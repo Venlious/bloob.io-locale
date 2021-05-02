@@ -5,9 +5,9 @@ export default {
 	},
 	generic: {
 		title: 'An error has occured.',
-		invalid: 'Given data is invalid',
+		invalid: 'Given data is invalid.',
 		invalidAction: 'An invalid action type "%{type}" was given.',
-		maintenance: 'You cannot perform this action while maintenance mode is active',
+		maintenance: 'You cannot perform this action while maintenance mode is active.',
 		missingArguments: 'Missing needed arguments for this action.',
 		missingAction: 'An action type is required.'
 	},
@@ -30,13 +30,16 @@ export default {
 		invalidCardSelection: 'Invalid card selection given.',
 		alreadyVoted: 'You have already voted.',
 		cardNotInHand: 'You do not have this card in your hand.',
-		insufficientWhiteCards: 'Insufficient white cards to start the game.',
-		insufficientBlackCards: 'Insufficient black cards to start the game.',
+		insufficientWhiteCards: 'Insufficient response cards to start the game.',
+		insufficientBlackCards: 'Insufficient action cards to start the game.',
 		invalidPlacement: 'Your piece placement is invalid.',
 		cellClaimed: 'One or more cells in your selection have already been claimed.',
 		colourClaimed: 'This colour has been claimed by another user already.',
 		invalidColumnRow: 'Column or row is not set or invalid.',
-		invalidColumn: 'Column is not set or invalid.'
+		invalidColumn: 'Column is not set or invalid.',
+		invalidWord: 'The word given is not in the dictionary used.',
+		wordTooShort: 'Word selection too short (Min. %{min})',
+		wordTooLong: 'Word selection too long (Max. %{max})'
 	},
 	preset: {
 		alreadyApplied: 'This preset has already been applied.',
@@ -58,18 +61,12 @@ export default {
 		minExceedMaxLength: 'Min. length cannot be more than the max. length',
 		maxSubceedMinLength: 'Max. length cannot be less than the min. length'
 	},
-	word: {
-		invalid: 'The word given is not in the dictionary used.',
-		claimed: 'One or more cells in your selection have already been claimed.',
-		selectionTooShort: 'Word selection too short (Min. %{min})',
-		selectionTooLong: 'Word selection too long (Max. %{max})'
-	},
 	profile: {
 		missingData: 'Missing username and/or picture arguments.',
 		incorrectNickname: 'Nickname is incorrectly formatted.',
 		incorrectPicture: 'Picture is incorrectly formatted.',
-		tooLong: 'Nickname is too long. (%{length}/%{max})',
-		tooShort: 'Nickname is too long. (%{length}/%{min})',
+		tooLong: 'Nickname is too long (%{length}/%{max})',
+		tooShort: 'Nickname is too short (%{length}/%{min})',
 		alphanumeric: `Nickname may only contain alphanumeric characters and these special characters ?!_-+`,
 		inGame: 'Cannot customise your profile while the game is in progress'
 	},

@@ -10,7 +10,7 @@ export default {
 			finished: 'Match Finished',
 			tied: `Match Tied`,
 			pickActionCard: 'Picking Action Card',
-			makingCardSelections: 'Picking Action Card',
+			makingCardSelections: 'Making Card Selection',
 			voting: 'Voting',
 			voteResults: 'Vote Results',
 			flippingField: 'Flipping Field',
@@ -137,7 +137,6 @@ export default {
 		minMax: 'Min. %{min} | Max. %{max}',
 		incrementCounter: 'Increments of %{count}',
 		selectedOfLimit: 'Selected %{current} out of %{total} limit',
-		errorOccured: 'An error has occured',
 		howToPlay: 'Learn how to play this game',
 		volume: {
 			interface: 'Interface Volume',
@@ -267,8 +266,8 @@ export default {
 			},
 			noType: `There are no %{type} cards`,
 			type: {
-				black: 'black',
-				white: 'white'
+				black: 'action',
+				white: 'response'
 			},
 			pickAction: `Pick an action card for this round`
 		},

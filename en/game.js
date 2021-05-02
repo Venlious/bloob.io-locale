@@ -2,11 +2,11 @@ export default {
 	generic: {
 		options: {
 			public: {
-				name: 'Game Privacy'
+				name: 'Match Privacy'
 			},
 			maxUsers: {
 				name: 'Max. Players',
-				help: `Set how many players are allowed to join. Generally the game is played best with only two players.`
+				help: `How many players are allowed in the match.`
 			}
 		},
 		presets: {
@@ -31,8 +31,8 @@ export default {
 			language: {
 				name: 'Language',
 				help: {
-					intro: `Set the language everyone finds words in.`,
-					globalLanguage: `If <b>Global Language</b> is off, each player can select a language of their choosing.`
+					intro: `The language everyone has to try to find words in.`,
+					globalLanguage: `If the <b>Global Language</b> is disabled each player can select a language of their choosing.`
 				}
 			},
 			sharedField: {
@@ -52,7 +52,7 @@ export default {
 			},
 			roundTotal: {
 				name: 'Rounds',
-				help: `Each round will generate a new playing field free from previous selections.`
+				help: `Each round will generate a new playing field.`
 			},
 			roundDuration: {
 				name: 'Round Duration',
@@ -78,7 +78,7 @@ export default {
 			field: {
 				name: 'Field Size',
 				help: {
-					change: `Change the size of the playing field. Bigger fields make playing with more people easier.`,
+					change: `The size of the playing field. Bigger fields make playing with more people easier.`,
 					notice: `Please note that large field sizes increase the interface size and may not fit the browser window for all players.`
 				},
 				data: {
@@ -148,7 +148,7 @@ export default {
 			},
 			turnTime: {
 				name: 'Turn Time',
-				help: `Define how long each player may decide on their next move before automatically losing.`
+				help: `How long each player may decide on their next move.`
 			},
 			piecesInRow: {
 				name: 'Winning Condition',
@@ -173,7 +173,7 @@ export default {
 			},
 			turnsUntilFlip: {
 				name: 'Turns to Flip',
-				help: `Placing a piece counts as a turn. Set how many pieces must be dropped before flipping the field.`
+				help: `Placing a piece counts as a turn. This defines how many pieces must be dropped before flipping the field.`
 			}
 		},
 		presets: {
@@ -198,7 +198,7 @@ export default {
 				title: 'Winning State',
 				desc: {
 					'1': `By default, the first person to get four on a row wins the game. This can be horizontal, vertical, and diagonal.`,
-					'2': `The match leader may change the default gamemode and allow for different requirements.`
+					'2': `The match leader may change the default winning condition and allow for different requirements.`
 				}
 			}
 		}
@@ -218,19 +218,19 @@ export default {
 			},
 			handSize: {
 				name: 'Hand Size',
-				help: `Set the amount of white cards everyone holds in their hand at any given time.`
+				help: `The amount of response cards everyone holds in their hand at any given time.`
 			},
 			judgeSystem: {
 				name: 'Judge System',
-				help: `Set what kind of judging system you would like. This is used to determine who had the best play each round.`,
+				help: `Either a judge or everyone gets to determine who had the best play each round.`,
 				data: {
 					single: 'New judge every round',
 					everyone: 'Everyone votes'
 				}
 			},
 			pickBlackCard: {
-				name: 'Pick Black Card',
-				help: `When turned on, three random black cards are shown to the judge to pick between.`
+				name: 'Pick Action Card',
+				help: `When turned on, three random action cards are shown to the judge to pick between.`
 			},
 			showNsfw: {
 				name: 'NSFW Cards',
@@ -241,7 +241,7 @@ export default {
 				help: `Cards containing brands, difficult words, or people.`
 			},
 			timePicking: {
-				name: 'Black Card Picking Time',
+				name: 'Action Card Picking Time',
 				help: `Define how long everyone has to pick the action card to play.`
 			},
 			timeDeciding: {
