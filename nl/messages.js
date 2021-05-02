@@ -137,6 +137,7 @@ export default {
 		minMax: 'Min. %{min} | Max. %{max}',
 		incrementCounter: 'Stappen van %{count}',
 		selectedOfLimit: '%{current} geselecteerd van %{total} limiet',
+		helpLocalise: 'Help de lokalisatie te verbeteren',
 		howToPlay: 'Bekijk hoe je dit spel speelt',
 		volume: {
 			interface: 'Interface Volume',
