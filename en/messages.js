@@ -72,6 +72,11 @@ export default {
 		basic: 'Basic',
 		language: 'Language'
 	},
+	time: {
+		hours: '0 hours | 1 hour | {count} hours',
+		minutes: '0 minutes | 1 minute | {count} minutes',
+		seconds: '0 seconds | 1 second | {count} seconds'
+	},
 	count: {
 		points: '0 points | 1 point | {count} points',
 		wins: '0 wins | 1 win | {count} wins',
