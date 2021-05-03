@@ -253,7 +253,7 @@ export default {
 			iconsSource: 'Icons courtesy of %{name} (Free)',
 			soundsSource: 'Sounds provided by %{name} (Licensed)',
 			rottenApples: 'Rotten Apples based on %{name} (Creative Commons BY-NC-SA 2.0)',
-			support: 'Support the development'
+			support: 'Buy me a pizza'
 		},
 		card: {
 			sets: {
