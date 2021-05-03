@@ -178,7 +178,7 @@ export default {
 		},
 		presets: {
 			fiveInARow: {
-				name: 'Vijf op een ri',
+				name: 'Vijf op een rij',
 				desc: 'Zijkolommen — Groot speelveld'
 			},
 			flipParty: {
