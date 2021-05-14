@@ -41,6 +41,14 @@ export default {
 		wordTooShort: 'Woordselectie te kort (Min. %{min})',
 		wordTooLong: 'Woordselectie te lang (Max. %{max})'
 	},
+	card: {
+		empty: `De kaart kan niet leeg zijn.`,
+		drawLimit: `Kan niet meer dan 3 antwoordkaarten trekken. (Te veel underscores?)`,
+		set: {
+			sizeLimit: `De totale grootte van de custom kaartensets mag niet groter zijn dan %{limit}`,
+			name: 'Naam moet tussen de 3 en 32 tekens lang zijn'
+		}
+	},
 	preset: {
 		alreadyApplied: 'Deze preset is reeds toegepast.',
 		invalid: 'Je kunt "%{id}" niet als preset gebruiken.',

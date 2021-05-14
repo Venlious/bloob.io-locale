@@ -28,6 +28,8 @@ export default {
 		}
 	},
 	placeholder: {
+		cardContent: 'Vul kaartinhoud in...',
+		cardSetName: 'Vul een naam in voor deze kaartenset...',
 		nickname: 'Vul een nickname in...',
 		matchId: 'Spel ID of URL',
 		message: 'Bericht...',
@@ -115,10 +117,14 @@ export default {
 		new: 'Nieuw',
 		fixed: 'Vast',
 		changed: 'Gewijzigd',
+		confirm: 'Bevestig',
 		close: 'Sluit',
+		edit: 'Wijzig',
+		delete: 'Verwijder',
 		cancel: 'Annuleer',
 		reset: 'Reset',
 		start: 'Start',
+		download: 'Download',
 		settings: 'Instellingen',
 		preset: 'Preset',
 		averageLength: 'Gem. Lengte',
@@ -135,11 +141,12 @@ export default {
 		resetData: 'Reset Gegevens',
 		resetLobby: 'Reset Lobby',
 		customise: 'Wijzig',
-		cancelCountdown: 'Annuleer Aftellen',
+		cancelCountdown: 'Aftellen Annuleren',
 		inviteOthers: 'Anderen Uitnodigen',
 		rematch: 'Rematch',
 		activeFilters: 'Actieve Filters',
 		minMax: 'Min. %{min} | Max. %{max}',
+		madeBy: 'Gemaakt door %{name}',
 		incrementCounter: 'Stappen van %{count}',
 		selectedOfLimit: '%{current} geselecteerd van %{total} limiet',
 		helpLocalise: 'Help de lokalisatie te verbeteren',
@@ -172,10 +179,25 @@ export default {
 			menu: 'Spelmenu'
 		},
 		card: {
+			draw: 'Trek Kaarten',
+			content: 'Kaartinhoud',
+			editor: 'Kaart Maker',
+			create: 'Maak Nieuwe Kaart',
 			none: 'Geen Kaarten',
-			total: 'Totaal aan Kaarten',
+			total: 'Totaal Aantal Kaarten',
+			view: 'Bekijk Kaarten',
+			noneFound: 'Geen Kaarten Gevonden',
+			type: {
+				title: 'Kaart Type',
+				black: 'Actie (Zwart)',
+				white: 'Antwoord (Wit)'
+			},
 			sets: {
+				create: 'Maak Nieuwe Kaartenset',
+				import: 'Importeer Kaartenset',
+				name: 'Kaartenset Naam',
 				title: 'Kaartensets',
+				importer: 'Kaartenset Importer',
 				namedTitle: 'Kaartenset "%{title}"',
 				custom: 'Custom Kaartensets',
 				default: 'Standaard Kaartensets',
@@ -262,14 +284,31 @@ export default {
 		},
 		card: {
 			sets: {
+				importer: `Je kunt hier kaartensets uploaden. Kaartensets van derde partijen (Cardcast, Pretend You're Xyzzy) werken niet optimaal en er kunnen fouten voorkomen. Controleer na het importen dan ook even de kaartensets die je hebt toegevoegd.`,
+				delete: `Het verwijderen van een custom kaartenset met de naam "%{name}" kan niet ongedaan worden gemaakt. Download de set eerst lokaal als je deze later wilt kunnen herstellen.`,
+				storage: `Custom kaartsets worden opgeslagen in jouw browser. Bewaar ze veilig door een gedownloade kopie ergens anders op te slaan.`,
+				share: 'Deel en browse voor custom kaartensets hier.',
 				noneSelected: 'Spelleider moet kaartensets selecteren.',
 				notLeader: `Omdat jij niet de spelleider bent zijn jouw ingevoerde kaartensets verborgen.`,
 				sizeLimit: `Elke custom kaartenset neemt een neemt opslagruimte in beslag. Om prestatieredenen kan een niet meer dan <b>%{size}</b> aan custom kaartensets tegelijk gebruiken.`,
+				processing: {
+					finished: 'Alle %{total} kaartensets verwerkt',
+					progress: 'Aan het verwerken van kaartenset %{current} uit %{total}',
+					failed: 'Kan kaartenset "%{name}" niet verwerken'
+				},
 				empty: {
 					leader: `Jouw custom kaartensets zullen hier verschijnen.`,
-					other: `De spelleider heeft geen custom kaartensets gekozen.`
+					other: `De spelleider heeft geen custom kaartensets gekozen.`,
+					editor: `Jouw (geïmporteerde) custom kaartensets zullen hier te zien zijn.`
 				}
 			},
+			edit: {
+				success: `Kaart succesvol gewijzigd!`
+			},
+			create: {
+				success: `Een nieuwe kaart succesvol toegevoegd!`
+			},
+			underscore: 'Gebruik _ waar antwoordkaarten moeten komen',
 			noType: `Er zijn geen %{type} kaarten`,
 			type: {
 				black: 'actie',
@@ -285,6 +324,7 @@ export default {
 			inProgress: 'Speelveld aan het Omkeren'
 		},
 		data: {
+			unsaved: `Je hebt onopgeslagen wijzigingen die gewist zullen worden als je doorgaat.`,
 			reset: `Het resetten van uw gegevens is onomkeerbaar en zal uw profiel, instellingen en statistieken wissen.`
 		}
 	}

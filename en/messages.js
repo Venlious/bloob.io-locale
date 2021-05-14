@@ -28,6 +28,8 @@ export default {
 		}
 	},
 	placeholder: {
+		cardContent: 'Fill in card content...',
+		cardSetName: 'Fill in name for this card set...',
 		nickname: 'Fill in a nickname...',
 		matchId: 'Match ID or URL',
 		message: 'Message...',
@@ -115,10 +117,14 @@ export default {
 		new: 'New',
 		fixed: 'Fixed',
 		changed: 'Changed',
+		confirm: 'Confirm',
 		close: 'Close',
+		edit: 'Edit',
+		delete: 'Delete',
 		cancel: 'Cancel',
 		reset: 'Reset',
 		start: 'Start',
+		download: 'Download',
 		settings: 'Settings',
 		preset: 'Preset',
 		averageLength: 'Avg. Length',
@@ -140,6 +146,7 @@ export default {
 		rematch: 'Rematch',
 		activeFilters: 'Active Filters',
 		minMax: 'Min. %{min} | Max. %{max}',
+		madeBy: 'Made by %{name}',
 		incrementCounter: 'Increments of %{count}',
 		selectedOfLimit: 'Selected %{current} out of %{total} limit',
 		helpLocalise: 'Help improve localisation',
@@ -172,10 +179,25 @@ export default {
 			menu: 'Game Menu'
 		},
 		card: {
+			draw: 'Draw Cards',
+			content: 'Card Content',
+			editor: 'Card Editor',
+			create: 'Create Card',
 			none: 'No Cards',
 			total: 'Total Cards',
+			view: 'View Cards',
+			noneFound: 'No Cards Found',
+			type: {
+				title: 'Card Type',
+				black: 'Action (Black)',
+				white: 'Response (White)'
+			},
 			sets: {
+				create: 'Create Card Set',
+				import: 'Import Card Set',
+				name: 'Card Set Name',
 				title: 'Card Sets',
+				importer: 'Card Set Importer',
 				namedTitle: 'Card Set "%{title}"',
 				custom: 'Custom Card Sets',
 				default: 'Default Card Sets',
@@ -262,14 +284,31 @@ export default {
 		},
 		card: {
 			sets: {
+				importer: `You can upload card sets here. Card sets from third parties (Cardcast, Pretend You're Xyzzy) have limited support and may contain errors. Please check on the resulting card sets afterwards.`,
+				delete: `Deleting custom card set named "%{name}" cannot be undone. Download the set locally first if you wish to be able to recover it at a later time.`,
+				storage: `Custom card sets are stored in your browser. Keep them safe by having a downloaded copy stored somewhere else.`,
+				share: 'Share and browse for custom card sets here.',
 				noneSelected: 'The match leader must select card sets.',
 				notLeader: `Your imported cards are hidden, as you are not the game leader.`,
 				sizeLimit: `Each custom card set takes up an amount of available storage. For performance reasons, a single game cannot use more than <b>%{size}</b> of custom card sets at a time.`,
+				processing: {
+					finished: 'Processed all %{total} card sets',
+					progress: 'Processing card set %{current} out of %{total}',
+					failed: 'Failed to process card set "%{name}"'
+				},
 				empty: {
 					leader: `Your custom card sets will show up here.`,
-					other: `The game leader has not selected any custom card sets.`
+					other: `The game leader has not selected any custom card sets.`,
+					editor: `Your (imported) custom card sets will show up here.`
 				}
 			},
+			edit: {
+				success: `Modified card successfully!`
+			},
+			create: {
+				success: `Added a new card successfully!`
+			},
+			underscore: 'Use _ to mark a space for reaction cards',
 			noType: `There are no %{type} cards`,
 			type: {
 				black: 'action',
@@ -285,6 +324,7 @@ export default {
 			inProgress: 'Flipping field'
 		},
 		data: {
+			unsaved: `You have unsaved changes which will be erased if you proceed.`,
 			reset: `Resetting your data is irreversible and will clear your profile, settings, and statistics.`
 		}
 	}
