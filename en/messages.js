@@ -80,6 +80,7 @@ export default {
 		seconds: '0 seconds | 1 second | {count} seconds'
 	},
 	count: {
+		files: '0 files | 1 file | {count} files',
 		points: '0 points | 1 point | {count} points',
 		wins: '0 wins | 1 win | {count} wins',
 		cards: '0 cards | 1 card | {count} cards',
@@ -223,6 +224,10 @@ export default {
 		}
 	},
 	info: {
+		file: {
+			upload: `Click to browse or drag your file(s) in here`,
+			uploadAdditional: `Add more files by dragging or clicking here`
+		},
 		copy: {
 			url: {
 				success: `Copied URL to clipboard!`,

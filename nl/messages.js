@@ -80,6 +80,7 @@ export default {
 		seconds: '0 seconden | 1 seconde | {count} seconden'
 	},
 	count: {
+		files: '0 bestanden | 1 bestand | {count} bestanden',
 		points: '0 punten | 1 punt | {count} punten',
 		wins: '0 overwinningen | 1 overwinning | {count} overwinningen',
 		cards: '0 kaarten | 1 kaart | {count} kaarten',
@@ -223,6 +224,10 @@ export default {
 		}
 	},
 	info: {
+		file: {
+			upload: `Klik om te browsen of sleep uw bestand(en) hierheen`,
+			uploadAdditional: `Voeg meer bestanden toe door te slepen of hier te klikken`
+		},
 		copy: {
 			url: {
 				success: `URL gekopieerd naar klembord!`,
