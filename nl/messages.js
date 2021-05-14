@@ -28,6 +28,7 @@ export default {
 		}
 	},
 	placeholder: {
+		cardSetId: 'Vul kaartenset ID in...',
 		cardContent: 'Vul kaartinhoud in...',
 		cardSetName: 'Vul een naam in voor deze kaartenset...',
 		nickname: 'Vul een nickname in...',
@@ -226,7 +227,11 @@ export default {
 	info: {
 		file: {
 			upload: `Klik om te browsen of sleep uw bestand(en) hierheen`,
-			uploadAdditional: `Voeg meer bestanden toe door te slepen of hier te klikken`
+			uploadAdditional: `Voeg meer bestanden toe door te slepen of hier te klikken`,
+			download: {
+				automatic: `Opent een nieuw tabblad en begint automatisch een .csv te downloaden`,
+				saveAs: `Opent een nieuw tabblad waar je dan het bestand moet opslaan door met de rechtermuisknop te klikken en "Opslaan als" te selecteren`
+			}
 		},
 		copy: {
 			url: {
@@ -289,7 +294,11 @@ export default {
 		},
 		card: {
 			sets: {
-				importer: `Je kunt hier kaartensets uploaden. Kaartensets van derde partijen (Cardcast, Pretend You're Xyzzy) werken niet optimaal en er kunnen fouten voorkomen. Controleer na het importen dan ook even de kaartensets die je hebt toegevoegd.`,
+				importId: {
+					title: `Kaartensets importeren met een ID (zoals van Many Decks)`,
+					content: `Je kunt de ID van kaartensets op populaire diensten hieronder invullen. Eenmaal gedownload kun je ze gemakkelijk hieronder uploaden.`
+				},
+				csv: `Let op: CSV-bestandsondersteuning is beperkt en de resulterende kaartenset kan fouten bevatten. Voor de beste resultaten gebruik de native .json bestanden (hetzelfde als export).`,
 				delete: `Het verwijderen van een custom kaartenset met de naam "%{name}" kan niet ongedaan worden gemaakt. Download de set eerst lokaal als je deze later wilt kunnen herstellen.`,
 				storage: `Custom kaartsets worden opgeslagen in jouw browser. Bewaar ze veilig door een gedownloade kopie ergens anders op te slaan.`,
 				share: 'Deel en browse voor custom kaartensets hier.',

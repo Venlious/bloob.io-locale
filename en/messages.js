@@ -28,6 +28,7 @@ export default {
 		}
 	},
 	placeholder: {
+		cardSetId: 'Fill in card set ID...',
 		cardContent: 'Fill in card content...',
 		cardSetName: 'Fill in name for this card set...',
 		nickname: 'Fill in a nickname...',
@@ -226,7 +227,11 @@ export default {
 	info: {
 		file: {
 			upload: `Click to browse or drag your file(s) in here`,
-			uploadAdditional: `Add more files by dragging or clicking here`
+			uploadAdditional: `Add more files by dragging or clicking here`,
+			download: {
+				automatic: `Opens a new tab and automatically starts .csv download`,
+				saveAs: `Opens a new tab where you will then have to save the file by right clicking and using "Save As"`
+			}
 		},
 		copy: {
 			url: {
@@ -289,7 +294,11 @@ export default {
 		},
 		card: {
 			sets: {
-				importer: `You can upload card sets here. Card sets from third parties (Cardcast, Pretend You're Xyzzy) have limited support and may contain errors. Please check on the resulting card sets afterwards.`,
+				importId: {
+					title: `Import card sets from an ID (such as from Many Decks)`,
+					content: `You can fill in the ID of card sets on popular providers below. Once downloaded you can simply upload them below.`
+				},
+				csv: `Please note CSV file support is limited and the resulting card set may not be flawless. For best results please use the native .json files (same as export).`,
 				delete: `Deleting custom card set named "%{name}" cannot be undone. Download the set locally first if you wish to be able to recover it at a later time.`,
 				storage: `Custom card sets are stored in your browser. Keep them safe by having a downloaded copy stored somewhere else.`,
 				share: 'Share and browse for custom card sets here.',
