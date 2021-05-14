@@ -43,7 +43,7 @@ export default {
 	},
 	card: {
 		empty: `Please make sure the card isn't empty.`,
-		drawLimit: `Cannot request to draw more than 3 response cards. (Too many underscores?)`,
+		pickLimit: `Cannot request to pick more than 3 response cards. (Too many underscores?)`,
 		set: {
 			sizeLimit: 'The total size of the custom card sets may not exceed %{limit}',
 			name: 'Name must be between 3 and 32 characters long'

@@ -181,7 +181,7 @@ export default {
 			menu: 'Spelmenu'
 		},
 		card: {
-			draw: 'Trek Kaarten',
+			pick: 'Kies Kaarten',
 			content: 'Kaartinhoud',
 			editor: 'Kaart Maker',
 			create: 'Maak Nieuwe Kaart',

@@ -181,7 +181,7 @@ export default {
 			menu: 'Game Menu'
 		},
 		card: {
-			draw: 'Draw Cards',
+			pick: 'Pick Cards',
 			content: 'Card Content',
 			editor: 'Card Editor',
 			create: 'Create Card',
