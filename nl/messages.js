@@ -2,6 +2,7 @@ import error from './error'
 import game from './game'
 
 export default {
+	name: 'Bloob.io',
 	error,
 	game,
 	header: {
@@ -85,11 +86,14 @@ export default {
 		points: '0 punten | 1 punt | {count} punten',
 		wins: '0 overwinningen | 1 overwinning | {count} overwinningen',
 		cards: '0 kaarten | 1 kaart | {count} kaarten',
+		playing: '0 aan het spelen | 1 aan het spelen | {count} aan het spelen',
 		matchesFound: '0 spellen gevonden | 1 spel gevonden | {count} spellen gevonden',
 		matchesWaiting: '0 spellen wachten | 1 spel wacht | {count} spellen wachten',
 		needMorePlayers: 'Nog 0 spelers nodig | Nog 1 speler nodig | Nog {count} spelers nodig'
 	},
 	misc: {
+		menu: 'Menu',
+		admin: 'Admin',
 		maintenance: 'Onderhoud',
 		notice: 'Mededeling',
 		pending: 'Aan het afwachten',
@@ -148,6 +152,7 @@ export default {
 		rematch: 'Rematch',
 		activeFilters: 'Actieve Filters',
 		minMax: 'Min. %{min} | Max. %{max}',
+		playersMinMax: '%{min}-%{max} spelers',
 		madeBy: 'Gemaakt door %{name}',
 		incrementCounter: 'Stappen van %{count}',
 		selectedOfLimit: '%{current} geselecteerd van %{total} limiet',
@@ -225,6 +230,7 @@ export default {
 		}
 	},
 	info: {
+		menu: `Een verzameling van multiplayer browser spellen zonder de noodzaak om een account aan te maken. Speel zonder gedoe en pas de ervaring aan naar je eigen smaak.`,
 		file: {
 			upload: `Klik om te browsen of sleep uw bestand(en) hierheen`,
 			uploadAdditional: `Voeg meer bestanden toe door te slepen of hier te klikken`,

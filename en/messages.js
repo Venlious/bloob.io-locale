@@ -2,6 +2,7 @@ import error from './error'
 import game from './game'
 
 export default {
+	name: 'Bloob.io',
 	error,
 	game,
 	header: {
@@ -85,11 +86,14 @@ export default {
 		points: '0 points | 1 point | {count} points',
 		wins: '0 wins | 1 win | {count} wins',
 		cards: '0 cards | 1 card | {count} cards',
+		playing: '0 playing | 1 playing | {count} playing',
 		matchesFound: '0 matches found | 1 match found | {count} matches found',
 		matchesWaiting: '0 matches waiting | 1 match waiting | {count} matches waiting',
 		needMorePlayers: 'Need 0 more players | Need 1 more player | Need {count} more players'
 	},
 	misc: {
+		menu: 'Menu',
+		admin: 'Admin',
 		maintenance: 'Maintenance',
 		notice: 'Notice',
 		pending: 'Pending',
@@ -148,6 +152,7 @@ export default {
 		rematch: 'Rematch',
 		activeFilters: 'Active Filters',
 		minMax: 'Min. %{min} | Max. %{max}',
+		playersMinMax: '%{min}-%{max} players',
 		madeBy: 'Made by %{name}',
 		incrementCounter: 'Increments of %{count}',
 		selectedOfLimit: 'Selected %{current} out of %{total} limit',
@@ -225,6 +230,7 @@ export default {
 		}
 	},
 	info: {
+		menu: `A collection of multiplayer browser-based games without the need to make an account. Play hassle free and customise the experience to your liking.`,
 		file: {
 			upload: `Click to browse or drag your file(s) in here`,
 			uploadAdditional: `Add more files by dragging or clicking here`,

@@ -1,3 +1,5 @@
+import GAME_TYPE from '../../../../public/enums/game-type'
+
 export default {
 	generic: {
 		options: {
@@ -19,7 +21,9 @@ export default {
 			}
 		}
 	},
-	WORDRACE: {
+	[GAME_TYPE.WORDRACE]: {
+		name: 'Wordrace',
+		description: `Find words in any direction on a randomly generated field while racing against others with the same objective.`,
 		options: {
 			globalLanguage: {
 				name: 'Global Language',
@@ -133,7 +137,9 @@ export default {
 			}
 		}
 	},
-	CONNECT_FOUR: {
+	[GAME_TYPE.CONNECT_FOUR]: {
+		name: 'Connect Four',
+		description: `Play Connect Four with up to six players in either the classic gamemode or available variations.`,
 		options: {
 			field: {
 				name: 'Field Size',
@@ -203,7 +209,9 @@ export default {
 			}
 		}
 	},
-	ROTTEN_APPLES: {
+	[GAME_TYPE.ROTTEN_APPLES]: {
+		name: 'Rotten Apples',
+		description: `Play a Cards Against Humanity clone and customise your experience to your liking.`,
 		options: {
 			winCondition: {
 				name: 'Winning Condition',

@@ -1,3 +1,5 @@
+import GAME_TYPE from '../../../../public/enums/game-type'
+
 export default {
 	generic: {
 		options: {
@@ -19,7 +21,9 @@ export default {
 			}
 		}
 	},
-	WORDRACE: {
+	[GAME_TYPE.WORDRACE]: {
+		name: 'Wordrace',
+		description: `Zoek woorden in elke richting op een willekeurig gegenereerd veld terwijl je racet tegen anderen met hetzelfde doel.`,
 		options: {
 			globalLanguage: {
 				name: 'Universele Taal',
@@ -133,7 +137,9 @@ export default {
 			}
 		}
 	},
-	CONNECT_FOUR: {
+	[GAME_TYPE.CONNECT_FOUR]: {
+		name: 'Connect Four',
+		description: `Speel vier-op-een-rij met maximaal zes spelers in de klassieke spelmodus of beschikbare variaties.`,
 		options: {
 			field: {
 				name: 'Speelveld Formaat',
@@ -203,7 +209,9 @@ export default {
 			}
 		}
 	},
-	ROTTEN_APPLES: {
+	[GAME_TYPE.ROTTEN_APPLES]: {
+		name: 'Rotten Apples',
+		description: `Speel een Cards Against Humanity-kloon en pas je ervaring aan naar eigen smaak.`,
 		options: {
 			winCondition: {
 				name: 'Win Conditie',
