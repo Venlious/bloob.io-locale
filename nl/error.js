@@ -22,12 +22,15 @@ export default {
 		increment: 'Optie "%{id}" vereist stappen van "%{increment}".'
 	},
 	game: {
+		cannotSelf: 'Je kunt deze actie niet op jezelf uitvoeren.',
 		invalid: 'Speltype "%{type}" bestaat niet.',
+		invalidUser: 'Gebruiker met opgegeven ID zit niet in dit spel.',
 		invalidTime: `Je kunt deze actie op dit moment niet uitvoeren.`,
 		invalidVote: 'De stem die je probeerde uit te brengen is ongeldig.',
 		invalidCard: 'Ongeldige kaartgegevens gegeven.',
 		invalidCardSet: 'Ongeldige kaartenset gegeven.',
 		invalidCardSelection: 'Ongeldige kaartselectie gegeven.',
+		inactiveUser: 'Kan deze actie niet uitvoeren op een inactieve gebruiker.',
 		alreadyVoted: 'Je hebt al gestemd.',
 		cardNotInHand: 'Je hebt deze kaart niet in je hand.',
 		insufficientWhiteCards: 'Onvoldoende antwoord kaarten om het spel te beginnen.',
@@ -55,6 +58,7 @@ export default {
 		inProgress: 'Je kunt de preset niet veranderen terwijl het spel bezig is.'
 	},
 	match: {
+		kicked: 'Je bent uit het spel gezet waar je in zat.',
 		reservedExcluded: 'Dit spel is gereserveerd (rematch) en je staat niet op de lijst.',
 		deleted: 'Het spel waar je in zat is verwijderd.',
 		invalid: 'Spel met ID "%{id}" bestaat niet.',

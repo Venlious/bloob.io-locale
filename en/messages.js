@@ -92,6 +92,8 @@ export default {
 		needMorePlayers: 'Need 0 more players | Need 1 more player | Need {count} more players'
 	},
 	misc: {
+		transferLeadership: 'Transfer Leadership',
+		kickUser: 'Kick User',
 		menu: 'Menu',
 		admin: 'Admin',
 		maintenance: 'Maintenance',
@@ -260,6 +262,8 @@ export default {
 				another: `Join %{name} in another match`,
 				rematch: `%{name} would like a rematch`
 			},
+			transferLeadership: `You are about to transfer the match leadership to "%{name}".`,
+			kickUser: `You are about to kick "%{name}" from this match.`,
 			finishedSettings: `Finished editing the match settings?`,
 			available: `New matches will show up here`,
 			rematch: `Would you like to play again?`,

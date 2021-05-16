@@ -22,12 +22,15 @@ export default {
 		increment: 'Option "%{id}" requires increments of "%{increment}".'
 	},
 	game: {
+		cannotSelf: 'You cannot perform this action to yourself.',
 		invalid: 'Game type "%{type}" does not exist.',
+		invalidUser: 'User with given ID is not in this match.',
 		invalidTime: `You cannot perform this action at this time.`,
 		invalidVote: 'The vote you attempted to make is invalid.',
 		invalidCard: 'Invalid card data given.',
 		invalidCardSet: 'Invalid card set given.',
 		invalidCardSelection: 'Invalid card selection given.',
+		inactiveUser: 'Cannot perform this action on an inactive user.',
 		alreadyVoted: 'You have already voted.',
 		cardNotInHand: 'You do not have this card in your hand.',
 		insufficientWhiteCards: 'Insufficient response cards to start the game.',
@@ -55,6 +58,7 @@ export default {
 		inProgress: 'You cannot change the preset while the game is in progress.'
 	},
 	match: {
+		kicked: 'You were kicked from the match you were in.',
 		reservedExcluded: 'This game is reserved (rematch) and you are not on the list.',
 		deleted: 'The match you were in has been deleted.',
 		invalid: 'Match with ID "%{id}" does not exist.',

@@ -92,6 +92,8 @@ export default {
 		needMorePlayers: 'Nog 0 spelers nodig | Nog 1 speler nodig | Nog {count} spelers nodig'
 	},
 	misc: {
+		transferLeadership: 'Leiderschap Overdragen',
+		kickUser: 'Verwijder Gebruiker',
 		menu: 'Menu',
 		admin: 'Admin',
 		maintenance: 'Onderhoud',
@@ -260,6 +262,8 @@ export default {
 				another: `Doe mee met %{name} in een andere wedstrijd`,
 				rematch: `%{name} wil een rematch`
 			},
+			transferLeadership: `Je staat op het punt om de leiderschap van het spel over te dragen aan "%{name}".`,
+			kickUser: `Je staat op het punt om "%{name}" uit dit spel te verwijderen.`,
 			finishedSettings: `Klaar met het wijzigen van de instellingen?`,
 			available: `Beschikbare spellen zullen hier verschijnen`,
 			rematch: `Wil je weer spelen?`,
