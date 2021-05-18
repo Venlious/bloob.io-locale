@@ -3,6 +3,10 @@ export default {
 		secure: 'You hit the rate limit on this secure channel. Wait %{seconds} second(s).',
 		generic: 'We have received too many requests from you. Wait %{seconds} second(s).'
 	},
+	token: {
+		invalid: 'Your token is invalid and has been reset.',
+		inUse: `It looks like you already have this site open. Please check your other tabs and windows.`
+	},
 	generic: {
 		title: 'An error has occured.',
 		invalid: 'Given data is invalid.',
