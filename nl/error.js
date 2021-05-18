@@ -4,7 +4,7 @@ export default {
 		generic: 'We hebben te veel verzoeken van u ontvangen. Wacht %{seconds} seconde(n).'
 	},
 	token: {
-		invalid: 'Jouw token is ongeldig en is gereset.',
+		invalid: 'Jouw token is ongeldig en is gereset. Ververs alsjeblieft het scherm.',
 		inUse: `Je hebt deze site al ergens anders open staan. Controleer je browser tabbladen en vensters.`
 	},
 	generic: {

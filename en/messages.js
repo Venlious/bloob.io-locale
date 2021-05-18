@@ -92,6 +92,7 @@ export default {
 		needMorePlayers: 'Need 0 more players | Need 1 more player | Need {count} more players'
 	},
 	misc: {
+		refreshWindow: 'Refresh Window',
 		transferLeadership: 'Transfer Leadership',
 		kickUser: 'Kick User',
 		menu: 'Menu',

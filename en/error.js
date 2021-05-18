@@ -4,7 +4,7 @@ export default {
 		generic: 'We have received too many requests from you. Wait %{seconds} second(s).'
 	},
 	token: {
-		invalid: 'Your token is invalid and has been reset.',
+		invalid: 'Your token is invalid and has been reset. Please refresh your window to proceed.',
 		inUse: `It looks like you already have this site open. Please check your other tabs and windows.`
 	},
 	generic: {

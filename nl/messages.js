@@ -92,6 +92,7 @@ export default {
 		needMorePlayers: 'Nog 0 spelers nodig | Nog 1 speler nodig | Nog {count} spelers nodig'
 	},
 	misc: {
+		refreshWindow: 'Ververs Scherm',
 		transferLeadership: 'Leiderschap Overdragen',
 		kickUser: 'Verwijder Gebruiker',
 		menu: 'Menu',
