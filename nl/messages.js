@@ -307,7 +307,7 @@ export default {
 			sets: {
 				importId: {
 					title: `Kaartensets importeren met een ID (zoals van Many Decks)`,
-					content: `Je kunt de ID van kaartensets op populaire diensten hieronder invullen. Eenmaal gedownload kun je ze gemakkelijk hieronder uploaden.`
+					content: `Je kunt de ID van kaartensets van populaire diensten hieronder invullen. Eenmaal gedownload kun je ze gemakkelijk hieronder uploaden.`
 				},
 				csv: `Let op: CSV-bestandsondersteuning is beperkt en de resulterende kaartenset kan fouten bevatten. Voor de beste resultaten gebruik de native .json bestanden (hetzelfde als export).`,
 				delete: `Het verwijderen van een custom kaartenset met de naam "%{name}" kan niet ongedaan worden gemaakt. Download de set eerst lokaal als je deze later wilt kunnen herstellen.`,

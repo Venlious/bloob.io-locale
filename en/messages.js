@@ -307,7 +307,7 @@ export default {
 			sets: {
 				importId: {
 					title: `Import card sets from an ID (such as from Many Decks)`,
-					content: `You can fill in the ID of card sets on popular providers below. Once downloaded you can simply upload them below.`
+					content: `You can fill in the ID of card sets from popular providers below. Once downloaded you can simply upload them below.`
 				},
 				csv: `Please note CSV file support is limited and the resulting card set may not be flawless. For best results please use the native .json files (same as export).`,
 				delete: `Deleting custom card set named "%{name}" cannot be undone. Download the set locally first if you wish to be able to recover it at a later time.`,
