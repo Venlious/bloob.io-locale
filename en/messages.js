@@ -24,8 +24,8 @@ export default {
 			start: `Match starts in %{TEXT}...`,
 			timeRemaining: `%{CLOCK} remaining...`,
 			nextRound: `Next round in %{TEXT}...`,
-			youWon: `You Won`,
-			nameWon: `%{name} Has Won`
+			youWon: `You won`,
+			nameWon: `%{name} has won`
 		}
 	},
 	placeholder: {
