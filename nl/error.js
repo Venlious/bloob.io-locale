@@ -35,6 +35,7 @@ export default {
 		invalidCardSet: 'Ongeldige kaartenset gegeven.',
 		invalidCardSelection: 'Ongeldige kaartselectie gegeven.',
 		inactiveUser: 'Kan deze actie niet uitvoeren op een inactieve gebruiker.',
+		alreadyPlaced: 'Je hebt al iets geplaatst.',
 		alreadyVoted: 'Je hebt al gestemd.',
 		cardNotInHand: 'Je hebt deze kaart niet in je hand.',
 		insufficientWhiteCards: 'Onvoldoende antwoord kaarten om het spel te beginnen.',

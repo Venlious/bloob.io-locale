@@ -35,6 +35,7 @@ export default {
 		invalidCardSet: 'Invalid card set given.',
 		invalidCardSelection: 'Invalid card selection given.',
 		inactiveUser: 'Cannot perform this action on an inactive user.',
+		alreadyPlaced: 'You have already placed something.',
 		alreadyVoted: 'You have already voted.',
 		cardNotInHand: 'You do not have this card in your hand.',
 		insufficientWhiteCards: 'Insufficient response cards to start the game.',
