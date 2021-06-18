@@ -305,5 +305,11 @@ export default {
 				}
 			}
 		}
+	},
+	[GAME_TYPE.CHECKERS]: {
+		name: 'Checkers',
+		description: `Dammen zoals jij het wilt spelen en zonder gedoe.`,
+		options: {},
+		help: {}
 	}
 }

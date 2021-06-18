@@ -305,5 +305,11 @@ export default {
 				}
 			}
 		}
+	},
+	[GAME_TYPE.CHECKERS]: {
+		name: 'Checkers',
+		description: `Checkers the way you want to play it without hassle.`,
+		options: {},
+		help: {}
 	}
 }
