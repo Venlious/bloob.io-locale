@@ -5,7 +5,7 @@ export default {
 	},
 	token: {
 		invalid: 'Your token is invalid and has been reset. Please refresh your window to proceed.',
-		inUse: `It looks like you already have this site open. Please check your other tabs and windows.`
+		inUse: `It looks like you opened this site in another tab and you have been disconnected here.`
 	},
 	generic: {
 		title: 'An error has occured.',

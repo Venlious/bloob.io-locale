@@ -5,7 +5,7 @@ export default {
 	},
 	token: {
 		invalid: 'Jouw token is ongeldig en is gereset. Ververs alsjeblieft het scherm.',
-		inUse: `Je hebt deze site al ergens anders open staan. Controleer je browser tabbladen en vensters.`
+		inUse: `Je hebt deze site in een ander tabblad geopend en daarom ben je hier afgemeld.`
 	},
 	generic: {
 		title: 'Er is een fout opgetreden.',
