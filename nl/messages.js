@@ -84,6 +84,7 @@ export default {
 	count: {
 		files: '0 bestanden | 1 bestand | {count} bestanden',
 		points: '0 punten | 1 punt | {count} punten',
+		pieces: '0 schijven | 1 schijf | {count} schijven',
 		wins: '0 overwinningen | 1 overwinning | {count} overwinningen',
 		cards: '0 kaarten | 1 kaart | {count} kaarten',
 		playing: '0 aan het spelen | 1 aan het spelen | {count} aan het spelen',
@@ -137,6 +138,7 @@ export default {
 		settings: 'Instellingen',
 		preset: 'Preset',
 		averageLength: 'Gem. Lengte',
+		pieces: 'Schijven',
 		words: 'Woorden',
 		score: 'Score',
 		and: 'en',

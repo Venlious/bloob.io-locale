@@ -26,8 +26,13 @@ export default {
 		increment: 'Option "%{id}" requires increments of "%{increment}".'
 	},
 	game: {
+		insufficientRows: 'This field does not fit the amount of rows selected.',
+		insufficientRoom: 'The selected field cannot fit all players present.',
+		stuckSkip: 'Your turn was skipped as you cannot make any moves.',
+		allStuck: 'Nobody can make a move anymore. The match has concluded.',
 		cannotSelf: 'You cannot perform this action to yourself.',
 		invalid: 'Game type "%{type}" does not exist.',
+		invalidMove: 'Given move is invalid.',
 		invalidUser: 'User with given ID is not in this match.',
 		invalidTime: `You cannot perform this action at this time.`,
 		invalidVote: 'The vote you attempted to make is invalid.',

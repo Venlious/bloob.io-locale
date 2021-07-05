@@ -26,8 +26,13 @@ export default {
 		increment: 'Optie "%{id}" vereist stappen van "%{increment}".'
 	},
 	game: {
+		insufficientRows: 'Het aantal geselecteerde rijen past niet in dit veld.',
+		insufficientRoom: 'Er zijn teveel spelers voor het geselecteerde speelveld.',
+		stuckSkip: 'Jouw beurt is overgeslagen omdat je geen zetten kunt doen.',
+		allStuck: 'Niemand kan nog een zet doen. Het spel is afgelopen.',
 		cannotSelf: 'Je kunt deze actie niet op jezelf uitvoeren.',
 		invalid: 'Speltype "%{type}" bestaat niet.',
+		invalidMove: 'Gegeven set is niet mogelijk.',
 		invalidUser: 'Gebruiker met opgegeven ID zit niet in dit spel.',
 		invalidTime: `Je kunt deze actie op dit moment niet uitvoeren.`,
 		invalidVote: 'De stem die je probeerde uit te brengen is ongeldig.',

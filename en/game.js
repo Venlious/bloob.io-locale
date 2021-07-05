@@ -1,4 +1,6 @@
 import GAME_TYPE from '../../../../public/enums/game-type'
+import CHECKERS_KING_TYPE from '../../../../public/enums/checkers-king-type'
+import WIN_CONDITION from '../../../../public/enums/win-condition'
 
 export default {
 	generic: {
@@ -309,7 +311,51 @@ export default {
 	[GAME_TYPE.CHECKERS]: {
 		name: 'Checkers',
 		description: `Checkers the way you want to play it without hassle.`,
-		options: {},
+		options: {
+			forceTake: {
+				name: 'Force Take',
+				help: {
+					enabled: `<b>Enabled</b>: When possible, the user will be forced to take an opponent's piece.`,
+					disabled: `<b>Disabled</b>: The user can choose what move they make, even if they can take out an opponent's piece.`
+				}
+			},
+			field: {
+				name: 'Field',
+				help: `The playing field used. Depending on the size of the field and the amount of rows, you will get more or less starting pieces. Some fields may support up to four players.`,
+				data: {
+					'8x8': 'English (8x8) — 2 players',
+					'10x10': 'International (10x10) — 2 players',
+					'12x12': 'Canadian (12x12) — 2 players',
+					plus: 'Plus Shape (12x12) — 4 players'
+				}
+			},
+			winCondition: {
+				name: 'Win Condition',
+				help: `Under what condition does a piece becomes kinged. A kinged piece is allowed to move in all directions.`,
+				data: {
+					[WIN_CONDITION.MORE_PIECES]: 'Player with most pieces',
+					[WIN_CONDITION.OPPOSITE_SIDE]: 'First to reach opposite side'
+				}
+			},
+			kingCondition: {
+				name: 'King Condition',
+				help: `Under what condition does a piece becomes kinged. A kinged piece is allowed to move in all directions.`,
+				data: {
+					[CHECKERS_KING_TYPE.OPPOSITE_SIDE]: 'Reach opposite side',
+					[CHECKERS_KING_TYPE.ALL]: 'Start with all kings',
+					[CHECKERS_KING_TYPE.NONE]: 'Disabled'
+				}
+			},
+			turnTime: {
+				name: 'Turn Time',
+				help: `How long each player may decide on their next move.`
+			},
+			rows: {
+				name: 'Rows',
+				help: `How many rows of pieces each player starts with. Depending on the field size the amount of rows will be determined.`
+			}
+		},
+		presets: {},
 		help: {}
 	}
 }
