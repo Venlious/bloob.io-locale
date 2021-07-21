@@ -10,6 +10,8 @@ export default {
 			lobby: 'Match Lobby',
 			finished: 'Match Finished',
 			tied: `Match Tied`,
+			winner: `Match Won by %{name}`,
+			inactive: `Match Ended Due to Inactivity`,
 			pickActionCard: 'Picking Action Card',
 			makingCardSelections: 'Making Card Selection',
 			voting: 'Voting',

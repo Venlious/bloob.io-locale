@@ -10,6 +10,8 @@ export default {
 			lobby: 'Spel Lobby',
 			finished: 'Spel Afgelopen',
 			tied: `Gelijkspel`,
+			winner: `Spel Gewonnen Door %{name}`,
+			inactive: `Spel Beëindigd Wegens Inactiviteit`,
 			pickActionCard: 'Actiekaart Kiezen',
 			makingCardSelections: 'Maken van Kaart Selectie',
 			voting: 'Stemmen',
