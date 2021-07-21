@@ -171,6 +171,7 @@ export default {
 		},
 		match: {
 			create: 'Maak Nieuw Spel',
+			rematch: 'Rematch',
 			start: 'Start Spel',
 			starting: 'Spel Begint',
 			leave: 'Verlaat Spel',

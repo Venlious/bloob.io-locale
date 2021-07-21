@@ -171,6 +171,7 @@ export default {
 		},
 		match: {
 			create: 'Create Match',
+			rematch: 'Rematch',
 			start: 'Start Match',
 			starting: 'Match Starting',
 			leave: 'Leave Match',
