@@ -326,7 +326,8 @@ export default {
 					'8x8': 'English (8x8) — 2 players',
 					'10x10': 'International (10x10) — 2 players',
 					'12x12': 'Canadian (12x12) — 2 players',
-					plus: 'Plus Shape (12x12) — 4 players'
+					plus: 'Plus Shape (12x12) — 4 players',
+					diamond: 'Diamond Shape (12x12) — 4 players'
 				}
 			},
 			winCondition: {
@@ -346,9 +347,21 @@ export default {
 					[CHECKERS_KING_TYPE.NONE]: 'Disabled'
 				}
 			},
+			backwardsTake: {
+				name: 'Take Backwards',
+				help: `Set whether pieces are allowed to take over opponent pieces backwards. If disabled, this can only be done by kinged pieces.`
+			},
 			turnTime: {
 				name: 'Turn Time',
 				help: `How long each player may decide on their next move.`
+			},
+			staleCount: {
+				name: 'Stale Game',
+				help: `After how many moves without any take overs the game should be considered stale and ended.`
+			},
+			stuckThreshold: {
+				name: 'Stuck Threshold',
+				help: `If a player is stuck for this amount of moves in a row they will lose automatically.`
 			},
 			rows: {
 				name: 'Rows',

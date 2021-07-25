@@ -29,6 +29,7 @@ export default {
 		insufficientRows: 'Het aantal geselecteerde rijen past niet in dit veld.',
 		insufficientRoom: 'Er zijn teveel spelers voor het geselecteerde speelveld.',
 		stuckSkip: 'Jouw beurt is overgeslagen omdat je geen zetten kunt doen.',
+		stuckThreshold: `Je bent geëlimineerd omdat je %{moves} zet(ten) achter elkaar vastzat.`,
 		allStuck: 'Niemand kan nog een zet doen. Het spel is afgelopen.',
 		cannotSelf: 'Je kunt deze actie niet op jezelf uitvoeren.',
 		invalid: 'Speltype "%{type}" bestaat niet.',

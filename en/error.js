@@ -29,6 +29,7 @@ export default {
 		insufficientRows: 'This field does not fit the amount of rows selected.',
 		insufficientRoom: 'The selected field cannot fit all players present.',
 		stuckSkip: 'Your turn was skipped as you cannot make any moves.',
+		stuckThreshold: `You were eliminated as you were stuck for %{moves} move(s) in a row.`,
 		allStuck: 'Nobody can make a move anymore. The match has concluded.',
 		cannotSelf: 'You cannot perform this action to yourself.',
 		invalid: 'Game type "%{type}" does not exist.',
