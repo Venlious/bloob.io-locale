@@ -65,7 +65,7 @@ export default {
 		skip: 'Sla over (%{current}/%{total})',
 		voteReduceTime: `De resterende tijd wordt automatisch verminderd als iedereen gestemd heeft.`,
 		filterDisclaimer: `Let op: deze filter kan alleen gegarandeerd worden voor officiële kaartensets. Aangepaste sets werken mogelijk niet met deze filter.`,
-		resize: `<span class="warning-text">Vergroot de interface zodat het in het speelveld past.</span>`,
+		resize: `<span class="warning-text">Vergroot de interface zodat het speelveld past</span>`,
 		winningSelection: `%{name} won deze ronde met selectie %{selection}`,
 		noticeDescription: 'Een mededeling blijft bovenaan de pagina staan tot deze is verwijderd',
 		actionResponseCardCounter: `Actie- en antwoordkaartenteller. Sommige sets gebruiken dezelfde kaarten, daarvan worden dubbele kaarten automatisch verwijderd. Het filteren van <b>NSFW</b> of <b>Specifieke  Kaarten</b> vermindert ook het totale aantal.`
@@ -91,6 +91,7 @@ export default {
 		wins: '0 overwinningen | 1 overwinning | {count} overwinningen',
 		cards: '0 kaarten | 1 kaart | {count} kaarten',
 		moves: '0 zetten | 1 zet | {count} zetten',
+		players: '0 spelers | 1 speler | {count} spelers',
 		playing: '0 aan het spelen | 1 aan het spelen | {count} aan het spelen',
 		matchesFound: '0 spellen gevonden | 1 spel gevonden | {count} spellen gevonden',
 		matchesWaiting: '0 spellen wachten | 1 spel wacht | {count} spellen wachten',

@@ -323,19 +323,18 @@ export default {
 				name: 'Field',
 				help: `The playing field used. Depending on the size of the field and the amount of rows, you will get more or less starting pieces. Some fields may support up to four players.`,
 				data: {
-					'8x8': 'English (8x8) — 2 players',
-					'10x10': 'International (10x10) — 2 players',
-					'12x12': 'Canadian (12x12) — 2 players',
-					plus: 'Plus Shape (12x12) — 4 players',
-					diamond: 'Diamond Shape (12x12) — 4 players'
+					'8x8': 'English (8x8)',
+					'10x10': 'International (10x10)',
+					'12x12': 'Canadian (12x12)',
+					plus: 'Plus Shape (12x12)'
 				}
 			},
 			winCondition: {
 				name: 'Win Condition',
-				help: `Under what condition does a piece becomes kinged. A kinged piece is allowed to move in all directions.`,
+				help: `How the winner will be determined.`,
 				data: {
-					[WIN_CONDITION.MORE_PIECES]: 'Player with most pieces',
-					[WIN_CONDITION.OPPOSITE_SIDE]: 'First to reach opposite side'
+					[WIN_CONDITION.MORE_PIECES]: 'Most pieces',
+					[WIN_CONDITION.OPPOSITE_SIDE]: 'Reach opposite side'
 				}
 			},
 			kingCondition: {
@@ -343,6 +342,7 @@ export default {
 				help: `Under what condition does a piece becomes kinged. A kinged piece is allowed to move in all directions.`,
 				data: {
 					[CHECKERS_KING_TYPE.OPPOSITE_SIDE]: 'Reach opposite side',
+					[CHECKERS_KING_TYPE.TAKE]: 'Taking a piece',
 					[CHECKERS_KING_TYPE.ALL]: 'Start with all kings',
 					[CHECKERS_KING_TYPE.NONE]: 'Disabled'
 				}
@@ -350,6 +350,10 @@ export default {
 			backwardsTake: {
 				name: 'Take Backwards',
 				help: `Set whether pieces are allowed to take over opponent pieces backwards. If disabled, this can only be done by kinged pieces.`
+			},
+			chainTake: {
+				name: 'Chain Take',
+				help: `When enabled a piece can take over several other pieces in one move, if they are spaced properly. Alternatively when disabled only one piece can be taken at a time.`
 			},
 			turnTime: {
 				name: 'Turn Time',

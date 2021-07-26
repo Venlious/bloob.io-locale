@@ -65,7 +65,7 @@ export default {
 		skip: 'Skip (%{current}/%{total})',
 		voteReduceTime: `The remaining time is automatically reduced when everyone has voted.`,
 		filterDisclaimer: `Please note that this filter can only be guaranteed for official card sets. Custom sets may not work with this filter.`,
-		resize: '<span class="warning-text">Resizes the interface to fit field.</span>',
+		resize: '<span class="warning-text">Resizes the interface to fit field</span>',
 		winningSelection: `%{name} won this round with selection %{selection}`,
 		noticeDescription: 'A notice is stuck on the top of the page until removed',
 		actionResponseCardCounter: `Action & response card counter. Some sets use the same cards; duplicates are removed automatically. Filtering <b>NSFW</b> or <b>Specific Cards</b> also reduces the total amount.`
@@ -92,6 +92,7 @@ export default {
 		cards: '0 cards | 1 card | {count} cards',
 		moves: '0 moves | 1 move | {count} moves',
 		playing: '0 playing | 1 playing | {count} playing',
+		players: '0 players | 1 player | {count} players',
 		matchesFound: '0 matches found | 1 match found | {count} matches found',
 		matchesWaiting: '0 matches waiting | 1 match waiting | {count} matches waiting',
 		needMorePlayers: 'Need 0 more players | Need 1 more player | Need {count} more players'
