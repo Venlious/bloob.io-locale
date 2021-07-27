@@ -76,6 +76,8 @@ export default {
 		times: 'Tijden',
 		round: 'Ronde',
 		flip: 'Omdraaien',
+		fallback: 'Terugvalvoorwaarden',
+		take: 'Overnemen',
 		basic: 'Basis',
 		language: 'Taal'
 	},

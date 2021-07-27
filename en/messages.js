@@ -76,6 +76,8 @@ export default {
 		times: 'Times',
 		round: 'Round',
 		flip: 'Flip',
+		fallback: 'Fallback Conditions',
+		take: 'Take Over',
 		basic: 'Basic',
 		language: 'Language'
 	},
