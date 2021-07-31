@@ -145,6 +145,7 @@ export default {
 		settings: 'Settings',
 		preset: 'Preset',
 		averageLength: 'Avg. Length',
+		takes: 'Takes',
 		pieces: 'Pieces',
 		words: 'Words',
 		score: 'Score',

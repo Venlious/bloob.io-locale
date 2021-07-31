@@ -145,6 +145,7 @@ export default {
 		settings: 'Instellingen',
 		preset: 'Preset',
 		averageLength: 'Gem. Lengte',
+		takes: 'Overnames',
 		pieces: 'Schijven',
 		words: 'Woorden',
 		score: 'Score',
