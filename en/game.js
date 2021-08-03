@@ -339,7 +339,7 @@ export default {
 			},
 			kingCondition: {
 				name: 'King Condition',
-				help: `Under what condition does a piece becomes kinged. A kinged piece is allowed to move in all directions.`,
+				help: `Under what condition a piece becomes kinged. A kinged piece is allowed to move in all directions.`,
 				data: {
 					[CHECKERS_KING_TYPE.OPPOSITE_SIDE]: 'Reach opposite side',
 					[CHECKERS_KING_TYPE.TAKE]: 'Taking a piece',
