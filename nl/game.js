@@ -1,4 +1,6 @@
 import GAME_TYPE from '../../../../public/enums/game-type'
+import CHECKERS_KING_TYPE from '../../../../public/enums/checkers-king-type'
+import WIN_CONDITION from '../../../../public/enums/win-condition'
 
 export default {
 	generic: {
@@ -308,8 +310,86 @@ export default {
 	},
 	[GAME_TYPE.CHECKERS]: {
 		name: 'Checkers',
-		description: `Dammen zoals jij het wilt spelen en zonder gedoe.`,
-		options: {},
+		description: `Speel hier dammen met maximaal 4 spelers en allerlei aanpasbare regels.`,
+		options: {
+			forceTake: {
+				name: 'Forceer Overname',
+				help: {
+					enabled: `<b>Ingeschakeld</b>: Indien mogelijk, zal de speler gedwongen worden een stuk van de tegenstander over te nemen.`,
+					disabled: `<b>Uitgeschakeld</b>: De speler mag zelf de volgende zet bepalen, zelfs als die een stuk van de tegenstander kan overnemen.`
+				}
+			},
+			field: {
+				name: 'Speelveld',
+				help: `Afhankelijk van de grootte van het veld en het aantal rijen, krijgen alle spelers meer of minder startstukken. Sommige velden ondersteunen tot vier spelers.`,
+				data: {
+					'8x8': 'Engels (8x8)',
+					'10x10': 'Internationaal (10x10)',
+					'12x12': 'Canadees (12x12)',
+					plus: 'Plus Vorm (12x12)'
+				}
+			},
+			winCondition: {
+				name: 'Win Voorwaarde',
+				help: `Hoe de winnaar zal worden bepaald.`,
+				data: {
+					[WIN_CONDITION.MORE_PIECES]: 'Meeste stukken',
+					[WIN_CONDITION.OPPOSITE_SIDE]: 'Bereik de overkant'
+				}
+			},
+			kingCondition: {
+				name: 'Koning Voorwaarde',
+				help: `Onder welke voorwaarde een speelstuk koning wordt. Een stuk dat koning is mag in alle richtingen bewegen.`,
+				data: {
+					[CHECKERS_KING_TYPE.OPPOSITE_SIDE]: 'Bereik de overkant',
+					[CHECKERS_KING_TYPE.TAKE]: 'Na stuk overname',
+					[CHECKERS_KING_TYPE.ALL]: 'Elk stuk is koning',
+					[CHECKERS_KING_TYPE.NONE]: 'Uitgeschakeld'
+				}
+			},
+			backwardsTake: {
+				name: 'Achteruit Overnemen',
+				help: `Stel in of stukken achterwaarts stukken van de tegenstander mogen overnemen. Indien uitgeschakeld kan dit alleen gedaan worden door koning stukken.`
+			},
+			chainTake: {
+				name: 'Meerdere Overnames',
+				help: `Indien ingeschakeld kan een stuk meerdere andere stukken in één zet overnemen, mits ze op de juiste afstand van elkaar staan. Als deze is uitgeschakeld kan slechts één stuk tegelijk worden overgenomen.`
+			},
+			turnTime: {
+				name: 'Beurt Tijd',
+				help: `Hoe lang elke speler maximaal over zijn beurt mag doen.`
+			},
+			staleCount: {
+				name: 'Doelloos Spel',
+				help: `Na hoeveel zetten zonder overname moet het spel als doelloos worden beschouwd en beëindigd.`
+			},
+			stuckThreshold: {
+				name: 'Vaste Speler Toleratie',
+				help: `Als een speler dit aantal zetten achter elkaar vastzit, verliest deze automatisch.`
+			},
+			rows: {
+				name: 'Rijen',
+				help: `Met hoeveel rijen vol stukken elke speler begint. De maximale hoevelheid rijen is afhankelijk van de grootte van het speelveld.`
+			}
+		},
+		presets: {
+			default: {
+				name: 'Engels dammen (standaard)',
+				desc: '8x8 speelveld — 24 stukken'
+			},
+			international: {
+				name: 'Internationaal dammen',
+				desc: '10x10 speelveld — 40 stukken — Achteruit overnemen'
+			},
+			canadian: {
+				name: 'Canadees dammen',
+				desc: '12x12 speelveld — 60 stukken — Achteruit overnemen'
+			},
+			party: {
+				name: 'Party dammen',
+				desc: 'Plus speelveld — 36 stukken — 4 players'
+			}
+		},
 		help: {}
 	}
 }

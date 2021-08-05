@@ -310,7 +310,7 @@ export default {
 	},
 	[GAME_TYPE.CHECKERS]: {
 		name: 'Checkers',
-		description: `Checkers the way you want to play it without hassle.`,
+		description: `Call it checkers or draughts, play it here with up to 4 players with all kinds of customisable rules.`,
 		options: {
 			forceTake: {
 				name: 'Force Take',
@@ -372,7 +372,24 @@ export default {
 				help: `How many rows of pieces each player starts with. Depending on the field size the amount of rows will be determined.`
 			}
 		},
-		presets: {},
+		presets: {
+			default: {
+				name: 'Straight Checkers (Standard)',
+				desc: '8x8 field — 24 pieces'
+			},
+			international: {
+				name: 'International Checkers',
+				desc: '10x10 field — 40 pieces — Take backwards'
+			},
+			canadian: {
+				name: 'Canadian Checkers',
+				desc: '12x12 field — 60 pieces — Take backwards'
+			},
+			party: {
+				name: 'Party Checkers',
+				desc: 'Plus field — 36 pieces — 4 players'
+			}
+		},
 		help: {}
 	}
 }
