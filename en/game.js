@@ -361,11 +361,15 @@ export default {
 			},
 			staleCount: {
 				name: 'Stale Game',
-				help: `After how many moves without any take overs the game should be considered stale and ended.`
+				help: `After how many turns without any take overs the game should be considered stale and ended.`
 			},
 			stuckThreshold: {
 				name: 'Stuck Threshold',
-				help: `If a player is stuck for this amount of moves in a row they will lose automatically.`
+				help: `If a player is stuck for this amount of turns in a row they will lose automatically.`
+			},
+			autoTurnThreshold: {
+				name: 'Late Threshold',
+				help: `If a player is late and a move is automatically made for them this number of turns in a row, they automatically lose.`
 			},
 			rows: {
 				name: 'Rows',

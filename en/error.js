@@ -26,6 +26,8 @@ export default {
 		increment: 'Option "%{id}" requires increments of "%{increment}".'
 	},
 	game: {
+		autoTurnWarning: `You were too late and a move was made for you. If this happens too many times in a row you will lose. (%{current}/%{threshold})`,
+		autoTurnKick: `You lost automatically as you were late for %{current} move(s) in a row.`,
 		insufficientRows: 'This field does not fit the amount of rows selected.',
 		insufficientRoom: 'The selected field cannot fit all players present.',
 		stuckSkip: 'Your turn was skipped as you cannot make any moves.',

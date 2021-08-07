@@ -361,11 +361,15 @@ export default {
 			},
 			staleCount: {
 				name: 'Doelloos Spel',
-				help: `Na hoeveel zetten zonder overname moet het spel als doelloos worden beschouwd en beëindigd.`
+				help: `Na hoeveel beurten zonder overname moet het spel als doelloos worden beschouwd en beëindigd.`
 			},
 			stuckThreshold: {
 				name: 'Vaste Speler Toleratie',
-				help: `Als een speler dit aantal zetten achter elkaar vastzit, verliest deze automatisch.`
+				help: `Als een speler dit aantal beurten achter elkaar vastzit, verliest deze automatisch.`
+			},
+			autoTurnThreshold: {
+				name: 'Laat Toleratie',
+				help: `Als een speler te laat is en er automatisch een zet gemaakt wordt voor dit aantal beurten achter elkaar, verliest deze automatisch.`
 			},
 			rows: {
 				name: 'Rijen',

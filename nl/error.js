@@ -26,6 +26,8 @@ export default {
 		increment: 'Optie "%{id}" vereist stappen van "%{increment}".'
 	},
 	game: {
+		autoTurnWarning: `Je was te laat en er werd een zet voor je gedaan. Als dit te vaak achter elkaar gebeurt, verlies je. (%{current}/%{threshold})`,
+		autoTurnKick: `Je hebt automatisch verloren omdat je %{current} zet(ten) achter elkaar te laat was.`,
 		insufficientRows: 'Het aantal geselecteerde rijen past niet in dit veld.',
 		insufficientRoom: 'Er zijn teveel spelers voor het geselecteerde speelveld.',
 		stuckSkip: 'Jouw beurt is overgeslagen omdat je geen zetten kunt doen.',
