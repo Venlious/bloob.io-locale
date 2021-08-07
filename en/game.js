@@ -394,6 +394,35 @@ export default {
 				desc: 'Plus field — 36 pieces — 4 players'
 			}
 		},
-		help: {}
+		help: {
+			movement: {
+				title: 'Piece Movement',
+				desc: {
+					'1': `Pieces can be moved diagonally. When it is your turn, all pieces that you can move are highlighted.`,
+					'2': `You can click on a highlighted piece to see all possible moves available for that piece.`
+				}
+			},
+			take: {
+				title: 'Takes',
+				desc: {
+					'1': `If an opponent's piece is diagonally next to your piece with an open spot behind it, you can take it.`,
+					'2': `Depending on the settings, you are either forced to take pieces when possible or can even take backwards.`
+				}
+			},
+			king: {
+				title: 'Kinged Pieces',
+				desc: {
+					'1': `Under the default settings, when you reach the opposite side with a piece it becomes kinged.`,
+					'2': `Kinged pieces are able to move in all diagonal directions without being forced to move forward.`
+				}
+			},
+			goal: {
+				title: 'Goal',
+				desc: {
+					'1': `Typically the goal is to take out all other pieces from the opponent or until no valid moves can be made.`,
+					'2': `The goal of the game, also referred to as the win condition, can be changed in the settings.`
+				}
+			}
+		}
 	}
 }

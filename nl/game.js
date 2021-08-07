@@ -338,21 +338,21 @@ export default {
 				}
 			},
 			kingCondition: {
-				name: 'Koning Voorwaarde',
-				help: `Onder welke voorwaarde een speelstuk koning wordt. Een stuk dat koning is mag in alle richtingen bewegen.`,
+				name: 'Kroning Voorwaarde',
+				help: `Onder welke voorwaarde een speelstuk bekroond wordt. Een stuk dat gekroond is mag in alle richtingen bewegen.`,
 				data: {
 					[CHECKERS_KING_TYPE.OPPOSITE_SIDE]: 'Bereik de overkant',
 					[CHECKERS_KING_TYPE.TAKE]: 'Na stuk overname',
-					[CHECKERS_KING_TYPE.ALL]: 'Elk stuk is koning',
+					[CHECKERS_KING_TYPE.ALL]: 'Elk stuk is gekroond',
 					[CHECKERS_KING_TYPE.NONE]: 'Uitgeschakeld'
 				}
 			},
 			backwardsTake: {
 				name: 'Achteruit Overnemen',
-				help: `Stel in of stukken achterwaarts stukken van de tegenstander mogen overnemen. Indien uitgeschakeld kan dit alleen gedaan worden door koning stukken.`
+				help: `Stel in of stukken achterwaarts stukken van de tegenstander mogen overnemen. Indien uitgeschakeld kan dit alleen gedaan worden door gekroonde stukken.`
 			},
 			chainTake: {
-				name: 'Meerdere Overnames',
+				name: 'Ketting Overnames',
 				help: `Indien ingeschakeld kan een stuk meerdere andere stukken in één zet overnemen, mits ze op de juiste afstand van elkaar staan. Als deze is uitgeschakeld kan slechts één stuk tegelijk worden overgenomen.`
 			},
 			turnTime: {
@@ -364,8 +364,8 @@ export default {
 				help: `Na hoeveel beurten zonder overname moet het spel als doelloos worden beschouwd en beëindigd.`
 			},
 			stuckThreshold: {
-				name: 'Vaste Speler Toleratie',
-				help: `Als een speler dit aantal beurten achter elkaar vastzit, verliest deze automatisch.`
+				name: 'Vast Toleratie',
+				help: `Als een speler dit aantal beurten achter elkaar vastzit en dus geen stukken kan bewegen, verliest deze automatisch.`
 			},
 			autoTurnThreshold: {
 				name: 'Laat Toleratie',
@@ -394,6 +394,35 @@ export default {
 				desc: 'Plus speelveld — 36 stukken — 4 players'
 			}
 		},
-		help: {}
+		help: {
+			movement: {
+				title: 'Bewegen van stukken',
+				desc: {
+					'1': `Stukken kunnen diagonaal worden bewogen. Als je aan de beurt bent, zijn alle stukken die je kunt verplaatsen gemarkeerd.`,
+					'2': `Je kunt op een gemarkeerd stuk klikken om alle mogelijke zetten voor dat stuk te zien.`
+				}
+			},
+			take: {
+				title: 'Overnames',
+				desc: {
+					'1': `Als een stuk van de tegenstander diagonaal naast jouw stuk staat met een open plek erachter, kun je het overnemen.`,
+					'2': `Afhankelijk van de instellingen moet je stukken overnemen wanneer dat mogelijk is. Het is soms zelfs mogelijk achteruit een overname doen.`
+				}
+			},
+			king: {
+				title: 'Gekroonde stukken',
+				desc: {
+					'1': `Met de standaard instellingen wordt een stuk bekroond voor het bereiken van de overkant.`,
+					'2': `Gekroonde stukken kunnen in alle diagonale richtingen bewegen.`
+				}
+			},
+			goal: {
+				title: 'Doel',
+				desc: {
+					'1': `Het doel is normaliter om alle andere stukken van de tegenstander uit te schakelen of totdat er geen geldige zetten meer gedaan kunnen worden.`,
+					'2': `Het doel van het spel, ook wel de win voorwarde genoemd, kan veranderd worden in de instellingen.`
+				}
+			}
+		}
 	}
 }
