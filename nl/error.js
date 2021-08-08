@@ -25,6 +25,12 @@ export default {
 		min: 'Optie "%{id}" heeft een minimale waarde van "%{min}".',
 		increment: 'Optie "%{id}" vereist stappen van "%{increment}".'
 	},
+	start: {
+		fieldRows: 'Geselecteerd speelveld ondersteunt niet meer dan %{rows} rijen',
+		fieldCannotFitUsers: 'Geselecteerd speelveld ondersteunt niet meer dan %{users} spelers',
+		whiteCardThreshold: `Het spel vereist minstens %{count} antwoordkaarten (wit)`,
+		blackCardThreshold: `Het spel vereist minstens %{count} actiekaarten (zwart)`
+	},
 	game: {
 		autoTurnWarning: `Je was te laat en er werd een zet voor je gedaan. Als dit te vaak achter elkaar gebeurt, verlies je. (%{current}/%{threshold})`,
 		autoTurnKick: `Je hebt automatisch verloren omdat je %{current} zet(ten) achter elkaar te laat was.`,

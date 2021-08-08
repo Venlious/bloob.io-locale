@@ -25,6 +25,12 @@ export default {
 		min: 'Option "%{id}" has a min value of "%{min}".',
 		increment: 'Option "%{id}" requires increments of "%{increment}".'
 	},
+	start: {
+		fieldRows: 'Selected field cannot support more than %{rows} rows',
+		fieldCannotFitUsers: 'Selected field cannot support more than %{users} players',
+		whiteCardThreshold: `Game requires at least %{count} response cards (white)`,
+		blackCardThreshold: `Game requires at least %{count} action cards (black)`
+	},
 	game: {
 		autoTurnWarning: `You were too late and a move was made for you. If this happens too many times in a row you will lose. (%{current}/%{threshold})`,
 		autoTurnKick: `You lost automatically as you were late for %{current} move(s) in a row.`,
