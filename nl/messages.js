@@ -279,9 +279,9 @@ export default {
 			finishedSettings: `Klaar met het wijzigen van de instellingen?`,
 			available: `Beschikbare spellen zullen hier verschijnen`,
 			rematch: `Wil je weer spelen?`,
-			public: `<b>Openbaar</b>: Iedereen kan meedoen door naar de beschikbare spellen te kijken.`,
-			private: `<b>Privé</b>: Spelers kunnen alleen meedoen via de URL of de viercijferige ID.`,
-			reserved: `<b>Rematch</b>: Dit spel is gereserveerd voor gebruikers die op dit moment in dit spel zitten. Andere spelers kunnen niet meedoen.`
+			public: `<b>Openbaar: </b>Iedereen kan meedoen door naar de beschikbare spellen te kijken.`,
+			private: `<b>Privé: </b>Spelers kunnen alleen meedoen via de URL of de viercijferige ID.`,
+			reserved: `<b>Rematch: </b>Dit spel is gereserveerd voor gebruikers die op dit moment in dit spel zitten. Andere spelers kunnen niet meedoen.`
 		},
 		judge: {
 			pickingCard: `Beslisser %{name} is een actiekaart aan het kiezen`,

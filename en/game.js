@@ -16,7 +16,7 @@ export default {
 		presets: {
 			custom: {
 				name: 'Custom',
-				desc: 'Settings have been customised — Basic settings are excluded'
+				desc: 'Changes made by you — Last updated %{timestamp}'
 			},
 			default: {
 				name: 'Default'

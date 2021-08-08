@@ -16,7 +16,7 @@ export default {
 		presets: {
 			custom: {
 				name: 'Custom',
-				desc: 'Instellingen zijn aangepast — Basis instellingen zijn uitgezonderd'
+				desc: 'Instellingen aangepast door jou — Laatste update %{timestamp}'
 			},
 			default: {
 				name: 'Standaard'

@@ -279,9 +279,9 @@ export default {
 			finishedSettings: `Finished editing the match settings?`,
 			available: `New matches will show up here`,
 			rematch: `Would you like to play again?`,
-			public: `<b>Public</b>: Anyone can join by browsing the available matches.`,
-			private: `<b>Private</b>: Players can only join using the URL or 4-digit ID.`,
-			reserved: `<b>Rematch</b>: This game is reserved for users currently in this match only. No other players may join.`
+			public: `<b>Public: </b>Anyone can join by browsing the available matches.`,
+			private: `<b>Private: </b>Players can only join using the URL or 4-digit ID.`,
+			reserved: `<b>Rematch: </b>This game is reserved for users currently in this match only. No other players may join.`
 		},
 		judge: {
 			pickingCard: `Judge %{name} is picking an action card`,
