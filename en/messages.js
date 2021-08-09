@@ -146,6 +146,7 @@ export default {
 		settings: 'Settings',
 		preset: 'Preset',
 		averageLength: 'Avg. Length',
+		largestTake: 'Largest Take',
 		takes: 'Takes',
 		pieces: 'Pieces',
 		words: 'Words',

@@ -146,6 +146,7 @@ export default {
 		settings: 'Instellingen',
 		preset: 'Preset',
 		averageLength: 'Gem. Lengte',
+		largestTake: 'Grootste Overname',
 		takes: 'Overnames',
 		pieces: 'Schijven',
 		words: 'Woorden',
