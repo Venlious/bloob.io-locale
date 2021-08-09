@@ -13,6 +13,7 @@ export default {
 			staleMoves: `Spel Verlopen — %{staleCount} zetten zonder overname`,
 			winner: `Spel Gewonnen Door %{name}`,
 			inactive: `Spel Beëindigd Wegens Inactiviteit`,
+			late: `Spel Beëindigd Wegens Missen van %{turns} Beurt(en)`,
 			pickActionCard: 'Actiekaart Kiezen',
 			makingCardSelections: 'Maken van Kaart Selectie',
 			voting: 'Stemmen',

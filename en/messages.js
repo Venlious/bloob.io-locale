@@ -13,6 +13,7 @@ export default {
 			staleMoves: `Match Staled — %{staleCount} moves with no take over`,
 			winner: `Match Won by %{name}`,
 			inactive: `Match Ended Due to Inactivity`,
+			late: `Match Ended Due to Missing %{turns} Turn(s)`,
 			pickActionCard: 'Picking Action Card',
 			makingCardSelections: 'Making Card Selection',
 			voting: 'Voting',
