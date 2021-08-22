@@ -424,5 +424,11 @@ export default {
 				}
 			}
 		}
+	},
+	[GAME_TYPE.BLOMBER]: {
+		name: 'Blomber',
+		description: `Blow up your opponents in an intense close quarted battlefield.`,
+		options: {},
+		help: {}
 	}
 }
