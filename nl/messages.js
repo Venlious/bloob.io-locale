@@ -1,10 +1,12 @@
 import error from './error'
 import game from './game'
+import chat from './chat'
 
 export default {
 	name: 'Bloob.io',
 	error,
 	game,
+	chat,
 	header: {
 		message: {
 			lobby: 'Spel Lobby',
@@ -101,6 +103,8 @@ export default {
 		needMorePlayers: 'Nog 0 spelers nodig | Nog 1 speler nodig | Nog {count} spelers nodig'
 	},
 	misc: {
+		sendMessage: 'Verstuur Bericht',
+		chat: 'Chat',
 		viewAllGames: 'Bekijk alle spellen',
 		refreshWindow: 'Ververs Scherm',
 		transferLeadership: 'Leiderschap Overdragen',
@@ -315,7 +319,7 @@ export default {
 			iconsSource: 'Icoontjes met dank aan %{name} (Gratis)',
 			soundsSource: 'Geluiden voorzien door %{name} (Licentie)',
 			rottenApples: 'Rotten Apples gebaseerd op %{name} (Creative Commons BY-NC-SA 2.0)',
-			support: 'Trakteer me op een pizza'
+			support: 'Steun mij'
 		},
 		card: {
 			sets: {

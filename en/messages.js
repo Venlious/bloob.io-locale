@@ -1,10 +1,12 @@
 import error from './error'
 import game from './game'
+import chat from './chat'
 
 export default {
 	name: 'Bloob.io',
 	error,
 	game,
+	chat,
 	header: {
 		message: {
 			lobby: 'Match Lobby',
@@ -101,6 +103,8 @@ export default {
 		needMorePlayers: 'Need 0 more players | Need 1 more player | Need {count} more players'
 	},
 	misc: {
+		sendMessage: 'Send Message',
+		chat: 'Chat',
 		viewAllGames: 'View all games',
 		refreshWindow: 'Refresh Window',
 		transferLeadership: 'Transfer Leadership',
@@ -315,7 +319,7 @@ export default {
 			iconsSource: 'Icons courtesy of %{name} (Free)',
 			soundsSource: 'Sounds provided by %{name} (Licensed)',
 			rottenApples: 'Rotten Apples based on %{name} (Creative Commons BY-NC-SA 2.0)',
-			support: 'Buy me a pizza'
+			support: 'Support Me'
 		},
 		card: {
 			sets: {
