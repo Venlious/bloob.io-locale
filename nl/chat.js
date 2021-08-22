@@ -1,31 +1,50 @@
 export default {
+	EMOJI: {
+		love: `❤️`,
+		luck: `🍀`,
+		celebration: `🎉`,
+		thumbsUp: `👍`,
+		thumbsDown: `👎`,
+		mindBlowing: `🤯`,
+		thinking: `🤔`,
+		clap: `👏`,
+		cry: `😭`,
+		cool: `😎`
+	},
 	UNIVERSAL: {
 		affirmative: `Oke.`,
 		thanks: `Dankje!`,
 		sorry: `Sorry!`,
-		love: `❤`
+		glhf: `glhf`,
+		goodLuck: `Veel plezier!`,
+		brb: `Ik ben zo terug!`,
+		go: `Ik moet gaan.`
 	},
 	PRE_GAME: {
+		readyCheck: `Iedereen klaar?`,
+		changeSettings: `Wijzig instellingen!`,
 		ready: `Klaar!`,
 		wait: `Wacht even!`,
 		go: `Kom op!`,
-		glhf: `glhf`,
-		goodLuck: `Veel plezier!`,
-		greeting: `Hi! 👋`
+		greeting: `Hallo! 👋`
 	},
 	GAME: {
 		wtf: `WTF`,
-		niceOne: `Mooi zo!`,
+		how: `Hoe!?`,
+		closeOne: `Bijna!`,
+		niceOne: `Mooi gedaan!`,
 		remindMove: `Jouw beurt!`,
 		wow: `Wow!`,
+		oops: 'Oeps!',
 		no: 'Neeee!',
 		ohNo: 'Oh nee!'
 	},
 	POST_GAME: {
 		wellPlayed: `Goed gespeeld!`,
+		differentGame: `Ander spel?`,
 		gg: `gg`,
 		rematch: `Nog een keer!`,
 		fun: `Dat was leuk!`,
-		go: `Ik moet gaan.`
+		bye: `Doei!`
 	}
 }
