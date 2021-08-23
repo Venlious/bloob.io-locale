@@ -103,6 +103,7 @@ export default {
 		needMorePlayers: 'Nog 0 spelers nodig | Nog 1 speler nodig | Nog {count} spelers nodig'
 	},
 	misc: {
+		processFiles: 'Verwerk Bestanden',
 		sendMessage: 'Verstuur Bericht',
 		chat: 'Chat',
 		viewAllGames: 'Bekijk alle spellen',

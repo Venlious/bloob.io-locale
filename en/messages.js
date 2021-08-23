@@ -103,6 +103,7 @@ export default {
 		needMorePlayers: 'Need 0 more players | Need 1 more player | Need {count} more players'
 	},
 	misc: {
+		processFiles: 'Process Files',
 		sendMessage: 'Send Message',
 		chat: 'Chat',
 		viewAllGames: 'View all games',
