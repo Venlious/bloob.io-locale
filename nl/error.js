@@ -32,6 +32,7 @@ export default {
 		blackCardThreshold: `Het spel vereist minstens %{count} actiekaarten (zwart)`
 	},
 	game: {
+		playerConceded: 'Speler "%{name}" heeft opgegeven en automatisch verloren.',
 		autoTurnWarning: `Je was te laat en er werd een zet voor je gedaan. Als dit te vaak achter elkaar gebeurt, verlies je. (%{current}/%{threshold})`,
 		autoTurnKick: `Je hebt automatisch verloren omdat je %{current} zet(ten) achter elkaar te laat was.`,
 		insufficientRows: 'Het aantal geselecteerde rijen past niet in dit veld.',

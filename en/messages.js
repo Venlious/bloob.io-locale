@@ -13,6 +13,7 @@ export default {
 			finished: 'Match Finished',
 			tied: `Match Tied`,
 			staleMoves: `Match Staled — %{staleCount} moves with no take over`,
+			concede: `Match Finished — Opponent chose to forfeit`,
 			winner: `Match Won by %{name}`,
 			inactive: `Match Ended Due to Inactivity`,
 			late: `Match Ended Due to Missing %{turns} Turn(s)`,
@@ -103,6 +104,7 @@ export default {
 		needMorePlayers: 'Need 0 more players | Need 1 more player | Need {count} more players'
 	},
 	misc: {
+		concedeGame: 'Forfeit Game',
 		processFiles: 'Process Files',
 		sendMessage: 'Send Message',
 		chat: 'Chat',
@@ -368,6 +370,7 @@ export default {
 			inProgress: 'Flipping field'
 		},
 		data: {
+			concedeGame: `Forfeiting the game will result in a loss for you.`,
 			unsaved: `You have unsaved changes which will be erased if you proceed.`,
 			reset: `Resetting your data is irreversible and will clear your profile, settings, and statistics.`
 		}

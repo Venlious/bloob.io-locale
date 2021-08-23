@@ -13,6 +13,7 @@ export default {
 			finished: 'Spel Afgelopen',
 			tied: `Gelijkspel`,
 			staleMoves: `Spel Verlopen — %{staleCount} zetten zonder overname`,
+			concede: `Spel Afgelopen — Tegenstander heeft opgegeven`,
 			winner: `Spel Gewonnen Door %{name}`,
 			inactive: `Spel Beëindigd Wegens Inactiviteit`,
 			late: `Spel Beëindigd Wegens Missen van %{turns} Beurt(en)`,
@@ -103,6 +104,7 @@ export default {
 		needMorePlayers: 'Nog 0 spelers nodig | Nog 1 speler nodig | Nog {count} spelers nodig'
 	},
 	misc: {
+		concedeGame: 'Verklaar Verlies',
 		processFiles: 'Verwerk Bestanden',
 		sendMessage: 'Verstuur Bericht',
 		chat: 'Chat',
@@ -368,6 +370,7 @@ export default {
 			inProgress: 'Speelveld aan het Omkeren'
 		},
 		data: {
+			concedeGame: `Door verlies te verklaren zal je het spel meteen verliezen.`,
 			unsaved: `Je hebt onopgeslagen wijzigingen die gewist zullen worden als je doorgaat.`,
 			reset: `Het resetten van uw gegevens is onomkeerbaar en zal uw profiel, instellingen en statistieken wissen.`
 		}

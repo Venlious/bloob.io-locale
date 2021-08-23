@@ -32,6 +32,7 @@ export default {
 		blackCardThreshold: `Game requires at least %{count} action cards (black)`
 	},
 	game: {
+		playerConceded: 'Player "%{name}" forfeited and lost automatically.',
 		autoTurnWarning: `You were too late and a move was made for you. If this happens too many times in a row you will lose. (%{current}/%{threshold})`,
 		autoTurnKick: `You lost automatically as you were late for %{current} move(s) in a row.`,
 		insufficientRows: 'This field does not fit the amount of rows selected.',
