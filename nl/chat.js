@@ -15,10 +15,11 @@ export default {
 		affirmative: `Oke.`,
 		thanks: `Dankje!`,
 		sorry: `Sorry!`,
-		glhf: `glhf`,
 		goodLuck: `Veel plezier!`,
 		brb: `Ik ben zo terug!`,
-		go: `Ik moet gaan.`
+		go: `Ik moet gaan.`,
+		glhf: `glhf`,
+		gg: `gg`
 	},
 	PRE_GAME: {
 		readyCheck: `Iedereen klaar?`,
@@ -40,6 +41,7 @@ export default {
 		ohNo: 'Oh nee!'
 	},
 	POST_GAME: {
+		closeOne: `Bijna!`,
 		wellPlayed: `Goed gespeeld!`,
 		differentGame: `Ander spel?`,
 		gg: `gg`,

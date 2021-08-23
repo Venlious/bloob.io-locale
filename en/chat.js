@@ -15,10 +15,11 @@ export default {
 		affirmative: `Okay.`,
 		thanks: `Thanks!`,
 		sorry: `Sorry!`,
-		glhf: `glhf`,
 		goodLuck: `Good luck!`,
 		brb: `I'll be right back!`,
-		go: `I must go.`
+		go: `I must go.`,
+		glhf: `glhf`,
+		gg: `gg`
 	},
 	PRE_GAME: {
 		readyCheck: `Everybody ready?`,
@@ -40,9 +41,9 @@ export default {
 		ohNo: 'Oh no!'
 	},
 	POST_GAME: {
+		closeOne: `Close one!`,
 		wellPlayed: `Well played!`,
 		differentGame: `Different game?`,
-		gg: `gg`,
 		rematch: `Rematch!`,
 		fun: `That was fun!`,
 		bye: `Bye!`
