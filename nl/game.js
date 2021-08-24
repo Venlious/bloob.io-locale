@@ -277,6 +277,12 @@ export default {
 				}
 			}
 		},
+		presets: {
+			democracy: {
+				name: 'Democratie',
+				desc: 'Iedereen mag stemmen'
+			}
+		},
 		help: {
 			action: {
 				title: 'Actiekaart',

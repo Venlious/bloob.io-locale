@@ -277,6 +277,12 @@ export default {
 				}
 			}
 		},
+		presets: {
+			democracy: {
+				name: 'Democracy',
+				desc: 'Everyone gets to vote'
+			}
+		},
 		help: {
 			action: {
 				title: 'Action Card',
