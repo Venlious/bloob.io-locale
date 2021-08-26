@@ -27,7 +27,7 @@ export default {
 	[GAME_TYPE.WORDRACE]: {
 		name: 'Wordrace',
 		description: `Find words in any direction on a randomly generated field while racing against others with the same objective.`,
-		title: 'Wordrace | Free Multiplayer Word Finding Game',
+		title: 'Free Multiplayer Word Finding Game',
 		options: {
 			globalLanguage: {
 				name: 'Global Language',
@@ -144,7 +144,7 @@ export default {
 	[GAME_TYPE.CONNECT_FOUR]: {
 		name: 'Connect Four',
 		description: `Play Connect Four with up to six players in either the classic gamemode or available variations.`,
-		title: 'Connect Four | Free Multiplayer Game for 2-6 Players',
+		title: 'Free Multiplayer Game for 2-6 Players',
 		options: {
 			field: {
 				name: 'Field Size',
@@ -217,7 +217,7 @@ export default {
 	[GAME_TYPE.ROTTEN_APPLES]: {
 		name: 'Rotten Apples',
 		description: `Play a Cards Against Humanity clone and customise your experience to your liking.`,
-		title: 'Rotten Apples | Free Multiplayer Cards Against Humanity Game',
+		title: 'Free Multiplayer Cards Against Humanity Game',
 		options: {
 			winCondition: {
 				name: 'Winning Condition',
@@ -321,7 +321,7 @@ export default {
 	[GAME_TYPE.CHECKERS]: {
 		name: 'Checkers',
 		description: `Call it checkers or draughts, play it here with up to 4 players with all kinds of customisable rules.`,
-		title: 'Checkers | Free Multiplayer Game for 2-4 Players',
+		title: 'Free Multiplayer Game for 2-4 Players',
 		options: {
 			forceTake: {
 				name: 'Force Take',
@@ -439,7 +439,7 @@ export default {
 	[GAME_TYPE.BLOMBER]: {
 		name: 'Blomber',
 		description: `Blow up your opponents in an intense close quarters battlefield packed with power ups.`,
-		title: 'Blomber | Free Multiplayer Bomberman Inspired Game',
+		title: 'Free Multiplayer Bomberman Inspired Game',
 		options: {},
 		help: {}
 	}

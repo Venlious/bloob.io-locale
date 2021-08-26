@@ -28,7 +28,7 @@ export default {
 	[GAME_TYPE.WORDRACE]: {
 		name: 'Wordrace',
 		description: `Zoek woorden in elke richting op een willekeurig gegenereerd veld terwijl je racet tegen anderen met hetzelfde doel.`,
-		title: 'Wordrace | Gratis Online Woord Zoek Spel',
+		title: 'Gratis Online Woord Zoek Spel',
 		options: {
 			globalLanguage: {
 				name: 'Universele Taal',
@@ -145,7 +145,7 @@ export default {
 	[GAME_TYPE.CONNECT_FOUR]: {
 		name: 'Connect Four',
 		description: `Speel vier-op-een-rij met maximaal zes spelers in de klassieke spelmodus of beschikbare variaties.`,
-		title: 'Connect Four | Gratis Online Vier-op-een-Rij Voor 2-6 Spelers',
+		title: 'Gratis Online Vier-op-een-Rij Voor 2-6 Spelers',
 		options: {
 			field: {
 				name: 'Speelveld Formaat',
@@ -218,7 +218,7 @@ export default {
 	[GAME_TYPE.ROTTEN_APPLES]: {
 		name: 'Rotten Apples',
 		description: `Speel een Cards Against Humanity-kloon en pas je ervaring aan naar eigen smaak.`,
-		title: 'Rotten Apples | Gratis Online Cards Against Humanity Spel',
+		title: 'Gratis Online Cards Against Humanity Spel',
 		options: {
 			winCondition: {
 				name: 'Win Conditie',
@@ -322,7 +322,7 @@ export default {
 	[GAME_TYPE.CHECKERS]: {
 		name: 'Checkers',
 		description: `Speel hier dammen met maximaal 4 spelers en allerlei aanpasbare regels.`,
-		title: 'Checkers | Gratis Online Dammen Voor 2-4 Spelers',
+		title: 'Gratis Online Dammen Voor 2-4 Spelers',
 		options: {
 			forceTake: {
 				name: 'Forceer Overname',
@@ -440,7 +440,7 @@ export default {
 	[GAME_TYPE.BLOMBER]: {
 		name: 'Blomber',
 		description: `Blaas je tegenstanders op in een intens slagveld vol power-ups.`,
-		title: 'Blomber | Gratis Online Bomberman Geïnspireerd Spel',
+		title: 'Gratis Online Bomberman Geïnspireerd Spel',
 		options: {},
 		help: {}
 	}
