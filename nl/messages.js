@@ -104,6 +104,11 @@ export default {
 		needMorePlayers: 'Nog 0 spelers nodig | Nog 1 speler nodig | Nog {count} spelers nodig'
 	},
 	misc: {
+		changeLog: 'Update Logboek',
+		status: 'Status',
+		information: 'Informatie',
+		language: 'Taal',
+		toggle: 'Toggle',
 		concedeGame: 'Verklaar Verlies',
 		processFiles: 'Verwerk Bestanden',
 		sendMessage: 'Verstuur Bericht',
@@ -182,6 +187,7 @@ export default {
 		helpLocalise: 'Help de lokalisatie te verbeteren',
 		howToPlay: 'Bekijk hoe je dit spel speelt',
 		volume: {
+			title: 'Volume',
 			interface: 'Interface Volume',
 			effects: 'Effecten Volume'
 		},

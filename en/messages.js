@@ -104,6 +104,11 @@ export default {
 		needMorePlayers: 'Need 0 more players | Need 1 more player | Need {count} more players'
 	},
 	misc: {
+		changeLog: 'Change Log',
+		status: 'Status',
+		information: 'Information',
+		language: 'Language',
+		toggle: 'Toggle',
 		concedeGame: 'Forfeit Game',
 		processFiles: 'Process Files',
 		sendMessage: 'Send Message',
@@ -182,6 +187,7 @@ export default {
 		helpLocalise: 'Help improve localisation',
 		howToPlay: 'Learn how to play this game',
 		volume: {
+			title: 'Volume',
 			interface: 'Interface Volume',
 			effects: 'Effects Volume'
 		},
