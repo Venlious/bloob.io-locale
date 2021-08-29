@@ -258,6 +258,10 @@ export default {
 				name: 'Action Card Picking Time',
 				help: `Define how long everyone has to pick the action card to play.`
 			},
+			responseCardLimit: {
+				name: 'Response Card Limit',
+				help: `By default action cards can request you to draw up to 3 response cards. By changing this limit action cards requesting more than this limit will be filtered out of the game.`
+			},
 			timeDeciding: {
 				name: 'Deciding Time (Per Card)',
 				help: {

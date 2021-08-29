@@ -259,6 +259,10 @@ export default {
 				name: 'Actiekaart Kies Tijd',
 				help: `Bepaal hoe lang iedereen heeft om een actiekaart te kiezen voor die ronde.`
 			},
+			responseCardLimit: {
+				name: 'Antwoordkaart Limiet',
+				help: `Standaard kunnen actiekaarten je maximaal 3 antwoordkaarten laten trekken. Door deze limiet te veranderen zullen actiekaarten die boven dit limiet zitten uit het spel worden gefilterd.`
+			},
 			timeDeciding: {
 				name: 'Beslissingstijd (per kaart)',
 				help: {
