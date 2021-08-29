@@ -286,15 +286,13 @@ export default {
 			},
 			join: {
 				private: `Je kunt meedoen met een privé spel door de viercijferige ID in te vullen.`,
-				again: `Speel opnieuw met dezelfde instellingen`,
-				another: `Doe mee met %{name} in een andere wedstrijd`,
-				rematch: `%{name} wil een rematch`
+				rematch: `%{name} wilt een rematch`
 			},
 			transferLeadership: `Je staat op het punt om de leiderschap van het spel over te dragen aan "%{name}".`,
 			kickUser: `Je staat op het punt om "%{name}" uit dit spel te verwijderen.`,
 			finishedSettings: `Klaar met het wijzigen van de instellingen?`,
 			available: `Beschikbare spellen zullen hier verschijnen`,
-			rematch: `Wil je weer spelen?`,
+			rematch: `Wil je nog een keer spelen?`,
 			public: `<b>Openbaar: </b>Iedereen kan meedoen door naar de beschikbare spellen te kijken.`,
 			private: `<b>Privé: </b>Spelers kunnen alleen meedoen via de URL of de viercijferige ID.`,
 			reserved: `<b>Rematch: </b>Dit spel is gereserveerd voor gebruikers die op dit moment in dit spel zitten. Andere spelers kunnen niet meedoen.`

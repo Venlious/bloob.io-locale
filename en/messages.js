@@ -286,8 +286,6 @@ export default {
 			},
 			join: {
 				private: `You can join a private match by filling in the four-digit ID.`,
-				again: `Play again with the same settings`,
-				another: `Join %{name} in another match`,
 				rematch: `%{name} would like a rematch`
 			},
 			transferLeadership: `You are about to transfer the match leadership to "%{name}".`,
