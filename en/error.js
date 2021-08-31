@@ -65,6 +65,7 @@ export default {
 		wordTooLong: 'Word selection too long (Max. %{max})'
 	},
 	card: {
+		underscore: `Each underscore results in one response card pick — don't put them next to each other!`,
 		empty: `Please make sure the card isn't empty.`,
 		pickLimit: `Cannot request to pick more than 3 response cards. (Too many underscores?)`,
 		set: {

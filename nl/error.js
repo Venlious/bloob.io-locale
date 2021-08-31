@@ -65,6 +65,7 @@ export default {
 		wordTooLong: 'Woordselectie te lang (Max. %{max})'
 	},
 	card: {
+		underscore: `Elke underscore resulteert in één antwoordkaart — zet ze niet naast elkaar!`,
 		empty: `De kaart kan niet leeg zijn.`,
 		pickLimit: `Kan niet meer dan 3 antwoordkaarten kiezen. (Te veel underscores?)`,
 		set: {
