@@ -246,6 +246,21 @@ export default {
 				name: 'Pick Action Card',
 				help: `When turned on, three random action cards are shown to the judge to pick between.`
 			},
+			handPreview: {
+				name: 'Hand Preview',
+				help: `When turned on, a period is added at the start of the game and after every dump round. During this time everyone can take a look at their (new) cards in their hand.`
+			},
+			dumpRound: {
+				name: 'Dump Round',
+				help: `A dump round allows everyone to select cards in their hand they would like to remove. New response cards are given as replacement after the round ends.`,
+				data: {
+					disabled: 'Disabled',
+					round: `Every <b>0</b> rounds | Every <b>1</b> round | Every <b>{count}</b> rounds`
+				}
+			},
+			dumpRoundAmount: {
+				name: 'Dump Round Amount'
+			},
 			showNsfw: {
 				name: 'NSFW Cards',
 				help: `Cards containing sex or profanity.`
@@ -253,6 +268,10 @@ export default {
 			showSpecific: {
 				name: 'Specific Cards',
 				help: `Cards containing brands, difficult words, or people.`
+			},
+			_filter: {
+				name: 'Filter',
+				help: `Active filters result in cards that fit the following criteria to be left out:`
 			},
 			timePicking: {
 				name: 'Action Card Picking Time',
@@ -280,8 +299,21 @@ export default {
 				name: 'Vote Reveal Time (Per Card)',
 				help: {
 					intro: `Define how long everyone gets to see the winning selection.`,
-					calc: `The total time is calculated as <b>RESPONSE CARDS * THIS TIME</b>`,
-					skip: `The reveal can also be skipped if over half the users vote to.`
+					calc: `The total time is calculated as <b>RESPONSE CARDS * THIS TIME</b>`
+				}
+			},
+			timeHandPreview: {
+				name: 'Hand Preview Time (Per Card)',
+				help: {
+					intro: `Define how long at the start of a game or after a dump round everyone gets to look at their (new) cards.`,
+					calc: `The total time is calculated as <b>3 SECONDS + HAND CARDS * THIS TIME</b>`
+				}
+			},
+			timeDumpRound: {
+				name: 'Dump Round Time (Per Card)',
+				help: {
+					intro: `Define how long everyone has to select which cards they'd like to dump.`,
+					calc: `The total time is calculated as <b>3 SECONDS + HAND CARDS * THIS TIME</b>`
 				}
 			}
 		},

@@ -19,6 +19,8 @@ export default {
 			late: `Match Ended Due to Missing %{turns} Turn(s)`,
 			pickActionCard: 'Picking Action Card',
 			makingCardSelections: 'Making Card Selection',
+			handDump: 'Dump Round',
+			handPreview: 'Hand Preview',
 			voting: 'Voting',
 			voteResults: 'Vote Results',
 			flippingField: 'Flipping Field',
@@ -67,6 +69,9 @@ export default {
 		pickYourself: 'Pick for yourself',
 		round: 'Round (%{current}/%{total})',
 		skip: 'Skip (%{current}/%{total})',
+		ready: 'Ready (%{current}/%{total})',
+		skipStep: `This step can also be skipped if over half the users vote to.`,
+		skipStepAll: `This step can also be skipped if all users vote to.`,
 		voteReduceTime: `The remaining time is automatically reduced when everyone has voted.`,
 		filterDisclaimer: `Please note that this filter can only be guaranteed for official card sets. Custom sets may not work with this filter.`,
 		resize: '<span class="warning-text">Resizes the interface to fit field</span>',
@@ -76,6 +81,7 @@ export default {
 	},
 	category: {
 		misc: 'Misc',
+		dump: 'Dump',
 		filter: 'Filter',
 		times: 'Times',
 		round: 'Round',
@@ -99,6 +105,7 @@ export default {
 		moves: '0 moves | 1 move | {count} moves',
 		playing: '0 playing | 1 playing | {count} playing',
 		players: '0 players | 1 player | {count} players',
+		selectedCards: 'No cards selected | 1 card selected | {count} cards selected',
 		matchesFound: '0 matches found | 1 match found | {count} matches found',
 		matchesWaiting: '0 matches waiting | 1 match waiting | {count} matches waiting',
 		needMorePlayers: 'Need 0 more players | Need 1 more player | Need {count} more players'
@@ -358,6 +365,8 @@ export default {
 			create: {
 				success: `Added a new card successfully!`
 			},
+			preview: `Take a moment to look at your (new) cards`,
+			dump: `Select any cards you'd like to dump`,
 			underscore: 'Use _ to mark a space for reaction cards',
 			noType: `There are no %{type} cards`,
 			type: {

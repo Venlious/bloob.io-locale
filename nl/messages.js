@@ -19,6 +19,8 @@ export default {
 			late: `Spel Beëindigd Wegens Missen van %{turns} Beurt(en)`,
 			pickActionCard: 'Actiekaart Kiezen',
 			makingCardSelections: 'Maken van Kaart Selectie',
+			handDump: 'Dumpronde',
+			handPreview: 'Hand Preview',
 			voting: 'Stemmen',
 			voteResults: 'Stemresultaten',
 			flippingField: 'Speelveld aan het Omkeren',
@@ -67,6 +69,9 @@ export default {
 		pickYourself: 'Kies voor jezelf',
 		round: 'Ronde (%{current}/%{total})',
 		skip: 'Sla over (%{current}/%{total})',
+		ready: 'Gereed (%{current}/%{total})',
+		skipStep: `Deze stap kan ook worden overgeslagen als meer dan de helft van de gebruikers daarvoor stemt.`,
+		skipStepAll: `Deze stap kan ook worden overgeslagen als alle gebruikers daarvoor stemt.`,
 		voteReduceTime: `De resterende tijd wordt automatisch verminderd als iedereen gestemd heeft.`,
 		filterDisclaimer: `Let op: deze filter kan alleen gegarandeerd worden voor officiële kaartensets. Aangepaste sets werken mogelijk niet met deze filter.`,
 		resize: `<span class="warning-text">Vergroot de interface zodat het speelveld past</span>`,
@@ -76,6 +81,7 @@ export default {
 	},
 	category: {
 		misc: 'Misc',
+		dump: 'Dump',
 		filter: 'Filter',
 		times: 'Tijden',
 		round: 'Ronde',
@@ -99,6 +105,7 @@ export default {
 		moves: '0 zetten | 1 zet | {count} zetten',
 		players: '0 spelers | 1 speler | {count} spelers',
 		playing: '0 aan het spelen | 1 aan het spelen | {count} aan het spelen',
+		selectedCards: `Geen kaarten geselecteerd | 1 kaart geselecteerd | {count} kaarten geselecteerd`,
 		matchesFound: '0 spellen gevonden | 1 spel gevonden | {count} spellen gevonden',
 		matchesWaiting: '0 spellen wachten | 1 spel wacht | {count} spellen wachten',
 		needMorePlayers: 'Nog 0 spelers nodig | Nog 1 speler nodig | Nog {count} spelers nodig'
@@ -358,6 +365,8 @@ export default {
 			create: {
 				success: `Een nieuwe kaart succesvol toegevoegd!`
 			},
+			preview: `Neem even de tijd om naar je (nieuwe) kaarten te kijken`,
+			dump: `Selecteer alle kaarten die je niet meer wilt hebben`,
 			underscore: 'Gebruik _ waar antwoordkaarten moeten komen',
 			noType: `Er zijn geen %{type} kaarten`,
 			type: {

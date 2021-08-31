@@ -247,6 +247,21 @@ export default {
 				name: 'Kies Actiekaart',
 				help: `Bij het aanzetten worden drie willekeurige actiekaarten aan de beslisser getoond om tussen te kiezen.`
 			},
+			handPreview: {
+				name: 'Hand Preview',
+				help: `Indien ingeschakeld, wordt aan het begin van het spel en na elke dumpronde een periode toegevoegd. Gedurende deze tijd kan iedereen zijn (nieuwe) kaarten in de hand bekijken.`
+			},
+			dumpRound: {
+				name: 'Dumpronde',
+				help: `Tijdens een dump-ronde mag iedereen kaarten in hun hand kiezen welke zij willen verwijderen. Na afloop van de ronde ontvangt iedereen nieuwe antwoordkaarten ter vervanging.`,
+				data: {
+					disabled: 'Uitgeschakeld',
+					round: `Elke <b>0</b> rondes | Elke <b>1</b> ronde | Every <b>{count}</b> rondes`
+				}
+			},
+			dumpRoundAmount: {
+				name: 'Dumpronde Aantal'
+			},
 			showNsfw: {
 				name: 'NSFW Kaarten',
 				help: `Kaarten met seks of gevloek.`
@@ -254,6 +269,10 @@ export default {
 			showSpecific: {
 				name: 'Specifieke Kaarten',
 				help: `Kaarten met merken, moeilijke woorden, of mensen.`
+			},
+			_filter: {
+				name: 'Filter',
+				help: `Actieve filters zorgen dat kaarten die aan de volgende criteria voldoen worden weggelaten:`
 			},
 			timePicking: {
 				name: 'Actiekaart Kies Tijd',
@@ -281,8 +300,21 @@ export default {
 				name: 'Onthullingstijd (per kaart)',
 				help: {
 					intro: `Bepaal hoe lang iedereen de winnende selectie te zien krijgt.`,
-					calc: `De totale tijd wordt berekend door <b>ANTWOORDKAARTEN * DEZE TIJD</b>`,
-					skip: `De onthulling kan ook worden overgeslagen als meer dan de helft van de gebruikers daarvoor stemt.`
+					calc: `De totale tijd wordt berekend door <b>ANTWOORDKAARTEN * DEZE TIJD</b>`
+				}
+			},
+			timeHandPreview: {
+				name: 'Hand Preview Tijd (per kaart)',
+				help: {
+					intro: `Bepaal hoe lang aan het begin van een spel of na een dumpronde iedereen zijn (nieuwe) kaarten mag bekijken.`,
+					calc: `De totale tijd wordt berekend door <b>3 SECONDEN + KAARTEN IN HAND * DEZE TIJD</b>`
+				}
+			},
+			timeDumpRound: {
+				name: 'Dumpronde Tijd (per kaart)',
+				help: {
+					intro: `Bepaal hoe lang iedereen heeft om te kiezen welke kaarten zij willen dumpen.`,
+					calc: `De totale tijd wordt berekend door <b>3 SECONDEN + KAARTEN IN HAND * DEZE TIJD</b>`
 				}
 			}
 		},
