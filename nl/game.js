@@ -142,8 +142,8 @@ export default {
 			}
 		}
 	},
-	[GAME_TYPE.CONNECT_FOUR]: {
-		name: 'Connect Four',
+	[GAME_TYPE.FOUR_IN_A_ROW]: {
+		name: 'Vier-op-een-Rij',
 		description: `Speel vier-op-een-rij met maximaal zes spelers in de klassieke spelmodus of beschikbare variaties.`,
 		title: 'Gratis Online Vier-op-een-Rij Voor 2-6 Spelers',
 		options: {

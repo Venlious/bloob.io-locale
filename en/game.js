@@ -141,9 +141,9 @@ export default {
 			}
 		}
 	},
-	[GAME_TYPE.CONNECT_FOUR]: {
-		name: 'Connect Four',
-		description: `Play Connect Four with up to six players in either the classic gamemode or available variations.`,
+	[GAME_TYPE.FOUR_IN_A_ROW]: {
+		name: 'Four in a Row',
+		description: `Play Four in a Row with up to six players in either the classic gamemode or available variations.`,
 		title: 'Free Multiplayer Game for 2-6 Players',
 		options: {
 			field: {
