@@ -112,6 +112,7 @@ export default {
 		needMorePlayers: 'Need 0 more players | Need 1 more player | Need {count} more players'
 	},
 	misc: {
+		unavailable: 'Unavailable',
 		changeLog: 'Change Log',
 		status: 'Status',
 		information: 'Information',
@@ -219,7 +220,7 @@ export default {
 		game: {
 			join: 'Join %{title} Match',
 			help: '%{title} Help',
-			leader: 'Game Leader',
+			leader: 'Leader',
 			duration: 'Game Duration',
 			menu: 'Game Menu'
 		},

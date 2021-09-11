@@ -112,6 +112,7 @@ export default {
 		needMorePlayers: 'Nog 0 spelers nodig | Nog 1 speler nodig | Nog {count} spelers nodig'
 	},
 	misc: {
+		unavailable: 'Niet beschikbaar',
 		changeLog: 'Update Logboek',
 		status: 'Status',
 		information: 'Informatie',
