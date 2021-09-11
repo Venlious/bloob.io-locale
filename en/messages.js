@@ -66,6 +66,7 @@ export default {
 		online: `<b>{count}</b> online`
 	},
 	content: {
+		scrollBackDown: 'Scroll back down',
 		pickYourself: 'Pick for yourself',
 		round: 'Round (%{current}/%{total})',
 		skip: 'Skip (%{current}/%{total})',
@@ -274,6 +275,12 @@ export default {
 			download: {
 				automatic: `Opens a new tab and automatically starts .csv download`,
 				saveAs: `Opens a new tab where you will then have to save the file by right clicking and using "Save As"`
+			}
+		},
+		chat: {
+			empty: {
+				title: 'No Messages',
+				description: 'Be the first to send a message!'
 			}
 		},
 		copy: {
