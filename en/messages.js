@@ -112,6 +112,7 @@ export default {
 		needMorePlayers: 'Need 0 more players | Need 1 more player | Need {count} more players'
 	},
 	misc: {
+		vibration: 'Vibration',
 		unavailable: 'Unavailable',
 		changeLog: 'Change Log',
 		status: 'Status',
