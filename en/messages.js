@@ -112,6 +112,8 @@ export default {
 		needMorePlayers: 'Need 0 more players | Need 1 more player | Need {count} more players'
 	},
 	misc: {
+		copy: 'Copy',
+		matchId: 'Match ID',
 		vibration: 'Vibration',
 		unavailable: 'Unavailable',
 		changeLog: 'Change Log',

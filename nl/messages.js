@@ -112,6 +112,8 @@ export default {
 		needMorePlayers: 'Nog 0 spelers nodig | Nog 1 speler nodig | Nog {count} spelers nodig'
 	},
 	misc: {
+		copy: 'Kopieer',
+		matchId: 'Spel ID',
 		vibration: 'Trilfunctie',
 		unavailable: 'Niet beschikbaar',
 		changeLog: 'Update Logboek',
