@@ -112,6 +112,7 @@ export default {
 		needMorePlayers: 'Need 0 more players | Need 1 more player | Need {count} more players'
 	},
 	misc: {
+		share: 'Share',
 		copy: 'Copy',
 		matchId: 'Match ID',
 		vibration: 'Vibration',
@@ -273,6 +274,7 @@ export default {
 	},
 	info: {
 		menu: `A collection of multiplayer browser-based games without the need to make an account. Play hassle free and customise the experience to your liking.`,
+		share: 'Join me in a game of %{game}!',
 		file: {
 			upload: `Click to browse or drag your file(s) in here`,
 			uploadAdditional: `Add more files by dragging or clicking here`,
