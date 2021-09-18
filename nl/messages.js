@@ -274,7 +274,6 @@ export default {
 	},
 	info: {
 		menu: `Een verzameling van multiplayer browser spellen zonder de noodzaak om een account aan te maken. Speel zonder gedoe en pas de ervaring aan naar je eigen smaak.`,
-		share: 'Speel een spel %{game} met mij!',
 		file: {
 			upload: `Klik om te browsen of sleep uw bestand(en) hierheen`,
 			uploadAdditional: `Voeg meer bestanden toe door te slepen of hier te klikken`,
