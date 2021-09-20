@@ -112,6 +112,7 @@ export default {
 		needMorePlayers: 'Nog 0 spelers nodig | Nog 1 speler nodig | Nog {count} spelers nodig'
 	},
 	misc: {
+		missingSet: 'Ontbrekende Set',
 		share: 'Deel',
 		copy: 'Kopieer',
 		matchId: 'Spel ID',
@@ -353,6 +354,7 @@ export default {
 					title: `Kaartensets importeren met een ID (zoals van Many Decks)`,
 					content: `Je kunt de ID van kaartensets van populaire diensten hieronder invullen. Eenmaal gedownload kun je ze gemakkelijk hieronder uploaden.`
 				},
+				missing: `Deze custom kaartenset is toegevoegd door een andere gebruiker. Voeg deze toe aan je bibliotheek om deze in de toekomst opnieuw te gebruiken.`,
 				csv: `Let op: CSV-bestandsondersteuning is beperkt en de resulterende kaartenset kan fouten bevatten. Voor de beste resultaten gebruik de native .json bestanden (hetzelfde als export).`,
 				delete: `Het verwijderen van een custom kaartenset met de naam "%{name}" kan niet ongedaan worden gemaakt. Download de set eerst lokaal als je deze later wilt kunnen herstellen.`,
 				storage: `Custom kaartsets worden opgeslagen in jouw browser. Bewaar ze veilig door een gedownloade kopie ergens anders op te slaan.`,
@@ -377,6 +379,7 @@ export default {
 			create: {
 				success: `Een nieuwe kaart succesvol toegevoegd!`
 			},
+			addToLibrary: 'Toevoegen',
 			preview: `Neem even de tijd om naar je (nieuwe) kaarten te kijken`,
 			dump: `Selecteer alle kaarten die je niet meer wilt hebben`,
 			underscore: 'Gebruik _ waar antwoordkaarten moeten komen',

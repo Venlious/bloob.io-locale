@@ -112,6 +112,7 @@ export default {
 		needMorePlayers: 'Need 0 more players | Need 1 more player | Need {count} more players'
 	},
 	misc: {
+		missingSet: 'Missing Set',
 		share: 'Share',
 		copy: 'Copy',
 		matchId: 'Match ID',
@@ -353,6 +354,7 @@ export default {
 					title: `Import card sets from an ID (such as from Many Decks)`,
 					content: `You can fill in the ID of card sets from popular providers below. Once downloaded you can simply upload them below.`
 				},
+				missing: `This custom card set was added by another user. You can add it to your library to use it again in the future.`,
 				csv: `Please note CSV file support is limited and the resulting card set may not be flawless. For best results please use the native .json files (same as export).`,
 				delete: `Deleting custom card set named "%{name}" cannot be undone. Download the set locally first if you wish to be able to recover it at a later time.`,
 				storage: `Custom card sets are stored in your browser. Keep them safe by having a downloaded copy stored somewhere else.`,
@@ -377,6 +379,7 @@ export default {
 			create: {
 				success: `Added a new card successfully!`
 			},
+			addToLibrary: 'Add to your library',
 			preview: `Take a moment to look at your (new) cards`,
 			dump: `Select any cards you'd like to dump`,
 			underscore: 'Use _ to mark a space for reaction cards',
