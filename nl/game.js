@@ -1,6 +1,6 @@
-import GAME_TYPE from '../../../../public/enums/game-type'
-import CHECKERS_KING_TYPE from '../../../../public/enums/checkers-king-type'
-import WIN_CONDITION from '../../../../public/enums/win-condition'
+import GAME_TYPE from '../../../assets/enums/game-type'
+import CHECKERS_KING_TYPE from '../../../assets/enums/checkers-king-type'
+import WIN_CONDITION from '../../../assets/enums/win-condition'
 
 export default {
 	generic: {
