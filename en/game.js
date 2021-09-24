@@ -135,7 +135,7 @@ export default {
 			language: {
 				title: 'Language',
 				desc: {
-					'1': `The match leader gets to decide if everyone plays in the same language or one of their choosing.`,
+					'1': `The host gets to decide if everyone plays in the same language or one of their choosing.`,
 					'2': `Words will only be valid for the language you are playing in and any accents are ignored.`
 				}
 			}
@@ -209,7 +209,7 @@ export default {
 				title: 'Winning State',
 				desc: {
 					'1': `By default, the first person to get four on a row wins the game. This can be horizontal, vertical, and diagonal.`,
-					'2': `The match leader may change the default winning condition and allow for different requirements.`
+					'2': `The host may change the default winning condition and allow for different requirements.`
 				}
 			}
 		}
@@ -341,14 +341,14 @@ export default {
 			vote: {
 				title: 'Voting',
 				desc: {
-					'1': `Voting is either done by a single judge or by everyone. This depends on how the game leader configured the game.`,
+					'1': `Voting is either done by a single judge or by everyone. This depends on how the host configured the game.`,
 					'2': `At the end of each round, the judge(s) get to vote for their favourite response. A point is rewarded to the winner.`
 				}
 			},
 			sets: {
 				title: 'Card Sets',
 				desc: {
-					'1': `Before the game starts, the game leader can choose out of many available sets or import custom ones.`,
+					'1': `Before the game starts, the host can choose out of many available sets or import custom ones.`,
 					'2': `Custom card sets can be imported and are saved to your account, allowing you to easily use them again later.`
 				}
 			}

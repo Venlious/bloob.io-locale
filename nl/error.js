@@ -114,7 +114,7 @@ export default {
 		finishedGame: `Je kunt deze actie alleen uitvoeren als het spel is afgelopen.`,
 		inGame: `Je moet in een spel zijn om deze actie uit te voeren.`,
 		notInGame: `Je kunt deze actie niet uitvoeren als je in al in een spel zit.`,
-		matchLeader: `Je bent niet de spelleider en kunt deze actie niet uitvoeren`,
+		matchHost: `Je bent niet de spelleider en kunt deze actie niet uitvoeren`,
 		admin: `Deze actie is voorbehouden aan Admins.`
 	}
 }

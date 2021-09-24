@@ -129,7 +129,7 @@ export default {
 		chat: 'Chat',
 		viewAllGames: 'Bekijk alle spellen',
 		refreshWindow: 'Ververs Scherm',
-		transferLeadership: 'Leiderschap Overdragen',
+		makeHost: 'Leiderschap Overdragen',
 		kickUser: 'Verwijder Gebruiker',
 		menu: 'Menu',
 		admin: 'Admin',
@@ -225,7 +225,7 @@ export default {
 		game: {
 			join: 'Join %{title}',
 			help: '%{title} Uitleg',
-			leader: 'Spelleider',
+			host: 'Spelleider',
 			duration: 'Spelduur',
 			menu: 'Spelmenu'
 		},
@@ -308,7 +308,7 @@ export default {
 				private: `Je kunt meedoen met een privé spel door de viercijferige ID in te vullen.`,
 				rematch: `%{name} wilt een rematch`
 			},
-			transferLeadership: `Je staat op het punt om de leiderschap van het spel over te dragen aan "%{name}".`,
+			makeHost: `Je staat op het punt om de leiderschap van het spel over te dragen aan "%{name}".`,
 			kickUser: `Je staat op het punt om "%{name}" uit dit spel te verwijderen.`,
 			finishedSettings: `Klaar met het wijzigen van de instellingen?`,
 			available: `Beschikbare spellen zullen hier verschijnen`,
@@ -360,7 +360,7 @@ export default {
 				storage: `Custom kaartsets worden opgeslagen in jouw browser. Bewaar ze veilig door een gedownloade kopie ergens anders op te slaan.`,
 				share: 'Deel en browse voor custom kaartensets hier.',
 				noneSelected: 'Spelleider moet kaartensets selecteren.',
-				notLeader: `Omdat jij niet de spelleider bent zijn jouw ingevoerde kaartensets verborgen.`,
+				notHost: `Omdat jij niet de spelleider bent zijn jouw ingevoerde kaartensets verborgen.`,
 				sizeLimit: `Elke custom kaartenset neemt een neemt opslagruimte in beslag. Om prestatieredenen kan een niet meer dan <b>%{size}</b> aan custom kaartensets tegelijk gebruiken.`,
 				processing: {
 					finished: 'Alle %{total} kaartensets verwerkt',
@@ -368,7 +368,7 @@ export default {
 					failed: 'Kan kaartenset "%{name}" niet verwerken'
 				},
 				empty: {
-					leader: `Jouw custom kaartensets zullen hier verschijnen.`,
+					host: `Jouw custom kaartensets zullen hier verschijnen.`,
 					other: `De spelleider heeft geen custom kaartensets gekozen.`,
 					editor: `Jouw (geïmporteerde) custom kaartensets zullen hier te zien zijn.`
 				}

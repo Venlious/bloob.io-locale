@@ -129,7 +129,7 @@ export default {
 		chat: 'Chat',
 		viewAllGames: 'View all games',
 		refreshWindow: 'Refresh Window',
-		transferLeadership: 'Transfer Leadership',
+		makeHost: 'Make Host',
 		kickUser: 'Kick User',
 		menu: 'Menu',
 		admin: 'Admin',
@@ -215,7 +215,7 @@ export default {
 			rejoin: 'Rejoin Match',
 			full: 'Full Match',
 			reserved: 'Ongoing Rematch',
-			waiting: 'Waiting for leader to start the match'
+			waiting: 'Waiting for host to start the match'
 		},
 		matches: {
 			browse: 'Browse Matches',
@@ -225,7 +225,7 @@ export default {
 		game: {
 			join: 'Join %{title} Match',
 			help: '%{title} Help',
-			leader: 'Leader',
+			host: 'Host',
 			duration: 'Game Duration',
 			menu: 'Game Menu'
 		},
@@ -302,13 +302,13 @@ export default {
 			leave: {
 				player: `You may not be able to join back if you choose to leave.`,
 				alone: `This game will be disbanded when you leave, as you are the only person in it.`,
-				others: `Your leadership will be transferred to another person when you leave.`
+				others: `Somebody else will become the new host when you leave.`
 			},
 			join: {
 				private: `You can join a private match by filling in the four-digit ID.`,
 				rematch: `%{name} would like a rematch`
 			},
-			transferLeadership: `You are about to transfer the match leadership to "%{name}".`,
+			makeHost: `You are about to make "%{name}" the new host.`,
 			kickUser: `You are about to kick "%{name}" from this match.`,
 			finishedSettings: `Finished editing the match settings?`,
 			available: `New matches will show up here`,
@@ -359,8 +359,8 @@ export default {
 				delete: `Deleting custom card set named "%{name}" cannot be undone. Download the set locally first if you wish to be able to recover it at a later time.`,
 				storage: `Custom card sets are stored in your browser. Keep them safe by having a downloaded copy stored somewhere else.`,
 				share: 'Share and browse for custom card sets here.',
-				noneSelected: 'The match leader must select card sets.',
-				notLeader: `Your imported cards are hidden, as you are not the game leader.`,
+				noneSelected: 'The host must select card sets.',
+				notHost: `Your imported cards are hidden, as you are not the host.`,
 				sizeLimit: `Each custom card set takes up an amount of available storage. For performance reasons, a single game cannot use more than <b>%{size}</b> of custom card sets at a time.`,
 				processing: {
 					finished: 'Processed all %{total} card sets',
@@ -368,8 +368,8 @@ export default {
 					failed: 'Failed to process card set "%{name}"'
 				},
 				empty: {
-					leader: `Your custom card sets will show up here.`,
-					other: `The game leader has not selected any custom card sets.`,
+					host: `Your custom card sets will show up here.`,
+					other: `The host has not selected any custom card sets.`,
 					editor: `Your (imported) custom card sets will show up here.`
 				}
 			},

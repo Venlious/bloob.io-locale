@@ -114,7 +114,7 @@ export default {
 		finishedGame: `You can only peform this action after the game has finished.`,
 		inGame: `You must be in a game to perform this action.`,
 		notInGame: `You cannot perform this action while you are in a game.`,
-		matchLeader: `You are not the match leader and cannot perform this action.`,
+		matchHost: `You are not the host and cannot perform this action.`,
 		admin: `This action is restricted to Admins.`
 	}
 }
