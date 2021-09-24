@@ -301,7 +301,7 @@ export default {
 		match: {
 			leave: {
 				player: `You may not be able to join back if you choose to leave.`,
-				alone: `This game will be disbanded when you leave, as you are the only person in it.`,
+				alone: `Since you are the only person in the game, the match will be closed when you leave.`,
 				others: `Somebody else will become the new host when you leave.`
 			},
 			join: {

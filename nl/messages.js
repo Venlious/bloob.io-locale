@@ -301,7 +301,7 @@ export default {
 		match: {
 			leave: {
 				player: `Het kan zijn dat je niet meer terug kunt komen als je het spel verlaat.`,
-				alone: `Omdat je alleen bent zal dit spel worden verwijdert als je het spel verlaat.`,
+				alone: `Omdat je alleen bent zal dit spel worden beëindigt zodra je het spel verlaat.`,
 				others: `Iemand anders zal spelleider worden zodra je het spel verlaat.`
 			},
 			join: {
