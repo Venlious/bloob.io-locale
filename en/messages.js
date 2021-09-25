@@ -354,6 +354,8 @@ export default {
 					title: `Import card sets from an ID (such as from Many Decks)`,
 					content: `You can fill in the ID of card sets from popular providers below. Once downloaded you can simply upload them below.`
 				},
+				loading: 'Card sets are being downloaded...',
+				loadingError: 'Unable to download the card sets.',
 				missing: `This custom card set was added by another user. You can add it to your library to use it again in the future.`,
 				csv: `Please note CSV file support is limited and the resulting card set may not be flawless. For best results please use the native .json files (same as export).`,
 				delete: `Deleting custom card set named "%{name}" cannot be undone. Download the set locally first if you wish to be able to recover it at a later time.`,

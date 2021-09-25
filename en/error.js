@@ -65,6 +65,7 @@ export default {
 		wordTooLong: 'Word selection too long (Max. %{max})'
 	},
 	card: {
+		loadError: `An error occured trying to download the card sets data.`,
 		underscore: `Each underscore results in one response card pick — don't put them next to each other!`,
 		empty: `Please make sure the card isn't empty.`,
 		pickLimit: `Cannot request to pick more than 3 response cards. (Too many underscores?)`,
