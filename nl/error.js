@@ -81,11 +81,9 @@ export default {
 	},
 	match: {
 		kicked: 'Je bent uit het spel gezet waar je in zat.',
-		reservedExcluded: 'Dit spel is gereserveerd (rematch) en je staat niet op de lijst.',
 		deleted: 'Het spel waar je in zat is verwijderd.',
 		invalid: 'Spel met ID "%{id}" bestaat niet.',
 		private: 'Dit is een privé spel. Je moet een ID invoeren om mee te doen.',
-		reserved: 'Dit is een rematch. Nog niet alle gebruikers hebben zich weer aangesloten.',
 		startStop: 'Je kunt een spel dat bezig is niet starten of stoppen.',
 		insufficientPlayers: 'Je hebt minstens %{min} spelers nodig om het spel te beginnen.',
 		inProgress: 'Het spel is al begonnen. Je kunt niet meer meedoen.',

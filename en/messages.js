@@ -112,6 +112,7 @@ export default {
 		needMorePlayers: 'Need 0 more players | Need 1 more player | Need {count} more players'
 	},
 	misc: {
+		bots: 'Bots',
 		missingSet: 'Missing Set',
 		share: 'Share',
 		copy: 'Copy',
@@ -149,7 +150,6 @@ export default {
 		about: 'About',
 		public: 'Public',
 		private: 'Private',
-		reserved: 'Rematch',
 		yes: 'Yes',
 		no: 'No',
 		disabled: 'Disabled',
@@ -187,7 +187,7 @@ export default {
 		deselectAll: 'Deselect all',
 		areYouSure: 'Are you sure?',
 		resetData: 'Reset Data',
-		resetLobby: 'Reset Lobby',
+		resetStats: 'Reset Stats',
 		customise: 'Customise',
 		cancelCountdown: 'Cancel Countdown',
 		inviteOthers: 'Invite Others',
@@ -214,7 +214,6 @@ export default {
 			join: 'Join Match',
 			rejoin: 'Rejoin Match',
 			full: 'Full Match',
-			reserved: 'Ongoing Rematch',
 			waiting: 'Waiting for host to start the match'
 		},
 		matches: {
@@ -308,14 +307,14 @@ export default {
 				private: `You can join a private match by filling in the four-digit ID.`,
 				rematch: `%{name} would like a rematch`
 			},
+			resetStats: `Reset rematch statistics (wins).`,
 			makeHost: `You are about to make "%{name}" the new host.`,
 			kickUser: `You are about to kick "%{name}" from this match.`,
 			finishedSettings: `Finished editing the match settings?`,
 			available: `New matches will show up here`,
 			rematch: `Would you like to play again?`,
 			public: `<b>Public: </b>Anyone can join by browsing the available matches.`,
-			private: `<b>Private: </b>Players can only join using the URL or 4-digit ID.`,
-			reserved: `<b>Rematch: </b>This game is reserved for users currently in this match only. No other players may join.`
+			private: `<b>Private: </b>Players can only join using the URL or 4-digit ID.`
 		},
 		judge: {
 			pickingCard: `Judge %{name} is picking an action card`,

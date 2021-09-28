@@ -13,6 +13,10 @@ export default {
 			maxUsers: {
 				name: 'Max. Spelers',
 				help: `Hoeveel spelers er maximaal in het spel mogen.`
+			},
+			botFill: {
+				name: 'Bot Fill',
+				help: `Wanneer deze optie is ingeschakeld, zullen bots alle lege spelerslots opvullen.`
 			}
 		},
 		presets: {

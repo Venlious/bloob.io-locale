@@ -12,6 +12,10 @@ export default {
 			maxUsers: {
 				name: 'Max. Players',
 				help: `How many players are allowed in the match.`
+			},
+			botFill: {
+				name: 'Bot Fill',
+				help: `When enabled, bots will fill up any empty player slots.`
 			}
 		},
 		presets: {

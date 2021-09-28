@@ -81,11 +81,9 @@ export default {
 	},
 	match: {
 		kicked: 'You were kicked from the match you were in.',
-		reservedExcluded: 'This game is reserved (rematch) and you are not on the list.',
 		deleted: 'The match you were in has been deleted.',
 		invalid: 'Match with ID "%{id}" does not exist.',
 		private: 'This is a private match. You must enter an ID to join.',
-		reserved: 'This is a rematch. Not all users have rejoined yet.',
 		startStop: 'You are unable to start or stop a game that is in progress.',
 		insufficientPlayers: 'Need at least %{min} players to start the match.',
 		inProgress: 'Match is already in progress. You may not join.',

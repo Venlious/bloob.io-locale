@@ -112,6 +112,7 @@ export default {
 		needMorePlayers: 'Nog 0 spelers nodig | Nog 1 speler nodig | Nog {count} spelers nodig'
 	},
 	misc: {
+		bots: 'Bots',
 		missingSet: 'Ontbrekende Set',
 		share: 'Deel',
 		copy: 'Kopieer',
@@ -149,7 +150,6 @@ export default {
 		about: 'Over',
 		public: 'Openbaar',
 		private: 'Privé',
-		reserved: 'Rematch',
 		yes: 'Ja',
 		no: 'Nee',
 		disabled: 'Uitgeschakeld',
@@ -187,7 +187,7 @@ export default {
 		deselectAll: 'Deselecteer alles',
 		areYouSure: 'Weet je het zeker?',
 		resetData: 'Reset Gegevens',
-		resetLobby: 'Reset Lobby',
+		resetStats: 'Reset Stats',
 		customise: 'Wijzig',
 		cancelCountdown: 'Aftellen Annuleren',
 		inviteOthers: 'Anderen Uitnodigen',
@@ -214,7 +214,6 @@ export default {
 			join: 'Join Spel',
 			rejoin: 'Rejoin Spel',
 			full: 'Vol Spel',
-			reserved: 'Doorlopende Rematch',
 			waiting: 'Wachten tot de spelleider spel start'
 		},
 		matches: {
@@ -308,14 +307,14 @@ export default {
 				private: `Je kunt meedoen met een privé spel door de viercijferige ID in te vullen.`,
 				rematch: `%{name} wilt een rematch`
 			},
+			resetStats: `Reset rematch statistieken (winsten).`,
 			makeHost: `Je staat op het punt om de leiderschap van het spel over te dragen aan "%{name}".`,
 			kickUser: `Je staat op het punt om "%{name}" uit dit spel te verwijderen.`,
 			finishedSettings: `Klaar met het wijzigen van de instellingen?`,
 			available: `Beschikbare spellen zullen hier verschijnen`,
 			rematch: `Wil je nog een keer spelen?`,
 			public: `<b>Openbaar: </b>Iedereen kan meedoen door naar de beschikbare spellen te kijken.`,
-			private: `<b>Privé: </b>Spelers kunnen alleen meedoen via de URL of de viercijferige ID.`,
-			reserved: `<b>Rematch: </b>Dit spel is gereserveerd voor gebruikers die op dit moment in dit spel zitten. Andere spelers kunnen niet meedoen.`
+			private: `<b>Privé: </b>Spelers kunnen alleen meedoen via de URL of de viercijferige ID.`
 		},
 		judge: {
 			pickingCard: `Beslisser %{name} is een actiekaart aan het kiezen`,
