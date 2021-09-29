@@ -170,6 +170,7 @@ export default {
 				name: 'Win Conditie',
 				help: `Hoeveel schijven je op een rij moet hebben om het spel te winnen.`,
 				data: {
+					'3': 'Drie op een rij (3)',
 					'4': 'Vier op een rij (4)',
 					'5': 'Vijf op een rij (5)',
 					'6': 'Zes op een rij (6)'

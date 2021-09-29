@@ -169,6 +169,7 @@ export default {
 				name: 'Winning Condition',
 				help: `How many pieces you must have in a row to win the game.`,
 				data: {
+					'3': 'Three-in-a-row (3)',
 					'4': 'Four-in-a-row (4)',
 					'5': 'Five-in-a-row (5)',
 					'6': 'Six-in-a-row (6)'
