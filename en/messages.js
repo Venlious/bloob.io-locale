@@ -395,8 +395,7 @@ export default {
 			menu: 'Feel like playing something else?'
 		},
 		flip: {
-			turns: 'Turns to flip | Turn to flip | Turns to flip',
-			inProgress: 'Flipping field'
+			turns: 'Turns to flip | Turn to flip | Turns to flip'
 		},
 		data: {
 			concedeGame: `Forfeiting the game will result in a loss for you.`,

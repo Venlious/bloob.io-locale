@@ -395,8 +395,7 @@ export default {
 			menu: 'Wil je iets anders spelen?'
 		},
 		flip: {
-			turns: 'Beurten tot flip | Beurt tot flip | Beurten tot flip',
-			inProgress: 'Speelveld aan het Omkeren'
+			turns: 'Beurten tot flip | Beurt tot flip | Beurten tot flip'
 		},
 		data: {
 			concedeGame: `Door verlies te verklaren zal je het spel meteen verliezen.`,
