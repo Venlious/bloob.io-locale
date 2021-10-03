@@ -41,6 +41,7 @@ export default {
 		stuckThreshold: `You were eliminated as you were stuck for %{moves} move(s) in a row.`,
 		allStuck: 'Nobody can make a move anymore. The match has concluded.',
 		cannotSelf: 'You cannot perform this action to yourself.',
+		isBot: 'You cannot perform this action to a bot.',
 		invalid: 'Game type "%{type}" does not exist.',
 		invalidMove: 'Given move is invalid.',
 		invalidUser: 'User with given ID is not in this match.',

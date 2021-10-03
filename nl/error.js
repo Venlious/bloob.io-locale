@@ -41,6 +41,7 @@ export default {
 		stuckThreshold: `Je bent geëlimineerd omdat je %{moves} zet(ten) achter elkaar vastzat.`,
 		allStuck: 'Niemand kan nog een zet doen. Het spel is afgelopen.',
 		cannotSelf: 'Je kunt deze actie niet op jezelf uitvoeren.',
+		isBot: 'Je kunt deze actie niet uitvoeren op een bot.',
 		invalid: 'Speltype "%{type}" bestaat niet.',
 		invalidMove: 'Gegeven set is niet mogelijk.',
 		invalidUser: 'Gebruiker met opgegeven ID zit niet in dit spel.',
