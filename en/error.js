@@ -81,6 +81,8 @@ export default {
 		inProgress: 'You cannot change the preset while the game is in progress.'
 	},
 	match: {
+		inactive: `The match you were in has been closed as it has been inactive for too long.`,
+		inactiveWarning: `Match will soon be closed due to inactivity unless action is taken.`,
 		kicked: 'You were kicked from the match you were in.',
 		deleted: 'The match you were in has been deleted.',
 		invalid: 'Match with ID "%{id}" does not exist.',

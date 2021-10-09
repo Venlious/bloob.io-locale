@@ -81,6 +81,8 @@ export default {
 		inProgress: 'Je kunt de preset niet veranderen terwijl het spel bezig is.'
 	},
 	match: {
+		inactive: `Het spel waar je in zat is gesloten omdat deze te lang inactief is geweest.`,
+		inactiveWarning: `Dit spel zal binnenkort worden gesloten wegens inactiviteit, tenzij er actie wordt ondernomen.`,
 		kicked: 'Je bent uit het spel gezet waar je in zat.',
 		deleted: 'Het spel waar je in zat is verwijderd.',
 		invalid: 'Spel met ID "%{id}" bestaat niet.',
