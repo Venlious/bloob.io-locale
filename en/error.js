@@ -1,7 +1,7 @@
 export default {
 	rateLimit: {
 		secure: 'You hit the rate limit on this secure channel. Wait %{seconds} second(s).',
-		generic: 'We have received too many requests from you. Wait %{seconds} second(s).'
+		generic: 'Slow down a little! Wait %{seconds} second(s).'
 	},
 	token: {
 		invalid: 'Your token is invalid and has been reset. Please refresh your window to proceed.',

@@ -1,7 +1,7 @@
 export default {
 	rateLimit: {
 		secure: `Je hebt de snelheidslimiet bereikt op dit beveiligde kanaal. Wacht %{seconds} seconde(n).`,
-		generic: 'We hebben te veel verzoeken van u ontvangen. Wacht %{seconds} seconde(n).'
+		generic: 'Rustig aan! Wacht %{seconds} seconde(n).'
 	},
 	token: {
 		invalid: 'Jouw token is ongeldig en is gereset. Ververs alsjeblieft het scherm.',
