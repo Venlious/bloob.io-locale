@@ -59,7 +59,7 @@ export default {
 					off: 'Uitgeschakeld',
 					uncommon: 'Zeldzaam (2.5%)',
 					common: 'Vaak (5%)',
-					veryCommon: 'Heel Vaak (2.5%)',
+					veryCommon: 'Heel Vaak (10%)',
 					extreme: 'Extreem (25%)'
 				}
 			},

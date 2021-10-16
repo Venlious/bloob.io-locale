@@ -58,7 +58,7 @@ export default {
 					off: 'Turned Off',
 					uncommon: 'Uncommon (2.5%)',
 					common: 'Common (5%)',
-					veryCommon: 'Very Common (2.5%)',
+					veryCommon: 'Very Common (10%)',
 					extreme: 'Extreme (25%)'
 				}
 			},
