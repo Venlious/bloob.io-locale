@@ -257,8 +257,8 @@ export default {
 			}
 		},
 		select: {
-			language: 'Select a Language',
-			colour: 'Select a Colour'
+			language: 'Pick Your Language',
+			colour: 'Pick Your Colour'
 		},
 		changes: {
 			latest: 'Latest Changes',

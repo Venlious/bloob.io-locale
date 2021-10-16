@@ -257,8 +257,8 @@ export default {
 			}
 		},
 		select: {
-			language: 'Selecteer een Taal',
-			colour: 'Selecteer een Kleur'
+			language: 'Kies Jouw Taal',
+			colour: 'Kies Jouw Kleur'
 		},
 		changes: {
 			latest: 'Laatste Wijzigingen',
