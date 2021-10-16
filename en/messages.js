@@ -187,7 +187,6 @@ export default {
 		deselectAll: 'Deselect all',
 		areYouSure: 'Are you sure?',
 		resetData: 'Reset Data',
-		resetStats: 'Reset Stats',
 		customise: 'Customise',
 		cancelCountdown: 'Cancel Countdown',
 		inviteOthers: 'Invite Others',
@@ -307,7 +306,6 @@ export default {
 				private: `You can join a private match by filling in the four-digit ID.`,
 				rematch: `%{name} would like a rematch`
 			},
-			resetStats: `Reset rematch statistics (wins).`,
 			makeHost: `You are about to make "%{name}" the new host.`,
 			kickUser: `You are about to kick "%{name}" from this match.`,
 			finishedSettings: `Finished editing the match settings?`,

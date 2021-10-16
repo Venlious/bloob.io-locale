@@ -187,7 +187,6 @@ export default {
 		deselectAll: 'Deselecteer alles',
 		areYouSure: 'Weet je het zeker?',
 		resetData: 'Reset Gegevens',
-		resetStats: 'Reset Stats',
 		customise: 'Wijzig',
 		cancelCountdown: 'Aftellen Annuleren',
 		inviteOthers: 'Anderen Uitnodigen',
@@ -307,7 +306,6 @@ export default {
 				private: `Je kunt meedoen met een privé spel door de viercijferige ID in te vullen.`,
 				rematch: `%{name} wilt een rematch`
 			},
-			resetStats: `Reset rematch statistieken (winsten).`,
 			makeHost: `Je staat op het punt om de leiderschap van het spel over te dragen aan "%{name}".`,
 			kickUser: `Je staat op het punt om "%{name}" uit dit spel te verwijderen.`,
 			finishedSettings: `Klaar met het wijzigen van de instellingen?`,
