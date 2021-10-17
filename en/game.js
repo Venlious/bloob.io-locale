@@ -190,6 +190,10 @@ export default {
 			turnsUntilFlip: {
 				name: 'Turns to Flip',
 				help: `Placing a piece counts as a turn. This defines how many pieces must be dropped before flipping the field.`
+			},
+			tetrisMode: {
+				name: 'Tetris Mode',
+				help: `When enabled, a fully filled row will disappear and drop all pieces above down a line. This also makes it impossible to tie in a game.`
 			}
 		},
 		presets: {

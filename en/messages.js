@@ -24,6 +24,7 @@ export default {
 			voting: 'Voting',
 			voteResults: 'Vote Results',
 			flippingField: 'Flipping Field',
+			removingRow: 'Removing Row',
 			yourTurn: 'Your Turn',
 			nameTurn: `%{name}'s Turn`,
 			roundCount: `Round %{current} out of %{total}`
@@ -89,6 +90,7 @@ export default {
 		flip: 'Flip',
 		fallback: 'Fallback Conditions',
 		take: 'Take Over',
+		tetris: 'Tetris',
 		basic: 'Basic',
 		language: 'Language'
 	},

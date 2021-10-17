@@ -191,6 +191,10 @@ export default {
 			turnsUntilFlip: {
 				name: 'Beurten tot Speelveld Keert',
 				help: `Het plaatsen van een schijf telt als een beurt. Dit bepaalt dus hoeveel schijven er moeten vallen voordat het speelveld wordt omgedraaid.`
+			},
+			tetrisMode: {
+				name: 'Tetris Modus',
+				help: `Indien ingeschakeld, zal een volledig gevulde rij verdwijnen en alle stukken erboven een rij naar beneden vallen. Dit maakt het ook onmogelijk om in een gelijk spel te eindigen.`
 			}
 		},
 		presets: {

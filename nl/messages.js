@@ -24,6 +24,7 @@ export default {
 			voting: 'Stemmen',
 			voteResults: 'Stemresultaten',
 			flippingField: 'Speelveld aan het Omkeren',
+			removingRow: 'Verwijderen van Rij',
 			yourTurn: 'Jouw Beurt',
 			nameTurn: `%{name}'s Beurt`,
 			roundCount: `Ronde %{current} van de %{total}`
@@ -89,6 +90,7 @@ export default {
 		flip: 'Omdraaien',
 		fallback: 'Terugvalvoorwaarden',
 		take: 'Overnemen',
+		tetris: 'Tetris',
 		basic: 'Basis',
 		language: 'Taal'
 	},
