@@ -201,6 +201,10 @@ export default {
 				name: 'Five-in-a-row',
 				desc: 'Side columns — Large field'
 			},
+			tetris: {
+				name: 'Tetris',
+				desc: 'Remove full rows automatically'
+			},
 			flipParty: {
 				name: 'Flip Party',
 				desc: 'Flip field every 12 turns — Very large field'

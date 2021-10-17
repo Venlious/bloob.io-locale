@@ -202,6 +202,10 @@ export default {
 				name: 'Vijf op een rij',
 				desc: 'Zijkolommen — Groot speelveld'
 			},
+			tetris: {
+				name: 'Tetris',
+				desc: 'Volle rijen worden automatisch verwijderd'
+			},
 			flipParty: {
 				name: 'Flip Party',
 				desc: 'Speelveld keert om na elke 12 beurten — Erg groot speelveld'
