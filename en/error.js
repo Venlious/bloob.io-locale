@@ -4,7 +4,6 @@ export default {
 		generic: 'Slow down a little! Wait %{seconds} second(s).'
 	},
 	token: {
-		invalid: 'Your token is invalid and has been reset. Please refresh your window to proceed.',
 		inUse: `It looks like you opened this site in another tab and you have been disconnected here.`
 	},
 	generic: {

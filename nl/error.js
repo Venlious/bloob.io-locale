@@ -4,7 +4,6 @@ export default {
 		generic: 'Rustig aan! Wacht %{seconds} seconde(n).'
 	},
 	token: {
-		invalid: 'Jouw token is ongeldig en is gereset. Ververs alsjeblieft het scherm.',
 		inUse: `Je hebt deze site in een ander tabblad geopend en daarom ben je hier afgemeld.`
 	},
 	generic: {
