@@ -263,7 +263,7 @@ export default {
 		},
 		select: {
 			language: 'Select Your Language',
-			colour: 'Select Your Colour'
+			color: 'Select Your Colour'
 		},
 		changes: {
 			latest: 'Latest Changes',

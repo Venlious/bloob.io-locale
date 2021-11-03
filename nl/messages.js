@@ -263,7 +263,7 @@ export default {
 		},
 		select: {
 			language: 'Selecteer Jouw Taal',
-			colour: 'Selecteer Jouw Kleur'
+			color: 'Selecteer Jouw Kleur'
 		},
 		changes: {
 			latest: 'Laatste Wijzigingen',

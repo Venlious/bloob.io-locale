@@ -57,7 +57,7 @@ export default {
 		insufficientBlackCards: 'Onvoldoende actie kaarten om het spel te beginnen.',
 		invalidPlacement: 'Jouw schijf plaatsing is ongeldig.',
 		cellClaimed: 'Een of meer cellen in uw selectie zijn al geclaimd.',
-		colourClaimed: 'Deze kleur is al geclaimd door een andere gebruiker.',
+		colorClaimed: 'Deze kleur is al geclaimd door een andere gebruiker.',
 		invalidColumnRow: 'Kolom of regel is niet ingesteld of ongeldig.',
 		invalidColumn: 'Kolom is niet ingesteld of ongeldig.',
 		invalidWord: 'Het gegeven woord komt niet voor in het gebruikte woordenboek.',

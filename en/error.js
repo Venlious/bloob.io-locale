@@ -57,7 +57,7 @@ export default {
 		insufficientBlackCards: 'Insufficient action cards to start the game.',
 		invalidPlacement: 'Your piece placement is invalid.',
 		cellClaimed: 'One or more cells in your selection have already been claimed.',
-		colourClaimed: 'This colour has been claimed by another user already.',
+		colorClaimed: 'This colour has been claimed by another user already.',
 		invalidColumnRow: 'Column or row is not set or invalid.',
 		invalidColumn: 'Column is not set or invalid.',
 		invalidWord: 'The word given is not in the dictionary used.',
