@@ -115,6 +115,7 @@ export default {
 	},
 	misc: {
 		bots: 'Bots',
+		randomBot: 'Random Bot',
 		missingSet: 'Missing Set',
 		share: 'Share',
 		copy: 'Copy',
