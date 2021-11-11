@@ -114,6 +114,7 @@ export default {
 		needMorePlayers: 'Need 0 more players | Need 1 more player | Need {count} more players'
 	},
 	misc: {
+		kills: 'Kills',
 		bots: 'Bots',
 		emptySlot: 'Empty Slot',
 		missingSet: 'Missing Set',
