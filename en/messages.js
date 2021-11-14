@@ -12,6 +12,7 @@ export default {
 			lobby: 'Match Lobby',
 			finished: 'Match Finished',
 			tied: `Match Tied`,
+			inProgress: `Match in Progress`,
 			staleMoves: `Match Staled — %{staleCount} moves with no take over`,
 			concede: `Match Finished — Opponent chose to forfeit`,
 			winner: `Match Won by %{name}`,
@@ -100,6 +101,8 @@ export default {
 		seconds: '0 seconds | 1 second | {count} seconds'
 	},
 	count: {
+		kills: '0 kills | 1 kill | {count} kills',
+		deaths: '0 deaths | 1 death | {count} deaths',
 		files: '0 files | 1 file | {count} files',
 		points: '0 points | 1 point | {count} points',
 		pieces: '0 pieces | 1 piece | {count} pieces',

@@ -56,6 +56,7 @@ export default {
 		insufficientWhiteCards: 'Onvoldoende antwoord kaarten om het spel te beginnen.',
 		insufficientBlackCards: 'Onvoldoende actie kaarten om het spel te beginnen.',
 		invalidPlacement: 'Jouw schijf plaatsing is ongeldig.',
+		invalidBombPlacement: 'Ongeldige plaatsing van een bom.',
 		cellClaimed: 'Een of meer cellen in uw selectie zijn al geclaimd.',
 		colorClaimed: 'Deze kleur is al geclaimd door een andere gebruiker.',
 		invalidColumnRow: 'Kolom of regel is niet ingesteld of ongeldig.',

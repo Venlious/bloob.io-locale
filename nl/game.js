@@ -490,7 +490,22 @@ export default {
 		name: 'Blomber',
 		description: `Blaas je tegenstanders op in een intens slagveld vol power-ups.`,
 		title: 'Gratis Online Bomberman Geïnspireerd Spel',
-		options: {},
+		options: {
+			field: {
+				name: 'Speelveld',
+				help: `Grotere speelvelden ondersteunen meerdere spelers.`,
+				data: {
+					'9x9': 'Klein Vierkant (9x9)',
+					'11x9': 'Rechthoek (11x9)'
+				}
+			}
+		},
+		presets: {
+			default: {
+				name: 'Standaard',
+				desc: '9x9 speelveld — 3 levens — 4 spelers'
+			}
+		},
 		help: {}
 	}
 }

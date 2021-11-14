@@ -56,6 +56,7 @@ export default {
 		insufficientWhiteCards: 'Insufficient response cards to start the game.',
 		insufficientBlackCards: 'Insufficient action cards to start the game.',
 		invalidPlacement: 'Your piece placement is invalid.',
+		invalidBombPlacement: 'Attempted an invalid bomb placement.',
 		cellClaimed: 'One or more cells in your selection have already been claimed.',
 		colorClaimed: 'This colour has been claimed by another user already.',
 		invalidColumnRow: 'Column or row is not set or invalid.',

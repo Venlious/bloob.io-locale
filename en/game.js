@@ -489,7 +489,21 @@ export default {
 		name: 'Blomber',
 		description: `Blow up your opponents in an intense close quarters battlefield packed with power ups.`,
 		title: 'Free Multiplayer Bomberman Inspired Game',
-		options: {},
-		help: {}
+		options: {
+			field: {
+				name: 'Field',
+				help: `The playing field used. Bigger field sizes can accommodate more players.`,
+				data: {
+					'9x9': 'Small Square (9x9)',
+					'11x9': 'Rectangle (11x9)'
+				}
+			}
+		},
+		presets: {
+			default: {
+				name: 'Default',
+				desc: '9x9 field — 3 lives — 4 players'
+			}
+		}
 	}
 }

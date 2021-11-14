@@ -12,6 +12,7 @@ export default {
 			lobby: 'Spel Lobby',
 			finished: 'Spel Afgelopen',
 			tied: `Gelijkspel`,
+			inProgress: `Spel is Gaande`,
 			staleMoves: `Spel Verlopen — %{staleCount} zetten zonder overname`,
 			concede: `Spel Afgelopen — Tegenstander heeft opgegeven`,
 			winner: `Spel Gewonnen Door %{name}`,
@@ -100,6 +101,8 @@ export default {
 		seconds: '0 seconden | 1 seconde | {count} seconden'
 	},
 	count: {
+		kills: '0 kills | 1 kill | {count} kills',
+		deaths: '0 overlijden | 1 overlijden | {count} overlijden',
 		files: '0 bestanden | 1 bestand | {count} bestanden',
 		points: '0 punten | 1 punt | {count} punten',
 		pieces: '0 schijven | 1 schijf | {count} schijven',
@@ -114,7 +117,7 @@ export default {
 		needMorePlayers: 'Nog 0 spelers nodig | Nog 1 speler nodig | Nog {count} spelers nodig'
 	},
 	misc: {
-		kills: 'Doden',
+		kills: 'Kills',
 		bots: 'Bots',
 		emptySlot: 'Lege Slot',
 		missingSet: 'Ontbrekende Set',
