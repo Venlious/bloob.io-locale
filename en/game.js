@@ -497,6 +497,30 @@ export default {
 					'9x9': 'Small Square (9x9)',
 					'11x9': 'Rectangle (11x9)'
 				}
+			},
+			winCondition: {
+				name: 'Winning Condition',
+				help: `Determine when the game should come to a conclusion. This is linked to the "Winning Amount" setting.`,
+				data: {
+					[WIN_CONDITION.LAST_STANDING]: `Last player standing (<b>0</b> lives) | Last player standing (<b>1</b> live) | Last player standing (<b>{count}</b> lives)`,
+					[WIN_CONDITION.KILL_COUNT]: `First to get <b>0</b> kills | First to get <b>1</b> kill | First to get <b>{count}</b> kills`,
+					[WIN_CONDITION.TIME]: `Most kills after <b>0</b> minutes | Most kills after <b>1</b> minute | Most kills after <b>{count}</b> minutes`
+				}
+			},
+			winAmount: {
+				name: 'Winning Amount'
+			},
+			defaultBombCount: {
+				name: 'Default Bomb Count',
+				help: `This is the amount of bombs a player can place at the same time.`
+			},
+			defaultBombSize: {
+				name: 'Default Bomb Size',
+				help: `This is the blast radius of a bomb. The size is measured in tiles in each direction.`
+			},
+			defaultSpeed: {
+				name: 'Default Speed',
+				help: `The player walking speed everyone starts with.`
 			}
 		},
 		presets: {

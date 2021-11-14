@@ -89,6 +89,7 @@ export default {
 		times: 'Tijden',
 		round: 'Ronde',
 		flip: 'Omdraaien',
+		default: 'Standaard',
 		fallback: 'Terugvalvoorwaarden',
 		take: 'Overnemen',
 		tetris: 'Tetris',
@@ -103,6 +104,7 @@ export default {
 	count: {
 		kills: '0 kills | 1 kill | {count} kills',
 		deaths: '0 overlijden | 1 overlijden | {count} overlijden',
+		lives: '0 levens | 1 leven | {count} levens',
 		files: '0 bestanden | 1 bestand | {count} bestanden',
 		points: '0 punten | 1 punt | {count} punten',
 		pieces: '0 schijven | 1 schijf | {count} schijven',
@@ -118,8 +120,8 @@ export default {
 	},
 	misc: {
 		kills: 'Kills',
+		deaths: 'Doden',
 		bots: 'Bots',
-		emptySlot: 'Lege Slot',
 		missingSet: 'Ontbrekende Set',
 		share: 'Deel',
 		copy: 'Kopieer',

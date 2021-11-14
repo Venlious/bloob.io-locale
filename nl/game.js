@@ -498,6 +498,18 @@ export default {
 					'9x9': 'Klein Vierkant (9x9)',
 					'11x9': 'Rechthoek (11x9)'
 				}
+			},
+			defaultBombCount: {
+				name: 'Standaard Aantal Bommen',
+				help: `Dit is het aantal bommen dat een speler tegelijkertijd kan plaatsen.`
+			},
+			defaultBombSize: {
+				name: 'Standaard Bom Grootte',
+				help: `Dit is de ontploffingsstraal van een bom. De grootte wordt gemeten in tegels in elke richting.`
+			},
+			defaultSpeed: {
+				name: 'Standaard Snelheid',
+				help: `De loopsnelheid waarmee iedereen begint.`
 			}
 		},
 		presets: {
