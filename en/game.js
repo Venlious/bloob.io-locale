@@ -16,6 +16,13 @@ export default {
 			botFill: {
 				name: 'Bot Fill',
 				help: `When enabled, bots will fill up any empty player slots.`
+			},
+			winCondition: {
+				name: 'Winning Condition',
+				help: `Determine when the game should come to a conclusion. This is linked to the "Winning Amount" setting.`
+			},
+			winAmount: {
+				name: 'Winning Amount'
 			}
 		},
 		presets: {
@@ -233,15 +240,10 @@ export default {
 		title: 'Free Multiplayer Cards Against Humanity Game',
 		options: {
 			winCondition: {
-				name: 'Winning Condition',
-				help: `Determine when the game should come to a conclusion. This is linked to the "Winning Amount" setting.`,
 				data: {
 					first: `First to get <b>0</b> points | First to get <b>1</b> point | First to get <b>{count}</b> points`,
 					most: `Most points after <b>0</b> rounds | Most points after <b>1</b> round | Most points after <b>{count}</b> rounds`
 				}
-			},
-			winAmount: {
-				name: 'Winning Amount'
 			},
 			handSize: {
 				name: 'Hand Size',
@@ -390,7 +392,6 @@ export default {
 				}
 			},
 			winCondition: {
-				name: 'Win Condition',
 				help: `How the winner will be determined.`,
 				data: {
 					[WIN_CONDITION.MORE_PIECES]: 'Most pieces',
@@ -499,28 +500,27 @@ export default {
 				}
 			},
 			winCondition: {
-				name: 'Winning Condition',
-				help: `Determine when the game should come to a conclusion. This is linked to the "Winning Amount" setting.`,
 				data: {
-					[WIN_CONDITION.LAST_STANDING]: `Last player standing (<b>0</b> lives) | Last player standing (<b>1</b> live) | Last player standing (<b>{count}</b> lives)`,
+					[WIN_CONDITION.LAST_STANDING]: `Last standing (<b>0</b> lives) | Last standing (<b>1</b> live) | Last standing (<b>{count}</b> lives)`,
 					[WIN_CONDITION.KILL_COUNT]: `First to get <b>0</b> kills | First to get <b>1</b> kill | First to get <b>{count}</b> kills`,
-					[WIN_CONDITION.TIME]: `Most kills after <b>0</b> minutes | Most kills after <b>1</b> minute | Most kills after <b>{count}</b> minutes`
+					[WIN_CONDITION.TIME]: `Most kills after <b>0</b> min. | Most kills after <b>1</b> min. | Most kills after <b>{count}</b> min.`
 				}
 			},
-			winAmount: {
-				name: 'Winning Amount'
-			},
 			defaultBombCount: {
-				name: 'Default Bomb Count',
+				name: 'Bomb Count',
 				help: `This is the amount of bombs a player can place at the same time.`
 			},
 			defaultBombSize: {
-				name: 'Default Bomb Size',
+				name: 'Bomb Size',
 				help: `This is the blast radius of a bomb. The size is measured in tiles in each direction.`
 			},
 			defaultSpeed: {
-				name: 'Default Speed',
-				help: `The player walking speed everyone starts with.`
+				name: 'Player Speed',
+				help: `The player walking speed.`
+			},
+			respawnDelay: {
+				name: 'Respawn Time',
+				help: `The time the player has to wait after they are killed before they can play again.`
 			}
 		},
 		presets: {

@@ -17,6 +17,13 @@ export default {
 			botFill: {
 				name: 'Bot Fill',
 				help: `Wanneer deze optie is ingeschakeld, zullen bots alle lege spelerslots opvullen.`
+			},
+			winCondition: {
+				name: 'Win Voorwaarde',
+				help: `Bepaal wanneer het spel tot een einde moet komen. Dit is gekoppeld aan de instelling "Winnende Aantal".`
+			},
+			winAmount: {
+				name: 'Winnende Aantal'
 			}
 		},
 		presets: {
@@ -234,15 +241,10 @@ export default {
 		title: 'Gratis Online Cards Against Humanity Spel',
 		options: {
 			winCondition: {
-				name: 'Win Conditie',
-				help: `Bepaal wanneer het spel tot een einde moet komen. Dit is gekoppeld aan de instelling "Winnende Aantal".`,
 				data: {
 					first: `Eerste met <b>0</b> punten | Eerste met <b>1</b> punt | Eerste met <b>{count}</b> punten`,
 					most: `Meeste punten na <b>0</b> rondes | Meeste punten na <b>1</b> ronde | Meeste punten na <b>{count}</b> rondes`
 				}
-			},
-			winAmount: {
-				name: 'Winnende Aantal'
 			},
 			handSize: {
 				name: 'Kaarten in Hand',
@@ -391,7 +393,6 @@ export default {
 				}
 			},
 			winCondition: {
-				name: 'Win Voorwaarde',
 				help: `Hoe de winnaar zal worden bepaald.`,
 				data: {
 					[WIN_CONDITION.MORE_PIECES]: 'Meeste stukken',
@@ -499,17 +500,28 @@ export default {
 					'11x9': 'Rechthoek (11x9)'
 				}
 			},
+			winCondition: {
+				data: {
+					[WIN_CONDITION.LAST_STANDING]: `Laatste overlevende (<b>0</b> levens) | Laatste overlevende (<b>1</b> leven) | Laatste overlevende (<b>{count}</b> levens)`,
+					[WIN_CONDITION.KILL_COUNT]: `Eerste met <b>0</b> kills | Eerste met <b>1</b> kill | Eerste met <b>{count}</b> kills`,
+					[WIN_CONDITION.TIME]: `Meeste kills na <b>0</b> min. | Meeste kills na <b>1</b> min. | Meeste kills na <b>{count}</b> min.`
+				}
+			},
 			defaultBombCount: {
-				name: 'Standaard Aantal Bommen',
+				name: 'Aantal Bommen',
 				help: `Dit is het aantal bommen dat een speler tegelijkertijd kan plaatsen.`
 			},
 			defaultBombSize: {
-				name: 'Standaard Bom Grootte',
+				name: 'Bom Grootte',
 				help: `Dit is de ontploffingsstraal van een bom. De grootte wordt gemeten in tegels in elke richting.`
 			},
 			defaultSpeed: {
-				name: 'Standaard Snelheid',
+				name: 'Speler Snelheid',
 				help: `De loopsnelheid waarmee iedereen begint.`
+			},
+			respawnDelay: {
+				name: 'Respawn Tijd',
+				help: `De tijd die de speler moet wachten nadat die gedood is voordat die weer kan spelen.`
 			}
 		},
 		presets: {

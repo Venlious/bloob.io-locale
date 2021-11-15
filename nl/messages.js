@@ -120,7 +120,7 @@ export default {
 	},
 	misc: {
 		kills: 'Kills',
-		deaths: 'Doden',
+		deaths: 'Sterfgevallen',
 		bots: 'Bots',
 		missingSet: 'Ontbrekende Set',
 		share: 'Deel',
