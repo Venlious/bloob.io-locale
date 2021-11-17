@@ -70,6 +70,7 @@ export default {
 	content: {
 		scrollBackDown: 'Scroll terug',
 		pickYourself: 'Kies voor jezelf',
+		highPing: 'Je ping is hoog (%{ping}ms)',
 		round: 'Ronde (%{current}/%{total})',
 		skip: 'Sla over (%{current}/%{total})',
 		ready: 'Gereed (%{current}/%{total})',
@@ -283,6 +284,7 @@ export default {
 		}
 	},
 	info: {
+		highPing: `De ping is de tijd die je nodig hebt om te communiceren met de server. Je ziet alles later dan andere spelers en kan jitter en vertragingen ervaren.`,
 		menu: `Een verzameling van multiplayer browser spellen zonder de noodzaak om een account aan te maken. Speel zonder gedoe en pas de ervaring aan naar je eigen smaak.`,
 		file: {
 			upload: `Klik om te browsen of sleep uw bestand(en) hierheen`,
