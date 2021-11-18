@@ -521,6 +521,14 @@ export default {
 			respawnDelay: {
 				name: 'Respawn Time',
 				help: `The time the player has to wait after they are killed before they can play again.`
+			},
+			bombPush: {
+				name: 'Bomb Push',
+				help: `When enabled, you can walk into a bomb to push it and slide it in a direction.`
+			},
+			explosionDelay: {
+				name: 'Explosion Delay',
+				help: `The delay before a placed bomb will explode.`
 			}
 		},
 		presets: {

@@ -522,6 +522,14 @@ export default {
 			respawnDelay: {
 				name: 'Respawn Tijd',
 				help: `De tijd die de speler moet wachten nadat die gedood is voordat die weer kan spelen.`
+			},
+			bombPush: {
+				name: 'Bom Duwen',
+				help: `Indien ingeschakeld kun je tegen een bom aanlopen om deze te duwen in een bepaalde richting.`
+			},
+			explosionDelay: {
+				name: 'Explosievertraging',
+				help: `De vertraging voordat een geplaatste bom zal ontploffen.`
 			}
 		},
 		presets: {
