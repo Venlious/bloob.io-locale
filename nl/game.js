@@ -497,7 +497,8 @@ export default {
 				help: `Grotere speelvelden ondersteunen meerdere spelers.`,
 				data: {
 					'9x9': 'Klein Vierkant (9x9)',
-					'11x9': 'Rechthoek (11x9)'
+					'11x9': 'Rechthoek (11x9)',
+					qrSquare: 'QR Vierkant (11x11)'
 				}
 			},
 			winCondition: {

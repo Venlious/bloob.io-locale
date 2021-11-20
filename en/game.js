@@ -496,7 +496,8 @@ export default {
 				help: `The playing field used. Bigger field sizes can accommodate more players.`,
 				data: {
 					'9x9': 'Small Square (9x9)',
-					'11x9': 'Rectangle (11x9)'
+					'11x9': 'Rectangle (11x9)',
+					qrSquare: 'QR Square (11x11)'
 				}
 			},
 			winCondition: {
