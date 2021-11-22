@@ -531,6 +531,10 @@ export default {
 			explosionDelay: {
 				name: 'Explosievertraging',
 				help: `De vertraging voordat een geplaatste bom zal ontploffen.`
+			},
+			chainReaction: {
+				name: 'Kettingreactie',
+				help: `Indien geactiveerd, zal een explosie bommen binnen bereik doen ontploffen. Als deze optie is uitgeschakeld, zullen deze bommen in plaats daarvan worden verwijderd.`
 			}
 		},
 		presets: {

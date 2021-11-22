@@ -530,6 +530,10 @@ export default {
 			explosionDelay: {
 				name: 'Explosion Delay',
 				help: `The delay before a placed bomb will explode.`
+			},
+			chainReaction: {
+				name: 'Chain Reaction',
+				help: `When enabled, an explosion will trigger bombs within range to also explode. If disabled, these bombs will be removed instead.`
 			}
 		},
 		presets: {
