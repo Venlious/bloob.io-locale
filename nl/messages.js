@@ -86,6 +86,7 @@ export default {
 	category: {
 		misc: 'Misc',
 		dump: 'Dump',
+		bomb: 'Bom',
 		filter: 'Filter',
 		times: 'Tijden',
 		round: 'Ronde',
