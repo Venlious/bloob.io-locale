@@ -534,7 +534,7 @@ export default {
 			},
 			chainReaction: {
 				name: 'Kettingreactie',
-				help: `Indien geactiveerd, zal een explosie bommen binnen bereik doen ontploffen. Als deze optie is uitgeschakeld, zullen deze bommen in plaats daarvan worden verwijderd.`
+				help: `Indien geactiveerd, zal een explosie bommen binnen bereik doen ontploffen. De kills gaan naar de gebruiker die de bom plaatste die de kettingreactie in gang zette. Als deze optie is uitgeschakeld, zullen deze bommen in plaats daarvan worden verwijderd.`
 			}
 		},
 		presets: {

@@ -533,7 +533,7 @@ export default {
 			},
 			chainReaction: {
 				name: 'Chain Reaction',
-				help: `When enabled, an explosion will trigger bombs within range to also explode. If disabled, these bombs will be removed instead.`
+				help: `When enabled, an explosion will trigger bombs within range to also explode. The kills will go to the user who placed the bomb that initiated the chain reaction. If disabled, these bombs will be removed instead.`
 			}
 		},
 		presets: {
