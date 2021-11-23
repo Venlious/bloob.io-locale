@@ -85,6 +85,7 @@ export default {
 	},
 	category: {
 		misc: 'Misc',
+		field: 'Field',
 		dump: 'Dump',
 		bomb: 'Bomb',
 		filter: 'Filter',

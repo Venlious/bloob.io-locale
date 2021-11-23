@@ -85,6 +85,7 @@ export default {
 	},
 	category: {
 		misc: 'Misc',
+		field: 'Speelveld',
 		dump: 'Dump',
 		bomb: 'Bom',
 		filter: 'Filter',
