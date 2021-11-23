@@ -534,6 +534,19 @@ export default {
 			chainReaction: {
 				name: 'Chain Reaction',
 				help: `When enabled, an explosion will trigger bombs within range to also explode. The kills will go to the user who placed the bomb that initiated the chain reaction. If disabled, these bombs will be removed instead.`
+			},
+			cratePercentage: {
+				name: 'Crate Percentage',
+				help: `The percentage of crates that will be shown on the playing field. Crates can be blown up and may contain powerups.`,
+				data: {
+					'0%': `0% (Disabled)`,
+					'10%': `10%`,
+					'25%': `25%`,
+					'50%': `50%`,
+					'75%': `75%`,
+					'90%': `90%`,
+					'100%': `100%`
+				}
 			}
 		},
 		presets: {

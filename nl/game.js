@@ -535,6 +535,19 @@ export default {
 			chainReaction: {
 				name: 'Kettingreactie',
 				help: `Indien geactiveerd, zal een explosie bommen binnen bereik doen ontploffen. De kills gaan naar de gebruiker die de bom plaatste die de kettingreactie in gang zette. Als deze optie is uitgeschakeld, zullen deze bommen in plaats daarvan worden verwijderd.`
+			},
+			cratePercentage: {
+				name: 'Krat Percentage',
+				help: `Het percentage kratten dat op het speelveld te zien zal zijn. Kratten kunnen worden opgeblazen en kunnen powerups bevatten.`,
+				data: {
+					'0%': `0% (Uitgeschakeld)`,
+					'10%': `10%`,
+					'25%': `25%`,
+					'50%': `50%`,
+					'75%': `75%`,
+					'90%': `90%`,
+					'100%': `100%`
+				}
 			}
 		},
 		presets: {
