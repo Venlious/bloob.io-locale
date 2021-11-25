@@ -68,6 +68,8 @@ export default {
 		online: `<b>{count}</b> online`
 	},
 	content: {
+		percentage: '{percentage}%',
+		percentageDisabled: '{percentage}% (Uitgeschakeld)',
 		scrollBackDown: 'Scroll terug',
 		pickYourself: 'Kies voor jezelf',
 		highPing: 'Je ping is hoog (%{ping}ms)',

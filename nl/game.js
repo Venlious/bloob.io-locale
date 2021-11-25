@@ -538,16 +538,11 @@ export default {
 			},
 			cratePercentage: {
 				name: 'Krat Percentage',
-				help: `Het percentage kratten dat op het speelveld te zien zal zijn. Kratten kunnen worden opgeblazen en kunnen powerups bevatten.`,
-				data: {
-					'0%': `0% (Uitgeschakeld)`,
-					'10%': `10%`,
-					'25%': `25%`,
-					'50%': `50%`,
-					'75%': `75%`,
-					'90%': `90%`,
-					'100%': `100%`
-				}
+				help: `Het percentage kratten dat op het speelveld te zien zal zijn. Kratten kunnen worden opgeblazen en kunnen powerups bevatten.`
+			},
+			powerUpPercentage: {
+				name: 'Power-up Percentage',
+				help: `Wijzig hoe groot de kans is dat een power up wordt gedropt als een krat wordt vernietigd.`
 			}
 		},
 		presets: {

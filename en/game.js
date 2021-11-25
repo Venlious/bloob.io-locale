@@ -537,16 +537,11 @@ export default {
 			},
 			cratePercentage: {
 				name: 'Crate Percentage',
-				help: `The percentage of crates that will be shown on the playing field. Crates can be blown up and may contain powerups.`,
-				data: {
-					'0%': `0% (Disabled)`,
-					'10%': `10%`,
-					'25%': `25%`,
-					'50%': `50%`,
-					'75%': `75%`,
-					'90%': `90%`,
-					'100%': `100%`
-				}
+				help: `The percentage of crates that will be shown on the playing field. Crates can be blown up and may contain powerups.`
+			},
+			powerUpPercentage: {
+				name: 'Power-up Percentage',
+				help: `Modify how likely it is that a power up is dropped when a crate is destroyed.`
 			}
 		},
 		presets: {
