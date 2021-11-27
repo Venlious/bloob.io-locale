@@ -356,12 +356,13 @@ export default {
 			selected: 'Je hebt op %{selection} gestemd'
 		},
 		about: {
-			description: `Bloob.io is een hobby project bestaande uit multiplayer browser games. Spellen moeten leuk, configureerbaar en toegankelijk zijn. Suggesties en ideeën zijn altijd welkom!`,
+			description: `Bloob.io is een hobby project bestaande uit multiplayer browser games. Deze site blijft reclamevrij en alle spellen zijn volledig naar eigen wens in te stellen. Suggesties zijn altijd welkom, voel je vrij om contact op te nemen!`,
+			licensing: `Sommige spellen kunnen gelicenseerd worden voor gebruik op jouw site of platform (met de nodige aanpassingen). Neem contact op als je geïnteresseerd bent.`,
 			developedBy: 'Ontwikkeld door %{name}',
 			iconsSource: 'Icoontjes met dank aan %{name} (Gratis)',
 			soundsSource: 'Geluiden voorzien door %{name} (Licentie)',
 			rottenApples: 'Rotten Apples gebaseerd op %{name} (Creative Commons BY-NC-SA 2.0)',
-			support: 'Steun mij'
+			support: 'Doneer'
 		},
 		card: {
 			sets: {

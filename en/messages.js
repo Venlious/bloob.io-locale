@@ -356,12 +356,13 @@ export default {
 			selected: 'You voted for %{selection}'
 		},
 		about: {
-			description: `Bloob.io is a project of passion consisting of multiplayer browser games. Games should be fun, configurable, and easily accessible. Feel free to make suggestions!`,
+			description: `Bloob.io is a project of passion consisting of multiplayer browser games. This site will remain ad-free and all games entirely configurable to your liking. Suggestions are always welcome, feel free to reach out!`,
+			licensing: `Some games can be licensed for use on your site or platform (with custom adjustments). Get in touch in case you are interested.`,
 			developedBy: 'Developed by %{name}',
 			iconsSource: 'Icons courtesy of %{name} (Free)',
 			soundsSource: 'Sounds provided by %{name} (Licensed)',
 			rottenApples: 'Rotten Apples based on %{name} (Creative Commons BY-NC-SA 2.0)',
-			support: 'Support Me'
+			support: 'Donate'
 		},
 		card: {
 			sets: {
