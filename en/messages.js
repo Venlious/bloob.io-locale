@@ -119,6 +119,7 @@ export default {
 		playing: '0 playing | 1 playing | {count} playing',
 		players: '0 players | 1 player | {count} players',
 		selectedCards: 'No cards selected | 1 card selected | {count} cards selected',
+		matches: '0 matches | 1 match | {count} matches',
 		matchesFound: '0 matches found | 1 match found | {count} matches found',
 		matchesWaiting: '0 matches waiting | 1 match waiting | {count} matches waiting',
 		needMorePlayers: 'Need 0 more players | Need 1 more player | Need {count} more players'

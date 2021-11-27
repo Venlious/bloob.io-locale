@@ -117,8 +117,9 @@ export default {
 		cards: '0 kaarten | 1 kaart | {count} kaarten',
 		moves: '0 zetten | 1 zet | {count} zetten',
 		players: '0 spelers | 1 speler | {count} spelers',
-		playing: '0 aan het spelen | 1 aan het spelen | {count} aan het spelen',
+		playing: '0 spelen nu | 1 speelt nu | {count} spelen nu',
 		selectedCards: `Geen kaarten geselecteerd | 1 kaart geselecteerd | {count} kaarten geselecteerd`,
+		matches: '0 spellen | 1 spel | {count} spellen',
 		matchesFound: '0 spellen gevonden | 1 spel gevonden | {count} spellen gevonden',
 		matchesWaiting: '0 spellen wachten | 1 spel wacht | {count} spellen wachten',
 		needMorePlayers: 'Nog 0 spelers nodig | Nog 1 speler nodig | Nog {count} spelers nodig'
