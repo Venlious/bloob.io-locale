@@ -109,7 +109,7 @@ export default {
 	count: {
 		kills: '0 kills | 1 kill | {count} kills',
 		deaths: '0 deaths | 1 death | {count} deaths',
-		lives: '0 lives | 1 live | {count} lives',
+		lives: '0 lives | 1 life | {count} lives',
 		files: '0 files | 1 file | {count} files',
 		points: '0 points | 1 point | {count} points',
 		pieces: '0 pieces | 1 piece | {count} pieces',
