@@ -81,11 +81,15 @@ export default {
 		inProgress: 'You cannot change the preset while the game is in progress.'
 	},
 	match: {
+		empty: `Match closed. All other players left the match.`,
+		tooLate: `You didn't accept the rematch request and were sent back to the main menu.`,
+		cancelledRematch: `Sorry! There aren't enough players left for a rematch.`,
 		inactive: `The match you were in has been closed as it has been inactive for too long.`,
 		inactiveWarning: `Match will soon be closed due to inactivity unless action is taken.`,
 		kicked: 'You were kicked from the match you were in.',
 		deleted: 'The match you were in has been deleted.',
 		invalid: 'Match with ID "%{id}" does not exist.',
+		computer: 'This is a match against the computer, you cannot join.',
 		private: 'This is a private match. You must enter an ID to join.',
 		startStop: 'You are unable to start or stop a game that is in progress.',
 		insufficientPlayers: 'Need at least %{min} players to start the match.',
@@ -116,6 +120,7 @@ export default {
 		finishedGame: `You can only peform this action after the game has finished.`,
 		inGame: `You must be in a game to perform this action.`,
 		notInGame: `You cannot perform this action while you are in a game.`,
+		notMatchmaking: `You cannot perform this action while you are matchmaking.`,
 		matchHost: `You are not the host and cannot perform this action.`,
 		admin: `This action is restricted to Admins.`
 	}

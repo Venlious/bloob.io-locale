@@ -12,6 +12,7 @@ export default {
 		cool: `😎`
 	},
 	UNIVERSAL: {
+		leftTheGame: 'heeft het spel verlaten',
 		affirmative: `Oke.`,
 		thanks: `Dankje!`,
 		sorry: `Sorry!`,

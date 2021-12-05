@@ -12,6 +12,7 @@ export default {
 			lobby: 'Spel Lobby',
 			finished: 'Spel Afgelopen',
 			tied: `Gelijkspel`,
+			finishedRematch: 'Rematch Begint Straks',
 			inProgress: `Spel is Gaande`,
 			staleMoves: `Spel Verlopen — %{staleCount} zetten zonder overname`,
 			concede: `Spel Afgelopen — Tegenstander heeft opgegeven`,
@@ -33,6 +34,7 @@ export default {
 		description: {
 			lobby: `Wachten op spelers`,
 			start: `Spel begint in %{TEXT}...`,
+			rematchStart: `Rematch begint in %{TEXT}...`,
 			timeRemaining: `%{CLOCK} over...`,
 			nextRound: `Volgende ronde in %{TEXT}...`,
 			youWon: `Je hebt gewonnen`,
@@ -196,6 +198,7 @@ export default {
 		words: 'Woorden',
 		score: 'Score',
 		and: 'en',
+		vs: 'vs',
 		rank: 'Plaats',
 		points: 'Punten',
 		player: 'Speler',
@@ -215,6 +218,8 @@ export default {
 		incrementCounter: 'Stappen van %{count}',
 		selectedOfLimit: '%{current} geselecteerd van %{total} limiet',
 		helpLocalise: 'Help de lokalisatie te verbeteren',
+		tiredOfWaiting: 'Klaar met wachten?',
+		playAgainstBots: 'Speel Tegen Bots',
 		howToPlay: 'Bekijk hoe je dit spel speelt',
 		volume: {
 			title: 'Volume',
@@ -222,6 +227,7 @@ export default {
 			effects: 'Effecten Volume'
 		},
 		match: {
+			random: 'Vind Willekeurig Spel',
 			create: 'Maak Nieuw Spel',
 			rematch: 'Rematch',
 			start: 'Start Spel',
@@ -299,6 +305,11 @@ export default {
 				saveAs: `Opent een nieuw tabblad waar je dan het bestand moet opslaan door met de rechtermuisknop te klikken en "Opslaan als" te selecteren`
 			}
 		},
+		matchmaking: {
+			cancel: 'Annuleer Matchmaking',
+			searching: 'Op zoek naar tegenstanders... (%{time})',
+			found: 'Spel gevonden! Begint in %{time}...'
+		},
 		chat: {
 			empty: {
 				title: 'Geen berichten',
@@ -321,6 +332,8 @@ export default {
 				others: `Iemand anders zal spelleider worden zodra je het spel verlaat.`
 			},
 			join: {
+				waiting: `Wachtend op de tegenstander om de rematch te accepteren...`,
+				starting: `De rematch begint over %{time}...`,
 				private: `Je kunt meedoen met een privé spel door de viercijferige ID in te vullen.`,
 				rematch: `%{name} wilt een rematch`
 			},

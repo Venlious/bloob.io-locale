@@ -18,6 +18,14 @@ export default {
 				name: 'Bot Fill',
 				help: `Wanneer deze optie is ingeschakeld, zullen bots alle lege spelerslots opvullen.`
 			},
+			botDifficulty: {
+				name: 'Bot Moeilijkheidsgraad',
+				data: {
+					easy: 'Makkelijk',
+					normal: 'Normaal',
+					hard: 'Moeilijk'
+				}
+			},
 			winCondition: {
 				name: 'Win Voorwaarde',
 				help: `Bepaal wanneer het spel tot een einde moet komen. Dit is gekoppeld aan de instelling "Winnende Aantal".`

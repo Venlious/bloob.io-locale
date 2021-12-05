@@ -12,6 +12,7 @@ export default {
 			lobby: 'Match Lobby',
 			finished: 'Match Finished',
 			tied: `Match Tied`,
+			finishedRematch: 'Rematch Starting Soon',
 			inProgress: `Match in Progress`,
 			staleMoves: `Match Staled — %{staleCount} moves with no take over`,
 			concede: `Match Finished — Opponent chose to forfeit`,
@@ -33,6 +34,7 @@ export default {
 		description: {
 			lobby: `Waiting for players`,
 			start: `Match starts in %{TEXT}...`,
+			rematchStart: `Rematch starts in %{TEXT}...`,
 			timeRemaining: `%{CLOCK} remaining...`,
 			nextRound: `Next round in %{TEXT}...`,
 			youWon: `You won`,
@@ -196,6 +198,7 @@ export default {
 		words: 'Words',
 		score: 'Score',
 		and: 'and',
+		vs: 'vs',
 		rank: 'Rank',
 		points: 'Points',
 		player: 'Player',
@@ -215,6 +218,8 @@ export default {
 		incrementCounter: 'Increments of %{count}',
 		selectedOfLimit: 'Selected %{current} out of %{total} limit',
 		helpLocalise: 'Help improve localisation',
+		tiredOfWaiting: 'Tired of waiting?',
+		playAgainstBots: 'Play Against Bots',
 		howToPlay: 'Learn how to play this game',
 		volume: {
 			title: 'Volume',
@@ -222,7 +227,8 @@ export default {
 			effects: 'Effects Volume'
 		},
 		match: {
-			create: 'Create Match',
+			random: 'Play Random Opponents',
+			create: 'Create Custom Match',
 			rematch: 'Rematch',
 			start: 'Start Match',
 			starting: 'Match Starting',
@@ -299,6 +305,11 @@ export default {
 				saveAs: `Opens a new tab where you will then have to save the file by right clicking and using "Save As"`
 			}
 		},
+		matchmaking: {
+			cancel: 'Cancel Matchmaking',
+			searching: 'Looking for opponents... (%{time})',
+			found: 'Match found! Starting in %{time}...'
+		},
 		chat: {
 			empty: {
 				title: 'No Messages',
@@ -321,6 +332,8 @@ export default {
 				others: `Somebody else will become the new host when you leave.`
 			},
 			join: {
+				waiting: `Waiting for other player to accept rematch...`,
+				starting: `Rematch will start in %{time}...`,
 				private: `You can join a private match by filling in the four-digit ID.`,
 				rematch: `%{name} would like a rematch`
 			},

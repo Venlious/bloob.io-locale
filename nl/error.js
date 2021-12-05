@@ -81,11 +81,15 @@ export default {
 		inProgress: 'Je kunt de preset niet veranderen terwijl het spel bezig is.'
 	},
 	match: {
+		empty: `Spel gesloten. Alle andere spelers verlieten de wedstrijd.`,
+		tooLate: `Je hebt het rematch verzoek niet geaccepteerd en bent teruggestuurd naar het hoofdmenu.`,
+		cancelledRematch: `Sorry! Er zijn niet genoeg spelers over voor een rematch.`,
 		inactive: `Het spel waar je in zat is gesloten omdat deze te lang inactief is geweest.`,
 		inactiveWarning: `Dit spel zal binnenkort worden gesloten wegens inactiviteit, tenzij er actie wordt ondernomen.`,
 		kicked: 'Je bent uit het spel gezet waar je in zat.',
 		deleted: 'Het spel waar je in zat is verwijderd.',
 		invalid: 'Spel met ID "%{id}" bestaat niet.',
+		computer: 'Dit is een spel tegen de computer, je kunt niet meedoen.',
 		private: 'Dit is een privé spel. Je moet een ID invoeren om mee te doen.',
 		startStop: 'Je kunt een spel dat bezig is niet starten of stoppen.',
 		insufficientPlayers: 'Je hebt minstens %{min} spelers nodig om het spel te beginnen.',
@@ -116,6 +120,7 @@ export default {
 		finishedGame: `Je kunt deze actie alleen uitvoeren als het spel is afgelopen.`,
 		inGame: `Je moet in een spel zijn om deze actie uit te voeren.`,
 		notInGame: `Je kunt deze actie niet uitvoeren als je in al in een spel zit.`,
+		notMatchmaking: `Je kunt deze actie niet uitvoeren als je naar een spel op zoek bent.`,
 		matchHost: `Je bent niet de spelleider en kunt deze actie niet uitvoeren`,
 		admin: `Deze actie is voorbehouden aan Admins.`
 	}

@@ -17,6 +17,14 @@ export default {
 				name: 'Bot Fill',
 				help: `When enabled, bots will fill up any empty player slots.`
 			},
+			botDifficulty: {
+				name: 'Bot Difficulty',
+				data: {
+					easy: 'Easy',
+					normal: 'Normal',
+					hard: 'Hard'
+				}
+			},
 			winCondition: {
 				name: 'Winning Condition',
 				help: `Determine when the game should come to a conclusion. This is linked to the "Winning Amount" setting.`
