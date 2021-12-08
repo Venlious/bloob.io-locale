@@ -228,7 +228,7 @@ export default {
 		},
 		match: {
 			random: 'Play Random Opponents',
-			create: 'Create Custom Match',
+			create: 'Create Match',
 			rematch: 'Rematch',
 			start: 'Start Match',
 			starting: 'Match Starting',
