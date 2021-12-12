@@ -86,6 +86,7 @@ export default {
 		cancelledRematch: `Sorry! There aren't enough players left for a rematch.`,
 		inactive: `The match you were in has been closed as it has been inactive for too long.`,
 		inactiveWarning: `Match will soon be closed due to inactivity unless action is taken.`,
+		replacedByBot: `You were replaced by a bot and cannot rejoin this game.`,
 		kicked: 'You were kicked from the match you were in.',
 		deleted: 'The match you were in has been deleted.',
 		invalid: 'Match with ID "%{id}" does not exist.',
