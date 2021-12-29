@@ -221,6 +221,8 @@ export default {
 		helpLocalise: 'Help improve localisation',
 		tiredOfWaiting: 'Tired of waiting?',
 		playAgainstBots: 'Play Against Bots',
+		playingAgainstBots: 'Playing Against Bots',
+		playingAgainstPlayers: 'Playing Against Players',
 		howToPlay: 'Learn how to play this game',
 		volume: {
 			title: 'Volume',
