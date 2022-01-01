@@ -221,6 +221,8 @@ export default {
 		helpLocalise: 'Help de lokalisatie te verbeteren',
 		tiredOfWaiting: 'Klaar met wachten?',
 		playAgainstBots: 'Speel Tegen Bots',
+		playingAgainstBots: 'Spelen Tegen Bots',
+		playingAgainstPlayers: 'Spelen Tegen Spelers',
 		howToPlay: 'Bekijk hoe je dit spel speelt',
 		volume: {
 			title: 'Volume',
