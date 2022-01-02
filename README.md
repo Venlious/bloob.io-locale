@@ -20,7 +20,9 @@ While the project itself is not open source, the localisation is. Feel free to c
   * Feel free to [make a new issue](https://github.com/Venlious/bloob.io-locale/issues/new) with your question.
 
 # Contributors
-* Tristan Volk (@Venlious)
+* Tristan Volk ([@Venlious](https://github.com/Venlious))
   * English (UK)
   * Dutch (NL)
+* Jay ([@untypedjay](https://github.com/untypedjay))
+  * German (DE)
 * ... you? :)
