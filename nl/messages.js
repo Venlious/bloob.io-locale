@@ -379,6 +379,7 @@ export default {
 			iconsSource: `Icoontjes met dank aan %{name} (Gratis)`,
 			soundsSource: `Geluiden voorzien door %{name} (Licentie)`,
 			rottenApples: `Rotten Apples gebaseerd op %{name} (Creative Commons BY-NC-SA 2.0)`,
+			localization: `Lokalisatie door vrijwillige bijdragers`,
 			support: `Doneer`
 		},
 		card: {
