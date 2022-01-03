@@ -12,7 +12,7 @@ export default {
 			lobby: `Lobby`,
 			finished: `Spiel vorbei`,
 			tied: `Spiel unentschieden`,
-			finishedRematch: `Rückspiel beginnt bald`,
+			finishedRematch: `Revanche beginnt bald`,
 			inProgress: `Spiel im Gange`,
 			staleMoves: `Spiel vorbei — %{staleCount} Züge ohne Schlagen`,
 			concede: `Spiel vorbei — Gegner hat aufgegeben`,
@@ -34,7 +34,7 @@ export default {
 		description: {
 			lobby: `Warte auf Spieler`,
 			start: `Spiel startet in %{TEXT}...`,
-			rematchStart: `Rückspiel startet in %{TEXT}...`,
+			rematchStart: `Revanche startet in %{TEXT}...`,
 			timeRemaining: `%{CLOCK} verbleibend...`,
 			nextRound: `Nächste Runde in %{TEXT}...`,
 			youWon: `Du hast gewonnen`,
@@ -142,7 +142,7 @@ export default {
 		information: `Information`,
 		language: `Sprache`,
 		toggle: `Umschalten`,
-		concedeGame: `Spiel aufgeben`,
+		concedeGame: `Aufgeben`,
 		processFiles: `Dateien verarbeiten`,
 		sendMessage: `Nachricht senden`,
 		chat: `Chat`,
@@ -165,7 +165,7 @@ export default {
 		globalAnnouncement: `Weltweite Ankündigung`,
 		broadcast: `Broadcast`,
 		login: `Anmelden`,
-		about: `About`,
+		about: `Über`,
 		public: `Öffentlich`,
 		private: `Privat`,
 		yes: `Ja`,
@@ -211,7 +211,7 @@ export default {
 		customise: `Anpassen`,
 		cancelCountdown: `Countdown Abbrechen`,
 		inviteOthers: `Andere Einladen`,
-		rematch: `Rückspiel`,
+		rematch: `Revanche`,
 		activeFilters: `Aktive Filter`,
 		minMax: `Min. %{min} | Max. %{max}`,
 		playersMinMax: `%{min}-%{max} Spieler`,
@@ -225,14 +225,14 @@ export default {
 		playingAgainstPlayers: undefined,
 		howToPlay: `Lerne das Spiel zu spielen`,
 		volume: {
-			title: `Volumen`,
-			interface: `Bildschirm Volumen`,
-			effects: `Effekt Volumem`
+			title: `Lautstärke`,
+			interface: `Bildschirmlautstärke`,
+			effects: `Effektlautstärke`
 		},
 		match: {
 			random: `Spiele gegen zufällige Gegner`,
 			create: `Spiel erstellen`,
-			rematch: `Rückspiel`,
+			rematch: `Revanche`,
 			start: `Spiel starten`,
 			starting: `Spiel startet`,
 			leave: `Spiel verlassen`,
@@ -244,7 +244,7 @@ export default {
 		matches: {
 			browse: `Spiele durchsuchen`,
 			available: `Verfügbare Spiele`,
-			noneAvailable: `Nicht verfügbare Spiele`
+			noneAvailable: `Keine Spiele verfügbar`
 		},
 		game: {
 			join: `Trete Spiel %{title} bei`,
@@ -336,10 +336,10 @@ export default {
 				others: `Jemand anderes wird der neue Gastgeber, wenn du gehst.`
 			},
 			join: {
-				waiting: `Warte auf den anderen Spieler das Rückspiel zu akzeptieren...`,
-				starting: `Rückspiel startet in %{time}...`,
+				waiting: `Warte auf den anderen Spieler die Revanche zu akzeptieren...`,
+				starting: `Revanche startet in %{time}...`,
 				private: `Du kannst einem privaten Spiel beitreten, indem du die vierstellige ID eingibst.`,
-				rematch: `%{name} möchte ein Rückspiel`
+				rematch: `%{name} möchte eine Revanche`
 			},
 			makeHost: `Du bist dabei "%{name}" zum neuen Gastgeber zu machen.`,
 			kickUser: `Du bist dabei "%{name}" aus diesem Spiel zu entfernen.`,
