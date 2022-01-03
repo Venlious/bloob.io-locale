@@ -221,8 +221,8 @@ export default {
 		helpLocalise: `Zur Verbesserung der Lokalisierung beitragen`,
 		tiredOfWaiting: `Keine Lust mehr zu warten?`,
 		playAgainstBots: `Gegen Bots spielen`,
-		playingAgainstBots: undefined,
-		playingAgainstPlayers: undefined,
+		playingAgainstBots: `Spiel gegen Bots`,
+		playingAgainstPlayers: `Spiel gegen Spieler`,
 		howToPlay: `Lerne das Spiel zu spielen`,
 		volume: {
 			title: `Lautstärke`,
