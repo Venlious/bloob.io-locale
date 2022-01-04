@@ -84,11 +84,11 @@ export default {
 			},
 			roundDuration: {
 				name: `Rundendauer`,
-				help: `Wie lang eine einzelne Runde dauert.`
+				help: `Wie lange eine einzelne Runde dauert.`
 			},
 			roundIntermission: {
 				name: `Pausenzeit`,
-				help: `Wie lang die Zeit zwischen den Runden ist.`
+				help: `Wie lange die Zeit zwischen den Runden ist.`
 			},
 			minWordLength: {
 				name: `Min. Wortlänge`,
@@ -135,7 +135,7 @@ export default {
 				title: `Wortauswahl`,
 				desc: {
 					'1': `Halte die Maus auf einem Buchstaben gedrückt und ziehe in eine beliebige Richtung um ein Wort zu bilden.`,
-					'2': `Sobald du die Maus loslässt, wird das Wort verarbeitet und du erhälst Punkte, die von der Länge des Wortes abhängen.`
+					'2': `Sobald du die Maus loslässt, wird das Wort verarbeitet und du erhältst Punkte, die von der Länge des Wortes abhängen.`
 				}
 			},
 			gameplay: {
@@ -238,7 +238,7 @@ export default {
 				title: `Spielende`,
 				desc: {
 					'1': `Standardmäßig gewinnt die erste Person mit vier Spielsteinen in einer Reihe das Spiel. Reihen können waagrecht, senkrecht und diagonal gebildet werden.`,
-					'2': `Der Spielleiter kann die Siegbedingung einstellen und verschieden Bedingungen zulassen.`
+					'2': `Der Spielleiter kann die Siegbedingung einstellen und verschiedene Bedingungen zulassen.`
 				}
 			}
 		}
@@ -404,14 +404,14 @@ export default {
 				help: `Wie der Gewinner bestimmt wird.`,
 				data: {
 					[WIN_CONDITION.MORE_PIECES]: `Meiste Spielsteine`,
-					[WIN_CONDITION.OPPOSITE_SIDE]: `Erreichen der gegenüberliegenden Seite`
+					[WIN_CONDITION.OPPOSITE_SIDE]: `Erreichen der anderen Seite`
 				}
 			},
 			kingCondition: {
 				name: `Krönungsbedingung`,
 				help: `Unter welchen Bedingungen ein Spielstein gekrönt wird. Ein gekrönter Spielstein darf sich in jede Richtung bewegen.`,
 				data: {
-					[CHECKERS_KING_TYPE.OPPOSITE_SIDE]: `Erreichen der gegenüberliegenden Seite`,
+					[CHECKERS_KING_TYPE.OPPOSITE_SIDE]: `Erreichen der anderen Seite`,
 					[CHECKERS_KING_TYPE.TAKE]: `Schlagen eines Spielsteins`,
 					[CHECKERS_KING_TYPE.ALL]: `Jeder Spielstein ist gekrönt`,
 					[CHECKERS_KING_TYPE.NONE]: `Deaktiviert`
@@ -469,13 +469,13 @@ export default {
 				title: `Bewegen der Spielsteine`,
 				desc: {
 					'1': `Spielsteine können diagonal bewegt werden. Wenn du an der Reihe bist, werden alle Steine, die du bewegen kannst, hervorgehoben.`,
-					'2': `Durch Klicken auf einen markierten Spielstein kannst du alle möglichen Züge für diese Spielstein sehen.`
+					'2': `Durch Klicken auf einen markierten Spielstein kannst du alle möglichen Züge für diesen Spielstein sehen.`
 				}
 			},
 			take: {
 				title: `Spielsteine schlagen`,
 				desc: {
-					'1': `Wenn ein gegnerischer Spielstein diagonal neben deinem Spielstein steht und dahinter ein freies Feld ist, kannst du ihn schlagen.`,
+					'1': `Wenn ein gegnerischer Spielstein diagonal neben deinem Spielstein steht und sich dahinter ein freies Feld befindet, kannst du ihn schlagen.`,
 					'2': `Je nach Einstellung musst du entweder Spielsteine schlagen, wenn dies möglich ist, oder kannst sogar rückwärts schlagen.`
 				}
 			},
@@ -489,7 +489,7 @@ export default {
 			goal: {
 				title: `Spielziel`,
 				desc: {
-					'1': `Normalerweise ist das Ziel, alle anderen Figuren des Gegners auszuschalten oder bis keine gültigen Züge mehr gemacht werden können.`,
+					'1': `Standardmäßig ist das Ziel, alle anderen Figuren des Gegners auszuschalten oder bis keine gültigen Züge mehr gemacht werden können.`,
 					'2': `Das Ziel des Spiels, auch als Siegbedingung bezeichnet, kann in den Einstellungen geändert werden.`
 				}
 			}
