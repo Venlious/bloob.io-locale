@@ -102,6 +102,7 @@ export default {
 		maxSubceedMinLength: `Die maximale Länge kann nicht kleiner als die minimale Länge sein`
 	},
 	profile: {
+		profanity: undefined,
 		missingData: `Fehlende Daten für Spitzname und/oder Bild.`,
 		incorrectNickname: `Spitzname ungültig.`,
 		incorrectPicture: `Bild ungültig.`,

@@ -102,6 +102,7 @@ export default {
 		maxSubceedMinLength: `Max. lengte kan niet kleiner zijn dan de min. lengte`
 	},
 	profile: {
+		profanity: 'Nickname lijkt verboden taal te bevatten.',
 		missingData: `Ontbrekende nickname en/of karakter argumenten.`,
 		incorrectNickname: `Nickname is onjuist geformatteerd.`,
 		incorrectPicture: `Karakter is onjuist geformatteerd.`,
