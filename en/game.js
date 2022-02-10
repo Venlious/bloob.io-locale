@@ -496,7 +496,7 @@ export default {
 	},
 	[GAME_TYPE.BLOMBER]: {
 		name: `Blomber`,
-		description: `Blomber is a Bomberman multiplayer game with more replayability than most other games. It\'s free, easy to play, customisable, and requires no sign-up. Play now.`,
+		description: `Blomber is a Bomberman multiplayer game with more replayability than most other games. It's free, easy to play, customisable, and requires no sign-up. Play now.`,
 		title: `Bomberman Multiplayer Game | Bloob.io`,
 		options: {
 			field: {
