@@ -379,7 +379,7 @@ export default {
 	},
 	[GAME_TYPE.CHECKERS]: {
 		name: `Checkers`,
-		description: `Checkers is the classic board fast-paced game you know and love with exciting twists! Be in control and alter the rules as you like. Play with friends now.`,
+		description: `Checkers is the classic fast-paced board game you know and love with exciting twists! Be in control and alter the rules as you like. Play with friends now.`,
 		title: `Classic Multiplayer Board Game | Bloob.io`,
 		options: {
 			forceTake: {
