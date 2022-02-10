@@ -46,6 +46,7 @@ export default {
 	},
 	[GAME_TYPE.WORDRACE]: {
 		name: `Wortrennen`,
+		tooltip: `Finde Wörter in beliebiger Richtung auf einem zufällig generierten Feld, während du gegen andere mit demselben Ziel antrittst.`,
 		description: `Finde Wörter in beliebiger Richtung auf einem zufällig generierten Feld, während du gegen andere mit demselben Ziel antrittst.`,
 		title: `Kostenloses Online-Wortsuchspiel`,
 		options: {
@@ -163,6 +164,7 @@ export default {
 	},
 	[GAME_TYPE.FOUR_IN_A_ROW]: {
 		name: `Vier gewinnt`,
+		tooltip: `Spiele Vier gewinnt mit bis zu sechs Spielern entweder im klassischen Spielmodus oder in den verfügbaren Varianten.`,
 		description: `Spiele Vier gewinnt mit bis zu sechs Spielern entweder im klassischen Spielmodus oder in den verfügbaren Varianten.`,
 		title: `Kostenloses Multiplayer-Spiel für 2-6 Spieler`,
 		options: {
@@ -245,6 +247,7 @@ export default {
 	},
 	[GAME_TYPE.ROTTEN_APPLES]: {
 		name: `Rotten Apples`,
+		tooltip: `Spiele einen Cards Against Humanity-Klon und passe das Spielerlebnis nach deinen Wünschen an.`,
 		description: `Spiele einen Cards Against Humanity-Klon und passe das Spielerlebnis nach deinen Wünschen an.`,
 		title: `Gratis Online Cards Against Humanity Spiel`,
 		options: {
@@ -380,6 +383,7 @@ export default {
 	},
 	[GAME_TYPE.CHECKERS]: {
 		name: `Checkers`,
+		tooltip: `Spiele hier Dame mit bis zu 4 Spielern und einer Vielzahl von anpassbaren Regeln.`,
 		description: `Spiele hier Dame mit bis zu 4 Spielern und einer Vielzahl von anpassbaren Regeln.`,
 		title: `Kostenloses Online-Dame-Spiel für 2-4 Spieler`,
 		options: {
@@ -497,6 +501,7 @@ export default {
 	},
 	[GAME_TYPE.BLOMBER]: {
 		name: `Blomber`,
+		tooltip: `Jage deine Gegner in einem intensiven Schlachtfeld voller Power-Ups in die Luft.`,
 		description: `Jage deine Gegner in einem intensiven Schlachtfeld voller Power-Ups in die Luft.`,
 		title: `Kostenloses von Bomberman inspiriertes Online-Spiel`,
 		options: {

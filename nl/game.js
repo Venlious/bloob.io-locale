@@ -4,7 +4,6 @@ import WIN_CONDITION from '../../../assets/enums/win-condition'
 
 export default {
 	generic: {
-		description: `A collection of multiplayer browser-based games without the need to make an account. Play hassle free and customise the experience to your liking.`,
 		title: `Gratis Online Multiplayer Browserspellen`,
 		options: {
 			public: {
@@ -46,6 +45,7 @@ export default {
 	},
 	[GAME_TYPE.WORDRACE]: {
 		name: `Wordrace`,
+		tooltip: `Zoek woorden in elke richting op een willekeurig gegenereerd veld terwijl je racet tegen anderen met hetzelfde doel.`,
 		description: `Zoek woorden in elke richting op een willekeurig gegenereerd veld terwijl je racet tegen anderen met hetzelfde doel.`,
 		title: `Gratis Online Woord Zoek Spel`,
 		options: {
@@ -163,6 +163,7 @@ export default {
 	},
 	[GAME_TYPE.FOUR_IN_A_ROW]: {
 		name: `Vier-op-een-Rij`,
+		tooltip: `Speel vier-op-een-rij met maximaal zes spelers in de klassieke spelmodus of beschikbare variaties.`,
 		description: `Speel vier-op-een-rij met maximaal zes spelers in de klassieke spelmodus of beschikbare variaties.`,
 		title: `Gratis Online Vier-op-een-Rij Voor 2-6 Spelers`,
 		options: {
@@ -245,6 +246,7 @@ export default {
 	},
 	[GAME_TYPE.ROTTEN_APPLES]: {
 		name: `Rotten Apples`,
+		tooltip: `Speel een Cards Against Humanity-kloon en pas je ervaring aan naar eigen smaak.`,
 		description: `Speel een Cards Against Humanity-kloon en pas je ervaring aan naar eigen smaak.`,
 		title: `Gratis Online Cards Against Humanity Spel`,
 		options: {
@@ -380,6 +382,7 @@ export default {
 	},
 	[GAME_TYPE.CHECKERS]: {
 		name: `Checkers`,
+		tooltip: `Speel hier dammen met maximaal 4 spelers en allerlei aanpasbare regels.`,
 		description: `Speel hier dammen met maximaal 4 spelers en allerlei aanpasbare regels.`,
 		title: `Gratis Online Dammen Voor 2-4 Spelers`,
 		options: {
@@ -497,6 +500,7 @@ export default {
 	},
 	[GAME_TYPE.BLOMBER]: {
 		name: `Blomber`,
+		tooltip: `Blaas je tegenstanders op in een intens slagveld vol power-ups.`,
 		description: `Blaas je tegenstanders op in een intens slagveld vol power-ups.`,
 		title: `Gratis Online Bomberman Geïnspireerd Spel`,
 		options: {
