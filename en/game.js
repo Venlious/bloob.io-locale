@@ -4,7 +4,7 @@ import WIN_CONDITION from '../../../assets/enums/win-condition'
 
 export default {
 	generic: {
-		title: `Free Fun Multiplayer Browser Games`,
+		title: `Free Multiplayer Games Online | No Sign-Up Needed`,
 		options: {
 			public: {
 				name: `Match Privacy`
@@ -46,7 +46,7 @@ export default {
 	[GAME_TYPE.WORDRACE]: {
 		name: `Wordrace`,
 		description: `Find words in any direction on a randomly generated field while racing against others with the same objective.`,
-		title: `Free Multiplayer Word Finding Game`,
+		title: `Unique Multiplayer Word Game | Bloob.io`,
 		options: {
 			globalLanguage: {
 				name: `Global Language`,
@@ -162,8 +162,8 @@ export default {
 	},
 	[GAME_TYPE.FOUR_IN_A_ROW]: {
 		name: `Four in a Row`,
-		description: `Play Four in a Row with up to six players in either the classic gamemode or available variations.`,
-		title: `Free Multiplayer Game for 2-6 Players`,
+		description: `Four in a Row is a casual free to play game. Play this classic connect four game with up to 6 friends at once in this fun, addictive, and easy-to-learn game.`,
+		title: `Easy Free Multiplayer Game | Bloob.io`,
 		options: {
 			field: {
 				name: `Field Size`,
@@ -244,8 +244,8 @@ export default {
 	},
 	[GAME_TYPE.ROTTEN_APPLES]: {
 		name: `Rotten Apples`,
-		description: `Play a Cards Against Humanity clone and customise your experience to your liking.`,
-		title: `Free Multiplayer Cards Against Humanity Game`,
+		description: `Play a Cards Against Humanity clone and customise your experience to your liking. Create your own custom card sets and include them in your next match.`,
+		title: `Multiplayer Cards Against Humanity | Bloob`,
 		options: {
 			winCondition: {
 				data: {
@@ -379,8 +379,8 @@ export default {
 	},
 	[GAME_TYPE.CHECKERS]: {
 		name: `Checkers`,
-		description: `Call it checkers or draughts, play it here with up to 4 players with all kinds of customisable rules.`,
-		title: `Free Multiplayer Game for 2-4 Players`,
+		description: `Checkers is the classic board fast-paced game you know and love with exciting twists! Be in control and alter the rules as you like. Play with friends now.`,
+		title: `Classic Multiplayer Board Game | Bloob.io`,
 		options: {
 			forceTake: {
 				name: `Force Take`,
@@ -496,8 +496,8 @@ export default {
 	},
 	[GAME_TYPE.BLOMBER]: {
 		name: `Blomber`,
-		description: `Blow up your opponents in an intense close quarters battlefield packed with power ups.`,
-		title: `Free Multiplayer Bomberman Inspired Game`,
+		description: `Blomber is a Bomberman multiplayer game with more replayability than most other games. It\'s free, easy to play, customisable, and requires no sign-up. Play now.`,
+		title: `Bomberman Multiplayer Game | Bloob.io`,
 		options: {
 			field: {
 				name: `Field`,
