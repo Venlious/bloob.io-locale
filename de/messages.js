@@ -288,6 +288,7 @@ export default {
 		},
 		changes: {
 			latest: `Letzte Änderungen`,
+			none: `Keine Änderungen festgestellt`,
 			new: `Neue Änderungen`,
 			save: `Änderungen Speichern`,
 			previous: `Frühere Änderungen ansehen`

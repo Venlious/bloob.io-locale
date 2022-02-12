@@ -288,6 +288,7 @@ export default {
 		},
 		changes: {
 			latest: `Laatste Wijzigingen`,
+			none: `Geen Wijzigingen Gevonden`,
 			new: `Nieuw`,
 			save: `Wijzigingen Opslaan`,
 			previous: `Zie eerdere wijzigingen`
