@@ -410,6 +410,10 @@ export default {
 					editor: `Jouw (geïmporteerde) custom kaartensets zullen hier te zien zijn.`
 				}
 			},
+			delete: {
+				description: `Je staat op het punt kaart "%{info}" te verwijderen.`,
+				success: `Kaart succesvol verwijderd!`
+			},
 			edit: {
 				success: `Kaart succesvol gewijzigd!`
 			},

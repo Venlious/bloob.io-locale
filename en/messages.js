@@ -410,6 +410,10 @@ export default {
 					editor: `Your (imported) custom card sets will show up here.`
 				}
 			},
+			delete: {
+				description: `You are about to delete card "%{info}".`,
+				success: `Deleted card successfully!`
+			},
 			edit: {
 				success: `Modified card successfully!`
 			},

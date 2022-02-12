@@ -410,6 +410,10 @@ export default {
 					editor: `Deine (importierten) benutzerdefinierten Kartensets werden hier angezeigt.`
 				}
 			},
+			delete: {
+				description: undefined,
+				success: undefined
+			},
 			edit: {
 				success: `Karte erfolgreich bearbeitet!`
 			},
