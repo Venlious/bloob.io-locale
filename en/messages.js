@@ -127,6 +127,7 @@ export default {
 		needMorePlayers: `Need 0 more players | Need 1 more player | Need {count} more players`
 	},
 	misc: {
+		home: 'Home',
 		kills: `Kills`,
 		deaths: `Deaths`,
 		bot: `Bot`,
@@ -267,9 +268,16 @@ export default {
 				black: `Action (Black)`,
 				white: `Response (White)`
 			},
+			browser: {
+				save: `Save Card Set`,
+				saved: `Saved`,
+				processing: `Processing`
+			},
 			sets: {
-				create: `Create Card Set`,
-				import: `Import Card Set`,
+				contribute: `Contribute to this List`,
+				create: `Create Set`,
+				browser: `Browse & Import Custom Sets`,
+				import: `Import Set`,
 				name: `Card Set Name`,
 				title: `Card Sets`,
 				importer: `Card Set Importer`,
@@ -389,13 +397,14 @@ export default {
 					title: `Import card sets from an ID (such as from Many Decks)`,
 					content: `You can fill in the ID of card sets from popular providers below. Once downloaded you can simply upload them below.`
 				},
+				emptyFolder: `No card sets have been shared here yet.`,
+				contributePublic: `Share your custom card sets for others to find here.`,
 				loading: `Card sets are being downloaded...`,
 				loadingError: `Unable to download the card sets.`,
 				missing: `This custom card set was added by another user. You can add it to your library to use it again in the future.`,
 				csv: `Please note CSV file support is limited and the resulting card set may not be flawless. For best results please use the native .json files (same as export).`,
 				delete: `Deleting custom card set named "%{name}" cannot be undone. Download the set locally first if you wish to be able to recover it at a later time.`,
-				storage: `Custom card sets are stored in your browser. Keep them safe by having a downloaded copy stored somewhere else.`,
-				share: `Share and browse for custom card sets here.`,
+				storage: `Card sets are stored in your browser. Keep them safe by downloading a copy and saving it on your device.`,
 				noneSelected: `The host must select card sets.`,
 				notHost: `Your imported cards are hidden, as you are not the host.`,
 				sizeLimit: `Each custom card set takes up an amount of available storage. For performance reasons, a single game cannot use more than <b>%{size}</b> of custom card sets at a time.`,

@@ -127,6 +127,7 @@ export default {
 		needMorePlayers: `Benötigt noch 0 Spieler | Benötigt noch 1 Spieler | Benötigt noch {count} Spieler`
 	},
 	misc: {
+		home: undefined,
 		kills: `Kills`,
 		deaths: `Tode`,
 		bot: `Bot`,
@@ -267,8 +268,15 @@ export default {
 				black: `Aktion (schwarz)`,
 				white: `Antwort (weiß)`
 			},
+			browser: {
+				save: undefined,
+				saved: undefined,
+				processing: undefined
+			},
 			sets: {
+				contribute: undefined,
 				create: `Kartenset erstellen`,
+				browser: undefined,
 				import: `Kartenset importieren`,
 				name: `Name des Kartensets`,
 				title: `Kartensets`,
@@ -389,13 +397,14 @@ export default {
 					title: `Importieren Sie Kartensets nach ID (z. B. von Many Decks)`,
 					content: `Du kannst die ID von Kartensets beliebter Anbieter unten eingeben. Nach dem Herunterladen kannst du sie einfach unten hochladen.`
 				},
+				emptyFolder: undefined,
+				contributePublic: undefined,
 				loading: `Die Kartensets werden heruntergeladen...`,
 				loadingError: `Die Kartensets konnten nicht heruntergeladen werden.`,
 				missing: `Dieses benutzerdefinierte Kartenset wurde von einem anderen Benutzer hinzugefügt. Du kannst es zu deiner Bibliothek hinzufügen, um es in Zukunft wieder zu verwenden.`,
 				csv: `Bitte beachte, dass CSV-Dateien nur begrenzt unterstützt werden und die resultierende Kartenmenge möglicherweise nicht einwandfrei ist. Für beste Ergebnisse verwende bitte die nativen .json-Dateien (wie beim Export).`,
 				delete: `Das Löschen eines benutzerdefinierten Kartensets mit dem Namen "%{name}" kann nicht rückgängig gemacht werden. Lade den Satz zunächst lokal herunter, wenn du ihn später wiederherstellen möchtest.`,
 				storage: `Benutzerdefinierte Kartensätze werden in deinem Browser gespeichert. Bewahre sie sicher auf, indem du eine heruntergeladene Kopie an einem anderen Ort speicherst.`,
-				share: `Teile und suche hier nach benutzerdefinierten Kartensets.`,
 				noneSelected: `Der Gastgeber muss Kartensets auswählen.`,
 				notHost: `Deine importierten Karten sind versteckt, weil du nicht der Gastgeber bist.`,
 				sizeLimit: `Jede benutzerdefinierte Karte verbraucht Speicherplatz. Aus Performanzgründen kann ein Spiel nicht mehr als <b>%{size}</b> benutzerdefinierte Kartensets gleichzeitig nutzen.`,

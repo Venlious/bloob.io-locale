@@ -127,6 +127,7 @@ export default {
 		needMorePlayers: `Nog 0 spelers nodig | Nog 1 speler nodig | Nog {count} spelers nodig`
 	},
 	misc: {
+		home: 'Home',
 		kills: `Kills`,
 		deaths: `Sterfgevallen`,
 		bot: `Bot`,
@@ -267,8 +268,15 @@ export default {
 				black: `Actie (Zwart)`,
 				white: `Antwoord (Wit)`
 			},
+			browser: {
+				save: `Bewaar Kaartenset`,
+				saved: `Opgeslagen`,
+				processing: `Aan het verwerken`
+			},
 			sets: {
-				create: `Maak Nieuwe Kaartenset`,
+				contribute: `Draag bij aan deze lijst`,
+				create: `Creëer Kaartenset`,
+				browser: `Bekijk Openbare Kaartensets`,
 				import: `Importeer Kaartenset`,
 				name: `Kaartenset Naam`,
 				title: `Kaartensets`,
@@ -389,13 +397,14 @@ export default {
 					title: `Kaartensets importeren met een ID (zoals van Many Decks)`,
 					content: `Je kunt de ID van kaartensets van populaire diensten hieronder invullen. Eenmaal gedownload kun je ze gemakkelijk hieronder uploaden.`
 				},
+				emptyFolder: `Er zijn hier nog geen kaartensets gedeeld.`,
+				contributePublic: `Deel jouw custom kaartensets hier met anderen.`,
 				loading: `Kaartensets worden gedownload...`,
 				loadingError: `Kan de kaartensets niet downloaden.`,
 				missing: `Deze custom kaartenset is toegevoegd door een andere gebruiker. Voeg deze toe aan je bibliotheek om deze in de toekomst opnieuw te gebruiken.`,
 				csv: `Let op: CSV-bestandsondersteuning is beperkt en de resulterende kaartenset kan fouten bevatten. Voor de beste resultaten gebruik de native .json bestanden (hetzelfde als export).`,
 				delete: `Het verwijderen van een custom kaartenset met de naam "%{name}" kan niet ongedaan worden gemaakt. Download de set eerst lokaal als je deze later wilt kunnen herstellen.`,
-				storage: `Custom kaartsets worden opgeslagen in jouw browser. Bewaar ze veilig door een gedownloade kopie ergens anders op te slaan.`,
-				share: `Deel en browse voor custom kaartensets hier.`,
+				storage: `Kaartensets worden opgeslagen in jouw browser. Download en bewaar een kopie om deze niet te verliezen.`,
 				noneSelected: `Spelleider moet kaartensets selecteren.`,
 				notHost: `Omdat jij niet de spelleider bent zijn jouw ingevoerde kaartensets verborgen.`,
 				sizeLimit: `Elke custom kaartenset neemt een neemt opslagruimte in beslag. Om prestatieredenen kan een niet meer dan <b>%{size}</b> aan custom kaartensets tegelijk gebruiken.`,
