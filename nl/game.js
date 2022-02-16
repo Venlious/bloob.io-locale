@@ -46,7 +46,7 @@ export default {
 	[GAME_TYPE.WORDRACE]: {
 		name: `Wordrace`,
 		tooltip: `Zoek woorden in elke richting op een willekeurig gegenereerd veld terwijl je racet tegen anderen met hetzelfde doel.`,
-		description: `Zoek woorden in elke richting op een willekeurig gegenereerd veld terwijl je racet tegen anderen met hetzelfde doel.`,
+		description: `Wordrace is een gratis uniek woorden zoek spel waar jij het tegen anderen opneemt om zo snel mogelijk zoveel mogelijk worden te vinden. Probeer het meteen.`,
 		title: `Gratis Online Woord Zoek Spel`,
 		options: {
 			globalLanguage: {
@@ -164,7 +164,7 @@ export default {
 	[GAME_TYPE.FOUR_IN_A_ROW]: {
 		name: `Vier-op-een-Rij`,
 		tooltip: `Speel vier-op-een-rij met maximaal zes spelers in de klassieke spelmodus of beschikbare variaties.`,
-		description: `Speel vier-op-een-rij met maximaal zes spelers in de klassieke spelmodus of beschikbare variaties.`,
+		description: `Speel vier-op-een-rij met maximaal zes spelers in de klassieke spelmodus of beschikbare variaties. Train nu tegen de bots en versla je vrienden met gemak.`,
 		title: `Gratis Online Vier-op-een-Rij Voor 2-6 Spelers`,
 		options: {
 			field: {
@@ -247,7 +247,7 @@ export default {
 	[GAME_TYPE.ROTTEN_APPLES]: {
 		name: `Rotten Apples`,
 		tooltip: `Speel een Cards Against Humanity-kloon en pas je ervaring aan naar eigen smaak.`,
-		description: `Speel een Cards Against Humanity-kloon en pas je ervaring aan naar eigen smaak.`,
+		description: `Speel een Cards Against Humanity kloon en pas de instellingen geheel naar jouw smaak aan. Creëer je eigen kaartensets en speel samen met je vrienden.`,
 		title: `Gratis Online Cards Against Humanity Spel`,
 		options: {
 			winCondition: {
@@ -383,7 +383,7 @@ export default {
 	[GAME_TYPE.CHECKERS]: {
 		name: `Checkers`,
 		tooltip: `Speel hier dammen met maximaal 4 spelers en allerlei aanpasbare regels.`,
-		description: `Speel hier dammen met maximaal 4 spelers en allerlei aanpasbare regels.`,
+		description: `Online Dammen is het wereldbekende klassieke bordspel maar dan online! Nodig je vrienden uit en gebruik je eigen spelregels. Speel nu tegen andere spelers en bots. Je kunt hier ook met 2-4 spelers spelen.`,
 		title: `Gratis Online Dammen Voor 2-4 Spelers`,
 		options: {
 			forceTake: {
@@ -501,7 +501,7 @@ export default {
 	[GAME_TYPE.BLOMBER]: {
 		name: `Blomber`,
 		tooltip: `Blaas je tegenstanders op in een intens slagveld vol power-ups.`,
-		description: `Blaas je tegenstanders op in een intens slagveld vol power-ups.`,
+		description: `Blomber is een Bomberman multiplayer spel dat je online tegen anderen kunt spelen! Het is gratis en volledig aan te passen naar jouw wensen. Speel het nu!`,
 		title: `Gratis Online Bomberman Geïnspireerd Spel`,
 		options: {
 			field: {

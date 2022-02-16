@@ -382,7 +382,7 @@ export default {
 		}
 	},
 	[GAME_TYPE.CHECKERS]: {
-		name: `Checkers`,
+		name: `Dame`,
 		tooltip: `Spiele hier Dame mit bis zu 4 Spielern und einer Vielzahl von anpassbaren Regeln.`,
 		description: `Spiele hier Dame mit bis zu 4 Spielern und einer Vielzahl von anpassbaren Regeln.`,
 		title: `Kostenloses Online-Dame-Spiel für 2-4 Spieler`,
