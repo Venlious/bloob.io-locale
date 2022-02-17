@@ -307,6 +307,7 @@ export default {
 		}
 	},
 	info: {
+		loading: `Laden...`,
 		highPing: `Der Ping ist die Zeit, die du für die Kommunikation mit dem Server benötigst. Du siehst alles später als andere Spieler und könntest Ruckler und Verzögerungen erleben.`,
 		menu: `Eine Sammlung von Multiplayer-Browserspielen, für die man kein Konto erstellen muss. Spiele mühelos und passe das Spielerlebnis nach deinen Wünschen an.`,
 		hasBots: `Dieses Spiel kann gegen Bots gespielt werden.`,

@@ -307,6 +307,7 @@ export default {
 		}
 	},
 	info: {
+		loading: `Loading...`,
 		highPing: `The ping is the time it takes for you to communicate with the server. You are seeing everything later than other players and may experience jitter and delays.`,
 		menu: `A collection of multiplayer browser-based games without the need to make an account. Play hassle free and customise the experience to your liking.`,
 		hasBots: `This game can be played against bots.`,

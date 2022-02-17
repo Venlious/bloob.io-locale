@@ -307,6 +307,7 @@ export default {
 		}
 	},
 	info: {
+		loading: `Aan het laden...`,
 		highPing: `De ping is de tijd die je nodig hebt om te communiceren met de server. Je ziet alles later dan andere spelers en kan jitter en vertragingen ervaren.`,
 		menu: `Een verzameling van multiplayer browser spellen zonder de noodzaak om een account aan te maken. Speel zonder gedoe en pas de ervaring aan naar je eigen smaak.`,
 		hasBots: `Dit spel kan tegen bots gespeeld worden.`,
