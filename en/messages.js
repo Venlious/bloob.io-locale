@@ -225,6 +225,7 @@ export default {
 		playingAgainstBots: `Playing Against Bots`,
 		playingAgainstPlayers: `Playing Against Players`,
 		howToPlay: `Learn how to play this game`,
+		discord: `Join our Discord`,
 		volume: {
 			title: `Volume`,
 			interface: `Interface Volume`,

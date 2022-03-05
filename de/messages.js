@@ -225,6 +225,7 @@ export default {
 		playingAgainstBots: `Spiel gegen Bots`,
 		playingAgainstPlayers: `Spiel gegen Spieler`,
 		howToPlay: `Lerne das Spiel zu spielen`,
+		discord: `Join unser Discord`,
 		volume: {
 			title: `Lautstärke`,
 			interface: `Bildschirmlautstärke`,

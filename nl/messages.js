@@ -225,6 +225,7 @@ export default {
 		playingAgainstBots: `Spelen Tegen Bots`,
 		playingAgainstPlayers: `Spelen Tegen Spelers`,
 		howToPlay: `Bekijk hoe je dit spel speelt`,
+		discord: `Join onze Discord`,
 		volume: {
 			title: `Volume`,
 			interface: `Interface Volume`,
