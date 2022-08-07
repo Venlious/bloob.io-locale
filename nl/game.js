@@ -580,6 +580,35 @@ export default {
 			}
 		},
 		presets: {},
-		help: {}
+		help: {
+			field: {
+				title: `Speelveld`,
+				desc: {
+					'1': `Het veld bevat 6 gaten waarin de ballen gepot kunnen worden. Er zijn in totaal 16 ballen, waarvan één de cue bal is die je op jouw beurt raakt.`,
+					'2': `Er zijn 7x gestreepte en 7x effen ballen, alsmede één zwarte eight ball. Bij het begin van het spel liggen alle ballen in een driehoek met de eight ball in het midden. De cue bal ligt op een afstand.`
+				}
+			},
+			breaking: {
+				title: `Het spel starten (Breken)`,
+				desc: {
+					'1': `Degene die als eerste aan de beurt is, mag de cue ball rond bewegen en slaan in de richting van de driehoek van ballen (de startpositie).`,
+					'2': `Breken kent zijn eigen regels. De cue-bal mag niet gepot worden en minstens twee ballen (behalve de cue bal) moeten een band raken (de muren rond het veld). Als je een bal tijdens het breken pot, krijg je meteen daarna weer een beurt.`
+				}
+			},
+			gameplay: {
+				title: `Gameplay`,
+				desc: {
+					'1': `Er zijn zowel gestreepte als effen ballen. Degene die als eerste een bal pot wordt dat type bal en krijgt nog een beurt. Vanaf dat moment mag je alleen nog maar gestreepte of effen ballen potten.`,
+					'2': `De volgorde waarin je jouw ballen in pot doet er niet toe. Als je een fout begaat mag je tegenstander de cue ball verplaatsen voor hun beurt.`
+				}
+			},
+			objective: {
+				title: `Doel`,
+				desc: {
+					'1': `Je moet voorkomen dat je de zwarte eight ball pot! Dit mag pas als je al jouw ballen hebt gepot. Je eindigt het spel door de eight ball aan het einde te potten. Het is belangrijk dat je hierbij geen overtredingen begaat, anders verlies je.`,
+					'2': `Als je de eight ball te vroeg pot, verlies je onmiddellijk. Zorg er dus goed voor dat je zorgvuldig mikt!`
+				}
+			}
+		}
 	}
 }

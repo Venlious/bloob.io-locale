@@ -579,6 +579,35 @@ export default {
 			}
 		},
 		presets: {},
-		help: {}
+		help: {
+			field: {
+				title: `Playing Field`,
+				desc: {
+					'1': `The field contains 6 holes in which the balls can be pocketed. There are a total of 16 balls, one of which is the cue ball that you strike on your turn.`,
+					'2': `There are 7x striped and 7x solid balls, as well as 1x black eight ball. At the start of the game all balls are positioned in a triangle with the eight ball in the middle. The cue ball is set further away.`
+				}
+			},
+			breaking: {
+				title: `Starting the game (Breaking)`,
+				desc: {
+					'1': `Whoever has their turn first can move around the cue ball and strike towards the triangle of balls (their starting position).`,
+					'2': `There are rules to breaking. The cue ball cannot be pocketed and at least two balls (except for the cue ball) must hit a cushion (the walls around the field). Pocketing a ball on break guarantees you another turn right after.`
+				}
+			},
+			gameplay: {
+				title: `Gameplay`,
+				desc: {
+					'1': `There are both striped and solid balls. Whoever pockets a ball first becomes that ball type and gets another turn. From that point forward you must only pocket striped or solid balls.`,
+					'2': `The order in which you pocket your balls does not matter. When you commit a foul your opponent will be allowed to move the cue ball around for their turn.`
+				}
+			},
+			objective: {
+				title: `Objective`,
+				desc: {
+					'1': `You must avoid pocketing the black eight ball up until you have pocketed all your balls. You then finish the game by pocketing the eight ball. It is important you commit no foul while doing so, otherwise you lose.`,
+					'2': `Pocketing the eight ball too soon will result in an instant loss. Make sure to aim carefully!`
+				}
+			}
+		}
 	}
 }

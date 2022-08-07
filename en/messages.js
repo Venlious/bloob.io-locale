@@ -338,8 +338,8 @@ export default {
 				[POOL_FOUL_TYPE.CUE_BALL_HIT_WRONG_BALL]: `%{name} hit the wrong ball first!`,
 				[POOL_FOUL_TYPE.CUSHION_HITS_LESS_THAN_TWO]: `At least two balls need to hit a cushion after breaking.`,
 				[POOL_FOUL_TYPE.CUSHION_HITS_LESS_THAN_ONE]: `No ball hit a cushion after the first ball contact.`,
-				[POOL_FOUL_TYPE.ILLEGAL_8_BALL_POCKET]: `%{name} pocketed the 8 ball while committing a foul.`,
-				[POOL_FOUL_TYPE.ILLEGAL_8_BALL_POCKET_TOO_SOON]: `%{name} pocketed the 8 ball too early.`,
+				[POOL_FOUL_TYPE.ILLEGAL_8_BALL_POCKET]: `%{name} pocketed the eight ball while committing a foul.`,
+				[POOL_FOUL_TYPE.ILLEGAL_8_BALL_POCKET_TOO_SOON]: `%{name} pocketed the eight ball too early.`,
 				[POOL_FOUL_TYPE.POCKETED_WRONG_BALL]: `%{name} pocketed the wrong ball.`
 			}
 		},

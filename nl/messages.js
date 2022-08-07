@@ -325,18 +325,18 @@ export default {
 			typeSelf: `Jij bent %{type}`,
 			typeEntry: `Speler (%{index}) is %{type}`,
 			types: {
-				[POOL_GROUP.SOLID]: `Heel`,
-				[POOL_GROUP.STRIPE]: `Half`
+				[POOL_GROUP.SOLID]: `Effen`,
+				[POOL_GROUP.STRIPE]: `Gestreept`
 			},
 			foul: {
-				[POOL_FOUL_TYPE.CUE_BALL_POCKET]: `%{name} heeft de cue ball gepocket!`,
+				[POOL_FOUL_TYPE.CUE_BALL_POCKET]: `%{name} heeft de cue ball gepot!`,
 				[POOL_FOUL_TYPE.CUE_BALL_HIT_NO_BALL]: `%{name} heeft geen andere bal geraakt!`,
 				[POOL_FOUL_TYPE.CUE_BALL_HIT_WRONG_BALL]: `%{name} heeft de verkeerde bal eerst geraakt!`,
 				[POOL_FOUL_TYPE.CUSHION_HITS_LESS_THAN_TWO]: `Minstens twee ballen moet na de break de band raken`,
 				[POOL_FOUL_TYPE.CUSHION_HITS_LESS_THAN_ONE]: `Geen bal heeft een band geraakt nadat deze geraakt was.`,
-				[POOL_FOUL_TYPE.ILLEGAL_8_BALL_POCKET]: `%{name} heeft de 8 ball gepocket na in combinatie met een fout.`,
-				[POOL_FOUL_TYPE.ILLEGAL_8_BALL_POCKET_TOO_SOON]: `%{name} heeft de 8 ball te vroeg gepocket.`,
-				[POOL_FOUL_TYPE.POCKETED_WRONG_BALL]: `%{name} heeft de verkeerde bal gepocket.`
+				[POOL_FOUL_TYPE.ILLEGAL_8_BALL_POCKET]: `%{name} heeft de eight ball gepot na in combinatie met een fout.`,
+				[POOL_FOUL_TYPE.ILLEGAL_8_BALL_POCKET_TOO_SOON]: `%{name} heeft de eight ball te vroeg gepot.`,
+				[POOL_FOUL_TYPE.POCKETED_WRONG_BALL]: `%{name} heeft de verkeerde bal gepot.`
 			}
 		},
 		localPlay: `Deel hetzelfde apparaat met meerdere mensen door lokale spelers toe te voegen.`,
