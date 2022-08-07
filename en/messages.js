@@ -2,6 +2,9 @@ import error from './error'
 import game from './game'
 import chat from './chat'
 
+import POOL_FOUL_TYPE from '../../enums/pool-foul-type'
+import POOL_GROUP from '../../enums/pool-group'
+
 export default {
 	name: `Bloob.io`,
 	error,
@@ -9,26 +12,29 @@ export default {
 	chat,
 	header: {
 		message: {
-			lobby: `Match Lobby`,
-			finished: `Match Finished`,
-			tied: `Match Tied`,
-			finishedRematch: `Rematch Starting Soon`,
-			inProgress: `Match in Progress`,
-			staleMoves: `Match Staled — %{staleCount} moves with no take over`,
-			concede: `Match Finished — Opponent chose to forfeit`,
-			winner: `Match Won by %{name}`,
-			inactive: `Match Ended Due to Inactivity`,
-			late: `Match Ended Due to Missing %{turns} Turn(s)`,
-			pickActionCard: `Picking Action Card`,
-			makingCardSelections: `Making Card Selection`,
-			handDump: `Dump Round`,
-			handPreview: `Hand Preview`,
+			lobby: `Match lobby`,
+			finished: `Match finished`,
+			tied: `Match tied`,
+			finishedRematch: `Rematch starting soon`,
+			inProgress: `Match in progress`,
+			staleMoves: `Match staled — %{staleCount} moves with no take over`,
+			concede: `Match finished — Opponent chose to forfeit`,
+			winner: `Match won by %{name}`,
+			inactive: `Match ended due to inactivity`,
+			late: `Match ended due to missing %{turns} turn(s)`,
+			pickActionCard: `Picking action card`,
+			makingCardSelections: `Making card selection`,
+			handDump: `Dump round`,
+			handPreview: `Hand preview`,
 			voting: `Voting`,
-			voteResults: `Vote Results`,
-			flippingField: `Flipping Field`,
-			removingRow: `Removing Row`,
-			yourTurn: `Your Turn`,
-			nameTurn: `%{name}'s Turn`,
+			voteResults: `Vote results`,
+			flippingField: `Flipping field`,
+			removingRow: `Removing row`,
+			yourTurn: `Your turn %{extra}`,
+			nameTurn: `%{name}'s turn`,
+			yourTurnBreaking: `You are breaking %{extra}`,
+			nameTurnBreaking: `%{name} is breaking`,
+			illegallyPocketedEightBall: `Eight ball was pocketed illegally`,
 			roundCount: `Round %{current} out of %{total}`
 		},
 		description: {
@@ -124,9 +130,15 @@ export default {
 		matches: `0 matches | 1 match | {count} matches`,
 		matchesFound: `0 matches found | 1 match found | {count} matches found`,
 		matchesWaiting: `0 matches waiting | 1 match waiting | {count} matches waiting`,
-		needMorePlayers: `Need 0 more players | Need 1 more player | Need {count} more players`
+		needMorePlayers: `Need 0 more players | Need 1 more player | Need {count} more players`,
+		playAgainstBots: `Play Against Bots | Play Against a Bot | Play Against Bots`,
+		playRandomOpponents: `Play Random Opponents | Play Random Opponent | Play Random Opponents`
 	},
 	misc: {
+		wins: `Wins`,
+		pocketed: `Pocketed`,
+		shots: `Shots`,
+		you: `You`,
 		home: 'Home',
 		kills: `Kills`,
 		deaths: `Deaths`,
@@ -169,6 +181,9 @@ export default {
 		about: `About`,
 		public: `Public`,
 		private: `Private`,
+		computer: `Computer`,
+		add: `Add`,
+		remove: `Remove`,
 		yes: `Yes`,
 		no: `No`,
 		disabled: `Disabled`,
@@ -192,6 +207,7 @@ export default {
 		playAsGuest: `Play as Guest`,
 		download: `Download`,
 		settings: `Settings`,
+		localPlay: `Local Play`,
 		preset: `Preset`,
 		averageLength: `Avg. Length`,
 		largestTake: `Largest Take`,
@@ -308,6 +324,26 @@ export default {
 		}
 	},
 	info: {
+		pool: {
+			opponentMissedTurn: `It is now your turn as your opponent ran out of time.`,
+			typeSelf: `You are %{type}`,
+			typeEntry: `Player (%{index}) is %{type}`,
+			types: {
+				[POOL_GROUP.SOLID]: `Solids`,
+				[POOL_GROUP.STRIPE]: `Stripes`
+			},
+			foul: {
+				[POOL_FOUL_TYPE.CUE_BALL_POCKET]: `%{name} pocketed the cue ball!`,
+				[POOL_FOUL_TYPE.CUE_BALL_HIT_NO_BALL]: `%{name} did not hit another ball!`,
+				[POOL_FOUL_TYPE.CUE_BALL_HIT_WRONG_BALL]: `%{name} hit the wrong ball first!`,
+				[POOL_FOUL_TYPE.CUSHION_HITS_LESS_THAN_TWO]: `At least two balls need to hit a cushion after breaking.`,
+				[POOL_FOUL_TYPE.CUSHION_HITS_LESS_THAN_ONE]: `No ball hit a cushion after the first ball contact.`,
+				[POOL_FOUL_TYPE.ILLEGAL_8_BALL_POCKET]: `%{name} pocketed the 8 ball while committing a foul.`,
+				[POOL_FOUL_TYPE.ILLEGAL_8_BALL_POCKET_TOO_SOON]: `%{name} pocketed the 8 ball too early.`,
+				[POOL_FOUL_TYPE.POCKETED_WRONG_BALL]: `%{name} pocketed the wrong ball.`
+			}
+		},
+		localPlay: `Share the same device with multiple people by adding local players.`,
 		loading: `Loading...`,
 		highPing: `The ping is the time it takes for you to communicate with the server. You are seeing everything later than other players and may experience jitter and delays.`,
 		menu: `A collection of multiplayer browser-based games without the need to make an account. Play hassle free and customise the experience to your liking.`,

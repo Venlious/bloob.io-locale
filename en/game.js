@@ -563,5 +563,22 @@ export default {
 				desc: `9x9 field — 3 lives — 4 players`
 			}
 		}
+	},
+	[GAME_TYPE.EIGHT_BALL_POOL]: {
+		name: `8 Ball Pool`,
+		description: `Take your best shot in online multiplayer pool! Sink all your balls and finish with the 8 ball to win at the table!`,
+		title: `Free Multiplayer Game for 2 Players`,
+		options: {
+			turnTime: {
+				name: `Turn Time`,
+				help: `How long each player has to hit the cue ball.`
+			},
+			missedTurnThreshold: {
+				name: `Missed Turn Threshold`,
+				help: `How many turns can a player miss in a row before being kicked out of the game.`
+			}
+		},
+		presets: {},
+		help: {}
 	}
 }

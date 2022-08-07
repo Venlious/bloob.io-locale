@@ -564,5 +564,22 @@ export default {
 			}
 		},
 		help: {}
+	},
+	[GAME_TYPE.EIGHT_BALL_POOL]: {
+		name: `8 Ball Poolbiljart `,
+		description: `Doe je best in online multiplayer pool! Tik al je ballen uit het veld en eindig met de 8-bal om het spel te winnen!`,
+		title: `Gratis multiplayer spel voor 2 spelers`,
+		options: {
+			turnTime: {
+				name: `Beurt Tijd`,
+				help: `Hoe lang elke speler heeft om de cue bal te raken.`
+			},
+			missedTurnThreshold: {
+				name: `Beurt Toleratie`,
+				help: `Hoeveel beurten achter elkaar kan een speler missen voordat die uit het spel wordt gezet.`
+			}
+		},
+		presets: {},
+		help: {}
 	}
 }

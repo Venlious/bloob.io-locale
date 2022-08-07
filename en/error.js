@@ -9,6 +9,7 @@ export default {
 	generic: {
 		title: `An error has occured.`,
 		invalid: `Given data is invalid.`,
+		texture: `Failed to load a texture "%{id}".`,
 		invalidAction: `An invalid action type "%{type}" was given.`,
 		maintenance: `You cannot perform this action while maintenance mode is active.`,
 		missingArguments: `Missing needed arguments for this action.`,
@@ -31,7 +32,11 @@ export default {
 		blackCardThreshold: `Game requires at least %{count} action cards (black)`
 	},
 	game: {
+		velocity: `Given velocity is outside of the permitted range.`,
+		desync: `Sorry, it looks like you were desynchronized. Please try again.`,
 		playerConceded: `Player "%{name}" forfeited and lost automatically.`,
+		missedTurnWarning: `You were too late and your opponent was given their turn. If this happens too many times in a row you will be kicked. (%{current}/%{threshold})`,
+		missedTurnKick: `You were kicked as you missed %{current} turn(s) in a row.`,
 		autoTurnWarning: `You were too late and a move was made for you. If this happens too many times in a row you will lose. (%{current}/%{threshold})`,
 		autoTurnKick: `You lost automatically as you were late for %{current} move(s) in a row.`,
 		insufficientRows: `This field does not fit the amount of rows selected.`,

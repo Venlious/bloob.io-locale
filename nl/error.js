@@ -9,6 +9,7 @@ export default {
 	generic: {
 		title: `Er is een fout opgetreden.`,
 		invalid: `Gegeven data is ongeldig.`,
+		texture: `Kan texture met ID "%{id}" niet laden.`,
 		invalidAction: `Er is een ongeldig actietype "%{type}" opgegeven.`,
 		maintenance: `Je kunt deze actie niet uitvoeren terwijl er onderhoud wordt gedaan.`,
 		missingArguments: `Ontbrekende argumenten voor deze actie.`,
@@ -31,7 +32,11 @@ export default {
 		blackCardThreshold: `Het spel vereist minstens %{count} actiekaarten (zwart)`
 	},
 	game: {
+		velocity: `De opgegeven snelheid ligt buiten het toegestane bereik.`,
+		desync: `Sorry, het lijkt erop dat je gedesynchroniseerd bent. Probeer het opnieuw.`,
 		playerConceded: `Speler "%{name}" heeft opgegeven en automatisch verloren.`,
+		missedTurnWarning: `Je was te laat en de tegenstander heeft nu de beurt gekregen. Als dit te vaak gebeurt wordt je uit het spel verwijderd. (%{current}/%{threshold})`,
+		missedTurnKick: `Je hebt %{current} beurt(en) gemist en bent uit het spel verwijderd.`,
 		autoTurnWarning: `Je was te laat en er werd een zet voor je gedaan. Als dit te vaak achter elkaar gebeurt, verlies je. (%{current}/%{threshold})`,
 		autoTurnKick: `Je hebt automatisch verloren omdat je %{current} zet(ten) achter elkaar te laat was.`,
 		insufficientRows: `Het aantal geselecteerde rijen past niet in dit veld.`,

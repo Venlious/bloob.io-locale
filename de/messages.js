@@ -27,7 +27,7 @@ export default {
 			voteResults: `Abstimmungsergebnisse`,
 			flippingField: `Umkehrung des Spielfelds`,
 			removingRow: `Reihe entfernen`,
-			yourTurn: `Dein Zug`,
+			yourTurn: `Dein Zug %{extra}`,
 			nameTurn: `%{name}'s Zug`,
 			roundCount: `Runde %{current} von %{total}`
 		},

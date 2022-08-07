@@ -2,6 +2,9 @@ import error from './error'
 import game from './game'
 import chat from './chat'
 
+import POOL_FOUL_TYPE from '../../enums/pool-foul-type'
+import POOL_GROUP from '../../enums/pool-group'
+
 export default {
 	name: `Bloob.io`,
 	error,
@@ -9,26 +12,29 @@ export default {
 	chat,
 	header: {
 		message: {
-			lobby: `Spel Lobby`,
-			finished: `Spel Afgelopen`,
+			lobby: `Spel lobby`,
+			finished: `Spel afgelopen`,
 			tied: `Gelijkspel`,
-			finishedRematch: `Rematch Begint Straks`,
-			inProgress: `Spel is Gaande`,
-			staleMoves: `Spel Verlopen — %{staleCount} zetten zonder overname`,
-			concede: `Spel Afgelopen — Tegenstander heeft opgegeven`,
-			winner: `Spel Gewonnen Door %{name}`,
-			inactive: `Spel Beëindigd Wegens Inactiviteit`,
-			late: `Spel Beëindigd Wegens Missen van %{turns} Beurt(en)`,
-			pickActionCard: `Actiekaart Kiezen`,
-			makingCardSelections: `Maken van Kaart Selectie`,
+			finishedRematch: `Rematch begint straks`,
+			inProgress: `Spel is gaande`,
+			staleMoves: `Spel verlopen — %{staleCount} zetten zonder overname`,
+			concede: `Spel afgelopen — Tegenstander heeft opgegeven`,
+			winner: `Spel gewonnen door %{name}`,
+			inactive: `Spel beëindigd wegens inactiviteit`,
+			late: `Spel beëindigd wegens missen van %{turns} beurt(en)`,
+			pickActionCard: `Actiekaart kiezen`,
+			makingCardSelections: `Maken van kaart selectie`,
 			handDump: `Dumpronde`,
-			handPreview: `Hand Preview`,
+			handPreview: `Hand preview`,
 			voting: `Stemmen`,
 			voteResults: `Stemresultaten`,
-			flippingField: `Speelveld aan het Omkeren`,
-			removingRow: `Verwijderen van Rij`,
-			yourTurn: `Jouw Beurt`,
-			nameTurn: `%{name}s Beurt`,
+			flippingField: `Speelveld aan het omkeren`,
+			removingRow: `Verwijderen van rij`,
+			yourTurn: `Jouw beurt %{extra}`,
+			nameTurn: `%{name}s beurt`,
+			yourTurnBreaking: `Je bent aan het breken %{extra}`,
+			nameTurnBreaking: `%{name} is aan het breken`,
+			illegallyPocketedEightBall: `De eight ball is te vroeg verdwenen`,
 			roundCount: `Ronde %{current} van de %{total}`
 		},
 		description: {
@@ -124,7 +130,9 @@ export default {
 		matches: `0 spellen | 1 spel | {count} spellen`,
 		matchesFound: `0 spellen gevonden | 1 spel gevonden | {count} spellen gevonden`,
 		matchesWaiting: `0 spellen wachten | 1 spel wacht | {count} spellen wachten`,
-		needMorePlayers: `Nog 0 spelers nodig | Nog 1 speler nodig | Nog {count} spelers nodig`
+		needMorePlayers: `Nog 0 spelers nodig | Nog 1 speler nodig | Nog {count} spelers nodig`,
+		playAgainstBots: `Play Against Bots | Play Against a Bot | Play Against Bots`,
+		playRandomOpponents: `Play Random Opponents | Play Random Opponent | Play Random Opponents`
 	},
 	misc: {
 		home: 'Home',
@@ -164,11 +172,14 @@ export default {
 		unknown: `Onbekend`,
 		adminLogin: `Admin Login`,
 		globalAnnouncement: `Universele Melding`,
-		broadcast: `Zend Melding`,
+		broadcast: `Verstuur Melding`,
 		login: `Login`,
 		about: `Over`,
 		public: `Openbaar`,
 		private: `Privé`,
+		computer: `Computer`,
+		add: `Voeg toe`,
+		remove: `Verwijder`,
 		yes: `Ja`,
 		no: `Nee`,
 		disabled: `Uitgeschakeld`,
@@ -192,6 +203,7 @@ export default {
 		playAsGuest: `Speel als Gast`,
 		download: `Download`,
 		settings: `Instellingen`,
+		localPlay: `Lokaal Spelen`,
 		preset: `Preset`,
 		averageLength: `Gem. Lengte`,
 		largestTake: `Grootste Overname`,
@@ -308,6 +320,26 @@ export default {
 		}
 	},
 	info: {
+		pool: {
+			opponentMissedTurn: `Het is nu jouw beurt omdat de tegenstander te lang heeft gewacht.`,
+			typeSelf: `Jij bent %{type}`,
+			typeEntry: `Speler (%{index}) is %{type}`,
+			types: {
+				[POOL_GROUP.SOLID]: `Heel`,
+				[POOL_GROUP.STRIPE]: `Half`
+			},
+			foul: {
+				[POOL_FOUL_TYPE.CUE_BALL_POCKET]: `%{name} heeft de cue ball gepocket!`,
+				[POOL_FOUL_TYPE.CUE_BALL_HIT_NO_BALL]: `%{name} heeft geen andere bal geraakt!`,
+				[POOL_FOUL_TYPE.CUE_BALL_HIT_WRONG_BALL]: `%{name} heeft de verkeerde bal eerst geraakt!`,
+				[POOL_FOUL_TYPE.CUSHION_HITS_LESS_THAN_TWO]: `Minstens twee ballen moet na de break de band raken`,
+				[POOL_FOUL_TYPE.CUSHION_HITS_LESS_THAN_ONE]: `Geen bal heeft een band geraakt nadat deze geraakt was.`,
+				[POOL_FOUL_TYPE.ILLEGAL_8_BALL_POCKET]: `%{name} heeft de 8 ball gepocket na in combinatie met een fout.`,
+				[POOL_FOUL_TYPE.ILLEGAL_8_BALL_POCKET_TOO_SOON]: `%{name} heeft de 8 ball te vroeg gepocket.`,
+				[POOL_FOUL_TYPE.POCKETED_WRONG_BALL]: `%{name} heeft de verkeerde bal gepocket.`
+			}
+		},
+		localPlay: `Deel hetzelfde apparaat met meerdere mensen door lokale spelers toe te voegen.`,
 		loading: `Aan het laden...`,
 		highPing: `De ping is de tijd die je nodig hebt om te communiceren met de server. Je ziet alles later dan andere spelers en kan jitter en vertragingen ervaren.`,
 		menu: `Een verzameling van multiplayer browser spellen zonder de noodzaak om een account aan te maken. Speel zonder gedoe en pas de ervaring aan naar je eigen smaak.`,
