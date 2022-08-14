@@ -345,7 +345,7 @@ export default {
 		menu: `Een verzameling van multiplayer browser spellen zonder de noodzaak om een account aan te maken. Speel zonder gedoe en pas de ervaring aan naar je eigen smaak.`,
 		hasBots: `Dit spel kan tegen bots gespeeld worden.`,
 		file: {
-			upload: `Klik om te browsen of sleep uw bestand(en) hierheen`,
+			upload: `Klik om te browsen of sleep jouw bestand(en) hierheen`,
 			uploadAdditional: `Voeg meer bestanden toe door te slepen of hier te klikken`,
 			download: {
 				automatic: `Opent een nieuw tabblad en begint automatisch een .csv te downloaden`,
@@ -483,7 +483,7 @@ export default {
 		data: {
 			concedeGame: `Door verlies te verklaren zal je het spel meteen verliezen.`,
 			unsaved: `Je hebt onopgeslagen wijzigingen die gewist zullen worden als je doorgaat.`,
-			reset: `Het resetten van uw gegevens is onomkeerbaar en zal uw profiel, instellingen en statistieken wissen.`
+			reset: `Het resetten van jouw gegevens is onomkeerbaar en zal jouw profiel, instellingen en statistieken wissen.`
 		}
 	}
 }

@@ -375,7 +375,7 @@ export default {
 				title: `Kaartensets`,
 				desc: {
 					'1': `Voordat het spel begint kan de spelleider kiezen uit vele beschikbare kaartensets of eigen sets maken of importeren.`,
-					'2': `Custom kaartensets kunnen worden geïmporteerd en worden opgeslagen in uw browser, zodat u ze later gemakkelijk opnieuw kunt gebruiken.`
+					'2': `Custom kaartensets kunnen worden geïmporteerd en worden opgeslagen in uw browser, zodat je ze later gemakkelijk opnieuw kunt gebruiken.`
 				}
 			}
 		}
@@ -567,6 +567,7 @@ export default {
 	},
 	[GAME_TYPE.EIGHT_BALL_POOL]: {
 		name: `8 Ball Poolbiljart `,
+		tooltip: `Speel het populaire biljart spel hier tegen een bot of een andere speler.`,
 		description: `Doe je best in online multiplayer pool! Tik al je ballen uit het veld en eindig met de 8-bal om het spel te winnen!`,
 		title: `Gratis multiplayer spel voor 2 spelers`,
 		options: {

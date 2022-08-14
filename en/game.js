@@ -566,6 +566,7 @@ export default {
 	},
 	[GAME_TYPE.EIGHT_BALL_POOL]: {
 		name: `8 Ball Pool`,
+		tooltip: `Play the popular billiards game here against a bot or player.`,
 		description: `Take your best shot in online multiplayer pool! Sink all your balls and finish with the 8 ball to win at the table!`,
 		title: `Free Multiplayer Game for 2 Players`,
 		options: {
