@@ -420,7 +420,7 @@ export default {
 			selected: `You voted for %{selection}`
 		},
 		about: {
-			description: `Bloob.io is a project of passion consisting of multiplayer browser games. This site will remain ad-free and all games entirely configurable to your liking. Suggestions are always welcome, feel free to reach out!`,
+			description: `Bloob.io is a project of passion consisting of multiplayer browser games. Suggestions are always welcome!`,
 			licensing: `Some games can be licensed for use on your site or platform (with custom adjustments). Get in touch in case you are interested.`,
 			developedBy: `Developed by %{name}`,
 			iconsSource: `Icons courtesy of %{name} (Free)`,

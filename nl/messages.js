@@ -416,7 +416,7 @@ export default {
 			selected: `Je hebt op %{selection} gestemd`
 		},
 		about: {
-			description: `Bloob.io is een hobby project bestaande uit multiplayer browser games. Deze site blijft reclamevrij en alle spellen zijn volledig naar eigen wens in te stellen. Suggesties zijn altijd welkom, voel je vrij om contact op te nemen!`,
+			description: `Bloob.io is een hobby project bestaande uit multiplayer browser games. Suggesties zijn altijd welkom!`,
 			licensing: `Sommige spellen kunnen gelicenseerd worden voor gebruik op jouw site of platform (met de nodige aanpassingen). Neem contact op als je geïnteresseerd bent.`,
 			developedBy: `Ontwikkeld door %{name}`,
 			iconsSource: `Icoontjes met dank aan %{name} (Gratis)`,

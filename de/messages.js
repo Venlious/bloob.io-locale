@@ -384,7 +384,7 @@ export default {
 			selected: `Du hast für %{selection} abgestimmt`
 		},
 		about: {
-			description: `Bloob.io ist ein Projekt aus Leidenschaft, das aus Multiplayer-Browsergames besteht. Diese Seite wird werbefrei bleiben und alle Spiele sind vollständig nach deinen Wünschen konfigurierbar. Vorschläge sind immer willkommen, zögere nicht, dich zu melden!`,
+			description: `Bloob.io ist ein Projekt aus Leidenschaft, das aus Multiplayer-Browsergames besteht. Vorschläge sind immer willkommen!`,
 			licensing: `Einige Spiele können für die Nutzung auf deiner Website oder Plattform lizenziert werden (mit individuellen Anpassungen). Nimm Kontakt auf, wenn du interessiert bist.`,
 			developedBy: `Entwickelt von %{name}`,
 			iconsSource: `Icons mit freundlicher Genehmigung von %{name} (Gratis)`,
