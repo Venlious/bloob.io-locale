@@ -13,7 +13,8 @@ export default {
 		invalidAction: `Er is een ongeldig actietype "%{type}" opgegeven.`,
 		maintenance: `Je kunt deze actie niet uitvoeren terwijl er onderhoud wordt gedaan.`,
 		missingArguments: `Ontbrekende argumenten voor deze actie.`,
-		missingAction: `Een actietype is vereist.`
+		missingAction: `Een actietype is vereist.`,
+		versionMismatch: `Jij gebruikt versie "%{client}" terwijl de server versie "%{server}" gebruikt. Ververs deze pagina over een paar minuten om te updaten naar de laatste versie.\n\nJe kunt nog steeds zonder problemen tegen de computer spelen, maar we raden je aan te updaten voordat je multiplayer gaat spelen.`
 	},
 	config: {
 		invalidType: `Ongeldig configuratie type "%{type}" gegeven.`,

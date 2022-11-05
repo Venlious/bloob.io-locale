@@ -13,7 +13,8 @@ export default {
 		invalidAction: `An invalid action type "%{type}" was given.`,
 		maintenance: `You cannot perform this action while maintenance mode is active.`,
 		missingArguments: `Missing needed arguments for this action.`,
-		missingAction: `An action type is required.`
+		missingAction: `An action type is required.`,
+		versionMismatch: `You are running version "%{client}" while the server is running version "%{server}". Please refresh this page in a few minutes to update to the latest version.\n\nYou can still play against the Computer with no issues, but we recommend updating before playing multiplayer.`
 	},
 	config: {
 		invalidType: `Invalid config type "%{type}" given.`,

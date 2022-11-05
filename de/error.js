@@ -12,7 +12,8 @@ export default {
 		invalidAction: `Es wurde ein ungültiger Aktionstyp "%{type}" angegeben.`,
 		maintenance: `Du kannst diese Aktion während einer Wartung nicht durchführen.`,
 		missingArguments: `Fehlende Argumente für diese Aktion.`,
-		missingAction: `Eine Aktionsart ist erforderlich.`
+		missingAction: `Eine Aktionsart ist erforderlich.`,
+		versionMismatch: undefined
 	},
 	config: {
 		invalidType: `Ungültiger Konfigurationstyp "%{type}" angegeben.`,
