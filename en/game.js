@@ -575,7 +575,7 @@ export default {
 				help: `How long each player has to hit the cue ball.`
 			},
 			missedTurnThreshold: {
-				name: `Missed Turn Threshold`,
+				name: `Max. Missed Turns`,
 				help: `How many turns can a player miss in a row before being kicked out of the game.`
 			}
 		},
