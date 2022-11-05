@@ -15,7 +15,7 @@ export default {
 			},
 			botFill: {
 				name: `Bot Fill`,
-				help: `When enabled, bots will fill up any empty player slots.`
+				help: `When enabled, bots will fill up any empty player slots. It will also result in a player being replaced by a bot if they leave early.`
 			},
 			botDifficulty: {
 				name: `Bot Difficulty`,

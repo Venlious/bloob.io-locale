@@ -15,7 +15,7 @@ export default {
 			},
 			botFill: {
 				name: `Bot Fill`,
-				help: `Wanneer deze optie is ingeschakeld, zullen bots alle lege spelerslots opvullen.`
+				help: `Wanneer deze optie is ingeschakeld, zullen bots alle lege spelerslots opvullen. Als een speler vroegtijdig het spel verlaat zal deze ook een speler vervangen.`
 			},
 			botDifficulty: {
 				name: `Bot Moeilijkheidsgraad`,

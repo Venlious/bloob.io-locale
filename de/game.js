@@ -16,6 +16,7 @@ export default {
 			},
 			botFill: {
 				name: `Bot Fill`,
+				// TODO: Add missing text to `botFill.help` "It will also result in a player being replaced by a bot if they leave early."
 				help: `Wenn diese Option aktiviert ist, werden alle leeren Spielerplätze durch Bots besetzt.`
 			},
 			botDifficulty: {
