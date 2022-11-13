@@ -362,12 +362,12 @@ export type ErrorMessage = {
 		/**
 		 * Error when the word is too short.
 		 */
-		wordnicknameMinLength: string
+		wordTooShort: string
 
 		/**
 		 * Error when the word is too long.
 		 */
-		wordnicknameMaxLength: string
+		wordTooLong: string
 	}
 
 	/**

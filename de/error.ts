@@ -65,8 +65,8 @@ export default <ErrorMessage>{
 		invalidColumnRow: `Spalte oder Zeile ist nicht gesetzt oder ungültig.`,
 		invalidColumn: `Spalte ist nicht gesetzt oder ungültig.`,
 		invalidWord: `Das angegebene Wort kommt in dem verwendeten Wörterbuch nicht vor.`,
-		wordnicknameMinLength: `Wortauswahl zu kurz (Min. %{min})`,
-		wordnicknameMaxLength: `Wortauswahl zu lang (Max. %{max})`
+		wordTooShort: `Wortauswahl zu kurz (Min. %{min})`,
+		wordTooLong: `Wortauswahl zu lang (Max. %{max})`
 	},
 	card: {
 		loadingSets: `Die Kartensets konnten nicht heruntergeladen werden.`,

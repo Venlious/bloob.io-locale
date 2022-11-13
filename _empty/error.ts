@@ -65,8 +65,8 @@ export default <ErrorMessage>{
 		invalidColumnRow: null,
 		invalidColumn: null,
 		invalidWord: null,
-		wordnicknameMinLength: null,
-		wordnicknameMaxLength: null
+		wordTooShort: null,
+		wordTooLong: null
 	},
 	card: {
 		loadingSets: null,

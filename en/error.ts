@@ -65,8 +65,8 @@ export default <ErrorMessage>{
 		invalidColumnRow: `Column or row is not set or invalid.`,
 		invalidColumn: `Column is not set or invalid.`,
 		invalidWord: `The word given is not in the dictionary used.`,
-		wordnicknameMinLength: `Word selection too short (Min. %{min})`,
-		wordnicknameMaxLength: `Word selection too long (Max. %{max})`
+		wordTooShort: `Word selection too short (Min. %{min})`,
+		wordTooLong: `Word selection too long (Max. %{max})`
 	},
 	card: {
 		loadingSets: `Unable to download the card sets.`,
