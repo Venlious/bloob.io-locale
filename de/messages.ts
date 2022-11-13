@@ -6,6 +6,10 @@ import { MessageList } from '../types/messages'
 import { PoolGameGroup, PoolGameFoulType } from '../types/index'
 
 export default <MessageList>{
+	_entries: {
+		total: 779,
+		missing: 65
+	},
 	name: `Bloob.io`,
 	error,
 	game,
@@ -348,6 +352,7 @@ export default <MessageList>{
 		}
 	},
 	info: {
+		incompleteTranslationNotice: null,
 		betaNotice: null,
 		howToPlay: `Lerne das Spiel zu spielen`,
 		skipStepOverHalf: `Dieser Schritt kann auch übersprungen werden, wenn mehr als die Hälfte der Spieler dafür stimmt.`,
