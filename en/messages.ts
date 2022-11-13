@@ -127,6 +127,7 @@ export default <MessageList>{
 		increment: `Increments of 0 | Increment of 1 | Increments of {count}`
 	},
 	misc: {
+		beta: `Beta`,
 		about: `About`,
 		public: `Public`,
 		private: `Private`,
@@ -347,6 +348,7 @@ export default <MessageList>{
 		}
 	},
 	info: {
+		betaNotice: `This game is still being developed. Please share feedback & bugs on our %{social}`,
 		howToPlay: `Learn how to play this game`,
 		skipStepOverHalf: `This step can also be skipped if over half the users vote to.`,
 		skipStepAll: `This step can also be skipped if all users vote to.`,

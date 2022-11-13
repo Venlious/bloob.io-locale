@@ -523,6 +523,14 @@ export default <GameMessage>{
 			default: {
 				title: null,
 				description: null
+			},
+			party: {
+				title: null,
+				description: null
+			},
+			action: {
+				title: null,
+				description: null
 			}
 		}
 	},

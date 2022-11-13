@@ -552,11 +552,11 @@ export default <GameMessage>{
 				help: `When enabled, an explosion will trigger bombs within range to also explode. The kills will go to the user who placed the bomb that initiated the chain reaction. If disabled, these bombs will be removed instead.`
 			},
 			cratePercentage: {
-				title: `Crate Percentage`,
-				help: `The percentage of crates that will be shown on the playing field. Crates can be blown up and may contain powerups.`
+				title: `Crates`,
+				help: `The percentage of crates that will be shown on the playing field. Crates can be blown up and may contain power-ups.`
 			},
 			powerUpPercentage: {
-				title: `Power-up Percentage`,
+				title: `Power-ups`,
 				help: `Modify how likely it is that a power up is dropped when a crate is destroyed.`
 			}
 		},
@@ -565,6 +565,14 @@ export default <GameMessage>{
 			default: {
 				title: `Default`,
 				description: `9x9 field — 3 lives — 4 players`
+			},
+			party: {
+				title: `Party`,
+				description: `QR Square field — 6 lives — 8 players`
+			},
+			action: {
+				title: `Action Packed`,
+				description: `No crates — Quick respawn — 6 lives — 8 players`
 			}
 		}
 	},

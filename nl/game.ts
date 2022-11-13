@@ -552,11 +552,11 @@ export default <GameMessage>{
 				help: `Indien geactiveerd, zal een explosie bommen binnen bereik doen ontploffen. De kills gaan naar de gebruiker die de bom plaatste die de kettingreactie in gang zette. Als deze optie is uitgeschakeld, zullen deze bommen in plaats daarvan worden verwijderd.`
 			},
 			cratePercentage: {
-				title: `Krat Percentage`,
+				title: `Kratten`,
 				help: `Het percentage kratten dat op het speelveld te zien zal zijn. Kratten kunnen worden opgeblazen en kunnen powerups bevatten.`
 			},
 			powerUpPercentage: {
-				title: `Power-up Percentage`,
+				title: `Power-ups`,
 				help: `Wijzig hoe groot de kans is dat een power up wordt gedropt als een krat wordt vernietigd.`
 			}
 		},
@@ -564,6 +564,14 @@ export default <GameMessage>{
 			default: {
 				title: `Standaard`,
 				description: `9x9 speelveld — 3 levens — 4 spelers`
+			},
+			party: {
+				title: `Party`,
+				description: `QR speelveld — 6 levens — 8 spelers`
+			},
+			action: {
+				title: `Action Packed`,
+				description: `Geen kratten — Snelle respawn — 6 levens — 8 spelers`
 			}
 		},
 		help: {}
