@@ -16,13 +16,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn
-  lint:
-    runs-on: ubuntu-latest
-    needs: setup
-    steps:
     - run: yarn lint
-  test:
-    runs-on: ubuntu-latest
-    needs: lint
-    steps:
     - run: yarn test
