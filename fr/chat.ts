@@ -33,7 +33,7 @@ export default <ChatMessage>{
 		greeting: `Salut! 👋`
 	},
 	[ChatMessageType.game]: {
-		wtf: `WTF`,
+		wtf: `WTF!`,
 		how: `Comment!?`,
 		closeOne: `C'était proche!`,
 		niceOne: `Super!`,

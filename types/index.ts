@@ -1,4 +1,4 @@
-export type SupportedLocale = `en` | `nl` | `de` | `fr` | `es`
+export type SupportedLocale = `en` | `nl` | `de` | `fr` | `es` | `it`
 export type LanguageList =
 	| `nl-NL`
 	| `en-US`
