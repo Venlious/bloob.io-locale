@@ -127,6 +127,7 @@ export default <MessageList>{
 		increment: null
 	},
 	misc: {
+		beta: null,
 		about: null,
 		public: null,
 		private: null,
@@ -347,6 +348,7 @@ export default <MessageList>{
 		}
 	},
 	info: {
+		betaNotice: null,
 		howToPlay: null,
 		skipStepOverHalf: null,
 		skipStepAll: null,

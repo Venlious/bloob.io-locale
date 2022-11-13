@@ -553,11 +553,11 @@ export default <GameMessage>{
 				help: `Wenn diese Funktion aktiviert ist, löst eine Explosion Bomben in Reichweite aus, die ebenfalls explodieren. Die Kills gehen an den Spieler, der die Bombe platziert hat, die die Kettenreaktion ausgelöst hat. Wenn deaktiviert, werden diese Bomben stattdessen entfernt.`
 			},
 			cratePercentage: {
-				title: `Kisten-Prozentsatz`,
+				title: `Kisten`,
 				help: `Der Prozentsatz der Kisten, die auf dem Spielfeld angezeigt werden. Kisten können gesprengt werden und können Powerups enthalten.`
 			},
 			powerUpPercentage: {
-				title: `Power-up-Prozentsatz`,
+				title: `Power-up`,
 				help: `Wie wahrscheinlich es ist, dass ein Power-Up beim Zerstören einer Kiste fallen gelassen wird.`
 			}
 		},
@@ -566,6 +566,14 @@ export default <GameMessage>{
 			default: {
 				title: `Standard`,
 				description: `9x9 Feld — 3 Leben — 4 Spieler`
+			},
+			party: {
+				title: `Party`,
+				description: `QR Square Feld — 6 Leben — 8 Spieler`
+			},
+			action: {
+				title: `Actionreich`,
+				description: `Keine Kisten — Schneller Respawn — 6 Leben — 8 Spieler`
 			}
 		}
 	},

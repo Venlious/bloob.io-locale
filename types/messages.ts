@@ -533,6 +533,7 @@ export type MessageList = {
 	 * These are short, reusable, and are generally used for titles or buttons.
 	 */
 	misc: {
+		beta: string
 		about: string
 		public: string
 		private: string
@@ -1579,6 +1580,14 @@ export type MessageList = {
 	 * Generic information (tooltips, explanations)
 	 */
 	info: {
+		/**
+		 * Shown as a notice when a game is still in beta. It encourages players
+		 * to report feedback.
+		 *
+		 * @argument {string} social - Link to the social where players can give feedback
+		 */
+		betaNotice: string
+
 		/**
 		 * Shown as a button on the page for the game.
 		 */

@@ -127,6 +127,7 @@ export default <MessageList>{
 		increment: `Stappen van 0 | Stap van 1 | Stappen van {count}`
 	},
 	misc: {
+		beta: `Beta`,
 		about: `Over`,
 		public: `Openbaar`,
 		private: `Privé`,
@@ -347,6 +348,7 @@ export default <MessageList>{
 		}
 	},
 	info: {
+		betaNotice: `Dit spel is nog in ontwikkeling. Deel feedback en bugs op onze %{social}`,
 		howToPlay: `Bekijk hoe je dit spel speelt`,
 		skipStepOverHalf: `Deze stap kan ook worden overgeslagen als meer dan de helft van de gebruikers daarvoor stemt.`,
 		skipStepAll: `Deze stap kan ook worden overgeslagen als alle gebruikers daarvoor stemt.`,

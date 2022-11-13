@@ -127,6 +127,7 @@ export default <MessageList>{
 		increment: `%{count}er Inkremente`
 	},
 	misc: {
+		beta: `Beta`,
 		about: `Über`,
 		public: `Öffentlich`,
 		private: `Privat`,
@@ -347,6 +348,7 @@ export default <MessageList>{
 		}
 	},
 	info: {
+		betaNotice: null,
 		howToPlay: `Lerne das Spiel zu spielen`,
 		skipStepOverHalf: `Dieser Schritt kann auch übersprungen werden, wenn mehr als die Hälfte der Spieler dafür stimmt.`,
 		skipStepAll: `Dieser Schritt kann auch übersprungen werden, wenn alle Spieler dafür stimmen.`,
