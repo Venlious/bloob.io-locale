@@ -4,9 +4,9 @@ export default <ChatMessage>{
 	[ChatMessageType.emoji]: {
 		love: `❤️`,
 		luck: `🍀`,
+		fire: `🔥`,
 		celebration: `🎉`,
 		thumbsUp: `👍`,
-		thumbsDown: `👎`,
 		mindBlowing: `🤯`,
 		thinking: `🤔`,
 		clap: `👏`,

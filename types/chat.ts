@@ -15,9 +15,9 @@ export type ChatMessage = {
 	[ChatMessageType.emoji]: {
 		love: string
 		luck: string
+		fire: string
 		celebration: string
 		thumbsUp: string
-		thumbsDown: string
 		mindBlowing: string
 		thinking: string
 		clap: string
