@@ -6,6 +6,15 @@ import { PoolGameGroup, PoolGameFoulType } from './index'
 
 export type MessageList = {
 	/**
+	 * Keeps track of the total number of entries in the project
+	 * and how much of them are still missing. This can be updated by
+	 * running `yarn test`
+	 */
+	_entries: {
+		total: number
+		missing: number
+	}
+	/**
 	 * Site name - Bloob.io
 	 */
 	name: string
@@ -1580,6 +1589,13 @@ export type MessageList = {
 	 * Generic information (tooltips, explanations)
 	 */
 	info: {
+		/**
+		 * Shown when the user is using a language that is less than 90% complete.
+		 *
+		 * @argument {number} percentage - Percentage on how complete the translation is
+		 */
+		incompleteTranslationNotice: string
+
 		/**
 		 * Shown as a notice when a game is still in beta. It encourages players
 		 * to report feedback.
