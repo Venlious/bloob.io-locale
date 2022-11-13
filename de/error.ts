@@ -1,19 +1,27 @@
-export default {
+import { ErrorMessage } from '../types/error'
+
+export default <ErrorMessage>{
 	rateLimit: {
 		secure: `Du hast die Höchstgrenze auf diesem sicheren Kanal erreicht. Warte %{seconds} Sekunde(n).`,
 		generic: `Mach mal langsamer! Warte %{seconds} Sekunde(n).`
 	},
-	token: {
-		inUse: `Es sieht so aus, als ob die Seite in einem anderen Tab geöffnet ist und die Verbindung hier unterbrochen wurde.`
-	},
 	generic: {
+		desync: null,
+		alreadyConnected: `Es sieht so aus, als ob die Seite in einem anderen Tab geöffnet ist und die Verbindung hier unterbrochen wurde.`,
 		title: `Ein Fehler ist aufgetreten.`,
 		invalid: `Die angegebenen Daten sind ungültig.`,
+		texture: null,
 		invalidAction: `Es wurde ein ungültiger Aktionstyp "%{type}" angegeben.`,
 		maintenance: `Du kannst diese Aktion während einer Wartung nicht durchführen.`,
 		missingArguments: `Fehlende Argumente für diese Aktion.`,
 		missingAction: `Eine Aktionsart ist erforderlich.`,
-		versionMismatch: undefined
+		cannotSelf: `Du kannst diese Aktion nicht an dir selbst ausführen.`,
+		actionAgainstBot: `Du kannst diese Aktion nicht an einem Bot ausführen.`,
+		againstAgainstInactiveUser: `Du kannst diese Aktion nicht an einem inaktiven Benutzer ausführen.`,
+		invalidUser: `Der Benutzer mit der angegebenen ID ist nicht in diesem Spiel.`,
+		invalidTime: `Du kannst diese Aktion gerade nicht ausführen.`,
+		versionMismatch: null,
+		clipboard: `Kopieren in die Zwischenablage nicht möglich.`
 	},
 	config: {
 		invalidType: `Ungültiger Konfigurationstyp "%{type}" angegeben.`,
@@ -23,39 +31,33 @@ export default {
 		integer: `Option "%{id}" muss eine ganze Zahl sein.`,
 		max: `Option "%{id}" hat einen Höchstwert von "%{max}".`,
 		min: `Option "%{id}" hat einen Mindestwert von "%{min}".`,
-		increment: `Option "%{id}" erfordert %{increment}er Schritte.`
+		increment: `Option "%{id}" erfordert %{increment}er Schritte.`,
+		minExceedMaxLength: `Die minimale Länge kann nicht größer als die maximale Länge sein.`,
+		maxSubceedMinLength: `Die maximale Länge kann nicht kleiner als die minimale Länge sein.`
 	},
 	start: {
 		fieldRows: `Das ausgewählte Spielfeld unterstützt nicht mehr als %{rows} Reihen`,
 		fieldCannotFitUsers: `Das ausgewählte Spielfeld unterstützt nicht mehr als %{users} Spieler`,
 		whiteCardThreshold: `Das Spiel erfordert mindestens %{count} Antwortkarten (weiß)`,
-		blackCardThreshold: `Das Spiel erfordert mindestens %{count} Aktionskarten (schwarz)`
+		blackCardThreshold: `Das Spiel erfordert mindestens %{count} Aktionskarten (schwarz)`,
+		insufficientPlayers: `Es werden mindestens %{min} Spieler benötigt, um das Spiel zu starten.`
 	},
 	game: {
-		playerConceded: `Spieler "%{name}" hat aufgegeben und automatisch verloren.`,
+		velocity: null,
+		playerForfeited: `Spieler "%{name}" hat aufgegeben und automatisch verloren.`,
+		missedTurnWarning: null,
+		missedTurnKick: null,
 		autoTurnWarning: `Du warst zu spät dran und es wurde ein Zug für dich gemacht. Wenn dies zu oft hintereinander passiert, verlierst du. (%{current}/%{threshold})`,
 		autoTurnKick: `Du hast automatisch verloren, weil du %{current} Züge hintereinander zu spät warst.`,
 		insufficientRows: `Die Anzahl der ausgewählten Zeilen passt nicht in dieses Feld.`,
-		insufficientRoom: `Es gibt zu viele Spieler für das ausgewählte Spielfeld.`,
 		stuckSkip: `Du wurdest übersprungen, weil du keinen Zug machen kannst.`,
 		stuckThreshold: `Du bist ausgeschieden, weil du %{moves} Mal hintereinander nicht ziehen konntest.`,
 		allStuck: `Niemand kann einen Zug mehr machen. Das Spiel ist vorbei.`,
-		cannotSelf: `Du kannst diese Aktion nicht an dir selbst ausführen.`,
-		isBot: `Du kannst diese Aktion nicht an einem Bot ausführen.`,
 		invalid: `Spieltyp "%{type}" existiert nicht.`,
 		invalidMove: `Dieser Zug ist nicht möglich.`,
-		invalidUser: `Der Benutzer mit der angegebenen ID ist nicht in diesem Spiel.`,
-		invalidTime: `Du kannst diese Aktion gerade nicht ausführen.`,
 		invalidVote: `Die Stimme, die du abgeben wolltest, ist ungültig.`,
-		invalidCard: `Ungültige Kartendaten.`,
-		invalidCardSet: `Ungültiges Kartenset.`,
-		invalidCardSelection: `Ungültige Kartenauswahl`,
-		inactiveUser: `Du kannst diese Aktion nicht an einem inaktiven Benutzer ausführen.`,
 		alreadyPlaced: `Du hast schon etwas platziert.`,
 		alreadyVoted: `Du hast schon abgestimmt.`,
-		cardNotInHand: `Du hast diese Karte nicht auf der Hand.`,
-		insufficientWhiteCards: `Nicht genügend Antwortkarten, um das Spiel zu beginnen.`,
-		insufficientBlackCards: `Nicht genügend Aktionskarten, um das Spiel zu beginnen.`,
 		invalidPlacement: `Ungültige Figurenplatzierung.`,
 		invalidBombPlacement: `Ungültige Bombenplatzierung.`,
 		cellClaimed: `Ein oder mehrere Felder deiner Auswahl sind bereits belegt.`,
@@ -63,28 +65,30 @@ export default {
 		invalidColumnRow: `Spalte oder Zeile ist nicht gesetzt oder ungültig.`,
 		invalidColumn: `Spalte ist nicht gesetzt oder ungültig.`,
 		invalidWord: `Das angegebene Wort kommt in dem verwendeten Wörterbuch nicht vor.`,
-		wordTooShort: `Wortauswahl zu kurz (Min. %{min})`,
-		wordTooLong: `Wortauswahl zu lang (Max. %{max})`
+		wordnicknameMinLength: `Wortauswahl zu kurz (Min. %{min})`,
+		wordnicknameMaxLength: `Wortauswahl zu lang (Max. %{max})`
 	},
 	card: {
+		loadingSets: `Die Kartensets konnten nicht heruntergeladen werden.`,
+		invalid: `Ungültige Kartendaten.`,
+		invalidSet: `Ungültiges Kartenset.`,
+		invalidSelection: `Ungültige Kartenauswahl`,
+		notInHand: `Du hast diese Karte nicht auf der Hand.`,
 		loadError: `Beim Herunterladen der Kartensätze ist ein Fehler aufgetreten.`,
 		underscore: `Jeder Unterstrich ergibt eine Antwortkarte — nicht mehrere hintereinander schreiben!`,
 		empty: `Die Karte darf nicht leer sein.`,
 		pickLimit: `Du kannst nicht mehr als 3 Antwortkarten auswählen. (Zu viele Unterstriche?)`,
-		set: {
-			sizeLimit: `Die Gesamtgröße der benutzerdefinierten Kartensätze darf %{limit} nicht überschreiten`,
-			name: `Name muss zwischen 3 und 32 Zeichen lang sein`
-		}
+		setSizeLimit: `Die Gesamtgröße der benutzerdefinierten Kartensätze darf %{limit} nicht überschreiten`,
+		setName: `Name muss zwischen 3 und 32 Zeichen lang sein`
 	},
 	preset: {
 		alreadyApplied: `Diese Voreinstellung wurde bereits angewendet.`,
-		invalid: `Du kannst "%{id}" nicht als Voreinstellung verwenden.`,
-		inProgress: `Du kannst die Voreinstellung nicht ändern, während das Spiel läuft.`
+		invalid: `Du kannst "%{id}" nicht als Voreinstellung verwenden.`
 	},
 	match: {
 		empty: `Spiel geschlossen. Alle anderen Spieler haben das Spiel verlassen.`,
-		tooLate: `Du hast die Anfrage zur Revanche nicht angenommen und bist zum Hauptmenü zurückgekehrt.`,
-		cancelledRematch: `Sorry! Es sind nicht mehr genug Spieler für eine Revanche übrig.`,
+		rematchTimeout: `Du hast die Anfrage zur Revanche nicht angenommen und bist zum Hauptmenü zurückgekehrt.`,
+		rematchCancelled: `Sorry! Es sind nicht mehr genug Spieler für eine Revanche übrig.`,
 		inactive: `Das Spiel, in dem du warst, wurde geschlossen, weil es zu lange inaktiv war.`,
 		inactiveWarning: `Dieses Spiel wird bald wegen Inaktivität geschlossen, wenn keine Aktion ausgeführt wird.`,
 		replacedByBot: `Du wurdest durch einen Bot ersetzt und kannst nicht mehr an diesem Spiel teilnehmen.`,
@@ -94,22 +98,17 @@ export default {
 		computer: `Dies ist ein Spiel gegen den Computer, du kannst nicht teilnehmen.`,
 		private: `Dies ist ein privates Spiel. Für die Teilnahme musst du eine ID angeben.`,
 		startStop: `Du kannst ein laufendes Spiel nicht starten oder beenden.`,
-		insufficientPlayers: `Es werden mindestens %{min} Spieler benötigt, um das Spiel zu starten.`,
 		inProgress: `Das Spiel läuft bereits. Du kannst nicht mehr teilnehmen.`,
 		full: `Das Spiel ist bereits voll (%{current}/%{max}).`
 	},
-	check: {
-		minExceedMaxLength: `Die minimale Länge kann nicht größer als die maximale Länge sein`,
-		maxSubceedMinLength: `Die maximale Länge kann nicht kleiner als die minimale Länge sein`
-	},
 	profile: {
-		profanity: undefined,
+		profanity: null,
 		missingData: `Fehlende Daten für Spitzname und/oder Bild.`,
-		incorrectNickname: `Spitzname ungültig.`,
-		incorrectPicture: `Bild ungültig.`,
-		tooLong: `Spitzname zu lang (%{length}/%{max})`,
-		tooShort: `Spitzname zu kurz (%{length}/%{min})`,
-		alphanumeric: `Spitzname darf nur alphanumerische Zeichen und die Sonderzeichen ?!_-+ enthalten.`,
+		invalidNickname: `Spitzname ungültig.`,
+		invalidPicture: `Bild ungültig.`,
+		nicknameMaxLength: `Spitzname zu lang (%{current}/%{max})`,
+		nicknameMinLength: `Spitzname zu kurz (%{current}/%{min})`,
+		nicknameAllowedCharacters: `Spitzname darf nur alphanumerische Zeichen und die Sonderzeichen ?!_-+ enthalten.`,
 		inGame: `Profil kann nicht während dem Spiel geändert werden.`
 	},
 	requirement: {

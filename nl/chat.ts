@@ -1,5 +1,7 @@
-export default {
-	EMOJI: {
+import { ChatMessage, ChatMessageType } from '../types/chat'
+
+export default <ChatMessage>{
+	[ChatMessageType.emoji]: {
 		love: `❤️`,
 		luck: `🍀`,
 		celebration: `🎉`,
@@ -11,8 +13,8 @@ export default {
 		cry: `😭`,
 		cool: `😎`
 	},
-	UNIVERSAL: {
-		leftTheGame: 'heeft het spel verlaten',
+	[ChatMessageType.universal]: {
+		leftTheGame: `heeft het spel verlaten`,
 		affirmative: `Oke.`,
 		thanks: `Dankje!`,
 		sorry: `Sorry!`,
@@ -22,7 +24,7 @@ export default {
 		glhf: `glhf`,
 		gg: `gg`
 	},
-	PRE_GAME: {
+	[ChatMessageType.preGame]: {
 		readyCheck: `Iedereen klaar?`,
 		changeSettings: `Wijzig instellingen!`,
 		ready: `Klaar!`,
@@ -30,22 +32,21 @@ export default {
 		go: `Kom op!`,
 		greeting: `Hallo! 👋`
 	},
-	GAME: {
+	[ChatMessageType.game]: {
 		wtf: `WTF`,
 		how: `Hoe!?`,
 		closeOne: `Bijna!`,
 		niceOne: `Mooi gedaan!`,
 		remindMove: `Jouw beurt!`,
 		wow: `Wow!`,
-		oops: 'Oeps!',
-		no: 'Neeee!',
-		ohNo: 'Oh nee!'
+		oops: `Oeps!`,
+		no: `Neeee!`,
+		ohNo: `Oh nee!`
 	},
-	POST_GAME: {
+	[ChatMessageType.postGame]: {
 		closeOne: `Bijna!`,
 		wellPlayed: `Goed gespeeld!`,
 		differentGame: `Ander spel?`,
-		gg: `gg`,
 		rematch: `Nog een keer!`,
 		fun: `Dat was leuk!`,
 		bye: `Doei!`
