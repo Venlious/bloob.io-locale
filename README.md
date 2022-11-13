@@ -20,6 +20,19 @@ While the project itself is not open source, the localisation is. Feel free to c
 -   **I have another question!**
     -   Feel free to [make a new issue](https://github.com/Venlious/bloob.io-locale/issues/new) with your question.
 
+# Local Setup
+
+Running the project locally is easy. Please make sure to use Node version 16.
+
+-   Install all files
+    `yarn`
+-   Verify if test passes
+    `yarn test`
+-   Verify if lint passes
+    `yarn lint`
+
+You're now good to go. There's no build process. Use `yarn lint:fix` to automatically fix any formatting and linting errors.
+
 # Contributors
 
 -   Tristan Volk ([@Venlious](https://github.com/Venlious))
