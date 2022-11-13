@@ -1,5 +1,7 @@
-export default {
-	EMOJI: {
+import { ChatMessage, ChatMessageType } from '../types/chat'
+
+export default <ChatMessage>{
+	[ChatMessageType.emoji]: {
 		love: `❤️`,
 		luck: `🍀`,
 		celebration: `🎉`,
@@ -11,8 +13,8 @@ export default {
 		cry: `😭`,
 		cool: `😎`
 	},
-	UNIVERSAL: {
-		leftTheGame: 'hat das Spiel verlassen',
+	[ChatMessageType.universal]: {
+		leftTheGame: `hat das Spiel verlassen`,
 		affirmative: `Okay.`,
 		thanks: `Danke!`,
 		sorry: `Sorry!`,
@@ -22,7 +24,7 @@ export default {
 		glhf: `glhf`,
 		gg: `gg`
 	},
-	PRE_GAME: {
+	[ChatMessageType.preGame]: {
 		readyCheck: `Alle bereit?`,
 		changeSettings: `Einstellungen ändern!`,
 		ready: `Bereit!`,
@@ -30,18 +32,18 @@ export default {
 		go: `Los geht's!`,
 		greeting: `Hallo! 👋`
 	},
-	GAME: {
+	[ChatMessageType.game]: {
 		wtf: `WTF`,
 		how: `Wie!?`,
 		closeOne: `Fast!`,
 		niceOne: `Gut gemacht!`,
 		remindMove: `Du bist dran!`,
 		wow: `Wow!`,
-		oops: 'Ups!',
-		no: 'Neiiiin!',
-		ohNo: 'Oh nein!'
+		oops: `Ups!`,
+		no: `Neiiiin!`,
+		ohNo: `Oh nein!`
 	},
-	POST_GAME: {
+	[ChatMessageType.postGame]: {
 		closeOne: `Fast!`,
 		wellPlayed: `Gut gespielt!`,
 		differentGame: `Anderes Spiel?`,

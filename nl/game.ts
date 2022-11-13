@@ -1,24 +1,24 @@
-import GAME_TYPE from '../../../assets/enums/game-type'
-import CHECKERS_KING_TYPE from '../../../assets/enums/checkers-king-type'
-import WIN_CONDITION from '../../../assets/enums/win-condition'
+import { GameType, GenericType, CheckersKingType, WinConditionType } from '../types/index'
+import { GameMessage } from '../types/game'
 
-export default {
-	generic: {
+export default <GameMessage>{
+	[GenericType.generic]: {
 		title: `Gratis Online Multiplayer Browserspellen`,
+		description: `Een verzameling van multiplayer browser spellen zonder de noodzaak om een account aan te maken. Speel zonder gedoe en pas de ervaring aan naar je eigen smaak.`,
 		options: {
 			public: {
-				name: `Spel Privacy`
+				title: `Spel Privacy`
 			},
 			maxUsers: {
-				name: `Max. Spelers`,
+				title: `Max. Spelers`,
 				help: `Hoeveel spelers er maximaal in het spel mogen.`
 			},
 			botFill: {
-				name: `Bot Fill`,
+				title: `Bot Fill`,
 				help: `Wanneer deze optie is ingeschakeld, zullen bots alle lege spelerslots opvullen. Als een speler vroegtijdig het spel verlaat zal deze ook een speler vervangen.`
 			},
 			botDifficulty: {
-				name: `Bot Moeilijkheidsgraad`,
+				title: `Bot Moeilijkheidsgraad`,
 				data: {
 					easy: `Makkelijk`,
 					normal: `Normaal`,
@@ -26,49 +26,50 @@ export default {
 				}
 			},
 			winCondition: {
-				name: `Win Voorwaarde`,
-				help: `Bepaal wanneer het spel tot een einde moet komen. Dit is gekoppeld aan de instelling "Winnende Aantal".`
+				title: `Win Voorwaarde`,
+				help: `Bepaal wanneer het spel tot een einde moet komen.`
 			},
 			winAmount: {
-				name: `Winnende Aantal`
+				title: `Winnende Aantal`
 			}
 		},
+		help: {},
 		presets: {
 			custom: {
-				name: `Custom`,
-				desc: `Instellingen aangepast door jou — Laatste update %{timestamp}`
+				title: `Custom`,
+				description: `Instellingen aangepast door jou — Laatste update %{timestamp}`
 			},
 			default: {
-				name: `Standaard`
+				title: `Standaard`
 			}
 		}
 	},
-	[GAME_TYPE.WORDRACE]: {
+	[GameType.wordrace]: {
 		name: `Wordrace`,
 		tooltip: `Zoek woorden in elke richting op een willekeurig gegenereerd veld terwijl je racet tegen anderen met hetzelfde doel.`,
 		description: `Wordrace is een gratis uniek woorden zoek spel waar jij het tegen anderen opneemt om zo snel mogelijk zoveel mogelijk worden te vinden. Probeer het meteen.`,
 		title: `Gratis Online Woord Zoek Spel`,
 		options: {
 			globalLanguage: {
-				name: `Universele Taal`,
+				title: `Universele Taal`,
 				help: {
 					enabled: `<b>Ingeschakeld</b>: Iedereen zoekt naar woorden in de taal die jij instelt.`,
 					disabled: `<b>Uitgeschakeld</b>: Elke speler kiest een taal naar keuze.`
 				}
 			},
 			language: {
-				name: `Taal`,
+				title: `Taal`,
 				help: {
 					intro: `De taal waarin iedereen woorden in moet vinden.`,
 					globalLanguage: `Als de <b>Universele Taal</b> is uitgeschakeld kan iedereen in hun eigen taal spelen.`
 				}
 			},
 			sharedField: {
-				name: `Gedeelde Speelveld`,
+				title: `Gedeelde Speelveld`,
 				help: `Iedereen ziet altijd hetzelfde speelveld. Als het speelveld gedeeld wordt kan iedereen zien welke letters zijn opgeëist. Deze letters kunnen dan niet meer gebruikt worden en maakt het spel steeds moeilijker.`
 			},
 			multiplier: {
-				name: `Vermenigvuldigers`,
+				title: `Vermenigvuldigers`,
 				help: `Vermenigvuldigers staan bij random letters in het speelveld. Als je hiermee een selectie maakt wordt de score hiermee vermenigvuldigt.`,
 				data: {
 					off: `Uitgeschakeld`,
@@ -79,32 +80,34 @@ export default {
 				}
 			},
 			roundTotal: {
-				name: `Rondes`,
+				title: `Rondes`,
 				help: `Elke ronde zal een nieuw speelveld genereren.`
 			},
 			roundDuration: {
-				name: `Duur van Ronde`,
+				title: `Duur van Ronde`,
 				help: `Hoe lang een enkele ronde duurt.`
 			},
 			roundIntermission: {
-				name: `Tussentijd`,
+				title: `Tussentijd`,
 				help: `Hoe lang de tijd tussen de rondes duurt.`
 			},
 			minWordLength: {
-				name: `Min. Woordlengte`,
+				title: `Min. Woordlengte`,
 				help: `Een woordselectie moet ten minste deze lengte hebben om op geldigheid te worden gecontroleerd.`
 			},
 			maxWordLength: {
-				name: `Max. Woordlengte`,
+				title: `Max. Woordlengte`,
 				help: `Een woordselectie mag niet langer zijn dan deze lengte om op geldigheid te worden gecontroleerd.`
 			},
 			_wordLength: {
-				name: `Woordlengte`,
+				title: `Woordlengte`,
 				help: `Een woordselectie moet tussen deze lengte liggen om als geldig te worden beschouwd.`,
-				between: `Tussen %{min} en %{max}`
+				data: {
+					between: `Tussen %{min} en %{max}`
+				}
 			},
 			field: {
-				name: `Speelveld Formaat`,
+				title: `Speelveld Formaat`,
 				help: {
 					change: `Verander de grootte van het speelveld. Grotere velden maken het spelen met meer mensen gemakkelijker.`,
 					notice: `Let op: grote velden vergroten de interface en passen mogelijk niet in het browservenster van alle spelers.`
@@ -117,58 +120,58 @@ export default {
 				}
 			},
 			_gameDuration: {
-				name: `Spelduur`
+				title: `Spelduur`
 			}
 		},
 		presets: {
 			largeGroup: {
-				name: `Grote Groep`,
-				desc: `Groot speelveld — Individuele talen — Meer spelers`
+				title: `Grote Groep`,
+				description: `Groot speelveld — Individuele talen — Meer spelers`
 			},
 			blitz: {
-				name: `Blitz`,
-				desc: `Veel korte rondes — Veel vermenigvuldigers`
+				title: `Blitz`,
+				description: `Veel korte rondes — Veel vermenigvuldigers`
 			}
 		},
 		help: {
 			find_word: {
 				title: `Woordenselectie`,
-				desc: {
-					'1': `Klik en houd vast op een letter in het speelveld en sleep in elke richting om een woord te vormen.`,
-					'2': `Als je een selectie hebt gemaakt kun je stoppen met klikken en wordt het woord verwerkt. Als het woord geldig is dan krijg je punten afhankelijk van de lengte van het woord.`
-				}
+				description: [
+					`Klik en houd vast op een letter in het speelveld en sleep in elke richting om een woord te vormen.`,
+					`Als je een selectie hebt gemaakt kun je stoppen met klikken en wordt het woord verwerkt. Als het woord geldig is dan krijg je punten afhankelijk van de lengte van het woord.`
+				]
 			},
 			gameplay: {
 				title: `Gameplay`,
-				desc: {
-					'1': `Everyone is trying to find words at the same time as you, it is a race after all. Claimed letters cannot be used again.`,
-					'2': `Sometimes it is more tactical to claim many short words, rather than taking the time for longer ones.`
-				}
+				description: [
+					`Iedereen probeert tegelijk met jou woorden te vinden, het is tenslotte een race. Geclaimde letters kunnen niet opnieuw gebruikt worden.`,
+					`Soms is het tactischer om veel korte woorden te claimen in plaats van langere, moeilijkere, woorden.`
+				]
 			},
 			multiplier: {
 				title: `Vermenigvuldigers`,
-				desc: {
-					'1': `Als het ingeschakeld is, worden er vermenigvuldigers getoond op willekeurige letters op het speelveld die de score van je gevonden woorden vermenigvuldigen!`,
-					'2': `Vermenigvuldigers stapelen op, dus een woord met <b>x2</b> en <b>x3</b> zou de score voor het woord <b>x5</b> vermenigvuldigen!`
-				}
+				description: [
+					`Als het ingeschakeld is, worden er vermenigvuldigers getoond op willekeurige letters op het speelveld die de score van je gevonden woorden vermenigvuldigen!`,
+					`Vermenigvuldigers stapelen op, dus een woord met <b>x2</b> en <b>x3</b> zou de score voor het woord <b>x5</b> vermenigvuldigen!`
+				]
 			},
 			language: {
 				title: `Taal`,
-				desc: {
-					'1': `De spelleider mag beslissen of iedereen in dezelfde taal speelt of in een taal van zijn keuze.`,
-					'2': `Woorden zullen alleen gelden voor de taal waarin je speelt en eventuele accenten worden genegeerd.`
-				}
+				description: [
+					`De spelleider mag beslissen of iedereen in dezelfde taal speelt of in een taal van zijn keuze.`,
+					`Woorden zullen alleen gelden voor de taal waarin je speelt en eventuele accenten worden genegeerd.`
+				]
 			}
 		}
 	},
-	[GAME_TYPE.FOUR_IN_A_ROW]: {
+	[GameType.fourInARow]: {
 		name: `Vier-op-een-Rij`,
 		tooltip: `Speel vier-op-een-rij met maximaal zes spelers in de klassieke spelmodus of beschikbare variaties.`,
 		description: `Speel vier-op-een-rij met maximaal zes spelers in de klassieke spelmodus of beschikbare variaties. Train nu tegen de bots en versla je vrienden met gemak.`,
 		title: `Gratis Online Vier-op-een-Rij Voor 2-6 Spelers`,
 		options: {
 			field: {
-				name: `Speelveld Formaat`,
+				title: `Speelveld Formaat`,
 				help: `De grootte van het speelveld.`,
 				data: {
 					'7x6': `Standaard (7x6)`,
@@ -179,11 +182,11 @@ export default {
 				}
 			},
 			turnTime: {
-				name: `Beurt Tijd`,
+				title: `Beurt Tijd`,
 				help: `Hoe lang elke speler maximaal over zijn beurt mag doen.`
 			},
 			piecesInRow: {
-				name: `Win Conditie`,
+				title: `Win Conditie`,
 				help: `Hoeveel schijven je op een rij moet hebben om het spel te winnen.`,
 				data: {
 					'3': `Drie op een rij (3)`,
@@ -193,11 +196,11 @@ export default {
 				}
 			},
 			sideColumns: {
-				name: `Zijkolommen`,
+				title: `Zijkolommen`,
 				help: `Voegt aan weerszijden van het speelveld een kolom toe met schijven in afwisselende kleuren.`
 			},
 			flip: {
-				name: `Speelveld Omkeren`,
+				title: `Speelveld Omkeren`,
 				help: `Draai het speelveld om, de schijven onderop worden de schijven bovenop. Een teller geeft aan hoeveel beurten er nog resteren tot het veld wordt omgedraaid.`,
 				data: {
 					everyTurn: `Na elke beurt`,
@@ -205,46 +208,46 @@ export default {
 				}
 			},
 			turnsUntilFlip: {
-				name: `Beurten tot Speelveld Keert`,
+				title: `Beurten tot Speelveld Keert`,
 				help: `Het plaatsen van een schijf telt als een beurt. Dit bepaalt dus hoeveel schijven er moeten vallen voordat het speelveld wordt omgedraaid.`
 			},
 			tetrisMode: {
-				name: `Tetris Modus`,
+				title: `Tetris Modus`,
 				help: `Indien ingeschakeld, zal een volledig gevulde rij verdwijnen en alle stukken erboven een rij naar beneden vallen. Dit maakt het ook onmogelijk om in een gelijk spel te eindigen.`
 			}
 		},
 		presets: {
 			fiveInARow: {
-				name: `Vijf op een rij`,
-				desc: `Zijkolommen — Groot speelveld`
+				title: `Vijf op een rij`,
+				description: `Zijkolommen — Groot speelveld`
 			},
 			tetris: {
-				name: `Tetris`,
-				desc: `Volle rijen worden automatisch verwijderd`
+				title: `Tetris`,
+				description: `Volle rijen worden automatisch verwijderd`
 			},
 			flipParty: {
-				name: `Flip Party`,
-				desc: `Speelveld keert om na elke 12 beurten — Erg groot speelveld`
+				title: `Flip Party`,
+				description: `Speelveld keert om na elke 12 beurten — Erg groot speelveld`
 			}
 		},
 		help: {
 			placement: {
 				title: `Plaatsen van schijven`,
-				desc: {
-					'1': `Schijven kunnen op verschillende manieren worden geplaatst. Klik op een kolom met je muis, gebruik de toetsenbordbediening of sleep ze rond.`,
-					'2': `Je kunt zien over welk kolom je tegenstander zweeft, hou dit in gedachten en gebruik het in je voordeel.`
-				}
+				description: [
+					`Schijven kunnen op verschillende manieren worden geplaatst. Klik op een kolom met je muis, gebruik de toetsenbordbediening of sleep ze rond.`,
+					`Je kunt zien over welk kolom je tegenstander zweeft, hou dit in gedachten en gebruik het in je voordeel.`
+				]
 			},
 			win: {
 				title: `Win Conditie`,
-				desc: {
-					'1': `Standaard wint de eerste persoon die vier schijven op een rij heeft in het spel. Dit kan horizontaal, verticaal en diagonaal zijn.`,
-					'2': `De spelleider kan de standaard win conditie veranderen en andere eisen instellen.`
-				}
+				description: [
+					`Standaard wint de eerste persoon die vier schijven op een rij heeft in het spel. Dit kan horizontaal, verticaal en diagonaal zijn.`,
+					`De spelleider kan de standaard win conditie veranderen en andere eisen instellen.`
+				]
 			}
 		}
 	},
-	[GAME_TYPE.ROTTEN_APPLES]: {
+	[GameType.rottenApples]: {
 		name: `Rotten Apples`,
 		tooltip: `Speel een Cards Against Humanity-kloon en pas je ervaring aan naar eigen smaak.`,
 		description: `Speel een Cards Against Humanity kloon en pas de instellingen geheel naar jouw smaak aan. Creëer je eigen kaartensets en speel samen met je vrienden.`,
@@ -257,11 +260,11 @@ export default {
 				}
 			},
 			handSize: {
-				name: `Kaarten in Hand`,
+				title: `Kaarten in Hand`,
 				help: `Het aantal antwoordkaarten dat iedereen op een bepaald moment in zijn hand heeft.`
 			},
 			judgeSystem: {
-				name: `Stem Systeem`,
+				title: `Stem Systeem`,
 				help: `Of er een enkele beslisser is of iedereen mag bepalen wie elke ronde de beste kaarten heeft gespeeld.`,
 				data: {
 					single: `Nieuwe beslisser elke ronde`,
@@ -269,15 +272,15 @@ export default {
 				}
 			},
 			pickBlackCard: {
-				name: `Kies Actiekaart`,
+				title: `Kies Actiekaart`,
 				help: `Bij het aanzetten worden drie willekeurige actiekaarten aan de beslisser getoond om tussen te kiezen.`
 			},
 			handPreview: {
-				name: `Hand Preview`,
+				title: `Hand Preview`,
 				help: `Indien ingeschakeld, wordt aan het begin van het spel en na elke dumpronde een periode toegevoegd. Gedurende deze tijd kan iedereen zijn (nieuwe) kaarten in de hand bekijken.`
 			},
 			dumpRound: {
-				name: `Dumpronde`,
+				title: `Dumpronde`,
 				help: `Tijdens een dump-ronde mag iedereen kaarten in hun hand kiezen welke zij willen verwijderen. Na afloop van de ronde ontvangt iedereen nieuwe antwoordkaarten ter vervanging.`,
 				data: {
 					disabled: `Uitgeschakeld`,
@@ -285,58 +288,58 @@ export default {
 				}
 			},
 			dumpRoundAmount: {
-				name: `Dumpronde Aantal`
+				title: `Aantal Dumprondes`
 			},
 			showNsfw: {
-				name: `NSFW Kaarten`,
+				title: `NSFW Kaarten`,
 				help: `Kaarten met seks of gevloek.`
 			},
 			showSpecific: {
-				name: `Specifieke Kaarten`,
+				title: `Specifieke Kaarten`,
 				help: `Kaarten met merken, moeilijke woorden, of mensen.`
 			},
 			_filter: {
-				name: `Filter`,
+				title: `Filter`,
 				help: `Actieve filters zorgen dat kaarten die aan de volgende criteria voldoen worden weggelaten:`
 			},
 			timePicking: {
-				name: `Actiekaart Kies Tijd`,
+				title: `Actiekaart Kies Tijd`,
 				help: `Bepaal hoe lang iedereen heeft om een actiekaart te kiezen voor die ronde.`
 			},
 			responseCardLimit: {
-				name: `Antwoordkaart Limiet`,
+				title: `Antwoordkaart Limiet`,
 				help: `Standaard kunnen actiekaarten je maximaal 3 antwoordkaarten laten trekken. Door deze limiet te veranderen zullen actiekaarten die boven dit limiet zitten uit het spel worden gefilterd.`
 			},
 			timeDeciding: {
-				name: `Beslissingstijd (per kaart)`,
+				title: `Beslissingstijd (per kaart)`,
 				help: {
 					intro: `Bepaal hoe lang iedereen heeft om zijn antwoordkaart(en) te selecteren.`,
 					calc: `De totale tijd wordt berekend door <b>ANTWOORDKAARTEN * DEZE TIJD</b>`
 				}
 			},
 			timeVoting: {
-				name: `Stemtijd (per kaart)`,
+				title: `Stemtijd (per kaart)`,
 				help: {
 					intro: `Bepaal hoe lang iedereen heeft om te stemmen voor de winnende selectie.`,
 					calc: `De totale tijd wordt berekend door <b>ANTWOORDKAARTEN * SPELERS * DEZE TIJD</b>`
 				}
 			},
 			timeReveal: {
-				name: `Onthullingstijd (per kaart)`,
+				title: `Onthullingstijd (per kaart)`,
 				help: {
 					intro: `Bepaal hoe lang iedereen de winnende selectie te zien krijgt.`,
 					calc: `De totale tijd wordt berekend door <b>ANTWOORDKAARTEN * DEZE TIJD</b>`
 				}
 			},
 			timeHandPreview: {
-				name: `Hand Preview Tijd (per kaart)`,
+				title: `Hand Preview Tijd (per kaart)`,
 				help: {
 					intro: `Bepaal hoe lang aan het begin van een spel of na een dumpronde iedereen zijn (nieuwe) kaarten mag bekijken.`,
 					calc: `De totale tijd wordt berekend door <b>3 SECONDEN + KAARTEN IN HAND * DEZE TIJD</b>`
 				}
 			},
 			timeDumpRound: {
-				name: `Dumpronde Tijd (per kaart)`,
+				title: `Dumpronde Tijd (per kaart)`,
 				help: {
 					intro: `Bepaal hoe lang iedereen heeft om te kiezen welke kaarten zij willen dumpen.`,
 					calc: `De totale tijd wordt berekend door <b>3 SECONDEN + KAARTEN IN HAND * DEZE TIJD</b>`
@@ -345,56 +348,56 @@ export default {
 		},
 		presets: {
 			democracy: {
-				name: `Democratie`,
-				desc: `Iedereen mag stemmen`
+				title: `Democratie`,
+				description: `Iedereen mag stemmen`
 			}
 		},
 		help: {
 			action: {
 				title: `Actiekaart`,
-				desc: {
-					'1': `Elke ronde wordt een nieuwe zwarte actiekaart gepresenteerd met lege vakjes (___) die door de spelers moeten worden ingevuld.`,
-					'2': `De lege vakjes worden ingevuld met de witte antwoordkaarten. Als alle spelers klaar zijn, kiest de beslisser zijn favoriete antwoord.`
-				}
+				description: [
+					`Elke ronde wordt een nieuwe zwarte actiekaart gepresenteerd met lege vakjes (___) die door de spelers moeten worden ingevuld.`,
+					`De lege vakjes worden ingevuld met de witte antwoordkaarten. Als alle spelers klaar zijn, kiest de beslisser zijn favoriete antwoord.`
+				]
 			},
 			move: {
 				title: `Antwoordkaarten`,
-				desc: {
-					'1': `Onderin de interface kun je de antwoordkaarten in jouw hand zien. Je kunt deze selecteren door erop te klikken of je kunt ze naar de beschikbare plaatsen slepen.`,
-					'2': `Na elke ronde worden de kaarten die je in je selectie hebt gebruikt omgewisseld voor nieuwe.`
-				}
+				description: [
+					`Onderin de interface kun je de antwoordkaarten in jouw hand zien. Je kunt deze selecteren door erop te klikken of je kunt ze naar de beschikbare plaatsen slepen.`,
+					`Na elke ronde worden de kaarten die je in je selectie hebt gebruikt omgewisseld voor nieuwe.`
+				]
 			},
 			vote: {
 				title: `Stemmen`,
-				desc: {
-					'1': `Het stemmen wordt gedaan door één beslisser of door iedereen. Dit hangt af van hoe de spelleider het spel heeft ingesteld.`,
-					'2': `Aan het eind van elke ronde wordt er gestemd op het beste antwoord. De winnaar verdient dan een punt.`
-				}
+				description: [
+					`Het stemmen wordt gedaan door één beslisser of door iedereen. Dit hangt af van hoe de spelleider het spel heeft ingesteld.`,
+					`Aan het eind van elke ronde wordt er gestemd op het beste antwoord. De winnaar verdient dan een punt.`
+				]
 			},
 			sets: {
 				title: `Kaartensets`,
-				desc: {
-					'1': `Voordat het spel begint kan de spelleider kiezen uit vele beschikbare kaartensets of eigen sets maken of importeren.`,
-					'2': `Custom kaartensets kunnen worden geïmporteerd en worden opgeslagen in uw browser, zodat je ze later gemakkelijk opnieuw kunt gebruiken.`
-				}
+				description: [
+					`Voordat het spel begint kan de spelleider kiezen uit vele beschikbare kaartensets of eigen sets maken of importeren.`,
+					`Custom kaartensets kunnen worden geïmporteerd en worden opgeslagen in uw browser, zodat je ze later gemakkelijk opnieuw kunt gebruiken.`
+				]
 			}
 		}
 	},
-	[GAME_TYPE.CHECKERS]: {
+	[GameType.checkers]: {
 		name: `Checkers`,
 		tooltip: `Speel hier dammen met maximaal 4 spelers en allerlei aanpasbare regels.`,
 		description: `Online Dammen is het wereldbekende klassieke bordspel maar dan online! Nodig je vrienden uit en gebruik je eigen spelregels. Speel nu tegen andere spelers en bots. Je kunt hier ook met 2-4 spelers spelen.`,
 		title: `Gratis Online Dammen Voor 2-4 Spelers`,
 		options: {
 			forceTake: {
-				name: `Forceer Overname`,
+				title: `Forceer Overname`,
 				help: {
 					enabled: `<b>Ingeschakeld</b>: Indien mogelijk, zal de speler gedwongen worden een stuk van de tegenstander over te nemen.`,
 					disabled: `<b>Uitgeschakeld</b>: De speler mag zelf de volgende zet bepalen, zelfs als die een stuk van de tegenstander kan overnemen.`
 				}
 			},
 			field: {
-				name: `Speelveld`,
+				title: `Speelveld`,
 				help: `Afhankelijk van de grootte van het veld en het aantal rijen, krijgen alle spelers meer of minder startstukken. Sommige velden ondersteunen tot vier spelers.`,
 				data: {
 					'8x8': `Engels (8x8)`,
@@ -406,106 +409,106 @@ export default {
 			winCondition: {
 				help: `Hoe de winnaar zal worden bepaald.`,
 				data: {
-					[WIN_CONDITION.MORE_PIECES]: `Meeste stukken`,
-					[WIN_CONDITION.OPPOSITE_SIDE]: `Bereik de overkant`
+					[WinConditionType.morePieces]: `Meeste stukken`,
+					[WinConditionType.oppositeSide]: `Bereik de overkant`
 				}
 			},
 			kingCondition: {
-				name: `Kroning Voorwaarde`,
+				title: `Kroning Voorwaarde`,
 				help: `Onder welke voorwaarde een speelstuk bekroond wordt. Een stuk dat gekroond is mag in alle richtingen bewegen.`,
 				data: {
-					[CHECKERS_KING_TYPE.OPPOSITE_SIDE]: `Bereik de overkant`,
-					[CHECKERS_KING_TYPE.TAKE]: `Na stuk overname`,
-					[CHECKERS_KING_TYPE.ALL]: `Elk stuk is gekroond`,
-					[CHECKERS_KING_TYPE.NONE]: `Uitgeschakeld`
+					[CheckersKingType.oppositeSide]: `Bereik de overkant`,
+					[CheckersKingType.take]: `Na stuk overname`,
+					[CheckersKingType.all]: `Elk stuk is gekroond`,
+					[CheckersKingType.none]: `Uitgeschakeld`
 				}
 			},
 			backwardsTake: {
-				name: `Achteruit Overnemen`,
+				title: `Achteruit Overnemen`,
 				help: `Stel in of stukken achterwaarts stukken van de tegenstander mogen overnemen. Indien uitgeschakeld kan dit alleen gedaan worden door gekroonde stukken.`
 			},
 			chainTake: {
-				name: `Ketting Overnames`,
+				title: `Ketting Overnames`,
 				help: `Indien ingeschakeld kan een stuk meerdere andere stukken in één zet overnemen, mits ze op de juiste afstand van elkaar staan. Als deze is uitgeschakeld kan slechts één stuk tegelijk worden overgenomen.`
 			},
 			turnTime: {
-				name: `Beurt Tijd`,
+				title: `Beurt Tijd`,
 				help: `Hoe lang elke speler maximaal over zijn beurt mag doen.`
 			},
 			staleCount: {
-				name: `Doelloos Spel`,
+				title: `Doelloos Spel`,
 				help: `Na hoeveel beurten zonder overname moet het spel als doelloos worden beschouwd en beëindigd.`
 			},
 			stuckThreshold: {
-				name: `Vast Toleratie`,
+				title: `Vast Toleratie`,
 				help: `Als een speler dit aantal beurten achter elkaar vastzit en dus geen stukken kan bewegen, verliest deze automatisch.`
 			},
 			autoTurnThreshold: {
-				name: `Laat Toleratie`,
+				title: `Laat Toleratie`,
 				help: `Als een speler te laat is en er automatisch een zet gemaakt wordt voor dit aantal beurten achter elkaar, verliest deze automatisch.`
 			},
 			rows: {
-				name: `Rijen`,
+				title: `Rijen`,
 				help: `Met hoeveel rijen vol stukken elke speler begint. De maximale hoevelheid rijen is afhankelijk van de grootte van het speelveld.`
 			}
 		},
 		presets: {
 			default: {
-				name: `Engels dammen (standaard)`,
-				desc: `8x8 speelveld — 24 stukken`
+				title: `Engels dammen (standaard)`,
+				description: `8x8 speelveld — 24 stukken`
 			},
 			international: {
-				name: `Internationaal dammen`,
-				desc: `10x10 speelveld — 40 stukken — Achteruit overnemen`
+				title: `Internationaal dammen`,
+				description: `10x10 speelveld — 40 stukken — Achteruit overnemen`
 			},
 			canadian: {
-				name: `Canadees dammen`,
-				desc: `12x12 speelveld — 60 stukken — Achteruit overnemen`
+				title: `Canadees dammen`,
+				description: `12x12 speelveld — 60 stukken — Achteruit overnemen`
 			},
 			party: {
-				name: `Party dammen`,
-				desc: `Plus speelveld — 36 stukken — 4 players`
+				title: `Party dammen`,
+				description: `Plus speelveld — 36 stukken — 4 players`
 			}
 		},
 		help: {
 			movement: {
 				title: `Bewegen van stukken`,
-				desc: {
-					'1': `Stukken kunnen diagonaal worden bewogen. Als je aan de beurt bent, zijn alle stukken die je kunt verplaatsen gemarkeerd.`,
-					'2': `Je kunt op een gemarkeerd stuk klikken om alle mogelijke zetten voor dat stuk te zien.`
-				}
+				description: [
+					`Stukken kunnen diagonaal worden bewogen. Als je aan de beurt bent, zijn alle stukken die je kunt verplaatsen gemarkeerd.`,
+					`Je kunt op een gemarkeerd stuk klikken om alle mogelijke zetten voor dat stuk te zien.`
+				]
 			},
 			take: {
 				title: `Overnames`,
-				desc: {
-					'1': `Als een stuk van de tegenstander diagonaal naast jouw stuk staat met een open plek erachter, kun je het overnemen.`,
-					'2': `Afhankelijk van de instellingen moet je stukken overnemen wanneer dat mogelijk is. Het is soms zelfs mogelijk achteruit een overname doen.`
-				}
+				description: [
+					`Als een stuk van de tegenstander diagonaal naast jouw stuk staat met een open plek erachter, kun je het overnemen.`,
+					`Afhankelijk van de instellingen moet je stukken overnemen wanneer dat mogelijk is. Het is soms zelfs mogelijk achteruit een overname doen.`
+				]
 			},
 			king: {
 				title: `Gekroonde stukken`,
-				desc: {
-					'1': `Met de standaard instellingen wordt een stuk bekroond voor het bereiken van de overkant.`,
-					'2': `Gekroonde stukken kunnen in alle diagonale richtingen bewegen.`
-				}
+				description: [
+					`Met de standaard instellingen wordt een stuk bekroond voor het bereiken van de overkant.`,
+					`Gekroonde stukken kunnen in alle diagonale richtingen bewegen.`
+				]
 			},
 			goal: {
 				title: `Doel`,
-				desc: {
-					'1': `Het doel is normaliter om alle andere stukken van de tegenstander uit te schakelen of totdat er geen geldige zetten meer gedaan kunnen worden.`,
-					'2': `Het doel van het spel, ook wel de win voorwarde genoemd, kan veranderd worden in de instellingen.`
-				}
+				description: [
+					`Het doel is normaliter om alle andere stukken van de tegenstander uit te schakelen of totdat er geen geldige zetten meer gedaan kunnen worden.`,
+					`Het doel van het spel, ook wel de win voorwarde genoemd, kan veranderd worden in de instellingen.`
+				]
 			}
 		}
 	},
-	[GAME_TYPE.BLOMBER]: {
+	[GameType.blomber]: {
 		name: `Blomber`,
 		tooltip: `Blaas je tegenstanders op in een intens slagveld vol power-ups.`,
 		description: `Blomber is een Bomberman multiplayer spel dat je online tegen anderen kunt spelen! Het is gratis en volledig aan te passen naar jouw wensen. Speel het nu!`,
 		title: `Gratis Online Bomberman Geïnspireerd Spel`,
 		options: {
 			field: {
-				name: `Speelveld`,
+				title: `Speelveld`,
 				help: `Grotere speelvelden ondersteunen meerdere spelers.`,
 				data: {
 					'9x9': `Klein Vierkant (9x9)`,
@@ -515,68 +518,68 @@ export default {
 			},
 			winCondition: {
 				data: {
-					[WIN_CONDITION.LAST_STANDING]: `Laatste overlevende (<b>0</b> levens) | Laatste overlevende (<b>1</b> leven) | Laatste overlevende (<b>{count}</b> levens)`,
-					[WIN_CONDITION.KILL_COUNT]: `Eerste met <b>0</b> kills | Eerste met <b>1</b> kill | Eerste met <b>{count}</b> kills`,
-					[WIN_CONDITION.TIME]: `Meeste kills na <b>0</b> min. | Meeste kills na <b>1</b> min. | Meeste kills na <b>{count}</b> min.`
+					[WinConditionType.lastStanding]: `Laatste overlevende (<b>0</b> levens) | Laatste overlevende (<b>1</b> leven) | Laatste overlevende (<b>{count}</b> levens)`,
+					[WinConditionType.killCount]: `Eerste met <b>0</b> kills | Eerste met <b>1</b> kill | Eerste met <b>{count}</b> kills`,
+					[WinConditionType.time]: `Meeste kills na <b>0</b> min. | Meeste kills na <b>1</b> min. | Meeste kills na <b>{count}</b> min.`
 				}
 			},
 			defaultBombCount: {
-				name: `Aantal Bommen`,
+				title: `Aantal Bommen`,
 				help: `Dit is het aantal bommen dat een speler tegelijkertijd kan plaatsen.`
 			},
 			defaultBombSize: {
-				name: `Bom Grootte`,
+				title: `Bom Grootte`,
 				help: `Dit is de ontploffingsstraal van een bom. De grootte wordt gemeten in tegels in elke richting.`
 			},
 			defaultSpeed: {
-				name: `Speler Snelheid`,
+				title: `Speler Snelheid`,
 				help: `De loopsnelheid waarmee iedereen begint.`
 			},
 			respawnDelay: {
-				name: `Respawn Tijd`,
+				title: `Respawn Tijd`,
 				help: `De tijd die de speler moet wachten nadat die gedood is voordat die weer kan spelen.`
 			},
 			bombPush: {
-				name: `Bom Duwen`,
+				title: `Bom Duwen`,
 				help: `Indien ingeschakeld kun je tegen een bom aanlopen om deze te duwen in een bepaalde richting.`
 			},
 			explosionDelay: {
-				name: `Explosievertraging`,
+				title: `Explosievertraging`,
 				help: `De vertraging voordat een geplaatste bom zal ontploffen.`
 			},
 			chainReaction: {
-				name: `Kettingreactie`,
+				title: `Kettingreactie`,
 				help: `Indien geactiveerd, zal een explosie bommen binnen bereik doen ontploffen. De kills gaan naar de gebruiker die de bom plaatste die de kettingreactie in gang zette. Als deze optie is uitgeschakeld, zullen deze bommen in plaats daarvan worden verwijderd.`
 			},
 			cratePercentage: {
-				name: `Krat Percentage`,
+				title: `Krat Percentage`,
 				help: `Het percentage kratten dat op het speelveld te zien zal zijn. Kratten kunnen worden opgeblazen en kunnen powerups bevatten.`
 			},
 			powerUpPercentage: {
-				name: `Power-up Percentage`,
+				title: `Power-up Percentage`,
 				help: `Wijzig hoe groot de kans is dat een power up wordt gedropt als een krat wordt vernietigd.`
 			}
 		},
 		presets: {
 			default: {
-				name: `Standaard`,
-				desc: `9x9 speelveld — 3 levens — 4 spelers`
+				title: `Standaard`,
+				description: `9x9 speelveld — 3 levens — 4 spelers`
 			}
 		},
 		help: {}
 	},
-	[GAME_TYPE.EIGHT_BALL_POOL]: {
+	[GameType.eightBallPool]: {
 		name: `8 Ball Poolbiljart `,
 		tooltip: `Speel het populaire biljart spel hier tegen een bot of een andere speler.`,
 		description: `Doe je best in online multiplayer pool! Tik al je ballen uit het veld en eindig met de 8-bal om het spel te winnen!`,
 		title: `Gratis multiplayer spel voor 2 spelers`,
 		options: {
 			turnTime: {
-				name: `Beurt Tijd`,
+				title: `Beurt Tijd`,
 				help: `Hoe lang elke speler heeft om de cue bal te raken.`
 			},
 			missedTurnThreshold: {
-				name: `Beurt Toleratie`,
+				title: `Beurt Toleratie`,
 				help: `Hoeveel beurten achter elkaar kan een speler missen voordat die uit het spel wordt gezet.`
 			}
 		},
@@ -584,31 +587,31 @@ export default {
 		help: {
 			field: {
 				title: `Speelveld`,
-				desc: {
-					'1': `Het veld bevat 6 gaten waarin de ballen gepot kunnen worden. Er zijn in totaal 16 ballen, waarvan één de cue bal is die je op jouw beurt raakt.`,
-					'2': `Er zijn 7x gestreepte en 7x effen ballen, alsmede één zwarte eight ball. Bij het begin van het spel liggen alle ballen in een driehoek met de eight ball in het midden. De cue bal ligt op een afstand.`
-				}
+				description: [
+					`Het veld bevat 6 gaten waarin de ballen gepot kunnen worden. Er zijn in totaal 16 ballen, waarvan één de cue bal is die je op jouw beurt raakt.`,
+					`Er zijn 7x gestreepte en 7x effen ballen, alsmede één zwarte eight ball. Bij het begin van het spel liggen alle ballen in een driehoek met de eight ball in het midden. De cue bal ligt op een afstand.`
+				]
 			},
 			breaking: {
 				title: `Het spel starten (Breken)`,
-				desc: {
-					'1': `Degene die als eerste aan de beurt is, mag de cue ball rond bewegen en slaan in de richting van de driehoek van ballen (de startpositie).`,
-					'2': `Breken kent zijn eigen regels. De cue-bal mag niet gepot worden en minstens twee ballen (behalve de cue bal) moeten een band raken (de muren rond het veld). Als je een bal tijdens het breken pot, krijg je meteen daarna weer een beurt.`
-				}
+				description: [
+					`Degene die als eerste aan de beurt is, mag de cue ball rond bewegen en slaan in de richting van de driehoek van ballen (de startpositie).`,
+					`Breken kent zijn eigen regels. De cue-bal mag niet gepot worden en minstens twee ballen (behalve de cue bal) moeten een band raken (de muren rond het veld). Als je een bal tijdens het breken pot, krijg je meteen daarna weer een beurt.`
+				]
 			},
 			gameplay: {
 				title: `Gameplay`,
-				desc: {
-					'1': `Er zijn zowel gestreepte als effen ballen. Degene die als eerste een bal pot wordt dat type bal en krijgt nog een beurt. Vanaf dat moment mag je alleen nog maar gestreepte of effen ballen potten.`,
-					'2': `De volgorde waarin je jouw ballen in pot doet er niet toe. Als je een fout begaat mag je tegenstander de cue ball verplaatsen voor hun beurt.`
-				}
+				description: [
+					`Er zijn zowel gestreepte als effen ballen. Degene die als eerste een bal pot wordt dat type bal en krijgt nog een beurt. Vanaf dat moment mag je alleen nog maar gestreepte of effen ballen potten.`,
+					`De volgorde waarin je jouw ballen in pot doet er niet toe. Als je een fout begaat mag je tegenstander de cue ball verplaatsen voor hun beurt.`
+				]
 			},
 			objective: {
 				title: `Doel`,
-				desc: {
-					'1': `Je moet voorkomen dat je de zwarte eight ball pot! Dit mag pas als je al jouw ballen hebt gepot. Je eindigt het spel door de eight ball aan het einde te potten. Het is belangrijk dat je hierbij geen overtredingen begaat, anders verlies je.`,
-					'2': `Als je de eight ball te vroeg pot, verlies je onmiddellijk. Zorg er dus goed voor dat je zorgvuldig mikt!`
-				}
+				description: [
+					`Je moet voorkomen dat je de zwarte eight ball pot! Dit mag pas als je al jouw ballen hebt gepot. Je eindigt het spel door de eight ball aan het einde te potten. Het is belangrijk dat je hierbij geen overtredingen begaat, anders verlies je.`,
+					`Als je de eight ball te vroeg pot, verlies je onmiddellijk. Zorg er dus goed voor dat je zorgvuldig mikt!`
+				]
 			}
 		}
 	}

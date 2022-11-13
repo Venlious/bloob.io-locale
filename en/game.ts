@@ -1,24 +1,24 @@
-import GAME_TYPE from '../../../assets/enums/game-type'
-import CHECKERS_KING_TYPE from '../../../assets/enums/checkers-king-type'
-import WIN_CONDITION from '../../../assets/enums/win-condition'
+import { GameType, GenericType, CheckersKingType, WinConditionType } from '../types/index'
+import { GameMessage } from '../types/game'
 
-export default {
-	generic: {
+export default <GameMessage>{
+	[GenericType.generic]: {
 		title: `Free Multiplayer Games Online | No Sign-Up Needed`,
+		description: `A collection of multiplayer browser-based games without the need to make an account. Play hassle free and customise the experience to your liking.`,
 		options: {
 			public: {
-				name: `Match Privacy`
+				title: `Match Privacy`
 			},
 			maxUsers: {
-				name: `Max. Players`,
+				title: `Max. Players`,
 				help: `How many players are allowed in the match.`
 			},
 			botFill: {
-				name: `Bot Fill`,
+				title: `Bot Fill`,
 				help: `When enabled, bots will fill up any empty player slots. It will also result in a player being replaced by a bot if they leave early.`
 			},
 			botDifficulty: {
-				name: `Bot Difficulty`,
+				title: `Bot Difficulty`,
 				data: {
 					easy: `Easy`,
 					normal: `Normal`,
@@ -26,49 +26,50 @@ export default {
 				}
 			},
 			winCondition: {
-				name: `Winning Condition`,
-				help: `Determine when the game should come to a conclusion. This is linked to the "Winning Amount" setting.`
+				title: `Winning Condition`,
+				help: `Determine when the game should come to a conclusion.`
 			},
 			winAmount: {
-				name: `Winning Amount`
+				title: `Winning Amount`
 			}
 		},
+		help: {},
 		presets: {
 			custom: {
-				name: `Custom`,
-				desc: `Changes made by you — Last updated %{timestamp}`
+				title: `Custom`,
+				description: `Changes made by you — Last updated %{timestamp}`
 			},
 			default: {
-				name: `Default`
+				title: `Default`
 			}
 		}
 	},
-	[GAME_TYPE.WORDRACE]: {
+	[GameType.wordrace]: {
 		name: `Wordrace`,
 		tooltip: `Find words in any direction on a randomly generated field while racing against others with the same objective.`,
 		description: `Wordrace is a free to play unique word finding game with customisable settings to give every player a challenge. It doesn't require any sign-up. Play now.`,
 		title: `Unique Multiplayer Word Game | Bloob.io`,
 		options: {
 			globalLanguage: {
-				name: `Global Language`,
+				title: `Global Language`,
 				help: {
 					enabled: `<b>Enabled</b>: Everyone finds words in the language you set.`,
 					disabled: `<b>Disabled</b>: Each player selects a language of their choosing.`
 				}
 			},
 			language: {
-				name: `Language`,
+				title: `Language`,
 				help: {
 					intro: `The language everyone has to try to find words in.`,
 					globalLanguage: `If the <b>Global Language</b> is disabled each player can select a language of their choosing.`
 				}
 			},
 			sharedField: {
-				name: `Shared Field`,
+				title: `Shared Field`,
 				help: `Everyone always sees the same field. If a field is shared, it means when a letter has been claimed nobody else can take it. This way the game gets more difficult over time.`
 			},
 			multiplier: {
-				name: `Multipliers`,
+				title: `Multipliers`,
 				help: `Multipliers are attached to random letters on the field and multiply the score of a found word if used in the selection.`,
 				data: {
 					off: `Turned Off`,
@@ -79,32 +80,34 @@ export default {
 				}
 			},
 			roundTotal: {
-				name: `Rounds`,
+				title: `Rounds`,
 				help: `Each round will generate a new playing field.`
 			},
 			roundDuration: {
-				name: `Round Duration`,
+				title: `Round Duration`,
 				help: `How long a single round lasts.`
 			},
 			roundIntermission: {
-				name: `Intermission Time`,
+				title: `Intermission Time`,
 				help: `How long the time in between rounds lasts.`
 			},
 			minWordLength: {
-				name: `Min. Word Length`,
+				title: `Min. Word Length`,
 				help: `A word selection must have at least this length in order to be checked on validity.`
 			},
 			maxWordLength: {
-				name: `Max. Word Length`,
+				title: `Max. Word Length`,
 				help: `A word selection cannot exceed this length in order to be checked on validity.`
 			},
 			_wordLength: {
-				name: `Word Length`,
+				title: `Word Length`,
 				help: `A word selection must be between this length to be considered valid.`,
-				between: `Between %{min} and %{max}`
+				data: {
+					between: `Between %{min} and %{max}`
+				}
 			},
 			field: {
-				name: `Field Size`,
+				title: `Field Size`,
 				help: {
 					change: `The size of the playing field. Bigger fields make playing with more people easier.`,
 					notice: `Please note that large field sizes increase the interface size and may not fit the browser window for all players.`
@@ -117,58 +120,58 @@ export default {
 				}
 			},
 			_gameDuration: {
-				name: `Game Duration`
+				title: `Game Duration`
 			}
 		},
 		presets: {
 			largeGroup: {
-				name: `Large Group`,
-				desc: `Big field — Individual languages — More players`
+				title: `Large Group`,
+				description: `Big field — Individual languages — More players`
 			},
 			blitz: {
-				name: `Blitz`,
-				desc: `Many short rounds — Lots of multipliers`
+				title: `Blitz`,
+				description: `Many short rounds — Lots of multipliers`
 			}
 		},
 		help: {
 			find_word: {
 				title: `Word Selection`,
-				desc: {
-					'1': `Click and hold on a letter in the playing field and drag in any direction to form a word.`,
-					'2': `Once you stop clicking, the word is processed, and you get points depending on the length of the word.`
-				}
+				description: [
+					`Click and hold on a letter in the playing field and drag in any direction to form a word.`,
+					`Once you stop clicking, the word is processed, and you get points depending on the length of the word.`
+				]
 			},
 			gameplay: {
 				title: `Gameplay`,
-				desc: {
-					'1': `Everyone is trying to find words at the same time as you, it is a race after all. Claimed letters cannot be used again.`,
-					'2': `Sometimes it is more tactical to claim many short words, rather than taking the time for longer ones.`
-				}
+				description: [
+					`Everyone is trying to find words at the same time as you, it is a race after all. Claimed letters cannot be used again.`,
+					`Sometimes it is more tactical to claim many short words, rather than taking the time for longer ones.`
+				]
 			},
 			multiplier: {
 				title: `Multipliers`,
-				desc: {
-					'1': `When enabled, multipliers are shown on random letters on the field which multiply the score of your found words!`,
-					'2': `Multipliers do stack up, so having a word with <b>x2</b> and <b>x3</b> would multiply the score for the word <b>x5</b>!`
-				}
+				description: [
+					`When enabled, multipliers are shown on random letters on the field which multiply the score of your found words!`,
+					`Multipliers do stack up, so having a word with <b>x2</b> and <b>x3</b> would multiply the score for the word <b>x5</b>!`
+				]
 			},
 			language: {
 				title: `Language`,
-				desc: {
-					'1': `The host gets to decide if everyone plays in the same language or one of their choosing.`,
-					'2': `Words will only be valid for the language you are playing in and any accents are ignored.`
-				}
+				description: [
+					`The host gets to decide if everyone plays in the same language or one of their choosing.`,
+					`Words will only be valid for the language you are playing in and any accents are ignored.`
+				]
 			}
 		}
 	},
-	[GAME_TYPE.FOUR_IN_A_ROW]: {
+	[GameType.fourInARow]: {
 		name: `Four in a Row`,
 		tooltip: `Play Four in a Row with up to six players in either the classic gamemode or available variations.`,
 		description: `Four in a Row is a casual free to play game. Play this classic connect four game with up to 6 friends at once in this fun, addictive, and easy-to-learn game.`,
 		title: `Easy Free Multiplayer Game | Bloob.io`,
 		options: {
 			field: {
-				name: `Field Size`,
+				title: `Field Size`,
 				help: `The size of the playing field.`,
 				data: {
 					'7x6': `Default (7x6)`,
@@ -179,11 +182,11 @@ export default {
 				}
 			},
 			turnTime: {
-				name: `Turn Time`,
+				title: `Turn Time`,
 				help: `How long each player may decide on their next move.`
 			},
 			piecesInRow: {
-				name: `Winning Condition`,
+				title: `Winning Condition`,
 				help: `How many pieces you must have in a row to win the game.`,
 				data: {
 					'3': `Three-in-a-row (3)`,
@@ -193,11 +196,11 @@ export default {
 				}
 			},
 			sideColumns: {
-				name: `Side Columns`,
+				title: `Side Columns`,
 				help: `Adds a column on either side of the playing field with pieces in alternating colours.`
 			},
 			flip: {
-				name: `Field Flip`,
+				title: `Field Flip`,
 				help: `Spice things up by flipping the field, the tiles on the bottom will become the tiles on top. A counter will show how many turns are left until a flip occurs.`,
 				data: {
 					everyTurn: `After every turn`,
@@ -205,46 +208,46 @@ export default {
 				}
 			},
 			turnsUntilFlip: {
-				name: `Turns to Flip`,
+				title: `Turns to Flip`,
 				help: `Placing a piece counts as a turn. This defines how many pieces must be dropped before flipping the field.`
 			},
 			tetrisMode: {
-				name: `Tetris Mode`,
+				title: `Tetris Mode`,
 				help: `When enabled, a fully filled row will disappear and drop all pieces above down a line. This also makes it impossible to tie in a game.`
 			}
 		},
 		presets: {
 			fiveInARow: {
-				name: `Five-in-a-row`,
-				desc: `Side columns — Large field`
+				title: `Five-in-a-row`,
+				description: `Side columns — Large field`
 			},
 			tetris: {
-				name: `Tetris`,
-				desc: `Remove full rows automatically`
+				title: `Tetris`,
+				description: `Remove full rows automatically`
 			},
 			flipParty: {
-				name: `Flip Party`,
-				desc: `Flip field every 12 turns — Very large field`
+				title: `Flip Party`,
+				description: `Flip field every 12 turns — Very large field`
 			}
 		},
 		help: {
 			placement: {
 				title: `Piece Placement`,
-				desc: {
-					'1': `Pieces can be placed several ways. Hover over a column and click, use keyboard controls, or drag it around.`,
-					'2': `You can see which column your opponent is hovering over, keep this in mind and use it to your advantage.`
-				}
+				description: [
+					`Pieces can be placed several ways. Hover over a column and click, use keyboard controls, or drag it around.`,
+					`You can see which column your opponent is hovering over, keep this in mind and use it to your advantage.`
+				]
 			},
 			win: {
 				title: `Winning State`,
-				desc: {
-					'1': `By default, the first person to get four on a row wins the game. This can be horizontal, vertical, and diagonal.`,
-					'2': `The host may change the default winning condition and allow for different requirements.`
-				}
+				description: [
+					`By default, the first person to get four on a row wins the game. This can be horizontal, vertical, and diagonal.`,
+					`The host may change the default winning condition and allow for different requirements.`
+				]
 			}
 		}
 	},
-	[GAME_TYPE.ROTTEN_APPLES]: {
+	[GameType.rottenApples]: {
 		name: `Rotten Apples`,
 		tooltip: `Play a Cards Against Humanity clone and customise your experience to your liking.`,
 		description: `Play a Cards Against Humanity clone and customise your experience to your liking. Create your own custom card sets and include them in your next match.`,
@@ -257,11 +260,11 @@ export default {
 				}
 			},
 			handSize: {
-				name: `Hand Size`,
+				title: `Hand Size`,
 				help: `The amount of response cards everyone holds in their hand at any given time.`
 			},
 			judgeSystem: {
-				name: `Judge System`,
+				title: `Judge System`,
 				help: `Either a judge or everyone gets to determine who had the best play each round.`,
 				data: {
 					single: `New judge every round`,
@@ -269,15 +272,15 @@ export default {
 				}
 			},
 			pickBlackCard: {
-				name: `Pick Action Card`,
+				title: `Pick Action Card`,
 				help: `When turned on, three random action cards are shown to the judge to pick between.`
 			},
 			handPreview: {
-				name: `Hand Preview`,
+				title: `Hand Preview`,
 				help: `When turned on, a period is added at the start of the game and after every dump round. During this time everyone can take a look at their (new) cards in their hand.`
 			},
 			dumpRound: {
-				name: `Dump Round`,
+				title: `Dump Round`,
 				help: `A dump round allows everyone to select cards in their hand they would like to remove. New response cards are given as replacement after the round ends.`,
 				data: {
 					disabled: `Disabled`,
@@ -285,58 +288,58 @@ export default {
 				}
 			},
 			dumpRoundAmount: {
-				name: `Dump Round Amount`
+				title: `Dump Round Amount`
 			},
 			showNsfw: {
-				name: `NSFW Cards`,
+				title: `NSFW Cards`,
 				help: `Cards containing sex or profanity.`
 			},
 			showSpecific: {
-				name: `Specific Cards`,
+				title: `Specific Cards`,
 				help: `Cards containing brands, difficult words, or people.`
 			},
 			_filter: {
-				name: `Filter`,
+				title: `Filter`,
 				help: `Active filters result in cards that fit the following criteria to be left out:`
 			},
 			timePicking: {
-				name: `Action Card Picking Time`,
+				title: `Action Card Picking Time`,
 				help: `Define how long everyone has to pick the action card to play.`
 			},
 			responseCardLimit: {
-				name: `Response Card Limit`,
+				title: `Response Card Limit`,
 				help: `By default action cards can request you to draw up to 3 response cards. By changing this limit action cards requesting more than this limit will be filtered out of the game.`
 			},
 			timeDeciding: {
-				name: `Deciding Time (Per Card)`,
+				title: `Deciding Time (Per Card)`,
 				help: {
 					intro: `Define how long everyone will have to make their response card selection.`,
 					calc: `The total time is calculated as <b>RESPONSE CARDS * THIS TIME</b>`
 				}
 			},
 			timeVoting: {
-				name: `Voting Time (Per Card)`,
+				title: `Voting Time (Per Card)`,
 				help: {
 					intro: `Define how long everyone will have to vote for the winning card selection.`,
 					calc: `The total time is calculated as <b>RESPONSE CARDS * PLAYERS * THIS TIME</b>`
 				}
 			},
 			timeReveal: {
-				name: `Vote Reveal Time (Per Card)`,
+				title: `Vote Reveal Time (Per Card)`,
 				help: {
 					intro: `Define how long everyone gets to see the winning selection.`,
 					calc: `The total time is calculated as <b>RESPONSE CARDS * THIS TIME</b>`
 				}
 			},
 			timeHandPreview: {
-				name: `Hand Preview Time (Per Card)`,
+				title: `Hand Preview Time (Per Card)`,
 				help: {
 					intro: `Define how long at the start of a game or after a dump round everyone gets to look at their (new) cards.`,
 					calc: `The total time is calculated as <b>3 SECONDS + HAND CARDS * THIS TIME</b>`
 				}
 			},
 			timeDumpRound: {
-				name: `Dump Round Time (Per Card)`,
+				title: `Dump Round Time (Per Card)`,
 				help: {
 					intro: `Define how long everyone has to select which cards they'd like to dump.`,
 					calc: `The total time is calculated as <b>3 SECONDS + HAND CARDS * THIS TIME</b>`
@@ -345,56 +348,56 @@ export default {
 		},
 		presets: {
 			democracy: {
-				name: `Democracy`,
-				desc: `Everyone gets to vote`
+				title: `Democracy`,
+				description: `Everyone gets to vote`
 			}
 		},
 		help: {
 			action: {
 				title: `Action Card`,
-				desc: {
-					'1': `Each round a new black action card is presented which has blanks (___) to be filled in by those playing.`,
-					'2': `Blanks are filled in using the white response cards in your hand. Once all players are ready, the judge picks their favourite response.`
-				}
+				description: [
+					`Each round a new black action card is presented which has blanks (___) to be filled in by those playing.`,
+					`Blanks are filled in using the white response cards in your hand. Once all players are ready, the judge picks their favourite response.`
+				]
 			},
 			move: {
 				title: `Response Cards`,
-				desc: {
-					'1': `Your hand will show you your response cards. You can drag these into available slots or click to select them.`,
-					'2': `After each round the cards you used in your selection are swapped for new ones.`
-				}
+				description: [
+					`Your hand will show you your response cards. You can drag these into available slots or click to select them.`,
+					`After each round the cards you used in your selection are swapped for new ones.`
+				]
 			},
 			vote: {
 				title: `Voting`,
-				desc: {
-					'1': `Voting is either done by a single judge or by everyone. This depends on how the host configured the game.`,
-					'2': `At the end of each round, the judge(s) get to vote for their favourite response. A point is rewarded to the winner.`
-				}
+				description: [
+					`Voting is either done by a single judge or by everyone. This depends on how the host configured the game.`,
+					`At the end of each round, the judge(s) get to vote for their favourite response. A point is rewarded to the winner.`
+				]
 			},
 			sets: {
 				title: `Card Sets`,
-				desc: {
-					'1': `Before the game starts, the host can choose out of many available sets or import custom ones.`,
-					'2': `Custom card sets can be imported and are saved to your account, allowing you to easily use them again later.`
-				}
+				description: [
+					`Before the game starts, the host can choose out of many available sets or import custom ones.`,
+					`Custom card sets can be imported and are saved to your account, allowing you to easily use them again later.`
+				]
 			}
 		}
 	},
-	[GAME_TYPE.CHECKERS]: {
+	[GameType.checkers]: {
 		name: `Checkers`,
 		tooltip: `Call it checkers or draughts, play it here with up to 4 players with all kinds of customisable rules.`,
 		description: `Checkers is the classic fast-paced board game you know and love with exciting twists! Be in control and alter the rules as you like. Play with friends now.`,
 		title: `Classic Multiplayer Board Game | Bloob.io`,
 		options: {
 			forceTake: {
-				name: `Force Take`,
+				title: `Force Take`,
 				help: {
 					enabled: `<b>Enabled</b>: When possible, the user will be forced to take an opponent's piece.`,
 					disabled: `<b>Disabled</b>: The user can choose what move they make, even if they can take out an opponent's piece.`
 				}
 			},
 			field: {
-				name: `Field`,
+				title: `Field`,
 				help: `The playing field used. Depending on the size of the field and the amount of rows, you will get more or less starting pieces. Some fields may support up to four players.`,
 				data: {
 					'8x8': `English (8x8)`,
@@ -406,106 +409,106 @@ export default {
 			winCondition: {
 				help: `How the winner will be determined.`,
 				data: {
-					[WIN_CONDITION.MORE_PIECES]: `Most pieces`,
-					[WIN_CONDITION.OPPOSITE_SIDE]: `Reach opposite side`
+					[WinConditionType.morePieces]: `Most pieces`,
+					[WinConditionType.oppositeSide]: `Reach opposite side`
 				}
 			},
 			kingCondition: {
-				name: `King Condition`,
+				title: `King Condition`,
 				help: `Under what condition a piece becomes kinged. A kinged piece is allowed to move in all directions.`,
 				data: {
-					[CHECKERS_KING_TYPE.OPPOSITE_SIDE]: `Reach opposite side`,
-					[CHECKERS_KING_TYPE.TAKE]: `Taking a piece`,
-					[CHECKERS_KING_TYPE.ALL]: `Start with all kings`,
-					[CHECKERS_KING_TYPE.NONE]: `Disabled`
+					[CheckersKingType.oppositeSide]: `Reach opposite side`,
+					[CheckersKingType.take]: `Taking a piece`,
+					[CheckersKingType.all]: `Start with all kings`,
+					[CheckersKingType.none]: `Disabled`
 				}
 			},
 			backwardsTake: {
-				name: `Take Backwards`,
+				title: `Take Backwards`,
 				help: `Set whether pieces are allowed to take over opponent pieces backwards. If disabled, this can only be done by kinged pieces.`
 			},
 			chainTake: {
-				name: `Chain Take`,
+				title: `Chain Take`,
 				help: `When enabled a piece can take over several other pieces in one move, if they are spaced properly. Alternatively when disabled only one piece can be taken at a time.`
 			},
 			turnTime: {
-				name: `Turn Time`,
+				title: `Turn Time`,
 				help: `How long each player may decide on their next move.`
 			},
 			staleCount: {
-				name: `Stale Game`,
+				title: `Stale Game`,
 				help: `After how many turns without any take overs the game should be considered stale and ended.`
 			},
 			stuckThreshold: {
-				name: `Stuck Threshold`,
+				title: `Stuck Threshold`,
 				help: `If a player is stuck for this amount of turns in a row they will lose automatically.`
 			},
 			autoTurnThreshold: {
-				name: `Late Threshold`,
+				title: `Late Threshold`,
 				help: `If a player is late and a move is automatically made for them this number of turns in a row, they automatically lose.`
 			},
 			rows: {
-				name: `Rows`,
+				title: `Rows`,
 				help: `How many rows of pieces each player starts with. Depending on the field size the amount of rows will be determined.`
 			}
 		},
 		presets: {
 			default: {
-				name: `Straight Checkers (Standard)`,
-				desc: `8x8 field — 24 pieces`
+				title: `Straight Checkers (Standard)`,
+				description: `8x8 field — 24 pieces`
 			},
 			international: {
-				name: `International Checkers`,
-				desc: `10x10 field — 40 pieces — Take backwards`
+				title: `International Checkers`,
+				description: `10x10 field — 40 pieces — Take backwards`
 			},
 			canadian: {
-				name: `Canadian Checkers`,
-				desc: `12x12 field — 60 pieces — Take backwards`
+				title: `Canadian Checkers`,
+				description: `12x12 field — 60 pieces — Take backwards`
 			},
 			party: {
-				name: `Party Checkers`,
-				desc: `Plus field — 36 pieces — 4 players`
+				title: `Party Checkers`,
+				description: `Plus field — 36 pieces — 4 players`
 			}
 		},
 		help: {
 			movement: {
 				title: `Piece Movement`,
-				desc: {
-					'1': `Pieces can be moved diagonally. When it is your turn, all pieces that you can move are highlighted.`,
-					'2': `You can click on a highlighted piece to see all possible moves available for that piece.`
-				}
+				description: [
+					`Pieces can be moved diagonally. When it is your turn, all pieces that you can move are highlighted.`,
+					`You can click on a highlighted piece to see all possible moves available for that piece.`
+				]
 			},
 			take: {
 				title: `Takes`,
-				desc: {
-					'1': `If an opponent's piece is diagonally next to your piece with an open spot behind it, you can take it.`,
-					'2': `Depending on the settings, you are either forced to take pieces when possible or can even take backwards.`
-				}
+				description: [
+					`If an opponent's piece is diagonally next to your piece with an open spot behind it, you can take it.`,
+					`Depending on the settings, you are either forced to take pieces when possible or can even take backwards.`
+				]
 			},
 			king: {
 				title: `Kinged Pieces`,
-				desc: {
-					'1': `Under the default settings, when you reach the opposite side with a piece it becomes kinged.`,
-					'2': `Kinged pieces are able to move in all diagonal directions without being forced to move forward.`
-				}
+				description: [
+					`Under the default settings, when you reach the opposite side with a piece it becomes kinged.`,
+					`Kinged pieces are able to move in all diagonal directions without being forced to move forward.`
+				]
 			},
 			goal: {
 				title: `Goal`,
-				desc: {
-					'1': `Typically the goal is to take out all other pieces from the opponent or until no valid moves can be made.`,
-					'2': `The goal of the game, also referred to as the win condition, can be changed in the settings.`
-				}
+				description: [
+					`Typically the goal is to take out all other pieces from the opponent or until no valid moves can be made.`,
+					`The goal of the game, also referred to as the win condition, can be changed in the settings.`
+				]
 			}
 		}
 	},
-	[GAME_TYPE.BLOMBER]: {
+	[GameType.blomber]: {
 		name: `Blomber`,
 		tooltip: `Blow up your opponents in an intense close quarters battlefield packed with power ups in this classic Bomberman game.`,
 		description: `Blomber is a Bomberman multiplayer game with more replayability than most other games. It's free, easy to play, customisable, and requires no sign-up. Play now.`,
 		title: `Bomberman Multiplayer Game | Bloob.io`,
 		options: {
 			field: {
-				name: `Field`,
+				title: `Field`,
 				help: `The playing field used. Bigger field sizes can accommodate more players.`,
 				data: {
 					'9x9': `Small Square (9x9)`,
@@ -515,67 +518,68 @@ export default {
 			},
 			winCondition: {
 				data: {
-					[WIN_CONDITION.LAST_STANDING]: `Last standing (<b>0</b> lives) | Last standing (<b>1</b> live) | Last standing (<b>{count}</b> lives)`,
-					[WIN_CONDITION.KILL_COUNT]: `First to get <b>0</b> kills | First to get <b>1</b> kill | First to get <b>{count}</b> kills`,
-					[WIN_CONDITION.TIME]: `Most kills after <b>0</b> min. | Most kills after <b>1</b> min. | Most kills after <b>{count}</b> min.`
+					[WinConditionType.lastStanding]: `Last standing (<b>0</b> lives) | Last standing (<b>1</b> live) | Last standing (<b>{count}</b> lives)`,
+					[WinConditionType.killCount]: `First to get <b>0</b> kills | First to get <b>1</b> kill | First to get <b>{count}</b> kills`,
+					[WinConditionType.time]: `Most kills after <b>0</b> min. | Most kills after <b>1</b> min. | Most kills after <b>{count}</b> min.`
 				}
 			},
 			defaultBombCount: {
-				name: `Bomb Count`,
+				title: `Bomb Count`,
 				help: `This is the amount of bombs a player can place at the same time.`
 			},
 			defaultBombSize: {
-				name: `Bomb Size`,
+				title: `Bomb Size`,
 				help: `This is the blast radius of a bomb. The size is measured in tiles in each direction.`
 			},
 			defaultSpeed: {
-				name: `Player Speed`,
+				title: `Player Speed`,
 				help: `The player walking speed.`
 			},
 			respawnDelay: {
-				name: `Respawn Time`,
+				title: `Respawn Time`,
 				help: `The time the player has to wait after they are killed before they can play again.`
 			},
 			bombPush: {
-				name: `Bomb Push`,
+				title: `Bomb Push`,
 				help: `When enabled, you can walk into a bomb to push it and slide it in a direction.`
 			},
 			explosionDelay: {
-				name: `Explosion Delay`,
+				title: `Explosion Delay`,
 				help: `The delay before a placed bomb will explode.`
 			},
 			chainReaction: {
-				name: `Chain Reaction`,
+				title: `Chain Reaction`,
 				help: `When enabled, an explosion will trigger bombs within range to also explode. The kills will go to the user who placed the bomb that initiated the chain reaction. If disabled, these bombs will be removed instead.`
 			},
 			cratePercentage: {
-				name: `Crate Percentage`,
+				title: `Crate Percentage`,
 				help: `The percentage of crates that will be shown on the playing field. Crates can be blown up and may contain powerups.`
 			},
 			powerUpPercentage: {
-				name: `Power-up Percentage`,
+				title: `Power-up Percentage`,
 				help: `Modify how likely it is that a power up is dropped when a crate is destroyed.`
 			}
 		},
+		help: {},
 		presets: {
 			default: {
-				name: `Default`,
-				desc: `9x9 field — 3 lives — 4 players`
+				title: `Default`,
+				description: `9x9 field — 3 lives — 4 players`
 			}
 		}
 	},
-	[GAME_TYPE.EIGHT_BALL_POOL]: {
+	[GameType.eightBallPool]: {
 		name: `8 Ball Pool`,
 		tooltip: `Play the popular billiards game here against a bot or player.`,
 		description: `Take your best shot in online multiplayer pool! Sink all your balls and finish with the 8 ball to win at the table!`,
 		title: `Free Multiplayer Game for 2 Players`,
 		options: {
 			turnTime: {
-				name: `Turn Time`,
+				title: `Turn Time`,
 				help: `How long each player has to hit the cue ball.`
 			},
 			missedTurnThreshold: {
-				name: `Max. Missed Turns`,
+				title: `Max. Missed Turns`,
 				help: `How many turns can a player miss in a row before being kicked out of the game.`
 			}
 		},
@@ -583,31 +587,31 @@ export default {
 		help: {
 			field: {
 				title: `Playing Field`,
-				desc: {
-					'1': `The field contains 6 holes in which the balls can be pocketed. There are a total of 16 balls, one of which is the cue ball that you strike on your turn.`,
-					'2': `There are 7x striped and 7x solid balls, as well as 1x black eight ball. At the start of the game all balls are positioned in a triangle with the eight ball in the middle. The cue ball is set further away.`
-				}
+				description: [
+					`The field contains 6 holes in which the balls can be pocketed. There are a total of 16 balls, one of which is the cue ball that you strike on your turn.`,
+					`There are 7x striped and 7x solid balls, as well as 1x black eight ball. At the start of the game all balls are positioned in a triangle with the eight ball in the middle. The cue ball is set further away.`
+				]
 			},
 			breaking: {
 				title: `Starting the game (Breaking)`,
-				desc: {
-					'1': `Whoever has their turn first can move around the cue ball and strike towards the triangle of balls (their starting position).`,
-					'2': `There are rules to breaking. The cue ball cannot be pocketed and at least two balls (except for the cue ball) must hit a cushion (the walls around the field). Pocketing a ball on break guarantees you another turn right after.`
-				}
+				description: [
+					`Whoever has their turn first can move around the cue ball and strike towards the triangle of balls (their starting position).`,
+					`There are rules to breaking. The cue ball cannot be pocketed and at least two balls (except for the cue ball) must hit a cushion (the walls around the field). Pocketing a ball on break guarantees you another turn right after.`
+				]
 			},
 			gameplay: {
 				title: `Gameplay`,
-				desc: {
-					'1': `There are both striped and solid balls. Whoever pockets a ball first becomes that ball type and gets another turn. From that point forward you must only pocket striped or solid balls.`,
-					'2': `The order in which you pocket your balls does not matter. When you commit a foul your opponent will be allowed to move the cue ball around for their turn.`
-				}
+				description: [
+					`There are both striped and solid balls. Whoever pockets a ball first becomes that ball type and gets another turn. From that point forward you must only pocket striped or solid balls.`,
+					`The order in which you pocket your balls does not matter. When you commit a foul your opponent will be allowed to move the cue ball around for their turn.`
+				]
 			},
 			objective: {
 				title: `Objective`,
-				desc: {
-					'1': `You must avoid pocketing the black eight ball up until you have pocketed all your balls. You then finish the game by pocketing the eight ball. It is important you commit no foul while doing so, otherwise you lose.`,
-					'2': `Pocketing the eight ball too soon will result in an instant loss. Make sure to aim carefully!`
-				}
+				description: [
+					`You must avoid pocketing the black eight ball up until you have pocketed all your balls. You then finish the game by pocketing the eight ball. It is important you commit no foul while doing so, otherwise you lose.`,
+					`Pocketing the eight ball too soon will result in an instant loss. Make sure to aim carefully!`
+				]
 			}
 		}
 	}
