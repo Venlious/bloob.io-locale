@@ -8,7 +8,7 @@ import { PoolGameGroup, PoolGameFoulType } from '../types/index'
 export default <MessageList>{
 	_entries: {
 		total: 779,
-		missing: 408
+		missing: 406
 	},
 	name: `Bloob.io`,
 	error,
@@ -62,15 +62,15 @@ export default <MessageList>{
 	},
 	language: {
 		'nl-NL': null,
-		'en-US': `Anglais`,
-		'en-GB': null,
+		'en-US': `Anglais (US)`,
+		'en-GB': `Anglais (UK)`,
 		'fr-FR': `Français`,
 		'de-DE': null,
 		'it-IT': `Italien`,
 		'pl-PL': null,
 		'pt-BR': `Portugais (BR)`,
-		'es-ES': null,
-		'es-MX': `Espagnol`,
+		'es-ES': `Espagnol (EU)`,
+		'es-MX': `Espagnol (MX)`,
 		'sv-SE': null
 	},
 	status: {
