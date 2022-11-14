@@ -37,10 +37,10 @@ const enNumberFormatKeys = objectDeepKeys(enNumberFormat)
 const enCount = getMissingCount(enMessage)
 describe(`correctEntriesCount`, () => {
 	it(`should have the proper total entries count in English`, () => {
-		expect(enCount.total).toBe(enMessage._entries.total)
+		expect(enMessage._entries.total).toBe(enCount.total)
 	})
 	it(`should have no missing entries in English`, () => {
-		expect(enCount.missing).toBe(0)
+		expect(0).toBe(enCount.missing)
 	})
 })
 
@@ -68,13 +68,13 @@ for (const folder of [...supportedLocales, `_empty`]) {
 	describe(`correctEntriesCount`, () => {
 		const count = getMissingCount(messages)
 		it(`should match the English total entries count for "${folder}"`, () => {
-			expect(count.total).toBe(enCount.total)
+			expect(enCount.total).toBe(count.total)
 		})
 		it(`should have the proper total entries count for "${folder}"`, () => {
-			expect(count.total).toBe(messages._entries.total)
+			expect(messages._entries.total).toBe(count.total)
 		})
 		it(`should have the proper missing entries count for "${folder}"`, () => {
-			expect(count.missing).toBe(messages._entries.missing)
+			expect(messages._entries.missing).toBe(count.missing)
 		})
 	})
 }
