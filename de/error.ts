@@ -6,6 +6,7 @@ export default <ErrorMessage>{
 		generic: `Mach mal langsamer! Warte %{seconds} Sekunde(n).`
 	},
 	generic: {
+		unableToConnectToServer: null,
 		desync: null,
 		alreadyConnected: `Es sieht so aus, als ob die Seite in einem anderen Tab geöffnet ist und die Verbindung hier unterbrochen wurde.`,
 		title: `Ein Fehler ist aufgetreten.`,

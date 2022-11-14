@@ -276,6 +276,11 @@ export type MessageList = {
 	 */
 	status: {
 		/**
+		 * Shown when the connection has been lost and a reconnection is attempted.
+		 */
+		reconnecting: string
+
+		/**
 		 * Shown in the status bar as a means of returning to the main menu.
 		 */
 		viewAllGames: string

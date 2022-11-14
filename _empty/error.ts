@@ -6,6 +6,7 @@ export default <ErrorMessage>{
 		generic: null
 	},
 	generic: {
+		unableToConnectToServer: null,
 		desync: null,
 		alreadyConnected: null,
 		title: null,

@@ -6,6 +6,7 @@ export default <ErrorMessage>{
 		generic: `Ralentis un peu! Attends %{seconds} seconde(s).`
 	},
 	generic: {
+		unableToConnectToServer: null,
 		desync: `Désolé, on dirait que tu as été désynchronisé. Essaie à nouveau.`,
 		alreadyConnected: null,
 		title: `Une erreur s'est produite.`,

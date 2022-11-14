@@ -7,7 +7,7 @@ import { PoolGameGroup, PoolGameFoulType } from '../types/index'
 
 export default <MessageList>{
 	_entries: {
-		total: 779,
+		total: 781,
 		missing: 0
 	},
 	name: `Bloob.io`,
@@ -74,6 +74,7 @@ export default <MessageList>{
 		'sv-SE': `Swedish`
 	},
 	status: {
+		reconnecting: `Attempting to reconnect...`,
 		viewAllGames: `View all games`,
 		playingAgainstBots: `Playing Against Bots`,
 		playingAgainstPlayers: `Playing Against Players`,
