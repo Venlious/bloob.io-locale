@@ -6,6 +6,7 @@ export default <ErrorMessage>{
 		generic: `Mach mal langsamer! Warte %{seconds} Sekunde(n).`
 	},
 	generic: {
+		unableToConnectToServer: null,
 		desync: null,
 		alreadyConnected: `Es sieht so aus, als ob die Seite in einem anderen Tab geöffnet ist und die Verbindung hier unterbrochen wurde.`,
 		title: `Ein Fehler ist aufgetreten.`,
@@ -65,8 +66,8 @@ export default <ErrorMessage>{
 		invalidColumnRow: `Spalte oder Zeile ist nicht gesetzt oder ungültig.`,
 		invalidColumn: `Spalte ist nicht gesetzt oder ungültig.`,
 		invalidWord: `Das angegebene Wort kommt in dem verwendeten Wörterbuch nicht vor.`,
-		wordnicknameMinLength: `Wortauswahl zu kurz (Min. %{min})`,
-		wordnicknameMaxLength: `Wortauswahl zu lang (Max. %{max})`
+		wordTooShort: `Wortauswahl zu kurz (Min. %{min})`,
+		wordTooLong: `Wortauswahl zu lang (Max. %{max})`
 	},
 	card: {
 		loadingSets: `Die Kartensets konnten nicht heruntergeladen werden.`,

@@ -6,6 +6,7 @@ export default <ErrorMessage>{
 		generic: `Rustig aan! Wacht %{seconds} seconde(n).`
 	},
 	generic: {
+		unableToConnectToServer: `Kan geen verbinding maken met de spelserver. Je kunt proberen deze pagina later te verversen. Als het probleem aanhoudt neem dan contact op.`,
 		desync: `Sorry, het lijkt erop dat je gedesynchroniseerd bent. Probeer het opnieuw.`,
 		alreadyConnected: `Je hebt deze site in een ander tabblad geopend en daarom ben je hier afgemeld.`,
 		title: `Er is een fout opgetreden.`,
@@ -65,8 +66,8 @@ export default <ErrorMessage>{
 		invalidColumnRow: `Kolom of regel is niet ingesteld of ongeldig.`,
 		invalidColumn: `Kolom is niet ingesteld of ongeldig.`,
 		invalidWord: `Het gegeven woord komt niet voor in het gebruikte woordenboek.`,
-		wordnicknameMinLength: `Woordselectie te kort (Min. %{min})`,
-		wordnicknameMaxLength: `Woordselectie te lang (Max. %{max})`
+		wordTooShort: `Woordselectie te kort (Min. %{min})`,
+		wordTooLong: `Woordselectie te lang (Max. %{max})`
 	},
 	card: {
 		loadingSets: `Er ging iets mis tijdens het laden van de kaartensets.`,

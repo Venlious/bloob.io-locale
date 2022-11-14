@@ -6,6 +6,7 @@ export default <ErrorMessage>{
 		generic: `Slow down a little! Wait %{seconds} second(s).`
 	},
 	generic: {
+		unableToConnectToServer: `Unable to connect to the game server. You may try refreshing this page later. Please reach out if the issue persists.`,
 		desync: `Sorry, it looks like you were desynchronized. Please try again.`,
 		alreadyConnected: `It looks like you opened this site in another tab and you have been disconnected here.`,
 		title: `An error has occured.`,
@@ -65,8 +66,8 @@ export default <ErrorMessage>{
 		invalidColumnRow: `Column or row is not set or invalid.`,
 		invalidColumn: `Column is not set or invalid.`,
 		invalidWord: `The word given is not in the dictionary used.`,
-		wordnicknameMinLength: `Word selection too short (Min. %{min})`,
-		wordnicknameMaxLength: `Word selection too long (Max. %{max})`
+		wordTooShort: `Word selection too short (Min. %{min})`,
+		wordTooLong: `Word selection too long (Max. %{max})`
 	},
 	card: {
 		loadingSets: `Unable to download the card sets.`,

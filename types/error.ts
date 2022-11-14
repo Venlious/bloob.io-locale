@@ -18,6 +18,11 @@ export type ErrorMessage = {
 	 */
 	generic: {
 		/**
+		 * Shown when the user has been trying to connect to the server but has failed to do so.
+		 */
+		unableToConnectToServer: string
+
+		/**
 		 * Error that occurs when the client has desynchronised.
 		 */
 		desync: string
@@ -362,12 +367,12 @@ export type ErrorMessage = {
 		/**
 		 * Error when the word is too short.
 		 */
-		wordnicknameMinLength: string
+		wordTooShort: string
 
 		/**
 		 * Error when the word is too long.
 		 */
-		wordnicknameMaxLength: string
+		wordTooLong: string
 	}
 
 	/**

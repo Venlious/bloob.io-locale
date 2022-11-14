@@ -6,6 +6,7 @@ export default <ErrorMessage>{
 		generic: null
 	},
 	generic: {
+		unableToConnectToServer: null,
 		desync: null,
 		alreadyConnected: null,
 		title: null,
@@ -65,8 +66,8 @@ export default <ErrorMessage>{
 		invalidColumnRow: null,
 		invalidColumn: null,
 		invalidWord: null,
-		wordnicknameMinLength: null,
-		wordnicknameMaxLength: null
+		wordTooShort: null,
+		wordTooLong: null
 	},
 	card: {
 		loadingSets: null,
