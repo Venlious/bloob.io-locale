@@ -159,11 +159,6 @@ export type MessageList = {
 			nameTurnBreaking: string
 
 			/**
-			 * Shown when it the eight ball pocket has been pocketed illegally.
-			 */
-			illegallyPocketedEightBall: string
-
-			/**
 			 * Indicates which round the game is on.
 			 *
 			 * @argument {number} current - Current round
@@ -368,6 +363,8 @@ export type MessageList = {
 		tetris: string
 		basic: string
 		language: string
+		rules: string
+		fouls: string
 	}
 
 	/**
@@ -882,6 +879,11 @@ export type MessageList = {
 		 * Shown in the leaderboard as a column name.
 		 */
 		deaths: string
+
+		/**
+		 * Shown in the leaderboard as a column name.
+		 */
+		fouls: string
 
 		/**
 		 * Shown between different items, such as names.
@@ -1416,6 +1418,11 @@ export type MessageList = {
 		join: string
 
 		/**
+		 * Button to open match by ID browser
+		 */
+		joinById: string
+
+		/**
 		 * The text the button shows while it is full.
 		 */
 		full: string
@@ -1608,6 +1615,11 @@ export type MessageList = {
 		 * @argument {string} social - Link to the social where players can give feedback
 		 */
 		betaNotice: string
+
+		/**
+		 * Shown when there's more description in the hover text.
+		 */
+		clickForDetails: string
 
 		/**
 		 * Shown as a button on the page for the game.
@@ -1822,24 +1834,38 @@ export type MessageList = {
 			[PoolGameFoulType.cueBallHitWrongBall]: string
 
 			/**
-			 * Foul message for when less than two balls hit a cushion after breaking.
+			 * Foul message for when an insufficient amount of balls hit a cushion after breaking.
+			 *
+			 * @argument {string} name - Name of the offender
+			 * @argument {number} min - Minimum number of balls that must hit the cushion
 			 */
-			[PoolGameFoulType.cushionHitsLessThanTwo]: string
+			[PoolGameFoulType.cushionHitMinOnBreak]: string
 
 			/**
 			 * Foul message for when no ball hit a cushion after contact.
+			 *
+			 * @argument {string} name - Name of the offender
+			 * @argument {string} type - Type of ball(s) that are permitted to be hit
 			 */
-			[PoolGameFoulType.cushionHitsLessThanOne]: string
+			[PoolGameFoulType.cushionHitInvalid]: string
 
 			/**
-			 * Foul message for when a user pocketed the 8 ball while comitting a different foul.
+			 * Foul message for when the user has made too many fouls in a row.
+			 *
+			 * @argument {string} name - Name of the offender
+			 * @argument {number} fouls - Number of fouls the user committed in a row
+			 */
+			[PoolGameFoulType.consecutiveFoulsExceeded]: string
+
+			/**
+			 * Foul message for when a user pocketed the 8 Ball while comitting a different foul.
 			 *
 			 * @argument {string} name - Name of the offender
 			 */
 			[PoolGameFoulType.illegalEightBallPocket]: string
 
 			/**
-			 * Foul message for when a user pocketed the 8 ball too soon.
+			 * Foul message for when a user pocketed the 8 Ball too soon.
 			 *
 			 * @argument {string} name - Name of the offender
 			 */

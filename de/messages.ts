@@ -7,8 +7,8 @@ import { PoolGameGroup, PoolGameFoulType } from '../types/index'
 
 export default <MessageList>{
 	_entries: {
-		total: 781,
-		missing: 67
+		total: 841,
+		missing: 127
 	},
 	name: `Bloob.io`,
 	error,
@@ -38,7 +38,6 @@ export default <MessageList>{
 			nameTurn: `%{name}'s Zug`,
 			yourTurnBreaking: null,
 			nameTurnBreaking: null,
-			illegallyPocketedEightBall: null,
 			roundCount: `Runde %{current} von %{total}`
 		},
 		description: {
@@ -55,7 +54,7 @@ export default <MessageList>{
 		cardSetId: `Ausfüllen des Kartensets ID...`,
 		cardContent: `Karteninhalt ausfüllen...`,
 		cardSetName: `Name des Kartensets eingeben...`,
-		matchId: `Spiel ID oder URL`,
+		matchId: `Spiel ID oder URL...`,
 		message: `Nachricht...`,
 		username: `Benutzername`,
 		password: `Passwort`
@@ -102,7 +101,9 @@ export default <MessageList>{
 		take: `Schlagen`,
 		tetris: `Tetris`,
 		basic: `Basic`,
-		language: `Sprache`
+		language: `Sprache`,
+		rules: null,
+		fouls: null
 	},
 	time: {
 		hours: `0 Stunden | 1 Stunde | {count} Stunden`,
@@ -218,6 +219,7 @@ export default <MessageList>{
 		pocketed: null,
 		shots: null,
 		deaths: `Tode`,
+		fouls: null,
 		and: `und`,
 		vs: `vs`,
 		selectAll: `Alles auswählen`,
@@ -317,6 +319,7 @@ export default <MessageList>{
 		create: `Spiel erstellen`,
 		leave: `Spiel verlassen`,
 		join: `Spiel beitreten`,
+		joinById: null,
 		full: `Volles Spiel`,
 		rematch: `Revanche`,
 		lobby: {
@@ -355,6 +358,7 @@ export default <MessageList>{
 	info: {
 		incompleteTranslationNotice: null,
 		betaNotice: null,
+		clickForDetails: null,
 		howToPlay: `Lerne das Spiel zu spielen`,
 		skipStepOverHalf: `Dieser Schritt kann auch übersprungen werden, wenn mehr als die Hälfte der Spieler dafür stimmt.`,
 		skipStepAll: `Dieser Schritt kann auch übersprungen werden, wenn alle Spieler dafür stimmen.`,
@@ -394,8 +398,9 @@ export default <MessageList>{
 			[PoolGameFoulType.cueBallPocket]: null,
 			[PoolGameFoulType.cueBallHitNoBall]: null,
 			[PoolGameFoulType.cueBallHitWrongBall]: null,
-			[PoolGameFoulType.cushionHitsLessThanTwo]: null,
-			[PoolGameFoulType.cushionHitsLessThanOne]: null,
+			[PoolGameFoulType.cushionHitMinOnBreak]: null,
+			[PoolGameFoulType.cushionHitInvalid]: null,
+			[PoolGameFoulType.consecutiveFoulsExceeded]: null,
 			[PoolGameFoulType.illegalEightBallPocket]: null,
 			[PoolGameFoulType.illegalEightBallPocketTooSoon]: null,
 			[PoolGameFoulType.pocketedWrongBall]: null
@@ -404,7 +409,7 @@ export default <MessageList>{
 			description: `Bloob.io ist ein Projekt aus Leidenschaft, das aus Multiplayer-Browsergames besteht. Vorschläge sind immer willkommen!`,
 			licensing: `Einige Spiele können für die Nutzung auf deiner Website oder Plattform lizenziert werden (mit individuellen Anpassungen). Nimm Kontakt auf, wenn du interessiert bist.`,
 			developedBy: `Entwickelt von %{name}`,
-			iconsSource: `Icons mit freundlicher Genehmigung von %{name} (Gratis)`,
+			iconsSource: `Icons mit freundlicher Genehmigung von %{name} (Lizensiert)`,
 			soundsSource: `Töne zur Verfügung gestellt von %{name} (Lizensiert)`,
 			rottenApplesSource: `Rotten Apples basierend auf %{name} (Creative Commons BY-NC-SA 2.0)`,
 			localization: `Lokalisierung durch Freiwillige`

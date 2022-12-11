@@ -7,8 +7,8 @@ import { PoolGameGroup, PoolGameFoulType } from '../types/index'
 
 export default <MessageList>{
 	_entries: {
-		total: 781,
-		missing: 767
+		total: 841,
+		missing: 827
 	},
 	name: `Bloob.io`,
 	error,
@@ -38,7 +38,6 @@ export default <MessageList>{
 			nameTurn: null,
 			yourTurnBreaking: null,
 			nameTurnBreaking: null,
-			illegallyPocketedEightBall: null,
 			roundCount: null
 		},
 		description: {
@@ -102,7 +101,9 @@ export default <MessageList>{
 		take: null,
 		tetris: null,
 		basic: null,
-		language: null
+		language: null,
+		rules: null,
+		fouls: null
 	},
 	time: {
 		hours: null,
@@ -218,6 +219,7 @@ export default <MessageList>{
 		pocketed: null,
 		shots: null,
 		deaths: null,
+		fouls: null,
 		and: null,
 		vs: null,
 		selectAll: null,
@@ -317,6 +319,7 @@ export default <MessageList>{
 		create: null,
 		leave: null,
 		join: null,
+		joinById: null,
 		full: null,
 		rematch: null,
 		lobby: {
@@ -355,6 +358,7 @@ export default <MessageList>{
 	info: {
 		incompleteTranslationNotice: null,
 		betaNotice: null,
+		clickForDetails: null,
 		howToPlay: null,
 		skipStepOverHalf: null,
 		skipStepAll: null,
@@ -394,8 +398,9 @@ export default <MessageList>{
 			[PoolGameFoulType.cueBallPocket]: null,
 			[PoolGameFoulType.cueBallHitNoBall]: null,
 			[PoolGameFoulType.cueBallHitWrongBall]: null,
-			[PoolGameFoulType.cushionHitsLessThanTwo]: null,
-			[PoolGameFoulType.cushionHitsLessThanOne]: null,
+			[PoolGameFoulType.cushionHitMinOnBreak]: null,
+			[PoolGameFoulType.cushionHitInvalid]: null,
+			[PoolGameFoulType.consecutiveFoulsExceeded]: null,
 			[PoolGameFoulType.illegalEightBallPocket]: null,
 			[PoolGameFoulType.illegalEightBallPocketTooSoon]: null,
 			[PoolGameFoulType.pocketedWrongBall]: null

@@ -25,6 +25,12 @@ export default <GameMessage>{
 					hard: `Moeilijk`
 				}
 			},
+			generic: {
+				data: {
+					required: `Verplicht`,
+					notRequired: `Optioneel`
+				}
+			},
 			winCondition: {
 				title: `Win Voorwaarde`,
 				help: `Bepaal wanneer het spel tot een einde moet komen.`
@@ -577,41 +583,141 @@ export default <GameMessage>{
 		help: {}
 	},
 	[GameType.eightBallPool]: {
-		name: `8 Ball Poolbiljart `,
+		name: `8-bal Poolbiljart `,
 		tooltip: `Speel het populaire biljart spel hier tegen een bot of een andere speler.`,
 		description: `Doe je best in online multiplayer pool! Tik al je ballen uit het veld en eindig met de 8-bal om het spel te winnen!`,
 		title: `Gratis multiplayer spel voor 2 spelers`,
 		options: {
 			turnTime: {
 				title: `Beurt Tijd`,
-				help: `Hoe lang elke speler heeft om de cue bal te raken.`
+				help: `Hoe lang elke speler heeft om de cue-bal te raken.`
 			},
-			missedTurnThreshold: {
-				title: `Beurt Toleratie`,
-				help: `Hoeveel beurten achter elkaar kan een speler missen voordat die uit het spel wordt gezet.`
+			illegalBallPocket: {
+				title: `Foutieve Bal Pot`
+			},
+			ruleContactRailOnBreak: {
+				title: `Band Tijdens Breken`,
+				help: `Tijdens het breken, bepaal hoeveel ballen minimaal de band moeten raken. Deze regel vervalt als een bal legaal gepot wordt.`,
+				data: {
+					one: `Eén bal`,
+					two: `Twee ballen`,
+					three: `Drie ballen`,
+					four: `Vier ballen`
+				}
+			},
+			assignedGroup: {
+				title: `Toegewezen Groep`,
+				help: `Bepaal hoe elke speler een groep krijgt toegewezen (effen of gestreept).`,
+				data: {
+					pocket: `Tijdens pot`,
+					random: `Random bij start`
+				}
+			},
+			ruleTurnCanHitBall: {
+				title: `Mag Baltype Raken`,
+				help: `Treedt op wanneer de speler een bal slaat die deze niet mag slaan. De regel geldt niet tijdens het breken.`,
+				data: {
+					assignedGroup: `Toegwezen groep`,
+					assignedGroupPlus: `Toegewezen groep + 8-bal`,
+					eitherGroup: `Beide groepen`,
+					anyBall: `Elke bal`
+				}
+			},
+			ruleTurnMustHitBall: {
+				title: `Moet Bal Raken`,
+				help: `Treedt op wanneer de speler geen bal slaat (van "Mag Baltype Raken") tijdens zijn beurt.`
+			},
+			ruleTurnContactRail: {
+				title: `Moet Band Raken`,
+				help: `Treedt op als geen enkele bal de band (rail) raakt. Deze regel is niet van toepassing als de speler een bal pot.`
+			},
+			ruleConsecutiveFouls: {
+				title: `Meerdere Fouls`,
+				help: `Bepaal wat er moet gebeuren als een speler meerdere fouls (overtredingen) achter elkaar maakt. Deze regel ontmoedigt onsportief gedrag.`,
+				data: {
+					off: `Uit`,
+					loseOnTwo: `Verlies na twee`,
+					loseOnThree: `Verlies na drie`,
+					loseOnFour: `Verlies na vier`
+				}
+			},
+			foul: {
+				help: {
+					disabled: `Foul is uitgeschakeld met de huidige instellingen.`
+				},
+				data: {
+					nothing: `Niets`,
+					keepTurn: `Behoudt beurt`,
+					endTurn: `Beëindig beurt`,
+					endTurnHand: `Beëindig beurt + Bal in hand`,
+					reset: `Beëindig beurt + Herstel veld`,
+					resetHand: `Beëindig beurt + Herstel veld + Bal in hand`,
+					instantWin: `Onmiddellijke overwinning`,
+					instantLoss: `Onmiddellijk verlies`
+				}
+			},
+			foulPocketCueBall: {
+				title: `Potten van cue-bal`,
+				help: `Treedt op wanneer een speler de cue-bal pot.`
+			},
+			foulPocketOpponentBall: {
+				title: `Potten bal van tegenpartij`,
+				help: `Komt voor wanneer een speler de bal van de tegenstander pot. Andere overtredingen hebben voorrang (bv. eerst de verkeerde bal raken).`
+			},
+			foulPocketOwnAndOpponentBall: {
+				title: `Potten eigen en bal van tegenpartij`,
+				help: `Treedt op wanneer een speler zowel zijn eigen bal en een bal van de tegenstander pot. Andere overtredingen hebben voorrang (bv. eerst de verkeerde bal raken).`
+			},
+			foulIllegalEightBallBreak: {
+				title: `Potten van 8-bal tijdens het breken`,
+				help: `Treedt op wanneer een speler erin slaagt de 8-bal te potten tijdens het breken.`
+			},
+			foulIllegalEightBallPocket: {
+				title: `Potten van 8-bal met foul`,
+				help: `Treedt op wanneer een speler de 8-bal pot en tegelijkertijd een andere overtreding begaat (bijv. ook de cue-bal pot).`
+			},
+			foulIllegalEightBallPocketTooSoon: {
+				title: `Te vroeg potten van 8-bal`,
+				help: `Treedt op wanneer een speler de 8-bal pot terwijl hij nog andere objectballen moet potten.`
 			}
 		},
-		presets: {},
+		presets: {
+			default: {
+				title: `Bloob.io Reglement`
+			},
+			wpa: {
+				title: `WPA Reglement`,
+				description: `Lijkt sterk op de regels van de World Pool-Billiard Association`
+			},
+			upa: {
+				title: `UPA Reglement`,
+				description: `Lijkt sterk op de regels van de US Professional Poolplayers Association`
+			},
+			relaxed: {
+				title: `Ontspannen regels`,
+				description: `Mildere straffen en minder regels`
+			}
+		},
 		help: {
 			field: {
 				title: `Speelveld`,
 				description: [
-					`Het veld bevat 6 gaten waarin de ballen gepot kunnen worden. Er zijn in totaal 16 ballen, waarvan één de cue bal is die je op jouw beurt raakt.`,
-					`Er zijn 7x gestreepte en 7x effen ballen, alsmede één zwarte eight ball. Bij het begin van het spel liggen alle ballen in een driehoek met de eight ball in het midden. De cue bal ligt op een afstand.`
+					`Het veld bevat 6 gaten waarin de ballen gepot kunnen worden. Er zijn in totaal 16 ballen, waarvan één de cue-bal is die je op jouw beurt raakt.`,
+					`Er zijn 7x gestreepte en 7x effen ballen, alsmede één zwarte eight ball. Bij het begin van het spel liggen alle ballen in een driehoek met de eight ball in het midden. De cue-bal ligt op een afstand.`
 				]
 			},
 			breaking: {
 				title: `Het spel starten (Breken)`,
 				description: [
-					`Degene die als eerste aan de beurt is, mag de cue ball rond bewegen en slaan in de richting van de driehoek van ballen (de startpositie).`,
-					`Breken kent zijn eigen regels. De cue-bal mag niet gepot worden en minstens twee ballen (behalve de cue bal) moeten een band raken (de muren rond het veld). Als je een bal tijdens het breken pot, krijg je meteen daarna weer een beurt.`
+					`Degene die als eerste aan de beurt is, mag de cue-bal rond bewegen en slaan in de richting van de driehoek van ballen (de startpositie).`,
+					`Breken kent zijn eigen regels. De cue-bal mag niet gepot worden en minstens twee ballen (behalve de cue-bal) moeten een band raken (de muren rond het veld). Als je een bal tijdens het breken pot, krijg je meteen daarna weer een beurt.`
 				]
 			},
 			gameplay: {
 				title: `Gameplay`,
 				description: [
 					`Er zijn zowel gestreepte als effen ballen. Degene die als eerste een bal pot wordt dat type bal en krijgt nog een beurt. Vanaf dat moment mag je alleen nog maar gestreepte of effen ballen potten.`,
-					`De volgorde waarin je jouw ballen in pot doet er niet toe. Als je een fout begaat mag je tegenstander de cue ball verplaatsen voor hun beurt.`
+					`De volgorde waarin je jouw ballen in pot doet er niet toe. Als je een foul begaat mag je tegenstander de cue-bal verplaatsen voor hun beurt.`
 				]
 			},
 			objective: {

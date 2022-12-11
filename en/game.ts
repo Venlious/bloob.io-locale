@@ -25,6 +25,12 @@ export default <GameMessage>{
 					hard: `Hard`
 				}
 			},
+			generic: {
+				data: {
+					required: `Required`,
+					notRequired: `Optional`
+				}
+			},
 			winCondition: {
 				title: `Winning Condition`,
 				help: `Determine when the game should come to a conclusion.`
@@ -392,8 +398,8 @@ export default <GameMessage>{
 			forceTake: {
 				title: `Force Take`,
 				help: {
-					enabled: `<b>Enabled</b>: When possible, the user will be forced to take an opponent's piece.`,
-					disabled: `<b>Disabled</b>: The user can choose what move they make, even if they can take out an opponent's piece.`
+					enabled: `<b>Enabled</b>: When possible, the player will be forced to take an opponent's piece.`,
+					disabled: `<b>Disabled</b>: The player can choose what move they make, even if they can take out an opponent's piece.`
 				}
 			},
 			field: {
@@ -549,7 +555,7 @@ export default <GameMessage>{
 			},
 			chainReaction: {
 				title: `Chain Reaction`,
-				help: `When enabled, an explosion will trigger bombs within range to also explode. The kills will go to the user who placed the bomb that initiated the chain reaction. If disabled, these bombs will be removed instead.`
+				help: `When enabled, an explosion will trigger bombs within range to also explode. The kills will go to the player who placed the bomb that initiated the chain reaction. If disabled, these bombs will be removed instead.`
 			},
 			cratePercentage: {
 				title: `Crates`,
@@ -579,19 +585,119 @@ export default <GameMessage>{
 	[GameType.eightBallPool]: {
 		name: `8 Ball Pool`,
 		tooltip: `Play the popular billiards game here against a bot or player.`,
-		description: `Take your best shot in online multiplayer pool! Sink all your balls and finish with the 8 ball to win at the table!`,
+		description: `Take your best shot in online multiplayer pool! Sink all your balls and finish with the 8 Ball to win at the table!`,
 		title: `Free Multiplayer Game for 2 Players`,
 		options: {
 			turnTime: {
 				title: `Turn Time`,
 				help: `How long each player has to hit the cue ball.`
 			},
-			missedTurnThreshold: {
-				title: `Max. Missed Turns`,
-				help: `How many turns can a player miss in a row before being kicked out of the game.`
+			illegalBallPocket: {
+				title: `Illegal Ball Pocket`
+			},
+			ruleContactRailOnBreak: {
+				title: `Rail on Break`,
+				help: `While breaking, determine how many balls must come in contact with the rail. This rule does not apply if you pocket a ball.`,
+				data: {
+					one: `One ball`,
+					two: `Two balls`,
+					three: `Three balls`,
+					four: `Four balls`
+				}
+			},
+			assignedGroup: {
+				title: `Assigned Group`,
+				help: `Determine how each player is assigned their group (solids or stripes).`,
+				data: {
+					pocket: `On pocket`,
+					random: `Random on start`
+				}
+			},
+			ruleTurnCanHitBall: {
+				title: `Can Hit Ball`,
+				help: `Occurs when the player hits a ball that they are not allowed to. Rule does not apply while breaking.`,
+				data: {
+					assignedGroup: `Assigned group`,
+					assignedGroupPlus: `Assigned group + 8 Ball`,
+					eitherGroup: `Either group`,
+					anyBall: `Any ball`
+				}
+			},
+			ruleTurnMustHitBall: {
+				title: `Must Hit Ball`,
+				help: `Occurs when the player does not hit a ball (from "Can Hit Ball") during their turn.`
+			},
+			ruleTurnContactRail: {
+				title: `Must Contact Rail`,
+				help: `Occurs when no ball hits the rail (cushion). This rule does not apply if the player pockets a ball.`
+			},
+			ruleConsecutiveFouls: {
+				title: `Consecutive Fouls`,
+				help: `Determine what should happen when a player makes multiple fouls in a row. This rule discourages unsportmanslike behaviour.`,
+				data: {
+					off: `Off`,
+					loseOnTwo: `Loss after two`,
+					loseOnThree: `Loss after three`,
+					loseOnFour: `Loss after four`
+				}
+			},
+			foul: {
+				help: {
+					disabled: `Foul is disabled with current settings.`
+				},
+				data: {
+					nothing: `Nothing`,
+					keepTurn: `Keep turn`,
+					endTurn: `End turn`,
+					endTurnHand: `End turn + Ball in hand`,
+					reset: `End turn + Restore field`,
+					resetHand: `End turn + Restore field + Ball in hand`,
+					instantWin: `Instant win`,
+					instantLoss: `Instant loss`
+				}
+			},
+			foulPocketCueBall: {
+				title: `Pocketing Cue Ball`,
+				help: `Occurs when a player pockets the Cue Ball.`
+			},
+			foulPocketOpponentBall: {
+				title: `Pocketing Opponent's Ball`,
+				help: `Occurs when a player pockets the opponent's ball. Other fouls take precedent over this (e.g. striking the incorrect ball first).`
+			},
+			foulPocketOwnAndOpponentBall: {
+				title: `Pocketing Own + Opponent's Ball`,
+				help: `Occurs when a player pockets both one of their own and the opponent's ball. Other fouls take precedent over this (e.g. striking the incorrect ball first).`
+			},
+			foulIllegalEightBallBreak: {
+				title: `Pocketing 8 Ball During Break`,
+				help: `Occurs when a player manages to pocket the 8 Ball during the break.`
+			},
+			foulIllegalEightBallPocket: {
+				title: `Pocketing 8 Ball Illegally`,
+				help: `Occurs when a player pockets the 8 Ball while committing a different foul at the same time (e.g. pocketing the cue ball as well).`
+			},
+			foulIllegalEightBallPocketTooSoon: {
+				title: `Pocketing 8 Ball Too Soon`,
+				help: `Occurs when a player pockets the 8 Ball while they still have other object balls to pocket.`
 			}
 		},
-		presets: {},
+		presets: {
+			default: {
+				title: `Bloob.io Ruleset`
+			},
+			wpa: {
+				title: `WPA Ruleset`,
+				description: `Closely resembles World Pool-Billiard Association rules`
+			},
+			upa: {
+				title: `UPA Ruleset`,
+				description: `Closely resembles US Professional Poolplayers Association rules`
+			},
+			relaxed: {
+				title: `Relaxed Rules`,
+				description: `Milder punishments and fewer rules`
+			}
+		},
 		help: {
 			field: {
 				title: `Playing Field`,
@@ -610,7 +716,7 @@ export default <GameMessage>{
 			gameplay: {
 				title: `Gameplay`,
 				description: [
-					`There are both striped and solid balls. Whoever pockets a ball first becomes that ball type and gets another turn. From that point forward you must only pocket striped or solid balls.`,
+					`There are both striped and solid balls. Whoever pockets a ball first becomes that ball group and gets another turn. From that point forward you must only pocket striped or solid balls.`,
 					`The order in which you pocket your balls does not matter. When you commit a foul your opponent will be allowed to move the cue ball around for their turn.`
 				]
 			},

@@ -7,7 +7,7 @@ import { PoolGameGroup, PoolGameFoulType } from '../types/index'
 
 export default <MessageList>{
 	_entries: {
-		total: 781,
+		total: 841,
 		missing: 0
 	},
 	name: `Bloob.io`,
@@ -38,7 +38,6 @@ export default <MessageList>{
 			nameTurn: `%{name}'s turn`,
 			yourTurnBreaking: `You are breaking %{extra}`,
 			nameTurnBreaking: `%{name} is breaking`,
-			illegallyPocketedEightBall: `Eight ball was pocketed illegally`,
 			roundCount: `Round %{current} out of %{total}`
 		},
 		description: {
@@ -55,7 +54,7 @@ export default <MessageList>{
 		cardSetId: `Fill in card set ID...`,
 		cardContent: `Fill in card content...`,
 		cardSetName: `Fill in name for this card set...`,
-		matchId: `Match ID or URL`,
+		matchId: `Match ID or URL...`,
 		message: `Message...`,
 		username: `Username`,
 		password: `Password`
@@ -102,7 +101,9 @@ export default <MessageList>{
 		take: `Take Over`,
 		tetris: `Tetris`,
 		basic: `Basic`,
-		language: `Language`
+		language: `Language`,
+		rules: `Rules`,
+		fouls: `Response to Foul`
 	},
 	time: {
 		hours: `0 hours | 1 hour | {count} hours`,
@@ -218,6 +219,7 @@ export default <MessageList>{
 		pocketed: `Pocketed`,
 		shots: `Shots`,
 		deaths: `Deaths`,
+		fouls: `Fouls`,
 		and: `and`,
 		vs: `vs`,
 		selectAll: `Select all`,
@@ -317,6 +319,7 @@ export default <MessageList>{
 		create: `Create Match`,
 		leave: `Leave Match`,
 		join: `Join Match`,
+		joinById: `Join Match by ID`,
 		full: `Full Match`,
 		rematch: `Rematch`,
 		lobby: {
@@ -343,7 +346,7 @@ export default <MessageList>{
 			rematch: `Would you like to play again?`,
 			rematchWaiting: `Waiting for other player to accept rematch...`,
 			rematchRequest: `%{name} would like a rematch`,
-			joinById: `You can join a private match by filling in the four-digit ID.`,
+			joinById: `You can join a (private) match by filling in the four-digit ID.`,
 			public: `<b>Public: </b>Anyone can join by browsing the available matches.`,
 			private: `<b>Private: </b>Players can only join using the URL or 4-digit ID.`,
 			finishedSettings: `Finished editing the match settings?`,
@@ -355,6 +358,7 @@ export default <MessageList>{
 	info: {
 		incompleteTranslationNotice: `The language you have selected is roughly {percentage}% complete. Any missing translations will be in English.`,
 		betaNotice: `This game is still being developed. Please share feedback & bugs on our %{social}`,
+		clickForDetails: `Click for details`,
 		howToPlay: `Learn how to play this game`,
 		skipStepOverHalf: `This step can also be skipped if over half the users vote to.`,
 		skipStepAll: `This step can also be skipped if all users vote to.`,
@@ -394,8 +398,9 @@ export default <MessageList>{
 			[PoolGameFoulType.cueBallPocket]: `%{name} pocketed the cue ball!`,
 			[PoolGameFoulType.cueBallHitNoBall]: `%{name} did not hit another ball!`,
 			[PoolGameFoulType.cueBallHitWrongBall]: `%{name} hit the wrong ball first!`,
-			[PoolGameFoulType.cushionHitsLessThanTwo]: `At least two balls need to hit a cushion after breaking.`,
-			[PoolGameFoulType.cushionHitsLessThanOne]: `No ball hit a cushion after the first ball contact.`,
+			[PoolGameFoulType.cushionHitMinOnBreak]: `Not enough balls hit a cushion after breaking. (Min. %{min})`,
+			[PoolGameFoulType.cushionHitInvalid]: `No valid ball (%{type}) hit a cushion while no ball was pocketed.`,
+			[PoolGameFoulType.consecutiveFoulsExceeded]: `%{name} committed %{fouls} consecutive fouls.`,
 			[PoolGameFoulType.illegalEightBallPocket]: `%{name} pocketed the eight ball while committing a foul.`,
 			[PoolGameFoulType.illegalEightBallPocketTooSoon]: `%{name} pocketed the eight ball too early.`,
 			[PoolGameFoulType.pocketedWrongBall]: `%{name} pocketed the wrong ball.`
@@ -404,7 +409,7 @@ export default <MessageList>{
 			description: `Bloob.io is a project of passion consisting of multiplayer browser games. Suggestions are always welcome!`,
 			licensing: `Some games can be licensed for use on your site or platform (with custom adjustments). Get in touch in case you are interested.`,
 			developedBy: `Developed by %{name}`,
-			iconsSource: `Icons courtesy of %{name} (Free)`,
+			iconsSource: `Icons courtesy of %{name} (Licensed)`,
 			soundsSource: `Sounds provided by %{name} (Licensed)`,
 			rottenApplesSource: `Rotten Apples based on %{name} (Creative Commons BY-NC-SA 2.0)`,
 			localization: `Localisation by volunteer contributors`
