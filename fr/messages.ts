@@ -7,8 +7,8 @@ import { PoolGameGroup, PoolGameFoulType } from '../types/index'
 
 export default <MessageList>{
 	_entries: {
-		total: 781,
-		missing: 408
+		total: 841,
+		missing: 472
 	},
 	name: `Bloob.io`,
 	error,
@@ -38,7 +38,6 @@ export default <MessageList>{
 			nameTurn: `Au tour de %{name}`,
 			yourTurnBreaking: `Tu casses %{extra}`,
 			nameTurnBreaking: `%{name} casse le paquet`,
-			illegallyPocketedEightBall: `La bille 8 a été empochée de façon illégale`,
 			roundCount: `Ronde %{current} de %{total}`
 		},
 		description: {
@@ -55,7 +54,7 @@ export default <MessageList>{
 		cardSetId: null,
 		cardContent: null,
 		cardSetName: null,
-		matchId: `ID ou URL de la partie`,
+		matchId: `ID ou URL de la partie...`,
 		message: null,
 		username: null,
 		password: null
@@ -102,7 +101,9 @@ export default <MessageList>{
 		take: null,
 		tetris: null,
 		basic: null,
-		language: null
+		language: null,
+		rules: null,
+		fouls: null
 	},
 	time: {
 		hours: `0 heures | 1 heure | {count} heures`,
@@ -218,6 +219,7 @@ export default <MessageList>{
 		pocketed: `Empoché`,
 		shots: `Coups`,
 		deaths: null,
+		fouls: null,
 		and: `et`,
 		vs: `vs`,
 		selectAll: `Sélectionner tout`,
@@ -317,6 +319,7 @@ export default <MessageList>{
 		create: `Créer une partie`,
 		leave: `Quitter la partie`,
 		join: `Se joindre à une partie`,
+		joinById: null,
 		full: `Partie complète`,
 		rematch: `Jouer la revanche`,
 		lobby: {
@@ -355,6 +358,7 @@ export default <MessageList>{
 	info: {
 		incompleteTranslationNotice: null,
 		betaNotice: null,
+		clickForDetails: null,
 		howToPlay: `Apprendre à jouer à ce jeu`,
 		skipStepOverHalf: null,
 		skipStepAll: null,
@@ -394,8 +398,9 @@ export default <MessageList>{
 			[PoolGameFoulType.cueBallPocket]: `%{name} a empoché la bille de pointe!`,
 			[PoolGameFoulType.cueBallHitNoBall]: `%{name} n'a pas touché une autre bille!`,
 			[PoolGameFoulType.cueBallHitWrongBall]: `%{name} a touché la mauvaise bille en premier!`,
-			[PoolGameFoulType.cushionHitsLessThanTwo]: `Au moins deux billes doivent toucher la bande après la casse.`,
-			[PoolGameFoulType.cushionHitsLessThanOne]: `Aucune bille n'a touché la bande après le premier contact avec une bille.`,
+			[PoolGameFoulType.cushionHitMinOnBreak]: `Pas assez de boules touchent une bande après avoir été cassées. (Min. %{min})`,
+			[PoolGameFoulType.cushionHitInvalid]: null,
+			[PoolGameFoulType.consecutiveFoulsExceeded]: null,
 			[PoolGameFoulType.illegalEightBallPocket]: `%{name} a empoché la bille 8 en commettant une faute.`,
 			[PoolGameFoulType.illegalEightBallPocketTooSoon]: `%{name} a empoché la bille 8 trop tôt.`,
 			[PoolGameFoulType.pocketedWrongBall]: `%{name} a empoché la mauvaise bille.`
@@ -404,7 +409,7 @@ export default <MessageList>{
 			description: `Bloob.io est un projet de passion qui consiste en plusieurs jeux multijoueur par navigateur.`,
 			licensing: null,
 			developedBy: `Developpé par %{name}`,
-			iconsSource: `Icônes gracieuseté de %{name} (Gratuit)`,
+			iconsSource: `Icônes gracieuseté de %{name} (Sous licence)`,
 			soundsSource: `Sons fournis par %{name} (Sous licence)`,
 			rottenApplesSource: null,
 			localization: null

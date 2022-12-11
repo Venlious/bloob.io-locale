@@ -7,8 +7,8 @@ import { PoolGameGroup, PoolGameFoulType } from '../types/index'
 
 export default <MessageList>{
 	_entries: {
-		total: 781,
-		missing: 411
+		total: 841,
+		missing: 474
 	},
 	name: `Bloob.io`,
 	error,
@@ -38,7 +38,6 @@ export default <MessageList>{
 			nameTurn: `vez de %{name}`,
 			yourTurnBreaking: `A tacada inicial é com você %{extra}`,
 			nameTurnBreaking: `A tacada inicial é de %{name}`,
-			illegallyPocketedEightBall: `Bola oito foi encaçapada ilegalmente`,
 			roundCount: `Rodada %{current} de %{total}`
 		},
 		description: {
@@ -55,7 +54,7 @@ export default <MessageList>{
 		cardSetId: null,
 		cardContent: null,
 		cardSetName: null,
-		matchId: `ID ou URL da partida`,
+		matchId: `ID ou URL da partida...`,
 		message: null,
 		username: null,
 		password: null
@@ -102,7 +101,9 @@ export default <MessageList>{
 		take: null,
 		tetris: null,
 		basic: null,
-		language: null
+		language: null,
+		rules: null,
+		fouls: null
 	},
 	time: {
 		hours: `0 horas | 1 hora | {count} horas`,
@@ -218,6 +219,7 @@ export default <MessageList>{
 		pocketed: `Embolsado`,
 		shots: `Tentativas`,
 		deaths: null,
+		fouls: null,
 		and: `e`,
 		vs: `vs`,
 		selectAll: `Selecione todos`,
@@ -317,6 +319,7 @@ export default <MessageList>{
 		create: `Crie uma correspondência`,
 		leave: `Deixar partida`,
 		join: `Junte-se a partida`,
+		joinById: null,
 		full: `Partida completa`,
 		rematch: `Revanche`,
 		lobby: {
@@ -355,6 +358,7 @@ export default <MessageList>{
 	info: {
 		incompleteTranslationNotice: null,
 		betaNotice: null,
+		clickForDetails: null,
 		howToPlay: `Aprenda a jogar este jogo`,
 		skipStepOverHalf: null,
 		skipStepAll: null,
@@ -394,8 +398,9 @@ export default <MessageList>{
 			[PoolGameFoulType.cueBallPocket]: `%{name} encaçapou a bola branca!`,
 			[PoolGameFoulType.cueBallHitNoBall]: `%{name} não bateu em nenhuma outra bola!`,
 			[PoolGameFoulType.cueBallHitWrongBall]: `%{name} bateu na bola errada primeiro!`,
-			[PoolGameFoulType.cushionHitsLessThanTwo]: `Pelo menos duas bolas têm que bater uma tabela depois do break.`,
-			[PoolGameFoulType.cushionHitsLessThanOne]: `Nenhuma bola bateu na tabela depois do primeiro contato com a(s) bola(s).`,
+			[PoolGameFoulType.cushionHitMinOnBreak]: `Não há bolas suficientes para bater em uma almofada depois de quebrar. (Min. %{min})`,
+			[PoolGameFoulType.cushionHitInvalid]: `Nenhuma bola bateu na tabela depois do primeiro contato com a(s) bola(s).`,
+			[PoolGameFoulType.consecutiveFoulsExceeded]: null,
 			[PoolGameFoulType.illegalEightBallPocket]: `%{name} encaçapou a bola 8 enquanto cometia uma falta.`,
 			[PoolGameFoulType.illegalEightBallPocketTooSoon]: `%{name} encaçapou a bola 8 muito cedo.`,
 			[PoolGameFoulType.pocketedWrongBall]: `%{name} encaçapou a bola errada.`
@@ -404,7 +409,7 @@ export default <MessageList>{
 			description: `Bloob.io é um projeto criado com paixão que consiste em jogos de navegação multiplayer.`,
 			licensing: null,
 			developedBy: `Desenvolvido por %{name}`,
-			iconsSource: `Cortesia dos ícones por %{name} (Gratuito)`,
+			iconsSource: `Cortesia dos ícones por %{name} (Licenciado)`,
 			soundsSource: `Sons fornecidos por %{name} (Licenciado)`,
 			rottenApplesSource: null,
 			localization: null

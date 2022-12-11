@@ -26,6 +26,12 @@ export default <GameMessage>{
 					hard: `Schwierig`
 				}
 			},
+			generic: {
+				data: {
+					required: null,
+					notRequired: null
+				}
+			},
 			winCondition: {
 				title: `Siegbedingung`,
 				help: `Bestimme, wann das Spiel enden soll. Dies ist mit der Einstellung "Gewinnzahl" verbunden.`
@@ -587,12 +593,112 @@ export default <GameMessage>{
 				title: null,
 				help: null
 			},
-			missedTurnThreshold: {
+			illegalBallPocket: {
+				title: null
+			},
+			ruleContactRailOnBreak: {
+				title: null,
+				help: null,
+				data: {
+					one: null,
+					two: null,
+					three: null,
+					four: null
+				}
+			},
+			assignedGroup: {
+				title: null,
+				help: null,
+				data: {
+					pocket: null,
+					random: null
+				}
+			},
+			ruleTurnCanHitBall: {
+				title: null,
+				help: null,
+				data: {
+					assignedGroup: null,
+					assignedGroupPlus: null,
+					eitherGroup: null,
+					anyBall: null
+				}
+			},
+			ruleTurnMustHitBall: {
+				title: null,
+				help: null
+			},
+			ruleTurnContactRail: {
+				title: null,
+				help: null
+			},
+			ruleConsecutiveFouls: {
+				title: null,
+				help: null,
+				data: {
+					off: null,
+					loseOnTwo: null,
+					loseOnThree: null,
+					loseOnFour: null
+				}
+			},
+			foul: {
+				help: {
+					disabled: null
+				},
+				data: {
+					nothing: null,
+					keepTurn: null,
+					endTurn: null,
+					endTurnHand: null,
+					reset: null,
+					resetHand: null,
+					instantWin: null,
+					instantLoss: null
+				}
+			},
+			foulPocketCueBall: {
+				title: null,
+				help: null
+			},
+			foulPocketOpponentBall: {
+				title: null,
+				help: null
+			},
+			foulPocketOwnAndOpponentBall: {
+				title: null,
+				help: null
+			},
+			foulIllegalEightBallBreak: {
+				title: null,
+				help: null
+			},
+			foulIllegalEightBallPocket: {
+				title: null,
+				help: null
+			},
+			foulIllegalEightBallPocketTooSoon: {
 				title: null,
 				help: null
 			}
 		},
-		presets: {},
+		presets: {
+			default: {
+				title: null
+			},
+			wpa: {
+				title: null,
+				description: null
+			},
+			upa: {
+				title: null,
+				description: null
+			},
+			relaxed: {
+				title: null,
+				description: null
+			}
+		},
 		help: {
 			field: {
 				title: null,

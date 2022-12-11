@@ -48,12 +48,14 @@ export enum PoolGameGroup {
 }
 
 export enum PoolGameFoulType {
+	consecutiveFoulsExceeded = `CONSECUTIVE_FOULS_EXCEEDED`,
 	illegalEightBallPocket = `ILLEGAL_8_BALL_POCKET`,
 	illegalEightBallPocketTooSoon = `ILLEGAL_8_BALL_POCKET_TOO_SOON`,
+	illegalEightBallPocketOnBreak = `ILLEGAL_8_BALL_POCKET_ON_BREAK`,
 	cueBallPocket = `CUE_BALL_POCKET`,
 	cueBallHitNoBall = `CUE_BALL_HIT_NO_BALL`,
 	cueBallHitWrongBall = `CUE_BALL_HIT_WRONG_BALL`,
-	cushionHitsLessThanTwo = `CUSHION_HITS_LESS_THAN_TWO`,
-	cushionHitsLessThanOne = `CUSHION_HITS_LESS_THAN_ONE`,
+	cushionHitMinOnBreak = `CUSHION_HIT_MIN_ON_BREAK`,
+	cushionHitInvalid = `CUSHION_HIT_INVALID`,
 	pocketedWrongBall = `POCKETED_WRONG_BALL`
 }

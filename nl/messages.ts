@@ -7,7 +7,7 @@ import { PoolGameGroup, PoolGameFoulType } from '../types/index'
 
 export default <MessageList>{
 	_entries: {
-		total: 781,
+		total: 841,
 		missing: 0
 	},
 	name: `Bloob.io`,
@@ -38,7 +38,6 @@ export default <MessageList>{
 			nameTurn: `%{name}s beurt`,
 			yourTurnBreaking: `Jij bent aan het breken %{extra}`,
 			nameTurnBreaking: `%{name} is aan het breken`,
-			illegallyPocketedEightBall: `De eight ball is te vroeg verdwenen`,
 			roundCount: `Ronde %{current} van de %{total}`
 		},
 		description: {
@@ -55,7 +54,7 @@ export default <MessageList>{
 		cardSetId: `Vul kaartenset ID in...`,
 		cardContent: `Vul kaartinhoud in...`,
 		cardSetName: `Vul een naam in voor deze kaartenset...`,
-		matchId: `Spel ID of URL`,
+		matchId: `Spel ID of URL...`,
 		message: `Bericht...`,
 		username: `Gebruikersnaam`,
 		password: `Wachtwoord`
@@ -102,7 +101,9 @@ export default <MessageList>{
 		take: `Overnemen`,
 		tetris: `Tetris`,
 		basic: `Basis`,
-		language: `Taal`
+		language: `Taal`,
+		rules: `Regels`,
+		fouls: `Antwoord op fout`
 	},
 	time: {
 		hours: `0 uren | 1 uur | {count} uren`,
@@ -218,6 +219,7 @@ export default <MessageList>{
 		pocketed: `Gepot`,
 		shots: `Schoten`,
 		deaths: `Sterfgevallen`,
+		fouls: `Fouten`,
 		and: `en`,
 		vs: `vs`,
 		selectAll: `Selecteer alles`,
@@ -317,6 +319,7 @@ export default <MessageList>{
 		create: `Maak Nieuw Spel`,
 		leave: `Verlaat Spel`,
 		join: `Join Spel`,
+		joinById: `Join Spel met ID`,
 		full: `Vol Spel`,
 		rematch: `Rematch`,
 		lobby: {
@@ -354,6 +357,7 @@ export default <MessageList>{
 	},
 	info: {
 		incompleteTranslationNotice: `De taal die je hebt geselecteerd is ongeveer {percentage}% compleet. Elke ontbrekende vertaling zal in het Engels verschijnen.`,
+		clickForDetails: `Klik voor details`,
 		betaNotice: `Dit spel is nog in ontwikkeling. Deel feedback en bugs op onze %{social}`,
 		howToPlay: `Bekijk hoe je dit spel speelt`,
 		skipStepOverHalf: `Deze stap kan ook worden overgeslagen als meer dan de helft van de gebruikers daarvoor stemt.`,
@@ -394,8 +398,9 @@ export default <MessageList>{
 			[PoolGameFoulType.cueBallPocket]: `%{name} heeft de cue ball gepot!`,
 			[PoolGameFoulType.cueBallHitNoBall]: `%{name} heeft geen andere bal geraakt!`,
 			[PoolGameFoulType.cueBallHitWrongBall]: `%{name} heeft de verkeerde bal eerst geraakt!`,
-			[PoolGameFoulType.cushionHitsLessThanTwo]: `Minstens twee ballen moet na de break de band raken`,
-			[PoolGameFoulType.cushionHitsLessThanOne]: `Geen bal heeft een band geraakt nadat deze geraakt was.`,
+			[PoolGameFoulType.cushionHitMinOnBreak]: `Niet genoeg ballen hebben de bank geraakt na het breken. (Min. %{min})`,
+			[PoolGameFoulType.cushionHitInvalid]: `Geen geldige bal (%{type}) heeft een bank geraakt terwijl geen bal gepot is.`,
+			[PoolGameFoulType.consecutiveFoulsExceeded]: `%{name} heeft %{fouls} fouten achter elkaar gemaakt.`,
 			[PoolGameFoulType.illegalEightBallPocket]: `%{name} heeft de eight ball gepot na in combinatie met een fout.`,
 			[PoolGameFoulType.illegalEightBallPocketTooSoon]: `%{name} heeft de eight ball te vroeg gepot.`,
 			[PoolGameFoulType.pocketedWrongBall]: `%{name} heeft de verkeerde bal gepot.`
@@ -404,7 +409,7 @@ export default <MessageList>{
 			description: `Bloob.io is een hobby project bestaande uit multiplayer browser games. Suggesties zijn altijd welkom!`,
 			licensing: `Sommige spellen kunnen gelicenseerd worden voor gebruik op jouw site of platform (met de nodige aanpassingen). Neem contact op als je geïnteresseerd bent.`,
 			developedBy: `Ontwikkeld door %{name}`,
-			iconsSource: `Icoontjes met dank aan %{name} (Gratis)`,
+			iconsSource: `Icoontjes met dank aan %{name} (Licentie)`,
 			soundsSource: `Geluiden voorzien door %{name} (Licentie)`,
 			rottenApplesSource: `Rotten Apples gebaseerd op %{name} (Creative Commons BY-NC-SA 2.0)`,
 			localization: `Lokalisatie door vrijwillige bijdragers`
