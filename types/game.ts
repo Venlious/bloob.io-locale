@@ -8,6 +8,13 @@ export type GameMessage = {
 		name?: string
 
 		/**
+		 * Catch phrase which describes the game in one sentence (shown as part of page meta).
+		 *
+		 * Should not be longer than 70 characters.
+		 */
+		heading: string
+
+		/**
 		 * Page title, which appears next to the name of the page.
 		 */
 		title: string

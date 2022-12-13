@@ -3,6 +3,7 @@ import { GameMessage } from '../types/game'
 
 export default <GameMessage>{
 	[GenericType.generic]: {
+		heading: `Multiplayer Games You Can Find on Bloob.io`,
 		title: `Free Multiplayer Games Online | No Sign-Up Needed`,
 		description: `A collection of multiplayer browser-based games without the need to make an account. Play hassle free and customise the experience to your liking.`,
 		options: {
@@ -52,6 +53,7 @@ export default <GameMessage>{
 	},
 	[GameType.wordrace]: {
 		name: `Wordrace`,
+		heading: `Play a Unique Word Finding Game`,
 		tooltip: `Find words in any direction on a randomly generated field while racing against others with the same objective.`,
 		description: `Wordrace is a free to play unique word finding game with customisable settings to give every player a challenge. It doesn't require any sign-up. Play now.`,
 		title: `Unique Multiplayer Word Game | Bloob.io`,
@@ -172,6 +174,7 @@ export default <GameMessage>{
 	},
 	[GameType.fourInARow]: {
 		name: `Four in a Row`,
+		heading: `Connect Four in a Row Online With Friends`,
 		tooltip: `Play Four in a Row with up to six players in either the classic gamemode or available variations.`,
 		description: `Four in a Row is a casual free to play game. Play this classic connect four game with up to 6 friends at once in this fun, addictive, and easy-to-learn game.`,
 		title: `Easy Free Multiplayer Game | Bloob.io`,
@@ -255,6 +258,7 @@ export default <GameMessage>{
 	},
 	[GameType.rottenApples]: {
 		name: `Rotten Apples`,
+		heading: `Play an Online Multiplayer Cards Against Humanity With Friends`,
 		tooltip: `Play a Cards Against Humanity clone and customise your experience to your liking.`,
 		description: `Play a Cards Against Humanity clone and customise your experience to your liking. Create your own custom card sets and include them in your next match.`,
 		title: `Multiplayer Cards Against Humanity | Bloob`,
@@ -391,6 +395,7 @@ export default <GameMessage>{
 	},
 	[GameType.checkers]: {
 		name: `Checkers`,
+		heading: `Play Draughts Online With Friends`,
 		tooltip: `Call it checkers or draughts, play it here with up to 4 players with all kinds of customisable rules.`,
 		description: `Checkers is the classic fast-paced board game you know and love with exciting twists! Be in control and alter the rules as you like. Play with friends now.`,
 		title: `Classic Multiplayer Board Game | Bloob.io`,
@@ -509,6 +514,7 @@ export default <GameMessage>{
 	},
 	[GameType.blomber]: {
 		name: `Blomber`,
+		heading: `Play Bomberman Online With Friends`,
 		tooltip: `Blow up your opponents in an intense close quarters battlefield packed with power ups in this classic Bomberman game.`,
 		description: `Blomber is a Bomberman multiplayer game with more replayability than most other games. It's free, easy to play, customisable, and requires no sign-up. Play now.`,
 		title: `Bomberman Multiplayer Game | Bloob.io`,
@@ -584,6 +590,7 @@ export default <GameMessage>{
 	},
 	[GameType.eightBallPool]: {
 		name: `8 Ball Pool`,
+		heading: `Play 8 Ball Pool Online With Friends`,
 		tooltip: `Play the popular billiards game here against a bot or player.`,
 		description: `Take your best shot in online multiplayer pool! Sink all your balls and finish with the 8 Ball to win at the table!`,
 		title: `Free Multiplayer Game for 2 Players`,

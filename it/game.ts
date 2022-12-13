@@ -4,6 +4,7 @@ import { GameMessage } from '../types/game'
 export default <GameMessage>{
 	[GenericType.generic]: {
 		title: `Giochi multiplayer gratuiti e divertenti per browser`,
+		heading: null,
 		description: `Una raccolta di giochi multiplayer su browser senza la necessità di creare un account. Gioca senza pensieri e personalizza l'esperienza a tuo piacimento.`,
 		options: {
 			public: {
@@ -52,6 +53,7 @@ export default <GameMessage>{
 	},
 	[GameType.wordrace]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -160,6 +162,7 @@ export default <GameMessage>{
 	},
 	[GameType.fourInARow]: {
 		name: `Quattro di fila`,
+		heading: null,
 		tooltip: null,
 		description: `Gioca a "Quattro di fila" con un massimo di sei giocatori nella modalità di gioco classica o nelle varianti disponibili.`,
 		title: `Gioco multiplayer gratuito per 2-6 giocatori`,
@@ -243,6 +246,7 @@ export default <GameMessage>{
 	},
 	[GameType.rottenApples]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -367,6 +371,7 @@ export default <GameMessage>{
 	},
 	[GameType.checkers]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -473,6 +478,7 @@ export default <GameMessage>{
 	},
 	[GameType.blomber]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -548,6 +554,7 @@ export default <GameMessage>{
 	},
 	[GameType.eightBallPool]: {
 		name: `8 Ball Pool`,
+		heading: null,
 		tooltip: null,
 		description: `Fai del tuo meglio nel biliardo multiplayer online! Manda in buca tutte le palle e lascia la palla 8 per ultima per vincere!`,
 		title: `Gioco multiplayer gratuito per due giocatori`,

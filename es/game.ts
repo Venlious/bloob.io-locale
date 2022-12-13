@@ -3,6 +3,7 @@ import { GameMessage } from '../types/game'
 
 export default <GameMessage>{
 	[GenericType.generic]: {
+		heading: null,
 		title: `Juegos de navegador multijugador gratuitos`,
 		description: `Una colección de juegos de navegador multijugador sin necesidad de crear una cuenta. Juega sin problemas y personaliza la experiencia a tu gusto.`,
 		options: {
@@ -52,6 +53,7 @@ export default <GameMessage>{
 	},
 	[GameType.wordrace]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -160,6 +162,7 @@ export default <GameMessage>{
 	},
 	[GameType.fourInARow]: {
 		name: `Cuatro Seguidos`,
+		heading: null,
 		tooltip: null,
 		description: `Juega a Cuatro en raya con hasta seis jugadores en el modo de juego clásico o en las variaciones disponibles.`,
 		title: `Juego multijugador gratuito para 2-6 jugadores`,
@@ -243,6 +246,7 @@ export default <GameMessage>{
 	},
 	[GameType.rottenApples]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -367,6 +371,7 @@ export default <GameMessage>{
 	},
 	[GameType.checkers]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -473,6 +478,7 @@ export default <GameMessage>{
 	},
 	[GameType.blomber]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -548,6 +554,7 @@ export default <GameMessage>{
 	},
 	[GameType.eightBallPool]: {
 		name: `Billar de 8 bolas`,
+		heading: null,
 		tooltip: null,
 		description: `¡Da lo mejor de ti en el billar multijugador online! ¡Mete todas las bolas y termina con la bola 8 para ganar en la mesa!`,
 		title: `Juego multijugador gratuito para 2 jugadores`,

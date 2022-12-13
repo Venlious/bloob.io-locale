@@ -4,6 +4,7 @@ import { GameMessage } from '../types/game'
 export default <GameMessage>{
 	[GenericType.generic]: {
 		title: null,
+		heading: null,
 		description: null,
 		options: {
 			public: {
@@ -52,6 +53,7 @@ export default <GameMessage>{
 	},
 	[GameType.wordrace]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -160,6 +162,7 @@ export default <GameMessage>{
 	},
 	[GameType.fourInARow]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -237,6 +240,7 @@ export default <GameMessage>{
 	},
 	[GameType.rottenApples]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -361,6 +365,7 @@ export default <GameMessage>{
 	},
 	[GameType.checkers]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -467,6 +472,7 @@ export default <GameMessage>{
 	},
 	[GameType.blomber]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -542,6 +548,7 @@ export default <GameMessage>{
 	},
 	[GameType.eightBallPool]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,

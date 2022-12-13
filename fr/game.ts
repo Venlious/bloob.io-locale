@@ -4,6 +4,7 @@ import { GameMessage } from '../types/game'
 export default <GameMessage>{
 	[GenericType.generic]: {
 		title: `Jeux par navigateur à multijoueurs gratuits`,
+		heading: null,
 		description: `Une collection de jeux par navigateur à multijoueurs sans besoin de créer un compte. Jouez sans soucis et personnalisez l'expérience à votre guise.`,
 		options: {
 			public: {
@@ -52,6 +53,7 @@ export default <GameMessage>{
 	},
 	[GameType.wordrace]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -160,6 +162,7 @@ export default <GameMessage>{
 	},
 	[GameType.fourInARow]: {
 		name: `4 en ligne`,
+		heading: null,
 		tooltip: null,
 		description: `Joue à 4 en ligne avec jusqu'à six joueurs soit en mode classique ou avec les variations disponibles.`,
 		title: `Jeu multijoueur gratuit pour 2 à 6 joueurs`,
@@ -243,6 +246,7 @@ export default <GameMessage>{
 	},
 	[GameType.rottenApples]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -367,6 +371,7 @@ export default <GameMessage>{
 	},
 	[GameType.checkers]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -473,6 +478,7 @@ export default <GameMessage>{
 	},
 	[GameType.blomber]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -548,6 +554,7 @@ export default <GameMessage>{
 	},
 	[GameType.eightBallPool]: {
 		name: `Billard américain`,
+		heading: null,
 		tooltip: null,
 		description: `Tente ta chance dans une partie multijoueur de billard en ligne! Empoche toutes les billes et finis avec la bille 8 pour gagner la partie!`,
 		title: `Partie multijoueur gratuite pour 2 joueurs`,
