@@ -4,6 +4,7 @@ import { GameMessage } from '../types/game'
 export default <GameMessage>{
 	[GenericType.generic]: {
 		title: `Jogos divertidos de navegação multiplayer grátis`,
+		heading: null,
 		description: `Uma coleção de jogos multiplayer baseados em navegador sem a necessidade de fazer uma conta. Jogue sem problemas e personalize a experiência ao seu gosto.`,
 		options: {
 			public: {
@@ -52,6 +53,7 @@ export default <GameMessage>{
 	},
 	[GameType.wordrace]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -160,6 +162,7 @@ export default <GameMessage>{
 	},
 	[GameType.fourInARow]: {
 		name: `Quatro em uma Fileira`,
+		heading: null,
 		tooltip: null,
 		description: `Jogue Quatro em uma Fileira com até seis jogadores no modo de jogo clássico ou nas variações disponíveis.`,
 		title: `Jogo Multiplayer Grátis para 2-6 Jogadores`,
@@ -243,6 +246,7 @@ export default <GameMessage>{
 	},
 	[GameType.rottenApples]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -367,6 +371,7 @@ export default <GameMessage>{
 	},
 	[GameType.checkers]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -473,6 +478,7 @@ export default <GameMessage>{
 	},
 	[GameType.blomber]: {
 		name: null,
+		heading: null,
 		tooltip: null,
 		description: null,
 		title: null,
@@ -548,6 +554,7 @@ export default <GameMessage>{
 	},
 	[GameType.eightBallPool]: {
 		name: `8 Ball Pool`,
+		heading: null,
 		tooltip: null,
 		description: `Dê o seu melhor lance na sinuca multiplayer online! Afunde todas as suas bolas e finalize com a bola 8 para ganhar na mesa!`,
 		title: `Jogo Multiplayer Grátis para 2 Jogadores`,

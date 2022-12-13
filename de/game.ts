@@ -3,6 +3,7 @@ import { GameMessage } from '../types/game'
 
 export default <GameMessage>{
 	[GenericType.generic]: {
+		heading: `Multiplayer-Spiele, die Sie auf Bloob.io spielen können`,
 		description: `Eine Sammlung von Multiplayer-Browserspielen, für die man kein Konto erstellen muss. Spiele mühelos und passe das Spielerlebnis nach deinen Wünschen an.`,
 		title: `Kostenlose Online-Multiplayer-Browserspiele`,
 		options: {
@@ -53,6 +54,7 @@ export default <GameMessage>{
 	},
 	[GameType.wordrace]: {
 		name: `Wortrennen`,
+		heading: `Spielen Sie ein einzigartiges Wortsuchspiel online`,
 		tooltip: `Finde Wörter in beliebiger Richtung auf einem zufällig generierten Feld, während du gegen andere mit demselben Ziel antrittst.`,
 		description: `Finde Wörter in beliebiger Richtung auf einem zufällig generierten Feld, während du gegen andere mit demselben Ziel antrittst.`,
 		title: `Kostenloses Online-Wortsuchspiel`,
@@ -173,6 +175,7 @@ export default <GameMessage>{
 	},
 	[GameType.fourInARow]: {
 		name: `Vier gewinnt`,
+		heading: `Vier in einer Reihe online mit Freunden spielen`,
 		tooltip: `Spiele Vier gewinnt mit bis zu sechs Spielern entweder im klassischen Spielmodus oder in den verfügbaren Varianten.`,
 		description: `Spiele Vier gewinnt mit bis zu sechs Spielern entweder im klassischen Spielmodus oder in den verfügbaren Varianten.`,
 		title: `Kostenloses Multiplayer-Spiel für 2-6 Spieler`,
@@ -256,6 +259,7 @@ export default <GameMessage>{
 	},
 	[GameType.rottenApples]: {
 		name: `Rotten Apples`,
+		heading: `Cards Against Humanity online spielen auf Deutsch`,
 		tooltip: `Spiele einen Cards Against Humanity-Klon und passe das Spielerlebnis nach deinen Wünschen an.`,
 		description: `Spiele einen Cards Against Humanity-Klon und passe das Spielerlebnis nach deinen Wünschen an.`,
 		title: `Gratis Online Cards Against Humanity Spiel`,
@@ -392,6 +396,7 @@ export default <GameMessage>{
 	},
 	[GameType.checkers]: {
 		name: `Dame`,
+		heading: `Dame online gegen Freunde spielen`,
 		tooltip: `Spiele hier Dame mit bis zu 4 Spielern und einer Vielzahl von anpassbaren Regeln.`,
 		description: `Spiele hier Dame mit bis zu 4 Spielern und einer Vielzahl von anpassbaren Regeln.`,
 		title: `Kostenloses Online-Dame-Spiel für 2-4 Spieler`,
@@ -510,6 +515,7 @@ export default <GameMessage>{
 	},
 	[GameType.blomber]: {
 		name: `Blomber`,
+		heading: `Bomberman online gegen Freunde spielen`,
 		tooltip: `Jage deine Gegner in einem intensiven Schlachtfeld voller Power-Ups in die Luft.`,
 		description: `Jage deine Gegner in einem intensiven Schlachtfeld voller Power-Ups in die Luft.`,
 		title: `Kostenloses von Bomberman inspiriertes Online-Spiel`,
@@ -585,6 +591,7 @@ export default <GameMessage>{
 	},
 	[GameType.eightBallPool]: {
 		name: null,
+		heading: `8 Ball Pool online gegen Freunde spielen`,
 		tooltip: null,
 		description: null,
 		title: null,

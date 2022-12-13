@@ -3,6 +3,7 @@ import { GameMessage } from '../types/game'
 
 export default <GameMessage>{
 	[GenericType.generic]: {
+		heading: `Multiplayer Spellen die je kunt Spelen op Bloob.io`,
 		title: `Gratis Online Multiplayer Browserspellen`,
 		description: `Een verzameling van multiplayer browser spellen zonder de noodzaak om een account aan te maken. Speel zonder gedoe en pas de ervaring aan naar je eigen smaak.`,
 		options: {
@@ -52,6 +53,7 @@ export default <GameMessage>{
 	},
 	[GameType.wordrace]: {
 		name: `Wordrace`,
+		heading: `Speel een Uniek Woord Zoek Spel Online`,
 		tooltip: `Zoek woorden in elke richting op een willekeurig gegenereerd veld terwijl je racet tegen anderen met hetzelfde doel.`,
 		description: `Wordrace is een gratis uniek woorden zoek spel waar jij het tegen anderen opneemt om zo snel mogelijk zoveel mogelijk worden te vinden. Probeer het meteen.`,
 		title: `Gratis Online Woord Zoek Spel`,
@@ -172,6 +174,7 @@ export default <GameMessage>{
 	},
 	[GameType.fourInARow]: {
 		name: `Vier-op-een-Rij`,
+		heading: `Speel Vier op een Rij Online Met Vrienden`,
 		tooltip: `Speel vier-op-een-rij met maximaal zes spelers in de klassieke spelmodus of beschikbare variaties.`,
 		description: `Speel vier-op-een-rij met maximaal zes spelers in de klassieke spelmodus of beschikbare variaties. Train nu tegen de bots en versla je vrienden met gemak.`,
 		title: `Gratis Online Vier-op-een-Rij Voor 2-6 Spelers`,
@@ -255,6 +258,7 @@ export default <GameMessage>{
 	},
 	[GameType.rottenApples]: {
 		name: `Rotten Apples`,
+		heading: `Speel Cards Against Humanity Online in het Nederlands`,
 		tooltip: `Speel een Cards Against Humanity-kloon en pas je ervaring aan naar eigen smaak.`,
 		description: `Speel een Cards Against Humanity kloon en pas de instellingen geheel naar jouw smaak aan. Creëer je eigen kaartensets en speel samen met je vrienden.`,
 		title: `Gratis Online Cards Against Humanity Spel`,
@@ -391,6 +395,7 @@ export default <GameMessage>{
 	},
 	[GameType.checkers]: {
 		name: `Checkers`,
+		heading: `Speel Dammen Online Tegen Vrienden`,
 		tooltip: `Speel hier dammen met maximaal 4 spelers en allerlei aanpasbare regels.`,
 		description: `Online Dammen is het wereldbekende klassieke bordspel maar dan online! Nodig je vrienden uit en gebruik je eigen spelregels. Speel nu tegen andere spelers en bots. Je kunt hier ook met 2-4 spelers spelen.`,
 		title: `Gratis Online Dammen Voor 2-4 Spelers`,
@@ -509,6 +514,7 @@ export default <GameMessage>{
 	},
 	[GameType.blomber]: {
 		name: `Blomber`,
+		heading: `Speel Bomberman Online Tegen Vrienden`,
 		tooltip: `Blaas je tegenstanders op in een intens slagveld vol power-ups.`,
 		description: `Blomber is een Bomberman multiplayer spel dat je online tegen anderen kunt spelen! Het is gratis en volledig aan te passen naar jouw wensen. Speel het nu!`,
 		title: `Gratis Online Bomberman Geïnspireerd Spel`,
@@ -584,6 +590,7 @@ export default <GameMessage>{
 	},
 	[GameType.eightBallPool]: {
 		name: `8-bal Poolbiljart `,
+		heading: `Speel 8 Ball Pool Online Tegen Vrienden`,
 		tooltip: `Speel het populaire biljart spel hier tegen een bot of een andere speler.`,
 		description: `Doe je best in online multiplayer pool! Tik al je ballen uit het veld en eindig met de 8-bal om het spel te winnen!`,
 		title: `Gratis multiplayer spel voor 2 spelers`,
