@@ -1845,7 +1845,6 @@ export type MessageList = {
 			 * Foul message for when no ball hit a cushion after contact.
 			 *
 			 * @argument {string} name - Name of the offender
-			 * @argument {string} type - Type of ball(s) that are permitted to be hit
 			 */
 			[PoolGameFoulType.cushionHitInvalid]: string
 
