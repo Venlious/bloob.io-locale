@@ -190,7 +190,7 @@ export default <MessageList>{
 		edit: `Modifica`,
 		delete: `Elimina`,
 		cancel: `Annullamento`,
-		reset: `Azzeramento`,
+		reset: `Pulire`,
 		start: `Iniziare`,
 		download: `Scarica`,
 		share: `Condividi`,
