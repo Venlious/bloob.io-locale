@@ -15,7 +15,7 @@ export default <ChatMessage>{
 	},
 	[ChatMessageType.universal]: {
 		leftTheGame: `ha abbandonato il gioco`,
-		affirmative: `Okay.`,
+		affirmative: `Ok.`,
 		thanks: `Grazie!`,
 		sorry: `Mi dispiace!`,
 		goodLuck: `Buona fortuna!`,
@@ -26,9 +26,9 @@ export default <ChatMessage>{
 	},
 	[ChatMessageType.preGame]: {
 		readyCheck: `Siete tutti pronti?`,
-		changeSettings: `Cambia le impostazioni!`,
+		changeSettings: `Modifica le impostazioni!`,
 		ready: `Pronti!`,
-		wait: `Aspetta un attimo!`,
+		wait: `Ancora un attimo!`,
 		go: `Andiamo!`,
 		greeting: `Ciao! 👋`
 	},
@@ -46,7 +46,7 @@ export default <ChatMessage>{
 	[ChatMessageType.postGame]: {
 		closeOne: `Per un pelo!`,
 		wellPlayed: `Bella mossa!`,
-		differentGame: null,
+		differentGame: `Un altro gioco?`,
 		rematch: `Rivincita!`,
 		fun: `È stato divertente!`,
 		bye: `Ciao!`
