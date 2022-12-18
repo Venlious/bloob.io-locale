@@ -399,7 +399,7 @@ export default <MessageList>{
 			[PoolGameFoulType.cueBallHitNoBall]: `%{name} heeft geen andere bal geraakt!`,
 			[PoolGameFoulType.cueBallHitWrongBall]: `%{name} heeft de verkeerde bal eerst geraakt!`,
 			[PoolGameFoulType.cushionHitMinOnBreak]: `Niet genoeg ballen hebben de bank geraakt na het breken. (Min. %{min})`,
-			[PoolGameFoulType.cushionHitInvalid]: `Geen geldige bal (%{type}) heeft een bank geraakt terwijl geen bal gepot is.`,
+			[PoolGameFoulType.cushionHitInvalid]: `Geen geldige bal heeft een bank geraakt terwijl geen bal gepot is.`,
 			[PoolGameFoulType.consecutiveFoulsExceeded]: `%{name} heeft %{fouls} fouten achter elkaar gemaakt.`,
 			[PoolGameFoulType.illegalEightBallPocket]: `%{name} heeft de eight ball gepot na in combinatie met een fout.`,
 			[PoolGameFoulType.illegalEightBallPocketTooSoon]: `%{name} heeft de eight ball te vroeg gepot.`,

@@ -399,7 +399,7 @@ export default <MessageList>{
 			[PoolGameFoulType.cueBallHitNoBall]: `%{name} did not hit another ball!`,
 			[PoolGameFoulType.cueBallHitWrongBall]: `%{name} hit the wrong ball first!`,
 			[PoolGameFoulType.cushionHitMinOnBreak]: `Not enough balls hit a cushion after breaking. (Min. %{min})`,
-			[PoolGameFoulType.cushionHitInvalid]: `No valid ball (%{type}) hit a cushion while no ball was pocketed.`,
+			[PoolGameFoulType.cushionHitInvalid]: `No valid ball hit a cushion while no ball was pocketed.`,
 			[PoolGameFoulType.consecutiveFoulsExceeded]: `%{name} committed %{fouls} consecutive fouls.`,
 			[PoolGameFoulType.illegalEightBallPocket]: `%{name} pocketed the eight ball while committing a foul.`,
 			[PoolGameFoulType.illegalEightBallPocketTooSoon]: `%{name} pocketed the eight ball too early.`,
