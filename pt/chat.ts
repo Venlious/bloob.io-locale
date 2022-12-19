@@ -46,7 +46,7 @@ export default <ChatMessage>{
 	[ChatMessageType.postGame]: {
 		closeOne: `Quase!`,
 		wellPlayed: `Bem jogado!`,
-		differentGame: null,
+		differentGame: `Jogo diferente?`,
 		rematch: `Revanche!`,
 		fun: `Isso foi show!`,
 		bye: `Até mais!`
