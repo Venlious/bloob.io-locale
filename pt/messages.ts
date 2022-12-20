@@ -128,7 +128,7 @@ export default <MessageList>{
 		matchesWaiting: `0 partidas em espera | 1 partida em espera | {count} partidas em espera`,
 		needMorePlayers: `Precisa de mais 0 jogadores | Precisa de mais 1 jogador | Precisa de mais {count} jogadores`,
 		playAgainstBots: `Jogue contra bots | Jogue contra um bot | Jogue contra bots`,
-		playRandomOpponents: `Jogar Random Opponents`,
+		playRandomOpponents: `Jogar Oponentes Aleatórios`,
 		turnsToFlip: `Gire para virar | Gire para virar | Gire para virar`,
 		increment: `Incrementos de %{count}`
 	},
@@ -335,7 +335,7 @@ export default <MessageList>{
 		},
 		matchmaking: {
 			tiredOfWaiting: `Cansado de esperar?`,
-			cancel: `Cancelar partidas`,
+			cancel: `Cancelar partida`,
 			searching: `Procurando oponentes... (%{time})`,
 			found: `Partida encontrada! Começando em %{time}...`
 		},
