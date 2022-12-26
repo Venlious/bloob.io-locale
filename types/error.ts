@@ -18,6 +18,12 @@ export type ErrorMessage = {
 	 */
 	generic: {
 		/**
+		 * Shown when the user is trying to play a game but is accessing it on a third party
+		 * website without permission.
+		 */
+		blockedFrame: string
+
+		/**
 		 * Shown when the user has been trying to connect to the server but has failed to do so.
 		 */
 		unableToConnectToServer: string

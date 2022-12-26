@@ -6,6 +6,7 @@ export default <ErrorMessage>{
 		generic: `Diminua um pouco! Espere %{seconds} segundo(s).`
 	},
 	generic: {
+		blockedFrame: `Este jogo não é permitido neste site. Você pode jogar de graça no site listado embaixo.`,
 		unableToConnectToServer: `Não foi possível conectar ao servidor do jogo. Você pode tentar atualizar esta página mais tarde. Entre em contato se o problema persistir.`,
 		desync: `Desculpe, parece que você foi desincronizado. Por favor, tente novamente.`,
 		alreadyConnected: `Parece que você abriu este site em outra guia e foi desconectado aqui.`,

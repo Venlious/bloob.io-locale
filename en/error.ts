@@ -6,6 +6,7 @@ export default <ErrorMessage>{
 		generic: `Slow down a little! Wait %{seconds} second(s).`
 	},
 	generic: {
+		blockedFrame: `This game isn't allowed on this website. You can play it for free on the website listed below.`,
 		unableToConnectToServer: `Unable to connect to the game server. You may try refreshing this page later. Please reach out if the issue persists.`,
 		desync: `Sorry, it looks like you were desynchronized. Please try again.`,
 		alreadyConnected: `It looks like you opened this site in another tab and you have been disconnected here.`,

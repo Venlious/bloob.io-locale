@@ -6,6 +6,7 @@ export default <ErrorMessage>{
 		generic: `Ralentis un peu! Attends %{seconds} seconde(s).`
 	},
 	generic: {
+		blockedFrame: `Ce jeu n'est pas autorisé sur ce site. Tu peux y jouer gratuitement sur le site ci-dessous.`,
 		unableToConnectToServer: null,
 		desync: `Désolé, on dirait que tu as été désynchronisé. Essaie à nouveau.`,
 		alreadyConnected: null,
