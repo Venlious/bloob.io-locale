@@ -7,7 +7,7 @@ import { PoolGameGroup, PoolGameFoulType } from '../types/index'
 
 export default <MessageList>{
 	_entries: {
-		total: 848,
+		total: 850,
 		missing: 0
 	},
 	name: `Bloob.io`,
@@ -292,7 +292,6 @@ export default <MessageList>{
 				emptyListNotHost: `L'ospite non ha selezionato alcun set di carte personalizzato.`,
 				noneSelected: `L'host deve selezionare i set di carte.`,
 				notInOwnLibrary: `Questo set di carte personalizzato è stato aggiunto da un altro utente. Puoi aggiungerlo alla tua libreria per utilizzarlo nuovamente in futuro.`,
-				importById: `Puoi compilare l'ID dei set di carte dei fornitori più famosi qui sotto. Una volta scaricati, potrai semplicemente caricarli qui sotto.`,
 				csv: `Il supporto dei file CSV è limitato e il set di carte risultante potrebbe non essere impeccabile. Per ottenere risultati migliori, utilizza i file .json nativi (come per l'esportazione).`,
 				delete: `L'eliminazione del set di carte personalizzate denominato "%{name}" non può essere annullata. Scarica prima il set in locale se vuoi poterlo recuperare in un secondo momento.`,
 				storage: `I set di carte sono memorizzati nel tuo browser. Tienili al sicuro scaricandone una copia e salvandola sul tuo dispositivo.`,
@@ -385,8 +384,6 @@ export default <MessageList>{
 		matchesDisabled: `Non puoi creare o unirti a una partita in questo momento`,
 		fileUpload: `Clicca per sfogliare o trascinare qui i tuoi file`,
 		fileUploadMore: `Aggiungi altri file trascinando o cliccando qui`,
-		fileDownloadAutomatically: `Apre una nuova scheda e avvia automaticamente il download.`,
-		fileDownloadManually: `Apre una nuova scheda in cui dovrai salvare il file cliccando con il tasto destro del mouse e utilizzando "Salva con nome".`,
 		gameJoin: `Partecipa a %{title} Partita`,
 		gameHelp: `%{title} Aiuto`,
 		areYouSure: `Sei sicuro?`,

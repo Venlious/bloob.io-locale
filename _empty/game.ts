@@ -557,6 +557,10 @@ export default <GameMessage>{
 				title: null,
 				help: null
 			},
+			preview: {
+				title: null,
+				help: null
+			},
 			illegalBallPocket: {
 				title: null
 			},
@@ -659,6 +663,10 @@ export default <GameMessage>{
 				description: null
 			},
 			relaxed: {
+				title: null,
+				description: null
+			},
+			ruthless: {
 				title: null,
 				description: null
 			}

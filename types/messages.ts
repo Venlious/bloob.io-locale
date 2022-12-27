@@ -1274,12 +1274,6 @@ export type MessageList = {
 				notInOwnLibrary: string
 
 				/**
-				 * Shown to explain to the user how to import a custom card set from
-				 * a third party provider by using their ID.
-				 */
-				importById: string
-
-				/**
 				 * Shown as disclaimer on CSV files as they might not result in a flawless
 				 * imported custom card set.
 				 */
@@ -1771,17 +1765,6 @@ export type MessageList = {
 		 * Shown in the file uploader at the bottom of already added files.
 		 */
 		fileUploadMore: string
-
-		/**
-		 * Shown as explanation when a download will commence automatically.
-		 */
-		fileDownloadAutomatically: string
-
-		/**
-		 * Shown as explanation when a download requires the user to manually
-		 * take action.
-		 */
-		fileDownloadManually: string
 
 		/**
 		 * Title shown above the popup modal to join a match.

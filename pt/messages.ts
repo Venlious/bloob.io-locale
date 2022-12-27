@@ -7,7 +7,7 @@ import { PoolGameGroup, PoolGameFoulType } from '../types/index'
 
 export default <MessageList>{
 	_entries: {
-		total: 848,
+		total: 850,
 		missing: 0
 	},
 	name: `Bloob.io`,
@@ -292,7 +292,6 @@ export default <MessageList>{
 				emptyListNotHost: `O anfitrião não selecionou nenhum conjunto de cartas personalizado.`,
 				noneSelected: `O anfitrião deve selecionar os conjuntos de cartas.`,
 				notInOwnLibrary: `Este conjunto de cartas personalizado foi adicionado por outro usuário. Você pode adicioná-lo à sua biblioteca para usá-lo novamente no futuro.`,
-				importById: `Você pode preencher o ID dos conjuntos de cartas de fornecedores populares abaixo. Uma vez baixados, você pode simplesmente carregá-los abaixo.`,
 				csv: `Observe que o suporte a arquivos CSV é limitado e o conjunto de cartas resultante pode não ser perfeito. Para obter melhores resultados, use os arquivos .json nativos (o mesmo para exportar).`,
 				delete: `A exclusão do conjunto de cartas personalizado chamado "%{name}" não pode ser desfeita. Baixe o conjunto localmente primeiro se quiser recuperá-lo posteriormente.`,
 				storage: `Os conjuntos de cartas são armazenados em seu navegador. Mantenha-os seguros baixando uma cópia e salvando-a em seu dispositivo.`,
@@ -385,8 +384,6 @@ export default <MessageList>{
 		matchesDisabled: `Você não pode criar ou entrar em uma partida agora`,
 		fileUpload: `Clique para navegar ou arraste seu(s) arquivo(s) aqui`,
 		fileUploadMore: `Adicione mais arquivos arrastando ou clicando aqui`,
-		fileDownloadAutomatically: `Abre uma nova guia e inicia automaticamente um download.`,
-		fileDownloadManually: `Abre uma nova guia onde você terá que salvar o arquivo clicando com o botão direito do mouse e usando "Salvar como".`,
 		gameJoin: `Ingressar na partida %{title}`,
 		gameHelp: `Ajuda %{title}`,
 		areYouSure: `Você tem certeza?`,
