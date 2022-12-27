@@ -7,7 +7,7 @@ import { PoolGameGroup, PoolGameFoulType } from '../types/index'
 
 export default <MessageList>{
 	_entries: {
-		total: 848,
+		total: 850,
 		missing: 0
 	},
 	name: `Bloob.io`,
@@ -267,7 +267,7 @@ export default <MessageList>{
 		},
 		sets: {
 			title: `Card Sets`,
-			contribute: `Contribute to this List`,
+			contribute: `Contribute to this list`,
 			create: `Create Set`,
 			browser: `Browse & Import Custom Sets`,
 			import: `Import Set`,
@@ -292,7 +292,6 @@ export default <MessageList>{
 				emptyListNotHost: `The host has not selected any custom card sets.`,
 				noneSelected: `The host must select card sets.`,
 				notInOwnLibrary: `This custom card set was added by another user. You can add it to your library to use it again in the future.`,
-				importById: `You can fill in the ID of card sets from popular providers below. Once downloaded you can simply upload them below.`,
 				csv: `Please note CSV file support is limited and the resulting card set may not be flawless. For best results please use the native .json files (same as export).`,
 				delete: `Deleting custom card set named "%{name}" cannot be undone. Download the set locally first if you wish to be able to recover it at a later time.`,
 				storage: `Card sets are stored in your browser. Keep them safe by downloading a copy and saving it on your device.`,
@@ -385,8 +384,6 @@ export default <MessageList>{
 		matchesDisabled: `You cannot make or join a match right now`,
 		fileUpload: `Click to browse or drag your file(s) in here`,
 		fileUploadMore: `Add more files by dragging or clicking here`,
-		fileDownloadAutomatically: `Opens a new tab and automatically starts a download.`,
-		fileDownloadManually: `Opens a new tab where you will then have to save the file by right clicking and using "Save As".`,
 		gameJoin: `Join %{title} Match`,
 		gameHelp: `%{title} Help`,
 		areYouSure: `Are you sure?`,

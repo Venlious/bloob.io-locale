@@ -7,7 +7,7 @@ import { PoolGameGroup, PoolGameFoulType } from '../types/index'
 
 export default <MessageList>{
 	_entries: {
-		total: 848,
+		total: 850,
 		missing: 0
 	},
 	name: `Bloob.io`,
@@ -292,7 +292,6 @@ export default <MessageList>{
 				emptyListNotHost: `De spelleider heeft geen custom kaartensets gekozen.`,
 				noneSelected: `Spelleider moet kaartensets selecteren.`,
 				notInOwnLibrary: `Deze custom kaartenset is toegevoegd door een andere gebruiker. Voeg deze toe aan je bibliotheek om deze in de toekomst opnieuw te gebruiken.`,
-				importById: `Je kunt de ID van kaartensets van populaire diensten hieronder invullen. Eenmaal gedownload kun je ze gemakkelijk hieronder uploaden.`,
 				csv: `Let op: CSV-bestandsondersteuning is beperkt en de resulterende kaartenset kan fouten bevatten. Voor de beste resultaten gebruik de native .json bestanden (hetzelfde als export).`,
 				delete: `Het verwijderen van een custom kaartenset met de naam "%{name}" kan niet ongedaan worden gemaakt. Download de set eerst lokaal als je deze later wilt kunnen herstellen.`,
 				storage: `Kaartensets worden opgeslagen in jouw browser. Download en bewaar een kopie om deze niet te verliezen.`,
@@ -385,8 +384,6 @@ export default <MessageList>{
 		matchesDisabled: `Alle spelfuncties zijn tijdelijk uitgeschakeld`,
 		fileUpload: `Klik om te browsen of sleep jouw bestand(en) hierheen`,
 		fileUploadMore: `Voeg meer bestanden toe door te slepen of hier te klikken`,
-		fileDownloadAutomatically: `Opent een nieuw tabblad en begint automatisch een .csv te downloaden`,
-		fileDownloadManually: `Opent een nieuw tabblad waar je dan het bestand moet opslaan door met de rechtermuisknop te klikken en "Opslaan als" te selecteren`,
 		gameJoin: `Join %{title}`,
 		gameHelp: `%{title} Uitleg`,
 		areYouSure: `Weet je het zeker?`,

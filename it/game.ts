@@ -599,6 +599,10 @@ export default <GameMessage>{
 				title: `Tempo di rotazione`,
 				help: `Per quanto tempo ogni giocatore deve colpire la palla da biliardo.`
 			},
+			preview: {
+				title: `Anteprima`,
+				help: `La linea di anteprima mostra dove andrà la palla bianca dopo essere stata colpita.`
+			},
 			illegalBallPocket: {
 				title: `Tasca della palla illegale`
 			},
@@ -703,6 +707,10 @@ export default <GameMessage>{
 			relaxed: {
 				title: `Regole rilassate`,
 				description: `Punizioni più miti e meno regole`
+			},
+			ruthless: {
+				title: `Regole senza pietà`,
+				description: `Qualsiasi fallo comporterà una perdita istantanea`
 			}
 		},
 		help: {

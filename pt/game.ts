@@ -599,6 +599,10 @@ export default <GameMessage>{
 				title: `Tempo para jogada`,
 				help: `Quanto tempo cada jogador tem para acertar a bola branca.`
 			},
+			preview: {
+				title: `Visualização`,
+				help: `A linha de visualização mostra para onde a bola branca irá depois de ser atingida.`
+			},
 			illegalBallPocket: {
 				title: `Encaçapada Proibida`
 			},
@@ -703,6 +707,10 @@ export default <GameMessage>{
 			relaxed: {
 				title: `Regras Relaxadas`,
 				description: `Punições mais brandas e menos regras`
+			},
+			ruthless: {
+				title: `Regras implacáveis`,
+				description: `Qualquer falta resultará em perda instantânea`
 			}
 		},
 		help: {

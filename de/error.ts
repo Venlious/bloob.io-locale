@@ -6,6 +6,7 @@ export default <ErrorMessage>{
 		generic: `Mach mal langsamer! Warte %{seconds} Sekunde(n).`
 	},
 	generic: {
+		blockedFrame: `Dieses Spiel ist auf dieser Website nicht erlaubt. Du kannst das Spiel kostenlos auf der unten angegebenen Website spielen.`,
 		unableToConnectToServer: null,
 		desync: null,
 		alreadyConnected: `Es sieht so aus, als ob die Seite in einem anderen Tab geöffnet ist und die Verbindung hier unterbrochen wurde.`,

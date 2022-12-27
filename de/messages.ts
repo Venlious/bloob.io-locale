@@ -7,7 +7,7 @@ import { PoolGameGroup, PoolGameFoulType } from '../types/index'
 
 export default <MessageList>{
 	_entries: {
-		total: 848,
+		total: 850,
 		missing: 127
 	},
 	name: `Bloob.io`,
@@ -292,7 +292,6 @@ export default <MessageList>{
 				emptyListNotHost: `Der Gastgeber hat keine Benutzerdefinierten Kartensets ausgewählt.`,
 				noneSelected: `Der Gastgeber muss Kartensets auswählen.`,
 				notInOwnLibrary: `Dieses benutzerdefinierte Kartenset wurde von einem anderen Benutzer hinzugefügt. Du kannst es zu deiner Bibliothek hinzufügen, um es in Zukunft wieder zu verwenden.`,
-				importById: `Du kannst die ID von Kartensets beliebter Anbieter unten eingeben. Nach dem Herunterladen kannst du sie einfach unten hochladen.`,
 				csv: `Bitte beachte, dass CSV-Dateien nur begrenzt unterstützt werden und die resultierende Kartenmenge möglicherweise nicht einwandfrei ist. Für beste Ergebnisse verwende bitte die nativen .json-Dateien (wie beim Export).`,
 				delete: `Das Löschen eines benutzerdefinierten Kartensets mit dem Namen "%{name}" kann nicht rückgängig gemacht werden. Lade den Satz zunächst lokal herunter, wenn du ihn später wiederherstellen möchtest.`,
 				storage: `Benutzerdefinierte Kartensätze werden in deinem Browser gespeichert. Bewahre sie sicher auf, indem du eine heruntergeladene Kopie an einem anderen Ort speicherst.`,
@@ -385,8 +384,6 @@ export default <MessageList>{
 		matchesDisabled: `Du kannst gerade kein Spiel erstellen oder einem beitreten`,
 		fileUpload: `Klicke zum Durchsuchen oder ziehe deine Datei(en) hierher`,
 		fileUploadMore: `Weitere Dateien durch Ziehen oder Klicken hier hinzufügen`,
-		fileDownloadAutomatically: `Öffnet einen neuen Tab und startet automatisch den Download`,
-		fileDownloadManually: `Es wird ein neuer Tab geöffnet, in dem du die Datei mit einem Rechtsklick und "Speichern unter" speichern musst.`,
 		gameJoin: `Trete Spiel %{title} bei`,
 		gameHelp: `%{title} Hilfe`,
 		areYouSure: `Bist du sicher?`,

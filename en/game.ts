@@ -599,6 +599,10 @@ export default <GameMessage>{
 				title: `Turn Time`,
 				help: `How long each player has to hit the cue ball.`
 			},
+			preview: {
+				title: `Preview`,
+				help: `The preview line shows where the cue ball will go after it has been hit.`
+			},
 			illegalBallPocket: {
 				title: `Illegal Ball Pocket`
 			},
@@ -701,8 +705,12 @@ export default <GameMessage>{
 				description: `Closely resembles US Professional Poolplayers Association rules`
 			},
 			relaxed: {
-				title: `Relaxed Rules`,
+				title: `Relaxed Ruleset`,
 				description: `Milder punishments and fewer rules`
+			},
+			ruthless: {
+				title: `Ruthless Ruleset`,
+				description: `Any foul will result in an instant loss`
 			}
 		},
 		help: {
