@@ -703,6 +703,10 @@ export default <GameMessage>{
 			relaxed: {
 				title: `Regras Relaxadas`,
 				description: `Punições mais brandas e menos regras`
+			},
+			ruthless: {
+				title: `Regras implacáveis`,
+				description: `Qualquer falta resultará em perda instantânea`
 			}
 		},
 		help: {

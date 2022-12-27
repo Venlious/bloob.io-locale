@@ -667,6 +667,10 @@ export default <GameMessage>{
 			relaxed: {
 				title: null,
 				description: null
+			},
+			ruthless: {
+				title: `Règles impitoyables`,
+				description: `Toute faute entraînera une perte immédiate`
 			}
 		},
 		help: {

@@ -704,6 +704,10 @@ export default <GameMessage>{
 			relaxed: {
 				title: null,
 				description: null
+			},
+			ruthless: {
+				title: `Skrupellose Regeln`,
+				description: `Jedes Foul führt zu einem sofortigen Verlust`
 			}
 		},
 		help: {

@@ -701,8 +701,12 @@ export default <GameMessage>{
 				description: `Closely resembles US Professional Poolplayers Association rules`
 			},
 			relaxed: {
-				title: `Relaxed Rules`,
+				title: `Relaxed Ruleset`,
 				description: `Milder punishments and fewer rules`
+			},
+			ruthless: {
+				title: `Ruthless Ruleset`,
+				description: `Any foul will result in an instant loss`
 			}
 		},
 		help: {
