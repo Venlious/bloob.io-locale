@@ -563,6 +563,10 @@ export default <GameMessage>{
 				title: `Temps d'un tour`,
 				help: `Combien de temps chaque joueur a pour toucher la bille pointe.`
 			},
+			preview: {
+				title: `Aperçu`,
+				help: `La ligne d'aperçu montre où la boule de billard ira après avoir été frappée.`
+			},
 			illegalBallPocket: {
 				title: null
 			},

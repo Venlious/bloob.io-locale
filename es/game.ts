@@ -563,6 +563,10 @@ export default <GameMessage>{
 				title: `Tiempo de turno`,
 				help: `El tiempo que tiene cada jugador para golpear la bola blanca.`
 			},
+			preview: {
+				title: `Vista previa`,
+				help: `La línea de vista previa muestra a dónde irá la bola de billar después de ser golpeada.`
+			},
 			illegalBallPocket: {
 				title: null
 			},

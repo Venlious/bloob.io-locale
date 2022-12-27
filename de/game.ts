@@ -600,6 +600,10 @@ export default <GameMessage>{
 				title: null,
 				help: null
 			},
+			preview: {
+				title: `Vorschau`,
+				help: `Die Vorschau-Zeile zeigt an, wohin der Spielball gehen wird, nachdem er getroffen wurde.`
+			},
 			illegalBallPocket: {
 				title: null
 			},

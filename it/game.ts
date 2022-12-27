@@ -599,6 +599,10 @@ export default <GameMessage>{
 				title: `Tempo di rotazione`,
 				help: `Per quanto tempo ogni giocatore deve colpire la palla da biliardo.`
 			},
+			preview: {
+				title: `Anteprima`,
+				help: `La linea di anteprima mostra dove andrà la palla bianca dopo essere stata colpita.`
+			},
 			illegalBallPocket: {
 				title: `Tasca della palla illegale`
 			},

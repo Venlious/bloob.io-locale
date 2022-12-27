@@ -599,6 +599,10 @@ export default <GameMessage>{
 				title: `Beurt Tijd`,
 				help: `Hoe lang elke speler heeft om de cue-bal te raken.`
 			},
+			preview: {
+				title: `Voorbeeld`,
+				help: `De voorbeeldlijn toont waar de cue-bal na het raken zal gaan.`
+			},
 			illegalBallPocket: {
 				title: `Foutieve Bal Pot`
 			},
