@@ -592,7 +592,7 @@ export default <GameMessage>{
 		name: `Billar de 8 bolas`,
 		heading: `Juega al billar de 8 bolas en línea con amigos`,
 		tooltip: `Juega aquí al popular juego de billar contra un bot o un jugador.`,
-		description: `¡Da lo mejor de ti en el billar multijugador online! Mete todas las bolas y acaba con la Bola 8 para ganar en la mesa!`,
+		description: `¡Da lo mejor de ti en el billar multijugador online! Mete todas las bolas y acaba con la bola 8 para ganar en la mesa!`,
 		title: `Juego multijugador gratuito para 2 jugadores`,
 		options: {
 			turnTime: {
@@ -661,8 +661,8 @@ export default <GameMessage>{
 					keepTurn: `Mantener turno`,
 					endTurn: `Fin de turno`,
 					endTurnHand: `Fin de giro + Bola en mano`,
-					reset: `Fin de turno + Restablecer campo`,
-					resetHand: `Fin de turno + Restaurar campo + Pelota en mano`,
+					reset: `Fin de turno + Restaurar campo`,
+					resetHand: `Fin de turno + Restaurar campo + Pelota`,
 					instantWin: `victoria instantánea`,
 					instantLoss: `Pérdida instantánea`
 				}
@@ -681,15 +681,15 @@ export default <GameMessage>{
 			},
 			foulIllegalEightBallBreak: {
 				title: `Meter la bola 8 durante el descanso`,
-				help: `Sucede cuando un jugador consigue meter la Bola 8 durante el descanso.`
+				help: `Sucede cuando un jugador consigue meter la bola 8 durante el descanso.`
 			},
 			foulIllegalEightBallPocket: {
-				title: `Meter la Bola 8 Ilegalmente`,
-				help: `Sucede cuando un jugador mete la Bola 8 mientras comete otra falta al mismo tiempo (por ejemplo, meter también la bola blanca).`
+				title: `Meter la bola 8 ilegalmente`,
+				help: `Sucede cuando un jugador mete la bola 8 mientras comete otra falta al mismo tiempo (por ejemplo, meter también la bola blanca).`
 			},
 			foulIllegalEightBallPocketTooSoon: {
 				title: `Meter la bola 8 demasiado pronto`,
-				help: `Sucede cuando un jugador mete la Bola 8 cuando aún tiene otras bolas objetivas que meter`
+				help: `Sucede cuando un jugador mete la bola 8 cuando aún tiene otras bolas objetivas que meter`
 			}
 		},
 		presets: {
