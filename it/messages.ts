@@ -25,7 +25,7 @@ export default <MessageList>{
 			forfeit: `Partita finita - L'avversario ha scelto di dare forfait`,
 			winner: `Partita vinta da %{name}`,
 			inactive: `La partita è terminata per inattività`,
-			late: `La partita è terminata a causa di un turno mancante (%{turns)`,
+			late: `La partita è terminata a causa di un turno mancante (%{turns})`,
 			pickActionCard: `Scegliere la carta azione`,
 			pickCardSelection: `Selezione della carta`,
 			handDump: `Giro di scarico`,
@@ -355,7 +355,7 @@ export default <MessageList>{
 		}
 	},
 	info: {
-		incompleteTranslationNotice: `La lingua che hai selezionato è completa al {percentuale}% circa. Le traduzioni mancanti sono in inglese.`,
+		incompleteTranslationNotice: `La lingua che hai selezionato è completa al {percentage}% circa. Le traduzioni mancanti sono in inglese.`,
 		betaNotice: `Questo gioco è ancora in fase di sviluppo. Ti invitiamo a condividere feedback e bug sul nostro %{social}`,
 		clickForDetails: `Clicca per i dettagli`,
 		howToPlay: `Scopri come giocare a questo gioco`,

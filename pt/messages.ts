@@ -183,7 +183,7 @@ export default <MessageList>{
 		currentSkipCount: `Passar (%{current}/%{total})`,
 		currentReadyCount: `Pronto (%{current}/%{total})`,
 		assignedTypeSelf: `Você é %{type}`,
-		assignedTypeSelfLocal: `O jogador (%index) é %{type}`,
+		assignedTypeSelfLocal: `O jogador (%{index}) é %{type}`,
 		broadcast: `Transmissão`,
 		confirm: `Confirmar`,
 		close: `Fechar`,
