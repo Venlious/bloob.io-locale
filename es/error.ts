@@ -7,14 +7,14 @@ export default <ErrorMessage>{
 	},
 	generic: {
 		blockedFrame: `Este juego no está permitido en este sitio web. Puedes jugar gratis en el sitio web que se indica abajo.`,
-		unableToConnectToServer: null,
+		unableToConnectToServer: `No se puede conectar con el servidor del juego. Puede intentar actualizar esta página más tarde. Por favor, póngase en contacto si el problema persiste`,
 		desync: `Lo siento, parece que te has desincronizado. Por favor, inténtalo de nuevo.`,
-		alreadyConnected: null,
+		alreadyConnected: `Parece que ha abierto este sitio en otra pestaña y se ha desconectado aquí.`,
 		title: `Se ha producido un error.`,
 		invalid: `Los datos no son válidos.`,
 		texture: `No se ha podido cargar una textura  "%{id}".`,
 		invalidAction: `Se ha dado un tipo de acción "%{type}" no válido.`,
-		maintenance: null,
+		maintenance: `No puede realizar esta acción mientras el modo de mantenimiento está activo.`,
 		missingArguments: `Faltan argumentos necesarios para esta acción.`,
 		missingAction: `Se requiere un tipo de acción.`,
 		cannotSelf: `No puedes realizar esta acción a ti mismo.`,
@@ -22,7 +22,7 @@ export default <ErrorMessage>{
 		againstAgainstInactiveUser: `No se puede realizar esta acción a un usuario inactivo.`,
 		invalidUser: `El usuario con el ID dado no está en esta partida.`,
 		invalidTime: `No puedes realizar esta acción en este momento.`,
-		versionMismatch: null,
+		versionMismatch: `Está ejecutando la versión "%{client}" mientras que el servidor está ejecutando la versión "%{server}". Por favor, actualice esta página en unos minutos para actualizarse a la última versión.\n\nPuede seguir jugando contra el Ordenador sin problemas, pero le recomendamos que se actualice antes de jugar en multijugador.`,
 		clipboard: `No se puede copiar en el portapapeles`
 	},
 	config: {
@@ -40,8 +40,8 @@ export default <ErrorMessage>{
 	start: {
 		fieldRows: `El campo seleccionado no admite más de %{rows} filas`,
 		fieldCannotFitUsers: `El campo seleccionado no puede admitir más de %{users} jugadores`,
-		whiteCardThreshold: null,
-		blackCardThreshold: null,
+		whiteCardThreshold: `El juego requiere al menos %{count} cartas de respuesta (blancas)`,
+		blackCardThreshold: `El juego requiere al menos %{count} cartas de respuesta (negras)`,
 		insufficientPlayers: `Necesita al menos %{min} jugadores para empezar el partido.`
 	},
 	game: {
@@ -57,11 +57,11 @@ export default <ErrorMessage>{
 		allStuck: `Ya nadie puede hacer un movimiento. El partido ha concluido.`,
 		invalid: `El tipo de juego "%{type}" no existe.`,
 		invalidMove: `La jugada dada no es válida.`,
-		invalidVote: null,
+		invalidVote: `El voto que ha intentado realizar no es válido.`,
 		alreadyPlaced: `Ya has colocado algo.`,
-		alreadyVoted: null,
+		alreadyVoted: `Ya ha votado.`,
 		invalidPlacement: `La colocación de tu pieza no es válida.`,
-		invalidBombPlacement: null,
+		invalidBombPlacement: `Intentó colocar una bomba no válida.`,
 		cellClaimed: `Una o más casillas de tu selección ya han sido reclamadas.`,
 		colorClaimed: `Este color ya ha sido reclamado por otro usuario.`,
 		invalidColumnRow: `La columna o la fila no está configurada o no es válida.`,
@@ -71,17 +71,17 @@ export default <ErrorMessage>{
 		wordTooLong: `Selección de palabras demasiado larga (Max. %{max})`
 	},
 	card: {
-		loadingSets: null,
-		invalid: null,
-		invalidSet: null,
-		invalidSelection: null,
-		notInHand: null,
-		loadError: null,
-		underscore: null,
-		empty: null,
-		pickLimit: null,
-		setSizeLimit: null,
-		setName: null
+		loadingSets: `No se han podido descargar los juegos de tarjetas.`,
+		invalid: `Datos de tarjeta no válidos dados.`,
+		invalidSet: `Conjunto de tarjetas no válido dado.`,
+		invalidSelection: `Selección de cartas no válida dada.`,
+		notInHand: `No tiene esta carta en la mano.`,
+		loadError: `Ha ocurrido un error intentando descargar los datos del conjunto de cartas.`,
+		underscore: `Cada guión bajo resulta en una elección de tarjeta de respuesta - ¡no las ponga una al lado de la otra!`,
+		empty: `Por favor, asegúrese de que la tarjeta no está vacía.`,
+		pickLimit: `No puede solicitar elegir más de 3 tarjetas de respuesta. (¿Demasiados guiones bajos?)`,
+		setSizeLimit: `El tamaño total de los conjuntos de tarjetas personalizadas no puede superar %{limit}`,
+		setName: `El nombre debe tener entre 3 y 32 caracteres`
 	},
 	preset: {
 		alreadyApplied: `Esta preselección ya se ha aplicado.`,
@@ -93,7 +93,7 @@ export default <ErrorMessage>{
 		rematchCancelled: `¡Lo siento! No quedan suficientes jugadores para la revancha.`,
 		inactive: `El partido en el que estabas ha sido cerrado por estar inactivo durante demasiado tiempo.`,
 		inactiveWarning: `El partido se cerrará pronto por inactividad si no se toman acciones.`,
-		replacedByBot: null,
+		replacedByBot: `Has sido sustituido por un bot y no puedes reincorporarte a esta partida.`,
 		kicked: `Te han expulsado del partido en el que estabas.`,
 		deleted: `El partido en el que estabas ha sido eliminado.`,
 		invalid: `El partido con el ID "%{id}" no existe.`,
@@ -104,21 +104,21 @@ export default <ErrorMessage>{
 		full: `Esta partida ya está llena (%{current}/%{max}).`
 	},
 	profile: {
-		profanity: null,
+		profanity: `Nickname parece contener blasfemias prohibidas.`,
 		missingData: `Falta el nombre de usuario y/o los argumentos de la imagen.`,
 		invalidNickname: `El apodo tiene un formato incorrecto.`,
 		invalidPicture: `La imagen tiene un formato incorrecto.`,
-		nicknameMaxLength: null,
-		nicknameMinLength: null,
-		nicknameAllowedCharacters: null,
+		nicknameMaxLength: `Nickname es demasiado largo (%{current}/%{max})`,
+		nicknameMinLength: `Nickname es demasiado corto (%{current}/%{min})`,
+		nicknameAllowedCharacters: `Nickname sólo puede contener caracteres alfanuméricos y estos caracteres especiales ?!_-+`,
 		inGame: `No se puede personalizar el perfil mientras el juego está en marcha`
 	},
 	requirement: {
 		credentials: `Has dado credenciales inválidas.`,
 		validAccount: `Tu cuenta aún no ha sido validada. Por favor, guarda los cambios en tu perfil.`,
 		inLobby: `No puedes realizar esta acción porque el partido ya ha comenzado.`,
-		notJudge: null,
-		judge: null,
+		notJudge: `No puedes realizar esta acción como juez.`,
+		judge: `No puedes realizar esta acción ya que no eres el juez.`,
 		turn: `No puedes realizar esta acción porque no es tu turno.`,
 		duringGame: `Sólo puedes realizar esta acción mientras el partido está en curso.`,
 		finishedGame: `Sólo puedes realizar esta acción cuando el juego haya terminado.`,
@@ -126,6 +126,6 @@ export default <ErrorMessage>{
 		notInGame: `No puedes realizar esta acción mientras estás en un partido.`,
 		notMatchmaking: `No se puede realizar esta acción mientras estás buscando un partido.`,
 		matchHost: `No eres el host y no puedes realizar esta acción.`,
-		admin: null
+		admin: `Esta acción está restringida a los Admins.`
 	}
 }
