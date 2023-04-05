@@ -55,12 +55,8 @@ const checkForVariables = (english, translation) => {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const enMessage = require(`./en/messages.ts`).default
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const enNumberFormat = require(`./en/numberFormats.ts`).default
-
+const enMessage = require(`./messages/en.json`)
 const enMessageKeys = objectDeepKeys(enMessage)
-const enNumberFormatKeys = objectDeepKeys(enNumberFormat)
 
 const enCount = getMissingCount(enMessage)
 describe(`correctEntriesCount`, () => {
@@ -75,21 +71,12 @@ describe(`correctEntriesCount`, () => {
 for (const folder of [...supportedLocales, `_empty`]) {
 	if (folder === `en`) continue
 	// eslint-disable-next-line @typescript-eslint/no-var-requires
-	const messages = require(`./${folder}/messages.ts`).default
-	// eslint-disable-next-line @typescript-eslint/no-var-requires
-	const numberFormat = require(`./${folder}/numberFormats.ts`).default
+	const messages = require(`./messages/${folder}.json`)
 
 	describe(`translatedMessages`, () => {
 		it(`should have all English translations keys in "${folder}"`, () => {
 			const messageKeys = objectDeepKeys(messages)
 			expect(symmetricDifference(enMessageKeys, messageKeys)).toHaveLength(0)
-		})
-	})
-
-	describe(`translatedNumberFormats`, () => {
-		it(`should have all English number translations keys in "${folder}"`, () => {
-			const numberFormatKeys = objectDeepKeys(numberFormat)
-			expect(symmetricDifference(enNumberFormatKeys, numberFormatKeys)).toHaveLength(0)
 		})
 	})
 
