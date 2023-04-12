@@ -61,7 +61,7 @@ const enMessageKeys = objectDeepKeys(enMessage)
 const enCount = getMissingCount(enMessage)
 describe(`correctEntriesCount`, () => {
 	it(`should have the proper total entries count in English`, () => {
-		expect(enMessage._entries.total).toBe(enCount.total)
+		expect(enMessage._meta.total).toBe(enCount.total)
 	})
 	it(`should have no missing entries in English`, () => {
 		expect(0).toBe(enCount.missing)
@@ -86,10 +86,10 @@ for (const folder of [...supportedLocales, `_empty`]) {
 			expect(enCount.total).toBe(count.total)
 		})
 		it(`should have the proper total entries count for "${folder}"`, () => {
-			expect(messages._entries.total).toBe(count.total)
+			expect(messages._meta.total).toBe(count.total)
 		})
 		it(`should have the proper missing entries count for "${folder}"`, () => {
-			expect(messages._entries.missing).toBe(count.missing)
+			expect(messages._meta.missing).toBe(count.missing)
 		})
 	})
 
