@@ -553,10 +553,10 @@ export default class TranslationClass {
 	 * @param output Output as returned by the API
 	 * @returns Sanitised array or "false" in case of an error
 	 */
-	sanitiseOutput(input: string[], output: string[]): string[] | false {
+	sanitiseOutput(input: string[], output: string[]): (string | null)[] | false {
 		if (input.length > output.length) {
-			console.error(`Input list is longer than the output list!`, input, output)
-			return false
+			console.error(`[NOTICE] Input list is longer than the output list!`, input, output)
+			return Array(input.length).fill(null)
 		}
 
 		// Remove
@@ -585,11 +585,11 @@ export default class TranslationClass {
 						processed.push(value)
 					} else {
 						console.error(
-							`Got invalid number sequence for entry "${entry}".`,
+							`[NOTICE] Got invalid number sequence for entry "${entry}".`,
 							input,
 							output
 						)
-						return false
+						return Array(input.length).fill(null)
 					}
 				})
 			} else {
@@ -599,11 +599,11 @@ export default class TranslationClass {
 			return processed
 		} else {
 			console.error(
-				`Unable to sanitise the output list (Output: ${output.length} - Input: ${input.length})`,
+				`[NOTICE] Unable to sanitise the output list (Output: ${output.length} - Input: ${input.length})`,
 				input,
 				output
 			)
-			return false
+			return Array(input.length).fill(null)
 		}
 	}
 }
