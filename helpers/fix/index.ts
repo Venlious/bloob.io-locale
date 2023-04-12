@@ -74,11 +74,11 @@ const fixVerifyObject = (obj: any): void => {
  * @param target Target file to modify to match
  */
 const checkAndFixVerified = async (target: string) => {
-	const { LOCALE_SOURCE, LOCALE_TARGET } = await loadMessages(target, `verified/${target}`)
+	const { LOCALE_TARGET } = await loadMessages(target, `verified/${target}`)
 
 	try {
 		// Add missing entries to the object
-		let data = addMissingEntriesToObject(LOCALE_SOURCE, LOCALE_TARGET)
+		let data = addMissingEntriesToObject(EN_MESSAGES, LOCALE_TARGET)
 
 		// Ensure order is consistent with source
 		data = ensureSameOrder(EN_MESSAGES, data)
