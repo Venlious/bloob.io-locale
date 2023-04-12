@@ -58,7 +58,7 @@ const fixVerifyObject = (obj: any): void => {
 				const value = obj[key]
 				if (value !== null && typeof value === `object`) {
 					fixVerifyObject(value)
-				} else {
+				} else if (typeof value !== `boolean`) {
 					obj[key] = false
 				}
 			}
