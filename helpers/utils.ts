@@ -123,6 +123,15 @@ export const getContentToPath = (
 export const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
 /**
+ * Load a message single file.
+ *
+ * @param target The target file to be loaded.
+ */
+export const getMessageFile = async (target: string) => {
+	return await require(`${LOCALE_FOLDER}/${target}.json`)
+}
+
+/**
  * Load both source and target message "XX.json" files.
  *
  * @param source The source file to use for the translation
@@ -181,6 +190,7 @@ export default {
 	getContentToPath,
 	delay,
 	ensureSameOrder,
+	getMessageFile,
 	loadMessages,
 	writeFile,
 	objectDeepKeys,

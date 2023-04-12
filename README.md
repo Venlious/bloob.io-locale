@@ -31,6 +31,8 @@ Running the project locally is easy. Please make sure to use Node version 16.
     `yarn translate --source "en" --target "nl" --language "informal Dutch"`
 -   Automatically fix any fixable and common issues
     `yarn fix`
+-   Automatically fix and fill any translations that are missing (Note: must configure .env)
+    `yarn fill`
 -   Verify if test passes
     `yarn test`
 -   Verify if lint passes

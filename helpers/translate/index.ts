@@ -34,7 +34,7 @@ rl.question(
 	answer => {
 		if (answer.toLowerCase() === `y`) {
 			// Start translation job
-			new TranslationClass(source, target, language)
+			new TranslationClass({ source, target, language })
 		} else {
 			console.log(`Aborting the script...`)
 			process.exit(0)

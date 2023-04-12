@@ -41,10 +41,12 @@ export default class TranslationClass {
 	readonly source: string
 	readonly target: string
 	readonly language: string
+	readonly skipDateInFileName: boolean
 	readonly messages: {
 		source: NestedObject
 		target: NestedObject
 	}
+	private finishCallback?: () => void
 	private queue: TranslateQueue
 	private finished: boolean
 	private rateLimit: {
@@ -53,10 +55,24 @@ export default class TranslationClass {
 		check: (extraDelay: number) => Promise<boolean>
 	}
 
-	constructor(source: string, target: string, language: string) {
+	constructor({
+		source,
+		target,
+		language,
+		skipDateInFileName = false,
+		finishCallback
+	}: {
+		source: string
+		target: string
+		language: string
+		skipDateInFileName?: boolean
+		finishCallback?: () => void
+	}) {
 		this.source = source
 		this.target = target
 		this.language = language
+		this.skipDateInFileName = skipDateInFileName
+		this.finishCallback = finishCallback
 		this.messages = {
 			source: {},
 			target: {}
@@ -105,7 +121,7 @@ export default class TranslationClass {
 		// Set up & write to output file
 		const date = new Date()
 		const timestamp = `${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`
-		const name = `${this.target}.${timestamp}`
+		const name = this.skipDateInFileName ? this.target : `${this.target}.${timestamp}`
 
 		if (interrupted) {
 			console.info(`Translation was interrupted! Writing output file "${name}" now...`)
@@ -119,7 +135,11 @@ export default class TranslationClass {
 				ensureSameOrder(this.messages.source, this.messages.target)
 			)
 			console.info(`Finished. File is now available.`)
-			process.exit()
+			if (this.finishCallback) {
+				this.finishCallback()
+			} else {
+				process.exit()
+			}
 		} catch (error) {
 			console.error(error)
 			throw `Failed to write output file.`
@@ -169,7 +189,11 @@ export default class TranslationClass {
 			console.info(
 				`There were no missing translations found. No further action will be taken.`
 			)
-			process.exit()
+			if (this.finishCallback) {
+				this.finishCallback()
+			} else {
+				process.exit()
+			}
 		}
 	}
 
