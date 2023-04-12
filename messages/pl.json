@@ -1,0 +1,1331 @@
+{
+    "_meta": {
+        "language": "informal Polish",
+        "total": 851,
+        "missing": 0
+    },
+    "name": "Bloob.io",
+    "error": {
+        "rateLimit": {
+            "secure": "Przekroczyłeś limit prędkości na tym bezpiecznym kanale. Poczekaj %{seconds} sekund(y).",
+            "generic": "Zwolnij trochę! Poczekaj %{seconds} sekund(y)."
+        },
+        "generic": {
+            "blockedFrame": "Ta gra nie jest dozwolona na tej stronie. Możesz zagrać w nią za darmo na stronie wymienionej poniżej.",
+            "unableToConnectToServer": "Nie można połączyć się z serwerem gry. Spróbuj odświeżyć tę stronę później. Skontaktuj się, jeśli problem będzie się powtarzał.",
+            "desync": "Przepraszam, wygląda na to, że zostałeś odsynchronizowany. Spróbuj ponownie.",
+            "alreadyConnected": "Wygląda na to, że otworzyłeś tę stronę w innej karcie i zostałeś odłączony tutaj.",
+            "title": "Wystąpił błąd.",
+            "invalid": "Podane dane są nieprawidłowe.",
+            "texture": "Nie udało się załadować tekstury \"%{id}\".",
+            "invalidAction": "Podano nieprawidłowy typ działania \"%{type}\".",
+            "maintenance": "Nie możesz wykonać tej akcji, gdy tryb konserwacji jest aktywny.",
+            "missingArguments": "Brakuje wymaganych argumentów dla tej akcji.",
+            "missingAction": "Wymagany jest typ działania.",
+            "cannotSelf": "Nie możesz wykonać tej akcji na sobie.",
+            "actionAgainstBot": "Nie można wykonać tej akcji na bota.",
+            "againstAgainstInactiveUser": "Nie można wykonać tej akcji na nieaktywnym użytkowniku.",
+            "invalidUser": "Użytkownik o podanym ID nie jest w tej grze.",
+            "invalidTime": "Nie możesz wykonać tej akcji w tym momencie.",
+            "versionMismatch": "Używasz wersji \"%{client}\", podczas gdy serwer używa wersji \"%{server}\". Odśwież tę stronę za kilka minut, aby zaktualizować do najnowszej wersji. Możesz nadal grać przeciwko komputerowi bez problemów, ale zalecamy aktualizację przed grą wieloosobową.",
+            "clipboard": "Nie udało się skopiować do schowka."
+        },
+        "config": {
+            "invalidType": "Nieprawidłowy typ konfiguracji \"%{type}\".",
+            "invalidOption": "Nieprawidłowa modyfikacja konfiguracji \"%{option}\".",
+            "invalidArgument": "Nieprawidłowy argument. Nie można ustawić \"%{id}\" na \"%{argument}\".",
+            "displayOnly": "Podany typ konfiguracji \"%{type}\" nie może być modyfikowany.",
+            "integer": "Opcja \"%{id}\" musi być liczbą całkowitą.",
+            "max": "Opcja \"%{id}\" ma maksymalną wartość \"%{max}\".",
+            "min": "Opcja \"%{id}\" ma minimalną wartość \"%{min}\".",
+            "increment": "Opcja \"%{id}\" wymaga przyrostów o \"%{increment}\".",
+            "minExceedMaxLength": "Min. długość nie może być większa niż maksymalna długość.",
+            "maxSubceedMinLength": "Maksymalna długość nie może być mniejsza niż minimalna długość."
+        },
+        "start": {
+            "fieldRows": "Nie można wybrać więcej niż %{rows} wierszy.",
+            "fieldCannotFitUsers": "Nie można wybrać więcej niż %{users} graczy.",
+            "whiteCardThreshold": "Gra wymaga co najmniej %{count} kart odpowiedzi (białych).",
+            "blackCardThreshold": "Gra wymaga co najmniej %{count} kart akcji (czarnych).",
+            "insufficientPlayers": "Potrzeba co najmniej %{min} graczy, aby rozpocząć mecz."
+        },
+        "game": {
+            "velocity": "Podana prędkość jest poza dozwolonym zakresem.",
+            "playerForfeited": "Gracz \"%{name}\" zrezygnował i przegrał automatycznie.",
+            "missedTurnWarning": "Spóźniłeś się i twojemu przeciwnikowi przydzielono jego ruch. Jeśli to się powtórzy za wiele razy z rzędu, zostaniesz wyrzucony. (%{current}/%{threshold})",
+            "missedTurnKick": "Zostałeś wyrzucony, ponieważ spóźniłeś się na %{current} ruch(y) z rzędu.",
+            "autoTurnWarning": "Spóźniłeś się i został wykonany ruch za ciebie. Jeśli to się powtórzy za wiele razy z rzędu, przegrasz. (%{current}/%{threshold})",
+            "autoTurnKick": "Przegrałeś automatycznie, ponieważ spóźniłeś się na %{current} ruch(y) z rzędu.",
+            "insufficientRows": "To pole nie pasuje do ilości wybranych wierszy.",
+            "stuckSkip": "Twój ruch został pominięty, ponieważ nie możesz wykonać żadnego ruchu.",
+            "stuckThreshold": "Zostałeś wyeliminowany, ponieważ byłeś zablokowany przez %{moves} ruch(y) z rzędu.",
+            "allStuck": "Nikt już nie może wykonać ruchu. Mecz został zakończony.",
+            "invalid": "Typ gry \"%{type}\" nie istnieje.",
+            "invalidMove": "Podany ruch jest nieprawidłowy.",
+            "invalidVote": "Głos, który próbowałeś złożyć, jest nieprawidłowy.",
+            "alreadyPlaced": "Już coś postawiłeś.",
+            "alreadyVoted": "Już głosowałeś.",
+            "invalidPlacement": "Twoje umieszczenie kawałka jest nieprawidłowe.",
+            "invalidBombPlacement": "Próbowano nieprawidłowego umieszczenia bomby.",
+            "cellClaimed": "Jedno lub więcej komórek w twoim wyborze zostało już zajętych.",
+            "colorClaimed": "Ten kolor został już zajęty przez innego użytkownika.",
+            "invalidColumnRow": "Kolumna lub wiersz nie jest ustawiony lub jest nieprawidłowy.",
+            "invalidColumn": "Kolumna nie jest ustawiona lub jest nieprawidłowa.",
+            "invalidWord": "Podane słowo nie jest w słowniku używanym.",
+            "wordTooShort": "Wybór słowa jest zbyt krótki (Min. %{min})",
+            "wordTooLong": "Wybór słowa jest zbyt długi (Max. %{max})"
+        },
+        "card": {
+            "loadingSets": "Nie można pobrać zestawów kart.",
+            "invalid": "Podano nieprawidłowe dane karty.",
+            "invalidSet": "Podano nieprawidłowy zestaw kart.",
+            "invalidSelection": "Podano nieprawidłowy wybór karty.",
+            "notInHand": "Nie masz tej karty w swojej ręce.",
+            "loadError": "Wystąpił błąd podczas próby pobrania danych zestawów kart.",
+            "underscore": "Każdy podkreślnik powoduje wybór jednej karty odpowiedzi - nie umieszczaj ich obok siebie!",
+            "empty": "Upewnij się, że karta nie jest pusta.",
+            "pickLimit": "Nie można żądać wyboru więcej niż 3 kart odpowiedzi. (Za dużo podkreślników?)",
+            "setSizeLimit": "Łączny rozmiar niestandardowych zestawów kart nie może przekraczać %{limit}",
+            "setName": "Nazwa musi mieć od 3 do 32 znaków długości."
+        },
+        "preset": {
+            "alreadyApplied": "To ustawienie zostało już zastosowane.",
+            "invalid": "Nie możesz użyć \"%{id}\" jako ustawienia."
+        },
+        "match": {
+            "empty": "Gra zamknięta. Wszyscy inni gracze opuścili grę.",
+            "rematchTimeout": "Nie zaakceptowałeś prośby o powtórkę i zostałeś wysłany z powrotem do głównego menu.",
+            "rematchCancelled": "Przykro mi! Nie ma już wystarczająco dużo graczy, aby rozegrać powtórkę.",
+            "inactive": "Gra, w której uczestniczyłeś, została zamknięta, ponieważ była nieaktywna zbyt długo.",
+            "inactiveWarning": "Gra zostanie wkrótce zamknięta z powodu braku aktywności, chyba że zostaną podjęte działania.",
+            "replacedByBot": "Zostałeś zastąpiony przez bota i nie możesz ponownie dołączyć do tej gry.",
+            "kicked": "Zostałeś wyrzucony z gry, w której uczestniczyłeś.",
+            "deleted": "Gra, w której uczestniczyłeś, została usunięta.",
+            "invalid": "Gra o ID „%{id}” nie istnieje.",
+            "computer": "To jest gra przeciwko komputerowi, nie możesz dołączyć.",
+            "private": "To jest prywatna gra. Musisz wprowadzić ID, aby dołączyć.",
+            "startStop": "Nie możesz rozpocząć lub zatrzymać trwającej gry.",
+            "inProgress": "Gra już trwa. Nie możesz dołączyć.",
+            "full": "Ta gra jest już pełna (%{current}/%{max})."
+        },
+        "profile": {
+            "profanity": "Nickname zawiera niedozwolone wulgaryzmy.",
+            "missingData": "Brakuje argumentów nazwy użytkownika i/lub obrazka.",
+            "invalidNickname": "Nickname jest niepoprawnie sformatowany.",
+            "invalidPicture": "Obrazek jest niepoprawnie sformatowany.",
+            "nicknameMaxLength": "Nickname jest zbyt długi (%{current}/%{max})",
+            "nicknameMinLength": "Nickname jest zbyt krótki (%{current}/%{min})",
+            "nicknameAllowedCharacters": "Nickname może zawierać tylko znaki alfanumeryczne i te specjalne znaki ?!_-+",
+            "inGame": "Nie możesz dostosować swojego profilu, gdy gra jest w toku."
+        },
+        "requirement": {
+            "credentials": "Podano nieprawidłowe dane.",
+            "validAccount": "Twoje konto nie zostało jeszcze zweryfikowane. Proszę zapisać zmiany w profilu.",
+            "inLobby": "Nie możesz wykonać tej akcji, ponieważ mecz już się rozpoczął.",
+            "notJudge": "Nie możesz wykonać tej akcji jako sędzia.",
+            "judge": "Nie możesz wykonać tej akcji, ponieważ nie jesteś sędzią.",
+            "turn": "Nie możesz wykonać tej akcji, ponieważ nie jest to twoja kolej.",
+            "duringGame": "Możesz wykonać tę akcję tylko w trakcie trwania meczu.",
+            "finishedGame": "Możesz wykonać tę akcję tylko po zakończeniu gry.",
+            "inGame": "Musisz być w grze, aby wykonać tę akcję.",
+            "notInGame": "Nie możesz wykonać tej akcji, gdy jesteś w grze.",
+            "notMatchmaking": "Nie możesz wykonać tej akcji, gdy jesteś w trakcie dopasowywania.",
+            "matchHost": "Nie jesteś gospodarzem i nie możesz wykonać tej akcji.",
+            "admin": "Ta akcja jest ograniczona do administratorów."
+        }
+    },
+    "game": {
+        "generic": {
+            "heading": "Gry wieloosobowe, które możesz znaleźć na Bloob.io",
+            "title": "Bezpłatne gry wieloosobowe online | Bez potrzeby rejestracji",
+            "description": "Zbiór gier wieloosobowych w przeglądarce bez konieczności tworzenia konta. Graj bezproblemowo i dostosuj doświadczenie do swoich preferencji.",
+            "options": {
+                "public": {
+                    "title": "Ustawienia prywatności dopasowania"
+                },
+                "maxUsers": {
+                    "title": "Maksymalna liczba graczy: 4",
+                    "help": "Ile graczy jest dozwolonych w meczu?"
+                },
+                "botFill": {
+                    "title": "Bot Wypełnij",
+                    "help": "Gdy włączone, boty wypełnią każde puste sloty graczy. To także spowoduje, że gracz zostanie zastąpiony przez bota, jeśli wcześniej odejdzie."
+                },
+                "botDifficulty": {
+                    "title": "Poziom trudności bota",
+                    "data": {
+                        "easy": "Łatwo",
+                        "normal": "Normalnie",
+                        "hard": "Trudno"
+                    }
+                },
+                "generic": {
+                    "data": {
+                        "required": "Wymagane",
+                        "notRequired": "Opcjonalne"
+                    }
+                },
+                "winCondition": {
+                    "title": "Warunek zwycięstwa",
+                    "help": "Określ, kiedy gra powinna dobiec końca."
+                },
+                "winAmount": {
+                    "title": "Kwota wygranej"
+                }
+            },
+            "help": {},
+            "presets": {
+                "custom": {
+                    "title": "Niestandardowe",
+                    "description": "Zmiany wprowadzone przez Ciebie — Ostatnia aktualizacja %{timestamp}"
+                },
+                "default": {
+                    "title": "Domyślne ustawienia będą używane."
+                }
+            }
+        },
+        "WORDRACE": {
+            "name": "Wordrace",
+            "heading": "Zagraj w Unikalną Grę Wyszukiwania Słów",
+            "tooltip": "Znajdź słowa w dowolnym kierunku na losowo wygenerowanym polu, biorąc udział w wyścigu z innymi, którzy mają ten sam cel.",
+            "description": "Wordrace to darmowa, unikalna gra słowna z dostosowywanymi ustawieniami, aby dać każdemu graczowi wyzwanie. Nie wymaga żadnej rejestracji. Graj teraz.",
+            "title": "Unikalna Gra Wieloosobowa | Bloob.io",
+            "options": {
+                "globalLanguage": {
+                    "title": "Nauczanie języków globalnych",
+                    "help": {
+                        "enabled": "Włączone: Każdy znajduje słowa w języku, który ustawiłeś.",
+                        "disabled": "Wyłączone: Każdy gracz wybiera język według własnego wyboru."
+                    }
+                },
+                "language": {
+                    "title": "Wybierz swoją przygodę",
+                    "help": {
+                        "intro": "Język, w którym każdy musi szukać słów.",
+                        "globalLanguage": "Jeśli <b>Globalny Język</b> jest wyłączony, każdy gracz może wybrać język według własnego wyboru."
+                    }
+                },
+                "sharedField": {
+                    "title": "Wspólne Pole",
+                    "help": "Wszyscy zawsze widzą to samo pole. Jeśli pole jest współdzielone, oznacza to, że gdy litera została zajęta, nikt inny nie może jej wziąć. W ten sposób gra staje się coraz trudniejsza z czasem."
+                },
+                "multiplier": {
+                    "title": "Mnożniki Wszechświata",
+                    "help": "Mnożniki są przypisane do losowych liter na polu i mnożą wynik znalezionego słowa, jeśli zostanie wybrane.",
+                    "data": {
+                        "off": "Wyłączone",
+                        "uncommon": "Niezwykłe (2,5%)",
+                        "common": "Powszechne (5%)",
+                        "veryCommon": "Bardzo powszechne (10%)",
+                        "extreme": "Ekstremalne (25%)"
+                    }
+                },
+                "roundTotal": {
+                    "title": "Rundy Zabawy",
+                    "help": "Każda runda stworzy nowe pole gry."
+                },
+                "roundDuration": {
+                    "title": "Czas trwania rundy",
+                    "help": "Jak długo trwa jedna runda."
+                },
+                "roundIntermission": {
+                    "title": "Czas przerwy",
+                    "help": "Jak długo trwa przerwa między rundami."
+                },
+                "minWordLength": {
+                    "title": "Min. Długość Słowa:",
+                    "help": "Wybór słów musi mieć co najmniej tę długość, aby móc zostać sprawdzonym pod kątem ważności."
+                },
+                "maxWordLength": {
+                    "title": "Maksymalna długość słowa",
+                    "help": "Nie można wybrać słów, które przekraczają tą długość, aby sprawdzić ich poprawność."
+                },
+                "_wordLength": {
+                    "title": "Długość słowa:",
+                    "help": "Wybór słów musi mieć tą długość, aby być uznany za ważny.",
+                    "data": {
+                        "between": "Między %{min} a %{max}"
+                    }
+                },
+                "field": {
+                    "title": "Rozmiar pola",
+                    "help": {
+                        "change": "Rozmiar boiska. Większe boiska ułatwiają grę z większą liczbą osób.",
+                        "notice": "Proszę zauważyć, że duże rozmiary boisk powodują zwiększenie rozmiaru interfejsu i mogą nie pasować do okna przeglądarki dla wszystkich graczy."
+                    },
+                    "data": {
+                        "10x8": "Mały (10x8)",
+                        "13x10": "Średni (13x10)",
+                        "16x14": "Duży (16x14)",
+                        "20x18": "Ekstremalny (20x18)"
+                    }
+                },
+                "_gameDuration": {
+                    "title": "Czas trwania gry"
+                }
+            },
+            "presets": {
+                "largeGroup": {
+                    "title": "Duża grupa",
+                    "description": "Duże pole - Indywidualne języki - Więcej graczy"
+                },
+                "blitz": {
+                    "title": "Błyskawicznie",
+                    "description": "Wiele krótkich rund - dużo mnożników"
+                }
+            },
+            "help": {
+                "find_word": {
+                    "title": "Wybór słów",
+                    "description": [
+                        "Kliknij i przytrzymaj literę na polu gry i przeciągnij w dowolnym kierunku, aby utworzyć słowo.",
+                        "Gdy przestaniesz klikać, słowo jest przetwarzane, a Ty otrzymujesz punkty w zależności od długości słowa."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Graj Zasady gry",
+                    "description": [
+                        "Wszyscy starają się znaleźć słowa w tym samym czasie co Ty, to przecież wyścig. Zgłoszone litery nie mogą być użyte ponownie.",
+                        "Czasami jest bardziej taktyczne, aby zgłaszać wiele krótkich słów, zamiast poświęcać czas na dłuższe."
+                    ]
+                },
+                "multiplier": {
+                    "title": "Mnożniki",
+                    "description": [
+                        "Gdy włączone, mnożniki są wyświetlane na losowych literach na polu, które mnożą wynik twoich znalezionych słów!",
+                        "Mnożniki się nakładają, więc mając słowo z <b>x2</b> i <b>x3</b> mnożyłoby wynik słowa <b>x5</b>!"
+                    ]
+                },
+                "language": {
+                    "title": "Jak grać",
+                    "description": [
+                        "Gospodarz decyduje, czy wszyscy grają w tym samym języku, czy w wybranym przez siebie.",
+                        "Słowa będą ważne tylko dla języka, w którym grasz, a akcenty są ignorowane."
+                    ]
+                }
+            }
+        },
+        "FOUR_IN_A_ROW": {
+            "name": "Cztery w Rzędzie",
+            "heading": "Graj w Czwórkę w Rzędy Online ze Znajomymi",
+            "tooltip": "Graj w Czwórkę w Rzędzie z maksymalnie sześcioma graczami w klasycznym trybie lub dostępnych wariacjach.",
+            "description": "Cztery w rzędzie to luźna gra za darmo. Zagraj w tę klasyczną grę połączenia czterech z maksymalnie 6 przyjaciółmi naraz w tej zabawnej, uzależniającej i łatwej do nauczenia się grze.",
+            "title": "Łatwa, darmowa gra wieloosobowa | Bloob.io",
+            "options": {
+                "field": {
+                    "title": "Rozmiar pola",
+                    "help": "Wielkość boiska.",
+                    "data": {
+                        "7x6": "Domyślny (7x6)",
+                        "9x4": "Rozciągnięty (9x4)",
+                        "9x6": "Duży (9x6)",
+                        "13x8": "Bardzo duży (13x8)",
+                        "17x10": "Ekstremalny (17x10)"
+                    }
+                },
+                "turnTime": {
+                    "title": "Czas tury",
+                    "help": "Jak długo każdy gracz może decydować o swoim następnym ruchu."
+                },
+                "piecesInRow": {
+                    "title": "Warunek zwycięstwa",
+                    "help": "Ile kawałków musisz mieć w rzędzie, aby wygrać grę?",
+                    "data": {
+                        "3": "Trzy w rzędzie (3)",
+                        "4": "Cztery w rzędzie (4)",
+                        "5": "Pięć w rzędzie (5)",
+                        "6": "Szesc w rzędzie (6)"
+                    }
+                },
+                "sideColumns": {
+                    "title": "Kolumny boczne",
+                    "help": "Dodaje kolumnę po obu stronach pola gry z kawałkami w przemiennym kolorze."
+                },
+                "flip": {
+                    "title": "Przewróć Pola",
+                    "help": "Podkręć rzeczy, przełączając pole, dolne płytki staną się górnymi. Licznik pokaże, ile pozostało do przełączenia.",
+                    "data": {
+                        "everyTurn": "Po każdym ruchu",
+                        "countTurns": "Co %{count} ruchów"
+                    }
+                },
+                "turnsUntilFlip": {
+                    "title": "Obroty do przewrócenia",
+                    "help": "Umieszczenie kawałka liczy się jako tura. To określa, ile kawałków musi zostać upuszczonych przed odwróceniem pola."
+                },
+                "tetrisMode": {
+                    "title": "Tryb Tetris",
+                    "help": "Gdy włączone, pełna linia zniknie i wszystkie klocki powyżej spadną o linię. To też uniemożliwia remis w grze."
+                }
+            },
+            "presets": {
+                "fiveInARow": {
+                    "title": "Pięć w rzędzie",
+                    "description": "Kolumny boczne - Duże pole"
+                },
+                "tetris": {
+                    "title": "Tetris",
+                    "description": "Automatycznie usuwaj pełne wiersze"
+                },
+                "flipParty": {
+                    "title": "Flip Party",
+                    "description": "Co 12 tur przewracaj pole - Bardzo duże pole"
+                }
+            },
+            "help": {
+                "placement": {
+                    "title": "Umieszczanie pól",
+                    "description": [
+                        "Można ustawiać klocki na kilka sposobów. Przesuwaj kursor nad kolumną i kliknij, użyj klawiszy kontrolnych albo przeciągnij go wokół.",
+                        "Możesz zobaczyć, nad którą kolumną przesuwa się twój przeciwnik, zapamiętaj to i wykorzystaj to na swoją korzyść."
+                    ]
+                },
+                "win": {
+                    "title": "Strategie wygranej",
+                    "description": [
+                        "Domyślnie, pierwsza osoba, która uzyska cztery w rzędzie, wygrywa grę. Może to być poziomo, pionowo i po skosie.",
+                        "Gospodarz może zmienić domyślne warunki zwycięstwa i pozwolić na inne wymagania."
+                    ]
+                }
+            }
+        },
+        "ROTTEN_APPLES": {
+            "name": "Zgniłe Jabłka",
+            "heading": "Graj w karcianą grę przeciwko przyjaciołom w trybie online",
+            "tooltip": "Graj w klon gry Cards Against Humanity i dostosuj swoje doświadczenie do swoich preferencji.",
+            "description": "Graj w klon gry Cards Against Humanity i dostosuj swoje doświadczenie do swoich preferencji. Stwórz własne zestawy kart i włącz je do następnej rozgrywki.",
+            "title": "Gra wieloosobowa w Karty Przeciwko Ludzkości | Bloob",
+            "options": {
+                "winCondition": {
+                    "data": {
+                        "first": "Pierwszy, który zdobędzie <b>0</b> punktów | Pierwszy, który zdobędzie <b>1</b> punkt | Pierwszy, który zdobędzie <b>{count}</b> punktów",
+                        "most": "Najwięcej punktów po <b>0</b> rundach | Najwięcej punktów po <b>1</b> rundzie | Najwięcej punktów po <b>{count}</b> rundach"
+                    }
+                },
+                "handSize": {
+                    "title": "Rozmiar dłoni",
+                    "help": "Ilość kart odpowiedzi, które każdy trzyma w dłoni w danym momencie."
+                },
+                "judgeSystem": {
+                    "title": "System Sędziowania",
+                    "help": "Albo sędzia, albo wszyscy decydują, kto miał najlepszą grę w każdej rundzie.",
+                    "data": {
+                        "single": "Każdy głosuje",
+                        "everyone": "Zwycięzca bierze wszystko"
+                    }
+                },
+                "pickBlackCard": {
+                    "title": "Wybierz kartę akcji",
+                    "help": "Gdy włączone, trzy losowe karty akcji są pokazane sędziemu do wyboru."
+                },
+                "handPreview": {
+                    "title": "Podgląd ręki",
+                    "help": "Gdy włączone, dodawany jest okres na początku gry i po każdym rzucie. W tym czasie każdy może przyjrzeć się swoim (nowym) kartom w ręce."
+                },
+                "dumpRound": {
+                    "title": "Runda Wyśmiewania",
+                    "help": "Runda wymiany pozwala każdemu wybrać karty z ręki, które chce usunąć. Nowe karty odpowiedzi są dawane jako zastępstwo po zakończeniu rundy.",
+                    "data": {
+                        "disabled": "Niepełnosprawni",
+                        "round": "Co <b>0</b> rund | Co <b>1</b> runda | Co <b>{count}</b> rund"
+                    }
+                },
+                "dumpRoundAmount": {
+                    "title": "Ilość Rund Wyświetlania"
+                },
+                "showNsfw": {
+                    "title": "Karty NSFW przeciwko ludzkości",
+                    "help": "Karty zawierające seks lub wulgaryzmy."
+                },
+                "showSpecific": {
+                    "title": "Karty specjalne",
+                    "help": "Karty zawierające marki, trudne słowa lub ludzi."
+                },
+                "_filter": {
+                    "title": "Filtruj według gatunku",
+                    "help": "Aktywne filtry powodują, że karty spełniające następujące kryteria są pomijane:"
+                },
+                "timePicking": {
+                    "title": "Czas na wybieranie kart akcji",
+                    "help": "Określ, ile czasu każdy ma na wybranie karty akcji do gry."
+                },
+                "responseCardLimit": {
+                    "title": "Limit kart odpowiedzi",
+                    "help": "Domyślnie karty akcji mogą prosić Cię o wyciągnięcie do 3 kart odpowiedzi. Zmieniając to ograniczenie, karty akcji żądające więcej niż to ograniczenie zostaną wyfiltrowane z gry."
+                },
+                "timeDeciding": {
+                    "title": "Czas Decyzji (Na Kartę)",
+                    "help": {
+                        "intro": "Określ, ile czasu każdy będzie miał na wybór karty odpowiedzi.",
+                        "calc": "Całkowity czas jest obliczany jako <b>KARTY ODPOWIEDZI * TEN CZAS</b>"
+                    }
+                },
+                "timeVoting": {
+                    "title": "Czas głosowania (na kartę)",
+                    "help": {
+                        "intro": "Określ, jak długo każdy będzie miał czas na głosowanie na wybraną kartę.",
+                        "calc": "Całkowity czas jest obliczany jako <b>KARTY ODPOWIEDZI * GRACZE * TEN CZAS</b>"
+                    }
+                },
+                "timeReveal": {
+                    "title": "Czas głosowania (na kartę)",
+                    "help": {
+                        "intro": "Określ, jak długo każdy będzie mógł zobaczyć wybraną wygraną.",
+                        "calc": "Całkowity czas jest obliczany jako <b>KARTY ODPOWIEDZI * TEN CZAS</b>"
+                    }
+                },
+                "timeHandPreview": {
+                    "title": "Czas podglądu ręki (na kartę)",
+                    "help": {
+                        "intro": "Określ, ile czasu na początku gry lub po rundzie wymiany każdy ma na obejrzenie swoich (nowych) kart.",
+                        "calc": "Całkowity czas jest obliczany jako <b>3 SEKUNDY + KARTY W RĘCE * TEN CZAS</b>"
+                    }
+                },
+                "timeDumpRound": {
+                    "title": "Czas wyrzucania kart (na kartę)",
+                    "help": {
+                        "intro": "Określ, ile czasu każdy ma na wybranie kart, które chce wyrzucić.",
+                        "calc": "Całkowity czas jest obliczany jako <b>3 SEKUNDY + KARTY W RĘCE * TEN CZAS</b>"
+                    }
+                }
+            },
+            "presets": {
+                "democracy": {
+                    "title": "Demokracja",
+                    "description": "Każdy ma prawo głosować"
+                }
+            },
+            "help": {
+                "action": {
+                    "title": "Gra karciana akcji",
+                    "description": [
+                        "Każda runda prezentuje nową czarną kartę akcji, która ma puste miejsca (___), które mają być wypełnione przez graczy.",
+                        "Puste miejsca są wypełniane za pomocą białych kart odpowiedzi w twojej ręce. Gdy wszyscy gracze są gotowi, sędzia wybiera swoją ulubioną odpowiedź."
+                    ]
+                },
+                "move": {
+                    "title": "Karty odpowiedzi",
+                    "description": [
+                        "Twoja ręka pokaże Ci Twoje karty odpowiedzi. Możesz je przeciągnąć do dostępnych slotów lub kliknąć, aby je wybrać.",
+                        "Po każdej rundzie karty, których użyłeś do wyboru, są wymieniane na nowe."
+                    ]
+                },
+                "vote": {
+                    "title": "Głosy są anonimowe",
+                    "description": [
+                        "Głosowanie może być przeprowadzone przez jednego sędziego lub przez wszystkich. To zależy od tego, jak gospodarz skonfigurował grę.",
+                        "Na końcu każdej rundy sędziowie głosują na swoją ulubioną odpowiedź. Zwycięzcy przyznawany jest punkt."
+                    ]
+                },
+                "sets": {
+                    "title": "Zestawy kart",
+                    "description": [
+                        "Przed rozpoczęciem gry gospodarz może wybrać spośród wielu dostępnych zestawów lub zaimportować własne.",
+                        "Własne zestawy kart mogą być zaimportowane i zapisywane na twoim koncie, co pozwala ci łatwo korzystać z nich ponownie później."
+                    ]
+                }
+            }
+        },
+        "CHECKERS": {
+            "name": "Warcaby",
+            "heading": "Graj w Warcaby Online ze Znajomymi",
+            "tooltip": "Nazywaj to warcaby albo szachy, graj tu z maksymalnie 4 graczami z różnymi dostosowanymi zasadami.",
+            "description": "Sprawdźcie klasyczną, szybką grę planszową, którą znacie i kochacie, z ekscytującymi zwrotami akcji! Bądźcie w kontroli i zmieniajcie zasady, jak chcecie. Grajcie teraz z przyjaciółmi.",
+            "title": "Klasyczna gra planszowa wieloosobowa | Bloob.io",
+            "options": {
+                "forceTake": {
+                    "title": "Przejęcie siłą",
+                    "help": {
+                        "enabled": "W miarę możliwości gracz będzie zmuszony do zabrania pionka przeciwnika.",
+                        "disabled": "Gracz może wybrać, jaką ruch wykona, nawet jeśli może zabrać pionek przeciwnika."
+                    }
+                },
+                "field": {
+                    "title": "Pola Marzeń",
+                    "help": "Pole gry używane. W zależności od wielkości pola i ilości rzędów, dostaniesz więcej lub mniej początkowych elementów. Niektóre pola mogą obsługiwać do czterech graczy.",
+                    "data": {
+                        "8x8": "Angielski (8x8)",
+                        "10x10": "Międzynarodowy (10x10)",
+                        "12x12": "Kanadyjski (12x12)",
+                        "plus": "Kształt Plus (12x12)"
+                    }
+                },
+                "winCondition": {
+                    "help": "Jak zostanie wyłoniony zwycięzca.",
+                    "data": {
+                        "MORE_PIECES": "Większość sztuk",
+                        "OPPOSITE_SIDE": "Dotrzeć do przeciwległej strony"
+                    }
+                },
+                "kingCondition": {
+                    "title": "Królewska Kondycja",
+                    "help": "Pod jakim warunkiem pionek staje się królem? Król może się poruszać we wszystkich kierunkach.",
+                    "data": {
+                        "OPPOSITE_SIDE": "Dotrzeć na przeciwległą stronę",
+                        "TAKE": "Weźmij kawałek",
+                        "ALL": "Zacznij od wszystkich królów",
+                        "NONE": "Niepełnosprawny"
+                    }
+                },
+                "backwardsTake": {
+                    "title": "Cofnij kroki",
+                    "help": "Ustaw, czy pozwalasz na bicie przeciwnika wstecz. Jeśli wyłączone, może to być zrobione tylko przez króla."
+                },
+                "chainTake": {
+                    "title": "Przejęcie łańcucha",
+                    "help": "Gdy włączone, pionek może przejąć kilka innych pionków w jednym ruchu, jeśli są odpowiednio rozmieszczone. Alternatywnie, gdy wyłączone, można przejąć tylko jeden pionek na raz."
+                },
+                "turnTime": {
+                    "title": "Czas obrotu",
+                    "help": "Jak długo każdy gracz może decydować o swoim następnym ruchu."
+                },
+                "staleCount": {
+                    "title": "Przestarzała rozgrywka",
+                    "help": "Po ilu turach bez przejęć powinno się uznać grę za nudną i zakończyć ją."
+                },
+                "stuckThreshold": {
+                    "title": "Przekroczony Próg",
+                    "help": "Jeśli gracz będzie zablokowany przez tą ilość tur z rzędu, to automatycznie przegra."
+                },
+                "autoTurnThreshold": {
+                    "title": "Próg Późny",
+                    "help": "Jeśli gracz spóźni się i ruch zostanie automatycznie wykonany za niego przez tę liczbę rund z rzędu, automatycznie przegrywa."
+                },
+                "rows": {
+                    "title": "Rzędy Drzew",
+                    "help": "Ile rzędów pionków każdy gracz zaczyna. W zależności od wielkości pola ilość rzędów zostanie określona."
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Prosta Warcaby (Standardowe)",
+                    "description": "8x8 pole — 24 kawałki"
+                },
+                "international": {
+                    "title": "Międzynarodowe Warcaby",
+                    "description": "10x10 pole - 40 kawałków - Bierz wstecz"
+                },
+                "canadian": {
+                    "title": "Kanadyjskie Warcaby",
+                    "description": "12x12 pole - 60 kawałków - Bierz wstecz"
+                },
+                "party": {
+                    "title": "Sprawdzacze imprez",
+                    "description": "Plus pole - 36 kawałków - 4 graczy"
+                }
+            },
+            "help": {
+                "movement": {
+                    "title": "Ruch pionków",
+                    "description": [
+                        "Można przesuwać pionki po skosie. Kiedy jest Twoja kolej, wszystkie pionki, które możesz przesunąć, są podświetlone.",
+                        "Możesz kliknąć na podświetlony pionek, aby zobaczyć wszystkie dostępne dla niego ruchy."
+                    ]
+                },
+                "take": {
+                    "title": "Wyzwanie Takeshiego",
+                    "description": [
+                        "Jeśli kawałek przeciwnika jest ustawiony po przekątnej obok twojego kawałka z otwartym miejscem za nim, możesz go zabrać.",
+                        "W zależności od ustawień, albo jesteś zmuszony do zabierania kawałków, gdy to możliwe, albo nawet możesz zabierać do tyłu."
+                    ]
+                },
+                "king": {
+                    "title": "Królewskie Pionki",
+                    "description": [
+                        "Pod domyślnymi ustawieniami, gdy dotrzesz do przeciwległej strony z kawałkiem, staje się on królem.",
+                        "Królewskie kawałki mogą poruszać się wszystkimi skośnymi kierunkami bez konieczności ruchu do przodu."
+                    ]
+                },
+                "goal": {
+                    "title": "Goal",
+                    "description": [
+                        "Zazwyczaj celem jest wyeliminowanie wszystkich pozostałych elementów przeciwnika lub aż nie będzie możliwych prawidłowych ruchów.",
+                        "Warunek zwycięstwa, zwany też celem gry, można zmienić w ustawieniach."
+                    ]
+                }
+            }
+        },
+        "BLOMBER": {
+            "name": "Blomber",
+            "heading": "Graj w Bombermana Online ze znajomymi",
+            "tooltip": "Zniszcz swoich przeciwników na intensywnym polu bitwy w bliskim zasięgu, wypełnionym power-upami w tej klasycznej grze Bomberman.",
+            "description": "Blomber to darmowa gra Bombermana z większą możliwością powtarzalności niż większość innych gier. Łatwa w grze, możliwa do dostosowania i nie wymagająca rejestracji. Graj teraz.",
+            "title": "Gra Bomberman Multiplayer | Bloob.io",
+            "options": {
+                "field": {
+                    "title": "Pola Marzeń",
+                    "help": "Użyto boiska. Większe rozmiary boiska pozwalają na więcej graczy.",
+                    "data": {
+                        "9x9": "Mały Kwadrat (9x9)",
+                        "11x9": "Prostokąt (11x9)",
+                        "qrSquare": "Kwadrat QR (11x11)"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Ostatni przy życiu (0 żyć) | Ostatni przy życiu (1 życie) | Ostatni przy życiu ({count} żyć)",
+                        "KILL_COUNT": "Pierwszy zdobywca 0 zabójstw | Pierwszy zdobywca 1 zabójstwa | Pierwszy zdobywca ({count}) zabójstw",
+                        "TIME": "Najwięcej zabójstw po 0 min. | Najwięcej zabójstw po 1 min. | Najwięcej zabójstw po ({count}) min."
+                    }
+                },
+                "defaultBombCount": {
+                    "title": "Liczba bomb:",
+                    "help": "To jest ilość bomb, jaką gracz może ustawić jednocześnie."
+                },
+                "defaultBombSize": {
+                    "title": "Rozmiar bomby",
+                    "help": "To jest promień wybuchu bomby. Wielkość jest mierzona w płytkach w każdym kierunku."
+                },
+                "defaultSpeed": {
+                    "title": "Prędkość gracza",
+                    "help": "Prędkość chodzenia gracza."
+                },
+                "respawnDelay": {
+                    "title": "Czas odrodzenia",
+                    "help": "Czas, który gracz musi odczekać po tym, jak zostanie zabity, zanim będzie mógł zagrać ponownie."
+                },
+                "bombPush": {
+                    "title": "Bomba Przesuń",
+                    "help": "Gdy włączone, możesz wejść na bombę, by ją przesunąć w jakimś kierunku."
+                },
+                "explosionDelay": {
+                    "title": "Opóźnienie Wybuchu",
+                    "help": "Opóźnienie przed wybuchem złożonej bomby."
+                },
+                "chainReaction": {
+                    "title": "Reakcja Łańcuchowa",
+                    "help": "Jeśli włączone, wybuch spowoduje, że bomby w zasięgu też wybuchną. Zabicia zostaną przypisane graczowi, który postawił bombę, która wywołała reakcję łańcuchową. Jeśli wyłączone, te bomby zostaną usunięte zamiast tego."
+                },
+                "cratePercentage": {
+                    "title": "Skrzynie Złota",
+                    "help": "Procent skrzynek, które zostaną wyświetlone na polu gry. Skrzynki mogą być wybuchowe i mogą zawierać power-upy."
+                },
+                "powerUpPercentage": {
+                    "title": "Mocne ulepszenia",
+                    "help": "Zmodyfikuj prawdopodobieństwo, że power up zostanie wypuszczony, gdy skrzynia zostanie zniszczona."
+                }
+            },
+            "help": {},
+            "presets": {
+                "default": {
+                    "title": "Domyślnie",
+                    "description": "9x9 - 3 życia - 4 graczy"
+                },
+                "party": {
+                    "title": "Impreza",
+                    "description": "Pole QR — 6 żyć — 8 graczy"
+                },
+                "action": {
+                    "title": "Pełna akcji",
+                    "description": "Bez skrzyń - Szybki respawn - 6 żyć - 8 graczy"
+                }
+            }
+        },
+        "EIGHT_BALL_POOL": {
+            "name": "8 Bile Pool",
+            "heading": "Graj w 8-Ball Pool online ze znajomymi",
+            "tooltip": "Tu możesz zagrać w popularną grę bilardową przeciwko botowi lub graczowi.",
+            "description": "Weź swój najlepszy strzał w grze wieloosobowej bilard! Zatop wszystkie swoje bile i skończ z 8-ką, by wygrać przy stole!",
+            "title": "Darmowa gra wieloosobowa dla 2 graczy",
+            "options": {
+                "turnTime": {
+                    "title": "Czas obrotu",
+                    "help": "Ile czasu ma każdy gracz, żeby uderzyć białą kulkę?"
+                },
+                "preview": {
+                    "title": "Przygotuj się na wyścig z czasem",
+                    "help": "Pokazuje, gdzie piłka będzie po tym, jak ją uderzysz."
+                },
+                "illegalBallPocket": {
+                    "title": "Nielegalne wrzucanie piłki do kieszeni"
+                },
+                "ruleContactRailOnBreak": {
+                    "title": "Jedź na przerwę",
+                    "help": "Podczas rozbijania, określ ile kul musi dotknąć bocznej krawędzi. Ta zasada nie obowiązuje, jeśli wpadnie Ci kula.",
+                    "data": {
+                        "one": "Jeden piłka",
+                        "two": "Dwie piłki",
+                        "three": "Trzy piłki",
+                        "four": "Cztery piłki"
+                    }
+                },
+                "assignedGroup": {
+                    "title": "Przydzielona grupa",
+                    "help": "Określ, jak każdy gracz jest przydzielany do swojej grupy (stale lub pasy).",
+                    "data": {
+                        "pocket": "Na kieszeń",
+                        "random": "Losowo na początku"
+                    }
+                },
+                "ruleTurnCanHitBall": {
+                    "title": "Możesz trafić piłkę",
+                    "help": "Gdy gracz uderzy piłkę, którego nie może uderzyć. Zasada nie obowiązuje przy rozbijaniu.",
+                    "data": {
+                        "assignedGroup": "Przydzielona grupa",
+                        "assignedGroupPlus": "Przydzielona grupa + 8 piłka",
+                        "eitherGroup": "Każda grupa",
+                        "anyBall": "Dowolna piłka"
+                    }
+                },
+                "ruleTurnMustHitBall": {
+                    "title": "Musisz trafić piłkę",
+                    "help": "Gdy gracz nie trafi piłki podczas swojej tury."
+                },
+                "ruleTurnContactRail": {
+                    "title": "Musisz skontaktować się ze stacją kolejową.",
+                    "help": "Gdy żadna bila nie trafi w bandę, ta zasada nie obowiązuje, jeśli gracz wrzuci bile do łuzy."
+                },
+                "ruleConsecutiveFouls": {
+                    "title": "Kolejne Faule",
+                    "help": "Określ, co powinno się stać, gdy gracz popełnia kilka fauli z rzędu. Ta zasada zniechęca do nie fair zachowania.",
+                    "data": {
+                        "off": "Odpuść.",
+                        "loseOnTwo": "Straty po dwóch.",
+                        "loseOnThree": "Straty po trzech.",
+                        "loseOnFour": "Straty po czterech."
+                    }
+                },
+                "foul": {
+                    "help": {
+                        "disabled": "Nieprzyzwoite jest wyłączone z obecnymi ustawieniami."
+                    },
+                    "data": {
+                        "nothing": "Nic",
+                        "keepTurn": "Kontynuuj ruch",
+                        "endTurn": "Zakończ ruch",
+                        "endTurnHand": "Zakończ ruch + Piłka w dłoni",
+                        "reset": "Zakończ ruch + Przywróć pole",
+                        "resetHand": "Zakończ ruch + Przywróć pole + Piłka w dłoni",
+                        "instantWin": "Natychmiastowe zwycięstwo",
+                        "instantLoss": "Natychmiastowa porażka"
+                    }
+                },
+                "foulPocketCueBall": {
+                    "title": "Zatrzymanie bilki",
+                    "help": "Gdy gracz wbije bilę stołową."
+                },
+                "foulPocketOpponentBall": {
+                    "title": "Zatrzymanie bile przeciwnika",
+                    "help": "Kiedy gracz wbija bile przeciwnika. Inne przewinienia mają pierwszeństwo (np. uderzenie niewłaściwej bili)."
+                },
+                "foulPocketOwnAndOpponentBall": {
+                    "title": "Zdobywanie własnej i przeciwnika bili",
+                    "help": "Kiedy gracz wbija jednocześnie swoją i przeciwnika kulkę. Inne przewinienia mają pierwszeństwo (np. uderzenie niewłaściwą kulką)."
+                },
+                "foulIllegalEightBallBreak": {
+                    "title": "Zbijanie 8-Balla podczas przerwy",
+                    "help": "Gdy gracz uda się wbić 8-kę podczas rozgrywki."
+                },
+                "foulIllegalEightBallPocket": {
+                    "title": "Łapanie 8-Balla nielegalnie",
+                    "help": "Kiedy gracz wbije 8-kę, ale jednocześnie popełni inny błąd (np. wbije też kulkę bilardową)."
+                },
+                "foulIllegalEightBallPocketTooSoon": {
+                    "title": "Zbyt Wczesne Wrzucenie 8-ki",
+                    "help": "Gdy gracz wrzuci 8-kę, podczas gdy ma jeszcze inne bile do wrzucenia."
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Nie wolno wykorzystywać nielegalnych skryptów."
+                },
+                "wpa": {
+                    "title": "Zasady WPA",
+                    "description": "Ściśle przypomina zasady Światowej Federacji Pool-Billiard"
+                },
+                "upa": {
+                    "title": "Zasady UPA",
+                    "description": "Ściśle przypomina zasady Stowarzyszenia Profesjonalnych Graczy Bilardowych w USA"
+                },
+                "relaxed": {
+                    "title": "Zrelaksowany zestaw zasad",
+                    "description": "Łagodniejsze kary i mniej zasad"
+                },
+                "ruthless": {
+                    "title": "Bezwzględny zestaw zasad",
+                    "description": "Każde naruszenie zasad skutkuje natychmiastową przegraną"
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Grając na polu",
+                    "description": [
+                        "Pole zawiera 6 dziur, w których można wpakować kulki. Łącznie jest 16 kulek, z których jedna jest kulką bilardową, którą uderzasz na swojej turze.",
+                        "Są 7 kulek w paski i 7 kulek w stałe, a także 1 czarna ósemka. Na początku gry wszystkie kulki są ustawione w trójkącie z ósemką w środku. Kula bilardowa jest ustawiona dalej."
+                    ]
+                },
+                "breaking": {
+                    "title": "Rozpoczynanie gry (Łamanie)",
+                    "description": [
+                        "Kto ma swoją kolejkę pierwszy może przesuwać białą kulkę i uderzać w trójkąt kulek (ich pozycja startowa).",
+                        "Są zasady rozpoczynania gry. Biała kulka nie może być wbita do łuzy i co najmniej dwie kulki (oprócz białej) muszą uderzyć w bandę (ściany wokół pola). Wbicie kuli na rozpoczęcie gry gwarantuje ci kolejną turę od razu po tym."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Graj Zasady gry",
+                    "description": [
+                        "Są zarówno kule w paski, jak i kule gładkie. Kto wpakuje pierwszy kulę, staje się właścicielem tej grupy kul i ma kolejną turę. Od tego momentu możesz wprowadzać tylko kule w paski lub gładkie.",
+                        "Porządek, w jakim wprowadzasz swoje kule, nie ma znaczenia. Jeśli popełnisz błąd, twój przeciwnik będzie mógł przesunąć kulkę bilardową na swoją turę."
+                    ]
+                },
+                "objective": {
+                    "title": "Cel",
+                    "description": [
+                        "Musisz unikać wbijania czarnej ósemki dopóki nie wbijesz wszystkich swoich kul. Następnie kończysz grę wbijając ósemkę. Ważne jest, abyś nie popełnił przy tym żadnego błędu, w przeciwnym razie przegrywasz.",
+                        "Wbicie ósemki za wcześnie skutkuje natychmiastową przegraną. Upewnij się, że celujesz dokładnie!"
+                    ]
+                }
+            }
+        }
+    },
+    "chat": {
+        "EMOJI": {
+            "love": "❤️",
+            "luck": "🍀",
+            "fire": "🔥",
+            "celebration": "🎉",
+            "thumbsUp": "👍",
+            "mindBlowing": "🤯",
+            "thinking": "🤔",
+            "clap": "👏",
+            "cry": "😭",
+            "cool": "😎"
+        },
+        "UNIVERSAL": {
+            "leftTheGame": "Wyszedł z gry",
+            "affirmative": "Ok.",
+            "thanks": "Dzięki!",
+            "sorry": "Przepraszam!",
+            "goodLuck": "Powodzenia!",
+            "brb": "Zaraz wracam!",
+            "go": "Muszę iść.",
+            "glhf": "Powodzenia w grze!",
+            "gg": "Gratulacje!"
+        },
+        "PRE_GAME": {
+            "readyCheck": "Wszyscy gotowi?",
+            "changeSettings": "Zmień ustawienia!",
+            "ready": "Gotowy!",
+            "wait": "Proszę czekać!",
+            "go": "Chodźmy!",
+            "greeting": "Cześć! 👋"
+        },
+        "GAME": {
+            "wtf": "WTF!",
+            "how": "Jak to!?",
+            "closeOne": "Świetny wyczyn!",
+            "niceOne": "Świetnie!",
+            "remindMove": "Twoja kolej!",
+            "wow": "Wow!",
+            "oops": "Ojej!",
+            "no": "Nieeee!",
+            "ohNo": "O nie!"
+        },
+        "POST_GAME": {
+            "closeOne": "Świetny wynik!",
+            "wellPlayed": "Dobra robota!",
+            "differentGame": "Inna gra?",
+            "rematch": "Remis!",
+            "fun": "To było fajne!",
+            "bye": "Cześć!"
+        }
+    },
+    "header": {
+        "message": {
+            "lobby": "Lobby meczu",
+            "finished": "Mecz zakończony",
+            "tied": "Mecz zremisowany",
+            "finishedRematch": "Remis rozpocznie się wkrótce",
+            "inProgress": "Mecz w toku",
+            "staleMoves": "Mecz zatrzymany — %{staleCount} ruchów bez przejęcia",
+            "forfeit": "Mecz zakończony — Przeciwnik wybrał rezygnację",
+            "winner": "Mecz wygrany przez %{name}",
+            "inactive": "Mecz zakończony z powodu braku aktywności",
+            "late": "Mecz zakończony z powodu braku %{turns} ruchu(ów)",
+            "pickActionCard": "Wybieranie karty akcji",
+            "pickCardSelection": "Wybieranie karty",
+            "handDump": "Runda wyrzucania",
+            "handPreview": "Podgląd ręki",
+            "voting": "Głosowanie",
+            "voteResults": "Wyniki głosowania",
+            "flippingField": "Odwracanie pola",
+            "removingRow": "Usuwanie rzędu",
+            "yourTurn": "Twoja kolej %{extra}",
+            "nameTurn": "Kolej %{name}",
+            "yourTurnBreaking": "Łamiesz %{extra}",
+            "nameTurnBreaking": "%{name} łamie",
+            "roundCount": "Runda %{current} z %{total}"
+        },
+        "description": {
+            "waitingForPlayers": "Czekanie na graczy",
+            "startCountdown": "Rozpoczęcie meczu za %{text}...",
+            "rematchStartCountdown": "Rozpoczęcie powtórnego meczu za %{text}...",
+            "remainingTimeCountdown": "Pozostało %{clock}...",
+            "nextRoundCountdown": "Następna runda za %{text}...",
+            "youWon": "Wygrałeś",
+            "nameWon": "%{name} wygrał"
+        }
+    },
+    "placeholder": {
+        "cardSetId": "Wpisz ID zestawu kart...",
+        "cardContent": "Wpisz zawartość karty...",
+        "cardSetName": "Wpisz nazwę dla tego zestawu kart...",
+        "matchId": "Pasujące ID lub URL...",
+        "message": "Wiadomość...",
+        "username": "Nazwa użytkownika",
+        "password": "Hasło"
+    },
+    "language": {
+        "nl-NL": "Holenderski",
+        "en-US": "Angielski (USA)",
+        "en-GB": "Angielski (Wielka Brytania)",
+        "fr-FR": "Francuski",
+        "de-DE": "Niemiecki",
+        "it-IT": "Włoski",
+        "pl-PL": "Polski",
+        "pt-BR": "Portugalski (Brazylia)",
+        "es-ES": "Hiszpański (UE)",
+        "es-MX": "Hiszpański (Meksyk)",
+        "sv-SE": "Szwedzki"
+    },
+    "status": {
+        "reconnecting": "Próba ponownego połączenia...",
+        "viewAllGames": "Zobacz wszystkie gry",
+        "playingAgainstBots": "Gra z Botami",
+        "playingAgainstPlayers": "Gra z Graczami",
+        "matchesWaiting": "<b>0</b> oczekujących meczy | <b>1</b> oczekujący mecz | <b>{count}</b> oczekujących meczy",
+        "playingGame": "<b>{count}</b> gra w tę grę",
+        "online": "<b>{count}</b> online",
+        "connection": "Połączenie",
+        "ping": "Ping",
+        "timeOffset": "Przesunięcie czasu",
+        "version": "Wersja",
+        "userId": "ID Użytkownika",
+        "notice": "Powiadomienie"
+    },
+    "category": {
+        "misc": "Inne",
+        "field": "Pole",
+        "dump": "Śmietnik",
+        "bomb": "Bomba",
+        "filter": "Filtrowanie",
+        "times": "Czasy",
+        "round": "Runda",
+        "flip": "Przerzucenie",
+        "default": "Domyślne",
+        "fallback": "Warunki awaryjne",
+        "take": "Przejęcie",
+        "tetris": "Tetris",
+        "basic": "Podstawowe",
+        "language": "Język",
+        "rules": "Zasady",
+        "fouls": "Reakcja na nieuczciwą grę"
+    },
+    "time": {
+        "hours": "0 godzin | 1 godzina | {count} godzin",
+        "minutes": "0 minut | 1 minuta | {count} minut",
+        "seconds": "0 sekund | 1 sekunda | {count} sekund"
+    },
+    "count": {
+        "kills": "0 zabójstw | 1 zabójstwo | {count} zabójstw",
+        "deaths": "0 śmierci | 1 śmierć | {count} śmierci",
+        "lives": "0 żyć | 1 życie | {count} żyć",
+        "files": "0 plików | 1 plik | {count} plików",
+        "points": "0 punktów | 1 punkt | {count} punktów",
+        "pieces": "0 kawałków | 1 kawałek | {count} kawałków",
+        "wins": "0 zwycięstw | 1 zwycięstwo | {count} zwycięstw",
+        "cards": "0 kart | 1 karta | {count} kart",
+        "moves": "0 ruchów | 1 ruch | {count} ruchów",
+        "playing": "0 grających | 1 grający | {count} grających",
+        "players": "0 graczy | 1 gracz | {count} graczy",
+        "selectedCards": "Nie wybrano kart | 1 wybrana karta | {count} wybranych kart",
+        "matches": "0 meczów | 1 mecz | {count} meczów",
+        "matchesFound": "0 znalezionych meczów | 1 znaleziony mecz | {count} znalezionych meczów",
+        "matchesWaiting": "0 oczekujących meczów | 1 oczekujący mecz | {count} oczekujących meczów",
+        "needMorePlayers": "Potrzeba 0 graczy | Potrzeba 1 gracza | Potrzeba {count} graczy",
+        "playAgainstBots": "Graj przeciwko botom | Graj przeciwko botowi | Graj przeciwko botom",
+        "playRandomOpponents": "Graj z losowymi przeciwnikami | Graj z losowym przeciwnikiem | Graj z losowymi przeciwnikami",
+        "turnsToFlip": "Tur do odwrócenia | Tura do odwrócenia | Tur do odwrócenia",
+        "increment": "Przyrosty o 0 | Przyrost o 1 | Przyrosty o {count}"
+    },
+    "misc": {
+        "beta": "Beta",
+        "about": "O nas",
+        "public": "Publiczny",
+        "private": "Prywatny",
+        "add": "Dodaj",
+        "remove": "Usuń",
+        "yes": "Tak",
+        "no": "Nie",
+        "disabled": "Wyłączony",
+        "enabled": "Włączony",
+        "excluded": "Wykluczone",
+        "included": "Dołączone",
+        "new": "Nowe",
+        "fixed": "Naprawione",
+        "changed": "Zmienione",
+        "guest": "Gość",
+        "settings": "Ustawienia",
+        "localPlay": "Gra Lokalna",
+        "preset": "Ustawienie wstępne",
+        "you": "Ty",
+        "home": "Strona główna",
+        "bot": "Bot",
+        "bots": "Boty",
+        "vibration": "Wibracje",
+        "unavailable": "Niedostępny",
+        "changeLog": "Dziennik zmian",
+        "status": "Status",
+        "information": "Informacje",
+        "language": "Język",
+        "toggle": "Przełącznik",
+        "login": "Zaloguj się",
+        "maintenance": "Konserwacja",
+        "admin": "Administrator",
+        "nsfw": "NSFW",
+        "specificCards": "Określone Karty",
+        "matchId": "Identyfikator meczu",
+        "chat": "Czat",
+        "host": "Gospodarz",
+        "player": "Gracz",
+        "players": "Gracze",
+        "loading": "Ładowanie...",
+        "percentage": "{percentage}%",
+        "percentageDisabled": "{percentage}% (Wyłączone)",
+        "scrollBackDown": "Przewiń w dół",
+        "pickYourself": "Wybierz dla siebie",
+        "highPing": "Twoje opóźnienie jest wysokie (%{ping}ms)",
+        "currentRoundCount": "Runda (%{current}/%{total})",
+        "currentSkipCount": "Pomiń (%{current}/%{total})",
+        "currentReadyCount": "Gotowe (%{current}/%{total})",
+        "assignedTypeSelf": "Jesteś %{type}",
+        "assignedTypeSelfLocal": "Gracz (%{index}) jest %{type}",
+        "broadcast": "Transmituj",
+        "confirm": "Potwierdź",
+        "close": "Zamknij",
+        "edit": "Edytuj",
+        "delete": "Usuń",
+        "cancel": "Anuluj",
+        "reset": "Resetuj",
+        "start": "Rozpocznij",
+        "download": "Pobierz",
+        "share": "Udostępnij",
+        "copy": "Skopiuj",
+        "view": "Zobacz",
+        "donate": "Przekaż darowiznę",
+        "forfeit": "Porzuć grę",
+        "processFiles": "Przetwarzaj pliki",
+        "sendMessage": "Wyślij wiadomość",
+        "refreshWindow": "Odśwież okno",
+        "makeHost": "Utwórz gospodarza",
+        "kickUser": "Wyproś użytkownika",
+        "returnToMenu": "Powrót do Menu",
+        "returnToLobby": "Powrót do Lobby",
+        "playAsGuest": "Grać jako Gość",
+        "averageLength": "Średnia Długość",
+        "largestTake": "Największy Zabierak",
+        "takes": "Zabieraki",
+        "pieces": "Kawałki",
+        "words": "Słowa",
+        "score": "Wynik",
+        "rank": "Ranga",
+        "kills": "Zabójstwa",
+        "points": "Punkty",
+        "wins": "Wygrane",
+        "pocketed": "Włożone",
+        "shots": "Strzały",
+        "deaths": "Śmierci",
+        "fouls": "Faule",
+        "and": "i",
+        "vs": "przeciwko",
+        "selectAll": "Wybierz wszystko",
+        "deselectAll": "Odznacz wszystko",
+        "resetData": "Resetuj dane",
+        "customize": "Dostosuj",
+        "inviteOthers": "Zaproś innych",
+        "activeFilters": "Aktywne filtry",
+        "minMax": "Min. %{min} | Max. %{max}",
+        "madeBy": "Stworzone przez %{name}",
+        "selectedOfLimit": "Wybrano %{current} z %{total} limitu",
+        "helpLocalise": "Pomóż ulepszyć lokalizację",
+        "discord": "Dołącz do Discord",
+        "volume": "Głośność",
+        "volumeInterface": "Głośność interfejsu",
+        "volumeEffects": "Głośność efektów",
+        "gameMenu": "Menu gry",
+        "selectYourLanguage": "Wybierz swój język",
+        "selectYourColor": "Wybierz swój kolor",
+        "latestChanges": "Najnowsze zmiany",
+        "noChangesDetected": "Nie wykryto żadnych zmian",
+        "newChanges": "Nowe zmiany",
+        "saveChanges": "Zapisz zmiany",
+        "previousChanges": "Przejrzyj poprzednie zmiany"
+    },
+    "card": {
+        "empty": "Brak kart",
+        "total": "Łącznie kart",
+        "view": "Zobacz karty",
+        "editor": {
+            "title": "Edytor kart",
+            "name": "Nazwa zestawu kart",
+            "type": "Typ karty",
+            "content": "Zawartość karty",
+            "contentUnderscore": "Użyj _, aby oznaczyć miejsce na karty odpowiedzi",
+            "pick": "Wybierz karty",
+            "create": "Utwórz kartę",
+            "deleted": "Karta została usunięta pomyślnie!",
+            "edited": "Karta została zmodyfikowana pomyślnie!",
+            "created": "Nowa karta została dodana pomyślnie!"
+        },
+        "type": {
+            "black": "Działanie (Czarny)",
+            "white": "Odpowiedź (Biały)"
+        },
+        "sets": {
+            "title": "Zestawy kart",
+            "contribute": "Dołącz do tej listy",
+            "create": "Stwórz zestaw",
+            "browser": "Przeglądaj i importuj własne zestawy",
+            "import": "Importuj zestaw",
+            "importer": "Importowanie zestawu kart",
+            "namedTitle": "Zestaw kart „%{title}”",
+            "custom": "Własne zestawy kart",
+            "default": "Domyślne zestawy kart",
+            "noneFound": "Nie znaleziono zestawów",
+            "noneSelected": "Nie wybrano zestawów",
+            "importById": "Importuj zestawy kart przy użyciu ID (od stron trzecich)",
+            "notInOwnLibrary": "Brakujący zestaw",
+            "addToLibrary": "Dodaj do swojej biblioteki",
+            "entrySave": "Zapisz zestaw kart",
+            "entrySaved": "Zapisano",
+            "entryProcessing": "Przetwarzanie",
+            "info": {
+                "importFinished": "Przetworzyłem wszystkie %{total} zestawy kart",
+                "importProgress": "Przetwarzanie zestawu kart %{current} z %{total}",
+                "importFailed": "Nie udało się przetworzyć zestawu kart \"%{name}\"",
+                "emptyFolder": "Tutaj jeszcze nie udostępniono żadnych zestawów kart.",
+                "emptyList": "Twoje własne zestawy kart pojawią się tutaj.",
+                "emptyListNotHost": "Gospodarz nie wybrał żadnych własnych zestawów kart.",
+                "noneSelected": "Gospodarz musi wybrać zestawy kart.",
+                "notInOwnLibrary": "Ten własny zestaw kart został dodany przez innego użytkownika. Możesz go dodać do swojej biblioteki, aby móc ponownie go użyć w przyszłości.",
+                "csv": "Należy pamiętać, że wsparcie dla plików CSV jest ograniczone, a wynikowy zestaw kart może nie być bezbłędny. Aby uzyskać najlepsze wyniki, należy używać natywnych plików .json (takich samych jak eksport).",
+                "delete": "Usuwanie własnego zestawu kart o nazwie \"%{name}\" nie może być cofnięte. Pobierz zestaw lokalnie, jeśli chcesz mieć możliwość odzyskania go w przyszłości.",
+                "storage": "Zestawy kart są przechowywane w przeglądarce. Zachowaj je bezpiecznie, pobierając kopię i zapisując ją na swoim urządzeniu.",
+                "notHost": "Twoje zaimportowane karty są ukryte, ponieważ nie jesteś gospodarzem.",
+                "sizeLimit": "Każdy własny zestaw kart zajmuje określoną ilość dostępnego magazynu. Ze względów wydajnościowych jedna gra nie może używać więcej niż <b>%{size}</b> własnych zestawów kart jednocześnie.",
+                "filterDisclaimer": "Należy pamiętać, że ten filtr może być zagwarantowany tylko dla oficjalnych zestawów kart. Własne zestawy mogą nie działać z tym filtrem."
+            }
+        },
+        "info": {
+            "pickAction": "Wybierz kartę akcji na tę rundę",
+            "judgePickingActionCard": "Sędzia %{name} wybiera kartę akcji",
+            "waitForSelections": "Ty jesteś <b>sędzią</b> tej rundy - czekaj aż wszyscy wybiorą swoje karty",
+            "preview": "Weź chwilę, aby spojrzeć na swoje (nowe) karty",
+            "dump": "Wybierz wszystkie karty, które chcesz wyrzucić",
+            "noType": "Nie ma kart %{type}",
+            "delete": "Zbliżasz się do usunięcia karty \"%{info}\".",
+            "winningOption": "%{name} wygrał tę rundę z wyborem %{selection}",
+            "actionResponseCardCounter": "Licznik kart akcji i odpowiedzi. Niektóre zestawy używają tych samych kart; duplikaty są automatycznie usuwane. Filtrowanie <b>NSFW</b> lub <b>Kart Specjalnych</b> również zmniejsza całkowitą ilość.",
+            "navigateSelf": "Przemieszczaj się",
+            "navigateFollowJudge": "Zobacz, co widzi sędzia"
+        }
+    },
+    "match": {
+        "create": "Stwórz mecz",
+        "leave": "Opuść mecz",
+        "join": "Dołącz do meczu",
+        "joinById": "Dołącz do meczu po ID",
+        "full": "Pełny mecz",
+        "rematch": "Powtórz mecz",
+        "lobby": {
+            "start": "Rozpocznij mecz",
+            "cancelCountdown": "Anuluj odliczanie",
+            "starting": "Rozpoczynanie meczu",
+            "waiting": "Oczekiwanie na rozpoczęcie meczu przez gospodarza"
+        },
+        "browser": {
+            "list": "Przeglądaj mecze",
+            "available": "Dostępne mecze",
+            "noneAvailable": "Brak dostępnych meczy"
+        },
+        "matchmaking": {
+            "tiredOfWaiting": "Zmęczony czekaniem?",
+            "cancel": "Anuluj wyszukiwanie",
+            "searching": "Szukam przeciwników... (%{time})",
+            "found": "Znaleziono mecz! Rozpoczęcie w %{time}..."
+        },
+        "info": {
+            "makeHost": "Zbliżasz się do ustanowienia \"%{name}\" nowym gospodarzem.",
+            "kickUser": "Zbliżasz się do wyrzucenia \"%{name}\" z tego meczu.",
+            "noMatches": "Nowe mecze pojawią się tutaj.",
+            "rematch": "Chcesz zagrać jeszcze raz?",
+            "rematchWaiting": "Oczekiwanie na akceptację przez innego gracza...",
+            "rematchRequest": "%{name} chce zagrać jeszcze raz.",
+            "joinById": "Możesz dołączyć do (prywatnego) meczu, wpisując czterocyfrowy kod.",
+            "public": "<b>Publiczny: </b>Każdy może dołączyć, przeglądając dostępne mecze.",
+            "private": "<b>Prywatny: </b>Gracze mogą dołączyć tylko za pomocą adresu URL lub czterocyfrowego kodu.",
+            "finishedSettings": "Skończyłeś edytować ustawienia meczu?",
+            "leave": "Nie możesz dołączyć z powrotem, jeśli zdecydujesz się odejść.",
+            "leaveLast": "Ponieważ jesteś jedyną osobą w grze, mecz zostanie zamknięty, gdy odejdziesz.",
+            "leaveAsHost": "Ktoś inny stanie się nowym gospodarzem, gdy odejdziesz."
+        }
+    },
+    "info": {
+        "incompleteTranslationNotice": "Wybrany język jest w zaawansowaniu około {percentage}%. Brakujące tłumaczenia będą w języku angielskim.",
+        "betaNotice": "Ta gra jest wciąż rozwijana. Prosimy o podzielenie się opiniami i błędami na naszym %{social}.",
+        "clickForDetails": "Kliknij, aby uzyskać szczegóły.",
+        "howToPlay": "Dowiedz się, jak grać w tę grę.",
+        "skipStepOverHalf": "Ten krok można pominąć, jeśli więcej niż połowa użytkowników na to zagłosuje.",
+        "skipStepAll": "Ten krok można pominąć, jeśli wszyscy użytkownicy na to zagłosują.",
+        "voteReduceTime": "Pozostały czas jest automatycznie zmniejszany, gdy wszyscy głosują.",
+        "interfaceAutoResize": "Zmienia rozmiar interfejsu, aby pasował do pola.",
+        "opponentMissedTurn": "Teraz twoja kolej, ponieważ twój przeciwnik wyczerpał czas.",
+        "localPlay": "Udostępnij ten sam urządzenie wielu osobom, dodając graczy lokalnych.",
+        "highPing": "Ping to czas, jaki potrzebujesz, aby skomunikować się z serwerem. Widzisz wszystko później niż inni gracze i możesz doświadczyć drgań i opóźnień.",
+        "hasBots": "Ta gra może być grana przeciwko botom.",
+        "inactiveUser": "Użytkownik nie jest połączony z tym meczem.",
+        "copiedToClipboard": "Skopiowano zawartość do schowka!",
+        "noMessages": "Brak wiadomości",
+        "sendFirstMessage": "Bądź pierwszy, aby wysłać wiadomość!",
+        "voteSelf": "Nie możesz głosować na siebie.",
+        "votePick": "Głosuj na %{option}",
+        "votePickChange": "Zmień głos na %{option}",
+        "votePickSelected": "Głosowałeś na %{option}",
+        "inactiveOpponent": "Twój przeciwnik był nieaktywny",
+        "inactiveOpponents": "Wszyscy przeciwnicy byli nieaktywni",
+        "gameMenu": "Masz ochotę zagrać w coś innego?",
+        "forfeit": "Porzucenie gry skutkować będzie porażką dla ciebie.",
+        "unsavedChanges": "Masz niezapisane zmiany, które zostaną usunięte, jeśli będziesz kontynuować.",
+        "resetData": "Resetowanie danych jest nieodwracalne i usunie twój profil, ustawienia i inne dane niestandardowe.",
+        "matchesDisabled": "Nie możesz teraz tworzyć ani dołączać do meczu.",
+        "fileUpload": "Kliknij, aby przeglądać lub przeciągnij swoje pliki tutaj.",
+        "fileUploadMore": "Dodaj więcej plików, przeciągając lub klikając tutaj.",
+        "gameJoin": "Dołącz do meczu %{title}",
+        "gameHelp": "%{title} Pomoc",
+        "areYouSure": "Czy na pewno?",
+        "poolType": {
+            "SOLID": "Kule pełne",
+            "STRIPE": "Kule prążkowane"
+        },
+        "poolFoul": {
+            "CUE_BALL_POCKET": "%{name} wbił białą kulkę!",
+            "CUE_BALL_HIT_NO_BALL": "%{name} nie trafił w żadną inną kulkę!",
+            "CUE_BALL_HIT_WRONG_BALL": "%{name} najpierw trafił w złą kulkę!",
+            "CUSHION_HIT_MIN_ON_BREAK": "Po rozpoczęciu gry nie trafiło wystarczająco dużo kulek w bandy. (Min. %{min})",
+            "CUSHION_HIT_INVALID": "Żadna kulka nie trafiła w bandy, a żadna nie została wbite.",
+            "CONSECUTIVE_FOULS_EXCEEDED": "%{name} popełnił %{fouls} kolejnych przewinień.",
+            "ILLEGAL_8_BALL_POCKET": "%{name} wbił ósemkę, popełniając przewinienie.",
+            "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} wbił ósemkę za wcześnie.",
+            "POCKETED_WRONG_BALL": "%{name} wbił złą kulkę."
+        },
+        "about": {
+            "description": "Bloob.io to projekt z pasją składający się z gier wieloosobowych w przeglądarce. Sugestie są zawsze mile widziane!",
+            "licensing": "Niektóre gry mogą być licencjonowane do użycia na Twojej stronie lub platformie (z dostosowanymi ustawieniami). Skontaktuj się w przypadku, gdy jesteś zainteresowany.",
+            "developedBy": "Stworzone przez %{name}",
+            "iconsSource": "Ikony dzięki uprzejmości %{name} (Licencjonowane)",
+            "soundsSource": "Dźwięki dostarczone przez %{name} (Licencjonowane)",
+            "rottenApplesSource": "Rotten Apples oparte na %{name} (Creative Commons BY-NC-SA 2.0)",
+            "localization": "Lokalizacja przez wolontariuszy"
+        }
+    }
+}

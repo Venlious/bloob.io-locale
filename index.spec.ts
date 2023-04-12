@@ -1,30 +1,9 @@
-import { supportedLocales } from './index'
+// Utils
 import { symmetricDifference } from 'ramda'
+import { objectDeepKeys, getMissingCount } from './helpers/utils'
 
-const objectDeepKeys = obj => {
-	return Object.keys(obj)
-		.filter(key => obj[key] instanceof Object)
-		.map(key => objectDeepKeys(obj[key]).map(k => `${key}.${k}`))
-		.reduce((x, y) => x.concat(y), Object.keys(obj))
-}
-
-const getMissingCount = obj => {
-	const data = { total: 0, missing: 0 }
-	const countCheck = value => {
-		if (value !== null && typeof value === `object`) {
-			for (const id in value) {
-				countCheck(value[id])
-			}
-		} else if (Array.isArray(value)) {
-			value.forEach(entry => countCheck(entry))
-		} else {
-			data.total++
-			if (value === null) data.missing++
-		}
-	}
-	countCheck(obj)
-	return data
-}
+// Data
+import { supportedLocales } from './index'
 
 // Define a regex pattern to match variables in curly braces
 const variablePattern = /{([^{}]*)}/g
@@ -61,7 +40,7 @@ const enMessageKeys = objectDeepKeys(enMessage)
 const enCount = getMissingCount(enMessage)
 describe(`correctEntriesCount`, () => {
 	it(`should have the proper total entries count in English`, () => {
-		expect(enMessage._entries.total).toBe(enCount.total)
+		expect(enMessage._meta.total).toBe(enCount.total)
 	})
 	it(`should have no missing entries in English`, () => {
 		expect(0).toBe(enCount.missing)
@@ -86,10 +65,10 @@ for (const folder of [...supportedLocales, `_empty`]) {
 			expect(enCount.total).toBe(count.total)
 		})
 		it(`should have the proper total entries count for "${folder}"`, () => {
-			expect(messages._entries.total).toBe(count.total)
+			expect(messages._meta.total).toBe(count.total)
 		})
 		it(`should have the proper missing entries count for "${folder}"`, () => {
-			expect(messages._entries.missing).toBe(count.missing)
+			expect(messages._meta.missing).toBe(count.missing)
 		})
 	})
 
