@@ -4,19 +4,20 @@
 
 https://bloob.io
 
+## Translation Editor
+
+The [built in translation editor](https://bloob.io/translation-editor) has been introduced to Bloob.io as of v1.6.0! On this page you are able to make changes, download the file as .csv, and submit them here or by mail to contribute.
+
 # Localisation
 
 While the project itself is not open source, the localisation is. Feel free to create pull requests with improvements, grammar fixes, or support for new languages.
 
 # FAQ
 
--   **If I add a new language, does it need to be complete?**
-    -   In short, no. While it would be nice for the language to be mostly complete, it does not have to be. Simply leave it as `null` for the English fallback language to be used instead.
 -   **How do I add a new language?**
-    -   In the top right corner of the [Venlious/bloob.io-locale](https://github.com/Venlious/bloob.io-locale) page you can create a "Fork" of this repository. If you're not familiar with it, you essentially make a copy of this repository in its current state. You can then freely make changes to your own fork and later make a [pull request](https://github.com/Venlious/bloob.io-locale/pulls) so the changes can be reviewed before being merged and included in the next release of [Bloob.io](https://bloob.io)!
-    -   You can then copy the `_empty` folder and rename it to the abbreviation of the language you would like to add. Replace any `null` with the appropiate translation. All translations are commented on through their Typescript types. You can also use the English text as reference. You may leave `null` in your translations, in which case English will be used as the fallback language.
+    -   Please [make a new issue](https://github.com/Venlious/bloob.io-locale/issues/new) requesting the language you would like to see. If approved, the language will be generated and can then be verified by a person.
 -   **I found a grammatically error or spelling mistake. What do I do?**
-    -   Great! You can either fork this repository (see above question if you do not know how), fix it, and make a pull request or [make a new issue](https://github.com/Venlious/bloob.io-locale/issues/new) explaining the error you found and what language you had selected so it can be looked at by somebody else.
+    -   Great! You can go to the [translation editor](https://bloob.io/translation-editor) and find and fix the issue there, resolve the issue in the repository directly, or you can [make a new issue](https://github.com/Venlious/bloob.io-locale/issues/new) with an explanation of the error you found.
 -   **I have another question!**
     -   Feel free to [make a new issue](https://github.com/Venlious/bloob.io-locale/issues/new) with your question.
 
@@ -26,6 +27,10 @@ Running the project locally is easy. Please make sure to use Node version 16.
 
 -   Install all files
     `yarn`
+-   Translate (new) language (Note: must configure .env)
+    `yarn translate --source "en" --target "nl" --language "informal Dutch"`
+-   Automatically fix any fixable and common issues
+    `yarn fix`
 -   Verify if test passes
     `yarn test`
 -   Verify if lint passes

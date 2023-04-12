@@ -1,30 +1,9 @@
-import { supportedLocales } from './index'
+// Utils
 import { symmetricDifference } from 'ramda'
+import { objectDeepKeys, getMissingCount } from './helpers/utils'
 
-const objectDeepKeys = obj => {
-	return Object.keys(obj)
-		.filter(key => obj[key] instanceof Object)
-		.map(key => objectDeepKeys(obj[key]).map(k => `${key}.${k}`))
-		.reduce((x, y) => x.concat(y), Object.keys(obj))
-}
-
-const getMissingCount = obj => {
-	const data = { total: 0, missing: 0 }
-	const countCheck = value => {
-		if (value !== null && typeof value === `object`) {
-			for (const id in value) {
-				countCheck(value[id])
-			}
-		} else if (Array.isArray(value)) {
-			value.forEach(entry => countCheck(entry))
-		} else {
-			data.total++
-			if (value === null) data.missing++
-		}
-	}
-	countCheck(obj)
-	return data
-}
+// Data
+import { supportedLocales } from './index'
 
 // Define a regex pattern to match variables in curly braces
 const variablePattern = /{([^{}]*)}/g
