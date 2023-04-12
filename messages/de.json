@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal German",
         "total": 851,
-        "missing": 127
+        "missing": 0
     },
     "name": "Bloob.io",
     "error": {
@@ -12,12 +12,12 @@
         },
         "generic": {
             "blockedFrame": "Dieses Spiel ist auf dieser Website nicht erlaubt. Du kannst das Spiel kostenlos auf der unten angegebenen Website spielen.",
-            "unableToConnectToServer": null,
-            "desync": null,
+            "unableToConnectToServer": "Verbindung zum Spiel-Server konnte nicht hergestellt werden. Versuche es später nochmal. Melde dich, wenn das Problem weiterhin besteht.",
+            "desync": "Tut mir leid, es sieht so aus, als wärst du desynchronisiert. Bitte versuche es nochmal.",
             "alreadyConnected": "Es sieht so aus, als ob die Seite in einem anderen Tab geöffnet ist und die Verbindung hier unterbrochen wurde.",
             "title": "Ein Fehler ist aufgetreten.",
             "invalid": "Die angegebenen Daten sind ungültig.",
-            "texture": null,
+            "texture": "Laden der Textur \"%{id}\" fehlgeschlagen.",
             "invalidAction": "Es wurde ein ungültiger Aktionstyp \"%{type}\" angegeben.",
             "maintenance": "Du kannst diese Aktion während einer Wartung nicht durchführen.",
             "missingArguments": "Fehlende Argumente für diese Aktion.",
@@ -27,7 +27,7 @@
             "againstAgainstInactiveUser": "Du kannst diese Aktion nicht an einem inaktiven Benutzer ausführen.",
             "invalidUser": "Der Benutzer mit der angegebenen ID ist nicht in diesem Spiel.",
             "invalidTime": "Du kannst diese Aktion gerade nicht ausführen.",
-            "versionMismatch": null,
+            "versionMismatch": "Du benutzt Version \"%{client}\", während der Server Version \"%{server}\" benutzt. Bitte lade die Seite in ein paar Minuten neu, um auf die neueste Version zu aktualisieren. Du kannst immer noch gegen den Computer spielen, ohne Probleme, aber wir empfehlen, vor dem Multiplayer-Spielen zu aktualisieren.",
             "clipboard": "Kopieren in die Zwischenablage nicht möglich."
         },
         "config": {
@@ -50,10 +50,10 @@
             "insufficientPlayers": "Es werden mindestens %{min} Spieler benötigt, um das Spiel zu starten."
         },
         "game": {
-            "velocity": null,
+            "velocity": "Die angegebene Geschwindigkeit liegt außerhalb des erlaubten Bereichs.",
             "playerForfeited": "Spieler \"%{name}\" hat aufgegeben und automatisch verloren.",
-            "missedTurnWarning": null,
-            "missedTurnKick": null,
+            "missedTurnWarning": "Du warst zu spät und dein Gegner hat seinen Zug bekommen. Wenn das zu oft hintereinander passiert, wirst du rausgeworfen. (%{current}/%{threshold})",
+            "missedTurnKick": "Du wurdest rausgeworfen, weil du %{current} Zug(e) hintereinander verpasst hast.",
             "autoTurnWarning": "Du warst zu spät dran und es wurde ein Zug für dich gemacht. Wenn dies zu oft hintereinander passiert, verlierst du. (%{current}/%{threshold})",
             "autoTurnKick": "Du hast automatisch verloren, weil du %{current} Züge hintereinander zu spät warst.",
             "insufficientRows": "Die Anzahl der ausgewählten Zeilen passt nicht in dieses Feld.",
@@ -109,7 +109,7 @@
             "full": "Das Spiel ist bereits voll (%{current}/%{max})."
         },
         "profile": {
-            "profanity": null,
+            "profanity": "Nickname scheint verbotene Schimpfwörter zu enthalten.",
             "missingData": "Fehlende Daten für Spitzname und/oder Bild.",
             "invalidNickname": "Spitzname ungültig.",
             "invalidPicture": "Bild ungültig.",
@@ -161,8 +161,8 @@
                 },
                 "generic": {
                     "data": {
-                        "required": null,
-                        "notRequired": null
+                        "required": "Pflicht",
+                        "notRequired": "Optional"
                     }
                 },
                 "winCondition": {
@@ -722,124 +722,124 @@
             }
         },
         "EIGHT_BALL_POOL": {
-            "name": null,
+            "name": "8-Ball-Pool",
             "heading": "8 Ball Pool online gegen Freunde spielen",
-            "tooltip": null,
-            "description": null,
-            "title": null,
+            "tooltip": "Hier kannst du das beliebte Billardspiel gegen einen Bot oder einen Spieler spielen.",
+            "description": "Gib dein Bestes im Online-Multiplayer-Pool! Versenke alle deine Kugeln und beende mit der 8 Kugel, um am Tisch zu gewinnen!",
+            "title": "Kostenloses Mehrspieler-Spiel für 2 Spieler",
             "options": {
                 "turnTime": {
-                    "title": null,
-                    "help": null
+                    "title": "Uhrzeit drehen",
+                    "help": "Wie lange jeder Spieler hat, um die Kugel anzustoßen."
                 },
                 "preview": {
                     "title": "Vorschau",
                     "help": "Die Vorschau-Zeile zeigt an, wohin der Spielball gehen wird, nachdem er getroffen wurde."
                 },
                 "illegalBallPocket": {
-                    "title": null
+                    "title": "Illegales Ball-Einstecken"
                 },
                 "ruleContactRailOnBreak": {
-                    "title": null,
-                    "help": null,
+                    "title": "Auf Schienen durchbrechen",
+                    "help": "Beim Brechen bestimme, wie viele Bälle mit der Bande in Kontakt kommen müssen. Diese Regel gilt nicht, wenn du einen Ball versenkst.",
                     "data": {
-                        "one": null,
-                        "two": null,
-                        "three": null,
-                        "four": null
+                        "one": "Ein Ball",
+                        "two": "Zwei Bälle",
+                        "three": "Drei Bälle",
+                        "four": "Vier Bälle"
                     }
                 },
                 "assignedGroup": {
-                    "title": null,
-                    "help": null,
+                    "title": "Zugewiesene Gruppe",
+                    "help": "Bestimme, wie jeder Spieler seiner Gruppe (Solide oder Streifen) zugewiesen wird.",
                     "data": {
-                        "pocket": null,
-                        "random": null
+                        "pocket": "In der Tasche",
+                        "random": "Zufällig am Anfang"
                     }
                 },
                 "ruleTurnCanHitBall": {
-                    "title": null,
-                    "help": null,
+                    "title": "Kann Ball Schlagen",
+                    "help": "Passiert, wenn der Spieler einen Ball trifft, den er nicht darf. Regel gilt nicht beim Brechen.",
                     "data": {
-                        "assignedGroup": null,
-                        "assignedGroupPlus": null,
-                        "eitherGroup": null,
-                        "anyBall": null
+                        "assignedGroup": "Zugewiesene Gruppe",
+                        "assignedGroupPlus": "Zugewiesene Gruppe + 8 Ball",
+                        "eitherGroup": "Entweder Gruppe",
+                        "anyBall": "Jeder Ball"
                     }
                 },
                 "ruleTurnMustHitBall": {
-                    "title": null,
-                    "help": null
+                    "title": "Muss Ball treffen",
+                    "help": "Passiert, wenn der Spieler keinen Ball trifft, während seinem Zug."
                 },
                 "ruleTurnContactRail": {
-                    "title": null,
-                    "help": null
+                    "title": "Kontaktiere die Eisenbahnen.",
+                    "help": "Kein Ball trifft die Bande, dann gilt diese Regel nicht, es sei denn, der Spieler versenkt einen Ball."
                 },
                 "ruleConsecutiveFouls": {
-                    "title": null,
-                    "help": null,
+                    "title": "Aufeinanderfolgende Fouls",
+                    "help": "Bestimme, was passieren soll, wenn ein Spieler mehrere Fouls hintereinander macht. Diese Regel verhindert unsportliches Verhalten.",
                     "data": {
-                        "off": null,
-                        "loseOnTwo": null,
-                        "loseOnThree": null,
-                        "loseOnFour": null
+                        "off": "Aus",
+                        "loseOnTwo": "Verlust nach zwei",
+                        "loseOnThree": "Verlust nach drei",
+                        "loseOnFour": "Verlust nach vier"
                     }
                 },
                 "foul": {
                     "help": {
-                        "disabled": null
+                        "disabled": "Foul ist mit den aktuellen Einstellungen deaktiviert."
                     },
                     "data": {
-                        "nothing": null,
-                        "keepTurn": null,
-                        "endTurn": null,
-                        "endTurnHand": null,
-                        "reset": null,
-                        "resetHand": null,
-                        "instantWin": null,
-                        "instantLoss": null
+                        "nothing": "Nichts",
+                        "keepTurn": "Weitermachen",
+                        "endTurn": "Runde beenden",
+                        "endTurnHand": "Runde beenden + Ball in der Hand",
+                        "reset": "Runde beenden + Feld wiederherstellen",
+                        "resetHand": "Runde beenden + Feld wiederherstellen + Ball in der Hand",
+                        "instantWin": "Sofortiger Sieg",
+                        "instantLoss": "Sofortige Niederlage"
                     }
                 },
                 "foulPocketCueBall": {
-                    "title": null,
-                    "help": null
+                    "title": "Taschen die Kugel ein",
+                    "help": "Passiert, wenn ein Spieler die Kugel versenkt."
                 },
                 "foulPocketOpponentBall": {
-                    "title": null,
-                    "help": null
+                    "title": "Gegnerischen Ball einlochen",
+                    "help": "Passiert, wenn ein Spieler den Ball des Gegners versenkt. Andere Fouls haben Vorrang vor diesem (z.B. zuerst den falschen Ball treffen)."
                 },
                 "foulPocketOwnAndOpponentBall": {
-                    "title": null,
-                    "help": null
+                    "title": "Eigene und Gegnerische Kugel Einlochen",
+                    "help": "Passiert, wenn ein Spieler eine eigene und die Kugel des Gegners versenkt. Andere Fouls haben Vorrang vor diesem (z.B. zuerst die falsche Kugel treffen)."
                 },
                 "foulIllegalEightBallBreak": {
-                    "title": null,
-                    "help": null
+                    "title": "8-Ball während des Breaks einlochen",
+                    "help": "Passiert, wenn ein Spieler es schafft, die 8 Kugel beim Break zu versenken."
                 },
                 "foulIllegalEightBallPocket": {
-                    "title": null,
-                    "help": null
+                    "title": "Illegales Pocketen des 8-Ball",
+                    "help": "Passiert, wenn ein Spieler die 8-Kugel versenkt, während er gleichzeitig ein anderes Foul begeht (z.B. die Queue-Kugel versenken)."
                 },
                 "foulIllegalEightBallPocketTooSoon": {
-                    "title": null,
-                    "help": null
+                    "title": "Pocketen 8 Ball Zu Früh",
+                    "help": "Passiert, wenn ein Spieler die 8-Kugel versenkt, während er noch andere Kugeln versenken muss."
                 }
             },
             "presets": {
                 "default": {
-                    "title": null
+                    "title": "Regeln für Bloob.io"
                 },
                 "wpa": {
-                    "title": null,
-                    "description": null
+                    "title": "WPA-Regelwerk",
+                    "description": "Ähnelt den Regeln der World Pool-Billiard Association sehr"
                 },
                 "upa": {
-                    "title": null,
-                    "description": null
+                    "title": "UPA-Regelwerk",
+                    "description": "Ähnelt den Regeln der US Professional Poolplayers Association sehr"
                 },
                 "relaxed": {
-                    "title": null,
-                    "description": null
+                    "title": "Lockerregelwerk",
+                    "description": "Mildere Strafen und weniger Regeln"
                 },
                 "ruthless": {
                     "title": "Skrupellose Regeln",
@@ -848,31 +848,31 @@
             },
             "help": {
                 "field": {
-                    "title": null,
+                    "title": "Spielfeld spielen",
                     "description": [
-                        null,
-                        null
+                        "Es gibt 6 Löcher, in die die Bälle gespielt werden können. Insgesamt gibt es 16 Bälle, einer davon ist der Spielball, den du bei deinem Zug anschlägst.",
+                        "Es gibt 7 gestreifte und 7 einfarbige Bälle, sowie einen schwarzen Achtball. Zu Beginn des Spiels sind alle Bälle in einem Dreieck angeordnet, wobei der Achtball in der Mitte steht. Der Spielball steht weiter weg."
                     ]
                 },
                 "breaking": {
-                    "title": null,
+                    "title": "Das Spiel starten (brechen)",
                     "description": [
-                        null,
-                        null
+                        "Wer als erstes an der Reihe ist, kann die Kugel bewegen und auf das Dreieck der Kugeln (ihre Ausgangsposition) schlagen.",
+                        "Es gibt Regeln für das Brechen. Die Kugel darf nicht versenkt werden und mindestens zwei Kugeln (außer der Kugel) müssen ein Kissen (die Wände um das Feld) treffen. Wenn man beim Brechen eine Kugel versenkt, bekommt man sofort noch einen Zug."
                     ]
                 },
                 "gameplay": {
-                    "title": null,
+                    "title": "Spielmechanik",
                     "description": [
-                        null,
-                        null
+                        "Es gibt sowohl gestreifte als auch solide Bälle. Wer als erstes einen Ball versenkt, wird zu dieser Ballgruppe und bekommt noch einen Zug. Ab diesem Punkt musst du nur noch gestreifte oder solide Bälle versenken.",
+                        "Die Reihenfolge, in der du deine Bälle versenkst, spielt keine Rolle. Wenn du ein Foul begehst, darf dein Gegner den Spielball für seinen Zug bewegen."
                     ]
                 },
                 "objective": {
-                    "title": null,
+                    "title": "Ziel:",
                     "description": [
-                        null,
-                        null
+                        "Du musst die schwarze Acht erst vermeiden, bis du alle deine Kugeln versenkt hast. Du beendest dann das Spiel, indem du die Acht versenkst. Es ist wichtig, dass du dabei kein Foul begehst, sonst verlierst du.",
+                        "Wenn du die Acht zu früh versenkst, bedeutet das sofortiger Verlust. Achte darauf, dass du sorgfältig zielst!"
                     ]
                 }
             }
@@ -952,8 +952,8 @@
             "removingRow": "Reihe entfernen",
             "yourTurn": "Dein Zug %{extra}",
             "nameTurn": "%{name}'s Zug",
-            "yourTurnBreaking": null,
-            "nameTurnBreaking": null,
+            "yourTurnBreaking": "Du brichst %{extra}",
+            "nameTurnBreaking": "%{name} bricht %{extra}",
             "roundCount": "Runde %{current} von %{total}"
         },
         "description": {
@@ -989,7 +989,7 @@
         "sv-SE": "Schwedisch"
     },
     "status": {
-        "reconnecting": null,
+        "reconnecting": "Versuche, wieder zu verbinden...",
         "viewAllGames": "Alle Spiele ansehen",
         "playingAgainstBots": "Spiel gegen Bots",
         "playingAgainstPlayers": "Spiel gegen Spieler",
@@ -1018,8 +1018,8 @@
         "tetris": "Tetris",
         "basic": "Basic",
         "language": "Sprache",
-        "rules": null,
-        "fouls": null
+        "rules": "Regeln",
+        "fouls": "Antwort auf Foul"
     },
     "time": {
         "hours": "0 Stunden | 1 Stunde | {count} Stunden",
@@ -1043,7 +1043,7 @@
         "matchesFound": "0 Spiele gefunden | 1 Spiel gefunden | {count} Spiele gefunden",
         "matchesWaiting": "0 Spiele warten | 1 Spiel wartet | {count} Spiele warten",
         "needMorePlayers": "Benötigt noch 0 Spieler | Benötigt noch 1 Spieler | Benötigt noch {count} Spieler",
-        "playAgainstBots": null,
+        "playAgainstBots": "Gegen Bots spielen | Gegen einen Bot spielen | Gegen Bots spielen",
         "playRandomOpponents": "Spiele gegen zufällige Gegner",
         "turnsToFlip": "Züge bis zum Umdrehen | Zug bis zum Umdrehen | Züge bis zum Umdrehen",
         "increment": "%{count}er Inkremente"
@@ -1053,8 +1053,8 @@
         "about": "Über",
         "public": "Öffentlich",
         "private": "Privat",
-        "add": null,
-        "remove": null,
+        "add": "Hinzufügen",
+        "remove": "Entfernen",
         "yes": "Ja",
         "no": "Nein",
         "disabled": "Deaktiviert",
@@ -1066,10 +1066,10 @@
         "changed": "Verändert",
         "guest": "Gast",
         "settings": "Einstellungen",
-        "localPlay": null,
+        "localPlay": "Lokales Spielen",
         "preset": "Voreinstellung",
-        "you": null,
-        "home": null,
+        "you": "Du",
+        "home": "Startseite",
         "bot": "Bot",
         "bots": "Bots",
         "vibration": "Vibration",
@@ -1098,8 +1098,8 @@
         "currentRoundCount": "Runde (%{current}/%{total})",
         "currentSkipCount": "Überspringen (%{current}/%{total})",
         "currentReadyCount": "Bereit (%{current}/%{total})",
-        "assignedTypeSelf": null,
-        "assignedTypeSelfLocal": null,
+        "assignedTypeSelf": "Du bist %{type}",
+        "assignedTypeSelfLocal": "Spieler (%{index}) ist %{type}",
         "broadcast": "Broadcast",
         "confirm": "Bestätigen",
         "close": "Schließen",
@@ -1112,7 +1112,7 @@
         "share": "Teilen",
         "copy": "Kopieren",
         "view": "Ansicht",
-        "donate": null,
+        "donate": "Spenden",
         "forfeit": "Aufgeben",
         "processFiles": "Dateien verarbeiten",
         "sendMessage": "Nachricht senden",
@@ -1131,11 +1131,11 @@
         "rank": "Rang",
         "kills": "Kills",
         "points": "Punkte",
-        "wins": null,
-        "pocketed": null,
-        "shots": null,
+        "wins": "Gewinnt",
+        "pocketed": "Versenkt",
+        "shots": "Schüsse",
         "deaths": "Tode",
-        "fouls": null,
+        "fouls": "Fouls",
         "and": "und",
         "vs": "vs",
         "selectAll": "Alles auswählen",
@@ -1173,7 +1173,7 @@
             "contentUnderscore": "Nutze _ um ein Lehrzeichen in Reaktionskarten zu markieren",
             "pick": "Karten auswählen",
             "create": "Karten erstellen",
-            "deleted": null,
+            "deleted": "Erfolgreich gelöscht!",
             "edited": "Karte erfolgreich bearbeitet!",
             "created": "Neue Karte erfolgreich hinzugefügt!"
         },
@@ -1183,9 +1183,9 @@
         },
         "sets": {
             "title": "Kartensets",
-            "contribute": null,
+            "contribute": "Diese Liste ergänzen",
             "create": "Kartenset erstellen",
-            "browser": null,
+            "browser": "Durchsuchen & Importieren von benutzerdefinierten Sets",
             "import": "Kartenset importieren",
             "importer": "Kartenset Importer",
             "namedTitle": "Kartenset \"%{title}\"",
@@ -1196,14 +1196,14 @@
             "importById": "Importieren Sie Kartensets nach ID (z. B. von Many Decks)",
             "notInOwnLibrary": "Fehlendes Set",
             "addToLibrary": "Zur Bibliothek hinzufügen",
-            "entrySave": null,
-            "entrySaved": null,
-            "entryProcessing": null,
+            "entrySave": "Kartenset speichern",
+            "entrySaved": "Gespeichert",
+            "entryProcessing": "Verarbeitung",
             "info": {
                 "importFinished": "Alle %{total} Kartensets wurden verarbeitet",
                 "importProgress": "Verarbeite Kartenset %{current} von %{total}",
                 "importFailed": "Kartenset \"%{name}\" konnte nicht verarbeitet werden",
-                "emptyFolder": null,
+                "emptyFolder": "Hier wurden noch keine Kartensets geteilt.",
                 "emptyList": "Deine (importierten) benutzerdefinierten Kartensets werden hier angezeigt.",
                 "emptyListNotHost": "Der Gastgeber hat keine Benutzerdefinierten Kartensets ausgewählt.",
                 "noneSelected": "Der Gastgeber muss Kartensets auswählen.",
@@ -1213,7 +1213,7 @@
                 "storage": "Benutzerdefinierte Kartensätze werden in deinem Browser gespeichert. Bewahre sie sicher auf, indem du eine heruntergeladene Kopie an einem anderen Ort speicherst.",
                 "notHost": "Deine importierten Karten sind versteckt, weil du nicht der Gastgeber bist.",
                 "sizeLimit": "Jede benutzerdefinierte Karte verbraucht Speicherplatz. Aus Performanzgründen kann ein Spiel nicht mehr als <b>%{size}</b> benutzerdefinierte Kartensets gleichzeitig nutzen.",
-                "filterDisclaimer": null
+                "filterDisclaimer": "Bitte beachte, dass dieser Filter nur für offizielle Kartensets garantiert werden kann. Eigene Sets funktionieren möglicherweise nicht mit diesem Filter."
             }
         },
         "info": {
@@ -1223,7 +1223,7 @@
             "preview": "Nehem dir einen Moment um deine (neuen) Karten anzusehen",
             "dump": "Wähle Karten aus die du abwerfen möchtest",
             "noType": "Es gibt keine %{type} Karten",
-            "delete": null,
+            "delete": "Du bist dabei, Karte \"%{info}\" zu löschen.",
             "winningOption": "%{name} hat diese Runde mit der Auswahl %{selection} gewonnen",
             "actionResponseCardCounter": "Aktions- und Antwortkartenzähler. Einige Sets verwenden die gleichen Karten; Duplikate werden automatisch entfernt. Nach <b>NSFW</b> oder <b>Spezifischen Karten</b> zu filtern verringert auch die Kartenanzahl.",
             "navigateSelf": "Selbst navigieren",
@@ -1234,7 +1234,7 @@
         "create": "Spiel erstellen",
         "leave": "Spiel verlassen",
         "join": "Spiel beitreten",
-        "joinById": null,
+        "joinById": "Match nach ID beitreten",
         "full": "Volles Spiel",
         "rematch": "Revanche",
         "lobby": {
@@ -1271,16 +1271,16 @@
         }
     },
     "info": {
-        "incompleteTranslationNotice": null,
-        "betaNotice": null,
-        "clickForDetails": null,
+        "incompleteTranslationNotice": "Die Sprache, die du ausgewählt hast, ist ungefähr {percentage}% fertig. Fehlende Übersetzungen werden auf Englisch sein.",
+        "betaNotice": "Dieses Spiel wird immer noch entwickelt. Bitte teile dein Feedback und Bugs auf unserem %{social}.",
+        "clickForDetails": "Klicke für Details.",
         "howToPlay": "Lerne das Spiel zu spielen",
         "skipStepOverHalf": "Dieser Schritt kann auch übersprungen werden, wenn mehr als die Hälfte der Spieler dafür stimmt.",
         "skipStepAll": "Dieser Schritt kann auch übersprungen werden, wenn alle Spieler dafür stimmen.",
         "voteReduceTime": "Die verbleibende Zeit wird automatisch verkürzt, wenn alle abgestimmt haben.",
         "interfaceAutoResize": "Passt die Größe der Bildschirms an das Feld an",
-        "opponentMissedTurn": null,
-        "localPlay": null,
+        "opponentMissedTurn": "Jetzt ist dein Zug, da dein Gegner die Zeit abgelaufen ist.",
+        "localPlay": "Teile dasselbe Gerät mit mehreren Personen, indem du lokale Spieler hinzufügst.",
         "highPing": "Der Ping ist die Zeit, die du für die Kommunikation mit dem Server benötigst. Du siehst alles später als andere Spieler und könntest Ruckler und Verzögerungen erleben.",
         "hasBots": "Dieses Spiel kann gegen Bots gespielt werden.",
         "inactiveUser": "Der Benutzer ist nicht mit diesem Spiel verbunden.",
@@ -1304,19 +1304,19 @@
         "gameHelp": "%{title} Hilfe",
         "areYouSure": "Bist du sicher?",
         "poolType": {
-            "SOLID": null,
-            "STRIPE": null
+            "SOLID": "Festekugeln",
+            "STRIPE": "Streifenkugeln"
         },
         "poolFoul": {
-            "CUE_BALL_POCKET": null,
-            "CUE_BALL_HIT_NO_BALL": null,
-            "CUE_BALL_HIT_WRONG_BALL": null,
-            "CUSHION_HIT_MIN_ON_BREAK": null,
-            "CUSHION_HIT_INVALID": null,
-            "CONSECUTIVE_FOULS_EXCEEDED": null,
-            "ILLEGAL_8_BALL_POCKET": null,
-            "ILLEGAL_8_BALL_POCKET_TOO_SOON": null,
-            "POCKETED_WRONG_BALL": null
+            "CUE_BALL_POCKET": "%{name} hat die Kugel versenkt!",
+            "CUE_BALL_HIT_NO_BALL": "%{name} hat keine andere Kugel getroffen!",
+            "CUE_BALL_HIT_WRONG_BALL": "%{name} hat zuerst die falsche Kugel getroffen!",
+            "CUSHION_HIT_MIN_ON_BREAK": "Es wurden nicht genug Kugeln an ein Band getroffen. (Min. %{min})",
+            "CUSHION_HIT_INVALID": "Keine gültige Kugel hat ein Band getroffen, während keine Kugel versenkt wurde.",
+            "CONSECUTIVE_FOULS_EXCEEDED": "%{name} hat %{fouls} aufeinanderfolgende Fouls begangen.",
+            "ILLEGAL_8_BALL_POCKET": "%{name} hat die Acht versenkt, während er ein Foul begangen hat.",
+            "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} hat die Acht zu früh versenkt.",
+            "POCKETED_WRONG_BALL": "%{name} hat die falsche Kugel versenkt."
         },
         "about": {
             "description": "Bloob.io ist ein Projekt aus Leidenschaft, das aus Multiplayer-Browsergames besteht. Vorschläge sind immer willkommen!",
