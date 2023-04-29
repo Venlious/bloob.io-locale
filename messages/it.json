@@ -1,23 +1,36 @@
 {
     "_meta": {
         "language": "informal Italian",
-        "total": 851,
-        "missing": 0
+        "total": 941,
+        "missing": 91
     },
     "name": "Bloob.io",
     "error": {
+        "authentication": {
+            "expired": null,
+            "alreadyLinkedUser": null,
+            "alreadyLinkedEmail": null,
+            "alreadyUsedEmail": null,
+            "invalidUserEmail": null,
+            "invalidDevice": null,
+            "invalidUser": null,
+            "invalidCode": null
+        },
         "rateLimit": {
+            "malicious": null,
             "secure": "Hai raggiunto il limite in questo canale sicuro. Aspetta %{seconds} secondo(i).",
             "generic": "Rallenta un attimo! Aspetta %{seconds} secondo(i)."
         },
         "generic": {
+            "differentSessionConnected": null,
+            "sameSessionConnected": null,
             "blockedFrame": "Questo gioco non è consentito su questo sito. Puoi giocare gratuitamente sul sito elencato di seguito.",
             "unableToConnectToServer": "Impossibile connettersi al server di gioco. Puoi provare ad aggiornare questa pagina più tardi. Se il problema persiste, contattaci.",
             "desync": "Spiacenti, sembra che tu sia stato desincronizzato. Per favore riprova.",
-            "alreadyConnected": "Sembra che tu abbia aperto questo sito in un'altra scheda e sei stato disconnesso qui.",
             "title": "Si è verificato un errore.",
             "invalid": "I dati forniti non sono validi.",
             "texture": "Non è stato possibile caricare una texture \"%{id}\".",
+            "invalidEmail": null,
             "invalidAction": "È stato fornito un tipo di azione \"%{type}\" invalido.",
             "maintenance": "Non puoi eseguire questa azione mentre è attiva la modalità di manutenzione.",
             "missingArguments": "Mancano gli argomenti necessari per questa azione.",
@@ -113,12 +126,14 @@
             "missingData": "Nome utente e/o immagine mancanti.",
             "invalidNickname": "Il nickname è formattato in modo errato.",
             "invalidPicture": "L'immagine è formattata in modo errato.",
+            "lockedPicture": null,
             "nicknameMaxLength": "Il nickname è troppo lungo (%{current}/%{max})",
             "nicknameMinLength": "Il nickname è troppo corto (%{current}/%{min})",
             "nicknameAllowedCharacters": "Il nickname può contenere solo caratteri alfanumerici e i seguenti caratteri speciali ?!_-+",
             "inGame": "Impossibile personalizzare il profilo mentre la partita è in corso"
         },
         "requirement": {
+            "authentication": null,
             "credentials": "Hai fornito credenziali non valide.",
             "validAccount": "Il tuo account non è stato ancora approvato. Salva le modifiche del tuo profilo.",
             "inLobby": "Non puoi eseguire questa azione perché la partita è già iniziata.",
@@ -972,6 +987,8 @@
         "cardSetName": "Inserisci il nome di questo set di carte...",
         "matchId": "ID o URL corrispondenti...",
         "message": "Messaggio...",
+        "email": null,
+        "emailConfirmation": null,
         "username": "Nome utente",
         "password": "Password"
     },
@@ -1026,6 +1043,43 @@
         "minutes": "0 minuti | 1 minuto | {count} minuti",
         "seconds": "0 secondi | 1 secondo | {count} secondi"
     },
+    "title": {
+        "rookie": null,
+        "beginner": null,
+        "novice": null,
+        "apprentice": null,
+        "competitor": null,
+        "challenger": null,
+        "strategist": null,
+        "tactician": null,
+        "skilledPlayer": null,
+        "risingStar": null,
+        "contender": null,
+        "crazyLarry": null,
+        "acePlayer": null,
+        "mastermind": null,
+        "eliteCompetitor": null,
+        "grandStrategist": null,
+        "prodigy": null,
+        "veteran": null,
+        "allStar": null,
+        "legendaryPlayer": null,
+        "supremeTactician": null,
+        "whizkid": null,
+        "maestro": null,
+        "tacticalGenius": null,
+        "grandmaster": null,
+        "champion": null,
+        "virtuoso": null,
+        "superstar": null,
+        "luminary": null,
+        "grandDynamo": null,
+        "strategicMastermind": null,
+        "tacticalVirtuoso": null,
+        "supremeChampion": null,
+        "legendaryStrategist": null,
+        "masterOfGames": null
+    },
     "count": {
         "kills": "0 uccisioni | 1 uccisione | {count} uccisioni",
         "deaths": "0 decessi | 1 decesso | {count} decessi",
@@ -1073,6 +1127,8 @@
         "bot": "Bot",
         "bots": "Bot",
         "vibration": "Vibrazioni",
+        "locked": null,
+        "available": null,
         "unavailable": "Non disponibile",
         "changeLog": "Registro delle modifiche",
         "status": "Stato",
@@ -1080,6 +1136,8 @@
         "language": "Lingua",
         "toggle": "Toggle",
         "login": "Accesso",
+        "logout": null,
+        "unlinkMyAccount": null,
         "maintenance": "Manutenzione",
         "admin": "Admin",
         "nsfw": "NSFW",
@@ -1102,6 +1160,7 @@
         "assignedTypeSelfLocal": "Il giocatore (%{index}) è %{type}",
         "broadcast": "Trasmissione",
         "confirm": "Confermare",
+        "notMeOption": null,
         "close": "Chiudi",
         "edit": "Modifica",
         "delete": "Elimina",
@@ -1119,6 +1178,7 @@
         "refreshWindow": "Finestra di aggiornamento",
         "makeHost": "Crea un ospite",
         "kickUser": "Utente che calcia",
+        "changeEmail": null,
         "returnToMenu": "Torna al menu",
         "returnToLobby": "Torna alla Lobby",
         "playAsGuest": "Gioca come ospite",
@@ -1138,6 +1198,9 @@
         "fouls": "Falli",
         "and": "e",
         "vs": "vs",
+        "orBlank": null,
+        "sendVerification": null,
+        "noThanks": null,
         "selectAll": "Seleziona tutti",
         "deselectAll": "Deseleziona tutti",
         "resetData": "Dati di reset",
@@ -1297,12 +1360,71 @@
         "forfeit": "La rinuncia alla partita comporterà una perdita per te.",
         "unsavedChanges": "Ci sono modifiche non salvate che verranno cancellate se procederai.",
         "resetData": "La reimpostazione dei dati è irreversibile e cancellerà il tuo profilo, le impostazioni e altri dati personalizzati.",
+        "notMeWarning": null,
         "matchesDisabled": "Non puoi creare o unirti a una partita in questo momento",
         "fileUpload": "Clicca per sfogliare o trascinare qui i tuoi file",
         "fileUploadMore": "Aggiungi altri file trascinando o cliccando qui",
         "gameJoin": "Partecipa a %{title} Partita",
         "gameHelp": "%{title} Aiuto",
         "areYouSure": "Sei sicuro?",
+        "authentication": {
+            "login": {
+                "title": null,
+                "description": null
+            },
+            "setup": {
+                "title": null,
+                "description": null,
+                "disclaimer": null
+            },
+            "unlink": {
+                "title": null,
+                "description": null
+            },
+            "unlinkSuccess": {
+                "title": null,
+                "description": null
+            },
+            "transferStart": {
+                "title": null,
+                "description": null
+            },
+            "transferConfirm": {
+                "title": null,
+                "description": null
+            },
+            "transferSuccess": {
+                "title": null,
+                "description": null
+            },
+            "logout": {
+                "title": null,
+                "description": null
+            },
+            "logoutGlobally": {
+                "title": null,
+                "description": null
+            },
+            "logoutSuccess": {
+                "title": null,
+                "description": null
+            },
+            "relogin": {
+                "title": null,
+                "description": null
+            },
+            "loginCode": {
+                "title": null
+            },
+            "ready": {
+                "title": null,
+                "description": null
+            },
+            "loginNoAccount": null,
+            "logoutGloballyCompleted": null,
+            "verificationEmail": null,
+            "noEmail": null
+        },
         "poolType": {
             "SOLID": "Solidi",
             "STRIPE": "Strisce"

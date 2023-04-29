@@ -1,23 +1,36 @@
 {
     "_meta": {
         "language": "informal British English",
-        "total": 851,
+        "total": 941,
         "missing": 0
     },
     "name": "Bloob.io",
     "error": {
+        "authentication": {
+            "expired": "Your authentication request may have expired. Please try again.",
+            "alreadyLinkedUser": "Your account is already linked to an email address.",
+            "alreadyLinkedEmail": "This email address is already linked to an account.",
+            "alreadyUsedEmail": "Your account is already linked to this email address",
+            "invalidUserEmail": "This email address is not linked to this user.",
+            "invalidDevice": "You must authenticate on the same device you requested the code.",
+            "invalidUser": "Your user account does not require authentication.",
+            "invalidCode": "This verification code is invalid."
+        },
         "rateLimit": {
+            "malicious": "Malicious activity has been detected. Timed out for %{seconds} second(s).",
             "secure": "You hit the rate limit on this secure channel. Wait %{seconds} second(s).",
             "generic": "Slow down a little! Wait %{seconds} second(s)."
         },
         "generic": {
+            "differentSessionConnected": "You logged in on %{session} and have been disconnected here.",
+            "sameSessionConnected": "You were disconnected here as you opened this site in another browser tab.",
             "blockedFrame": "This game isn't allowed on this website. You can play it for free on the website listed below.",
             "unableToConnectToServer": "Unable to connect to the game server. You may try refreshing this page later. Please reach out if the issue persists.",
             "desync": "Sorry, it looks like you were desynchronized. Please try again.",
-            "alreadyConnected": "It looks like you opened this site in another tab and you have been disconnected here.",
             "title": "An error has occured.",
             "invalid": "Given data is invalid.",
             "texture": "Failed to load a texture \"%{id}\".",
+            "invalidEmail": "An invalid email address was given.",
             "invalidAction": "An invalid action type \"%{type}\" was given.",
             "maintenance": "You cannot perform this action while maintenance mode is active.",
             "missingArguments": "Missing needed arguments for this action.",
@@ -113,12 +126,14 @@
             "missingData": "Missing username and/or picture arguments.",
             "invalidNickname": "Nickname is incorrectly formatted.",
             "invalidPicture": "Picture is incorrectly formatted.",
+            "lockedPicture": "Picture contains locked items that you may not use.",
             "nicknameMaxLength": "Nickname is too long (%{current}/%{max})",
             "nicknameMinLength": "Nickname is too short (%{current}/%{min})",
             "nicknameAllowedCharacters": "Nickname may only contain alphanumeric characters and these special characters ?!_-+",
             "inGame": "Cannot customise your profile while the game is in progress"
         },
         "requirement": {
+            "authentication": "You cannot perform this action without having authenticated.",
             "credentials": "You have given invalid credentials.",
             "validAccount": "Your account has not been validated yet. Please save your profile changes.",
             "inLobby": "You cannot perform this action as the match has already started.",
@@ -972,6 +987,8 @@
         "cardSetName": "Fill in name for this card set...",
         "matchId": "Match ID or URL...",
         "message": "Message...",
+        "email": "Email",
+        "emailConfirmation": "Repeat Email",
         "username": "Username",
         "password": "Password"
     },
@@ -1026,6 +1043,43 @@
         "minutes": "0 minutes | 1 minute | {count} minutes",
         "seconds": "0 seconds | 1 second | {count} seconds"
     },
+    "title": {
+        "rookie": "Rookie",
+        "beginner": "Beginner",
+        "novice": "Novice",
+        "apprentice": "Apprentice",
+        "competitor": "Competitor",
+        "challenger": "Challenger",
+        "strategist": "Strategist",
+        "tactician": "Tactician",
+        "skilledPlayer": "Skilled Player",
+        "risingStar": "Rising Star",
+        "contender": "Contender",
+        "crazyLarry": "Crazy Larry",
+        "acePlayer": "Ace Player",
+        "mastermind": "Mastermind",
+        "eliteCompetitor": "Elite Competitor",
+        "grandStrategist": "Grand Strategist",
+        "prodigy": "Prodigy",
+        "veteran": "Veteran",
+        "allStar": "All-Star",
+        "legendaryPlayer": "Legendary Player",
+        "supremeTactician": "Supreme Tactician",
+        "whizkid": "Whizkid",
+        "maestro": "Maestro",
+        "tacticalGenius": "Tactical Genius",
+        "grandmaster": "Grandmaster",
+        "champion": "Champion",
+        "virtuoso": "Virtuoso",
+        "superstar": "Superstar",
+        "luminary": "Luminary",
+        "grandDynamo": "Grand Dynamo",
+        "strategicMastermind": "Strategic Mastermind",
+        "tacticalVirtuoso": "Tactical Virtuoso",
+        "supremeChampion": "Supreme Champion",
+        "legendaryStrategist": "Legendary Strategist",
+        "masterOfGames": "Master of Games"
+    },
     "count": {
         "kills": "0 kills | 1 kill | {count} kills",
         "deaths": "0 deaths | 1 death | {count} deaths",
@@ -1073,6 +1127,8 @@
         "bot": "Bot",
         "bots": "Bots",
         "vibration": "Vibration",
+        "locked": "Locked",
+        "available": "Available",
         "unavailable": "Unavailable",
         "changeLog": "Change Log",
         "status": "Status",
@@ -1080,6 +1136,8 @@
         "language": "Language",
         "toggle": "Toggle",
         "login": "Login",
+        "logout": "Logout",
+        "unlinkMyAccount": "Unlink My Account",
         "maintenance": "Maintenance",
         "admin": "Admin",
         "nsfw": "NSFW",
@@ -1102,6 +1160,7 @@
         "assignedTypeSelfLocal": "Player (%{index}) is %{type}",
         "broadcast": "Broadcast",
         "confirm": "Confirm",
+        "notMeOption": "This wasn't me",
         "close": "Close",
         "edit": "Edit",
         "delete": "Delete",
@@ -1119,6 +1178,7 @@
         "refreshWindow": "Refresh Window",
         "makeHost": "Make Host",
         "kickUser": "Kick User",
+        "changeEmail": "Change Email",
         "returnToMenu": "Return to Menu",
         "returnToLobby": "Return to Lobby",
         "playAsGuest": "Play as Guest",
@@ -1138,6 +1198,9 @@
         "fouls": "Fouls",
         "and": "and",
         "vs": "vs",
+        "orBlank": "Or %{value}",
+        "sendVerification": "Send Verification",
+        "noThanks": "No thanks",
         "selectAll": "Select all",
         "deselectAll": "Deselect all",
         "resetData": "Reset Data",
@@ -1297,12 +1360,71 @@
         "forfeit": "Forfeiting the game will result in a loss for you.",
         "unsavedChanges": "You have unsaved changes which will be erased if you proceed.",
         "resetData": "Resetting your data is irreversible and will clear your profile, settings, and other custom data.",
+        "notMeWarning": "By proceeding you will be logged out and redirected to a page that allows you to log out on all devices. After this you can login again like you would normally.",
         "matchesDisabled": "You cannot make or join a match right now",
         "fileUpload": "Click to browse or drag your file(s) in here",
         "fileUploadMore": "Add more files by dragging or clicking here",
         "gameJoin": "Join %{title} Match",
         "gameHelp": "%{title} Help",
         "areYouSure": "Are you sure?",
+        "authentication": {
+            "login": {
+                "title": "Account Login",
+                "description": "Please note logging into your account will clear all progress for unlinked user %{name}."
+            },
+            "setup": {
+                "title": "Hi, %{name}!",
+                "description": "Connect your account to your email to keep your progress safe and synced across all your devices. No password needed!",
+                "disclaimer": "We only use your email to verify your account and log you in. No spam, no sharing. Unlink your email anytime."
+            },
+            "unlink": {
+                "title": "Account Unlinking",
+                "description": "You can unlink your %{name} account from your email address. Your progress won't be synchronised and you will only be able to access your account on this device."
+            },
+            "unlinkSuccess": {
+                "title": "Account Unlinked",
+                "description": "Your account is no longer linked to an email address. You can only access your account on this device from now on."
+            },
+            "transferStart": {
+                "title": "Update Your Email Address",
+                "description": "To change the email address linked to %{name}, please verify the current email address below. Once verified, you can enter the new email address."
+            },
+            "transferConfirm": {
+                "title": "New Email Address",
+                "description": "Great news %{name}! Your current email address has been verified successfully. To complete the process, please provide your new email address below."
+            },
+            "transferSuccess": {
+                "title": "Email Changed",
+                "description": "The email address linked to your account has been changed. For your security, you have been logged out on all other devices and will need to login again with your new email address."
+            },
+            "logout": {
+                "title": "Logout",
+                "description": "As you have an account, your progress will be saved and can be retrieved by logging back in with your email."
+            },
+            "logoutGlobally": {
+                "title": "Logout Everywhere",
+                "description": "This will log your account out of all devices including this one."
+            },
+            "logoutSuccess": {
+                "title": "Logged Out",
+                "description": "Your account has been logged out on this device."
+            },
+            "relogin": {
+                "title": "Welcome back, %{name}!",
+                "description": "You were logged out. Use the email linked to this account to gain access again."
+            },
+            "loginCode": {
+                "title": "Enter Verification Code"
+            },
+            "ready": {
+                "title": "You're all set, %{name}!",
+                "description": "Your progress is now saved and synchronised!"
+            },
+            "loginNoAccount": "Login with your email below to synchronise your account on this device.",
+            "logoutGloballyCompleted": "Your account has been logged out from all devices.",
+            "verificationEmail": "An email with a verification code has been sent.",
+            "noEmail": "No email? Check your spam folder and confirm this email is linked to your account."
+        },
         "poolType": {
             "SOLID": "Solids",
             "STRIPE": "Stripes"

@@ -1,18 +1,31 @@
 {
     "name": true,
     "error": {
+        "authentication": {
+            "expired": false,
+            "alreadyLinkedUser": false,
+            "alreadyLinkedEmail": false,
+            "alreadyUsedEmail": false,
+            "invalidUserEmail": false,
+            "invalidDevice": false,
+            "invalidUser": false,
+            "invalidCode": false
+        },
         "rateLimit": {
+            "malicious": false,
             "secure": true,
             "generic": true
         },
         "generic": {
+            "differentSessionConnected": false,
+            "sameSessionConnected": false,
             "blockedFrame": true,
             "unableToConnectToServer": true,
             "desync": true,
-            "alreadyConnected": true,
             "title": true,
             "invalid": true,
             "texture": true,
+            "invalidEmail": false,
             "invalidAction": true,
             "maintenance": true,
             "missingArguments": true,
@@ -108,12 +121,14 @@
             "missingData": true,
             "invalidNickname": true,
             "invalidPicture": true,
+            "lockedPicture": false,
             "nicknameMaxLength": true,
             "nicknameMinLength": true,
             "nicknameAllowedCharacters": true,
             "inGame": true
         },
         "requirement": {
+            "authentication": false,
             "credentials": true,
             "validAccount": true,
             "inLobby": true,
@@ -967,6 +982,8 @@
         "cardSetName": true,
         "matchId": true,
         "message": true,
+        "email": false,
+        "emailConfirmation": false,
         "username": true,
         "password": true
     },
@@ -1021,6 +1038,43 @@
         "minutes": true,
         "seconds": true
     },
+    "title": {
+        "rookie": false,
+        "beginner": false,
+        "novice": false,
+        "apprentice": false,
+        "competitor": false,
+        "challenger": false,
+        "strategist": false,
+        "tactician": false,
+        "skilledPlayer": false,
+        "risingStar": false,
+        "contender": false,
+        "crazyLarry": false,
+        "acePlayer": false,
+        "mastermind": false,
+        "eliteCompetitor": false,
+        "grandStrategist": false,
+        "prodigy": false,
+        "veteran": false,
+        "allStar": false,
+        "legendaryPlayer": false,
+        "supremeTactician": false,
+        "whizkid": false,
+        "maestro": false,
+        "tacticalGenius": false,
+        "grandmaster": false,
+        "champion": false,
+        "virtuoso": false,
+        "superstar": false,
+        "luminary": false,
+        "grandDynamo": false,
+        "strategicMastermind": false,
+        "tacticalVirtuoso": false,
+        "supremeChampion": false,
+        "legendaryStrategist": false,
+        "masterOfGames": false
+    },
     "count": {
         "kills": true,
         "deaths": true,
@@ -1068,6 +1122,8 @@
         "bot": true,
         "bots": true,
         "vibration": true,
+        "locked": false,
+        "available": false,
         "unavailable": true,
         "changeLog": true,
         "status": true,
@@ -1075,6 +1131,8 @@
         "language": true,
         "toggle": true,
         "login": true,
+        "logout": false,
+        "unlinkMyAccount": false,
         "maintenance": true,
         "admin": true,
         "nsfw": true,
@@ -1097,6 +1155,7 @@
         "assignedTypeSelfLocal": true,
         "broadcast": true,
         "confirm": true,
+        "notMeOption": false,
         "close": true,
         "edit": true,
         "delete": true,
@@ -1114,6 +1173,7 @@
         "refreshWindow": true,
         "makeHost": true,
         "kickUser": true,
+        "changeEmail": false,
         "returnToMenu": true,
         "returnToLobby": true,
         "playAsGuest": true,
@@ -1133,6 +1193,9 @@
         "fouls": true,
         "and": true,
         "vs": true,
+        "orBlank": false,
+        "sendVerification": false,
+        "noThanks": false,
         "selectAll": true,
         "deselectAll": true,
         "resetData": true,
@@ -1292,12 +1355,71 @@
         "forfeit": true,
         "unsavedChanges": true,
         "resetData": true,
+        "notMeWarning": false,
         "matchesDisabled": true,
         "fileUpload": true,
         "fileUploadMore": true,
         "gameJoin": true,
         "gameHelp": true,
         "areYouSure": true,
+        "authentication": {
+            "login": {
+                "title": false,
+                "description": false
+            },
+            "setup": {
+                "title": false,
+                "description": false,
+                "disclaimer": false
+            },
+            "unlink": {
+                "title": false,
+                "description": false
+            },
+            "unlinkSuccess": {
+                "title": false,
+                "description": false
+            },
+            "transferStart": {
+                "title": false,
+                "description": false
+            },
+            "transferConfirm": {
+                "title": false,
+                "description": false
+            },
+            "transferSuccess": {
+                "title": false,
+                "description": false
+            },
+            "logout": {
+                "title": false,
+                "description": false
+            },
+            "logoutGlobally": {
+                "title": false,
+                "description": false
+            },
+            "logoutSuccess": {
+                "title": false,
+                "description": false
+            },
+            "relogin": {
+                "title": false,
+                "description": false
+            },
+            "loginCode": {
+                "title": false
+            },
+            "ready": {
+                "title": false,
+                "description": false
+            },
+            "loginNoAccount": false,
+            "logoutGloballyCompleted": false,
+            "verificationEmail": false,
+            "noEmail": false
+        },
         "poolType": {
             "SOLID": true,
             "STRIPE": true

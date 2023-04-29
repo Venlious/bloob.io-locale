@@ -1,23 +1,36 @@
 {
     "_meta": {
         "language": null,
-        "total": 851,
-        "missing": 837
+        "total": 941,
+        "missing": 927
     },
     "name": "Bloob.io",
     "error": {
+        "authentication": {
+            "expired": null,
+            "alreadyLinkedUser": null,
+            "alreadyLinkedEmail": null,
+            "alreadyUsedEmail": null,
+            "invalidUserEmail": null,
+            "invalidDevice": null,
+            "invalidUser": null,
+            "invalidCode": null
+        },
         "rateLimit": {
+            "malicious": null,
             "secure": null,
             "generic": null
         },
         "generic": {
+            "differentSessionConnected": null,
+            "sameSessionConnected": null,
             "blockedFrame": null,
             "unableToConnectToServer": null,
             "desync": null,
-            "alreadyConnected": null,
             "title": null,
             "invalid": null,
             "texture": null,
+            "invalidEmail": null,
             "invalidAction": null,
             "maintenance": null,
             "missingArguments": null,
@@ -113,12 +126,14 @@
             "missingData": null,
             "invalidNickname": null,
             "invalidPicture": null,
+            "lockedPicture": null,
             "nicknameMaxLength": null,
             "nicknameMinLength": null,
             "nicknameAllowedCharacters": null,
             "inGame": null
         },
         "requirement": {
+            "authentication": null,
             "credentials": null,
             "validAccount": null,
             "inLobby": null,
@@ -972,6 +987,8 @@
         "cardSetName": null,
         "matchId": null,
         "message": null,
+        "email": null,
+        "emailConfirmation": null,
         "username": null,
         "password": null
     },
@@ -1026,6 +1043,43 @@
         "minutes": null,
         "seconds": null
     },
+    "title": {
+        "rookie": null,
+        "beginner": null,
+        "novice": null,
+        "apprentice": null,
+        "competitor": null,
+        "challenger": null,
+        "strategist": null,
+        "tactician": null,
+        "skilledPlayer": null,
+        "risingStar": null,
+        "contender": null,
+        "crazyLarry": null,
+        "acePlayer": null,
+        "mastermind": null,
+        "eliteCompetitor": null,
+        "grandStrategist": null,
+        "prodigy": null,
+        "veteran": null,
+        "allStar": null,
+        "legendaryPlayer": null,
+        "supremeTactician": null,
+        "whizkid": null,
+        "maestro": null,
+        "tacticalGenius": null,
+        "grandmaster": null,
+        "champion": null,
+        "virtuoso": null,
+        "superstar": null,
+        "luminary": null,
+        "grandDynamo": null,
+        "strategicMastermind": null,
+        "tacticalVirtuoso": null,
+        "supremeChampion": null,
+        "legendaryStrategist": null,
+        "masterOfGames": null
+    },
     "count": {
         "kills": null,
         "deaths": null,
@@ -1073,6 +1127,8 @@
         "bot": null,
         "bots": null,
         "vibration": null,
+        "locked": null,
+        "available": null,
         "unavailable": null,
         "changeLog": null,
         "status": null,
@@ -1080,6 +1136,8 @@
         "language": null,
         "toggle": null,
         "login": null,
+        "logout": null,
+        "unlinkMyAccount": null,
         "maintenance": null,
         "admin": null,
         "nsfw": null,
@@ -1102,6 +1160,7 @@
         "assignedTypeSelfLocal": null,
         "broadcast": null,
         "confirm": null,
+        "notMeOption": null,
         "close": null,
         "edit": null,
         "delete": null,
@@ -1119,6 +1178,7 @@
         "refreshWindow": null,
         "makeHost": null,
         "kickUser": null,
+        "changeEmail": null,
         "returnToMenu": null,
         "returnToLobby": null,
         "playAsGuest": null,
@@ -1138,6 +1198,9 @@
         "fouls": null,
         "and": null,
         "vs": null,
+        "orBlank": null,
+        "sendVerification": null,
+        "noThanks": null,
         "selectAll": null,
         "deselectAll": null,
         "resetData": null,
@@ -1297,12 +1360,71 @@
         "forfeit": null,
         "unsavedChanges": null,
         "resetData": null,
+        "notMeWarning": null,
         "matchesDisabled": null,
         "fileUpload": null,
         "fileUploadMore": null,
         "gameJoin": null,
         "gameHelp": null,
         "areYouSure": null,
+        "authentication": {
+            "login": {
+                "title": null,
+                "description": null
+            },
+            "setup": {
+                "title": null,
+                "description": null,
+                "disclaimer": null
+            },
+            "unlink": {
+                "title": null,
+                "description": null
+            },
+            "unlinkSuccess": {
+                "title": null,
+                "description": null
+            },
+            "transferStart": {
+                "title": null,
+                "description": null
+            },
+            "transferConfirm": {
+                "title": null,
+                "description": null
+            },
+            "transferSuccess": {
+                "title": null,
+                "description": null
+            },
+            "logout": {
+                "title": null,
+                "description": null
+            },
+            "logoutGlobally": {
+                "title": null,
+                "description": null
+            },
+            "logoutSuccess": {
+                "title": null,
+                "description": null
+            },
+            "relogin": {
+                "title": null,
+                "description": null
+            },
+            "loginCode": {
+                "title": null
+            },
+            "ready": {
+                "title": null,
+                "description": null
+            },
+            "loginNoAccount": null,
+            "logoutGloballyCompleted": null,
+            "verificationEmail": null,
+            "noEmail": null
+        },
         "poolType": {
             "SOLID": null,
             "STRIPE": null
