@@ -1,18 +1,37 @@
 {
     "name": true,
     "error": {
+        "redeemCode": {
+            "invalid": true,
+            "alreadyUsed": true
+        },
+        "authentication": {
+            "expired": true,
+            "alreadyLinkedUser": true,
+            "alreadyLinkedEmail": true,
+            "alreadyUsedEmail": true,
+            "invalidUserEmail": true,
+            "invalidDevice": true,
+            "invalidUser": true,
+            "invalidCode": true,
+            "invalidSessionName": true,
+            "alreadyUsedSessionName": true
+        },
         "rateLimit": {
+            "malicious": true,
             "secure": true,
             "generic": true
         },
         "generic": {
+            "differentSessionConnected": true,
+            "sameSessionConnected": true,
             "blockedFrame": true,
             "unableToConnectToServer": true,
             "desync": true,
-            "alreadyConnected": true,
             "title": true,
             "invalid": true,
             "texture": true,
+            "invalidEmail": true,
             "invalidAction": true,
             "maintenance": true,
             "missingArguments": true,
@@ -108,12 +127,14 @@
             "missingData": true,
             "invalidNickname": true,
             "invalidPicture": true,
+            "lockedPicture": true,
             "nicknameMaxLength": true,
             "nicknameMinLength": true,
             "nicknameAllowedCharacters": true,
             "inGame": true
         },
         "requirement": {
+            "authentication": true,
             "credentials": true,
             "validAccount": true,
             "inLobby": true,
@@ -1016,12 +1037,72 @@
         "rules": true,
         "fouls": true
     },
+    "month": {
+        "short": {
+            "0": true,
+            "1": true,
+            "2": true,
+            "3": true,
+            "4": true,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": true,
+            "9": true,
+            "10": true,
+            "11": true
+        }
+    },
     "time": {
+        "days": true,
         "hours": true,
         "minutes": true,
         "seconds": true
     },
+    "perk": {
+        "enhancedPack": true,
+        "developer": true
+    },
+    "title": {
+        "rookie": true,
+        "beginner": true,
+        "novice": true,
+        "apprentice": true,
+        "competitor": true,
+        "challenger": true,
+        "strategist": true,
+        "tactician": true,
+        "skilledPlayer": true,
+        "risingStar": true,
+        "contender": true,
+        "crazyLarry": true,
+        "acePlayer": true,
+        "mastermind": true,
+        "eliteCompetitor": true,
+        "grandStrategist": true,
+        "prodigy": true,
+        "veteran": true,
+        "allStar": true,
+        "legendaryPlayer": true,
+        "supremeTactician": true,
+        "whizkid": true,
+        "maestro": true,
+        "tacticalGenius": true,
+        "grandmaster": true,
+        "champion": true,
+        "virtuoso": true,
+        "superstar": true,
+        "luminary": true,
+        "grandDynamo": true,
+        "strategicMastermind": true,
+        "tacticalVirtuoso": true,
+        "supremeChampion": true,
+        "legendaryStrategist": true,
+        "masterOfGames": true
+    },
     "count": {
+        "levelShort": true,
+        "experienceShort": true,
         "kills": true,
         "deaths": true,
         "lives": true,
@@ -1044,12 +1125,24 @@
         "increment": true
     },
     "misc": {
+        "privacy": true,
+        "termsOfUse": true,
+        "summary": true,
+        "versusPlayers": true,
+        "versusBots": true,
+        "expires": true,
+        "never": true,
+        "perks": true,
         "beta": true,
         "about": true,
         "public": true,
         "private": true,
         "add": true,
         "remove": true,
+        "feature": true,
+        "visibility": true,
+        "tracking": true,
+        "change": true,
         "yes": true,
         "no": true,
         "disabled": true,
@@ -1060,7 +1153,9 @@
         "fixed": true,
         "changed": true,
         "guest": true,
+        "submit": true,
         "settings": true,
+        "options": true,
         "localPlay": true,
         "preset": true,
         "you": true,
@@ -1068,6 +1163,8 @@
         "bot": true,
         "bots": true,
         "vibration": true,
+        "locked": true,
+        "available": true,
         "unavailable": true,
         "changeLog": true,
         "status": true,
@@ -1075,6 +1172,13 @@
         "language": true,
         "toggle": true,
         "login": true,
+        "logout": true,
+        "email": true,
+        "setupEmail": true,
+        "emailConfirmation": true,
+        "logoutGlobally": true,
+        "unlinkMyAccount": true,
+        "deleteMyAccount": true,
         "maintenance": true,
         "admin": true,
         "nsfw": true,
@@ -1097,6 +1201,7 @@
         "assignedTypeSelfLocal": true,
         "broadcast": true,
         "confirm": true,
+        "notMeOption": true,
         "close": true,
         "edit": true,
         "delete": true,
@@ -1114,28 +1219,49 @@
         "refreshWindow": true,
         "makeHost": true,
         "kickUser": true,
+        "changeEmail": true,
         "returnToMenu": true,
         "returnToLobby": true,
         "playAsGuest": true,
-        "averageLength": true,
         "largestTake": true,
         "takes": true,
         "pieces": true,
         "words": true,
+        "longestWord": true,
+        "length": true,
         "score": true,
         "rank": true,
         "kills": true,
+        "games": true,
+        "winRatio": true,
+        "killDeathRatio": true,
         "points": true,
         "wins": true,
         "pocketed": true,
+        "largestPocket": true,
         "shots": true,
         "deaths": true,
         "fouls": true,
         "and": true,
         "vs": true,
+        "rename": true,
+        "created": true,
+        "lastSeen": true,
+        "thisDevice": true,
+        "otherDevices": true,
+        "myAccount": true,
+        "myDevices": true,
+        "myData": true,
+        "redeemCode": true,
+        "leaderboard": true,
+        "averageBlank": true,
+        "showBlank": true,
+        "hideBlank": true,
+        "orBlank": true,
+        "sendVerification": true,
+        "noThanks": true,
         "selectAll": true,
         "deselectAll": true,
-        "resetData": true,
         "customize": true,
         "inviteOthers": true,
         "activeFilters": true,
@@ -1266,6 +1392,8 @@
         }
     },
     "info": {
+        "accountLinkSuggestion": true,
+        "accountLinked": true,
         "incompleteTranslationNotice": true,
         "betaNotice": true,
         "clickForDetails": true,
@@ -1291,13 +1419,108 @@
         "gameMenu": true,
         "forfeit": true,
         "unsavedChanges": true,
-        "resetData": true,
+        "accountDeletion": true,
+        "notMeWarning": true,
         "matchesDisabled": true,
         "fileUpload": true,
         "fileUploadMore": true,
         "gameJoin": true,
         "gameHelp": true,
         "areYouSure": true,
+        "settings": {
+            "redeemCode": {
+                "title": true,
+                "description": true,
+                "unlinked": true,
+                "success": true,
+                "expiration": true
+            },
+            "experience": {
+                "title": true,
+                "description": true
+            },
+            "statistics": {
+                "title": true,
+                "description": true
+            },
+            "analytics": {
+                "title": true,
+                "description": true,
+                "blocked": true,
+                "dnt": true
+            },
+            "serverData": {
+                "title": true,
+                "description": true
+            },
+            "localStorage": {
+                "title": true,
+                "description": true
+            },
+            "myDevices": {
+                "description": true,
+                "noOtherDevices": true,
+                "unlinked": true
+            }
+        },
+        "authentication": {
+            "login": {
+                "title": true,
+                "description": true
+            },
+            "setup": {
+                "title": true,
+                "description": true,
+                "disclaimer": true
+            },
+            "unlink": {
+                "title": true,
+                "description": true
+            },
+            "unlinkSuccess": {
+                "title": true,
+                "description": true
+            },
+            "transferStart": {
+                "title": true,
+                "description": true
+            },
+            "transferConfirm": {
+                "title": true,
+                "description": true
+            },
+            "transferSuccess": {
+                "title": true,
+                "description": true
+            },
+            "logout": {
+                "title": true,
+                "description": true
+            },
+            "logoutGlobally": {
+                "title": true,
+                "description": true
+            },
+            "logoutSuccess": {
+                "title": true,
+                "description": true
+            },
+            "relogin": {
+                "title": true,
+                "description": true
+            },
+            "loginCode": {
+                "title": true
+            },
+            "ready": {
+                "title": true,
+                "description": true
+            },
+            "loginNoAccount": true,
+            "logoutGloballyCompleted": true,
+            "verificationEmail": true,
+            "noEmail": true
+        },
         "poolType": {
             "SOLID": true,
             "STRIPE": true

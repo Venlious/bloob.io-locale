@@ -1,23 +1,42 @@
 {
     "_meta": {
         "language": "informal Dutch",
-        "total": 851,
+        "total": 1018,
         "missing": 0
     },
     "name": "Bloob.io",
     "error": {
+        "redeemCode": {
+            "invalid": "De opgegeven code bestaat niet.",
+            "alreadyUsed": "De opgegeven code is al gebruikt."
+        },
+        "authentication": {
+            "expired": "Je verificatieverzoek is mogelijk verlopen. Probeer het opnieuw.",
+            "alreadyLinkedUser": "Je account is al gekoppeld aan een e-mailadres.",
+            "alreadyLinkedEmail": "Dit e-mailadres is al gekoppeld aan een account.",
+            "alreadyUsedEmail": "Je account is al gekoppeld aan dit e-mailadres.",
+            "invalidUserEmail": "Dit e-mailadres is niet gekoppeld aan deze gebruiker.",
+            "invalidDevice": "Je moet verifiëren op hetzelfde apparaat waarop je de code hebt aangevraagd.",
+            "invalidUser": "Je gebruikersaccount heeft geen verificatie nodig.",
+            "invalidCode": "Deze verificatiecode is ongeldig.",
+            "invalidSessionName": "Een sessienaam moet tussen 2-24 tekens lang zijn en mag alleen alfanumerieke tekens en spaties bevatten.",
+            "alreadyUsedSessionName": "Er bestaat al een sessie met deze naam."
+        },
         "rateLimit": {
+            "malicious": "Er is kwaadaardige activiteit gedetecteerd. Wacht %{seconds} seconde(n).",
             "secure": "Je hebt de snelheidslimiet bereikt op dit beveiligde kanaal. Wacht %{seconds} seconde(n).",
             "generic": "Rustig aan! Wacht %{seconds} seconde(n)."
         },
         "generic": {
+            "differentSessionConnected": "Je bent ingelogd op %{session} en je verbinding is hier verbroken.",
+            "sameSessionConnected": "Je verbinding is hier verbroken omdat je deze site in een ander browsertab geopend hebt.",
             "blockedFrame": "Dit spel is niet toegestaan op deze website. Je kunt dit spel gratis spelen op de onderstaande website.",
             "unableToConnectToServer": "Kan geen verbinding maken met de spelserver. Je kunt proberen deze pagina later te verversen. Als het probleem aanhoudt neem dan contact op.",
             "desync": "Sorry, het lijkt erop dat je gedesynchroniseerd bent. Probeer het opnieuw.",
-            "alreadyConnected": "Je hebt deze site in een ander tabblad geopend en daarom ben je hier afgemeld.",
             "title": "Er is een fout opgetreden.",
             "invalid": "Gegeven data is ongeldig.",
             "texture": "Kan texture met ID \"%{id}\" niet laden.",
+            "invalidEmail": "Er is een ongeldig e-mailadres opgegeven.",
             "invalidAction": "Er is een ongeldig actietype \"%{type}\" opgegeven.",
             "maintenance": "Je kunt deze actie niet uitvoeren terwijl er onderhoud wordt gedaan.",
             "missingArguments": "Ontbrekende argumenten voor deze actie.",
@@ -113,12 +132,14 @@
             "missingData": "Ontbrekende nickname en/of karakter argumenten.",
             "invalidNickname": "Nickname is onjuist geformatteerd.",
             "invalidPicture": "Karakter is onjuist geformatteerd.",
+            "lockedPicture": "Karakter bevat vergrendelde items die je niet mag gebruiken.",
             "nicknameMaxLength": "Nickname is te lang (%{current}/%{max})",
             "nicknameMinLength": "Nickname is te kort (%{current}/%{min})",
             "nicknameAllowedCharacters": "Nickname mag alleen alfanumerieke en bepaalde speciale tekens bevatten ?!_-+",
             "inGame": "Je kunt je profiel niet aanpassen terwijl het spel al is begonnen."
         },
         "requirement": {
+            "authentication": "Je kunt deze actie niet uitvoeren zonder dat je bent geauthenticeerd.",
             "credentials": "Je hebt ongeldige inloggegevens opgegeven.",
             "validAccount": "Je account is nog niet gevalideerd. Gelieve je profielwijzigingen op te slaan.",
             "inLobby": "Je kunt deze actie niet uitvoeren omdat het spel al is begonnen.",
@@ -1021,12 +1042,72 @@
         "rules": "Regels",
         "fouls": "Antwoord op fout"
     },
+    "month": {
+        "short": {
+            "0": "jan",
+            "1": "feb",
+            "2": "mrt",
+            "3": "apr",
+            "4": "mei",
+            "5": "jun",
+            "6": "jul",
+            "7": "aug",
+            "8": "sep",
+            "9": "okt",
+            "10": "nov",
+            "11": "dec"
+        }
+    },
     "time": {
+        "days": "0 dagen | 1 dag | {count} dagen",
         "hours": "0 uren | 1 uur | {count} uren",
         "minutes": "0 minuten | 1 minuut | {count} minuten",
         "seconds": "0 seconden | 1 seconde | {count} seconden"
     },
+    "perk": {
+        "enhancedPack": "Uitgebreid Pack",
+        "developer": "Ontwikkelaar"
+    },
+    "title": {
+        "rookie": "Rookie",
+        "beginner": "Beginner",
+        "novice": "Novice",
+        "apprentice": "Leerling",
+        "competitor": "Concurrent",
+        "challenger": "Uitdager",
+        "strategist": "Strateeg",
+        "tactician": "Tacticus",
+        "skilledPlayer": "Vaardige Speler",
+        "risingStar": "Opkomende Ster",
+        "contender": "Uitdager",
+        "crazyLarry": "Gekke Larry",
+        "acePlayer": "Topper",
+        "mastermind": "Meesterbrein",
+        "eliteCompetitor": "Elite Concurrent",
+        "grandStrategist": "Groot Strategisch Denker",
+        "prodigy": "Wonderkind",
+        "veteran": "Oudgediende",
+        "allStar": "All-Star",
+        "legendaryPlayer": "Legendarische Speler",
+        "supremeTactician": "Supremestrategisch Tacticus",
+        "whizkid": "Knappe Koppie",
+        "maestro": "Meester",
+        "tacticalGenius": "Tactisch Genie",
+        "grandmaster": "Grootmeester",
+        "champion": "Kampioen",
+        "virtuoso": "Virtuoos",
+        "superstar": "Superster",
+        "luminary": "Lichtend Voorbeeld",
+        "grandDynamo": "Groot Dynamisch Meester",
+        "strategicMastermind": "Strategisch Meesterbrein",
+        "tacticalVirtuoso": "Tactisch Virtuoos",
+        "supremeChampion": "Supremum Kampioen",
+        "legendaryStrategist": "Legendarische Strateeg",
+        "masterOfGames": "Meester van Spellen"
+    },
     "count": {
+        "levelShort": "LVL {count}",
+        "experienceShort": "{count} XP",
         "kills": "0 kills | 1 kill | {count} kills",
         "deaths": "0 overlijden | 1 overlijden | {count} overlijden",
         "lives": "0 levens | 1 leven | {count} levens",
@@ -1049,12 +1130,24 @@
         "increment": "Stappen van 0 | Stap van 1 | Stappen van {count}"
     },
     "misc": {
+        "privacy": "Privacy",
+        "termsOfUse": "Gebruiksvoorwaarden",
+        "summary": "Samenvatting",
+        "versusPlayers": "Tegen Spelers",
+        "versusBots": "Tegen Bots",
+        "expires": "Verloopt",
+        "never": "Nooit",
+        "perks": "Perks",
         "beta": "Beta",
         "about": "Over",
         "public": "Openbaar",
         "private": "Privé",
         "add": "Voeg toe",
         "remove": "Verwijder",
+        "feature": "Functie",
+        "visibility": "Zichtbaarheid",
+        "tracking": "Volgen",
+        "change": "Veranderen",
         "yes": "Ja",
         "no": "Nee",
         "disabled": "Uitgeschakeld",
@@ -1065,7 +1158,9 @@
         "fixed": "Vast",
         "changed": "Gewijzigd",
         "guest": "Gast",
+        "submit": "Verzenden",
         "settings": "Instellingen",
+        "options": "Opties",
         "localPlay": "Lokaal Spelen",
         "preset": "Preset",
         "you": "Jij",
@@ -1073,6 +1168,8 @@
         "bot": "Bot",
         "bots": "Bots",
         "vibration": "Trilfunctie",
+        "locked": "Vergrendeld",
+        "available": "Beschikbaar",
         "unavailable": "Niet beschikbaar",
         "changeLog": "Update Logboek",
         "status": "Status",
@@ -1080,6 +1177,13 @@
         "language": "Taal",
         "toggle": "Toggle",
         "login": "Login",
+        "logout": "Uitloggen",
+        "email": "E-mail",
+        "setupEmail": "E-mail instellen",
+        "emailConfirmation": "E-mail herhalen",
+        "logoutGlobally": "Overal uitloggen",
+        "unlinkMyAccount": "Mijn account ontkoppelen",
+        "deleteMyAccount": "Mijn account verwijderen",
         "maintenance": "Onderhoud",
         "admin": "Admin",
         "nsfw": "NSFW",
@@ -1102,6 +1206,7 @@
         "assignedTypeSelfLocal": "Speler (%{index}) is %{type}",
         "broadcast": "Omroep",
         "confirm": "Bevestig",
+        "notMeOption": "Dit was ik niet",
         "close": "Sluit",
         "edit": "Wijzig",
         "delete": "Verwijder",
@@ -1119,28 +1224,49 @@
         "refreshWindow": "Ververs Scherm",
         "makeHost": "Leiderschap Overdragen",
         "kickUser": "Verwijder Gebruiker",
+        "changeEmail": "E-mail wijzigen",
         "returnToMenu": "Terug naar Menu",
         "returnToLobby": "Terug naar Lobby",
         "playAsGuest": "Speel als Gast",
-        "averageLength": "Gem. Lengte",
         "largestTake": "Grootste Overname",
         "takes": "Overnames",
         "pieces": "Schijven",
         "words": "Woorden",
+        "longestWord": "Langste woord",
+        "length": "Lengte",
         "score": "Score",
         "rank": "Plaats",
         "kills": "Kills",
+        "games": "Spellen",
+        "winRatio": "Winratio",
+        "killDeathRatio": "K/D-ratio",
         "points": "Punten",
         "wins": "Overwinningen",
         "pocketed": "Gepot",
+        "largestPocket": "Grootste pocket",
         "shots": "Schoten",
         "deaths": "Sterfgevallen",
         "fouls": "Fouten",
         "and": "en",
         "vs": "vs",
+        "rename": "Hernoemen",
+        "created": "Gemaakt",
+        "lastSeen": "Laatst Gezien",
+        "thisDevice": "Dit Apparaat",
+        "otherDevices": "Andere Apparaten",
+        "myAccount": "Mijn Account",
+        "myDevices": "Mijn Apparaten",
+        "myData": "Mijn Gegevens",
+        "redeemCode": "Inwisselcode",
+        "leaderboard": "Leaderbord",
+        "averageBlank": "Gem. %{value}",
+        "showBlank": "Toon %{value}",
+        "hideBlank": "Verberg %{value}",
+        "orBlank": "Of %{value}",
+        "sendVerification": "Verificatie verzenden",
+        "noThanks": "Nee bedankt",
         "selectAll": "Selecteer alles",
         "deselectAll": "Deselecteer alles",
-        "resetData": "Reset Gegevens",
         "customize": "Wijzig",
         "inviteOthers": "Anderen Uitnodigen",
         "activeFilters": "Actieve Filters",
@@ -1271,6 +1397,8 @@
         }
     },
     "info": {
+        "accountLinkSuggestion": "Je bent nu LVL %{level}! Overweeg om je account te koppelen aan een e-mailadres om je vooruitgang te beschermen.",
+        "accountLinked": "Dit account is gekoppeld aan het volgende e-mailadres: %{email}.",
         "incompleteTranslationNotice": "De taal die je hebt geselecteerd is ongeveer {percentage}% compleet. Elke ontbrekende vertaling zal in het Engels verschijnen.",
         "betaNotice": "Dit spel is nog in ontwikkeling. Deel feedback en bugs op onze %{social}",
         "clickForDetails": "Klik voor details",
@@ -1296,13 +1424,108 @@
         "gameMenu": "Wil je iets anders spelen?",
         "forfeit": "Door verlies te verklaren zal je het spel meteen verliezen.",
         "unsavedChanges": "Je hebt onopgeslagen wijzigingen die gewist zullen worden als je doorgaat.",
-        "resetData": "Het resetten van jouw gegevens is onomkeerbaar en zal jouw profiel, instellingen en statistieken wissen.",
+        "accountDeletion": "Het verwijderen van je account is onomkeerbaar en zal je profiel, vooruitgang en statistieken wissen.",
+        "notMeWarning": "Door verder te gaan word je uitgelogd en word je doorgestuurd naar een pagina waar je op alle apparaten uit kunt loggen. Daarna kun je weer normaal inloggen.",
         "matchesDisabled": "Alle spelfuncties zijn tijdelijk uitgeschakeld",
         "fileUpload": "Klik om te browsen of sleep jouw bestand(en) hierheen",
         "fileUploadMore": "Voeg meer bestanden toe door te slepen of hier te klikken",
         "gameJoin": "Join %{title}",
         "gameHelp": "%{title} Uitleg",
         "areYouSure": "Weet je het zeker?",
+        "settings": {
+            "redeemCode": {
+                "title": "Code inwisselen",
+                "description": "Voer hieronder een unieke code in om speciale items te ontgrendelen voor nog meer aanpassingen. Elke code kan maar één keer gebruikt worden.",
+                "unlinked": "Sorry, je kunt geen code inwisselen totdat je je account hebt gekoppeld aan een e-mailadres.",
+                "success": "Je hebt de %{perk} voordeel succesvol geclaimd!",
+                "expiration": "De code is geldig voor %{activationDuration} en je voordeel zal verlopen op %{expirationDate}."
+            },
+            "experience": {
+                "title": "Ervaring",
+                "description": "Ervaring (XP) wordt beloond aan het einde van een wedstrijd. Als je bepaalde XP-drempels bereikt, stijg je van niveau en help je nieuwe titels te ontgrendelen."
+            },
+            "statistics": {
+                "title": "Statistieken",
+                "description": "Statistieken worden per spel en wedstrijd bijgehouden. Ze kunnen jou of anderen inzicht geven in hoe goed je presteert."
+            },
+            "analytics": {
+                "title": "Analytics",
+                "description": "Bloob.io volgt anoniem analytics bij met een privacy-vriendelijke, zelf gehoste Matomo analytics server. Je gegevens worden nooit met anderen gedeeld. Als je dat wilt, kun je je uitschrijven.",
+                "blocked": "Analytics zijn niet actief. Jouw browser of extensie heeft het misschien geblokkeerd.",
+                "dnt": "Jouw browser heeft de \"Do Not Track\" (DNT) instelling ingeschakeld. We respecteren je verzoek en volgen je niet."
+            },
+            "serverData": {
+                "title": "Servergegevens",
+                "description": "Je kunt al je opgeslagen gegevens op Bloob.io hieronder zien. Sensitieve informatie zoals e-mail en geheime sleutels kunnen voor je veiligheid verborgen zijn."
+            },
+            "localStorage": {
+                "title": "Lokale opslag",
+                "description": "Browsergegevens (bijv. taal, volumeregeling) worden opgeslagen in de 'localStorage' van je browser, niet op onze server."
+            },
+            "myDevices": {
+                "description": "Bekijk en beheer op welke apparaten je bent ingelogd. Je kunt je huidige apparaat ook hernoemen voor je gemak.",
+                "noOtherDevices": "Er zijn geen andere apparaten ingelogd. Wist je dat je tijdens een spel kunt switchen tussen apparaten?",
+                "unlinked": "Je hebt je account nog niet gekoppeld aan een e-mailadres en je kunt alleen op dit apparaat bij je account komen."
+            }
+        },
+        "authentication": {
+            "login": {
+                "title": "Inloggen op je account",
+                "description": "Let op: als je inlogt op je account, worden alle voortgangen voor het niet-gekoppelde account dat je momenteel gebruikt (%{name}) gewist."
+            },
+            "setup": {
+                "title": "Hallo, %{name}!",
+                "description": "Verbind je account met je e-mail om je voortgang veilig te houden en overal op al je apparaten te synchroniseren. Geen wachtwoord nodig!",
+                "disclaimer": "We gebruiken alleen je e-mail om je account te verifiëren en je in te loggen. Geen spam, geen delen. Ontkoppel je e-mail op elk moment."
+            },
+            "unlink": {
+                "title": "Account ontkoppelen",
+                "description": "Je kunt je %{name}-account ontkoppelen van je e-mailadres. Je voortgang wordt niet gesynchroniseerd en je kunt alleen toegang krijgen tot je account op dit apparaat."
+            },
+            "unlinkSuccess": {
+                "title": "Jouw account is niet meer gekoppeld aan een e-mailadres.",
+                "description": "Je kunt je account alleen nog maar op dit apparaat benaderen vanaf nu."
+            },
+            "transferStart": {
+                "title": "Update je e-mailadres",
+                "description": "Om het e-mailadres dat gekoppeld is aan %{name} te wijzigen, controleer je alsjeblieft het huidige e-mailadres hieronder. Nadat je dit hebt geverifieerd, kun je het nieuwe e-mailadres invoeren."
+            },
+            "transferConfirm": {
+                "title": "Nieuw e-mailadres",
+                "description": "Geweldig nieuws %{name}! Je huidige e-mailadres is succesvol geverifieerd. Om het proces te voltooien, geef je hieronder je nieuwe e-mailadres aan."
+            },
+            "transferSuccess": {
+                "title": "E-mail gewijzigd",
+                "description": "Het e-mailadres dat aan je account gekoppeld is, is gewijzigd. Voor je veiligheid ben je uitgelogd op alle andere apparaten en moet je opnieuw inloggen met je nieuwe e-mailadres."
+            },
+            "logout": {
+                "title": "Uitloggen",
+                "description": "Omdat je een account hebt, wordt je voortgang opgeslagen en kan je terug inloggen met je e-mail."
+            },
+            "logoutGlobally": {
+                "title": "Overal Uitloggen",
+                "description": "Dit zal je account uitloggen op alle apparaten, inclusief deze."
+            },
+            "logoutSuccess": {
+                "title": "Uitgelogd",
+                "description": "Je account is op dit apparaat uitgelogd. Je kunt je weer aanmelden met je e-mail."
+            },
+            "relogin": {
+                "title": "Welkom terug, %{name}!",
+                "description": "Je bent uitgelogd. Gebruik het e-mailadres dat aan dit account is gekoppeld om opnieuw toegang te krijgen."
+            },
+            "loginCode": {
+                "title": "Voer verificatiecode in"
+            },
+            "ready": {
+                "title": "Je bent klaar, %{name}!",
+                "description": "Je vooruitgang is nu opgeslagen en gesynchroniseerd!"
+            },
+            "loginNoAccount": "Log hieronder in met je e-mail om je account op dit apparaat te synchroniseren.",
+            "logoutGloballyCompleted": "Je account is uitgelogd van alle apparaten.",
+            "verificationEmail": "Er is een e-mail met een verificatiecode verzonden.",
+            "noEmail": "Geen e-mail? Controleer je spam-map en bevestig dat deze e-mail is gekoppeld aan je account."
+        },
         "poolType": {
             "SOLID": "Effen",
             "STRIPE": "Gestreept"

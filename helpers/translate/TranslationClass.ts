@@ -229,6 +229,9 @@ export default class TranslationClass {
 			`vue-i18n compliant pluralization entries (KEEP THEM SHORT)`
 		)
 		this.generateTranslationTask([`misc`], `buttons and columns`)
+		this.generateTranslationTask([`month`, `short`], `only 3 letter month abbreviations`)
+		this.generateTranslationTask([`perk`], `unlockable game perks`)
+		this.generateTranslationTask([`title`], `unlockable game titles`)
 
 		/**
 		 * Card related
@@ -248,6 +251,27 @@ export default class TranslationClass {
 		this.generateTranslationTask([`info`, `poolType`], `8 Ball Pool ball types`)
 		this.generateTranslationTask([`info`, `poolFoul`], `8 Ball Pool ball foul messages`)
 		this.generateTranslationTask([`info`, `about`])
+		this.generateTranslationTask([`info`, `settings`, `redeemCode`])
+		this.generateTranslationTask([`info`, `settings`, `experience`])
+		this.generateTranslationTask([`info`, `settings`, `statistics`])
+		this.generateTranslationTask([`info`, `settings`, `analytics`])
+		this.generateTranslationTask([`info`, `settings`, `serverData`])
+		this.generateTranslationTask([`info`, `settings`, `localStorage`])
+		this.generateTranslationTask([`info`, `settings`, `myDevices`])
+		this.generateTranslationTask([`info`, `authentication`])
+		this.generateTranslationTask([`info`, `authentication`, `login`])
+		this.generateTranslationTask([`info`, `authentication`, `setup`])
+		this.generateTranslationTask([`info`, `authentication`, `unlink`])
+		this.generateTranslationTask([`info`, `authentication`, `unlinkSuccess`])
+		this.generateTranslationTask([`info`, `authentication`, `transferStart`])
+		this.generateTranslationTask([`info`, `authentication`, `transferConfirm`])
+		this.generateTranslationTask([`info`, `authentication`, `transferSuccess`])
+		this.generateTranslationTask([`info`, `authentication`, `logout`])
+		this.generateTranslationTask([`info`, `authentication`, `logoutGlobally`])
+		this.generateTranslationTask([`info`, `authentication`, `logoutSuccess`])
+		this.generateTranslationTask([`info`, `authentication`, `relogin`])
+		this.generateTranslationTask([`info`, `authentication`, `loginCode`])
+		this.generateTranslationTask([`info`, `authentication`, `ready`])
 
 		/**
 		 * Chat messsages
@@ -279,6 +303,8 @@ export default class TranslationClass {
 		this.generateTranslationTask([`error`, `match`])
 		this.generateTranslationTask([`error`, `profile`])
 		this.generateTranslationTask([`error`, `requirement`])
+		this.generateTranslationTask([`error`, `redeemCode`])
+		this.generateTranslationTask([`error`, `authentication`], `authentication related`)
 
 		/**
 		 * Game messages
@@ -400,10 +426,10 @@ export default class TranslationClass {
 
 		// If there were missing translations, make sure to queue this entry for translation
 		if (input.length > 0) {
-			// Make chunks of 10 lines max
+			// Make chunks of 5 lines max
 			while (input.length > 0) {
 				const list: string[] = []
-				const target = input.splice(0, 10)
+				const target = input.splice(0, 5)
 				const numbered = target.length > 1
 				let inputCount = 0
 
@@ -421,7 +447,7 @@ export default class TranslationClass {
 					type,
 					path,
 					input: list,
-					inputKeys: inputKeys.splice(0, 10),
+					inputKeys: inputKeys.splice(0, 5),
 					description
 				})
 			}
