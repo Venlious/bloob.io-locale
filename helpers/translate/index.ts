@@ -36,7 +36,7 @@ rl.question(
 			// Start translation job
 			new TranslationClass({ source, target, language })
 		} else {
-			console.log(`Aborting the script...`)
+			console.info(`Aborting the script...`)
 			process.exit(0)
 		}
 		rl.close()
