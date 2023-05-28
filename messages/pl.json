@@ -1,7 +1,7 @@
 {
     "_meta": {
         "language": "informal Polish",
-        "total": 1018,
+        "total": 1019,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1130,6 +1130,7 @@
         "increment": "Przyrosty o 0 | Przyrost o 1 | Przyrosty o {count}"
     },
     "misc": {
+        "congratulations": "Gratulacje!",
         "privacy": "Prywatność",
         "termsOfUse": "Warunki korzystania",
         "summary": "Podsumowanie",
@@ -1178,9 +1179,9 @@
         "toggle": "Przełącznik",
         "login": "Zaloguj się",
         "logout": "Wyloguj się",
-        "email": "Email",
-        "setupEmail": "Ustaw Email",
-        "emailConfirmation": "Powtórz Email",
+        "emailAddress": "Adres Email",
+        "emailAddressConfirmation": "Powtórz Adres Email",
+        "createAccount": "Utwórz Konto",
         "logoutGlobally": "Wyloguj wszystkie urządzenia",
         "unlinkMyAccount": "Odłącz mój konto",
         "deleteMyAccount": "Usuń mój konto",
@@ -1397,7 +1398,7 @@
         }
     },
     "info": {
-        "accountLinkSuggestion": "Jesteś teraz na poziomie LVL %{level}! Rozważ połączenie twojego konta z adresem e-mail, aby chronić twoje postępy.",
+        "accountLinkSuggestion": "Teraz jesteś %{level}! Rozważ stworzenie konta, aby chronić swój postęp.",
         "accountLinked": "To konto jest połączone z następującym adresem e-mail: %{email}.",
         "incompleteTranslationNotice": "Wybrany język jest w zaawansowaniu około {percentage}%. Brakujące tłumaczenia będą w języku angielskim.",
         "betaNotice": "Ta gra jest wciąż rozwijana. Prosimy o podzielenie się opiniami i błędami na naszym %{social}.",
@@ -1470,21 +1471,21 @@
         },
         "authentication": {
             "login": {
-                "title": "Logowanie do konta",
-                "description": "Proszę zauważyć, że logowanie do Twojego konta wyczyści wszystkie postępy dla niepowiązanego konta, którego obecnie używasz (%{name})."
+                "title": "Zaloguj się",
+                "description": "Proszę zauważyć, że logowanie do Twojego konta wyczyści wszystkie postępy dla użytkownika, którego obecnie używasz (%{name})."
             },
             "setup": {
                 "title": "Cześć, %{name}!",
-                "description": "Połącz swoje konto z adresem e-mail, aby zapisać postępy i synchronizować je na wszystkich urządzeniach. Bez potrzeby hasła!",
-                "disclaimer": "Używamy tylko Twojego adresu e-mail, aby zweryfikować Twoje konto i zalogować Cię. Bez spamu, bez udostępniania. Możesz wypiąć swój adres e-mail w dowolnym momencie."
+                "description": "Zarejestruj się tylko za pomocą adresu e-mail, aby zapisać swoje postępy i synchronizować je na wszystkich urządzeniach. Nie potrzebujesz hasła!",
+                "disclaimer": "Używamy tylko Twojego adresu e-mail, aby zweryfikować Twoje konto i zalogować się. Usuń swój adres e-mail w dowolnym momencie."
             },
             "unlink": {
-                "title": "Odłączenie konta",
-                "description": "Możesz odłączyć swoje konto %{name} od adresu e-mail. Twoje postępy nie będą synchronizowane, a dostęp do Twojego konta będzie możliwy tylko na tym urządzeniu."
+                "title": "Usuń adres e-mail.",
+                "description": "Zbliżasz się do usunięcia swojego adresu e-mail z twojego konta %{name}. Twoje postępy nie będą już synchronizowane, a dostęp do twojego użytkownika będzie możliwy tylko na tym urządzeniu."
             },
             "unlinkSuccess": {
-                "title": "Konto odłączone",
-                "description": "Twoje konto nie jest już powiązane z adresem e-mail. Od teraz możesz uzyskać dostęp do swojego konta tylko na tym urządzeniu."
+                "title": "Adres e-mail usunięty",
+                "description": "Twój adres e-mail został usunięty z twojego konta. Ten użytkownik może być teraz uzyskany tylko na tym urządzeniu."
             },
             "transferStart": {
                 "title": "Zaktualizuj swój adres e-mail",
@@ -1495,12 +1496,12 @@
                 "description": "Świetna wiadomość %{name}! Twój obecny adres e-mail został pomyślnie zweryfikowany. Aby zakończyć proces, proszę poniżej podać swój nowy adres e-mail."
             },
             "transferSuccess": {
-                "title": "Adres email związany z Twoim kontem został zmieniony.",
+                "title": "Adres e-mail zmieniony.",
                 "description": "Ze względów bezpieczeństwa, zostałeś wylogowany z wszystkich innych urządzeń i będziesz musiał zalogować się ponownie za pomocą nowego adresu email."
             },
             "logout": {
                 "title": "Wyloguj się",
-                "description": "Ponieważ masz konto, twoj postęp zostanie zapisany i można go odzyskać logując się ponownie za pomocą twojego adresu e-mail."
+                "description": "Jako masz konto, twój postęp zostanie zapisany i można go odzyskać po ponownym zalogowaniu się przy użyciu adresu e-mail."
             },
             "logoutGlobally": {
                 "title": "Wyloguj się wszędzie.",
@@ -1508,11 +1509,11 @@
             },
             "logoutSuccess": {
                 "title": "Wylogowano",
-                "description": "Twoje konto zostało wylogowane z tego urządzenia. Możesz zalogować się ponownie używając swojego adresu e-mail."
+                "description": "Twoje konto zostało wylogowane z tego urządzenia. Możesz zalogować się ponownie używając swojego adresu email."
             },
             "relogin": {
                 "title": "Witaj z powrotem, %{name}!",
-                "description": "Zostałeś wylogowany. Użyj adresu email powiązanego z tym kontem, aby uzyskać dostęp ponownie."
+                "description": "Zostałeś wylogowany. Użyj swojego adresu email, aby uzyskać dostęp ponownie."
             },
             "loginCode": {
                 "title": "Wprowadź kod weryfikacyjny"
@@ -1521,10 +1522,10 @@
                 "title": "Wszystko gotowe, %{name}!",
                 "description": "Twój postęp został teraz zapisany i zsynchronizowany!"
             },
-            "loginNoAccount": "Zaloguj się poniżej za pomocą swojego adresu e-mail, aby zsynchronizować swoje konto na tym urządzeniu.",
+            "loginNoAccount": "Zaloguj się poniżej używając swojego adresu email, aby uzyskać dostęp do swojego konta na tym urządzeniu.",
             "logoutGloballyCompleted": "Twoje konto zostało wylogowane ze wszystkich urządzeń.",
             "verificationEmail": "E-mail z kodem weryfikacyjnym został wysłany.",
-            "noEmail": "Brak e-maila? Sprawdź folder ze spamem i potwierdź, że ten adres e-mail jest powiązany z Twoim kontem."
+            "noEmail": "Brak emaila? Sprawdź folder ze spamem i potwierdź, że ten adres email jest powiązany z Twoim kontem."
         },
         "poolType": {
             "SOLID": "Kule pełne",
