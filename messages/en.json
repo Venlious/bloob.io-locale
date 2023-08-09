@@ -1,7 +1,7 @@
 {
     "_meta": {
         "language": "informal British English",
-        "total": 1019,
+        "total": 1057,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -80,6 +80,8 @@
             "stuckThreshold": "You were eliminated as you were stuck for %{moves} move(s) in a row.",
             "allStuck": "Nobody can make a move anymore. The match has concluded.",
             "invalid": "Game type \"%{type}\" does not exist.",
+            "noThrowsRemaining": "There are no more remaining throws.",
+            "incorrectValue": "The value that was given does not match up with the expected one.",
             "invalidMove": "Given move is invalid.",
             "invalidVote": "The vote you attempted to make is invalid.",
             "alreadyPlaced": "You have already placed something.",
@@ -897,6 +899,29 @@
                     ]
                 }
             }
+        },
+        "YAHTZEE": {
+            "name": "Yahtzee",
+            "heading": "Play Yahtzee Online With Friends",
+            "tooltip": "Play the popular Yahtzee game here against up to 4 bots or players.",
+            "description": "",
+            "title": "",
+            "options": {
+                "turnTime": {
+                    "title": "Turn Time",
+                    "help": "How long each player has to throw their dice and make a selection. This time is reset after every throw."
+                },
+                "throws": {
+                    "title": "Throws",
+                    "help": "How many throws the user gets before they must make a selection."
+                },
+                "speed": {
+                    "title": "Speed",
+                    "help": "How fast the dice roll animation is played."
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -967,6 +992,7 @@
             "pickCardSelection": "Making card selection",
             "handDump": "Dump round",
             "handPreview": "Hand preview",
+            "countingScores": "Counting scores...",
             "voting": "Voting",
             "voteResults": "Vote results",
             "flippingField": "Flipping field",
@@ -1130,6 +1156,11 @@
         "increment": "Increments of 0 | Increment of 1 | Increments of {count}"
     },
     "misc": {
+        "throw": "Throw",
+        "throwAgain": "Throw again",
+        "throwing": "Throwing",
+        "opponentIsThrowing": "Opponent is throwing",
+        "noThrowsRemaining": "No throws remaining",
         "congratulations": "Congratulations!",
         "privacy": "Privacy",
         "termsOfUse": "Terms of Use",
@@ -1236,6 +1267,7 @@
         "longestWord": "Longest Word",
         "length": "Length",
         "score": "Score",
+        "highestScore": "Highest Score",
         "rank": "Rank",
         "kills": "Kills",
         "games": "Games",
@@ -1527,6 +1559,27 @@
             "verificationEmail": "An email with a verification code has been sent.",
             "noEmail": "No email? Check your spam folder and confirm this email address is linked to your account."
         },
+        "yahtzee": {
+            "title": {
+                "ones": "Ones",
+                "twos": "Twos",
+                "threes": "Threes",
+                "fours": "Fours",
+                "fives": "Fives",
+                "sixes": "Sixes",
+                "threeOfAKind": "Three of a kind",
+                "fourOfAKind": "Four of a kind",
+                "fullHouse": "Full House",
+                "smallStraight": "Small straight",
+                "largeStraight": "Large straight",
+                "yahtzee": "YAHTZEE",
+                "chance": "Chance",
+                "sum": "Sum",
+                "bonus": "Bonus",
+                "totalScore": "Total Score"
+            },
+            "noPointsWarning": "This move won't score you any points. There are other choices which do give you points."
+        },
         "poolType": {
             "SOLID": "Solids",
             "STRIPE": "Stripes"
@@ -1548,7 +1601,8 @@
             "developedBy": "Developed by %{name}",
             "iconsSource": "Icons courtesy of %{name} (Licensed)",
             "soundsSource": "Sounds provided by %{name} (Licensed)",
-            "rottenApplesSource": "Rotten Apples based on %{name} (Creative Commons BY-NC-SA 2.0)",
+            "rottenApplesSource": "Rotten Apples based on %{name} (BY-NC-SA 2.0)",
+            "diceSource": "Dice model by %{name} (CC-BY-4.0)",
             "localization": "Localisation by volunteer contributors"
         }
     }
