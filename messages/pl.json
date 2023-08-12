@@ -1,8 +1,8 @@
 {
     "_meta": {
         "language": "informal Polish",
-        "total": 1057,
-        "missing": 38
+        "total": 1070,
+        "missing": 2
     },
     "name": "Bloob.io",
     "error": {
@@ -80,8 +80,8 @@
             "stuckThreshold": "Zostałeś wyeliminowany, ponieważ byłeś zablokowany przez %{moves} ruch(y) z rzędu.",
             "allStuck": "Nikt już nie może wykonać ruchu. Mecz został zakończony.",
             "invalid": "Typ gry \"%{type}\" nie istnieje.",
-            "noThrowsRemaining": null,
-            "incorrectValue": null,
+            "noThrowsRemaining": "Nie ma już więcej rzutów.",
+            "incorrectValue": "Podana wartość nie zgadza się z oczekiwaną.",
             "invalidMove": "Podany ruch jest nieprawidłowy.",
             "invalidVote": "Głos, który próbowałeś złożyć, jest nieprawidłowy.",
             "alreadyPlaced": "Już coś postawiłeś.",
@@ -901,23 +901,23 @@
             }
         },
         "YAHTZEE": {
-            "name": null,
-            "heading": null,
-            "tooltip": null,
+            "name": "Yahtzee",
+            "heading": "Graj w Yahtzee Online ze Znajomymi",
+            "tooltip": "Zagraj w popularną grę Yahtzee tutaj przeciwko maksymalnie 4 botom lub graczom.",
             "description": null,
             "title": null,
             "options": {
                 "turnTime": {
-                    "title": null,
-                    "help": null
+                    "title": "Czas na ruch",
+                    "help": "Jak długo każdy gracz ma na rzucenie kostką i dokonanie wyboru. Ten czas jest resetowany po każdym rzucie."
                 },
                 "throws": {
-                    "title": null,
-                    "help": null
+                    "title": "Rzuty",
+                    "help": "Ile rzutów użytkownik dostaje zanim musi dokonać wyboru."
                 },
                 "speed": {
-                    "title": null,
-                    "help": null
+                    "title": "Prędkość",
+                    "help": "Jak szybko jest odtwarzana animacja rzutu kośćmi."
                 }
             },
             "presets": {},
@@ -992,7 +992,7 @@
             "pickCardSelection": "Wybieranie karty",
             "handDump": "Runda wyrzucania",
             "handPreview": "Podgląd ręki",
-            "countingScores": null,
+            "countingScores": "Liczenie punktów...",
             "voting": "Głosowanie",
             "voteResults": "Wyniki głosowania",
             "flippingField": "Odwracanie pola",
@@ -1156,11 +1156,11 @@
         "increment": "Przyrosty o 0 | Przyrost o 1 | Przyrosty o {count}"
     },
     "misc": {
-        "throw": null,
-        "throwAgain": null,
-        "throwing": null,
-        "opponentIsThrowing": null,
-        "noThrowsRemaining": null,
+        "throw": "Rzuć",
+        "throwAgain": "Rzuć jeszcze raz",
+        "throwing": "Rzucanie",
+        "opponentIsThrowing": "Przeciwnik rzuca",
+        "noThrowsRemaining": "Nie ma więcej rzutów",
         "congratulations": "Gratulacje!",
         "privacy": "Prywatność",
         "termsOfUse": "Warunki korzystania",
@@ -1267,7 +1267,7 @@
         "longestWord": "Najdłuższe słowo",
         "length": "Długość",
         "score": "Wynik",
-        "highestScore": null,
+        "highestScore": "Najwyższy Wynik",
         "rank": "Ranga",
         "kills": "Zabójstwa",
         "games": "Gry",
@@ -1561,24 +1561,39 @@
         },
         "yahtzee": {
             "title": {
-                "ones": null,
-                "twos": null,
-                "threes": null,
-                "fours": null,
-                "fives": null,
-                "sixes": null,
-                "threeOfAKind": null,
-                "fourOfAKind": null,
-                "fullHouse": null,
-                "smallStraight": null,
-                "largeStraight": null,
-                "yahtzee": null,
-                "chance": null,
-                "sum": null,
-                "bonus": null,
-                "totalScore": null
+                "ones": "Jedynki",
+                "twos": "Dwójki",
+                "threes": "Trójki",
+                "fours": "Czwórki",
+                "fives": "Piątki",
+                "sixes": "Szóstki",
+                "threeOfAKind": "Trójka",
+                "fourOfAKind": "Karetka",
+                "fullHouse": "Full",
+                "smallStraight": "Mały strit",
+                "largeStraight": "Duży strit",
+                "yahtzee": "YAHTZEE",
+                "chance": "Szansa",
+                "sum": "Suma",
+                "bonus": "Bonus",
+                "totalScore": "Całkowity Wynik"
             },
-            "noPointsWarning": null
+            "description": {
+                "bonus": "Jeśli suma twoich punktów w górnej sekcji wynosi %{sum} lub więcej, dostajesz bonus %{points}.",
+                "number": "Zdobądź jak najwięcej kostek z numerem %{number}.",
+                "threeOfAKind": "Zdobądź trzy kostki z tym samym numerem. Na przykład trzy 4.",
+                "fourOfAKind": "Zdobądź cztery kostki z tym samym numerem. Na przykład cztery 2.",
+                "fullHouse": "Miej trzy kostki z jednym numerem i dwie kostki z innym numerem. Na przykład, możesz rzucić 3-3-3-5-5.",
+                "smallStraight": "Ułóż cztery kostki w rzędzie, na przykład 2-3-4-5.",
+                "largeStraight": "Ułóż pięć kostek w rzędzie, na przykład 2-3-4-5-6.",
+                "yahtzee": "Rzuć pięć kostek z tym samym numerem.",
+                "yahtzeeBonus": "Jeśli rzucisz kolejnego Yahtzee po tym, jak już jeden zdobyłeś, zdobędziesz dodatkowe %{points}. Ale pamiętaj, te punkty dostaniesz tylko wtedy, gdy wykonasz ruch, który da ci punkty.",
+                "chance": "Możesz użyć dowolnej kombinacji kostek."
+            },
+            "earnsMatch": "Zarabiasz sumę wszystkich pasujących do siebie kości.",
+            "earnsPoints": "Zarabiasz %{points}.",
+            "earnsSum": "Zarabiasz sumę wszystkich kości razem wziętych.",
+            "noPointsWarning": "Ten ruch nie da ci żadnych punktów. Są inne wybory, które ci punkty przyniosą."
         },
         "poolType": {
             "SOLID": "Kule pełne",
@@ -1602,7 +1617,7 @@
             "iconsSource": "Ikony dzięki uprzejmości %{name} (Licencjonowane)",
             "soundsSource": "Dźwięki dostarczone przez %{name} (Licencjonowane)",
             "rottenApplesSource": "Rotten Apples oparte na %{name} (Creative Commons BY-NC-SA 2.0)",
-            "diceSource": null,
+            "diceSource": "Model kostki stworzony przez %{name} (CC-BY-4.0)",
             "localization": "Lokalizacja przez wolontariuszy"
         }
     }

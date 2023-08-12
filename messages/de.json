@@ -1,8 +1,8 @@
 {
     "_meta": {
         "language": "informal German",
-        "total": 1057,
-        "missing": 38
+        "total": 1070,
+        "missing": 2
     },
     "name": "Bloob.io",
     "error": {
@@ -80,8 +80,8 @@
             "stuckThreshold": "Du bist ausgeschieden, weil du %{moves} Mal hintereinander nicht ziehen konntest.",
             "allStuck": "Niemand kann einen Zug mehr machen. Das Spiel ist vorbei.",
             "invalid": "Spieltyp \"%{type}\" existiert nicht.",
-            "noThrowsRemaining": null,
-            "incorrectValue": null,
+            "noThrowsRemaining": "Es gibt keine Würfe mehr übrig.",
+            "incorrectValue": "Der gegebene Wert stimmt nicht mit dem erwarteten überein.",
             "invalidMove": "Dieser Zug ist nicht möglich.",
             "invalidVote": "Die Stimme, die du abgeben wolltest, ist ungültig.",
             "alreadyPlaced": "Du hast schon etwas platziert.",
@@ -901,23 +901,23 @@
             }
         },
         "YAHTZEE": {
-            "name": null,
-            "heading": null,
-            "tooltip": null,
+            "name": "Kniffel",
+            "heading": "Online Yahtzee mit Freunden spielen",
+            "tooltip": "Spiele hier das beliebte Yahtzee-Spiel gegen bis zu 4 Bots oder Spieler.",
             "description": null,
             "title": null,
             "options": {
                 "turnTime": {
-                    "title": null,
-                    "help": null
+                    "title": "Zugzeit",
+                    "help": "Wie lange jeder Spieler Zeit hat, seine Würfel zu werfen und eine Auswahl zu treffen. Diese Zeit wird nach jedem Wurf zurückgesetzt."
                 },
                 "throws": {
-                    "title": null,
-                    "help": null
+                    "title": "Würfe",
+                    "help": "Wie viele Würfe der Benutzer bekommt, bevor er eine Auswahl treffen muss."
                 },
                 "speed": {
-                    "title": null,
-                    "help": null
+                    "title": "Geschwindigkeit",
+                    "help": "Wie schnell die Würfelrollen-Animation abgespielt wird."
                 }
             },
             "presets": {},
@@ -992,7 +992,7 @@
             "pickCardSelection": "Kartenauswahl treffen",
             "handDump": "Abwerfrunde",
             "handPreview": "Blattvorschau",
-            "countingScores": null,
+            "countingScores": "Punkte zählen...",
             "voting": "Abstimmung",
             "voteResults": "Abstimmungsergebnisse",
             "flippingField": "Umkehrung des Spielfelds",
@@ -1156,11 +1156,11 @@
         "increment": "%{count}er Inkremente"
     },
     "misc": {
-        "throw": null,
-        "throwAgain": null,
-        "throwing": null,
-        "opponentIsThrowing": null,
-        "noThrowsRemaining": null,
+        "throw": "Werfen",
+        "throwAgain": "Nochmal werfen",
+        "throwing": "Werfen",
+        "opponentIsThrowing": "Gegner wirft",
+        "noThrowsRemaining": "Keine Würfe mehr übrig",
         "congratulations": "Herzlichen Glückwunsch!",
         "privacy": "Datenschutz",
         "termsOfUse": "Nutzungsbedingungen",
@@ -1267,7 +1267,7 @@
         "longestWord": "Längstes Wort",
         "length": "Länge",
         "score": "Punktestand",
-        "highestScore": null,
+        "highestScore": "Höchste Punktzahl",
         "rank": "Rang",
         "kills": "Kills",
         "games": "Spiele",
@@ -1561,24 +1561,39 @@
         },
         "yahtzee": {
             "title": {
-                "ones": null,
-                "twos": null,
-                "threes": null,
-                "fours": null,
-                "fives": null,
-                "sixes": null,
-                "threeOfAKind": null,
-                "fourOfAKind": null,
-                "fullHouse": null,
-                "smallStraight": null,
-                "largeStraight": null,
-                "yahtzee": null,
-                "chance": null,
-                "sum": null,
-                "bonus": null,
-                "totalScore": null
+                "ones": "Einsen",
+                "twos": "Zweien",
+                "threes": "Dreien",
+                "fours": "Vieren",
+                "fives": "Fünfen",
+                "sixes": "Sechsen",
+                "threeOfAKind": "Drilling",
+                "fourOfAKind": "Vierling",
+                "fullHouse": "Full House",
+                "smallStraight": "Kleine Straße",
+                "largeStraight": "Große Straße",
+                "yahtzee": "YAHTZEE",
+                "chance": "Zufall",
+                "sum": "Summe",
+                "bonus": "Bonus",
+                "totalScore": "Gesamtpunktzahl"
             },
-            "noPointsWarning": null
+            "description": {
+                "bonus": "Wenn die Summe deiner Punkte im oberen Bereich %{sum} oder höher ist, bekommst du einen Bonus von %{points}.",
+                "number": "Versuche so viele Würfel mit der Nummer %{number} zu bekommen wie möglich.",
+                "threeOfAKind": "Versuche drei Würfel mit der gleichen Nummer zu bekommen. Wie zum Beispiel drei 4en.",
+                "fourOfAKind": "Versuche vier Würfel mit der gleichen Nummer zu bekommen. Wie zum Beispiel vier 2en.",
+                "fullHouse": "Du brauchst drei Würfel mit einer Nummer und zwei Würfel mit einer anderen Nummer. Zum Beispiel könntest du 3-3-3-5-5 würfeln.",
+                "smallStraight": "Krieg vier Würfel in einer Reihe, wie 2-3-4-5.",
+                "largeStraight": "Krieg fünf Würfel in einer Reihe, wie 2-3-4-5-6.",
+                "yahtzee": "Würfel fünf Würfel mit der gleichen Nummer.",
+                "yahtzeeBonus": "Wenn du nach einem bereits erzielten Yahtzee noch einen Yahtzee würfelst, bekommst du extra %{points}. Aber denk dran, diese Punkte bekommst du nur, wenn du einen Zug machst, der dir Punkte einbringt.",
+                "chance": "Jede Kombination von Würfeln kann verwendet werden."
+            },
+            "earnsMatch": "Verdient die Summe aller passenden Würfel.",
+            "earnsPoints": "Verdient %{points}.",
+            "earnsSum": "Verdient die Gesamtsumme aller Würfel zusammen.",
+            "noPointsWarning": "Mit diesem Zug bekommst du keine Punkte. Es gibt andere Optionen, die dir Punkte geben."
         },
         "poolType": {
             "SOLID": "Festekugeln",
@@ -1602,7 +1617,7 @@
             "iconsSource": "Icons mit freundlicher Genehmigung von %{name} (Lizensiert)",
             "soundsSource": "Töne zur Verfügung gestellt von %{name} (Lizensiert)",
             "rottenApplesSource": "Rotten Apples basierend auf %{name} (Creative Commons BY-NC-SA 2.0)",
-            "diceSource": null,
+            "diceSource": "Würfelmodell von %{name} (CC-BY-4.0)",
             "localization": "Lokalisierung durch Freiwillige"
         }
     }

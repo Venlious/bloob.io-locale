@@ -1,8 +1,8 @@
 {
     "_meta": {
         "language": "informal French",
-        "total": 1057,
-        "missing": 38
+        "total": 1070,
+        "missing": 2
     },
     "name": "Bloob.io",
     "error": {
@@ -80,8 +80,8 @@
             "stuckThreshold": "Tu as été éliminé parce que tu n'a pas pu faire de mouvement %{moves} fois de suite.",
             "allStuck": "Personne ne peut plus faire de mouvement. La partie est terminée.",
             "invalid": "Le type de jeu \"%{type}\" n'existe pas.",
-            "noThrowsRemaining": null,
-            "incorrectValue": null,
+            "noThrowsRemaining": "Il ne reste plus de lancers.",
+            "incorrectValue": "La valeur donnée ne correspond pas à celle attendue.",
             "invalidMove": "Le mouvement donné est invalide.",
             "invalidVote": "Votre vote est invalide.",
             "alreadyPlaced": "Tu as déjà placé quelque chose.",
@@ -901,23 +901,23 @@
             }
         },
         "YAHTZEE": {
-            "name": null,
-            "heading": null,
-            "tooltip": null,
+            "name": "Yahtzee",
+            "heading": "Joue au Yahtzee en ligne avec tes amis",
+            "tooltip": "Joue au populaire jeu de Yahtzee ici contre jusqu'à 4 bots ou joueurs.",
             "description": null,
             "title": null,
             "options": {
                 "turnTime": {
-                    "title": null,
-                    "help": null
+                    "title": "Temps de Tour",
+                    "help": "Combien de temps chaque joueur a pour lancer ses dés et faire une sélection. Ce temps est réinitialisé après chaque lancement."
                 },
                 "throws": {
-                    "title": null,
-                    "help": null
+                    "title": "Lancers",
+                    "help": "Combien de lancers l'utilisateur obtient avant qu'il doive faire une sélection."
                 },
                 "speed": {
-                    "title": null,
-                    "help": null
+                    "title": "Vitesse",
+                    "help": "La vitesse à laquelle l'animation du lancer de dés est jouée."
                 }
             },
             "presets": {},
@@ -992,7 +992,7 @@
             "pickCardSelection": "Sélection de la carte",
             "handDump": "Tour de décharge",
             "handPreview": "Aperçu de la main",
-            "countingScores": null,
+            "countingScores": "Comptage des scores...",
             "voting": "Vote",
             "voteResults": "Résultats du vote",
             "flippingField": "Revirement du champ",
@@ -1156,11 +1156,11 @@
         "increment": "Incréments de {count}"
     },
     "misc": {
-        "throw": null,
-        "throwAgain": null,
-        "throwing": null,
-        "opponentIsThrowing": null,
-        "noThrowsRemaining": null,
+        "throw": "Lance",
+        "throwAgain": "Lance encore",
+        "throwing": "En train de lancer",
+        "opponentIsThrowing": "L'adversaire lance",
+        "noThrowsRemaining": "Plus de lancers restants",
         "congratulations": "Félicitations!",
         "privacy": "Confidentialité",
         "termsOfUse": "Conditions d'utilisation",
@@ -1267,7 +1267,7 @@
         "longestWord": "Mot le plus long",
         "length": "Longueur",
         "score": "Score",
-        "highestScore": null,
+        "highestScore": "Meilleur Score",
         "rank": "Rang",
         "kills": "Kills",
         "games": "Jeux",
@@ -1561,24 +1561,39 @@
         },
         "yahtzee": {
             "title": {
-                "ones": null,
-                "twos": null,
-                "threes": null,
-                "fours": null,
-                "fives": null,
-                "sixes": null,
-                "threeOfAKind": null,
-                "fourOfAKind": null,
-                "fullHouse": null,
-                "smallStraight": null,
-                "largeStraight": null,
-                "yahtzee": null,
-                "chance": null,
-                "sum": null,
-                "bonus": null,
-                "totalScore": null
+                "ones": "Uns",
+                "twos": "Deux",
+                "threes": "Trois",
+                "fours": "Quatres",
+                "fives": "Cinqs",
+                "sixes": "Six",
+                "threeOfAKind": "Brelan",
+                "fourOfAKind": "Carré",
+                "fullHouse": "Full",
+                "smallStraight": "Petite suite",
+                "largeStraight": "Grande suite",
+                "yahtzee": "YAHTZEE",
+                "chance": "Chance",
+                "sum": "Somme",
+                "bonus": "Bonus",
+                "totalScore": "Score Total"
             },
-            "noPointsWarning": null
+            "description": {
+                "bonus": "Si la somme de tes points dans la section supérieure est de %{sum} ou plus, tu reçois un bonus de %{points}.",
+                "number": "Essaye d'obtenir autant de dés numérotés %{number} que possible.",
+                "threeOfAKind": "Obtient trois dés avec le même numéro. Comme avoir trois 4.",
+                "fourOfAKind": "Obtient quatre dés avec le même numéro. Comme avoir quatre 2.",
+                "fullHouse": "Avoir trois dés avec un numéro et deux dés avec un autre numéro. Par exemple, tu pourrais lancer 3-3-3-5-5.",
+                "smallStraight": "Obtiens quatre dés d'affilée, comme 2-3-4-5.",
+                "largeStraight": "Obtiens cinq dés d'affilée, comme 2-3-4-5-6.",
+                "yahtzee": "Lance cinq dés avec le même numéro.",
+                "yahtzeeBonus": "Si tu lances un autre Yahtzee après en avoir déjà obtenu un, tu gagneras %{points} supplémentaires. Mais n'oublie pas, tu n'obtiendras ces points que si tu fais un mouvement qui te rapporte des points.",
+                "chance": "N'importe quelle combinaison de dés peut être utilisée."
+            },
+            "earnsMatch": "Gagne le total de tous les dés correspondants.",
+            "earnsPoints": "Gagne %{points}.",
+            "earnsSum": "Gagne le total de tous les dés combinés.",
+            "noPointsWarning": "Ce mouvement ne te rapportera aucun point. Il y a d'autres choix qui te donnent des points."
         },
         "poolType": {
             "SOLID": "Hautes",
@@ -1602,7 +1617,7 @@
             "iconsSource": "Icônes gracieuseté de %{name} (Sous licence)",
             "soundsSource": "Sons fournis par %{name} (Sous licence)",
             "rottenApplesSource": "Pommes pourries basées sur %{name} (Creative Commons BY-NC-SA 2.0)",
-            "diceSource": null,
+            "diceSource": "Modèle de dé par %{name} (CC-BY-4.0)",
             "localization": "Localisation par des contributeurs bénévoles"
         }
     }

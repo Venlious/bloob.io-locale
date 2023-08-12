@@ -1,8 +1,8 @@
 {
     "_meta": {
         "language": "informal Italian",
-        "total": 1057,
-        "missing": 38
+        "total": 1070,
+        "missing": 2
     },
     "name": "Bloob.io",
     "error": {
@@ -80,8 +80,8 @@
             "stuckThreshold": "Sei stato eliminato visto che hai mancato %{moves} mossa(e) di fila.",
             "allStuck": "Nessuno può più fare una mossa. Questo incontro si è concluso.",
             "invalid": "Il tipo di gioco \"%{type}\" non esiste.",
-            "noThrowsRemaining": null,
-            "incorrectValue": null,
+            "noThrowsRemaining": "Non ci sono più lanci rimasti.",
+            "incorrectValue": "Il valore che è stato dato non corrisponde a quello previsto.",
             "invalidMove": "La mossa specificata è invalida.",
             "invalidVote": "Il voto che hai tentato di fare non è valido.",
             "alreadyPlaced": "Hai già posizionato qualcosa.",
@@ -901,23 +901,23 @@
             }
         },
         "YAHTZEE": {
-            "name": null,
-            "heading": null,
-            "tooltip": null,
+            "name": "Yahtzee",
+            "heading": "Gioca a Yahtzee Online con gli Amici",
+            "tooltip": "Gioca qui al popolare gioco del Yahtzee contro fino a 4 bot o giocatori.",
             "description": null,
             "title": null,
             "options": {
                 "turnTime": {
-                    "title": null,
-                    "help": null
+                    "title": "Tempo di Turno",
+                    "help": "Quanto tempo ha ogni giocatore per lanciare i loro dadi e fare una scelta. Questo tempo si resetta dopo ogni tiro."
                 },
                 "throws": {
-                    "title": null,
-                    "help": null
+                    "title": "Lanci",
+                    "help": "Quanti lanci l'utente ottiene prima di dover fare una scelta."
                 },
                 "speed": {
-                    "title": null,
-                    "help": null
+                    "title": "Velocità",
+                    "help": "Quanto velocemente viene riprodotta l'animazione del lancio dei dadi."
                 }
             },
             "presets": {},
@@ -992,7 +992,7 @@
             "pickCardSelection": "Selezione della carta",
             "handDump": "Giro di scarico",
             "handPreview": "Anteprima della mano",
-            "countingScores": null,
+            "countingScores": "Contando i punti...",
             "voting": "Votazione",
             "voteResults": "Risultati del voto",
             "flippingField": "Campo ribaltabile",
@@ -1156,11 +1156,11 @@
         "increment": "Incremento di 0 | Incremento di 1 | Incremento di {count}"
     },
     "misc": {
-        "throw": null,
-        "throwAgain": null,
-        "throwing": null,
-        "opponentIsThrowing": null,
-        "noThrowsRemaining": null,
+        "throw": "Lancia",
+        "throwAgain": "Lancia di nuovo",
+        "throwing": "Lanciando",
+        "opponentIsThrowing": "L'avversario sta lanciando",
+        "noThrowsRemaining": "Non rimangono lanci",
         "congratulations": "Congratulazioni!",
         "privacy": "Privacy",
         "termsOfUse": "Termini di Utilizzo",
@@ -1267,7 +1267,7 @@
         "longestWord": "Parola più lunga",
         "length": "Lunghezza",
         "score": "Punteggio",
-        "highestScore": null,
+        "highestScore": "Punteggio più alto",
         "rank": "Classifica",
         "kills": "Uccide",
         "games": "Giochi",
@@ -1561,24 +1561,39 @@
         },
         "yahtzee": {
             "title": {
-                "ones": null,
-                "twos": null,
-                "threes": null,
-                "fours": null,
-                "fives": null,
-                "sixes": null,
-                "threeOfAKind": null,
-                "fourOfAKind": null,
-                "fullHouse": null,
-                "smallStraight": null,
-                "largeStraight": null,
-                "yahtzee": null,
-                "chance": null,
-                "sum": null,
-                "bonus": null,
-                "totalScore": null
+                "ones": "Unos",
+                "twos": "Duos",
+                "threes": "Tres",
+                "fours": "Quattros",
+                "fives": "Cincos",
+                "sixes": "Sei",
+                "threeOfAKind": "Tris",
+                "fourOfAKind": "Poker",
+                "fullHouse": "Full",
+                "smallStraight": "Scala Minore",
+                "largeStraight": "Sequenza lunga",
+                "yahtzee": "YAHTZEE",
+                "chance": "Casuale",
+                "sum": "Somma",
+                "bonus": "Bonus",
+                "totalScore": "Punteggio Totale"
             },
-            "noPointsWarning": null
+            "description": {
+                "bonus": "Se la somma dei tuoi punti nella sezione superiore è %{sum} o più, ricevi un bonus di %{points}.",
+                "number": "Prendi quanti più dadi numerati %{number} possibile.",
+                "threeOfAKind": "Prendi tre dadi con lo stesso numero. Tipo avere tre 4.",
+                "fourOfAKind": "Prendi quattro dadi con lo stesso numero. Tipo avere quattro 2.",
+                "fullHouse": "Hai tre dadi con un numero e due dadi con un altro numero. Ad esempio, potresti tirare 3-3-3-5-5.",
+                "smallStraight": "Ottieni quattro dadi in fila, tipo 2-3-4-5.",
+                "largeStraight": "Ottieni cinque dadi in fila, tipo 2-3-4-5-6.",
+                "yahtzee": "Lancia cinque dadi con lo stesso numero.",
+                "yahtzeeBonus": "Se lanci un altro Yahtzee dopo averne già ottenuto uno, guadagnerai %{points} extra. Ma ricorda, otterrai questi punti solo se fai una mossa che ti fa guadagnare punti.",
+                "chance": "Puoi usare qualsiasi combinazione di dadi."
+            },
+            "earnsMatch": "Guadagna il totale di tutti i dadi corrispondenti.",
+            "earnsPoints": "Guadagna %{points}.",
+            "earnsSum": "Guadagna il totale di tutti i dadi combinati.",
+            "noPointsWarning": "Questa mossa non ti farà guadagnare punti. Ci sono altre scelte che ti danno punti."
         },
         "poolType": {
             "SOLID": "Solidi",
@@ -1602,7 +1617,7 @@
             "iconsSource": "Icone per gentile concessione di %{name} (con licenza)",
             "soundsSource": "Suoni forniti da %{name} (con licenza)",
             "rottenApplesSource": "Rotten Apples basato su %{name} (Creative Commons BY-NC-SA 2.0)",
-            "diceSource": null,
+            "diceSource": "Modello di dado di %{name} (CC-BY-4.0)",
             "localization": "Localizzazione da parte di collaboratori volontari"
         }
     }

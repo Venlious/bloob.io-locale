@@ -1,8 +1,8 @@
 {
     "_meta": {
         "language": "informal Mexican Spanish",
-        "total": 1057,
-        "missing": 38
+        "total": 1070,
+        "missing": 2
     },
     "name": "Bloob.io",
     "error": {
@@ -80,8 +80,8 @@
             "stuckThreshold": "Has sido eliminado por estar atascado durante %{moves} movimientos seguidos.",
             "allStuck": "Ya nadie puede hacer un movimiento. El partido ha concluido.",
             "invalid": "El tipo de juego \"%{type}\" no existe.",
-            "noThrowsRemaining": null,
-            "incorrectValue": null,
+            "noThrowsRemaining": "Ya no quedan lanzamientos.",
+            "incorrectValue": "El valor que se dio no coincide con el esperado.",
             "invalidMove": "La jugada dada no es válida.",
             "invalidVote": "El voto que ha intentado realizar no es válido.",
             "alreadyPlaced": "Ya has colocado algo.",
@@ -901,23 +901,23 @@
             }
         },
         "YAHTZEE": {
-            "name": null,
-            "heading": null,
-            "tooltip": null,
+            "name": "Yahtzee",
+            "heading": "Juega Yahtzee en Línea con Amigos",
+            "tooltip": "Juega el popular juego de Yahtzee aquí contra hasta 4 bots o jugadores.",
             "description": null,
             "title": null,
             "options": {
                 "turnTime": {
-                    "title": null,
-                    "help": null
+                    "title": "Tiempo de Turno",
+                    "help": "Cuánto tiempo tiene cada jugador para lanzar sus dados y hacer una selección. Este tiempo se reinicia después de cada lanzamiento."
                 },
                 "throws": {
-                    "title": null,
-                    "help": null
+                    "title": "Lanzamientos",
+                    "help": "Cuántos lanzamientos tiene el usuario antes de que deba hacer una selección."
                 },
                 "speed": {
-                    "title": null,
-                    "help": null
+                    "title": "Velocidad",
+                    "help": "Qué tan rápido se reproduce la animación de lanzamiento de dados."
                 }
             },
             "presets": {},
@@ -992,7 +992,7 @@
             "pickCardSelection": "Seleccionando la tarjeta",
             "handDump": "Volcar ronda",
             "handPreview": "Vista previa de la mano",
-            "countingScores": null,
+            "countingScores": "Contando puntos...",
             "voting": "Votación",
             "voteResults": "Resultados de la votación",
             "flippingField": "Volteando el campo",
@@ -1156,11 +1156,11 @@
         "increment": "Incrementos de %{count}"
     },
     "misc": {
-        "throw": null,
-        "throwAgain": null,
-        "throwing": null,
-        "opponentIsThrowing": null,
-        "noThrowsRemaining": null,
+        "throw": "Lanza",
+        "throwAgain": "Lanza de nuevo",
+        "throwing": "Lanzando",
+        "opponentIsThrowing": "El oponente está lanzando",
+        "noThrowsRemaining": "No quedan lanzamientos",
         "congratulations": "¡Felicidades!",
         "privacy": "Privacidad",
         "termsOfUse": "Términos de Uso",
@@ -1267,7 +1267,7 @@
         "longestWord": "Palabra Más Larga",
         "length": "Longitud",
         "score": "Puntuación",
-        "highestScore": null,
+        "highestScore": "Puntuación Más Alta",
         "rank": "Rango",
         "kills": "Bajas",
         "games": "Juegos",
@@ -1561,24 +1561,39 @@
         },
         "yahtzee": {
             "title": {
-                "ones": null,
-                "twos": null,
-                "threes": null,
-                "fours": null,
-                "fives": null,
-                "sixes": null,
-                "threeOfAKind": null,
-                "fourOfAKind": null,
-                "fullHouse": null,
-                "smallStraight": null,
-                "largeStraight": null,
-                "yahtzee": null,
-                "chance": null,
-                "sum": null,
-                "bonus": null,
-                "totalScore": null
+                "ones": "Unos",
+                "twos": "Dos",
+                "threes": "Tres",
+                "fours": "Cuatros",
+                "fives": "Cincos",
+                "sixes": "Seises",
+                "threeOfAKind": "Tres de un tipo",
+                "fourOfAKind": "Cuatro de un tipo",
+                "fullHouse": "Casa llena",
+                "smallStraight": "Escalera pequeña",
+                "largeStraight": "Racha larga",
+                "yahtzee": "YAHTZEE",
+                "chance": "Oportunidad",
+                "sum": "Suma",
+                "bonus": "Bono",
+                "totalScore": "Puntuación Total"
             },
-            "noPointsWarning": null
+            "description": {
+                "bonus": "Si la suma de tus puntos en la sección de arriba es %{sum} o más, te llevas un bono de %{points}.",
+                "number": "Consigue tantos dados con el número %{number} como puedas.",
+                "threeOfAKind": "Consigue tres dados con el mismo número. Como tener tres 4s.",
+                "fourOfAKind": "Consigue cuatro dados con el mismo número. Como tener cuatro 2s.",
+                "fullHouse": "Ten tres dados con un número y dos dados con otro número. Por ejemplo, podrías tirar 3-3-3-5-5.",
+                "smallStraight": "Consigue cuatro dados en fila, como 2-3-4-5.",
+                "largeStraight": "Consigue cinco dados en fila, como 2-3-4-5-6.",
+                "yahtzee": "Lanza cinco dados con el mismo número.",
+                "yahtzeeBonus": "Si lanzas otro Yahtzee después de ya haber conseguido uno, ganarás %{points} extra. Pero recuerda, solo obtendrás estos puntos si haces un movimiento que te dé puntos.",
+                "chance": "Cualquier combinación de dados puede ser utilizada."
+            },
+            "earnsMatch": "Gana el total de todos los dados que coinciden.",
+            "earnsPoints": "Gana %{points}.",
+            "earnsSum": "Gana el total de todos los dados combinados.",
+            "noPointsWarning": "Este movimiento no te dará ningún punto. Hay otras opciones que sí te dan puntos."
         },
         "poolType": {
             "SOLID": "Sólidas",
@@ -1602,7 +1617,7 @@
             "iconsSource": "Iconos por cortesía de %{name} (con licencia)",
             "soundsSource": "Sonidos proporcionados por %{name} (con licencia)",
             "rottenApplesSource": "Manzanas podridas basadas en %{name} (Creative Commons BY-NC-SA 2.0)",
-            "diceSource": null,
+            "diceSource": "Modelo de dados por %{name} (CC-BY-4.0)",
             "localization": "Localización por colaboradores voluntarios"
         }
     }
