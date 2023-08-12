@@ -5,7 +5,7 @@ import type { GenericMessage, NestedObject, TranslateQueue, TranslateTask } from
 
 // Utils
 import { delay, loadMessages, getContentToPath, ensureSameOrder, writeFile } from '../utils'
-import { Configuration, OpenAIApi } from 'openai'
+import { ChatCompletionRequestMessage, Configuration, OpenAIApi } from 'openai'
 import * as osPath from 'path'
 
 // Data
@@ -15,20 +15,20 @@ const EN_MESSAGES = require(`../../messages/en.json`)
 /**
  * Check if rate limit is configured in the .env file.
  */
-const RATE_LIMIT_PER_MIN = Number(process.env.GPT3_API_RATE_LIMIT_PER_MINUTE)
+const RATE_LIMIT_PER_MIN = Number(process.env.GPT_API_RATE_LIMIT_PER_MINUTE)
 if (isNaN(RATE_LIMIT_PER_MIN)) {
-	throw `Make sure to set .env value "GPT3_API_RATE_LIMIT_PER_MINUTE". This defines how many times the OpenAI API will be hit per minute and spread the translation tasks accordingly. It must be a valid number.`
+	throw `Make sure to set .env value "GPT_API_RATE_LIMIT_PER_MINUTE". This defines how many times the OpenAI API will be hit per minute and spread the translation tasks accordingly. It must be a valid number.`
 }
 
 /**
  * Check if API key is configured in the .env file.
  */
-const API_KEY = process.env.GPT3_API_KEY
+const API_KEY = process.env.GPT_API_KEY
 if (!API_KEY) {
-	throw `Make sure to set .env value "GPT3_API_KEY". This should be the OpenAI organization API key to access GPT3.`
+	throw `Make sure to set .env value "GPT_API_KEY". This should be the OpenAI organization API key to access GPT.`
 }
 
-const openai = new OpenAIApi(new Configuration({ apiKey: process.env.GPT3_API_KEY }))
+const openai = new OpenAIApi(new Configuration({ apiKey: process.env.GPT_API_KEY }))
 
 /**
  * Translate and
@@ -274,6 +274,7 @@ export default class TranslationClass {
 		this.generateTranslationTask([`info`, `authentication`, `ready`])
 		this.generateTranslationTask([`info`, `yahtzee`])
 		this.generateTranslationTask([`info`, `yahtzee`, `title`])
+		this.generateTranslationTask([`info`, `yahtzee`, `description`])
 
 		/**
 		 * Chat messsages
@@ -506,27 +507,42 @@ export default class TranslationClass {
 			 *
 			 * The results are still disappointing at times. It does require manual fixing.
 			 */
-			const prompt = `Translate each of the following lines${
-				description ? ` of ${description} ` : ` `
-			}to ${this.language} while preserving the order${
-				input.length > 1 ? ` and starting each entry with [number]` : ``
-			}:\n${input.join(`\n`)}`
+			const messages: ChatCompletionRequestMessage[] = [
+				{
+					role: `system`,
+					content: `You are a game translation service. You will get a list of items you must translate to ${
+						this.language
+					} while preserving the order it was given in. Each entry will start with [number] followed by a string of text to be translated. If a single entry is given, it will not have this number. Keep things informal and easy to understand.${
+						description ? ` ` + description : ``
+					}`
+				}
+			]
 
-			const response = await openai.createCompletion({
-				model: `text-davinci-003`,
-				prompt: prompt,
+			messages.push({
+				role: `user`,
+				content: input.join(`\n`)
+			})
+
+			const response = await openai.createChatCompletion({
+				model: `gpt-4`,
+				messages,
 				temperature: 0,
-				max_tokens: 2048
+				max_tokens: 2048,
+				top_p: 1,
+				frequency_penalty: 0,
+				presence_penalty: 0
 			})
 
 			// Extract the translated text from the response
-			const output = response.data.choices[0].text
+			const output = response.data.choices[0].message.content
 			if (!output) {
 				console.error(`Something went wrong with the output!`, response.data.choices)
 				return false
 			}
 			return this.sanitiseOutput(input, output.split(`\n`))
 		} catch (error) {
+			console.log(error)
+
 			// Check for rate limiting
 			if (error && error.response && error.response.status === 429) {
 				console.info(`Hit rate limit! Will retry later (Attempt #${retries + 1})...`)
