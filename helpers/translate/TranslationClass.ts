@@ -541,8 +541,6 @@ export default class TranslationClass {
 			}
 			return this.sanitiseOutput(input, output.split(`\n`))
 		} catch (error) {
-			console.log(error)
-
 			// Check for rate limiting
 			if (error && error.response && error.response.status === 429) {
 				console.info(`Hit rate limit! Will retry later (Attempt #${retries + 1})...`)
