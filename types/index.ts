@@ -23,7 +23,7 @@ export enum GameType {
 	rottenApples = `ROTTEN_APPLES`,
 	blomber = `BLOMBER`,
 	eightBallPool = `EIGHT_BALL_POOL`,
-	yatzy = `YATZY`
+	yacht = `YACHT`
 }
 
 export enum CheckersKingType {
