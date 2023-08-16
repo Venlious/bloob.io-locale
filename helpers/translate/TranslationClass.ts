@@ -272,9 +272,9 @@ export default class TranslationClass {
 		this.generateTranslationTask([`info`, `authentication`, `relogin`])
 		this.generateTranslationTask([`info`, `authentication`, `loginCode`])
 		this.generateTranslationTask([`info`, `authentication`, `ready`])
-		this.generateTranslationTask([`info`, `yahtzee`])
-		this.generateTranslationTask([`info`, `yahtzee`, `title`])
-		this.generateTranslationTask([`info`, `yahtzee`, `description`])
+		this.generateTranslationTask([`info`, `yatzy`])
+		this.generateTranslationTask([`info`, `yatzy`, `title`])
+		this.generateTranslationTask([`info`, `yatzy`, `description`])
 
 		/**
 		 * Chat messsages
