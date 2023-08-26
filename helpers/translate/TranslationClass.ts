@@ -250,6 +250,7 @@ export default class TranslationClass {
 		this.generateTranslationTask([`info`])
 		this.generateTranslationTask([`info`, `poolType`], `8 Ball Pool ball types`)
 		this.generateTranslationTask([`info`, `poolFoul`], `8 Ball Pool ball foul messages`)
+		this.generateTranslationTask([`info`, `battleship`], `a web based Battleships game`)
 		this.generateTranslationTask([`info`, `about`])
 		this.generateTranslationTask([`info`, `settings`, `redeemCode`])
 		this.generateTranslationTask([`info`, `settings`, `experience`])

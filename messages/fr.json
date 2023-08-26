@@ -1,7 +1,7 @@
 {
     "_meta": {
         "language": "informal French",
-        "total": 1095,
+        "total": 1144,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -957,15 +957,15 @@
                 "picking_category": {
                     "title": "Choisir une Catégorie",
                     "description": [
-                        "Après avoir lancé les dés, la fiche de score montre combien de points tu peux obtenir dans différentes catégories. Essaye de choisir celle qui te donne le plus de points !",
+                        "Après avoir lancé les dés, la fiche de score montre combien de points tu peux obtenir dans différentes catégories. Essaye de choisir celle qui te donne le plus de points!",
                         "Clique sur l'entrée orange pour choisir ton score et gagner des points."
                     ]
                 },
                 "bonus": {
                     "title": "Bonus",
                     "description": [
-                        "Si le score de la section supérieure s'additionne à 63 ou plus, tu gagneras un bonus de 35 points !",
-                        "Un Yacht te donnera instantanément 50 points. T'as eu un autre Yacht après ça ? Utilise-le dans une entrée qui te rapporte des points et gagne 100 points supplémentaires !"
+                        "Si le score de la section supérieure s'additionne à 63 ou plus, tu gagneras un bonus de 35 points!",
+                        "Un Yacht te donnera instantanément 50 points. T'as eu un autre Yacht après ça ? Utilise-le dans une entrée qui te rapporte des points et gagne 100 points supplémentaires!"
                     ]
                 },
                 "tips": {
@@ -976,6 +976,75 @@
                     ]
                 }
             }
+        },
+        "BATTLESHIP": {
+            "name": "Bataille de Pirates: Bateaux à l'Horizon",
+            "heading": "Participe à des Batailles de Navires Épiques en Ligne - Joue à Pirate Battle: Navires Ahoy",
+            "tooltip": "Commande ta flotte et conquiers les hautes mers dans ce jeu de Bataille Navale en ligne palpitant.",
+            "description": "Maîtrise des bateaux de bataille tactiques, coule des ennemis et conquiert les mers dans Pirate Battle: Ships Ahoy! Lance-toi dans des batailles de navires multijoueurs épiques aujourd'hui.",
+            "title": "Conquiers les Mers - Joue à Pirate Battle: Navires Ahoy Maintenant",
+            "options": {
+                "placementTime": {
+                    "title": "Temps de Placement",
+                    "help": "Combien de temps chaque joueur a pour positionner ses navires."
+                },
+                "turnTime": {
+                    "title": "Temps de Tour",
+                    "help": "Combien de temps chaque joueur a pour faire son tir."
+                },
+                "missedTurnThreshold": {
+                    "title": "Seuil de Tour Manqué",
+                    "help": "Combien de tours un joueur peut-il manquer d'affilée avant d'être exclu du jeu."
+                },
+                "gridSize": {
+                    "title": "Taille de la Grille",
+                    "help": "Choisis la taille du niveau dans lequel jouer.",
+                    "data": {
+                        "random": "Aléatoire",
+                        "7x7": "7x7",
+                        "11x11": "11x11",
+                        "15x15": "15x15"
+                    }
+                },
+                "level": {
+                    "title": "Carte",
+                    "help": "Choisis la carte sur laquelle tu aimerais jouer.",
+                    "data": {
+                        "random": "Aléatoire",
+                        "peninsula": "Péninsule",
+                        "archipelago": "Archipel",
+                        "canal": "Canal",
+                        "atoll": "Atoll",
+                        "bay": "La Baie",
+                        "bigIsland": "La Grande Île",
+                        "pier": "Le Quai",
+                        "littleIsland": "La Petite Île",
+                        "keys": "Les Clés",
+                        "lagoon": "Lagon"
+                    }
+                },
+                "levelOrientation": {
+                    "title": "Orientation",
+                    "help": "Choisis l'orientation dans laquelle le niveau sera affiché.",
+                    "data": {
+                        "random": "Aléatoire",
+                        "NORTH": "Nord",
+                        "EAST": "Est",
+                        "SOUTH": "Sud",
+                        "WEST": "Ouest"
+                    }
+                },
+                "shipSpacing": {
+                    "title": "Espacement des Navires",
+                    "help": "Quand activé, les navires doivent avoir au moins une case entre eux et ne peuvent pas se toucher directement."
+                },
+                "shipReveal": {
+                    "title": "Révélation du Navire",
+                    "help": "Quand activé, tu verras le navire quand tu l'auras coulé. Quand désactivé, seul un compteur avec les navires restants est affiché."
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1036,6 +1105,9 @@
             "finished": "Partie finie",
             "tied": "Partie nulle",
             "finishedRematch": "La revanche commencera bientôt",
+            "placingShips": "Placement des navires",
+            "firing": "%{name} tire",
+            "firingSelf": "Tu tires",
             "inProgress": "Match en cours",
             "staleMoves": "Match bloqué — %{staleCount} mouvements sans prise de contrôle",
             "forfeit": "Partie terminée - L'adversaire a abandonné la partie",
@@ -1207,7 +1279,8 @@
         "playAgainstBots": "Jouer contre des bots | Jouer contre un bot | Jouer contre des bots",
         "playRandomOpponents": "Jouer contre des adversaires aléatoires",
         "turnsToFlip": "Tours avant le revirement du champ  | Tour avant le revirement du champ | Tours avant le revirement du champ",
-        "increment": "Incréments de {count}"
+        "increment": "Incréments de {count}",
+        "shipsRemaining": "0 bateau restant | 1 bateau restant | {count} bateaux restants"
     },
     "misc": {
         "roll": "Roule",
@@ -1613,6 +1686,12 @@
             "logoutGloballyCompleted": "Votre compte a été déconnecté de tous les appareils.",
             "verificationEmail": "Un email avec un code de vérification a été envoyé.",
             "noEmail": "Pas d'e-mail ? Vérifiez votre dossier spam et confirmez que cette adresse e-mail est liée à votre compte."
+        },
+        "battleship": {
+            "keyToRotate": "Appuie sur 'R' pour tourner",
+            "tapToRotate": "Tape pour tourner",
+            "dragToMove": "Glisse pour bouger",
+            "setup": "Déploie ta flotte!"
         },
         "yacht": {
             "title": {

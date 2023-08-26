@@ -971,6 +971,75 @@
                     }
                 }
             }
+        },
+        "BATTLESHIP": {
+            "name": false,
+            "heading": false,
+            "tooltip": false,
+            "description": false,
+            "title": false,
+            "options": {
+                "placementTime": {
+                    "title": false,
+                    "help": false
+                },
+                "turnTime": {
+                    "title": false,
+                    "help": false
+                },
+                "missedTurnThreshold": {
+                    "title": false,
+                    "help": false
+                },
+                "gridSize": {
+                    "title": false,
+                    "help": false,
+                    "data": {
+                        "random": false,
+                        "7x7": false,
+                        "11x11": false,
+                        "15x15": false
+                    }
+                },
+                "level": {
+                    "title": false,
+                    "help": false,
+                    "data": {
+                        "random": false,
+                        "peninsula": false,
+                        "archipelago": false,
+                        "canal": false,
+                        "atoll": false,
+                        "bay": false,
+                        "bigIsland": false,
+                        "pier": false,
+                        "littleIsland": false,
+                        "keys": false,
+                        "lagoon": false
+                    }
+                },
+                "levelOrientation": {
+                    "title": false,
+                    "help": false,
+                    "data": {
+                        "random": false,
+                        "NORTH": false,
+                        "EAST": false,
+                        "SOUTH": false,
+                        "WEST": false
+                    }
+                },
+                "shipSpacing": {
+                    "title": false,
+                    "help": false
+                },
+                "shipReveal": {
+                    "title": false,
+                    "help": false
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1031,6 +1100,9 @@
             "finished": true,
             "tied": true,
             "finishedRematch": true,
+            "placingShips": false,
+            "firing": false,
+            "firingSelf": false,
             "inProgress": true,
             "staleMoves": true,
             "forfeit": true,
@@ -1202,7 +1274,8 @@
         "playAgainstBots": true,
         "playRandomOpponents": true,
         "turnsToFlip": true,
-        "increment": true
+        "increment": true,
+        "shipsRemaining": false
     },
     "misc": {
         "roll": false,
@@ -1608,6 +1681,12 @@
             "logoutGloballyCompleted": true,
             "verificationEmail": true,
             "noEmail": true
+        },
+        "battleship": {
+            "keyToRotate": false,
+            "tapToRotate": false,
+            "dragToMove": false,
+            "setup": false
         },
         "yacht": {
             "title": {

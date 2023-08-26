@@ -1,7 +1,7 @@
 {
     "_meta": {
         "language": "informal German",
-        "total": 1095,
+        "total": 1144,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -976,6 +976,75 @@
                     ]
                 }
             }
+        },
+        "BATTLESHIP": {
+            "name": "Piratenschlacht: Schiffe Ahoi",
+            "heading": "Nimm an epischen Schiffsschlachten online teil - Spiele Piratenschlacht: Schiffe Ahoi",
+            "tooltip": "Befehle deine Flotte und erobere die hohe See in diesem aufregenden Online-Schlachtschiff-Spiel.",
+            "description": "Meistere taktische Schlachtschiffe, versenke Feinde und erobere die Meere in Pirate Battle: Ships Ahoy! Stürze dich heute in epische Mehrspieler-Schiffsschlachten.",
+            "title": "Erobere die Meere - Spiele Piratenschlacht: Schiffe Ahoi Jetzt",
+            "options": {
+                "placementTime": {
+                    "title": "Platzierungszeit",
+                    "help": "Wie lange jeder Spieler Zeit hat, seine Schiffe in Position zu bringen."
+                },
+                "turnTime": {
+                    "title": "Zugzeit",
+                    "help": "Wie lange jeder Spieler Zeit hat, seinen Schuss abzugeben."
+                },
+                "missedTurnThreshold": {
+                    "title": "Verpasste Zug Grenze",
+                    "help": "Wie viele Runden kann ein Spieler hintereinander auslassen, bevor er aus dem Spiel geworfen wird."
+                },
+                "gridSize": {
+                    "title": "Rastergröße",
+                    "help": "Wähle die Größe des Levels, in dem du spielen möchtest.",
+                    "data": {
+                        "random": "Zufällig",
+                        "7x7": "7x7",
+                        "11x11": "11x11",
+                        "15x15": "15x15"
+                    }
+                },
+                "level": {
+                    "title": "Karte",
+                    "help": "Wähle die Karte aus, auf der du spielen möchtest.",
+                    "data": {
+                        "random": "Zufällig",
+                        "peninsula": "Halbinsel",
+                        "archipelago": "Inselgruppe",
+                        "canal": "Kanal",
+                        "atoll": "Atoll",
+                        "bay": "Bucht",
+                        "bigIsland": "Große Insel",
+                        "pier": "Steg",
+                        "littleIsland": "Kleine Insel",
+                        "keys": "Die Schlüssel",
+                        "lagoon": "Lagune"
+                    }
+                },
+                "levelOrientation": {
+                    "title": "Ausrichtung",
+                    "help": "Wähle die Ausrichtung aus, in der das Level angezeigt wird.",
+                    "data": {
+                        "random": "Zufällig",
+                        "NORTH": "Norden",
+                        "EAST": "Osten",
+                        "SOUTH": "Süden",
+                        "WEST": "Westen"
+                    }
+                },
+                "shipSpacing": {
+                    "title": "Schiffsabstand",
+                    "help": "Wenn aktiviert, müssen Schiffe mindestens eine Zelle Abstand voneinander haben und dürfen sich nicht direkt berühren."
+                },
+                "shipReveal": {
+                    "title": "Schiffsenthüllung",
+                    "help": "Wenn aktiviert, siehst du das Schiff, wenn du es versenkt hast. Wenn deaktiviert, wird nur ein Zähler mit den verbleibenden Schiffen angezeigt."
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1036,6 +1105,9 @@
             "finished": "Spiel vorbei",
             "tied": "Spiel unentschieden",
             "finishedRematch": "Revanche beginnt bald",
+            "placingShips": "Schiffe platzieren",
+            "firing": "%{name} feuert",
+            "firingSelf": "Du feuerst",
             "inProgress": "Spiel im Gange",
             "staleMoves": "Spiel vorbei — %{staleCount} Züge ohne Schlagen",
             "forfeit": "Spiel vorbei — Gegner hat aufgegeben",
@@ -1207,7 +1279,8 @@
         "playAgainstBots": "Gegen Bots spielen | Gegen einen Bot spielen | Gegen Bots spielen",
         "playRandomOpponents": "Spiele gegen zufällige Gegner",
         "turnsToFlip": "Züge bis zum Umdrehen | Zug bis zum Umdrehen | Züge bis zum Umdrehen",
-        "increment": "%{count}er Inkremente"
+        "increment": "%{count}er Inkremente",
+        "shipsRemaining": "0 Schiffe übrig | 1 Schiff übrig | {count} Schiffe übrig"
     },
     "misc": {
         "roll": "Rollen",
@@ -1613,6 +1686,12 @@
             "logoutGloballyCompleted": "Dein Konto wurde von allen Geräten abgemeldet.",
             "verificationEmail": "Eine E-Mail mit einem Bestätigungscode wurde gesendet.",
             "noEmail": "Keine E-Mail? Überprüfe deinen Spam-Ordner und bestätige, dass diese E-Mail-Adresse mit deinem Konto verknüpft ist."
+        },
+        "battleship": {
+            "keyToRotate": "Drück 'R' zum Drehen",
+            "tapToRotate": "Tippe zum Drehen",
+            "dragToMove": "Ziehe zum Bewegen",
+            "setup": "Setze deine Flotte ein!"
         },
         "yacht": {
             "title": {
