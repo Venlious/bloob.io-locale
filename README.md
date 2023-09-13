@@ -23,22 +23,22 @@ While the project itself is not open source, the localisation is. Feel free to c
 
 # Local Setup
 
-Running the project locally is easy. Please make sure to use Node version 16.
+Running the project locally is easy. Please make sure to use [Bun](https://bun.sh/).
 
 -   Install all files
-    `yarn`
+    `bun install`
 -   Translate (new) language (Note: must configure .env)
-    `yarn translate --source "en" --target "nl" --language "informal Dutch"`
+    `bun translate --source "en" --target "nl" --language "informal Dutch"`
 -   Automatically fix any fixable and common issues
-    `yarn fix`
+    `bun fix`
 -   Automatically fix and fill any translations that are missing (Note: must configure .env)
-    `yarn fill`
+    `bun fill`
 -   Verify if test passes
-    `yarn test`
+    `bun test`
 -   Verify if lint passes
-    `yarn lint`
+    `bun lint`
 
-You're now good to go. There's no build process. Use `yarn lint:fix` to automatically fix any formatting and linting errors.
+You're now good to go. There's no build process. Use `bun lint:fix` to automatically fix any formatting and linting errors.
 
 # Contributors
 

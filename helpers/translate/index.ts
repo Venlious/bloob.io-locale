@@ -1,4 +1,3 @@
-require(`dotenv`).config()
 import * as readline from 'readline'
 import TranslationClass from './TranslationClass'
 

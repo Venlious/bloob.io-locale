@@ -1,11 +1,10 @@
-require(`dotenv`).config()
-
 // Types
 import type { GenericMessage, NestedObject, TranslateQueue, TranslateTask } from '../types'
+import type { ChatCompletionMessageParam } from 'openai/resources/chat/index.mjs'
 
 // Utils
 import { delay, loadMessages, getContentToPath, ensureSameOrder, writeFile } from '../utils'
-import { ChatCompletionRequestMessage, Configuration, OpenAIApi } from 'openai'
+import OpenAI from 'openai'
 import * as osPath from 'path'
 
 // Data
@@ -28,7 +27,9 @@ if (!API_KEY) {
 	throw `Make sure to set .env value "GPT_API_KEY". This should be the OpenAI organization API key to access GPT.`
 }
 
-const openai = new OpenAIApi(new Configuration({ apiKey: process.env.GPT_API_KEY }))
+const openai = new OpenAI({
+	apiKey: process.env.GPT_API_KEY
+})
 
 /**
  * Translate and
@@ -508,7 +509,7 @@ export default class TranslationClass {
 			 *
 			 * The results are still disappointing at times. It does require manual fixing.
 			 */
-			const messages: ChatCompletionRequestMessage[] = [
+			const messages: ChatCompletionMessageParam[] = [
 				{
 					role: `system`,
 					content: `You are a game translation service. You will get a list of items you must translate to ${
@@ -524,7 +525,7 @@ export default class TranslationClass {
 				content: input.join(`\n`)
 			})
 
-			const response = await openai.createChatCompletion({
+			const response = await openai.chat.completions.create({
 				model: `gpt-4`,
 				messages,
 				temperature: 0,
@@ -535,9 +536,9 @@ export default class TranslationClass {
 			})
 
 			// Extract the translated text from the response
-			const output = response.data.choices[0].message.content
+			const output = response.choices[0].message.content
 			if (!output) {
-				console.error(`Something went wrong with the output!`, response.data.choices)
+				console.error(`Something went wrong with the output!`, response.choices)
 				return false
 			}
 			return this.sanitiseOutput(input, output.split(`\n`))
