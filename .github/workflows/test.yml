@@ -9,9 +9,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup Bun Runtime
-      uses: antongolub/action-setup-bun@v1
+      uses: oven-sh/setup-bun@v1
       with:
-        bun-repo: 'oven-sh/bun'
+        bun-version: latest
     - run: bun install
     - name: Format & Lint Check
       run: bun run lint
