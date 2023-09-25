@@ -343,6 +343,10 @@ export default class TranslationClass {
 			const presets = Object.keys(target.presets)
 			for (const title of presets) {
 				this.generateTranslationTask([`game`, value, `presets`, title])
+				const description = target.presets[title].description
+				if (Array.isArray(description)) {
+					this.generateTranslationTask([`game`, value, `presets`, title, `description`])
+				}
 			}
 
 			// Game help
