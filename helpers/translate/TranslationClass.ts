@@ -207,11 +207,11 @@ export default class TranslationClass {
 		 */
 		this.generateTranslationTask(
 			[`header`, `message`],
-			`short game headers informing the player of the game state`
+			`The context of these translations are short game headers informing the player of the game state.`
 		)
 		this.generateTranslationTask(
 			[`header`, `description`],
-			`short game header description informing the player of the game state`
+			`The context of these translations are short game header descriptions informing the player of the game state.`
 		)
 
 		/**
@@ -219,39 +219,39 @@ export default class TranslationClass {
 		 */
 		this.generateTranslationTask(
 			[`category`],
-			`short category titles for game settings (KEEP THEM SHORT)`
+			`These are short category titles for game settings (KEEP THEM SHORT).`
 		)
 		this.generateTranslationTask([`placeholder`])
 		this.generateTranslationTask([`language`])
 		this.generateTranslationTask([`status`])
-		this.generateTranslationTask([`time`], `vue-i18n compliant pluralization entries`)
+		this.generateTranslationTask([`time`], `The context of these are vue-i18n compliant pluralization entries.`)
 		this.generateTranslationTask(
 			[`count`],
-			`vue-i18n compliant pluralization entries (KEEP THEM SHORT)`
+			`The context of these are vue-i18n compliant pluralization entries (KEEP THEM SHORT)`
 		)
-		this.generateTranslationTask([`misc`], `buttons and columns`)
-		this.generateTranslationTask([`month`, `short`], `only 3 letter month abbreviations`)
-		this.generateTranslationTask([`perk`], `unlockable game perks`)
-		this.generateTranslationTask([`title`], `unlockable game titles`)
+		this.generateTranslationTask([`misc`], `The context behind these are typically buttons and columns.`)
+		this.generateTranslationTask([`month`, `short`], `These must be only 3 letter month abbreviations.`)
+		this.generateTranslationTask([`perk`], `These are unlockable game perks.`)
+		this.generateTranslationTask([`title`], `These are unlockable game titles.`)
 
 		/**
 		 * Card related
 		 */
-		this.generateTranslationTask([`card`], `a Cards Against Humanity card game`)
-		this.generateTranslationTask([`card`, `editor`], `a Cards Against Humanity card game`)
+		this.generateTranslationTask([`card`], `These are used in a web based Cards Against Humanity card game.`)
+		this.generateTranslationTask([`card`, `editor`], `These are used in a web based Cards Against Humanity card game.`)
 		this.generateTranslationTask([`card`, `type`])
-		this.generateTranslationTask([`card`, `sets`], `a Cards Against Humanity card game`)
-		this.generateTranslationTask([`card`, `sets`, `info`], `a Cards Against Humanity card game`)
-		this.generateTranslationTask([`card`, `info`], `a Cards Against Humanity card game`)
-		this.generateTranslationTask([`card`, `info`], `a Cards Against Humanity card game`)
+		this.generateTranslationTask([`card`, `sets`], `These are used in a web based Cards Against Humanity card game.`)
+		this.generateTranslationTask([`card`, `sets`, `info`], `These are used in a web based Cards Against Humanity card game.`)
+		this.generateTranslationTask([`card`, `info`], `These are used in a web based Cards Against Humanity card game.`)
+		this.generateTranslationTask([`card`, `info`], `These are used in a web based Cards Against Humanity card game.`)
 
 		/**
 		 * Information messages
 		 */
 		this.generateTranslationTask([`info`])
-		this.generateTranslationTask([`info`, `poolType`], `8 Ball Pool ball types`)
-		this.generateTranslationTask([`info`, `poolFoul`], `8 Ball Pool ball foul messages`)
-		this.generateTranslationTask([`info`, `battleship`], `a web based Battleships game`)
+		this.generateTranslationTask([`info`, `poolType`], `These are 8 Ball Pool ball types.`)
+		this.generateTranslationTask([`info`, `poolFoul`], `These are 8 Ball Pool ball foul messages.`)
+		this.generateTranslationTask([`info`, `battleship`], `These are used in a web based Battleships game.`)
 		this.generateTranslationTask([`info`, `about`])
 		this.generateTranslationTask([`info`, `settings`, `redeemCode`])
 		this.generateTranslationTask([`info`, `settings`, `experience`])
@@ -275,25 +275,26 @@ export default class TranslationClass {
 		this.generateTranslationTask([`info`, `authentication`, `loginCode`])
 		this.generateTranslationTask([`info`, `authentication`, `ready`])
 		this.generateTranslationTask([`info`, `yacht`])
-		this.generateTranslationTask([`info`, `yacht`, `title`])
-		this.generateTranslationTask([`info`, `yacht`, `description`])
+		this.generateTranslationTask([`info`, `yacht`, `title`], `These are Yacht/Yahtzee gaming terminologies.`)
+		this.generateTranslationTask([`info`, `yacht`, `shortTitle`], `These are shortened Yacht/Yahtzee gaming terminologies. Turn words into numbers (e.g. "three" as "3"). Also use abbreviations whenever possible (e.g. "large" as "lg").`)
+		this.generateTranslationTask([`info`, `yacht`, `description`], `These are Yacht/Yahtzee gaming terminology descriptions.`)
 
 		/**
 		 * Chat messsages
 		 */
-		this.generateTranslationTask([`chat`, `UNIVERSAL`], `short informal chat messages`)
-		this.generateTranslationTask([`chat`, `PRE_GAME`], `short informal chat messages`)
-		this.generateTranslationTask([`chat`, `GAME`], `short informal chat messages`)
-		this.generateTranslationTask([`chat`, `POST_GAME`], `short informal chat messages`)
+		this.generateTranslationTask([`chat`, `UNIVERSAL`], `These are short informal chat messages.`)
+		this.generateTranslationTask([`chat`, `PRE_GAME`], `These are short informal chat messages.`)
+		this.generateTranslationTask([`chat`, `GAME`], `These are short informal chat messages.`)
+		this.generateTranslationTask([`chat`, `POST_GAME`], `These are short informal chat messages.`)
 
 		/**
 		 * Match messsages
 		 */
-		this.generateTranslationTask([`match`], `game matchmaking related butons`)
-		this.generateTranslationTask([`match`, `lobby`], `game match lobby button states`)
-		this.generateTranslationTask([`match`, `browser`], `game match list`)
-		this.generateTranslationTask([`match`, `matchmaking`], `game matchmaking states`)
-		this.generateTranslationTask([`match`, `info`], `game match information`)
+		this.generateTranslationTask([`match`], `These are game matchmaking related butons.`)
+		this.generateTranslationTask([`match`, `lobby`], `These are game match lobby button states.`)
+		this.generateTranslationTask([`match`, `browser`], `These are game match list.`)
+		this.generateTranslationTask([`match`, `matchmaking`], `These are game matchmaking states.`)
+		this.generateTranslationTask([`match`, `info`], `These are game match information.`)
 
 		/**
 		 * Error messsages
@@ -309,7 +310,7 @@ export default class TranslationClass {
 		this.generateTranslationTask([`error`, `profile`])
 		this.generateTranslationTask([`error`, `requirement`])
 		this.generateTranslationTask([`error`, `redeemCode`])
-		this.generateTranslationTask([`error`, `authentication`], `authentication related`)
+		this.generateTranslationTask([`error`, `authentication`], `These are authentication related translations.`)
 
 		/**
 		 * Game messages
@@ -318,21 +319,21 @@ export default class TranslationClass {
 		for (const value of heading) {
 			const target = EN_MESSAGES[`game`][value]
 			if (target.name) {
-				this.generateTranslationTask([`game`, value, `name`], `game name`)
+				this.generateTranslationTask([`game`, value, `name`], `These translations are game names.`)
 			}
 			if (target.heading) {
-				this.generateTranslationTask([`game`, value, `heading`], `an SEO friendly heading`)
+				this.generateTranslationTask([`game`, value, `heading`], `These translations must be SEO friendly headings.`)
 			}
 			if (target.title) {
 				this.generateTranslationTask(
 					[`game`, value, `title`],
-					`an SEO friendly meta title no longer than 60 characters`
+					`These translations must be SEO friendly meta titles no longer than 60 characters.`
 				)
 			}
 			if (target.description) {
 				this.generateTranslationTask(
 					[`game`, value, `description`],
-					`an SEO friendly meta description no longer than 160 characters`
+					`These translations must be SEO friendly meta description no longer than 160 characters.`
 				)
 			}
 			if (target.tooltip) {
@@ -355,7 +356,7 @@ export default class TranslationClass {
 				if (target.help[title].title) {
 					this.generateTranslationTask(
 						[`game`, value, `help`, title, `title`],
-						`a short game help title`
+						`These translations must be a short game help tutorial title.`
 					)
 				}
 				if (target.help[title].description) {
@@ -369,7 +370,7 @@ export default class TranslationClass {
 				if (target.options[title].title) {
 					this.generateTranslationTask(
 						[`game`, value, `options`, title, `title`],
-						`a short game option title`
+						`These translations must be a short game settings option title.`
 					)
 				}
 				if (target.options[title].help) {
@@ -552,6 +553,7 @@ export default class TranslationClass {
 				console.info(`Hit rate limit! Will retry later (Attempt #${retries + 1})...`)
 				return this.translateText({ input, description }, 60 * 1000, retries++)
 			} else {
+				console.log(error.code)
 				return false
 			}
 		}
