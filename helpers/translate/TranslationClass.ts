@@ -549,7 +549,7 @@ export default class TranslationClass {
 			return this.sanitiseOutput(input, output.split(`\n`))
 		} catch (error) {
 			// Check for rate limiting
-			if (error && error.response && error.response.status === 429) {
+			if (error && error.code === `rate_limit_exceeded`) {
 				console.info(`Hit rate limit! Will retry later (Attempt #${retries + 1})...`)
 				return this.translateText({ input, description }, 60 * 1000, retries++)
 			} else {
