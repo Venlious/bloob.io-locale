@@ -484,7 +484,7 @@ export default class TranslationClass {
 	 * @param param0 Input array and optional description of what is being translated
 	 * @param extraRateDelay In case an additional delay should be added before processing
 	 * @param retries Keep track of the amount of retries have been attempted
-	 * @returns Will give a sanitised output (matching input) or throw "false" in case of an error
+	 * @returns Will give a sanitized output (matching input) or throw "false" in case of an error
 	 */
 	async translateText(
 		{
@@ -625,7 +625,7 @@ export default class TranslationClass {
 	 *
 	 * @param input Input, original, messages
 	 * @param output Output as returned by the API
-	 * @returns Sanitised array or "false" in case of an error
+	 * @returns Sanitized array or "false" in case of an error
 	 */
 	sanitiseOutput(input: string[], output: string[]): (string | null)[] | false {
 		if (input.length > output.length) {

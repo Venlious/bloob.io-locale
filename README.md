@@ -8,9 +8,9 @@ https://bloob.io
 
 The [built in translation editor](https://bloob.io/translation-editor) has been introduced to Bloob.io as of v1.6.0! On this page you are able to make changes, download the file as .csv, and submit them here or by mail to contribute.
 
-# Localisation
+# Localization
 
-While the project itself is not open source, the localisation is. Feel free to create pull requests with improvements, grammar fixes, or support for new languages.
+While the project itself is not open source, the localization is. Feel free to create pull requests with improvements, grammar fixes, or support for new languages.
 
 # FAQ
 
