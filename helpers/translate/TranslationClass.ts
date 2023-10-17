@@ -535,7 +535,7 @@ export default class TranslationClass {
 
 		if (!output) {
 			console.error(`Failed to translate a task!`, task, ` - Output:`, output)
-			throw `Failed to translate a specific task!`
+			process.exit(0)
 		}
 
 		return output
@@ -613,8 +613,8 @@ export default class TranslationClass {
 		} catch (error) {
 			// Check for rate limiting
 			if (error && error.code === `rate_limit_exceeded`) {
-				console.info(`Hit rate limit! Will retry later (Attempt #${retries + 1})...`)
-				return this.translateText({ input, description }, 60 * 1000, retries++)
+				// Double the default delay for rate limit exceeding calls
+				return this.translateText({ input, description }, this.rateLimit.delayInMs, retries++)
 			} else {
 				console.log(error.code)
 				return false
