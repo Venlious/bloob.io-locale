@@ -1,4 +1,23 @@
-export type SupportedLocale = `en` | `nl` | `de` | `fr` | `es` | `it` | `pt` | `pl`
+export type SupportedLocale =
+	| `en`
+	| `nl`
+	| `de`
+	| `fr`
+	| `es`
+	| `it`
+	| `pt`
+	| `pl`
+	| `id`
+	| `tr`
+	| `ar`
+	| `yi`
+	| `hi`
+	| `ru`
+	| `uk`
+	| `ko`
+	| `zh`
+	| `ja`
+
 export type LanguageList =
 	| `nl-NL`
 	| `en-US`
