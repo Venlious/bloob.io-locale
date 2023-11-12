@@ -296,6 +296,7 @@ export default class TranslationClass {
 		this.generateTranslationTask([`info`, `authentication`])
 		this.generateTranslationTask([`info`, `authentication`, `login`])
 		this.generateTranslationTask([`info`, `authentication`, `setup`])
+		this.generateTranslationTask([`info`, `authentication`, `setupThreshold`])
 		this.generateTranslationTask([`info`, `authentication`, `unlink`])
 		this.generateTranslationTask([`info`, `authentication`, `unlinkSuccess`])
 		this.generateTranslationTask([`info`, `authentication`, `transferStart`])
