@@ -615,7 +615,11 @@ export default class TranslationClass {
 			// Check for rate limiting
 			if (error && error.code === `rate_limit_exceeded`) {
 				// Double the default delay for rate limit exceeding calls
-				return this.translateText({ input, description }, this.rateLimit.delayInMs, retries++)
+				return this.translateText(
+					{ input, description },
+					this.rateLimit.delayInMs,
+					retries++
+				)
 			} else {
 				console.log(error.code)
 				return false
