@@ -53,6 +53,7 @@ export const addMissingEntriesToObject = (
 		if (typeof source[key] === `object`) {
 			target[key] = addMissingEntriesToObject(source[key] as NestedObject, target[key] || {})
 		} else if (!Object.prototype.hasOwnProperty.call(target, key)) {
+			if (typeof target[key] !== `object` && typeof source === `object`) target = {}
 			target[key] = null
 		}
 	}
