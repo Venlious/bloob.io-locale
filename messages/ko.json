@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal Korean",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1255,
+        "missing": 47
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "주어진 코드가 존재하지 않아요.",
+            "alreadyOwned": null,
             "alreadyUsed": "이미 활성화된 코드에요."
         },
         "authentication": {
@@ -29,6 +30,10 @@
             "generic": "좀 천천히 해! %{seconds}초 동안 기다려."
         },
         "generic": {
+            "insufficientBalance": null,
+            "invalidPurchaseWindow": null,
+            "invalidProduct": null,
+            "alreadyOwnedProduct": null,
             "levelTooLow": "네 레벨이 이 행동을 하기에는 충분히 높지 않아요.",
             "differentSessionConnected": "%{session}에서 로그인했고 여기서 연결이 끊어졌어요.",
             "sameSessionConnected": "다른 브라우저 탭에서 이 사이트를 열어서 여기서 연결이 끊어졌어요.",
@@ -143,7 +148,7 @@
             "inGame": "게임 진행 중에는 프로필을 수정할 수 없어요"
         },
         "requirement": {
-            "authentication": "인증 없이는 이 작업을 수행할 수 없어.",
+            "authentication": null,
             "credentials": "잘못된 인증 정보를 입력했어.",
             "validAccount": "아직 계정이 확인되지 않았어. 프로필 변경 사항을 저장해줘.",
             "inLobby": "이미 경기가 시작되었기 때문에 이 작업을 수행할 수 없어.",
@@ -1335,14 +1340,63 @@
         }
     },
     "time": {
+        "daysShort": null,
+        "hoursShort": null,
+        "minutesShort": null,
         "days": "0일 | 1일 | {count}일",
         "hours": "0시간 | 1시간 | {count}시간",
         "minutes": "0분 | 1분 | {count}분",
         "seconds": "0초 | 1초 | {count}초"
     },
     "perk": {
-        "enhancedPack": "강화 팩",
-        "developer": "개발자"
+        "enhancedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "신입",
@@ -1404,9 +1458,16 @@
         "playRandomOpponents": "랜덤 상대와 게임하기 | 랜덤 상대와 게임하기 | 랜덤 상대와 게임하기",
         "turnsToFlip": "뒤집을 차례 | 뒤집을 차례 | 뒤집을 차례",
         "increment": "0 증가 | 1 증가 | {count} 증가",
-        "shipsRemaining": "남은 배 0 | 남은 배 1 | 남은 배 {count}"
+        "shipsRemaining": "남은 배 0 | 남은 배 1 | 남은 배 {count}",
+        "includesItems": null
     },
     "misc": {
+        "store": null,
+        "buyNow": null,
+        "expired": null,
+        "yourCoins": null,
+        "getCoins": null,
+        "price": null,
         "roll": "굴리기",
         "rollAgain": "다시 굴리기",
         "rolling": "굴리는 중",
@@ -1418,7 +1479,6 @@
         "summary": "요약",
         "versusPlayers": "플레이어 대결",
         "versusBots": "봇과 대결",
-        "expires": "만료",
         "never": "절대로",
         "perks": "특전",
         "beta": "베타",
@@ -1454,6 +1514,7 @@
         "vibration": "진동",
         "locked": "잠김",
         "available": "사용 가능",
+        "owned": null,
         "unavailable": "사용 불가능",
         "changeLog": "변경 기록",
         "status": "상태",
@@ -1462,6 +1523,10 @@
         "toggle": "토글",
         "login": "로그인",
         "logout": "로그아웃",
+        "hats": null,
+        "eyes": null,
+        "mouths": null,
+        "backgrounds": null,
         "emailAddress": "이메일 주소",
         "emailAddressConfirmation": "이메일 주소 재입력",
         "createAccount": "계정 생성",
@@ -1548,6 +1613,8 @@
         "showBlank": "%{value} 보기",
         "hideBlank": "%{value} 숨기기",
         "orBlank": "또는 %{value}",
+        "saveBlank": null,
+        "coinsBlank": null,
         "sendVerification": "인증 보내기",
         "noThanks": "괜찮아요",
         "selectAll": "전체 선택",
@@ -1719,13 +1786,13 @@
         "areYouSure": "정말로?",
         "checkServerStatus": "라이브 서버 상태를 확인해봐",
         "customizePreset": "이 프리셋을 네 맘대로 커스터마이즈해봐.",
+        "loginToPurchase": null,
         "settings": {
             "redeemCode": {
                 "title": "코드 사용하기",
                 "description": "아래에 고유 코드를 입력하여 특별 아이템을 얻어 더 많은 커스터마이징을 즐겨보세요. 각 코드는 한 번만 사용할 수 있습니다.",
                 "unlinked": "이메일 주소와 계정을 연결하기 전에는 코드를 사용할 수 없습니다.",
-                "success": "%{perk} 퍽을 성공적으로 받았습니다!",
-                "expiration": "이 코드는 %{activationDuration} 동안 유효하며, 퍽은 %{expirationDate}에 만료됩니다."
+                "success": null
             },
             "experience": {
                 "title": "경험",

@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal Italian",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1255,
+        "missing": 47
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Il codice fornito non esiste.",
+            "alreadyOwned": null,
             "alreadyUsed": "Il codice fornito è già stato attivato."
         },
         "authentication": {
@@ -29,6 +30,10 @@
             "generic": "Rallenta un attimo! Aspetta %{seconds} secondo(i)."
         },
         "generic": {
+            "insufficientBalance": null,
+            "invalidPurchaseWindow": null,
+            "invalidProduct": null,
+            "alreadyOwnedProduct": null,
             "levelTooLow": "Il tuo livello non è abbastanza alto per fare questa azione.",
             "differentSessionConnected": "Hai effettuato l'accesso su %{session} e sei stato disconnesso qui.",
             "sameSessionConnected": "Sei stato disconnesso qui perché hai aperto questo sito in un'altra scheda del browser.",
@@ -143,7 +148,7 @@
             "inGame": "Impossibile personalizzare il profilo mentre la partita è in corso"
         },
         "requirement": {
-            "authentication": "Non puoi eseguire questa azione senza aver autenticato.",
+            "authentication": null,
             "credentials": "Hai fornito credenziali non valide.",
             "validAccount": "Il tuo account non è stato ancora approvato. Salva le modifiche del tuo profilo.",
             "inLobby": "Non puoi eseguire questa azione perché la partita è già iniziata.",
@@ -1335,14 +1340,63 @@
         }
     },
     "time": {
+        "daysShort": null,
+        "hoursShort": null,
+        "minutesShort": null,
         "days": "0 giorni | 1 giorno | {count} giorni",
         "hours": "0 ore | 1 ora | {count} ore",
         "minutes": "0 minuti | 1 minuto | {count} minuti",
         "seconds": "0 secondi | 1 secondo | {count} secondi"
     },
     "perk": {
-        "enhancedPack": "Pacchetto potenziato",
-        "developer": "Sviluppatore"
+        "enhancedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "Esordiente",
@@ -1404,9 +1458,16 @@
         "playRandomOpponents": "Gioca contro avversari casuali | Gioca contro avversari casuali | Gioca contro avversari casuali",
         "turnsToFlip": "Gira per capovolgere | Gira per capovolgere | Gira per capovolgere",
         "increment": "Incremento di 0 | Incremento di 1 | Incremento di {count}",
-        "shipsRemaining": "0 navi rimaste | 1 nave rimasta | {count} navi rimaste"
+        "shipsRemaining": "0 navi rimaste | 1 nave rimasta | {count} navi rimaste",
+        "includesItems": null
     },
     "misc": {
+        "store": null,
+        "buyNow": null,
+        "expired": null,
+        "yourCoins": null,
+        "getCoins": null,
+        "price": null,
         "roll": "Tira",
         "rollAgain": "Tira di nuovo",
         "rolling": "Sto tirando",
@@ -1418,7 +1479,6 @@
         "summary": "Riassunto",
         "versusPlayers": "Contro Giocatori",
         "versusBots": "Contro Bot",
-        "expires": "Scade",
         "never": "Mai",
         "perks": "Vantaggi",
         "beta": "Beta",
@@ -1454,6 +1514,7 @@
         "vibration": "Vibrazioni",
         "locked": "Bloccato",
         "available": "Disponibile",
+        "owned": null,
         "unavailable": "Non disponibile",
         "changeLog": "Registro delle modifiche",
         "status": "Stato",
@@ -1462,6 +1523,10 @@
         "toggle": "Toggle",
         "login": "Accesso",
         "logout": "Esci",
+        "hats": null,
+        "eyes": null,
+        "mouths": null,
+        "backgrounds": null,
         "emailAddress": "Indirizzo Email",
         "emailAddressConfirmation": "Ripeti Indirizzo Email",
         "createAccount": "Crea Account",
@@ -1548,6 +1613,8 @@
         "showBlank": "Mostra %{value}",
         "hideBlank": "Nascondi %{value}",
         "orBlank": "Oppure %{value}",
+        "saveBlank": null,
+        "coinsBlank": null,
         "sendVerification": "Invia Verifica",
         "noThanks": "No grazie",
         "selectAll": "Seleziona tutti",
@@ -1719,13 +1786,13 @@
         "areYouSure": "Sei sicuro?",
         "checkServerStatus": "Controlla lo stato del server in tempo reale",
         "customizePreset": "Personalizza questo preset a tuo piacimento.",
+        "loginToPurchase": null,
         "settings": {
             "redeemCode": {
                 "title": "Inserisci codice",
                 "description": "Inserisci un codice univoco qui sotto per sbloccare oggetti speciali per una personalizzazione ancora maggiore. Ogni codice può essere usato una sola volta.",
                 "unlinked": "Spiacenti, non puoi riscattare un codice finché non hai collegato il tuo account a un indirizzo email.",
-                "success": "Hai riscattato con successo il vantaggio %{perk}!",
-                "expiration": "Il codice è valido per %{activationDuration} e il tuo vantaggio scadrà il %{expirationDate}."
+                "success": null
             },
             "experience": {
                 "title": "Esperienza",

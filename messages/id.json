@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1255,
+        "missing": 47
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Kode yang diberikan tidak ada.",
+            "alreadyOwned": null,
             "alreadyUsed": "Kode yang diberikan sudah diaktifkan."
         },
         "authentication": {
@@ -29,6 +30,10 @@
             "generic": "Pelan-pelan dulu! Tunggu %{seconds} detik."
         },
         "generic": {
+            "insufficientBalance": null,
+            "invalidPurchaseWindow": null,
+            "invalidProduct": null,
+            "alreadyOwnedProduct": null,
             "levelTooLow": "Level kamu belum cukup tinggi untuk melakukan aksi ini.",
             "differentSessionConnected": "Kamu login di %{session} dan udah diputus sambungannya di sini.",
             "sameSessionConnected": "Kamu diputus sambungan di sini karena kamu buka situs ini di tab browser lain.",
@@ -143,7 +148,7 @@
             "inGame": "Tidak bisa mengubah profil kamu saat game sedang berlangsung"
         },
         "requirement": {
-            "authentication": "Kamu nggak bisa melakukan aksi ini tanpa autentikasi.",
+            "authentication": null,
             "credentials": "Kredensial yang kamu berikan nggak valid.",
             "validAccount": "Akunmu belum divalidasi. Tolong simpan perubahan profil kamu.",
             "inLobby": "Kamu nggak bisa melakukan aksi ini karena pertandingan sudah dimulai.",
@@ -1335,14 +1340,63 @@
         }
     },
     "time": {
+        "daysShort": null,
+        "hoursShort": null,
+        "minutesShort": null,
         "days": "0 hari | 1 hari | {count} hari",
         "hours": "0 jam | 1 jam | {count} jam",
         "minutes": "0 menit | 1 menit | {count} menit",
         "seconds": "0 detik | 1 detik | {count} detik"
     },
     "perk": {
-        "enhancedPack": "Paket Peningkatan",
-        "developer": "Pengembang"
+        "enhancedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "Pemula",
@@ -1404,9 +1458,16 @@
         "playRandomOpponents": "Main Lawan Lawan Acak | Main Lawan Acak | Main Lawan Lawan Acak",
         "turnsToFlip": "Giliran buat balik | Giliran buat balik | Giliran-giliran buat balik",
         "increment": "Bertambah 0 | Bertambah 1 | Bertambah {count}",
-        "shipsRemaining": "0 kapal tersisa | 1 kapal tersisa | {count} kapal tersisa"
+        "shipsRemaining": "0 kapal tersisa | 1 kapal tersisa | {count} kapal tersisa",
+        "includesItems": null
     },
     "misc": {
+        "store": null,
+        "buyNow": null,
+        "expired": null,
+        "yourCoins": null,
+        "getCoins": null,
+        "price": null,
         "roll": "Gulir",
         "rollAgain": "Gulir Lagi",
         "rolling": "Sedang Menggulir",
@@ -1418,7 +1479,6 @@
         "summary": "Ringkasan",
         "versusPlayers": "Lawan Pemain",
         "versusBots": "Lawan Bot",
-        "expires": "Kadaluarsa",
         "never": "Tidak Pernah",
         "perks": "Keuntungan",
         "beta": "Beta",
@@ -1454,6 +1514,7 @@
         "vibration": "Getaran",
         "locked": "Terkunci",
         "available": "Tersedia",
+        "owned": null,
         "unavailable": "Tidak Tersedia",
         "changeLog": "Catatan Perubahan",
         "status": "Status",
@@ -1462,6 +1523,10 @@
         "toggle": "Beralih",
         "login": "Masuk",
         "logout": "Keluar",
+        "hats": null,
+        "eyes": null,
+        "mouths": null,
+        "backgrounds": null,
         "emailAddress": "Alamat Email",
         "emailAddressConfirmation": "Ulangi Alamat Email",
         "createAccount": "Buat Akun",
@@ -1548,6 +1613,8 @@
         "showBlank": "Tampilkan %{value}",
         "hideBlank": "Sembunyikan %{value}",
         "orBlank": "Atau %{value}",
+        "saveBlank": null,
+        "coinsBlank": null,
         "sendVerification": "Kirim Verifikasi",
         "noThanks": "Nggak, makasih",
         "selectAll": "Pilih semua",
@@ -1719,13 +1786,13 @@
         "areYouSure": "Kamu yakin?",
         "checkServerStatus": "Cek status server langsung",
         "customizePreset": "Sesuaikan preset ini sesuai selera kamu.",
+        "loginToPurchase": null,
         "settings": {
             "redeemCode": {
                 "title": "Tukar Kode",
                 "description": "Masukkan kode unik di bawah ini untuk membuka item spesial untuk lebih banyak kustomisasi. Setiap kode hanya bisa digunakan sekali.",
                 "unlinked": "Maaf, kamu tidak bisa menukar kode sampai kamu menghubungkan akunmu ke alamat email.",
-                "success": "Kamu telah berhasil mengklaim %{perk}!",
-                "expiration": "Kode ini berlaku selama %{activationDuration} dan keuntunganmu akan berakhir pada %{expirationDate}."
+                "success": null
             },
             "experience": {
                 "title": "Pengalaman",

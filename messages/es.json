@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal Mexican Spanish",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1255,
+        "missing": 47
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "El código proporcionado no existe.",
+            "alreadyOwned": null,
             "alreadyUsed": "El código proporcionado ya ha sido activado."
         },
         "authentication": {
@@ -29,6 +30,10 @@
             "generic": "¡Frena un poco! Espera %{seconds} segundo(s)."
         },
         "generic": {
+            "insufficientBalance": null,
+            "invalidPurchaseWindow": null,
+            "invalidProduct": null,
+            "alreadyOwnedProduct": null,
             "levelTooLow": "Tu nivel no es suficientemente alto para hacer esto.",
             "differentSessionConnected": "Usted inició sesión en %{session} y ha sido desconectado aquí.",
             "sameSessionConnected": "Usted fue desconectado aquí al abrir este sitio en otra pestaña del navegador.",
@@ -143,7 +148,7 @@
             "inGame": "No se puede personalizar el perfil mientras el juego está en marcha"
         },
         "requirement": {
-            "authentication": "No puedes realizar esta acción sin haberte autenticado.",
+            "authentication": null,
             "credentials": "Has dado credenciales inválidas.",
             "validAccount": "Tu cuenta aún no ha sido validada. Por favor, guarda los cambios en tu perfil.",
             "inLobby": "No puedes realizar esta acción porque el partido ya ha comenzado.",
@@ -1335,14 +1340,63 @@
         }
     },
     "time": {
+        "daysShort": null,
+        "hoursShort": null,
+        "minutesShort": null,
         "days": "0 días | 1 día | {count} días",
         "hours": "0 horas | 1 hora | {count} horas",
         "minutes": "0 minutos | 1 minuto | {count} minutos",
         "seconds": "0 segundos | 1 segundo | {count} segundos"
     },
     "perk": {
-        "enhancedPack": "Paquete Mejorado",
-        "developer": "Desarrollador"
+        "enhancedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "Novato",
@@ -1404,9 +1458,16 @@
         "playRandomOpponents": "Jugar con oponentes aleatorios",
         "turnsToFlip": "Turnos para voltear | Turno para voltear | Turnos para voltear",
         "increment": "Incrementos de %{count}",
-        "shipsRemaining": "0 barcos restantes | 1 barco restante | {count} barcos restantes"
+        "shipsRemaining": "0 barcos restantes | 1 barco restante | {count} barcos restantes",
+        "includesItems": null
     },
     "misc": {
+        "store": null,
+        "buyNow": null,
+        "expired": null,
+        "yourCoins": null,
+        "getCoins": null,
+        "price": null,
         "roll": "Lanza",
         "rollAgain": "Lanza de Nuevo",
         "rolling": "Lanzando",
@@ -1418,7 +1479,6 @@
         "summary": "Resumen",
         "versusPlayers": "Versus Jugadores",
         "versusBots": "Versus Bots",
-        "expires": "Expira",
         "never": "Nunca",
         "perks": "Beneficios",
         "beta": "Beta",
@@ -1454,6 +1514,7 @@
         "vibration": "Vibración",
         "locked": "Bloqueado",
         "available": "Disponible",
+        "owned": null,
         "unavailable": "No disponible",
         "changeLog": "Registro de cambios",
         "status": "Estatus",
@@ -1462,6 +1523,10 @@
         "toggle": "Activar",
         "login": "Iniciar sesión",
         "logout": "Cerrar sesión",
+        "hats": null,
+        "eyes": null,
+        "mouths": null,
+        "backgrounds": null,
         "emailAddress": "Correo electrónico",
         "emailAddressConfirmation": "Repite tu correo electrónico",
         "createAccount": "Crear cuenta",
@@ -1548,6 +1613,8 @@
         "showBlank": "Mostrar %{value}",
         "hideBlank": "Ocultar %{value}",
         "orBlank": "O %{value}",
+        "saveBlank": null,
+        "coinsBlank": null,
         "sendVerification": "Enviar verificación",
         "noThanks": "No, gracias",
         "selectAll": "Seleccionar todo",
@@ -1719,13 +1786,13 @@
         "areYouSure": "¿Estás seguro?",
         "checkServerStatus": "Revisa el estado en vivo del servidor",
         "customizePreset": "Personaliza este preajuste a tu gusto.",
+        "loginToPurchase": null,
         "settings": {
             "redeemCode": {
                 "title": "Canjear código",
                 "description": "Ingresa un código único a continuación para desbloquear artículos especiales para una mayor personalización. Cada código solo se puede usar una vez.",
                 "unlinked": "Lo sentimos, no puedes canjear un código hasta que hayas vinculado tu cuenta a una dirección de correo electrónico.",
-                "success": "¡Has reclamado con éxito el beneficio %{perk}!",
-                "expiration": "El código es válido por %{activationDuration} y tu beneficio caducará el %{expirationDate}."
+                "success": null
             },
             "experience": {
                 "title": "Experiencia",

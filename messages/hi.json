@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal Hindi script",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1255,
+        "missing": 47
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "दिया गया कोड मौजूद नहीं है।",
+            "alreadyOwned": null,
             "alreadyUsed": "दिया गया कोड पहले ही सक्रिय कर दिया गया है।"
         },
         "authentication": {
@@ -29,6 +30,10 @@
             "generic": "थोड़ा धीरे करो! %{seconds} सेकंड(s) इंतजार करें।"
         },
         "generic": {
+            "insufficientBalance": null,
+            "invalidPurchaseWindow": null,
+            "invalidProduct": null,
+            "alreadyOwnedProduct": null,
             "levelTooLow": "तुम्हारा स्तर इस कार्य को करने के लिए काफी ऊचा नहीं है।",
             "differentSessionConnected": "आपने %{session} पर लॉग इन किया था और यहाँ डिस्कनेक्ट हो गए हैं।",
             "sameSessionConnected": "आप इस साइट को दूसरे ब्राउज़र टैब में खोलने के कारण यहाँ डिस्कनेक्ट हो गए थे।",
@@ -143,7 +148,7 @@
             "inGame": "खेल चल रहा होने पर आप अपनी प्रोफ़ाइल कस्टमाइज़ नहीं कर सकते"
         },
         "requirement": {
-            "authentication": "आप इस कार्य को करने के लिए प्रमाणित नहीं हैं।",
+            "authentication": null,
             "credentials": "आपने गलत जानकारी दी है।",
             "validAccount": "आपका खाता अभी तक सत्यापित नहीं हुआ है। कृपया अपने प्रोफ़ाइल में परिवर्तन सहेजें।",
             "inLobby": "मैच शुरू हो चुका है, इसलिए आप इस कार्य को नहीं कर सकते।",
@@ -1335,14 +1340,63 @@
         }
     },
     "time": {
+        "daysShort": null,
+        "hoursShort": null,
+        "minutesShort": null,
         "days": "0 दिन | 1 दिन | {count} दिन",
         "hours": "0 घंटे | 1 घंटा | {count} घंटे",
         "minutes": "0 मिनट | 1 मिनट | {count} मिनट",
         "seconds": "0 सेकंड | 1 सेकंड | {count} सेकंड"
     },
     "perk": {
-        "enhancedPack": "उन्नत पैक",
-        "developer": "डेवलपर"
+        "enhancedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "नौसिखिया",
@@ -1404,9 +1458,16 @@
         "playRandomOpponents": "बेतरतीब विरोधी से खेलें | बेतरतीब विरोधी से खेलें | बेतरतीब विरोधी से खेलें",
         "turnsToFlip": "फ्लिप करने के लिए बारी | फ्लिप करने की बारी | फ्लिप करने के लिए बारियां",
         "increment": "0 की वृद्धि | 1 की वृद्धि | {count} की वृद्धियां",
-        "shipsRemaining": "0 जहाज बाकी | 1 जहाज बाकी | {count} जहाज बाकी"
+        "shipsRemaining": "0 जहाज बाकी | 1 जहाज बाकी | {count} जहाज बाकी",
+        "includesItems": null
     },
     "misc": {
+        "store": null,
+        "buyNow": null,
+        "expired": null,
+        "yourCoins": null,
+        "getCoins": null,
+        "price": null,
         "roll": "घुमाओ",
         "rollAgain": "फिर से घुमाओ",
         "rolling": "घुमा रहा है",
@@ -1418,7 +1479,6 @@
         "summary": "सारांश",
         "versusPlayers": "खिलाड़ियों के खिलाफ",
         "versusBots": "बॉट्स के खिलाफ",
-        "expires": "समाप्त होता है",
         "never": "कभी नहीं",
         "perks": "फायदे",
         "beta": "बीटा",
@@ -1454,6 +1514,7 @@
         "vibration": "कंपन",
         "locked": "बंद",
         "available": "उपलब्ध",
+        "owned": null,
         "unavailable": "अनुपलब्ध",
         "changeLog": "बदलाव की सूची",
         "status": "स्थिति",
@@ -1462,6 +1523,10 @@
         "toggle": "टॉगल",
         "login": "लॉगिन",
         "logout": "लॉगआउट",
+        "hats": null,
+        "eyes": null,
+        "mouths": null,
+        "backgrounds": null,
         "emailAddress": "ईमेल पता",
         "emailAddressConfirmation": "ईमेल पता दोहराएं",
         "createAccount": "खाता बनाएं",
@@ -1548,6 +1613,8 @@
         "showBlank": "%{value} दिखाएं",
         "hideBlank": "%{value} छुपाएं",
         "orBlank": "या %{value}",
+        "saveBlank": null,
+        "coinsBlank": null,
         "sendVerification": "सत्यापन भेजें",
         "noThanks": "नहीं, धन्यवाद",
         "selectAll": "सभी का चयन करें",
@@ -1719,13 +1786,13 @@
         "areYouSure": "क्या आप पक्के हैं?",
         "checkServerStatus": "लाइव सर्वर की स्थिति जांचें",
         "customizePreset": "इस प्रीसेट को अपनी पसंद अनुसार कस्टमाइज़ करें।",
+        "loginToPurchase": null,
         "settings": {
             "redeemCode": {
                 "title": "कोड रिडीम करें",
                 "description": "नीचे एक अद्वितीय कोड दर्ज करें ताकि आप और अधिक अनुकूलन के लिए विशेष आइटम अनलॉक कर सकें। प्रत्येक कोड केवल एक बार ही उपयोग किया जा सकता है।",
                 "unlinked": "क्षमा करें, आप तब तक कोड रिडीम नहीं कर सकते जब तक आपने अपने खाते को ईमेल पते से लिंक नहीं किया होता।",
-                "success": "आपने %{perk} पर्क को सफलतापूर्वक दावा किया है!",
-                "expiration": "कोड %{activationDuration} के लिए मान्य है और आपका पर्क %{expirationDate} को समाप्त हो जाएगा।"
+                "success": null
             },
             "experience": {
                 "title": "अनुभव",

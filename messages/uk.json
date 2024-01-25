@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal Ukrainian",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1255,
+        "missing": 47
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Даний код не існує.",
+            "alreadyOwned": null,
             "alreadyUsed": "Даний код вже був активований."
         },
         "authentication": {
@@ -29,6 +30,10 @@
             "generic": "Трохи сповільни! Зачекай %{seconds} секунд(и)."
         },
         "generic": {
+            "insufficientBalance": null,
+            "invalidPurchaseWindow": null,
+            "invalidProduct": null,
+            "alreadyOwnedProduct": null,
             "levelTooLow": "Твій рівень недостатньо високий, щоб виконати цю дію.",
             "differentSessionConnected": "Ти увійшов у систему на %{session} і був відключений тут.",
             "sameSessionConnected": "Тебе відключили тут, бо ти відкрив цей сайт у іншій вкладці браузера.",
@@ -143,7 +148,7 @@
             "inGame": "Неможливо налаштувати свій профіль під час гри"
         },
         "requirement": {
-            "authentication": "Ти не можеш виконати цю дію без авторизації.",
+            "authentication": null,
             "credentials": "Ти ввів неправильні дані.",
             "validAccount": "Твій акаунт ще не підтверджено. Будь ласка, збережи зміни в профілі.",
             "inLobby": "Ти не можеш виконати цю дію, бо матч вже почався.",
@@ -1335,14 +1340,63 @@
         }
     },
     "time": {
+        "daysShort": null,
+        "hoursShort": null,
+        "minutesShort": null,
         "days": "0 днів | 1 день | {count} днів",
         "hours": "0 годин | 1 година | {count} годин",
         "minutes": "0 хвилин | 1 хвилина | {count} хвилин",
         "seconds": "0 секунд | 1 секунда | {count} секунд"
     },
     "perk": {
-        "enhancedPack": "Покращений Пакет",
-        "developer": "Розробник"
+        "enhancedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "Новачок",
@@ -1404,9 +1458,16 @@
         "playRandomOpponents": "Грай проти випадкових суперників | Грай проти випадкового суперника | Грай проти випадкових суперників",
         "turnsToFlip": "Оберти для перевороту | Оберт для перевороту | Обертів для перевороту",
         "increment": "Приріст 0 | Приріст 1 | Приріст {count}",
-        "shipsRemaining": "0 кораблів залишилося | 1 корабель залишився | Залишилося {count} кораблів"
+        "shipsRemaining": "0 кораблів залишилося | 1 корабель залишився | Залишилося {count} кораблів",
+        "includesItems": null
     },
     "misc": {
+        "store": null,
+        "buyNow": null,
+        "expired": null,
+        "yourCoins": null,
+        "getCoins": null,
+        "price": null,
         "roll": "Кинути",
         "rollAgain": "Кинути знову",
         "rolling": "Кидаємо",
@@ -1418,7 +1479,6 @@
         "summary": "Підсумок",
         "versusPlayers": "Проти гравців",
         "versusBots": "Проти Ботів",
-        "expires": "Закінчується",
         "never": "Ніколи",
         "perks": "Переваги",
         "beta": "Бета",
@@ -1454,6 +1514,7 @@
         "vibration": "Вібрація",
         "locked": "Заблоковано",
         "available": "Доступно",
+        "owned": null,
         "unavailable": "Недоступно",
         "changeLog": "Журнал змін",
         "status": "Статус",
@@ -1462,6 +1523,10 @@
         "toggle": "Перемкнути",
         "login": "Увійти",
         "logout": "Вийти",
+        "hats": null,
+        "eyes": null,
+        "mouths": null,
+        "backgrounds": null,
         "emailAddress": "Електронна адреса",
         "emailAddressConfirmation": "Повторіть електронну адресу",
         "createAccount": "Створити акаунт",
@@ -1548,6 +1613,8 @@
         "showBlank": "Показати %{value}",
         "hideBlank": "Сховати %{value}",
         "orBlank": "Або %{value}",
+        "saveBlank": null,
+        "coinsBlank": null,
         "sendVerification": "Відправити верифікацію",
         "noThanks": "Ні, дякую",
         "selectAll": "Вибрати все",
@@ -1719,13 +1786,13 @@
         "areYouSure": "Ти впевнений?",
         "checkServerStatus": "Перевір статус живого сервера",
         "customizePreset": "Налаштуй цей пресет за своїм смаком.",
+        "loginToPurchase": null,
         "settings": {
             "redeemCode": {
                 "title": "Введіть код",
                 "description": "Введіть унікальний код нижче, щоб розблокувати спеціальні предмети для ще більшого налаштування. Кожен код можна використати лише один раз.",
                 "unlinked": "Вибачте, ви не можете ввести код, поки не прив'яжете свій аккаунт до електронної адреси.",
-                "success": "Ви успішно отримали перевагу %{perk}!",
-                "expiration": "Код дійсний протягом %{activationDuration} і ваша перевага закінчиться %{expirationDate}."
+                "success": null
             },
             "experience": {
                 "title": "Досвід",

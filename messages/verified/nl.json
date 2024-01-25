@@ -3,6 +3,7 @@
     "error": {
         "redeemCode": {
             "invalid": true,
+            "alreadyOwned": false,
             "alreadyUsed": true
         },
         "authentication": {
@@ -23,6 +24,10 @@
             "generic": true
         },
         "generic": {
+            "insufficientBalance": false,
+            "invalidPurchaseWindow": false,
+            "invalidProduct": false,
+            "alreadyOwnedProduct": false,
             "levelTooLow": false,
             "differentSessionConnected": true,
             "sameSessionConnected": true,
@@ -137,7 +142,7 @@
             "inGame": true
         },
         "requirement": {
-            "authentication": true,
+            "authentication": false,
             "credentials": true,
             "validAccount": true,
             "inLobby": true,
@@ -1329,14 +1334,63 @@
         }
     },
     "time": {
+        "daysShort": false,
+        "hoursShort": false,
+        "minutesShort": false,
         "days": true,
         "hours": true,
         "minutes": true,
         "seconds": true
     },
     "perk": {
-        "enhancedPack": true,
-        "developer": true
+        "enhancedPack": {
+            "title": false,
+            "description": false
+        },
+        "dapperPack": {
+            "title": false,
+            "description": false
+        },
+        "militaryPack": {
+            "title": false,
+            "description": false
+        },
+        "piratePack": {
+            "title": false,
+            "description": false
+        },
+        "holidaysPack": {
+            "title": false,
+            "description": false
+        },
+        "animalPack": {
+            "title": false,
+            "description": false
+        },
+        "halloweenPack": {
+            "title": false,
+            "description": false
+        },
+        "americanFootballPack": {
+            "title": false,
+            "description": false
+        },
+        "celebrationPack": {
+            "title": false,
+            "description": false
+        },
+        "developer": {
+            "title": false
+        },
+        "coinSmall": {
+            "title": false
+        },
+        "coinMedium": {
+            "title": false
+        },
+        "coinLarge": {
+            "title": false
+        }
     },
     "title": {
         "rookie": true,
@@ -1398,9 +1452,16 @@
         "playRandomOpponents": true,
         "turnsToFlip": true,
         "increment": true,
-        "shipsRemaining": false
+        "shipsRemaining": false,
+        "includesItems": false
     },
     "misc": {
+        "store": false,
+        "buyNow": false,
+        "expired": false,
+        "yourCoins": false,
+        "getCoins": false,
+        "price": false,
         "roll": false,
         "rollAgain": false,
         "rolling": false,
@@ -1412,7 +1473,6 @@
         "summary": true,
         "versusPlayers": true,
         "versusBots": true,
-        "expires": true,
         "never": true,
         "perks": true,
         "beta": true,
@@ -1448,6 +1508,7 @@
         "vibration": true,
         "locked": true,
         "available": true,
+        "owned": false,
         "unavailable": true,
         "changeLog": true,
         "status": true,
@@ -1456,6 +1517,10 @@
         "toggle": true,
         "login": true,
         "logout": true,
+        "hats": false,
+        "eyes": false,
+        "mouths": false,
+        "backgrounds": false,
         "emailAddress": true,
         "emailAddressConfirmation": true,
         "createAccount": true,
@@ -1542,6 +1607,8 @@
         "showBlank": true,
         "hideBlank": true,
         "orBlank": true,
+        "saveBlank": false,
+        "coinsBlank": false,
         "sendVerification": true,
         "noThanks": true,
         "selectAll": true,
@@ -1713,13 +1780,13 @@
         "areYouSure": true,
         "checkServerStatus": false,
         "customizePreset": false,
+        "loginToPurchase": false,
         "settings": {
             "redeemCode": {
                 "title": true,
                 "description": true,
                 "unlinked": true,
-                "success": true,
-                "expiration": true
+                "success": false
             },
             "experience": {
                 "title": true,

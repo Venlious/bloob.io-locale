@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal German",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1255,
+        "missing": 47
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Der angegebene Code existiert nicht.",
+            "alreadyOwned": null,
             "alreadyUsed": "Der angegebene Code wurde bereits aktiviert."
         },
         "authentication": {
@@ -29,6 +30,10 @@
             "generic": "Mach mal langsamer! Warte %{seconds} Sekunde(n)."
         },
         "generic": {
+            "insufficientBalance": null,
+            "invalidPurchaseWindow": null,
+            "invalidProduct": null,
+            "alreadyOwnedProduct": null,
             "levelTooLow": "Dein Level ist nicht hoch genug, um diese Aktion auszuführen.",
             "differentSessionConnected": "Du hast dich bei %{session} angemeldet und hier wurdest du getrennt.",
             "sameSessionConnected": "Hier wurdest du getrennt, als du diese Seite in einem anderen Browser-Tab geöffnet hast.",
@@ -143,7 +148,7 @@
             "inGame": "Profil kann nicht während dem Spiel geändert werden."
         },
         "requirement": {
-            "authentication": "Du kannst diese Aktion nicht ausführen, ohne authentifiziert zu sein.",
+            "authentication": null,
             "credentials": "Anmeldedaten ungültig.",
             "validAccount": "Dein Konto wurde noch nicht validiert. Bitte speichere deine Profiländerungen.",
             "inLobby": "Du kannst diese Aktion nicht durchführen, da das Spiel bereits begonnen hat.",
@@ -1335,14 +1340,63 @@
         }
     },
     "time": {
+        "daysShort": null,
+        "hoursShort": null,
+        "minutesShort": null,
         "days": "0 Tage | 1 Tag | {count} Tage",
         "hours": "0 Stunden | 1 Stunde | {count} Stunden",
         "minutes": "0 Minuten | 1 Minute | {count} Minuten",
         "seconds": "0 Sekunden | 1 Sekunde | {count} Sekunden"
     },
     "perk": {
-        "enhancedPack": "Erweitertes Paket",
-        "developer": "Entwickler"
+        "enhancedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "Anfänger",
@@ -1404,9 +1458,16 @@
         "playRandomOpponents": "Spiele gegen zufällige Gegner",
         "turnsToFlip": "Züge bis zum Umdrehen | Zug bis zum Umdrehen | Züge bis zum Umdrehen",
         "increment": "%{count}er Inkremente",
-        "shipsRemaining": "0 Schiffe übrig | 1 Schiff übrig | {count} Schiffe übrig"
+        "shipsRemaining": "0 Schiffe übrig | 1 Schiff übrig | {count} Schiffe übrig",
+        "includesItems": null
     },
     "misc": {
+        "store": null,
+        "buyNow": null,
+        "expired": null,
+        "yourCoins": null,
+        "getCoins": null,
+        "price": null,
         "roll": "Rollen",
         "rollAgain": "Nochmal rollen",
         "rolling": "Am Rollen",
@@ -1418,7 +1479,6 @@
         "summary": "Zusammenfassung",
         "versusPlayers": "Gegen Spieler",
         "versusBots": "Gegen Bots",
-        "expires": "Verfällt",
         "never": "Nie",
         "perks": "Vorteile",
         "beta": "Beta",
@@ -1454,6 +1514,7 @@
         "vibration": "Vibration",
         "locked": "Gesperrt",
         "available": "Verfügbar",
+        "owned": null,
         "unavailable": "Nicht verfügbar",
         "changeLog": "Change Log",
         "status": "Status",
@@ -1462,6 +1523,10 @@
         "toggle": "Umschalten",
         "login": "Anmelden",
         "logout": "Abmelden",
+        "hats": null,
+        "eyes": null,
+        "mouths": null,
+        "backgrounds": null,
         "emailAddress": "E-Mail-Adresse",
         "emailAddressConfirmation": "E-Mail-Adresse wiederholen",
         "createAccount": "Konto erstellen",
@@ -1548,6 +1613,8 @@
         "showBlank": "%{value} anzeigen",
         "hideBlank": "%{value} verbergen",
         "orBlank": "Oder %{value}",
+        "saveBlank": null,
+        "coinsBlank": null,
         "sendVerification": "Bestätigung senden",
         "noThanks": "Nein danke",
         "selectAll": "Alles auswählen",
@@ -1719,13 +1786,13 @@
         "areYouSure": "Bist du sicher?",
         "checkServerStatus": "Prüfe den Status des Live-Servers",
         "customizePreset": "Pass dieses Voreinstellung nach deinem Geschmack an.",
+        "loginToPurchase": null,
         "settings": {
             "redeemCode": {
                 "title": "Code einlösen",
                 "description": "Gib unten einen einzigartigen Code ein, um spezielle Gegenstände zu entsperren und dein Erscheinungsbild noch mehr anzupassen. Jeder Code kann nur einmal verwendet werden.",
                 "unlinked": "Tut mir leid, du kannst keinen Code einlösen, bis du dein Konto mit einer E-Mail-Adresse verknüpft hast.",
-                "success": "Du hast den %{perk}-Vorteil erfolgreich beansprucht!",
-                "expiration": "Der Code ist für %{activationDuration} gültig und dein Vorteil läuft am %{expirationDate} ab."
+                "success": null
             },
             "experience": {
                 "title": "Erfahrung",

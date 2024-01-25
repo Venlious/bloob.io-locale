@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal American English",
         "rtl": false,
-        "total": 1214,
+        "total": 1255,
         "missing": 0
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Given code does not exist.",
+            "alreadyOwned": "You already own this item. The code remains valid.",
             "alreadyUsed": "Given code has already been activated."
         },
         "authentication": {
@@ -29,6 +30,10 @@
             "generic": "Slow down a little! Wait %{seconds} second(s)."
         },
         "generic": {
+            "insufficientBalance": "You do not have enough coins for this purchase.",
+            "invalidPurchaseWindow": "Sorry, this product cannot be bought at this time.",
+            "invalidProduct": "Product with given ID does not exist.",
+            "alreadyOwnedProduct": "You already own this product.",
             "levelTooLow": "Your level is not high enough to perform this action.",
             "differentSessionConnected": "You logged in on %{session} and have been disconnected here.",
             "sameSessionConnected": "You were disconnected here as you opened this site in another browser tab.",
@@ -143,7 +148,7 @@
             "inGame": "Cannot customize your profile while the game is in progress"
         },
         "requirement": {
-            "authentication": "You cannot perform this action without having authenticated.",
+            "authentication": "You must be logged into your account to perform this action.",
             "credentials": "You have given invalid credentials.",
             "validAccount": "Your account has not been validated yet. Please save your profile changes.",
             "inLobby": "You cannot perform this action as the match has already started.",
@@ -1335,14 +1340,63 @@
         }
     },
     "time": {
+        "daysShort": "{count}d",
+        "hoursShort": "{count}h",
+        "minutesShort": "{count}m",
         "days": "0 days | 1 day | {count} days",
         "hours": "0 hours | 1 hour | {count} hours",
         "minutes": "0 minutes | 1 minute | {count} minutes",
         "seconds": "0 seconds | 1 second | {count} seconds"
     },
     "perk": {
-        "enhancedPack": "Enhanced Pack",
-        "developer": "Developer"
+        "enhancedPack": {
+            "title": "Enhanced Pack",
+            "description": "Elevate your experience! Unlock a world of possibilities with gradient backgrounds, cool eyes, and unique mouths."
+        },
+        "dapperPack": {
+            "title": "Dapper Pack",
+            "description": "Embrace the detective life! Equip your character with a detective hat, a top hat, a stylish moustache, and even a monocle."
+        },
+        "militaryPack": {
+            "title": "Military Pack",
+            "description": "Get ready for action! Put on a hard helmet and a beret, and blend into the surroundings with multiple camouflage backgrounds."
+        },
+        "piratePack": {
+            "title": "Pirate Pack",
+            "description": "Arr matey! Transform your character into a pirate with an eye patch, crooked teeth, and top it off with a pirate hat."
+        },
+        "holidaysPack": {
+            "title": "Holidays Pack",
+            "description": "Get in the holiday spirit with a range of festive hats!"
+        },
+        "animalPack": {
+            "title": "Animal Pack",
+            "description": "Be cute and playful! Give your character bunny ears, cat ears, and adorable mouths. The ears will adapt to the background color you select."
+        },
+        "halloweenPack": {
+            "title": "Halloween Pack",
+            "description": "Dive into the spooky season! Choose from chilling skeleton and zombie eyes, along with haunting mouths, to create a spooky and fun atmosphere in the game."
+        },
+        "americanFootballPack": {
+            "title": "American Football Pack",
+            "description": "Get ready for the big game! Equip your character with stylish football helmets in a variety of colors."
+        },
+        "celebrationPack": {
+            "title": "Celebration Pack",
+            "description": "Party time! Bring the joy to your character with a collection of vibrant party hats in different colors."
+        },
+        "developer": {
+            "title": "Developer"
+        },
+        "coinSmall": {
+            "title": "Coin Pouch"
+        },
+        "coinMedium": {
+            "title": "Coin Stash"
+        },
+        "coinLarge": {
+            "title": "Coin Vault"
+        }
     },
     "title": {
         "rookie": "Rookie",
@@ -1404,9 +1458,16 @@
         "playRandomOpponents": "Play Random Opponents | Play Random Opponent | Play Random Opponents",
         "turnsToFlip": "Turns to flip | Turn to flip | Turns to flip",
         "increment": "Increments of 0 | Increment of 1 | Increments of {count}",
-        "shipsRemaining": "0 ships remaining | 1 ship remaining | {count} ships remaining"
+        "shipsRemaining": "0 ships remaining | 1 ship remaining | {count} ships remaining",
+        "includesItems": "Includes 0 items | Includes 1 item | Includes {count} items"
     },
     "misc": {
+        "store": "Store",
+        "buyNow": "Buy Now",
+        "expired": "Expired",
+        "yourCoins": "Your Coins",
+        "getCoins": "Get Coins",
+        "price": "Price",
         "roll": "Roll",
         "rollAgain": "Roll Again",
         "rolling": "Rolling",
@@ -1418,7 +1479,6 @@
         "summary": "Summary",
         "versusPlayers": "Versus Players",
         "versusBots": "Versus Bots",
-        "expires": "Expires",
         "never": "Never",
         "perks": "Perks",
         "beta": "Beta",
@@ -1454,6 +1514,7 @@
         "vibration": "Vibration",
         "locked": "Locked",
         "available": "Available",
+        "owned": "Owned",
         "unavailable": "Unavailable",
         "changeLog": "Change Log",
         "status": "Status",
@@ -1462,6 +1523,10 @@
         "toggle": "Toggle",
         "login": "Login",
         "logout": "Logout",
+        "hats": "Hats",
+        "eyes": "Eyes",
+        "mouths": "Mouths",
+        "backgrounds": "Backgrounds",
         "emailAddress": "Email Address",
         "emailAddressConfirmation": "Repeat Email Address",
         "createAccount": "Create Account",
@@ -1548,6 +1613,8 @@
         "showBlank": "Show %{value}",
         "hideBlank": "Hide %{value}",
         "orBlank": "Or %{value}",
+        "saveBlank": "Save %{value}",
+        "coinsBlank": "%{value} coins",
         "sendVerification": "Send Verification",
         "noThanks": "No thanks",
         "selectAll": "Select all",
@@ -1718,14 +1785,14 @@
         "gameHelp": "%{title} Help",
         "areYouSure": "Are you sure?",
         "checkServerStatus": "Check the live server status",
-        "customizePreset": "customize this preset to your liking.",
+        "customizePreset": "Customize this preset to your liking.",
+        "loginToPurchase": "To make a purchase you must first login or create an account.",
         "settings": {
             "redeemCode": {
                 "title": "Redeem Code",
                 "description": "Enter a unique code below to unlock special items for even more customization. Each code can only be used once.",
                 "unlinked": "Sorry, you cannot redeem a code until you have linked your account to an email address.",
-                "success": "You have claimed the %{perk} perk successfully!",
-                "expiration": "The code is valid for %{activationDuration} and your perk will expire on %{expirationDate}."
+                "success": "You have successfully claimed %{item}!"
             },
             "experience": {
                 "title": "Experience",

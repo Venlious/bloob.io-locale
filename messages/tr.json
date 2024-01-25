@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1255,
+        "missing": 47
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Verilen kod mevcut değil.",
+            "alreadyOwned": null,
             "alreadyUsed": "Verilen kod zaten aktif hale getirilmiş."
         },
         "authentication": {
@@ -29,6 +30,10 @@
             "generic": "Biraz yavaşla! %{seconds} saniye beklemelisin."
         },
         "generic": {
+            "insufficientBalance": null,
+            "invalidPurchaseWindow": null,
+            "invalidProduct": null,
+            "alreadyOwnedProduct": null,
             "levelTooLow": "Bu eylemi gerçekleştirebilmek için seviyen yeterince yüksek değil.",
             "differentSessionConnected": "%{session} oturumunda giriş yaptın ve buradan bağlantın kesildi.",
             "sameSessionConnected": "Bu siteyi başka bir tarayıcı sekmesinde açtığın için buradan bağlantın kesildi.",
@@ -143,7 +148,7 @@
             "inGame": "Oyun devam ederken profilini özelleştiremezsin"
         },
         "requirement": {
-            "authentication": "Bu işlemi doğrulama yapmadan gerçekleştiremezsin.",
+            "authentication": null,
             "credentials": "Geçersiz bilgiler girdin.",
             "validAccount": "Hesabın henüz onaylanmadı. Lütfen profil değişikliklerini kaydet.",
             "inLobby": "Maç zaten başladığı için bu işlemi gerçekleştiremezsin.",
@@ -1335,14 +1340,63 @@
         }
     },
     "time": {
+        "daysShort": null,
+        "hoursShort": null,
+        "minutesShort": null,
         "days": "0 gün | 1 gün | {count} gün",
         "hours": "0 saat | 1 saat | {count} saat",
         "minutes": "0 dakika | 1 dakika | {count} dakika",
         "seconds": "0 saniye | 1 saniye | {count} saniye"
     },
     "perk": {
-        "enhancedPack": "Geliştirilmiş Paket",
-        "developer": "Geliştirici"
+        "enhancedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "Acemi",
@@ -1404,9 +1458,16 @@
         "playRandomOpponents": "Rastgele Rakiplerle Oyna | Rastgele Bir Rakiple Oyna | Rastgele Rakiplerle Oyna",
         "turnsToFlip": "Çevirmek için sıra | Çevirmek için bir sıra | Çevirmek için {count} sıra",
         "increment": "0'lık artışlar | 1'lik artış | {count}'luk artışlar",
-        "shipsRemaining": "0 gemi kaldı | 1 gemi kaldı | {count} gemi kaldı"
+        "shipsRemaining": "0 gemi kaldı | 1 gemi kaldı | {count} gemi kaldı",
+        "includesItems": null
     },
     "misc": {
+        "store": null,
+        "buyNow": null,
+        "expired": null,
+        "yourCoins": null,
+        "getCoins": null,
+        "price": null,
         "roll": "At",
         "rollAgain": "Tekrar At",
         "rolling": "Atılıyor",
@@ -1418,7 +1479,6 @@
         "summary": "Özet",
         "versusPlayers": "Oyunculara Karşı",
         "versusBots": "Botlara Karşı",
-        "expires": "Süresi Doluyor",
         "never": "Asla",
         "perks": "Avantajlar",
         "beta": "Beta",
@@ -1454,6 +1514,7 @@
         "vibration": "Titreşim",
         "locked": "Kilitli",
         "available": "Mevcut",
+        "owned": null,
         "unavailable": "Mevcut Değil",
         "changeLog": "Değişiklik Kaydı",
         "status": "Durum",
@@ -1462,6 +1523,10 @@
         "toggle": "Değiştir",
         "login": "Giriş Yap",
         "logout": "Çıkış Yap",
+        "hats": null,
+        "eyes": null,
+        "mouths": null,
+        "backgrounds": null,
         "emailAddress": "E-posta Adresi",
         "emailAddressConfirmation": "E-posta Adresini Tekrarla",
         "createAccount": "Hesap Oluştur",
@@ -1548,6 +1613,8 @@
         "showBlank": "%{value} Göster",
         "hideBlank": "%{value} Gizle",
         "orBlank": "Veya %{value}",
+        "saveBlank": null,
+        "coinsBlank": null,
         "sendVerification": "Doğrulama Gönder",
         "noThanks": "Teşekkürler, gerek yok",
         "selectAll": "Tümünü Seç",
@@ -1719,13 +1786,13 @@
         "areYouSure": "Emin misin?",
         "checkServerStatus": "Canlı sunucu durumunu kontrol et",
         "customizePreset": "Bu ön ayarı istediğin gibi özelleştir.",
+        "loginToPurchase": null,
         "settings": {
             "redeemCode": {
                 "title": "Kodu Kullan",
                 "description": "Daha fazla özelleştirme için özel eşyaların kilidini açmak üzere aşağıya benzersiz bir kod girin. Her kod yalnızca bir kez kullanılabilir.",
                 "unlinked": "Üzgünüz, hesabınızı bir e-posta adresine bağlamadan bir kod kullanamazsınız.",
-                "success": "%{perk} avantajını başarıyla talep ettin!",
-                "expiration": "Kod, %{activationDuration} süresince geçerlidir ve avantajınız %{expirationDate} tarihinde sona erecektir."
+                "success": null
             },
             "experience": {
                 "title": "Tecrübe",

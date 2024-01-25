@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal Egyptian Arabic",
         "rtl": true,
-        "total": 1214,
-        "missing": 0
+        "total": 1255,
+        "missing": 47
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "الكود اللي اتعطى مش موجود.",
+            "alreadyOwned": null,
             "alreadyUsed": "الكود اللي اتعطى اتفعل قبل كده."
         },
         "authentication": {
@@ -29,6 +30,10 @@
             "generic": "خد بالك شوية! استنى %{seconds} ثانية."
         },
         "generic": {
+            "insufficientBalance": null,
+            "invalidPurchaseWindow": null,
+            "invalidProduct": null,
+            "alreadyOwnedProduct": null,
             "levelTooLow": "مستواك مش كافي عشان تعمل الحركة دي.",
             "differentSessionConnected": "انت دخلت على %{session} و اتقطعت الاتصال هنا.",
             "sameSessionConnected": "اتقطعت الاتصال هنا لما فتحت الموقع ده في تاب تاني في المتصفح.",
@@ -143,7 +148,7 @@
             "inGame": "مش هتقدر تغير بروفايلك وأنت بتلعب اللعبة"
         },
         "requirement": {
-            "authentication": "مش هتقدر تعمل الحركة دي لو متأكدتش هويتك.",
+            "authentication": null,
             "credentials": "البيانات اللي اديتها غلط.",
             "validAccount": "حسابك لسه متأكدتش. لو سمحت احفظ التغييرات اللي عملتها في البروفايل.",
             "inLobby": "مش هتقدر تعمل الحركة دي لأن الماتش بدأ بالفعل.",
@@ -1335,14 +1340,63 @@
         }
     },
     "time": {
+        "daysShort": null,
+        "hoursShort": null,
+        "minutesShort": null,
         "days": "0 أيام | يوم واحد | {count} أيام",
         "hours": "0 ساعات | ساعة واحدة | {count} ساعات",
         "minutes": "0 دقائق | دقيقة واحدة | {count} دقائق",
         "seconds": "0 ثواني | ثانية واحدة | {count} ثواني"
     },
     "perk": {
-        "enhancedPack": "باكيت محسن",
-        "developer": "مطور"
+        "enhancedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "مبتدئ",
@@ -1404,9 +1458,16 @@
         "playRandomOpponents": "العب ضد خصوم عشوائيين | العب ضد خصم عشوائي | العب ضد خصوم عشوائيين",
         "turnsToFlip": "دورك للقلب | دورك للقلب | أدوار للقلب",
         "increment": "زيادة بـ 0 | زيادة بـ 1 | زيادة بـ {count}",
-        "shipsRemaining": "مافيش سفن باقية | سفينة واحدة باقية | {count} سفن باقية"
+        "shipsRemaining": "مافيش سفن باقية | سفينة واحدة باقية | {count} سفن باقية",
+        "includesItems": null
     },
     "misc": {
+        "store": null,
+        "buyNow": null,
+        "expired": null,
+        "yourCoins": null,
+        "getCoins": null,
+        "price": null,
         "roll": "اطلق",
         "rollAgain": "اطلق تاني",
         "rolling": "بيتم الإطلاق",
@@ -1418,7 +1479,6 @@
         "summary": "الملخص",
         "versusPlayers": "ضد اللاعبين",
         "versusBots": "ضد الروبوتات",
-        "expires": "ينتهي",
         "never": "أبدا",
         "perks": "مميزات",
         "beta": "بيتا",
@@ -1454,6 +1514,7 @@
         "vibration": "الاهتزاز",
         "locked": "مقفول",
         "available": "متاح",
+        "owned": null,
         "unavailable": "غير متاح",
         "changeLog": "سجل التغييرات",
         "status": "الحالة",
@@ -1462,6 +1523,10 @@
         "toggle": "تغيير",
         "login": "تسجيل الدخول",
         "logout": "تسجيل الخروج",
+        "hats": null,
+        "eyes": null,
+        "mouths": null,
+        "backgrounds": null,
         "emailAddress": "عنوان البريد الإلكتروني",
         "emailAddressConfirmation": "أعد كتابة عنوان البريد الإلكتروني",
         "createAccount": "إنشاء حساب",
@@ -1548,6 +1613,8 @@
         "showBlank": "اعرض %{value}",
         "hideBlank": "اخفي %{value}",
         "orBlank": "أو %{value}",
+        "saveBlank": null,
+        "coinsBlank": null,
         "sendVerification": "ابعت التحقق",
         "noThanks": "لا شكرا",
         "selectAll": "اختار الكل",
@@ -1719,13 +1786,13 @@
         "areYouSure": "انت متأكد؟",
         "checkServerStatus": "شيك على حالة السيرفر الحي",
         "customizePreset": "غير الإعدادات دي على زوقك.",
+        "loginToPurchase": null,
         "settings": {
             "redeemCode": {
                 "title": "استخدم الكود",
                 "description": "ادخل كود فريد تحت عشان تفتح حاجات خاصة للتخصيص أكتر. كل كود ممكن تستخدمه مرة واحدة بس.",
                 "unlinked": "معذرة, مش هتقدر تستخدم الكود لحد ما تربط حسابك بالإيميل.",
-                "success": "انت استلمت الـ %{perk} بنجاح!",
-                "expiration": "الكود صالح لـ %{activationDuration} والـ %{perk} حقتك هتنتهي في %{expirationDate}."
+                "success": null
             },
             "experience": {
                 "title": "تجربة",

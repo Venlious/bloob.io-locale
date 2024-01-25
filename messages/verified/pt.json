@@ -3,6 +3,7 @@
     "error": {
         "redeemCode": {
             "invalid": false,
+            "alreadyOwned": false,
             "alreadyUsed": false
         },
         "authentication": {
@@ -23,6 +24,10 @@
             "generic": false
         },
         "generic": {
+            "insufficientBalance": false,
+            "invalidPurchaseWindow": false,
+            "invalidProduct": false,
+            "alreadyOwnedProduct": false,
             "levelTooLow": false,
             "differentSessionConnected": false,
             "sameSessionConnected": false,
@@ -1329,14 +1334,63 @@
         }
     },
     "time": {
+        "daysShort": false,
+        "hoursShort": false,
+        "minutesShort": false,
         "days": false,
         "hours": false,
         "minutes": false,
         "seconds": false
     },
     "perk": {
-        "enhancedPack": false,
-        "developer": false
+        "enhancedPack": {
+            "title": false,
+            "description": false
+        },
+        "dapperPack": {
+            "title": false,
+            "description": false
+        },
+        "militaryPack": {
+            "title": false,
+            "description": false
+        },
+        "piratePack": {
+            "title": false,
+            "description": false
+        },
+        "holidaysPack": {
+            "title": false,
+            "description": false
+        },
+        "animalPack": {
+            "title": false,
+            "description": false
+        },
+        "halloweenPack": {
+            "title": false,
+            "description": false
+        },
+        "americanFootballPack": {
+            "title": false,
+            "description": false
+        },
+        "celebrationPack": {
+            "title": false,
+            "description": false
+        },
+        "developer": {
+            "title": false
+        },
+        "coinSmall": {
+            "title": false
+        },
+        "coinMedium": {
+            "title": false
+        },
+        "coinLarge": {
+            "title": false
+        }
     },
     "title": {
         "rookie": false,
@@ -1398,9 +1452,16 @@
         "playRandomOpponents": false,
         "turnsToFlip": false,
         "increment": false,
-        "shipsRemaining": false
+        "shipsRemaining": false,
+        "includesItems": false
     },
     "misc": {
+        "store": false,
+        "buyNow": false,
+        "expired": false,
+        "yourCoins": false,
+        "getCoins": false,
+        "price": false,
         "roll": false,
         "rollAgain": false,
         "rolling": false,
@@ -1412,7 +1473,6 @@
         "summary": false,
         "versusPlayers": false,
         "versusBots": false,
-        "expires": false,
         "never": false,
         "perks": false,
         "beta": false,
@@ -1448,6 +1508,7 @@
         "vibration": false,
         "locked": false,
         "available": false,
+        "owned": false,
         "unavailable": false,
         "changeLog": false,
         "status": false,
@@ -1456,6 +1517,10 @@
         "toggle": false,
         "login": false,
         "logout": false,
+        "hats": false,
+        "eyes": false,
+        "mouths": false,
+        "backgrounds": false,
         "emailAddress": false,
         "emailAddressConfirmation": false,
         "createAccount": false,
@@ -1542,6 +1607,8 @@
         "showBlank": false,
         "hideBlank": false,
         "orBlank": false,
+        "saveBlank": false,
+        "coinsBlank": false,
         "sendVerification": false,
         "noThanks": false,
         "selectAll": false,
@@ -1713,13 +1780,13 @@
         "areYouSure": false,
         "checkServerStatus": false,
         "customizePreset": false,
+        "loginToPurchase": false,
         "settings": {
             "redeemCode": {
                 "title": false,
                 "description": false,
                 "unlinked": false,
-                "success": false,
-                "expiration": false
+                "success": false
             },
             "experience": {
                 "title": false,

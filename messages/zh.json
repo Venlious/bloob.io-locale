@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1255,
+        "missing": 47
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "提供的代码不存在。",
+            "alreadyOwned": null,
             "alreadyUsed": "提供的代码已经被激活了。"
         },
         "authentication": {
@@ -29,6 +30,10 @@
             "generic": "慢点儿！等待%{seconds}秒。"
         },
         "generic": {
+            "insufficientBalance": null,
+            "invalidPurchaseWindow": null,
+            "invalidProduct": null,
+            "alreadyOwnedProduct": null,
             "levelTooLow": "你的等级不够高，不能做这个动作。",
             "differentSessionConnected": "你在%{session}登录了，所以这里被断开了连接。",
             "sameSessionConnected": "你在另一个浏览器标签页打开了这个网站，所以这里被断开了连接。",
@@ -143,7 +148,7 @@
             "inGame": "游戏进行中不能自定义你的个人资料"
         },
         "requirement": {
-            "authentication": "你没验证过就不能做这个动作。",
+            "authentication": null,
             "credentials": "你给的凭证无效。",
             "validAccount": "你的账号还没验证呢。请保存你的个人资料修改。",
             "inLobby": "比赛已经开始了，你不能做这个动作。",
@@ -1335,14 +1340,63 @@
         }
     },
     "time": {
+        "daysShort": null,
+        "hoursShort": null,
+        "minutesShort": null,
         "days": "0天 | 1天 | {count}天",
         "hours": "0小时 | 1小时 | {count}小时",
         "minutes": "0分钟 | 1分钟 | {count}分钟",
         "seconds": "0秒 | 1秒 | {count}秒"
     },
     "perk": {
-        "enhancedPack": "加强包",
-        "developer": "开发者"
+        "enhancedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "新手",
@@ -1404,9 +1458,16 @@
         "playRandomOpponents": "随机对战 | 随机对一个人 | 随机对战",
         "turnsToFlip": "轮到翻转 | 轮到翻转 | 轮到翻转",
         "increment": "0的增量 | 1的增量 | {count}的增量",
-        "shipsRemaining": "0艘船剩下 | 1艘船剩下 | {count}艘船剩下"
+        "shipsRemaining": "0艘船剩下 | 1艘船剩下 | {count}艘船剩下",
+        "includesItems": null
     },
     "misc": {
+        "store": null,
+        "buyNow": null,
+        "expired": null,
+        "yourCoins": null,
+        "getCoins": null,
+        "price": null,
         "roll": "掷骰",
         "rollAgain": "再掷一次",
         "rolling": "正在掷骰",
@@ -1418,7 +1479,6 @@
         "summary": "概述",
         "versusPlayers": "对战玩家",
         "versusBots": "对战机器人",
-        "expires": "过期",
         "never": "从不",
         "perks": "特权",
         "beta": "测试版",
@@ -1454,6 +1514,7 @@
         "vibration": "震动",
         "locked": "已锁定",
         "available": "可用的",
+        "owned": null,
         "unavailable": "不可用的",
         "changeLog": "更改记录",
         "status": "状态",
@@ -1462,6 +1523,10 @@
         "toggle": "切换",
         "login": "登录",
         "logout": "注销",
+        "hats": null,
+        "eyes": null,
+        "mouths": null,
+        "backgrounds": null,
         "emailAddress": "电子邮件地址",
         "emailAddressConfirmation": "重复输入电子邮件地址",
         "createAccount": "创建账户",
@@ -1548,6 +1613,8 @@
         "showBlank": "显示 %{value}",
         "hideBlank": "隐藏 %{value}",
         "orBlank": "或者 %{value}",
+        "saveBlank": null,
+        "coinsBlank": null,
         "sendVerification": "发送验证",
         "noThanks": "不用了，谢谢",
         "selectAll": "全选",
@@ -1719,13 +1786,13 @@
         "areYouSure": "你确定吗？",
         "checkServerStatus": "查看现在的服务器状态",
         "customizePreset": "根据你的喜好来自定义这个预设。",
+        "loginToPurchase": null,
         "settings": {
             "redeemCode": {
                 "title": "兑换码",
                 "description": "在下面输入一个独特的代码，解锁更多定制的特殊物品。每个代码只能使用一次。",
                 "unlinked": "抱歉，你必须先把你的账户和电子邮件地址关联起来，才能兑换代码。",
-                "success": "你已经成功领取了%{perk}的特权！",
-                "expiration": "这个代码的有效期是%{activationDuration}，你的特权将在%{expirationDate}过期。"
+                "success": null
             },
             "experience": {
                 "title": "经验",

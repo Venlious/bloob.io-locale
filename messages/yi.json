@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal Yiddish",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1255,
+        "missing": 47
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Der gegebn kod existirt nisht.",
+            "alreadyOwned": null,
             "alreadyUsed": "Der gegebn kod iz shoyn aktivirt."
         },
         "authentication": {
@@ -29,6 +30,10 @@
             "generic": "Zog zikh a bisele! Vart %{seconds} sekunde(n)."
         },
         "generic": {
+            "insufficientBalance": null,
+            "invalidPurchaseWindow": null,
+            "invalidProduct": null,
+            "alreadyOwnedProduct": null,
             "levelTooLow": "Dayn level iz nit hekh genug tsu performen dem akt.",
             "differentSessionConnected": "Du host dich aroisgelogt af %{session} un bist doh aroisgevaksn.",
             "sameSessionConnected": "Du bist doh aroisgevaksn vayl du host dos site aroysgemakht in a anderer browser tab.",
@@ -143,7 +148,7 @@
             "inGame": "Kenst nisht farbesern dayn profil ven dos shpil iz in gang"
         },
         "requirement": {
-            "authentication": "Du kenst nit machen dem akt nit oif du host nit authentifizirt.",
+            "authentication": null,
             "credentials": "Du host gegebn falsheh identifikatsye.",
             "validAccount": "Dayn account iz nit nokh nit gevalideert. Zay a guter un save dayn profil changes.",
             "inLobby": "Du kenst nit machen dem akt vayl der match hot shoyn ongehoybn.",
@@ -1335,14 +1340,63 @@
         }
     },
     "time": {
+        "daysShort": null,
+        "hoursShort": null,
+        "minutesShort": null,
         "days": "0 teg | 1 tog | {count} teg",
         "hours": "0 sho | 1 sho | {count} sho",
         "minutes": "0 minutn | 1 minut | {count} minutn",
         "seconds": "0 sekundn | 1 sekunde | {count} sekundn"
     },
     "perk": {
-        "enhancedPack": "Farbessert Paket",
-        "developer": "Antvikler"
+        "enhancedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "Neuling",
@@ -1404,9 +1458,16 @@
         "playRandomOpponents": "Shpil Tsufellige Gegners | Shpil Tsufelliger Gegner | Shpil Tsufellige Gegners",
         "turnsToFlip": "Dreyen tsu flipn | Drey tsu flipn | Dreyen tsu flipn",
         "increment": "Shteyger fun 0 | Shteyger fun 1 | Shteyger fun {count}",
-        "shipsRemaining": "0 shifn blaybn | 1 shif blaybt | {count} shifn blaybn"
+        "shipsRemaining": "0 shifn blaybn | 1 shif blaybt | {count} shifn blaybn",
+        "includesItems": null
     },
     "misc": {
+        "store": null,
+        "buyNow": null,
+        "expired": null,
+        "yourCoins": null,
+        "getCoins": null,
+        "price": null,
         "roll": "Rolln",
         "rollAgain": "Rolln Nochamol",
         "rolling": "Rollendik",
@@ -1418,7 +1479,6 @@
         "summary": "Zussamenfassung",
         "versusPlayers": "Gegn Shpilers",
         "versusBots": "Gegn Robots",
-        "expires": "Oysloyft",
         "never": "Keynmol Nit",
         "perks": "Fayglen",
         "beta": "Beta",
@@ -1454,6 +1514,7 @@
         "vibration": "Vibrazie",
         "locked": "Farshperrt",
         "available": "Faranen",
+        "owned": null,
         "unavailable": "Nisht Faranen",
         "changeLog": "Ändern Log",
         "status": "Shtatus",
@@ -1462,6 +1523,10 @@
         "toggle": "Umschalt",
         "login": "Tzugang",
         "logout": "Oysgang",
+        "hats": null,
+        "eyes": null,
+        "mouths": null,
+        "backgrounds": null,
         "emailAddress": "Blitspost Adres",
         "emailAddressConfirmation": "Viderhol Blitspost Adres",
         "createAccount": "Shaf a Kont",
@@ -1548,6 +1613,8 @@
         "showBlank": "Vayz %{value}",
         "hideBlank": "Bahaltn %{value}",
         "orBlank": "Oder %{value}",
+        "saveBlank": null,
+        "coinsBlank": null,
         "sendVerification": "Shikt Pruvung",
         "noThanks": "Nishto dank",
         "selectAll": "Klibt ale",
@@ -1719,13 +1786,13 @@
         "areYouSure": "Bistu zicher?",
         "checkServerStatus": "Kuk af der lebediker server shtatus",
         "customizePreset": "Pasn di preset tsu deyn gefalen.",
+        "loginToPurchase": null,
         "settings": {
             "redeemCode": {
                 "title": "Nem Aroys Code",
                 "description": "Gib ayn a yekhidik code unter tsu ofshlisn besondere items far nokh mer personalizatsye. Yeder code ken nor zayn genutzt eynmol.",
                 "unlinked": "S'iz mir layd, du kenst nit nem aroys a code biz du host farbundn dayn account tsu an email adres.",
-                "success": "Du host gehat di %{perk} perk gliklekh!",
-                "expiration": "Der code iz giltik far %{activationDuration} un dayn perk vet oysgeyn af %{expirationDate}."
+                "success": null
             },
             "experience": {
                 "title": "Erfahrung",

@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal Polish",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1255,
+        "missing": 47
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Podany kod nie istnieje.",
+            "alreadyOwned": null,
             "alreadyUsed": "Podany kod został już wykorzystany."
         },
         "authentication": {
@@ -29,6 +30,10 @@
             "generic": "Zwolnij trochę! Poczekaj %{seconds} sekund(y)."
         },
         "generic": {
+            "insufficientBalance": null,
+            "invalidPurchaseWindow": null,
+            "invalidProduct": null,
+            "alreadyOwnedProduct": null,
             "levelTooLow": "Twój poziom jest za niski, żeby to zrobić.",
             "differentSessionConnected": "Zalogowałeś się na %{session} i zostałeś tu odłączony.",
             "sameSessionConnected": "Zostałeś tu odłączony, ponieważ otworzyłeś tę stronę w innej karcie przeglądarki.",
@@ -143,7 +148,7 @@
             "inGame": "Nie możesz dostosować swojego profilu, gdy gra jest w toku."
         },
         "requirement": {
-            "authentication": "Nie możesz wykonać tej czynności bez uwierzytelnienia.",
+            "authentication": null,
             "credentials": "Podano nieprawidłowe dane.",
             "validAccount": "Twoje konto nie zostało jeszcze zweryfikowane. Proszę zapisać zmiany w profilu.",
             "inLobby": "Nie możesz wykonać tej akcji, ponieważ mecz już się rozpoczął.",
@@ -1335,14 +1340,63 @@
         }
     },
     "time": {
+        "daysShort": null,
+        "hoursShort": null,
+        "minutesShort": null,
         "days": "0 dni | 1 dzień | {count} dni",
         "hours": "0 godzin | 1 godzina | {count} godzin",
         "minutes": "0 minut | 1 minuta | {count} minut",
         "seconds": "0 sekund | 1 sekunda | {count} sekund"
     },
     "perk": {
-        "enhancedPack": "Ulepszony pakiet",
-        "developer": "Deweloper"
+        "enhancedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "Nowicjusz",
@@ -1404,9 +1458,16 @@
         "playRandomOpponents": "Graj z losowymi przeciwnikami | Graj z losowym przeciwnikiem | Graj z losowymi przeciwnikami",
         "turnsToFlip": "Tur do odwrócenia | Tura do odwrócenia | Tur do odwrócenia",
         "increment": "Przyrosty o 0 | Przyrost o 1 | Przyrosty o {count}",
-        "shipsRemaining": "0 statków pozostało | 1 statek pozostał | {count} statków pozostało"
+        "shipsRemaining": "0 statków pozostało | 1 statek pozostał | {count} statków pozostało",
+        "includesItems": null
     },
     "misc": {
+        "store": null,
+        "buyNow": null,
+        "expired": null,
+        "yourCoins": null,
+        "getCoins": null,
+        "price": null,
         "roll": "Rzuć",
         "rollAgain": "Rzuć ponownie",
         "rolling": "Rzucanie",
@@ -1418,7 +1479,6 @@
         "summary": "Podsumowanie",
         "versusPlayers": "Przeciwko graczom",
         "versusBots": "Przeciwko botom",
-        "expires": "Wygasa",
         "never": "Nigdy",
         "perks": "Przywileje",
         "beta": "Beta",
@@ -1454,6 +1514,7 @@
         "vibration": "Wibracje",
         "locked": "Zablokowane",
         "available": "Dostępne",
+        "owned": null,
         "unavailable": "Niedostępny",
         "changeLog": "Dziennik zmian",
         "status": "Status",
@@ -1462,6 +1523,10 @@
         "toggle": "Przełącznik",
         "login": "Zaloguj się",
         "logout": "Wyloguj się",
+        "hats": null,
+        "eyes": null,
+        "mouths": null,
+        "backgrounds": null,
         "emailAddress": "Adres Email",
         "emailAddressConfirmation": "Powtórz Adres Email",
         "createAccount": "Utwórz Konto",
@@ -1548,6 +1613,8 @@
         "showBlank": "Pokaż %{value}",
         "hideBlank": "Ukryj %{value}",
         "orBlank": "Albo %{value}",
+        "saveBlank": null,
+        "coinsBlank": null,
         "sendVerification": "Wyślij weryfikację",
         "noThanks": "Nie, dziękuję",
         "selectAll": "Wybierz wszystko",
@@ -1719,13 +1786,13 @@
         "areYouSure": "Czy na pewno?",
         "checkServerStatus": "Sprawdź status serwera na żywo",
         "customizePreset": "Dostosuj ten preset do swojego gustu.",
+        "loginToPurchase": null,
         "settings": {
             "redeemCode": {
                 "title": "Wprowadź kod",
                 "description": "Wpisz poniżej unikalny kod, aby odblokować specjalne przedmioty i jeszcze bardziej dostosować grę. Każdy kod można użyć tylko raz.",
                 "unlinked": "Przykro mi, nie możesz wprowadzić kodu, dopóki nie połączysz swojego konta z adresem e-mail.",
-                "success": "Pomyślnie uzyskałeś przywilej %{perk}!",
-                "expiration": "Kod jest ważny przez %{activationDuration}, a Twój przywilej wygaśnie %{expirationDate}."
+                "success": null
             },
             "experience": {
                 "title": "Doświadczenie",
