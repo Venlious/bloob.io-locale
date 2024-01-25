@@ -9,6 +9,16 @@ import * as osPath from 'path'
 const LOCALE_FOLDER = `../messages`
 
 /**
+ * Checks whether a value is a plain object.
+ *
+ * @param value Value to check
+ * @returns boolean
+ */
+const isPlainObject = (value: any): boolean => {
+	return typeof value === `object` && value !== null && value.constructor === Object
+}
+
+/**
  * Checks whether a file exists on a given location
  *
  * @param filePath Path to file
@@ -53,7 +63,7 @@ export const addMissingEntriesToObject = (
 		if (typeof source[key] === `object`) {
 			target[key] = addMissingEntriesToObject(source[key] as NestedObject, target[key] || {})
 		} else if (!Object.prototype.hasOwnProperty.call(target, key)) {
-			if (typeof target[key] !== `object` && typeof source === `object`) target = {}
+			if (!isPlainObject(target) && isPlainObject(source)) target = {}
 			target[key] = null
 		}
 	}
