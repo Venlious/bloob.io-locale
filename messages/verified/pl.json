@@ -3,6 +3,7 @@
     "error": {
         "redeemCode": {
             "invalid": false,
+            "alreadyOwned": false,
             "alreadyUsed": false
         },
         "authentication": {
@@ -23,6 +24,11 @@
             "generic": false
         },
         "generic": {
+            "incorrectProductPrice": false,
+            "insufficientBalance": false,
+            "invalidPurchaseWindow": false,
+            "invalidProduct": false,
+            "alreadyOwnedProduct": false,
             "levelTooLow": false,
             "differentSessionConnected": false,
             "sameSessionConnected": false,
@@ -1216,7 +1222,6 @@
             "inProgress": false,
             "staleMoves": false,
             "forfeit": false,
-            "winner": false,
             "inactive": false,
             "late": false,
             "pickActionCard": false,
@@ -1329,14 +1334,67 @@
         }
     },
     "time": {
+        "daysShort": false,
+        "hoursShort": false,
+        "minutesShort": false,
         "days": false,
         "hours": false,
         "minutes": false,
         "seconds": false
     },
     "perk": {
-        "enhancedPack": false,
-        "developer": false
+        "gradientPack": {
+            "title": false,
+            "description": false
+        },
+        "maskedPack": {
+            "title": false,
+            "description": false
+        },
+        "dapperPack": {
+            "title": false,
+            "description": false
+        },
+        "militaryPack": {
+            "title": false,
+            "description": false
+        },
+        "piratePack": {
+            "title": false,
+            "description": false
+        },
+        "holidaysPack": {
+            "title": false,
+            "description": false
+        },
+        "animalPack": {
+            "title": false,
+            "description": false
+        },
+        "halloweenPack": {
+            "title": false,
+            "description": false
+        },
+        "americanFootballPack": {
+            "title": false,
+            "description": false
+        },
+        "celebrationPack": {
+            "title": false,
+            "description": false
+        },
+        "developer": {
+            "title": false
+        },
+        "coinSmall": {
+            "title": false
+        },
+        "coinMedium": {
+            "title": false
+        },
+        "coinLarge": {
+            "title": false
+        }
     },
     "title": {
         "rookie": false,
@@ -1398,9 +1456,21 @@
         "playRandomOpponents": false,
         "turnsToFlip": false,
         "increment": false,
-        "shipsRemaining": false
+        "shipsRemaining": false,
+        "includesItems": false
     },
     "misc": {
+        "seasonal": false,
+        "dailyFeatures": false,
+        "purchaseCoins": false,
+        "store": false,
+        "buyNow": false,
+        "expired": false,
+        "yourCoins": false,
+        "getCoins": false,
+        "transactions": false,
+        "userData": false,
+        "price": false,
         "roll": false,
         "rollAgain": false,
         "rolling": false,
@@ -1412,7 +1482,6 @@
         "summary": false,
         "versusPlayers": false,
         "versusBots": false,
-        "expires": false,
         "never": false,
         "perks": false,
         "beta": false,
@@ -1448,6 +1517,7 @@
         "vibration": false,
         "locked": false,
         "available": false,
+        "owned": false,
         "unavailable": false,
         "changeLog": false,
         "status": false,
@@ -1456,6 +1526,10 @@
         "toggle": false,
         "login": false,
         "logout": false,
+        "hats": false,
+        "eyes": false,
+        "mouths": false,
+        "backgrounds": false,
         "emailAddress": false,
         "emailAddressConfirmation": false,
         "createAccount": false,
@@ -1542,6 +1616,9 @@
         "showBlank": false,
         "hideBlank": false,
         "orBlank": false,
+        "saveBlank": false,
+        "coinsBlank": false,
+        "receivedBlank": false,
         "sendVerification": false,
         "noThanks": false,
         "selectAll": false,
@@ -1713,13 +1790,18 @@
         "areYouSure": false,
         "checkServerStatus": false,
         "customizePreset": false,
+        "loginToPurchase": false,
+        "seasonalItem": false,
+        "awaitingPurchaseConfirmation": {
+            "title": false,
+            "description": false
+        },
         "settings": {
             "redeemCode": {
                 "title": false,
                 "description": false,
                 "unlinked": false,
-                "success": false,
-                "expiration": false
+                "success": false
             },
             "experience": {
                 "title": false,
@@ -1736,6 +1818,10 @@
                 "dnt": false
             },
             "serverData": {
+                "title": false,
+                "description": false
+            },
+            "controlYourData": {
                 "title": false,
                 "description": false
             },
@@ -1867,15 +1953,30 @@
             "STRIPE": false
         },
         "poolFoul": {
-            "CUE_BALL_POCKET": false,
-            "CUE_BALL_HIT_NO_BALL": false,
-            "CUE_BALL_HIT_WRONG_BALL": false,
-            "CUSHION_HIT_MIN_ON_BREAK": false,
-            "CUSHION_HIT_INVALID": false,
-            "CONSECUTIVE_FOULS_EXCEEDED": false,
-            "ILLEGAL_8_BALL_POCKET": false,
-            "ILLEGAL_8_BALL_POCKET_TOO_SOON": false,
-            "POCKETED_WRONG_BALL": false
+            "other": {
+                "CUE_BALL_POCKET": false,
+                "CUE_BALL_HIT_NO_BALL": false,
+                "CUE_BALL_HIT_WRONG_BALL": false,
+                "CUSHION_HIT_MIN_ON_BREAK": false,
+                "CUSHION_HIT_INVALID": false,
+                "CONSECUTIVE_FOULS_EXCEEDED": false,
+                "ILLEGAL_8_BALL_POCKET": false,
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": false,
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": false,
+                "POCKETED_WRONG_BALL": false
+            },
+            "self": {
+                "CUE_BALL_POCKET": false,
+                "CUE_BALL_HIT_NO_BALL": false,
+                "CUE_BALL_HIT_WRONG_BALL": false,
+                "CUSHION_HIT_MIN_ON_BREAK": false,
+                "CUSHION_HIT_INVALID": false,
+                "CONSECUTIVE_FOULS_EXCEEDED": false,
+                "ILLEGAL_8_BALL_POCKET": false,
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": false,
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": false,
+                "POCKETED_WRONG_BALL": false
+            }
         },
         "about": {
             "description": false,

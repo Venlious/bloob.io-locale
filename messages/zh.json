@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1279,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "提供的代码不存在。",
+            "alreadyOwned": "你已经拥有这个物品了。代码仍然有效。",
             "alreadyUsed": "提供的代码已经被激活了。"
         },
         "authentication": {
@@ -29,6 +30,11 @@
             "generic": "慢点儿！等待%{seconds}秒。"
         },
         "generic": {
+            "incorrectProductPrice": "因为价格不匹配，购买已取消。预期价格: %{expectedAmount}。实际价格: %{receivedAmount}。",
+            "insufficientBalance": "你的金币不够，无法购买。",
+            "invalidPurchaseWindow": "抱歉，这个产品现在不能买。",
+            "invalidProduct": "给定ID的产品不存在。",
+            "alreadyOwnedProduct": "你已经拥有这个产品了。",
             "levelTooLow": "你的等级不够高，不能做这个动作。",
             "differentSessionConnected": "你在%{session}登录了，所以这里被断开了连接。",
             "sameSessionConnected": "你在另一个浏览器标签页打开了这个网站，所以这里被断开了连接。",
@@ -143,7 +149,7 @@
             "inGame": "游戏进行中不能自定义你的个人资料"
         },
         "requirement": {
-            "authentication": "你没验证过就不能做这个动作。",
+            "authentication": "你得登录你的账号才能进行这个操作。",
             "credentials": "你给的凭证无效。",
             "validAccount": "你的账号还没验证呢。请保存你的个人资料修改。",
             "inLobby": "比赛已经开始了，你不能做这个动作。",
@@ -1222,7 +1228,6 @@
             "inProgress": "比赛进行中",
             "staleMoves": "比赛陷入僵局 — %{staleCount}步棋没有翻盘",
             "forfeit": "比赛结束 — 对手选择了认输",
-            "winner": "%{name}赢了比赛",
             "inactive": "比赛因无活动而结束",
             "late": "因为缺少%{turns}轮次，比赛结束了",
             "pickActionCard": "正在选行动卡",
@@ -1335,14 +1340,67 @@
         }
     },
     "time": {
+        "daysShort": "{count}天",
+        "hoursShort": "{count}小时",
+        "minutesShort": "{count}分钟",
         "days": "0天 | 1天 | {count}天",
         "hours": "0小时 | 1小时 | {count}小时",
         "minutes": "0分钟 | 1分钟 | {count}分钟",
         "seconds": "0秒 | 1秒 | {count}秒"
     },
     "perk": {
-        "enhancedPack": "加强包",
-        "developer": "开发者"
+        "gradientPack": {
+            "title": null,
+            "description": null
+        },
+        "maskedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "新手",
@@ -1404,9 +1462,21 @@
         "playRandomOpponents": "随机对战 | 随机对一个人 | 随机对战",
         "turnsToFlip": "轮到翻转 | 轮到翻转 | 轮到翻转",
         "increment": "0的增量 | 1的增量 | {count}的增量",
-        "shipsRemaining": "0艘船剩下 | 1艘船剩下 | {count}艘船剩下"
+        "shipsRemaining": "0艘船剩下 | 1艘船剩下 | {count}艘船剩下",
+        "includesItems": "包含 {count} 个物品 | 包含 {count} 个物品 | 包含 {count} 个物品"
     },
     "misc": {
+        "seasonal": "季节性",
+        "dailyFeatures": "每日特色",
+        "purchaseCoins": "购买金币",
+        "store": "商店",
+        "buyNow": "立即购买",
+        "expired": "已过期",
+        "yourCoins": "你的金币",
+        "getCoins": "获取金币",
+        "transactions": "交易",
+        "userData": "用户数据",
+        "price": "价格",
         "roll": "掷骰",
         "rollAgain": "再掷一次",
         "rolling": "正在掷骰",
@@ -1418,7 +1488,6 @@
         "summary": "概述",
         "versusPlayers": "对战玩家",
         "versusBots": "对战机器人",
-        "expires": "过期",
         "never": "从不",
         "perks": "特权",
         "beta": "测试版",
@@ -1454,6 +1523,7 @@
         "vibration": "震动",
         "locked": "已锁定",
         "available": "可用的",
+        "owned": "已拥有",
         "unavailable": "不可用的",
         "changeLog": "更改记录",
         "status": "状态",
@@ -1462,6 +1532,10 @@
         "toggle": "切换",
         "login": "登录",
         "logout": "注销",
+        "hats": "帽子",
+        "eyes": "眼睛",
+        "mouths": "嘴巴",
+        "backgrounds": "背景",
         "emailAddress": "电子邮件地址",
         "emailAddressConfirmation": "重复输入电子邮件地址",
         "createAccount": "创建账户",
@@ -1548,6 +1622,9 @@
         "showBlank": "显示 %{value}",
         "hideBlank": "隐藏 %{value}",
         "orBlank": "或者 %{value}",
+        "saveBlank": "保存 %{value}",
+        "coinsBlank": "%{value} 金币",
+        "receivedBlank": "收到 %{value}",
         "sendVerification": "发送验证",
         "noThanks": "不用了，谢谢",
         "selectAll": "全选",
@@ -1719,13 +1796,18 @@
         "areYouSure": "你确定吗？",
         "checkServerStatus": "查看现在的服务器状态",
         "customizePreset": "根据你的喜好来自定义这个预设。",
+        "loginToPurchase": "要购买东西，你得先登录或者创建一个账号。",
+        "seasonalItem": "这个位置的物品一年只有几天能买到。",
+        "awaitingPurchaseConfirmation": {
+            "title": null,
+            "description": null
+        },
         "settings": {
             "redeemCode": {
                 "title": "兑换码",
                 "description": "在下面输入一个独特的代码，解锁更多定制的特殊物品。每个代码只能使用一次。",
                 "unlinked": "抱歉，你必须先把你的账户和电子邮件地址关联起来，才能兑换代码。",
-                "success": "你已经成功领取了%{perk}的特权！",
-                "expiration": "这个代码的有效期是%{activationDuration}，你的特权将在%{expirationDate}过期。"
+                "success": "你成功领取了%{item}！"
             },
             "experience": {
                 "title": "经验",
@@ -1744,6 +1826,10 @@
             "serverData": {
                 "title": "服务器数据",
                 "description": "你可以在下面的Bloob.io看到你所有的存储数据。为了你的安全，像电子邮件地址和秘密密钥这样的敏感信息可能会被隐藏。"
+            },
+            "controlYourData": {
+                "title": null,
+                "description": null
             },
             "localStorage": {
                 "title": "本地存储",
@@ -1873,15 +1959,30 @@
             "STRIPE": "条纹球"
         },
         "poolFoul": {
-            "CUE_BALL_POCKET": "%{name} 把母球打进洞了！",
-            "CUE_BALL_HIT_NO_BALL": "%{name} 没有击中其他的球！",
-            "CUE_BALL_HIT_WRONG_BALL": "%{name} 首先击中了错误的球！",
-            "CUSHION_HIT_MIN_ON_BREAK": "开球后，球没有足够多地撞到垫子上。（至少需要 %{min}）",
-            "CUSHION_HIT_INVALID": "没有球进洞，也没有有效的球撞到垫子上。",
-            "CONSECUTIVE_FOULS_EXCEEDED": "%{name}连续犯了%{fouls}次犯规。",
-            "ILLEGAL_8_BALL_POCKET": "%{name}在犯规的同时把八号球打进了口袋。",
-            "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name}把八号球打进去太早了。",
-            "POCKETED_WRONG_BALL": "%{name}打进了错误的球。"
+            "other": {
+                "CUE_BALL_POCKET": "%{name} 把母球打进洞了！",
+                "CUE_BALL_HIT_NO_BALL": "%{name} 没有击中其他的球！",
+                "CUE_BALL_HIT_WRONG_BALL": "%{name} 首先击中了错误的球！",
+                "CUSHION_HIT_MIN_ON_BREAK": "%{name} 在开球时没有足够的球击中缓冲区。（至少需要 %{min}个）",
+                "CUSHION_HIT_INVALID": "%{name} 在没有任何球入袋的情况下，没有有效地让球击中缓冲区。",
+                "CONSECUTIVE_FOULS_EXCEEDED": "%{name}连续犯了%{fouls}次犯规。",
+                "ILLEGAL_8_BALL_POCKET": "%{name}在犯规的同时把八号球打进了。",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name}把八号球打进得太早了。",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name}在开球时就把八号球打进了。",
+                "POCKETED_WRONG_BALL": "%{name}打进了错误的球。"
+            },
+            "self": {
+                "CUE_BALL_POCKET": "你把母球打进洞了！",
+                "CUE_BALL_HIT_NO_BALL": "你没有击中其他的球！",
+                "CUE_BALL_HIT_WRONG_BALL": "你先打错了球！",
+                "CUSHION_HIT_MIN_ON_BREAK": "你在开球时没有让足够的球击中缓冲垫。（至少需要%{min}个）",
+                "CUSHION_HIT_INVALID": "当没有球被打进洞时，你没有让有效的球击中缓冲垫。",
+                "CONSECUTIVE_FOULS_EXCEEDED": "你连续犯了%{fouls}次犯规。",
+                "ILLEGAL_8_BALL_POCKET": "你在犯规的同时把八号球打进去了。",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "你把八号球打进去得太早了。",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "你在开球时就把八号球打进去了。",
+                "POCKETED_WRONG_BALL": "你打进去的是错的球。"
+            }
         },
         "about": {
             "description": "Bloob.io是一个由多人在线游戏组成的热衷项目。我们随时欢迎你的建议！",

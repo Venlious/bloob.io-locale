@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal Yiddish",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1279,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Der gegebn kod existirt nisht.",
+            "alreadyOwned": "Du host shoyn dem artikel. Der kod is nokh giltik.",
             "alreadyUsed": "Der gegebn kod iz shoyn aktivirt."
         },
         "authentication": {
@@ -29,6 +30,11 @@
             "generic": "Zog zikh a bisele! Vart %{seconds} sekunde(n)."
         },
         "generic": {
+            "incorrectProductPrice": "Kauf abgebrochen wegen a preis ungleichheit. Erwartet: %{expectedAmount}. Bekommen: %{receivedAmount}.",
+            "insufficientBalance": "Du host nisht genug gelt far dem kauf.",
+            "invalidPurchaseWindow": "Entschuldigung, men ken nisht koyfn dem produkt itst.",
+            "invalidProduct": "Produkt mit gegebn ID existirt nisht.",
+            "alreadyOwnedProduct": "Du host shoyn dem produkt.",
             "levelTooLow": "Dayn level iz nit hekh genug tsu performen dem akt.",
             "differentSessionConnected": "Du host dich aroisgelogt af %{session} un bist doh aroisgevaksn.",
             "sameSessionConnected": "Du bist doh aroisgevaksn vayl du host dos site aroysgemakht in a anderer browser tab.",
@@ -143,7 +149,7 @@
             "inGame": "Kenst nisht farbesern dayn profil ven dos shpil iz in gang"
         },
         "requirement": {
-            "authentication": "Du kenst nit machen dem akt nit oif du host nit authentifizirt.",
+            "authentication": "Du musst oyfgelegt zayn in dayn account far tsu ton dem akt.",
             "credentials": "Du host gegebn falsheh identifikatsye.",
             "validAccount": "Dayn account iz nit nokh nit gevalideert. Zay a guter un save dayn profil changes.",
             "inLobby": "Du kenst nit machen dem akt vayl der match hot shoyn ongehoybn.",
@@ -1222,7 +1228,6 @@
             "inProgress": "Shpil in geyen",
             "staleMoves": "Shpil farshvunden — %{staleCount} tseykhn mit nisht keyn nemen iber",
             "forfeit": "Shpil farshpilt — Gegner hot gekliben oyfgebn",
-            "winner": "Shpil gavunen fun %{name}",
             "inactive": "Shpil farshpilt vegn nisht keyn aktiveet",
             "late": "Shpil farshpilt vegn farlozn %{turns} runde(n)",
             "pickActionCard": "Oysklibn aktion kort",
@@ -1335,14 +1340,67 @@
         }
     },
     "time": {
+        "daysShort": "{count}teg",
+        "hoursShort": "{count}sho",
+        "minutesShort": "{count}minutn",
         "days": "0 teg | 1 tog | {count} teg",
         "hours": "0 sho | 1 sho | {count} sho",
         "minutes": "0 minutn | 1 minut | {count} minutn",
         "seconds": "0 sekundn | 1 sekunde | {count} sekundn"
     },
     "perk": {
-        "enhancedPack": "Farbessert Paket",
-        "developer": "Antvikler"
+        "gradientPack": {
+            "title": null,
+            "description": null
+        },
+        "maskedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "Neuling",
@@ -1404,9 +1462,21 @@
         "playRandomOpponents": "Shpil Tsufellige Gegners | Shpil Tsufelliger Gegner | Shpil Tsufellige Gegners",
         "turnsToFlip": "Dreyen tsu flipn | Drey tsu flipn | Dreyen tsu flipn",
         "increment": "Shteyger fun 0 | Shteyger fun 1 | Shteyger fun {count}",
-        "shipsRemaining": "0 shifn blaybn | 1 shif blaybt | {count} shifn blaybn"
+        "shipsRemaining": "0 shifn blaybn | 1 shif blaybt | {count} shifn blaybn",
+        "includesItems": "Beinhaltet {count} sakhn | Beinhaltet {count} sakh | Beinhaltet {count} sakhn"
     },
     "misc": {
+        "seasonal": "Zmanim",
+        "dailyFeatures": "Teglekhe Farshtelt",
+        "purchaseCoins": "Kauf Münzen",
+        "store": "Krom",
+        "buyNow": "Kauf Itst",
+        "expired": "Oysgelofn",
+        "yourCoins": "Dayne Gelt",
+        "getCoins": "Bekum Gelt",
+        "transactions": "Transaktsies",
+        "userData": "Benutzer Data",
+        "price": "Prays",
         "roll": "Rolln",
         "rollAgain": "Rolln Nochamol",
         "rolling": "Rollendik",
@@ -1418,7 +1488,6 @@
         "summary": "Zussamenfassung",
         "versusPlayers": "Gegn Shpilers",
         "versusBots": "Gegn Robots",
-        "expires": "Oysloyft",
         "never": "Keynmol Nit",
         "perks": "Fayglen",
         "beta": "Beta",
@@ -1454,6 +1523,7 @@
         "vibration": "Vibrazie",
         "locked": "Farshperrt",
         "available": "Faranen",
+        "owned": "Gehat",
         "unavailable": "Nisht Faranen",
         "changeLog": "Ändern Log",
         "status": "Shtatus",
@@ -1462,6 +1532,10 @@
         "toggle": "Umschalt",
         "login": "Tzugang",
         "logout": "Oysgang",
+        "hats": "Hitl",
+        "eyes": "Oygn",
+        "mouths": "Moylach",
+        "backgrounds": "Hintergrindn",
         "emailAddress": "Blitspost Adres",
         "emailAddressConfirmation": "Viderhol Blitspost Adres",
         "createAccount": "Shaf a Kont",
@@ -1548,6 +1622,9 @@
         "showBlank": "Vayz %{value}",
         "hideBlank": "Bahaltn %{value}",
         "orBlank": "Oder %{value}",
+        "saveBlank": "Shparn %{value}",
+        "coinsBlank": "%{value} gelt",
+        "receivedBlank": "Bakumen %{value}",
         "sendVerification": "Shikt Pruvung",
         "noThanks": "Nishto dank",
         "selectAll": "Klibt ale",
@@ -1719,13 +1796,18 @@
         "areYouSure": "Bistu zicher?",
         "checkServerStatus": "Kuk af der lebediker server shtatus",
         "customizePreset": "Pasn di preset tsu deyn gefalen.",
+        "loginToPurchase": "Far tsu koyfn musst du ershter aroislogn oder shafn a kont.",
+        "seasonalItem": "A zach in dem shlit is nor farhanen far a teyl teg per yor.",
+        "awaitingPurchaseConfirmation": {
+            "title": null,
+            "description": null
+        },
         "settings": {
             "redeemCode": {
                 "title": "Nem Aroys Code",
                 "description": "Gib ayn a yekhidik code unter tsu ofshlisn besondere items far nokh mer personalizatsye. Yeder code ken nor zayn genutzt eynmol.",
                 "unlinked": "S'iz mir layd, du kenst nit nem aroys a code biz du host farbundn dayn account tsu an email adres.",
-                "success": "Du host gehat di %{perk} perk gliklekh!",
-                "expiration": "Der code iz giltik far %{activationDuration} un dayn perk vet oysgeyn af %{expirationDate}."
+                "success": "Du host geshpilt %{item} mit erfolg!"
             },
             "experience": {
                 "title": "Erfahrung",
@@ -1744,6 +1826,10 @@
             "serverData": {
                 "title": "Server Data",
                 "description": "Du kenst zehn ale dayne geshtoyerte data af Bloob.io unten. Sensible info vi an email address un heimliche shlislen ken zayn farshtekt far dayn zicherheit."
+            },
+            "controlYourData": {
+                "title": null,
+                "description": null
             },
             "localStorage": {
                 "title": "Lokaler Oychshteler",
@@ -1873,15 +1959,30 @@
             "STRIPE": "Shtreifen"
         },
         "poolFoul": {
-            "CUE_BALL_POCKET": "%{name} hot di cue ball arayngevakst!",
-            "CUE_BALL_HIT_NO_BALL": "%{name} hot nisht getrofen a ander ball!",
-            "CUE_BALL_HIT_WRONG_BALL": "%{name} hot getrofen di falshe ball ershter!",
-            "CUSHION_HIT_MIN_ON_BREAK": "Nisht genug balls hot a cushion getrofen nokh brechen. (Min. %{min})",
-            "CUSHION_HIT_INVALID": "Keyn gultik ball hot a cushion getrofen vayl keyn ball iz nisht arayngevakst.",
-            "CONSECUTIVE_FOULS_EXCEEDED": "%{name} hot gemakht %{fouls} oysgehargete fouls.",
-            "ILLEGAL_8_BALL_POCKET": "%{name} hot arayngelegt di acht ball ven farbrechen a foul.",
-            "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} hot arayngelegt di acht ball tsu fri.",
-            "POCKETED_WRONG_BALL": "%{name} hot arayngelegt di falshe ball."
+            "other": {
+                "CUE_BALL_POCKET": "%{name} hot di cue ball in di loch geshikt!",
+                "CUE_BALL_HIT_NO_BALL": "%{name} hot nisht getrofen a ander ball!",
+                "CUE_BALL_HIT_WRONG_BALL": "%{name} hot di falshe ball ershter getrofen!",
+                "CUSHION_HIT_MIN_ON_BREAK": "%{name} hot nisht genug balls gekrigt tsu shlogn di cushion af brechen. (Min. %{min})",
+                "CUSHION_HIT_INVALID": "%{name} hot nisht a gultik ball gekrigt tsu shlogn a cushion ven keyn ball iz geshikt in di loch.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "%{name} hot gemakht %{fouls} oif a royteh reihe fouls.",
+                "ILLEGAL_8_BALL_POCKET": "%{name} hot arayngevakst di akhter kugl ven er hot a foul gemakht.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} hot arayngevakst di akhter kugl tsu fri.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} hot arayngevakst di akhter kugl afn brek.",
+                "POCKETED_WRONG_BALL": "%{name} hot arayngevakst di falshe kugl."
+            },
+            "self": {
+                "CUE_BALL_POCKET": "Du host arayngevakst di cue ball!",
+                "CUE_BALL_HIT_NO_BALL": "Du host nisht getrofen nokh a ball!",
+                "CUE_BALL_HIT_WRONG_BALL": "Du host getrofen di falshe ball ershter!",
+                "CUSHION_HIT_MIN_ON_BREAK": "Du host nisht bakumen genug balls tsu shlogn di cushion af break. (Min. %{min})",
+                "CUSHION_HIT_INVALID": "Du host nisht bakumen a giltik ball tsu shlogn a cushion ven keyn ball iz geveyn pocketed.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "Du host %{fouls} oif a royte foul gemakht.",
+                "ILLEGAL_8_BALL_POCKET": "Du host de acht ball arayngelegt ven du host a foul gemakht.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Du host de acht ball tsu fri arayngelegt.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Du host de acht ball arayngelegt afn brek.",
+                "POCKETED_WRONG_BALL": "Du host de falshe ball arayngelegt."
+            }
         },
         "about": {
             "description": "Bloob.io iz a hartz-proyekt vos besteyt fun multiplayer bleyzer games. Forschläge zenen altz velkum!",

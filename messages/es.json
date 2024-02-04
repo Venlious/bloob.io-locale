@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal Mexican Spanish",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1279,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "El código proporcionado no existe.",
+            "alreadyOwned": "Ya tienes este artículo. El código sigue siendo válido.",
             "alreadyUsed": "El código proporcionado ya ha sido activado."
         },
         "authentication": {
@@ -29,6 +30,11 @@
             "generic": "¡Frena un poco! Espera %{seconds} segundo(s)."
         },
         "generic": {
+            "incorrectProductPrice": "Compra cancelada por discrepancia en el precio. Esperado: %{expectedAmount}. Recibido: %{receivedAmount}.",
+            "insufficientBalance": "No tienes suficientes monedas para esta compra.",
+            "invalidPurchaseWindow": "Lo siento, este producto no se puede comprar en este momento.",
+            "invalidProduct": "El producto con el ID proporcionado no existe.",
+            "alreadyOwnedProduct": "Ya tienes este producto.",
             "levelTooLow": "Tu nivel no es suficientemente alto para hacer esto.",
             "differentSessionConnected": "Usted inició sesión en %{session} y ha sido desconectado aquí.",
             "sameSessionConnected": "Usted fue desconectado aquí al abrir este sitio en otra pestaña del navegador.",
@@ -143,7 +149,7 @@
             "inGame": "No se puede personalizar el perfil mientras el juego está en marcha"
         },
         "requirement": {
-            "authentication": "No puedes realizar esta acción sin haberte autenticado.",
+            "authentication": "Debes estar conectado a tu cuenta para realizar esta acción.",
             "credentials": "Has dado credenciales inválidas.",
             "validAccount": "Tu cuenta aún no ha sido validada. Por favor, guarda los cambios en tu perfil.",
             "inLobby": "No puedes realizar esta acción porque el partido ya ha comenzado.",
@@ -1222,7 +1228,6 @@
             "inProgress": "Partido en curso",
             "staleMoves": "Partido estancado - %{staleCount} movimientos sin toma de posesión",
             "forfeit": "Partido finalizado - El oponente ha abandonado el partido",
-            "winner": "Partido ganado por %{name}",
             "inactive": "Partido finalizado por inactividad",
             "late": "Partido finalizado por falta de %{turns} Turno(s)",
             "pickActionCard": "Escogiendo la carta de acción",
@@ -1335,14 +1340,67 @@
         }
     },
     "time": {
+        "daysShort": "{count}d",
+        "hoursShort": "{count}h",
+        "minutesShort": "{count}m",
         "days": "0 días | 1 día | {count} días",
         "hours": "0 horas | 1 hora | {count} horas",
         "minutes": "0 minutos | 1 minuto | {count} minutos",
         "seconds": "0 segundos | 1 segundo | {count} segundos"
     },
     "perk": {
-        "enhancedPack": "Paquete Mejorado",
-        "developer": "Desarrollador"
+        "gradientPack": {
+            "title": null,
+            "description": null
+        },
+        "maskedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "Novato",
@@ -1404,9 +1462,21 @@
         "playRandomOpponents": "Jugar con oponentes aleatorios",
         "turnsToFlip": "Turnos para voltear | Turno para voltear | Turnos para voltear",
         "increment": "Incrementos de %{count}",
-        "shipsRemaining": "0 barcos restantes | 1 barco restante | {count} barcos restantes"
+        "shipsRemaining": "0 barcos restantes | 1 barco restante | {count} barcos restantes",
+        "includesItems": "Incluye {count} artículos | Incluye {count} artículo | Incluye {count} artículos"
     },
     "misc": {
+        "seasonal": "De Temporada",
+        "dailyFeatures": "Destacados del Día",
+        "purchaseCoins": "Comprar Monedas",
+        "store": "Tienda",
+        "buyNow": "Comprar Ahora",
+        "expired": "Caducado",
+        "yourCoins": "Tus Monedas",
+        "getCoins": "Consigue Monedas",
+        "transactions": "Transacciones",
+        "userData": "Datos del Usuario",
+        "price": "Precio",
         "roll": "Lanza",
         "rollAgain": "Lanza de Nuevo",
         "rolling": "Lanzando",
@@ -1418,7 +1488,6 @@
         "summary": "Resumen",
         "versusPlayers": "Versus Jugadores",
         "versusBots": "Versus Bots",
-        "expires": "Expira",
         "never": "Nunca",
         "perks": "Beneficios",
         "beta": "Beta",
@@ -1454,6 +1523,7 @@
         "vibration": "Vibración",
         "locked": "Bloqueado",
         "available": "Disponible",
+        "owned": "Propio",
         "unavailable": "No disponible",
         "changeLog": "Registro de cambios",
         "status": "Estatus",
@@ -1462,6 +1532,10 @@
         "toggle": "Activar",
         "login": "Iniciar sesión",
         "logout": "Cerrar sesión",
+        "hats": "Sombreros",
+        "eyes": "Ojos",
+        "mouths": "Bocas",
+        "backgrounds": "Fondos",
         "emailAddress": "Correo electrónico",
         "emailAddressConfirmation": "Repite tu correo electrónico",
         "createAccount": "Crear cuenta",
@@ -1548,6 +1622,9 @@
         "showBlank": "Mostrar %{value}",
         "hideBlank": "Ocultar %{value}",
         "orBlank": "O %{value}",
+        "saveBlank": "Guardar %{value}",
+        "coinsBlank": "%{value} monedas",
+        "receivedBlank": "Recibido %{value}",
         "sendVerification": "Enviar verificación",
         "noThanks": "No, gracias",
         "selectAll": "Seleccionar todo",
@@ -1719,13 +1796,18 @@
         "areYouSure": "¿Estás seguro?",
         "checkServerStatus": "Revisa el estado en vivo del servidor",
         "customizePreset": "Personaliza este preajuste a tu gusto.",
+        "loginToPurchase": "Para hacer una compra primero tienes que iniciar sesión o crear una cuenta.",
+        "seasonalItem": "Un artículo en este espacio solo está disponible unos pocos días al año.",
+        "awaitingPurchaseConfirmation": {
+            "title": null,
+            "description": null
+        },
         "settings": {
             "redeemCode": {
                 "title": "Canjear código",
                 "description": "Ingresa un código único a continuación para desbloquear artículos especiales para una mayor personalización. Cada código solo se puede usar una vez.",
                 "unlinked": "Lo sentimos, no puedes canjear un código hasta que hayas vinculado tu cuenta a una dirección de correo electrónico.",
-                "success": "¡Has reclamado con éxito el beneficio %{perk}!",
-                "expiration": "El código es válido por %{activationDuration} y tu beneficio caducará el %{expirationDate}."
+                "success": "¡Has reclamado exitosamente %{item}!"
             },
             "experience": {
                 "title": "Experiencia",
@@ -1744,6 +1826,10 @@
             "serverData": {
                 "title": "Datos del servidor",
                 "description": "Puedes ver todos tus datos almacenados en Bloob.io abajo. La información sensible como el correo electrónico y las claves secretas pueden estar ocultas por tu seguridad."
+            },
+            "controlYourData": {
+                "title": null,
+                "description": null
             },
             "localStorage": {
                 "title": "Almacenamiento local",
@@ -1873,15 +1959,30 @@
             "STRIPE": "Rayadas"
         },
         "poolFoul": {
-            "CUE_BALL_POCKET": "¡%{name} ha metido la bola blanca!",
-            "CUE_BALL_HIT_NO_BALL": "¡%{name} no golpeó otra bola!",
-            "CUE_BALL_HIT_WRONG_BALL": "¡%{name} golpeó primero la bola equivocada!",
-            "CUSHION_HIT_MIN_ON_BREAK": "No hay suficientes bolas que golpeen un cojín después de romper. (Mínimo %{min})",
-            "CUSHION_HIT_INVALID": "Ninguna bola válida golpeó una almohadilla mientras no se entroneró ninguna bola.",
-            "CONSECUTIVE_FOULS_EXCEEDED": "%{name} cometió %{fouls} faltas consecutivas.",
-            "ILLEGAL_8_BALL_POCKET": "%{name} embocó la bola 8 mientras cometía una falta.",
-            "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} embocó la bola 8 demasiado pronto.",
-            "POCKETED_WRONG_BALL": "%{name} ha metido la bola equivocada."
+            "other": {
+                "CUE_BALL_POCKET": "¡%{name} metió la bola blanca!",
+                "CUE_BALL_HIT_NO_BALL": "¡%{name} no golpeó ninguna otra bola!",
+                "CUE_BALL_HIT_WRONG_BALL": "¡%{name} golpeó la bola equivocada primero!",
+                "CUSHION_HIT_MIN_ON_BREAK": "%{name} no golpeó suficientes bolas para que llegaran al cojín en el saque. (Mín. %{min})",
+                "CUSHION_HIT_INVALID": "%{name} no golpeó una bola válida para que llegara a un cojín mientras ninguna bola fue embolsada.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "%{name} cometió %{fouls} faltas seguidas.",
+                "ILLEGAL_8_BALL_POCKET": "%{name} embocó la bola ocho mientras cometía una falta.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} embocó la bola ocho demasiado pronto.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} embocó la bola ocho en el saque.",
+                "POCKETED_WRONG_BALL": "%{name} embocó la bola equivocada."
+            },
+            "self": {
+                "CUE_BALL_POCKET": "¡Metiste la bola blanca!",
+                "CUE_BALL_HIT_NO_BALL": "¡No golpeaste ninguna otra bola!",
+                "CUE_BALL_HIT_WRONG_BALL": "¡Golpeaste la bola equivocada primero!",
+                "CUSHION_HIT_MIN_ON_BREAK": "No metiste suficientes bolas para golpear el cojín en el saque. (Mín. %{min})",
+                "CUSHION_HIT_INVALID": "No golpeaste una bola válida contra un cojín mientras ninguna bola fue embolsada.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "Cometiste %{fouls} faltas seguidas.",
+                "ILLEGAL_8_BALL_POCKET": "Metiste la bola ocho mientras cometías una falta.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Metiste la bola ocho demasiado pronto.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Metiste la bola ocho en el saque.",
+                "POCKETED_WRONG_BALL": "Metiste la bola equivocada."
+            }
         },
         "about": {
             "description": "Bloob.io es un proyecto de pasión que consiste en juegos de navegador multijugador.",

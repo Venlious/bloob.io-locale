@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal Japanese",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1279,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "与えられたコードは存在しません。",
+            "alreadyOwned": "このアイテムはもう持ってるよ。コードはまだ有効だよ。",
             "alreadyUsed": "与えられたコードはすでにアクティブ化されています。"
         },
         "authentication": {
@@ -29,6 +30,11 @@
             "generic": "少し落ち着いて！%{seconds}秒間待ってください。"
         },
         "generic": {
+            "incorrectProductPrice": "価格の不一致により購入がキャンセルされました。期待値: %{expectedAmount}。受け取った: %{receivedAmount}。",
+            "insufficientBalance": "この購入にはコインが足りません。",
+            "invalidPurchaseWindow": "ごめんなさい、この商品は現在購入できません。",
+            "invalidProduct": "指定されたIDの商品は存在しません。",
+            "alreadyOwnedProduct": "あなたはすでにこの商品を所有しています。",
             "levelTooLow": "あなたのレベルはこのアクションを行うには十分高くないよ。",
             "differentSessionConnected": "%{session}でログインしたんだけど、ここでは切断されちゃったよ。",
             "sameSessionConnected": "他のブラウザのタブでこのサイトを開いたから、ここでは切断されちゃったよ。",
@@ -143,7 +149,7 @@
             "inGame": "ゲーム進行中はプロフィールのカスタマイズができません"
         },
         "requirement": {
-            "authentication": "認証しないとこのアクションはできませんよ。",
+            "authentication": "このアクションを実行するには、アカウントにログインしている必要があります。",
             "credentials": "認証情報が間違っていますよ。",
             "validAccount": "まだアカウントが確認されていません。プロフィールの変更を保存してください。",
             "inLobby": "マッチがもう始まっているから、このアクションはできませんよ。",
@@ -1222,7 +1228,6 @@
             "inProgress": "マッチ進行中",
             "staleMoves": "マッチが停滞 — %{staleCount}手番経過で取り込みなし",
             "forfeit": "マッチ終了 — 相手が降参を選んだよ",
-            "winner": "%{name}による試合勝利",
             "inactive": "活動不足により試合終了",
             "late": "%{turns}ターン不在により試合終了",
             "pickActionCard": "アクションカードを選んでいる",
@@ -1335,14 +1340,67 @@
         }
     },
     "time": {
+        "daysShort": "{count}日",
+        "hoursShort": "{count}時間",
+        "minutesShort": "{count}分",
         "days": "0日 | 1日 | {count}日",
         "hours": "0時間 | 1時間 | {count}時間",
         "minutes": "0分 | 1分 | {count}分",
         "seconds": "0秒 | 1秒 | {count}秒"
     },
     "perk": {
-        "enhancedPack": "強化パック",
-        "developer": "開発者"
+        "gradientPack": {
+            "title": null,
+            "description": null
+        },
+        "maskedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "ルーキー",
@@ -1404,9 +1462,21 @@
         "playRandomOpponents": "ランダムな相手と遊ぶ | ランダムな相手と遊ぶ | ランダムな相手と遊ぶ",
         "turnsToFlip": "フリップするターン | フリップするターン | フリップするターン",
         "increment": "0の増分 | 1の増分 | {count}の増分",
-        "shipsRemaining": "残りの船は0 | 残りの船は1 | 残りの船は{count}"
+        "shipsRemaining": "残りの船は0 | 残りの船は1 | 残りの船は{count}",
+        "includesItems": "{count}個のアイテムが含まれてるよ | {count}個のアイテムが含まれてるよ | {count}個のアイテムが含まれてるよ"
     },
     "misc": {
+        "seasonal": "季節限定",
+        "dailyFeatures": "日替わり特集",
+        "purchaseCoins": "コインを購入",
+        "store": "ストア",
+        "buyNow": "今すぐ購入",
+        "expired": "期限切れ",
+        "yourCoins": "あなたのコイン",
+        "getCoins": "コインをゲット",
+        "transactions": "取引",
+        "userData": "ユーザーデータ",
+        "price": "価格",
         "roll": "ロール",
         "rollAgain": "もう一度ロール",
         "rolling": "ローリング中",
@@ -1418,7 +1488,6 @@
         "summary": "概要",
         "versusPlayers": "プレイヤー対戦",
         "versusBots": "ボットと対戦",
-        "expires": "有効期限",
         "never": "決して",
         "perks": "特典",
         "beta": "ベータ",
@@ -1454,6 +1523,7 @@
         "vibration": "バイブレーション",
         "locked": "ロックされてる",
         "available": "利用可能",
+        "owned": "所有",
         "unavailable": "利用不可",
         "changeLog": "変更ログ",
         "status": "ステータス",
@@ -1462,6 +1532,10 @@
         "toggle": "切り替え",
         "login": "ログイン",
         "logout": "ログアウト",
+        "hats": "帽子",
+        "eyes": "目",
+        "mouths": "口",
+        "backgrounds": "背景",
         "emailAddress": "メールアドレス",
         "emailAddressConfirmation": "メールアドレスの再入力",
         "createAccount": "アカウントを作成する",
@@ -1548,6 +1622,9 @@
         "showBlank": "%{value}を表示",
         "hideBlank": "%{value}を隠す",
         "orBlank": "または %{value}",
+        "saveBlank": "%{value}を保存",
+        "coinsBlank": "%{value}コイン",
+        "receivedBlank": "%{value}を受け取った",
         "sendVerification": "認証を送る",
         "noThanks": "結構です",
         "selectAll": "全て選択",
@@ -1719,13 +1796,18 @@
         "areYouSure": "本当にいいの？",
         "checkServerStatus": "ライブサーバーの状態を確認してみて",
         "customizePreset": "このプリセットを好みに合わせてカスタマイズしてね。",
+        "loginToPurchase": "購入するには、まずログインするかアカウントを作成する必要があります。",
+        "seasonalItem": "このスロットのアイテムは年に数日しか利用できません。",
+        "awaitingPurchaseConfirmation": {
+            "title": null,
+            "description": null
+        },
         "settings": {
             "redeemCode": {
                 "title": "コードを引き換える",
                 "description": "以下にユニークなコードを入力して、さらにカスタマイズできる特別なアイテムを解除しよう。各コードは一度しか使えないよ。",
                 "unlinked": "ごめん、メールアドレスにアカウントをリンクさせるまでコードは引き換えられないんだ。",
-                "success": "%{perk}の特典を無事にゲットしたよ！",
-                "expiration": "このコードは%{activationDuration}間有効で、あなたの特典は%{expirationDate}に期限切れになるよ。"
+                "success": "無事に%{item}をゲットしたぜ！"
             },
             "experience": {
                 "title": "経験",
@@ -1744,6 +1826,10 @@
             "serverData": {
                 "title": "サーバーデータ",
                 "description": "以下のBloob.ioで保存した全てのデータを見ることができるよ。メールアドレスや秘密のキーのようなセンシティブな情報は、君の安全のために隠されているかもしれないよ。"
+            },
+            "controlYourData": {
+                "title": null,
+                "description": null
             },
             "localStorage": {
                 "title": "ローカルストレージ",
@@ -1873,15 +1959,30 @@
             "STRIPE": "ストライプ"
         },
         "poolFoul": {
-            "CUE_BALL_POCKET": "%{name}がキューボールをポケットに入れちゃったよ！",
-            "CUE_BALL_HIT_NO_BALL": "%{name}が他のボールに当たらなかったよ！",
-            "CUE_BALL_HIT_WRONG_BALL": "%{name}が最初に違うボールを打っちゃったよ！",
-            "CUSHION_HIT_MIN_ON_BREAK": "ブレイク後にクッションに当たったボールが足りないよ。（最低 %{min}個）",
-            "CUSHION_HIT_INVALID": "有効なボールがクッションに当たらず、ボールもポケットに入らなかったよ。",
-            "CONSECUTIVE_FOULS_EXCEEDED": "%{name}さんが%{fouls}回連続でファウルを犯しました。",
-            "ILLEGAL_8_BALL_POCKET": "%{name}さんがファウルを犯しながら8番ボールをポケットに入れました。",
-            "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name}さんが8番ボールを早すぎてポケットに入れました。",
-            "POCKETED_WRONG_BALL": "%{name}さんが間違ったボールをポケットに入れました。"
+            "other": {
+                "CUE_BALL_POCKET": "%{name}さんがキューボールをポケットに入れちゃったよ！",
+                "CUE_BALL_HIT_NO_BALL": "%{name}さんが他のボールに当たらなかったよ！",
+                "CUE_BALL_HIT_WRONG_BALL": "%{name}さんが最初に違うボールを打っちゃったよ！",
+                "CUSHION_HIT_MIN_ON_BREAK": "%{name}さんがブレイク時に十分なボールをクッションに当てられなかったよ。（最低 %{min}）",
+                "CUSHION_HIT_INVALID": "%{name}さんが有効なボールをクッションに当てられず、ボールがポケットに入らなかったよ。",
+                "CONSECUTIVE_FOULS_EXCEEDED": "%{name}さんが%{fouls}回連続でファウルを犯しました。",
+                "ILLEGAL_8_BALL_POCKET": "%{name}さんがファウルを犯しながら8番ボールをポケットに入れました。",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name}さんが8番ボールを早すぎてポケットに入れました。",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name}さんがブレイク時に8番ボールをポケットに入れました。",
+                "POCKETED_WRONG_BALL": "%{name}さんが間違ったボールをポケットに入れました。"
+            },
+            "self": {
+                "CUE_BALL_POCKET": "キューボールをポケットに入れちゃったね！",
+                "CUE_BALL_HIT_NO_BALL": "他のボールに当たらなかったよ！",
+                "CUE_BALL_HIT_WRONG_BALL": "最初に間違ったボールを打っちゃったね！",
+                "CUSHION_HIT_MIN_ON_BREAK": "ブレイク時に十分なボールをクッションに当てなかったよ。（最低 %{min}）",
+                "CUSHION_HIT_INVALID": "ボールがポケットに入らない状態で、有効なボールをクッションに当てなかったよ。",
+                "CONSECUTIVE_FOULS_EXCEEDED": "あなたは%{fouls}回連続でファウルを犯しました。",
+                "ILLEGAL_8_BALL_POCKET": "ファウルを犯しながら8番ボールをポケットに入れました。",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "8番ボールを早すぎてポケットに入れました。",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "ブレイク時に8番ボールをポケットに入れました。",
+                "POCKETED_WRONG_BALL": "間違ったボールをポケットに入れました。"
+            }
         },
         "about": {
             "description": "Bloob.ioは、マルチプレイヤーのブラウザゲームを含む情熱のプロジェクトだよ。いつでも提案を歓迎してるからね！",

@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal Korean",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1279,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "주어진 코드가 존재하지 않아요.",
+            "alreadyOwned": "이 아이템은 이미 가지고 있어. 코드는 여전히 유효해.",
             "alreadyUsed": "이미 활성화된 코드에요."
         },
         "authentication": {
@@ -29,6 +30,11 @@
             "generic": "좀 천천히 해! %{seconds}초 동안 기다려."
         },
         "generic": {
+            "incorrectProductPrice": "가격 불일치로 인해 구매가 취소되었습니다. 예상: %{expectedAmount}. 받은: %{receivedAmount}.",
+            "insufficientBalance": "이 구매를 위한 충분한 코인이 없습니다.",
+            "invalidPurchaseWindow": "죄송합니다, 이 제품은 현재 구매할 수 없습니다.",
+            "invalidProduct": "주어진 ID의 제품이 존재하지 않습니다.",
+            "alreadyOwnedProduct": "이미 이 제품을 소유하고 있습니다.",
             "levelTooLow": "네 레벨이 이 행동을 하기에는 충분히 높지 않아요.",
             "differentSessionConnected": "%{session}에서 로그인했고 여기서 연결이 끊어졌어요.",
             "sameSessionConnected": "다른 브라우저 탭에서 이 사이트를 열어서 여기서 연결이 끊어졌어요.",
@@ -143,7 +149,7 @@
             "inGame": "게임 진행 중에는 프로필을 수정할 수 없어요"
         },
         "requirement": {
-            "authentication": "인증 없이는 이 작업을 수행할 수 없어.",
+            "authentication": "이 작업을 수행하려면 계정에 로그인해야 해.",
             "credentials": "잘못된 인증 정보를 입력했어.",
             "validAccount": "아직 계정이 확인되지 않았어. 프로필 변경 사항을 저장해줘.",
             "inLobby": "이미 경기가 시작되었기 때문에 이 작업을 수행할 수 없어.",
@@ -1222,7 +1228,6 @@
             "inProgress": "경기 진행 중",
             "staleMoves": "경기 정체 — %{staleCount}번의 움직임에도 변동 없음",
             "forfeit": "경기 종료 — 상대방이 포기를 선택했습니다",
-            "winner": "%{name}님이 경기에서 이겼어요",
             "inactive": "활동 없어서 경기가 끝났어요",
             "late": "%{turns} 턴을 놓쳐서 경기가 끝났어요",
             "pickActionCard": "액션 카드를 고르는 중",
@@ -1335,14 +1340,67 @@
         }
     },
     "time": {
+        "daysShort": "{count}일",
+        "hoursShort": "{count}시간",
+        "minutesShort": "{count}분",
         "days": "0일 | 1일 | {count}일",
         "hours": "0시간 | 1시간 | {count}시간",
         "minutes": "0분 | 1분 | {count}분",
         "seconds": "0초 | 1초 | {count}초"
     },
     "perk": {
-        "enhancedPack": "강화 팩",
-        "developer": "개발자"
+        "gradientPack": {
+            "title": null,
+            "description": null
+        },
+        "maskedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "신입",
@@ -1404,9 +1462,21 @@
         "playRandomOpponents": "랜덤 상대와 게임하기 | 랜덤 상대와 게임하기 | 랜덤 상대와 게임하기",
         "turnsToFlip": "뒤집을 차례 | 뒤집을 차례 | 뒤집을 차례",
         "increment": "0 증가 | 1 증가 | {count} 증가",
-        "shipsRemaining": "남은 배 0 | 남은 배 1 | 남은 배 {count}"
+        "shipsRemaining": "남은 배 0 | 남은 배 1 | 남은 배 {count}",
+        "includesItems": "{count}개 항목 포함 | {count}개 항목 포함 | {count}개 항목 포함"
     },
     "misc": {
+        "seasonal": "계절별",
+        "dailyFeatures": "일일 특징",
+        "purchaseCoins": "코인 구매하기",
+        "store": "상점",
+        "buyNow": "지금 사기",
+        "expired": "만료됨",
+        "yourCoins": "당신의 코인",
+        "getCoins": "코인 받기",
+        "transactions": "거래 내역",
+        "userData": "사용자 데이터",
+        "price": "가격",
         "roll": "굴리기",
         "rollAgain": "다시 굴리기",
         "rolling": "굴리는 중",
@@ -1418,7 +1488,6 @@
         "summary": "요약",
         "versusPlayers": "플레이어 대결",
         "versusBots": "봇과 대결",
-        "expires": "만료",
         "never": "절대로",
         "perks": "특전",
         "beta": "베타",
@@ -1454,6 +1523,7 @@
         "vibration": "진동",
         "locked": "잠김",
         "available": "사용 가능",
+        "owned": "소유한",
         "unavailable": "사용 불가능",
         "changeLog": "변경 기록",
         "status": "상태",
@@ -1462,6 +1532,10 @@
         "toggle": "토글",
         "login": "로그인",
         "logout": "로그아웃",
+        "hats": "모자",
+        "eyes": "눈",
+        "mouths": "입",
+        "backgrounds": "배경들",
         "emailAddress": "이메일 주소",
         "emailAddressConfirmation": "이메일 주소 재입력",
         "createAccount": "계정 생성",
@@ -1548,6 +1622,9 @@
         "showBlank": "%{value} 보기",
         "hideBlank": "%{value} 숨기기",
         "orBlank": "또는 %{value}",
+        "saveBlank": "%{value} 저장하기",
+        "coinsBlank": "%{value} 코인들",
+        "receivedBlank": "%{value} 받았어요",
         "sendVerification": "인증 보내기",
         "noThanks": "괜찮아요",
         "selectAll": "전체 선택",
@@ -1719,13 +1796,18 @@
         "areYouSure": "정말로?",
         "checkServerStatus": "라이브 서버 상태를 확인해봐",
         "customizePreset": "이 프리셋을 네 맘대로 커스터마이즈해봐.",
+        "loginToPurchase": "물건을 사려면 먼저 로그인하거나 계정을 만들어야 해.",
+        "seasonalItem": "이 슬롯의 아이템은 일년에 몇 일 동안만 사용할 수 있어.",
+        "awaitingPurchaseConfirmation": {
+            "title": null,
+            "description": null
+        },
         "settings": {
             "redeemCode": {
                 "title": "코드 사용하기",
                 "description": "아래에 고유 코드를 입력하여 특별 아이템을 얻어 더 많은 커스터마이징을 즐겨보세요. 각 코드는 한 번만 사용할 수 있습니다.",
                 "unlinked": "이메일 주소와 계정을 연결하기 전에는 코드를 사용할 수 없습니다.",
-                "success": "%{perk} 퍽을 성공적으로 받았습니다!",
-                "expiration": "이 코드는 %{activationDuration} 동안 유효하며, 퍽은 %{expirationDate}에 만료됩니다."
+                "success": "성공적으로 %{item}을(를) 획득했어요!"
             },
             "experience": {
                 "title": "경험",
@@ -1744,6 +1826,10 @@
             "serverData": {
                 "title": "서버 데이터",
                 "description": "아래에서 Bloob.io에 저장된 모든 데이터를 볼 수 있어요. 이메일 주소나 비밀 키와 같은 민감한 정보는 보안을 위해 숨겨져 있을 수 있어요."
+            },
+            "controlYourData": {
+                "title": null,
+                "description": null
             },
             "localStorage": {
                 "title": "로컬 스토리지",
@@ -1873,15 +1959,30 @@
             "STRIPE": "줄무늬"
         },
         "poolFoul": {
-            "CUE_BALL_POCKET": "%{name}이(가) 당구공을 넣었어!",
-            "CUE_BALL_HIT_NO_BALL": "%{name}이(가) 다른 공을 치지 않았어!",
-            "CUE_BALL_HIT_WRONG_BALL": "%{name}이(가) 잘못된 공을 먼저 쳤어!",
-            "CUSHION_HIT_MIN_ON_BREAK": "브레이크 후에 충분한 공이 쿠션에 닿지 않았어. (최소 %{min})",
-            "CUSHION_HIT_INVALID": "유효한 공이 쿠션에 닿지 않았고, 공도 넣지 않았어.",
-            "CONSECUTIVE_FOULS_EXCEEDED": "%{name}님이 %{fouls}번 연속으로 파울을 범했어요.",
-            "ILLEGAL_8_BALL_POCKET": "%{name}님이 파울을 범하면서 8번 볼을 넣었어요.",
-            "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name}님이 8번 볼을 너무 일찍 넣었어요.",
-            "POCKETED_WRONG_BALL": "%{name}님이 잘못된 볼을 넣었어요."
+            "other": {
+                "CUE_BALL_POCKET": "%{name}이(가) 당구공을 포켓에 넣었어!",
+                "CUE_BALL_HIT_NO_BALL": "%{name}이(가) 다른 공을 치지 않았어!",
+                "CUE_BALL_HIT_WRONG_BALL": "%{name}이(가) 잘못된 공을 먼저 쳤어!",
+                "CUSHION_HIT_MIN_ON_BREAK": "%{name}이(가) 브레이크 시에 충분한 공을 쿠션에 맞추지 못했어. (최소 %{min})",
+                "CUSHION_HIT_INVALID": "%{name}이(가) 공을 포켓에 넣지 않은 상태에서 유효한 공을 쿠션에 맞추지 못했어.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "%{name}님이 연속으로 %{fouls}번의 파울을 범했어요.",
+                "ILLEGAL_8_BALL_POCKET": "%{name}님이 파울을 범하면서 8번 볼을 넣었어요.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name}님이 8번 볼을 너무 일찍 넣었어요.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name}님이 브레이크할 때 8번 볼을 넣었어요.",
+                "POCKETED_WRONG_BALL": "%{name}님이 잘못된 볼을 넣었어요."
+            },
+            "self": {
+                "CUE_BALL_POCKET": "당신이 큐볼을 넣었어!",
+                "CUE_BALL_HIT_NO_BALL": "다른 공을 치지 않았어!",
+                "CUE_BALL_HIT_WRONG_BALL": "잘못된 공을 먼저 쳤어!",
+                "CUSHION_HIT_MIN_ON_BREAK": "브레이크할 때 쿠션에 충분히 많은 공을 치지 않았어. (최소 %{min})",
+                "CUSHION_HIT_INVALID": "공을 하나도 넣지 않은 상태에서 유효한 공을 쿠션에 치지 않았어.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "너 %{fouls}번 연속으로 파울을 저질렀어.",
+                "ILLEGAL_8_BALL_POCKET": "너 파울을 저지르면서 8번 공을 넣었어.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "너 8번 공을 너무 일찍 넣었어.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "너 브레이크할 때 8번 공을 넣었어.",
+                "POCKETED_WRONG_BALL": "너 잘못된 공을 넣었어."
+            }
         },
         "about": {
             "description": "Bloob.io는 멀티플레이어 브라우저 게임을 포함한 열정의 프로젝트입니다. 언제든지 제안해 주세요!",

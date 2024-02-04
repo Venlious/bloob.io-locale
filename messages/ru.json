@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal Russian",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1279,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Данного кода не существует.",
+            "alreadyOwned": "У тебя уже есть этот предмет. Код все еще действителен.",
             "alreadyUsed": "Данный код уже был активирован."
         },
         "authentication": {
@@ -29,6 +30,11 @@
             "generic": "Помедленнее, дружок! Подожди %{seconds} секунд(у)."
         },
         "generic": {
+            "incorrectProductPrice": "Покупка отменена из-за несоответствия цены. Ожидалось: %{expectedAmount}. Получено: %{receivedAmount}.",
+            "insufficientBalance": "У тебя не хватает монет для этой покупки.",
+            "invalidPurchaseWindow": "Извини, но сейчас этот товар купить нельзя.",
+            "invalidProduct": "Товара с таким ID не существует.",
+            "alreadyOwnedProduct": "Ты уже владеешь этим товаром.",
             "levelTooLow": "Твой уровень не достаточно высок, чтобы сделать это действие.",
             "differentSessionConnected": "Ты вошел в систему в %{session} и был отключен здесь.",
             "sameSessionConnected": "Ты был отключен здесь, потому что открыл этот сайт в другой вкладке браузера.",
@@ -143,7 +149,7 @@
             "inGame": "Нельзя изменять свой профиль, пока идет игра"
         },
         "requirement": {
-            "authentication": "Не получится это сделать, если ты не авторизовался.",
+            "authentication": "Тебе надо войти в свой аккаунт, чтобы сделать это действие.",
             "credentials": "Ты ввел неправильные данные.",
             "validAccount": "Твой аккаунт еще не подтвержден. Сохрани изменения в профиле.",
             "inLobby": "Это действие невозможно, матч уже начался.",
@@ -1180,7 +1186,7 @@
             "brb": "Сейчас вернусь!",
             "go": "Мне нужно идти.",
             "glhf": "Удачи в игре, веселитесь",
-            "gg": "Гуд гейм"
+            "gg": "Хорошей игры!"
         },
         "PRE_GAME": {
             "readyCheck": "Все готовы?",
@@ -1222,7 +1228,6 @@
             "inProgress": "Матч идет",
             "staleMoves": "Матч застопорился — %{staleCount} ходов без захвата",
             "forfeit": "Матч закончен — соперник решил сдаться",
-            "winner": "Матч выиграл %{name}",
             "inactive": "Матч закончился из-за бездействия",
             "late": "Матч закончился, потому что пропущено %{turns} ход(а)",
             "pickActionCard": "Выбор действующей карты",
@@ -1335,14 +1340,67 @@
         }
     },
     "time": {
+        "daysShort": "{count}д",
+        "hoursShort": "{count}ч",
+        "minutesShort": "{count}м",
         "days": "0 дней | 1 день | {count} дней",
         "hours": "0 часов | 1 час | {count} часов",
         "minutes": "0 минут | 1 минута | {count} минут",
         "seconds": "0 секунд | 1 секунда | {count} секунд"
     },
     "perk": {
-        "enhancedPack": "Улучшенный Пакет",
-        "developer": "Разработчик"
+        "gradientPack": {
+            "title": null,
+            "description": null
+        },
+        "maskedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "Новичок",
@@ -1404,11 +1462,23 @@
         "playRandomOpponents": "Играть против случайных соперников | Играть против случайного соперника | Играть против случайных соперников",
         "turnsToFlip": "Ходы на переворот | Ход на переворот | Ходы на переворот",
         "increment": "Прирост 0 | Прирост 1 | Прирост {count}",
-        "shipsRemaining": "0 кораблей осталось | 1 корабль остался | {count} кораблей осталось"
+        "shipsRemaining": "0 кораблей осталось | 1 корабль остался | {count} кораблей осталось",
+        "includesItems": "Включает {count} предмета | Включает {count} предмет | Включает {count} предметов"
     },
     "misc": {
-        "roll": "Катить",
-        "rollAgain": "Катить Снова",
+        "seasonal": "Сезонные",
+        "dailyFeatures": "Ежедневные Фишки",
+        "purchaseCoins": "Купить Монеты",
+        "store": "Магазин",
+        "buyNow": "Купить Сейчас",
+        "expired": "Истекший",
+        "yourCoins": "Твои Монеты",
+        "getCoins": "Получить Монеты",
+        "transactions": "Транзакции",
+        "userData": "Данные Пользователя",
+        "price": "Цена",
+        "roll": "Бросить",
+        "rollAgain": "Бросить снова",
         "rolling": "Катится",
         "finalRoll": "Финальный Бросок",
         "noRollsRemaining": "Бросков Не Осталось",
@@ -1418,7 +1488,6 @@
         "summary": "Сводка",
         "versusPlayers": "Против игроков",
         "versusBots": "Против Ботов",
-        "expires": "Истекает",
         "never": "Никогда",
         "perks": "Плюшки",
         "beta": "Бета",
@@ -1454,6 +1523,7 @@
         "vibration": "Вибрация",
         "locked": "Заблокировано",
         "available": "Доступно",
+        "owned": "В наличии",
         "unavailable": "Недоступно",
         "changeLog": "История изменений",
         "status": "Статус",
@@ -1462,6 +1532,10 @@
         "toggle": "Переключить",
         "login": "Войти",
         "logout": "Выйти",
+        "hats": "Шапки",
+        "eyes": "Глаза",
+        "mouths": "Рты",
+        "backgrounds": "Фоны",
         "emailAddress": "Электронная почта",
         "emailAddressConfirmation": "Повторите адрес электронной почты",
         "createAccount": "Создать аккаунт",
@@ -1548,6 +1622,9 @@
         "showBlank": "Показать %{value}",
         "hideBlank": "Скрыть %{value}",
         "orBlank": "Или %{value}",
+        "saveBlank": "Сохранить %{value}",
+        "coinsBlank": "%{value} монет",
+        "receivedBlank": "Получено %{value}",
         "sendVerification": "Отправить верификацию",
         "noThanks": "Нет, спасибо",
         "selectAll": "Выбрать все",
@@ -1719,13 +1796,18 @@
         "areYouSure": "Ты уверен?",
         "checkServerStatus": "Проверь статус живого сервера",
         "customizePreset": "Настрой этот пресет по своему вкусу.",
+        "loginToPurchase": "Чтобы сделать покупку, сначала войди в систему или создай аккаунт.",
+        "seasonalItem": "Предмет в этом слоте доступен только несколько дней в году.",
+        "awaitingPurchaseConfirmation": {
+            "title": null,
+            "description": null
+        },
         "settings": {
             "redeemCode": {
                 "title": "Ввести Код",
                 "description": "Введите уникальный код ниже, чтобы разблокировать специальные предметы для еще большей кастомизации. Каждый код можно использовать только один раз.",
                 "unlinked": "Извини, ты не можешь ввести код, пока не привяжешь свой аккаунт к электронной почте.",
-                "success": "Ты успешно получил перк %{perk}!",
-                "expiration": "Код действителен в течение %{activationDuration}, а твой перк истечет %{expirationDate}."
+                "success": "Ты успешно забрал %{item}!"
             },
             "experience": {
                 "title": "Опыт",
@@ -1744,6 +1826,10 @@
             "serverData": {
                 "title": "Данные Сервера",
                 "description": "Вы можете увидеть все свои сохраненные данные на Bloob.io ниже. Чувствительная информация, такая как адрес электронной почты и секретные ключи, может быть скрыта для вашей безопасности."
+            },
+            "controlYourData": {
+                "title": null,
+                "description": null
             },
             "localStorage": {
                 "title": "Локальное хранение",
@@ -1873,15 +1959,30 @@
             "STRIPE": "В полоску"
         },
         "poolFoul": {
-            "CUE_BALL_POCKET": "%{name} забил белый шар!",
-            "CUE_BALL_HIT_NO_BALL": "%{name} не ударил по другому шару!",
-            "CUE_BALL_HIT_WRONG_BALL": "%{name} сначала ударил не тот шар!",
-            "CUSHION_HIT_MIN_ON_BREAK": "После разбивки недостаточно шаров ударились о борт. (Мин. %{min})",
-            "CUSHION_HIT_INVALID": "Ни один действительный шар не ударился о борт, пока ни один шар не был забит.",
-            "CONSECUTIVE_FOULS_EXCEEDED": "%{name} совершил %{fouls} фола подряд.",
-            "ILLEGAL_8_BALL_POCKET": "%{name} забил восьмерку, нарушив правила.",
-            "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} забил восьмерку слишком рано.",
-            "POCKETED_WRONG_BALL": "%{name} забил не тот шар."
+            "other": {
+                "CUE_BALL_POCKET": "%{name} забил белый шар!",
+                "CUE_BALL_HIT_NO_BALL": "%{name} не ударил по другому шару!",
+                "CUE_BALL_HIT_WRONG_BALL": "%{name} сначала ударил не по тому шару!",
+                "CUSHION_HIT_MIN_ON_BREAK": "%{name} не ударил достаточно шаров, чтобы они ударились о борт при разбивке. (Мин. %{min})",
+                "CUSHION_HIT_INVALID": "%{name} не ударил по действительному шару, чтобы он ударился о борт, пока ни один шар не был забит.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "%{name} совершил %{fouls} подряд штрафных ударов.",
+                "ILLEGAL_8_BALL_POCKET": "%{name} забил восьмерку, нарушив правила.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} забил восьмерку слишком рано.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} забил восьмерку сразу после разбития.",
+                "POCKETED_WRONG_BALL": "%{name} забил не тот шар."
+            },
+            "self": {
+                "CUE_BALL_POCKET": "Ты забил шар-кий!",
+                "CUE_BALL_HIT_NO_BALL": "Ты не ударил другой шар!",
+                "CUE_BALL_HIT_WRONG_BALL": "Ты сначала ударил не тот шар!",
+                "CUSHION_HIT_MIN_ON_BREAK": "Ты не забил достаточно шаров, чтобы ударить по подушке на разбивке. (Мин. %{min})",
+                "CUSHION_HIT_INVALID": "Ты не смог забить действительный шар, чтобы ударить по подушке, пока ни один шар не был забит.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "Ты совершил %{fouls} подряд фола.",
+                "ILLEGAL_8_BALL_POCKET": "Ты забил восьмерку, совершив фол.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Ты забил восьмерку слишком рано.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Ты забил восьмерку сразу после разбития.",
+                "POCKETED_WRONG_BALL": "Ты забил не тот шар."
+            }
         },
         "about": {
             "description": "Bloob.io - это проект, созданный с любовью, включающий в себя многопользовательские браузерные игры. Предложения всегда приветствуются!",

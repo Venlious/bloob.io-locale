@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1279,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Kode yang diberikan tidak ada.",
+            "alreadyOwned": "Kamu udah punya barang ini. Kodenya masih berlaku.",
             "alreadyUsed": "Kode yang diberikan sudah diaktifkan."
         },
         "authentication": {
@@ -29,6 +30,11 @@
             "generic": "Pelan-pelan dulu! Tunggu %{seconds} detik."
         },
         "generic": {
+            "incorrectProductPrice": "Pembelian dibatalkan karena ada perbedaan harga. Yang diharapkan: %{expectedAmount}. Yang diterima: %{receivedAmount}.",
+            "insufficientBalance": "Kamu nggak punya cukup koin untuk beli ini.",
+            "invalidPurchaseWindow": "Maaf, produk ini nggak bisa dibeli sekarang.",
+            "invalidProduct": "Produk dengan ID ini nggak ada.",
+            "alreadyOwnedProduct": "Kamu udah punya produk ini.",
             "levelTooLow": "Level kamu belum cukup tinggi untuk melakukan aksi ini.",
             "differentSessionConnected": "Kamu login di %{session} dan udah diputus sambungannya di sini.",
             "sameSessionConnected": "Kamu diputus sambungan di sini karena kamu buka situs ini di tab browser lain.",
@@ -143,7 +149,7 @@
             "inGame": "Tidak bisa mengubah profil kamu saat game sedang berlangsung"
         },
         "requirement": {
-            "authentication": "Kamu nggak bisa melakukan aksi ini tanpa autentikasi.",
+            "authentication": "Kamu harus masuk ke akunmu dulu untuk melakukan aksi ini.",
             "credentials": "Kredensial yang kamu berikan nggak valid.",
             "validAccount": "Akunmu belum divalidasi. Tolong simpan perubahan profil kamu.",
             "inLobby": "Kamu nggak bisa melakukan aksi ini karena pertandingan sudah dimulai.",
@@ -1222,7 +1228,6 @@
             "inProgress": "Pertandingan sedang berlangsung",
             "staleMoves": "Pertandingan mandek — %{staleCount} gerakan tanpa ada yang mengambil alih",
             "forfeit": "Pertandingan selesai — Lawan memilih untuk menyerah",
-            "winner": "Pertandingan dimenangkan oleh %{name}",
             "inactive": "Pertandingan berakhir karena tidak ada aktivitas",
             "late": "Pertandingan berakhir karena melewatkan %{turns} giliran",
             "pickActionCard": "Memilih kartu aksi",
@@ -1335,14 +1340,67 @@
         }
     },
     "time": {
+        "daysShort": "{count} hari",
+        "hoursShort": "{count} jam",
+        "minutesShort": "{count} menit",
         "days": "0 hari | 1 hari | {count} hari",
         "hours": "0 jam | 1 jam | {count} jam",
         "minutes": "0 menit | 1 menit | {count} menit",
         "seconds": "0 detik | 1 detik | {count} detik"
     },
     "perk": {
-        "enhancedPack": "Paket Peningkatan",
-        "developer": "Pengembang"
+        "gradientPack": {
+            "title": null,
+            "description": null
+        },
+        "maskedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "Pemula",
@@ -1404,9 +1462,21 @@
         "playRandomOpponents": "Main Lawan Lawan Acak | Main Lawan Acak | Main Lawan Lawan Acak",
         "turnsToFlip": "Giliran buat balik | Giliran buat balik | Giliran-giliran buat balik",
         "increment": "Bertambah 0 | Bertambah 1 | Bertambah {count}",
-        "shipsRemaining": "0 kapal tersisa | 1 kapal tersisa | {count} kapal tersisa"
+        "shipsRemaining": "0 kapal tersisa | 1 kapal tersisa | {count} kapal tersisa",
+        "includesItems": "Termasuk {count} item | Termasuk {count} item | Termasuk {count} item"
     },
     "misc": {
+        "seasonal": "Musiman",
+        "dailyFeatures": "Fitur Harian",
+        "purchaseCoins": "Beli Koin",
+        "store": "Toko",
+        "buyNow": "Beli Sekarang",
+        "expired": "Kadaluarsa",
+        "yourCoins": "Koin Kamu",
+        "getCoins": "Dapatkan Koin",
+        "transactions": "Transaksi",
+        "userData": "Data Pengguna",
+        "price": "Harga",
         "roll": "Gulir",
         "rollAgain": "Gulir Lagi",
         "rolling": "Sedang Menggulir",
@@ -1418,7 +1488,6 @@
         "summary": "Ringkasan",
         "versusPlayers": "Lawan Pemain",
         "versusBots": "Lawan Bot",
-        "expires": "Kadaluarsa",
         "never": "Tidak Pernah",
         "perks": "Keuntungan",
         "beta": "Beta",
@@ -1454,6 +1523,7 @@
         "vibration": "Getaran",
         "locked": "Terkunci",
         "available": "Tersedia",
+        "owned": "Milik",
         "unavailable": "Tidak Tersedia",
         "changeLog": "Catatan Perubahan",
         "status": "Status",
@@ -1462,6 +1532,10 @@
         "toggle": "Beralih",
         "login": "Masuk",
         "logout": "Keluar",
+        "hats": "Topi",
+        "eyes": "Mata",
+        "mouths": "Mulut",
+        "backgrounds": "Latar Belakang",
         "emailAddress": "Alamat Email",
         "emailAddressConfirmation": "Ulangi Alamat Email",
         "createAccount": "Buat Akun",
@@ -1548,6 +1622,9 @@
         "showBlank": "Tampilkan %{value}",
         "hideBlank": "Sembunyikan %{value}",
         "orBlank": "Atau %{value}",
+        "saveBlank": "Simpan %{value}",
+        "coinsBlank": "%{value} koin",
+        "receivedBlank": "Diterima %{value}",
         "sendVerification": "Kirim Verifikasi",
         "noThanks": "Nggak, makasih",
         "selectAll": "Pilih semua",
@@ -1719,13 +1796,18 @@
         "areYouSure": "Kamu yakin?",
         "checkServerStatus": "Cek status server langsung",
         "customizePreset": "Sesuaikan preset ini sesuai selera kamu.",
+        "loginToPurchase": "Buat belanja, kamu harus login atau buat akun dulu.",
+        "seasonalItem": "Barang di slot ini cuma tersedia beberapa hari dalam setahun.",
+        "awaitingPurchaseConfirmation": {
+            "title": null,
+            "description": null
+        },
         "settings": {
             "redeemCode": {
                 "title": "Tukar Kode",
                 "description": "Masukkan kode unik di bawah ini untuk membuka item spesial untuk lebih banyak kustomisasi. Setiap kode hanya bisa digunakan sekali.",
                 "unlinked": "Maaf, kamu tidak bisa menukar kode sampai kamu menghubungkan akunmu ke alamat email.",
-                "success": "Kamu telah berhasil mengklaim %{perk}!",
-                "expiration": "Kode ini berlaku selama %{activationDuration} dan keuntunganmu akan berakhir pada %{expirationDate}."
+                "success": "Kamu berhasil mengklaim %{item}!"
             },
             "experience": {
                 "title": "Pengalaman",
@@ -1744,6 +1826,10 @@
             "serverData": {
                 "title": "Data Server",
                 "description": "Kamu bisa lihat semua data yang tersimpan di Bloob.io di bawah ini. Info sensitif seperti alamat email dan kunci rahasia mungkin disembunyikan demi keamananmu."
+            },
+            "controlYourData": {
+                "title": null,
+                "description": null
             },
             "localStorage": {
                 "title": "Penyimpanan Lokal",
@@ -1873,15 +1959,30 @@
             "STRIPE": "Bola Bergaris"
         },
         "poolFoul": {
-            "CUE_BALL_POCKET": "%{name} masukin bola putih ke lubang!",
-            "CUE_BALL_HIT_NO_BALL": "%{name} nggak kena bola lain!",
-            "CUE_BALL_HIT_WRONG_BALL": "%{name} kena bola yang salah dulu!",
-            "CUSHION_HIT_MIN_ON_BREAK": "Nggak cukup bola kena bantalan setelah pecah. (Min. %{min})",
-            "CUSHION_HIT_INVALID": "Nggak ada bola yang valid kena bantalan sementara nggak ada bola yang masuk ke lubang.",
-            "CONSECUTIVE_FOULS_EXCEEDED": "%{name} melakukan %{fouls} pelanggaran berturut-turut.",
-            "ILLEGAL_8_BALL_POCKET": "%{name} memasukkan bola delapan saat melakukan pelanggaran.",
-            "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} memasukkan bola delapan terlalu dini.",
-            "POCKETED_WRONG_BALL": "%{name} memasukkan bola yang salah."
+            "other": {
+                "CUE_BALL_POCKET": "%{name} masukin bola putih!",
+                "CUE_BALL_HIT_NO_BALL": "%{name} nggak kena bola lain!",
+                "CUE_BALL_HIT_WRONG_BALL": "%{name} kena bola yang salah dulu!",
+                "CUSHION_HIT_MIN_ON_BREAK": "%{name} nggak cukup banyak bola kena bantalan saat break. (Min. %{min})",
+                "CUSHION_HIT_INVALID": "%{name} nggak dapet bola yang valid buat kena bantalan sementara nggak ada bola yang masuk.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "%{name} melakukan %{fouls} pelanggaran berturut-turut.",
+                "ILLEGAL_8_BALL_POCKET": "%{name} memasukkan bola delapan saat melakukan pelanggaran.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} memasukkan bola delapan terlalu dini.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} memasukkan bola delapan saat istirahat.",
+                "POCKETED_WRONG_BALL": "%{name} memasukkan bola yang salah."
+            },
+            "self": {
+                "CUE_BALL_POCKET": "Kamu masukin bola putihnya!",
+                "CUE_BALL_HIT_NO_BALL": "Kamu nggak kena bola lain!",
+                "CUE_BALL_HIT_WRONG_BALL": "Kamu kena bola yang salah duluan!",
+                "CUSHION_HIT_MIN_ON_BREAK": "Kamu nggak cukup banyak bola buat kena cushion saat break. (Min. %{min})",
+                "CUSHION_HIT_INVALID": "Kamu nggak dapet bola yang valid buat kena cushion sementara nggak ada bola yang masuk.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "Kamu melakukan %{fouls} pelanggaran berturut-turut.",
+                "ILLEGAL_8_BALL_POCKET": "Kamu memasukkan bola delapan saat melakukan pelanggaran.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Kamu memasukkan bola delapan terlalu dini.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Kamu memasukkan bola delapan saat break.",
+                "POCKETED_WRONG_BALL": "Kamu memasukkan bola yang salah."
+            }
         },
         "about": {
             "description": "Bloob.io adalah proyek yang penuh semangat yang terdiri dari game browser multiplayer. Saran selalu kami tunggu!",

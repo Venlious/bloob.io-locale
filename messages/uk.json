@@ -2,13 +2,14 @@
     "_meta": {
         "language": "informal Ukrainian",
         "rtl": false,
-        "total": 1214,
-        "missing": 0
+        "total": 1279,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Даний код не існує.",
+            "alreadyOwned": "Ти вже маєш цей предмет. Код залишається дійсним.",
             "alreadyUsed": "Даний код вже був активований."
         },
         "authentication": {
@@ -29,6 +30,11 @@
             "generic": "Трохи сповільни! Зачекай %{seconds} секунд(и)."
         },
         "generic": {
+            "incorrectProductPrice": "Покупку скасовано через невідповідність ціни. Очікувалось: %{expectedAmount}. Отримано: %{receivedAmount}.",
+            "insufficientBalance": "У тебе недостатньо монет для цієї покупки.",
+            "invalidPurchaseWindow": "Вибач, але цей товар зараз купити не можна.",
+            "invalidProduct": "Товару з таким ID не існує.",
+            "alreadyOwnedProduct": "Ти вже маєш цей товар.",
             "levelTooLow": "Твій рівень недостатньо високий, щоб виконати цю дію.",
             "differentSessionConnected": "Ти увійшов у систему на %{session} і був відключений тут.",
             "sameSessionConnected": "Тебе відключили тут, бо ти відкрив цей сайт у іншій вкладці браузера.",
@@ -143,7 +149,7 @@
             "inGame": "Неможливо налаштувати свій профіль під час гри"
         },
         "requirement": {
-            "authentication": "Ти не можеш виконати цю дію без авторизації.",
+            "authentication": "Тобі треба увійти в свій акаунт, щоб зробити цю дію.",
             "credentials": "Ти ввів неправильні дані.",
             "validAccount": "Твій акаунт ще не підтверджено. Будь ласка, збережи зміни в профілі.",
             "inLobby": "Ти не можеш виконати цю дію, бо матч вже почався.",
@@ -1222,7 +1228,6 @@
             "inProgress": "Матч триває",
             "staleMoves": "Матч застоявся — %{staleCount} ходів без змін",
             "forfeit": "Матч закінчено — суперник вирішив здатися",
-            "winner": "Матч виграв %{name}",
             "inactive": "Матч закінчився через неактивність",
             "late": "Матч закінчився, бо пропущено %{turns} ход(и)",
             "pickActionCard": "Вибір карти дії",
@@ -1335,14 +1340,67 @@
         }
     },
     "time": {
+        "daysShort": "{count}д",
+        "hoursShort": "{count}г",
+        "minutesShort": "{count}хв",
         "days": "0 днів | 1 день | {count} днів",
         "hours": "0 годин | 1 година | {count} годин",
         "minutes": "0 хвилин | 1 хвилина | {count} хвилин",
         "seconds": "0 секунд | 1 секунда | {count} секунд"
     },
     "perk": {
-        "enhancedPack": "Покращений Пакет",
-        "developer": "Розробник"
+        "gradientPack": {
+            "title": null,
+            "description": null
+        },
+        "maskedPack": {
+            "title": null,
+            "description": null
+        },
+        "dapperPack": {
+            "title": null,
+            "description": null
+        },
+        "militaryPack": {
+            "title": null,
+            "description": null
+        },
+        "piratePack": {
+            "title": null,
+            "description": null
+        },
+        "holidaysPack": {
+            "title": null,
+            "description": null
+        },
+        "animalPack": {
+            "title": null,
+            "description": null
+        },
+        "halloweenPack": {
+            "title": null,
+            "description": null
+        },
+        "americanFootballPack": {
+            "title": null,
+            "description": null
+        },
+        "celebrationPack": {
+            "title": null,
+            "description": null
+        },
+        "developer": {
+            "title": null
+        },
+        "coinSmall": {
+            "title": null
+        },
+        "coinMedium": {
+            "title": null
+        },
+        "coinLarge": {
+            "title": null
+        }
     },
     "title": {
         "rookie": "Новачок",
@@ -1404,9 +1462,21 @@
         "playRandomOpponents": "Грай проти випадкових суперників | Грай проти випадкового суперника | Грай проти випадкових суперників",
         "turnsToFlip": "Оберти для перевороту | Оберт для перевороту | Обертів для перевороту",
         "increment": "Приріст 0 | Приріст 1 | Приріст {count}",
-        "shipsRemaining": "0 кораблів залишилося | 1 корабель залишився | Залишилося {count} кораблів"
+        "shipsRemaining": "0 кораблів залишилося | 1 корабель залишився | Залишилося {count} кораблів",
+        "includesItems": "Включає {count} предмети | Включає {count} предмет | Включає {count} предметів"
     },
     "misc": {
+        "seasonal": "Сезонні",
+        "dailyFeatures": "Щоденні Особливості",
+        "purchaseCoins": "Купити Монети",
+        "store": "Магазин",
+        "buyNow": "Купити Зараз",
+        "expired": "Закінчився",
+        "yourCoins": "Твої Монети",
+        "getCoins": "Отримати Монети",
+        "transactions": "Транзакції",
+        "userData": "Дані Користувача",
+        "price": "Ціна",
         "roll": "Кинути",
         "rollAgain": "Кинути знову",
         "rolling": "Кидаємо",
@@ -1418,7 +1488,6 @@
         "summary": "Підсумок",
         "versusPlayers": "Проти гравців",
         "versusBots": "Проти Ботів",
-        "expires": "Закінчується",
         "never": "Ніколи",
         "perks": "Переваги",
         "beta": "Бета",
@@ -1454,6 +1523,7 @@
         "vibration": "Вібрація",
         "locked": "Заблоковано",
         "available": "Доступно",
+        "owned": "У власності",
         "unavailable": "Недоступно",
         "changeLog": "Журнал змін",
         "status": "Статус",
@@ -1462,6 +1532,10 @@
         "toggle": "Перемкнути",
         "login": "Увійти",
         "logout": "Вийти",
+        "hats": "Капелюхи",
+        "eyes": "Очі",
+        "mouths": "Роти",
+        "backgrounds": "Фони",
         "emailAddress": "Електронна адреса",
         "emailAddressConfirmation": "Повторіть електронну адресу",
         "createAccount": "Створити акаунт",
@@ -1548,6 +1622,9 @@
         "showBlank": "Показати %{value}",
         "hideBlank": "Сховати %{value}",
         "orBlank": "Або %{value}",
+        "saveBlank": "Зберегти %{value}",
+        "coinsBlank": "%{value} монет",
+        "receivedBlank": "Отримано %{value}",
         "sendVerification": "Відправити верифікацію",
         "noThanks": "Ні, дякую",
         "selectAll": "Вибрати все",
@@ -1719,13 +1796,18 @@
         "areYouSure": "Ти впевнений?",
         "checkServerStatus": "Перевір статус живого сервера",
         "customizePreset": "Налаштуй цей пресет за своїм смаком.",
+        "loginToPurchase": "Щоб зробити покупку, спочатку увійдіть в систему або створіть обліковий запис.",
+        "seasonalItem": "Предмет у цьому слоті доступний лише кілька днів на рік.",
+        "awaitingPurchaseConfirmation": {
+            "title": null,
+            "description": null
+        },
         "settings": {
             "redeemCode": {
                 "title": "Введіть код",
                 "description": "Введіть унікальний код нижче, щоб розблокувати спеціальні предмети для ще більшого налаштування. Кожен код можна використати лише один раз.",
                 "unlinked": "Вибачте, ви не можете ввести код, поки не прив'яжете свій аккаунт до електронної адреси.",
-                "success": "Ви успішно отримали перевагу %{perk}!",
-                "expiration": "Код дійсний протягом %{activationDuration} і ваша перевага закінчиться %{expirationDate}."
+                "success": "Ти успішно отримав %{item}!"
             },
             "experience": {
                 "title": "Досвід",
@@ -1744,6 +1826,10 @@
             "serverData": {
                 "title": "Дані сервера",
                 "description": "Ти можеш побачити всі свої збережені дані на Bloob.io нижче. Чутлива інформація, як-от електронна адреса та секретні ключі, можуть бути приховані для твоєї безпеки."
+            },
+            "controlYourData": {
+                "title": null,
+                "description": null
             },
             "localStorage": {
                 "title": "Локальне зберігання",
@@ -1873,15 +1959,30 @@
             "STRIPE": "Смугасті"
         },
         "poolFoul": {
-            "CUE_BALL_POCKET": "%{name} забив кулю-кий!",
-            "CUE_BALL_HIT_NO_BALL": "%{name} не влучив у жодну кулю!",
-            "CUE_BALL_HIT_WRONG_BALL": "%{name} спочатку влучив у неправильну кулю!",
-            "CUSHION_HIT_MIN_ON_BREAK": "Недостатньо куль влучило у борт після розбиття. (Мін. %{min})",
-            "CUSHION_HIT_INVALID": "Жодна дійсна куля не влучила у борт, поки жодна куля не була забита.",
-            "CONSECUTIVE_FOULS_EXCEEDED": "%{name} зробив %{fouls} поспіль фоли.",
-            "ILLEGAL_8_BALL_POCKET": "%{name} забив восьму кулю, зробивши фол.",
-            "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} забив восьму кулю занадто рано.",
-            "POCKETED_WRONG_BALL": "%{name} забив не ту кулю."
+            "other": {
+                "CUE_BALL_POCKET": "%{name} забив кулю-кий!",
+                "CUE_BALL_HIT_NO_BALL": "%{name} не влучив у жодну кулю!",
+                "CUE_BALL_HIT_WRONG_BALL": "%{name} спочатку влучив у неправильну кулю!",
+                "CUSHION_HIT_MIN_ON_BREAK": "%{name} не забив достатньо куль, щоб влучити у борт на розіграші. (Мін. %{min})",
+                "CUSHION_HIT_INVALID": "%{name} не забив жодну дійсну кулю у борт, коли жодна куля не була забита.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "%{name} зробив %{fouls} поспіль фоли.",
+                "ILLEGAL_8_BALL_POCKET": "%{name} забив восьму кулю, роблячи фол.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} забив восьму кулю занадто рано.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} забив восьму кулю на перерві.",
+                "POCKETED_WRONG_BALL": "%{name} забив не ту кулю."
+            },
+            "self": {
+                "CUE_BALL_POCKET": "Ти забив кулю-кий!",
+                "CUE_BALL_HIT_NO_BALL": "Ти не влучив у жодну кулю!",
+                "CUE_BALL_HIT_WRONG_BALL": "Ти спочатку влучив у неправильну кулю!",
+                "CUSHION_HIT_MIN_ON_BREAK": "Ти не забив достатньо куль, щоб влучити у борт на розіграші. (Мін. %{min})",
+                "CUSHION_HIT_INVALID": "Ти не забив жодну дійсну кулю у борт, коли жодна куля не була забита.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "Ти зробив %{fouls} порушень підряд.",
+                "ILLEGAL_8_BALL_POCKET": "Ти забив восьмий м'яч, порушуючи правила.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Ти забив восьмий м'яч занадто рано.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Ти забив восьмий м'яч на перерві.",
+                "POCKETED_WRONG_BALL": "Ти забив не той м'яч."
+            }
         },
         "about": {
             "description": "Bloob.io - це проект, створений з любов'ю, що включає в себе браузерні мультиплеєрні ігри. Завжди раді будь-яким пропозиціям!",
