@@ -3,13 +3,13 @@
         "language": "informal Egyptian Arabic",
         "rtl": true,
         "total": 1279,
-        "missing": 81
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "الكود اللي اتعطى مش موجود.",
-            "alreadyOwned": null,
+            "alreadyOwned": "انت بالفعل معاك الحاجة دي. الكود لسه شغال.",
             "alreadyUsed": "الكود اللي اتعطى اتفعل قبل كده."
         },
         "authentication": {
@@ -30,11 +30,11 @@
             "generic": "خد بالك شوية! استنى %{seconds} ثانية."
         },
         "generic": {
-            "incorrectProductPrice": null,
-            "insufficientBalance": null,
-            "invalidPurchaseWindow": null,
-            "invalidProduct": null,
-            "alreadyOwnedProduct": null,
+            "incorrectProductPrice": "الشراء اتلغى عشان فيه خطأ في السعر. المتوقع: %{expectedAmount}. اللي جه: %{receivedAmount}.",
+            "insufficientBalance": "معندكش عملات كفاية عشان تشتري الحاجة دي.",
+            "invalidPurchaseWindow": "اسفين، مش ممكن تشتري المنتج ده دلوقتي.",
+            "invalidProduct": "المنتج بالرقم ده مش موجود.",
+            "alreadyOwnedProduct": "انت بالفعل شاري المنتج ده.",
             "levelTooLow": "مستواك مش كافي عشان تعمل الحركة دي.",
             "differentSessionConnected": "انت دخلت على %{session} و اتقطعت الاتصال هنا.",
             "sameSessionConnected": "اتقطعت الاتصال هنا لما فتحت الموقع ده في تاب تاني في المتصفح.",
@@ -149,7 +149,7 @@
             "inGame": "مش هتقدر تغير بروفايلك وأنت بتلعب اللعبة"
         },
         "requirement": {
-            "authentication": null,
+            "authentication": "لازم تكون مسجل دخول في حسابك عشان تقدر تعمل الحاجة دي.",
             "credentials": "البيانات اللي اديتها غلط.",
             "validAccount": "حسابك لسه متأكدتش. لو سمحت احفظ التغييرات اللي عملتها في البروفايل.",
             "inLobby": "مش هتقدر تعمل الحركة دي لأن الماتش بدأ بالفعل.",
@@ -1340,9 +1340,9 @@
         }
     },
     "time": {
-        "daysShort": null,
-        "hoursShort": null,
-        "minutesShort": null,
+        "daysShort": "{count} يوم",
+        "hoursShort": "{count} ساعة",
+        "minutesShort": "{count} دقيقة",
         "days": "0 أيام | يوم واحد | {count} أيام",
         "hours": "0 ساعات | ساعة واحدة | {count} ساعات",
         "minutes": "0 دقائق | دقيقة واحدة | {count} دقائق",
@@ -1463,20 +1463,20 @@
         "turnsToFlip": "دورك للقلب | دورك للقلب | أدوار للقلب",
         "increment": "زيادة بـ 0 | زيادة بـ 1 | زيادة بـ {count}",
         "shipsRemaining": "مافيش سفن باقية | سفينة واحدة باقية | {count} سفن باقية",
-        "includesItems": null
+        "includesItems": "بيحتوي على {count} حاجات | بيحتوي على {count} حاجة | بيحتوي على {count} حاجات"
     },
     "misc": {
-        "seasonal": null,
-        "dailyFeatures": null,
-        "purchaseCoins": null,
-        "store": null,
-        "buyNow": null,
-        "expired": null,
-        "yourCoins": null,
-        "getCoins": null,
-        "transactions": null,
-        "userData": null,
-        "price": null,
+        "seasonal": "موسمي",
+        "dailyFeatures": "مميزات يومية",
+        "purchaseCoins": "اشتري عملات",
+        "store": "المتجر",
+        "buyNow": "اشتري دلوقتي",
+        "expired": "انتهى",
+        "yourCoins": "عملاتك",
+        "getCoins": "احصل على عملات",
+        "transactions": "المعاملات",
+        "userData": "بيانات المستخدم",
+        "price": "السعر",
         "roll": "اطلق",
         "rollAgain": "اطلق تاني",
         "rolling": "بيتم الإطلاق",
@@ -1523,7 +1523,7 @@
         "vibration": "الاهتزاز",
         "locked": "مقفول",
         "available": "متاح",
-        "owned": null,
+        "owned": "ملكك",
         "unavailable": "غير متاح",
         "changeLog": "سجل التغييرات",
         "status": "الحالة",
@@ -1532,10 +1532,10 @@
         "toggle": "تغيير",
         "login": "تسجيل الدخول",
         "logout": "تسجيل الخروج",
-        "hats": null,
-        "eyes": null,
-        "mouths": null,
-        "backgrounds": null,
+        "hats": "القبعات",
+        "eyes": "العيون",
+        "mouths": "الأفواه",
+        "backgrounds": "خلفيات",
         "emailAddress": "عنوان البريد الإلكتروني",
         "emailAddressConfirmation": "أعد كتابة عنوان البريد الإلكتروني",
         "createAccount": "إنشاء حساب",
@@ -1622,9 +1622,9 @@
         "showBlank": "اعرض %{value}",
         "hideBlank": "اخفي %{value}",
         "orBlank": "أو %{value}",
-        "saveBlank": null,
-        "coinsBlank": null,
-        "receivedBlank": null,
+        "saveBlank": "احفظ %{value}",
+        "coinsBlank": "%{value} عملات",
+        "receivedBlank": "استلمت %{value}",
         "sendVerification": "ابعت التحقق",
         "noThanks": "لا شكرا",
         "selectAll": "اختار الكل",
@@ -1796,8 +1796,8 @@
         "areYouSure": "انت متأكد؟",
         "checkServerStatus": "شيك على حالة السيرفر الحي",
         "customizePreset": "غير الإعدادات دي على زوقك.",
-        "loginToPurchase": null,
-        "seasonalItem": null,
+        "loginToPurchase": "عشان تشتري حاجة لازم أولاً تسجل دخولك أو تعمل حساب.",
+        "seasonalItem": "في حاجة في المكان ده بتتوفر بس ليومين أو تلاتة في السنة.",
         "awaitingPurchaseConfirmation": {
             "title": null,
             "description": null
@@ -1807,7 +1807,7 @@
                 "title": "استخدم الكود",
                 "description": "ادخل كود فريد تحت عشان تفتح حاجات خاصة للتخصيص أكتر. كل كود ممكن تستخدمه مرة واحدة بس.",
                 "unlinked": "معذرة, مش هتقدر تستخدم الكود لحد ما تربط حسابك بالإيميل.",
-                "success": null
+                "success": "انت نجحت في الحصول على %{item}!"
             },
             "experience": {
                 "title": "تجربة",
@@ -1960,28 +1960,28 @@
         },
         "poolFoul": {
             "other": {
-                "CUE_BALL_POCKET": null,
-                "CUE_BALL_HIT_NO_BALL": null,
-                "CUE_BALL_HIT_WRONG_BALL": null,
-                "CUSHION_HIT_MIN_ON_BREAK": null,
-                "CUSHION_HIT_INVALID": null,
-                "CONSECUTIVE_FOULS_EXCEEDED": null,
-                "ILLEGAL_8_BALL_POCKET": null,
-                "ILLEGAL_8_BALL_POCKET_TOO_SOON": null,
-                "ILLEGAL_8_BALL_POCKET_ON_BREAK": null,
-                "POCKETED_WRONG_BALL": null
+                "CUE_BALL_POCKET": "%{name} دخل الكرة البيضة في الجيب!",
+                "CUE_BALL_HIT_NO_BALL": "%{name} ما لمسش كرة تانية!",
+                "CUE_BALL_HIT_WRONG_BALL": "%{name} لمس الكرة الغلط أول واحدة!",
+                "CUSHION_HIT_MIN_ON_BREAK": "%{name} ما جابش كفاية كور عشان تلمس الحافة في البداية. (الأدنى %{min})",
+                "CUSHION_HIT_INVALID": "%{name} ما جابش كرة صح عشان تلمس الحافة و مفيش كرة دخلت الجيب.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "%{name} عمل %{fouls} أخطاء متتالية.",
+                "ILLEGAL_8_BALL_POCKET": "%{name} حط الكرة رقم ثمانية وهو بيعمل خطأ.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} حط الكرة رقم ثمانية قبل ما يكون المفروض.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} حط الكرة رقم ثمانية من أول ضربة.",
+                "POCKETED_WRONG_BALL": "%{name} حط الكرة الغلط."
             },
             "self": {
-                "CUE_BALL_POCKET": null,
-                "CUE_BALL_HIT_NO_BALL": null,
-                "CUE_BALL_HIT_WRONG_BALL": null,
-                "CUSHION_HIT_MIN_ON_BREAK": null,
-                "CUSHION_HIT_INVALID": null,
-                "CONSECUTIVE_FOULS_EXCEEDED": null,
-                "ILLEGAL_8_BALL_POCKET": null,
-                "ILLEGAL_8_BALL_POCKET_TOO_SOON": null,
-                "ILLEGAL_8_BALL_POCKET_ON_BREAK": null,
-                "POCKETED_WRONG_BALL": null
+                "CUE_BALL_POCKET": "انت غطست الكرة البيضة!",
+                "CUE_BALL_HIT_NO_BALL": "ما اتصدمتش بكرة تانية!",
+                "CUE_BALL_HIT_WRONG_BALL": "اتصدمت بالكرة الغلط أول حاجة!",
+                "CUSHION_HIT_MIN_ON_BREAK": "ما جبتش كفاية كور عشان تضرب الكوشن في البداية. (الحد الأدنى %{min})",
+                "CUSHION_HIT_INVALID": "ما جبتش كرة صح عشان تضرب الكوشن و مفيش كرة غطست.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "انت عملت %{fouls} أخطاء متتالية.",
+                "ILLEGAL_8_BALL_POCKET": "انت حطيت الكورة رقم ثمانية وانت بتعمل خطأ.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "انت حطيت الكورة رقم ثمانية بدري أوي.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "انت حطيت الكورة رقم ثمانية في البداية.",
+                "POCKETED_WRONG_BALL": "انت حطيت الكورة الغلط."
             }
         },
         "about": {

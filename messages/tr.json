@@ -3,13 +3,13 @@
         "language": "informal Turkish",
         "rtl": false,
         "total": 1279,
-        "missing": 81
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Verilen kod mevcut değil.",
-            "alreadyOwned": null,
+            "alreadyOwned": "Bu öğeye zaten sahipsin. Kod hala geçerli.",
             "alreadyUsed": "Verilen kod zaten aktif hale getirilmiş."
         },
         "authentication": {
@@ -30,11 +30,11 @@
             "generic": "Biraz yavaşla! %{seconds} saniye beklemelisin."
         },
         "generic": {
-            "incorrectProductPrice": null,
-            "insufficientBalance": null,
-            "invalidPurchaseWindow": null,
-            "invalidProduct": null,
-            "alreadyOwnedProduct": null,
+            "incorrectProductPrice": "Fiyat uyuşmazlığı nedeniyle satın alma iptal edildi. Beklenen: %{expectedAmount}. Alınan: %{receivedAmount}.",
+            "insufficientBalance": "Bu satın almayı yapmak için yeterli paran yok.",
+            "invalidPurchaseWindow": "Üzgünüm, bu ürün şu anda satın alınamıyor.",
+            "invalidProduct": "Verilen ID'ye sahip ürün mevcut değil.",
+            "alreadyOwnedProduct": "Bu ürüne zaten sahipsin.",
             "levelTooLow": "Bu eylemi gerçekleştirebilmek için seviyen yeterince yüksek değil.",
             "differentSessionConnected": "%{session} oturumunda giriş yaptın ve buradan bağlantın kesildi.",
             "sameSessionConnected": "Bu siteyi başka bir tarayıcı sekmesinde açtığın için buradan bağlantın kesildi.",
@@ -149,7 +149,7 @@
             "inGame": "Oyun devam ederken profilini özelleştiremezsin"
         },
         "requirement": {
-            "authentication": null,
+            "authentication": "Bu işlemi yapabilmek için hesabına giriş yapmış olman gerekiyor.",
             "credentials": "Geçersiz bilgiler girdin.",
             "validAccount": "Hesabın henüz onaylanmadı. Lütfen profil değişikliklerini kaydet.",
             "inLobby": "Maç zaten başladığı için bu işlemi gerçekleştiremezsin.",
@@ -1340,9 +1340,9 @@
         }
     },
     "time": {
-        "daysShort": null,
-        "hoursShort": null,
-        "minutesShort": null,
+        "daysShort": "{count}g",
+        "hoursShort": "{count}s",
+        "minutesShort": "{count}d",
         "days": "0 gün | 1 gün | {count} gün",
         "hours": "0 saat | 1 saat | {count} saat",
         "minutes": "0 dakika | 1 dakika | {count} dakika",
@@ -1463,20 +1463,20 @@
         "turnsToFlip": "Çevirmek için sıra | Çevirmek için bir sıra | Çevirmek için {count} sıra",
         "increment": "0'lık artışlar | 1'lik artış | {count}'luk artışlar",
         "shipsRemaining": "0 gemi kaldı | 1 gemi kaldı | {count} gemi kaldı",
-        "includesItems": null
+        "includesItems": "{count} öğe içerir | {count} öğe içerir | {count} öğe içerir"
     },
     "misc": {
-        "seasonal": null,
-        "dailyFeatures": null,
-        "purchaseCoins": null,
-        "store": null,
-        "buyNow": null,
-        "expired": null,
-        "yourCoins": null,
-        "getCoins": null,
-        "transactions": null,
-        "userData": null,
-        "price": null,
+        "seasonal": "Mevsimlik",
+        "dailyFeatures": "Günlük Özellikler",
+        "purchaseCoins": "Jeton Satın Al",
+        "store": "Mağaza",
+        "buyNow": "Hemen Al",
+        "expired": "Süresi Dolmuş",
+        "yourCoins": "Senin Paraların",
+        "getCoins": "Para Al",
+        "transactions": "İşlemler",
+        "userData": "Kullanıcı Verisi",
+        "price": "Fiyat",
         "roll": "At",
         "rollAgain": "Tekrar At",
         "rolling": "Atılıyor",
@@ -1523,7 +1523,7 @@
         "vibration": "Titreşim",
         "locked": "Kilitli",
         "available": "Mevcut",
-        "owned": null,
+        "owned": "Sahip Olunan",
         "unavailable": "Mevcut Değil",
         "changeLog": "Değişiklik Kaydı",
         "status": "Durum",
@@ -1532,10 +1532,10 @@
         "toggle": "Değiştir",
         "login": "Giriş Yap",
         "logout": "Çıkış Yap",
-        "hats": null,
-        "eyes": null,
-        "mouths": null,
-        "backgrounds": null,
+        "hats": "Şapkalar",
+        "eyes": "Gözler",
+        "mouths": "Ağızlar",
+        "backgrounds": "Arka Planlar",
         "emailAddress": "E-posta Adresi",
         "emailAddressConfirmation": "E-posta Adresini Tekrarla",
         "createAccount": "Hesap Oluştur",
@@ -1622,9 +1622,9 @@
         "showBlank": "%{value} Göster",
         "hideBlank": "%{value} Gizle",
         "orBlank": "Veya %{value}",
-        "saveBlank": null,
-        "coinsBlank": null,
-        "receivedBlank": null,
+        "saveBlank": "%{value} Kaydet",
+        "coinsBlank": "%{value} altın",
+        "receivedBlank": "%{value} Alındı",
         "sendVerification": "Doğrulama Gönder",
         "noThanks": "Teşekkürler, gerek yok",
         "selectAll": "Tümünü Seç",
@@ -1796,8 +1796,8 @@
         "areYouSure": "Emin misin?",
         "checkServerStatus": "Canlı sunucu durumunu kontrol et",
         "customizePreset": "Bu ön ayarı istediğin gibi özelleştir.",
-        "loginToPurchase": null,
-        "seasonalItem": null,
+        "loginToPurchase": "Bir şey satın almak için önce giriş yapmalı veya bir hesap oluşturmalısın.",
+        "seasonalItem": "Bu slot'taki bir eşya yılda sadece birkaç gün boyunca kullanılabilir.",
         "awaitingPurchaseConfirmation": {
             "title": null,
             "description": null
@@ -1807,7 +1807,7 @@
                 "title": "Kodu Kullan",
                 "description": "Daha fazla özelleştirme için özel eşyaların kilidini açmak üzere aşağıya benzersiz bir kod girin. Her kod yalnızca bir kez kullanılabilir.",
                 "unlinked": "Üzgünüz, hesabınızı bir e-posta adresine bağlamadan bir kod kullanamazsınız.",
-                "success": null
+                "success": "Başarıyla %{item} kazandın!"
             },
             "experience": {
                 "title": "Tecrübe",
@@ -1960,28 +1960,28 @@
         },
         "poolFoul": {
             "other": {
-                "CUE_BALL_POCKET": null,
-                "CUE_BALL_HIT_NO_BALL": null,
-                "CUE_BALL_HIT_WRONG_BALL": null,
-                "CUSHION_HIT_MIN_ON_BREAK": null,
-                "CUSHION_HIT_INVALID": null,
-                "CONSECUTIVE_FOULS_EXCEEDED": null,
-                "ILLEGAL_8_BALL_POCKET": null,
-                "ILLEGAL_8_BALL_POCKET_TOO_SOON": null,
-                "ILLEGAL_8_BALL_POCKET_ON_BREAK": null,
-                "POCKETED_WRONG_BALL": null
+                "CUE_BALL_POCKET": "%{name} isteka topunu deliğe soktu!",
+                "CUE_BALL_HIT_NO_BALL": "%{name} başka bir topa vurmadı!",
+                "CUE_BALL_HIT_WRONG_BALL": "%{name} ilk olarak yanlış topa vurdu!",
+                "CUSHION_HIT_MIN_ON_BREAK": "%{name} açılışta yeterli sayıda topu bantlara çarptıramadı. (Min. %{min})",
+                "CUSHION_HIT_INVALID": "%{name} hiç top deliğe girmezken geçerli bir topu bantlara çarptıramadı.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "%{name}, %{fouls} kere üst üste faul yaptı.",
+                "ILLEGAL_8_BALL_POCKET": "%{name}, faul yaparken sekiz numaralı topu deliğe attı.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name}, sekiz numaralı topu çok erken deliğe attı.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name}, oyun başlarken sekiz numaralı topu deliğe attı.",
+                "POCKETED_WRONG_BALL": "%{name}, yanlış topu deliğe attı."
             },
             "self": {
-                "CUE_BALL_POCKET": null,
-                "CUE_BALL_HIT_NO_BALL": null,
-                "CUE_BALL_HIT_WRONG_BALL": null,
-                "CUSHION_HIT_MIN_ON_BREAK": null,
-                "CUSHION_HIT_INVALID": null,
-                "CONSECUTIVE_FOULS_EXCEEDED": null,
-                "ILLEGAL_8_BALL_POCKET": null,
-                "ILLEGAL_8_BALL_POCKET_TOO_SOON": null,
-                "ILLEGAL_8_BALL_POCKET_ON_BREAK": null,
-                "POCKETED_WRONG_BALL": null
+                "CUE_BALL_POCKET": "İsteka topunu deliğe soktun!",
+                "CUE_BALL_HIT_NO_BALL": "Başka bir topa vurmadın!",
+                "CUE_BALL_HIT_WRONG_BALL": "İlk olarak yanlış topa vurdun!",
+                "CUSHION_HIT_MIN_ON_BREAK": "Açılışta yastığa vuracak yeterli sayıda top alamadın. (Min. %{min})",
+                "CUSHION_HIT_INVALID": "Hiç top deliğe girmezken, yastığa vuracak geçerli bir top alamadın.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "Ardı ardına %{fouls} hata yaptın.",
+                "ILLEGAL_8_BALL_POCKET": "Bir hata yaparken sekiz numaralı topu deliğe soktun.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Sekiz numaralı topu çok erken deliğe soktun.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Oyun başlarken sekiz numaralı topu deliğe soktun.",
+                "POCKETED_WRONG_BALL": "Yanlış topu deliğe soktun."
             }
         },
         "about": {

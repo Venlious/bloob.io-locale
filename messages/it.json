@@ -3,13 +3,13 @@
         "language": "informal Italian",
         "rtl": false,
         "total": 1279,
-        "missing": 81
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Il codice fornito non esiste.",
-            "alreadyOwned": null,
+            "alreadyOwned": "Possiedi già questo oggetto. Il codice rimane valido.",
             "alreadyUsed": "Il codice fornito è già stato attivato."
         },
         "authentication": {
@@ -30,11 +30,11 @@
             "generic": "Rallenta un attimo! Aspetta %{seconds} secondo(i)."
         },
         "generic": {
-            "incorrectProductPrice": null,
-            "insufficientBalance": null,
-            "invalidPurchaseWindow": null,
-            "invalidProduct": null,
-            "alreadyOwnedProduct": null,
+            "incorrectProductPrice": "Acquisto annullato a causa di una discrepanza nel prezzo. Previsto: %{expectedAmount}. Ricevuto: %{receivedAmount}.",
+            "insufficientBalance": "Non hai abbastanza monete per questo acquisto.",
+            "invalidPurchaseWindow": "Scusa, questo prodotto non può essere acquistato al momento.",
+            "invalidProduct": "Il prodotto con l'ID fornito non esiste.",
+            "alreadyOwnedProduct": "Possiedi già questo prodotto.",
             "levelTooLow": "Il tuo livello non è abbastanza alto per fare questa azione.",
             "differentSessionConnected": "Hai effettuato l'accesso su %{session} e sei stato disconnesso qui.",
             "sameSessionConnected": "Sei stato disconnesso qui perché hai aperto questo sito in un'altra scheda del browser.",
@@ -149,7 +149,7 @@
             "inGame": "Impossibile personalizzare il profilo mentre la partita è in corso"
         },
         "requirement": {
-            "authentication": null,
+            "authentication": "Devi essere loggato nel tuo account per fare questa azione.",
             "credentials": "Hai fornito credenziali non valide.",
             "validAccount": "Il tuo account non è stato ancora approvato. Salva le modifiche del tuo profilo.",
             "inLobby": "Non puoi eseguire questa azione perché la partita è già iniziata.",
@@ -1340,9 +1340,9 @@
         }
     },
     "time": {
-        "daysShort": null,
-        "hoursShort": null,
-        "minutesShort": null,
+        "daysShort": "{count}g",
+        "hoursShort": "{count}o",
+        "minutesShort": "{count}m",
         "days": "0 giorni | 1 giorno | {count} giorni",
         "hours": "0 ore | 1 ora | {count} ore",
         "minutes": "0 minuti | 1 minuto | {count} minuti",
@@ -1463,20 +1463,20 @@
         "turnsToFlip": "Gira per capovolgere | Gira per capovolgere | Gira per capovolgere",
         "increment": "Incremento di 0 | Incremento di 1 | Incremento di {count}",
         "shipsRemaining": "0 navi rimaste | 1 nave rimasta | {count} navi rimaste",
-        "includesItems": null
+        "includesItems": "Include {count} articoli | Include {count} articolo | Include {count} articoli"
     },
     "misc": {
-        "seasonal": null,
-        "dailyFeatures": null,
-        "purchaseCoins": null,
-        "store": null,
-        "buyNow": null,
-        "expired": null,
-        "yourCoins": null,
-        "getCoins": null,
-        "transactions": null,
-        "userData": null,
-        "price": null,
+        "seasonal": "Stagionale",
+        "dailyFeatures": "Funzioni Giornaliere",
+        "purchaseCoins": "Acquista Monete",
+        "store": "Negozio",
+        "buyNow": "Compra Subito",
+        "expired": "Scaduto",
+        "yourCoins": "Le tue Monete",
+        "getCoins": "Ottieni Monete",
+        "transactions": "Transazioni",
+        "userData": "Dati Utente",
+        "price": "Prezzo",
         "roll": "Tira",
         "rollAgain": "Tira di nuovo",
         "rolling": "Sto tirando",
@@ -1523,7 +1523,7 @@
         "vibration": "Vibrazioni",
         "locked": "Bloccato",
         "available": "Disponibile",
-        "owned": null,
+        "owned": "Posseduto",
         "unavailable": "Non disponibile",
         "changeLog": "Registro delle modifiche",
         "status": "Stato",
@@ -1532,10 +1532,10 @@
         "toggle": "Toggle",
         "login": "Accesso",
         "logout": "Esci",
-        "hats": null,
-        "eyes": null,
-        "mouths": null,
-        "backgrounds": null,
+        "hats": "Cappelli",
+        "eyes": "Occhi",
+        "mouths": "Bocche",
+        "backgrounds": "Sfondi",
         "emailAddress": "Indirizzo Email",
         "emailAddressConfirmation": "Ripeti Indirizzo Email",
         "createAccount": "Crea Account",
@@ -1622,9 +1622,9 @@
         "showBlank": "Mostra %{value}",
         "hideBlank": "Nascondi %{value}",
         "orBlank": "Oppure %{value}",
-        "saveBlank": null,
-        "coinsBlank": null,
-        "receivedBlank": null,
+        "saveBlank": "Salva %{value}",
+        "coinsBlank": "%{value} monete",
+        "receivedBlank": "Ricevuto %{value}",
         "sendVerification": "Invia Verifica",
         "noThanks": "No grazie",
         "selectAll": "Seleziona tutti",
@@ -1796,8 +1796,8 @@
         "areYouSure": "Sei sicuro?",
         "checkServerStatus": "Controlla lo stato del server in tempo reale",
         "customizePreset": "Personalizza questo preset a tuo piacimento.",
-        "loginToPurchase": null,
-        "seasonalItem": null,
+        "loginToPurchase": "Per fare un acquisto devi prima accedere o creare un account.",
+        "seasonalItem": "Un oggetto in questo slot è disponibile solo per pochi giorni all'anno.",
         "awaitingPurchaseConfirmation": {
             "title": null,
             "description": null
@@ -1807,7 +1807,7 @@
                 "title": "Inserisci codice",
                 "description": "Inserisci un codice univoco qui sotto per sbloccare oggetti speciali per una personalizzazione ancora maggiore. Ogni codice può essere usato una sola volta.",
                 "unlinked": "Spiacenti, non puoi riscattare un codice finché non hai collegato il tuo account a un indirizzo email.",
-                "success": null
+                "success": "Hai reclamato con successo %{item}!"
             },
             "experience": {
                 "title": "Esperienza",
@@ -1960,28 +1960,28 @@
         },
         "poolFoul": {
             "other": {
-                "CUE_BALL_POCKET": null,
-                "CUE_BALL_HIT_NO_BALL": null,
-                "CUE_BALL_HIT_WRONG_BALL": null,
-                "CUSHION_HIT_MIN_ON_BREAK": null,
-                "CUSHION_HIT_INVALID": null,
-                "CONSECUTIVE_FOULS_EXCEEDED": null,
-                "ILLEGAL_8_BALL_POCKET": null,
-                "ILLEGAL_8_BALL_POCKET_TOO_SOON": null,
-                "ILLEGAL_8_BALL_POCKET_ON_BREAK": null,
-                "POCKETED_WRONG_BALL": null
+                "CUE_BALL_POCKET": "%{name} ha mandato in buca la palla bianca!",
+                "CUE_BALL_HIT_NO_BALL": "%{name} non ha colpito nessun'altra palla!",
+                "CUE_BALL_HIT_WRONG_BALL": "%{name} ha colpito per primo la palla sbagliata!",
+                "CUSHION_HIT_MIN_ON_BREAK": "%{name} non ha colpito abbastanza palle per farle rimbalzare sul bordo al break. (Min. %{min})",
+                "CUSHION_HIT_INVALID": "%{name} non ha colpito una palla valida per farla rimbalzare sul bordo mentre nessuna palla è stata imbucata.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "%{name} ha commesso %{fouls} falli consecutivi.",
+                "ILLEGAL_8_BALL_POCKET": "%{name} ha imbucato l'otto nero mentre commetteva un fallo.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} ha imbucato l'otto nero troppo presto.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} ha imbucato l'otto nero all'inizio.",
+                "POCKETED_WRONG_BALL": "%{name} ha imbucato la palla sbagliata."
             },
             "self": {
-                "CUE_BALL_POCKET": null,
-                "CUE_BALL_HIT_NO_BALL": null,
-                "CUE_BALL_HIT_WRONG_BALL": null,
-                "CUSHION_HIT_MIN_ON_BREAK": null,
-                "CUSHION_HIT_INVALID": null,
-                "CONSECUTIVE_FOULS_EXCEEDED": null,
-                "ILLEGAL_8_BALL_POCKET": null,
-                "ILLEGAL_8_BALL_POCKET_TOO_SOON": null,
-                "ILLEGAL_8_BALL_POCKET_ON_BREAK": null,
-                "POCKETED_WRONG_BALL": null
+                "CUE_BALL_POCKET": "Hai mandato in buca la biglia bianca!",
+                "CUE_BALL_HIT_NO_BALL": "Non hai colpito nessun'altra biglia!",
+                "CUE_BALL_HIT_WRONG_BALL": "Hai colpito per prima la biglia sbagliata!",
+                "CUSHION_HIT_MIN_ON_BREAK": "Non hai colpito abbastanza biglie per farle rimbalzare sul bordo al break. (Min. %{min})",
+                "CUSHION_HIT_INVALID": "Non hai colpito una biglia valida per farla rimbalzare sul bordo mentre nessuna biglia è stata imbucata.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "Hai commesso %{fouls} falli consecutivi.",
+                "ILLEGAL_8_BALL_POCKET": "Hai imbucato l'otto nero mentre commettevi un fallo.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Hai imbucato l'otto nero troppo presto.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Hai imbucato l'otto nero all'inizio.",
+                "POCKETED_WRONG_BALL": "Hai imbucato la palla sbagliata."
             }
         },
         "about": {

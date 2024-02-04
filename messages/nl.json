@@ -3,13 +3,13 @@
         "language": "informal Dutch",
         "rtl": false,
         "total": 1279,
-        "missing": 81
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "De opgegeven code bestaat niet.",
-            "alreadyOwned": null,
+            "alreadyOwned": "Je hebt dit item al. De code blijft geldig.",
             "alreadyUsed": "De opgegeven code is al gebruikt."
         },
         "authentication": {
@@ -30,11 +30,11 @@
             "generic": "Rustig aan! Wacht %{seconds} seconde(n)."
         },
         "generic": {
-            "incorrectProductPrice": null,
-            "insufficientBalance": null,
-            "invalidPurchaseWindow": null,
-            "invalidProduct": null,
-            "alreadyOwnedProduct": null,
+            "incorrectProductPrice": "Aankoop geannuleerd vanwege prijsverschil. Verwacht: %{expectedAmount}. Ontvangen: %{receivedAmount}.",
+            "insufficientBalance": "Je hebt niet genoeg munten voor deze aankoop.",
+            "invalidPurchaseWindow": "Sorry, dit product kan nu niet gekocht worden.",
+            "invalidProduct": "Product met gegeven ID bestaat niet.",
+            "alreadyOwnedProduct": "Je hebt dit product al.",
             "levelTooLow": "Je level is niet hoog genoeg om deze actie uit te voeren.",
             "differentSessionConnected": "Je bent ingelogd op %{session} en je verbinding is hier verbroken.",
             "sameSessionConnected": "Je verbinding is hier verbroken omdat je deze site in een ander browsertab geopend hebt.",
@@ -149,7 +149,7 @@
             "inGame": "Je kunt je profiel niet aanpassen terwijl het spel al is begonnen."
         },
         "requirement": {
-            "authentication": null,
+            "authentication": "Je moet ingelogd zijn op je account om deze actie uit te voeren.",
             "credentials": "Je hebt ongeldige inloggegevens opgegeven.",
             "validAccount": "Je account is nog niet gevalideerd. Gelieve je profielwijzigingen op te slaan.",
             "inLobby": "Je kunt deze actie niet uitvoeren omdat het spel al is begonnen.",
@@ -1340,9 +1340,9 @@
         }
     },
     "time": {
-        "daysShort": null,
-        "hoursShort": null,
-        "minutesShort": null,
+        "daysShort": "{count}d",
+        "hoursShort": "{count}u",
+        "minutesShort": "{count}m",
         "days": "0 dagen | 1 dag | {count} dagen",
         "hours": "0 uren | 1 uur | {count} uren",
         "minutes": "0 minuten | 1 minuut | {count} minuten",
@@ -1463,20 +1463,20 @@
         "turnsToFlip": "Beurten tot flip | Beurt tot flip | Beurten tot flip",
         "increment": "Stappen van 0 | Stap van 1 | Stappen van {count}",
         "shipsRemaining": "0 schepen over | 1 schip over | {count} schepen over",
-        "includesItems": null
+        "includesItems": "Bevat {count} items | Bevat {count} item | Bevat {count} items"
     },
     "misc": {
-        "seasonal": null,
-        "dailyFeatures": null,
-        "purchaseCoins": null,
-        "store": null,
-        "buyNow": null,
-        "expired": null,
-        "yourCoins": null,
-        "getCoins": null,
-        "transactions": null,
-        "userData": null,
-        "price": null,
+        "seasonal": "Seizoensgebonden",
+        "dailyFeatures": "Dagelijkse Aanbevelingen",
+        "purchaseCoins": "Munten Kopen",
+        "store": "Winkel",
+        "buyNow": "Koop Nu",
+        "expired": "Verlopen",
+        "yourCoins": "Jouw Munten",
+        "getCoins": "Krijg Munten",
+        "transactions": "Transacties",
+        "userData": "Gebruikersgegevens",
+        "price": "Prijs",
         "roll": "Rol",
         "rollAgain": "Rol opnieuw",
         "rolling": "Aan het rollen",
@@ -1523,7 +1523,7 @@
         "vibration": "Trilfunctie",
         "locked": "Vergrendeld",
         "available": "Beschikbaar",
-        "owned": null,
+        "owned": "In Bezit",
         "unavailable": "Niet beschikbaar",
         "changeLog": "Update Logboek",
         "status": "Status",
@@ -1532,10 +1532,10 @@
         "toggle": "Toggle",
         "login": "Login",
         "logout": "Uitloggen",
-        "hats": null,
-        "eyes": null,
-        "mouths": null,
-        "backgrounds": null,
+        "hats": "Hoeden",
+        "eyes": "Ogen",
+        "mouths": "Monden",
+        "backgrounds": "Achtergronden",
         "emailAddress": "E-mailadres",
         "emailAddressConfirmation": "Herhaal e-mailadres",
         "createAccount": "Maak account aan",
@@ -1622,9 +1622,9 @@
         "showBlank": "Toon %{value}",
         "hideBlank": "Verberg %{value}",
         "orBlank": "Of %{value}",
-        "saveBlank": null,
-        "coinsBlank": null,
-        "receivedBlank": null,
+        "saveBlank": "Bewaar %{value}",
+        "coinsBlank": "%{value} munten",
+        "receivedBlank": "Ontvangen %{value}",
         "sendVerification": "Verificatie verzenden",
         "noThanks": "Nee bedankt",
         "selectAll": "Selecteer alles",
@@ -1796,8 +1796,8 @@
         "areYouSure": "Weet je het zeker?",
         "checkServerStatus": "Controleer de live server status",
         "customizePreset": "Pas deze voorinstelling naar je zin aan.",
-        "loginToPurchase": null,
-        "seasonalItem": null,
+        "loginToPurchase": "Om iets te kopen moet je eerst inloggen of een account aanmaken.",
+        "seasonalItem": "Een item in deze slot is maar een paar dagen per jaar beschikbaar.",
         "awaitingPurchaseConfirmation": {
             "title": null,
             "description": null
@@ -1807,7 +1807,7 @@
                 "title": "Code inwisselen",
                 "description": "Voer hieronder een unieke code in om speciale items te ontgrendelen voor nog meer aanpassingen. Elke code kan maar één keer gebruikt worden.",
                 "unlinked": "Sorry, je kunt geen code inwisselen totdat je je account hebt gekoppeld aan een e-mailadres.",
-                "success": null
+                "success": "Je hebt met succes %{item} geclaimd!"
             },
             "experience": {
                 "title": "Ervaring",
@@ -1960,28 +1960,28 @@
         },
         "poolFoul": {
             "other": {
-                "CUE_BALL_POCKET": null,
-                "CUE_BALL_HIT_NO_BALL": null,
-                "CUE_BALL_HIT_WRONG_BALL": null,
-                "CUSHION_HIT_MIN_ON_BREAK": null,
-                "CUSHION_HIT_INVALID": null,
-                "CONSECUTIVE_FOULS_EXCEEDED": null,
-                "ILLEGAL_8_BALL_POCKET": null,
-                "ILLEGAL_8_BALL_POCKET_TOO_SOON": null,
-                "ILLEGAL_8_BALL_POCKET_ON_BREAK": null,
-                "POCKETED_WRONG_BALL": null
+                "CUE_BALL_POCKET": "%{name} heeft de speelbal gepot!",
+                "CUE_BALL_HIT_NO_BALL": "%{name} heeft geen andere bal geraakt!",
+                "CUE_BALL_HIT_WRONG_BALL": "%{name} raakte eerst de verkeerde bal!",
+                "CUSHION_HIT_MIN_ON_BREAK": "%{name} heeft niet genoeg ballen geraakt om de band te raken bij de break. (Min. %{min})",
+                "CUSHION_HIT_INVALID": "%{name} heeft geen geldige bal geraakt om een band te raken terwijl er geen bal werd gepot.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "%{name} heeft %{fouls} opeenvolgende fouten gemaakt.",
+                "ILLEGAL_8_BALL_POCKET": "%{name} heeft de achtbal gepot terwijl hij een fout beging.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} heeft de achtbal te vroeg gepot.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} heeft de achtbal gepot bij de afstoot.",
+                "POCKETED_WRONG_BALL": "%{name} heeft de verkeerde bal gepot."
             },
             "self": {
-                "CUE_BALL_POCKET": null,
-                "CUE_BALL_HIT_NO_BALL": null,
-                "CUE_BALL_HIT_WRONG_BALL": null,
-                "CUSHION_HIT_MIN_ON_BREAK": null,
-                "CUSHION_HIT_INVALID": null,
-                "CONSECUTIVE_FOULS_EXCEEDED": null,
-                "ILLEGAL_8_BALL_POCKET": null,
-                "ILLEGAL_8_BALL_POCKET_TOO_SOON": null,
-                "ILLEGAL_8_BALL_POCKET_ON_BREAK": null,
-                "POCKETED_WRONG_BALL": null
+                "CUE_BALL_POCKET": "Je hebt de speelbal gepot!",
+                "CUE_BALL_HIT_NO_BALL": "Je hebt geen andere bal geraakt!",
+                "CUE_BALL_HIT_WRONG_BALL": "Je raakte eerst de verkeerde bal!",
+                "CUSHION_HIT_MIN_ON_BREAK": "Je hebt niet genoeg ballen geraakt om de kussen te raken bij de break. (Min. %{min})",
+                "CUSHION_HIT_INVALID": "Je hebt geen geldige bal geraakt om een kussen te raken terwijl er geen bal werd gepot.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "Je hebt %{fouls} opeenvolgende fouten gemaakt.",
+                "ILLEGAL_8_BALL_POCKET": "Je hebt de achtbal gepot terwijl je een fout beging.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Je hebt de achtbal te vroeg gepot.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Je hebt de achtbal bij de afstoot gepot.",
+                "POCKETED_WRONG_BALL": "Je hebt de verkeerde bal gepot."
             }
         },
         "about": {

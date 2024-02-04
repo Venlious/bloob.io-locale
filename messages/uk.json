@@ -3,13 +3,13 @@
         "language": "informal Ukrainian",
         "rtl": false,
         "total": 1279,
-        "missing": 81
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Даний код не існує.",
-            "alreadyOwned": null,
+            "alreadyOwned": "Ти вже маєш цей предмет. Код залишається дійсним.",
             "alreadyUsed": "Даний код вже був активований."
         },
         "authentication": {
@@ -30,11 +30,11 @@
             "generic": "Трохи сповільни! Зачекай %{seconds} секунд(и)."
         },
         "generic": {
-            "incorrectProductPrice": null,
-            "insufficientBalance": null,
-            "invalidPurchaseWindow": null,
-            "invalidProduct": null,
-            "alreadyOwnedProduct": null,
+            "incorrectProductPrice": "Покупку скасовано через невідповідність ціни. Очікувалось: %{expectedAmount}. Отримано: %{receivedAmount}.",
+            "insufficientBalance": "У тебе недостатньо монет для цієї покупки.",
+            "invalidPurchaseWindow": "Вибач, але цей товар зараз купити не можна.",
+            "invalidProduct": "Товару з таким ID не існує.",
+            "alreadyOwnedProduct": "Ти вже маєш цей товар.",
             "levelTooLow": "Твій рівень недостатньо високий, щоб виконати цю дію.",
             "differentSessionConnected": "Ти увійшов у систему на %{session} і був відключений тут.",
             "sameSessionConnected": "Тебе відключили тут, бо ти відкрив цей сайт у іншій вкладці браузера.",
@@ -149,7 +149,7 @@
             "inGame": "Неможливо налаштувати свій профіль під час гри"
         },
         "requirement": {
-            "authentication": null,
+            "authentication": "Тобі треба увійти в свій акаунт, щоб зробити цю дію.",
             "credentials": "Ти ввів неправильні дані.",
             "validAccount": "Твій акаунт ще не підтверджено. Будь ласка, збережи зміни в профілі.",
             "inLobby": "Ти не можеш виконати цю дію, бо матч вже почався.",
@@ -1340,9 +1340,9 @@
         }
     },
     "time": {
-        "daysShort": null,
-        "hoursShort": null,
-        "minutesShort": null,
+        "daysShort": "{count}д",
+        "hoursShort": "{count}г",
+        "minutesShort": "{count}хв",
         "days": "0 днів | 1 день | {count} днів",
         "hours": "0 годин | 1 година | {count} годин",
         "minutes": "0 хвилин | 1 хвилина | {count} хвилин",
@@ -1463,20 +1463,20 @@
         "turnsToFlip": "Оберти для перевороту | Оберт для перевороту | Обертів для перевороту",
         "increment": "Приріст 0 | Приріст 1 | Приріст {count}",
         "shipsRemaining": "0 кораблів залишилося | 1 корабель залишився | Залишилося {count} кораблів",
-        "includesItems": null
+        "includesItems": "Включає {count} предмети | Включає {count} предмет | Включає {count} предметів"
     },
     "misc": {
-        "seasonal": null,
-        "dailyFeatures": null,
-        "purchaseCoins": null,
-        "store": null,
-        "buyNow": null,
-        "expired": null,
-        "yourCoins": null,
-        "getCoins": null,
-        "transactions": null,
-        "userData": null,
-        "price": null,
+        "seasonal": "Сезонні",
+        "dailyFeatures": "Щоденні Особливості",
+        "purchaseCoins": "Купити Монети",
+        "store": "Магазин",
+        "buyNow": "Купити Зараз",
+        "expired": "Закінчився",
+        "yourCoins": "Твої Монети",
+        "getCoins": "Отримати Монети",
+        "transactions": "Транзакції",
+        "userData": "Дані Користувача",
+        "price": "Ціна",
         "roll": "Кинути",
         "rollAgain": "Кинути знову",
         "rolling": "Кидаємо",
@@ -1523,7 +1523,7 @@
         "vibration": "Вібрація",
         "locked": "Заблоковано",
         "available": "Доступно",
-        "owned": null,
+        "owned": "У власності",
         "unavailable": "Недоступно",
         "changeLog": "Журнал змін",
         "status": "Статус",
@@ -1532,10 +1532,10 @@
         "toggle": "Перемкнути",
         "login": "Увійти",
         "logout": "Вийти",
-        "hats": null,
-        "eyes": null,
-        "mouths": null,
-        "backgrounds": null,
+        "hats": "Капелюхи",
+        "eyes": "Очі",
+        "mouths": "Роти",
+        "backgrounds": "Фони",
         "emailAddress": "Електронна адреса",
         "emailAddressConfirmation": "Повторіть електронну адресу",
         "createAccount": "Створити акаунт",
@@ -1622,9 +1622,9 @@
         "showBlank": "Показати %{value}",
         "hideBlank": "Сховати %{value}",
         "orBlank": "Або %{value}",
-        "saveBlank": null,
-        "coinsBlank": null,
-        "receivedBlank": null,
+        "saveBlank": "Зберегти %{value}",
+        "coinsBlank": "%{value} монет",
+        "receivedBlank": "Отримано %{value}",
         "sendVerification": "Відправити верифікацію",
         "noThanks": "Ні, дякую",
         "selectAll": "Вибрати все",
@@ -1796,8 +1796,8 @@
         "areYouSure": "Ти впевнений?",
         "checkServerStatus": "Перевір статус живого сервера",
         "customizePreset": "Налаштуй цей пресет за своїм смаком.",
-        "loginToPurchase": null,
-        "seasonalItem": null,
+        "loginToPurchase": "Щоб зробити покупку, спочатку увійдіть в систему або створіть обліковий запис.",
+        "seasonalItem": "Предмет у цьому слоті доступний лише кілька днів на рік.",
         "awaitingPurchaseConfirmation": {
             "title": null,
             "description": null
@@ -1807,7 +1807,7 @@
                 "title": "Введіть код",
                 "description": "Введіть унікальний код нижче, щоб розблокувати спеціальні предмети для ще більшого налаштування. Кожен код можна використати лише один раз.",
                 "unlinked": "Вибачте, ви не можете ввести код, поки не прив'яжете свій аккаунт до електронної адреси.",
-                "success": null
+                "success": "Ти успішно отримав %{item}!"
             },
             "experience": {
                 "title": "Досвід",
@@ -1960,28 +1960,28 @@
         },
         "poolFoul": {
             "other": {
-                "CUE_BALL_POCKET": null,
-                "CUE_BALL_HIT_NO_BALL": null,
-                "CUE_BALL_HIT_WRONG_BALL": null,
-                "CUSHION_HIT_MIN_ON_BREAK": null,
-                "CUSHION_HIT_INVALID": null,
-                "CONSECUTIVE_FOULS_EXCEEDED": null,
-                "ILLEGAL_8_BALL_POCKET": null,
-                "ILLEGAL_8_BALL_POCKET_TOO_SOON": null,
-                "ILLEGAL_8_BALL_POCKET_ON_BREAK": null,
-                "POCKETED_WRONG_BALL": null
+                "CUE_BALL_POCKET": "%{name} забив кулю-кий!",
+                "CUE_BALL_HIT_NO_BALL": "%{name} не влучив у жодну кулю!",
+                "CUE_BALL_HIT_WRONG_BALL": "%{name} спочатку влучив у неправильну кулю!",
+                "CUSHION_HIT_MIN_ON_BREAK": "%{name} не забив достатньо куль, щоб влучити у борт на розіграші. (Мін. %{min})",
+                "CUSHION_HIT_INVALID": "%{name} не забив жодну дійсну кулю у борт, коли жодна куля не була забита.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "%{name} зробив %{fouls} поспіль фоли.",
+                "ILLEGAL_8_BALL_POCKET": "%{name} забив восьму кулю, роблячи фол.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} забив восьму кулю занадто рано.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} забив восьму кулю на перерві.",
+                "POCKETED_WRONG_BALL": "%{name} забив не ту кулю."
             },
             "self": {
-                "CUE_BALL_POCKET": null,
-                "CUE_BALL_HIT_NO_BALL": null,
-                "CUE_BALL_HIT_WRONG_BALL": null,
-                "CUSHION_HIT_MIN_ON_BREAK": null,
-                "CUSHION_HIT_INVALID": null,
-                "CONSECUTIVE_FOULS_EXCEEDED": null,
-                "ILLEGAL_8_BALL_POCKET": null,
-                "ILLEGAL_8_BALL_POCKET_TOO_SOON": null,
-                "ILLEGAL_8_BALL_POCKET_ON_BREAK": null,
-                "POCKETED_WRONG_BALL": null
+                "CUE_BALL_POCKET": "Ти забив кулю-кий!",
+                "CUE_BALL_HIT_NO_BALL": "Ти не влучив у жодну кулю!",
+                "CUE_BALL_HIT_WRONG_BALL": "Ти спочатку влучив у неправильну кулю!",
+                "CUSHION_HIT_MIN_ON_BREAK": "Ти не забив достатньо куль, щоб влучити у борт на розіграші. (Мін. %{min})",
+                "CUSHION_HIT_INVALID": "Ти не забив жодну дійсну кулю у борт, коли жодна куля не була забита.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "Ти зробив %{fouls} порушень підряд.",
+                "ILLEGAL_8_BALL_POCKET": "Ти забив восьмий м'яч, порушуючи правила.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Ти забив восьмий м'яч занадто рано.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Ти забив восьмий м'яч на перерві.",
+                "POCKETED_WRONG_BALL": "Ти забив не той м'яч."
             }
         },
         "about": {

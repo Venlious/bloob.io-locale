@@ -3,13 +3,13 @@
         "language": "informal Russian",
         "rtl": false,
         "total": 1279,
-        "missing": 81
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Данного кода не существует.",
-            "alreadyOwned": null,
+            "alreadyOwned": "У тебя уже есть этот предмет. Код все еще действителен.",
             "alreadyUsed": "Данный код уже был активирован."
         },
         "authentication": {
@@ -30,11 +30,11 @@
             "generic": "Помедленнее, дружок! Подожди %{seconds} секунд(у)."
         },
         "generic": {
-            "incorrectProductPrice": null,
-            "insufficientBalance": null,
-            "invalidPurchaseWindow": null,
-            "invalidProduct": null,
-            "alreadyOwnedProduct": null,
+            "incorrectProductPrice": "Покупка отменена из-за несоответствия цены. Ожидалось: %{expectedAmount}. Получено: %{receivedAmount}.",
+            "insufficientBalance": "У тебя не хватает монет для этой покупки.",
+            "invalidPurchaseWindow": "Извини, но сейчас этот товар купить нельзя.",
+            "invalidProduct": "Товара с таким ID не существует.",
+            "alreadyOwnedProduct": "Ты уже владеешь этим товаром.",
             "levelTooLow": "Твой уровень не достаточно высок, чтобы сделать это действие.",
             "differentSessionConnected": "Ты вошел в систему в %{session} и был отключен здесь.",
             "sameSessionConnected": "Ты был отключен здесь, потому что открыл этот сайт в другой вкладке браузера.",
@@ -149,7 +149,7 @@
             "inGame": "Нельзя изменять свой профиль, пока идет игра"
         },
         "requirement": {
-            "authentication": null,
+            "authentication": "Тебе надо войти в свой аккаунт, чтобы сделать это действие.",
             "credentials": "Ты ввел неправильные данные.",
             "validAccount": "Твой аккаунт еще не подтвержден. Сохрани изменения в профиле.",
             "inLobby": "Это действие невозможно, матч уже начался.",
@@ -1340,9 +1340,9 @@
         }
     },
     "time": {
-        "daysShort": null,
-        "hoursShort": null,
-        "minutesShort": null,
+        "daysShort": "{count}д",
+        "hoursShort": "{count}ч",
+        "minutesShort": "{count}м",
         "days": "0 дней | 1 день | {count} дней",
         "hours": "0 часов | 1 час | {count} часов",
         "minutes": "0 минут | 1 минута | {count} минут",
@@ -1463,20 +1463,20 @@
         "turnsToFlip": "Ходы на переворот | Ход на переворот | Ходы на переворот",
         "increment": "Прирост 0 | Прирост 1 | Прирост {count}",
         "shipsRemaining": "0 кораблей осталось | 1 корабль остался | {count} кораблей осталось",
-        "includesItems": null
+        "includesItems": "Включает {count} предмета | Включает {count} предмет | Включает {count} предметов"
     },
     "misc": {
-        "seasonal": null,
-        "dailyFeatures": null,
-        "purchaseCoins": null,
-        "store": null,
-        "buyNow": null,
-        "expired": null,
-        "yourCoins": null,
-        "getCoins": null,
-        "transactions": null,
-        "userData": null,
-        "price": null,
+        "seasonal": "Сезонные",
+        "dailyFeatures": "Ежедневные Фишки",
+        "purchaseCoins": "Купить Монеты",
+        "store": "Магазин",
+        "buyNow": "Купить Сейчас",
+        "expired": "Истекший",
+        "yourCoins": "Твои Монеты",
+        "getCoins": "Получить Монеты",
+        "transactions": "Транзакции",
+        "userData": "Данные Пользователя",
+        "price": "Цена",
         "roll": "Бросить",
         "rollAgain": "Бросить снова",
         "rolling": "Катится",
@@ -1523,7 +1523,7 @@
         "vibration": "Вибрация",
         "locked": "Заблокировано",
         "available": "Доступно",
-        "owned": null,
+        "owned": "В наличии",
         "unavailable": "Недоступно",
         "changeLog": "История изменений",
         "status": "Статус",
@@ -1532,10 +1532,10 @@
         "toggle": "Переключить",
         "login": "Войти",
         "logout": "Выйти",
-        "hats": null,
-        "eyes": null,
-        "mouths": null,
-        "backgrounds": null,
+        "hats": "Шапки",
+        "eyes": "Глаза",
+        "mouths": "Рты",
+        "backgrounds": "Фоны",
         "emailAddress": "Электронная почта",
         "emailAddressConfirmation": "Повторите адрес электронной почты",
         "createAccount": "Создать аккаунт",
@@ -1622,9 +1622,9 @@
         "showBlank": "Показать %{value}",
         "hideBlank": "Скрыть %{value}",
         "orBlank": "Или %{value}",
-        "saveBlank": null,
-        "coinsBlank": null,
-        "receivedBlank": null,
+        "saveBlank": "Сохранить %{value}",
+        "coinsBlank": "%{value} монет",
+        "receivedBlank": "Получено %{value}",
         "sendVerification": "Отправить верификацию",
         "noThanks": "Нет, спасибо",
         "selectAll": "Выбрать все",
@@ -1796,8 +1796,8 @@
         "areYouSure": "Ты уверен?",
         "checkServerStatus": "Проверь статус живого сервера",
         "customizePreset": "Настрой этот пресет по своему вкусу.",
-        "loginToPurchase": null,
-        "seasonalItem": null,
+        "loginToPurchase": "Чтобы сделать покупку, сначала войди в систему или создай аккаунт.",
+        "seasonalItem": "Предмет в этом слоте доступен только несколько дней в году.",
         "awaitingPurchaseConfirmation": {
             "title": null,
             "description": null
@@ -1807,7 +1807,7 @@
                 "title": "Ввести Код",
                 "description": "Введите уникальный код ниже, чтобы разблокировать специальные предметы для еще большей кастомизации. Каждый код можно использовать только один раз.",
                 "unlinked": "Извини, ты не можешь ввести код, пока не привяжешь свой аккаунт к электронной почте.",
-                "success": null
+                "success": "Ты успешно забрал %{item}!"
             },
             "experience": {
                 "title": "Опыт",
@@ -1960,28 +1960,28 @@
         },
         "poolFoul": {
             "other": {
-                "CUE_BALL_POCKET": null,
-                "CUE_BALL_HIT_NO_BALL": null,
-                "CUE_BALL_HIT_WRONG_BALL": null,
-                "CUSHION_HIT_MIN_ON_BREAK": null,
-                "CUSHION_HIT_INVALID": null,
-                "CONSECUTIVE_FOULS_EXCEEDED": null,
-                "ILLEGAL_8_BALL_POCKET": null,
-                "ILLEGAL_8_BALL_POCKET_TOO_SOON": null,
-                "ILLEGAL_8_BALL_POCKET_ON_BREAK": null,
-                "POCKETED_WRONG_BALL": null
+                "CUE_BALL_POCKET": "%{name} забил белый шар!",
+                "CUE_BALL_HIT_NO_BALL": "%{name} не ударил по другому шару!",
+                "CUE_BALL_HIT_WRONG_BALL": "%{name} сначала ударил не по тому шару!",
+                "CUSHION_HIT_MIN_ON_BREAK": "%{name} не ударил достаточно шаров, чтобы они ударились о борт при разбивке. (Мин. %{min})",
+                "CUSHION_HIT_INVALID": "%{name} не ударил по действительному шару, чтобы он ударился о борт, пока ни один шар не был забит.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "%{name} совершил %{fouls} подряд штрафных ударов.",
+                "ILLEGAL_8_BALL_POCKET": "%{name} забил восьмерку, нарушив правила.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} забил восьмерку слишком рано.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} забил восьмерку сразу после разбития.",
+                "POCKETED_WRONG_BALL": "%{name} забил не тот шар."
             },
             "self": {
-                "CUE_BALL_POCKET": null,
-                "CUE_BALL_HIT_NO_BALL": null,
-                "CUE_BALL_HIT_WRONG_BALL": null,
-                "CUSHION_HIT_MIN_ON_BREAK": null,
-                "CUSHION_HIT_INVALID": null,
-                "CONSECUTIVE_FOULS_EXCEEDED": null,
-                "ILLEGAL_8_BALL_POCKET": null,
-                "ILLEGAL_8_BALL_POCKET_TOO_SOON": null,
-                "ILLEGAL_8_BALL_POCKET_ON_BREAK": null,
-                "POCKETED_WRONG_BALL": null
+                "CUE_BALL_POCKET": "Ты забил шар-кий!",
+                "CUE_BALL_HIT_NO_BALL": "Ты не ударил другой шар!",
+                "CUE_BALL_HIT_WRONG_BALL": "Ты сначала ударил не тот шар!",
+                "CUSHION_HIT_MIN_ON_BREAK": "Ты не забил достаточно шаров, чтобы ударить по подушке на разбивке. (Мин. %{min})",
+                "CUSHION_HIT_INVALID": "Ты не смог забить действительный шар, чтобы ударить по подушке, пока ни один шар не был забит.",
+                "CONSECUTIVE_FOULS_EXCEEDED": "Ты совершил %{fouls} подряд фола.",
+                "ILLEGAL_8_BALL_POCKET": "Ты забил восьмерку, совершив фол.",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Ты забил восьмерку слишком рано.",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Ты забил восьмерку сразу после разбития.",
+                "POCKETED_WRONG_BALL": "Ты забил не тот шар."
             }
         },
         "about": {

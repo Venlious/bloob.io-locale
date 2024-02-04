@@ -3,13 +3,13 @@
         "language": "informal Hindi script",
         "rtl": false,
         "total": 1279,
-        "missing": 81
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "दिया गया कोड मौजूद नहीं है।",
-            "alreadyOwned": null,
+            "alreadyOwned": "आपके पास यह आइटम पहले से ही है। कोड अभी भी मान्य है।",
             "alreadyUsed": "दिया गया कोड पहले ही सक्रिय कर दिया गया है।"
         },
         "authentication": {
@@ -30,11 +30,11 @@
             "generic": "थोड़ा धीरे करो! %{seconds} सेकंड(s) इंतजार करें।"
         },
         "generic": {
-            "incorrectProductPrice": null,
-            "insufficientBalance": null,
-            "invalidPurchaseWindow": null,
-            "invalidProduct": null,
-            "alreadyOwnedProduct": null,
+            "incorrectProductPrice": "मूल्य असंगतता के कारण खरीदारी रद्द कर दी गई। अपेक्षित: %{expectedAmount}। प्राप्त: %{receivedAmount}।",
+            "insufficientBalance": "आपके पास इस खरीदारी के लिए पर्याप्त सिक्के नहीं हैं।",
+            "invalidPurchaseWindow": "क्षमा करें, इस समय यह उत्पाद खरीदा नहीं जा सकता।",
+            "invalidProduct": "दिए गए ID के साथ उत्पाद मौजूद नहीं है।",
+            "alreadyOwnedProduct": "आप पहले से ही इस उत्पाद के मालिक हैं।",
             "levelTooLow": "तुम्हारा स्तर इस कार्य को करने के लिए काफी ऊचा नहीं है।",
             "differentSessionConnected": "आपने %{session} पर लॉग इन किया था और यहाँ डिस्कनेक्ट हो गए हैं।",
             "sameSessionConnected": "आप इस साइट को दूसरे ब्राउज़र टैब में खोलने के कारण यहाँ डिस्कनेक्ट हो गए थे।",
@@ -149,7 +149,7 @@
             "inGame": "खेल चल रहा होने पर आप अपनी प्रोफ़ाइल कस्टमाइज़ नहीं कर सकते"
         },
         "requirement": {
-            "authentication": null,
+            "authentication": "इस कार्य को करने के लिए आपको अपने खाते में लॉग इन होना चाहिए।",
             "credentials": "आपने गलत जानकारी दी है।",
             "validAccount": "आपका खाता अभी तक सत्यापित नहीं हुआ है। कृपया अपने प्रोफ़ाइल में परिवर्तन सहेजें।",
             "inLobby": "मैच शुरू हो चुका है, इसलिए आप इस कार्य को नहीं कर सकते।",
@@ -1340,9 +1340,9 @@
         }
     },
     "time": {
-        "daysShort": null,
-        "hoursShort": null,
-        "minutesShort": null,
+        "daysShort": "{count}दिन",
+        "hoursShort": "{count}घंटे",
+        "minutesShort": "{count}मिनट",
         "days": "0 दिन | 1 दिन | {count} दिन",
         "hours": "0 घंटे | 1 घंटा | {count} घंटे",
         "minutes": "0 मिनट | 1 मिनट | {count} मिनट",
@@ -1463,20 +1463,20 @@
         "turnsToFlip": "फ्लिप करने के लिए बारी | फ्लिप करने की बारी | फ्लिप करने के लिए बारियां",
         "increment": "0 की वृद्धि | 1 की वृद्धि | {count} की वृद्धियां",
         "shipsRemaining": "0 जहाज बाकी | 1 जहाज बाकी | {count} जहाज बाकी",
-        "includesItems": null
+        "includesItems": "{count} वस्तुएं शामिल हैं | {count} वस्तु शामिल है | {count} वस्तुएं शामिल हैं"
     },
     "misc": {
-        "seasonal": null,
-        "dailyFeatures": null,
-        "purchaseCoins": null,
-        "store": null,
-        "buyNow": null,
-        "expired": null,
-        "yourCoins": null,
-        "getCoins": null,
-        "transactions": null,
-        "userData": null,
-        "price": null,
+        "seasonal": "मौसमी",
+        "dailyFeatures": "रोज के विशेषताएं",
+        "purchaseCoins": "सिक्के खरीदें",
+        "store": "स्टोर",
+        "buyNow": "अभी खरीदें",
+        "expired": "समाप्त हो गया",
+        "yourCoins": "आपके सिक्के",
+        "getCoins": "सिक्के प्राप्त करें",
+        "transactions": "लेन-देन",
+        "userData": "उपयोगकर्ता डेटा",
+        "price": "मूल्य",
         "roll": "घुमाओ",
         "rollAgain": "फिर से घुमाओ",
         "rolling": "घुमा रहा है",
@@ -1523,7 +1523,7 @@
         "vibration": "कंपन",
         "locked": "बंद",
         "available": "उपलब्ध",
-        "owned": null,
+        "owned": "स्वामित्व में",
         "unavailable": "अनुपलब्ध",
         "changeLog": "बदलाव की सूची",
         "status": "स्थिति",
@@ -1532,10 +1532,10 @@
         "toggle": "टॉगल",
         "login": "लॉगिन",
         "logout": "लॉगआउट",
-        "hats": null,
-        "eyes": null,
-        "mouths": null,
-        "backgrounds": null,
+        "hats": "टोपियाँ",
+        "eyes": "आँखें",
+        "mouths": "मुंह",
+        "backgrounds": "पृष्ठभूमियाँ",
         "emailAddress": "ईमेल पता",
         "emailAddressConfirmation": "ईमेल पता दोहराएं",
         "createAccount": "खाता बनाएं",
@@ -1622,9 +1622,9 @@
         "showBlank": "%{value} दिखाएं",
         "hideBlank": "%{value} छुपाएं",
         "orBlank": "या %{value}",
-        "saveBlank": null,
-        "coinsBlank": null,
-        "receivedBlank": null,
+        "saveBlank": "%{value} सहेजें",
+        "coinsBlank": "%{value} सिक्के",
+        "receivedBlank": "%{value} प्राप्त किया",
         "sendVerification": "सत्यापन भेजें",
         "noThanks": "नहीं, धन्यवाद",
         "selectAll": "सभी का चयन करें",
@@ -1796,8 +1796,8 @@
         "areYouSure": "क्या आप पक्के हैं?",
         "checkServerStatus": "लाइव सर्वर की स्थिति जांचें",
         "customizePreset": "इस प्रीसेट को अपनी पसंद अनुसार कस्टमाइज़ करें।",
-        "loginToPurchase": null,
-        "seasonalItem": null,
+        "loginToPurchase": "खरीदारी करने के लिए आपको पहले लॉगिन करना होगा या एक खाता बनाना होगा।",
+        "seasonalItem": "इस स्लॉट में एक आइटम सिर्फ साल में कुछ ही दिनों के लिए उपलब्ध होता है।",
         "awaitingPurchaseConfirmation": {
             "title": null,
             "description": null
@@ -1807,7 +1807,7 @@
                 "title": "कोड रिडीम करें",
                 "description": "नीचे एक अद्वितीय कोड दर्ज करें ताकि आप और अधिक अनुकूलन के लिए विशेष आइटम अनलॉक कर सकें। प्रत्येक कोड केवल एक बार ही उपयोग किया जा सकता है।",
                 "unlinked": "क्षमा करें, आप तब तक कोड रिडीम नहीं कर सकते जब तक आपने अपने खाते को ईमेल पते से लिंक नहीं किया होता।",
-                "success": null
+                "success": "आपने सफलतापूर्वक %{item} का दावा कर लिया है!"
             },
             "experience": {
                 "title": "अनुभव",
@@ -1960,28 +1960,28 @@
         },
         "poolFoul": {
             "other": {
-                "CUE_BALL_POCKET": null,
-                "CUE_BALL_HIT_NO_BALL": null,
-                "CUE_BALL_HIT_WRONG_BALL": null,
-                "CUSHION_HIT_MIN_ON_BREAK": null,
-                "CUSHION_HIT_INVALID": null,
-                "CONSECUTIVE_FOULS_EXCEEDED": null,
-                "ILLEGAL_8_BALL_POCKET": null,
-                "ILLEGAL_8_BALL_POCKET_TOO_SOON": null,
-                "ILLEGAL_8_BALL_POCKET_ON_BREAK": null,
-                "POCKETED_WRONG_BALL": null
+                "CUE_BALL_POCKET": "%{name} ने क्यू बॉल को पॉकेट कर दिया!",
+                "CUE_BALL_HIT_NO_BALL": "%{name} ने दूसरी गेंद को हिट नहीं किया!",
+                "CUE_BALL_HIT_WRONG_BALL": "%{name} ने पहले गलत गेंद को हिट किया!",
+                "CUSHION_HIT_MIN_ON_BREAK": "%{name} ने ब्रेक पर कुशन को हिट करने के लिए पर्याप्त गेंदें नहीं पाईं। (न्यूनतम %{min})",
+                "CUSHION_HIT_INVALID": "%{name} ने कोई मान्य गेंद नहीं पाई जिसे कुशन को हिट करते हुए कोई गेंद पॉकेट नहीं की गई थी।",
+                "CONSECUTIVE_FOULS_EXCEEDED": "%{name} ने %{fouls} लगातार फाउल किए।",
+                "ILLEGAL_8_BALL_POCKET": "%{name} ने फाउल करते हुए आठवां बॉल पॉकेट किया।",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} ने आठवां बॉल बहुत जल्दी पॉकेट किया।",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} ने ब्रेक पर आठवां बॉल पॉकेट किया।",
+                "POCKETED_WRONG_BALL": "%{name} ने गलत बॉल पॉकेट किया।"
             },
             "self": {
-                "CUE_BALL_POCKET": null,
-                "CUE_BALL_HIT_NO_BALL": null,
-                "CUE_BALL_HIT_WRONG_BALL": null,
-                "CUSHION_HIT_MIN_ON_BREAK": null,
-                "CUSHION_HIT_INVALID": null,
-                "CONSECUTIVE_FOULS_EXCEEDED": null,
-                "ILLEGAL_8_BALL_POCKET": null,
-                "ILLEGAL_8_BALL_POCKET_TOO_SOON": null,
-                "ILLEGAL_8_BALL_POCKET_ON_BREAK": null,
-                "POCKETED_WRONG_BALL": null
+                "CUE_BALL_POCKET": "आपने क्यू बॉल को पॉकेट कर दिया!",
+                "CUE_BALL_HIT_NO_BALL": "आपने दूसरी गेंद को हिट नहीं किया!",
+                "CUE_BALL_HIT_WRONG_BALL": "आपने पहले गलत गेंद को हिट किया!",
+                "CUSHION_HIT_MIN_ON_BREAK": "आपके पास ब्रेक पर कुशन को हिट करने के लिए पर्याप्त गेंदें नहीं थीं। (न्यूनतम %{min})",
+                "CUSHION_HIT_INVALID": "आपके पास कोई मान्य गेंद नहीं थी जिसे कुशन को हिट करने के लिए जब कोई गेंद पॉकेट नहीं की गई थी।",
+                "CONSECUTIVE_FOULS_EXCEEDED": "आपने %{fouls} लगातार फाउल किए।",
+                "ILLEGAL_8_BALL_POCKET": "आपने फाउल करते हुए आठवां बॉल डाल दिया।",
+                "ILLEGAL_8_BALL_POCKET_TOO_SOON": "आपने आठवां बॉल बहुत जल्दी डाल दिया।",
+                "ILLEGAL_8_BALL_POCKET_ON_BREAK": "आपने ब्रेक पर आठवां बॉल डाल दिया।",
+                "POCKETED_WRONG_BALL": "आपने गलत बॉल डाल दिया।"
             }
         },
         "about": {
