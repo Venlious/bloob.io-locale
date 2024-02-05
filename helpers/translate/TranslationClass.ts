@@ -290,11 +290,13 @@ export default class TranslationClass {
 			`These are used in a web based Battleships game.`
 		)
 		this.generateTranslationTask([`info`, `about`])
+		this.generateTranslationTask([`info`, `awaitingPurchaseConfirmation`])
 		this.generateTranslationTask([`info`, `settings`, `redeemCode`])
 		this.generateTranslationTask([`info`, `settings`, `experience`])
 		this.generateTranslationTask([`info`, `settings`, `statistics`])
 		this.generateTranslationTask([`info`, `settings`, `analytics`])
 		this.generateTranslationTask([`info`, `settings`, `serverData`])
+		this.generateTranslationTask([`info`, `settings`, `controlYourData`])
 		this.generateTranslationTask([`info`, `settings`, `localStorage`])
 		this.generateTranslationTask([`info`, `settings`, `myDevices`])
 		this.generateTranslationTask([`info`, `authentication`])
@@ -373,6 +375,26 @@ export default class TranslationClass {
 			[`error`, `authentication`],
 			`These are authentication related translations.`
 		)
+
+		/**
+		 * Perk messages
+		 */
+		const perks = Object.keys(EN_MESSAGES[`perk`])
+		for (const perk of perks) {
+			const target = EN_MESSAGES[`perk`][perk]
+			if (target.title) {
+				this.generateTranslationTask(
+					[`perk`, perk, `title`],
+					`This translation is for an unlockable perk title.`
+				)
+			}
+			if (target.description) {
+				this.generateTranslationTask(
+					[`perk`, perk, `description`],
+					`This translation is for an unlockable perk description, with the title of "${target.title}".`
+				)
+			}
+		}
 
 		/**
 		 * Game messages
