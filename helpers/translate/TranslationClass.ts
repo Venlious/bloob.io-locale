@@ -360,8 +360,16 @@ export default class TranslationClass {
 			`This is a matchmaking setting.`
 		)
 		this.generateTranslationTask(
+			[`match`, `matchmaking`, `settings`, `publicMatches`, `tooltip`],
+			`This is a matchmaking setting tooltip.`
+		)
+		this.generateTranslationTask(
 			[`match`, `matchmaking`, `settings`, `games`],
 			`This is a matchmaking setting.`
+		)
+		this.generateTranslationTask(
+			[`match`, `matchmaking`, `settings`, `games`, `tooltip`],
+			`This is a matchmaking setting tooltip.`
 		)
 		this.generateTranslationTask([`match`, `info`], `These are game match information.`)
 
