@@ -355,6 +355,14 @@ export default class TranslationClass {
 		)
 		this.generateTranslationTask([`match`, `browser`], `These are game match list.`)
 		this.generateTranslationTask([`match`, `matchmaking`], `These are game matchmaking states.`)
+		this.generateTranslationTask(
+			[`match`, `matchmaking`, `settings`, `publicMatches`],
+			`This is a matchmaking setting.`
+		)
+		this.generateTranslationTask(
+			[`match`, `matchmaking`, `settings`, `games`],
+			`This is a matchmaking setting.`
+		)
 		this.generateTranslationTask([`match`, `info`], `These are game match information.`)
 
 		/**
