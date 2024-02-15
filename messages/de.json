@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal German",
         "rtl": false,
-        "total": 1279,
+        "total": 1295,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1466,6 +1466,10 @@
         "includesItems": "Beinhaltet {count} Artikel | Beinhaltet {count} Artikel | Beinhaltet {count} Artikel"
     },
     "misc": {
+        "notEnoughData": "Nicht genug Daten",
+        "averageWaitTime": "Durchschnittliche Wartezeit",
+        "unknown": "Unbekannt",
+        "none": "Keine",
         "seasonal": "Saisonbedingt",
         "dailyFeatures": "Tägliche Highlights",
         "purchaseCoins": "Münzen kaufen",
@@ -1618,6 +1622,9 @@
         "myData": "Meine Daten",
         "redeemCode": "Code einlösen",
         "leaderboard": "Leaderboard",
+        "elapsedTime": "%{time} vergangen",
+        "startingInTime": "Startet in %{time}",
+        "averageWaitTimeBlank": "Durchschnittliche Wartezeit %{value}",
         "averageBlank": "Durchschnittliche %{value}",
         "showBlank": "%{value} anzeigen",
         "hideBlank": "%{value} verbergen",
@@ -1719,6 +1726,7 @@
     },
     "match": {
         "create": "Spiel erstellen",
+        "createPublic": "Öffentliches Spiel erstellen",
         "leave": "Spiel verlassen",
         "join": "Spiel beitreten",
         "joinById": "Match nach ID beitreten",
@@ -1736,12 +1744,29 @@
             "noneAvailable": "Keine Spiele verfügbar"
         },
         "matchmaking": {
-            "tiredOfWaiting": "Keine Lust mehr zu warten?",
-            "cancel": "Matchmaking abbrechen",
-            "searching": "Suche nach Gegnern... (%{time})",
-            "found": "Spiel gefunden! Starte in %{time}..."
+            "searching": "Suche nach einem Spiel...",
+            "settings": {
+                "publicMatches": {
+                    "title": "Öffentliche Spiele",
+                    "description": "Verkürzt die Wartezeit.",
+                    "tooltip": [
+                        "Öffentliche Spiele werden von anderen Spielern erstellt. Diese Spiele können angepasste Einstellungen haben.",
+                        "Du wirst automatisch zum Matchmaking zurückkehren, wenn du rausgeworfen wirst oder wenn der Gastgeber das Spiel verlässt."
+                    ]
+                },
+                "games": {
+                    "title": "Spiele",
+                    "description": "Spiel das erste verfügbare Spiel",
+                    "tooltip": [
+                        "Wenn du mehrere Spiele einbeziehst, kann die Wartezeit verkürzt werden."
+                    ]
+                }
+            }
         },
         "info": {
+            "hostLeftWhileMatchmaking": "Der Gastgeber hat das Spiel, in dem du warst, verlassen.",
+            "kickedWhileMatchmaking": "Der Gastgeber des Spiels hat dich rausgeschmissen.",
+            "privateWhileMatchmaking": "Der Gastgeber hat sein Spiel privat gemacht.",
             "makeHost": "Du bist dabei \"%{name}\" zum neuen Gastgeber zu machen.",
             "kickUser": "Du bist dabei \"%{name}\" aus diesem Spiel zu entfernen.",
             "noMatches": "Neue Spiele werden hier angezeigt",
@@ -1758,6 +1783,7 @@
         }
     },
     "info": {
+        "clearOldListings": "Lösche alle 'Nicht verfügbar' Spiele.",
         "accountLinkSuggestion": "Du bist jetzt %{level}! Überlege dir, ein Konto zu erstellen, um deinen Fortschritt zu schützen.",
         "accountLinked": "Dieses Konto ist mit folgender E-Mail-Adresse verknüpft: %{email}.",
         "incompleteTranslationNotice": "Die Sprache, die du ausgewählt hast, ist ungefähr {percentage}% fertig. Fehlende Übersetzungen werden auf Englisch sein.",

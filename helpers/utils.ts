@@ -61,7 +61,14 @@ export const addMissingEntriesToObject = (
 ): NestedObject => {
 	for (const key in source) {
 		if (typeof source[key] === `object`) {
-			target[key] = addMissingEntriesToObject(source[key] as NestedObject, target[key] || {})
+			if (Array.isArray(source[key]) && !Array.isArray(target[key])) {
+				target[key] = source[key].map(() => null)
+			} else {
+				target[key] = addMissingEntriesToObject(
+					source[key] as NestedObject,
+					target[key] || {}
+				)
+			}
 		} else if (!Object.prototype.hasOwnProperty.call(target, key)) {
 			if (!isPlainObject(target) && isPlainObject(source)) target = {}
 			target[key] = null

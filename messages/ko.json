@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Korean",
         "rtl": false,
-        "total": 1279,
+        "total": 1295,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1466,6 +1466,10 @@
         "includesItems": "{count}개 항목 포함 | {count}개 항목 포함 | {count}개 항목 포함"
     },
     "misc": {
+        "notEnoughData": "데이터 부족",
+        "averageWaitTime": "평균 대기 시간",
+        "unknown": "알 수 없음",
+        "none": "없음",
         "seasonal": "계절별",
         "dailyFeatures": "일일 특징",
         "purchaseCoins": "코인 구매하기",
@@ -1618,6 +1622,9 @@
         "myData": "내 데이터",
         "redeemCode": "코드 사용하기",
         "leaderboard": "랭킹 보기",
+        "elapsedTime": "%{time} 경과",
+        "startingInTime": "%{time} 후 시작",
+        "averageWaitTimeBlank": "평균 대기 시간 %{value}",
         "averageBlank": "평균 %{value}",
         "showBlank": "%{value} 보기",
         "hideBlank": "%{value} 숨기기",
@@ -1719,6 +1726,7 @@
     },
     "match": {
         "create": "매치 만들기",
+        "createPublic": "공개 매치 만들기",
         "leave": "매치 나가기",
         "join": "매치 참가하기",
         "joinById": "ID로 매치 참가하기",
@@ -1736,12 +1744,29 @@
             "noneAvailable": "가능한 매치 없음"
         },
         "matchmaking": {
-            "tiredOfWaiting": "기다리는 거 지겨워?",
-            "cancel": "매치메이킹 취소",
             "searching": "상대를 찾는 중... (%{time})",
-            "found": "매치 찾았어! %{time} 후에 시작해..."
+            "settings": {
+                "publicMatches": {
+                    "title": "공개 매치",
+                    "description": "대기 시간을 줄여줘.",
+                    "tooltip": [
+                        "공개 매치는 다른 플레이어들이 만드는 거예요. 이 매치들은 설정을 사용자 정의할 수 있어요.",
+                        "만약 강퇴당하거나 호스트가 매치를 포기하면, 자동으로 매칭으로 돌아갈 거예요."
+                    ]
+                },
+                "games": {
+                    "title": "게임들",
+                    "description": "가장 먼저 가능한 게임 플레이하기",
+                    "tooltip": [
+                        "여러 게임을 포함하면 대기 시간을 줄일 수 있어요."
+                    ]
+                }
+            }
         },
         "info": {
+            "hostLeftWhileMatchmaking": "너가 있던 경기에서 호스트가 나갔어.",
+            "kickedWhileMatchmaking": "경기의 호스트가 너를 추방했어.",
+            "privateWhileMatchmaking": "호스트가 그들의 경기를 비공개로 설정했어.",
             "makeHost": "\"%{name}\"을 새로운 호스트로 만들려고 합니다.",
             "kickUser": "\"%{name}\"을 이 경기에서 킥하려고 합니다.",
             "noMatches": "새로운 경기는 여기에 표시될 거예요",
@@ -1758,6 +1783,7 @@
         }
     },
     "info": {
+        "clearOldListings": "'사용 불가능한' 매치를 모두 지워.",
         "accountLinkSuggestion": "이제 %{level}이 되었어요! 진행 상황을 보호하기 위해 계정을 만들어 보세요.",
         "accountLinked": "이 계정은 다음 이메일 주소에 연결되어 있어요: %{email}.",
         "incompleteTranslationNotice": "선택하신 언어는 대략 {percentage}% 완성되었어요. 누락된 번역은 영어로 표시될 거예요.",
