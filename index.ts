@@ -18,6 +18,10 @@ const supportedLocales = <SupportedLocale[]>[
 	`uk`,
 	`ko`,
 	`zh`,
-	`ja`
+	`ja`,
+	`nb`,
+	`fi`,
+	`da`,
+	`sv`
 ]
 export { supportedLocales }
