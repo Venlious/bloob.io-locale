@@ -17,6 +17,10 @@ export type SupportedLocale =
 	| `ko`
 	| `zh`
 	| `ja`
+	| `nb`
+	| `fi`
+	| `da`
+	| `sv`
 
 export type LanguageList =
 	| `nl-NL`
