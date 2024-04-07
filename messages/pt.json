@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Brazilian Portuguese",
         "rtl": false,
-        "total": 1303,
+        "total": 1399,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1162,6 +1162,82 @@
                     ]
                 }
             }
+        },
+        "CRIBBAGE": {
+            "name": "Cribbage",
+            "heading": "Curta o Clássico Cribbage Online",
+            "tooltip": "Teste suas habilidades e estratégias neste amado jogo de cartas contra jogadores do mundo todo.",
+            "description": "Afie suas habilidades e jogue Cribbage online! Com seu sistema de pontuação único e jogabilidade estratégica, Cribbage oferece horas infinitas de diversão para os amantes de jogos de cartas.",
+            "title": "Desafie Seus Amigos",
+            "options": {
+                "playTime": {
+                    "title": "Tempo de Jogo",
+                    "help": "Quanto tempo cada jogador tem pra escolher uma carta da mão pra adicionar na jogada em andamento."
+                },
+                "cribTime": {
+                    "title": "Hora do Berço",
+                    "help": "Quanto tempo cada jogador tem pra decidir quais cartas vão mandar pro berço."
+                },
+                "starterCardTime": {
+                    "title": "Tempo do Cartão Inicial",
+                    "help": "Quanto tempo o jogador selecionado tem para pegar a carta inicial do baralho. A carta inicial é usada como uma quinta carta na hora de calcular os pontos de todas as mãos e do berço."
+                },
+                "revealSpeed": {
+                    "title": "Velocidade de Revelação",
+                    "help": "Como rápido a pontuação é revelada no final de uma rodada."
+                },
+                "dealerExtraCard": {
+                    "title": "Carta Extra do Dealer",
+                    "help": "Quando ativado em jogos de 3 jogadores, o dealer recebe uma carta extra pro berço. Quando desativado, a quarta carta vai pro berço automaticamente."
+                },
+                "winCondition": {
+                    "title": "Condição de Vitória",
+                    "help": "Decide quando o jogo deve chegar ao fim.",
+                    "data": {
+                        "FIRST": "Primeiro a chegar a <b>0</b> pontos | Primeiro a chegar a <b>1</b> ponto | Primeiro a chegar a <b>{count}</b> pontos",
+                        "HIGHEST_AFTER_FIRST": "Maior número de pontos depois de alcançar <b>0</b> pontos | Maior número de pontos depois de alcançar <b>1</b> ponto | Maior número de pontos depois de alcançar <b>{count}</b> pontos"
+                    }
+                }
+            },
+            "presets": {
+                "blitz": {
+                    "title": "Blitz",
+                    "description": [
+                        "Primeiro a chegar nos 31 pontos",
+                        "Tempos reduzidos"
+                    ]
+                }
+            },
+            "help": {
+                "objective": {
+                    "title": "Entendendo o Objetivo",
+                    "description": [
+                        "O objetivo do Cribbage é ser o primeiro jogador a atingir a pontuação alvo, geralmente 121 pontos.",
+                        "O jogo consiste em três partes distintas que vão continuar acontecendo até que haja um vencedor."
+                    ]
+                },
+                "deal": {
+                    "title": "O Acordo",
+                    "description": [
+                        "Cada jogador recebe 5 ou 6 cartas, dependendo de quantos jogadores tem. Cada um deve escolher 4 cartas que quer manter e descartar as outras para o \"berço\", que pertence ao crupiê.",
+                        "O berço pode ser visto como uma segunda mão, que vai dar pontos extras pro crupiê quando chegar a hora de contar os pontos."
+                    ]
+                },
+                "play": {
+                    "title": "O Jogo",
+                    "description": [
+                        "Os jogadores se revezam jogando uma carta por vez da mão para a mesa. A soma das cartas jogadas é acompanhada durante a rodada e deve ficar abaixo de 31.",
+                        "Os jogadores podem ganhar pontos com sequências, pares e ao fazer a soma chegar a 15. Clique no botão \"Sistema de Pontuação\" durante o jogo para uma visão geral completa."
+                    ]
+                },
+                "show": {
+                    "title": "O Show",
+                    "description": [
+                        "Depois que todos os jogadores esvaziarem as mãos durante o jogo, os pontos são contados. O dealer sempre é contado por último e também recebe pontos pelo seu crib.",
+                        "Os jogadores podem ganhar pontos por várias combinações. Clique no botão \"Sistema de Pontuação\" enquanto estiver no jogo para uma visão geral completa."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -1243,7 +1319,12 @@
             "nameTurn": "vez de %{name}",
             "yourTurnBreaking": "A tacada inicial é com você %{extra}",
             "nameTurnBreaking": "A tacada inicial é de %{name}",
-            "roundCount": "Rodada %{current} de %{total}"
+            "roundCount": "Rodada %{current} de %{total}",
+            "dealingCards": "Distribuindo as cartas...",
+            "youPickStarterCard": "Você precisa escolher a carta inicial",
+            "namePickStarterCard": "%{name} precisa escolher a carta inicial",
+            "yourCrib": "Seu berço",
+            "nameCrib": "Berço do(a) %{name}"
         },
         "description": {
             "waitingForPlayers": "Esperando por jogadores",
@@ -1469,6 +1550,16 @@
         "includesItems": "Inclui {count} itens | Inclui {count} item | Inclui {count} itens"
     },
     "misc": {
+        "judge": "Juiz",
+        "dealer": "Negociante",
+        "slow": "Devagar",
+        "normal": "Normal",
+        "fast": "Rápido",
+        "fastest": "Mais Rápido",
+        "starter": "Iniciante",
+        "cards": "Cartas",
+        "type": "Tipo",
+        "scoringSystem": "Sistema de Pontuação",
         "notEnoughData": "Dados insuficientes",
         "averageWaitTime": "Tempo médio de espera",
         "unknown": "Desconhecido",
@@ -1817,6 +1908,10 @@
         "votePickSelected": "Você votou em %{option}",
         "inactiveOpponent": "Seu oponente estava inativo",
         "inactiveOpponents": "Todos os oponentes estavam inativos",
+        "waitForOpponent": "Esperando pelo seu oponente...",
+        "waitForOpponents": "Esperando pelos seus oponentes...",
+        "selfNoPoints": "Você não recebeu nenhum ponto.",
+        "nameNoPoints": "%{name} não recebeu nenhum ponto.",
         "gameMenu": "Quer jogar outra coisa?",
         "forfeit": "A perda do jogo resultará em uma derrota para você.",
         "unsavedChanges": "Você fez alterações não salvas que serão apagadas se você continuar.",
@@ -1832,6 +1927,7 @@
         "customizePreset": "Personalize essa predefinição do jeito que você quiser.",
         "loginToPurchase": "Pra fazer uma compra, você precisa primeiro entrar ou criar uma conta.",
         "seasonalItem": "Um item nesse slot só fica disponível por alguns dias no ano.",
+        "cardInteractHint": "Clique em uma carta para fazer sua escolha.",
         "awaitingPurchaseConfirmation": {
             "title": "Aguardando Confirmação de Compra",
             "description": "Isso geralmente leva apenas alguns segundos. Dependendo do seu método de pagamento, pode demorar mais. Fique à vontade para fechar essa tela."
@@ -1936,6 +2032,70 @@
             "logoutGloballyCompleted": "Sua conta foi desconectada de todos os dispositivos.",
             "verificationEmail": "Um e-mail com um código de verificação foi enviado.",
             "noEmail": "Nenhum e-mail? Verifique sua pasta de spam e confirme se este endereço de e-mail está vinculado à sua conta."
+        },
+        "cribbage": {
+            "type": {
+                "oneForHisNob": {
+                    "title": "Um para o seu nobre",
+                    "description": "Dá %{points} por ter o mesmo naipe de valete que a carta inicial."
+                },
+                "fifteen": {
+                    "title": "Quinze",
+                    "description": "Dá %{points} pra qualquer combinação de cartas que somam 15. As mesmas cartas podem ser usadas várias vezes em diferentes combinações.",
+                    "playDescription": "Dá %{points} pontos por adicionar uma carta que faz o total dar 15."
+                },
+                "pair": {
+                    "title": "Par",
+                    "description": "Dá %{points} pontos por ter duas cartas do mesmo naipe.",
+                    "playDescription": "Concede %{points} por adicionar uma carta com o mesmo valor que acabou de ser jogada."
+                },
+                "pairRoyal": {
+                    "title": "Trinca Real",
+                    "description": "Dá %{points} pontos por ter três cartas do mesmo naipe.",
+                    "playDescription": "Dá %{points} por adicionar um carta com o mesmo valor das duas últimas cartas."
+                },
+                "doublePairRoyal": {
+                    "title": "Duplo Par Real",
+                    "description": "Dá %{points} pontos por ter quatro cartas do mesmo valor.",
+                    "playDescription": "Dá %{points} pontos por adicionar uma carta com o mesmo valor das últimas três cartas."
+                },
+                "run": {
+                    "title": "Sequência",
+                    "description": "Dá %{points} pontos para cada carta na sequência.",
+                    "playDescription": "Dá %{points} para cada carta na sequência. As cartas não precisam estar em ordem, mas precisam estar agrupadas. Por exemplo, se você pegar as últimas cartas e reorganizá-las em ordem, elas devem contar sem interrupção."
+                },
+                "flush": {
+                    "title": "Sequência (4 cartas)",
+                    "description": "Te dá %{points} se todas as cartas na sua mão forem do mesmo naipe. Isso só vale pras cartas na sua mão, excluindo o berço e a carta inicial."
+                },
+                "flushStarter": {
+                    "title": "Sequência (5 cartas)",
+                    "description": "Te dá %{points} se todas as cartas na sua mão + a carta inicial forem do mesmo naipe. Isso só vale para as cartas na sua mão, excluindo o berço."
+                }
+            },
+            "title": {
+                "hand": "Mão",
+                "show": "Mostrar",
+                "play": "Jogar",
+                "crib": "Berço"
+            },
+            "yourCribSelection": "Selecione %{cards} para o seu berço",
+            "nameCribSelection": "Selecione %{cards} para o berço do(a) %{name}",
+            "yourCribSelectionSubmit": "Mande as cartas destacadas para o seu berço!",
+            "nameCribSelectionSubmit": "Mande as cartas destacadas para o berço do(a) %{name}!",
+            "singleSkunk": "Foi skunked! Esse jogador tinha menos de %{points}.",
+            "doubleSkunk": "Levou um skunk duplo! Esse jogador tinha menos de %{points}.",
+            "selfJackHeelsPoints": "%{turn} tirou um valete! Você ganha %{points} pelos calcanhares dele.",
+            "nameJackHeelsPoints": "%{turn} tirou um valete! %{name} ganha %{points} pelos calcanhares dele.",
+            "nameSelfJackHeelsPoints": "Você tirou um valete! %{name} ganha %{points} pelos calcanhares dele.",
+            "selfFinishedPlay": "Você ganha %{points} por ter terminado a jogada.",
+            "nameFinishedPlay": "%{name} ganha %{points} por ter terminado a jogada.",
+            "selfLastCard": "Você ganha %{points} por ter jogado a última carta.",
+            "nameLastCard": "%{name} ganha %{points} por ter jogado a última carta.",
+            "selfCannotPlay": "Nenhuma das suas cartas pode ser usada na jogada.",
+            "nameCannotPlay": "%{name} não tem cartas que possam ser usadas na jogada.",
+            "cardPlayBoardLimit": "Essa carta não pode ser jogada. O valor do tabuleiro não pode ultrapassar %{limit}.",
+            "sendCardsToCrib": "Mande Cartas para o Berço"
         },
         "battleship": {
             "keyToRotate": "Aperte 'R' para girar",

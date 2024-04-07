@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Japanese",
         "rtl": false,
-        "total": 1303,
+        "total": 1399,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1162,6 +1162,82 @@
                     ]
                 }
             }
+        },
+        "CRIBBAGE": {
+            "name": "クリブッジ",
+            "heading": "クラシッククリブベージをオンラインで楽しもう",
+            "tooltip": "世界中のプレイヤーとこの大好きなカードゲームで、あなたのスキルと戦略を試してみてね。",
+            "description": "頭を鍛えてクリブッジをオンラインで遊ぼう！ユニークなスコアリングシステムと戦略的なゲームプレイで、カードゲーム好きには終わりなき楽しみが待っています。",
+            "title": "友達に挑戦しよう！",
+            "options": {
+                "playTime": {
+                    "title": "プレイ時間",
+                    "help": "プレイヤーが手札からカードを選んで進行中のプレイに追加するのに必要な時間はどのくらいですか。"
+                },
+                "cribTime": {
+                    "title": "ベビーベッドの時間",
+                    "help": "プレイヤーがクリブに送るカードを決めるのにどのくらい時間があるか。"
+                },
+                "starterCardTime": {
+                    "title": "スターターカードの時間",
+                    "help": "選ばれたプレイヤーがデッキからスターターカードを選ぶのにどれくらい時間があるか。スターターカードは、全ての手札とクリブのスコアを計算する際に5枚目のカードとして使われます。"
+                },
+                "revealSpeed": {
+                    "title": "表示速度",
+                    "help": "ラウンド終了時にスコアがどれくらい早く表示されるか。"
+                },
+                "dealerExtraCard": {
+                    "title": "ディーラー追加カード",
+                    "help": "3人プレイのゲームで有効にすると、ディーラーはエクストラのクリブカードをもらえるよ。無効にすると、4枚目のカードは自動的にクリブに行くんだよ。"
+                },
+                "winCondition": {
+                    "title": "勝利条件",
+                    "help": "ゲームがいつ終わるべきか決めてね。",
+                    "data": {
+                        "FIRST": "最初に<b>0</b>点に到達 | 最初に<b>1</b>点に到達 | 最初に<b>{count}</b>点に到達",
+                        "HIGHEST_AFTER_FIRST": "<b>0</b>点に到達した後で最も点数が多い | <b>1</b>点に到達した後で最も点数が多い | <b>{count}</b>点に到達した後で最も点数が多い"
+                    }
+                }
+            },
+            "presets": {
+                "blitz": {
+                    "title": "ブリッツ",
+                    "description": [
+                        "最初の31ポイント",
+                        "時間短縮"
+                    ]
+                }
+            },
+            "help": {
+                "objective": {
+                    "title": "目標の理解方法",
+                    "description": [
+                        "クリブボードの目標は、目標スコア、通常121点に最初に到達するプレイヤーになることです。",
+                        "勝者が出るまで、ゲームは3つの明確なパートから成り立っています。"
+                    ]
+                },
+                "deal": {
+                    "title": "「取引」",
+                    "description": [
+                        "プレイヤーの数によって、各プレイヤーには5枚または6枚のカードが配られます。各プレイヤーは自分が保持したい4枚のカードを選び、残りのカードはディーラーの「クリブ」に捨てます。",
+                        "クリブは第二の手札と見なすことができ、スコアを数えるときにディーラーに追加のポイントを与えます。"
+                    ]
+                },
+                "play": {
+                    "title": "プレイ方法",
+                    "description": [
+                        "プレイヤーは手札から一枚ずつテーブルに出していきます。ラウンド中に出されたカードの合計は記録され、31を超えてはいけません。",
+                        "プレイヤーは連続したカード、ペア、合計が15になることでポイントを獲得できます。詳細はゲーム中に「スコアリングシステム」ボタンをクリックしてください。"
+                    ]
+                },
+                "show": {
+                    "title": "ショー",
+                    "description": [
+                        "みんながプレイ中に手札を全部出し終わったら、得点を数えます。ディーラーはいつも最後に数えられ、自分のクリブのポイントももらえますよ。",
+                        "プレイヤーは色々な組み合わせでポイントを獲得できます。ゲーム中に「スコアリングシステム」ボタンをクリックすると、全体の概要が見れますよ。"
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -1243,7 +1319,12 @@
             "nameTurn": "%{name}のターンだよ",
             "yourTurnBreaking": "%{extra}を壊してるよ",
             "nameTurnBreaking": "%{name}が壊れてるよ",
-            "roundCount": "現在のラウンドは%{current}、全体のラウンドは%{total}だよ"
+            "roundCount": "現在のラウンドは%{current}、全体のラウンドは%{total}だよ",
+            "dealingCards": "カードを配っています...",
+            "youPickStarterCard": "スターターカードを選ばなきゃ",
+            "namePickStarterCard": "%{name}がスターターカードを選ばなきゃ",
+            "yourCrib": "あなたのクリブ",
+            "nameCrib": "%{name}のクリブ"
         },
         "description": {
             "waitingForPlayers": "プレイヤー待ち",
@@ -1469,6 +1550,16 @@
         "includesItems": "{count}個のアイテムが含まれてるよ | {count}個のアイテムが含まれてるよ | {count}個のアイテムが含まれてるよ"
     },
     "misc": {
+        "judge": "審判",
+        "dealer": "ディーラー",
+        "slow": "遅い",
+        "normal": "普通",
+        "fast": "速い",
+        "fastest": "最速",
+        "starter": "スターター",
+        "cards": "カード",
+        "type": "タイプ",
+        "scoringSystem": "スコアリングシステム",
         "notEnoughData": "データ不足",
         "averageWaitTime": "平均待ち時間",
         "unknown": "不明",
@@ -1817,6 +1908,10 @@
         "votePickSelected": "%{option}に投票したよ",
         "inactiveOpponent": "相手は非アクティブだったよ",
         "inactiveOpponents": "全ての相手が非アクティブだったよ",
+        "waitForOpponent": "相手を待ってるよ…",
+        "waitForOpponents": "相手たちを待ってるよ…",
+        "selfNoPoints": "ポイントはゼロだよ。",
+        "nameNoPoints": "%{name}はポイントゼロだよ。",
         "gameMenu": "他のゲームをやりたい気分？",
         "forfeit": "ゲームを投げると、あなたの負けになるよ。",
         "unsavedChanges": "保存してない変更があるんだけど、進むと全部消えちゃうよ。",
@@ -1832,6 +1927,7 @@
         "customizePreset": "このプリセットを好みに合わせてカスタマイズしてね。",
         "loginToPurchase": "購入するには、まずログインするかアカウントを作成する必要があります。",
         "seasonalItem": "このスロットのアイテムは年に数日しか利用できません。",
+        "cardInteractHint": "選ぶカードをクリックしてね。",
         "awaitingPurchaseConfirmation": {
             "title": "購入確認待ち",
             "description": "だいたい数秒で終わるよ。でも、支払い方法によってはもうちょっと時間かかるかもね。この画面を閉じても大丈夫だよ。"
@@ -1936,6 +2032,70 @@
             "logoutGloballyCompleted": "あなたのアカウントは全てのデバイスからログアウトされたよ。",
             "verificationEmail": "認証コードが含まれたメールが送信されたよ。",
             "noEmail": "メールがない？迷惑メールフォルダをチェックして、このメールアドレスがあなたのアカウントにリンクされていることを確認してね。"
+        },
+        "cribbage": {
+            "type": {
+                "oneForHisNob": {
+                    "title": "彼のノブのための1点",
+                    "description": "スターターと同じジャックのスーツを持っていると%{points}ポイントがもらえるよ。"
+                },
+                "fifteen": {
+                    "title": "フィフティーン",
+                    "description": "カードの組み合わせが15になると%{points}ポイントがもらえるよ。同じカードを何度でも使って組み合わせを作れるんだよ。",
+                    "playDescription": "カードを追加して合計が15になったら%{points}ポイントをあげるよ。"
+                },
+                "pair": {
+                    "title": "ペア",
+                    "description": "同じランクのカードが2枚あると%{points}ポイントもらえるよ。",
+                    "playDescription": "同じランクのカードを出した時に%{points}ポイントを獲得するよ。"
+                },
+                "pairRoyal": {
+                    "title": "ロイヤルペア",
+                    "description": "同じランクのカードが3枚あると%{points}ポイントもらえるよ。",
+                    "playDescription": "最後の2枚のカードと同じランクのカードを追加すると%{points}ポイントがもらえるよ。"
+                },
+                "doublePairRoyal": {
+                    "title": "ダブルペアロイヤル",
+                    "description": "同じランクのカードが4枚あると%{points}ポイントもらえるよ。",
+                    "playDescription": "最後の3枚のカードと同じランクのカードを追加すると%{points}ポイント獲得だよ。"
+                },
+                "run": {
+                    "title": "ラン",
+                    "description": "シーケンス内の各カードに%{points}のポイントを与えるよ。",
+                    "playDescription": "シーケンス内の各カードに%{points}を授与します。カードは順番通りである必要はありませんが、まとめている必要があります。例えば、最後の数枚のカードを取って並べ替えると、それらは途切れることなく数え上げるべきです。"
+                },
+                "flush": {
+                    "title": "4枚のフラッシュ",
+                    "description": "手札のカードが全て同じスートだったら%{points}ポイントもらえるよ。ただし、これは手札のカードだけに適用されて、クリブとスターターカードは除外されるんだよ。"
+                },
+                "flushStarter": {
+                    "title": "フラッシュ（5枚のカード）",
+                    "description": "スターターカードを含む手札のすべてのカードが同じスートだったら%{points}ポイントを獲得できるよ。ただし、これはクリブを除いた手札にだけ適用されるんだからね。"
+                }
+            },
+            "title": {
+                "hand": "ハンド",
+                "show": "ショー",
+                "play": "プレイ",
+                "crib": "クリブ"
+            },
+            "yourCribSelection": "あなたのクリブに%{cards}を選んでね",
+            "nameCribSelection": "%{name}のクリブに%{cards}を選んでね",
+            "yourCribSelectionSubmit": "ハイライトされたカードをあなたのクリブに送ってね！",
+            "nameCribSelectionSubmit": "ハイライトされたカードを%{name}のクリブに送ってね！",
+            "singleSkunk": "スカンク！このプレイヤーは%{points}未満だったよ。",
+            "doubleSkunk": "ダブルスカンク！このプレイヤーは%{points}点以下だったよ。",
+            "selfJackHeelsPoints": "%{turn}がジャックを引いた！彼のヒールで%{points}点ゲットだぜ。",
+            "nameJackHeelsPoints": "%{turn}がジャックを引いた！%{name}が彼のヒールで%{points}点ゲットだぜ。",
+            "nameSelfJackHeelsPoints": "ジャックを引いたぞ！%{name}がヒールで%{points}点ゲットだぜ。",
+            "selfFinishedPlay": "プレイが終わったから%{points}点ゲットだぜ。",
+            "nameFinishedPlay": "%{name}さんがプレイを終えたから%{points}ポイントゲットだよ。",
+            "selfLastCard": "最後のカードを出したから%{points}ポイントゲットだよ。",
+            "nameLastCard": "%{name}さんが最後のカードを出したから%{points}ポイントゲットだよ。",
+            "selfCannotPlay": "使えるカードが一枚もないよ。",
+            "nameCannotPlay": "%{name}さんはプレイで使えるカードが一枚もないよ。",
+            "cardPlayBoardLimit": "このカードは使えません。ボードの値は%{limit}を超えることはできません。",
+            "sendCardsToCrib": "カードをクリブに送る"
         },
         "battleship": {
             "keyToRotate": "'R'を押して回転させてね",

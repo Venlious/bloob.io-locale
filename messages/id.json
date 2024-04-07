@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 1303,
+        "total": 1399,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1162,6 +1162,82 @@
                     ]
                 }
             }
+        },
+        "CRIBBAGE": {
+            "name": "Cribbage",
+            "heading": "Nikmati Permainan Klasik Cribbage Online",
+            "tooltip": "Uji kemampuan dan strategi kamu dalam permainan kartu ini yang disukai banyak orang melawan pemain dari seluruh dunia.",
+            "description": "Asah kecerdasanmu dan mainkan Cribbage online! Dengan sistem penilaian unik dan gameplay strategis, Cribbage menawarkan jam-jam kesenangan tak terbatas bagi penggemar game kartu.",
+            "title": "Tantang Temanmu",
+            "options": {
+                "playTime": {
+                    "title": "Waktu Bermain",
+                    "help": "Berapa lama setiap pemain punya waktu untuk memilih kartu dari tangan mereka untuk ditambahkan ke permainan yang sedang berlangsung."
+                },
+                "cribTime": {
+                    "title": "Waktu Boks Bayi",
+                    "help": "Berapa lama setiap pemain punya waktu untuk memutuskan kartu mana yang akan mereka kirim ke tempat tidur bayi."
+                },
+                "starterCardTime": {
+                    "title": "Waktu Kartu Awal",
+                    "help": "Berapa lama pemain yang dipilih harus memilih kartu awal dari tumpukan. Kartu awal digunakan sebagai kartu kelima saat menghitung skor untuk semua tangan dan tempat penyimpanan kartu."
+                },
+                "revealSpeed": {
+                    "title": "Kecepatan Penyingkapan",
+                    "help": "Seberapa cepat skor diumumkan di akhir ronde."
+                },
+                "dealerExtraCard": {
+                    "title": "Kartu Ekstra Bandar",
+                    "help": "Ketika diaktifkan dalam permainan 3 pemain, si dealer mendapatkan kartu crib tambahan. Ketika dinonaktifkan, kartu keempat langsung pergi ke crib secara otomatis."
+                },
+                "winCondition": {
+                    "title": "Kondisi Menang",
+                    "help": "Tentukan kapan game harus diakhiri.",
+                    "data": {
+                        "FIRST": "Pertama kali mencapai <b>0</b> poin | Pertama kali mencapai <b>1</b> poin | Pertama kali mencapai <b>{count}</b> poin",
+                        "HIGHEST_AFTER_FIRST": "Poin terbanyak setelah mencapai <b>0</b> poin | Poin terbanyak setelah mencapai <b>1</b> poin | Poin terbanyak setelah mencapai <b>{count}</b> poin"
+                    }
+                }
+            },
+            "presets": {
+                "blitz": {
+                    "title": "Blitz",
+                    "description": [
+                        "Pertama sampai 31 poin",
+                        "Waktu dikurangi"
+                    ]
+                }
+            },
+            "help": {
+                "objective": {
+                    "title": "Memahami Tujuan",
+                    "description": [
+                        "Tujuan dari Cribbage adalah menjadi pemain pertama yang mencapai skor target, biasanya 121 poin.",
+                        "Game ini terdiri dari tiga bagian berbeda yang akan terus berlangsung sampai ada pemenangnya."
+                    ]
+                },
+                "deal": {
+                    "title": "Kesepakatan",
+                    "description": [
+                        "Setiap pemain dibagikan 5 atau 6 kartu, tergantung berapa banyak pemainnya. Setiap pemain harus memilih 4 kartu yang mereka ingin simpan dan buang kartu lainnya ke \"crib\", yang merupakan milik dealer.",
+                        "\"Crib\" bisa dilihat sebagai tangan kedua, yang akan memberikan poin tambahan untuk dealer saat menghitung skor."
+                    ]
+                },
+                "play": {
+                    "title": "Mainannya",
+                    "description": [
+                        "Pemain bergantian memainkan satu kartu dari tangan mereka ke meja. Jumlah kartu yang dimainkan dihitung selama putaran dan harus tetap di bawah 31.",
+                        "Pemain bisa mendapatkan poin dengan urutan, pasangan, dan dengan menjumlahkan hingga 15. Klik tombol \"Sistem Penilaian\" saat di game untuk melihat keseluruhan."
+                    ]
+                },
+                "show": {
+                    "title": "Pertunjukan",
+                    "description": [
+                        "Setelah semua pemain mengosongkan tangan mereka selama permainan, skor dihitung. Dealer selalu dihitung terakhir dan juga akan menerima poin untuk crib mereka.",
+                        "Pemain bisa mendapatkan poin untuk berbagai kombinasi. Klik tombol \"Sistem Penilaian\" saat di dalam game untuk melihat keseluruhan."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -1243,7 +1319,12 @@
             "nameTurn": "Giliran %{name}",
             "yourTurnBreaking": "Kamu sedang merusak %{extra}",
             "nameTurnBreaking": "%{name} lagi rusak",
-            "roundCount": "Ronde %{current} dari %{total}"
+            "roundCount": "Ronde %{current} dari %{total}",
+            "dealingCards": "Lagi bagi-bagi kartu nih...",
+            "youPickStarterCard": "Kamu harus pilih kartu awal",
+            "namePickStarterCard": "%{name} harus pilih kartu awal",
+            "yourCrib": "Kartu milikmu",
+            "nameCrib": "Kartu milik %{name}"
         },
         "description": {
             "waitingForPlayers": "Menunggu pemain",
@@ -1469,6 +1550,16 @@
         "includesItems": "Termasuk {count} item | Termasuk {count} item | Termasuk {count} item"
     },
     "misc": {
+        "judge": "Hakim",
+        "dealer": "Pedagang",
+        "slow": "Lambat",
+        "normal": "Normal",
+        "fast": "Cepat",
+        "fastest": "Tercepat",
+        "starter": "Pemula",
+        "cards": "Kartu",
+        "type": "Tipe",
+        "scoringSystem": "Sistem Penilaian",
         "notEnoughData": "Data tidak cukup",
         "averageWaitTime": "Waktu tunggu rata-rata",
         "unknown": "Tidak diketahui",
@@ -1817,6 +1908,10 @@
         "votePickSelected": "Kamu udah milih %{option}",
         "inactiveOpponent": "Lawanmu nggak aktif",
         "inactiveOpponents": "Semua lawan nggak aktif",
+        "waitForOpponent": "Nunggu lawanmu...",
+        "waitForOpponents": "Nunggu lawan-lawanmu....",
+        "selfNoPoints": "Kamu nggak dapet poin.",
+        "nameNoPoints": "%{name} nggak dapet poin.",
         "gameMenu": "Pengen main game lain?",
         "forfeit": "Kalau kamu menyerah, kamu bakal kalah nih.",
         "unsavedChanges": "Ada perubahan yang belum disimpan, nanti bakal hilang kalau kamu lanjut.",
@@ -1832,6 +1927,7 @@
         "customizePreset": "Sesuaikan preset ini sesuai selera kamu.",
         "loginToPurchase": "Buat belanja, kamu harus login atau buat akun dulu.",
         "seasonalItem": "Barang di slot ini cuma tersedia beberapa hari dalam setahun.",
+        "cardInteractHint": "Klik kartu untuk pilihannya.",
         "awaitingPurchaseConfirmation": {
             "title": "Menunggu Konfirmasi Pembelian",
             "description": "Biasanya ini hanya butuh beberapa detik. Tergantung metode pembayaranmu, ini bisa memakan waktu lebih lama. Silakan tutup layar ini."
@@ -1936,6 +2032,70 @@
             "logoutGloballyCompleted": "Akunmu telah di-logout dari semua perangkat.",
             "verificationEmail": "Email dengan kode verifikasi telah dikirim.",
             "noEmail": "Tidak ada email? Cek folder spammu dan konfirmasi bahwa alamat email ini terhubung dengan akunmu."
+        },
+        "cribbage": {
+            "type": {
+                "oneForHisNob": {
+                    "title": "Satu untuk si bangsawan",
+                    "description": "Memberikan %{points} untuk memiliki jack dengan suit yang sama seperti kartu awal."
+                },
+                "fifteen": {
+                    "title": "Lima Belas",
+                    "description": "Memberikan %{points} untuk setiap kombinasi kartu yang jumlahnya 15. Kartu yang sama bisa digunakan lagi untuk kombinasi lainnya.",
+                    "playDescription": "Memberikan %{points} untuk menambahkan kartu yang membuat totalnya menjadi 15."
+                },
+                "pair": {
+                    "title": "Pasangan",
+                    "description": "Memberikan %{points} untuk memiliki dua kartu dengan peringkat yang sama.",
+                    "playDescription": "Memberikan %{points} untuk menambahkan kartu dengan peringkat yang sama seperti yang baru saja dimainkan."
+                },
+                "pairRoyal": {
+                    "title": "Tiga Pasangan",
+                    "description": "Memberikan %{points} untuk punya tiga kartu dengan peringkat yang sama.",
+                    "playDescription": "Memberikan %{points} untuk menambahkan kartu dengan peringkat yang sama seperti dua kartu terakhir."
+                },
+                "doublePairRoyal": {
+                    "title": "Empat Pasangan Kerajaan",
+                    "description": "Memberikan %{points} untuk punya empat kartu dengan peringkat yang sama.",
+                    "playDescription": "Memberikan %{points} untuk menambahkan kartu dengan peringkat yang sama seperti tiga kartu terakhir."
+                },
+                "run": {
+                    "title": "Lari",
+                    "description": "Memberikan %{points} untuk setiap kartu dalam urutan tersebut.",
+                    "playDescription": "Memberikan %{points} untuk setiap kartu dalam urutan. Kartu-kartu ini tidak perlu berurutan, tapi harus dikelompokkan bersama. Sebagai contoh, jika kamu mengambil beberapa kartu terakhir dan mengatur ulang mereka dalam urutan, mereka harus dihitung tanpa terputus."
+                },
+                "flush": {
+                    "title": "Flush (4 kartu)",
+                    "description": "Memberi %{points} jika semua kartu di tanganmu memiliki jenis yang sama. Ini hanya berlaku untuk kartu di tanganmu, tidak termasuk kartu crib dan kartu starter."
+                },
+                "flushStarter": {
+                    "title": "Flush (5 kartu)",
+                    "description": "Memberi %{points} jika semua kartu di tanganmu + kartu starter adalah dari jenis yang sama. Ini hanya berlaku untuk kartu di tanganmu, tidak termasuk crib."
+                }
+            },
+            "title": {
+                "hand": "Tangan",
+                "show": "Tunjukkan",
+                "play": "Main",
+                "crib": "Boks Bayi"
+            },
+            "yourCribSelection": "Pilih %{cards} untuk kotak kartumu",
+            "nameCribSelection": "Pilih %{cards} untuk kotak kartu %{name}",
+            "yourCribSelectionSubmit": "Kirim kartu yang di-highlight ke kotak kartumu!",
+            "nameCribSelectionSubmit": "Kirim kartu yang di-highlight ke kotak kartu %{name}!",
+            "singleSkunk": "Tertinggal! Pemain ini punya poin kurang dari %{points}.",
+            "doubleSkunk": "Dikalahkan dua kali lipat! Pemain ini punya poin kurang dari %{points}.",
+            "selfJackHeelsPoints": "%{turn} mengambil Jack! Kamu dapat %{points} untuk tumitnya.",
+            "nameJackHeelsPoints": "%{turn} mengambil Jack! %{name} dapat %{points} untuk tumitnya.",
+            "nameSelfJackHeelsPoints": "Kamu mengambil Jack! %{name} dapat %{points} untuk tumitnya.",
+            "selfFinishedPlay": "Kamu dapat %{points} karena telah menyelesaikan permainan.",
+            "nameFinishedPlay": "%{name} dapet %{points} karena udah selesai main.",
+            "selfLastCard": "Kamu dapet %{points} karena udah mainin kartu terakhir.",
+            "nameLastCard": "%{name} dapet %{points} karena udah mainin kartu terakhir.",
+            "selfCannotPlay": "Kamu nggak punya kartu yang bisa dipake buat main.",
+            "nameCannotPlay": "%{name} nggak punya kartu yang bisa dipake buat main.",
+            "cardPlayBoardLimit": "Kartu ini nggak bisa dimainkan. Nilai papan nggak boleh melebihi %{limit}.",
+            "sendCardsToCrib": "Kirim Kartu ke Crib"
         },
         "battleship": {
             "keyToRotate": "Tekan 'R' buat muter",

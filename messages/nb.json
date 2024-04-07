@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Norwegian (Bokmål)",
         "rtl": false,
-        "total": 1303,
+        "total": 1399,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1162,6 +1162,82 @@
                     ]
                 }
             }
+        },
+        "CRIBBAGE": {
+            "name": "Cribbage",
+            "heading": "Nyt Klassisk Cribbage Online",
+            "tooltip": "Test dine ferdigheter og strategi i dette elskede kortspillet mot spillere over hele verden.",
+            "description": "Skjerp vettet og spill Cribbage online! Med sitt unike poengsystem og strategiske spill, tilbyr Cribbage uendelige timer med moro for kortspillentusiaster.",
+            "title": "Utfordre vennene dine",
+            "options": {
+                "playTime": {
+                    "title": "Spilletid",
+                    "help": "Hvor lang tid hver spiller har til å velge et kort fra hånden sin for å legge til i det pågående spillet."
+                },
+                "cribTime": {
+                    "title": "Tid i sprinkelseng",
+                    "help": "Hvor lang tid hver spiller har til å bestemme hvilke kort de vil sende til krybben."
+                },
+                "starterCardTime": {
+                    "title": "Startkorttid",
+                    "help": "Hvor lenge den valgte spilleren har til å plukke startkortet fra bunken. Startkortet brukes som et femte kort når det kommer til å regne ut poengene for alle hender og krybbe."
+                },
+                "revealSpeed": {
+                    "title": "Avsløringshastighet",
+                    "help": "Hvor fort poengene vises på slutten av en runde."
+                },
+                "dealerExtraCard": {
+                    "title": "Forhandler Ekstra Kort",
+                    "help": "Når dette er aktivert i 3-spiller spill, får dealeren et ekstra crib-kort. Når det er deaktivert, går det fjerde kortet automatisk til cribben."
+                },
+                "winCondition": {
+                    "title": "Vinnende Betingelse",
+                    "help": "Bestem når spillet skal avsluttes.",
+                    "data": {
+                        "FIRST": "Første til å nå <b>0</b> poeng | Første til å nå <b>1</b> poeng | Første til å nå <b>{count}</b> poeng",
+                        "HIGHEST_AFTER_FIRST": "Flest poeng etter at <b>0</b> poeng er nådd | Flest poeng etter at <b>1</b> poeng er nådd | Flest poeng etter at <b>{count}</b> poeng er nådd"
+                    }
+                }
+            },
+            "presets": {
+                "blitz": {
+                    "title": "Blits",
+                    "description": [
+                        "Først til 31 poeng",
+                        "Reduserte tider"
+                    ]
+                }
+            },
+            "help": {
+                "objective": {
+                    "title": "Forstå Målet",
+                    "description": [
+                        "Målet med Cribbage er å være den første spilleren som når målscoren, som vanligvis er 121 poeng.",
+                        "Spillet består av tre forskjellige deler som vil fortsette å skje til det er en vinner."
+                    ]
+                },
+                "deal": {
+                    "title": "Avtalen",
+                    "description": [
+                        "Hver spiller får utdelt 5 eller 6 kort, avhengig av hvor mange spillere det er. Hver spiller må velge 4 kort de vil beholde og kaste de andre til \"krybben\", som tilhører giveren.",
+                        "Krybben kan ses på som en ekstra hånd, som vil gi giveren ekstra poeng når det kommer til å telle poengene."
+                    ]
+                },
+                "play": {
+                    "title": "Spillet",
+                    "description": [
+                        "Spillerne tar etter tur å spille ett kort om gangen fra hånden sin på bordet. Summen av kortene som spilles blir holdt styr på under runden og må holde seg under 31.",
+                        "Spillere kan tjene poeng med sekvenser, par, og ved å få summen til 15. Klikk på \"Poengsystem\" knappen mens du spiller for en full oversikt."
+                    ]
+                },
+                "show": {
+                    "title": "Showet",
+                    "description": [
+                        "Etter at alle spillerne har tømt hendene sine under spillet, telles poengene. Dealern telles alltid sist og vil også få poeng for sin crib.",
+                        "Spillere kan tjene poeng for forskjellige kombinasjoner. Klikk på \"Poengsystem\" knappen mens du er i spillet for en full oversikt."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -1243,7 +1319,12 @@
             "nameTurn": "%{name}s tur",
             "yourTurnBreaking": "Du bryter %{extra}",
             "nameTurnBreaking": "%{name} bryter",
-            "roundCount": "Runde %{current} av %{total}"
+            "roundCount": "Runde %{current} av %{total}",
+            "dealingCards": "Deler ut kort...",
+            "youPickStarterCard": "Du må velge startkortet",
+            "namePickStarterCard": "%{name} må velge startkortet",
+            "yourCrib": "Din krybbe",
+            "nameCrib": "%{name}s krybbe"
         },
         "description": {
             "waitingForPlayers": "Venter på spillere",
@@ -1469,6 +1550,16 @@
         "includesItems": "Inkluderer {count} ting | Inkluderer {count} ting | Inkluderer {count} ting"
     },
     "misc": {
+        "judge": "Dommer",
+        "dealer": "Forhandler",
+        "slow": "Sakte",
+        "normal": "Normal",
+        "fast": "Rask",
+        "fastest": "Raskest",
+        "starter": "Starter",
+        "cards": "Kort",
+        "type": "Type",
+        "scoringSystem": "Poengsystem",
         "notEnoughData": "Ikke nok data",
         "averageWaitTime": "Gjennomsnittlig ventetid",
         "unknown": "Ukjent",
@@ -1817,6 +1908,10 @@
         "votePickSelected": "Du stemte på %{option}",
         "inactiveOpponent": "Motstanderen din var inaktiv",
         "inactiveOpponents": "Alle motstandere var inaktive",
+        "waitForOpponent": "Venter på motstanderen din...",
+        "waitForOpponents": "Venter på motstanderne dine....",
+        "selfNoPoints": "Du fikk ingen poeng.",
+        "nameNoPoints": "%{name} fikk ingen poeng.",
         "gameMenu": "Har du lyst til å spille noe annet?",
         "forfeit": "Hvis du gir opp spillet, vil det resultere i et tap for deg.",
         "unsavedChanges": "Du har ulagrede endringer som vil bli slettet hvis du fortsetter.",
@@ -1832,6 +1927,7 @@
         "customizePreset": "Tilpass denne forhåndsinnstillingen etter din smak.",
         "loginToPurchase": "For å gjøre et kjøp må du først logge inn eller opprette en konto.",
         "seasonalItem": "En gjenstand i denne plassen er bare tilgjengelig noen få dager i året.",
+        "cardInteractHint": "Klikk på et kort for å gjøre valget ditt.",
         "awaitingPurchaseConfirmation": {
             "title": "Venter på kjøpsbekreftelse",
             "description": "Dette tar vanligvis bare noen sekunder. Avhengig av betalingsmetoden din kan det ta lenger tid. Du kan trygt lukke denne skjermen."
@@ -1936,6 +2032,70 @@
             "logoutGloballyCompleted": "Kontoen din har blitt logget ut fra alle enheter.",
             "verificationEmail": "En e-post med en verifiseringskode er sendt.",
             "noEmail": "Ingen e-post? Sjekk søppelpostmappen din og bekreft at denne e-postadressen er koblet til kontoen din."
+        },
+        "cribbage": {
+            "type": {
+                "oneForHisNob": {
+                    "title": "En for hans adelsmann",
+                    "description": "Gir %{points} for å ha samme knekt-drakt som starteren."
+                },
+                "fifteen": {
+                    "title": "Femten",
+                    "description": "Gir %{points} for enhver kombinasjon av kort hvor summen er 15. De samme kortene kan brukes om igjen for flere kombinasjoner.",
+                    "playDescription": "Gir %{points} for å legge til et kort som gir totalt 15."
+                },
+                "pair": {
+                    "title": "Par",
+                    "description": "Gir %{points} for å ha to kort med samme rang.",
+                    "playDescription": "Gir %{points} for å legge til et kort med samme rang som nettopp ble spilt."
+                },
+                "pairRoyal": {
+                    "title": "Konge-par",
+                    "description": "Gir %{points} for å ha tre kort med samme rang.",
+                    "playDescription": "Gir %{points} for å legge til et kort med samme rang som de to siste kortene."
+                },
+                "doublePairRoyal": {
+                    "title": "Dobbel Par Royal",
+                    "description": "Gir %{points} for å ha fire kort av samme rang.",
+                    "playDescription": "Gir %{points} for å legge til et kort med samme rang som de tre siste kortene."
+                },
+                "run": {
+                    "title": "Serie",
+                    "description": "Gir %{points} for hvert kort i sekvensen.",
+                    "playDescription": "Gir %{points} for hvert kort i sekvensen. Kortene trenger ikke å være i orden, men de må være gruppert sammen. For eksempel, hvis du tar de siste kortene og ordner dem i rekkefølge, skal de telle opp uten avbrudd."
+                },
+                "flush": {
+                    "title": "Flush (4 kort)",
+                    "description": "Gir deg %{points} hvis alle kortene i hånda di er av samme sort. Dette gjelder bare for kortene i hånda di, utenom krybben og startkortet."
+                },
+                "flushStarter": {
+                    "title": "Flush (5 kort)",
+                    "description": "Gir deg %{points} hvis alle kortene i hånden din + startkortet er av samme sort. Dette gjelder bare for kortene i hånden din, utenom cribben."
+                }
+            },
+            "title": {
+                "hand": "Hånd",
+                "show": "Vis",
+                "play": "Spill",
+                "crib": "Barneseng"
+            },
+            "yourCribSelection": "Velg %{cards} til din krybbe",
+            "nameCribSelection": "Velg %{cards} til %{name}s krybbe",
+            "yourCribSelectionSubmit": "Send de uthevede kortene til din krybbe!",
+            "nameCribSelectionSubmit": "Send de uthevede kortene til %{name}s krybbe!",
+            "singleSkunk": "Skunket! Denne spilleren hadde mindre enn %{points}.",
+            "doubleSkunk": "Dobbel stinkdyr! Denne spilleren hadde mindre enn %{points}.",
+            "selfJackHeelsPoints": "%{turn} trakk en knekt! Du får %{points} for hælene hans.",
+            "nameJackHeelsPoints": "%{turn} trakk en knekt! %{name} får %{points} for hælene hans.",
+            "nameSelfJackHeelsPoints": "Du trakk en knekt! %{name} får %{points} for hælene dine.",
+            "selfFinishedPlay": "Du får %{points} for å ha avsluttet spillet.",
+            "nameFinishedPlay": "%{name} får %{points} for å ha avsluttet spillet.",
+            "selfLastCard": "Du får %{points} for å ha spilt det siste kortet.",
+            "nameLastCard": "%{name} får %{points} for å ha spilt det siste kortet.",
+            "selfCannotPlay": "Ingen av kortene dine kan brukes i spillet.",
+            "nameCannotPlay": "%{name} har ingen kort som kan brukes i spillet.",
+            "cardPlayBoardLimit": "Dette kortet kan ikke spilles. Brettets verdi kan ikke overstige %{limit}.",
+            "sendCardsToCrib": "Send kort til Crib"
         },
         "battleship": {
             "keyToRotate": "Trykk 'R' for å rotere",
