@@ -327,6 +327,36 @@ export default class TranslationClass {
 			[`info`, `yacht`, `description`],
 			`These are Yacht/Yahtzee gaming terminology descriptions.`
 		)
+		this.generateTranslationTask(
+			[`info`, `cribbage`],
+			`These are Cribbage board game related messages and actions.`
+		)
+		this.generateTranslationTask(
+			[`info`, `cribbage`, `title`],
+			`These are Cribbage board game related terminologies.`
+		)
+		const cribbageTypes = Object.keys(EN_MESSAGES[`info`][`cribbage`][`type`])
+		for (const type of cribbageTypes) {
+			const target = EN_MESSAGES[`info`][`cribbage`][`type`][type]
+			if (target.title) {
+				this.generateTranslationTask(
+					[`info`, `cribbage`, `type`, type, `title`],
+					`This translation is a Cribbage score title.`
+				)
+			}
+			if (target.description) {
+				this.generateTranslationTask(
+					[`info`, `cribbage`, `type`, type, `description`],
+					`This translation is a Cribbage score description.`
+				)
+			}
+			if (target.playDescription) {
+				this.generateTranslationTask(
+					[`info`, `cribbage`, `type`, type, `playDescription`],
+					`This translation is a Cribbage score description if it were used in a play.`
+				)
+			}
+		}
 
 		/**
 		 * Chat messsages
