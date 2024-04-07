@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Polish",
         "rtl": false,
-        "total": 1303,
+        "total": 1399,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1162,6 +1162,82 @@
                     ]
                 }
             }
+        },
+        "CRIBBAGE": {
+            "name": "Krybiński",
+            "heading": "Ciesz Się Klasycznym Cribbage Online",
+            "tooltip": "Sprawdź swoje umiejętności i strategię w tej ukochanej grze karcianej przeciwko graczom z całego świata.",
+            "description": "Ostrzyj swój umysł i graj w Cribbage online! Dzięki unikalnemu systemowi punktacji i strategicznej rozgrywce, Cribbage oferuje nieskończone godziny zabawy dla entuzjastów gier karcianych.",
+            "title": "Wyzwij Swoich Przyjaciół",
+            "options": {
+                "playTime": {
+                    "title": "Czas Gry",
+                    "help": "Jak długo każdy gracz ma na wybranie karty z ręki, żeby dołożyć do bieżącej gry."
+                },
+                "cribTime": {
+                    "title": "Czas na kołyskę",
+                    "help": "Jak długo każdy gracz ma na podjęcie decyzji, które karty wyśle do kryjówki."
+                },
+                "starterCardTime": {
+                    "title": "Czas Startowej Karty",
+                    "help": "Jak długo wybrany gracz ma na wybranie karty startowej z talii. Karta startowa jest używana jako piąta karta, gdy chodzi o obliczanie punktów dla wszystkich układów i kryjówki."
+                },
+                "revealSpeed": {
+                    "title": "Szybkość Odkrywania",
+                    "help": "Jak szybko wyniki są pokazywane na końcu rundy."
+                },
+                "dealerExtraCard": {
+                    "title": "Dodatkowa Karta Krupiera",
+                    "help": "Gdy włączone w grach dla 3 graczy, rozdający dostaje dodatkową kartę do kołyski. Gdy wyłączone, czwarta karta automatycznie trafia do kołyski."
+                },
+                "winCondition": {
+                    "title": "Warunek Zwycięstwa",
+                    "help": "Zdecyduj, kiedy gra powinna dojść do końca.",
+                    "data": {
+                        "FIRST": "Pierwszy, który zdobędzie <b>0</b> punktów | Pierwszy, który zdobędzie <b>1</b> punkt | Pierwszy, który zdobędzie <b>{count}</b> punktów",
+                        "HIGHEST_AFTER_FIRST": "Najwięcej punktów po zdobyciu <b>0</b> punktów | Najwięcej punktów po zdobyciu <b>1</b> punktu | Najwięcej punktów po zdobyciu <b>{count}</b> punktów"
+                    }
+                }
+            },
+            "presets": {
+                "blitz": {
+                    "title": "Błyskawica",
+                    "description": [
+                        "Pierwszy do 31 punktów",
+                        "Skrócone czasy"
+                    ]
+                }
+            },
+            "help": {
+                "objective": {
+                    "title": "Zrozumienie Celu",
+                    "description": [
+                        "Celem gry w Cribbage jest być pierwszym graczem, który osiągnie wymaganą ilość punktów, zazwyczaj 121.",
+                        "Gra składa się z trzech różnych części, które będą się powtarzać, aż znajdziemy zwycięzcę."
+                    ]
+                },
+                "deal": {
+                    "title": "Układ",
+                    "description": [
+                        "Każdy gracz dostaje 5 albo 6 kart, w zależności od ilości graczy. Każdy gracz musi wybrać 4 karty, które chce zatrzymać, a resztę odrzucić do \"kołyski\", która należy do rozdającego.",
+                        "Kołyska to jakby druga ręka, która da dodatkowe punkty rozdającemu, kiedy przyjdzie czas na liczenie punktów."
+                    ]
+                },
+                "play": {
+                    "title": "Zagraj",
+                    "description": [
+                        "Gracze na zmianę wykładają po jednej karcie ze swojej ręki na stół. Suma wyłożonych kart jest śledzona podczas rundy i musi być poniżej 31.",
+                        "Gracze mogą zdobywać punkty za sekwencje, pary i za osiągnięcie sumy 15. Kliknij przycisk \"System Punktacji\" podczas gry, aby zobaczyć pełny przegląd."
+                    ]
+                },
+                "show": {
+                    "title": "Występ",
+                    "description": [
+                        "Po tym, jak wszyscy gracze opróżnili swoje ręce podczas gry, liczone są punkty. Rozdający zawsze jest liczonny na końcu i otrzyma również punkty za swoją kryjówkę.",
+                        "Gracze mogą zdobywać punkty za różne kombinacje. Kliknij przycisk \"System Punktacji\" podczas gry, aby zobaczyć pełny przegląd."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -1243,7 +1319,12 @@
             "nameTurn": "Kolej %{name}",
             "yourTurnBreaking": "Łamiesz %{extra}",
             "nameTurnBreaking": "%{name} łamie",
-            "roundCount": "Runda %{current} z %{total}"
+            "roundCount": "Runda %{current} z %{total}",
+            "dealingCards": "Rozdajemy karty...",
+            "youPickStarterCard": "Musisz wybrać kartę startową",
+            "namePickStarterCard": "%{name} musi wybrać kartę startową",
+            "yourCrib": "Twoja kołyska",
+            "nameCrib": "Kołyska %{name}"
         },
         "description": {
             "waitingForPlayers": "Czekanie na graczy",
@@ -1469,6 +1550,16 @@
         "includesItems": "Zawiera {count} przedmioty | Zawiera {count} przedmiot | Zawiera {count} przedmiotów"
     },
     "misc": {
+        "judge": "Sędzia",
+        "dealer": "Sprzedawca",
+        "slow": "Wolno",
+        "normal": "Normalnie",
+        "fast": "Szybko",
+        "fastest": "Najszybszy",
+        "starter": "Startowy",
+        "cards": "Karty",
+        "type": "Typ",
+        "scoringSystem": "System punktacji",
         "notEnoughData": "Za mało danych",
         "averageWaitTime": "Średni czas oczekiwania",
         "unknown": "Nieznane",
@@ -1817,6 +1908,10 @@
         "votePickSelected": "Głosowałeś na %{option}",
         "inactiveOpponent": "Twój przeciwnik był nieaktywny",
         "inactiveOpponents": "Wszyscy przeciwnicy byli nieaktywni",
+        "waitForOpponent": "Czekam na twojego przeciwnika...",
+        "waitForOpponents": "Czekam na twoich przeciwników...",
+        "selfNoPoints": "Nie dostałeś żadnych punktów.",
+        "nameNoPoints": "%{name} nie dostał żadnych punktów.",
         "gameMenu": "Masz ochotę zagrać w coś innego?",
         "forfeit": "Porzucenie gry skutkować będzie porażką dla ciebie.",
         "unsavedChanges": "Masz niezapisane zmiany, które zostaną usunięte, jeśli będziesz kontynuować.",
@@ -1832,6 +1927,7 @@
         "customizePreset": "Dostosuj ten preset do swojego gustu.",
         "loginToPurchase": "Żeby coś kupić, musisz się najpierw zalogować albo założyć konto.",
         "seasonalItem": "Przedmiot w tym miejscu jest dostępny tylko przez kilka dni w roku.",
+        "cardInteractHint": "Kliknij na kartę, żeby wybrać.",
         "awaitingPurchaseConfirmation": {
             "title": "Czekam na potwierdzenie zakupu",
             "description": "Zazwyczaj to trwa tylko kilka sekund. W zależności od metody płatności, może to potrwać dłużej. Śmiało możesz zamknąć ten ekran."
@@ -1936,6 +2032,70 @@
             "logoutGloballyCompleted": "Twoje konto zostało wylogowane ze wszystkich urządzeń.",
             "verificationEmail": "E-mail z kodem weryfikacyjnym został wysłany.",
             "noEmail": "Brak emaila? Sprawdź folder ze spamem i potwierdź, że ten adres email jest powiązany z Twoim kontem."
+        },
+        "cribbage": {
+            "type": {
+                "oneForHisNob": {
+                    "title": "Jeden za jego szlachcica",
+                    "description": "Daje ci %{points} punktów za to, że twój walet ma taki sam kolor jak karta startowa."
+                },
+                "fifteen": {
+                    "title": "Piętnaście",
+                    "description": "Daje %{points} za dowolną kombinację kart, której suma wynosi 15. Te same karty mogą być używane do wielu kombinacji.",
+                    "playDescription": "Nagradza %{points} za dodanie karty, która daje w sumie 15."
+                },
+                "pair": {
+                    "title": "Para",
+                    "description": "Daje %{points} za posiadanie dwóch kart tej samej rangi.",
+                    "playDescription": "Nagradza %{points} za dodanie karty o tej samej randze, którą właśnie zagrałeś."
+                },
+                "pairRoyal": {
+                    "title": "Królewski Para",
+                    "description": "Daje %{points} za posiadanie trzech kart tej samej rangi.",
+                    "playDescription": "Daje ci %{points} punktów za dobieranie karty tej samej rangi co dwie ostatnie karty."
+                },
+                "doublePairRoyal": {
+                    "title": "Podwójna Królewska Para",
+                    "description": "Daje %{points} za posiadanie czterech kart tej samej rangi.",
+                    "playDescription": "Nagradza %{points} za dodanie karty o tej samej randze co ostatnie trzy karty."
+                },
+                "run": {
+                    "title": "Seria",
+                    "description": "Nagradza %{points} za każdą kartę w sekwencji.",
+                    "playDescription": "Nagradza %{points} za każdą kartę w sekwencji. Karty nie muszą być w kolejności, ale muszą być zebrane razem. Na przykład, jeśli weźmiesz kilka ostatnich kart i ułożysz je w kolejności, powinny się sumować bez przerwy."
+                },
+                "flush": {
+                    "title": "Kolor (4 karty)",
+                    "description": "Daje ci %{points}, jeśli wszystkie karty w twojej ręce są tego samego koloru. Dotyczy to tylko kart w twojej ręce, nie licząc kryjówki i karty startowej."
+                },
+                "flushStarter": {
+                    "title": "Kolor (5 kart)",
+                    "description": "Daje ci %{points}, jeśli wszystkie karty w twojej ręce + karta startowa są tego samego koloru. Dotyczy to tylko kart w twojej ręce, nie licząc kryjówki."
+                }
+            },
+            "title": {
+                "hand": "Ręka",
+                "show": "Pokaż",
+                "play": "Graj",
+                "crib": "Kołyska"
+            },
+            "yourCribSelection": "Wybierz %{cards} do swojego łóżeczka",
+            "nameCribSelection": "Wybierz %{cards} do łóżeczka %{name}",
+            "yourCribSelectionSubmit": "Wyślij zaznaczone karty do swojego łóżeczka!",
+            "nameCribSelectionSubmit": "Wyślij zaznaczone karty do łóżeczka %{name}!",
+            "singleSkunk": "Skunks! Ten gracz miał mniej niż %{points}.",
+            "doubleSkunk": "Podwójny skunks! Ten gracz miał mniej niż %{points}.",
+            "selfJackHeelsPoints": "%{turn} wyciągnął waleta! Dostajesz %{points} za jego pięty.",
+            "nameJackHeelsPoints": "%{turn} wyciągnął waleta! %{name} dostaje %{points} za jego pięty.",
+            "nameSelfJackHeelsPoints": "Wyciągnąłeś waleta! %{name} dostaje %{points} za jego pięty.",
+            "selfFinishedPlay": "Dostajesz %{points} za zakończenie gry.",
+            "nameFinishedPlay": "%{name} dostaje %{points} za zakończenie gry.",
+            "selfLastCard": "Dostajesz %{points} za zagranie ostatniej karty.",
+            "nameLastCard": "%{name} dostaje %{points} za zagranie ostatniej karty.",
+            "selfCannotPlay": "Żadna z twoich kart nie może być użyta w grze.",
+            "nameCannotPlay": "%{name} nie ma żadnych kart, które mogą być użyte w grze.",
+            "cardPlayBoardLimit": "Nie możesz zagrać tą kartą. Wartość na planszy nie może przekroczyć %{limit}.",
+            "sendCardsToCrib": "Wyślij karty do kołyski."
         },
         "battleship": {
             "keyToRotate": "Naciśnij 'R', żeby obrócić",

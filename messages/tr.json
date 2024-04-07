@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 1303,
+        "total": 1399,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1162,6 +1162,82 @@
                     ]
                 }
             }
+        },
+        "CRIBBAGE": {
+            "name": "Cribbage",
+            "heading": "Klasik Cribbage'ı Online Olarak Keyfini Çıkarın",
+            "tooltip": "Dünya çapında oyunculara karşı sevilen bu kart oyununda becerilerini ve stratejini test et.",
+            "description": "Zekanızı bileyleyin ve Cribbage'ı çevrimiçi oynayın! Benzersiz puanlama sistemi ve stratejik oyun tarzıyla, Cribbage kart oyunu meraklılarına sonsuz eğlence sunar.",
+            "title": "Arkadaşlarınıza Meydan Okuyun",
+            "options": {
+                "playTime": {
+                    "title": "Oynama Süresi",
+                    "help": "Her oyuncunun elinden bir kart seçip devam eden oyununa eklemek için ne kadar süresi var."
+                },
+                "cribTime": {
+                    "title": "Bebek Yatağı Zamanı",
+                    "help": "Her oyuncunun hangi kartları beşiğe göndereceğine karar vermek için ne kadar süresi olduğu."
+                },
+                "starterCardTime": {
+                    "title": "Başlangıç Kartı Süresi",
+                    "help": "Seçilen oyuncunun desteden başlangıç kartını seçmek için ne kadar süresi olduğunu. Başlangıç kartı, tüm ellerin ve beşiğin skorlarını hesaplarken beşinci kart olarak kullanılır."
+                },
+                "revealSpeed": {
+                    "title": "Açığa Çıkma Hızı",
+                    "help": "Bir turun sonunda skorun ne kadar hızlı açığa çıktığı."
+                },
+                "dealerExtraCard": {
+                    "title": "Krupiyenin Ekstra Kartı",
+                    "help": "3 oyunculu oyunlarda etkinleştirildiğinde, dağıtıcıya ekstra bir beşik kartı verilir. Devre dışı bırakıldığında, dördüncü kart otomatik olarak beşiğe gider."
+                },
+                "winCondition": {
+                    "title": "Kazanma Koşulu",
+                    "help": "Oyunun ne zaman sona ermesi gerektiğine karar ver.",
+                    "data": {
+                        "FIRST": "İlk <b>0</b> puana ulaşan | İlk <b>1</b> puana ulaşan | İlk <b>{count}</b> puana ulaşan",
+                        "HIGHEST_AFTER_FIRST": "<b>0</b> puan ulaşıldıktan sonra en çok puanı olan | <b>1</b> puan ulaşıldıktan sonra en çok puanı olan | <b>{count}</b> puan ulaşıldıktan sonra en çok puanı olan"
+                    }
+                }
+            },
+            "presets": {
+                "blitz": {
+                    "title": "Hücum",
+                    "description": [
+                        "İlk 31 puana ulaşan",
+                        "Azaltılmış süreler"
+                    ]
+                }
+            },
+            "help": {
+                "objective": {
+                    "title": "Amaçları Anlama",
+                    "description": [
+                        "Cribbage'in amacı, genellikle 121 puan olan hedef skora ilk ulaşan oyuncu olmaktır.",
+                        "Oyun, bir kazanan olana kadar sürekli gerçekleşen üç farklı bölümden oluşur."
+                    ]
+                },
+                "deal": {
+                    "title": "Anlaşma",
+                    "description": [
+                        "Her oyuncuya kaç kişi oynuyorsa ona bağlı olarak 5 ya da 6 kart dağıtılır. Her oyuncu hangi 4 kartı tutmak istediğine karar verir ve geri kalanları \"beşik\"e atar, bu da dağıtıcıya aittir.",
+                        "Beşik, ikinci bir el olarak görülebilir, skorları sayma zamanı geldiğinde dağıtıcıya ekstra puanlar kazandırır."
+                    ]
+                },
+                "play": {
+                    "title": "Oyun",
+                    "description": [
+                        "Oyuncular, elden birer birer kart oynayarak sırayla oynarlar. Oynanan kartların toplamı tur boyunca takip edilir ve 31'in altında olmalıdır.",
+                        "Oyuncular, sıralı kartlar, çiftler ve toplamı 15 yaparak puan kazanabilirler. Tam bir genel bakış için oyun içindeyken \"Skorlama Sistemi\" düğmesine tıklayın."
+                    ]
+                },
+                "show": {
+                    "title": "Şov",
+                    "description": [
+                        "Oyun sırasında tüm oyuncular ellerini boşalttıktan sonra, puanlar sayılır. Dağıtıcı her zaman son sayılır ve ayrıca kendi beşiğine de puan alır.",
+                        "Oyuncular çeşitli kombinasyonlarla puan kazanabilir. Tam bir genel bakış için oyun içindeyken \"Skorlama Sistemi\" düğmesine tıklayın."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -1243,7 +1319,12 @@
             "nameTurn": "Sıra %{name}'de",
             "yourTurnBreaking": "Sen %{extra} kırıyorsun",
             "nameTurnBreaking": "%{name} kırılıyor",
-            "roundCount": "%{current} tur, toplam %{total} turdan"
+            "roundCount": "%{current} tur, toplam %{total} turdan",
+            "dealingCards": "Kartlar dağıtılıyor...",
+            "youPickStarterCard": "Başlangıç kartını seçmelisin",
+            "namePickStarterCard": "%{name} başlangıç kartını seçmeli",
+            "yourCrib": "Senin beşiğin",
+            "nameCrib": "%{name}'in beşiği"
         },
         "description": {
             "waitingForPlayers": "Oyuncular bekleniyor",
@@ -1469,6 +1550,16 @@
         "includesItems": "{count} öğe içerir | {count} öğe içerir | {count} öğe içerir"
     },
     "misc": {
+        "judge": "Hakem",
+        "dealer": "Satıcı",
+        "slow": "Yavaş",
+        "normal": "Normal",
+        "fast": "Hızlı",
+        "fastest": "En Hızlı",
+        "starter": "Başlangıç",
+        "cards": "Kartlar",
+        "type": "Tür",
+        "scoringSystem": "Skorlama Sistemi",
         "notEnoughData": "Yeterli veri yok",
         "averageWaitTime": "Ortalama bekleme süresi",
         "unknown": "Bilinmeyen",
@@ -1817,6 +1908,10 @@
         "votePickSelected": "Oyun %{option} için kullanıldı",
         "inactiveOpponent": "Rakibin hareketsizdi",
         "inactiveOpponents": "Tüm rakipler hareketsizdi",
+        "waitForOpponent": "Rakibini bekliyor...",
+        "waitForOpponents": "Rakiplerini bekliyor...",
+        "selfNoPoints": "Hiç puan almadın.",
+        "nameNoPoints": "%{name} hiç puan almadı.",
         "gameMenu": "Başka bir şey oynamak ister misin?",
         "forfeit": "Oyunu terk etmek senin için bir kayıp anlamına gelecek.",
         "unsavedChanges": "Kaydedilmemiş değişikliklerin var ve ilerlersen bunlar silinecek.",
@@ -1832,6 +1927,7 @@
         "customizePreset": "Bu ön ayarı istediğin gibi özelleştir.",
         "loginToPurchase": "Bir şey satın almak için önce giriş yapmalı veya bir hesap oluşturmalısın.",
         "seasonalItem": "Bu slot'taki bir eşya yılda sadece birkaç gün boyunca kullanılabilir.",
+        "cardInteractHint": "Seçimini yapmak için bir karta tıkla.",
         "awaitingPurchaseConfirmation": {
             "title": "Satın Alma Onayı Bekleniyor",
             "description": "Bu genellikle sadece birkaç saniye sürer. Ödeme yönteminize bağlı olarak daha uzun sürebilir. Bu ekranı kapatmakta özgürsünüz."
@@ -1936,6 +2032,70 @@
             "logoutGloballyCompleted": "Hesabın tüm cihazlardan çıkış yapıldı.",
             "verificationEmail": "Doğrulama kodu içeren bir e-posta gönderildi.",
             "noEmail": "E-posta yok mu? Spam klasörünü kontrol et ve bu e-posta adresinin hesabına bağlı olduğunu onayla."
+        },
+        "cribbage": {
+            "type": {
+                "oneForHisNob": {
+                    "title": "On puanlık asası",
+                    "description": "Başlangıçtaki vale ile aynı takıma sahip olmak için %{points} puan verir."
+                },
+                "fifteen": {
+                    "title": "Onbeş",
+                    "description": "Toplamı 15 olan herhangi bir kart kombinasyonu için %{points} ödül verir. Aynı kartlar birden çok kombinasyon için yeniden kullanılabilir.",
+                    "playDescription": "Toplamı 15 yapan bir kart eklediğin için %{points} ödül kazanıyorsun."
+                },
+                "pair": {
+                    "title": "Çift",
+                    "description": "Aynı rütbede iki kartı olanlara %{points} puan verir.",
+                    "playDescription": "Oynanan aynı rütbeli bir kart eklemek için %{points} ödül verir."
+                },
+                "pairRoyal": {
+                    "title": "Kral Çifti",
+                    "description": "Aynı rütbede üç kartı olanlara %{points} puan verir.",
+                    "playDescription": "Son iki kartla aynı rütbeli bir kart eklemek için %{points} ödül verir."
+                },
+                "doublePairRoyal": {
+                    "title": "Çiftli Kraliyet Çifti",
+                    "description": "Aynı rütbeden dört kartı olanlara %{points} puan verir.",
+                    "playDescription": "Son üç kartla aynı rütbeli bir kart eklediğin için %{points} puan kazanırsın."
+                },
+                "run": {
+                    "title": "Seri",
+                    "description": "Sıradaki her kart için %{points} ödül verir.",
+                    "playDescription": "Sıradaki her kart için %{points} ödül verir. Kartların sıralı olması gerekmez, ama bir arada olmaları gerekir. Örneğin, son birkaç kartı alıp sıralarsanız, kesintisiz bir şekilde sayılmalıdırlar."
+                },
+                "flush": {
+                    "title": "Dört Kartlı Renk (Flush)",
+                    "description": "Eğer elindeki tüm kartlar aynı türden ise %{points} puan kazanırsın. Bu sadece elindeki kartlar için geçerli, beşik ve başlangıç kartını hariç tutuyoruz."
+                },
+                "flushStarter": {
+                    "title": "Beşli Renk (5 kart)",
+                    "description": "Eğer elindeki tüm kartlar + başlangıç kartı aynı türden ise %{points} puan kazanırsın. Bu sadece elindeki kartlara uygulanır, beşiği hariç tutar."
+                }
+            },
+            "title": {
+                "hand": "El",
+                "show": "Göster",
+                "play": "Oyna",
+                "crib": "Beşik"
+            },
+            "yourCribSelection": "Kribin için %{cards} seç",
+            "nameCribSelection": "%{name}'in kribi için %{cards} seç",
+            "yourCribSelectionSubmit": "İşaretli kartları kribine gönder!",
+            "nameCribSelectionSubmit": "İşaretli kartları %{name}'in kribine gönder!",
+            "singleSkunk": "Skunked! Bu oyuncunun %{points}'dan az puanı vardı.",
+            "doubleSkunk": "Çifte skunk oldu! Bu oyuncunun %{points} puanından daha azı var.",
+            "selfJackHeelsPoints": "%{turn} bir vale çekti! Topukları için %{points} puan alıyorsun.",
+            "nameJackHeelsPoints": "%{turn} bir vale çekti! %{name}, topukları için %{points} puan alıyor.",
+            "nameSelfJackHeelsPoints": "Bir vale çektin! %{name}, topukların için %{points} puan alıyor.",
+            "selfFinishedPlay": "Oyunu bitirdiğin için %{points} puan alıyorsun.",
+            "nameFinishedPlay": "%{name}, oyunu bitirdiği için %{points} puan kazanıyor.",
+            "selfLastCard": "Son kartı oynadığın için %{points} puan kazanıyorsun.",
+            "nameLastCard": "%{name}, son kartı oynadığı için %{points} puan kazanıyor.",
+            "selfCannotPlay": "Oyunda kullanabileceğin bir kartın yok.",
+            "nameCannotPlay": "%{name}'nin oyunda kullanabileceği bir kartı yok.",
+            "cardPlayBoardLimit": "Bu kart oynanamaz. Tahtanın değeri %{limit}'i aşamaz.",
+            "sendCardsToCrib": "Kartları Beşiğe Gönder"
         },
         "battleship": {
             "keyToRotate": "'R'ye basarak döndür",

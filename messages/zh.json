@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 1303,
+        "total": 1399,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1162,6 +1162,82 @@
                     ]
                 }
             }
+        },
+        "CRIBBAGE": {
+            "name": "牌九",
+            "heading": "在线享受经典的纸牌游戏",
+            "tooltip": "在这款深受喜爱的卡牌游戏中，和全球的玩家一起测试你的技巧和策略。",
+            "description": "锐化你的智慧，来玩在线的Cribbage吧！凭借其独特的计分系统和策略性的游戏玩法，Cribbage为纸牌游戏爱好者提供了无尽的乐趣。",
+            "title": "挑战你的朋友们",
+            "options": {
+                "playTime": {
+                    "title": "游戏时间",
+                    "help": "每个玩家需要多长时间从他们的手牌中选一张牌来继续游戏。"
+                },
+                "cribTime": {
+                    "title": "婴儿床时间",
+                    "help": "每个玩家需要多长时间来决定他们要送到垫子上的牌。"
+                },
+                "starterCardTime": {
+                    "title": "初始卡片时间",
+                    "help": "选定的玩家从牌堆中选取起始牌的时间有多长。起始牌在计算所有手牌和垫牌的分数时用作第五张牌。"
+                },
+                "revealSpeed": {
+                    "title": "显示速度",
+                    "help": "一轮结束后，得分揭晓的速度有多快。"
+                },
+                "dealerExtraCard": {
+                    "title": "庄家额外牌",
+                    "help": "当在3人游戏中启用时，发牌者会多得到一张垫牌。当禁用时，第四张牌会自动进入垫牌。"
+                },
+                "winCondition": {
+                    "title": "胜利条件",
+                    "help": "确定游戏应该什么时候结束。",
+                    "data": {
+                        "FIRST": "首先达到<b>0</b>分 | 首先达到<b>1</b>分 | 首先达到<b>{count}</b>分",
+                        "HIGHEST_AFTER_FIRST": "达到<b>0</b>分后得分最多 | 达到<b>1</b>分后得分最多 | 达到<b>{count}</b>分后得分最多"
+                    }
+                }
+            },
+            "presets": {
+                "blitz": {
+                    "title": "闪电战",
+                    "description": [
+                        "先到31分",
+                        "减少次数"
+                    ]
+                }
+            },
+            "help": {
+                "objective": {
+                    "title": "理解游戏目标",
+                    "description": [
+                        "抓鱼的目标是成为第一个达到目标分数的玩家，通常是121分。",
+                        "游戏包括三个不同的部分，这些部分会一直进行直到有人赢。"
+                    ]
+                },
+                "deal": {
+                    "title": "交易",
+                    "description": [
+                        "根据玩家的数量，每个玩家会发到5或6张牌。每个玩家必须选择他们想要保留的4张牌，然后把其他的牌丢到“婴儿床”里，这个“婴儿床”是属于庄家的。",
+                        "“婴儿床”可以被看作是第二手牌，当计算分数的时候，它会给庄家带来额外的分数。"
+                    ]
+                },
+                "play": {
+                    "title": "游戏玩法",
+                    "description": [
+                        "玩家轮流从手中打出一张牌到桌子上。在一轮游戏中，要记住已经打出的牌的总和，这个总和不能超过31。",
+                        "玩家可以通过顺子、对子，以及使总和达到15来获得分数。在游戏中点击\"计分系统\"按钮，可以查看完整的规则。"
+                    ]
+                },
+                "show": {
+                    "title": "表演",
+                    "description": [
+                        "所有玩家在游戏中都已经打完手中的牌后，就会开始计算分数。庄家总是最后一个被计算，而且他们的庄家牌也会得分。",
+                        "玩家可以通过各种组合赚取分数。在游戏中点击\"计分系统\"按钮，可以查看完整的规则。"
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -1243,7 +1319,12 @@
             "nameTurn": "轮到%{name}了",
             "yourTurnBreaking": "你正在破坏 %{extra}",
             "nameTurnBreaking": "%{name}正在坏掉",
-            "roundCount": "第%{current}轮，总共%{total}轮"
+            "roundCount": "第%{current}轮，总共%{total}轮",
+            "dealingCards": "正在发牌...",
+            "youPickStarterCard": "你得选一张起始牌",
+            "namePickStarterCard": "%{name}得选一张起始牌",
+            "yourCrib": "你的婴儿床",
+            "nameCrib": "%{name}的婴儿床"
         },
         "description": {
             "waitingForPlayers": "等待玩家中",
@@ -1469,6 +1550,16 @@
         "includesItems": "包含 {count} 个物品 | 包含 {count} 个物品 | 包含 {count} 个物品"
     },
     "misc": {
+        "judge": "裁判",
+        "dealer": "庄家",
+        "slow": "慢",
+        "normal": "正常",
+        "fast": "快",
+        "fastest": "最快的",
+        "starter": "初学者",
+        "cards": "卡片",
+        "type": "类型",
+        "scoringSystem": "计分系统",
         "notEnoughData": "数据不足",
         "averageWaitTime": "平均等待时间",
         "unknown": "未知",
@@ -1817,6 +1908,10 @@
         "votePickSelected": "你投的票是 %{option}",
         "inactiveOpponent": "你的对手没动静",
         "inactiveOpponents": "所有的对手都没动静",
+        "waitForOpponent": "等待你的对手...",
+        "waitForOpponents": "等待你的对手们....",
+        "selfNoPoints": "你没有得到任何分数。",
+        "nameNoPoints": "%{name}没有得到任何分数。",
         "gameMenu": "想玩别的游戏吗？",
         "forfeit": "放弃游戏会让你输掉。",
         "unsavedChanges": "你有未保存的更改，如果继续进行，这些更改将被删除。",
@@ -1832,6 +1927,7 @@
         "customizePreset": "根据你的喜好来自定义这个预设。",
         "loginToPurchase": "要购买东西，你得先登录或者创建一个账号。",
         "seasonalItem": "这个位置的物品一年只有几天能买到。",
+        "cardInteractHint": "点击一张卡片来选择。",
         "awaitingPurchaseConfirmation": {
             "title": "等待购买确认",
             "description": "这通常只需要几秒钟。根据你的付款方式，可能需要更长时间。随时可以关闭这个屏幕。"
@@ -1936,6 +2032,70 @@
             "logoutGloballyCompleted": "你的账户已经从所有设备上登出了。",
             "verificationEmail": "含有验证码的邮件已经发出去了。",
             "noEmail": "没收到邮件？检查一下你的垃圾邮件文件夹，确认一下这个邮箱地址是不是跟你的账户绑定的。"
+        },
+        "cribbage": {
+            "type": {
+                "oneForHisNob": {
+                    "title": "他的贵族得一分",
+                    "description": "如果你的杰克牌和起始牌是同一花色，就能得到 %{points} 分。"
+                },
+                "fifteen": {
+                    "title": "十五分",
+                    "description": "为任何卡牌组合的总和为15的情况奖励%{points}分。同一张卡可以被重复用于多个组合。",
+                    "playDescription": "为了加一张让总数达到15的牌，奖励%{points}分。"
+                },
+                "pair": {
+                    "title": "一对",
+                    "description": "因为有两张相同等级的牌，奖励你 %{points} 分。",
+                    "playDescription": "为刚刚打出的同等级卡片加分 %{points}。"
+                },
+                "pairRoyal": {
+                    "title": "三张一样的牌",
+                    "description": "因为有三张相同等级的牌，奖励你 %{points} 分。",
+                    "playDescription": "为添加一张与最后两张牌同等级的牌奖励 %{points} 分。"
+                },
+                "doublePairRoyal": {
+                    "title": "双对皇家",
+                    "description": "因为有四张相同等级的牌，奖励你 %{points} 分。",
+                    "playDescription": "奖励%{points}分，因为你添加了一张和最后三张牌同等级的牌。"
+                },
+                "run": {
+                    "title": "顺子",
+                    "description": "为序列中的每张卡片奖励 %{points} 分。",
+                    "playDescription": "为序列中的每张卡片奖励%{points}分。卡片不需要按顺序，但需要放在一起。举个例子，如果你拿最后几张卡重新排列，它们应该连续不断地计数。"
+                },
+                "flush": {
+                    "title": "四张同花牌",
+                    "description": "如果你手里的所有牌都是同一花色，就能得到 %{points} 分。这只适用于你手里的牌，不包括底牌和起始牌。"
+                },
+                "flushStarter": {
+                    "title": "同花（5张牌）",
+                    "description": "如果你手中的所有牌+底牌都是同一花色，就能得到%{points}分。这只适用于你手中的牌，不包括底牌。"
+                }
+            },
+            "title": {
+                "hand": "手牌",
+                "show": "展示",
+                "play": "玩",
+                "crib": "储牌区"
+            },
+            "yourCribSelection": "为你的摇篮选择%{cards}",
+            "nameCribSelection": "为%{name}的摇篮选择%{cards}",
+            "yourCribSelectionSubmit": "把高亮的牌送到你的摇篮里！",
+            "nameCribSelectionSubmit": "把高亮的牌送到%{name}的摇篮里！",
+            "singleSkunk": "被淘汰了！这个玩家得分不到%{points}。",
+            "doubleSkunk": "双杠！这个玩家得分不到 %{points}。",
+            "selfJackHeelsPoints": "%{turn} 抽到了一个杰克！他的脚跟给你带来了 %{points} 分。",
+            "nameJackHeelsPoints": "%{turn} 抽到了一个杰克！他的脚跟给 %{name} 带来了 %{points} 分。",
+            "nameSelfJackHeelsPoints": "你抽到了一个杰克！你的脚跟给 %{name} 带来了 %{points} 分。",
+            "selfFinishedPlay": "你因为完成了游戏得到了 %{points} 分。",
+            "nameFinishedPlay": "%{name}因为完成了游戏，得到了%{points}分。",
+            "selfLastCard": "你因为出了最后一张牌，得到了%{points}分。",
+            "nameLastCard": "%{name}因为出了最后一张牌，得到了%{points}分。",
+            "selfCannotPlay": "你的牌都不能用在游戏中。",
+            "nameCannotPlay": "%{name}的牌都不能用在游戏中。",
+            "cardPlayBoardLimit": "这张牌不能出。棋盘的值不能超过%{limit}。",
+            "sendCardsToCrib": "把牌送到摇篮里"
         },
         "battleship": {
             "keyToRotate": "按 'R' 来旋转",

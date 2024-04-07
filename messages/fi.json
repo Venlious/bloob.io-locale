@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 1303,
+        "total": 1399,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1162,6 +1162,82 @@
                     ]
                 }
             }
+        },
+        "CRIBBAGE": {
+            "name": "Cribbage",
+            "heading": "Nauti Klassisesta Cribbage-pelistä Verkossa",
+            "tooltip": "Kokeile taitojasi ja strategiaasi tässä rakastetussa korttipelissä pelaajia vastaan ympäri maailmaa.",
+            "description": "Terävöi älysi ja pelaa Cribbagea netissä! Ainutlaatuisen pisteytysjärjestelmänsä ja strategisen pelitavan ansiosta Cribbage tarjoaa loputtomasti hauskoja tunteja korttipelien ystäville.",
+            "title": "Haasta Kaverisi",
+            "options": {
+                "playTime": {
+                    "title": "Pelaaika",
+                    "help": "Kuinka kauan jokaisella pelaajalla on aikaa valita kortti kädestään lisättäväksi meneillään olevaan peliin."
+                },
+                "cribTime": {
+                    "title": "Pinnasängyn Aika",
+                    "help": "Kuinka kauan kullakin pelaajalla on aikaa päättää, mitkä kortit he lähettävät pihalle."
+                },
+                "starterCardTime": {
+                    "title": "Aloitus Kortin Aika",
+                    "help": "Kuinka kauan valitulla pelaajalla on aikaa valita aloituskortti pakasta. Aloitus korttia käytetään viidentenä korttina, kun lasketaan kaikkien käsien ja cribin pisteitä."
+                },
+                "revealSpeed": {
+                    "title": "Paljastusnopeus",
+                    "help": "Kuinka nopeasti pistetilanne paljastetaan kierroksen lopussa."
+                },
+                "dealerExtraCard": {
+                    "title": "Jakajan ylimääräinen kortti",
+                    "help": "Kun tämä on käytössä 3 pelaajan peleissä, jakaja saa ylimääräisen kortin cribiin. Kun tämä ei ole käytössä, neljäs kortti menee cribiin automaattisesti."
+                },
+                "winCondition": {
+                    "title": "Voittoehto",
+                    "help": "Päätä, milloin pelin pitäisi päättyä.",
+                    "data": {
+                        "FIRST": "Ensimmäinen, joka saa <b>0</b> pistettä | Ensimmäinen, joka saa <b>1</b> pisteen | Ensimmäinen, joka saa <b>{count}</b> pistettä",
+                        "HIGHEST_AFTER_FIRST": "Eniten pisteitä, kun <b>0</b> pistettä on saavutettu | Eniten pisteitä, kun <b>1</b> piste on saavutettu | Eniten pisteitä, kun <b>{count}</b> pistettä on saavutettu"
+                    }
+                }
+            },
+            "presets": {
+                "blitz": {
+                    "title": "Blitzi",
+                    "description": [
+                        "Ensimmäinen 31 pisteeseen",
+                        "Lyhennetyt ajat"
+                    ]
+                }
+            },
+            "help": {
+                "objective": {
+                    "title": "Ymmärtäminen Tehtävän",
+                    "description": [
+                        "Cribbagen tavoitteena on olla ensimmäinen pelaaja, joka saavuttaa tavoitepisteet, yleensä 121 pistettä.",
+                        "Peli koostuu kolmesta erillisestä osasta, jotka jatkuvat kunnes meillä on voittaja."
+                    ]
+                },
+                "deal": {
+                    "title": "Diili",
+                    "description": [
+                        "Jokaiselle pelaajalle jaetaan 5 tai 6 korttia, riippuen pelaajien määrästä. Jokaisen pelaajan on valittava 4 korttia, jotka he haluavat pitää, ja heittää loput \"kehtoon\", joka kuuluu jakajalle.",
+                        "Kehtoa voidaan pitää toisena kätenä, joka antaa jakajalle lisäpisteitä, kun pisteitä lasketaan."
+                    ]
+                },
+                "play": {
+                    "title": "Pelinäytös",
+                    "description": [
+                        "Pelaajat vuorottelevat pelaten yhden kortin kerrallaan kädestään pöydälle. Kierroksen aikana pidetään kirjaa pelattujen korttien summasta, joka ei saa ylittää 31.",
+                        "Pelaajat voivat ansaita pisteitä sekvensseillä, pareilla ja saamalla summan 15:een. Klikkaa \"Pisteytysjärjestelmä\" -nappia pelin aikana, jos haluat täyden yleiskatsauksen."
+                    ]
+                },
+                "show": {
+                    "title": "Esitys",
+                    "description": [
+                        "Kun kaikki pelaajat ovat tyhjentäneet kätensä pelin aikana, pisteet lasketaan. Jakaja lasketaan aina viimeisenä ja saa myös pisteitä omasta kopastaan.",
+                        "Pelaajat voivat ansaita pisteitä erilaisista yhdistelmistä. Klikkaa \"Pisteytysjärjestelmä\" -nappia pelin aikana, niin näet koko yleiskatsauksen."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -1243,7 +1319,12 @@
             "nameTurn": "%{name}:n vuoro",
             "yourTurnBreaking": "Rikot %{extra}",
             "nameTurnBreaking": "%{name} rikkoo",
-            "roundCount": "Kierros %{current} / %{total}"
+            "roundCount": "Kierros %{current} / %{total}",
+            "dealingCards": "Jaetaan kortteja...",
+            "youPickStarterCard": "Sun pitää valita aloituskortti",
+            "namePickStarterCard": "%{name}n pitää valita aloituskortti",
+            "yourCrib": "Sun pihapiiri",
+            "nameCrib": "%{name}n pihapiiri"
         },
         "description": {
             "waitingForPlayers": "Odotetaan pelaajia",
@@ -1469,6 +1550,16 @@
         "includesItems": "Sisältää {count} esinettä | Sisältää {count} esineen | Sisältää {count} esinettä"
     },
     "misc": {
+        "judge": "Tuomari",
+        "dealer": "Jakaja",
+        "slow": "Hidas",
+        "normal": "Normaali",
+        "fast": "Nopea",
+        "fastest": "Nopein",
+        "starter": "Aloittelija",
+        "cards": "Kortit",
+        "type": "Tyyppi",
+        "scoringSystem": "Pisteytysjärjestelmä",
         "notEnoughData": "Ei tarpeeksi tietoa",
         "averageWaitTime": "Keskimääräinen odotusaika",
         "unknown": "Tuntematon",
@@ -1817,6 +1908,10 @@
         "votePickSelected": "Äänestit kohteen %{option} puolesta",
         "inactiveOpponent": "Vastustajasi oli toimeton",
         "inactiveOpponents": "Kaikki vastustajat olivat passiivisia",
+        "waitForOpponent": "Odotetaan vastustajaasi...",
+        "waitForOpponents": "Odotetaan vastustajiasi....",
+        "selfNoPoints": "Et saanut pisteitä.",
+        "nameNoPoints": "%{name} ei saanut pisteitä.",
         "gameMenu": "Tekisikö mieli pelata jotain muuta?",
         "forfeit": "Pelistä luopuminen johtaa sinulle tappioon.",
         "unsavedChanges": "Sinulla on tallentamattomia muutoksia, jotka poistuvat, jos jatkat.",
@@ -1832,6 +1927,7 @@
         "customizePreset": "Muokkaa tätä esiasetusta mieltymystesi mukaan.",
         "loginToPurchase": "Ostoksen tekemiseksi sinun on ensin kirjauduttava sisään tai luotava tili.",
         "seasonalItem": "Tämän paikan esine on saatavilla vain muutamana päivänä vuodessa.",
+        "cardInteractHint": "Klikkaa korttia tehdäksesi valintasi.",
         "awaitingPurchaseConfirmation": {
             "title": "Odotetaan ostovahvistusta",
             "description": "Tämä kestää yleensä vain muutaman sekunnin. Maksutavasta riippuen tämä saattaa kestää kauemmin. Voit huoletta sulkea tämän näytön."
@@ -1936,6 +2032,70 @@
             "logoutGloballyCompleted": "Tilisi on kirjattu ulos kaikista laitteista.",
             "verificationEmail": "Sähköposti vahvistuskoodilla on lähetetty.",
             "noEmail": "Eikö sähköpostia? Tarkista roskapostikansiosi ja varmista, että tämä sähköpostiosoite on linkitetty tilillesi."
+        },
+        "cribbage": {
+            "type": {
+                "oneForHisNob": {
+                    "title": "Yksi hänen jalokivelleen",
+                    "description": "Antaa %{points} pistettä, jos jätkäsi on samaa maata kuin aloituskortti."
+                },
+                "fifteen": {
+                    "title": "Viistoista",
+                    "description": "Antaa %{points} pistettä mille tahansa korttien yhdistelmälle, joiden summa on 15. Samaa korttia voidaan käyttää useissa yhdistelmissä.",
+                    "playDescription": "Antaa %{points} pistettä kortin lisäämisestä, joka tekee yhteissumman 15."
+                },
+                "pair": {
+                    "title": "Pari",
+                    "description": "Antaa %{points} pistettä, jos sulla on kaksi samanarvoista korttia.",
+                    "playDescription": "Antaa %{points} pistettä, kun lisäät kortin, jolla on sama arvo kuin juuri pelatulla kortilla."
+                },
+                "pairRoyal": {
+                    "title": "Kolmen parin kuningas",
+                    "description": "Antaa %{points} pistettä, jos sulla on kolme samanarvoista korttia.",
+                    "playDescription": "Antaa %{points} pistettä, kun lisäät kortin, jolla on sama arvo kuin kahdella edellisellä kortilla."
+                },
+                "doublePairRoyal": {
+                    "title": "Kaksoispari Kuningallinen",
+                    "description": "Antaa %{points} pistettä, kun sulla on neljä samanarvoista korttia.",
+                    "playDescription": "Antaa %{points} pistettä, kun lisäät kortin, jolla on sama arvo kuin kolmella edellisellä kortilla."
+                },
+                "run": {
+                    "title": "Juoksu",
+                    "description": "Antaa %{points} pistettä jokaisesta kortista sarjassa.",
+                    "playDescription": "Antaa %{points} pistettä jokaisesta sekvenssin kortista. Korttien ei tarvitse olla järjestyksessä, mutta ne on ryhmiteltävä yhteen. Esimerkiksi, jos otat viimeiset kortit ja järjestät ne uudelleen, niiden pitäisi laskea keskeytyksettä."
+                },
+                "flush": {
+                    "title": "Neljän kortin värisuora",
+                    "description": "Antaa %{points} pistettä, jos kaikki kädessäsi olevat kortit ovat samaa maata. Tämä koskee vain kädessäsi olevia kortteja, pois lukien pistepotti ja aloituskortti."
+                },
+                "flushStarter": {
+                    "title": "Viiden kortin värisuora",
+                    "description": "Antaa %{points} pistettä, jos kaikki kortit kädessäsi + aloituskortti ovat samaa maata. Tämä koskee vain kortteja kädessäsi, lukuun ottamatta pistekorttia."
+                }
+            },
+            "title": {
+                "hand": "Käsi",
+                "show": "Näytä",
+                "play": "Pelaa",
+                "crib": "Kehto"
+            },
+            "yourCribSelection": "Valitse %{cards} omaan koriisi",
+            "nameCribSelection": "Valitse %{cards} %{name}:n koriin",
+            "yourCribSelectionSubmit": "Lähetä korostetut kortit omaan koriisi!",
+            "nameCribSelectionSubmit": "Lähetä korostetut kortit %{name}:n koriin!",
+            "singleSkunk": "Hävisit pahasti! Tällä pelaajalla oli alle %{points} pistettä.",
+            "doubleSkunk": "Tuplapesukarhu! Tällä pelaajalla oli alle %{points} pistettä.",
+            "selfJackHeelsPoints": "%{turn} veti jätkän! Saat %{points} pistettä hänen kantapäistään.",
+            "nameJackHeelsPoints": "%{turn} veti jätkän! %{name} saa %{points} pistettä hänen kantapäistään.",
+            "nameSelfJackHeelsPoints": "Vedit jätkän! %{name} saa %{points} pistettä kantapäistäsi.",
+            "selfFinishedPlay": "Saat %{points} pistettä, koska olet päättänyt pelin.",
+            "nameFinishedPlay": "%{name} saa %{points} pistettä, koska hän lopetti pelin.",
+            "selfLastCard": "Saat %{points} pistettä, koska pelasit viimeisen kortin.",
+            "nameLastCard": "%{name} saa %{points} pistettä, koska hän pelasi viimeisen kortin.",
+            "selfCannotPlay": "Yhtäkään korttiasi ei voi käyttää pelissä.",
+            "nameCannotPlay": "%{name}:lla ei ole yhtään korttia, jota voisi käyttää pelissä.",
+            "cardPlayBoardLimit": "Tätä korttia ei voi pelata. Lautapelin arvo ei voi ylittää %{limit}.",
+            "sendCardsToCrib": "Lähetä kortit kehtoon"
         },
         "battleship": {
             "keyToRotate": "Paina 'R' kääntääksesi",

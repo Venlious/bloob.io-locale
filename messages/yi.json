@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Yiddish",
         "rtl": false,
-        "total": 1303,
+        "total": 1399,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1162,6 +1162,82 @@
                     ]
                 }
             }
+        },
+        "CRIBBAGE": {
+            "name": "Kribish",
+            "heading": "Hob a Sakh Shpas mit Klasisher Cribbage Online",
+            "tooltip": "Próbt ayer kentenish un strategie in dem gelibten kartn shpil kegn shpilers arum der velt.",
+            "description": "Schärf dein Kopf un shpil Cribbage online! Mit zayn eyntsik scoring system un strategish gameplay, Cribbage bietet endless shoen fun far card game enthusiasts.",
+            "title": "Fordert Eure Freind!",
+            "options": {
+                "playTime": {
+                    "title": "Shpil Tsayt",
+                    "help": "Vi lang yeder shpiler hot tsu klibn a kort fun zeyer hant tsu tsufügen af dem ongoing shpil."
+                },
+                "cribTime": {
+                    "title": "Kinderbett Zeit",
+                    "help": "Vi lang yeder shpiler hot tsu entsheydn velfe kortn zey veln shikn tsu dem krib."
+                },
+                "starterCardTime": {
+                    "title": "Startkarte Tzeit",
+                    "help": "Vi lang der oysgeklibener shpiler hot tsu kliben di onheyb karte fun dem pak. Di onheyb karte iz genutzt vi a finft karte ven es kumt tsu oychzehlen di shkorn far ale hent un krib."
+                },
+                "revealSpeed": {
+                    "title": "Offenbarung Geshvindkayt",
+                    "help": "Vi gich der score vird oisgeshpilt oif dem sof fun a rund."
+                },
+                "dealerExtraCard": {
+                    "title": "Hendler Extra Karte",
+                    "help": "Ven eyngeklempt in 3-shpiler spiln, der dealer krigt a ekstra crib kortl. Ven es iz farshperrt, der fertl kortl geyt tsu dem crib otomatish."
+                },
+                "winCondition": {
+                    "title": "Gevinn Bedingung",
+                    "help": "Bestimmen ven dos shpil zol kumen tsu a sof.",
+                    "data": {
+                        "FIRST": "Ershter tzu erreichen <b>0</b> punkten | Ershter tzu erreichen <b>1</b> punkt | Ershter tzu erreichen <b>{count}</b> punkten",
+                        "HIGHEST_AFTER_FIRST": "Di meiste punkten nokh <b>0</b> punkten zaynen erreicht | Di meiste punkten nokh <b>1</b> punkt iz erreicht | Di meiste punkten nokh <b>{count}</b> punkten zaynen erreicht"
+                    }
+                }
+            },
+            "presets": {
+                "blitz": {
+                    "title": "Blitz",
+                    "description": [
+                        "Ershter tsu 31 punktn",
+                        "Farshidn tsaytn"
+                    ]
+                }
+            },
+            "help": {
+                "objective": {
+                    "title": "Farshteyn dem Tsil",
+                    "description": [
+                        "Der tachlis fun Cribbage iz tsu zayn der ershter shpiler tsu erreichen der tsil score, typish 121 punkten.",
+                        "Dos shpil besteit fun dray farshidene teyln vos vet haltn gesheenin biz es iz a gavinner."
+                    ]
+                },
+                "deal": {
+                    "title": "Der Handel",
+                    "description": [
+                        "Yeder shpiler krigt 5 oder 6 karte, es hengt avek fun vi fil shpilers zaynen do. Yeder shpiler muz oysklibn 4 karte zey viln behaltn un shmeisn avek di andere tsu dem \"crib\", vos iz dem dealer's.",
+                        "Der \"crib\" ken men zehn vi a tsveyter hant, vos vet gebn dem dealer nokh punkten ven es kumt tsu tsayln di shkorim."
+                    ]
+                },
+                "play": {
+                    "title": "Dos Shpil",
+                    "description": [
+                        "Shpilers nemen zich turen shpiln eyn karte af a mol fun zeyer hant afn tish. Der sum fun di karten gespilt iz gehalten shpura fun vayl dem durkhgang un muz blaybn unter 31.",
+                        "Shpilers kenen fardinen punkten mit sekventsies, peyres, un durkh krigndik der sum tsu 15. Klik afn \"Scoring System\" kneppl vayl in shpil far a gants iberblik."
+                    ]
+                },
+                "show": {
+                    "title": "Der Shpiel",
+                    "description": [
+                        "Nochdem ale shpiler hobn geleert zeyere hent vayl dem shpil, di shkorim zaynen gegeytlt. Der dealer iz altz gegeytlt lezt un vet oykh bakumen punktn far zeyn vigele.",
+                        "Shpiler kenen fardinen punktn far farshidene kombinatsyes. Klik afn \"Shkoring System\" kneppl vayl in shpil far a gantsn iberblik."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -1243,7 +1319,12 @@
             "nameTurn": "%{name}'s zug",
             "yourTurnBreaking": "Du brichst %{extra}",
             "nameTurnBreaking": "%{name} is brechendik",
-            "roundCount": "Rund %{current} fun %{total}"
+            "roundCount": "Rund %{current} fun %{total}",
+            "dealingCards": "Dealt karts...",
+            "youPickStarterCard": "Du musst di ershte kart oyskleybn",
+            "namePickStarterCard": "%{name} darf di ershte kart oyskleybn",
+            "yourCrib": "Dayn krib",
+            "nameCrib": "%{name}'s krib"
         },
         "description": {
             "waitingForPlayers": "Vartn far shpilers",
@@ -1469,6 +1550,16 @@
         "includesItems": "Beinhaltet {count} sakhn | Beinhaltet {count} sakh | Beinhaltet {count} sakhn"
     },
     "misc": {
+        "judge": "Dayan",
+        "dealer": "Handler",
+        "slow": "Shlepndik",
+        "normal": "Normal",
+        "fast": "Gikh",
+        "fastest": "Der Gikhster",
+        "starter": "Anfanger",
+        "cards": "Kartelekh",
+        "type": "Zort",
+        "scoringSystem": "Punktirung Sistehm",
         "notEnoughData": "Nit genug daten",
         "averageWaitTime": "Durchschnittlich vart tsayt",
         "unknown": "Unbekant",
@@ -1817,6 +1908,10 @@
         "votePickSelected": "Du host geshtimt far %{option}",
         "inactiveOpponent": "Dayn tsugigner iz geven untetik",
         "inactiveOpponents": "Ale tsugigners zenen geven untetik",
+        "waitForOpponent": "Vartn far dayn tsugignik...",
+        "waitForOpponents": "Vartn far dayne tsugigniks...",
+        "selfNoPoints": "Du hast nisht bakumen keyn punktn.",
+        "nameNoPoints": "%{name} hot nisht bakumen keyn punktn.",
         "gameMenu": "Lustig tzu shpiln epes andersh?",
         "forfeit": "Oyb du gibst aroys dem shpil, vet es zayn a farlir far dir.",
         "unsavedChanges": "Du host ungeshparte ennederungen vos vetn vern aroysgelushn oyb du geyst vayter.",
@@ -1832,6 +1927,7 @@
         "customizePreset": "Pasn di preset tsu deyn gefalen.",
         "loginToPurchase": "Far tsu koyfn musst du ershter aroislogn oder shafn a kont.",
         "seasonalItem": "A zach in dem shlit is nor farhanen far a teyl teg per yor.",
+        "cardInteractHint": "Klik af a karte tsu makhn dayn oysber.",
         "awaitingPurchaseConfirmation": {
             "title": "Vartn af Kauf-Bestätigung",
             "description": "Das nemt normalerweise nor a paar sekunden. Abhängig fun dein tzuholn metod, ken es nemn a bissel lenger. Du kannst ruhig shlisn dem bildschirm."
@@ -1936,6 +2032,70 @@
             "logoutGloballyCompleted": "Dayn akount iz farlogt oys fun ale aparates.",
             "verificationEmail": "An email mit a pruv-kod iz gezen.",
             "noEmail": "Keyn email? Kuk in dayn spam tekel un bestetig az di email adres iz farbunden mit dayn akount."
+        },
+        "cribbage": {
+            "type": {
+                "oneForHisNob": {
+                    "title": "Eyns far zayn knop",
+                    "description": "Gibt %{points} fir hobn dem zelbn bokher kostyum vi der onheyber."
+                },
+                "fifteen": {
+                    "title": "Fiftn",
+                    "description": "Gibt %{points} far a kombinatsye fun karten vos der sume iz 15. Di zelbe karten kenen zayn vider genutzt far multiple kombinatsyes.",
+                    "playDescription": "Gibt %{points} far tsuzetzen a kort vos macht dem total 15."
+                },
+                "pair": {
+                    "title": "Paar",
+                    "description": "Gibt %{points} far hobn tsvey karts fun der zelber rang.",
+                    "playDescription": "Gibt %{points} far tsuzetzen a kort mit dem zelben rang azoy vi gespilt."
+                },
+                "pairRoyal": {
+                    "title": "Königliches Paar",
+                    "description": "Gibt %{points} far hobn dray karts fun dem zelbn rang.",
+                    "playDescription": "Gibt %{points} far tsuzetzen a kort mit dem zelben rang vi di letste tsvey kortn."
+                },
+                "doublePairRoyal": {
+                    "title": "Doppelte Paar Royal",
+                    "description": "Gibt %{points} far hobn fir karteles fun dem zelbn rang.",
+                    "playDescription": "Gibt %{points} far tsuzetzen a kort mit dem zelben rang vi di letste drei korts."
+                },
+                "run": {
+                    "title": "Lauf",
+                    "description": "Gibt %{points} punkten far yeder kort in der sequence.",
+                    "playDescription": "Gibt %{points} far yeder kort in der sequence. Di karten darfn nisht zayn in ordnung, ober zey darfn zayn grupt tsuzamen. As a bayspil, oyb du nempt di letste kartn un tse-ordnung zey in ordnung, zey zoln tsayln up uninterrupted."
+                },
+                "flush": {
+                    "title": "Flush (4 karteles)",
+                    "description": "Gibt %{points} punkten, ven ale karteles in dayn hant zaynen fun dem zelben sort. Dos gilt nor far di karteles in dayn hant, oysgezogt dem crib un starter karte."
+                },
+                "flushStarter": {
+                    "title": "Flush (5 karts)",
+                    "description": "Gibt %{points} punkten, ven ale karten in dayn hant + der onheyb karte zaynen fun dem zelben sort. Dos gilt nor far di karten in dayn hant, oysgeshlosn dem crib."
+                }
+            },
+            "title": {
+                "hand": "Hant",
+                "show": "Zeigen",
+                "play": "Shpiln",
+                "crib": "Vigele"
+            },
+            "yourCribSelection": "Klib %{cards} far dayn crib",
+            "nameCribSelection": "Klib %{cards} far %{name}'s crib",
+            "yourCribSelectionSubmit": "Shikt di hervorgehobene karten tsu dayn crib!",
+            "nameCribSelectionSubmit": "Shikt di hervorgehobene karten tsu %{name}'s crib!",
+            "singleSkunk": "Skunked! Dem shpiler hot gehat veyniker vi %{points}.",
+            "doubleSkunk": "Doppelt geskunkt! Der shpiler hot gehat vayniker vi %{points}.",
+            "selfJackHeelsPoints": "%{turn} hot a Yankl getsoygn! Du bakumst %{points} far zayn fers.",
+            "nameJackHeelsPoints": "%{turn} hot a Yankl getsoygn! %{name} bakumt %{points} far zayn fers.",
+            "nameSelfJackHeelsPoints": "Du host a Yankl getsoygn! %{name} bakumt %{points} far dayn fers.",
+            "selfFinishedPlay": "Du bakumst %{points} far dos oysforn fun dem shpil.",
+            "nameFinishedPlay": "%{name} krigt %{points} far ferdig zein mit dem shpil.",
+            "selfLastCard": "Du krigst %{points} far shpiln di letste kort.",
+            "nameLastCard": "%{name} krigt %{points} far shpiln di letste kort.",
+            "selfCannotPlay": "Kein fun dayne kortn ken zayn genitst in dem shpil.",
+            "nameCannotPlay": "%{name} hot keyn kortn vos ken zayn genitst in dem shpil.",
+            "cardPlayBoardLimit": "Du kenst nisht shpiln mit dem karte. Der brett's vart ken nisht ibergeyn %{limit}.",
+            "sendCardsToCrib": "Shikt karten tsu Crib"
         },
         "battleship": {
             "keyToRotate": "Drik 'R' far dreyen",

@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Dutch",
         "rtl": false,
-        "total": 1303,
+        "total": 1399,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1162,6 +1162,82 @@
                     ]
                 }
             }
+        },
+        "CRIBBAGE": {
+            "name": "Cribbage",
+            "heading": "Geniet van Klassiek Cribbage Online",
+            "tooltip": "Test je vaardigheden en strategie in dit geliefde kaartspel tegen spelers van over de hele wereld.",
+            "description": "Scherp je verstand en speel Cribbage online! Met zijn unieke puntensysteem en strategische gameplay biedt Cribbage eindeloos veel plezier voor kaartspel liefhebbers.",
+            "title": "Daag Je Vrienden Uit",
+            "options": {
+                "playTime": {
+                    "title": "Speeltijd",
+                    "help": "Hoe lang elke speler de tijd heeft om een kaart uit hun hand te kiezen om aan het lopende spel toe te voegen."
+                },
+                "cribTime": {
+                    "title": "Crib Tijd",
+                    "help": "Hoe lang elke speler de tijd heeft om te beslissen welke kaarten ze naar de crib sturen."
+                },
+                "starterCardTime": {
+                    "title": "Startkaart Tijd",
+                    "help": "Hoe lang de gekozen speler de tijd heeft om de startkaart uit de stapel te pakken. De startkaart wordt gebruikt als een vijfde kaart als het gaat om het berekenen van de scores voor alle handen en crib."
+                },
+                "revealSpeed": {
+                    "title": "Onthullingssnelheid",
+                    "help": "Hoe snel de score onthulling wordt afgespeeld aan het einde van een ronde."
+                },
+                "dealerExtraCard": {
+                    "title": "Extra Kaart van de Dealer",
+                    "help": "Als je dit inschakelt bij spellen met 3 spelers, krijgt de deler een extra cribkaart. Als je dit uitschakelt, gaat de vierde kaart automatisch naar de crib."
+                },
+                "winCondition": {
+                    "title": "Winnende Voorwaarde",
+                    "help": "Bepaal wanneer het spel moet eindigen.",
+                    "data": {
+                        "FIRST": "Eerste die <b>0</b> punten bereikt | Eerste die <b>1</b> punt bereikt | Eerste die <b>{count}</b> punten bereikt",
+                        "HIGHEST_AFTER_FIRST": "Meeste punten nadat <b>0</b> punten zijn bereikt | Meeste punten nadat <b>1</b> punt is bereikt | Meeste punten nadat <b>{count}</b> punten zijn bereikt"
+                    }
+                }
+            },
+            "presets": {
+                "blitz": {
+                    "title": "Blitz",
+                    "description": [
+                        "Eerste tot 31 punten",
+                        "Verminderde tijden"
+                    ]
+                }
+            },
+            "help": {
+                "objective": {
+                    "title": "Het Doel Begrijpen",
+                    "description": [
+                        "Het doel van Cribbage is om de eerste speler te zijn die de doelscore bereikt, meestal 121 punten.",
+                        "Het spel bestaat uit drie verschillende delen die blijven gebeuren totdat er een winnaar is."
+                    ]
+                },
+                "deal": {
+                    "title": "De Deal",
+                    "description": [
+                        "Elke speler krijgt 5 of 6 kaarten, afhankelijk van hoeveel spelers er zijn. Elke speler moet 4 kaarten kiezen die ze willen houden en de rest weggooien in de \"crib\", die van de dealer is.",
+                        "De crib kan je zien als een tweede hand, die de dealer extra punten geeft als het tijd is om de scores te tellen."
+                    ]
+                },
+                "play": {
+                    "title": "Het Spel",
+                    "description": [
+                        "Spelers spelen om de beurt één kaart uit hun hand op tafel. De som van de gespeelde kaarten wordt tijdens de ronde bijgehouden en moet onder de 31 blijven.",
+                        "Spelers kunnen punten verdienen met reeksen, paren, en door de som op 15 te krijgen. Klik op de knop \"Puntensysteem\" tijdens het spel voor een volledig overzicht."
+                    ]
+                },
+                "show": {
+                    "title": "De Show",
+                    "description": [
+                        "Nadat alle spelers hun handen hebben leeggemaakt tijdens het spel, worden de scores geteld. De dealer wordt altijd als laatste geteld en krijgt ook punten voor hun crib.",
+                        "Spelers kunnen punten verdienen voor verschillende combinaties. Klik op de knop \"Puntensysteem\" tijdens het spel voor een volledig overzicht."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -1243,7 +1319,12 @@
             "nameTurn": "%{name}s beurt",
             "yourTurnBreaking": "Jij bent aan het breken %{extra}",
             "nameTurnBreaking": "%{name} is aan het breken",
-            "roundCount": "Ronde %{current} van de %{total}"
+            "roundCount": "Ronde %{current} van de %{total}",
+            "dealingCards": "Kaarten delen...",
+            "youPickStarterCard": "Jij moet de startkaart kiezen",
+            "namePickStarterCard": "%{name} moet de startkaart kiezen",
+            "yourCrib": "Jouw crib",
+            "nameCrib": "%{name}s crib"
         },
         "description": {
             "waitingForPlayers": "Wachten op spelers",
@@ -1469,6 +1550,16 @@
         "includesItems": "Bevat {count} items | Bevat {count} item | Bevat {count} items"
     },
     "misc": {
+        "judge": "Rechter",
+        "dealer": "Dealer",
+        "slow": "Langzaam",
+        "normal": "Normaal",
+        "fast": "Snel",
+        "fastest": "Snelste",
+        "starter": "Beginner",
+        "cards": "Kaarten",
+        "type": "Type",
+        "scoringSystem": "Puntensysteem",
         "notEnoughData": "Niet genoeg data",
         "averageWaitTime": "Gemiddelde wachttijd",
         "unknown": "Onbekend",
@@ -1817,6 +1908,10 @@
         "votePickSelected": "Je hebt op %{option} gestemd",
         "inactiveOpponent": "Je tegenstander was inactief",
         "inactiveOpponents": "Alle tegenstanders waren inactief",
+        "waitForOpponent": "Wachten op je tegenstander...",
+        "waitForOpponents": "Wachten op je tegenstanders....",
+        "selfNoPoints": "Je hebt geen punten ontvangen.",
+        "nameNoPoints": "%{name} heeft geen punten ontvangen.",
         "gameMenu": "Wil je iets anders spelen?",
         "forfeit": "Door verlies te verklaren zal je het spel meteen verliezen.",
         "unsavedChanges": "Je hebt onopgeslagen wijzigingen die gewist zullen worden als je doorgaat.",
@@ -1832,6 +1927,7 @@
         "customizePreset": "Pas deze voorinstelling naar je zin aan.",
         "loginToPurchase": "Om iets te kopen moet je eerst inloggen of een account aanmaken.",
         "seasonalItem": "Een item in deze slot is maar een paar dagen per jaar beschikbaar.",
+        "cardInteractHint": "Klik op een kaart om je keuze te maken.",
         "awaitingPurchaseConfirmation": {
             "title": "Wachten op Bevestiging van Aankoop",
             "description": "Dit duurt meestal maar een paar seconden. Afhankelijk van je betaalmethode kan dit langer duren. Je mag dit scherm gerust sluiten."
@@ -1936,6 +2032,70 @@
             "logoutGloballyCompleted": "Je account is uitgelogd van alle apparaten.",
             "verificationEmail": "Er is een e-mail met een verificatiecode verzonden.",
             "noEmail": "Geen e-mail? Controleer je spam-map en bevestig dat dit e-mailadres is gekoppeld aan je account."
+        },
+        "cribbage": {
+            "type": {
+                "oneForHisNob": {
+                    "title": "Eentje voor zijn edele",
+                    "description": "Geeft %{points} voor het hebben van dezelfde boer pak als de starter."
+                },
+                "fifteen": {
+                    "title": "Vijftien",
+                    "description": "Geeft %{points} voor elke combinatie van kaarten waarvan de som 15 is. Dezelfde kaarten kunnen opnieuw worden gebruikt voor meerdere combinaties.",
+                    "playDescription": "Geeft %{points} voor het toevoegen van een kaart die het totaal op 15 brengt."
+                },
+                "pair": {
+                    "title": "Paar",
+                    "description": "Geeft %{points} voor het hebben van twee kaarten van dezelfde rang.",
+                    "playDescription": "Geeft %{points} voor het toevoegen van een kaart met dezelfde rang die net gespeeld is."
+                },
+                "pairRoyal": {
+                    "title": "Koninklijk Paar",
+                    "description": "Geeft %{points} punten voor het hebben van drie kaarten van dezelfde rang.",
+                    "playDescription": "Geeft %{points} voor het toevoegen van een kaart met dezelfde rang als de laatste twee kaarten."
+                },
+                "doublePairRoyal": {
+                    "title": "Dubbele Paar Koninklijk",
+                    "description": "Geeft %{points} punten voor het hebben van vier kaarten van dezelfde rang.",
+                    "playDescription": "Geeft %{points} voor het toevoegen van een kaart met dezelfde rang als de laatste drie kaarten."
+                },
+                "run": {
+                    "title": "Reeks",
+                    "description": "Geeft %{points} voor elke kaart in de reeks.",
+                    "playDescription": "Geeft %{points} voor elke kaart in de reeks. De kaarten hoeven niet op volgorde te zijn, maar moeten wel bij elkaar horen. Als voorbeeld, als je de laatste paar kaarten pakt en ze op volgorde legt, moeten ze ononderbroken optellen."
+                },
+                "flush": {
+                    "title": "Flush (4 kaarten)",
+                    "description": "Geeft %{points} als alle kaarten in je hand van dezelfde soort zijn. Dit geldt alleen voor de kaarten in je hand, exclusief de crib en de startkaart."
+                },
+                "flushStarter": {
+                    "title": "Flush (5 kaarten)",
+                    "description": "Geeft %{points} als alle kaarten in je hand + de startkaart van dezelfde soort zijn. Dit geldt alleen voor de kaarten in je hand, de crib niet meegerekend."
+                }
+            },
+            "title": {
+                "hand": "Hand",
+                "show": "Laat zien",
+                "play": "Speel",
+                "crib": "Crib"
+            },
+            "yourCribSelection": "Kies %{cards} voor je crib",
+            "nameCribSelection": "Kies %{cards} voor %{name}'s crib",
+            "yourCribSelectionSubmit": "Stuur de gemarkeerde kaarten naar je crib!",
+            "nameCribSelectionSubmit": "Stuur de gemarkeerde kaarten naar %{name}s crib!",
+            "singleSkunk": "Afgetroefd! Deze speler had minder dan %{points}.",
+            "doubleSkunk": "Dubbel geskunked! Deze speler had minder dan %{points}.",
+            "selfJackHeelsPoints": "%{turn} heeft een boer getrokken! Je krijgt %{points} voor zijn hielen.",
+            "nameJackHeelsPoints": "%{turn} heeft een boer getrokken! %{name} krijgt %{points} voor zijn hielen.",
+            "nameSelfJackHeelsPoints": "Je hebt een boer getrokken! %{name} krijgt %{points} voor zijn hielen.",
+            "selfFinishedPlay": "Je krijgt %{points} omdat je het spel hebt uitgespeeld.",
+            "nameFinishedPlay": "%{name} krijgt %{points} omdat hij het spel heeft uitgespeeld.",
+            "selfLastCard": "Jij krijgt %{points} omdat je de laatste kaart hebt gespeeld.",
+            "nameLastCard": "%{name} krijgt %{points} omdat hij de laatste kaart heeft gespeeld.",
+            "selfCannotPlay": "Geen van je kaarten kan in het spel worden gebruikt.",
+            "nameCannotPlay": "%{name} heeft geen kaarten die in het spel kunnen worden gebruikt.",
+            "cardPlayBoardLimit": "Deze kaart kan niet gespeeld worden. De waarde van het bord mag %{limit} niet overschrijden.",
+            "sendCardsToCrib": "Stuur kaarten naar de Crib."
         },
         "battleship": {
             "keyToRotate": "Druk op 'R' om te draaien",

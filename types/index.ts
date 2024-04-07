@@ -48,7 +48,8 @@ export enum GameType {
 	eightBallPool = `EIGHT_BALL_POOL`,
 	yacht = `YACHT`,
 	superTicTacToe = `SUPER_TIC_TAC_TOE`,
-	battleship = `BATTLESHIP`
+	battleship = `BATTLESHIP`,
+	cribbage = `CRIBBAGE`
 }
 
 export enum CheckersKingType {
