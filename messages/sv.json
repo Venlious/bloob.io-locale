@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Swedish",
         "rtl": false,
-        "total": 1399,
+        "total": 1411,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1728,6 +1728,7 @@
         "saveBlank": "Spara %{value}",
         "coinsBlank": "%{value} mynt",
         "receivedBlank": "Mottaget %{value}",
+        "lessThanBlank": "Mindre än %{value}",
         "sendVerification": "Skicka Verifiering",
         "noThanks": "Nej tack",
         "ready": "Klar",
@@ -2042,26 +2043,31 @@
                 "fifteen": {
                     "title": "Femton",
                     "description": "Ger %{points} för alla kombinationer av kort där summan är 15. Samma kort kan användas om och om igen för flera kombinationer.",
+                    "playTitle": "att träffa %{target}",
                     "playDescription": "Ger %{points} för att lägga till ett kort som gör totalen 15."
                 },
                 "pair": {
                     "title": "Par",
                     "description": "Ger %{points} för att ha två kort av samma rang.",
+                    "playTitle": "att placera en %{title}",
                     "playDescription": "Ger %{points} poäng för att lägga till ett kort med samma rang som just spelades."
                 },
                 "pairRoyal": {
                     "title": "Kungligt Par",
                     "description": "Ger %{points} för att ha tre kort av samma valör.",
+                    "playTitle": "att placera en %{title}",
                     "playDescription": "Ger %{points} poäng för att lägga till ett kort med samma rang som de två sista korten."
                 },
                 "doublePairRoyal": {
                     "title": "Dubbel Kunglig Par",
                     "description": "Ger %{points} för att ha fyra kort av samma valör.",
+                    "playTitle": "att placera en %{title}",
                     "playDescription": "Ger %{points} för att lägga till ett kort med samma rang som de tre sista korten."
                 },
                 "run": {
                     "title": "Serie",
                     "description": "Ger %{points} poäng för varje kort i sekvensen.",
+                    "playTitle": "att göra en sekvens av %{cards}",
                     "playDescription": "Ger %{points} för varje kort i sekvensen. Korten behöver inte vara i ordning, men de måste vara grupperade tillsammans. Till exempel, om du tar de sista korten och ordnar om dem i ordning, borde de räknas upp utan avbrott."
                 },
                 "flush": {
@@ -2071,6 +2077,16 @@
                 "flushStarter": {
                     "title": "Flush (5 kort)",
                     "description": "Ger %{points} om alla kort i din hand + startkortet är av samma sort. Detta gäller bara för korten i din hand, inte för korten i korgen."
+                },
+                "thirtyOneForTwo": {
+                    "title": "31 för två",
+                    "playTitle": "att träffa exakt %{target}",
+                    "playDescription": "Ger %{points} till spelaren som spelade det sista kortet som ledde till en summa av 31."
+                },
+                "oneForGo": {
+                    "title": "En för att gå",
+                    "playTitle": "att spela det sista kortet",
+                    "playDescription": "Ger %{points} till spelaren som spelade det sista kortet när ingen annan kan göra ett giltigt drag."
                 }
             },
             "title": {
@@ -2088,10 +2104,10 @@
             "selfJackHeelsPoints": "%{turn} drog en knekt! Du får %{points} för hans klackar.",
             "nameJackHeelsPoints": "%{turn} drog en knekt! %{name} får %{points} för hans klackar.",
             "nameSelfJackHeelsPoints": "Du drog en knekt! %{name} får %{points} för hans klackar.",
-            "selfFinishedPlay": "Du får %{points} för att pricka exakt %{target}.",
-            "nameFinishedPlay": "%{name} får %{points} för att pricka exakt %{target}.",
-            "selfLastCard": "Du får %{points} för att ha spelat ut det sista kortet.",
-            "nameLastCard": "%{name} får %{points} för att ha spelat ut det sista kortet.",
+            "selfPlayOfOne": "Du får %{points} för %{0}.",
+            "selfPlayOfTwo": "Du får %{points} för %{0} och %{1}.",
+            "namePlayOfOne": "%{name} får %{points} för %{0}.",
+            "namePlayOfTwo": "%{name} får %{points} för %{0} och %{1}.",
             "selfCannotPlay": "Inget av dina kort kan användas i spelet.",
             "nameCannotPlay": "%{name} har inga kort som kan användas i spelet.",
             "cardPlayBoardLimit": "Det här kortet kan inte spelas. Brädets värde kan inte överstiga %{limit}.",

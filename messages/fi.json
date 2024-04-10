@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 1399,
+        "total": 1411,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1728,6 +1728,7 @@
         "saveBlank": "Tallenna %{value}",
         "coinsBlank": "%{value} kolikkoa",
         "receivedBlank": "Saatu %{value}",
+        "lessThanBlank": "Vähemmän kuin %{value}",
         "sendVerification": "Lähetä vahvistus",
         "noThanks": "Ei kiitos",
         "ready": "Valmis",
@@ -2042,26 +2043,31 @@
                 "fifteen": {
                     "title": "Viistoista",
                     "description": "Antaa %{points} pistettä mille tahansa korttien yhdistelmälle, joiden summa on 15. Samaa korttia voidaan käyttää useissa yhdistelmissä.",
+                    "playTitle": "osumasta %{target}",
                     "playDescription": "Antaa %{points} pistettä kortin lisäämisestä, joka tekee yhteissumman 15."
                 },
                 "pair": {
                     "title": "Pari",
                     "description": "Antaa %{points} pistettä, jos sulla on kaksi samanarvoista korttia.",
+                    "playTitle": "asettamalla %{title}",
                     "playDescription": "Antaa %{points} pistettä, kun lisäät kortin, jolla on sama arvo kuin juuri pelatulla kortilla."
                 },
                 "pairRoyal": {
                     "title": "Kolmen parin kuningas",
                     "description": "Antaa %{points} pistettä, jos sulla on kolme samanarvoista korttia.",
+                    "playTitle": "asettamalla %{title}",
                     "playDescription": "Antaa %{points} pistettä, kun lisäät kortin, jolla on sama arvo kuin kahdella edellisellä kortilla."
                 },
                 "doublePairRoyal": {
                     "title": "Kaksoispari Kuningallinen",
                     "description": "Antaa %{points} pistettä, kun sulla on neljä samanarvoista korttia.",
+                    "playTitle": "asettamalla %{title}",
                     "playDescription": "Antaa %{points} pistettä, kun lisäät kortin, jolla on sama arvo kuin kolmella edellisellä kortilla."
                 },
                 "run": {
                     "title": "Juoksu",
                     "description": "Antaa %{points} pistettä jokaisesta kortista sarjassa.",
+                    "playTitle": "tehdessäsi juoksun %{cards} kortilla",
                     "playDescription": "Antaa %{points} pistettä jokaisesta sekvenssin kortista. Korttien ei tarvitse olla järjestyksessä, mutta ne on ryhmiteltävä yhteen. Esimerkiksi, jos otat viimeiset kortit ja järjestät ne uudelleen, niiden pitäisi laskea keskeytyksettä."
                 },
                 "flush": {
@@ -2071,6 +2077,16 @@
                 "flushStarter": {
                     "title": "Viiden kortin värisuora",
                     "description": "Antaa %{points} pistettä, jos kaikki kortit kädessäsi + aloituskortti ovat samaa maata. Tämä koskee vain kortteja kädessäsi, lukuun ottamatta pistekorttia."
+                },
+                "thirtyOneForTwo": {
+                    "title": "31 kahdelle",
+                    "playTitle": "osumalla täsmälleen %{target}iin",
+                    "playDescription": "Antaa %{points} pistettä pelaajalle, joka pelasi viimeisen kortin, joka johti summaan 31."
+                },
+                "oneForGo": {
+                    "title": "Yksi menemisestä",
+                    "playTitle": "viimeisen kortin pelaamisesta",
+                    "playDescription": "Antaa %{points} pistettä pelaajalle, joka pelasi viimeisen kortin, kun kukaan muu ei voi tehdä laillista siirtoa."
                 }
             },
             "title": {
@@ -2088,10 +2104,10 @@
             "selfJackHeelsPoints": "%{turn} veti jätkän! Saat %{points} hänen kantapäistään.",
             "nameJackHeelsPoints": "%{turn} veti jätkän! %{name} saa %{points} hänen kantapäistään.",
             "nameSelfJackHeelsPoints": "Vedit jätkän! %{name} saa %{points} kantapäistäsi.",
-            "selfFinishedPlay": "Saat %{points}, kun osut tasan %{target}.",
-            "nameFinishedPlay": "%{name} saa %{points}, kun hän osuu tasan %{target}.",
-            "selfLastCard": "Saat %{points}, koska pelasit viimeisen kortin.",
-            "nameLastCard": "%{name} saa %{points}, koska hän pelasi viimeisen kortin.",
+            "selfPlayOfOne": "Saat %{points} pistettä %{0}:sta.",
+            "selfPlayOfTwo": "Saat %{points} pistettä %{0}:sta ja %{1}:sta.",
+            "namePlayOfOne": "%{name} saa %{points} pistettä %{0}:sta.",
+            "namePlayOfTwo": "%{name} saa %{points} pistettä %{0}:sta ja %{1}:sta.",
             "selfCannotPlay": "Yhtäkään korttiasi ei voi käyttää pelissä.",
             "nameCannotPlay": "%{name}:lla ei ole yhtään korttia, jota voisi käyttää pelissä.",
             "cardPlayBoardLimit": "Tätä korttia ei voi pelata. Lautapelin arvo ei voi ylittää %{limit}.",

@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Hindi script",
         "rtl": false,
-        "total": 1399,
+        "total": 1411,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1728,6 +1728,7 @@
         "saveBlank": "%{value} सहेजें",
         "coinsBlank": "%{value} सिक्के",
         "receivedBlank": "%{value} प्राप्त किया",
+        "lessThanBlank": "%{value} से कम",
         "sendVerification": "सत्यापन भेजें",
         "noThanks": "नहीं, धन्यवाद",
         "ready": "तैयार",
@@ -2042,26 +2043,31 @@
                 "fifteen": {
                     "title": "पंद्रह",
                     "description": "जो भी कार्ड्स का योग 15 होता है, उसके लिए %{points} अंक प्रदान करता है। एक ही कार्ड को कई संयोजनों के लिए पुनः उपयोग किया जा सकता है।",
+                    "playTitle": "%{target} को मारने के लिए",
                     "playDescription": "जो कार्ड जोड़कर कुल 15 बनाता है, उसके लिए %{points} पुरस्कार देता है।"
                 },
                 "pair": {
                     "title": "जोड़ी",
                     "description": "दो कार्ड्स जिनकी रैंक समान हो, उसके लिए %{points} अंक देता है।",
+                    "playTitle": "%{title} रखने के लिए",
                     "playDescription": "जिस रैंक का कार्ड अभी खेला गया है, उसी रैंक का एक और कार्ड जोड़ने के लिए %{points} अंक प्रदान करता है।"
                 },
                 "pairRoyal": {
                     "title": "रॉयल जोड़ी",
                     "description": "तीन पत्तियों के समान दर्जे के होने पर %{points} अंक प्रदान करता है।",
+                    "playTitle": "%{title} रखने के लिए",
                     "playDescription": "अंतिम दो कार्डों के समान रैंक वाले कार्ड को जोड़ने के लिए %{points} पुरस्कार देता है।"
                 },
                 "doublePairRoyal": {
                     "title": "डबल जोड़ी रॉयल",
                     "description": "चार कार्ड्स जिनकी रैंक समान हो, उसके लिए %{points} अंक देता है।",
+                    "playTitle": "%{title} रखने के लिए",
                     "playDescription": "अंतिम तीन कार्ड्स के समान रैंक वाले कार्ड को जोड़ने के लिए %{points} पुरस्कार देता है।"
                 },
                 "run": {
                     "title": "दौड़",
                     "description": "हर कार्ड के लिए %{points} अंक देता है।",
+                    "playTitle": "%{cards} की एक श्रृंखला बनाने के लिए",
                     "playDescription": "हर sequence में होने वाले कार्ड के लिए %{points} अंक प्रदान करता है। कार्डों को क्रम में होने की जरूरत नहीं है, लेकिन उन्हें साथ में रखने की जरूरत है। उदाहरण के लिए, अगर आप अंतिम कुछ कार्ड लेते हैं और उन्हें क्रम में व्यवस्थित करते हैं, तो वे अविरोधित गिनती करने चाहिए।"
                 },
                 "flush": {
@@ -2071,6 +2077,16 @@
                 "flushStarter": {
                     "title": "फ्लश (5 कार्ड)",
                     "description": "अगर आपके हाथ में सभी कार्ड + स्टार्टर कार्ड एक ही रंग के हैं, तो %{points} अंक मिलते हैं। यह केवल आपके हाथ के कार्डों पर लागू होता है, क्रिब को छोड़कर।"
+                },
+                "thirtyOneForTwo": {
+                    "title": "31 के लिए दो",
+                    "playTitle": "ठीक %{target} हिट करने पर",
+                    "playDescription": "जिस खिलाड़ी ने अंतिम कार्ड खेलकर 31 का योग बनाया, उसे %{points} अंक प्रदान करता है।"
+                },
+                "oneForGo": {
+                    "title": "एक चलने के लिए",
+                    "playTitle": "अंतिम कार्ड खेलने के लिए",
+                    "playDescription": "जब कोई भी वैध खेल नहीं कर सकता, तो अंतिम कार्ड खेलने वाले खिलाड़ी को %{points} पुरस्कार देता है।"
                 }
             },
             "title": {
@@ -2088,10 +2104,10 @@
             "selfJackHeelsPoints": "%{turn} ने एक जैक खींचा! आपको उसकी एड़ियों के लिए %{points} मिलते हैं।",
             "nameJackHeelsPoints": "%{turn} ने एक जैक खींचा! %{name} को उसकी एड़ियों के लिए %{points} मिलते हैं।",
             "nameSelfJackHeelsPoints": "आपने एक जैक खींचा! %{name} को उसकी एड़ियों के लिए %{points} मिलते हैं।",
-            "selfFinishedPlay": "आपको ठीक %{target} हिट करने पर %{points} मिलते हैं।",
-            "nameFinishedPlay": "%{name} को ठीक %{target} हिट करने पर %{points} मिलते हैं।",
-            "selfLastCard": "आपको अंतिम कार्ड खेलने के लिए %{points} मिलते हैं।",
-            "nameLastCard": "%{name} को अंतिम कार्ड खेलने के लिए %{points} मिलते हैं।",
+            "selfPlayOfOne": "आपको %{0} के लिए %{points} मिलते हैं।",
+            "selfPlayOfTwo": "आपको %{0} और %{1} के लिए %{points} मिलते हैं।",
+            "namePlayOfOne": "%{name} को %{0} के लिए %{points} मिलते हैं।",
+            "namePlayOfTwo": "%{name} को %{0} और %{1} के लिए %{points} मिलते हैं।",
             "selfCannotPlay": "आपके पास कोई भी कार्ड खेलने के लिए उपयोगी नहीं है।",
             "nameCannotPlay": "%{name} के पास खेलने के लिए कोई उपयोगी कार्ड नहीं है।",
             "cardPlayBoardLimit": "यह कार्ड खेला नहीं जा सकता। बोर्ड का मूल्य %{limit} से अधिक नहीं हो सकता।",

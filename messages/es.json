@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Mexican Spanish",
         "rtl": false,
-        "total": 1399,
+        "total": 1411,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1728,6 +1728,7 @@
         "saveBlank": "Guardar %{value}",
         "coinsBlank": "%{value} monedas",
         "receivedBlank": "Recibido %{value}",
+        "lessThanBlank": "Menos de %{value}",
         "sendVerification": "Enviar verificación",
         "noThanks": "No, gracias",
         "ready": "Listo",
@@ -2042,26 +2043,31 @@
                 "fifteen": {
                     "title": "Quince",
                     "description": "Otorga %{points} por cualquier combinación de cartas cuya suma sea 15. Las mismas cartas pueden reutilizarse para múltiples combinaciones.",
+                    "playTitle": "al darle a %{target}",
                     "playDescription": "Otorga %{points} por agregar una carta que hace un total de 15."
                 },
                 "pair": {
                     "title": "Par",
                     "description": "Otorga %{points} por tener dos cartas del mismo rango.",
+                    "playTitle": "poniendo un %{title}",
                     "playDescription": "Otorga %{points} por agregar una carta del mismo rango que acaba de jugar."
                 },
                 "pairRoyal": {
                     "title": "Trío Real",
                     "description": "Otorga %{points} por tener tres cartas del mismo número.",
+                    "playTitle": "colocando un %{title}",
                     "playDescription": "Otorga %{points} por agregar una carta del mismo rango que las dos últimas cartas."
                 },
                 "doublePairRoyal": {
                     "title": "Doble Par Real",
                     "description": "Otorga %{points} por tener cuatro cartas del mismo número.",
+                    "playTitle": "colocando un %{title}",
                     "playDescription": "Otorga %{points} por agregar una carta del mismo rango que las últimas tres cartas."
                 },
                 "run": {
                     "title": "Racha",
                     "description": "Otorga %{points} por cada carta en la secuencia.",
+                    "playTitle": "haciendo una secuencia de %{cards}",
                     "playDescription": "Otorga %{points} por cada carta en la secuencia. Las cartas no necesitan estar en orden, pero sí necesitan estar agrupadas. Por ejemplo, si tomas las últimas cartas y las reorganizas en orden, deberían sumar sin interrupciones."
                 },
                 "flush": {
@@ -2071,6 +2077,16 @@
                 "flushStarter": {
                     "title": "Escalera (5 cartas)",
                     "description": "Te da %{points} si todas las cartas en tu mano + la carta inicial son del mismo palo. Esto solo aplica a las cartas en tu mano, excluyendo la cuna."
+                },
+                "thirtyOneForTwo": {
+                    "title": "31 para dos",
+                    "playTitle": "al dar justo en el %{target}",
+                    "playDescription": "Otorga %{points} al jugador que jugó la última carta que sumó 31."
+                },
+                "oneForGo": {
+                    "title": "Uno por ir",
+                    "playTitle": "jugando la última carta",
+                    "playDescription": "Otorga %{points} al jugador que jugó la última carta cuando nadie más puede hacer una jugada válida."
                 }
             },
             "title": {
@@ -2088,10 +2104,10 @@
             "selfJackHeelsPoints": "¡%{turn} sacó un joto! Te llevas %{points} por sus talones.",
             "nameJackHeelsPoints": "¡%{turn} sacó un joto! %{name} se lleva %{points} por sus talones.",
             "nameSelfJackHeelsPoints": "¡Sacaste un joto! %{name} se lleva %{points} por sus talones.",
-            "selfFinishedPlay": "Te llevas %{points} por darle exactamente a %{target}.",
-            "nameFinishedPlay": "%{name} se lleva %{points} por darle exactamente a %{target}.",
-            "selfLastCard": "Tú recibes %{points} por haber jugado la última carta.",
-            "nameLastCard": "%{name} recibe %{points} por haber jugado la última carta.",
+            "selfPlayOfOne": "Te llevas %{points} por %{0}.",
+            "selfPlayOfTwo": "Te llevas %{points} por %{0} y %{1}.",
+            "namePlayOfOne": "%{name} se lleva %{points} por %{0}.",
+            "namePlayOfTwo": "%{name} se lleva %{points} por %{0} y %{1}.",
             "selfCannotPlay": "Ninguna de tus cartas puede ser usada en la jugada.",
             "nameCannotPlay": "%{name} no tiene cartas que puedan ser usadas en la jugada.",
             "cardPlayBoardLimit": "No puedes jugar esta carta. El valor del tablero no puede exceder %{limit}.",
