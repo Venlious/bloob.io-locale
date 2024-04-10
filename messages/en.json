@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal American English",
         "rtl": false,
-        "total": 1399,
+        "total": 1411,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1728,6 +1728,7 @@
         "saveBlank": "Save %{value}",
         "coinsBlank": "%{value} coins",
         "receivedBlank": "Received %{value}",
+        "lessThanBlank": "Less than %{value}",
         "sendVerification": "Send Verification",
         "noThanks": "No thanks",
         "ready": "Ready",
@@ -2042,26 +2043,31 @@
                 "fifteen": {
                     "title": "Fifteen",
                     "description": "Awards %{points} for any combination of cards of which the sum is 15. The same cards can be re-used for multiple combinations.",
+                    "playTitle": "hitting %{target}",
                     "playDescription": "Awards %{points} for adding a card that makes the total 15."
                 },
                 "pair": {
                     "title": "Pair",
                     "description": "Awards %{points} for having two cards of the same rank.",
+                    "playTitle": "placing a %{title}",
                     "playDescription": "Awards %{points} for adding a card with the same rank just played."
                 },
                 "pairRoyal": {
                     "title": "Pair Royal",
                     "description": "Awards %{points} for having three cards of the same rank.",
+                    "playTitle": "placing a %{title}",
                     "playDescription": "Awards %{points} for adding a card with the same rank as the last two cards."
                 },
                 "doublePairRoyal": {
                     "title": "Double Pair Royal",
                     "description": "Awards %{points} for having four cards of the same rank.",
+                    "playTitle": "placing a %{title}",
                     "playDescription": "Awards %{points} for adding a card with the same rank as the last three cards."
                 },
                 "run": {
                     "title": "Run",
                     "description": "Awards %{points} for each card in the sequence.",
+                    "playTitle": "making a run of %{cards}",
                     "playDescription": "Awards %{points} for each card in the sequence. The cards do not need to be in order, but do need to be grouped together. As an example, if you take the last few cards and re-arrange them in order, they should count up uninterrupted."
                 },
                 "flush": {
@@ -2071,6 +2077,16 @@
                 "flushStarter": {
                     "title": "Flush (5 cards)",
                     "description": "Awards %{points} if all cards in your hand + the starter card are of the same suit. This only applies to the cards in your hand, excluding the crib."
+                },
+                "thirtyOneForTwo": {
+                    "title": "31 for two",
+                    "playTitle": "hitting exactly %{target}",
+                    "playDescription": "Awards %{points} to the player who played the last card leading to a sum of 31."
+                },
+                "oneForGo": {
+                    "title": "One for go",
+                    "playTitle": "playing the last card",
+                    "playDescription": "Awards %{points} to the player who played the last card when no one else can make a valid play."
                 }
             },
             "title": {
@@ -2088,10 +2104,10 @@
             "selfJackHeelsPoints": "%{turn} drew a jack! You get %{points} for his heels.",
             "nameJackHeelsPoints": "%{turn} drew a jack! %{name} gets %{points} for his heels.",
             "nameSelfJackHeelsPoints": "You drew a jack! %{name} gets %{points} for his heels.",
-            "selfFinishedPlay": "You get %{points} for hitting exactly %{target}.",
-            "nameFinishedPlay": "%{name} gets %{points} for hitting exactly %{target}.",
-            "selfLastCard": "You get %{points} for having played the last card.",
-            "nameLastCard": "%{name} gets %{points} for having played the last card.",
+            "selfPlayOfOne": "You get %{points} for %{0}.",
+            "selfPlayOfTwo": "You get %{points} for %{0} and %{1}.",
+            "namePlayOfOne": "%{name} gets %{points} for %{0}.",
+            "namePlayOfTwo": "%{name} gets %{points} for %{0} and %{1}.",
             "selfCannotPlay": "None of your cards can be used in the play.",
             "nameCannotPlay": "%{name} has no cards that can be used in the play.",
             "cardPlayBoardLimit": "This card cannot be played. The board's value cannot exceed %{limit}.",

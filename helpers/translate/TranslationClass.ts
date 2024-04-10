@@ -350,6 +350,12 @@ export default class TranslationClass {
 					`This translation is a Cribbage score description.`
 				)
 			}
+			if (target.playTitle) {
+				this.generateTranslationTask(
+					[`info`, `cribbage`, `type`, type, `playTitle`],
+					`This translation is a Cribbage play score description. It is shown inside %{0} or %{1}. Example phrase in which it is used: "You get 2 points for %{0} and %{1}."`
+				)
+			}
 			if (target.playDescription) {
 				this.generateTranslationTask(
 					[`info`, `cribbage`, `type`, type, `playDescription`],
