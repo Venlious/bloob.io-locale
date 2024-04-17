@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 1399,
+        "total": 1419,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1170,6 +1170,14 @@
             "description": "Asah kecerdasanmu dan mainkan Cribbage online! Dengan sistem penilaian unik dan gameplay strategis, Cribbage menawarkan jam-jam kesenangan tak terbatas bagi penggemar game kartu.",
             "title": "Tantang Temanmu",
             "options": {
+                "summaryEnabled": {
+                    "title": "Ringkasan Putaran",
+                    "help": "Menunjukkan ringkasan skor untuk semua pemain dengan rincian semua poin."
+                },
+                "summaryTime": {
+                    "title": "Waktu Ringkasan",
+                    "help": "Berapa lama ringkasan skor harus ditampilkan sebelum berpindah. Pemain juga bisa memilih untuk melewati ringkasan putaran lebih cepat."
+                },
                 "playTime": {
                     "title": "Waktu Bermain",
                     "help": "Berapa lama setiap pemain punya waktu untuk memilih kartu dari tangan mereka untuk ditambahkan ke permainan yang sedang berlangsung."
@@ -1319,6 +1327,7 @@
             "nameTurn": "Giliran %{name}",
             "yourTurnBreaking": "Kamu sedang merusak %{extra}",
             "nameTurnBreaking": "%{name} lagi rusak",
+            "roundSummary": "Ringkasan ronde",
             "roundCount": "Ronde %{current} dari %{total}",
             "dealingCards": "Lagi bagi-bagi kartu nih...",
             "youPickStarterCard": "Kamu harus pilih kartu awal",
@@ -1550,6 +1559,7 @@
         "includesItems": "Termasuk {count} item | Termasuk {count} item | Termasuk {count} item"
     },
     "misc": {
+        "total": "Total",
         "judge": "Hakim",
         "dealer": "Pedagang",
         "slow": "Lambat",
@@ -1728,6 +1738,7 @@
         "saveBlank": "Simpan %{value}",
         "coinsBlank": "%{value} koin",
         "receivedBlank": "Diterima %{value}",
+        "lessThanBlank": "Kurang dari %{value}",
         "sendVerification": "Kirim Verifikasi",
         "noThanks": "Nggak, makasih",
         "ready": "Siap",
@@ -2035,6 +2046,9 @@
         },
         "cribbage": {
             "type": {
+                "jackHeels": {
+                    "title": "Dua untuk tumitnya"
+                },
                 "oneForHisNob": {
                     "title": "Satu untuk si bangsawan",
                     "description": "Memberikan %{points} untuk memiliki jack dengan suit yang sama seperti kartu awal."
@@ -2042,26 +2056,31 @@
                 "fifteen": {
                     "title": "Lima Belas",
                     "description": "Memberikan %{points} untuk setiap kombinasi kartu yang jumlahnya 15. Kartu yang sama bisa digunakan lagi untuk kombinasi lainnya.",
+                    "playTitle": "nabrak %{target}",
                     "playDescription": "Memberikan %{points} untuk menambahkan kartu yang membuat totalnya menjadi 15."
                 },
                 "pair": {
                     "title": "Pasangan",
                     "description": "Memberikan %{points} untuk memiliki dua kartu dengan peringkat yang sama.",
+                    "playTitle": "menaruh %{title}",
                     "playDescription": "Memberikan %{points} untuk menambahkan kartu dengan peringkat yang sama seperti yang baru saja dimainkan."
                 },
                 "pairRoyal": {
                     "title": "Tiga Pasangan",
                     "description": "Memberikan %{points} untuk punya tiga kartu dengan peringkat yang sama.",
+                    "playTitle": "menaruh %{title}",
                     "playDescription": "Memberikan %{points} untuk menambahkan kartu dengan peringkat yang sama seperti dua kartu terakhir."
                 },
                 "doublePairRoyal": {
                     "title": "Empat Pasangan Kerajaan",
                     "description": "Memberikan %{points} untuk punya empat kartu dengan peringkat yang sama.",
+                    "playTitle": "menaruh %{title}",
                     "playDescription": "Memberikan %{points} untuk menambahkan kartu dengan peringkat yang sama seperti tiga kartu terakhir."
                 },
                 "run": {
                     "title": "Lari",
                     "description": "Memberikan %{points} untuk setiap kartu dalam urutan tersebut.",
+                    "playTitle": "membuat urutan kartu %{cards}",
                     "playDescription": "Memberikan %{points} untuk setiap kartu dalam urutan. Kartu-kartu ini tidak perlu berurutan, tapi harus dikelompokkan bersama. Sebagai contoh, jika kamu mengambil beberapa kartu terakhir dan mengatur ulang mereka dalam urutan, mereka harus dihitung tanpa terputus."
                 },
                 "flush": {
@@ -2071,6 +2090,16 @@
                 "flushStarter": {
                     "title": "Flush (5 kartu)",
                     "description": "Memberi %{points} jika semua kartu di tanganmu + kartu starter adalah dari jenis yang sama. Ini hanya berlaku untuk kartu di tanganmu, tidak termasuk crib."
+                },
+                "thirtyOneForTwo": {
+                    "title": "31 untuk dua",
+                    "playTitle": "ngebanting tepat di %{target}",
+                    "playDescription": "Memberikan %{points} kepada pemain yang memainkan kartu terakhir yang menghasilkan jumlah 31."
+                },
+                "oneForGo": {
+                    "title": "Satu untuk pergi",
+                    "playTitle": "memainkan kartu terakhir",
+                    "playDescription": "Memberikan %{points} kepada pemain yang memainkan kartu terakhir ketika tidak ada orang lain yang bisa melakukan permainan yang valid."
                 }
             },
             "title": {
@@ -2088,14 +2117,15 @@
             "selfJackHeelsPoints": "%{turn} mengambil Jack! Kamu dapat %{points} untuk tumitnya.",
             "nameJackHeelsPoints": "%{turn} mengambil Jack! %{name} dapat %{points} untuk tumitnya.",
             "nameSelfJackHeelsPoints": "Kamu mengambil Jack! %{name} dapat %{points} untuk tumitnya.",
-            "selfFinishedPlay": "Kamu dapat %{points} karena telah menyelesaikan permainan.",
-            "nameFinishedPlay": "%{name} dapet %{points} karena udah selesai main.",
-            "selfLastCard": "Kamu dapet %{points} karena udah mainin kartu terakhir.",
-            "nameLastCard": "%{name} dapet %{points} karena udah mainin kartu terakhir.",
+            "selfPlayOfOne": "Kamu dapet %{points} buat %{0}.",
+            "selfPlayOfTwo": "Kamu dapet %{points} buat %{0} dan %{1}.",
+            "namePlayOfOne": "%{name} dapet %{points} buat %{0}.",
+            "namePlayOfTwo": "%{name} dapet %{points} buat %{0} dan %{1}.",
             "selfCannotPlay": "Kamu nggak punya kartu yang bisa dipake buat main.",
             "nameCannotPlay": "%{name} nggak punya kartu yang bisa dipake buat main.",
             "cardPlayBoardLimit": "Kartu ini nggak bisa dimainkan. Nilai papan nggak boleh melebihi %{limit}.",
-            "sendCardsToCrib": "Kirim Kartu ke Crib"
+            "sendCardsToCrib": "Kirim Kartu ke Crib",
+            "pointsDisclaimer": "Skor ini nggak dihitung karena permainannya selesai lebih cepat."
         },
         "battleship": {
             "keyToRotate": "Tekan 'R' buat muter",

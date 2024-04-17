@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Norwegian (Bokmål)",
         "rtl": false,
-        "total": 1399,
+        "total": 1419,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1170,6 +1170,14 @@
             "description": "Skjerp vettet og spill Cribbage online! Med sitt unike poengsystem og strategiske spill, tilbyr Cribbage uendelige timer med moro for kortspillentusiaster.",
             "title": "Utfordre vennene dine",
             "options": {
+                "summaryEnabled": {
+                    "title": "Oppsummering av runden",
+                    "help": "Viser en poengoppsummering for alle spillere med en nedbrytning av alle poeng."
+                },
+                "summaryTime": {
+                    "title": "Oppsummeringstid",
+                    "help": "Hvor lenge poengsammendraget skal vises før det går videre. Spillerne kan også stemme for å hoppe over rundeoppsummeringen tidligere."
+                },
                 "playTime": {
                     "title": "Spilletid",
                     "help": "Hvor lang tid hver spiller har til å velge et kort fra hånden sin for å legge til i det pågående spillet."
@@ -1319,6 +1327,7 @@
             "nameTurn": "%{name}s tur",
             "yourTurnBreaking": "Du bryter %{extra}",
             "nameTurnBreaking": "%{name} bryter",
+            "roundSummary": "Oppsummering av runden",
             "roundCount": "Runde %{current} av %{total}",
             "dealingCards": "Deler ut kort...",
             "youPickStarterCard": "Du må velge startkortet",
@@ -1550,6 +1559,7 @@
         "includesItems": "Inkluderer {count} ting | Inkluderer {count} ting | Inkluderer {count} ting"
     },
     "misc": {
+        "total": "Totalt",
         "judge": "Dommer",
         "dealer": "Forhandler",
         "slow": "Sakte",
@@ -1728,6 +1738,7 @@
         "saveBlank": "Lagre %{value}",
         "coinsBlank": "%{value} mynter",
         "receivedBlank": "Mottatt %{value}",
+        "lessThanBlank": "Mindre enn %{value}",
         "sendVerification": "Send verifisering",
         "noThanks": "Nei takk",
         "ready": "Klar",
@@ -2035,6 +2046,9 @@
         },
         "cribbage": {
             "type": {
+                "jackHeels": {
+                    "title": "To for hælene hans"
+                },
                 "oneForHisNob": {
                     "title": "En for hans adelsmann",
                     "description": "Gir %{points} for å ha samme knekt-drakt som starteren."
@@ -2042,26 +2056,31 @@
                 "fifteen": {
                     "title": "Femten",
                     "description": "Gir %{points} for enhver kombinasjon av kort hvor summen er 15. De samme kortene kan brukes om igjen for flere kombinasjoner.",
+                    "playTitle": "å treffe %{target}",
                     "playDescription": "Gir %{points} for å legge til et kort som gir totalt 15."
                 },
                 "pair": {
                     "title": "Par",
                     "description": "Gir %{points} for å ha to kort med samme rang.",
+                    "playTitle": "plassering av en %{title}",
                     "playDescription": "Gir %{points} for å legge til et kort med samme rang som nettopp ble spilt."
                 },
                 "pairRoyal": {
                     "title": "Konge-par",
                     "description": "Gir %{points} for å ha tre kort med samme rang.",
+                    "playTitle": "plassering av en %{title}",
                     "playDescription": "Gir %{points} for å legge til et kort med samme rang som de to siste kortene."
                 },
                 "doublePairRoyal": {
                     "title": "Dobbel Par Royal",
                     "description": "Gir %{points} for å ha fire kort av samme rang.",
+                    "playTitle": "plassering av en %{title}",
                     "playDescription": "Gir %{points} for å legge til et kort med samme rang som de tre siste kortene."
                 },
                 "run": {
                     "title": "Serie",
                     "description": "Gir %{points} for hvert kort i sekvensen.",
+                    "playTitle": "å lage en rekke med %{cards}",
                     "playDescription": "Gir %{points} for hvert kort i sekvensen. Kortene trenger ikke å være i orden, men de må være gruppert sammen. For eksempel, hvis du tar de siste kortene og ordner dem i rekkefølge, skal de telle opp uten avbrudd."
                 },
                 "flush": {
@@ -2071,6 +2090,16 @@
                 "flushStarter": {
                     "title": "Flush (5 kort)",
                     "description": "Gir deg %{points} hvis alle kortene i hånden din + startkortet er av samme sort. Dette gjelder bare for kortene i hånden din, utenom cribben."
+                },
+                "thirtyOneForTwo": {
+                    "title": "31 for to",
+                    "playTitle": "å treffe nøyaktig %{target}",
+                    "playDescription": "Gir %{points} til spilleren som la det siste kortet som førte til en sum på 31."
+                },
+                "oneForGo": {
+                    "title": "En for å gå",
+                    "playTitle": "å spille det siste kortet",
+                    "playDescription": "Gir %{points} til spilleren som la det siste kortet når ingen andre kan gjøre et gyldig trekk."
                 }
             },
             "title": {
@@ -2088,14 +2117,15 @@
             "selfJackHeelsPoints": "%{turn} trakk en knekt! Du får %{points} for hælene hans.",
             "nameJackHeelsPoints": "%{turn} trakk en knekt! %{name} får %{points} for hælene hans.",
             "nameSelfJackHeelsPoints": "Du trakk en knekt! %{name} får %{points} for hælene dine.",
-            "selfFinishedPlay": "Du får %{points} for å ha avsluttet spillet.",
-            "nameFinishedPlay": "%{name} får %{points} for å ha avsluttet spillet.",
-            "selfLastCard": "Du får %{points} for å ha spilt det siste kortet.",
-            "nameLastCard": "%{name} får %{points} for å ha spilt det siste kortet.",
+            "selfPlayOfOne": "Du får %{points} for %{0}.",
+            "selfPlayOfTwo": "Du får %{points} for %{0} og %{1}.",
+            "namePlayOfOne": "%{name} får %{points} for %{0}.",
+            "namePlayOfTwo": "%{name} får %{points} for %{0} og %{1}.",
             "selfCannotPlay": "Ingen av kortene dine kan brukes i spillet.",
             "nameCannotPlay": "%{name} har ingen kort som kan brukes i spillet.",
             "cardPlayBoardLimit": "Dette kortet kan ikke spilles. Brettets verdi kan ikke overstige %{limit}.",
-            "sendCardsToCrib": "Send kort til Crib"
+            "sendCardsToCrib": "Send kort til Crib",
+            "pointsDisclaimer": "Disse poengene telte ikke fordi spillet ble ferdig tidlig."
         },
         "battleship": {
             "keyToRotate": "Trykk 'R' for å rotere",

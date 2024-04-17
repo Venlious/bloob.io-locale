@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 1399,
+        "total": 1419,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1170,6 +1170,14 @@
             "description": "锐化你的智慧，来玩在线的Cribbage吧！凭借其独特的计分系统和策略性的游戏玩法，Cribbage为纸牌游戏爱好者提供了无尽的乐趣。",
             "title": "挑战你的朋友们",
             "options": {
+                "summaryEnabled": {
+                    "title": "回合总结",
+                    "help": "显示所有玩家的得分总结，包括所有点数的细分。"
+                },
+                "summaryTime": {
+                    "title": "总结时间",
+                    "help": "得分总结应显示多长时间才能继续。玩家也可以投票提前跳过回合总结。"
+                },
                 "playTime": {
                     "title": "游戏时间",
                     "help": "每个玩家需要多长时间从他们的手牌中选一张牌来继续游戏。"
@@ -1319,6 +1327,7 @@
             "nameTurn": "轮到%{name}了",
             "yourTurnBreaking": "你正在破坏 %{extra}",
             "nameTurnBreaking": "%{name}正在坏掉",
+            "roundSummary": "回合总结",
             "roundCount": "第%{current}轮，总共%{total}轮",
             "dealingCards": "正在发牌...",
             "youPickStarterCard": "你得选一张起始牌",
@@ -1550,6 +1559,7 @@
         "includesItems": "包含 {count} 个物品 | 包含 {count} 个物品 | 包含 {count} 个物品"
     },
     "misc": {
+        "total": "总数",
         "judge": "裁判",
         "dealer": "庄家",
         "slow": "慢",
@@ -1728,6 +1738,7 @@
         "saveBlank": "保存 %{value}",
         "coinsBlank": "%{value} 金币",
         "receivedBlank": "收到 %{value}",
+        "lessThanBlank": "小于%{value}",
         "sendVerification": "发送验证",
         "noThanks": "不用了，谢谢",
         "ready": "准备好了",
@@ -2035,6 +2046,9 @@
         },
         "cribbage": {
             "type": {
+                "jackHeels": {
+                    "title": "他的脚后跟得两分"
+                },
                 "oneForHisNob": {
                     "title": "他的贵族得一分",
                     "description": "如果你的杰克牌和起始牌是同一花色，就能得到 %{points} 分。"
@@ -2042,26 +2056,31 @@
                 "fifteen": {
                     "title": "十五分",
                     "description": "为任何卡牌组合的总和为15的情况奖励%{points}分。同一张卡可以被重复用于多个组合。",
+                    "playTitle": "击中 %{target}",
                     "playDescription": "为了加一张让总数达到15的牌，奖励%{points}分。"
                 },
                 "pair": {
                     "title": "一对",
                     "description": "因为有两张相同等级的牌，奖励你 %{points} 分。",
+                    "playTitle": "放置一个 %{title}",
                     "playDescription": "为刚刚打出的同等级卡片加分 %{points}。"
                 },
                 "pairRoyal": {
                     "title": "三张一样的牌",
                     "description": "因为有三张相同等级的牌，奖励你 %{points} 分。",
+                    "playTitle": "放置一个%{title}",
                     "playDescription": "为添加一张与最后两张牌同等级的牌奖励 %{points} 分。"
                 },
                 "doublePairRoyal": {
                     "title": "双对皇家",
                     "description": "因为有四张相同等级的牌，奖励你 %{points} 分。",
+                    "playTitle": "放置一个%{title}",
                     "playDescription": "奖励%{points}分，因为你添加了一张和最后三张牌同等级的牌。"
                 },
                 "run": {
                     "title": "顺子",
                     "description": "为序列中的每张卡片奖励 %{points} 分。",
+                    "playTitle": "组成了%{cards}张牌的顺子",
                     "playDescription": "为序列中的每张卡片奖励%{points}分。卡片不需要按顺序，但需要放在一起。举个例子，如果你拿最后几张卡重新排列，它们应该连续不断地计数。"
                 },
                 "flush": {
@@ -2071,6 +2090,16 @@
                 "flushStarter": {
                     "title": "同花（5张牌）",
                     "description": "如果你手中的所有牌+底牌都是同一花色，就能得到%{points}分。这只适用于你手中的牌，不包括底牌。"
+                },
+                "thirtyOneForTwo": {
+                    "title": "两个得31分",
+                    "playTitle": "恰好打到 %{target}",
+                    "playDescription": "给出了最后一张牌，使总数达到31的玩家奖励%{points}分。"
+                },
+                "oneForGo": {
+                    "title": "过一分",
+                    "playTitle": "打出最后一张牌",
+                    "playDescription": "给最后出牌且其他人无法进行有效出牌的玩家奖励%{points}分。"
                 }
             },
             "title": {
@@ -2088,14 +2117,15 @@
             "selfJackHeelsPoints": "%{turn} 抽到了一个杰克！他的脚跟给你带来了 %{points} 分。",
             "nameJackHeelsPoints": "%{turn} 抽到了一个杰克！他的脚跟给 %{name} 带来了 %{points} 分。",
             "nameSelfJackHeelsPoints": "你抽到了一个杰克！你的脚跟给 %{name} 带来了 %{points} 分。",
-            "selfFinishedPlay": "你因为完成了游戏得到了 %{points} 分。",
-            "nameFinishedPlay": "%{name}因为完成了游戏，得到了%{points}分。",
-            "selfLastCard": "你因为出了最后一张牌，得到了%{points}分。",
-            "nameLastCard": "%{name}因为出了最后一张牌，得到了%{points}分。",
+            "selfPlayOfOne": "你因为%{0}得到%{points}分。",
+            "selfPlayOfTwo": "你因为%{0}和%{1}得到%{points}分。",
+            "namePlayOfOne": "%{name}因为%{0}得到%{points}分。",
+            "namePlayOfTwo": "%{name}因为%{0}和%{1}得到%{points}分。",
             "selfCannotPlay": "你的牌都不能用在游戏中。",
             "nameCannotPlay": "%{name}的牌都不能用在游戏中。",
             "cardPlayBoardLimit": "这张牌不能出。棋盘的值不能超过%{limit}。",
-            "sendCardsToCrib": "把牌送到摇篮里"
+            "sendCardsToCrib": "把牌送到摇篮里",
+            "pointsDisclaimer": "这些分数没算，因为游戏提前结束了。"
         },
         "battleship": {
             "keyToRotate": "按 'R' 来旋转",

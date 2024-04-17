@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Italian",
         "rtl": false,
-        "total": 1399,
+        "total": 1419,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1170,6 +1170,14 @@
             "description": "Affila la tua astuzia e gioca a Cribbage online! Con il suo unico sistema di punteggio e gameplay strategico, Cribbage offre ore infinite di divertimento per gli appassionati di giochi di carte.",
             "title": "Sfida i Tuoi Amici",
             "options": {
+                "summaryEnabled": {
+                    "title": "Riepilogo del Round",
+                    "help": "Mostra un riassunto dei punteggi per tutti i giocatori con un dettaglio di tutti i punti."
+                },
+                "summaryTime": {
+                    "title": "Tempo di Sommario",
+                    "help": "Quanto tempo dovrebbe essere mostrato il riepilogo del punteggio prima di passare avanti. I giocatori possono anche votare per saltare il riepilogo del round prima."
+                },
                 "playTime": {
                     "title": "Tempo di Gioco",
                     "help": "Quanto tempo ha ogni giocatore per scegliere una carta dalla loro mano da aggiungere al gioco in corso."
@@ -1319,6 +1327,7 @@
             "nameTurn": "Il turno di %{name}",
             "yourTurnBreaking": "Stai violando il %{extra}",
             "nameTurnBreaking": "%{name} si sta rompendo",
+            "roundSummary": "Riepilogo del turno",
             "roundCount": "Arrotonda %{current} su %{total}",
             "dealingCards": "Sto distribuendo le carte...",
             "youPickStarterCard": "Devi scegliere la carta iniziale",
@@ -1550,6 +1559,7 @@
         "includesItems": "Include {count} articoli | Include {count} articolo | Include {count} articoli"
     },
     "misc": {
+        "total": "Totale",
         "judge": "Giudice",
         "dealer": "Mazzo",
         "slow": "Lento",
@@ -1728,6 +1738,7 @@
         "saveBlank": "Salva %{value}",
         "coinsBlank": "%{value} monete",
         "receivedBlank": "Ricevuto %{value}",
+        "lessThanBlank": "Meno di %{value}",
         "sendVerification": "Invia Verifica",
         "noThanks": "No grazie",
         "ready": "Pronto",
@@ -2035,6 +2046,9 @@
         },
         "cribbage": {
             "type": {
+                "jackHeels": {
+                    "title": "Due per i suoi tacchi"
+                },
                 "oneForHisNob": {
                     "title": "Uno per il suo nob",
                     "description": "Assegna %{points} per avere lo stesso seme del jack come la carta iniziale."
@@ -2042,26 +2056,31 @@
                 "fifteen": {
                     "title": "Quindici",
                     "description": "Assegna %{points} per qualsiasi combinazione di carte che sommano 15. Le stesse carte possono essere riutilizzate per più combinazioni.",
+                    "playTitle": "colpendo %{target}",
                     "playDescription": "Assegna %{points} per aver aggiunto una carta che fa il totale 15."
                 },
                 "pair": {
                     "title": "Coppia",
                     "description": "Assegna %{points} per avere due carte dello stesso valore.",
+                    "playTitle": "mettendo un %{title}",
                     "playDescription": "Assegna %{points} per aver aggiunto una carta dello stesso valore appena giocata."
                 },
                 "pairRoyal": {
                     "title": "Tris Reale",
                     "description": "Assegna %{points} per avere tre carte dello stesso valore.",
+                    "playTitle": "mettendo un %{title}",
                     "playDescription": "Assegna %{points} per aver aggiunto una carta dello stesso valore delle ultime due carte."
                 },
                 "doublePairRoyal": {
                     "title": "Doppio Coppia Reale",
                     "description": "Assegna %{points} per avere quattro carte dello stesso valore.",
+                    "playTitle": "mettendo un %{title}",
                     "playDescription": "Assegna %{points} per aver aggiunto una carta dello stesso valore delle ultime tre carte."
                 },
                 "run": {
                     "title": "Corsa",
                     "description": "Assegna %{points} punti per ogni carta nella sequenza.",
+                    "playTitle": "facendo una sequenza di %{cards}",
                     "playDescription": "Assegna %{points} per ogni carta nella sequenza. Le carte non devono essere in ordine, ma devono essere raggruppate. Ad esempio, se prendi le ultime carte e le riordini, dovrebbero contare senza interruzioni."
                 },
                 "flush": {
@@ -2071,6 +2090,16 @@
                 "flushStarter": {
                     "title": "Colore (5 carte)",
                     "description": "Ti premia con %{points} se tutte le carte nella tua mano + la carta iniziale sono dello stesso seme. Questo vale solo per le carte nella tua mano, escludendo il crib."
+                },
+                "thirtyOneForTwo": {
+                    "title": "31 per due",
+                    "playTitle": "colpendo esattamente %{target}",
+                    "playDescription": "Assegna %{points} al giocatore che ha giocato l'ultima carta portando la somma a 31."
+                },
+                "oneForGo": {
+                    "title": "Uno per andare",
+                    "playTitle": "giocando l'ultima carta",
+                    "playDescription": "Assegna %{points} al giocatore che ha giocato l'ultima carta quando nessun altro può fare una mossa valida."
                 }
             },
             "title": {
@@ -2088,14 +2117,15 @@
             "selfJackHeelsPoints": "%{turn} ha pescato un fante! Prendi %{points} per i suoi tacchi.",
             "nameJackHeelsPoints": "%{turn} ha pescato un fante! %{name} prende %{points} per i suoi tacchi.",
             "nameSelfJackHeelsPoints": "Hai pescato un fante! %{name} prende %{points} per i suoi tacchi.",
-            "selfFinishedPlay": "Prendi %{points} per aver finito il gioco.",
-            "nameFinishedPlay": "%{name} riceve %{points} per aver finito il gioco.",
-            "selfLastCard": "Ricevi %{points} per aver giocato l'ultima carta.",
-            "nameLastCard": "%{name} riceve %{points} per aver giocato l'ultima carta.",
+            "selfPlayOfOne": "Prendi %{points} per %{0}.",
+            "selfPlayOfTwo": "Prendi %{points} per %{0} e %{1}.",
+            "namePlayOfOne": "%{name} prende %{points} per %{0}.",
+            "namePlayOfTwo": "%{name} prende %{points} per %{0} e %{1}.",
             "selfCannotPlay": "Nessuna delle tue carte può essere usata nel gioco.",
             "nameCannotPlay": "%{name} non ha carte che possono essere usate nel gioco.",
             "cardPlayBoardLimit": "Questa carta non può essere giocata. Il valore della tavola non può superare %{limit}.",
-            "sendCardsToCrib": "Invia le Carte alla Culla"
+            "sendCardsToCrib": "Invia le Carte alla Culla",
+            "pointsDisclaimer": "Questi punteggi non sono contati perché il gioco è finito presto."
         },
         "battleship": {
             "keyToRotate": "Premi 'R' per ruotare",

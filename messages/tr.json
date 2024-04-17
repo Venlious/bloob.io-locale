@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 1399,
+        "total": 1419,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1170,6 +1170,14 @@
             "description": "Zekanızı bileyleyin ve Cribbage'ı çevrimiçi oynayın! Benzersiz puanlama sistemi ve stratejik oyun tarzıyla, Cribbage kart oyunu meraklılarına sonsuz eğlence sunar.",
             "title": "Arkadaşlarınıza Meydan Okuyun",
             "options": {
+                "summaryEnabled": {
+                    "title": "Tur Tur Özeti",
+                    "help": "Tüm oyuncular için puan özetini gösterir ve tüm puanların ayrıntılı bir dökümünü sağlar."
+                },
+                "summaryTime": {
+                    "title": "Özet Zamanı",
+                    "help": "Skor özeti ne kadar süre gösterilmeli ve devam etmeli. Oyuncular ayrıca tur özetini daha erken atlamak için oy kullanabilirler."
+                },
                 "playTime": {
                     "title": "Oynama Süresi",
                     "help": "Her oyuncunun elinden bir kart seçip devam eden oyununa eklemek için ne kadar süresi var."
@@ -1319,6 +1327,7 @@
             "nameTurn": "Sıra %{name}'de",
             "yourTurnBreaking": "Sen %{extra} kırıyorsun",
             "nameTurnBreaking": "%{name} kırılıyor",
+            "roundSummary": "Tur Tur Özeti",
             "roundCount": "%{current} tur, toplam %{total} turdan",
             "dealingCards": "Kartlar dağıtılıyor...",
             "youPickStarterCard": "Başlangıç kartını seçmelisin",
@@ -1550,6 +1559,7 @@
         "includesItems": "{count} öğe içerir | {count} öğe içerir | {count} öğe içerir"
     },
     "misc": {
+        "total": "Toplam",
         "judge": "Hakem",
         "dealer": "Satıcı",
         "slow": "Yavaş",
@@ -1728,6 +1738,7 @@
         "saveBlank": "%{value} Kaydet",
         "coinsBlank": "%{value} altın",
         "receivedBlank": "%{value} Alındı",
+        "lessThanBlank": "%{value}'den daha az",
         "sendVerification": "Doğrulama Gönder",
         "noThanks": "Teşekkürler, gerek yok",
         "ready": "Hazır",
@@ -2035,6 +2046,9 @@
         },
         "cribbage": {
             "type": {
+                "jackHeels": {
+                    "title": "Topukları için iki puan"
+                },
                 "oneForHisNob": {
                     "title": "On puanlık asası",
                     "description": "Başlangıçtaki vale ile aynı takıma sahip olmak için %{points} puan verir."
@@ -2042,26 +2056,31 @@
                 "fifteen": {
                     "title": "Onbeş",
                     "description": "Toplamı 15 olan herhangi bir kart kombinasyonu için %{points} ödül verir. Aynı kartlar birden çok kombinasyon için yeniden kullanılabilir.",
+                    "playTitle": "%{target} hedefine ulaşmak",
                     "playDescription": "Toplamı 15 yapan bir kart eklediğin için %{points} ödül kazanıyorsun."
                 },
                 "pair": {
                     "title": "Çift",
                     "description": "Aynı rütbede iki kartı olanlara %{points} puan verir.",
+                    "playTitle": "bir %{title} yerleştirme",
                     "playDescription": "Oynanan aynı rütbeli bir kart eklemek için %{points} ödül verir."
                 },
                 "pairRoyal": {
                     "title": "Kral Çifti",
                     "description": "Aynı rütbede üç kartı olanlara %{points} puan verir.",
+                    "playTitle": "bir %{title} yerleştirme",
                     "playDescription": "Son iki kartla aynı rütbeli bir kart eklemek için %{points} ödül verir."
                 },
                 "doublePairRoyal": {
                     "title": "Çiftli Kraliyet Çifti",
                     "description": "Aynı rütbeden dört kartı olanlara %{points} puan verir.",
+                    "playTitle": "bir %{title} yerleştirme",
                     "playDescription": "Son üç kartla aynı rütbeli bir kart eklediğin için %{points} puan kazanırsın."
                 },
                 "run": {
                     "title": "Seri",
                     "description": "Sıradaki her kart için %{points} ödül verir.",
+                    "playTitle": "%{cards} kadar kartla bir seri yapma",
                     "playDescription": "Sıradaki her kart için %{points} ödül verir. Kartların sıralı olması gerekmez, ama bir arada olmaları gerekir. Örneğin, son birkaç kartı alıp sıralarsanız, kesintisiz bir şekilde sayılmalıdırlar."
                 },
                 "flush": {
@@ -2071,6 +2090,16 @@
                 "flushStarter": {
                     "title": "Beşli Renk (5 kart)",
                     "description": "Eğer elindeki tüm kartlar + başlangıç kartı aynı türden ise %{points} puan kazanırsın. Bu sadece elindeki kartlara uygulanır, beşiği hariç tutar."
+                },
+                "thirtyOneForTwo": {
+                    "title": "İki için 31",
+                    "playTitle": "tam olarak %{target} vurmak",
+                    "playDescription": "31 toplamına ulaşan son kartı oynayan oyuncuya %{points} puan verir."
+                },
+                "oneForGo": {
+                    "title": "Gitmek için bir puan",
+                    "playTitle": "son kartı oynama",
+                    "playDescription": "Son kartı oynayan ve başka kimse geçerli bir hamle yapamadığı zaman oyuncuya %{points} puan verir."
                 }
             },
             "title": {
@@ -2085,17 +2114,18 @@
             "nameCribSelectionSubmit": "İşaretli kartları %{name}'in kribine gönder!",
             "singleSkunk": "Skunked! Bu oyuncunun %{points}'dan az puanı vardı.",
             "doubleSkunk": "Çifte skunk oldu! Bu oyuncunun %{points} puanından daha azı var.",
-            "selfJackHeelsPoints": "%{turn} bir vale çekti! Topukları için %{points} puan alıyorsun.",
-            "nameJackHeelsPoints": "%{turn} bir vale çekti! %{name}, topukları için %{points} puan alıyor.",
-            "nameSelfJackHeelsPoints": "Bir vale çektin! %{name}, topukların için %{points} puan alıyor.",
-            "selfFinishedPlay": "Oyunu bitirdiğin için %{points} puan alıyorsun.",
-            "nameFinishedPlay": "%{name}, oyunu bitirdiği için %{points} puan kazanıyor.",
-            "selfLastCard": "Son kartı oynadığın için %{points} puan kazanıyorsun.",
-            "nameLastCard": "%{name}, son kartı oynadığı için %{points} puan kazanıyor.",
+            "selfJackHeelsPoints": "%{turn} bir vale çekti! Topukları için %{points} alıyorsun.",
+            "nameJackHeelsPoints": "%{turn} bir vale çekti! %{name}, topukları için %{points} alıyor.",
+            "nameSelfJackHeelsPoints": "Bir vale çektin! %{name}, topukların için %{points} alıyor.",
+            "selfPlayOfOne": "%{0} için %{points} puan kazanıyorsun.",
+            "selfPlayOfTwo": "%{0} ve %{1} için %{points} puan kazanıyorsun.",
+            "namePlayOfOne": "%{name}, %{0} için %{points} puan kazanıyor.",
+            "namePlayOfTwo": "%{name}, %{0} ve %{1} için %{points} puan kazanıyor.",
             "selfCannotPlay": "Oyunda kullanabileceğin bir kartın yok.",
             "nameCannotPlay": "%{name}'nin oyunda kullanabileceği bir kartı yok.",
             "cardPlayBoardLimit": "Bu kart oynanamaz. Tahtanın değeri %{limit}'i aşamaz.",
-            "sendCardsToCrib": "Kartları Beşiğe Gönder"
+            "sendCardsToCrib": "Kartları Beşiğe Gönder",
+            "pointsDisclaimer": "Bu skorlar geçerli sayılmadı çünkü oyun erken bitti."
         },
         "battleship": {
             "keyToRotate": "'R'ye basarak döndür",

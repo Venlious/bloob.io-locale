@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Korean",
         "rtl": false,
-        "total": 1399,
+        "total": 1419,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1170,6 +1170,14 @@
             "description": "지능을 높이고 크리브게이지 온라인 게임을 즐겨보세요! 독특한 점수 시스템과 전략적인 게임 플레이로 카드 게임 애호가들에게 끝없는 재미를 선사합니다.",
             "title": "친구들에게 도전하세요",
             "options": {
+                "summaryEnabled": {
+                    "title": "라운드 요약",
+                    "help": "모든 플레이어의 점수 요약과 모든 포인트의 분석을 보여줍니다."
+                },
+                "summaryTime": {
+                    "title": "요약 시간",
+                    "help": "점수 요약이 얼마나 오래 보여야 할지. 플레이어들은 라운드 요약을 더 빨리 넘길 수도 있어."
+                },
                 "playTime": {
                     "title": "플레이 시간",
                     "help": "각 플레이어가 진행 중인 게임에 카드를 뽑아 추가하는 데 얼마나 걸리는지."
@@ -1319,6 +1327,7 @@
             "nameTurn": "%{name}님의 차례",
             "yourTurnBreaking": "당신이 %{extra}을 깨고 있어요",
             "nameTurnBreaking": "%{name}이(가) 고장 나고 있어요",
+            "roundSummary": "라운드 요약",
             "roundCount": "총 %{total} 라운드 중 %{current} 라운드",
             "dealingCards": "카드를 나누는 중...",
             "youPickStarterCard": "시작 카드를 고르셔야 해요",
@@ -1550,6 +1559,7 @@
         "includesItems": "{count}개 항목 포함 | {count}개 항목 포함 | {count}개 항목 포함"
     },
     "misc": {
+        "total": "총합",
         "judge": "판사",
         "dealer": "딜러",
         "slow": "느림",
@@ -1728,6 +1738,7 @@
         "saveBlank": "%{value} 저장하기",
         "coinsBlank": "%{value} 코인들",
         "receivedBlank": "%{value} 받았어요",
+        "lessThanBlank": "%{value}보다 작음",
         "sendVerification": "인증 보내기",
         "noThanks": "괜찮아요",
         "ready": "준비됨",
@@ -2035,6 +2046,9 @@
         },
         "cribbage": {
             "type": {
+                "jackHeels": {
+                    "title": "그의 뒤꿈치에 대한 두 점"
+                },
                 "oneForHisNob": {
                     "title": "그의 꼬마에게 하나",
                     "description": "스타터와 같은 잭 슈트를 가지고 있어서 %{points}점을 얻어요."
@@ -2042,26 +2056,31 @@
                 "fifteen": {
                     "title": "십오",
                     "description": "카드 조합의 합이 15인 경우에 %{points}를 받습니다. 같은 카드를 여러 조합에 재사용할 수 있어요.",
+                    "playTitle": "%{target}을(를) 맞추기",
                     "playDescription": "카드를 추가해서 총합이 15가 되면 %{points}를 받아."
                 },
                 "pair": {
                     "title": "쌍",
                     "description": "같은 랭크의 두 카드를 가지고 있어서 %{points}점을 얻어요.",
+                    "playTitle": "%{title}을 놓는 것",
                     "playDescription": "같은 등급의 카드를 추가해서 %{points}를 획득해."
                 },
                 "pairRoyal": {
                     "title": "로열 페어",
                     "description": "같은 숫자의 카드 세 장을 가지고 있으면 %{points}점을 받아요.",
+                    "playTitle": "%{title}을 놓는 것",
                     "playDescription": "마지막 두 카드와 같은 순위의 카드를 추가하면 %{points}를 받아."
                 },
                 "doublePairRoyal": {
                     "title": "더블 페어 로얄",
                     "description": "같은 숫자의 카드 네 장을 가지고 있으면 %{points}점을 받아.",
+                    "playTitle": "%{title}을 놓는 것",
                     "playDescription": "마지막 세 장의 카드와 같은 순위의 카드를 추가하면 %{points}점을 받아."
                 },
                 "run": {
                     "title": "연속",
                     "description": "시퀀스에 있는 각 카드에 %{points}를 주는거야.",
+                    "playTitle": "%{cards}개의 카드로 연속을 만들어",
                     "playDescription": "시퀀스에 있는 각 카드에 대해 %{points}를 주는거야. 카드들이 순서대로 있을 필요는 없지만, 함께 그룹화되어야 해. 예를 들어, 마지막 몇 장의 카드를 재정렬해서 순서대로 만들면, 그것들은 중단 없이 세어져야 해."
                 },
                 "flush": {
@@ -2071,6 +2090,16 @@
                 "flushStarter": {
                     "title": "플러시 (5장 카드)",
                     "description": "너의 패에 있는 모든 카드 + 스타터 카드가 같은 무늬일 경우 %{points}를 획득해. 이건 너의 패에만 적용되고, 크리브는 제외야."
+                },
+                "thirtyOneForTwo": {
+                    "title": "둘을 위한 서른 하나",
+                    "playTitle": "정확히 %{target}을(를) 맞추면",
+                    "playDescription": "31의 합계를 만든 마지막 카드를 낸 플레이어에게 %{points}를 주어."
+                },
+                "oneForGo": {
+                    "title": "가는 것에 대해 하나",
+                    "playTitle": "마지막 카드를 놓는 것",
+                    "playDescription": "다른 사람이 유효한 플레이를 할 수 없을 때 마지막 카드를 놓은 플레이어에게 %{points}를 주는 상."
                 }
             },
             "title": {
@@ -2088,14 +2117,15 @@
             "selfJackHeelsPoints": "%{turn}이 잭을 뽑았어! 그의 힐로 %{points}점을 얻어.",
             "nameJackHeelsPoints": "%{turn}이 잭을 뽑았어! %{name}이 그의 힐로 %{points}점을 얻었어.",
             "nameSelfJackHeelsPoints": "너가 잭을 뽑았어! %{name}이 너의 힐로 %{points}점을 얻었어.",
-            "selfFinishedPlay": "게임을 끝낸 보상으로 %{points}점을 얻었어.",
-            "nameFinishedPlay": "%{name}님이 플레이를 끝내서 %{points}점을 얻었어요.",
-            "selfLastCard": "마지막 카드를 냈으니 %{points}점을 얻었어요.",
-            "nameLastCard": "%{name}님이 마지막 카드를 내서 %{points}점을 얻었어요.",
+            "selfPlayOfOne": "%{0} 때문에 %{points}점을 얻어.",
+            "selfPlayOfTwo": "%{0}와 %{1} 때문에 %{points}점을 얻어.",
+            "namePlayOfOne": "%{name}이 %{0} 때문에 %{points}점을 얻었어.",
+            "namePlayOfTwo": "%{name}이 %{0}와 %{1} 때문에 %{points}점을 얻었어.",
             "selfCannotPlay": "플레이에 사용할 수 있는 카드가 없어요.",
             "nameCannotPlay": "%{name}님은 플레이에 사용할 수 있는 카드가 없어요.",
             "cardPlayBoardLimit": "이 카드는 놓을 수 없어. 보드의 값이 %{limit}을 초과하면 안 돼.",
-            "sendCardsToCrib": "카드를 크립에 보내."
+            "sendCardsToCrib": "카드를 크립에 보내.",
+            "pointsDisclaimer": "이 점수들은 게임이 일찍 끝나서 계산되지 않았어."
         },
         "battleship": {
             "keyToRotate": "'R' 키를 눌러 회전하세요",

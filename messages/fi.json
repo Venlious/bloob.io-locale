@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 1399,
+        "total": 1419,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1170,6 +1170,14 @@
             "description": "Terävöi älysi ja pelaa Cribbagea netissä! Ainutlaatuisen pisteytysjärjestelmänsä ja strategisen pelitavan ansiosta Cribbage tarjoaa loputtomasti hauskoja tunteja korttipelien ystäville.",
             "title": "Haasta Kaverisi",
             "options": {
+                "summaryEnabled": {
+                    "title": "Kierroksen Yhteenveto",
+                    "help": "Näyttää pisteyhteenvedon kaikille pelaajille, jossa on erittely kaikista pisteistä."
+                },
+                "summaryTime": {
+                    "title": "Yhteenvedon Aika",
+                    "help": "Kuinka kauan pisteyhteenvetoa pitäisi näyttää ennen siirtymistä eteenpäin. Pelaajat voivat myös äänestää kierroksen yhteenvedon ohittamisesta aikaisemmin."
+                },
                 "playTime": {
                     "title": "Pelaaika",
                     "help": "Kuinka kauan jokaisella pelaajalla on aikaa valita kortti kädestään lisättäväksi meneillään olevaan peliin."
@@ -1319,6 +1327,7 @@
             "nameTurn": "%{name}:n vuoro",
             "yourTurnBreaking": "Rikot %{extra}",
             "nameTurnBreaking": "%{name} rikkoo",
+            "roundSummary": "Kierroksen yhteenveto",
             "roundCount": "Kierros %{current} / %{total}",
             "dealingCards": "Jaetaan kortteja...",
             "youPickStarterCard": "Sun pitää valita aloituskortti",
@@ -1550,6 +1559,7 @@
         "includesItems": "Sisältää {count} esinettä | Sisältää {count} esineen | Sisältää {count} esinettä"
     },
     "misc": {
+        "total": "Yhteensä",
         "judge": "Tuomari",
         "dealer": "Jakaja",
         "slow": "Hidas",
@@ -1728,6 +1738,7 @@
         "saveBlank": "Tallenna %{value}",
         "coinsBlank": "%{value} kolikkoa",
         "receivedBlank": "Saatu %{value}",
+        "lessThanBlank": "Vähemmän kuin %{value}",
         "sendVerification": "Lähetä vahvistus",
         "noThanks": "Ei kiitos",
         "ready": "Valmis",
@@ -2035,6 +2046,9 @@
         },
         "cribbage": {
             "type": {
+                "jackHeels": {
+                    "title": "Kaksi hänen kantapäistään"
+                },
                 "oneForHisNob": {
                     "title": "Yksi hänen jalokivelleen",
                     "description": "Antaa %{points} pistettä, jos jätkäsi on samaa maata kuin aloituskortti."
@@ -2042,26 +2056,31 @@
                 "fifteen": {
                     "title": "Viistoista",
                     "description": "Antaa %{points} pistettä mille tahansa korttien yhdistelmälle, joiden summa on 15. Samaa korttia voidaan käyttää useissa yhdistelmissä.",
+                    "playTitle": "osumasta %{target}",
                     "playDescription": "Antaa %{points} pistettä kortin lisäämisestä, joka tekee yhteissumman 15."
                 },
                 "pair": {
                     "title": "Pari",
                     "description": "Antaa %{points} pistettä, jos sulla on kaksi samanarvoista korttia.",
+                    "playTitle": "asettamalla %{title}",
                     "playDescription": "Antaa %{points} pistettä, kun lisäät kortin, jolla on sama arvo kuin juuri pelatulla kortilla."
                 },
                 "pairRoyal": {
                     "title": "Kolmen parin kuningas",
                     "description": "Antaa %{points} pistettä, jos sulla on kolme samanarvoista korttia.",
+                    "playTitle": "asettamalla %{title}",
                     "playDescription": "Antaa %{points} pistettä, kun lisäät kortin, jolla on sama arvo kuin kahdella edellisellä kortilla."
                 },
                 "doublePairRoyal": {
                     "title": "Kaksoispari Kuningallinen",
                     "description": "Antaa %{points} pistettä, kun sulla on neljä samanarvoista korttia.",
+                    "playTitle": "asettamalla %{title}",
                     "playDescription": "Antaa %{points} pistettä, kun lisäät kortin, jolla on sama arvo kuin kolmella edellisellä kortilla."
                 },
                 "run": {
                     "title": "Juoksu",
                     "description": "Antaa %{points} pistettä jokaisesta kortista sarjassa.",
+                    "playTitle": "tehdessäsi juoksun %{cards} kortilla",
                     "playDescription": "Antaa %{points} pistettä jokaisesta sekvenssin kortista. Korttien ei tarvitse olla järjestyksessä, mutta ne on ryhmiteltävä yhteen. Esimerkiksi, jos otat viimeiset kortit ja järjestät ne uudelleen, niiden pitäisi laskea keskeytyksettä."
                 },
                 "flush": {
@@ -2071,6 +2090,16 @@
                 "flushStarter": {
                     "title": "Viiden kortin värisuora",
                     "description": "Antaa %{points} pistettä, jos kaikki kortit kädessäsi + aloituskortti ovat samaa maata. Tämä koskee vain kortteja kädessäsi, lukuun ottamatta pistekorttia."
+                },
+                "thirtyOneForTwo": {
+                    "title": "31 kahdelle",
+                    "playTitle": "osumalla täsmälleen %{target}iin",
+                    "playDescription": "Antaa %{points} pistettä pelaajalle, joka pelasi viimeisen kortin, joka johti summaan 31."
+                },
+                "oneForGo": {
+                    "title": "Yksi menemisestä",
+                    "playTitle": "viimeisen kortin pelaamisesta",
+                    "playDescription": "Antaa %{points} pistettä pelaajalle, joka pelasi viimeisen kortin, kun kukaan muu ei voi tehdä laillista siirtoa."
                 }
             },
             "title": {
@@ -2083,19 +2112,20 @@
             "nameCribSelection": "Valitse %{cards} %{name}:n koriin",
             "yourCribSelectionSubmit": "Lähetä korostetut kortit omaan koriisi!",
             "nameCribSelectionSubmit": "Lähetä korostetut kortit %{name}:n koriin!",
-            "singleSkunk": "Hävisit pahasti! Tällä pelaajalla oli alle %{points} pistettä.",
-            "doubleSkunk": "Tuplapesukarhu! Tällä pelaajalla oli alle %{points} pistettä.",
-            "selfJackHeelsPoints": "%{turn} veti jätkän! Saat %{points} pistettä hänen kantapäistään.",
-            "nameJackHeelsPoints": "%{turn} veti jätkän! %{name} saa %{points} pistettä hänen kantapäistään.",
-            "nameSelfJackHeelsPoints": "Vedit jätkän! %{name} saa %{points} pistettä kantapäistäsi.",
-            "selfFinishedPlay": "Saat %{points} pistettä, koska olet päättänyt pelin.",
-            "nameFinishedPlay": "%{name} saa %{points} pistettä, koska hän lopetti pelin.",
-            "selfLastCard": "Saat %{points} pistettä, koska pelasit viimeisen kortin.",
-            "nameLastCard": "%{name} saa %{points} pistettä, koska hän pelasi viimeisen kortin.",
+            "singleSkunk": "Hävisit pahasti! Tällä pelaajalla oli alle %{points}.",
+            "doubleSkunk": "Tuplapesukarhu! Tällä pelaajalla oli alle %{points}.",
+            "selfJackHeelsPoints": "%{turn} veti jätkän! Saat %{points} hänen kantapäistään.",
+            "nameJackHeelsPoints": "%{turn} veti jätkän! %{name} saa %{points} hänen kantapäistään.",
+            "nameSelfJackHeelsPoints": "Vedit jätkän! %{name} saa %{points} kantapäistäsi.",
+            "selfPlayOfOne": "Saat %{points} pistettä %{0}:sta.",
+            "selfPlayOfTwo": "Saat %{points} pistettä %{0}:sta ja %{1}:sta.",
+            "namePlayOfOne": "%{name} saa %{points} pistettä %{0}:sta.",
+            "namePlayOfTwo": "%{name} saa %{points} pistettä %{0}:sta ja %{1}:sta.",
             "selfCannotPlay": "Yhtäkään korttiasi ei voi käyttää pelissä.",
             "nameCannotPlay": "%{name}:lla ei ole yhtään korttia, jota voisi käyttää pelissä.",
             "cardPlayBoardLimit": "Tätä korttia ei voi pelata. Lautapelin arvo ei voi ylittää %{limit}.",
-            "sendCardsToCrib": "Lähetä kortit kehtoon"
+            "sendCardsToCrib": "Lähetä kortit kehtoon",
+            "pointsDisclaimer": "Nämä pisteet eivät laskeneet, koska peli loppui aikaisin."
         },
         "battleship": {
             "keyToRotate": "Paina 'R' kääntääksesi",

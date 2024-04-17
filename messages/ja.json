@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Japanese",
         "rtl": false,
-        "total": 1399,
+        "total": 1419,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1170,6 +1170,14 @@
             "description": "頭を鍛えてクリブッジをオンラインで遊ぼう！ユニークなスコアリングシステムと戦略的なゲームプレイで、カードゲーム好きには終わりなき楽しみが待っています。",
             "title": "友達に挑戦しよう！",
             "options": {
+                "summaryEnabled": {
+                    "title": "ラウンドのまとめ",
+                    "help": "全プレイヤーのスコアサマリーと全ポイントの内訳を表示します。"
+                },
+                "summaryTime": {
+                    "title": "サマリータイム",
+                    "help": "スコアのサマリーが次に進む前にどのくらい表示されるべきか。プレイヤーはまた、ラウンドのサマリーを早くスキップするために投票もできます。"
+                },
                 "playTime": {
                     "title": "プレイ時間",
                     "help": "プレイヤーが手札からカードを選んで進行中のプレイに追加するのに必要な時間はどのくらいですか。"
@@ -1319,6 +1327,7 @@
             "nameTurn": "%{name}のターンだよ",
             "yourTurnBreaking": "%{extra}を壊してるよ",
             "nameTurnBreaking": "%{name}が壊れてるよ",
+            "roundSummary": "ラウンドのまとめ",
             "roundCount": "現在のラウンドは%{current}、全体のラウンドは%{total}だよ",
             "dealingCards": "カードを配っています...",
             "youPickStarterCard": "スターターカードを選ばなきゃ",
@@ -1550,6 +1559,7 @@
         "includesItems": "{count}個のアイテムが含まれてるよ | {count}個のアイテムが含まれてるよ | {count}個のアイテムが含まれてるよ"
     },
     "misc": {
+        "total": "合計",
         "judge": "審判",
         "dealer": "ディーラー",
         "slow": "遅い",
@@ -1728,6 +1738,7 @@
         "saveBlank": "%{value}を保存",
         "coinsBlank": "%{value}コイン",
         "receivedBlank": "%{value}を受け取った",
+        "lessThanBlank": "%{value}より少ない",
         "sendVerification": "認証を送る",
         "noThanks": "結構です",
         "ready": "準備OK",
@@ -2035,6 +2046,9 @@
         },
         "cribbage": {
             "type": {
+                "jackHeels": {
+                    "title": "彼のヒールのための2点"
+                },
                 "oneForHisNob": {
                     "title": "彼のノブのための1点",
                     "description": "スターターと同じジャックのスーツを持っていると%{points}ポイントがもらえるよ。"
@@ -2042,26 +2056,31 @@
                 "fifteen": {
                     "title": "フィフティーン",
                     "description": "カードの組み合わせが15になると%{points}ポイントがもらえるよ。同じカードを何度でも使って組み合わせを作れるんだよ。",
+                    "playTitle": "%{target}を当てる",
                     "playDescription": "カードを追加して合計が15になったら%{points}ポイントをあげるよ。"
                 },
                 "pair": {
                     "title": "ペア",
                     "description": "同じランクのカードが2枚あると%{points}ポイントもらえるよ。",
+                    "playTitle": "%{title}を置くことで",
                     "playDescription": "同じランクのカードを出した時に%{points}ポイントを獲得するよ。"
                 },
                 "pairRoyal": {
                     "title": "ロイヤルペア",
                     "description": "同じランクのカードが3枚あると%{points}ポイントもらえるよ。",
+                    "playTitle": "%{title}を置くことで",
                     "playDescription": "最後の2枚のカードと同じランクのカードを追加すると%{points}ポイントがもらえるよ。"
                 },
                 "doublePairRoyal": {
                     "title": "ダブルペアロイヤル",
                     "description": "同じランクのカードが4枚あると%{points}ポイントもらえるよ。",
+                    "playTitle": "%{title}を置くことで",
                     "playDescription": "最後の3枚のカードと同じランクのカードを追加すると%{points}ポイント獲得だよ。"
                 },
                 "run": {
                     "title": "ラン",
                     "description": "シーケンス内の各カードに%{points}のポイントを与えるよ。",
+                    "playTitle": "%{cards}枚の連続するカードを作る",
                     "playDescription": "シーケンス内の各カードに%{points}を授与します。カードは順番通りである必要はありませんが、まとめている必要があります。例えば、最後の数枚のカードを取って並べ替えると、それらは途切れることなく数え上げるべきです。"
                 },
                 "flush": {
@@ -2071,6 +2090,16 @@
                 "flushStarter": {
                     "title": "フラッシュ（5枚のカード）",
                     "description": "スターターカードを含む手札のすべてのカードが同じスートだったら%{points}ポイントを獲得できるよ。ただし、これはクリブを除いた手札にだけ適用されるんだからね。"
+                },
+                "thirtyOneForTwo": {
+                    "title": "二つで31点",
+                    "playTitle": "ちょうど%{target}に当たる",
+                    "playDescription": "31の合計になる最後のカードを出したプレイヤーに%{points}ポイントをあげるよ。"
+                },
+                "oneForGo": {
+                    "title": "ゴーのためのワン",
+                    "playTitle": "最後のカードを出す",
+                    "playDescription": "誰も有効なプレイができないときに最後のカードをプレイしたプレイヤーに%{points}を授与します。"
                 }
             },
             "title": {
@@ -2088,14 +2117,15 @@
             "selfJackHeelsPoints": "%{turn}がジャックを引いた！彼のヒールで%{points}点ゲットだぜ。",
             "nameJackHeelsPoints": "%{turn}がジャックを引いた！%{name}が彼のヒールで%{points}点ゲットだぜ。",
             "nameSelfJackHeelsPoints": "ジャックを引いたぞ！%{name}がヒールで%{points}点ゲットだぜ。",
-            "selfFinishedPlay": "プレイが終わったから%{points}点ゲットだぜ。",
-            "nameFinishedPlay": "%{name}さんがプレイを終えたから%{points}ポイントゲットだよ。",
-            "selfLastCard": "最後のカードを出したから%{points}ポイントゲットだよ。",
-            "nameLastCard": "%{name}さんが最後のカードを出したから%{points}ポイントゲットだよ。",
+            "selfPlayOfOne": "%{0}のために%{points}ポイントゲットだぜ。",
+            "selfPlayOfTwo": "%{0}と%{1}のために%{points}ポイントゲットだぜ。",
+            "namePlayOfOne": "%{name}は%{0}のために%{points}ポイントゲットだぜ。",
+            "namePlayOfTwo": "%{name}は%{0}と%{1}のために%{points}ポイントゲットだぜ。",
             "selfCannotPlay": "使えるカードが一枚もないよ。",
             "nameCannotPlay": "%{name}さんはプレイで使えるカードが一枚もないよ。",
             "cardPlayBoardLimit": "このカードは使えません。ボードの値は%{limit}を超えることはできません。",
-            "sendCardsToCrib": "カードをクリブに送る"
+            "sendCardsToCrib": "カードをクリブに送る",
+            "pointsDisclaimer": "このスコアはゲームが早く終わったからカウントされなかったよ。"
         },
         "battleship": {
             "keyToRotate": "'R'を押して回転させてね",

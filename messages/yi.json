@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Yiddish",
         "rtl": false,
-        "total": 1399,
+        "total": 1419,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1170,6 +1170,14 @@
             "description": "Schärf dein Kopf un shpil Cribbage online! Mit zayn eyntsik scoring system un strategish gameplay, Cribbage bietet endless shoen fun far card game enthusiasts.",
             "title": "Fordert Eure Freind!",
             "options": {
+                "summaryEnabled": {
+                    "title": "Rundn Zumerkung",
+                    "help": "Zeigt a score zumeri far alle shpilers mit a breakdown fun alle punkten."
+                },
+                "summaryTime": {
+                    "title": "Zusammenfassung Zeit",
+                    "help": "Vi lang der score zumeri zol vayzn eyder vaytergeyn. Shpilers kenen oykh shtimen tsu ibershpringen dem rundn zumeri frier."
+                },
                 "playTime": {
                     "title": "Shpil Tsayt",
                     "help": "Vi lang yeder shpiler hot tsu klibn a kort fun zeyer hant tsu tsufügen af dem ongoing shpil."
@@ -1319,6 +1327,7 @@
             "nameTurn": "%{name}'s zug",
             "yourTurnBreaking": "Du brichst %{extra}",
             "nameTurnBreaking": "%{name} is brechendik",
+            "roundSummary": "Rundn Zumerkung",
             "roundCount": "Rund %{current} fun %{total}",
             "dealingCards": "Dealt karts...",
             "youPickStarterCard": "Du musst di ershte kart oyskleybn",
@@ -1550,6 +1559,7 @@
         "includesItems": "Beinhaltet {count} sakhn | Beinhaltet {count} sakh | Beinhaltet {count} sakhn"
     },
     "misc": {
+        "total": "Gantse",
         "judge": "Dayan",
         "dealer": "Handler",
         "slow": "Shlepndik",
@@ -1728,6 +1738,7 @@
         "saveBlank": "Shparn %{value}",
         "coinsBlank": "%{value} gelt",
         "receivedBlank": "Bakumen %{value}",
+        "lessThanBlank": "Vener vi %{value}",
         "sendVerification": "Shikt Pruvung",
         "noThanks": "Nishto dank",
         "ready": "Bereit",
@@ -2035,6 +2046,9 @@
         },
         "cribbage": {
             "type": {
+                "jackHeels": {
+                    "title": "Tsvay far zayn haldzunkelekh"
+                },
                 "oneForHisNob": {
                     "title": "Eyns far zayn knop",
                     "description": "Gibt %{points} fir hobn dem zelbn bokher kostyum vi der onheyber."
@@ -2042,26 +2056,31 @@
                 "fifteen": {
                     "title": "Fiftn",
                     "description": "Gibt %{points} far a kombinatsye fun karten vos der sume iz 15. Di zelbe karten kenen zayn vider genutzt far multiple kombinatsyes.",
+                    "playTitle": "treffen %{target}",
                     "playDescription": "Gibt %{points} far tsuzetzen a kort vos macht dem total 15."
                 },
                 "pair": {
                     "title": "Paar",
                     "description": "Gibt %{points} far hobn tsvey karts fun der zelber rang.",
+                    "playTitle": "asetzen a %{title}",
                     "playDescription": "Gibt %{points} far tsuzetzen a kort mit dem zelben rang azoy vi gespilt."
                 },
                 "pairRoyal": {
                     "title": "Königliches Paar",
                     "description": "Gibt %{points} far hobn dray karts fun dem zelbn rang.",
+                    "playTitle": "asetzen a %{title}",
                     "playDescription": "Gibt %{points} far tsuzetzen a kort mit dem zelben rang vi di letste tsvey kortn."
                 },
                 "doublePairRoyal": {
                     "title": "Doppelte Paar Royal",
                     "description": "Gibt %{points} far hobn fir karteles fun dem zelbn rang.",
+                    "playTitle": "asetzen a %{title}",
                     "playDescription": "Gibt %{points} far tsuzetzen a kort mit dem zelben rang vi di letste drei korts."
                 },
                 "run": {
                     "title": "Lauf",
                     "description": "Gibt %{points} punkten far yeder kort in der sequence.",
+                    "playTitle": "makhn a loyf fun %{cards}",
                     "playDescription": "Gibt %{points} far yeder kort in der sequence. Di karten darfn nisht zayn in ordnung, ober zey darfn zayn grupt tsuzamen. As a bayspil, oyb du nempt di letste kartn un tse-ordnung zey in ordnung, zey zoln tsayln up uninterrupted."
                 },
                 "flush": {
@@ -2071,6 +2090,16 @@
                 "flushStarter": {
                     "title": "Flush (5 karts)",
                     "description": "Gibt %{points} punkten, ven ale karten in dayn hant + der onheyb karte zaynen fun dem zelben sort. Dos gilt nor far di karten in dayn hant, oysgeshlosn dem crib."
+                },
+                "thirtyOneForTwo": {
+                    "title": "31 far tsvey",
+                    "playTitle": "treffen gants genau %{target}",
+                    "playDescription": "Gibt %{points} punktn dem shpiler vos hot geshpilt di letste kort, vus hot gebracht a zamlung fun 31."
+                },
+                "oneForGo": {
+                    "title": "Eyns far geyn",
+                    "playTitle": "shpiln di letste kort",
+                    "playDescription": "Gibt %{points} punktn dem shpiler vos hot geshpilt di letste kort ven keyner ander ken machen a giltik shpil."
                 }
             },
             "title": {
@@ -2088,14 +2117,15 @@
             "selfJackHeelsPoints": "%{turn} hot a Yankl getsoygn! Du bakumst %{points} far zayn fers.",
             "nameJackHeelsPoints": "%{turn} hot a Yankl getsoygn! %{name} bakumt %{points} far zayn fers.",
             "nameSelfJackHeelsPoints": "Du host a Yankl getsoygn! %{name} bakumt %{points} far dayn fers.",
-            "selfFinishedPlay": "Du bakumst %{points} far dos oysforn fun dem shpil.",
-            "nameFinishedPlay": "%{name} krigt %{points} far ferdig zein mit dem shpil.",
-            "selfLastCard": "Du krigst %{points} far shpiln di letste kort.",
-            "nameLastCard": "%{name} krigt %{points} far shpiln di letste kort.",
+            "selfPlayOfOne": "Du krigst %{points} far %{0}.",
+            "selfPlayOfTwo": "Du krigst %{points} far %{0} un %{1}.",
+            "namePlayOfOne": "%{name} krigt %{points} far %{0}.",
+            "namePlayOfTwo": "%{name} krigt %{points} far %{0} un %{1}.",
             "selfCannotPlay": "Kein fun dayne kortn ken zayn genitst in dem shpil.",
             "nameCannotPlay": "%{name} hot keyn kortn vos ken zayn genitst in dem shpil.",
             "cardPlayBoardLimit": "Du kenst nisht shpiln mit dem karte. Der brett's vart ken nisht ibergeyn %{limit}.",
-            "sendCardsToCrib": "Shikt karten tsu Crib"
+            "sendCardsToCrib": "Shikt karten tsu Crib",
+            "pointsDisclaimer": "Disse skoires gezehlt nit vayl dos spiel farloifn frier."
         },
         "battleship": {
             "keyToRotate": "Drik 'R' far dreyen",
