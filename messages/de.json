@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal German",
         "rtl": false,
-        "total": 1419,
-        "missing": 0
+        "total": 1447,
+        "missing": 7
     },
     "name": "Bloob.io",
     "error": {
@@ -78,7 +78,6 @@
         },
         "game": {
             "velocity": "Die angegebene Geschwindigkeit liegt außerhalb des erlaubten Bereichs.",
-            "playerForfeited": "Spieler \"%{name}\" hat aufgegeben und automatisch verloren.",
             "missedTurnWarning": "Du warst zu spät und dein Gegner hat seinen Zug bekommen. Wenn das zu oft hintereinander passiert, wirst du rausgeworfen. (%{current}/%{threshold})",
             "missedTurnKick": "Du wurdest rausgeworfen, weil du %{current} Zug(e) hintereinander verpasst hast.",
             "autoTurnWarning": "Du warst zu spät dran und es wurde ein Zug für dich gemacht. Wenn dies zu oft hintereinander passiert, verlierst du. (%{current}/%{threshold})",
@@ -211,6 +210,15 @@
                     "help": "Spiele ohne Zeitlimits. Deaktiviere alle Runden-Timer und genieße ein entspanntes Spielerlebnis, bei dem du in deinem eigenen Tempo spielen kannst. Nicht empfohlen gegen zufällige Gegner.",
                     "data": {
                         "off": "Kein Limit"
+                    }
+                },
+                "deckSize": {
+                    "title": "Deckgröße",
+                    "help": "Spiele ohne Zeitlimits. Deaktiviere alle Runden-Timer und genieße ein entspanntes Spielerlebnis, bei dem du in deinem eigenen Tempo spielen kannst. Nicht empfohlen gegen zufällige Gegner.",
+                    "data": {
+                        "half": "Halbes Deck",
+                        "full": "Volles Deck",
+                        "double": "Doppeltes Deck"
                     }
                 }
             },
@@ -659,10 +667,6 @@
                     "title": "Toleranz bei Feststeckung",
                     "help": "Wenn ein Spieler diese Anzahl von Zügen hintereinander nicht weiterkommt und keine Spielsteine bewegen kann, verliert er automatisch."
                 },
-                "autoTurnThreshold": {
-                    "title": "Toleranz bei zu spätem Ziehen",
-                    "help": "Wenn ein Spieler zu spät dran ist und ein Zug automatisch für ihn gemacht wird, verliert er automatisch, wenn er so viele Züge hintereinander macht."
-                },
                 "rows": {
                     "title": "Reihen",
                     "help": "Wie viele Reihen von Spielsteinen jeder Spieler zu Beginn hat. Die Anzahl der Reihen hängt von der Feldgröße ab."
@@ -1062,10 +1066,6 @@
                     "title": "Platzierungszeit",
                     "help": "Wie lange jeder Spieler Zeit hat, seine Schiffe in Position zu bringen."
                 },
-                "missedTurnThreshold": {
-                    "title": "Verpasste Zug Grenze",
-                    "help": "Wie viele Runden kann ein Spieler hintereinander auslassen, bevor er aus dem Spiel geworfen wird."
-                },
                 "gridSize": {
                     "title": "Rastergröße",
                     "help": "Wähle die Größe des Levels, in dem du spielen möchtest.",
@@ -1133,10 +1133,9 @@
                 }
             },
             "presets": {
-                "blitz": {
-                    "title": "Blitz",
+                "longHaul": {
+                    "title": "Langer Haul",
                     "description": [
-                        "Kurze Runden",
                         "Kaskadierende Gitter"
                     ]
                 }
@@ -1199,8 +1198,6 @@
                     "help": "Wenn es in 3-Spieler-Spielen aktiviert ist, bekommt der Geber eine extra Krippe-Karte. Wenn es deaktiviert ist, geht die vierte Karte automatisch zur Krippe."
                 },
                 "winCondition": {
-                    "title": "Gewinnbedingung",
-                    "help": "Entscheide, wann das Spiel zu Ende sein sollte.",
                     "data": {
                         "FIRST": "Als Erster <b>0</b> Punkte erreichen | Als Erster <b>1</b> Punkt erreichen | Als Erster <b>{count}</b> Punkte erreichen",
                         "HIGHEST_AFTER": "Die meisten Punkte, nachdem <b>0</b> Punkte erreicht wurden | Die meisten Punkte, nachdem <b>1</b> Punkt erreicht wurde | Die meisten Punkte, nachdem <b>{count}</b> Punkte erreicht wurden"
@@ -1246,6 +1243,50 @@
                     ]
                 }
             }
+        },
+        "WAR": {
+            "name": "Krieg",
+            "heading": "Erlebe aufregende Kriegskartenschlachten online",
+            "tooltip": "Erlebe die Aufregung des Kriegskartenspiels mit Spielern aus allen Ecken der Welt.",
+            "description": "Erlebe Online-Multiplayer-Kartenschlachten mit War! Spiele gegen Freunde und Rivalen in diesem Web-Klassiker.",
+            "title": "Betrete die Arena des Kartengefechts",
+            "options": {
+                "winCondition": {
+                    "help": "Das Spiel endet früh, wenn nur noch ein Spieler mit allen Karten übrig ist.",
+                    "data": {
+                        "LAST_STANDING": "Wenn ein Spieler alle Karten bekommt",
+                        "HIGHEST_AFTER": "Die meisten Karten nach <b>0</b> Runden | Die meisten Karten nach <b>1</b> Runde | Die meisten Karten nach <b>{count}</b> Runden"
+                    }
+                },
+                "warRequirement": {
+                    "title": "Kriegsanforderung",
+                    "help": "Bestimme, wie der Krieg ausgespielt werden sollte, wenn zwei oder mehr Spieler die gleiche Karte spielen.",
+                    "data": {
+                        "DEFAULT": "Leg <b>0</b> Karten hin | Leg <b>1</b> Karte hin | Leg <b>{count}</b> Karten hin",
+                        "CARD_VALUE": "Leg Karten hin, die gleich dem Rang der ersten Karte sind"
+                    }
+                },
+                "warCardCount": {
+                    "title": "Kriegskarten Anzahl",
+                    "help": "Lege eine festgelegte Anzahl von Karten fest, die ein Spieler im Krieg platzieren muss. Die letzte Karte ist die, die aufgedeckt wird."
+                }
+            },
+            "presets": {
+                "razboi": {
+                    "title": "Krieg",
+                    "description": [
+                        "Lege Karten gleich dem Anfangskartenrang"
+                    ]
+                },
+                "blitz": {
+                    "title": "Blitz",
+                    "description": [
+                        "Halbes Deck",
+                        "Auf 60 Runden begrenzt"
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
@@ -1313,7 +1354,6 @@
             "staleMoves": "Spiel vorbei — %{staleCount} Züge ohne Schlagen",
             "forfeit": "Spiel vorbei — Gegner hat aufgegeben",
             "inactive": "Spiel beendet wegen Inaktivität",
-            "late": "Spiel beendet wegen %{turns} fehlenden Zügen",
             "pickActionCard": "Aktionskarte auswählen",
             "pickCardSelection": "Kartenauswahl treffen",
             "handDump": "Abwerfrunde",
@@ -1329,6 +1369,8 @@
             "nameTurnBreaking": "%{name} bricht %{extra}",
             "roundSummary": "Rundenübersicht",
             "roundCount": "Runde %{current} von %{total}",
+            "roundCurrent": "Runde %{current}",
+            "war": "Krieg!",
             "dealingCards": "Karten werden ausgeteilt...",
             "youPickStarterCard": "Du musst die Startkarte auswählen",
             "namePickStarterCard": "%{name} muss die Startkarte auswählen",
@@ -1555,6 +1597,7 @@
         "playRandomOpponents": "Spiele gegen zufällige Gegner",
         "turnsToFlip": "Züge bis zum Umdrehen | Zug bis zum Umdrehen | Züge bis zum Umdrehen",
         "increment": "%{count}er Inkremente",
+        "remaining": "Keine mehr übrig | 1 übrig | {count} übrig",
         "shipsRemaining": "0 Schiffe übrig | 1 Schiff übrig | {count} Schiffe übrig",
         "includesItems": "Beinhaltet {count} Artikel | Beinhaltet {count} Artikel | Beinhaltet {count} Artikel"
     },
@@ -1828,6 +1871,7 @@
             "dump": "Wähle Karten aus die du abwerfen möchtest",
             "noType": "Es gibt keine %{type} Karten",
             "delete": "Du bist dabei, Karte \"%{info}\" zu löschen.",
+            "winningOptionSelf": "Du hast diese Runde gewonnen!",
             "winningOption": "%{name} hat diese Runde mit der Auswahl %{selection} gewonnen",
             "actionResponseCardCounter": "Aktions- und Antwortkartenzähler. Einige Sets verwenden die gleichen Karten; Duplikate werden automatisch entfernt. Nach <b>NSFW</b> oder <b>Spezifischen Karten</b> zu filtern verringert auch die Kartenanzahl.",
             "navigateSelf": "Selbst navigieren",
@@ -1925,6 +1969,8 @@
         "nameNoPoints": "%{name} hat keine Punkte bekommen.",
         "gameMenu": "Möchtest du etwas anderes spielen?",
         "forfeit": "Wenn du das Spiel aufgibst, hast du verloren.",
+        "nameForfeited": "%{name} hat aufgegeben und automatisch verloren.",
+        "selfForfeited": "Du hast aufgegeben und automatisch verloren.",
         "unsavedChanges": "Du habst nicht gespeicherte Änderungen, die gelöscht werden, wenn du fortfährst.",
         "accountDeletion": "Wenn du dein Konto löschst, ist das endgültig und dein Profil, Fortschritt und Statistiken werden gelöscht.",
         "notMeWarning": "Wenn du fortfährst, wirst du abgemeldet und zu einer Seite weitergeleitet, auf der du dich auf allen Geräten abmelden kannst. Danach kannst du dich wie gewohnt wieder anmelden.",
@@ -2043,6 +2089,17 @@
             "logoutGloballyCompleted": "Dein Konto wurde von allen Geräten abgemeldet.",
             "verificationEmail": "Eine E-Mail mit einem Bestätigungscode wurde gesendet.",
             "noEmail": "Keine E-Mail? Überprüfe deinen Spam-Ordner und bestätige, dass diese E-Mail-Adresse mit deinem Konto verknüpft ist."
+        },
+        "cards": {
+            "selfRanOut": null,
+            "nameRanOut": null
+        },
+        "war": {
+            "title": null,
+            "powerPlay": null,
+            "selfWarNotIncluded": null,
+            "selfWarPlaceCards": null,
+            "selfWarPlaceFinalCard": null
         },
         "cribbage": {
             "type": {

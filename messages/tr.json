@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 1419,
-        "missing": 0
+        "total": 1447,
+        "missing": 7
     },
     "name": "Bloob.io",
     "error": {
@@ -78,7 +78,6 @@
         },
         "game": {
             "velocity": "Verilen hız, izin verilen aralığın dışında.",
-            "playerForfeited": "\"%{name}\" adlı oyuncu pes etti ve otomatik olarak kaybetti.",
             "missedTurnWarning": "Çok geç kaldın ve sıra rakibine verildi. Eğer bu durum peş peşe çok fazla olursa oyundan atılırsın. (%{current}/%{threshold})",
             "missedTurnKick": "Peş peşe %{current} sıra kaçırdığın için oyundan atıldın.",
             "autoTurnWarning": "Çok geç kaldın ve senin yerine bir hamle yapıldı. Eğer bu durum peş peşe çok fazla olursa kaybedersin. (%{current}/%{threshold})",
@@ -211,6 +210,15 @@
                     "help": "Zaman sınırlaması olmadan oyna. Tüm tur zamanlayıcılarını devre dışı bırak ve kendi hızında oynayabileceğin rahat bir oyun deneyimi yaşa. Rastgele rakiplere karşı önerilmez.",
                     "data": {
                         "off": "Sınırsız"
+                    }
+                },
+                "deckSize": {
+                    "title": "Deste Boyutu",
+                    "help": "Zaman sınırlaması olmadan oyna. Tüm tur zamanlayıcılarını devre dışı bırak ve kendi hızında oynayabileceğin rahat bir oyun deneyimi yaşa. Rastgele rakiplere karşı önerilmez.",
+                    "data": {
+                        "half": "Yarım Destesi",
+                        "full": "Tam Destesi",
+                        "double": "Çift Destesi"
                     }
                 }
             },
@@ -659,10 +667,6 @@
                     "title": "Takılma Eşiği",
                     "help": "Eğer bir oyuncu bu kadar tur boyunca sıkışıp kalırsa, otomatik olarak kaybeder."
                 },
-                "autoTurnThreshold": {
-                    "title": "Geç Eşik",
-                    "help": "Eğer bir oyuncu geç kalır ve bu sayıda sıra boyunca onlar için otomatik olarak hamle yapılırsa, otomatik olarak kaybederler."
-                },
                 "rows": {
                     "title": "Satırlar",
                     "help": "Her oyuncunun kaç sıra taşıyla başladığı. Alanın boyutuna bağlı olarak sıra sayısı belirlenir."
@@ -1062,10 +1066,6 @@
                     "title": "Yerleştirme Süresi",
                     "help": "Her oyuncunun gemilerini pozisyona getirmek için ne kadar süresi olduğu."
                 },
-                "missedTurnThreshold": {
-                    "title": "Kaçırdığın Tur Eşiği",
-                    "help": "Bir oyuncu üst üste kaç tur kaçırabilir ki oyundan atılsın."
-                },
                 "gridSize": {
                     "title": "Kılavuz Boyutu",
                     "help": "Oynayacağın seviye boyutunu seç.",
@@ -1133,11 +1133,10 @@
                 }
             },
             "presets": {
-                "blitz": {
-                    "title": "Hücum",
+                "longHaul": {
+                    "title": "Uzun Yol",
                     "description": [
-                        "Kısa turlar",
-                        "Kademeli ızgaralar"
+                        "Sıralı ızgaralar"
                     ]
                 }
             },
@@ -1199,8 +1198,6 @@
                     "help": "3 oyunculu oyunlarda etkinleştirildiğinde, dağıtıcıya ekstra bir beşik kartı verilir. Devre dışı bırakıldığında, dördüncü kart otomatik olarak beşiğe gider."
                 },
                 "winCondition": {
-                    "title": "Kazanma Koşulu",
-                    "help": "Oyunun ne zaman sona ermesi gerektiğine karar ver.",
                     "data": {
                         "FIRST": "İlk <b>0</b> puana ulaşan | İlk <b>1</b> puana ulaşan | İlk <b>{count}</b> puana ulaşan",
                         "HIGHEST_AFTER": "<b>0</b> puan ulaşıldıktan sonra en çok puanı olan | <b>1</b> puan ulaşıldıktan sonra en çok puanı olan | <b>{count}</b> puan ulaşıldıktan sonra en çok puanı olan"
@@ -1246,6 +1243,50 @@
                     ]
                 }
             }
+        },
+        "WAR": {
+            "name": "Savaş",
+            "heading": "Heyecan Verici Savaş Kartı Mücadelelerini Online Yaşa",
+            "tooltip": "Dünyanın dört bir yanından oyuncularla Savaş kart oyununun heyecanını yaşa.",
+            "description": "War ile çevrimiçi çok oyunculu kart savaşlarına katılın! Bu web tabanlı klasikte arkadaşlarınıza ve rakiplerinize karşı oynayın.",
+            "title": "Kart Savaşının Arenasına Girin",
+            "options": {
+                "winCondition": {
+                    "help": "Eğer tüm kartlara sahip olan sadece bir oyuncu kalırsa, oyun erken bitecek.",
+                    "data": {
+                        "LAST_STANDING": "Bir oyuncu tüm kartları aldığında",
+                        "HIGHEST_AFTER": "<b>0</b> turdan sonra en çok kart | <b>1</b> turdan sonra en çok kart | <b>{count}</b> turdan sonra en çok kart"
+                    }
+                },
+                "warRequirement": {
+                    "title": "Savaş Gereksinimi",
+                    "help": "Eğer iki veya daha fazla oyuncu aynı kartı oynarsa savaşın nasıl ilerlemesi gerektiğine karar ver.",
+                    "data": {
+                        "DEFAULT": "<b>0</b> kart yerleştir | <b>1</b> kart yerleştir | <b>{count}</b> kart yerleştir",
+                        "CARD_VALUE": "İlk kartın rütbesine eşit kartlar yerleştir"
+                    }
+                },
+                "warCardCount": {
+                    "title": "Savaş Kartı Sayısı",
+                    "help": "Bir savaşta bir oyuncunun yerleştirmesi gereken belirlenmiş miktarı kartları ayarla. Son kart açığa çıkan karttır."
+                }
+            },
+            "presets": {
+                "razboi": {
+                    "title": "Savaş",
+                    "description": [
+                        "Başlangıç kartının rütbesine eşit kartları yerleştir."
+                    ]
+                },
+                "blitz": {
+                    "title": "Hücum",
+                    "description": [
+                        "Yarım destesi",
+                        "60 tur ile sınırlı"
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
@@ -1313,7 +1354,6 @@
             "staleMoves": "Maç durdu — %{staleCount} hamle boyunca hiç alım olmadı",
             "forfeit": "Maç bitti — Rakip pes etmeyi seçti",
             "inactive": "Maç, hareketsizlik nedeniyle sona erdi",
-            "late": "%{turns} tur kaçırıldığı için maç sona erdi",
             "pickActionCard": "Eylem kartı seçiliyor",
             "pickCardSelection": "Kart seçimi yapılıyor",
             "handDump": "Atma turu",
@@ -1329,6 +1369,8 @@
             "nameTurnBreaking": "%{name} kırılıyor",
             "roundSummary": "Tur Tur Özeti",
             "roundCount": "%{current} tur, toplam %{total} turdan",
+            "roundCurrent": "Tur %{current}",
+            "war": "Savaş!",
             "dealingCards": "Kartlar dağıtılıyor...",
             "youPickStarterCard": "Başlangıç kartını seçmelisin",
             "namePickStarterCard": "%{name} başlangıç kartını seçmeli",
@@ -1555,6 +1597,7 @@
         "playRandomOpponents": "Rastgele Rakiplerle Oyna | Rastgele Bir Rakiple Oyna | Rastgele Rakiplerle Oyna",
         "turnsToFlip": "Çevirmek için sıra | Çevirmek için bir sıra | Çevirmek için {count} sıra",
         "increment": "0'lık artışlar | 1'lik artış | {count}'luk artışlar",
+        "remaining": "Hiç kalmadı | 1 kaldı | {count} kaldı",
         "shipsRemaining": "0 gemi kaldı | 1 gemi kaldı | {count} gemi kaldı",
         "includesItems": "{count} öğe içerir | {count} öğe içerir | {count} öğe içerir"
     },
@@ -1828,6 +1871,7 @@
             "dump": "Atmak istediğin kartları seç",
             "noType": "%{type} tipinde kart yok",
             "delete": "\"%{info}\" kartını silmek üzeresin.",
+            "winningOptionSelf": "Bu turu sen kazandın!",
             "winningOption": "%{name}, bu turu %{selection} seçimiyle kazandı",
             "actionResponseCardCounter": "Eylem ve yanıt kartı sayacı. Bazı setler aynı kartları kullanır; çiftler otomatik olarak kaldırılır. <b>NSFW</b> veya <b>Belirli Kartlar</b> filtrelemesi de toplam miktarı azaltır.",
             "navigateSelf": "Kendini yönlendir",
@@ -1925,6 +1969,8 @@
         "nameNoPoints": "%{name} hiç puan almadı.",
         "gameMenu": "Başka bir şey oynamak ister misin?",
         "forfeit": "Oyunu terk etmek senin için bir kayıp anlamına gelecek.",
+        "nameForfeited": "%{name} pes etti ve otomatik olarak kaybetti.",
+        "selfForfeited": "Pes ettin ve otomatik olarak kaybettin.",
         "unsavedChanges": "Kaydedilmemiş değişikliklerin var ve ilerlersen bunlar silinecek.",
         "accountDeletion": "Hesabını silmek geri alınamaz ve profilini, ilerlemeni ve istatistiklerini temizler.",
         "notMeWarning": "İlerlersen oturumun kapatılacak ve tüm cihazlarda oturumu kapatmanı sağlayan bir sayfaya yönlendirileceksin. Bundan sonra normalde olduğu gibi tekrar giriş yapabilirsin.",
@@ -2043,6 +2089,17 @@
             "logoutGloballyCompleted": "Hesabın tüm cihazlardan çıkış yapıldı.",
             "verificationEmail": "Doğrulama kodu içeren bir e-posta gönderildi.",
             "noEmail": "E-posta yok mu? Spam klasörünü kontrol et ve bu e-posta adresinin hesabına bağlı olduğunu onayla."
+        },
+        "cards": {
+            "selfRanOut": null,
+            "nameRanOut": null
+        },
+        "war": {
+            "title": null,
+            "powerPlay": null,
+            "selfWarNotIncluded": null,
+            "selfWarPlaceCards": null,
+            "selfWarPlaceFinalCard": null
         },
         "cribbage": {
             "type": {

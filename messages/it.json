@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Italian",
         "rtl": false,
-        "total": 1419,
-        "missing": 0
+        "total": 1447,
+        "missing": 7
     },
     "name": "Bloob.io",
     "error": {
@@ -78,7 +78,6 @@
         },
         "game": {
             "velocity": "La velocità data è al di fuori dell'intervallo consentito.",
-            "playerForfeited": "Il giocatore \"%{name}\" ha dato forfait e ha perso in automatico.",
             "missedTurnWarning": "Eri in ritardo ed il turno è passato al tuo avversario. Se ciò accade troppe volte di seguito, verrai eliminato. (%{current}/%{threshold})",
             "missedTurnKick": "Sei stato eliminato perchè hai mancato %{current} turno(i) di seguito.",
             "autoTurnWarning": "Eri in ritardo ed una mossa è stata fatta al tuo posto. Se ciò accade troppe volte di seguito, perderai. (%{current}/%{threshold})",
@@ -211,6 +210,15 @@
                     "help": "Gioca senza limiti di tempo. Disattiva tutti i timer di turno e goditi un'esperienza di gioco rilassata dove puoi giocare al tuo ritmo. Non consigliato contro avversari casuali.",
                     "data": {
                         "off": "Senza limiti"
+                    }
+                },
+                "deckSize": {
+                    "title": "Dimensione del Mazzo",
+                    "help": "Gioca senza limiti di tempo. Disattiva tutti i timer di turno e goditi un'esperienza di gioco rilassata dove puoi giocare al tuo ritmo. Non consigliato contro avversari casuali.",
+                    "data": {
+                        "half": "Mezzo Mazzo",
+                        "full": "Mazzo Completo",
+                        "double": "Doppio Mazzo"
                     }
                 }
             },
@@ -659,10 +667,6 @@
                     "title": "Soglia bloccata",
                     "help": "Se un giocatore rimane bloccato per questo numero di turni di fila, perde automaticamente."
                 },
-                "autoTurnThreshold": {
-                    "title": "Soglia tardiva",
-                    "help": "Se un giocatore è in ritardo e una mossa viene fatta automaticamente per questo numero di turni di fila, perde automaticamente."
-                },
                 "rows": {
                     "title": "Righe",
                     "help": "Con quante file di pezzi inizia ogni giocatore. A seconda delle dimensioni del campo, la quantità di file sarà determinata."
@@ -1062,10 +1066,6 @@
                     "title": "Tempo di Posizionamento",
                     "help": "Quanto tempo ha ogni giocatore per posizionare le loro navi."
                 },
-                "missedTurnThreshold": {
-                    "title": "Soglia del Turno Saltato",
-                    "help": "Quante turni può saltare un giocatore di fila prima di essere buttato fuori dal gioco."
-                },
                 "gridSize": {
                     "title": "Dimensione della Griglia",
                     "help": "Seleziona la dimensione del livello in cui giocare.",
@@ -1133,10 +1133,9 @@
                 }
             },
             "presets": {
-                "blitz": {
-                    "title": "Blitz",
+                "longHaul": {
+                    "title": "Viaggio Lungo",
                     "description": [
-                        "Turni brevi",
                         "Griglie a cascata"
                     ]
                 }
@@ -1199,8 +1198,6 @@
                     "help": "Quando attivato nei giochi a 3 giocatori, il mazziere riceve una carta extra per la culla. Quando disattivato, la quarta carta va automaticamente alla culla."
                 },
                 "winCondition": {
-                    "title": "Condizione di Vittoria",
-                    "help": "Determina quando il gioco dovrebbe finire.",
                     "data": {
                         "FIRST": "Primo a raggiungere <b>0</b> punti | Primo a raggiungere <b>1</b> punto | Primo a raggiungere <b>{count}</b> punti",
                         "HIGHEST_AFTER": "Più punti dopo aver raggiunto <b>0</b> punti | Più punti dopo aver raggiunto <b>1</b> punto | Più punti dopo aver raggiunto <b>{count}</b> punti"
@@ -1246,6 +1243,50 @@
                     ]
                 }
             }
+        },
+        "WAR": {
+            "name": "Guerra",
+            "heading": "Vivi Emozionanti Battaglie di Carte di Guerra Online",
+            "tooltip": "Vivi l'emozione del gioco di carte della Guerra con giocatori da tutti gli angoli del mondo.",
+            "description": "Vivi battaglie di carte multiplayer online con War! Gioca contro amici e rivali in questo classico basato sul web.",
+            "title": "Entra nell'Arena del Combattimento di Carte",
+            "options": {
+                "winCondition": {
+                    "help": "Il gioco finirà presto se rimane solo un giocatore con tutte le carte.",
+                    "data": {
+                        "LAST_STANDING": "Quando un giocatore prende tutte le carte",
+                        "HIGHEST_AFTER": "Più carte dopo <b>0</b> turni | Più carte dopo <b>1</b> turno | Più carte dopo <b>{count}</b> turni"
+                    }
+                },
+                "warRequirement": {
+                    "title": "Requisito di Guerra",
+                    "help": "Determina come dovrebbe svolgersi la guerra se due o più giocatori giocano la stessa carta.",
+                    "data": {
+                        "DEFAULT": "Metti <b>0</b> carte | Metti <b>1</b> carta | Metti <b>{count}</b> carte",
+                        "CARD_VALUE": "Metti carte uguali al rango della carta iniziale"
+                    }
+                },
+                "warCardCount": {
+                    "title": "Conteggio Carte di Guerra",
+                    "help": "Imposta un numero prestabilito di carte che un giocatore in guerra deve mettere. L'ultima carta è quella rivelata."
+                }
+            },
+            "presets": {
+                "razboi": {
+                    "title": "Guerra",
+                    "description": [
+                        "Posiziona carte uguali al rango della carta iniziale"
+                    ]
+                },
+                "blitz": {
+                    "title": "Blitz",
+                    "description": [
+                        "Mezzo mazzo",
+                        "Limitato a 60 turni"
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
@@ -1313,7 +1354,6 @@
             "staleMoves": "Partita stallata - %{staleCount} movimenti senza ripresa",
             "forfeit": "Partita finita - L'avversario ha scelto di dare forfait",
             "inactive": "La partita è terminata per inattività",
-            "late": "La partita è terminata a causa di un turno mancante (%{turns})",
             "pickActionCard": "Scegliere la carta azione",
             "pickCardSelection": "Selezione della carta",
             "handDump": "Giro di scarico",
@@ -1329,6 +1369,8 @@
             "nameTurnBreaking": "%{name} si sta rompendo",
             "roundSummary": "Riepilogo del turno",
             "roundCount": "Arrotonda %{current} su %{total}",
+            "roundCurrent": "Turno %{current}",
+            "war": "Guerra!",
             "dealingCards": "Sto distribuendo le carte...",
             "youPickStarterCard": "Devi scegliere la carta iniziale",
             "namePickStarterCard": "%{name} deve scegliere la carta iniziale",
@@ -1555,6 +1597,7 @@
         "playRandomOpponents": "Gioca contro avversari casuali | Gioca contro avversari casuali | Gioca contro avversari casuali",
         "turnsToFlip": "Gira per capovolgere | Gira per capovolgere | Gira per capovolgere",
         "increment": "Incremento di 0 | Incremento di 1 | Incremento di {count}",
+        "remaining": "Nessuno rimasto | 1 rimasto | {count} rimasti",
         "shipsRemaining": "0 navi rimaste | 1 nave rimasta | {count} navi rimaste",
         "includesItems": "Include {count} articoli | Include {count} articolo | Include {count} articoli"
     },
@@ -1828,6 +1871,7 @@
             "dump": "Seleziona le carte che vuoi scaricare",
             "noType": "Non ci sono carte %{type}",
             "delete": "Stai per cancellare la scheda \"%{info}\".",
+            "winningOptionSelf": "Hai vinto questo turno!",
             "winningOption": "%{name} ha vinto questo round con la selezione %{selection}",
             "actionResponseCardCounter": "Contatore di carte azione e risposta. Alcuni set utilizzano le stesse carte; i duplicati vengono rimossi automaticamente. Anche i filtri <b>NSFW</b> o <b>Carte specifiche</b> riducono l'importo totale.",
             "navigateSelf": "Naviga da solo",
@@ -1925,6 +1969,8 @@
         "nameNoPoints": "%{name} non ha ricevuto punti.",
         "gameMenu": "Hai voglia di giocare a qualcos'altro?",
         "forfeit": "La rinuncia alla partita comporterà una perdita per te.",
+        "nameForfeited": "%{name} ha rinunciato e ha perso automaticamente.",
+        "selfForfeited": "Hai rinunciato e perso automaticamente.",
         "unsavedChanges": "Ci sono modifiche non salvate che verranno cancellate se procederai.",
         "accountDeletion": "La cancellazione del tuo account è irreversibile e cancellerà il tuo profilo, il tuo progresso e le tue statistiche.",
         "notMeWarning": "Procedendo verrai disconnesso e reindirizzato a una pagina che ti consente di effettuare il logout su tutti i dispositivi. Dopo questo potrai effettuare nuovamente l'accesso come al solito.",
@@ -2043,6 +2089,17 @@
             "logoutGloballyCompleted": "Il tuo account è stato disconnesso da tutti i dispositivi.",
             "verificationEmail": "Un'email con un codice di verifica è stata inviata.",
             "noEmail": "Nessuna email? Controlla la tua cartella spam e conferma che questo indirizzo email sia collegato al tuo account."
+        },
+        "cards": {
+            "selfRanOut": null,
+            "nameRanOut": null
+        },
+        "war": {
+            "title": null,
+            "powerPlay": null,
+            "selfWarNotIncluded": null,
+            "selfWarPlaceCards": null,
+            "selfWarPlaceFinalCard": null
         },
         "cribbage": {
             "type": {

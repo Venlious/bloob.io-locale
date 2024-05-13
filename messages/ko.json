@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Korean",
         "rtl": false,
-        "total": 1419,
-        "missing": 0
+        "total": 1447,
+        "missing": 7
     },
     "name": "Bloob.io",
     "error": {
@@ -78,7 +78,6 @@
         },
         "game": {
             "velocity": "주어진 속도가 허용 범위를 벗어났어.",
-            "playerForfeited": "플레이어 \"%{name}\"이(가) 포기해서 자동으로 진 거야.",
             "missedTurnWarning": "너무 늦어서 상대에게 차례가 넘어갔어. 이런 일이 계속되면 퇴장당할 거야. (%{current}/%{threshold})",
             "missedTurnKick": "너는 %{current}번 차례를 연속으로 놓쳐서 퇴장당했어.",
             "autoTurnWarning": "너무 늦어서 대신 움직임이 결정됐어. 이런 일이 계속되면 질 거야. (%{current}/%{threshold})",
@@ -211,6 +210,15 @@
                     "help": "시간 제한 없이 플레이하세요. 모든 턴 타이",
                     "data": {
                         "off": "제한 없어"
+                    }
+                },
+                "deckSize": {
+                    "title": "덱 크기",
+                    "help": "시간 제한 없이 플레이하세요. 모든 턴 타이머를 비활성화하고 여유롭게 게임을 즐길 수 있어요. 자신의 속도에 맞춰 플레이할 수 있어요. 랜덤 상대에게는 추천하지 않아요.",
+                    "data": {
+                        "half": "반 덱",
+                        "full": "풀 덱",
+                        "double": "더블 덱"
                     }
                 }
             },
@@ -659,10 +667,6 @@
                     "title": "꼼짝 못하는 한계",
                     "help": "만약 플레이어가 이 턴 동안 계속 갇혀있다면 자동으로 패배하게 될 거야."
                 },
-                "autoTurnThreshold": {
-                    "title": "늦은 임계값",
-                    "help": "플레이어가 늦어서 턴이 자동으로 진행되는 경우, 이런 상황이 연속으로 몇 번 일어나면 자동으로 패배하게 돼."
-                },
                 "rows": {
                     "title": "행들",
                     "help": "각 플레이어가 시작할 때 몇 줄의 말을 가지고 있는지. 필드 크기에 따라 줄 수가 결정됩니다."
@@ -1062,10 +1066,6 @@
                     "title": "배치 시간",
                     "help": "각 플레이어가 배를 위치시키는 데 얼마나 걸리는지."
                 },
-                "missedTurnThreshold": {
-                    "title": "놓친 턴 임계값",
-                    "help": "게임에서 플레이어가 연속으로 몇 턴을 놓칠 수 있나요? 그 후에는 게임에서 퇴장당하나요?"
-                },
                 "gridSize": {
                     "title": "그리드 크기",
                     "help": "플레이할 레벨 크기를 선택하세요.",
@@ -1133,10 +1133,9 @@
                 }
             },
             "presets": {
-                "blitz": {
-                    "title": "블리츠",
+                "longHaul": {
+                    "title": "장거리",
                     "description": [
-                        "짧은 라운드",
                         "계단식 그리드"
                     ]
                 }
@@ -1199,8 +1198,6 @@
                     "help": "3인 플레이 게임에서 활성화하면 딜러는 크립 카드를 하나 더 받아요. 비활성화하면 네 번째 카드는 자동으로 크립에 들어가요."
                 },
                 "winCondition": {
-                    "title": "승리 조건",
-                    "help": "게임이 언제 끝나야 할지 결정해봐.",
                     "data": {
                         "FIRST": "먼저 <b>0</b>점 도달 | 먼저 <b>1</b>점 도달 | 먼저 <b>{count}</b>점 도달",
                         "HIGHEST_AFTER": "<b>0</b>점 도달 후 가장 많은 점수 | <b>1</b>점 도달 후 가장 많은 점수 | <b>{count}</b>점 도달 후 가장 많은 점수"
@@ -1246,6 +1243,50 @@
                     ]
                 }
             }
+        },
+        "WAR": {
+            "name": "전쟁",
+            "heading": "온라인에서 전유의 전쟁 카드 배틀을 경험해보세요",
+            "tooltip": "세계 각지의 플레이어들과 함께 전쟁 카드 게임의 흥분을 경험해봐.",
+            "description": "워에서 온라인 멀티플레이어 카드 배틀을 경험해보세요! 이 웹 기반 클래식에서 친구들과 라이벌들과 대결하세요.",
+            "title": "카드 전투의 아레나에 들어가보세요",
+            "options": {
+                "winCondition": {
+                    "help": "게임은 모든 카드를 가진 한 명의 플레이어만 남으면 일찍 끝날 거야.",
+                    "data": {
+                        "LAST_STANDING": "플레이어가 모든 카드를 얻을 때",
+                        "HIGHEST_AFTER": "<b>0</b> 라운드 후에 가장 많은 카드 | <b>1</b> 라운드 후에 가장 많은 카드 | <b>{count}</b> 라운드 후에 가장 많은 카드"
+                    }
+                },
+                "warRequirement": {
+                    "title": "전쟁 요건",
+                    "help": "두 명 이상의 플레이어가 같은 카드를 냈을 때, 어떻게 전쟁을 진행할지 결정해봐.",
+                    "data": {
+                        "DEFAULT": "<b>0</b>장의 카드를 놓으세요 | <b>1</b>장의 카드를 놓으세요 | <b>{count}</b>장의 카드를 놓으세요",
+                        "CARD_VALUE": "처음 카드 등급만큼 카드를 놓으세요"
+                    }
+                },
+                "warCardCount": {
+                    "title": "전쟁 카드 수",
+                    "help": "전쟁에서 플레이어가 놓아야 할 카드의 정해진 양을 설정하세요. 마지막 카드가 공개되는 카드입니다."
+                }
+            },
+            "presets": {
+                "razboi": {
+                    "title": "전쟁",
+                    "description": [
+                        "초기 카드 등급에 해당하는 카드를 놓으세요."
+                    ]
+                },
+                "blitz": {
+                    "title": "블리츠",
+                    "description": [
+                        "반 덱",
+                        "60 라운드로 제한"
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
@@ -1313,7 +1354,6 @@
             "staleMoves": "경기 정체 — %{staleCount}번의 움직임에도 변동 없음",
             "forfeit": "경기 종료 — 상대방이 포기를 선택했습니다",
             "inactive": "활동 없어서 경기가 끝났어요",
-            "late": "%{turns} 턴을 놓쳐서 경기가 끝났어요",
             "pickActionCard": "액션 카드를 고르는 중",
             "pickCardSelection": "카드 선택 중",
             "handDump": "덤프 라운드",
@@ -1329,6 +1369,8 @@
             "nameTurnBreaking": "%{name}이(가) 고장 나고 있어요",
             "roundSummary": "라운드 요약",
             "roundCount": "총 %{total} 라운드 중 %{current} 라운드",
+            "roundCurrent": "라운드 %{current}",
+            "war": "전쟁!",
             "dealingCards": "카드를 나누는 중...",
             "youPickStarterCard": "시작 카드를 고르셔야 해요",
             "namePickStarterCard": "%{name}님이 시작 카드를 고르셔야 해요",
@@ -1555,6 +1597,7 @@
         "playRandomOpponents": "랜덤 상대와 게임하기 | 랜덤 상대와 게임하기 | 랜덤 상대와 게임하기",
         "turnsToFlip": "뒤집을 차례 | 뒤집을 차례 | 뒤집을 차례",
         "increment": "0 증가 | 1 증가 | {count} 증가",
+        "remaining": "남은게 없어 | 1개 남았어 | {count}개 남았어",
         "shipsRemaining": "남은 배 0 | 남은 배 1 | 남은 배 {count}",
         "includesItems": "{count}개 항목 포함 | {count}개 항목 포함 | {count}개 항목 포함"
     },
@@ -1828,6 +1871,7 @@
             "dump": "버리고 싶은 카드를 선택하세요",
             "noType": "%{type} 카드가 없어요",
             "delete": "\"%{info}\" 카드를 삭제하려고 해요.",
+            "winningOptionSelf": "이 라운드는 너가 이겼어!",
             "winningOption": "%{name}님이 이 라운드에서 %{selection} 선택으로 이겼어요",
             "actionResponseCardCounter": "행동 & 반응 카드 카운터. 몇몇 세트는 같은 카드를 사용해요; 중복은 자동으로 제거돼요. <b>NSFW</b> 또는 <b>특정 카드</b> 필터링도 총 수량을 줄여요.",
             "navigateSelf": "스스로 탐색해봐요",
@@ -1925,6 +1969,8 @@
         "nameNoPoints": "%{name}는 포인트를 받지 못했어.",
         "gameMenu": "다른 게임 하고 싶어?",
         "forfeit": "게임을 포기하면 너한테 패배로 간주돼.",
+        "nameForfeited": "%{name}이(가) 기권했고, 자동으로 패배했어.",
+        "selfForfeited": "너가 기권하고 자동으로 패배했어.",
         "unsavedChanges": "저장하지 않은 변경 사항이 있어. 계속하면 이 사항들은 지워질 거야.",
         "accountDeletion": "계정을 삭제하면 되돌릴 수 없고, 프로필, 진행 상황, 통계 모두 사라져.",
         "notMeWarning": "계속하면 로그아웃되고, 모든 기기에서 로그아웃할 수 있는 페이지로 이동해. 이후에는 평소처럼 다시 로그인할 수 있어.",
@@ -2043,6 +2089,17 @@
             "logoutGloballyCompleted": "모든 기기에서 계정이 로그아웃 됐어.",
             "verificationEmail": "인증 코드가 포함된 이메일이 발송됐어.",
             "noEmail": "이메일이 안 왔어? 스팸 폴더를 확인하고 이 이메일 주소가 너의 계정에 연결되어 있는지 확인해봐."
+        },
+        "cards": {
+            "selfRanOut": null,
+            "nameRanOut": null
+        },
+        "war": {
+            "title": null,
+            "powerPlay": null,
+            "selfWarNotIncluded": null,
+            "selfWarPlaceCards": null,
+            "selfWarPlaceFinalCard": null
         },
         "cribbage": {
             "type": {

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 1419,
-        "missing": 0
+        "total": 1447,
+        "missing": 7
     },
     "name": "Bloob.io",
     "error": {
@@ -78,7 +78,6 @@
         },
         "game": {
             "velocity": "Kecepatan yang diberikan di luar batas yang diizinkan.",
-            "playerForfeited": "Pemain \"%{name}\" menyerah dan kalah secara otomatis.",
             "missedTurnWarning": "Kamu terlambat dan giliranmu diberikan ke lawan. Jika ini terjadi terus menerus, kamu akan dikeluarkan. (%{current}/%{threshold})",
             "missedTurnKick": "Kamu dikeluarkan karena kamu melewatkan %{current} giliran berturut-turut.",
             "autoTurnWarning": "Kamu terlambat dan langkah telah dibuat untukmu. Jika ini terjadi terus menerus, kamu akan kalah. (%{current}/%{threshold})",
@@ -211,6 +210,15 @@
                     "help": "Main tanpa batas waktu. Nonaktifkan semua timer giliran dan nikmati pengalaman bermain yang santai di mana kamu bisa main sesuai ritme sendiri. Tidak disarankan melawan lawan acak.",
                     "data": {
                         "off": "Tanpa batas"
+                    }
+                },
+                "deckSize": {
+                    "title": "Ukuran Dek",
+                    "help": "Main tanpa batas waktu. Nonaktifkan semua timer giliran dan nikmati pengalaman bermain yang santai di mana kamu bisa main sesuai ritme sendiri. Tidak disarankan melawan lawan acak.",
+                    "data": {
+                        "half": "Setengah Dek",
+                        "full": "Dek Penuh",
+                        "double": "Dek Ganda"
                     }
                 }
             },
@@ -659,10 +667,6 @@
                     "title": "Batasan Terjebak",
                     "help": "Jika pemain terjebak selama jumlah giliran ini secara berturut-turut, mereka akan kalah secara otomatis."
                 },
-                "autoTurnThreshold": {
-                    "title": "Batas Keterlambatan",
-                    "help": "Jika seorang pemain terlambat dan gerakan otomatis dibuat untuk mereka sejumlah putaran berturut-turut, mereka otomatis kalah."
-                },
                 "rows": {
                     "title": "Baris",
                     "help": "Berapa baris bidak yang dimulai setiap pemain. Jumlah baris akan ditentukan berdasarkan ukuran lapangan."
@@ -1062,10 +1066,6 @@
                     "title": "Waktu Penempatan",
                     "help": "Berapa lama setiap pemain harus memindahkan kapal mereka ke posisi."
                 },
-                "missedTurnThreshold": {
-                    "title": "Batas Melewatkan Giliran",
-                    "help": "Berapa banyak giliran yang bisa dilewatkan pemain secara berturut-turut sebelum diusir dari permainan."
-                },
                 "gridSize": {
                     "title": "Ukuran Kotak",
                     "help": "Pilih ukuran level untuk bermain.",
@@ -1133,11 +1133,10 @@
                 }
             },
             "presets": {
-                "blitz": {
-                    "title": "Blitz",
+                "longHaul": {
+                    "title": "Perjalanan Jauh",
                     "description": [
-                        "Putaran singkat",
-                        "Kisi-kisi bertumpuk"
+                        "Grid yang bertumpuk"
                     ]
                 }
             },
@@ -1199,8 +1198,6 @@
                     "help": "Ketika diaktifkan dalam permainan 3 pemain, si dealer mendapatkan kartu crib tambahan. Ketika dinonaktifkan, kartu keempat langsung pergi ke crib secara otomatis."
                 },
                 "winCondition": {
-                    "title": "Kondisi Menang",
-                    "help": "Tentukan kapan game harus diakhiri.",
                     "data": {
                         "FIRST": "Pertama kali mencapai <b>0</b> poin | Pertama kali mencapai <b>1</b> poin | Pertama kali mencapai <b>{count}</b> poin",
                         "HIGHEST_AFTER": "Poin terbanyak setelah mencapai <b>0</b> poin | Poin terbanyak setelah mencapai <b>1</b> poin | Poin terbanyak setelah mencapai <b>{count}</b> poin"
@@ -1246,6 +1243,50 @@
                     ]
                 }
             }
+        },
+        "WAR": {
+            "name": "Perang",
+            "heading": "Rasakan Sensasi Pertempuran Kartu Perang Online yang Menggemparkan",
+            "tooltip": "Rasakan serunya permainan kartu Perang dengan pemain dari segala penjuru dunia.",
+            "description": "Nikmati pertempuran kartu multiplayer online dengan War! Mainkan melawan teman dan saingan dalam klasik berbasis web ini.",
+            "title": "Masuk ke Arena Pertarungan Kartu",
+            "options": {
+                "winCondition": {
+                    "help": "Game bakal berakhir lebih cepat kalau cuma ada satu pemain yang masih punya semua kartu.",
+                    "data": {
+                        "LAST_STANDING": "Ketika pemain mendapatkan semua kartu",
+                        "HIGHEST_AFTER": "Kartu terbanyak setelah <b>0</b> ronde | Kartu terbanyak setelah <b>1</b> ronde | Kartu terbanyak setelah <b>{count}</b> ronde"
+                    }
+                },
+                "warRequirement": {
+                    "title": "Kebutuhan Perang",
+                    "help": "Tentukan bagaimana perang harus berlangsung jika dua pemain atau lebih memainkan kartu yang sama.",
+                    "data": {
+                        "DEFAULT": "Taruh <b>0</b> kartu | Taruh <b>1</b> kartu | Taruh <b>{count}</b> kartu",
+                        "CARD_VALUE": "Taruh kartu sebanyak peringkat kartu awal"
+                    }
+                },
+                "warCardCount": {
+                    "title": "Jumlah Kartu Perang",
+                    "help": "Tentukan jumlah kartu tertentu yang harus diletakkan pemain dalam perang. Kartu terakhir adalah yang diperlihatkan."
+                }
+            },
+            "presets": {
+                "razboi": {
+                    "title": "Perang",
+                    "description": [
+                        "Letakkan kartu sebanyak peringkat kartu awal"
+                    ]
+                },
+                "blitz": {
+                    "title": "Blitz",
+                    "description": [
+                        "Setengah dek",
+                        "Terbatas sampai 60 ronde"
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
@@ -1313,7 +1354,6 @@
             "staleMoves": "Pertandingan mandek — %{staleCount} gerakan tanpa ada yang mengambil alih",
             "forfeit": "Pertandingan selesai — Lawan memilih untuk menyerah",
             "inactive": "Pertandingan berakhir karena tidak ada aktivitas",
-            "late": "Pertandingan berakhir karena melewatkan %{turns} giliran",
             "pickActionCard": "Memilih kartu aksi",
             "pickCardSelection": "Membuat seleksi kartu",
             "handDump": "Putaran buang",
@@ -1329,6 +1369,8 @@
             "nameTurnBreaking": "%{name} lagi rusak",
             "roundSummary": "Ringkasan ronde",
             "roundCount": "Ronde %{current} dari %{total}",
+            "roundCurrent": "Putaran %{current}",
+            "war": "Perang!",
             "dealingCards": "Lagi bagi-bagi kartu nih...",
             "youPickStarterCard": "Kamu harus pilih kartu awal",
             "namePickStarterCard": "%{name} harus pilih kartu awal",
@@ -1555,6 +1597,7 @@
         "playRandomOpponents": "Main Lawan Lawan Acak | Main Lawan Acak | Main Lawan Lawan Acak",
         "turnsToFlip": "Giliran buat balik | Giliran buat balik | Giliran-giliran buat balik",
         "increment": "Bertambah 0 | Bertambah 1 | Bertambah {count}",
+        "remaining": "Gak ada yang tersisa | 1 masih tersisa | {count} masih tersisa",
         "shipsRemaining": "0 kapal tersisa | 1 kapal tersisa | {count} kapal tersisa",
         "includesItems": "Termasuk {count} item | Termasuk {count} item | Termasuk {count} item"
     },
@@ -1828,6 +1871,7 @@
             "dump": "Pilih kartu apa saja yang ingin kamu buang",
             "noType": "Tidak ada kartu %{type}",
             "delete": "Kamu akan menghapus kartu \"%{info}\".",
+            "winningOptionSelf": "Kamu menang ronde ini!",
             "winningOption": "%{name} menang ronde ini dengan pilihan %{selection}",
             "actionResponseCardCounter": "Penghitung kartu aksi & respons. Beberapa set menggunakan kartu yang sama; duplikat dihapus secara otomatis. Menyaring <b>NSFW</b> atau <b>Kartu Spesifik</b> juga mengurangi jumlah total.",
             "navigateSelf": "Navigasi dirimu sendiri",
@@ -1925,6 +1969,8 @@
         "nameNoPoints": "%{name} nggak dapet poin.",
         "gameMenu": "Pengen main game lain?",
         "forfeit": "Kalau kamu menyerah, kamu bakal kalah nih.",
+        "nameForfeited": "%{name} menyerah dan otomatis kalah.",
+        "selfForfeited": "Kamu menyerah dan otomatis kalah.",
         "unsavedChanges": "Ada perubahan yang belum disimpan, nanti bakal hilang kalau kamu lanjut.",
         "accountDeletion": "Hapus akun itu ga bisa dibalikin dan bakal menghapus profil, progres, dan statistik kamu.",
         "notMeWarning": "Kalau kamu lanjut, kamu bakal keluar dan dialihkan ke halaman yang memungkinkan kamu untuk keluar di semua perangkat. Setelah itu kamu bisa masuk lagi seperti biasa.",
@@ -2043,6 +2089,17 @@
             "logoutGloballyCompleted": "Akunmu telah di-logout dari semua perangkat.",
             "verificationEmail": "Email dengan kode verifikasi telah dikirim.",
             "noEmail": "Tidak ada email? Cek folder spammu dan konfirmasi bahwa alamat email ini terhubung dengan akunmu."
+        },
+        "cards": {
+            "selfRanOut": null,
+            "nameRanOut": null
+        },
+        "war": {
+            "title": null,
+            "powerPlay": null,
+            "selfWarNotIncluded": null,
+            "selfWarPlaceCards": null,
+            "selfWarPlaceFinalCard": null
         },
         "cribbage": {
             "type": {

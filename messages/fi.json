@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 1419,
-        "missing": 0
+        "total": 1447,
+        "missing": 7
     },
     "name": "Bloob.io",
     "error": {
@@ -78,7 +78,6 @@
         },
         "game": {
             "velocity": "Annettu vauhti on sallitun alueen ulkopuolella.",
-            "playerForfeited": "Pelaaja \"%{name}\" luovutti ja hävisi automaattisesti.",
             "missedTurnWarning": "Olit liian myöhässä ja vuoro annettiin vastustajallesi. Jos näin käy liian monta kertaa peräkkäin, sinut potkitaan ulos. (%{current}/%{threshold})",
             "missedTurnKick": "Sinut potkaistiin ulos, koska missasit %{current} vuoro(a) peräkkäin.",
             "autoTurnWarning": "Olit liian myöhässä ja siirto tehtiin puolestasi. Jos näin käy liian monta kertaa peräkkäin, häviät. (%{current}/%{threshold})",
@@ -211,6 +210,15 @@
                     "help": "Pelaa ilman aikarajoituksia. Poista kaikki vuorokellot käytöstä ja nauti rennosta pelikokemuksesta, jossa voit pelata omaan tahtiisi. Ei suositella satunnaisia vastustajia vastaan.",
                     "data": {
                         "off": "Ei rajoituksia"
+                    }
+                },
+                "deckSize": {
+                    "title": "Pakan Koko",
+                    "help": "Pelaa ilman aikarajoituksia. Poista kaikki vuorokellot käytöstä ja nauti rennosta pelikokemuksesta, jossa voit pelata omaan tahtiisi. Ei suositella satunnaisia vastustajia vastaan.",
+                    "data": {
+                        "half": "Puolikas pakka",
+                        "full": "Täysi pakka",
+                        "double": "Tuplapakka"
                     }
                 }
             },
@@ -659,10 +667,6 @@
                     "title": "Jumiutumiskynnys",
                     "help": "Jos pelaaja jumittuu tämän määrän vuoroja peräkkäin, hän häviää automaattisesti."
                 },
-                "autoTurnThreshold": {
-                    "title": "Myöhäisen kynnyksen",
-                    "help": "Jos pelaaja on myöhässä ja siirto tehdään automaattisesti hänen puolestaan tämän monta kierrosta peräkkäin, hän häviää automaattisesti."
-                },
                 "rows": {
                     "title": "Rivit",
                     "help": "Kuinka monta riviä nappuloita jokainen pelaaja aloittaa. Kentän koon mukaan määräytyy rivien määrä."
@@ -1062,10 +1066,6 @@
                     "title": "Sijoitusajan",
                     "help": "Kuinka kauan kullakin pelaajalla on aikaa siirtää laivansa paikoilleen."
                 },
-                "missedTurnThreshold": {
-                    "title": "Ohitetun vuoron kynnysarvo",
-                    "help": "Kuinka monta vuoroa pelaaja voi jättää väliin peräkkäin ennen kuin hänet potkitaan pelistä ulos."
-                },
                 "gridSize": {
                     "title": "Ruudukon Koko",
                     "help": "Valitse pelattavan tason koko.",
@@ -1133,11 +1133,10 @@
                 }
             },
             "presets": {
-                "blitz": {
-                    "title": "Blitzi",
+                "longHaul": {
+                    "title": "Pitkä matka",
                     "description": [
-                        "Lyhyet kierrokset",
-                        "Kaskadoidut ruudukot"
+                        "Putoavat ruudukot"
                     ]
                 }
             },
@@ -1199,8 +1198,6 @@
                     "help": "Kun tämä on käytössä 3 pelaajan peleissä, jakaja saa ylimääräisen kortin cribiin. Kun tämä ei ole käytössä, neljäs kortti menee cribiin automaattisesti."
                 },
                 "winCondition": {
-                    "title": "Voittoehto",
-                    "help": "Päätä, milloin pelin pitäisi päättyä.",
                     "data": {
                         "FIRST": "Ensimmäinen, joka saa <b>0</b> pistettä | Ensimmäinen, joka saa <b>1</b> pisteen | Ensimmäinen, joka saa <b>{count}</b> pistettä",
                         "HIGHEST_AFTER": "Eniten pisteitä, kun <b>0</b> pistettä on saavutettu | Eniten pisteitä, kun <b>1</b> piste on saavutettu | Eniten pisteitä, kun <b>{count}</b> pistettä on saavutettu"
@@ -1246,6 +1243,50 @@
                     ]
                 }
             }
+        },
+        "WAR": {
+            "name": "Sota",
+            "heading": "Koe Jännittävät Sota-Korttipelit Netissä",
+            "tooltip": "Koe jännitys War-korttipelissä pelaajien kanssa kaikista maailman kolkista.",
+            "description": "Koe moninpeli korttitaistelut verkossa War-pelissä! Pelaa kavereita ja kilpailijoita vastaan tässä nettiklassikossa.",
+            "title": "Astuppaan Korttitaistelun Areenalle",
+            "options": {
+                "winCondition": {
+                    "help": "Peli loppuu aikaisin, jos vain yksi pelaaja on jäljellä kaikkien korttien kanssa.",
+                    "data": {
+                        "LAST_STANDING": "Kun pelaaja saa kaikki kortit",
+                        "HIGHEST_AFTER": "Eniten kortteja <b>0</b> kierroksen jälkeen | Eniten kortteja <b>1</b> kierroksen jälkeen | Eniten kortteja <b>{count}</b> kierroksen jälkeen"
+                    }
+                },
+                "warRequirement": {
+                    "title": "Sotavaatimus",
+                    "help": "Päätä, miten sota pitäisi pelata, jos kaksi tai useampi pelaaja pelaa saman kortin.",
+                    "data": {
+                        "DEFAULT": "Laita <b>0</b> korttia | Laita <b>1</b> kortti | Laita <b>{count}</b> korttia",
+                        "CARD_VALUE": "Laita kortteja alkuperäisen kortin arvon verran"
+                    }
+                },
+                "warCardCount": {
+                    "title": "Sotakorttien Määrä",
+                    "help": "Aseta ennalta määrätty määrä kortteja, jotka sotapelin pelaajan on asetettava. Viimeinen kortti on se, joka paljastetaan."
+                }
+            },
+            "presets": {
+                "razboi": {
+                    "title": "Sota",
+                    "description": [
+                        "Laita kortteja saman verran kuin alkuperäisen kortin arvo on."
+                    ]
+                },
+                "blitz": {
+                    "title": "Blitzi",
+                    "description": [
+                        "Puoli pakkaa",
+                        "Rajoitettu 60 kierrokseen"
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
@@ -1313,7 +1354,6 @@
             "staleMoves": "Ottelu jumissa — %{staleCount} siirtoa ilman valtausta",
             "forfeit": "Ottelu päättyi — Vastustaja valitsi luovuttaa",
             "inactive": "Ottelu päättyi toimettomuuden vuoksi",
-            "late": "Ottelu päättyi koska %{turns} vuoro(a) jäi väliin",
             "pickActionCard": "Valitaan toimintakortti",
             "pickCardSelection": "Tehdään korttivalinta",
             "handDump": "Roskakierros",
@@ -1329,6 +1369,8 @@
             "nameTurnBreaking": "%{name} rikkoo",
             "roundSummary": "Kierroksen yhteenveto",
             "roundCount": "Kierros %{current} / %{total}",
+            "roundCurrent": "Kierros %{current}",
+            "war": "Sota!",
             "dealingCards": "Jaetaan kortteja...",
             "youPickStarterCard": "Sun pitää valita aloituskortti",
             "namePickStarterCard": "%{name}n pitää valita aloituskortti",
@@ -1555,6 +1597,7 @@
         "playRandomOpponents": "Pelaa satunnaisia vastustajia vastaan | Pelaa satunnaista vastustajaa vastaan | Pelaa satunnaisia vastustajia vastaan",
         "turnsToFlip": "Käännösvuoroja | Käännösvuoro | Käännösvuoroja",
         "increment": "0 lisäystä | 1 lisäys | {count} lisäystä",
+        "remaining": "Ei jäljellä | 1 jäljellä | {count} jäljellä",
         "shipsRemaining": "0 laivaa jäljellä | 1 laiva jäljellä | {count} laivaa jäljellä",
         "includesItems": "Sisältää {count} esinettä | Sisältää {count} esineen | Sisältää {count} esinettä"
     },
@@ -1828,6 +1871,7 @@
             "dump": "Valitse kortit, jotka haluat hylätä",
             "noType": "%{type} kortteja ei ole",
             "delete": "Olet poistamassa korttia \"%{info}\".",
+            "winningOptionSelf": "Voitit tämän kierroksen!",
             "winningOption": "%{name} voitti tämän kierroksen valinnalla %{selection}",
             "actionResponseCardCounter": "Toiminta- ja vastauskorttien laskuri. Jotkut setit käyttävät samoja kortteja; kaksoiskappaleet poistetaan automaattisesti. <b>NSFW</b> tai <b>Erityiset Kortit</b> suodattaminen vähentää myös kokonaismäärää.",
             "navigateSelf": "Navigoi itse",
@@ -1925,6 +1969,8 @@
         "nameNoPoints": "%{name} ei saanut pisteitä.",
         "gameMenu": "Tekisikö mieli pelata jotain muuta?",
         "forfeit": "Pelistä luopuminen johtaa sinulle tappioon.",
+        "nameForfeited": "%{name} luovutti ja hävisi automaattisesti.",
+        "selfForfeited": "Sinä luovutit ja hävisit automaattisesti.",
         "unsavedChanges": "Sinulla on tallentamattomia muutoksia, jotka poistuvat, jos jatkat.",
         "accountDeletion": "Tilisi poistaminen on peruuttamatonta ja se tyhjentää profiilisi, edistymisesi ja tilastosi.",
         "notMeWarning": "Jatkamalla kirjaudut ulos ja sinut ohjataan sivulle, joka mahdollistaa uloskirjautumisen kaikilla laitteilla. Tämän jälkeen voit kirjautua sisään normaalisti.",
@@ -2043,6 +2089,17 @@
             "logoutGloballyCompleted": "Tilisi on kirjattu ulos kaikista laitteista.",
             "verificationEmail": "Sähköposti vahvistuskoodilla on lähetetty.",
             "noEmail": "Eikö sähköpostia? Tarkista roskapostikansiosi ja varmista, että tämä sähköpostiosoite on linkitetty tilillesi."
+        },
+        "cards": {
+            "selfRanOut": null,
+            "nameRanOut": null
+        },
+        "war": {
+            "title": null,
+            "powerPlay": null,
+            "selfWarNotIncluded": null,
+            "selfWarPlaceCards": null,
+            "selfWarPlaceFinalCard": null
         },
         "cribbage": {
             "type": {

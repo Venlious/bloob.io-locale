@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Dutch",
         "rtl": false,
-        "total": 1419,
-        "missing": 0
+        "total": 1447,
+        "missing": 7
     },
     "name": "Bloob.io",
     "error": {
@@ -78,7 +78,6 @@
         },
         "game": {
             "velocity": "De opgegeven snelheid ligt buiten het toegestane bereik.",
-            "playerForfeited": "Speler \"%{name}\" heeft opgegeven en automatisch verloren.",
             "missedTurnWarning": "Je was te laat en de tegenstander heeft nu de beurt gekregen. Als dit te vaak gebeurt wordt je uit het spel verwijderd. (%{current}/%{threshold})",
             "missedTurnKick": "Je hebt %{current} beurt(en) gemist en bent uit het spel verwijderd.",
             "autoTurnWarning": "Je was te laat en er werd een zet voor je gedaan. Als dit te vaak achter elkaar gebeurt, verlies je. (%{current}/%{threshold})",
@@ -211,6 +210,15 @@
                     "help": "Speel zonder tijdslimieten. Schakel alle beurt timers uit en geniet van een ontspannen spelervaring waar je in je eigen tempo kunt spelen. Niet aanbevolen tegen willekeurige tegenstanders.",
                     "data": {
                         "off": "Geen limiet"
+                    }
+                },
+                "deckSize": {
+                    "title": "Deck Grootte",
+                    "help": "Speel zonder tijdslimieten. Schakel alle beurt timers uit en geniet van een ontspannen spelervaring waar je in je eigen tempo kunt spelen. Niet aanbevolen tegen willekeurige tegenstanders.",
+                    "data": {
+                        "half": "Half Deck",
+                        "full": "Volledig Deck",
+                        "double": "Dubbel Deck"
                     }
                 }
             },
@@ -659,10 +667,6 @@
                     "title": "Vast Toleratie",
                     "help": "Als een speler dit aantal beurten achter elkaar vastzit en dus geen stukken kan bewegen, verliest deze automatisch."
                 },
-                "autoTurnThreshold": {
-                    "title": "Laat Toleratie",
-                    "help": "Als een speler te laat is en er automatisch een zet gemaakt wordt voor dit aantal beurten achter elkaar, verliest deze automatisch."
-                },
                 "rows": {
                     "title": "Rijen",
                     "help": "Met hoeveel rijen vol stukken elke speler begint. De maximale hoevelheid rijen is afhankelijk van de grootte van het speelveld."
@@ -1062,10 +1066,6 @@
                     "title": "Plaatsingstijd",
                     "help": "Hoe lang elke speler heeft om hun schepen in positie te brengen."
                 },
-                "missedTurnThreshold": {
-                    "title": "Gemiste Beurt Drempel",
-                    "help": "Hoeveel beurten kan een speler achter elkaar missen voordat hij uit het spel wordt gegooid."
-                },
                 "gridSize": {
                     "title": "Rastergrootte",
                     "help": "Selecteer de grootte van het speelveld waarin je wilt spelen.",
@@ -1133,11 +1133,10 @@
                 }
             },
             "presets": {
-                "blitz": {
-                    "title": "Blitz",
+                "longHaul": {
+                    "title": "Lange Rit",
                     "description": [
-                        "Korte rondes",
-                        "Trapsgewijze roosters"
+                        "Waterval roosters"
                     ]
                 }
             },
@@ -1199,8 +1198,6 @@
                     "help": "Als je dit inschakelt bij spellen met 3 spelers, krijgt de deler een extra cribkaart. Als je dit uitschakelt, gaat de vierde kaart automatisch naar de crib."
                 },
                 "winCondition": {
-                    "title": "Winnende Voorwaarde",
-                    "help": "Bepaal wanneer het spel moet eindigen.",
                     "data": {
                         "FIRST": "Eerste die <b>0</b> punten bereikt | Eerste die <b>1</b> punt bereikt | Eerste die <b>{count}</b> punten bereikt",
                         "HIGHEST_AFTER": "Meeste punten nadat <b>0</b> punten zijn bereikt | Meeste punten nadat <b>1</b> punt is bereikt | Meeste punten nadat <b>{count}</b> punten zijn bereikt"
@@ -1246,6 +1243,50 @@
                     ]
                 }
             }
+        },
+        "WAR": {
+            "name": "Oorlog",
+            "heading": "Ervaar Spannende Oorlog Kaartgevechten Online",
+            "tooltip": "Ervaar de spanning van het kaartspel Oorlog met spelers uit alle hoeken van de wereld.",
+            "description": "Ervaar online multiplayer kaartgevechten met War! Speel tegen vrienden en rivalen in deze webklassieker.",
+            "title": "Betreed de Arena van Kaartgevechten",
+            "options": {
+                "winCondition": {
+                    "help": "Het spel eindigt vroeg als er nog maar één speler over is met alle kaarten.",
+                    "data": {
+                        "LAST_STANDING": "Wanneer een speler alle kaarten krijgt",
+                        "HIGHEST_AFTER": "Meeste kaarten na <b>0</b> rondes | Meeste kaarten na <b>1</b> ronde | Meeste kaarten na <b>{count}</b> rondes"
+                    }
+                },
+                "warRequirement": {
+                    "title": "Oorlogsvereiste",
+                    "help": "Bepaal hoe de oorlog gespeeld moet worden als twee of meer spelers dezelfde kaart spelen.",
+                    "data": {
+                        "DEFAULT": "Leg <b>0</b> kaarten neer | Leg <b>1</b> kaart neer | Leg <b>{count}</b> kaarten neer",
+                        "CARD_VALUE": "Leg kaarten neer gelijk aan de rang van de eerste kaart"
+                    }
+                },
+                "warCardCount": {
+                    "title": "Aantal Oorlog Kaarten",
+                    "help": "Stel een vooraf bepaald aantal kaarten in dat een speler in een oorlog moet leggen. De laatste kaart is degene die wordt onthuld."
+                }
+            },
+            "presets": {
+                "razboi": {
+                    "title": "Oorlog",
+                    "description": [
+                        "Plaats kaarten gelijk aan de beginrang van de kaart"
+                    ]
+                },
+                "blitz": {
+                    "title": "Blitz",
+                    "description": [
+                        "Half deck",
+                        "Beperkt tot 60 rondes"
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
@@ -1313,7 +1354,6 @@
             "staleMoves": "Spel verlopen — %{staleCount} zetten zonder overname",
             "forfeit": "Spel afgelopen — Tegenstander heeft opgegeven",
             "inactive": "Spel beëindigd wegens inactiviteit",
-            "late": "Spel beëindigd wegens missen van %{turns} beurt(en)",
             "pickActionCard": "Actiekaart kiezen",
             "pickCardSelection": "Maken van kaart selectie",
             "handDump": "Dumpronde",
@@ -1329,6 +1369,8 @@
             "nameTurnBreaking": "%{name} is aan het breken",
             "roundSummary": "Ronde samenvatting",
             "roundCount": "Ronde %{current} van de %{total}",
+            "roundCurrent": "Ronde %{huidig}",
+            "war": "Oorlog!",
             "dealingCards": "Kaarten delen...",
             "youPickStarterCard": "Jij moet de startkaart kiezen",
             "namePickStarterCard": "%{name} moet de startkaart kiezen",
@@ -1555,6 +1597,7 @@
         "playRandomOpponents": "Play Random Opponents | Play Random Opponent | Play Random Opponents",
         "turnsToFlip": "Beurten tot flip | Beurt tot flip | Beurten tot flip",
         "increment": "Stappen van 0 | Stap van 1 | Stappen van {count}",
+        "remaining": "Geen over | 1 over | {count} over",
         "shipsRemaining": "0 schepen over | 1 schip over | {count} schepen over",
         "includesItems": "Bevat {count} items | Bevat {count} item | Bevat {count} items"
     },
@@ -1828,6 +1871,7 @@
             "dump": "Selecteer alle kaarten die je niet meer wilt hebben",
             "noType": "Er zijn geen %{type} kaarten",
             "delete": "Je staat op het punt kaart \"%{info}\" te verwijderen.",
+            "winningOptionSelf": "Je hebt deze ronde gewonnen!",
             "winningOption": "%{name} won deze ronde met selectie %{selection}",
             "actionResponseCardCounter": "Actie- en antwoordkaartenteller. Sommige sets gebruiken dezelfde kaarten, daarvan worden dubbele kaarten automatisch verwijderd. Het filteren van <b>NSFW</b> of <b>Specifieke  Kaarten</b> vermindert ook het totale aantal.",
             "navigateSelf": "Navigeer zelf",
@@ -1925,6 +1969,8 @@
         "nameNoPoints": "%{name} heeft geen punten ontvangen.",
         "gameMenu": "Wil je iets anders spelen?",
         "forfeit": "Door verlies te verklaren zal je het spel meteen verliezen.",
+        "nameForfeited": "%{name} heeft opgegeven en heeft automatisch verloren.",
+        "selfForfeited": "Je hebt opgegeven en automatisch verloven.",
         "unsavedChanges": "Je hebt onopgeslagen wijzigingen die gewist zullen worden als je doorgaat.",
         "accountDeletion": "Het verwijderen van je account is onomkeerbaar en zal je profiel, vooruitgang en statistieken wissen.",
         "notMeWarning": "Door verder te gaan word je uitgelogd en word je doorgestuurd naar een pagina waar je op alle apparaten uit kunt loggen. Daarna kun je weer normaal inloggen.",
@@ -2043,6 +2089,17 @@
             "logoutGloballyCompleted": "Je account is uitgelogd van alle apparaten.",
             "verificationEmail": "Er is een e-mail met een verificatiecode verzonden.",
             "noEmail": "Geen e-mail? Controleer je spam-map en bevestig dat dit e-mailadres is gekoppeld aan je account."
+        },
+        "cards": {
+            "selfRanOut": null,
+            "nameRanOut": null
+        },
+        "war": {
+            "title": null,
+            "powerPlay": null,
+            "selfWarNotIncluded": null,
+            "selfWarPlaceCards": null,
+            "selfWarPlaceFinalCard": null
         },
         "cribbage": {
             "type": {

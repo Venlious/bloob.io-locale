@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 1419,
-        "missing": 0
+        "total": 1447,
+        "missing": 7
     },
     "name": "Bloob.io",
     "error": {
@@ -78,7 +78,6 @@
         },
         "game": {
             "velocity": "给出的速度超出了允许的范围。",
-            "playerForfeited": "玩家 \"%{name}\" 放弃了，自动输了。",
             "missedTurnWarning": "你来晚了，轮到你的对手了。如果这种情况连续发生太多次，你会被踢出去。(%{current}/%{threshold})",
             "missedTurnKick": "你因为连续%{current}次没有轮到你，所以被踢出去了。",
             "autoTurnWarning": "你来晚了，已经为你做了一个动作。如果这种情况连续发生太多次，你会输掉。(%{current}/%{threshold})",
@@ -211,6 +210,15 @@
                     "help": "无时间限制玩耍。关闭所有回合计时器，享受轻松的游戏体验，你可以按自己的节奏玩。不建议对随机对手使用。",
                     "data": {
                         "off": "没有限制"
+                    }
+                },
+                "deckSize": {
+                    "title": "牌组大小",
+                    "help": "无时间限制玩耍。关闭所有回合计时器，享受轻松的游戏体验，你可以按自己的节奏玩。不建议对随机对手使用。",
+                    "data": {
+                        "half": "半副牌",
+                        "full": "一副完整的牌",
+                        "double": "双副牌"
                     }
                 }
             },
@@ -659,10 +667,6 @@
                     "title": "卡住阈值",
                     "help": "如果一个玩家连续这么多轮被卡住，他们会自动输掉游戏。"
                 },
-                "autoTurnThreshold": {
-                    "title": "晚点阈值",
-                    "help": "如果一个玩家连续这么多轮迟到，系统自动帮他们走棋，他们就会自动输掉比赛。"
-                },
                 "rows": {
                     "title": "行数",
                     "help": "每个玩家开始时有多少行棋子。根据场地大小，行数会有所不同。"
@@ -1062,10 +1066,6 @@
                     "title": "放置时间",
                     "help": "每个玩家需要多长时间来移动他们的船到位。"
                 },
-                "missedTurnThreshold": {
-                    "title": "错过回合阈值",
-                    "help": "玩家可以连续缺席多少轮次才会被踢出游戏。"
-                },
                 "gridSize": {
                     "title": "网格大小",
                     "help": "选择要玩的关卡大小。",
@@ -1133,10 +1133,9 @@
                 }
             },
             "presets": {
-                "blitz": {
-                    "title": "闪电战",
+                "longHaul": {
+                    "title": "长途跋涉",
                     "description": [
-                        "短轮次",
                         "级联网格"
                     ]
                 }
@@ -1199,8 +1198,6 @@
                     "help": "当在3人游戏中启用时，发牌者会多得到一张垫牌。当禁用时，第四张牌会自动进入垫牌。"
                 },
                 "winCondition": {
-                    "title": "胜利条件",
-                    "help": "确定游戏应该什么时候结束。",
                     "data": {
                         "FIRST": "首先达到<b>0</b>分 | 首先达到<b>1</b>分 | 首先达到<b>{count}</b>分",
                         "HIGHEST_AFTER": "达到<b>0</b>分后得分最多 | 达到<b>1</b>分后得分最多 | 达到<b>{count}</b>分后得分最多"
@@ -1246,6 +1243,50 @@
                     ]
                 }
             }
+        },
+        "WAR": {
+            "name": "战争",
+            "heading": "在线体验刺激的战争卡牌对战",
+            "tooltip": "体验和来自世界各地的玩家一起玩战争纸牌游戏的刺激吧。",
+            "description": "在War中体验在线多人卡牌战斗！在这个网络经典游戏中与朋友和对手对战。",
+            "title": "进入卡牌对战竞技场",
+            "options": {
+                "winCondition": {
+                    "help": "如果只剩下一个玩家拿着所有的牌，游戏就会提前结束。",
+                    "data": {
+                        "LAST_STANDING": "当玩家得到所有的牌",
+                        "HIGHEST_AFTER": "<b>0</b>轮后得到最多的牌 | <b>1</b>轮后得到最多的牌 | <b>{count}</b>轮后得到最多的牌"
+                    }
+                },
+                "warRequirement": {
+                    "title": "战争要求",
+                    "help": "如果两个或更多的玩家打出相同的卡，应该如何决定战局的走向。",
+                    "data": {
+                        "DEFAULT": "放<b>0</b>张卡 | 放<b>1</b>张卡 | 放<b>{count}</b>张卡",
+                        "CARD_VALUE": "放与初始卡牌等级相等的卡牌"
+                    }
+                },
+                "warCardCount": {
+                    "title": "战争卡片数量",
+                    "help": "设定玩家在战争中必须放置的预定数量的卡片。最后一张卡是要揭示的卡。"
+                }
+            },
+            "presets": {
+                "razboi": {
+                    "title": "战争",
+                    "description": [
+                        "放置与初始卡牌等级相等的卡牌"
+                    ]
+                },
+                "blitz": {
+                    "title": "闪电战",
+                    "description": [
+                        "半副牌",
+                        "限60回合"
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
@@ -1313,7 +1354,6 @@
             "staleMoves": "比赛陷入僵局 — %{staleCount}步棋没有翻盘",
             "forfeit": "比赛结束 — 对手选择了认输",
             "inactive": "比赛因无活动而结束",
-            "late": "因为缺少%{turns}轮次，比赛结束了",
             "pickActionCard": "正在选行动卡",
             "pickCardSelection": "正在选卡片",
             "handDump": "扔牌轮次",
@@ -1329,6 +1369,8 @@
             "nameTurnBreaking": "%{name}正在坏掉",
             "roundSummary": "回合总结",
             "roundCount": "第%{current}轮，总共%{total}轮",
+            "roundCurrent": "第%{current}轮",
+            "war": "战争！",
             "dealingCards": "正在发牌...",
             "youPickStarterCard": "你得选一张起始牌",
             "namePickStarterCard": "%{name}得选一张起始牌",
@@ -1555,6 +1597,7 @@
         "playRandomOpponents": "随机对战 | 随机对一个人 | 随机对战",
         "turnsToFlip": "轮到翻转 | 轮到翻转 | 轮到翻转",
         "increment": "0的增量 | 1的增量 | {count}的增量",
+        "remaining": "没有剩余 | 还剩1个 | 还剩{count}个",
         "shipsRemaining": "0艘船剩下 | 1艘船剩下 | {count}艘船剩下",
         "includesItems": "包含 {count} 个物品 | 包含 {count} 个物品 | 包含 {count} 个物品"
     },
@@ -1828,6 +1871,7 @@
             "dump": "选择你想丢掉的卡片",
             "noType": "没有%{type}卡片",
             "delete": "你即将删除卡片\"%{info}\"。",
+            "winningOptionSelf": "你这轮赢了！",
             "winningOption": "%{name}用选择%{selection}赢得了这一轮",
             "actionResponseCardCounter": "行动和反应卡计数器。有些套装使用相同的卡片；重复的会自动删除。过滤<b>NSFW</b>或<b>特定卡片</b>也会减少总数。",
             "navigateSelf": "自己导航",
@@ -1925,6 +1969,8 @@
         "nameNoPoints": "%{name}没有得到任何分数。",
         "gameMenu": "想玩别的游戏吗？",
         "forfeit": "放弃游戏会让你输掉。",
+        "nameForfeited": "%{name}放弃了，自动输了。",
+        "selfForfeited": "你放弃了，自动输了。",
         "unsavedChanges": "你有未保存的更改，如果继续进行，这些更改将被删除。",
         "accountDeletion": "删除你的账户是不可逆的，会清除你的个人资料，游戏进度和统计数据。",
         "notMeWarning": "继续进行，你将会被登出并重定向到一个可以在所有设备上登出的页面。之后你可以像平常一样再登录。",
@@ -2043,6 +2089,17 @@
             "logoutGloballyCompleted": "你的账户已经从所有设备上登出了。",
             "verificationEmail": "含有验证码的邮件已经发出去了。",
             "noEmail": "没收到邮件？检查一下你的垃圾邮件文件夹，确认一下这个邮箱地址是不是跟你的账户绑定的。"
+        },
+        "cards": {
+            "selfRanOut": null,
+            "nameRanOut": null
+        },
+        "war": {
+            "title": null,
+            "powerPlay": null,
+            "selfWarNotIncluded": null,
+            "selfWarPlaceCards": null,
+            "selfWarPlaceFinalCard": null
         },
         "cribbage": {
             "type": {

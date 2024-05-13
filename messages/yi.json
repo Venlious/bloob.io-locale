@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Yiddish",
         "rtl": false,
-        "total": 1419,
-        "missing": 0
+        "total": 1447,
+        "missing": 7
     },
     "name": "Bloob.io",
     "error": {
@@ -78,7 +78,6 @@
         },
         "game": {
             "velocity": "Di gegebn geshvindkayt iz aroys fun der erlaubt range.",
-            "playerForfeited": "Shpiler \"%{name}\" hot opgegebn un farlorn auto-matish.",
             "missedTurnWarning": "Du bist geven tsu shpet un dayn tsugenger hot bakumen zayn rey. Oyb dos gesheft tsu fil mol in a ritzel, vestu zayn gekikt. (%{current}/%{threshold})",
             "missedTurnKick": "Du bist geven gekikt vayl du hot farsheyt %{current} rey(e) in a ritzel.",
             "autoTurnWarning": "Du bist geven tsu shpet un a tsug iz geven gemakht far dir. Oyb dos gesheft tsu fil mol in a ritzel, vestu farlirn. (%{current}/%{threshold})",
@@ -211,6 +210,15 @@
                     "help": "Shpil on zeit limitn. Makh avek alle reyhe timers un geniess a relaxed shpil erfahrung vu du kenst shpiln in dayn eygen tempo. Nit rekomentirt kegn tsufellige gegner.",
                     "data": {
                         "off": "Keyn grenets"
+                    }
+                },
+                "deckSize": {
+                    "title": "Deckel Gresn",
+                    "help": "Shpil on zeit limitn. Makh avek alle reyhe timers un geniess a relaxed shpil erfahrung vu du kenst shpiln in dayn eygen tempo. Nit rekomentirt kegn tsufellige gegners.",
+                    "data": {
+                        "half": "Halber Tseklekh",
+                        "full": "Ful Tseklekh",
+                        "double": "Doppel Tseklekh"
                     }
                 }
             },
@@ -659,10 +667,6 @@
                     "title": "Farklempt Shvel",
                     "help": "If a player is festgeklebt for this amount of turns in a row, they will lose automatically."
                 },
-                "autoTurnThreshold": {
-                    "title": "Shpete Shvelldik",
-                    "help": "If a player is late and a move is automatically made for them this number of turns in a row, they automatically lose."
-                },
                 "rows": {
                     "title": "Reyhen",
                     "help": "Vi fil reihen fun shtiker jeder shpiler onheybt mit. Depending on the feld gresser, der menge fun reihen vet zayn farshlosn."
@@ -1062,10 +1066,6 @@
                     "title": "Setzungs Zeit",
                     "help": "Vi lang yeder shpiler hot tsu rirn zeyere shifn in pozitsye."
                 },
-                "missedTurnThreshold": {
-                    "title": "Farshtopte Drey Threshold",
-                    "help": "Vi fil runds ken a shpiler farloyrn in a ringlekh bevor men varft im aroys fun dem shpil."
-                },
                 "gridSize": {
                     "title": "Gitter Gréisn",
                     "help": "Klib di greys fun der level greys tsu shpiln in.",
@@ -1133,11 +1133,10 @@
                 }
             },
             "presets": {
-                "blitz": {
-                    "title": "Blitz",
+                "longHaul": {
+                    "title": "Langer Trek",
                     "description": [
-                        "Kurtsike runds",
-                        "Kaskadierende grids"
+                        "Kaskadierende gitter"
                     ]
                 }
             },
@@ -1199,8 +1198,6 @@
                     "help": "Ven eyngeklempt in 3-shpiler spiln, der dealer krigt a ekstra crib kortl. Ven es iz farshperrt, der fertl kortl geyt tsu dem crib otomatish."
                 },
                 "winCondition": {
-                    "title": "Gevinn Bedingung",
-                    "help": "Bestimmen ven dos shpil zol kumen tsu a sof.",
                     "data": {
                         "FIRST": "Ershter tzu erreichen <b>0</b> punkten | Ershter tzu erreichen <b>1</b> punkt | Ershter tzu erreichen <b>{count}</b> punkten",
                         "HIGHEST_AFTER": "Di meiste punkten nokh <b>0</b> punkten zaynen erreicht | Di meiste punkten nokh <b>1</b> punkt iz erreicht | Di meiste punkten nokh <b>{count}</b> punkten zaynen erreicht"
@@ -1246,6 +1243,50 @@
                     ]
                 }
             }
+        },
+        "WAR": {
+            "name": "Krig",
+            "heading": "Erleb Oifregende Krieg Karte Shlakhtn Online",
+            "tooltip": "Erleb di oifregung fun Krigel kartn shpil mit shpilers fun ale ekn fun der velt.",
+            "description": "Erleb multiplayer kartn shpiln online mit Krig! Shpil kegn fraynd un tsurikhaltn in dem veb-bazirt klassiker.",
+            "title": "Tritt Ayn in der Arena fun Karte Kampf",
+            "options": {
+                "winCondition": {
+                    "help": "Dos shpil vet endikn frier oyb s'iz nor eyn shpiler blaybn mit ale kartelekh.",
+                    "data": {
+                        "LAST_STANDING": "Ven a shpiler krigt ale karteles",
+                        "HIGHEST_AFTER": "Di meiste karteles nokh <b>0</b> rundn | Di meiste karteles nokh <b>1</b> rund | Di meiste karteles nokh <b>{count}</b> rundn"
+                    }
+                },
+                "warRequirement": {
+                    "title": "Krigs Bedarf",
+                    "help": "Bestimmt vi di krig zol zikh shpiln aroys ven tsvey oder mer shpilers shpiln di zelbe kort.",
+                    "data": {
+                        "DEFAULT": "Leg <b>0</b> kartelech | Leg ayn <b>1</b> karte | Leg ayn <b>{count}</b> kartelech",
+                        "CARD_VALUE": "Leg kartelech glaykh tsu dem onheyb karte rang"
+                    }
+                },
+                "warCardCount": {
+                    "title": "Krig Kortlekh Tsol",
+                    "help": "Setz a feste menge fun karten a shpiler in a krig muz legn. Di letste karte iz di eine vos iz geopenbaret."
+                }
+            },
+            "presets": {
+                "razboi": {
+                    "title": "Krig",
+                    "description": [
+                        "Leg di kartelekh glaykh tsu dem onheyb karte rang."
+                    ]
+                },
+                "blitz": {
+                    "title": "Blitz",
+                    "description": [
+                        "Halber deck",
+                        "Begränzt auf 60 rundn"
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
@@ -1313,7 +1354,6 @@
             "staleMoves": "Shpil farshvunden — %{staleCount} tseykhn mit nisht keyn nemen iber",
             "forfeit": "Shpil farshpilt — Gegner hot gekliben oyfgebn",
             "inactive": "Shpil farshpilt vegn nisht keyn aktiveet",
-            "late": "Shpil farshpilt vegn farlozn %{turns} runde(n)",
             "pickActionCard": "Oysklibn aktion kort",
             "pickCardSelection": "Makhn kort oysklib",
             "handDump": "Runde fun Aroysvorf",
@@ -1329,6 +1369,8 @@
             "nameTurnBreaking": "%{name} is brechendik",
             "roundSummary": "Rundn Zumerkung",
             "roundCount": "Rund %{current} fun %{total}",
+            "roundCurrent": "Rund %{current}",
+            "war": "Krig!",
             "dealingCards": "Dealt karts...",
             "youPickStarterCard": "Du musst di ershte kart oyskleybn",
             "namePickStarterCard": "%{name} darf di ershte kart oyskleybn",
@@ -1555,6 +1597,7 @@
         "playRandomOpponents": "Shpil Tsufellige Gegners | Shpil Tsufelliger Gegner | Shpil Tsufellige Gegners",
         "turnsToFlip": "Dreyen tsu flipn | Drey tsu flipn | Dreyen tsu flipn",
         "increment": "Shteyger fun 0 | Shteyger fun 1 | Shteyger fun {count}",
+        "remaining": "Gornisht übrig | 1 übrig | {count} übrig",
         "shipsRemaining": "0 shifn blaybn | 1 shif blaybt | {count} shifn blaybn",
         "includesItems": "Beinhaltet {count} sakhn | Beinhaltet {count} sakh | Beinhaltet {count} sakhn"
     },
@@ -1828,6 +1871,7 @@
             "dump": "Oysklibn ale karten vos du vilst tsu dumpen",
             "noType": "Es gibt keine %{type} karten",
             "delete": "Du bist im Begriff, die Karte \"%{info}\" zu löschen.",
+            "winningOptionSelf": "Du host di runde gewonnen!",
             "winningOption": "%{name} hot gewonnen diser rund mit der auswahl %{selection}",
             "actionResponseCardCounter": "Aktion & Antwort Karten zähler. Einige sets verwenden die gleichen Karten; Duplikate werden automatisch entfernt. Filtern <b>NSFW</b> oder <b>Spezifische Karten</b> reduziert auch die Gesamtmenge.",
             "navigateSelf": "Navigier dich selbst",
@@ -1925,6 +1969,8 @@
         "nameNoPoints": "%{name} hot nisht bakumen keyn punktn.",
         "gameMenu": "Lustig tzu shpiln epes andersh?",
         "forfeit": "Oyb du gibst aroys dem shpil, vet es zayn a farlir far dir.",
+        "nameForfeited": "%{name} hot oyfgegebn un hot otomatish farlorn.",
+        "selfForfeited": "Du host oyfgegebn un otomatish farlorn.",
         "unsavedChanges": "Du host ungeshparte ennederungen vos vetn vern aroysgelushn oyb du geyst vayter.",
         "accountDeletion": "Oysmekhen dayn akount iz umkehrbar un vet oysputsn dayn profil, fortshtayt, un statistik.",
         "notMeWarning": "Durkh geyn vayter, vestu vern aroysgelogt un umgeleitet tzu a blatt vos erlaubt dir tzu aroyslogn af ale apparatn. Nokh dem kenstu aroyslogn vider vi du tust normal.",
@@ -2043,6 +2089,17 @@
             "logoutGloballyCompleted": "Dayn akount iz farlogt oys fun ale aparates.",
             "verificationEmail": "An email mit a pruv-kod iz gezen.",
             "noEmail": "Keyn email? Kuk in dayn spam tekel un bestetig az di email adres iz farbunden mit dayn akount."
+        },
+        "cards": {
+            "selfRanOut": null,
+            "nameRanOut": null
+        },
+        "war": {
+            "title": null,
+            "powerPlay": null,
+            "selfWarNotIncluded": null,
+            "selfWarPlaceCards": null,
+            "selfWarPlaceFinalCard": null
         },
         "cribbage": {
             "type": {

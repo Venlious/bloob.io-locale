@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Swedish",
         "rtl": false,
-        "total": 1419,
-        "missing": 0
+        "total": 1447,
+        "missing": 7
     },
     "name": "Bloob.io",
     "error": {
@@ -78,7 +78,6 @@
         },
         "game": {
             "velocity": "Givna hastigheten är utanför tillåtna intervallet.",
-            "playerForfeited": "Spelaren \"%{name}\" gav upp och förlorade automatiskt.",
             "missedTurnWarning": "Du var för sen och din motståndare fick sin tur. Om detta händer för många gånger i rad kommer du att sparkas ut. (%{current}/%{threshold})",
             "missedTurnKick": "Du sparkades ut eftersom du missade %{current} tur(er) i rad.",
             "autoTurnWarning": "Du var för sen och ett drag gjordes åt dig. Om detta händer för många gånger i rad kommer du att förlora. (%{current}/%{threshold})",
@@ -211,6 +210,15 @@
                     "help": "Spela utan tidsgränser. Stäng av alla tur-timers och njut av en avslappnad spelupplevelse där du kan spela i din egen takt. Rekommenderas inte mot slumpmässiga motståndare.",
                     "data": {
                         "off": "Ingen gräns"
+                    }
+                },
+                "deckSize": {
+                    "title": "Kortleksstorlek",
+                    "help": "Spela utan tidsgränser. Stäng av alla tur-timers och njut av en avslappnad spelupplevelse där du kan spela i din egen takt. Rekommenderas inte mot slumpmässiga motståndare.",
+                    "data": {
+                        "half": "Halvt kortlek",
+                        "full": "Full kortlek",
+                        "double": "Dubbel kortlek"
                     }
                 }
             },
@@ -659,10 +667,6 @@
                     "title": "Fastnat Tröskel",
                     "help": "Om en spelare fastnar så här många rundor i rad kommer de att förlora automatiskt."
                 },
-                "autoTurnThreshold": {
-                    "title": "Sen Tröskel",
-                    "help": "Om en spelare är sen och ett drag görs automatiskt för dem detta antal rundor i rad, förlorar de automatiskt."
-                },
                 "rows": {
                     "title": "Rader",
                     "help": "Hur många rader med pjäser varje spelare börjar med. Beroende på fältets storlek bestäms antalet rader."
@@ -1062,10 +1066,6 @@
                     "title": "Placerings Tid",
                     "help": "Hur lång tid varje spelare har på sig att flytta sina skepp till position."
                 },
-                "missedTurnThreshold": {
-                    "title": "Tröskel för Missade Turer",
-                    "help": "Hur många turer i rad kan en spelare missa innan de sparkas ut ur spelet."
-                },
                 "gridSize": {
                     "title": "Rutnätsstorlek",
                     "help": "Välj storleken på nivån du vill spela i.",
@@ -1133,10 +1133,9 @@
                 }
             },
             "presets": {
-                "blitz": {
-                    "title": "Blixt",
+                "longHaul": {
+                    "title": "Långtur",
                     "description": [
-                        "Korta rundor",
                         "Kaskadnät"
                     ]
                 }
@@ -1199,8 +1198,6 @@
                     "help": "När det är aktiverat i 3-spelarspel får dealern ett extra crib-kort. När det är inaktiverat går det fjärde kortet automatiskt till crib."
                 },
                 "winCondition": {
-                    "title": "Vinnande Villkor",
-                    "help": "Bestäm när spelet ska ta slut.",
                     "data": {
                         "FIRST": "Först att nå <b>0</b> poäng | Först att nå <b>1</b> poäng | Först att nå <b>{count}</b> poäng",
                         "HIGHEST_AFTER": "Flest poäng efter att <b>0</b> poäng har nåtts | Flest poäng efter att <b>1</b> poäng har nåtts | Flest poäng efter att <b>{count}</b> poäng har nåtts"
@@ -1246,6 +1243,50 @@
                     ]
                 }
             }
+        },
+        "WAR": {
+            "name": "Krig",
+            "heading": "Upplev Spännande Krigskortslag Online",
+            "tooltip": "Upplev spänningen med krigskortspel tillsammans med spelare från alla hörn av världen.",
+            "description": "Upplev multiplayer kortslag online med Krig! Spela mot vänner och rivaler i denna webbaserade klassiker.",
+            "title": "Stig in i Kortstridsarenan",
+            "options": {
+                "winCondition": {
+                    "help": "Spelet kommer att sluta tidigt om det bara är en spelare kvar med alla kort.",
+                    "data": {
+                        "LAST_STANDING": "När en spelare får alla kort",
+                        "HIGHEST_AFTER": "Flest kort efter <b>0</b> rundor | Flest kort efter <b>1</b> runda | Flest kort efter <b>{count}</b> rundor"
+                    }
+                },
+                "warRequirement": {
+                    "title": "Krigskrav",
+                    "help": "Bestäm hur kriget ska spelas ut om två eller fler spelare spelar samma kort.",
+                    "data": {
+                        "DEFAULT": "Lägg <b>0</b> kort | Lägg <b>1</b> kort | Lägg <b>{count}</b> kort",
+                        "CARD_VALUE": "Lägg kort lika med det ursprungliga kortets rang"
+                    }
+                },
+                "warCardCount": {
+                    "title": "Antal Krigskort",
+                    "help": "Ställ in en förbestämd mängd kort som en spelare i ett krig måste lägga. Det sista kortet är det som visas."
+                }
+            },
+            "presets": {
+                "razboi": {
+                    "title": "Krig",
+                    "description": [
+                        "Lägg kort lika med den ursprungliga kortrankingen"
+                    ]
+                },
+                "blitz": {
+                    "title": "Blixt",
+                    "description": [
+                        "Halvt kortlek",
+                        "Begränsad till 60 rundor"
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
@@ -1313,7 +1354,6 @@
             "staleMoves": "Matchen har stannat — %{staleCount} drag utan övertag",
             "forfeit": "Matchen är slut — Motståndaren valde att ge upp",
             "inactive": "Matchen avslutades på grund av inaktivitet",
-            "late": "Matchen avslutades eftersom %{turns} tur(er) saknades",
             "pickActionCard": "Väljer aktionskort",
             "pickCardSelection": "Gör kortval",
             "handDump": "Dumpomgång",
@@ -1329,6 +1369,8 @@
             "nameTurnBreaking": "%{name} bryter",
             "roundSummary": "Sammanfattning av rundan",
             "roundCount": "Omgång %{current} av %{total}",
+            "roundCurrent": "Runda %{current}",
+            "war": "Krig!",
             "dealingCards": "Delar ut kort...",
             "youPickStarterCard": "Du måste välja startkortet",
             "namePickStarterCard": "%{name} måste välja startkortet",
@@ -1555,6 +1597,7 @@
         "playRandomOpponents": "Spela mot slumpmässiga motståndare | Spela mot en slumpmässig motståndare | Spela mot slumpmässiga motståndare",
         "turnsToFlip": "Vändningar kvar | Vändning kvar | Vändningar kvar",
         "increment": "Ökningar med 0 | Ökning med 1 | Ökningar med {count}",
+        "remaining": "Ingen kvar | 1 kvar | {count} kvar",
         "shipsRemaining": "0 skepp kvar | 1 skepp kvar | {count} skepp kvar",
         "includesItems": "Inkluderar {count} saker | Inkluderar {count} sak | Inkluderar {count} saker"
     },
@@ -1828,6 +1871,7 @@
             "dump": "Välj vilka kort du vill slänga",
             "noType": "Det finns inga %{type} kort",
             "delete": "Du håller på att ta bort kortet \"%{info}\".",
+            "winningOptionSelf": "Du vann den här rundan!",
             "winningOption": "%{name} vann den här omgången med valet %{selection}",
             "actionResponseCardCounter": "Åtgärds- och svarskort räknare. Vissa set använder samma kort; dubbletter tas bort automatiskt. Filtrering av <b>NSFW</b> eller <b>Specifika Kort</b> minskar också det totala antalet.",
             "navigateSelf": "Navigera dig själv",
@@ -1925,6 +1969,8 @@
         "nameNoPoints": "%{name} fick inga poäng.",
         "gameMenu": "Känner du för att spela något annat?",
         "forfeit": "Om du ger upp spelet kommer du att förlora.",
+        "nameForfeited": "%{name} gav upp och förlorade automatiskt.",
+        "selfForfeited": "Du gav upp och förlorade automatiskt.",
         "unsavedChanges": "Du har osparade ändringar som kommer att raderas om du fortsätter.",
         "accountDeletion": "Att radera ditt konto är oåterkalleligt och kommer att rensa din profil, framsteg och statistik.",
         "notMeWarning": "Om du fortsätter kommer du att loggas ut och omdirigeras till en sida som låter dig logga ut på alla enheter. Efter det kan du logga in igen som vanligt.",
@@ -2043,6 +2089,17 @@
             "logoutGloballyCompleted": "Ditt konto har loggats ut från alla enheter.",
             "verificationEmail": "Ett mail med en verifieringskod har skickats.",
             "noEmail": "Inget mail? Kolla din skräppost och bekräfta att den här e-postadressen är kopplad till ditt konto."
+        },
+        "cards": {
+            "selfRanOut": null,
+            "nameRanOut": null
+        },
+        "war": {
+            "title": null,
+            "powerPlay": null,
+            "selfWarNotIncluded": null,
+            "selfWarPlaceCards": null,
+            "selfWarPlaceFinalCard": null
         },
         "cribbage": {
             "type": {
