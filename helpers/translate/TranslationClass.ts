@@ -327,6 +327,11 @@ export default class TranslationClass {
 			[`info`, `yacht`, `description`],
 			`These are Yacht/Yahtzee gaming terminology descriptions.`
 		)
+		this.generateTranslationTask([`info`, `cards`], `These are card game related messages.`)
+		this.generateTranslationTask(
+			[`info`, `war`],
+			`These are War card game related messages and actions.`
+		)
 		this.generateTranslationTask(
 			[`info`, `cribbage`],
 			`These are Cribbage board game related messages and actions.`
