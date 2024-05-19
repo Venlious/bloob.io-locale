@@ -72,7 +72,6 @@
         },
         "game": {
             "velocity": true,
-            "playerForfeited": true,
             "missedTurnWarning": true,
             "missedTurnKick": true,
             "autoTurnWarning": true,
@@ -205,6 +204,15 @@
                     "help": false,
                     "data": {
                         "off": false
+                    }
+                },
+                "deckSize": {
+                    "title": false,
+                    "help": false,
+                    "data": {
+                        "half": false,
+                        "full": false,
+                        "double": false
                     }
                 }
             },
@@ -653,10 +661,6 @@
                     "title": true,
                     "help": true
                 },
-                "autoTurnThreshold": {
-                    "title": true,
-                    "help": true
-                },
                 "rows": {
                     "title": true,
                     "help": true
@@ -1056,10 +1060,6 @@
                     "title": false,
                     "help": false
                 },
-                "missedTurnThreshold": {
-                    "title": false,
-                    "help": false
-                },
                 "gridSize": {
                     "title": false,
                     "help": false,
@@ -1127,10 +1127,9 @@
                 }
             },
             "presets": {
-                "blitz": {
+                "longHaul": {
                     "title": false,
                     "description": [
-                        false,
                         false
                     ]
                 }
@@ -1193,8 +1192,6 @@
                     "help": false
                 },
                 "winCondition": {
-                    "title": false,
-                    "help": false,
                     "data": {
                         "FIRST": false,
                         "HIGHEST_AFTER": false
@@ -1233,6 +1230,65 @@
                     ]
                 },
                 "show": {
+                    "title": false,
+                    "description": [
+                        false,
+                        false
+                    ]
+                }
+            }
+        },
+        "WAR": {
+            "name": false,
+            "heading": false,
+            "tooltip": false,
+            "description": false,
+            "title": false,
+            "options": {
+                "winCondition": {
+                    "help": false,
+                    "data": {
+                        "LAST_STANDING": false,
+                        "HIGHEST_AFTER": false
+                    }
+                },
+                "warRequirement": {
+                    "title": false,
+                    "help": false,
+                    "data": {
+                        "DEFAULT": false,
+                        "CARD_VALUE": false
+                    }
+                },
+                "warCardCount": {
+                    "title": false,
+                    "help": false
+                }
+            },
+            "presets": {
+                "razboi": {
+                    "title": false,
+                    "description": [
+                        false
+                    ]
+                },
+                "blitz": {
+                    "title": false,
+                    "description": [
+                        false,
+                        false
+                    ]
+                }
+            },
+            "help": {
+                "objective": {
+                    "title": false,
+                    "description": [
+                        false,
+                        false
+                    ]
+                },
+                "war": {
                     "title": false,
                     "description": [
                         false,
@@ -1307,7 +1363,6 @@
             "staleMoves": true,
             "forfeit": true,
             "inactive": true,
-            "late": true,
             "pickActionCard": true,
             "pickCardSelection": true,
             "handDump": true,
@@ -1323,6 +1378,8 @@
             "nameTurnBreaking": true,
             "roundSummary": false,
             "roundCount": true,
+            "roundCurrent": false,
+            "war": false,
             "dealingCards": false,
             "youPickStarterCard": false,
             "namePickStarterCard": false,
@@ -1549,6 +1606,7 @@
         "playRandomOpponents": true,
         "turnsToFlip": true,
         "increment": true,
+        "remaining": false,
         "shipsRemaining": false,
         "includesItems": false
     },
@@ -1822,6 +1880,7 @@
             "dump": true,
             "noType": true,
             "delete": true,
+            "winningOptionSelf": false,
             "winningOption": true,
             "actionResponseCardCounter": true,
             "navigateSelf": true,
@@ -1919,6 +1978,8 @@
         "nameNoPoints": false,
         "gameMenu": true,
         "forfeit": true,
+        "nameForfeited": false,
+        "selfForfeited": false,
         "unsavedChanges": true,
         "accountDeletion": true,
         "notMeWarning": true,
@@ -2037,6 +2098,16 @@
             "logoutGloballyCompleted": true,
             "verificationEmail": true,
             "noEmail": true
+        },
+        "cards": {
+            "selfRanOut": false,
+            "nameRanOut": false
+        },
+        "war": {
+            "title": false,
+            "selfWarNotIncluded": false,
+            "selfWarPlaceCards": false,
+            "selfWarPlaceFinalCard": false
         },
         "cribbage": {
             "type": {

@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal American English",
         "rtl": false,
-        "total": 1419,
+        "total": 1452,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -78,7 +78,6 @@
         },
         "game": {
             "velocity": "Given velocity is outside of the permitted range.",
-            "playerForfeited": "Player \"%{name}\" forfeited and lost automatically.",
             "missedTurnWarning": "You were too late and your opponent was given their turn. If this happens too many times in a row you will be kicked. (%{current}/%{threshold})",
             "missedTurnKick": "You were kicked as you missed %{current} turn(s) in a row.",
             "autoTurnWarning": "You were too late and a move was made for you. If this happens too many times in a row you will lose. (%{current}/%{threshold})",
@@ -211,6 +210,15 @@
                     "help": "Play without time limits. Disable all turn timers and enjoy a relaxed gameplay experience where you can play at your own pace. Not recommended against random opponents.",
                     "data": {
                         "off": "No limit"
+                    }
+                },
+                "deckSize": {
+                    "title": "Deck Size",
+                    "help": "Play without time limits. Disable all turn timers and enjoy a relaxed gameplay experience where you can play at your own pace. Not recommended against random opponents.",
+                    "data": {
+                        "half": "Half Deck",
+                        "full": "Full Deck",
+                        "double": "Double Deck"
                     }
                 }
             },
@@ -659,10 +667,6 @@
                     "title": "Stuck Threshold",
                     "help": "If a player is stuck for this amount of turns in a row they will lose automatically."
                 },
-                "autoTurnThreshold": {
-                    "title": "Late Threshold",
-                    "help": "If a player is late and a move is automatically made for them this number of turns in a row, they automatically lose."
-                },
                 "rows": {
                     "title": "Rows",
                     "help": "How many rows of pieces each player starts with. Depending on the field size the amount of rows will be determined."
@@ -1062,10 +1066,6 @@
                     "title": "Placement Time",
                     "help": "How long each player has to move their ships into position."
                 },
-                "missedTurnThreshold": {
-                    "title": "Missed Turn Threshold",
-                    "help": "How many turns can a player miss in a row before being kicked out of the game."
-                },
                 "gridSize": {
                     "title": "Grid Size",
                     "help": "Select the size of the level size to play in.",
@@ -1133,10 +1133,9 @@
                 }
             },
             "presets": {
-                "blitz": {
-                    "title": "Blitz",
+                "longHaul": {
+                    "title": "Long Haul",
                     "description": [
-                        "Short rounds",
                         "Cascading grids"
                     ]
                 }
@@ -1199,8 +1198,6 @@
                     "help": "When enabled in 3-player games, the dealer receives an extra crib card. When disabled, the fourth card goes to the crib automatically."
                 },
                 "winCondition": {
-                    "title": "Winning Condition",
-                    "help": "Determine when the game should come to a conclusion.",
                     "data": {
                         "FIRST": "First to reach <b>0</b> points | First to reach <b>1</b> point | First to reach <b>{count}</b> points",
                         "HIGHEST_AFTER": "Most points after <b>0</b> points are reached | Most points after <b>1</b> point are reached | Most points after <b>{count}</b> points are reached"
@@ -1243,6 +1240,65 @@
                     "description": [
                         "After all players have emptied their hands during the play, the scores are counted. The dealer is always counted last and will also receive points for their crib.",
                         "Players can earn points for various combinations. Click on the \"Scoring System\" button while in game for a full overview."
+                    ]
+                }
+            }
+        },
+        "WAR": {
+            "name": "War",
+            "heading": "Join the Excitement: Thrilling Online War Card Battles",
+            "tooltip": "Experience the excitement of War card game with players from all corners of the world.",
+            "description": "Join the excitement of multiplayer card battles online with War! Play the classic game with 1-4 players on Bloob.io. Experience the fun and intense competition.",
+            "title": "Enter the Arena of Card Combat",
+            "options": {
+                "winCondition": {
+                    "help": "The game will end early if there is only one player remaining with all cards.",
+                    "data": {
+                        "LAST_STANDING": "When a player gets all cards",
+                        "HIGHEST_AFTER": "Most cards after <b>0</b> rounds | Most cards after <b>1</b> round | Most cards after <b>{count}</b> rounds"
+                    }
+                },
+                "warRequirement": {
+                    "title": "War Requirement",
+                    "help": "Determine how the war should be played out if two or more players play the same card.",
+                    "data": {
+                        "DEFAULT": "Place <b>0</b> cards | Place <b>1</b> card | Place <b>{count}</b> cards",
+                        "CARD_VALUE": "Place cards equal to the initial card rank"
+                    }
+                },
+                "warCardCount": {
+                    "title": "War Card Amount",
+                    "help": "Set a predetermined amount of cards a player in a war must place. The final card is the one revealed."
+                }
+            },
+            "presets": {
+                "razboi": {
+                    "title": "Război",
+                    "description": [
+                        "Place cards equal to the initial card rank"
+                    ]
+                },
+                "blitz": {
+                    "title": "Blitz",
+                    "description": [
+                        "Half deck",
+                        "Limited to 60 rounds"
+                    ]
+                }
+            },
+            "help": {
+                "objective": {
+                    "title": "Understanding the Objective",
+                    "description": [
+                        "The game is really simple. The cards are split evenly between all players. Every player must place a card every single round. The highest scoring card wins and takes all cards",
+                        "The highest scoring card is an Ace and the lowest card is a two. The player who ends up with all cards wins."
+                    ]
+                },
+                "war": {
+                    "title": "War",
+                    "description": [
+                        "A war is started if two or more players play the same highest card. All players must then place four cards, with the last card used to determine the winner of the war.",
+                        "The Romanian Război variant forces you to place cards equal to the rank of the card that started the war (e.g. a King would be 13 cards)."
                     ]
                 }
             }
@@ -1313,7 +1369,6 @@
             "staleMoves": "Match staled — %{staleCount} moves with no take over",
             "forfeit": "Match finished — Opponent chose to forfeit",
             "inactive": "Match ended due to inactivity",
-            "late": "Match ended due to missing %{turns} turn(s)",
             "pickActionCard": "Picking action card",
             "pickCardSelection": "Making card selection",
             "handDump": "Dump round",
@@ -1329,6 +1384,8 @@
             "nameTurnBreaking": "%{name} is breaking",
             "roundSummary": "Round summary",
             "roundCount": "Round %{current} out of %{total}",
+            "roundCurrent": "Round %{current}",
+            "war": "War!",
             "dealingCards": "Dealing cards...",
             "youPickStarterCard": "You have to pick the starter card",
             "namePickStarterCard": "%{name} has to pick the starter card",
@@ -1555,6 +1612,7 @@
         "playRandomOpponents": "Play Random Opponents | Play Random Opponent | Play Random Opponents",
         "turnsToFlip": "Turns to flip | Turn to flip | Turns to flip",
         "increment": "Increments of 0 | Increment of 1 | Increments of {count}",
+        "remaining": "None remaining | 1 remaining | {count} remaining",
         "shipsRemaining": "0 ships remaining | 1 ship remaining | {count} ships remaining",
         "includesItems": "Includes {count} items | Includes {count} item | Includes {count} items"
     },
@@ -1828,6 +1886,7 @@
             "dump": "Select any cards you'd like to dump",
             "noType": "There are no %{type} cards",
             "delete": "You are about to delete card \"%{info}\".",
+            "winningOptionSelf": "You won this round!",
             "winningOption": "%{name} won this round with selection %{selection}",
             "actionResponseCardCounter": "Action & response card counter. Some sets use the same cards; duplicates are removed automatically. Filtering <b>NSFW</b> or <b>Specific Cards</b> also reduces the total amount.",
             "navigateSelf": "Navigate yourself",
@@ -1925,6 +1984,8 @@
         "nameNoPoints": "%{name} received no points.",
         "gameMenu": "Feel like playing something else?",
         "forfeit": "Forfeiting the game will result in a loss for you.",
+        "nameForfeited": "%{name} forfeited and has lost automatically.",
+        "selfForfeited": "You have forfeited and lost automatically.",
         "unsavedChanges": "You have unsaved changes which will be erased if you proceed.",
         "accountDeletion": "Deleting your account is irreversible and will clear your profile, progress, and statistics.",
         "notMeWarning": "By proceeding you will be logged out and redirected to a page that allows you to log out on all devices. After this you can login again like you would normally.",
@@ -2043,6 +2104,16 @@
             "logoutGloballyCompleted": "Your account has been logged out from all devices.",
             "verificationEmail": "An email with a verification code has been sent.",
             "noEmail": "No email? Check your spam folder and confirm this email address is linked to your account."
+        },
+        "cards": {
+            "selfRanOut": "You ran out of cards to play with!",
+            "nameRanOut": "%{name} ran out of cards to play with!"
+        },
+        "war": {
+            "title": "War!",
+            "selfWarNotIncluded": "Wait for the war between your opponents to end...",
+            "selfWarPlaceCards": "You're in a war! Place %{cards}.",
+            "selfWarPlaceFinalCard": "You're in a war! Place your final card."
         },
         "cribbage": {
             "type": {

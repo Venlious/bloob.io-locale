@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Danish",
         "rtl": false,
-        "total": 1419,
+        "total": 1452,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -78,7 +78,6 @@
         },
         "game": {
             "velocity": "Den givne hastighed er uden for det tilladte område.",
-            "playerForfeited": "Spilleren \"%{name}\" opgav og tabte automatisk.",
             "missedTurnWarning": "Du var for sent på den, og din modstander fik deres tur. Hvis dette sker for mange gange i træk, vil du blive smidt ud. (%{current}/%{threshold})",
             "missedTurnKick": "Du blev smidt ud, fordi du missede %{current} tur(er) i træk.",
             "autoTurnWarning": "Du var for sent på den, og et træk blev lavet for dig. Hvis dette sker for mange gange i træk, vil du tabe. (%{current}/%{threshold})",
@@ -211,6 +210,15 @@
                     "help": "Spil uden tidsbegrænsninger. Slå alle tur-timere fra og nyd en afslappet spiloplevelse, hvor du kan spille i dit eget tempo. Ikke anbefalet mod tilfældige modstandere.",
                     "data": {
                         "off": "Ingen grænse"
+                    }
+                },
+                "deckSize": {
+                    "title": "Dæk Størrelse",
+                    "help": "Spil uden tidsbegrænsninger. Deaktiver alle tur-timere og nyd en afslappet spiloplevelse, hvor du kan spille i dit eget tempo. Ikke anbefalet mod tilfældige modstandere.",
+                    "data": {
+                        "half": "Halvt sæt kort",
+                        "full": "Fuld sæt kort",
+                        "double": "Dobbelt sæt kort"
                     }
                 }
             },
@@ -659,10 +667,6 @@
                     "title": "Fastklemningsgrænse",
                     "help": "Hvis en spiller sidder fast i dette antal ture i træk, vil de automatisk tabe."
                 },
-                "autoTurnThreshold": {
-                    "title": "Sen Tærskel",
-                    "help": "Hvis en spiller er forsinket og et træk bliver automatisk lavet for dem dette antal ture i træk, så taber de automatisk."
-                },
                 "rows": {
                     "title": "Rækker",
                     "help": "Hvor mange rækker med brikker hver spiller starter med. Afhængig af feltstørrelsen vil antallet af rækker blive bestemt."
@@ -1062,10 +1066,6 @@
                     "title": "Placerings Tid",
                     "help": "Hvor lang tid hver spiller har til at flytte deres skibe på plads."
                 },
-                "missedTurnThreshold": {
-                    "title": "Tærskel for Overset Tur",
-                    "help": "Hvor mange ture kan en spiller misse i træk før de bliver smidt ud af spillet."
-                },
                 "gridSize": {
                     "title": "Gitter Størrelse",
                     "help": "Vælg størrelsen på niveauet du vil spille i.",
@@ -1133,10 +1133,9 @@
                 }
             },
             "presets": {
-                "blitz": {
-                    "title": "Blitz",
+                "longHaul": {
+                    "title": "Lang Tur",
                     "description": [
-                        "Korte runder",
                         "Kaskade gitter"
                     ]
                 }
@@ -1199,8 +1198,6 @@
                     "help": "Når det er aktiveret i 3-spillers spil, får dealeren et ekstra crib kort. Når det er deaktiveret, går det fjerde kort automatisk til cribben."
                 },
                 "winCondition": {
-                    "title": "Vinderbetingelse",
-                    "help": "Find ud af hvornår spillet skal slutte.",
                     "data": {
                         "FIRST": "Først til at nå <b>0</b> point | Først til at nå <b>1</b> point | Først til at nå <b>{count}</b> point",
                         "HIGHEST_AFTER": "Flest point efter <b>0</b> point er nået | Flest point efter <b>1</b> point er nået | Flest point efter <b>{count}</b> point er nået"
@@ -1243,6 +1240,65 @@
                     "description": [
                         "Når alle spillere har tømt deres hænder under spillet, tælles pointene. Kortgiveren tælles altid sidst og vil også få point for deres krybbe.",
                         "Spillere kan tjene point for forskellige kombinationer. Klik på \"Pointsystem\" knappen mens du spiller for en fuld oversigt."
+                    ]
+                }
+            }
+        },
+        "WAR": {
+            "name": "Krig",
+            "heading": "Oplev Spændende Krigskort Kampe Online",
+            "tooltip": "Oplev spændingen ved krigskortspillet med spillere fra alle verdenshjørner.",
+            "description": "Oplev multiplayer kortkampe online med War! Spil mod venner og rivaler i denne web-baserede klassiker.",
+            "title": "Træd ind i kortkampens arena",
+            "options": {
+                "winCondition": {
+                    "help": "Spillet slutter tidligt, hvis der kun er en spiller tilbage med alle kortene.",
+                    "data": {
+                        "LAST_STANDING": "Når en spiller får alle kortene",
+                        "HIGHEST_AFTER": "Flest kort efter <b>0</b> runder | Flest kort efter <b>1</b> runde | Flest kort efter <b>{count}</b> runder"
+                    }
+                },
+                "warRequirement": {
+                    "title": "Krigskrav",
+                    "help": "Bestem hvordan krigen skal spilles ud, hvis to eller flere spillere spiller det samme kort.",
+                    "data": {
+                        "DEFAULT": "Placer <b>0</b> kort | Placer <b>1</b> kort | Placer <b>{count}</b> kort",
+                        "CARD_VALUE": "Placer kort svarende til den oprindelige korts rang"
+                    }
+                },
+                "warCardCount": {
+                    "title": "Krigskort Antal",
+                    "help": "Sæt en forudbestemt mængde kort, en spiller i en krig skal lægge. Det sidste kort er det, der bliver afsløret."
+                }
+            },
+            "presets": {
+                "razboi": {
+                    "title": "Krig",
+                    "description": [
+                        "Placer kort svarende til den oprindelige korts rang"
+                    ]
+                },
+                "blitz": {
+                    "title": "Blitz",
+                    "description": [
+                        "Halvt kortspil",
+                        "Begrænset til 60 runder"
+                    ]
+                }
+            },
+            "help": {
+                "objective": {
+                    "title": "Forstå Målet",
+                    "description": [
+                        "Spillet er virkelig simpelt. Kortene deles lige mellem alle spillere. Hver spiller skal lægge et kort hver eneste runde. Det højeste scoring kort vinder og tager alle kortene.",
+                        "Det højeste scoring kort er en Es og det laveste kort er en toer. Spilleren, der ender op med alle kortene, vinder."
+                    ]
+                },
+                "war": {
+                    "title": "Krig",
+                    "description": [
+                        "En krig starter, hvis to eller flere spillere spiller det samme højeste kort. Alle spillere skal så lægge fire kort, med det sidste kort brugt til at afgøre vinderen af krigen.",
+                        "Den rumænske Război variant tvinger dig til at lægge kort svarende til rangen af det kort, der startede krigen (f.eks. ville en konge være 13 kort)."
                     ]
                 }
             }
@@ -1313,7 +1369,6 @@
             "staleMoves": "Kampen er gået i stå — %{staleCount} træk uden overtagelse",
             "forfeit": "Kampen er slut — Modstanderen valgte at give op",
             "inactive": "Kampen sluttede på grund af inaktivitet",
-            "late": "Kampen sluttede fordi %{turns} tur(er) manglede",
             "pickActionCard": "Vælger handling kort",
             "pickCardSelection": "Laver kortvalg",
             "handDump": "Smid runde",
@@ -1329,6 +1384,8 @@
             "nameTurnBreaking": "%{name} bryder",
             "roundSummary": "Rundeoversigt",
             "roundCount": "Runde %{current} ud af %{total}",
+            "roundCurrent": "Runde %{current}",
+            "war": "Krig!",
             "dealingCards": "Deler kort...",
             "youPickStarterCard": "Du skal vælge startkortet",
             "namePickStarterCard": "%{name} skal vælge startkortet",
@@ -1555,6 +1612,7 @@
         "playRandomOpponents": "Spil Mod Tilfældige Modstandere | Spil Mod en Tilfældig Modstander | Spil Mod Tilfældige Modstandere",
         "turnsToFlip": "Ture til at vende | Tur til at vende | Ture til at vende",
         "increment": "Stigninger på 0 | Stigning på 1 | Stigninger på {count}",
+        "remaining": "Ingen tilbage | 1 tilbage | {count} tilbage",
         "shipsRemaining": "0 skibe tilbage | 1 skib tilbage | {count} skibe tilbage",
         "includesItems": "Inkluderer {count} ting | Inkluderer {count} ting | Inkluderer {count} ting"
     },
@@ -1828,6 +1886,7 @@
             "dump": "Vælg alle kort, du gerne vil smide væk",
             "noType": "Der er ingen %{type} kort",
             "delete": "Du er ved at slette kortet \"%{info}\".",
+            "winningOptionSelf": "Du vandt denne runde!",
             "winningOption": "%{name} vandt denne runde med valget %{selection}",
             "actionResponseCardCounter": "Handling & respons korttæller. Nogle sæt bruger de samme kort; dubletter fjernes automatisk. Filtrering af <b>NSFW</b> eller <b>Specifikke Kort</b> reducerer også det samlede antal.",
             "navigateSelf": "Find selv vej",
@@ -1925,6 +1984,8 @@
         "nameNoPoints": "%{name} fik ingen point.",
         "gameMenu": "Har du lyst til at spille noget andet?",
         "forfeit": "Hvis du opgiver spillet, vil det resultere i et nederlag for dig.",
+        "nameForfeited": "%{name} har givet op og har automatisk tabt.",
+        "selfForfeited": "Du har givet op og har automatisk tabt.",
         "unsavedChanges": "Du har ikke gemte ændringer, som vil blive slettet, hvis du fortsætter.",
         "accountDeletion": "At slette din konto er uigenkaldeligt og vil rydde din profil, fremskridt og statistikker.",
         "notMeWarning": "Hvis du fortsætter, bliver du logget ud og omdirigeret til en side, der giver dig mulighed for at logge ud på alle enheder. Derefter kan du logge ind igen, som du normalt ville gøre.",
@@ -2043,6 +2104,16 @@
             "logoutGloballyCompleted": "Din konto er blevet logget ud fra alle enheder.",
             "verificationEmail": "En email med en bekræftelseskode er blevet sendt.",
             "noEmail": "Ingen email? Tjek din spammappe og bekræft at denne emailadresse er tilknyttet din konto."
+        },
+        "cards": {
+            "selfRanOut": "Du løb tør for kort at spille med!",
+            "nameRanOut": "%{name} løb tør for kort at spille med!"
+        },
+        "war": {
+            "title": "Krig!",
+            "selfWarNotIncluded": "Vent på krigen mellem dine modstandere er slut...",
+            "selfWarPlaceCards": "Du er i krig! Placer %{cards}.",
+            "selfWarPlaceFinalCard": "Du er i krig! Placer dit sidste kort."
         },
         "cribbage": {
             "type": {

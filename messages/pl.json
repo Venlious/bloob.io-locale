@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Polish",
         "rtl": false,
-        "total": 1419,
+        "total": 1452,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -78,7 +78,6 @@
         },
         "game": {
             "velocity": "Podana prędkość jest poza dozwolonym zakresem.",
-            "playerForfeited": "Gracz \"%{name}\" zrezygnował i przegrał automatycznie.",
             "missedTurnWarning": "Spóźniłeś się i twojemu przeciwnikowi przydzielono jego ruch. Jeśli to się powtórzy za wiele razy z rzędu, zostaniesz wyrzucony. (%{current}/%{threshold})",
             "missedTurnKick": "Zostałeś wyrzucony, ponieważ spóźniłeś się na %{current} ruch(y) z rzędu.",
             "autoTurnWarning": "Spóźniłeś się i został wykonany ruch za ciebie. Jeśli to się powtórzy za wiele razy z rzędu, przegrasz. (%{current}/%{threshold})",
@@ -211,6 +210,15 @@
                     "help": "Graj bez limitu czasu. Wyłącz wszystkie timery tur i ciesz się zrelaksowaną rozgrywką, w której możesz grać we własnym tempie. Nie zaleca się tego przeciwko losowym przeciwnikom.",
                     "data": {
                         "off": "Bez limitu"
+                    }
+                },
+                "deckSize": {
+                    "title": "Rozmiar Talii",
+                    "help": "Graj bez limitu czasu. Wyłącz wszystkie timery tur i ciesz się zrelaksowaną rozgrywką, w której możesz grać we własnym tempie. Nie zaleca się tego przeciwko losowym przeciwnikom.",
+                    "data": {
+                        "half": "Pół talii",
+                        "full": "Pełna talia",
+                        "double": "Podwójna talia"
                     }
                 }
             },
@@ -659,10 +667,6 @@
                     "title": "Przekroczony Próg",
                     "help": "Jeśli gracz będzie zablokowany przez tą ilość tur z rzędu, to automatycznie przegra."
                 },
-                "autoTurnThreshold": {
-                    "title": "Próg Późny",
-                    "help": "Jeśli gracz spóźni się i ruch zostanie automatycznie wykonany za niego przez tę liczbę rund z rzędu, automatycznie przegrywa."
-                },
                 "rows": {
                     "title": "Rzędy Drzew",
                     "help": "Ile rzędów pionków każdy gracz zaczyna. W zależności od wielkości pola ilość rzędów zostanie określona."
@@ -1062,10 +1066,6 @@
                     "title": "Czas Umieszczenia",
                     "help": "Jak długo każdy gracz ma na przesunięcie swoich statków na pozycję."
                 },
-                "missedTurnThreshold": {
-                    "title": "Próg Pominiętych Tur",
-                    "help": "Ile tur gracz może pominąć z rzędu, zanim zostanie wywalony z gry."
-                },
                 "gridSize": {
                     "title": "Rozmiar siatki",
                     "help": "Wybierz rozmiar poziomu, na którym chcesz grać.",
@@ -1133,10 +1133,9 @@
                 }
             },
             "presets": {
-                "blitz": {
-                    "title": "Szybki atak",
+                "longHaul": {
+                    "title": "Długi Marsz",
                     "description": [
-                        "Krótkie rundy",
                         "Kaskadowe siatki"
                     ]
                 }
@@ -1199,8 +1198,6 @@
                     "help": "Gdy włączone w grach dla 3 graczy, rozdający dostaje dodatkową kartę do kołyski. Gdy wyłączone, czwarta karta automatycznie trafia do kołyski."
                 },
                 "winCondition": {
-                    "title": "Warunek Zwycięstwa",
-                    "help": "Zdecyduj, kiedy gra powinna dojść do końca.",
                     "data": {
                         "FIRST": "Pierwszy, który zdobędzie <b>0</b> punktów | Pierwszy, który zdobędzie <b>1</b> punkt | Pierwszy, który zdobędzie <b>{count}</b> punktów",
                         "HIGHEST_AFTER": "Najwięcej punktów po zdobyciu <b>0</b> punktów | Najwięcej punktów po zdobyciu <b>1</b> punktu | Najwięcej punktów po zdobyciu <b>{count}</b> punktów"
@@ -1243,6 +1240,65 @@
                     "description": [
                         "Po tym, jak wszyscy gracze opróżnili swoje ręce podczas gry, liczone są punkty. Rozdający zawsze jest liczonny na końcu i otrzyma również punkty za swoją kryjówkę.",
                         "Gracze mogą zdobywać punkty za różne kombinacje. Kliknij przycisk \"System Punktacji\" podczas gry, aby zobaczyć pełny przegląd."
+                    ]
+                }
+            }
+        },
+        "WAR": {
+            "name": "Wojna",
+            "heading": "Doświadcz Ekscytujących Bitew Kart Wojennych Online",
+            "tooltip": "Doświadcz emocji gry w wojenne karty z graczami z każdego zakątka świata.",
+            "description": "Doświadcz online bitew kartowych z War! Graj przeciwko znajomym i rywalom w tej klasycznej grze internetowej.",
+            "title": "Wejdź na Arenę Walki Kartami",
+            "options": {
+                "winCondition": {
+                    "help": "Gra skończy się wcześniej, jeśli zostanie tylko jeden gracz ze wszystkimi kartami.",
+                    "data": {
+                        "LAST_STANDING": "Kiedy gracz zdobędzie wszystkie karty",
+                        "HIGHEST_AFTER": "Najwięcej kart po <b>0</b> rundach | Najwięcej kart po <b>1</b> rundzie | Najwięcej kart po <b>{count}</b> rundach"
+                    }
+                },
+                "warRequirement": {
+                    "title": "Wymóg Wojny",
+                    "help": "Określ, jak powinna się rozegrać wojna, jeśli dwóch lub więcej graczy zagra tą samą kartę.",
+                    "data": {
+                        "DEFAULT": "Połóż <b>0</b> kart | Połóż <b>1</b> kartę | Połóż <b>{count}</b> kart",
+                        "CARD_VALUE": "Połóż tyle kart, ile wynosi ranga początkowej karty"
+                    }
+                },
+                "warCardCount": {
+                    "title": "Liczba Kart Wojennych",
+                    "help": "Ustal z góry ilość kart, które gracz w wojnie musi położyć. Ostatnia karta jest tą odkrywaną."
+                }
+            },
+            "presets": {
+                "razboi": {
+                    "title": "Wojna",
+                    "description": [
+                        "Umieść karty równe początkowemu rangu karty"
+                    ]
+                },
+                "blitz": {
+                    "title": "Błyskawica",
+                    "description": [
+                        "Pół talii",
+                        "Ograniczone do 60 rund"
+                    ]
+                }
+            },
+            "help": {
+                "objective": {
+                    "title": "Zrozumienie Celu",
+                    "description": [
+                        "Gra jest naprawdę prosta. Karty są równo podzielone między wszystkich graczy. Każdy gracz musi położyć kartę w każdej rundzie. Najwyżej punktowana karta wygrywa i zabiera wszystkie karty.",
+                        "Najwyżej punktowana karta to as, a najniższa to dwójka. Gracz, który skończy z wszystkimi kartami, wygrywa."
+                    ]
+                },
+                "war": {
+                    "title": "Wojna",
+                    "description": [
+                        "Wojna zaczyna się, gdy dwóch lub więcej graczy wykłada tę samą najwyższą kartę. Wszyscy gracze muszą potem położyć cztery karty, a ostatnia z nich decyduje o zwycięzcy wojny.",
+                        "Rumuńska wersja Război zmusza cię do położenia tylu kart, ile wynosi ranga karty, która rozpoczęła wojnę (np. dla króla będzie to 13 kart)."
                     ]
                 }
             }
@@ -1313,7 +1369,6 @@
             "staleMoves": "Mecz zatrzymany — %{staleCount} ruchów bez przejęcia",
             "forfeit": "Mecz zakończony — Przeciwnik wybrał rezygnację",
             "inactive": "Mecz zakończony z powodu braku aktywności",
-            "late": "Mecz zakończony z powodu braku %{turns} ruchu(ów)",
             "pickActionCard": "Wybieranie karty akcji",
             "pickCardSelection": "Wybieranie karty",
             "handDump": "Runda wyrzucania",
@@ -1329,6 +1384,8 @@
             "nameTurnBreaking": "%{name} łamie",
             "roundSummary": "Podsumowanie rundy",
             "roundCount": "Runda %{current} z %{total}",
+            "roundCurrent": "Runda %{current}",
+            "war": "Wojna!",
             "dealingCards": "Rozdajemy karty...",
             "youPickStarterCard": "Musisz wybrać kartę startową",
             "namePickStarterCard": "%{name} musi wybrać kartę startową",
@@ -1555,6 +1612,7 @@
         "playRandomOpponents": "Graj z losowymi przeciwnikami | Graj z losowym przeciwnikiem | Graj z losowymi przeciwnikami",
         "turnsToFlip": "Tur do odwrócenia | Tura do odwrócenia | Tur do odwrócenia",
         "increment": "Przyrosty o 0 | Przyrost o 1 | Przyrosty o {count}",
+        "remaining": "Brak pozostałych | 1 pozostały | {count} pozostałe",
         "shipsRemaining": "0 statków pozostało | 1 statek pozostał | {count} statków pozostało",
         "includesItems": "Zawiera {count} przedmioty | Zawiera {count} przedmiot | Zawiera {count} przedmiotów"
     },
@@ -1828,6 +1886,7 @@
             "dump": "Wybierz wszystkie karty, które chcesz wyrzucić",
             "noType": "Nie ma kart %{type}",
             "delete": "Zbliżasz się do usunięcia karty \"%{info}\".",
+            "winningOptionSelf": "Wygrałeś tę rundę!",
             "winningOption": "%{name} wygrał tę rundę z wyborem %{selection}",
             "actionResponseCardCounter": "Licznik kart akcji i odpowiedzi. Niektóre zestawy używają tych samych kart; duplikaty są automatycznie usuwane. Filtrowanie <b>NSFW</b> lub <b>Kart Specjalnych</b> również zmniejsza całkowitą ilość.",
             "navigateSelf": "Przemieszczaj się",
@@ -1925,6 +1984,8 @@
         "nameNoPoints": "%{name} nie dostał żadnych punktów.",
         "gameMenu": "Masz ochotę zagrać w coś innego?",
         "forfeit": "Porzucenie gry skutkować będzie porażką dla ciebie.",
+        "nameForfeited": "%{name} poddał się i automatycznie przegrał.",
+        "selfForfeited": "Poddajesz się i automatycznie przegrywasz.",
         "unsavedChanges": "Masz niezapisane zmiany, które zostaną usunięte, jeśli będziesz kontynuować.",
         "accountDeletion": "Usunięcie twojego konta jest nieodwracalne i wyczyści twój profil, postępy i statystyki.",
         "notMeWarning": "Po dokonaniu tej operacji zostaniesz wylogowany i przekierowany na stronę, która pozwoli ci wylogować się ze wszystkich urządzeń. Po tym możesz zalogować się normalnie.",
@@ -2043,6 +2104,16 @@
             "logoutGloballyCompleted": "Twoje konto zostało wylogowane ze wszystkich urządzeń.",
             "verificationEmail": "E-mail z kodem weryfikacyjnym został wysłany.",
             "noEmail": "Brak emaila? Sprawdź folder ze spamem i potwierdź, że ten adres email jest powiązany z Twoim kontem."
+        },
+        "cards": {
+            "selfRanOut": "Skończyły ci się karty do gry!",
+            "nameRanOut": "%{name} skończyły się karty do gry!"
+        },
+        "war": {
+            "title": "Wojna!",
+            "selfWarNotIncluded": "Poczekaj, aż wojna między twoimi przeciwnikami dobiegnie końca...",
+            "selfWarPlaceCards": "Jesteś w wojnie! Połóż %{cards}.",
+            "selfWarPlaceFinalCard": "Jesteś w wojnie! Połóż swoją ostatnią kartę."
         },
         "cribbage": {
             "type": {
