@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 1452,
-        "missing": 0
+        "total": 1500,
+        "missing": 10
     },
     "name": "Bloob.io",
     "error": {
@@ -30,6 +30,7 @@
             "generic": "Hidasta vähän! Odota %{seconds} sekuntia."
         },
         "generic": {
+            "startingUp": "Palvelin on vielä käynnistymässä. Kokeile päivittää tätä sivua myöhemmin.",
             "incorrectProductPrice": "Ostos peruttu hinnan epäjohdonmukaisuuden vuoksi. Odotettu: %{expectedAmount}. Saatu: %{receivedAmount}.",
             "insufficientBalance": "Sinulla ei ole tarpeeksi kolikoita tähän ostokseen.",
             "invalidPurchaseWindow": "Valitettavasti tätä tuotetta ei voi ostaa tällä hetkellä.",
@@ -121,6 +122,7 @@
             "invalid": "Et voi käyttää \"%{id}\" esiasetuksena."
         },
         "match": {
+            "blocked": "Rangaistuksesi estää sinua liittymästä matchmakingiin tai julkisiin otteluihin.",
             "empty": "Ottelu suljettu. Kaikki muut pelaajat lähtivät matsista.",
             "rematchTimeout": "Et hyväksynyt uusintaottelupyyntöä ja sinut lähetettiin takaisin päävalikkoon.",
             "rematchCancelled": "Harmi! Pelaajia ei ole jäljellä tarpeeksi uusintaotteluun.",
@@ -137,6 +139,7 @@
             "full": "Tämä matsi on jo täynnä (%{current}/%{max})."
         },
         "profile": {
+            "usernameBlocked": "Rangaistuksesi ei salli sinun vaihtaa käyttäjänimeäsi.",
             "profanity": "Käyttäjänimi näyttää sisältävän kiellettyä kirosanaa.",
             "missingData": "Käyttäjänimi ja/tai kuva puuttuvat.",
             "invalidNickname": "Käyttäjänimi on väärin muotoiltu.",
@@ -148,6 +151,7 @@
             "inGame": "Et voi muokata profiiliasi pelin ollessa käynnissä"
         },
         "requirement": {
+            "acknowledgeWarning": "Sinun täytyy hyväksyä varoituksesi, jotta voit tehdä tämän toiminnon.",
             "authentication": "Sun pitää olla kirjautuneena sisään tilillesi, että voit tehdä tämän toiminnon.",
             "credentials": "Olet antanut virheelliset tunnistetiedot.",
             "validAccount": "Tiliäsi ei ole vielä vahvistettu. Tallenna profiilisi muutokset.",
@@ -204,6 +208,18 @@
                 "turnTime": {
                     "title": "Vuoron Kesto",
                     "help": "Aika, jonka pelaajalla on ennen kuin vuoro siirtyy seuraavalle pelaajalle."
+                },
+                "inputTime": {
+                    "title": "Syötä Aika",
+                    "help": "Pelaajalla on tietty määrä aikaa syöttää tietoja. Peli jatkuu joka tapauksessa, ovatko he valmiita kun aika loppuu."
+                },
+                "continueAutomatically": {
+                    "title": "Jatka Automaattisesti",
+                    "help": "Vaihda pelin jatkumisen automaattisuutta tai odota, että kaikki vahvistavat olevansa valmiita."
+                },
+                "continueTime": {
+                    "title": "Jatkoaika",
+                    "help": "Kun jatka-nappi ilmestyy, päätä kuinka kauan pitäisi odottaa ennen kuin peli jatkuu joka tapauksessa."
                 },
                 "timeFreedomMode": {
                     "title": "Ajan Vapaus -tila",
@@ -1302,6 +1318,16 @@
                     ]
                 }
             }
+        },
+        "AI_ASSASSIN": {
+            "name": "Tehtävä: Tappaa AI",
+            "heading": "Ole Salamurhaaja tai Selviydy Kohteena AI Assassin -pelissä!",
+            "tooltip": "Korkean panoksen älypeli, jossa jokainen kehotus merkitsee. Oletko sinä salamurhaaja vai kohde?",
+            "description": "AI Assassin on jännittävä moninpeli, jossa eliminoit kohteen tai harhautat salamurhaajia. Käytä strategisia vihjeitä tavoitteesi saavuttamiseksi ja menestyäksesi.",
+            "title": "Päihitä, Eliminoi, Selviydy",
+            "options": {},
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1386,6 +1412,9 @@
             "roundCount": "Kierros %{current} / %{total}",
             "roundCurrent": "Kierros %{current}",
             "war": "Sota!",
+            "outcome": "Lopputulos",
+            "input": "Odotetaan sinun syötettäsi",
+            "waitingForAI": "Odotetaan tekoälyä...",
             "dealingCards": "Jaetaan kortteja...",
             "youPickStarterCard": "Sun pitää valita aloituskortti",
             "namePickStarterCard": "%{name}n pitää valita aloituskortti",
@@ -1409,7 +1438,8 @@
         "matchId": "Ottelun ID tai URL...",
         "message": "Viesti...",
         "username": "Käyttäjänimi",
-        "password": "Salasana"
+        "password": "Salasana",
+        "textarea": "Kirjoita tähän..."
     },
     "language": {
         "nl-NL": "Hollanti",
@@ -1617,6 +1647,7 @@
         "includesItems": "Sisältää {count} esinettä | Sisältää {count} esineen | Sisältää {count} esinettä"
     },
     "misc": {
+        "permanent": "Pysyvä",
         "total": "Yhteensä",
         "judge": "Tuomari",
         "dealer": "Jakaja",
@@ -1627,6 +1658,7 @@
         "starter": "Aloittelija",
         "cards": "Kortit",
         "type": "Tyyppi",
+        "iUnderstand": "Ymmärrän",
         "scoringSystem": "Pisteytysjärjestelmä",
         "notEnoughData": "Ei tarpeeksi tietoa",
         "averageWaitTime": "Keskimääräinen odotusaika",
@@ -1721,9 +1753,11 @@
         "percentage": "{percentage}%",
         "percentageDisabled": "{percentage}% (Ei käytössä)",
         "scrollBackDown": "Vieritä takaisin alas",
+        "yourInput": "Sinun syötteesi",
         "pickYourself": "Valitse itse",
         "highPing": "Pingisi on korkea (%{ping}ms)",
         "currentRoundCount": "Kierros (%{current}/%{total})",
+        "currentContinueCount": "Jatka (%{current}/%{total})",
         "currentSkipCount": "Ohita (%{current}/%{total})",
         "currentReadyCount": "Valmis (%{current}/%{total})",
         "assignedTypeSelf": "Olet %{type}",
@@ -1763,6 +1797,10 @@
         "hitRate": "Osuma-aste",
         "rank": "Sijoitus",
         "kills": "Tappot",
+        "assassin": "Salamurhaaja",
+        "target": "Kohde",
+        "assassinations": "Murhat",
+        "survivals": "Selviytymiset",
         "games": "Pelit",
         "winRatio": "Voittojen suhde",
         "killDeathRatio": "K/D Suhde",
@@ -2249,6 +2287,18 @@
             "earnsSum": "Ansaitsee kaikkien noppien yhteissumman.",
             "noPointsWarning": "Tällä siirrolla et saa pisteitä. On muita valintoja, joista saat pisteitä."
         },
+        "ai": {
+            "ready": null,
+            "findingTarget": null,
+            "calculatingOutcome": null,
+            "targetReport": null,
+            "assassinAssignment": null,
+            "targetAssignment": null,
+            "assassinDescription": null,
+            "targetDescription": null,
+            "startAssassinChat": null,
+            "joinAssassinChat": null
+        },
         "poolType": {
             "SOLID": "Täysväriset",
             "STRIPE": "Raidalliset"
@@ -2277,6 +2327,23 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Laitoit mustan pallon reikään liian aikaisin.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Laitoit mustan pallon reikään aloituslyönnillä.",
                 "POCKETED_WRONG_BALL": "Laitoit väärän pallon reikään."
+            }
+        },
+        "accountWarning": {
+            "title": "Tilin Varoitus",
+            "description": "Olet saanut virallisen varoituksen tilillesi. Useat varoitukset johtavat vakavampiin rangaistuksiin.",
+            "reasonTitle": "Syy",
+            "punishmentTitle": "Rangaistus",
+            "reason": {
+                "BAD_NAME": "Aiempi käyttäjänimesi \"%{content}\" sisältää loukkaavaa, rivoa tai muuten sopimatonta kieltä.",
+                "GAME_QUIT": "Olet osoittanut epäurheilijamaista käytöstä aiemmissa peleissä lähtemällä ennen ottelun päättymistä.",
+                "TOXIC_CHAT": "Olet osoittanut myrkyllistä käytöstä käyttämällä chattia aiemmissa peleissä."
+            },
+            "punishment": {
+                "NAME_CHANGED": "Käyttäjänimesi on vaihdettu",
+                "NAME_BLOCKED": "Et voi enää vaihtaa käyttäjänimeäsi",
+                "CHAT_BLOCKED": "Et voi enää käyttää pelin sisäistä chattiä",
+                "MATCHMAKING_BLOCKED": "Et voi enää osallistua pelinparitukseen tai julkisiin lobbiihin"
             }
         },
         "about": {

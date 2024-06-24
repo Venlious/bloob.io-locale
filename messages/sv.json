@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Swedish",
         "rtl": false,
-        "total": 1452,
-        "missing": 0
+        "total": 1500,
+        "missing": 10
     },
     "name": "Bloob.io",
     "error": {
@@ -30,6 +30,7 @@
             "generic": "Lugna ner dig lite! Vänta %{seconds} sekund(er)."
         },
         "generic": {
+            "startingUp": "Servern startar fortfarande upp. Prova att uppdatera sidan senare.",
             "incorrectProductPrice": "Köpet avbröts på grund av prisfel. Förväntat: %{expectedAmount}. Mottaget: %{receivedAmount}.",
             "insufficientBalance": "Du har inte tillräckligt med mynt för det här köpet.",
             "invalidPurchaseWindow": "Tyvärr, den här produkten kan inte köpas just nu.",
@@ -121,6 +122,7 @@
             "invalid": "Du kan inte använda \"%{id}\" som en förinställning."
         },
         "match": {
+            "blocked": "Ditt straff tillåter inte att du deltar i matchning eller offentliga matcher.",
             "empty": "Matchen är avslutad. Alla andra spelare lämnade matchen.",
             "rematchTimeout": "Du accepterade inte omkampsförfrågan och skickades tillbaka till huvudmenyn.",
             "rematchCancelled": "Tyvärr! Det finns inte tillräckligt med spelare kvar för en omkamp.",
@@ -137,6 +139,7 @@
             "full": "Den här matchen är redan full (%{current}/%{max})."
         },
         "profile": {
+            "usernameBlocked": "Ditt straff tillåter inte att du ändrar ditt användarnamn.",
             "profanity": "Smeknamnet verkar innehålla förbjudna svordomar.",
             "missingData": "Saknar användarnamn och/eller bildargument.",
             "invalidNickname": "Smeknamnet är felaktigt formaterat.",
@@ -148,6 +151,7 @@
             "inGame": "Du kan inte anpassa din profil medan spelet pågår"
         },
         "requirement": {
+            "acknowledgeWarning": "Du måste erkänna din varning för att utföra denna åtgärd.",
             "authentication": "Du måste vara inloggad på ditt konto för att göra det här.",
             "credentials": "Du har gett ogiltiga uppgifter.",
             "validAccount": "Ditt konto har inte blivit godkänt än. Snälla, spara dina profiländringar.",
@@ -204,6 +208,18 @@
                 "turnTime": {
                     "title": "Turtid",
                     "help": "Tiden en spelare har innan det är nästa spelares tur."
+                },
+                "inputTime": {
+                    "title": "Inmatningstid",
+                    "help": "Den tid en spelare har på sig att fylla i ett svar. Spelet fortsätter oavsett om de är redo när tiden tar slut."
+                },
+                "continueAutomatically": {
+                    "title": "Fortsätt Automatiskt",
+                    "help": "Växla om spelet ska fortsätta automatiskt eller vänta tills alla bekräftar att de är redo."
+                },
+                "continueTime": {
+                    "title": "Fortsättningstid",
+                    "help": "När en fortsätt-knapp dyker upp, bestäm hur lång tid det ska ta innan spelet fortsätter ändå."
                 },
                 "timeFreedomMode": {
                     "title": "Tidsfrihetsläge",
@@ -1302,6 +1318,16 @@
                     ]
                 }
             }
+        },
+        "AI_ASSASSIN": {
+            "name": "AI Mördare",
+            "heading": "Vara Mördaren eller Överlev som Målet i AI Mördare!",
+            "tooltip": "Ett högriskspel med klurigheter där varje ledtråd räknas. Är du mördaren eller måltavlan?",
+            "description": "AI Assassin är ett spännande multiplayer-spel där du antingen eliminerar målet eller lurar lönnmördarna. Använd strategiska tips för att nå ditt mål och lyckas.",
+            "title": "Lura, Eliminera, Överlev",
+            "options": {},
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1386,6 +1412,9 @@
             "roundCount": "Omgång %{current} av %{total}",
             "roundCurrent": "Runda %{current}",
             "war": "Krig!",
+            "outcome": "Resultat",
+            "input": "Väntar på din input",
+            "waitingForAI": "Väntar på AI...",
             "dealingCards": "Delar ut kort...",
             "youPickStarterCard": "Du måste välja startkortet",
             "namePickStarterCard": "%{name} måste välja startkortet",
@@ -1409,7 +1438,8 @@
         "matchId": "Matcha ID eller URL...",
         "message": "Meddelande...",
         "username": "Användarnamn",
-        "password": "Lösenord"
+        "password": "Lösenord",
+        "textarea": "Skriv här..."
     },
     "language": {
         "nl-NL": "Holländska",
@@ -1617,6 +1647,7 @@
         "includesItems": "Inkluderar {count} saker | Inkluderar {count} sak | Inkluderar {count} saker"
     },
     "misc": {
+        "permanent": "Permanent",
         "total": "Totalt",
         "judge": "Domare",
         "dealer": "Handlare",
@@ -1627,6 +1658,7 @@
         "starter": "Startare",
         "cards": "Kort",
         "type": "Typ",
+        "iUnderstand": "Jag fattar",
         "scoringSystem": "Poängsystem",
         "notEnoughData": "Inte tillräckligt med data",
         "averageWaitTime": "Genomsnittlig väntetid",
@@ -1721,9 +1753,11 @@
         "percentage": "{percentage}%",
         "percentageDisabled": "{percentage}% (Inaktiverad)",
         "scrollBackDown": "Scrolla ner igen",
+        "yourInput": "Din input",
         "pickYourself": "Välj själv",
         "highPing": "Din ping är hög (%{ping}ms)",
         "currentRoundCount": "Runda (%{current}/%{total})",
+        "currentContinueCount": "Fortsätt (%{current}/%{total})",
         "currentSkipCount": "Hoppa över (%{current}/%{total})",
         "currentReadyCount": "Klar (%{current}/%{total})",
         "assignedTypeSelf": "Du är %{type}",
@@ -1763,6 +1797,10 @@
         "hitRate": "Träfffrekvens",
         "rank": "Rankning",
         "kills": "Mord",
+        "assassin": "Mördare",
+        "target": "Mål",
+        "assassinations": "Mord",
+        "survivals": "Överlevnader",
         "games": "Spel",
         "winRatio": "Vinstförhållande",
         "killDeathRatio": "K/D Förhållande",
@@ -2249,6 +2287,18 @@
             "earnsSum": "Tjänar totalt av alla tärningar tillsammans.",
             "noPointsWarning": "Det här draget ger dig inga poäng. Det finns andra val som faktiskt ger dig poäng."
         },
+        "ai": {
+            "ready": null,
+            "findingTarget": null,
+            "calculatingOutcome": null,
+            "targetReport": null,
+            "assassinAssignment": null,
+            "targetAssignment": null,
+            "assassinDescription": null,
+            "targetDescription": null,
+            "startAssassinChat": null,
+            "joinAssassinChat": null
+        },
         "poolType": {
             "SOLID": "Enfärgade",
             "STRIPE": "Randiga"
@@ -2277,6 +2327,23 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Du sänkte åttbollen för tidigt.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Du sänkte åttbollen på breaket.",
                 "POCKETED_WRONG_BALL": "Du sänkte fel boll."
+            }
+        },
+        "accountWarning": {
+            "title": "Konto Varning",
+            "description": "Du har fått en officiell varning för ditt konto. Flera varningar kommer att resultera i strängare straff.",
+            "reasonTitle": "Anledning",
+            "punishmentTitle": "Straff",
+            "reason": {
+                "BAD_NAME": "Ditt (tidigare) användarnamn \"%{content}\" innehåller en förolämpning, svordom eller annat olämpligt språk.",
+                "GAME_QUIT": "Du har visat osportsligt beteende i tidigare spel genom att lämna innan matchen är slut.",
+                "TOXIC_CHAT": "Du har visat giftigt beteende med ditt användande av chatten i tidigare spel."
+            },
+            "punishment": {
+                "NAME_CHANGED": "Ditt användarnamn har ändrats",
+                "NAME_BLOCKED": "Du är blockerad från att ändra ditt användarnamn",
+                "CHAT_BLOCKED": "Du är blockerad från att använda spelets chatt",
+                "MATCHMAKING_BLOCKED": "Du är blockerad från matchning och offentliga lobbyn"
             }
         },
         "about": {

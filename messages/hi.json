@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Hindi script",
         "rtl": false,
-        "total": 1452,
-        "missing": 0
+        "total": 1500,
+        "missing": 10
     },
     "name": "Bloob.io",
     "error": {
@@ -30,6 +30,7 @@
             "generic": "थोड़ा धीरे करो! %{seconds} सेकंड(s) इंतजार करें।"
         },
         "generic": {
+            "startingUp": "सर्वर अभी भी शुरू हो रहा है। थोड़ी देर बाद इस पेज को रिफ्रेश करके देखें।",
             "incorrectProductPrice": "मूल्य असंगतता के कारण खरीदारी रद्द कर दी गई। अपेक्षित: %{expectedAmount}। प्राप्त: %{receivedAmount}।",
             "insufficientBalance": "आपके पास इस खरीदारी के लिए पर्याप्त सिक्के नहीं हैं।",
             "invalidPurchaseWindow": "क्षमा करें, इस समय यह उत्पाद खरीदा नहीं जा सकता।",
@@ -121,6 +122,7 @@
             "invalid": "आप \"%{id}\" को प्रीसेट के रूप में उपयोग नहीं कर सकते।"
         },
         "match": {
+            "blocked": "तुम्हारी सजा के चलते तुम मैचमेकिंग या सार्वजनिक मैच में शामिल नहीं हो सकते।",
             "empty": "मैच बंद हो गया। बाकी सभी खिलाड़ी मैच छोड़ चुके हैं।",
             "rematchTimeout": "आपने रीमैच की अनुरोध को स्वीकार नहीं किया और आपको मुख्य मेनू में भेज दिया गया।",
             "rematchCancelled": "माफ़ कीजिए! रीमैच के लिए बचे हुए खिलाड़ी पर्याप्त नहीं हैं।",
@@ -137,6 +139,7 @@
             "full": "यह मैच पहले से ही भर चुकी है (%{current}/%{max})।"
         },
         "profile": {
+            "usernameBlocked": "तुम्हारी सजा के चलते तुम अपना उपयोगकर्ता नाम बदल नहीं सकते।",
             "profanity": "उपनाम में प्रतिबंधित गालियाँ शामिल हैं।",
             "missingData": "उपयोगकर्ता नाम और/या चित्र के तर्क गायब हैं।",
             "invalidNickname": "उपनाम का प्रारूप गलत है।",
@@ -148,6 +151,7 @@
             "inGame": "खेल चल रहा होने पर आप अपनी प्रोफ़ाइल कस्टमाइज़ नहीं कर सकते"
         },
         "requirement": {
+            "acknowledgeWarning": "इस कार्य को करने के लिए आपको अपनी चेतावनी को मान्य करना होगा।",
             "authentication": "इस कार्य को करने के लिए आपको अपने खाते में लॉग इन होना चाहिए।",
             "credentials": "आपने गलत जानकारी दी है।",
             "validAccount": "आपका खाता अभी तक सत्यापित नहीं हुआ है। कृपया अपने प्रोफ़ाइल में परिवर्तन सहेजें।",
@@ -204,6 +208,18 @@
                 "turnTime": {
                     "title": "बारी का समय",
                     "help": "खिलाड़ी के पास अगले खिलाड़ी को अपनी बारी देने से पहले कितना समय होता है।"
+                },
+                "inputTime": {
+                    "title": "इनपुट समय",
+                    "help": "खिलाड़ी के पास इनपुट भरने के लिए कितना समय है। समय समाप्त होने पर खेल तैयार होने पर भी जारी रहेगा।"
+                },
+                "continueAutomatically": {
+                    "title": "स्वचालित रूप से जारी रखें",
+                    "help": "यह टॉगल करें कि खेल स्वचालित रूप से जारी रखना चाहिए या सभी की पुष्टि का इंतजार करना चाहिए कि वे तैयार हैं."
+                },
+                "continueTime": {
+                    "title": "समय जारी रखें",
+                    "help": "जब एक कन्टिन्यू बटन दिखाई दे, तब तय करें कि खेल को वैसे ही जारी रखने में कितना समय लगना चाहिए।"
                 },
                 "timeFreedomMode": {
                     "title": "समय स्वतंत्रता मोड",
@@ -1302,6 +1318,16 @@
                     ]
                 }
             }
+        },
+        "AI_ASSASSIN": {
+            "name": "AI हत्यारा",
+            "heading": "AI Assassin में अस्सासिन बनें या टारगेट के रूप में बचें!",
+            "tooltip": "एक उच्च दांव का बुद्धिमत्ता का खेल जहां हर प्रेरणा महत्वपूर्ण है। क्या आप अस्सासिन हैं या निशाना?",
+            "description": "AI Assassin एक रोमांचक मल्टीप्लेयर गेम है जहां आप लक्ष्य को नष्ट करते हैं या असैसिन्स को हराते हैं। अपने लक्ष्य को प्राप्त करने के लिए रणनीतिक संकेतों का उपयोग करें और सफल हों।",
+            "title": "चतुराई से बाहर निकलो, हटाओ, जीवित रहो",
+            "options": {},
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1386,6 +1412,9 @@
             "roundCount": "%{current} गोल बाहर %{total} का",
             "roundCurrent": "दौर %{current}",
             "war": "युद्ध!",
+            "outcome": "परिणाम",
+            "input": "आपकी प्रविष्टि का इंतजार कर रहे हैं",
+            "waitingForAI": "AI का इंतजार कर रहे हैं...",
             "dealingCards": "कार्ड बाँट रहे हैं...",
             "youPickStarterCard": "आपको स्टार्टर कार्ड चुनना होगा",
             "namePickStarterCard": "%{name} को स्टार्टर कार्ड चुनना होगा",
@@ -1409,7 +1438,8 @@
         "matchId": "मैच ID या URL...",
         "message": "संदेश...",
         "username": "उपयोगकर्ता नाम",
-        "password": "पासवर्ड"
+        "password": "पासवर्ड",
+        "textarea": "यहां टाइप करें..."
     },
     "language": {
         "nl-NL": "डच",
@@ -1617,6 +1647,7 @@
         "includesItems": "{count} वस्तुएं शामिल हैं | {count} वस्तु शामिल है | {count} वस्तुएं शामिल हैं"
     },
     "misc": {
+        "permanent": "स्थायी",
         "total": "कुल",
         "judge": "न्यायाधीश",
         "dealer": "व्यापारी",
@@ -1627,6 +1658,7 @@
         "starter": "शुरुआती",
         "cards": "कार्ड",
         "type": "प्रकार",
+        "iUnderstand": "मैं समझता हूँ",
         "scoringSystem": "स्कोरिंग सिस्टम",
         "notEnoughData": "डेटा अद्यतित नहीं है",
         "averageWaitTime": "औसत प्रतीक्षा समय",
@@ -1721,9 +1753,11 @@
         "percentage": "{percentage}%",
         "percentageDisabled": "{percentage}% (निष्क्रिय)",
         "scrollBackDown": "नीचे स्क्रॉल करें",
+        "yourInput": "आपकी इनपुट",
         "pickYourself": "खुद के लिए चुनें",
         "highPing": "आपकी पिंग बहुत ज्यादा है (%{ping}ms)",
         "currentRoundCount": "दौर (%{current}/%{total})",
+        "currentContinueCount": "जारी रखें (%{current}/%{total})",
         "currentSkipCount": "छोड़ें (%{current}/%{total})",
         "currentReadyCount": "तैयार (%{current}/%{total})",
         "assignedTypeSelf": "आप %{type} हैं",
@@ -1763,6 +1797,10 @@
         "hitRate": "हिट दर",
         "rank": "रैंक",
         "kills": "मारे गए",
+        "assassin": "अस्सासिन",
+        "target": "लक्ष्य",
+        "assassinations": "हत्याएँ",
+        "survivals": "बचाव",
         "games": "खेल",
         "winRatio": "जीत का अनुपात",
         "killDeathRatio": "K/D अनुपात",
@@ -2249,6 +2287,18 @@
             "earnsSum": "सभी पासों का संयुक्त योगदान प्राप्त करता है.",
             "noPointsWarning": "यह चाल तुम्हें कोई अंक नहीं दिलाएगी। और भी विकल्प हैं जो तुम्हें अंक देते हैं।"
         },
+        "ai": {
+            "ready": null,
+            "findingTarget": null,
+            "calculatingOutcome": null,
+            "targetReport": null,
+            "assassinAssignment": null,
+            "targetAssignment": null,
+            "assassinDescription": null,
+            "targetDescription": null,
+            "startAssassinChat": null,
+            "joinAssassinChat": null
+        },
         "poolType": {
             "SOLID": "सॉलिड्स",
             "STRIPE": "स्ट्राइप्स"
@@ -2277,6 +2327,23 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "आपने आठवां बॉल बहुत जल्दी डाल दिया।",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "आपने ब्रेक पर आठवां बॉल डाल दिया।",
                 "POCKETED_WRONG_BALL": "आपने गलत बॉल डाल दिया।"
+            }
+        },
+        "accountWarning": {
+            "title": "खाता चेतावनी",
+            "description": "आपको एक आधिकारिक खाता चेतावनी मिली है। अनेक चेतावनियाँ और अधिक गंभीर दंड का कारण बनेंगी।",
+            "reasonTitle": "कारण",
+            "punishmentTitle": "दंड",
+            "reason": {
+                "BAD_NAME": "आपका (पिछला) उपयोगकर्ता नाम \"%{content}\" में गाली, अश्लीलता, या अन्य अनुचित भाषा शामिल है।",
+                "GAME_QUIT": "आपने पिछले खेलों में अनुचित व्यवहार दिखाया है, मैच समाप्त होने से पहले छोड़कर चले गए।",
+                "TOXIC_CHAT": "आपने पिछले खेलों में चैट का उपयोग करके विषाक्त व्यवहार दिखाया है।"
+            },
+            "punishment": {
+                "NAME_CHANGED": "आपका उपयोगकर्ता नाम बदल दिया गया है",
+                "NAME_BLOCKED": "आपको अपना उपयोगकर्ता नाम बदलने से रोक दिया गया है",
+                "CHAT_BLOCKED": "आपको गेम की चैट का उपयोग करने से रोक दिया गया है",
+                "MATCHMAKING_BLOCKED": "आपको मैचमेकिंग और सार्वजनिक लॉबियों का उपयोग करने से रोक दिया गया है"
             }
         },
         "about": {

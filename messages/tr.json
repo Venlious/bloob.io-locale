@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 1452,
-        "missing": 0
+        "total": 1500,
+        "missing": 10
     },
     "name": "Bloob.io",
     "error": {
@@ -30,6 +30,7 @@
             "generic": "Biraz yavaşla! %{seconds} saniye beklemelisin."
         },
         "generic": {
+            "startingUp": "Sunucu hala başlıyor. Daha sonra bu sayfayı yenilemeyi dene.",
             "incorrectProductPrice": "Fiyat uyuşmazlığı nedeniyle satın alma iptal edildi. Beklenen: %{expectedAmount}. Alınan: %{receivedAmount}.",
             "insufficientBalance": "Bu satın almayı yapmak için yeterli paran yok.",
             "invalidPurchaseWindow": "Üzgünüm, bu ürün şu anda satın alınamıyor.",
@@ -121,6 +122,7 @@
             "invalid": "\"%{id}\"'yi bir ön ayar olarak kullanamazsın."
         },
         "match": {
+            "blocked": "Cezan dolayısıyla eşleştirme oyunlarına ya da genel maçlara katılmana izin verilmiyor.",
             "empty": "Maç kapandı. Diğer tüm oyuncular maçı terk etti.",
             "rematchTimeout": "Yeniden maç teklifini kabul etmedin ve ana menüye geri gönderildin.",
             "rematchCancelled": "Üzgünüm! Yeniden maç için yeterli oyuncu kalmadı.",
@@ -137,6 +139,7 @@
             "full": "Bu maç zaten dolu (%{current}/%{max})."
         },
         "profile": {
+            "usernameBlocked": "Cezan dolayısıyla kullanıcı adını değiştiremezsin.",
             "profanity": "Takma adında yasaklı küfürler var gibi görünüyor.",
             "missingData": "Kullanıcı adı ve/veya resim argümanları eksik.",
             "invalidNickname": "Takma adın yanlış biçimlendirilmiş.",
@@ -148,6 +151,7 @@
             "inGame": "Oyun devam ederken profilini özelleştiremezsin"
         },
         "requirement": {
+            "acknowledgeWarning": "Bu eylemi gerçekleştirmek için uyarını kabul etmelisin.",
             "authentication": "Bu işlemi yapabilmek için hesabına giriş yapmış olman gerekiyor.",
             "credentials": "Geçersiz bilgiler girdin.",
             "validAccount": "Hesabın henüz onaylanmadı. Lütfen profil değişikliklerini kaydet.",
@@ -204,6 +208,18 @@
                 "turnTime": {
                     "title": "Sıra Süresi",
                     "help": "Bir oyuncunun sırası bir sonraki oyuncuya geçmeden önce sahip olduğu süre."
+                },
+                "inputTime": {
+                    "title": "Giriş Zamanı",
+                    "help": "Oyuncunun bir girişi doldurması için ne kadar zamanı olduğu. Zaman bitse bile oyuncu hazır olmasa da oyun devam eder."
+                },
+                "continueAutomatically": {
+                    "title": "Otomatik Devam Et",
+                    "help": "Oyunun otomatik olarak devam edip etmemesi ya da herkesin hazır olduğunu onaylamasını beklemesi seçeneğini değiştir."
+                },
+                "continueTime": {
+                    "title": "Devam Etme Süresi",
+                    "help": "Devam et butonu belirdiğinde, oyunun ne kadar süre sonra kendiliğinden devam etmesi gerektiğine karar ver."
                 },
                 "timeFreedomMode": {
                     "title": "Zaman Özgürlüğü Modu",
@@ -1302,6 +1318,16 @@
                     ]
                 }
             }
+        },
+        "AI_ASSASSIN": {
+            "name": "AI Suikastçı",
+            "heading": "AI Assassin'da Suikastçı Ol veya Hedef Olarak Hayatta Kal!",
+            "tooltip": "Her ipucunun önemli olduğu, yüksek riskli bir zeka oyunu. Sen mi suikastçısın yoksa hedef mi?",
+            "description": "AI Assassin, hedefi ortadan kaldırma veya suikastçıları alt etme üzerine heyecan verici bir çok oyunculu oyun. Hedefine ulaşmak ve başarılı olmak için stratejik ipuçlarını kullan.",
+            "title": "Daha Akıllı Ol, Yok Et, Hayatta Kal",
+            "options": {},
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1386,6 +1412,9 @@
             "roundCount": "%{current} tur, toplam %{total} turdan",
             "roundCurrent": "Tur %{current}",
             "war": "Savaş!",
+            "outcome": "Sonuç",
+            "input": "Senin girişini bekliyoruz",
+            "waitingForAI": "Yapay zekâ için bekleniyor...",
             "dealingCards": "Kartlar dağıtılıyor...",
             "youPickStarterCard": "Başlangıç kartını seçmelisin",
             "namePickStarterCard": "%{name} başlangıç kartını seçmeli",
@@ -1409,7 +1438,8 @@
         "matchId": "Eşleşme ID'si veya URL'si...",
         "message": "Mesaj...",
         "username": "Kullanıcı Adı",
-        "password": "Şifre"
+        "password": "Şifre",
+        "textarea": "Buraya yaz..."
     },
     "language": {
         "nl-NL": "Hollandalı",
@@ -1617,6 +1647,7 @@
         "includesItems": "{count} öğe içerir | {count} öğe içerir | {count} öğe içerir"
     },
     "misc": {
+        "permanent": "Kalıcı",
         "total": "Toplam",
         "judge": "Hakem",
         "dealer": "Satıcı",
@@ -1627,6 +1658,7 @@
         "starter": "Başlangıç",
         "cards": "Kartlar",
         "type": "Tür",
+        "iUnderstand": "Anladım",
         "scoringSystem": "Skorlama Sistemi",
         "notEnoughData": "Yeterli veri yok",
         "averageWaitTime": "Ortalama bekleme süresi",
@@ -1721,9 +1753,11 @@
         "percentage": "%{percentage}",
         "percentageDisabled": "%{percentage} (Devre Dışı)",
         "scrollBackDown": "Aşağıya geri kaydır",
+        "yourInput": "Senin girişin",
         "pickYourself": "Kendin için seç",
         "highPing": "Ping'in yüksek (%{ping}ms)",
         "currentRoundCount": "Tur (%{current}/%{total})",
+        "currentContinueCount": "Devam et (%{current}/%{total})",
         "currentSkipCount": "Atla (%{current}/%{total})",
         "currentReadyCount": "Hazır (%{current}/%{total})",
         "assignedTypeSelf": "Sen %{type}sin",
@@ -1763,6 +1797,10 @@
         "hitRate": "Vuruş Oranı",
         "rank": "Sıralama",
         "kills": "Öldürmeler",
+        "assassin": "Suikastçı",
+        "target": "Hedef",
+        "assassinations": "Suikastlar",
+        "survivals": "Hayatta Kalma",
         "games": "Oyunlar",
         "winRatio": "Kazanma Oranı",
         "killDeathRatio": "K/D Oranı",
@@ -2249,6 +2287,18 @@
             "earnsSum": "Tüm zarların toplamını kazanır.",
             "noPointsWarning": "Bu hamle sana hiç puan kazandırmayacak. Puan kazandıran başka seçenekler var."
         },
+        "ai": {
+            "ready": null,
+            "findingTarget": null,
+            "calculatingOutcome": null,
+            "targetReport": null,
+            "assassinAssignment": null,
+            "targetAssignment": null,
+            "assassinDescription": null,
+            "targetDescription": null,
+            "startAssassinChat": null,
+            "joinAssassinChat": null
+        },
         "poolType": {
             "SOLID": "Düzler",
             "STRIPE": "Çizgililer"
@@ -2277,6 +2327,23 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Sekiz numaralı topu çok erken deliğe soktun.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Oyun başlarken sekiz numaralı topu deliğe soktun.",
                 "POCKETED_WRONG_BALL": "Yanlış topu deliğe soktun."
+            }
+        },
+        "accountWarning": {
+            "title": "Hesap Uyarısı",
+            "description": "Resmi bir hesap uyarısı aldın. Birden fazla uyarı, daha ciddi cezalarla sonuçlanır.",
+            "reasonTitle": "Sebep",
+            "punishmentTitle": "Cezalandırma",
+            "reason": {
+                "BAD_NAME": "Önceki kullanıcı adın \"%{content}\" küfür, argo ya da başka bir uygunsuz dil içeriyor.",
+                "GAME_QUIT": "Önceki oyunlarda maçı bitirmeden ayrılarak sportmenliğe aykırı davranış sergiledin.",
+                "TOXIC_CHAT": "Önceki oyunlarda sohbeti kullanarak toksik bir davranış sergiledin."
+            },
+            "punishment": {
+                "NAME_CHANGED": "Kullanıcı adın değiştirildi",
+                "NAME_BLOCKED": "Kullanıcı adını değiştirmen engellendi",
+                "CHAT_BLOCKED": "Oyun içi sohbeti kullanman engellendi",
+                "MATCHMAKING_BLOCKED": "Eşleştirme ve genel lobilerden yasaklandın"
             }
         },
         "about": {

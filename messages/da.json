@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Danish",
         "rtl": false,
-        "total": 1452,
-        "missing": 0
+        "total": 1500,
+        "missing": 10
     },
     "name": "Bloob.io",
     "error": {
@@ -30,6 +30,7 @@
             "generic": "Tag den lidt med ro! Vent %{seconds} sekund(er)."
         },
         "generic": {
+            "startingUp": "Serveren er stadig ved at starte op. Prøv at opdatere denne side senere.",
             "incorrectProductPrice": "Købet er annulleret på grund af prisforskelle. Forventet: %{expectedAmount}. Modtaget: %{receivedAmount}.",
             "insufficientBalance": "Du har ikke nok mønter til dette køb.",
             "invalidPurchaseWindow": "Beklager, men dette produkt kan ikke købes lige nu.",
@@ -121,6 +122,7 @@
             "invalid": "Du kan ikke bruge \"%{id}\" som en forudindstilling."
         },
         "match": {
+            "blocked": "Din straf tillader ikke, at du deltager i matchmaking eller offentlige kampe.",
             "empty": "Kampen er lukket. Alle andre spillere har forladt kampen.",
             "rematchTimeout": "Du accepterede ikke genkamp forespørgslen og blev sendt tilbage til hovedmenuen.",
             "rematchCancelled": "Beklager! Der er ikke nok spillere tilbage til en genkamp.",
@@ -137,6 +139,7 @@
             "full": "Denne kamp er allerede fuld (%{current}/%{max})."
         },
         "profile": {
+            "usernameBlocked": "Din straf tillader ikke, at du ændrer dit brugernavn.",
             "profanity": "Kaldenavnet ser ud til at indeholde forbudt bandeord.",
             "missingData": "Mangler brugernavn og/eller billedargumenter.",
             "invalidNickname": "Kaldenavnet er forkert formateret.",
@@ -148,6 +151,7 @@
             "inGame": "Du kan ikke tilpasse din profil, mens spillet er i gang"
         },
         "requirement": {
+            "acknowledgeWarning": "Du skal anerkende din advarsel for at udføre denne handling.",
             "authentication": "Du skal være logget ind på din konto for at udføre denne handling.",
             "credentials": "Du har givet ugyldige oplysninger.",
             "validAccount": "Din konto er ikke blevet valideret endnu. Gem venligst dine profilændringer.",
@@ -204,6 +208,18 @@
                 "turnTime": {
                     "title": "Turtid",
                     "help": "Den tid en spiller har, før deres tur gives til den næste spiller."
+                },
+                "inputTime": {
+                    "title": "Inputtid",
+                    "help": "Den tid en spiller har til at indtaste noget. Spillet fortsætter uanset om de er klar, når tiden løber ud."
+                },
+                "continueAutomatically": {
+                    "title": "Fortsæt Automatisk",
+                    "help": "Skift om spillet skal fortsætte automatisk, eller vente på at alle bekræfter, at de er klar."
+                },
+                "continueTime": {
+                    "title": "Fortsæt Tid",
+                    "help": "Når en fortsæt-knap vises, skal du bestemme, hvor lang tid der skal gå, før spillet fortsætter alligevel."
                 },
                 "timeFreedomMode": {
                     "title": "Tid Frihed Tilstand",
@@ -1302,6 +1318,16 @@
                     ]
                 }
             }
+        },
+        "AI_ASSASSIN": {
+            "name": "AI Snigmorder",
+            "heading": "Vær Snigmorderen eller Overlev som Målet i AI Snigmorder!",
+            "tooltip": "Et højrisiko spil om snilde, hvor hvert hint tæller. Er du snigmorderen eller målet?",
+            "description": "AI Assassin er et spændende multiplayer spil, hvor du enten fjerner målet eller overgår snigmorderne. Brug strategiske prompts til at nå dit mål og lykkes.",
+            "title": "Overlist, Eliminer, Overlev",
+            "options": {},
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1386,6 +1412,9 @@
             "roundCount": "Runde %{current} ud af %{total}",
             "roundCurrent": "Runde %{current}",
             "war": "Krig!",
+            "outcome": "Resultat",
+            "input": "Venter på din indtastning",
+            "waitingForAI": "Venter på AI'en...",
             "dealingCards": "Deler kort...",
             "youPickStarterCard": "Du skal vælge startkortet",
             "namePickStarterCard": "%{name} skal vælge startkortet",
@@ -1409,7 +1438,8 @@
         "matchId": "Match ID eller URL...",
         "message": "Besked...",
         "username": "Brugernavn",
-        "password": "Adgangskode"
+        "password": "Adgangskode",
+        "textarea": "Skriv her..."
     },
     "language": {
         "nl-NL": "Hollandsk",
@@ -1617,6 +1647,7 @@
         "includesItems": "Inkluderer {count} ting | Inkluderer {count} ting | Inkluderer {count} ting"
     },
     "misc": {
+        "permanent": "Permanent",
         "total": "Total",
         "judge": "Dommer",
         "dealer": "Forhandler",
@@ -1627,6 +1658,7 @@
         "starter": "Starter",
         "cards": "Kort",
         "type": "Type",
+        "iUnderstand": "Jeg forstår",
         "scoringSystem": "Scoring System",
         "notEnoughData": "Ikke nok data",
         "averageWaitTime": "Gennemsnitlig ventetid",
@@ -1721,9 +1753,11 @@
         "percentage": "{percentage}%",
         "percentageDisabled": "{percentage}% (Deaktiveret)",
         "scrollBackDown": "Rul ned igen",
+        "yourInput": "Din indtastning",
         "pickYourself": "Vælg selv",
         "highPing": "Din ping er høj (%{ping}ms)",
         "currentRoundCount": "Runde (%{current}/%{total})",
+        "currentContinueCount": "Fortsæt (%{current}/%{total})",
         "currentSkipCount": "Spring over (%{current}/%{total})",
         "currentReadyCount": "Klar (%{current}/%{total})",
         "assignedTypeSelf": "Du er %{type}",
@@ -1763,6 +1797,10 @@
         "hitRate": "Træfsats",
         "rank": "Rang",
         "kills": "Drab",
+        "assassin": "Snigmorder",
+        "target": "Mål",
+        "assassinations": "Mord",
+        "survivals": "Overlevelser",
         "games": "Spil",
         "winRatio": "Sejrsforhold",
         "killDeathRatio": "K/D Forhold",
@@ -2249,6 +2287,18 @@
             "earnsSum": "Tjener det samlede antal af alle terninger kombineret.",
             "noPointsWarning": "Denne bevægelse giver dig ikke nogen point. Der er andre valg, som faktisk kan give dig point."
         },
+        "ai": {
+            "ready": null,
+            "findingTarget": null,
+            "calculatingOutcome": null,
+            "targetReport": null,
+            "assassinAssignment": null,
+            "targetAssignment": null,
+            "assassinDescription": null,
+            "targetDescription": null,
+            "startAssassinChat": null,
+            "joinAssassinChat": null
+        },
         "poolType": {
             "SOLID": "Ensfarvede",
             "STRIPE": "Stribede"
@@ -2277,6 +2327,23 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Du fik otterkuglen i hul for tidligt.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Du fik otterkuglen i hul ved åbningsstødet.",
                 "POCKETED_WRONG_BALL": "Du fik den forkerte kugle i hul."
+            }
+        },
+        "accountWarning": {
+            "title": "Konto Advarsel",
+            "description": "Du har modtaget en officiel advarsel til din konto. Flere advarsler vil resultere i mere alvorlige straffe.",
+            "reasonTitle": "Årsag",
+            "punishmentTitle": "Straf",
+            "reason": {
+                "BAD_NAME": "Dit (tidligere) brugernavn \"%{content}\" indeholder en fornærmelse, bandeord eller andet upassende sprog.",
+                "GAME_QUIT": "Du har vist usportslig opførsel i tidligere spil ved at forlade før kampen er færdig.",
+                "TOXIC_CHAT": "Du har udvist toksisk opførsel med din brug af chat i tidligere spil."
+            },
+            "punishment": {
+                "NAME_CHANGED": "Dit brugernavn er blevet ændret",
+                "NAME_BLOCKED": "Du er blokeret fra at ændre dit brugernavn",
+                "CHAT_BLOCKED": "Du er blokeret fra at bruge in-game chatten",
+                "MATCHMAKING_BLOCKED": "Du er blokeret fra matchmaking og offentlige lobbyer"
             }
         },
         "about": {

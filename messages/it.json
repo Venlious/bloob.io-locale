@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Italian",
         "rtl": false,
-        "total": 1452,
-        "missing": 0
+        "total": 1500,
+        "missing": 10
     },
     "name": "Bloob.io",
     "error": {
@@ -30,6 +30,7 @@
             "generic": "Rallenta un attimo! Aspetta %{seconds} secondo(i)."
         },
         "generic": {
+            "startingUp": "Il server si sta ancora avviando. Prova a ricaricare questa pagina più tardi.",
             "incorrectProductPrice": "Acquisto annullato a causa di una discrepanza nel prezzo. Previsto: %{expectedAmount}. Ricevuto: %{receivedAmount}.",
             "insufficientBalance": "Non hai abbastanza monete per questo acquisto.",
             "invalidPurchaseWindow": "Scusa, questo prodotto non può essere acquistato al momento.",
@@ -121,6 +122,7 @@
             "invalid": "Non puoi usare \"%{id}\" come preset."
         },
         "match": {
+            "blocked": "La tua punizione non ti permette di partecipare al matchmaking o alle partite pubbliche.",
             "empty": "La partita è chiusa. Tutti gli altri giocatori hanno lasciato la partita.",
             "rematchTimeout": "Non hai accettato la richiesta di rivincita e sei stato rimandato al menu principale.",
             "rematchCancelled": "Spiacenti! Non ci sono abbastanza giocatori rimasti per una rivincita.",
@@ -137,6 +139,7 @@
             "full": "La partita è già al completo (%{current}/%{max})."
         },
         "profile": {
+            "usernameBlocked": "La tua punizione non ti permette di cambiare il tuo nome utente.",
             "profanity": "Il nickname sembra contenere una bestemmia vietata.",
             "missingData": "Nome utente e/o immagine mancanti.",
             "invalidNickname": "Il nickname è formattato in modo errato.",
@@ -148,6 +151,7 @@
             "inGame": "Impossibile personalizzare il profilo mentre la partita è in corso"
         },
         "requirement": {
+            "acknowledgeWarning": "Devi riconoscere il tuo avviso per eseguire questa azione.",
             "authentication": "Devi essere loggato nel tuo account per fare questa azione.",
             "credentials": "Hai fornito credenziali non valide.",
             "validAccount": "Il tuo account non è stato ancora approvato. Salva le modifiche del tuo profilo.",
@@ -204,6 +208,18 @@
                 "turnTime": {
                     "title": "Tempo di Turno",
                     "help": "Il tempo che un giocatore ha prima che il suo turno passi al prossimo giocatore."
+                },
+                "inputTime": {
+                    "title": "Tempo di Ingresso",
+                    "help": "Il tempo che un giocatore ha per inserire un input. Il gioco continuerà comunque, pronto o meno, quando il tempo scade."
+                },
+                "continueAutomatically": {
+                    "title": "Continua Automaticamente",
+                    "help": "Cambia se il gioco dovrebbe continuare automaticamente o aspettare che tutti confermino di essere pronti."
+                },
+                "continueTime": {
+                    "title": "Tempo di Continuazione",
+                    "help": "Quando appare un pulsante di continuazione, decidi quanto tempo dovrebbe passare prima che il gioco continui comunque."
                 },
                 "timeFreedomMode": {
                     "title": "Modalità Libertà Temporale",
@@ -1302,6 +1318,16 @@
                     ]
                 }
             }
+        },
+        "AI_ASSASSIN": {
+            "name": "Assassino AI",
+            "heading": "Diventa l'Assassino o Sopravvivi come Bersaglio in AI Assassin!",
+            "tooltip": "Un gioco ad alta posta in gioco di ingegno dove ogni indizio conta. Sei l'assassino o il bersaglio?",
+            "description": "AI Assassin è un emozionante gioco multiplayer dove devi eliminare il bersaglio o ingannare gli assassini. Usa suggerimenti strategici per raggiungere il tuo obiettivo e avere successo.",
+            "title": "Inganna, Elimina, Sopravvivi",
+            "options": {},
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1386,6 +1412,9 @@
             "roundCount": "Arrotonda %{current} su %{total}",
             "roundCurrent": "Turno %{current}",
             "war": "Guerra!",
+            "outcome": "Risultato",
+            "input": "In attesa del tuo input",
+            "waitingForAI": "Aspettando l'IA...",
             "dealingCards": "Sto distribuendo le carte...",
             "youPickStarterCard": "Devi scegliere la carta iniziale",
             "namePickStarterCard": "%{name} deve scegliere la carta iniziale",
@@ -1409,7 +1438,8 @@
         "matchId": "ID o URL corrispondenti...",
         "message": "Messaggio...",
         "username": "Nome utente",
-        "password": "Password"
+        "password": "Password",
+        "textarea": "Scrivi qui..."
     },
     "language": {
         "nl-NL": "Olandese",
@@ -1617,6 +1647,7 @@
         "includesItems": "Include {count} articoli | Include {count} articolo | Include {count} articoli"
     },
     "misc": {
+        "permanent": "Permanente",
         "total": "Totale",
         "judge": "Giudice",
         "dealer": "Mazzo",
@@ -1627,6 +1658,7 @@
         "starter": "Iniziale",
         "cards": "Carte",
         "type": "Tipo",
+        "iUnderstand": "Ho capito",
         "scoringSystem": "Sistema di punteggio",
         "notEnoughData": "Dati insufficienti",
         "averageWaitTime": "Tempo medio di attesa",
@@ -1721,9 +1753,11 @@
         "percentage": "{percentage}%",
         "percentageDisabled": "{percentage}% (Disabilitato)",
         "scrollBackDown": "Scorri verso il basso",
+        "yourInput": "Il tuo input",
         "pickYourself": "Scegli per te",
         "highPing": "Il tuo ping è alto (%{ping}ms)",
         "currentRoundCount": "Arrotonda (%{current}/%{total})",
+        "currentContinueCount": "Continua (%{current}/%{total})",
         "currentSkipCount": "Salto (%{current}/%{total})",
         "currentReadyCount": "Pronto (%{current}/%{total})",
         "assignedTypeSelf": "Tu sei %{type}",
@@ -1763,6 +1797,10 @@
         "hitRate": "Tasso di Colpi",
         "rank": "Classifica",
         "kills": "Uccide",
+        "assassin": "Assassino",
+        "target": "Obiettivo",
+        "assassinations": "Assassinii",
+        "survivals": "Sopravvivenze",
         "games": "Giochi",
         "winRatio": "Rapporto vittorie",
         "killDeathRatio": "Rapporto K/D",
@@ -2249,6 +2287,18 @@
             "earnsSum": "Guadagna il totale di tutti i dadi combinati.",
             "noPointsWarning": "Questa mossa non ti farà guadagnare punti. Ci sono altre scelte che ti danno punti."
         },
+        "ai": {
+            "ready": null,
+            "findingTarget": null,
+            "calculatingOutcome": null,
+            "targetReport": null,
+            "assassinAssignment": null,
+            "targetAssignment": null,
+            "assassinDescription": null,
+            "targetDescription": null,
+            "startAssassinChat": null,
+            "joinAssassinChat": null
+        },
         "poolType": {
             "SOLID": "Solidi",
             "STRIPE": "Strisce"
@@ -2277,6 +2327,23 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Hai imbucato l'otto nero troppo presto.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Hai imbucato l'otto nero all'inizio.",
                 "POCKETED_WRONG_BALL": "Hai imbucato la palla sbagliata."
+            }
+        },
+        "accountWarning": {
+            "title": "Avviso Account",
+            "description": "Hai ricevuto un avviso ufficiale per il tuo account. Più avvisi porteranno a punizioni più severe.",
+            "reasonTitle": "Motivo",
+            "punishmentTitle": "Punizione",
+            "reason": {
+                "BAD_NAME": "Il tuo (precedente) nome utente \"%{content}\" contiene un insulto, una parolaccia o altro linguaggio inappropriato.",
+                "GAME_QUIT": "Hai mostrato un comportamento antisportivo nei giochi precedenti, uscendo prima di finire la partita.",
+                "TOXIC_CHAT": "Hai mostrato un comportamento tossico con l'uso della chat nei giochi precedenti."
+            },
+            "punishment": {
+                "NAME_CHANGED": "Il tuo nome utente è stato cambiato",
+                "NAME_BLOCKED": "Non puoi più cambiare il tuo nome utente",
+                "CHAT_BLOCKED": "Non puoi più usare la chat del gioco",
+                "MATCHMAKING_BLOCKED": "Non puoi più partecipare al matchmaking e alle lobby pubbliche"
             }
         },
         "about": {

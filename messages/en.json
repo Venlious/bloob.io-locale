@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal American English",
         "rtl": false,
-        "total": 1452,
+        "total": 1500,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -30,6 +30,7 @@
             "generic": "Slow down a little! Wait %{seconds} second(s)."
         },
         "generic": {
+            "startingUp": "Server is still starting up. Try refreshing this page later.",
             "incorrectProductPrice": "Purchase cancelled due to price mismatch. Expected: %{expectedAmount}. Received: %{receivedAmount}.",
             "insufficientBalance": "You do not have enough coins for this purchase.",
             "invalidPurchaseWindow": "Sorry, this product cannot be bought at this time.",
@@ -121,6 +122,7 @@
             "invalid": "You cannot use \"%{id}\" as a preset."
         },
         "match": {
+            "blocked": "Your punishment does not allow you to join matchmaking or public matches.",
             "empty": "Match closed. All other players left the match.",
             "rematchTimeout": "You didn't accept the rematch request and were sent back to the main menu.",
             "rematchCancelled": "Sorry! There aren't enough players left for a rematch.",
@@ -137,6 +139,7 @@
             "full": "This match is already full (%{current}/%{max})."
         },
         "profile": {
+            "usernameBlocked": "Your punishment does not allow you to change your username.",
             "profanity": "Nickname appears to contain banned profanity.",
             "missingData": "Missing username and/or picture arguments.",
             "invalidNickname": "Nickname is incorrectly formatted.",
@@ -148,6 +151,7 @@
             "inGame": "Cannot customize your profile while the game is in progress"
         },
         "requirement": {
+            "acknowledgeWarning": "You must acknowledge your warning to perform this action.",
             "authentication": "You must be logged into your account to perform this action.",
             "credentials": "You have given invalid credentials.",
             "validAccount": "Your account has not been validated yet. Please save your profile changes.",
@@ -204,6 +208,18 @@
                 "turnTime": {
                     "title": "Turn Time",
                     "help": "The amount of time a player has before their turn is given to the next player."
+                },
+                "inputTime": {
+                    "title": "Input Time",
+                    "help": "The amount of time a player has to fill in an input. The game will continue regardless on if they are ready when time runs out."
+                },
+                "continueAutomatically": {
+                    "title": "Continue Automatically",
+                    "help": "Toggle whether the game should continue automatically or wait for everyone to confirm they are ready."
+                },
+                "continueTime": {
+                    "title": "Continue Time",
+                    "help": "When a continue button appears, decide how long it should take before the game continues anyway."
                 },
                 "timeFreedomMode": {
                     "title": "Time Freedom Mode",
@@ -1302,6 +1318,16 @@
                     ]
                 }
             }
+        },
+        "AI_ASSASSIN": {
+            "name": "AI Assassin",
+            "heading": "Be the Assassin or Survive as the Target in AI Assassin!",
+            "tooltip": "A high-stakes game of wits where every prompt counts. Are you the assassin or the target?",
+            "description": "AI Assassin is a thrilling multiplayer game where you either eliminate the target or outsmart the assassins. Use strategic prompts to achieve your goal and succeed.",
+            "title": "Outsmart, Eliminate, Survive",
+            "options": {},
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1386,6 +1412,9 @@
             "roundCount": "Round %{current} out of %{total}",
             "roundCurrent": "Round %{current}",
             "war": "War!",
+            "outcome": "Outcome",
+            "input": "Awaiting your input",
+            "waitingForAI": "Waiting for the AI...",
             "dealingCards": "Dealing cards...",
             "youPickStarterCard": "You have to pick the starter card",
             "namePickStarterCard": "%{name} has to pick the starter card",
@@ -1409,7 +1438,8 @@
         "matchId": "Match ID or URL...",
         "message": "Message...",
         "username": "Username",
-        "password": "Password"
+        "password": "Password",
+        "textarea": "Type here..."
     },
     "language": {
         "nl-NL": "Dutch",
@@ -1617,6 +1647,7 @@
         "includesItems": "Includes {count} items | Includes {count} item | Includes {count} items"
     },
     "misc": {
+        "permanent": "Permanent",
         "total": "Total",
         "judge": "Judge",
         "dealer": "Dealer",
@@ -1627,6 +1658,7 @@
         "starter": "Starter",
         "cards": "Cards",
         "type": "Type",
+        "iUnderstand": "I understand",
         "scoringSystem": "Scoring System",
         "notEnoughData": "Not enough data",
         "averageWaitTime": "Average wait time",
@@ -1721,9 +1753,11 @@
         "percentage": "{percentage}%",
         "percentageDisabled": "{percentage}% (Disabled)",
         "scrollBackDown": "Scroll back down",
+        "yourInput": "Your input",
         "pickYourself": "Pick for yourself",
         "highPing": "Your ping is high (%{ping}ms)",
         "currentRoundCount": "Round (%{current}/%{total})",
+        "currentContinueCount": "Continue (%{current}/%{total})",
         "currentSkipCount": "Skip (%{current}/%{total})",
         "currentReadyCount": "Ready (%{current}/%{total})",
         "assignedTypeSelf": "You are %{type}",
@@ -1763,6 +1797,10 @@
         "hitRate": "Hit Rate",
         "rank": "Rank",
         "kills": "Kills",
+        "assassin": "Assassin",
+        "target": "Target",
+        "assassinations": "Assassinations",
+        "survivals": "Survivals",
         "games": "Games",
         "winRatio": "Win Ratio",
         "killDeathRatio": "K/D Ratio",
@@ -2249,6 +2287,18 @@
             "earnsSum": "Earns the total of all dice combined.",
             "noPointsWarning": "This move won't score you any points. There are other choices which do give you points."
         },
+        "ai": {
+            "ready": "Ready!",
+            "findingTarget": "Finding a target",
+            "calculatingOutcome": "Playing out the scenario",
+            "targetReport": "Target Report",
+            "assassinAssignment": "You're an assassin",
+            "targetAssignment": "You're the target",
+            "assassinDescription": "Try to eliminate the target.",
+            "targetDescription": "Try to outwit the assassins and survive.",
+            "startAssassinChat": "Start Assassin Chat",
+            "joinAssassinChat": "Join Assassin Chat"
+        },
         "poolType": {
             "SOLID": "Solids",
             "STRIPE": "Stripes"
@@ -2277,6 +2327,23 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "You pocketed the eight ball too early.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "You pocketed the eight ball on break.",
                 "POCKETED_WRONG_BALL": "You pocketed the wrong ball."
+            }
+        },
+        "accountWarning": {
+            "title": "Account Warning",
+            "description": "You have received an official account warning. Multiple warnings will result in more severe punishments.",
+            "reasonTitle": "Reason",
+            "punishmentTitle": "Punishment",
+            "reason": {
+                "BAD_NAME": "Your (previous) username \"%{content}\" contains a slur, profanity, or other inappropriate language.",
+                "GAME_QUIT": "You have shown unsportsmanlike behavior in previous games by leaving before finishing the match.",
+                "TOXIC_CHAT": "You have displayed toxic behavior with your use of chat in previous games."
+            },
+            "punishment": {
+                "NAME_CHANGED": "Your username has been changed",
+                "NAME_BLOCKED": "You are blocked from changing your username",
+                "CHAT_BLOCKED": "You are blocked from using the in-game chat",
+                "MATCHMAKING_BLOCKED": "You are blocked from matchmaking and public lobbies"
             }
         },
         "about": {

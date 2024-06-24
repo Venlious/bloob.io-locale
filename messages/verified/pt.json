@@ -24,6 +24,7 @@
             "generic": false
         },
         "generic": {
+            "startingUp": false,
             "incorrectProductPrice": false,
             "insufficientBalance": false,
             "invalidPurchaseWindow": false,
@@ -115,6 +116,7 @@
             "invalid": false
         },
         "match": {
+            "blocked": false,
             "empty": false,
             "rematchTimeout": false,
             "rematchCancelled": false,
@@ -131,6 +133,7 @@
             "full": false
         },
         "profile": {
+            "usernameBlocked": false,
             "profanity": false,
             "missingData": false,
             "invalidNickname": false,
@@ -142,6 +145,7 @@
             "inGame": false
         },
         "requirement": {
+            "acknowledgeWarning": false,
             "authentication": false,
             "credentials": false,
             "validAccount": false,
@@ -196,6 +200,18 @@
                     "title": false
                 },
                 "turnTime": {
+                    "title": false,
+                    "help": false
+                },
+                "inputTime": {
+                    "title": false,
+                    "help": false
+                },
+                "continueAutomatically": {
+                    "title": false,
+                    "help": false
+                },
+                "continueTime": {
                     "title": false,
                     "help": false
                 },
@@ -1296,6 +1312,16 @@
                     ]
                 }
             }
+        },
+        "AI_ASSASSIN": {
+            "name": false,
+            "heading": {},
+            "tooltip": {},
+            "description": {},
+            "title": {},
+            "options": {},
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1380,6 +1406,9 @@
             "roundCount": false,
             "roundCurrent": false,
             "war": false,
+            "outcome": false,
+            "input": false,
+            "waitingForAI": false,
             "dealingCards": false,
             "youPickStarterCard": false,
             "namePickStarterCard": false,
@@ -1403,7 +1432,8 @@
         "matchId": false,
         "message": false,
         "username": false,
-        "password": false
+        "password": false,
+        "textarea": false
     },
     "language": {
         "nl-NL": false,
@@ -1611,6 +1641,7 @@
         "includesItems": false
     },
     "misc": {
+        "permanent": false,
         "total": false,
         "judge": false,
         "dealer": false,
@@ -1621,6 +1652,7 @@
         "starter": false,
         "cards": false,
         "type": false,
+        "iUnderstand": false,
         "scoringSystem": false,
         "notEnoughData": false,
         "averageWaitTime": false,
@@ -1715,9 +1747,11 @@
         "percentage": false,
         "percentageDisabled": false,
         "scrollBackDown": false,
+        "yourInput": false,
         "pickYourself": false,
         "highPing": false,
         "currentRoundCount": false,
+        "currentContinueCount": false,
         "currentSkipCount": false,
         "currentReadyCount": false,
         "assignedTypeSelf": false,
@@ -1757,6 +1791,10 @@
         "hitRate": false,
         "rank": false,
         "kills": false,
+        "assassin": false,
+        "target": false,
+        "assassinations": false,
+        "survivals": false,
         "games": false,
         "winRatio": false,
         "killDeathRatio": false,
@@ -2243,6 +2281,18 @@
             "earnsSum": false,
             "noPointsWarning": false
         },
+        "ai": {
+            "ready": false,
+            "findingTarget": false,
+            "calculatingOutcome": false,
+            "targetReport": false,
+            "assassinAssignment": false,
+            "targetAssignment": false,
+            "assassinDescription": false,
+            "targetDescription": false,
+            "startAssassinChat": false,
+            "joinAssassinChat": false
+        },
         "poolType": {
             "SOLID": false,
             "STRIPE": false
@@ -2271,6 +2321,23 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": false,
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": false,
                 "POCKETED_WRONG_BALL": false
+            }
+        },
+        "accountWarning": {
+            "title": false,
+            "description": false,
+            "reasonTitle": false,
+            "punishmentTitle": false,
+            "reason": {
+                "BAD_NAME": false,
+                "GAME_QUIT": false,
+                "TOXIC_CHAT": false
+            },
+            "punishment": {
+                "NAME_CHANGED": false,
+                "NAME_BLOCKED": false,
+                "CHAT_BLOCKED": false,
+                "MATCHMAKING_BLOCKED": false
             }
         },
         "about": {

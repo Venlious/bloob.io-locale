@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Polish",
         "rtl": false,
-        "total": 1452,
-        "missing": 0
+        "total": 1500,
+        "missing": 10
     },
     "name": "Bloob.io",
     "error": {
@@ -30,6 +30,7 @@
             "generic": "Zwolnij trochę! Poczekaj %{seconds} sekund(y)."
         },
         "generic": {
+            "startingUp": "Serwer nadal się uruchamia. Spróbuj odświeżyć tę stronę później.",
             "incorrectProductPrice": "Zakup anulowany z powodu niezgodności cen. Oczekiwano: %{expectedAmount}. Otrzymano: %{receivedAmount}.",
             "insufficientBalance": "Nie masz wystarczająco dużo monet na ten zakup.",
             "invalidPurchaseWindow": "Przykro mi, ale teraz nie można kupić tego produktu.",
@@ -121,6 +122,7 @@
             "invalid": "Nie możesz użyć \"%{id}\" jako ustawienia."
         },
         "match": {
+            "blocked": "Twoja kara nie pozwala ci dołączyć do gier rankingowych czy publicznych.",
             "empty": "Gra zamknięta. Wszyscy inni gracze opuścili grę.",
             "rematchTimeout": "Nie zaakceptowałeś prośby o powtórkę i zostałeś wysłany z powrotem do głównego menu.",
             "rematchCancelled": "Przykro mi! Nie ma już wystarczająco dużo graczy, aby rozegrać powtórkę.",
@@ -137,6 +139,7 @@
             "full": "Ta gra jest już pełna (%{current}/%{max})."
         },
         "profile": {
+            "usernameBlocked": "Twoja kara nie pozwala ci zmienić swojego nicku.",
             "profanity": "Nickname zawiera niedozwolone wulgaryzmy.",
             "missingData": "Brakuje argumentów nazwy użytkownika i/lub obrazka.",
             "invalidNickname": "Nickname jest niepoprawnie sformatowany.",
@@ -148,6 +151,7 @@
             "inGame": "Nie możesz dostosować swojego profilu, gdy gra jest w toku."
         },
         "requirement": {
+            "acknowledgeWarning": "Musisz potwierdzić swoje ostrzeżenie, aby wykonać tę akcję.",
             "authentication": "Musisz być zalogowany na swoje konto, żeby to zrobić.",
             "credentials": "Podano nieprawidłowe dane.",
             "validAccount": "Twoje konto nie zostało jeszcze zweryfikowane. Proszę zapisać zmiany w profilu.",
@@ -204,6 +208,18 @@
                 "turnTime": {
                     "title": "Czas na ruch",
                     "help": "Ilość czasu, którą gracz ma zanim jego tura przejdzie na następnego gracza."
+                },
+                "inputTime": {
+                    "title": "Czas wejścia",
+                    "help": "Ilość czasu, którą gracz ma na wprowadzenie danych. Gra będzie kontynuowana, niezależnie od tego, czy są gotowi, gdy czas się skończy."
+                },
+                "continueAutomatically": {
+                    "title": "Kontynuuj Automatycznie",
+                    "help": "Przełącz, czy gra powinna kontynuować automatycznie, czy czekać, aż wszyscy potwierdzą, że są gotowi."
+                },
+                "continueTime": {
+                    "title": "Czas kontynuacji",
+                    "help": "Kiedy pojawi się przycisk kontynuuj, zdecyduj, ile czasu powinno minąć, zanim gra i tak pójdzie dalej."
                 },
                 "timeFreedomMode": {
                     "title": "Tryb Wolności Czasowej",
@@ -1302,6 +1318,16 @@
                     ]
                 }
             }
+        },
+        "AI_ASSASSIN": {
+            "name": "Sztuczna Inteligencja - Zabójca",
+            "heading": "Bądź Zabójcą lub Przetrwaj jako Cel w AI Assassin!",
+            "tooltip": "Gra o wysoką stawkę, gdzie liczy się każda wskazówka. Jesteś zabójcą czy celem?",
+            "description": "AI Assassin to ekscytująca gra wieloosobowa, gdzie albo eliminujesz cel, albo przechytrzasz zabójców. Używaj strategicznych wskazówek, aby osiągnąć swój cel i odnieść sukces.",
+            "title": "Przechytrz, Wyeliminuj, Przetrwaj",
+            "options": {},
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1386,6 +1412,9 @@
             "roundCount": "Runda %{current} z %{total}",
             "roundCurrent": "Runda %{current}",
             "war": "Wojna!",
+            "outcome": "Wynik",
+            "input": "Czekam na twój ruch",
+            "waitingForAI": "Czekanie na AI...",
             "dealingCards": "Rozdajemy karty...",
             "youPickStarterCard": "Musisz wybrać kartę startową",
             "namePickStarterCard": "%{name} musi wybrać kartę startową",
@@ -1409,7 +1438,8 @@
         "matchId": "Pasujące ID lub URL...",
         "message": "Wiadomość...",
         "username": "Nazwa użytkownika",
-        "password": "Hasło"
+        "password": "Hasło",
+        "textarea": "Pisz tutaj..."
     },
     "language": {
         "nl-NL": "Holenderski",
@@ -1617,6 +1647,7 @@
         "includesItems": "Zawiera {count} przedmioty | Zawiera {count} przedmiot | Zawiera {count} przedmiotów"
     },
     "misc": {
+        "permanent": "Stały",
         "total": "Całkowity",
         "judge": "Sędzia",
         "dealer": "Sprzedawca",
@@ -1627,6 +1658,7 @@
         "starter": "Startowy",
         "cards": "Karty",
         "type": "Typ",
+        "iUnderstand": "Rozumiem",
         "scoringSystem": "System punktacji",
         "notEnoughData": "Za mało danych",
         "averageWaitTime": "Średni czas oczekiwania",
@@ -1721,9 +1753,11 @@
         "percentage": "{percentage}%",
         "percentageDisabled": "{percentage}% (Wyłączone)",
         "scrollBackDown": "Przewiń w dół",
+        "yourInput": "Twoje dane",
         "pickYourself": "Wybierz dla siebie",
         "highPing": "Twoje opóźnienie jest wysokie (%{ping}ms)",
         "currentRoundCount": "Runda (%{current}/%{total})",
+        "currentContinueCount": "Kontynuuj (%{current}/%{total})",
         "currentSkipCount": "Pomiń (%{current}/%{total})",
         "currentReadyCount": "Gotowe (%{current}/%{total})",
         "assignedTypeSelf": "Jesteś %{type}",
@@ -1763,6 +1797,10 @@
         "hitRate": "Skuteczność",
         "rank": "Ranga",
         "kills": "Zabójstwa",
+        "assassin": "Zabójca",
+        "target": "Cel",
+        "assassinations": "Zabójstwa",
+        "survivals": "Przetrwania",
         "games": "Gry",
         "winRatio": "Stosunek wygranych",
         "killDeathRatio": "Stosunek zabójstw do śmierci",
@@ -2249,6 +2287,18 @@
             "earnsSum": "Zarabiasz sumę wszystkich kości razem wziętych.",
             "noPointsWarning": "Ten ruch nie da ci żadnych punktów. Są inne wybory, które ci punkty przyniosą."
         },
+        "ai": {
+            "ready": null,
+            "findingTarget": null,
+            "calculatingOutcome": null,
+            "targetReport": null,
+            "assassinAssignment": null,
+            "targetAssignment": null,
+            "assassinDescription": null,
+            "targetDescription": null,
+            "startAssassinChat": null,
+            "joinAssassinChat": null
+        },
         "poolType": {
             "SOLID": "Kule pełne",
             "STRIPE": "Kule prążkowane"
@@ -2277,6 +2327,23 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Wprowadziłeś ósemkę do kieszeni za wcześnie.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Wprowadziłeś ósemkę do kieszeni na początku gry.",
                 "POCKETED_WRONG_BALL": "Wprowadziłeś do kieszeni niewłaściwą bilę."
+            }
+        },
+        "accountWarning": {
+            "title": "Ostrzeżenie dla Konta",
+            "description": "Dostałeś oficjalne ostrzeżenie dla konta. Wielokrotne ostrzeżenia skutkują surowszymi karami.",
+            "reasonTitle": "Powód",
+            "punishmentTitle": "Kara",
+            "reason": {
+                "BAD_NAME": "Twoja (poprzednia) nazwa użytkownika \"%{content}\" zawiera obraźliwe słowo, wulgaryzm lub inne nieodpowiednie wyrażenie.",
+                "GAME_QUIT": "Wykazałeś niesportowe zachowanie w poprzednich grach, wychodząc przed zakończeniem meczu.",
+                "TOXIC_CHAT": "Wykazałeś toksyczne zachowanie, używając czatu w poprzednich grach."
+            },
+            "punishment": {
+                "NAME_CHANGED": "Twoja nazwa użytkownika została zmieniona",
+                "NAME_BLOCKED": "Nie możesz już zmieniać swojej nazwy użytkownika",
+                "CHAT_BLOCKED": "Nie możesz korzystać z czatu w grze",
+                "MATCHMAKING_BLOCKED": "Nie możesz korzystać z dobierania graczy i publicznych lobby"
             }
         },
         "about": {

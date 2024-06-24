@@ -340,6 +340,18 @@ export default class TranslationClass {
 			[`info`, `cribbage`, `title`],
 			`These are Cribbage board game related terminologies.`
 		)
+		this.generateTranslationTask(
+			[`info`, `accountWarning`],
+			`These are messages related to an account receiving a warning.`
+		)
+		this.generateTranslationTask(
+			[`info`, `accountWarning`, `reason`],
+			`These are reasons why a player might get warned.`
+		)
+		this.generateTranslationTask(
+			[`info`, `accountWarning`, `punishment`],
+			`These are punishments a player might received after being warned.`
+		)
 		const cribbageTypes = Object.keys(EN_MESSAGES[`info`][`cribbage`][`type`])
 		for (const type of cribbageTypes) {
 			const target = EN_MESSAGES[`info`][`cribbage`][`type`][type]

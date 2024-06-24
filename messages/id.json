@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 1452,
-        "missing": 0
+        "total": 1500,
+        "missing": 10
     },
     "name": "Bloob.io",
     "error": {
@@ -30,6 +30,7 @@
             "generic": "Pelan-pelan dulu! Tunggu %{seconds} detik."
         },
         "generic": {
+            "startingUp": "Server masih lagi mulai. Coba segarkan halaman ini nanti.",
             "incorrectProductPrice": "Pembelian dibatalkan karena ada perbedaan harga. Yang diharapkan: %{expectedAmount}. Yang diterima: %{receivedAmount}.",
             "insufficientBalance": "Kamu nggak punya cukup koin untuk beli ini.",
             "invalidPurchaseWindow": "Maaf, produk ini nggak bisa dibeli sekarang.",
@@ -121,6 +122,7 @@
             "invalid": "Kamu nggak bisa pake \"%{id}\" sebagai preset."
         },
         "match": {
+            "blocked": "Hukumanmu nggak membolehkan kamu ikutan matchmaking atau pertandingan publik.",
             "empty": "Pertandingan ditutup. Semua pemain lain telah meninggalkan pertandingan.",
             "rematchTimeout": "Kamu nggak terima permintaan rematch dan dikirim balik ke menu utama.",
             "rematchCancelled": "Maaf! Nggak cukup pemain untuk rematch.",
@@ -137,6 +139,7 @@
             "full": "Pertandingan ini udah penuh (%{current}/%{max})."
         },
         "profile": {
+            "usernameBlocked": "Hukumanmu nggak boleh ganti username.",
             "profanity": "Nama panggilan tampaknya mengandung kata-kata kasar yang dilarang.",
             "missingData": "Nama pengguna dan/atau gambar hilang.",
             "invalidNickname": "Format nama panggilan salah.",
@@ -148,6 +151,7 @@
             "inGame": "Tidak bisa mengubah profil kamu saat game sedang berlangsung"
         },
         "requirement": {
+            "acknowledgeWarning": "Kamu harus mengakui peringatanmu untuk melakukan aksi ini.",
             "authentication": "Kamu harus masuk ke akunmu dulu untuk melakukan aksi ini.",
             "credentials": "Kredensial yang kamu berikan nggak valid.",
             "validAccount": "Akunmu belum divalidasi. Tolong simpan perubahan profil kamu.",
@@ -204,6 +208,18 @@
                 "turnTime": {
                     "title": "Waktu Giliran",
                     "help": "Waktu yang dimiliki seorang pemain sebelum gilirannya diberikan ke pemain selanjutnya."
+                },
+                "inputTime": {
+                    "title": "Waktu Masukan",
+                    "help": "Waktu yang dimiliki pemain untuk mengisi input. Game akan tetap berlanjut, siap atau tidak siap, saat waktu habis."
+                },
+                "continueAutomatically": {
+                    "title": "Lanjutkan Secara Otomatis",
+                    "help": "Ubah apakah game harus melanjutkan secara otomatis atau menunggu semua orang mengkonfirmasi bahwa mereka siap."
+                },
+                "continueTime": {
+                    "title": "Waktu Lanjut",
+                    "help": "Ketika tombol lanjut muncul, tentukan berapa lama sebelum game berlanjut dengan sendirinya."
                 },
                 "timeFreedomMode": {
                     "title": "Mode Kebebasan Waktu",
@@ -1302,6 +1318,16 @@
                     ]
                 }
             }
+        },
+        "AI_ASSASSIN": {
+            "name": "Pembunuh AI",
+            "heading": "Jadilah Pembunuh atau Bertahan sebagai Target di AI Assassin!",
+            "tooltip": "Sebuah permainan berisiko tinggi yang mengandalkan kecerdasan dimana setiap petunjuk penting. Apakah kamu si pembunuh atau sasaran?",
+            "description": "AI Assassin adalah game multiplayer seru dimana kamu bisa menghabisi target atau mengelabui para pembunuh. Gunakan petunjuk strategis untuk mencapai tujuan dan berhasil.",
+            "title": "Kalahkan, Singkirkan, Bertahan Hidup",
+            "options": {},
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1386,6 +1412,9 @@
             "roundCount": "Ronde %{current} dari %{total}",
             "roundCurrent": "Putaran %{current}",
             "war": "Perang!",
+            "outcome": "Hasil",
+            "input": "Menunggu masukanmu",
+            "waitingForAI": "Menunggu AI...",
             "dealingCards": "Lagi bagi-bagi kartu nih...",
             "youPickStarterCard": "Kamu harus pilih kartu awal",
             "namePickStarterCard": "%{name} harus pilih kartu awal",
@@ -1409,7 +1438,8 @@
         "matchId": "Cocokkan ID atau URL...",
         "message": "Pesan...",
         "username": "Nama pengguna",
-        "password": "Kata sandi"
+        "password": "Kata sandi",
+        "textarea": "Ketik di sini..."
     },
     "language": {
         "nl-NL": "Belanda",
@@ -1617,6 +1647,7 @@
         "includesItems": "Termasuk {count} item | Termasuk {count} item | Termasuk {count} item"
     },
     "misc": {
+        "permanent": "Permanen",
         "total": "Total",
         "judge": "Hakim",
         "dealer": "Pedagang",
@@ -1627,6 +1658,7 @@
         "starter": "Pemula",
         "cards": "Kartu",
         "type": "Tipe",
+        "iUnderstand": "Aku mengerti",
         "scoringSystem": "Sistem Penilaian",
         "notEnoughData": "Data tidak cukup",
         "averageWaitTime": "Waktu tunggu rata-rata",
@@ -1721,9 +1753,11 @@
         "percentage": "{percentage}%",
         "percentageDisabled": "{percentage}% (Nonaktif)",
         "scrollBackDown": "Gulir ke bawah lagi",
+        "yourInput": "Masukanmu",
         "pickYourself": "Pilih sendiri",
         "highPing": "Ping kamu tinggi (%{ping}ms)",
         "currentRoundCount": "Ronde (%{current}/%{total})",
+        "currentContinueCount": "Lanjutkan (%{current}/%{total})",
         "currentSkipCount": "Lewati (%{current}/%{total})",
         "currentReadyCount": "Siap (%{current}/%{total})",
         "assignedTypeSelf": "Kamu adalah %{type}",
@@ -1763,6 +1797,10 @@
         "hitRate": "Tingkat Hit",
         "rank": "Peringkat",
         "kills": "Bunuh",
+        "assassin": "Pembunuh bayaran",
+        "target": "Sasaran",
+        "assassinations": "Pembunuhan",
+        "survivals": "Bertahan hidup",
         "games": "Game",
         "winRatio": "Rasio Menang",
         "killDeathRatio": "Rasio K/D",
@@ -2249,6 +2287,18 @@
             "earnsSum": "Dapetin total dari semua dadu yang digabung.",
             "noPointsWarning": "Gerakan ini nggak bakal ngasih kamu poin. Ada pilihan lain yang bisa ngasih kamu poin."
         },
+        "ai": {
+            "ready": null,
+            "findingTarget": null,
+            "calculatingOutcome": null,
+            "targetReport": null,
+            "assassinAssignment": null,
+            "targetAssignment": null,
+            "assassinDescription": null,
+            "targetDescription": null,
+            "startAssassinChat": null,
+            "joinAssassinChat": null
+        },
         "poolType": {
             "SOLID": "Bola Polos",
             "STRIPE": "Bola Bergaris"
@@ -2277,6 +2327,23 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Kamu memasukkan bola delapan terlalu dini.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Kamu memasukkan bola delapan saat break.",
                 "POCKETED_WRONG_BALL": "Kamu memasukkan bola yang salah."
+            }
+        },
+        "accountWarning": {
+            "title": "Peringatan Akun",
+            "description": "Kamu udah dapet peringatan resmi buat akunmu. Kalo dapet peringatan banyak-banyak, hukumannya bakal makin berat lho.",
+            "reasonTitle": "Alasan",
+            "punishmentTitle": "Hukuman",
+            "reason": {
+                "BAD_NAME": "Nama pengguna kamu sebelumnya \"%{content}\" mengandung kata kasar, umpatan, atau bahasa yang tidak pantas lainnya.",
+                "GAME_QUIT": "Kamu telah menunjukkan perilaku tidak sportif di game sebelumnya dengan meninggalkan pertandingan sebelum selesai.",
+                "TOXIC_CHAT": "Kamu telah menunjukkan perilaku toxic dengan penggunaan chat di game sebelumnya."
+            },
+            "punishment": {
+                "NAME_CHANGED": "Nama penggunamu udah diganti",
+                "NAME_BLOCKED": "Kamu udah diblokir buat ganti nama pengguna",
+                "CHAT_BLOCKED": "Kamu udah diblokir buat pake obrolan dalam game",
+                "MATCHMAKING_BLOCKED": "Kamu udah diblokir buat ikutan pencocokan dan lobi publik"
             }
         },
         "about": {
