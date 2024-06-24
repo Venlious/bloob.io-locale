@@ -50,7 +50,8 @@ export enum GameType {
 	superTicTacToe = `SUPER_TIC_TAC_TOE`,
 	battleship = `BATTLESHIP`,
 	cribbage = `CRIBBAGE`,
-	war = `WAR`
+	war = `WAR`,
+	aiAssassin = `AI_ASSASSIN`
 }
 
 export enum CheckersKingType {
