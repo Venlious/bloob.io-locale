@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Norwegian (Bokmål)",
         "rtl": false,
-        "total": 1452,
-        "missing": 0
+        "total": 1500,
+        "missing": 21
     },
     "name": "Bloob.io",
     "error": {
@@ -30,6 +30,7 @@
             "generic": "Ro ned litt! Vent %{seconds} sekund(er)."
         },
         "generic": {
+            "startingUp": "Serveren starter fortsatt opp. Prøv å oppdatere denne siden senere.",
             "incorrectProductPrice": "Kjøpet ble avbrutt på grunn av prisforskjell. Forventet: %{expectedAmount}. Mottatt: %{receivedAmount}.",
             "insufficientBalance": "Du har ikke nok mynter til å kjøpe dette.",
             "invalidPurchaseWindow": "Beklager, men du kan ikke kjøpe dette produktet akkurat nå.",
@@ -121,6 +122,7 @@
             "invalid": "Du kan ikke bruke \"%{id}\" som en forhåndsinnstilling."
         },
         "match": {
+            "blocked": "Straffen din tillater ikke at du deltar i matchmaking eller offentlige kamper.",
             "empty": "Kampen er avsluttet. Alle andre spillere har forlatt kampen.",
             "rematchTimeout": "Du godtok ikke omkamp forespørselen og ble sendt tilbake til hovedmenyen.",
             "rematchCancelled": "Beklager! Det er ikke nok spillere igjen for en omkamp.",
@@ -137,6 +139,7 @@
             "full": "Denne kampen er allerede full (%{current}/%{max})."
         },
         "profile": {
+            "usernameBlocked": "Straffen din tillater ikke at du endrer brukernavnet ditt.",
             "profanity": "Kallenavnet ser ut til å inneholde forbudt banning.",
             "missingData": "Mangler brukernavn og/eller bildeargumenter.",
             "invalidNickname": "Kallenavnet er feil formatert.",
@@ -148,6 +151,7 @@
             "inGame": "Du kan ikke tilpasse profilen din mens spillet pågår"
         },
         "requirement": {
+            "acknowledgeWarning": "Du må bekrefte advarselen din for å utføre denne handlingen.",
             "authentication": "Du må være logget inn på kontoen din for å gjøre dette.",
             "credentials": "Du har gitt ugyldige legitimasjoner.",
             "validAccount": "Kontoen din er ikke validert ennå. Vennligst lagre profilendringene dine.",
@@ -204,6 +208,18 @@
                 "turnTime": {
                     "title": "Turtid",
                     "help": "Mengden tid en spiller har før turen deres går videre til neste spiller."
+                },
+                "inputTime": {
+                    "title": "Inntastningstid",
+                    "help": "Mengden tid en spiller har til å fylle inn en input. Spillet vil fortsette uansett om de er klare når tiden går ut."
+                },
+                "continueAutomatically": {
+                    "title": "Fortsett Automatisk",
+                    "help": "Bytt om spillet skal fortsette automatisk eller vente til alle bekrefter at de er klare."
+                },
+                "continueTime": {
+                    "title": "Fortsettelsestid",
+                    "help": "Når en fortsett-knapp dukker opp, bestem hvor lang tid det skal ta før spillet fortsetter uansett."
                 },
                 "timeFreedomMode": {
                     "title": "Modus for Tidsfrihet",
@@ -1302,6 +1318,16 @@
                     ]
                 }
             }
+        },
+        "AI_ASSASSIN": {
+            "name": "AI Snikmorder",
+            "heading": "Vær snikmorderen eller overlev som målet i AI Assassin!",
+            "tooltip": "Et høyrisikospill med kløkt der hvert hint teller. Er du snikmorderen eller målet?",
+            "description": "AI Assassin er et spennende flerspiller spill hvor du enten eliminerer målet eller lurer morderne. Bruk strategiske hint for å nå målet ditt og lykkes.",
+            "title": "Overlist, Eliminer, Overlev",
+            "options": {},
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1386,6 +1412,9 @@
             "roundCount": "Runde %{current} av %{total}",
             "roundCurrent": "Runde %{current}",
             "war": "Krig!",
+            "outcome": "Resultat",
+            "input": "Venter på ditt valg",
+            "waitingForAI": "Venter på AI-en...",
             "dealingCards": "Deler ut kort...",
             "youPickStarterCard": "Du må velge startkortet",
             "namePickStarterCard": "%{name} må velge startkortet",
@@ -1409,7 +1438,8 @@
         "matchId": "Match ID eller URL...",
         "message": "Melding...",
         "username": "Brukernavn",
-        "password": "Passord"
+        "password": "Passord",
+        "textarea": "Skriv her..."
     },
     "language": {
         "nl-NL": "Nederlandsk",
@@ -1617,6 +1647,7 @@
         "includesItems": "Inkluderer {count} ting | Inkluderer {count} ting | Inkluderer {count} ting"
     },
     "misc": {
+        "permanent": "Permanent",
         "total": "Totalt",
         "judge": "Dommer",
         "dealer": "Forhandler",
@@ -1627,6 +1658,7 @@
         "starter": "Starter",
         "cards": "Kort",
         "type": "Type",
+        "iUnderstand": "Jeg skjønner",
         "scoringSystem": "Poengsystem",
         "notEnoughData": "Ikke nok data",
         "averageWaitTime": "Gjennomsnittlig ventetid",
@@ -1721,9 +1753,11 @@
         "percentage": "{percentage}%",
         "percentageDisabled": "{percentage}% (Deaktivert)",
         "scrollBackDown": "Rull ned igjen",
+        "yourInput": "Din inndata",
         "pickYourself": "Velg for deg selv",
         "highPing": "Ping-en din er høy (%{ping}ms)",
         "currentRoundCount": "Runde (%{current}/%{total})",
+        "currentContinueCount": "Fortsett (%{current}/%{total})",
         "currentSkipCount": "Hopp over (%{current}/%{total})",
         "currentReadyCount": "Klar (%{current}/%{total})",
         "assignedTypeSelf": "Du er %{type}",
@@ -1763,6 +1797,10 @@
         "hitRate": "Treffrate",
         "rank": "Rangering",
         "kills": "Drap",
+        "assassin": "Snikmorder",
+        "target": "Mål",
+        "assassinations": "Drap",
+        "survivals": "Overlevelser",
         "games": "Spill",
         "winRatio": "Seiersforhold",
         "killDeathRatio": "K/D-forhold",
@@ -2249,6 +2287,18 @@
             "earnsSum": "Tjener totalen av alle terningene kombinert.",
             "noPointsWarning": "Dette trekket gir deg ikke noen poeng. Det finnes andre valg som faktisk gir deg poeng."
         },
+        "ai": {
+            "ready": null,
+            "findingTarget": null,
+            "calculatingOutcome": null,
+            "targetReport": null,
+            "assassinAssignment": null,
+            "targetAssignment": null,
+            "assassinDescription": null,
+            "targetDescription": null,
+            "startAssassinChat": null,
+            "joinAssassinChat": null
+        },
         "poolType": {
             "SOLID": "Ensfargede",
             "STRIPE": "Stripete"
@@ -2277,6 +2327,23 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Du senket åtterballen for tidlig.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Du senket åtterballen på åpningsstøtet.",
                 "POCKETED_WRONG_BALL": "Du senket feil ball."
+            }
+        },
+        "accountWarning": {
+            "title": null,
+            "description": null,
+            "reasonTitle": null,
+            "punishmentTitle": null,
+            "reason": {
+                "BAD_NAME": null,
+                "GAME_QUIT": null,
+                "TOXIC_CHAT": null
+            },
+            "punishment": {
+                "NAME_CHANGED": null,
+                "NAME_BLOCKED": null,
+                "CHAT_BLOCKED": null,
+                "MATCHMAKING_BLOCKED": null
             }
         },
         "about": {

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Yiddish",
         "rtl": false,
-        "total": 1452,
-        "missing": 0
+        "total": 1500,
+        "missing": 21
     },
     "name": "Bloob.io",
     "error": {
@@ -30,6 +30,7 @@
             "generic": "Zog zikh a bisele! Vart %{seconds} sekunde(n)."
         },
         "generic": {
+            "startingUp": "Der server is nokh onhebn. Versuch es noch a mol shpeter.",
             "incorrectProductPrice": "Kauf abgebrochen wegen a preis ungleichheit. Erwartet: %{expectedAmount}. Bekommen: %{receivedAmount}.",
             "insufficientBalance": "Du host nisht genug gelt far dem kauf.",
             "invalidPurchaseWindow": "Entschuldigung, men ken nisht koyfn dem produkt itst.",
@@ -121,6 +122,7 @@
             "invalid": "Du kenst nisht nemen \"%{id}\" vi a preset."
         },
         "match": {
+            "blocked": "Dein shtrof lozt dich nisht mitmachen in matchmaking oder offentliche shpiln.",
             "empty": "Shpil farshlossen. Ale andere shpilers zenen avek fun dem shpil.",
             "rematchTimeout": "Du host nisht akzeptirt dem vider-shpil bakoshe un bist gezent tsurik tsu dem haupt menu.",
             "rematchCancelled": "Entshuldik! Es zenen nisht genug shpilers nokh do far a vider-shpil.",
@@ -137,6 +139,7 @@
             "full": "Dose match iz shoyn ful (%{current}/%{max})."
         },
         "profile": {
+            "usernameBlocked": "Dein shtrof lozt dir nisht tsu derrenen dayn usernamen.",
             "profanity": "Der shpitzname hot farbodene shmutzike red.",
             "missingData": "Fehlt a benutzername un/oder bild argumentn.",
             "invalidNickname": "Der shpitzname is nit richtig formatirt.",
@@ -148,6 +151,7 @@
             "inGame": "Kenst nisht farbesern dayn profil ven dos shpil iz in gang"
         },
         "requirement": {
+            "acknowledgeWarning": "Du musst dayn varnung akhtung geben far tsu ton dem akt.",
             "authentication": "Du musst oyfgelegt zayn in dayn account far tsu ton dem akt.",
             "credentials": "Du host gegebn falsheh identifikatsye.",
             "validAccount": "Dayn account iz nit nokh nit gevalideert. Zay a guter un save dayn profil changes.",
@@ -204,6 +208,18 @@
                 "turnTime": {
                     "title": "Drey Zayt",
                     "help": "Di menge tsayt a shpiler hot far irn tirn iz gegebn tsu dem nekstn shpiler."
+                },
+                "inputTime": {
+                    "title": "Eingabe Zeit",
+                    "help": "Der tsayt a shpiler hot tsu oysfuln an input. Dos shpil vet geyn vayter, gleykh vi az zey zaynen geredt ven tsayt iz aroys."
+                },
+                "continueAutomatically": {
+                    "title": "Fahr Vayter Oytomatish",
+                    "help": "Shaltz avek az di shpil zol geyn otomatish oder vartn far ale tsu batishtatn zey zaynen greyt."
+                },
+                "continueTime": {
+                    "title": "Fortshtseyt Tsayt",
+                    "help": "Ven a \"continue\" knop erscheint, entscheid vie lang es zol nemen bevor dem spiel macht weiter oif zich alein."
                 },
                 "timeFreedomMode": {
                     "title": "Zeit Frayhayt Modus",
@@ -1302,6 +1318,16 @@
                     ]
                 }
             }
+        },
+        "AI_ASSASSIN": {
+            "name": "AI Morder",
+            "heading": "Zayn der Morder oder Leb'n als der Tsil in AI Morder!",
+            "tooltip": "A hokh-shtekl shpil fun seykhl vu yeder prompt tselt. Bistu der morder oder der tsil?",
+            "description": "AI Assassin iz a shpilndik multiplayer shpil vu du entfern di tsil oder bist kliger fun di assassins. Nuts strategishe prompts tsu ergraykhn dayn tsil un hobn hatslokhe.",
+            "title": "\"Outschlau, Eliminir, Iberleb\"",
+            "options": {},
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1386,6 +1412,9 @@
             "roundCount": "Rund %{current} fun %{total}",
             "roundCurrent": "Rund %{current}",
             "war": "Krig!",
+            "outcome": "Resultat",
+            "input": "Mir vartn af dayn input",
+            "waitingForAI": "Vartn far dem AI...",
             "dealingCards": "Dealt karts...",
             "youPickStarterCard": "Du musst di ershte kart oyskleybn",
             "namePickStarterCard": "%{name} darf di ershte kart oyskleybn",
@@ -1409,7 +1438,8 @@
         "matchId": "Pasn ID oder URL...",
         "message": "Meldung...",
         "username": "Benutzername",
-        "password": "Passvort"
+        "password": "Passvort",
+        "textarea": "Type here..."
     },
     "language": {
         "nl-NL": "Hollandish",
@@ -1617,6 +1647,7 @@
         "includesItems": "Beinhaltet {count} sakhn | Beinhaltet {count} sakh | Beinhaltet {count} sakhn"
     },
     "misc": {
+        "permanent": "Shtendik",
         "total": "Gantse",
         "judge": "Dayan",
         "dealer": "Handler",
@@ -1627,6 +1658,7 @@
         "starter": "Anfanger",
         "cards": "Kartelekh",
         "type": "Zort",
+        "iUnderstand": "Ikh farshtey",
         "scoringSystem": "Punktirung Sistehm",
         "notEnoughData": "Nit genug daten",
         "averageWaitTime": "Durchschnittlich vart tsayt",
@@ -1721,9 +1753,11 @@
         "percentage": "{percentage}%",
         "percentageDisabled": "{percentage}% (Farloshn)",
         "scrollBackDown": "Blatser arop nokh a mol",
+        "yourInput": "Dayn input",
         "pickYourself": "Nem far zikh aleyn",
         "highPing": "Dayn ping iz hoykh (%{ping}ms)",
         "currentRoundCount": "Rund (%{current}/%{total})",
+        "currentContinueCount": "Farzetzen (%{current}/%{total})",
         "currentSkipCount": "Ibergeyn (%{current}/%{total})",
         "currentReadyCount": "Bereyt (%{current}/%{total})",
         "assignedTypeSelf": "Du bist %{type}",
@@ -1763,6 +1797,10 @@
         "hitRate": "Treffer Rate",
         "rank": "Rang",
         "kills": "Toites",
+        "assassin": "Morder",
+        "target": "Tsil",
+        "assassinations": "Ermordungen",
+        "survivals": "Iberlebungen",
         "games": "Shpiln",
         "winRatio": "Gevinz Rate",
         "killDeathRatio": "Teyt/Lebn Rate",
@@ -2249,6 +2287,18 @@
             "earnsSum": "Verdient der gantzer sum fun ale vurfels tsuzamen.",
             "noPointsWarning": "Mit dem zug wirstu nisht kenen punkten. Es zaynen andere opsies vos gebn dir punkten."
         },
+        "ai": {
+            "ready": null,
+            "findingTarget": null,
+            "calculatingOutcome": null,
+            "targetReport": null,
+            "assassinAssignment": null,
+            "targetAssignment": null,
+            "assassinDescription": null,
+            "targetDescription": null,
+            "startAssassinChat": null,
+            "joinAssassinChat": null
+        },
         "poolType": {
             "SOLID": "Feste",
             "STRIPE": "Shtreifen"
@@ -2277,6 +2327,23 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Du host de acht ball tsu fri arayngelegt.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Du host de acht ball arayngelegt afn brek.",
                 "POCKETED_WRONG_BALL": "Du host de falshe ball arayngelegt."
+            }
+        },
+        "accountWarning": {
+            "title": null,
+            "description": null,
+            "reasonTitle": null,
+            "punishmentTitle": null,
+            "reason": {
+                "BAD_NAME": null,
+                "GAME_QUIT": null,
+                "TOXIC_CHAT": null
+            },
+            "punishment": {
+                "NAME_CHANGED": null,
+                "NAME_BLOCKED": null,
+                "CHAT_BLOCKED": null,
+                "MATCHMAKING_BLOCKED": null
             }
         },
         "about": {

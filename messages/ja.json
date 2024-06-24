@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Japanese",
         "rtl": false,
-        "total": 1452,
-        "missing": 0
+        "total": 1500,
+        "missing": 21
     },
     "name": "Bloob.io",
     "error": {
@@ -30,6 +30,7 @@
             "generic": "少し落ち着いて！%{seconds}秒間待ってください。"
         },
         "generic": {
+            "startingUp": "サーバーはまだ起動中だよ。後でこのページを更新してみてね。",
             "incorrectProductPrice": "価格の不一致により購入がキャンセルされました。期待値: %{expectedAmount}。受け取った: %{receivedAmount}。",
             "insufficientBalance": "この購入にはコインが足りません。",
             "invalidPurchaseWindow": "ごめんなさい、この商品は現在購入できません。",
@@ -121,6 +122,7 @@
             "invalid": "\"%{id}\"をプリセットとして使うことはできません。"
         },
         "match": {
+            "blocked": "君の罰のせいで、マッチメイキングや公開マッチに参加できないんだよ。",
             "empty": "マッチ終了。他のプレイヤーは全員マッチを抜けました。",
             "rematchTimeout": "リマッチのリクエストを受け入れなかったので、メインメニューに戻されました。",
             "rematchCancelled": "ごめんなさい！リマッチに必要なプレイヤーが足りません。",
@@ -137,6 +139,7 @@
             "full": "このマッチはすでに満員だよ（%{current}/%{max}）。"
         },
         "profile": {
+            "usernameBlocked": "君の罰として、ユーザーネームを変えることは許されないよ。",
             "profanity": "ニックネームに禁止されている卑猥な言葉が含まれているようだね。",
             "missingData": "ユーザーネームと/または画像の引数が足りないよ。",
             "invalidNickname": "ニックネームの形式が間違っているよ。",
@@ -148,6 +151,7 @@
             "inGame": "ゲーム進行中はプロフィールのカスタマイズができません"
         },
         "requirement": {
+            "acknowledgeWarning": "このアクションを実行するには、警告を認識しなければならないよ。",
             "authentication": "このアクションを実行するには、アカウントにログインしている必要があります。",
             "credentials": "認証情報が間違っていますよ。",
             "validAccount": "まだアカウントが確認されていません。プロフィールの変更を保存してください。",
@@ -204,6 +208,18 @@
                 "turnTime": {
                     "title": "ターン時間",
                     "help": "プレイヤーが次のプレイヤーにターンを渡すまでの時間。"
+                },
+                "inputTime": {
+                    "title": "入力時間",
+                    "help": "プレイヤーが入力を完成させるための時間。時間が経過しても、彼らが準備できているかどうかに関係なく、ゲームは続行されます。"
+                },
+                "continueAutomatically": {
+                    "title": "自動的に続ける",
+                    "help": "ゲームが自動的に続行するか、全員が準備ができたことを確認するまで待つかを切り替えるよ。"
+                },
+                "continueTime": {
+                    "title": "続行時間",
+                    "help": "「続ける」ボタンが表示されたら、ゲームが自動的に続くまでどのくらい時間を設定するか決めてね。"
                 },
                 "timeFreedomMode": {
                     "title": "時間自由モード",
@@ -1302,6 +1318,16 @@
                     ]
                 }
             }
+        },
+        "AI_ASSASSIN": {
+            "name": "AI アサシン",
+            "heading": "AIアサシンで暗殺者になるか、ターゲットとして生き残るか！",
+            "tooltip": "すべてのプロンプトが重要な知恵の高額賭けゲーム。あなたは暗殺者？それともターゲット？",
+            "description": "AIアサシンはスリリングなマルチプレイヤーゲームです。ターゲットを排除するか、アサシンを出し抜くかを選びます。戦略的なプロンプトを使って目標を達成し、成功を収めましょう。",
+            "title": "賢く, 撃退, 生き残る",
+            "options": {},
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1386,6 +1412,9 @@
             "roundCount": "現在のラウンドは%{current}、全体のラウンドは%{total}だよ",
             "roundCurrent": "ラウンド%{current}",
             "war": "戦争だ！",
+            "outcome": "結果",
+            "input": "あなたの入力を待っています",
+            "waitingForAI": "AIの反応を待っています...",
             "dealingCards": "カードを配っています...",
             "youPickStarterCard": "スターターカードを選ばなきゃ",
             "namePickStarterCard": "%{name}がスターターカードを選ばなきゃ",
@@ -1409,7 +1438,8 @@
         "matchId": "IDかURLをマッチさせてね...",
         "message": "メッセージを入力してね...",
         "username": "ユーザーネーム",
-        "password": "パスワード"
+        "password": "パスワード",
+        "textarea": "ここに入力して..."
     },
     "language": {
         "nl-NL": "オランダ語",
@@ -1617,6 +1647,7 @@
         "includesItems": "{count}個のアイテムが含まれてるよ | {count}個のアイテムが含まれてるよ | {count}個のアイテムが含まれてるよ"
     },
     "misc": {
+        "permanent": "永久的",
         "total": "合計",
         "judge": "審判",
         "dealer": "ディーラー",
@@ -1627,6 +1658,7 @@
         "starter": "スターター",
         "cards": "カード",
         "type": "タイプ",
+        "iUnderstand": "分かった",
         "scoringSystem": "スコアリングシステム",
         "notEnoughData": "データ不足",
         "averageWaitTime": "平均待ち時間",
@@ -1721,9 +1753,11 @@
         "percentage": "{percentage}%",
         "percentageDisabled": "{percentage}% (無効)",
         "scrollBackDown": "下にスクロールする",
+        "yourInput": "あなたの入力",
         "pickYourself": "自分で選ぶ",
         "highPing": "ピングが高いよ (%{ping}ms)",
         "currentRoundCount": "ラウンド (%{current}/%{total})",
+        "currentContinueCount": "続ける (%{current}/%{total})",
         "currentSkipCount": "スキップ (%{current}/%{total})",
         "currentReadyCount": "準備OK (%{current}/%{total})",
         "assignedTypeSelf": "あなたは%{type}だよ",
@@ -1763,6 +1797,10 @@
         "hitRate": "ヒット率",
         "rank": "ランク",
         "kills": "キル数",
+        "assassin": "アサシン",
+        "target": "ターゲット",
+        "assassinations": "暗殺",
+        "survivals": "生存",
         "games": "ゲーム数",
         "winRatio": "勝率",
         "killDeathRatio": "K/D比率",
@@ -2249,6 +2287,18 @@
             "earnsSum": "全てのダイスの合計を獲得するよ。",
             "noPointsWarning": "この動きでポイントは稼げないよ。ポイントがもらえる他の選択肢もあるからさ。"
         },
+        "ai": {
+            "ready": null,
+            "findingTarget": null,
+            "calculatingOutcome": null,
+            "targetReport": null,
+            "assassinAssignment": null,
+            "targetAssignment": null,
+            "assassinDescription": null,
+            "targetDescription": null,
+            "startAssassinChat": null,
+            "joinAssassinChat": null
+        },
         "poolType": {
             "SOLID": "ソリッド",
             "STRIPE": "ストライプ"
@@ -2277,6 +2327,23 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "8番ボールを早すぎてポケットに入れました。",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "ブレイク時に8番ボールをポケットに入れました。",
                 "POCKETED_WRONG_BALL": "間違ったボールをポケットに入れました。"
+            }
+        },
+        "accountWarning": {
+            "title": null,
+            "description": null,
+            "reasonTitle": null,
+            "punishmentTitle": null,
+            "reason": {
+                "BAD_NAME": null,
+                "GAME_QUIT": null,
+                "TOXIC_CHAT": null
+            },
+            "punishment": {
+                "NAME_CHANGED": null,
+                "NAME_BLOCKED": null,
+                "CHAT_BLOCKED": null,
+                "MATCHMAKING_BLOCKED": null
             }
         },
         "about": {

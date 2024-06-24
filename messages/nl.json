@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Dutch",
         "rtl": false,
-        "total": 1452,
-        "missing": 0
+        "total": 1500,
+        "missing": 21
     },
     "name": "Bloob.io",
     "error": {
@@ -30,6 +30,7 @@
             "generic": "Rustig aan! Wacht %{seconds} seconde(n)."
         },
         "generic": {
+            "startingUp": "De server start nog steeds op. Probeer deze pagina later nog eens te vernieuwen.",
             "incorrectProductPrice": "Aankoop geannuleerd vanwege prijsverschil. Verwacht: %{expectedAmount}. Ontvangen: %{receivedAmount}.",
             "insufficientBalance": "Je hebt niet genoeg munten voor deze aankoop.",
             "invalidPurchaseWindow": "Sorry, dit product kan nu niet gekocht worden.",
@@ -121,6 +122,7 @@
             "invalid": "Je kunt \"%{id}\" niet als preset gebruiken."
         },
         "match": {
+            "blocked": "Je straf laat je niet toe om mee te doen aan matchmaking of openbare wedstrijden.",
             "empty": "Spel gesloten. Alle andere spelers verlieten de wedstrijd.",
             "rematchTimeout": "Je hebt het rematch verzoek niet geaccepteerd en bent teruggestuurd naar het hoofdmenu.",
             "rematchCancelled": "Sorry! Er zijn niet genoeg spelers over voor een rematch.",
@@ -137,6 +139,7 @@
             "full": "Dit spel is al vol (%{current}/%{max})."
         },
         "profile": {
+            "usernameBlocked": "Je straf laat je niet toe om je gebruikersnaam te veranderen.",
             "profanity": "Nickname lijkt verboden taal te bevatten.",
             "missingData": "Ontbrekende nickname en/of karakter argumenten.",
             "invalidNickname": "Nickname is onjuist geformatteerd.",
@@ -148,6 +151,7 @@
             "inGame": "Je kunt je profiel niet aanpassen terwijl het spel al is begonnen."
         },
         "requirement": {
+            "acknowledgeWarning": "Je moet je waarschuwing erkennen om deze actie uit te voeren.",
             "authentication": "Je moet ingelogd zijn op je account om deze actie uit te voeren.",
             "credentials": "Je hebt ongeldige inloggegevens opgegeven.",
             "validAccount": "Je account is nog niet gevalideerd. Gelieve je profielwijzigingen op te slaan.",
@@ -204,6 +208,18 @@
                 "turnTime": {
                     "title": "Beurt Tijd",
                     "help": "De tijd die een speler heeft voordat zijn beurt naar de volgende speler gaat."
+                },
+                "inputTime": {
+                    "title": "Invoertijd",
+                    "help": "De hoeveelheid tijd die een speler heeft om een invoer in te vullen. Het spel gaat gewoon door, of ze nou klaar zijn of niet als de tijd op is."
+                },
+                "continueAutomatically": {
+                    "title": "Automatisch Doorgaan",
+                    "help": "Schakel tussen of het spel automatisch moet doorgaan of wachten tot iedereen bevestigt dat ze klaar zijn."
+                },
+                "continueTime": {
+                    "title": "Doorgaan Tijd",
+                    "help": "Wanneer een doorgaan-knop verschijnt, beslis hoe lang het zou moeten duren voordat het spel sowieso doorgaat."
                 },
                 "timeFreedomMode": {
                     "title": "Tijd Vrijheid Modus",
@@ -1302,6 +1318,16 @@
                     ]
                 }
             }
+        },
+        "AI_ASSASSIN": {
+            "name": "AI Moordenaar",
+            "heading": "Wees de Moordenaar of Overleef als het Doelwit in AI Moordenaar!",
+            "tooltip": "Een spannend spel van verstand waarbij elke aanwijzing telt. Ben jij de moordenaar of het doelwit?",
+            "description": "AI Assassin is een spannend multiplayer spel waar je het doelwit uitschakelt of de moordenaars te slim af bent. Gebruik strategische aanwijzingen om je doel te bereiken en te winnen.",
+            "title": "Versla, Elimineer, Overleef",
+            "options": {},
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1386,6 +1412,9 @@
             "roundCount": "Ronde %{current} van de %{total}",
             "roundCurrent": "Ronde %{current}",
             "war": "Oorlog!",
+            "outcome": "Uitslag",
+            "input": "Wachten op jouw invoer",
+            "waitingForAI": "Wachten op de AI...",
             "dealingCards": "Kaarten delen...",
             "youPickStarterCard": "Jij moet de startkaart kiezen",
             "namePickStarterCard": "%{name} moet de startkaart kiezen",
@@ -1409,7 +1438,8 @@
         "matchId": "Spel ID of URL...",
         "message": "Bericht...",
         "username": "Gebruikersnaam",
-        "password": "Wachtwoord"
+        "password": "Wachtwoord",
+        "textarea": "Schrijf hier..."
     },
     "language": {
         "nl-NL": "Nederlands",
@@ -1617,6 +1647,7 @@
         "includesItems": "Bevat {count} items | Bevat {count} item | Bevat {count} items"
     },
     "misc": {
+        "permanent": "Permanent",
         "total": "Totaal",
         "judge": "Rechter",
         "dealer": "Dealer",
@@ -1627,6 +1658,7 @@
         "starter": "Beginner",
         "cards": "Kaarten",
         "type": "Type",
+        "iUnderstand": "Ik snap het",
         "scoringSystem": "Puntensysteem",
         "notEnoughData": "Niet genoeg data",
         "averageWaitTime": "Gemiddelde wachttijd",
@@ -1721,9 +1753,11 @@
         "percentage": "{percentage}%",
         "percentageDisabled": "{percentage}% (Uitgeschakeld)",
         "scrollBackDown": "Scroll terug",
+        "yourInput": "Jouw invoer",
         "pickYourself": "Kies voor jezelf",
         "highPing": "Je ping is hoog (%{ping}ms)",
         "currentRoundCount": "Ronde (%{current}/%{total})",
+        "currentContinueCount": "Ga door (%{current}/%{total})",
         "currentSkipCount": "Sla over (%{current}/%{total})",
         "currentReadyCount": "Gereed (%{current}/%{total})",
         "assignedTypeSelf": "Jij bent %{type}",
@@ -1763,6 +1797,10 @@
         "hitRate": "Hitpercentage",
         "rank": "Plaats",
         "kills": "Kills",
+        "assassin": "Moordenaar",
+        "target": "Doelwit",
+        "assassinations": "Moorden",
+        "survivals": "Overlevingen",
         "games": "Spellen",
         "winRatio": "Winratio",
         "killDeathRatio": "K/D-ratio",
@@ -2249,6 +2287,18 @@
             "earnsSum": "Verdient het totaal van alle dobbelstenen samen.",
             "noPointsWarning": "Deze zet je geen punten op. Er zijn andere keuzes die je wel punten kunnen opleveren."
         },
+        "ai": {
+            "ready": null,
+            "findingTarget": null,
+            "calculatingOutcome": null,
+            "targetReport": null,
+            "assassinAssignment": null,
+            "targetAssignment": null,
+            "assassinDescription": null,
+            "targetDescription": null,
+            "startAssassinChat": null,
+            "joinAssassinChat": null
+        },
         "poolType": {
             "SOLID": "Effen",
             "STRIPE": "Gestreept"
@@ -2277,6 +2327,23 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Je hebt de achtbal te vroeg gepot.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Je hebt de achtbal bij de afstoot gepot.",
                 "POCKETED_WRONG_BALL": "Je hebt de verkeerde bal gepot."
+            }
+        },
+        "accountWarning": {
+            "title": null,
+            "description": null,
+            "reasonTitle": null,
+            "punishmentTitle": null,
+            "reason": {
+                "BAD_NAME": null,
+                "GAME_QUIT": null,
+                "TOXIC_CHAT": null
+            },
+            "punishment": {
+                "NAME_CHANGED": null,
+                "NAME_BLOCKED": null,
+                "CHAT_BLOCKED": null,
+                "MATCHMAKING_BLOCKED": null
             }
         },
         "about": {

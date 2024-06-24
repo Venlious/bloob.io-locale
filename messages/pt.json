@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Brazilian Portuguese",
         "rtl": false,
-        "total": 1452,
-        "missing": 0
+        "total": 1500,
+        "missing": 21
     },
     "name": "Bloob.io",
     "error": {
@@ -30,6 +30,7 @@
             "generic": "Diminua um pouco! Espere %{seconds} segundo(s)."
         },
         "generic": {
+            "startingUp": "O servidor ainda está iniciando. Tenta atualizar essa página mais tarde.",
             "incorrectProductPrice": "Compra cancelada por causa de diferença no preço. Esperado: %{expectedAmount}. Recebido: %{receivedAmount}.",
             "insufficientBalance": "Você não tem moedas suficientes para essa compra.",
             "invalidPurchaseWindow": "Desculpe, esse produto não pode ser comprado no momento.",
@@ -121,6 +122,7 @@
             "invalid": "Você não pode usar o \"%{id}\" como uma predefinição."
         },
         "match": {
+            "blocked": "Sua punição não te permite entrar em partidas públicas ou de seleção.",
             "empty": "Sala fechada. Todos os outros jogadores deixaram a partida.",
             "rematchTimeout": "Você não aceitou o pedido de revanche e foi enviado de volta para o menu principal.",
             "rematchCancelled": "Desculpe! Não há jogadores suficientes para uma revanche.",
@@ -137,6 +139,7 @@
             "full": "Esta partida já está cheia (%{current}/%{max})."
         },
         "profile": {
+            "usernameBlocked": "Sua punição não te permite mudar seu nome de usuário.",
             "profanity": "O apelido parece conter palavrões proibidos.",
             "missingData": "Argumentos de nome de usuário e/ou imagem em falta.",
             "invalidNickname": "O apelido está formatado incorretamente.",
@@ -148,6 +151,7 @@
             "inGame": "Não é possível personalizar seu perfil enquanto o jogo estiver em andamento."
         },
         "requirement": {
+            "acknowledgeWarning": "Você precisa reconhecer seu aviso para realizar essa ação.",
             "authentication": "Você precisa estar logado na sua conta pra fazer isso.",
             "credentials": "Você deu credenciais inválidas.",
             "validAccount": "Sua conta ainda não foi validada. Por favor, salve suas mudanças de perfil.",
@@ -204,6 +208,18 @@
                 "turnTime": {
                     "title": "Tempo de Turno",
                     "help": "O tempo que um jogador tem antes da vez dele passar pro próximo jogador."
+                },
+                "inputTime": {
+                    "title": "Tempo de Entrada",
+                    "help": "O tempo que o jogador tem para preencher uma entrada. O jogo vai continuar, esteja ele pronto ou não quando o tempo acabar."
+                },
+                "continueAutomatically": {
+                    "title": "Continuar Automaticamente",
+                    "help": "Alterne se o jogo deve continuar automaticamente ou esperar que todos confirmem que estão prontos."
+                },
+                "continueTime": {
+                    "title": "Tempo de Continuação",
+                    "help": "Quando aparecer um botão de continuar, decida quanto tempo deve demorar antes que o jogo continue de qualquer maneira."
                 },
                 "timeFreedomMode": {
                     "title": "Modo de Liberdade de Tempo",
@@ -1302,6 +1318,16 @@
                     ]
                 }
             }
+        },
+        "AI_ASSASSIN": {
+            "name": "Assassino IA",
+            "heading": "Seja o Assassino ou Sobreviva como Alvo em AI Assassin!",
+            "tooltip": "Um jogo de alto risco onde cada dica conta. Você é o assassino ou o alvo?",
+            "description": "AI Assassin é um emocionante jogo multiplayer onde você elimina o alvo ou engana os assassinos. Use dicas estratégicas para atingir seu objetivo e vencer.",
+            "title": "Engane, Elimine, Sobreviva",
+            "options": {},
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1386,6 +1412,9 @@
             "roundCount": "Rodada %{current} de %{total}",
             "roundCurrent": "Rodada %{current}",
             "war": "Guerra!",
+            "outcome": "Resultado",
+            "input": "Aguardando sua jogada",
+            "waitingForAI": "Esperando pela IA...",
             "dealingCards": "Distribuindo as cartas...",
             "youPickStarterCard": "Você precisa escolher a carta inicial",
             "namePickStarterCard": "%{name} precisa escolher a carta inicial",
@@ -1409,7 +1438,8 @@
         "matchId": "ID ou URL da partida...",
         "message": "Mensagem...",
         "username": "Nome de usuário",
-        "password": "Senha"
+        "password": "Senha",
+        "textarea": "Escreva aqui..."
     },
     "language": {
         "nl-NL": "Holandês",
@@ -1617,6 +1647,7 @@
         "includesItems": "Inclui {count} itens | Inclui {count} item | Inclui {count} itens"
     },
     "misc": {
+        "permanent": "Permanente",
         "total": "Total",
         "judge": "Juiz",
         "dealer": "Negociante",
@@ -1627,6 +1658,7 @@
         "starter": "Iniciante",
         "cards": "Cartas",
         "type": "Tipo",
+        "iUnderstand": "Eu entendo",
         "scoringSystem": "Sistema de Pontuação",
         "notEnoughData": "Dados insuficientes",
         "averageWaitTime": "Tempo médio de espera",
@@ -1721,9 +1753,11 @@
         "percentage": "{percentage}%",
         "percentageDisabled": "{percentage}% (Desativado)",
         "scrollBackDown": "Role para baixo",
+        "yourInput": "Sua entrada",
         "pickYourself": "Escolha por si mesmo",
         "highPing": "Seu ping está alto (%{ping}ms)",
         "currentRoundCount": "Rodada (%{current}/%{total})",
+        "currentContinueCount": "Continuar (%{current}/%{total})",
         "currentSkipCount": "Passar (%{current}/%{total})",
         "currentReadyCount": "Pronto (%{current}/%{total})",
         "assignedTypeSelf": "Você é %{type}",
@@ -1763,6 +1797,10 @@
         "hitRate": "Taxa de Acerto",
         "rank": "Classificação",
         "kills": "Mortes realizadas",
+        "assassin": "Assassino",
+        "target": "Alvo",
+        "assassinations": "Assassinatos",
+        "survivals": "Sobrevivências",
         "games": "Jogos",
         "winRatio": "Taxa de Vitória",
         "killDeathRatio": "Taxa K/D",
@@ -2249,6 +2287,18 @@
             "earnsSum": "Ganha o total de todos os dados combinados.",
             "noPointsWarning": "Essa jogada não vai te dar nenhum ponto. Tem outras escolhas que te dão pontos."
         },
+        "ai": {
+            "ready": null,
+            "findingTarget": null,
+            "calculatingOutcome": null,
+            "targetReport": null,
+            "assassinAssignment": null,
+            "targetAssignment": null,
+            "assassinDescription": null,
+            "targetDescription": null,
+            "startAssassinChat": null,
+            "joinAssassinChat": null
+        },
         "poolType": {
             "SOLID": "Sólidas",
             "STRIPE": "Listradas"
@@ -2277,6 +2327,23 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Você encaçapou a bola oito muito cedo.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Você encaçapou a bola oito na quebra.",
                 "POCKETED_WRONG_BALL": "Você encaçapou a bola errada."
+            }
+        },
+        "accountWarning": {
+            "title": null,
+            "description": null,
+            "reasonTitle": null,
+            "punishmentTitle": null,
+            "reason": {
+                "BAD_NAME": null,
+                "GAME_QUIT": null,
+                "TOXIC_CHAT": null
+            },
+            "punishment": {
+                "NAME_CHANGED": null,
+                "NAME_BLOCKED": null,
+                "CHAT_BLOCKED": null,
+                "MATCHMAKING_BLOCKED": null
             }
         },
         "about": {

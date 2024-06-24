@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Egyptian Arabic",
         "rtl": true,
-        "total": 1452,
-        "missing": 0
+        "total": 1500,
+        "missing": 21
     },
     "name": "Bloob.io",
     "error": {
@@ -30,6 +30,7 @@
             "generic": "خد بالك شوية! استنى %{seconds} ثانية."
         },
         "generic": {
+            "startingUp": "السيرفر لسه بيفتح. حاول تحدث الصفحة بعدين.",
             "incorrectProductPrice": "الشراء اتلغى عشان فيه خطأ في السعر. المتوقع: %{expectedAmount}. اللي جه: %{receivedAmount}.",
             "insufficientBalance": "معندكش عملات كفاية عشان تشتري الحاجة دي.",
             "invalidPurchaseWindow": "اسفين، مش ممكن تشتري المنتج ده دلوقتي.",
@@ -121,6 +122,7 @@
             "invalid": "مش هتقدر تستخدم \"%{id}\" كإعداد مسبق."
         },
         "match": {
+            "blocked": "عقوبتك مش سامحاك تشارك في الماتشات العامة أو الماتشات المتوازية.",
             "empty": "الماتش اتقفل. كل اللاعبين التانيين سابوا الماتش.",
             "rematchTimeout": "انت مقبلتش على طلب الماتش تاني ورجعوك للقائمة الرئيسية.",
             "rematchCancelled": "اسفين! مفيش لاعبين كفاية باقيين عشان يكون في ماتش تاني.",
@@ -137,6 +139,7 @@
             "full": "الماتش ده مليان بالفعل (%{current}/%{max})."
         },
         "profile": {
+            "usernameBlocked": "عقوبتك مش سامحاك تغير اسم المستخدم بتاعك.",
             "profanity": "الاسم المستعار بيحتوي على كلمات بذيئة ممنوعة.",
             "missingData": "اسم المستخدم و/أو الصورة مش موجودين.",
             "invalidNickname": "الاسم المستعار مكتوب بطريقة غلط.",
@@ -148,6 +151,7 @@
             "inGame": "مش هتقدر تغير بروفايلك وأنت بتلعب اللعبة"
         },
         "requirement": {
+            "acknowledgeWarning": "لازم تقر الإنذار عشان تعمل الحركة دي.",
             "authentication": "لازم تكون مسجل دخول في حسابك عشان تقدر تعمل الحاجة دي.",
             "credentials": "البيانات اللي اديتها غلط.",
             "validAccount": "حسابك لسه متأكدتش. لو سمحت احفظ التغييرات اللي عملتها في البروفايل.",
@@ -204,6 +208,18 @@
                 "turnTime": {
                     "title": "وقت الدور",
                     "help": "الوقت اللي عند اللاعب قبل ما دوره يروح لللاعب اللي بعده."
+                },
+                "inputTime": {
+                    "title": "وقت الإدخال",
+                    "help": "الوقت اللي عند اللاعب عشان يدخل البيانات. اللعبة هتستمر على أي حال، سواء كان اللاعب جاهز ولا لأ لما الوقت يخلص."
+                },
+                "continueAutomatically": {
+                    "title": "استمر تلقائيا",
+                    "help": "غير إذا اللعبة هتكمل لوحدها أو تستنى لحد ما الكل يؤكد إنهم جاهزين."
+                },
+                "continueTime": {
+                    "title": "وقت الاستمرار",
+                    "help": "لما يظهر زرار الاستمرار، اقرر بتاخد كام قبل ما اللعبة تكمل لوحدها."
                 },
                 "timeFreedomMode": {
                     "title": "وضع الحرية في الوقت",
@@ -1302,6 +1318,16 @@
                     ]
                 }
             }
+        },
+        "AI_ASSASSIN": {
+            "name": "قاتل الذكاء الصناعي",
+            "heading": "كن القاتل أو استمر في البقاء كالهدف في لعبة القاتل الذكي!",
+            "tooltip": "لعبة مراهنات عالية تعتمد على الذكاء، كل تحرك مهم. انت القاتل ولا الهدف؟",
+            "description": "\"AI Assassin\" لعبة مثيرة متعددة اللاعبين حيث تقوم بإزالة الهدف أو التفوق على القتلة. استخدم التلميحات الاستراتيجية لتحقيق هدفك والنجاح.",
+            "title": "أذكى، أزل، نجو",
+            "options": {},
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1386,6 +1412,9 @@
             "roundCount": "جولة %{current} من %{total}",
             "roundCurrent": "الجولة %{current}",
             "war": "حرب!",
+            "outcome": "النتيجة",
+            "input": "مستني رأيك",
+            "waitingForAI": "مستني الذكاء الاصطناعي...",
             "dealingCards": "بنوزع الورق...",
             "youPickStarterCard": "لازم تختار الورقة الأولى",
             "namePickStarterCard": "%{name} لازم يختار الورقة الأولى",
@@ -1409,7 +1438,8 @@
         "matchId": "رقم الماتش أو الرابط...",
         "message": "الرسالة...",
         "username": "اسم المستخدم",
-        "password": "كلمة السر"
+        "password": "كلمة السر",
+        "textarea": "اكتب هنا..."
     },
     "language": {
         "nl-NL": "هولندي",
@@ -1617,6 +1647,7 @@
         "includesItems": "بيحتوي على {count} حاجات | بيحتوي على {count} حاجة | بيحتوي على {count} حاجات"
     },
     "misc": {
+        "permanent": "دايم",
         "total": "المجموع",
         "judge": "القاضي",
         "dealer": "التاجر",
@@ -1627,6 +1658,7 @@
         "starter": "المبتدئ",
         "cards": "كروت",
         "type": "النوع",
+        "iUnderstand": "أنا فاهم",
         "scoringSystem": "نظام التسجيل",
         "notEnoughData": "مفيش بيانات كفاية",
         "averageWaitTime": "متوسط وقت الانتظار",
@@ -1721,9 +1753,11 @@
         "percentage": "{percentage}%",
         "percentageDisabled": "{percentage}% (معطل)",
         "scrollBackDown": "ارجع تحت تاني",
+        "yourInput": "إدخالك",
         "pickYourself": "اختار لنفسك",
         "highPing": "البينج عندك عالي (%{ping}ملي ثانية)",
         "currentRoundCount": "الجولة (%{current}/%{total})",
+        "currentContinueCount": "استمر (%{current}/%{total})",
         "currentSkipCount": "تخطي (%{current}/%{total})",
         "currentReadyCount": "جاهز (%{current}/%{total})",
         "assignedTypeSelf": "انت %{type}",
@@ -1763,6 +1797,10 @@
         "hitRate": "معدل الضرب",
         "rank": "الترتيب",
         "kills": "القتلى",
+        "assassin": "قاتل",
+        "target": "الهدف",
+        "assassinations": "الاغتيالات",
+        "survivals": "الناجين",
         "games": "الألعاب",
         "winRatio": "نسبة الفوز",
         "killDeathRatio": "نسبة القتل/الموت",
@@ -2249,6 +2287,18 @@
             "earnsSum": "بتكسب مجموع الزهر كله مجموع.",
             "noPointsWarning": "الحركة دي مش هتجيبلك أي نقاط. فيه خيارات تانية ممكن تجيبلك نقاط."
         },
+        "ai": {
+            "ready": null,
+            "findingTarget": null,
+            "calculatingOutcome": null,
+            "targetReport": null,
+            "assassinAssignment": null,
+            "targetAssignment": null,
+            "assassinDescription": null,
+            "targetDescription": null,
+            "startAssassinChat": null,
+            "joinAssassinChat": null
+        },
         "poolType": {
             "SOLID": "كور صلبة",
             "STRIPE": "كور مخططة"
@@ -2277,6 +2327,23 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "انت حطيت الكورة رقم ثمانية بدري أوي.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "انت حطيت الكورة رقم ثمانية في البداية.",
                 "POCKETED_WRONG_BALL": "انت حطيت الكورة الغلط."
+            }
+        },
+        "accountWarning": {
+            "title": null,
+            "description": null,
+            "reasonTitle": null,
+            "punishmentTitle": null,
+            "reason": {
+                "BAD_NAME": null,
+                "GAME_QUIT": null,
+                "TOXIC_CHAT": null
+            },
+            "punishment": {
+                "NAME_CHANGED": null,
+                "NAME_BLOCKED": null,
+                "CHAT_BLOCKED": null,
+                "MATCHMAKING_BLOCKED": null
             }
         },
         "about": {

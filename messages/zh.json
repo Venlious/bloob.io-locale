@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 1452,
-        "missing": 0
+        "total": 1500,
+        "missing": 21
     },
     "name": "Bloob.io",
     "error": {
@@ -30,6 +30,7 @@
             "generic": "慢点儿！等待%{seconds}秒。"
         },
         "generic": {
+            "startingUp": "服务器还在启动中。过会儿刷新这个页面试试。",
             "incorrectProductPrice": "因为价格不匹配，购买已取消。预期价格: %{expectedAmount}。实际价格: %{receivedAmount}。",
             "insufficientBalance": "你的金币不够，无法购买。",
             "invalidPurchaseWindow": "抱歉，这个产品现在不能买。",
@@ -121,6 +122,7 @@
             "invalid": "你不能用 \"%{id}\" 当作预设。"
         },
         "match": {
+            "blocked": "你的惩罚不允许你参加配对赛或公开比赛。",
             "empty": "比赛结束了。其他玩家都离开了比赛。",
             "rematchTimeout": "你没有接受重赛请求，所以被送回主菜单了。",
             "rematchCancelled": "抱歉！剩下的玩家不足以进行重赛。",
@@ -137,6 +139,7 @@
             "full": "这场比赛已经满员了（%{current}/%{max}）。"
         },
         "profile": {
+            "usernameBlocked": "你的惩罚不允许你改用户名。",
             "profanity": "昵称似乎包含了被禁止的脏话。",
             "missingData": "缺少用户名和/或图片参数。",
             "invalidNickname": "昵称格式不正确。",
@@ -148,6 +151,7 @@
             "inGame": "游戏进行中不能自定义你的个人资料"
         },
         "requirement": {
+            "acknowledgeWarning": "你得承认你的警告才能进行这个操作。",
             "authentication": "你得登录你的账号才能进行这个操作。",
             "credentials": "你给的凭证无效。",
             "validAccount": "你的账号还没验证呢。请保存你的个人资料修改。",
@@ -204,6 +208,18 @@
                 "turnTime": {
                     "title": "回合时间",
                     "help": "玩家轮到下一个玩家之前的时间。"
+                },
+                "inputTime": {
+                    "title": "输入时间",
+                    "help": "玩家填写输入的时间。无论他们是否准备好，当时间用完，游戏都会继续。"
+                },
+                "continueAutomatically": {
+                    "title": "自动继续",
+                    "help": "切换游戏是否应自动继续，还是等待所有人确认他们已经准备好了。"
+                },
+                "continueTime": {
+                    "title": "继续时间",
+                    "help": "当出现继续按钮时，决定游戏应在多久后自动继续。"
                 },
                 "timeFreedomMode": {
                     "title": "时间自由模式",
@@ -1302,6 +1318,16 @@
                     ]
                 }
             }
+        },
+        "AI_ASSASSIN": {
+            "name": "AI刺客",
+            "heading": "在AI刺客游戏中，成为刺客或者作为目标生存下来！",
+            "tooltip": "这是一场高风险的智力游戏，每个提示都很重要。你是刺客还是目标？",
+            "description": "\"AI刺客\"是一款刺激的多人游戏，你可以消灭目标或智胜刺客。使用策略提示来达成你的目标并取得成功。",
+            "title": "智胜，消灭，生存",
+            "options": {},
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1386,6 +1412,9 @@
             "roundCount": "第%{current}轮，总共%{total}轮",
             "roundCurrent": "第%{current}轮",
             "war": "战争！",
+            "outcome": "结果",
+            "input": "等待你的操作",
+            "waitingForAI": "正在等待AI...",
             "dealingCards": "正在发牌...",
             "youPickStarterCard": "你得选一张起始牌",
             "namePickStarterCard": "%{name}得选一张起始牌",
@@ -1409,7 +1438,8 @@
         "matchId": "匹配ID或者网址...",
         "message": "消息...",
         "username": "用户名",
-        "password": "密码"
+        "password": "密码",
+        "textarea": "在这里输入..."
     },
     "language": {
         "nl-NL": "荷兰语",
@@ -1617,6 +1647,7 @@
         "includesItems": "包含 {count} 个物品 | 包含 {count} 个物品 | 包含 {count} 个物品"
     },
     "misc": {
+        "permanent": "永久",
         "total": "总数",
         "judge": "裁判",
         "dealer": "庄家",
@@ -1627,6 +1658,7 @@
         "starter": "初学者",
         "cards": "卡片",
         "type": "类型",
+        "iUnderstand": "我明白了",
         "scoringSystem": "计分系统",
         "notEnoughData": "数据不足",
         "averageWaitTime": "平均等待时间",
@@ -1721,9 +1753,11 @@
         "percentage": "{percentage}%",
         "percentageDisabled": "{percentage}% (已禁用)",
         "scrollBackDown": "滚回下面",
+        "yourInput": "你的输入",
         "pickYourself": "自己选",
         "highPing": "你的延迟很高 (%{ping}毫秒)",
         "currentRoundCount": "回合 (%{current}/%{total})",
+        "currentContinueCount": "继续 (%{current}/%{total})",
         "currentSkipCount": "跳过 (%{current}/%{total})",
         "currentReadyCount": "准备好了 (%{current}/%{total})",
         "assignedTypeSelf": "你是 %{type}",
@@ -1763,6 +1797,10 @@
         "hitRate": "命中率",
         "rank": "排名",
         "kills": "击杀",
+        "assassin": "刺客",
+        "target": "目标",
+        "assassinations": "刺杀",
+        "survivals": "生存",
         "games": "游戏",
         "winRatio": "胜率",
         "killDeathRatio": "击杀/死亡比率",
@@ -2249,6 +2287,18 @@
             "earnsSum": "获得所有骰子总和的分数。",
             "noPointsWarning": "这个动作不会给你加分。还有其他可以加分的选择。"
         },
+        "ai": {
+            "ready": null,
+            "findingTarget": null,
+            "calculatingOutcome": null,
+            "targetReport": null,
+            "assassinAssignment": null,
+            "targetAssignment": null,
+            "assassinDescription": null,
+            "targetDescription": null,
+            "startAssassinChat": null,
+            "joinAssassinChat": null
+        },
         "poolType": {
             "SOLID": "实色球",
             "STRIPE": "条纹球"
@@ -2277,6 +2327,23 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "你把八号球打进去得太早了。",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "你在开球时就把八号球打进去了。",
                 "POCKETED_WRONG_BALL": "你打进去的是错的球。"
+            }
+        },
+        "accountWarning": {
+            "title": null,
+            "description": null,
+            "reasonTitle": null,
+            "punishmentTitle": null,
+            "reason": {
+                "BAD_NAME": null,
+                "GAME_QUIT": null,
+                "TOXIC_CHAT": null
+            },
+            "punishment": {
+                "NAME_CHANGED": null,
+                "NAME_BLOCKED": null,
+                "CHAT_BLOCKED": null,
+                "MATCHMAKING_BLOCKED": null
             }
         },
         "about": {
