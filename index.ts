@@ -12,7 +12,6 @@ const supportedLocales = <SupportedLocale[]>[
 	`id`,
 	`tr`,
 	`ar`,
-	`yi`,
 	`hi`,
 	`ru`,
 	`uk`,
