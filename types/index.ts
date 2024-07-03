@@ -10,7 +10,6 @@ export type SupportedLocale =
 	| `id`
 	| `tr`
 	| `ar`
-	| `yi`
 	| `hi`
 	| `ru`
 	| `uk`
@@ -21,23 +20,6 @@ export type SupportedLocale =
 	| `fi`
 	| `da`
 	| `sv`
-
-export type LanguageList =
-	| `nl-NL`
-	| `en-US`
-	| `en-GB`
-	| `fr-FR`
-	| `de-DE`
-	| `it-IT`
-	| `pl-PL`
-	| `pt-BR`
-	| `es-ES`
-	| `es-MX`
-	| `sv-SE`
-
-export enum GenericType {
-	generic = `generic`
-}
 
 export enum GameType {
 	wordrace = `WORDRACE`,
@@ -69,11 +51,6 @@ export enum WinConditionType {
 	lastStanding = `LAST_STANDING`,
 	morePieces = `MORE_PIECES`,
 	oppositeSide = `OPPOSITE_SIDE`
-}
-
-export enum PoolGameGroup {
-	solid = `SOLID`,
-	stripe = `STRIPE`
 }
 
 export enum PoolGameFoulType {
