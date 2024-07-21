@@ -690,7 +690,7 @@ export default class TranslationClass {
 			})
 
 			const response = await openai.chat.completions.create({
-				model: `gpt-4`,
+				model: `gpt-4o-mini`,
 				messages,
 				temperature: 0,
 				max_tokens: 2048,
