@@ -407,6 +407,10 @@ export default class TranslationClass {
 			`These are game match lobby button states.`
 		)
 		this.generateTranslationTask([`match`, `browser`], `These are game match list.`)
+		this.generateTranslationTask(
+			[`match`, `opponentFilter`],
+			`These are filters that can be applied when matchmaking.`
+		)
 		this.generateTranslationTask([`match`, `matchmaking`], `These are game matchmaking states.`)
 		this.generateTranslationTask(
 			[`match`, `matchmaking`, `settings`, `publicMatches`],
@@ -422,6 +426,14 @@ export default class TranslationClass {
 		)
 		this.generateTranslationTask(
 			[`match`, `matchmaking`, `settings`, `games`, `tooltip`],
+			`This is a matchmaking setting tooltip.`
+		)
+		this.generateTranslationTask(
+			[`match`, `matchmaking`, `settings`, `opponentFilter`],
+			`This is a matchmaking setting.`
+		)
+		this.generateTranslationTask(
+			[`match`, `matchmaking`, `settings`, `opponentFilter`, `tooltip`],
 			`This is a matchmaking setting tooltip.`
 		)
 		this.generateTranslationTask([`match`, `info`], `These are game match information.`)
@@ -716,7 +728,7 @@ export default class TranslationClass {
 					retries++
 				)
 			} else {
-				console.log(error.code)
+				console.error(error.code)
 				return false
 			}
 		}
