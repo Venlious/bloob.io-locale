@@ -179,6 +179,10 @@
                 "public": {
                     "title": "Match Privacy"
                 },
+                "handSize": {
+                    "title": "Hand Size",
+                    "help": "The amount of cards everyone has in their hand."
+                },
                 "maxUsers": {
                     "title": "Max. Players",
                     "help": "How many players are allowed in the match."
@@ -492,10 +496,6 @@
                         "first": "First to get <b>0</b> points | First to get <b>1</b> point | First to get <b>{count}</b> points",
                         "most": "Most points after <b>0</b> rounds | Most points after <b>1</b> round | Most points after <b>{count}</b> rounds"
                     }
-                },
-                "handSize": {
-                    "title": "Hand Size",
-                    "help": "The amount of response cards everyone holds in their hand at any given time."
                 },
                 "judgeSystem": {
                     "title": "Judge System",
@@ -1322,19 +1322,30 @@
             }
         },
         "GIN_RUMMY": {
-            "name": "Gin Rummy",
-            "heading": null,
-            "tooltip": null,
-            "description": null,
-            "title": null,
+			"name": "Gin Rummy",
+			"heading": "Play Gin Rummy Online: Classic Card Game for Two",
+			"tooltip": "Enjoy Gin Rummy against friends or bots, with customizable game settings.",
+			"description": "Play Gin Rummy online with friends or bots! Customize your game, enjoy Oklahoma Gin, and strategize to win in this classic card game.",
+			"title": "Free Online Gin Rummy Game for 2 Players",
             "options": {
                 "winAmount": {
                     "help": "The game ends as soon as a player reaches this amount of points. However, this does not guarantee a win, as bonus points are awarded at the end of the game."
                 },
                 "knock": {
                     "title": "Knock",
-                    "help": "When disabled, a player can only end a round if they have a Gin. When enabled, a player can knock if their deadwood is below or equal to the knock threshold."
+					"help": {
+                        "enabled": "'Enabled' allows knocking based on the configured knock threshold.",
+                        "firstDiscardCard": "'Based on first discard card' uses the first discard to set the threshold; if an Ace is drawn, you must go Gin.",
+                        "disabled": "'Disabled' allows ending a round only with a Gin."
+                    },
+					"data": {
+						"firstDiscardCard": "Based on first discard card"
+					}
                 },
+                "knockBasedOnFirstCard": {
+					"title": "Knock Based on First Discard",
+					"help": "When enabled, the first card in the discard pile determines the knock threshold. Players can only knock if their deadwood is below or equal to the value of this card."
+				},
                 "knockThreshold": {
                     "title": "Knock Threshold",
                     "help": "A player can knock when it is their turn and their deadwood is below or equal to the configured threshold."
@@ -1364,7 +1375,21 @@
                     "help": "Awarded at the end of the game. Gives the winner an additional bonus of this amount of points if they have won every round."
                 }
             },
-            "presets": {},
+            "presets": {
+                "straightGin": {
+                    "title": "Straight Gin",
+                    "description": [
+                        "No Knocking",
+                        "No Bonus"
+                    ]
+                },
+                "oklahomaGin": {
+                    "title": "Oklahoma Gin",
+                    "description": [
+                        "Knock value based on first discard"
+                    ]
+                }
+			},
             "help": {}
         },
         "AI_ASSASSIN": {
@@ -1851,8 +1876,12 @@
         "words": "Words",
         "longestWord": "Longest Word",
         "length": "Length",
+        "bonus": "Bonus",
+        "round": "Round",
         "score": "Score",
         "highestScore": "Highest Score",
+		"totalScore": "Total Score",
+		"finalScore": "Final Score",
         "hits": "Hits",
         "hitRate": "Hit Rate",
         "rank": "Rank",
@@ -2323,6 +2352,7 @@
         },
         "ginRummy": {
             "title": {
+                "undercut": "Undercut",
                 "gin": "Gin",
                 "bigGin": "Big Gin",
                 "knock": "Knock"
