@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Hindi script",
         "rtl": false,
-        "total": 1511,
-        "missing": 10
+        "total": 1550,
+        "missing": 50
     },
     "name": "Bloob.io",
     "error": {
@@ -55,7 +55,6 @@
             "againstAgainstInactiveUser": "निष्क्रिय उपयोगकर्ता पर यह कार्य नहीं कर सकते।",
             "invalidUser": "दिए गए ID वाला उपयोगकर्ता इस मैच में नहीं है।",
             "invalidTime": "आप इस समय यह कार्य नहीं कर सकते।",
-            "versionMismatch": "आप \"%{client}\" संस्करण चला रहे हैं जबकि सर्वर \"%{server}\" संस्करण चला रहा है। कृपया इस पृष्ठ को कुछ मिनटों में ताज़ा करें। आप अभी भी कंप्यूटर के खिलाफ खेल सकते हैं, लेकिन हम बहुखिलाड़ी खेलने से पहले अपडेट करने की सलाह देते हैं।",
             "clipboard": "क्लिपबोर्ड में कॉपी करने में विफल।"
         },
         "config": {
@@ -105,6 +104,8 @@
             "wordTooLong": "शब्द चयन बहुत लंबा है (अधिकतम %{max})"
         },
         "card": {
+            "handLocked": null,
+            "handTooFull": null,
             "loadingSets": "कार्ड सेट डाउनलोड करने में असमर्थ।",
             "invalid": "दिया गया कार्ड डाटा अमान्य है।",
             "invalidSet": "दिया गया कार्ड सेट अमान्य है।",
@@ -1319,6 +1320,52 @@
                 }
             }
         },
+        "GIN_RUMMY": {
+            "name": null,
+            "heading": {},
+            "tooltip": {},
+            "description": {},
+            "title": {},
+            "options": {
+                "winAmount": {
+                    "help": null
+                },
+                "knock": {
+                    "title": null,
+                    "help": null
+                },
+                "knockThreshold": {
+                    "title": null,
+                    "help": null
+                },
+                "ginPointAmount": {
+                    "title": null,
+                    "help": null
+                },
+                "bigGinPointAmount": {
+                    "title": null,
+                    "help": null
+                },
+                "undercutPointAmount": {
+                    "title": null,
+                    "help": null
+                },
+                "firstBonusPointAmount": {
+                    "title": null,
+                    "help": null
+                },
+                "roundBonusPointAmount": {
+                    "title": null,
+                    "help": null
+                },
+                "shutoutBonusPointAmount": {
+                    "title": null,
+                    "help": null
+                }
+            },
+            "presets": {},
+            "help": {}
+        },
         "AI_ASSASSIN": {
             "name": "AI हत्यारा",
             "heading": "AI Assassin में अस्सासिन बनें या टारगेट के रूप में बचें!",
@@ -1406,6 +1453,11 @@
             "removingRow": "पंक्ति हटा रहे हैं",
             "yourTurn": "तुम्हारी बारी %{extra}",
             "nameTurn": "%{name} की बारी",
+            "tieEndedRound": null,
+            "youEndedRound": null,
+            "nameEndedRound": null,
+            "youWonRound": null,
+            "nameWonRound": null,
             "yourTurnBreaking": "तुम %{extra} तोड़ रहे हो",
             "nameTurnBreaking": "%{name} टूट रहा है",
             "roundSummary": "दौर का सारांश",
@@ -1501,6 +1553,7 @@
         "basic": "बुनियादी",
         "language": "Bhasha",
         "rules": "Niyam",
+        "points": null,
         "fouls": "Galat Ka Jawab"
     },
     "month": {
@@ -1650,6 +1703,9 @@
         "restartNotice": "सर्वर {count} मिनट में रीस्टार्ट होगा। कृपया अपना गेम खत्म करो। | सर्वर {count} मिनट में रीस्टार्ट होगा। कृपया अपना गेम खत्म करो। | सर्वर {count} मिनट में रीस्टार्ट होगा। कृपया अपना गेम खत्म करो।"
     },
     "misc": {
+        "roundWinner": null,
+        "sort": null,
+        "pass": null,
         "permanent": "स्थायी",
         "total": "कुल",
         "judge": "न्यायाधीश",
@@ -1868,6 +1924,8 @@
         "empty": "कोई कार्ड नहीं",
         "total": "कुल कार्ड",
         "view": "कार्ड देखें",
+        "melds": null,
+        "deadwood": null,
         "editor": {
             "title": "कार्ड संपादक",
             "name": "कार्ड सेट का नाम",
@@ -2161,6 +2219,9 @@
             "noEmail": "कोई ईमेल नहीं? अपने स्पैम फ़ोल्डर की जांच करें और यह सुनिश्चित करें कि यह ईमेल पता आपके खाते से जुड़ा हुआ है।"
         },
         "cards": {
+            "sortHandBy": null,
+            "cardRank": null,
+            "cardSuit": null,
             "selfRanOut": "आपके पास खेलने के लिए कार्ड खत्म हो गए!",
             "nameRanOut": "%{name} के पास खेलने के लिए कार्ड खत्म हो गए!"
         },
@@ -2258,6 +2319,16 @@
             "tapToRotate": "घुमाने के लिए टैप करो",
             "dragToMove": "हिलाने के लिए खींचो",
             "setup": "अपनी पोतों की सेना तैनात करो!"
+        },
+        "ginRummy": {
+            "title": {
+                "gin": null,
+                "bigGin": null,
+                "knock": null
+            },
+            "scoreDescription": null,
+            "yourMeldAfterKnock": null,
+            "nameMeldAfterKnock": null
         },
         "yacht": {
             "title": {

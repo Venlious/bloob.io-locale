@@ -49,7 +49,6 @@
             "againstAgainstInactiveUser": true,
             "invalidUser": true,
             "invalidTime": true,
-            "versionMismatch": true,
             "clipboard": true
         },
         "config": {
@@ -99,6 +98,8 @@
             "wordTooLong": true
         },
         "card": {
+            "handLocked": false,
+            "handTooFull": false,
             "loadingSets": true,
             "invalid": true,
             "invalidSet": true,
@@ -1313,6 +1314,52 @@
                 }
             }
         },
+        "GIN_RUMMY": {
+            "name": false,
+            "heading": {},
+            "tooltip": {},
+            "description": {},
+            "title": {},
+            "options": {
+                "winAmount": {
+                    "help": false
+                },
+                "knock": {
+                    "title": false,
+                    "help": false
+                },
+                "knockThreshold": {
+                    "title": false,
+                    "help": false
+                },
+                "ginPointAmount": {
+                    "title": false,
+                    "help": false
+                },
+                "bigGinPointAmount": {
+                    "title": false,
+                    "help": false
+                },
+                "undercutPointAmount": {
+                    "title": false,
+                    "help": false
+                },
+                "firstBonusPointAmount": {
+                    "title": false,
+                    "help": false
+                },
+                "roundBonusPointAmount": {
+                    "title": false,
+                    "help": false
+                },
+                "shutoutBonusPointAmount": {
+                    "title": false,
+                    "help": false
+                }
+            },
+            "presets": {},
+            "help": {}
+        },
         "AI_ASSASSIN": {
             "name": false,
             "heading": {},
@@ -1400,6 +1447,11 @@
             "removingRow": true,
             "yourTurn": true,
             "nameTurn": true,
+            "tieEndedRound": false,
+            "youEndedRound": false,
+            "nameEndedRound": false,
+            "youWonRound": false,
+            "nameWonRound": false,
             "yourTurnBreaking": true,
             "nameTurnBreaking": true,
             "roundSummary": false,
@@ -1495,6 +1547,7 @@
         "basic": true,
         "language": true,
         "rules": true,
+        "points": false,
         "fouls": true
     },
     "month": {
@@ -1644,6 +1697,9 @@
         "restartNotice": false
     },
     "misc": {
+        "roundWinner": false,
+        "sort": false,
+        "pass": false,
         "permanent": false,
         "total": false,
         "judge": false,
@@ -1862,6 +1918,8 @@
         "empty": true,
         "total": true,
         "view": true,
+        "melds": false,
+        "deadwood": false,
         "editor": {
             "title": true,
             "name": true,
@@ -2155,6 +2213,9 @@
             "noEmail": true
         },
         "cards": {
+            "sortHandBy": false,
+            "cardRank": false,
+            "cardSuit": false,
             "selfRanOut": false,
             "nameRanOut": false
         },
@@ -2252,6 +2313,16 @@
             "tapToRotate": false,
             "dragToMove": false,
             "setup": false
+        },
+        "ginRummy": {
+            "title": {
+                "gin": false,
+                "bigGin": false,
+                "knock": false
+            },
+            "scoreDescription": false,
+            "yourMeldAfterKnock": false,
+            "nameMeldAfterKnock": false
         },
         "yacht": {
             "title": {
