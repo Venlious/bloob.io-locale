@@ -33,7 +33,8 @@ export enum GameType {
 	battleship = `BATTLESHIP`,
 	cribbage = `CRIBBAGE`,
 	war = `WAR`,
-	aiAssassin = `AI_ASSASSIN`
+	aiAssassin = `AI_ASSASSIN`,
+	ginRummy = `GIN_RUMMY`
 }
 
 export enum CheckersKingType {

@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 1511,
+        "total": 1564,
         "missing": 10
     },
     "name": "Bloob.io",
@@ -55,7 +55,7 @@
             "againstAgainstInactiveUser": "Et voi tehdä tätä toimintoa passiiviselle käyttäjälle.",
             "invalidUser": "Antamallasi ID:llä olevaa käyttäjää ei ole tässä matsissa.",
             "invalidTime": "Et voi tehdä tätä toimintoa tällä hetkellä.",
-            "versionMismatch": "Käytät versiota \"%{client}\", kun taas palvelin käyttää versiota \"%{server}\". Päivitä sivu muutaman minuutin kuluttua uusimpaan versioon.;;;;;;;;Voit silti pelata tietokonetta vastaan ilman ongelmia, mutta suosittelemme päivittämään ennen moninpelin pelaamista.",
+            "versionMismatch": "Sä käytät versiota \"%{client}\", kun taas palvelin pyörittää versiota \"%{server}\". Tää voi tapahtua, kun päivitystä on tulossa. Päivitä tää sivu muutaman minuutin päästä, niin saat uusimman version.",
             "clipboard": "Kopioiminen leikepöydälle epäonnistui."
         },
         "config": {
@@ -105,6 +105,8 @@
             "wordTooLong": "Valittu sana on liian pitkä (Maks. %{max})"
         },
         "card": {
+            "handLocked": "Et voi valita korttia kädestäsi nyt.",
+            "handTooFull": "Voit vaan hävittää kortin kädestäsi nyt.",
             "loadingSets": "Korttipakkojen lataus ei onnistu.",
             "invalid": "Annettu korttitieto on virheellinen.",
             "invalidSet": "Annettu korttipakka on virheellinen.",
@@ -170,12 +172,15 @@
     },
     "game": {
         "generic": {
-            "heading": "Moninpeli Pelejä, Joita Voit Löytää Bloob.io:sta",
-            "title": "Ilmaisia Moninpeli Pelejä Netissä | Ei Rekisteröitymistä Tarvita",
-            "description": "Moninpeli-selainpelejä ilman tiliä. Pelaa vaivattomasti ja muokkaa kokemusta mieltymystesi mukaan.",
+            "title": "Bloob.io | Pelaa ilmaiseksi kaverien kanssa tai bottien",
+            "description": "Koe iloinen pelikokemus Bloob.io:ssa! Pelaa ilmaisia selainpelejä moninpelinä kavereiden, tuntemattomien tai bottien kanssa ilman tiliä.",
             "options": {
                 "public": {
                     "title": "Ottelun yksityisyys"
+                },
+                "handSize": {
+                    "title": "Käsi koko",
+                    "help": "Korttien määrä, mitä kaikilla on kädessä."
                 },
                 "maxUsers": {
                     "title": "Maks. pelaajat",
@@ -258,10 +263,8 @@
         },
         "WORDRACE": {
             "name": "Sanakilpailu",
-            "heading": "Pelaa Ainutlaatuista Sananetsintäpeliä",
-            "tooltip": "Etsi sanoja miltä tahansa suunnalta satunnaisesti luodulta kentältä samalla kun kilpailet muiden kanssa, joilla on sama tavoite.",
-            "description": "Wordrace on ilmainen, ainutlaatuinen sananetsintäpeli, jossa voit mukauttaa asetuksia haasteen mukaan. Ei vaadi rekisteröitymistä. Pelaa nyt.",
-            "title": "Ainutlaatuinen Moninpeli Sanapeli | Bloob.io",
+            "title": "Sanakilpailu | Sana Haku Netissä | Pelaa Kaverit & Pelaajat",
+            "description": "Pelaa Sanakilpailua ilmaiseksi netissä ilman tiliä! Haasta kaverit, tuntemattomat tai botti ja ratkaise sanapelit moninpelinä jopa 12 pelaajan kanssa.",
             "options": {
                 "globalLanguage": {
                     "title": "Yleinen Kieli",
@@ -391,10 +394,8 @@
         },
         "FOUR_IN_A_ROW": {
             "name": "Neljä Peräkkäin",
-            "heading": "Pelaa Neljä Peräkkäin Verkossa Kavereiden Kanssa",
-            "tooltip": "Pelaa Neljä peräkkäin -peliä jopa kuuden pelaajan kanssa joko klassisessa pelitilassa tai saatavilla olevissa muunnelmissa.",
-            "description": "Neljä peräkkäin on rento ilmaispeli. Pelaa tätä klassista neljän yhdistämispeliä jopa 6 ystävän kanssa kerrallaan tässä hauskassa, koukuttavassa ja helposti opittavassa pelissä.",
-            "title": "Helppo Ilmainen Moninpeli | Bloob.io",
+            "title": "Neljä Peräkkäin | Ilmainen nettipeli ystäviä ja botteja vastaan",
+            "description": "Pelaa Neljä Peräkkäin netissä ilmaiseksi! Ei tiliä tarvii. Kutsu kaverit tai pelaa bottien kanssa 2-6 pelaajan moninpeli missä ja milloin vaan!",
             "options": {
                 "field": {
                     "title": "Kentän Koko",
@@ -480,20 +481,14 @@
         },
         "ROTTEN_APPLES": {
             "name": "Mädäntyneet Omenat",
-            "heading": "Pelaa Verkossa Moninpeliä Cards Against Humanity Kavereiden Kanssa",
-            "tooltip": "Pelaa Cards Against Humanity -kloonia ja muokkaa pelikokemustasi mieltymystesi mukaan.",
-            "description": "Pelaa Cards Against Humanity -kloonia ja räätälöi kokemuksesi mieleiseksesi. Luo omat korttisettisi ja sisällytä ne seuraavaan otteluusi.",
-            "title": "Moninpeli Kortit Ihmisyyttä Vastaan | Bloob.io",
+            "title": "Pelaa Mädäntyneet Omenat | Korttipeli netissä | Ei tilejä",
+            "description": "Pelaa Mädäntyneet Omenat netissä ilmaiseksi! Ei vaadi tiliä, pelaa 3-16 pelaajalla. Naura yhdessä ystävien tai uusien tuttavuuksien kanssa!",
             "options": {
                 "winCondition": {
                     "data": {
                         "first": "Ensimmäinen, joka saa <b>0</b> pistettä | Ensimmäinen, joka saa <b>1</b> pisteen | Ensimmäinen, joka saa <b>{count}</b> pistettä",
                         "most": "Eniten pisteitä <b>0</b> kierroksen jälkeen | Eniten pisteitä <b>1</b> kierroksen jälkeen | Eniten pisteitä <b>{count}</b> kierroksen jälkeen"
                     }
-                },
-                "handSize": {
-                    "title": "Käden Koko",
-                    "help": "Se määrä vastauskortteja, mitä kaikilla on käsissään milloin tahansa."
                 },
                 "judgeSystem": {
                     "title": "Tuomarijärjestelmä",
@@ -628,10 +623,8 @@
         },
         "CHECKERS": {
             "name": "Tammi",
-            "heading": "Pelaa Verkossa Tammea Kavereiden Kanssa",
-            "tooltip": "Kutsu sitä vaikka tammeiksi tai dämiiksi, pelaa sitä täällä jopa 4 pelaajan kanssa kaikenlaisten muokattavien sääntöjen kanssa.",
-            "description": "Tutun ja rakastamasi nopeatahtisen lautapelin, tammen, klassinen versio jännittävillä käänteillä! Hallitse peliä ja muuta sääntöjä mielensä mukaan. Pelaa kavereiden kanssa nyt.",
-            "title": "Klassinen Moninpeli Lautapeli | Bloob.io",
+            "title": "Tammi Lautapeli Netissä | Pelaa Ilmaiseksi Ystävien Kanssa",
+            "description": "Pelaa Tammi lautapeliä netissä ilmaiseksi ilman tiliä. Haasta ystävät tai tuntemattomat moninpelissä tai pelaa bottien säännöillä.",
             "options": {
                 "forceTake": {
                     "title": "Pakota Ottamaan",
@@ -739,10 +732,8 @@
         },
         "BLOMBER": {
             "name": "Blomberi",
-            "heading": "Pelaa Bomberman-verkossa kavereiden kanssa",
-            "tooltip": "Räjäytä vastustajasi intensiivisellä lähitaistelukentällä, joka on täynnä tehosteita tässä klassisessa Bomberman-pelissä.",
-            "description": "Blomber on moninpelaaja Bomberman-peli, jolla on enemmän uudelleenpelattavuutta kuin useimmilla muilla peleillä. Se on ilmainen, helppo pelata, muokattavissa eikä vaadi rekisteröitymistä. Pelaa nyt.",
-            "title": "Bomberman Moninpeli | Bloob.io",
+            "title": "Super Bomberman Netissä! Pelaa Ilmainen Blomberi Nyt!",
+            "description": "Pelaa Blomberi ilmaiseksi netissä! Kutsu kaverit mukaan hauskaan Super Bomberman -variaatioon, ei tarvita tiliä. Matseja jopa kahdeksalle!",
             "options": {
                 "field": {
                     "title": "Kenttä",
@@ -828,10 +819,8 @@
         },
         "EIGHT_BALL_POOL": {
             "name": "8 Pallo Biljardi",
-            "heading": "Pelaa 8-pallo biljardia verkossa kavereiden kanssa",
-            "tooltip": "Pelaa suosittua biljardipeliä täällä bottia tai pelaajaa vastaan.",
-            "description": "Ammu parhaasi verkkomoninpelissä biljardissa! Upota kaikki pallot ja lopeta 8-pallolla voittaaksesi pöydässä!",
-            "title": "Ilmainen moninpeli 2 pelaajalle",
+            "title": "Pelaa 8 Pallo Biljardia netissä | Moninpeli kaverit mukaan",
+            "description": "Pelaa 8 Pallo Biljardia ilmaiseksi netissä ilman tiliä! Haasta kaverit, tuntemattomat tai botit moninpeliin ja nauti biljardista verkossa.",
             "options": {
                 "preview": {
                     "title": "Esikatselu",
@@ -980,10 +969,8 @@
         },
         "YACHT": {
             "name": "Jahti",
-            "heading": "Pelaa Yachtia, klassista noppapeliä netissä",
-            "tooltip": "Pelaa suosittua Yacht-peliä täällä jopa 4 bottia tai pelaajaa vastaan.",
-            "description": "Pelaa Yachtia, klassista noppapeliä joka tunnetaan myös nimellä Yahtzee tai Yatzy, kavereiden kanssa Bloob.io:ssa. Heitä, pisteytä ja voita yhdessä!",
-            "title": "Ilmainen Moninpeli Noppapeli",
+            "title": "Jahti Yahtzee Netissä | Ilmainen Peli Yksin tai Kavereiden Kaa",
+            "description": "Pelaa Jahti Yahtzee netissä ilmaiseksi ilman tiliä! Nopat, säännöt ja pokerin jännitys kaikille. Haasta kaverit tai botit moninpelissä nyt!",
             "options": {
                 "rolls": {
                     "title": "Heitot",
@@ -1073,10 +1060,8 @@
         },
         "BATTLESHIP": {
             "name": "Taistelulaiva",
-            "heading": "Osallistu Episiin Laivataisteluihin Verkossa - Pelaa Laivapeliä",
-            "tooltip": "Komenta laivastoasi ja valloita avomeret tässä jännittävässä netin Laivapeli-pelissä.",
-            "description": "Hallitse taktisia taistelulaivoja, upota vihollisia ja valloita meret Battleship-pelissä! Osallistu eeppisiin moninpelaajalaivataisteluihin tänään.",
-            "title": "Valloita Meret - Pelaa Laivastotaistelua Nyt",
+            "title": "Pelaa Taistelulaiva ilmaiseksi netissä | Kutsu kaverit mukaan",
+            "description": "Pelaa Taistelulaiva ilmaiseksi netissä ilman tiliä! Haasta kaverit, tuntemattomat tai botit hauskoihin moninpelimatseihin laivanupotuksessa.",
             "options": {
                 "placementTime": {
                     "title": "Sijoitusajan",
@@ -1134,10 +1119,8 @@
         },
         "SUPER_TIC_TAC_TOE": {
             "name": "Super Risti-Nolla",
-            "heading": "Haasta Kaverit Super Ristinolla-Pelissä",
-            "tooltip": "Pelaa Super Ristinolla-peliä täällä bottia tai pelaajaa vastaan.",
-            "description": "Koe verkossa moninpeli Super Ristinolla! Pelaa kavereiden tai bottien kanssa ja hallitse ruudukko! Ei rekisteröitymistä vaadita. Liity hauskanpitoon tänään!",
-            "title": "Verkossa Pelattava Moninpeli",
+            "title": "Super Risti-Nolla netissä | Pelaa ilmaiseksi moninpeliä!",
+            "description": "Pelaa Super Risti-Nollaa ilmaiseksi netissä! Ei tarvitse tiliä. Haasta kavereita, tuntemattomia tai botteja 2 pelaajan moninpelissä.",
             "options": {
                 "winFallback": {
                     "title": "Voitto-varasuunnitelma",
@@ -1180,10 +1163,8 @@
         },
         "CRIBBAGE": {
             "name": "Cribbage",
-            "heading": "Nauti Klassisesta Cribbage-pelistä Verkossa",
-            "tooltip": "Kokeile taitojasi ja strategiaasi tässä rakastetussa korttipelissä pelaajia vastaan ympäri maailmaa.",
-            "description": "Terävöi älysi ja pelaa Cribbagea netissä! Ainutlaatuisen pisteytysjärjestelmänsä ja strategisen pelitavan ansiosta Cribbage tarjoaa loputtomasti hauskoja tunteja korttipelien ystäville.",
-            "title": "Haasta Kaverisi",
+            "title": "Pelaa Cribbage | Ilmainen Lautapeli | Klassinen Cribbage säännöt",
+            "description": "Pelaa ilmainen klassinen Cribbage missä vain! Ei tiliä tarvitaan. Haasta ystävät, tuntemattomat tai botit säännöillä 2-4 pelaajan lautapelissä.",
             "options": {
                 "summaryEnabled": {
                     "title": "Kierroksen Yhteenveto",
@@ -1262,10 +1243,8 @@
         },
         "WAR": {
             "name": "Sota",
-            "heading": "Koe Jännittävät Sota-Korttipelit Netissä",
-            "tooltip": "Koe jännitys War-korttipelissä pelaajien kanssa kaikista maailman kolkista.",
-            "description": "Koe moninpeli korttitaistelut verkossa War-pelissä! Pelaa kavereita ja kilpailijoita vastaan tässä nettiklassikossa.",
-            "title": "Astuppaan Korttitaistelun Areenalle",
+            "title": "Sota Korttipeli Verkossa | Pelaa Sotapeli Ystävien Kanssa",
+            "description": "Pelaa sotapeli Sota verkossa ilmaiseksi! Ei tarvita tiliä, nauti korttipelistä ystävien, vieraiden tai bottien kanssa ja julista sota nyt!",
             "options": {
                 "winCondition": {
                     "help": "Peli loppuu aikaisin, jos vain yksi pelaaja on jäljellä kaikkien korttien kanssa.",
@@ -1319,12 +1298,122 @@
                 }
             }
         },
+        "GIN_RUMMY": {
+            "name": "Gin Rummy",
+            "title": "Pelaa Gin Rummy netissä ilmaiseksi | Korttipeli ystävien kanssa",
+            "description": "Pelaa Gin Rummy netissä täysin ilmaiseksi. Ei tiliä tarvita! Haasta ystävät, tuntemattomat tai botit hauskoihin korttipeleihin milloin tahansa.",
+            "options": {
+                "winAmount": {
+                    "help": "Peli loppuu heti, kun joku pelaaja saa tämän verran pisteitä. Mutta se ei takaa voittoa, koska pelin lopussa jaetaan vielä bonuspisteitä."
+                },
+                "knock": {
+                    "title": "Koputus",
+                    "help": {
+                        "enabled": "'Päällä' mahdollistaa kolkuttamisen asetetun kolkutusrajan mukaan.",
+                        "firstDiscardCard": "'Ensimmäisen hylätyn kortin mukaan' käyttää ensimmäistä hylättyä korttia rajan asettamiseen; jos ässä vedetään, sun on pakko mennä Gin.",
+                        "disabled": "'Pois päältä' sallii kierroksen päättämisen vain Ginillä."
+                    },
+                    "data": {
+                        "firstDiscardCard": "Perustuu ekaan hylättyyn korttiin"
+                    }
+                },
+                "knockBasedOnFirstCard": {
+                    "title": "Knock Ensimmäisen Hylkäyksen Mukaan",
+                    "help": "Kun tää on päällä, niin ensimmäinen kortti hylkäyskasaassa määrittää, kuinka paljon voi koputtaa. Pelaajat voi koputtaa vaan, jos niiden \"deadwood\" on tämän kortin arvon alapuolella tai yhtä suuri."
+                },
+                "knockThreshold": {
+                    "title": "Koputusraja",
+                    "help": "Pelaaja voi lyödä, kun on hänen vuoronsa ja hänen roskansa on alle tai yhtä suuri kuin asetettu raja."
+                },
+                "ginPointAmount": {
+                    "title": "Gini",
+                    "help": "Pisteet, jotka pelaaja saa, kun huutaa Gin, eli kun kaikki kortit kädessä on yhdistelmässä."
+                },
+                "bigGinPointAmount": {
+                    "title": "Iso Gin",
+                    "help": "Pisteet, jotka pelaaja saa, kun kutsuu Big Giniä, eli silloin kun kaikki kortit kädessä plus nostettu kortti on yhdistelmässä, eikä jää mitään turhaa korttia."
+                },
+                "undercutPointAmount": {
+                    "title": "Alaleikkaus",
+                    "help": "Alaleikkaus tapahtuu, kun pelaaja lyö, mutta vastustajalla on sama tai vähemmän kuollutta puuta. Tässä tapauksessa vastustaja saa ekstra pisteitä."
+                },
+                "firstBonusPointAmount": {
+                    "title": "Bonus: Ensimmäinen voittaja",
+                    "help": "Palkitaan pelin lopussa. Antaa ensimmäisenä 'Voitto Summaan' päässeen pelaajan bonuksen."
+                },
+                "roundBonusPointAmount": {
+                    "title": "Bonus: Kierros",
+                    "help": "Palkitaan pelin lopussa. Antaa jokaiselle pelaajalle tämän verran pisteitä jokaisesta voitetusta kierroksesta, ilman tasapelejä."
+                },
+                "shutoutBonusPointAmount": {
+                    "title": "Bonus: Nollaus",
+                    "help": "Palkitaan pelin lopussa. Antaa voittajalle lisäpisteitä, jos on voittanut jokaisen kierroksen."
+                }
+            },
+            "presets": {
+                "straightGin": {
+                    "title": "Suora gini",
+                    "description": [
+                        "Ei koputusta",
+                        "Ei bonusta"
+                    ]
+                },
+                "oklahomaGin": {
+                    "title": "Oklahoma Gin",
+                    "description": [
+                        "Knock-arvo ensimmäisen hylkäyksen mukaan"
+                    ]
+                }
+            },
+            "help": {
+                "rounds": {
+                    "title": "Kierrokset",
+                    "description": [
+                        "Peli koostuu useista kierroksista. Jokaisella kierroksella pelaajille jaetaan 10 korttia, ja yksi kortti näytetään pinoon. Pelaajat voivat päättää, ottavatko he kortin vai passaaako.",
+                        "Vuorot vaihtelee, ja omalla vuorollasi voit ottaa kortin pinosta tai pakasta. Sen jälkeen sun pitää palauttaa yksi kortti pinoon."
+                    ]
+                },
+                "deadwood": {
+                    "title": "Kuollut puu",
+                    "description": [
+                        "Deadwood tarkoittaa kortteja, jotka ei oo osa mitään yhdistelmää. Deadwoodin arvo lasketaan lisäämällä näiden korttien arvot yhteen (esim. kaksi Kuningasta ja viitonen yhteensä 25).",
+                        "Yritä pitää sun deadwood mahdollisimman alhaalla tekemällä yhdistelmiä ja heittämällä pois korkeita kortteja, jotka ei oo yhdistelmissä."
+                    ]
+                },
+                "melds": {
+                    "title": "Meldit",
+                    "description": [
+                        "Meldit voi tehdä, kun sulla on kolme tai enemmän korttia samaa maata peräkkäin (esim. 3D, 4D, 5D) tai kolme tai enemmän samaa arvoa (esim. 3H, 3D, 3S).",
+                        "Meldit korostuu automaattisesti sun kädessä ja käyttöliittymässä, joten pidä silmällä pinoa—vastustaja saattaa tiputtaa kortin, jota tarvitset!"
+                    ]
+                },
+                "knock": {
+                    "title": "Koputus",
+                    "description": [
+                        "Voit koputtaa, jos sun \"deadwood\" on alle 10. Kun koputat, kaikki kortit paljastuu, ja näet sun vastustajan \"deadwoodin\". Jos sun \"deadwood\" on korkeampi, vastustaja voittaa kierroksen bonuksella.",
+                        "Koputuksen pisteytys on helppoa: vähennä sun \"deadwood\" vastustajan \"deadwoodista\". Esimerkiksi, jos sun \"deadwood\" on 5 ja vastustajan 25, saat 20 pistettä."
+                    ]
+                },
+                "gin": {
+                    "title": "Gin ja Iso Gin",
+                    "description": [
+                        "Jos sun kuollut puu on 0 tai voi olla 0, kun heität viimeisen kuolleen kortin, niin sulla on Gin. Tää takaa voiton ja saat bonuksen plus kuolleiden korttien eron.",
+                        "Iso Gin on vielä parempi: jos sun koko käsi ja se kortti, jonka just nostit, muodostaa yhdistelmiä, saat isomman bonuksen. Muista huutaa Iso Gin heti, kun saat sen!"
+                    ]
+                },
+                "goal": {
+                    "title": "Tavoite",
+                    "description": [
+                        "Tavoitteena on voittaa mahdollisimman monta kierrosta ja olla eka, joka saavuttaa 100 pistettä. Tää päättää pelin ja paljastaa lopulliset pisteet, mukaan lukien bonuspisteet.",
+                        "Oletuksena saat 25 ekstra pistettä jokaisesta voitetusta kierroksesta ja vielä 100 pistettä, jos oot eka, joka saavuttaa 100 pistettä."
+                    ]
+                }
+            }
+        },
         "AI_ASSASSIN": {
             "name": "Tehtävä: Tappaa AI",
-            "heading": "Ole Salamurhaaja tai Selviydy Kohteena AI Assassin -pelissä!",
-            "tooltip": "Korkean panoksen älypeli, jossa jokainen kehotus merkitsee. Oletko sinä salamurhaaja vai kohde?",
-            "description": "AI Assassin on jännittävä moninpeli, jossa eliminoit kohteen tai harhautat salamurhaajia. Käytä strategisia vihjeitä tavoitteesi saavuttamiseksi ja menestyäksesi.",
             "title": "Päihitä, Eliminoi, Selviydy",
+            "description": "AI Assassin on jännittävä moninpeli, jossa eliminoit kohteen tai harhautat salamurhaajia. Käytä strategisia vihjeitä tavoitteesi saavuttamiseksi ja menestyäksesi.",
             "options": {},
             "presets": {},
             "help": {}
@@ -1406,6 +1495,11 @@
             "removingRow": "Poistetaan rivi",
             "yourTurn": "Sinun vuorosi %{extra}",
             "nameTurn": "%{name}:n vuoro",
+            "tieEndedRound": "Kierros päättyi tasapeliin",
+            "youEndedRound": "Sä lopetit kierroksen",
+            "nameEndedRound": "%{name} lopetti kierroksen",
+            "youWonRound": "Sä voitit kierroksen",
+            "nameWonRound": "%{name} voitti kierroksen",
             "yourTurnBreaking": "Rikot %{extra}",
             "nameTurnBreaking": "%{name} rikkoo",
             "roundSummary": "Kierroksen yhteenveto",
@@ -1501,6 +1595,7 @@
         "basic": "Perus",
         "language": "Kieli",
         "rules": "Säännöt",
+        "points": "Pisteet",
         "fouls": "Rikkeeseen Vastaus"
     },
     "month": {
@@ -1650,6 +1745,9 @@
         "restartNotice": "Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi."
     },
     "misc": {
+        "roundWinner": "Kierroksen voittaja",
+        "sort": "Lajittele",
+        "pass": "Ohita",
         "permanent": "Pysyvä",
         "total": "Yhteensä",
         "judge": "Tuomari",
@@ -1682,6 +1780,7 @@
         "rollAgain": "Heitä Uudestaan",
         "rolling": "Heittää",
         "finalRoll": "Viimeinen Heitto",
+        "remaining": "Jäljellä",
         "noRollsRemaining": "Ei Heittoja Jäljellä",
         "congratulations": "Onnittelut!",
         "privacy": "Yksityisyys",
@@ -1794,8 +1893,12 @@
         "words": "Sanat",
         "longestWord": "Pisin Sana",
         "length": "Pituus",
+        "bonus": "Bonus",
+        "round": "Kierros",
         "score": "Pisteet",
         "highestScore": "Korkein pistemäärä",
+        "totalScore": "Yhteispisteet",
+        "finalScore": "Lopputulos",
         "hits": "Osumat",
         "hitRate": "Osuma-aste",
         "rank": "Sijoitus",
@@ -1868,6 +1971,8 @@
         "empty": "Ei kortteja",
         "total": "Korttien määrä",
         "view": "Katso kortit",
+        "melds": "Yhdistelmät",
+        "deadwood": "Kuollut puu",
         "editor": {
             "title": "Kortin Muokkaaja",
             "name": "Korttipakan Nimi",
@@ -2161,6 +2266,9 @@
             "noEmail": "Eikö sähköpostia? Tarkista roskapostikansiosi ja varmista, että tämä sähköpostiosoite on linkitetty tilillesi."
         },
         "cards": {
+            "sortHandBy": "Järjestä käsi",
+            "cardRank": "Kortin arvo",
+            "cardSuit": "Kortin maa",
             "selfRanOut": "Sulta loppui kortit pelattavaksi!",
             "nameRanOut": "%{name}lta loppui kortit pelattavaksi!"
         },
@@ -2258,6 +2366,19 @@
             "tapToRotate": "Napauta kääntääksesi",
             "dragToMove": "Vedä siirtääksesi",
             "setup": "Lähetä laivastosi!"
+        },
+        "ginRummy": {
+            "title": {
+                "tie": "Tasapeli",
+                "undercut": "Alikuristus",
+                "gin": "Gin",
+                "bigGin": "Iso Gin",
+                "knock": "Koputus"
+            },
+            "tieDescription": "Kortteja ei oo tarpeeks jäljellä pelaamiseen. Tasapeli!",
+            "scoreDescription": "Pisteet lasketaan siten, että katsotaan, kuinka paljon kuollut puu on kummankin pelaajan käsissä.",
+            "yourMeldAfterKnock": "Voi ei... Osaa %{name}n kuolleista korteista voi siirtää sun meldiin!",
+            "nameMeldAfterKnock": "Siistiä! Osaa sun kuolleista korteista voi siirtää %{name}n meldiin!"
         },
         "yacht": {
             "title": {

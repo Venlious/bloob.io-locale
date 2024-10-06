@@ -99,6 +99,8 @@
             "wordTooLong": false
         },
         "card": {
+            "handLocked": false,
+            "handTooFull": false,
             "loadingSets": false,
             "invalid": false,
             "invalidSet": false,
@@ -164,12 +166,15 @@
     },
     "game": {
         "generic": {
-            "heading": false,
             "title": false,
             "description": false,
             "options": {
                 "public": {
                     "title": false
+                },
+                "handSize": {
+                    "title": false,
+                    "help": false
                 },
                 "maxUsers": {
                     "title": false,
@@ -252,10 +257,8 @@
         },
         "WORDRACE": {
             "name": false,
-            "heading": false,
-            "tooltip": false,
-            "description": false,
             "title": false,
+            "description": false,
             "options": {
                 "globalLanguage": {
                     "title": false,
@@ -385,10 +388,8 @@
         },
         "FOUR_IN_A_ROW": {
             "name": false,
-            "heading": false,
-            "tooltip": false,
-            "description": false,
             "title": false,
+            "description": false,
             "options": {
                 "field": {
                     "title": false,
@@ -474,20 +475,14 @@
         },
         "ROTTEN_APPLES": {
             "name": false,
-            "heading": false,
-            "tooltip": false,
-            "description": false,
             "title": false,
+            "description": false,
             "options": {
                 "winCondition": {
                     "data": {
                         "first": false,
                         "most": false
                     }
-                },
-                "handSize": {
-                    "title": false,
-                    "help": false
                 },
                 "judgeSystem": {
                     "title": false,
@@ -622,10 +617,8 @@
         },
         "CHECKERS": {
             "name": false,
-            "heading": false,
-            "tooltip": false,
-            "description": false,
             "title": false,
+            "description": false,
             "options": {
                 "forceTake": {
                     "title": false,
@@ -733,10 +726,8 @@
         },
         "BLOMBER": {
             "name": false,
-            "heading": false,
-            "tooltip": false,
-            "description": false,
             "title": false,
+            "description": false,
             "options": {
                 "field": {
                     "title": false,
@@ -822,10 +813,8 @@
         },
         "EIGHT_BALL_POOL": {
             "name": false,
-            "heading": false,
-            "tooltip": false,
-            "description": false,
             "title": false,
+            "description": false,
             "options": {
                 "preview": {
                     "title": false,
@@ -974,10 +963,8 @@
         },
         "YACHT": {
             "name": false,
-            "heading": false,
-            "tooltip": false,
-            "description": false,
             "title": false,
+            "description": false,
             "options": {
                 "rolls": {
                     "title": false,
@@ -1067,10 +1054,8 @@
         },
         "BATTLESHIP": {
             "name": false,
-            "heading": false,
-            "tooltip": false,
-            "description": false,
             "title": false,
+            "description": false,
             "options": {
                 "placementTime": {
                     "title": false,
@@ -1128,10 +1113,8 @@
         },
         "SUPER_TIC_TAC_TOE": {
             "name": false,
-            "heading": {},
-            "tooltip": {},
-            "description": {},
             "title": {},
+            "description": {},
             "options": {
                 "winFallback": {
                     "title": false,
@@ -1174,10 +1157,8 @@
         },
         "CRIBBAGE": {
             "name": false,
-            "heading": false,
-            "tooltip": false,
-            "description": false,
             "title": false,
+            "description": false,
             "options": {
                 "summaryEnabled": {
                     "title": false,
@@ -1256,10 +1237,8 @@
         },
         "WAR": {
             "name": false,
-            "heading": false,
-            "tooltip": false,
-            "description": false,
             "title": false,
+            "description": false,
             "options": {
                 "winCondition": {
                     "help": false,
@@ -1313,12 +1292,122 @@
                 }
             }
         },
+        "GIN_RUMMY": {
+            "name": false,
+            "title": {},
+            "description": {},
+            "options": {
+                "winAmount": {
+                    "help": false
+                },
+                "knock": {
+                    "title": false,
+                    "help": {
+                        "enabled": false,
+                        "firstDiscardCard": false,
+                        "disabled": false
+                    },
+                    "data": {
+                        "firstDiscardCard": false
+                    }
+                },
+                "knockBasedOnFirstCard": {
+                    "title": false,
+                    "help": false
+                },
+                "knockThreshold": {
+                    "title": false,
+                    "help": false
+                },
+                "ginPointAmount": {
+                    "title": false,
+                    "help": false
+                },
+                "bigGinPointAmount": {
+                    "title": false,
+                    "help": false
+                },
+                "undercutPointAmount": {
+                    "title": false,
+                    "help": false
+                },
+                "firstBonusPointAmount": {
+                    "title": false,
+                    "help": false
+                },
+                "roundBonusPointAmount": {
+                    "title": false,
+                    "help": false
+                },
+                "shutoutBonusPointAmount": {
+                    "title": false,
+                    "help": false
+                }
+            },
+            "presets": {
+                "straightGin": {
+                    "title": false,
+                    "description": [
+                        false,
+                        false
+                    ]
+                },
+                "oklahomaGin": {
+                    "title": false,
+                    "description": [
+                        false
+                    ]
+                }
+            },
+            "help": {
+                "rounds": {
+                    "title": false,
+                    "description": [
+                        false,
+                        false
+                    ]
+                },
+                "deadwood": {
+                    "title": false,
+                    "description": [
+                        false,
+                        false
+                    ]
+                },
+                "melds": {
+                    "title": false,
+                    "description": [
+                        false,
+                        false
+                    ]
+                },
+                "knock": {
+                    "title": false,
+                    "description": [
+                        false,
+                        false
+                    ]
+                },
+                "gin": {
+                    "title": false,
+                    "description": [
+                        false,
+                        false
+                    ]
+                },
+                "goal": {
+                    "title": false,
+                    "description": [
+                        false,
+                        false
+                    ]
+                }
+            }
+        },
         "AI_ASSASSIN": {
             "name": false,
-            "heading": {},
-            "tooltip": {},
-            "description": {},
             "title": {},
+            "description": {},
             "options": {},
             "presets": {},
             "help": {}
@@ -1400,6 +1489,11 @@
             "removingRow": false,
             "yourTurn": false,
             "nameTurn": false,
+            "tieEndedRound": false,
+            "youEndedRound": false,
+            "nameEndedRound": false,
+            "youWonRound": false,
+            "nameWonRound": false,
             "yourTurnBreaking": false,
             "nameTurnBreaking": false,
             "roundSummary": false,
@@ -1495,6 +1589,7 @@
         "basic": false,
         "language": false,
         "rules": false,
+        "points": false,
         "fouls": false
     },
     "month": {
@@ -1644,6 +1739,9 @@
         "restartNotice": false
     },
     "misc": {
+        "roundWinner": false,
+        "sort": false,
+        "pass": false,
         "permanent": false,
         "total": false,
         "judge": false,
@@ -1676,6 +1774,7 @@
         "rollAgain": false,
         "rolling": false,
         "finalRoll": false,
+        "remaining": false,
         "noRollsRemaining": false,
         "congratulations": false,
         "privacy": false,
@@ -1788,8 +1887,12 @@
         "words": false,
         "longestWord": false,
         "length": false,
+        "bonus": false,
+        "round": false,
         "score": false,
         "highestScore": false,
+        "totalScore": false,
+        "finalScore": false,
         "hits": false,
         "hitRate": false,
         "rank": false,
@@ -1862,6 +1965,8 @@
         "empty": false,
         "total": false,
         "view": false,
+        "melds": false,
+        "deadwood": false,
         "editor": {
             "title": false,
             "name": false,
@@ -2155,6 +2260,9 @@
             "noEmail": false
         },
         "cards": {
+            "sortHandBy": false,
+            "cardRank": false,
+            "cardSuit": false,
             "selfRanOut": false,
             "nameRanOut": false
         },
@@ -2252,6 +2360,19 @@
             "tapToRotate": false,
             "dragToMove": false,
             "setup": false
+        },
+        "ginRummy": {
+            "title": {
+                "tie": false,
+                "undercut": false,
+                "gin": false,
+                "bigGin": false,
+                "knock": false
+            },
+            "tieDescription": false,
+            "scoreDescription": false,
+            "yourMeldAfterKnock": false,
+            "nameMeldAfterKnock": false
         },
         "yacht": {
             "title": {
