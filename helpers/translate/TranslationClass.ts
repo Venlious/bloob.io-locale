@@ -352,6 +352,14 @@ export default class TranslationClass {
 			[`info`, `accountWarning`, `punishment`],
 			`These are punishments a player might received after being warned.`
 		)
+		this.generateTranslationTask(
+			[`info`, `ginRummy`, `title`],
+			`This translation is a Gin Rummy action or outcome..`
+		)
+		this.generateTranslationTask(
+			[`info`, `ginRummy`],
+			`This translation is a Gin Rummy action or outcome..`
+		)
 		const cribbageTypes = Object.keys(EN_MESSAGES[`info`][`cribbage`][`type`])
 		for (const type of cribbageTypes) {
 			const target = EN_MESSAGES[`info`][`cribbage`][`type`][type]
@@ -488,27 +496,6 @@ export default class TranslationClass {
 					[`game`, value, `name`],
 					`These translations are game names.`
 				)
-			}
-			if (target.heading) {
-				this.generateTranslationTask(
-					[`game`, value, `heading`],
-					`These translations must be SEO friendly headings.`
-				)
-			}
-			if (target.title) {
-				this.generateTranslationTask(
-					[`game`, value, `title`],
-					`These translations must be SEO friendly meta titles no longer than 60 characters.`
-				)
-			}
-			if (target.description) {
-				this.generateTranslationTask(
-					[`game`, value, `description`],
-					`These translations must be SEO friendly meta description no longer than 160 characters.`
-				)
-			}
-			if (target.tooltip) {
-				this.generateTranslationTask([`game`, value, `tooltip`])
 			}
 
 			// Game preset
