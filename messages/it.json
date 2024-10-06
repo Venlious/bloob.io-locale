@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Italian",
         "rtl": false,
-        "total": 1550,
-        "missing": 50
+        "total": 1562,
+        "missing": 10
     },
     "name": "Bloob.io",
     "error": {
@@ -55,6 +55,7 @@
             "againstAgainstInactiveUser": "Non puoi eseguire questa azione su un utente non attivo.",
             "invalidUser": "L'utente con l'ID specificato non è in questa partita.",
             "invalidTime": "Non puoi eseguire questa azione in questo momento.",
+            "versionMismatch": "Stai usando la versione \"%{client}\" mentre il server è sulla versione \"%{server}\". Questo può succedere quando stanno facendo un aggiornamento. Ricarica questa pagina tra qualche minuto per passare all'ultima versione.",
             "clipboard": "Impossibile copiare negli appunti"
         },
         "config": {
@@ -104,8 +105,8 @@
             "wordTooLong": "La parola scelta è troppo lunga (Max. %{max})"
         },
         "card": {
-            "handLocked": null,
-            "handTooFull": null,
+            "handLocked": "Non puoi scegliere una carta dalla tua mano in questo momento.",
+            "handTooFull": "Puoi solo scartare una carta dalla tua mano in questo momento.",
             "loadingSets": "Impossibile scaricare i set di carte.",
             "invalid": "Dati della carta non validi.",
             "invalidSet": "Set di carte non valido.",
@@ -171,12 +172,15 @@
     },
     "game": {
         "generic": {
-            "heading": "Giochi multiplayer che puoi trovare su Bloob.io",
             "title": "Giochi Multigiocatore Gratuiti Online | Non c'è bisogno di iscriversi",
             "description": "Una raccolta di giochi multiplayer basati su browser senza la necessità di creare un account. Gioca senza problemi e personalizza l'esperienza a tuo piacimento.",
             "options": {
                 "public": {
                     "title": "Privacy delle partite"
+                },
+                "handSize": {
+                    "title": "Dimensione della mano",
+                    "help": "Il numero di carte che ognuno ha in mano."
                 },
                 "maxUsers": {
                     "title": "Max. Giocatori",
@@ -259,8 +263,6 @@
         },
         "WORDRACE": {
             "name": "Wordrace",
-            "heading": "Gioca a un gioco di ricerca di parole unico nel suo genere",
-            "tooltip": "Trova le parole in qualsiasi direzione su un campo generato in modo casuale mentre gareggi contro altri con lo stesso obiettivo.",
             "description": "Wordrace è un gioco di ricerca di parole unico nel suo genere, gratuito e con impostazioni personalizzabili per offrire una sfida a ogni giocatore. Non richiede alcuna iscrizione. Gioca ora.",
             "title": "Un gioco di parole multiplayer unico nel suo genere | Bloob.io",
             "options": {
@@ -392,8 +394,6 @@
         },
         "FOUR_IN_A_ROW": {
             "name": "Quattro di fila",
-            "heading": "Connetti Quattro in fila online con gli amici",
-            "tooltip": "Gioca a Quattro in fila con un massimo di sei giocatori nella modalità classica o nelle varianti disponibili.",
             "description": "Gioca a Four in a Row gratis! Classico gioco di connessione a quattro facile da imparare e divertente. Passa il tempo con gli amici in questo gioco coinvolgente.",
             "title": "Gioco multiplayer facile e gratuito | Bloob.io",
             "options": {
@@ -481,8 +481,6 @@
         },
         "ROTTEN_APPLES": {
             "name": "Rotten Apples",
-            "heading": "Gioca a Cards Against Humanity in multiplayer online con gli amici",
-            "tooltip": "Gioca a un clone di Cards Against Humanity e personalizza la tua esperienza a tuo piacimento.",
             "description": "Gioca a un clone di Cards Against Humanity e personalizza la tua esperienza a tuo piacimento. Crea i tuoi set di carte personalizzati e inseriscili nella tua prossima partita.",
             "title": "Cards Against Humanity multiplayer | Bloob",
             "options": {
@@ -491,10 +489,6 @@
                         "first": "Il primo a ottenere <b>0</b> punti | Il primo a ottenere <b>1</b> punto | Il primo a ottenere <b>{count}</b> punti",
                         "most": "Più punti dopo <b>0</b> round | Più punti dopo <b>1</b> round | Più punti dopo <b>{count}</b> round"
                     }
-                },
-                "handSize": {
-                    "title": "Dimensione della mano",
-                    "help": "La quantità di biglietti di risposta che ognuno ha in mano in un determinato momento."
                 },
                 "judgeSystem": {
                     "title": "Sistema Giudiziario",
@@ -629,8 +623,6 @@
         },
         "CHECKERS": {
             "name": "Dama",
-            "heading": "Gioca a Dama online con gli amici",
-            "tooltip": "Chiama la dama o il gioco della dama, gioca qui con fino a 4 giocatori con regole personalizzabili.",
             "description": "La dama è il classico gioco da tavolo dal ritmo incalzante che conosci e che ami, ma con un tocco di novità! Controlla e modifica le regole a tuo piacimento. Gioca subito con gli amici.",
             "title": "Classico gioco da tavolo multigiocatore | Bloob.io",
             "options": {
@@ -740,8 +732,6 @@
         },
         "BLOMBER": {
             "name": "Blomber",
-            "heading": "Gioca a Bomberman online con gli amici",
-            "tooltip": "Fai saltare in aria i tuoi avversari in un intenso campo di battaglia ravvicinato ricco di potenziamenti in questo classico gioco di Bomberman.",
             "description": "Blomber è un gioco multiplayer di Bomberman con una rigiocabilità maggiore rispetto alla maggior parte degli altri giochi. È gratuito, facile da giocare, personalizzabile e non richiede alcuna iscrizione. Gioca ora.",
             "title": "Bomberman Gioco Multiplayer | Bloob.io",
             "options": {
@@ -829,8 +819,6 @@
         },
         "EIGHT_BALL_POOL": {
             "name": "8 Ball Pool",
-            "heading": "Gioca a 8 Ball Pool online con gli amici",
-            "tooltip": "Gioca al famoso gioco del biliardo contro un bot o un giocatore.",
             "description": "Sfrutta il tuo colpo migliore nel biliardo multigiocatore online! Affonda tutte le palle e termina con la Palla 8 per vincere al tavolo!",
             "title": "Gioco multigiocatore gratuito per 2 giocatori",
             "options": {
@@ -981,8 +969,6 @@
         },
         "YACHT": {
             "name": "Yacht",
-            "heading": "Gioca a Yacht Online con gli Amici",
-            "tooltip": "Gioca qui al popolare gioco del Yacht contro fino a 4 bot o giocatori.",
             "description": "ivertiti con Yacht, gioco di dadi classico: Yahtzee o Yatzy. Con amici su Bloob.io. Tira, segna e vinci!",
             "title": "Dadi Multiplayer Gratis",
             "options": {
@@ -1074,8 +1060,6 @@
         },
         "BATTLESHIP": {
             "name": "Battaglia Navale",
-            "heading": "Impegnati in Epiche Battaglie Navali Online - Gioca a Battaglia Navale",
-            "tooltip": "Comanda la tua flotta e conquista i mari in questo emozionante gioco di Battaglia Navale online.",
             "description": "Domina battaglie tattiche navali, affonda nemici e conquista i mari in Battleship! Impegnati in epiche battaglie navali multiplayer oggi.",
             "title": "Conquista i Mari - Gioca a Battaglia Navale Ora",
             "options": {
@@ -1135,8 +1119,6 @@
         },
         "SUPER_TIC_TAC_TOE": {
             "name": "Super Tris",
-            "heading": "Sfida gli Amici con il Super Tris",
-            "tooltip": "Gioca qui al Super Tris contro un bot o un giocatore.",
             "description": "Vivi il gioco Super Tris online multiplayer! Gioca con amici o bot e domina la griglia! Iscrizione non necessaria. Unisciti al divertimento oggi!",
             "title": "Gioco Multiplayer Online",
             "options": {
@@ -1181,8 +1163,6 @@
         },
         "CRIBBAGE": {
             "name": "Cribbage",
-            "heading": "Goditi il Classico Cribbage Online",
-            "tooltip": "Metti alla prova le tue abilità e strategie in questo amato gioco di carte contro giocatori di tutto il mondo.",
             "description": "Affila la tua astuzia e gioca a Cribbage online! Con il suo unico sistema di punteggio e gameplay strategico, Cribbage offre ore infinite di divertimento per gli appassionati di giochi di carte.",
             "title": "Sfida i Tuoi Amici",
             "options": {
@@ -1263,8 +1243,6 @@
         },
         "WAR": {
             "name": "Guerra",
-            "heading": "Vivi Emozionanti Battaglie di Carte di Guerra Online",
-            "tooltip": "Vivi l'emozione del gioco di carte della Guerra con giocatori da tutti gli angoli del mondo.",
             "description": "Vivi battaglie di carte multiplayer online con War! Gioca contro amici e rivali in questo classico basato sul web.",
             "title": "Entra nell'Arena del Combattimento di Carte",
             "options": {
@@ -1321,55 +1299,119 @@
             }
         },
         "GIN_RUMMY": {
-            "name": null,
-            "heading": {},
-            "tooltip": {},
+            "name": "Gin Rummy",
             "description": {},
             "title": {},
             "options": {
                 "winAmount": {
-                    "help": null
+                    "help": "Il gioco finisce appena un giocatore arriva a questo punteggio. Però, questo non garantisce una vittoria, perché ci sono punti bonus che vengono dati alla fine del gioco."
                 },
                 "knock": {
-                    "title": null,
-                    "help": null
+                    "title": "Batti!",
+                    "help": {
+                        "enabled": "'Abilitato' permette di bussare in base alla soglia di bussata impostata.",
+                        "firstDiscardCard": "'Basato sulla prima carta scartata' usa la prima carta scartata per impostare la soglia; se esce un Asso, devi andare in Gin.",
+                        "disabled": "'Disabilitato' permette di chiudere un turno solo con un Gin."
+                    },
+                    "data": {
+                        "firstDiscardCard": "[1] Basato sulla prima carta scartata"
+                    }
+                },
+                "knockBasedOnFirstCard": {
+                    "title": "Batti in base al primo scarto",
+                    "help": "Quando è attivato, la prima carta nel mazzo degli scarti determina la soglia per bussare. I giocatori possono bussare solo se il loro \"deadwood\" è uguale o inferiore al valore di questa carta."
                 },
                 "knockThreshold": {
-                    "title": null,
-                    "help": null
+                    "title": "Soglia di Colpo",
+                    "help": "Un giocatore può \"bussare\" quando è il suo turno e il suo \"deadwood\" è uguale o inferiore alla soglia impostata."
                 },
                 "ginPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "Gin",
+                    "help": "Il numero di punti che si danno a un giocatore per aver chiamato Gin, che succede quando tutte le carte in mano sono in un meld."
                 },
                 "bigGinPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "Gin Gigante",
+                    "help": "Il numero di punti che si danno a un giocatore per aver chiamato Big Gin, che succede quando tutte le carte in mano più quella pescata sono in un meld, senza carte morte."
                 },
                 "undercutPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "Sottosquadro",
+                    "help": "Un undercut succede quando un giocatore fa knock, ma il suo avversario ha lo stesso numero di punti morti o meno. In questo caso, l'avversario guadagna punti extra."
                 },
                 "firstBonusPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "Bonus: Primo a vincere",
+                    "help": "Assegnato alla fine del gioco. Dà al giocatore che è arrivato per primo al 'Importo Vincente' un bonus."
                 },
                 "roundBonusPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "Bonus: Giro",
+                    "help": "Assegnato alla fine del gioco. Dà a ogni giocatore questo numero di punti per ogni round che hanno vinto, escluse le pareggiate."
                 },
                 "shutoutBonusPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "Bonus: Porta chiusa",
+                    "help": "Alla fine del gioco, chi vince riceve un bonus extra di questo numero di punti se ha vinto tutti i turni."
                 }
             },
-            "presets": {},
-            "help": {}
+            "presets": {
+                "straightGin": {
+                    "title": "Gin liscio",
+                    "description": [
+                        "Niente colpi",
+                        "Niente bonus"
+                    ]
+                },
+                "oklahomaGin": {
+                    "title": "Oklahoma Gin",
+                    "description": [
+                        "Valore del knock basato sulla prima scartata"
+                    ]
+                }
+            },
+            "help": {
+                "rounds": {
+                    "title": "Giri",
+                    "description": [
+                        "Il gioco è fatto di più turni. In ogni turno, ai giocatori vengono date 10 carte e una carta viene mostrata nel mazzo. I giocatori possono scegliere di passare o prendere la carta in cima al mazzo.",
+                        "I turni si alternano, e quando è il tuo turno, puoi prendere una carta dal mazzo o dal mazzo. Dopo, devi restituire una carta al mazzo."
+                    ]
+                },
+                "deadwood": {
+                    "title": "[1] Legno Morto",
+                    "description": [
+                        "Il deadwood si riferisce alle carte che non fanno parte di nessun meld. Il valore del deadwood si calcola sommando i valori di queste carte (per esempio, due Re e un cinque fanno 25 in totale).",
+                        "Cerca di tenere il tuo deadwood il più basso possibile formando meld e scartando le carte di alto valore che non sono nei meld."
+                    ]
+                },
+                "melds": {
+                    "title": "Combinazioni",
+                    "description": [
+                        "I meld si formano con una sequenza di tre o più carte dello stesso seme (tipo, 3D, 4D, 5D) oppure tre o più carte dello stesso valore (tipo, 3H, 3D, 3S).",
+                        "I meld vengono evidenziati automaticamente nella tua mano e nell'interfaccia, quindi fai attenzione al mazzo—il tuo avversario potrebbe lasciare la carta che ti serve!"
+                    ]
+                },
+                "knock": {
+                    "title": "Batti!",
+                    "description": [
+                        "Puoi bussare se il tuo deadwood è meno di 10. Quando bussi, tutte le carte vengono rivelate e vedrai il deadwood del tuo avversario. Se il tuo deadwood è più alto, il tuo avversario vince il turno con un bonus.",
+                        "Il punteggio per un knock è semplice: sottrai il tuo deadwood da quello del tuo avversario. Per esempio, se il tuo deadwood è 5 e quello del tuo avversario è 25, fai 20 punti."
+                    ]
+                },
+                "gin": {
+                    "title": "1. Gin e Big Gin",
+                    "description": [
+                        "Se il tuo deadwood è 0 o può diventarlo dopo aver scartato l'ultima carta deadwood, hai fatto un Gin. Questo ti garantisce la vittoria e ti dà un bonus più la differenza di deadwood.",
+                        "Un Big Gin è ancora meglio: se tutta la tua mano, più la carta che hai appena pescato, forma dei meld, ricevi un bonus più grande. Chiama sempre un Big Gin appena ce l'hai!"
+                    ]
+                },
+                "goal": {
+                    "title": "Obiettivo",
+                    "description": [
+                        "L'obiettivo è vincere il maggior numero di round possibile e essere il primo a raggiungere 100 punti. Così finisce il gioco e si vedono i punteggi finali, compresi i punti bonus.",
+                        "Di base, guadagni 25 punti extra per ogni round che vinci e altri 100 punti se sei il primo a toccare i 100 punti."
+                    ]
+                }
+            }
         },
         "AI_ASSASSIN": {
             "name": "Assassino AI",
-            "heading": "Diventa l'Assassino o Sopravvivi come Bersaglio in AI Assassin!",
-            "tooltip": "Un gioco ad alta posta in gioco di ingegno dove ogni indizio conta. Sei l'assassino o il bersaglio?",
             "description": "AI Assassin è un emozionante gioco multiplayer dove devi eliminare il bersaglio o ingannare gli assassini. Usa suggerimenti strategici per raggiungere il tuo obiettivo e avere successo.",
             "title": "Inganna, Elimina, Sopravvivi",
             "options": {},
@@ -1453,11 +1495,11 @@
             "removingRow": "Rimozione della riga",
             "yourTurn": "Tocca a te %{extra}",
             "nameTurn": "Il turno di %{name}",
-            "tieEndedRound": null,
-            "youEndedRound": null,
-            "nameEndedRound": null,
-            "youWonRound": null,
-            "nameWonRound": null,
+            "tieEndedRound": "Il turno è finito in pareggio",
+            "youEndedRound": "Hai finito il turno",
+            "nameEndedRound": "%{name} ha finito il turno",
+            "youWonRound": "Hai vinto il turno",
+            "nameWonRound": "%{name} ha vinto il turno",
             "yourTurnBreaking": "Stai violando il %{extra}",
             "nameTurnBreaking": "%{name} si sta rompendo",
             "roundSummary": "Riepilogo del turno",
@@ -1553,7 +1595,7 @@
         "basic": "Di base",
         "language": "Lingua",
         "rules": "Regole",
-        "points": null,
+        "points": "Punti",
         "fouls": "Risposta al fallo"
     },
     "month": {
@@ -1703,9 +1745,9 @@
         "restartNotice": "Il server si riavvierà tra {count} minuti. Finisci la tua partita. | Il server si riavvierà tra {count} minuto. Finisci la tua partita. | Il server si riavvierà tra {count} minuti. Finisci la tua partita."
     },
     "misc": {
-        "roundWinner": null,
-        "sort": null,
-        "pass": null,
+        "roundWinner": "Vincitore del turno",
+        "sort": "Ordina",
+        "pass": "Passa",
         "permanent": "Permanente",
         "total": "Totale",
         "judge": "Giudice",
@@ -1738,6 +1780,7 @@
         "rollAgain": "Tira di nuovo",
         "rolling": "Sto tirando",
         "finalRoll": "Ultimo tiro",
+        "remaining": "Rimanente",
         "noRollsRemaining": "Non ci sono più tiri rimasti",
         "congratulations": "Congratulazioni!",
         "privacy": "Privacy",
@@ -1850,8 +1893,12 @@
         "words": "Parole",
         "longestWord": "Parola più lunga",
         "length": "Lunghezza",
+        "bonus": "Bonus",
+        "round": "Giro",
         "score": "Punteggio",
         "highestScore": "Punteggio più alto",
+        "totalScore": "Punteggio Totale",
+        "finalScore": "Punteggio Finale",
         "hits": "Colpi",
         "hitRate": "Tasso di Colpi",
         "rank": "Classifica",
@@ -1924,8 +1971,8 @@
         "empty": "Nessuna carta",
         "total": "Totale Carte",
         "view": "Visualizza le schede",
-        "melds": null,
-        "deadwood": null,
+        "melds": "Combinazioni",
+        "deadwood": "Legno morto",
         "editor": {
             "title": "Editor di schede",
             "name": "Nome del set di carte",
@@ -2219,9 +2266,9 @@
             "noEmail": "Nessuna email? Controlla la tua cartella spam e conferma che questo indirizzo email sia collegato al tuo account."
         },
         "cards": {
-            "sortHandBy": null,
-            "cardRank": null,
-            "cardSuit": null,
+            "sortHandBy": "Ordina la mano per",
+            "cardRank": "Valore delle carte",
+            "cardSuit": "Seme delle carte",
             "selfRanOut": "Hai finito le carte da giocare!",
             "nameRanOut": "%{name} ha finito le carte da giocare!"
         },
@@ -2322,13 +2369,16 @@
         },
         "ginRummy": {
             "title": {
-                "gin": null,
-                "bigGin": null,
-                "knock": null
+                "tie": "Pareggio",
+                "undercut": "Sottocut",
+                "gin": "Gin",
+                "bigGin": "Grande Gin",
+                "knock": "Knock"
             },
-            "scoreDescription": null,
-            "yourMeldAfterKnock": null,
-            "nameMeldAfterKnock": null
+            "tieDescription": "Non ci sono abbastanza carte per continuare a giocare. È un pareggio!",
+            "scoreDescription": "Il punteggio si calcola facendo la differenza tra i valori totali delle carte morte in mano a ciascun giocatore.",
+            "yourMeldAfterKnock": "Oh no... Alcune delle carte morte di %{name} possono essere spostate nei tuoi meld!",
+            "nameMeldAfterKnock": "Bello! Alcune delle tue carte morte possono essere spostate nei meld di %{name}!"
         },
         "yacht": {
             "title": {

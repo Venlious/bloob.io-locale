@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal German",
         "rtl": false,
-        "total": 1550,
-        "missing": 50
+        "total": 1562,
+        "missing": 10
     },
     "name": "Bloob.io",
     "error": {
@@ -55,6 +55,7 @@
             "againstAgainstInactiveUser": "Du kannst diese Aktion nicht an einem inaktiven Benutzer ausführen.",
             "invalidUser": "Der Benutzer mit der angegebenen ID ist nicht in diesem Spiel.",
             "invalidTime": "Du kannst diese Aktion gerade nicht ausführen.",
+            "versionMismatch": "Du benutzt die Version \"%{client}\", während der Server die Version \"%{server}\" am Laufen hat. Das kann passieren, wenn ein Update ausgerollt wird. Refresh die Seite einfach in ein paar Minuten, um die neueste Version zu bekommen.",
             "clipboard": "Kopieren in die Zwischenablage nicht möglich."
         },
         "config": {
@@ -104,8 +105,8 @@
             "wordTooLong": "Wortauswahl zu lang (Max. %{max})"
         },
         "card": {
-            "handLocked": null,
-            "handTooFull": null,
+            "handLocked": "Du kannst gerade keine Karte aus deiner Hand auswählen.",
+            "handTooFull": "Du kannst gerade nur eine Karte aus deiner Hand ablegen.",
             "loadingSets": "Die Kartensets konnten nicht heruntergeladen werden.",
             "invalid": "Ungültige Kartendaten.",
             "invalidSet": "Ungültiges Kartenset.",
@@ -171,12 +172,15 @@
     },
     "game": {
         "generic": {
-            "heading": "Multiplayer-Spiele, die Sie auf Bloob.io spielen können",
             "title": "Kostenlose Online-Multiplayer-Browserspiele",
             "description": "Eine Sammlung von Multiplayer-Browserspielen, für die man kein Konto erstellen muss. Spiele mühelos und passe das Spielerlebnis nach deinen Wünschen an.",
             "options": {
                 "public": {
                     "title": "Sichtbarkeit"
+                },
+                "handSize": {
+                    "title": "Handgröße",
+                    "help": "Die Anzahl der Karten, die jeder auf der Hand hat."
                 },
                 "maxUsers": {
                     "title": "Max. Spieler",
@@ -259,8 +263,6 @@
         },
         "WORDRACE": {
             "name": "Wortrennen",
-            "heading": "Spielen Sie ein einzigartiges Wortsuchspiel online",
-            "tooltip": "Finde Wörter in beliebiger Richtung auf einem zufällig generierten Feld, während du gegen andere mit demselben Ziel antrittst.",
             "description": "Finde Wörter in beliebiger Richtung auf einem zufällig generierten Feld, während du gegen andere mit demselben Ziel antrittst.",
             "title": "Kostenloses Online-Wortsuchspiel",
             "options": {
@@ -392,8 +394,6 @@
         },
         "FOUR_IN_A_ROW": {
             "name": "Vier gewinnt",
-            "heading": "Vier in einer Reihe online mit Freunden spielen",
-            "tooltip": "Spiele Vier gewinnt mit bis zu sechs Spielern entweder im klassischen Spielmodus oder in den verfügbaren Varianten.",
             "description": "Spiele Vier gewinnt mit bis zu sechs Spielern entweder im klassischen Spielmodus oder in den verfügbaren Varianten.",
             "title": "Kostenloses Multiplayer-Spiel für 2-6 Spieler",
             "options": {
@@ -481,8 +481,6 @@
         },
         "ROTTEN_APPLES": {
             "name": "Rotten Apples",
-            "heading": "Cards Against Humanity online spielen auf Deutsch",
-            "tooltip": "Spiele einen Cards Against Humanity-Klon und passe das Spielerlebnis nach deinen Wünschen an.",
             "description": "Spiele einen Cards Against Humanity-Klon und passe das Spielerlebnis nach deinen Wünschen an.",
             "title": "Gratis Online Cards Against Humanity Spiel",
             "options": {
@@ -491,10 +489,6 @@
                         "first": "Erster mit <b>0</b> Punkten | Erster mit <b>1</b> Punkt | Erster mit <b>{count}</b> Punkten",
                         "most": "Meiste Punkte nach <b>0</b> Runden | Meiste Punkte nach <b>1</b> Runde | Meiste Punkte nach <b>{count}</b> Runden"
                     }
-                },
-                "handSize": {
-                    "title": "Karten auf der Hand",
-                    "help": "Die Anzahl der Antwortkarten, die jeder zu einem bestimmten Zeitpunkt auf der Hand hat."
                 },
                 "judgeSystem": {
                     "title": "Abstimmungssystem",
@@ -629,8 +623,6 @@
         },
         "CHECKERS": {
             "name": "Dame",
-            "heading": "Dame online gegen Freunde spielen",
-            "tooltip": "Spiele hier Dame mit bis zu 4 Spielern und einer Vielzahl von anpassbaren Regeln.",
             "description": "Spiele hier Dame mit bis zu 4 Spielern und einer Vielzahl von anpassbaren Regeln.",
             "title": "Kostenloses Online-Dame-Spiel für 2-4 Spieler",
             "options": {
@@ -740,8 +732,6 @@
         },
         "BLOMBER": {
             "name": "Blomber",
-            "heading": "Bomberman online gegen Freunde spielen",
-            "tooltip": "Jage deine Gegner in einem intensiven Schlachtfeld voller Power-Ups in die Luft.",
             "description": "Jage deine Gegner in einem intensiven Schlachtfeld voller Power-Ups in die Luft.",
             "title": "Kostenloses von Bomberman inspiriertes Online-Spiel",
             "options": {
@@ -829,8 +819,6 @@
         },
         "EIGHT_BALL_POOL": {
             "name": "8-Ball-Pool",
-            "heading": "8 Ball Pool online gegen Freunde spielen",
-            "tooltip": "Hier kannst du das beliebte Billardspiel gegen einen Bot oder einen Spieler spielen.",
             "description": "Gib dein Bestes im Online-Multiplayer-Pool! Versenke alle deine Kugeln und beende mit der 8 Kugel, um am Tisch zu gewinnen!",
             "title": "Kostenloses Mehrspieler-Spiel für 2 Spieler",
             "options": {
@@ -981,8 +969,6 @@
         },
         "YACHT": {
             "name": "Kniffel",
-            "heading": "Online Kniffel mit Freunden spielen",
-            "tooltip": "Spiele hier das beliebte Kniffel-Spiel gegen bis zu 4 Bots oder Spieler.",
             "description": "Kostenloses Multiplayer Würfelspiel",
             "title": "Zocke Kniffel, das klassische Würfelspiel, als Yahtzee, Yatzy oder Yacht. Mit Freunden auf Bloob.io. Würfeln, punkten und gewinnen!",
             "options": {
@@ -1074,8 +1060,6 @@
         },
         "BATTLESHIP": {
             "name": "Schlachtschiff",
-            "heading": "Nimm an epischen Schiffsschlachten online teil - Spiele Schiffe versenken",
-            "tooltip": "Befehle deine Flotte und erobere die hohe See in diesem aufregenden Online-Schlachtschiff-Spiel.",
             "description": "Meistere taktische Schlachtschiffe, versenke Feinde und erobere die Meere in Battleship! Stürze dich heute in epische Mehrspieler-Schiffsschlachten.",
             "title": "Erobere die Meere - Spiele jetzt Schlachtschiff",
             "options": {
@@ -1135,8 +1119,6 @@
         },
         "SUPER_TIC_TAC_TOE": {
             "name": "Super Tic-Tac-Toe",
-            "heading": "Fordere Freunde heraus mit Super Tic-Tac-Toe",
-            "tooltip": "Spiele hier das Super Tic-Tac-Toe Spiel gegen einen Bot oder Spieler.",
             "description": "Erlebe Online-Multiplayer Tic-Tac-Toe mit Freunden und Bots! Keine Anmeldung erforderlich. Erobere das Spielfeld und genieße den Spaß noch heute!",
             "title": "Online-Mehrspieler-Spiel",
             "options": {
@@ -1181,8 +1163,6 @@
         },
         "CRIBBAGE": {
             "name": "Kribbeln",
-            "heading": "Genieße klassisches Cribbage online",
-            "tooltip": "Teste deine Fähigkeiten und Strategien in diesem beliebten Kartenspiel gegen Spieler aus der ganzen Welt.",
             "description": "Schärfe deinen Verstand und spiele Cribbage online! Mit seinem einzigartigen Punktesystem und strategischem Gameplay bietet Cribbage endlosen Spaß für Kartenspielfans.",
             "title": "Fordere deine Freunde heraus",
             "options": {
@@ -1263,8 +1243,6 @@
         },
         "WAR": {
             "name": "Krieg",
-            "heading": "Erlebe aufregende Kriegskartenschlachten online",
-            "tooltip": "Erlebe die Aufregung des Kriegskartenspiels mit Spielern aus allen Ecken der Welt.",
             "description": "Erlebe Online-Multiplayer-Kartenschlachten mit War! Spiele gegen Freunde und Rivalen in diesem Web-Klassiker.",
             "title": "Betrete die Arena des Kartengefechts",
             "options": {
@@ -1321,55 +1299,119 @@
             }
         },
         "GIN_RUMMY": {
-            "name": null,
-            "heading": {},
-            "tooltip": {},
+            "name": "Gin Rummy",
             "description": {},
             "title": {},
             "options": {
                 "winAmount": {
-                    "help": null
+                    "help": "Das Spiel endet, sobald ein Spieler diese Punktzahl erreicht. Aber das heißt nicht, dass man automatisch gewinnt, denn am Ende gibt's noch Bonuspunkte."
                 },
                 "knock": {
-                    "title": null,
-                    "help": null
+                    "title": "Klopf!",
+                    "help": {
+                        "enabled": "'Aktiviert' erlaubt Klopfen basierend auf dem festgelegten Klopfwert.",
+                        "firstDiscardCard": "'Basierend auf der ersten abgeworfenen Karte' nutzt die erste abgeworfene Karte, um den Wert festzulegen; wenn ein Ass gezogen wird, musst du Gin machen.",
+                        "disabled": "'Deaktiviert' erlaubt das Beenden einer Runde nur mit einem Gin."
+                    },
+                    "data": {
+                        "firstDiscardCard": "Basierend auf der ersten abgeworfenen Karte"
+                    }
+                },
+                "knockBasedOnFirstCard": {
+                    "title": "Knock basierend auf erstem Abwurf",
+                    "help": "Wenn's aktiviert ist, bestimmt die erste Karte im Ablagestapel die Knock-Schwelle. Die Spieler können nur klopfen, wenn ihr toter Holzwert gleich oder niedriger als der Wert dieser Karte ist."
                 },
                 "knockThreshold": {
-                    "title": null,
-                    "help": null
+                    "title": "Klopfgrenze",
+                    "help": "Ein Spieler kann klopfen, wenn er dran ist und sein toter Holzwert gleich oder kleiner als der festgelegte Grenzwert ist."
                 },
                 "ginPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "Gin",
+                    "help": "Die Punkte, die ein Spieler bekommt, wenn er Gin ruft, also wenn alle Karten in seiner Hand in einer Meld sind."
                 },
                 "bigGinPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "Großer Gin",
+                    "help": "Die Punkte, die ein Spieler bekommt, wenn er Big Gin ruft, also wenn alle Karten in seiner Hand plus die gezogene Karte in einer Meld sind und kein totes Holz übrig bleibt."
                 },
                 "undercutPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "Undercut",
+                    "help": "Ein Undercut passiert, wenn ein Spieler klopft, aber sein Gegner gleich viele oder weniger Punkte hat. In dem Fall kriegt der Gegner extra Punkte."
                 },
                 "firstBonusPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "Bonus: Erster Sieg",
+                    "help": "Am Ende des Spiels vergeben. Gibt dem Spieler, der als erster den 'Gewinnbetrag' erreicht hat, einen Bonus."
                 },
                 "roundBonusPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "Bonus: Runde",
+                    "help": "Am Ende des Spiels vergeben. Gibt jedem Spieler diese Anzahl an Punkten für jede Runde, die sie gewonnen haben, ohne Unentschieden."
                 },
                 "shutoutBonusPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "Bonus: Auszeit",
+                    "help": "Am Ende des Spiels vergeben. Gibt dem Gewinner einen zusätzlichen Bonus von dieser Punktzahl, wenn er jede Runde gewonnen hat."
                 }
             },
-            "presets": {},
-            "help": {}
+            "presets": {
+                "straightGin": {
+                    "title": "Pur Gin",
+                    "description": [
+                        "Kein Klopfen",
+                        "Kein Bonus"
+                    ]
+                },
+                "oklahomaGin": {
+                    "title": "Oklahoma Gin",
+                    "description": [
+                        "Knock-Wert basierend auf dem ersten Abwurf"
+                    ]
+                }
+            },
+            "help": {
+                "rounds": {
+                    "title": "Runden",
+                    "description": [
+                        "Das Spiel besteht aus mehreren Runden. In jeder Runde kriegen die Spieler 10 Karten, und eine Karte liegt offen im Stapel. Die Spieler können entscheiden, ob sie passen oder die oberste Karte vom Stapel nehmen wollen.",
+                        "Die Züge wechseln sich ab, und wenn du dran bist, kannst du eine Karte vom Stapel oder vom Deck nehmen. Danach musst du eine Karte wieder in den Stapel zurücklegen."
+                    ]
+                },
+                "deadwood": {
+                    "title": "Deadwood - Totenkopfstadt",
+                    "description": [
+                        "Deadwood sind Karten, die nicht zu irgendwelchen Meldungen gehören. Der Wert von Deadwood wird berechnet, indem man die Werte dieser Karten zusammenzählt (z.B. zwei Könige und eine fünf ergeben insgesamt 25).",
+                        "Versuch, dein Deadwood so niedrig wie möglich zu halten, indem du Meldungen bildest und hochpreisige Karten, die nicht in Meldungen sind, abwirfst."
+                    ]
+                },
+                "melds": {
+                    "title": "Meldungen",
+                    "description": [
+                        "Melds kannst du bilden, indem du eine Reihe von drei oder mehr Karten derselben Farbe hast (z.B. 3Kreuz, 4Kreuz, 5Kreuz) oder drei oder mehr Karten mit dem gleichen Wert (z.B. 3Herz, 3Kreuz, 3Pik).",
+                        "Melds werden automatisch in deiner Hand und im Interface hervorgehoben, also schau auf den Stapel—dein Gegner könnte die Karte abwerfen, die du brauchst!"
+                    ]
+                },
+                "knock": {
+                    "title": "Klopf, klopf!",
+                    "description": [
+                        "Du kannst klopfen, wenn dein Deadwood weniger als 10 ist. Wenn du klopfst, werden alle Karten aufgedeckt und du siehst das Deadwood deines Gegners. Wenn dein Deadwood höher ist, gewinnt dein Gegner die Runde mit einem Bonus.",
+                        "Die Punkte für ein Klopfen sind einfach: Zieh dein Deadwood von dem deines Gegners ab. Zum Beispiel, wenn dein Deadwood 5 ist und das deines Gegners 25, bekommst du 20 Punkte."
+                    ]
+                },
+                "gin": {
+                    "title": "Gin und Big Gin",
+                    "description": [
+                        "Wenn dein Deadwood 0 ist oder 0 werden kann, nachdem du deine letzte Deadwood-Karte abgelegt hast, hast du einen Gin. Das sichert dir den Sieg und gibt dir einen Bonus plus die Deadwood-Differenz.",
+                        "Ein Big Gin ist noch besser: Wenn deine ganze Hand, plus die Karte, die du gerade gezogen hast, Meldungen bildet, bekommst du einen größeren Bonus. Ruf immer einen Big Gin, sobald du ihn hast!"
+                    ]
+                },
+                "goal": {
+                    "title": "Ziel",
+                    "description": [
+                        "Das Ziel ist, so viele Runden wie möglich zu gewinnen und als Erster 100 Punkte zu erreichen. Dann ist das Spiel vorbei und die Endpunkte werden angezeigt, inklusive Bonuspunkte.",
+                        "Standardmäßig bekommst du für jede gewonnene Runde 25 Extra-Punkte und nochmal 100 Punkte, wenn du als Erster die 100 Punkte knackst."
+                    ]
+                }
+            }
         },
         "AI_ASSASSIN": {
             "name": "KI Attentäter",
-            "heading": "Sei der Attentäter oder überlebe als Ziel in AI Assassin!",
-            "tooltip": "Ein hochriskantes Spiel der Klugheit, bei dem jeder Hinweis zählt. Bist du der Attentäter oder das Ziel?",
             "description": "AI Assassin ist ein spannendes Multiplayer-Spiel, bei dem du entweder das Ziel ausschaltest oder die Assassinen überlistest. Nutze strategische Hinweise, um dein Ziel zu erreichen und erfolgreich zu sein.",
             "title": "Überliste, Eliminiere, Überlebe",
             "options": {},
@@ -1453,11 +1495,11 @@
             "removingRow": "Reihe entfernen",
             "yourTurn": "Dein Zug %{extra}",
             "nameTurn": "%{name}'s Zug",
-            "tieEndedRound": null,
-            "youEndedRound": null,
-            "nameEndedRound": null,
-            "youWonRound": null,
-            "nameWonRound": null,
+            "tieEndedRound": "Runde ist unentschieden ausgegangen",
+            "youEndedRound": "Du hast die Runde beendet",
+            "nameEndedRound": "%{name} hat die Runde beendet",
+            "youWonRound": "Du hast die Runde gewonnen",
+            "nameWonRound": "%{name} hat die Runde gewonnen",
             "yourTurnBreaking": "Du brichst %{extra}",
             "nameTurnBreaking": "%{name} bricht %{extra}",
             "roundSummary": "Rundenübersicht",
@@ -1553,7 +1595,7 @@
         "basic": "Basic",
         "language": "Sprache",
         "rules": "Regeln",
-        "points": null,
+        "points": "Punkte",
         "fouls": "Antwort auf Foul"
     },
     "month": {
@@ -1703,9 +1745,9 @@
         "restartNotice": "Der Server startet in {count} Minuten neu. Beende bitte dein Spiel. | Der Server startet in {count} Minute neu. Beende bitte dein Spiel. | Der Server startet in {count} Minuten neu. Beende bitte dein Spiel."
     },
     "misc": {
-        "roundWinner": null,
-        "sort": null,
-        "pass": null,
+        "roundWinner": "Rundensieger",
+        "sort": "Sortieren",
+        "pass": "Passen",
         "permanent": "Dauerhaft",
         "total": "Gesamt",
         "judge": "Richter",
@@ -1738,6 +1780,7 @@
         "rollAgain": "Nochmal rollen",
         "rolling": "Am Rollen",
         "finalRoll": "Letzter Wurf",
+        "remaining": "Übrig",
         "noRollsRemaining": "Keine Würfe mehr übrig",
         "congratulations": "Herzlichen Glückwunsch!",
         "privacy": "Datenschutz",
@@ -1850,8 +1893,12 @@
         "words": "Wörter",
         "longestWord": "Längstes Wort",
         "length": "Länge",
+        "bonus": "Bonus",
+        "round": "Runde",
         "score": "Punktestand",
         "highestScore": "Höchste Punktzahl",
+        "totalScore": "Gesamtpunktzahl",
+        "finalScore": "Endpunktzahl",
         "hits": "Treffer",
         "hitRate": "Trefferquote",
         "rank": "Rang",
@@ -1924,8 +1971,8 @@
         "empty": "Keine Karten",
         "total": "Karten gesamt",
         "view": "Karten ansehen",
-        "melds": null,
-        "deadwood": null,
+        "melds": "Melds - Melds",
+        "deadwood": "Deadwood - Totholz",
         "editor": {
             "title": "Karteneditor",
             "name": "Name des Kartensets",
@@ -2219,9 +2266,9 @@
             "noEmail": "Keine E-Mail? Überprüfe deinen Spam-Ordner und bestätige, dass diese E-Mail-Adresse mit deinem Konto verknüpft ist."
         },
         "cards": {
-            "sortHandBy": null,
-            "cardRank": null,
-            "cardSuit": null,
+            "sortHandBy": "Hand sortieren nach",
+            "cardRank": "Kartenwert",
+            "cardSuit": "Kartenfarbe",
             "selfRanOut": "Du hast keine Karten mehr zum Spielen!",
             "nameRanOut": "%{name} hat keine Karten mehr zum Spielen!"
         },
@@ -2322,13 +2369,16 @@
         },
         "ginRummy": {
             "title": {
-                "gin": null,
-                "bigGin": null,
-                "knock": null
+                "tie": "Unentschieden",
+                "undercut": "Überbieten",
+                "gin": "Gin",
+                "bigGin": "Großer Gin",
+                "knock": "Klopfen"
             },
-            "scoreDescription": null,
-            "yourMeldAfterKnock": null,
-            "nameMeldAfterKnock": null
+            "tieDescription": "Es sind nicht genug Karten übrig, um weiterzuspielen. Unentschieden!",
+            "scoreDescription": "Die Punkte werden berechnet, indem man die Unterschiede zwischen den Werten der toten Karten in den Händen der Spieler vergleicht.",
+            "yourMeldAfterKnock": "Oh nein... Ein paar von %{name}'s toten Karten können zu deinen Meldungen verschoben werden!",
+            "nameMeldAfterKnock": "Nice! Ein paar von deinen toten Karten können zu %{name}'s Meldungen verschoben werden!"
         },
         "yacht": {
             "title": {

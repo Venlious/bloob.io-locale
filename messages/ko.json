@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Korean",
         "rtl": false,
-        "total": 1550,
-        "missing": 50
+        "total": 1562,
+        "missing": 10
     },
     "name": "Bloob.io",
     "error": {
@@ -55,6 +55,7 @@
             "againstAgainstInactiveUser": "비활성 사용자에게 이 작업을 수행할 수 없습니다.",
             "invalidUser": "주어진 ID의 사용자는 이 경기에 없습니다.",
             "invalidTime": "지금은 이 작업을 수행할 수 없습니다.",
+            "versionMismatch": "너는 \"%{client}\" 버전을 사용 중인데, 서버는 \"%{server}\" 버전을 돌리고 있어. 이건 업데이트가 진행 중일 때 발생할 수 있어. 몇 분 후에 이 페이지를 새로 고쳐서 최신 버전으로 업데이트해 줘.",
             "clipboard": "클립보드에 복사하지 못했습니다."
         },
         "config": {
@@ -104,8 +105,8 @@
             "wordTooLong": "단어 선택이 너무 길어요 (최대 %{max})"
         },
         "card": {
-            "handLocked": null,
-            "handTooFull": null,
+            "handLocked": "지금 손에서 카드를 선택할 수 없어.",
+            "handTooFull": "지금 손에서 카드를 버릴 수만 있어.",
             "loadingSets": "카드 세트를 다운로드할 수 없어요.",
             "invalid": "잘못된 카드 데이터가 주어졌어요.",
             "invalidSet": "잘못된 카드 세트가 주어졌어요.",
@@ -171,12 +172,15 @@
     },
     "game": {
         "generic": {
-            "heading": "Bloob.io에서 찾을 수 있는 멀티플레이어 게임들",
             "title": "무료 온라인 멀티플레이 게임 | 가입 없이 즐기세요",
             "description": "계정 생성 없이 즐길 수 있는 멀티플레이어 브라우저 게임 모음. 불편함 없이 플레이하고, 원하는 대로 경험을 맞춤화하세요.",
             "options": {
                 "public": {
                     "title": "매치 공개 설정"
+                },
+                "handSize": {
+                    "title": "손 크기",
+                    "help": "모두가 손에 쥐고 있는 카드 수."
                 },
                 "maxUsers": {
                     "title": "최대 플레이어 수",
@@ -259,8 +263,6 @@
         },
         "WORDRACE": {
             "name": "단어 경주",
-            "heading": "독특한 단어 찾기 게임 해보세요",
-            "tooltip": "무작위로 생성된 필드에서 어떤 방향으로든 단어를 찾아보고, 같은 목표를 가진 다른 사람들과 경쟁해봐.",
             "description": "Wordrace는 모든 플레이어에게 도전을 제공하는 맞춤 설정이 가능한 독특한 단어 찾기 게임입니다. 가입 없이 무료로 즐길 수 있어요. 지금 플레이해보세요.",
             "title": "독특한 멀티플레이어 단어 게임 | Bloob.io",
             "options": {
@@ -392,8 +394,6 @@
         },
         "FOUR_IN_A_ROW": {
             "name": "네 개를 한 줄에",
-            "heading": "친구들과 온라인에서 네 개를 연속으로 연결해보세요",
-            "tooltip": "최대 여섯 명의 플레이어와 함께 클래식 게임 모드나 사용 가능한 변형으로 '네 개를 연속으로 맞추기' 게임을 즐겨보세요.",
             "description": "\"Four in a Row\"는 캐주얼하게 무료로 즐길 수 있는 게임입니다. 이 클래식한 4개 연결 게임을 최대 6명의 친구들과 함께 즐겨보세요. 재미있고 중독성 있으며 배우기 쉬운 게임입니다.",
             "title": "간편하고 무료 멀티플레이 게임 | Bloob.io",
             "options": {
@@ -481,8 +481,6 @@
         },
         "ROTTEN_APPLES": {
             "name": "썩은 사과들",
-            "heading": "친구들과 함께 온라인 멀티플레이어 카드 대 인류 게임하기",
-            "tooltip": "'Cards Against Humanity' 클론 게임을 해보고, 너의 취향에 맞게 경험을 커스터마이징해봐.",
             "description": "'Cards Against Humanity' 클론 게임을 즐기고 원하는 대로 경험을 맞춤화하세요. 나만의 맞춤 카드 세트를 만들어 다음 경기에 포함시켜보세요.",
             "title": "다중 사용자 카드 대 인류 | Bloob.io",
             "options": {
@@ -491,10 +489,6 @@
                         "first": "<b>0</b>점을 먼저 얻는 사람 | <b>1</b>점을 먼저 얻는 사람 | <b>{count}</b>점을 먼저 얻는 사람",
                         "most": "<b>0</b>라운드 후에 가장 많은 점수 | <b>1</b>라운드 후에 가장 많은 점수 | <b>{count}</b>라운드 후에 가장 많은 점수"
                     }
-                },
-                "handSize": {
-                    "title": "손 크기",
-                    "help": "모두가 언제든지 손에 들고 있는 응답 카드의 수."
                 },
                 "judgeSystem": {
                     "title": "심판 시스테ム",
@@ -629,8 +623,6 @@
         },
         "CHECKERS": {
             "name": "체커스",
-            "heading": "친구들과 함께 온라인으로 장기 놀기",
-            "tooltip": "체커라고 부르든 드래프트라고 부르든, 여기서 최대 4명의 플레이어와 함께 다양한 규칙을 설정해서 게임해봐.",
             "description": "체커는 당신이 알고 사랑하는 클래식한 빠른 속도의 보드 게임입니다! 흥미진진한 변화와 함께 규칙을 마음대로 바꿀 수 있습니다. 지금 친구들과 함께 플레이하세요.",
             "title": "클래식 멀티플레이어 보드 게임 | Bloob.io",
             "options": {
@@ -740,8 +732,6 @@
         },
         "BLOMBER": {
             "name": "블롬버",
-            "heading": "친구들과 함께 온라인으로 폭탄맨 게임하기",
-            "tooltip": "이 클래식한 폭탄맨 게임에서 파워 업이 가득한 치열한 근접 전장에서 상대를 터트려 보세요.",
             "description": "블롬버는 대부분의 다른 게임보다 재생성이 더 많은 본맨 멀티플레이 게임입니다. 무료로 쉽게 즐길 수 있으며, 맞춤 설정이 가능하고 가입이 필요 없습니다. 지금 플레이하세요.",
             "title": "멀티플레이어 게임, 봄버맨 | Bloob.io",
             "options": {
@@ -829,8 +819,6 @@
         },
         "EIGHT_BALL_POOL": {
             "name": "8 볼 풀",
-            "heading": "친구들과 함께 온라인 8볼 풀 게임하기",
-            "tooltip": "여기서 봇이나 플레이어와 인기있는 당구 게임을 해봐.",
             "description": "온라인 멀티플레이어 풀에서 최고의 슛을 쏘세요! 모든 공을 넣고 8번 공으로 마무리하여 테이블에서 승리하세요!",
             "title": "2명이서 즐기는 무료 멀티플레이 게임",
             "options": {
@@ -981,8 +969,6 @@
         },
         "YACHT": {
             "name": "요트",
-            "heading": "온라인에서 클래식 주사위 게임, '야트'를 즐겨보세요",
-            "tooltip": "여기서 인기있는 요트 게임을 최대 4명의 봇이나 플레이어와 함께 즐겨보세요.",
             "description": "Bloob.io에서 친구들과 함께 Yacht, 야추 또는 Yatzy라고도 알려진 클래식 주사위 게임을 즐겨보세요. 굴리고, 점수를 얻고, 함께 이기세요!",
             "title": "무료 멀티플레이어 주사위 게임",
             "options": {
@@ -1074,8 +1060,6 @@
         },
         "BATTLESHIP": {
             "name": "전함",
-            "heading": "온라인에서 대단한 배 전투에 참여하세요 - 배틀쉽 게임하기",
-            "tooltip": "너의 함대를 지휘하고 이 흥미진진한 온라인 전함 게임에서 높은 바다를 정복해봐.",
             "description": "전략적인 전함을 주도하고, 적을 가라앉히며, 바다를 정복하세요! 오늘 바로 멋진 멀티플레이어 배 전투에 참여하세요.",
             "title": "바다를 정복하라 - 지금 배틀쉽 게임하자",
             "options": {
@@ -1135,8 +1119,6 @@
         },
         "SUPER_TIC_TAC_TOE": {
             "name": "슈퍼 틱-택-토",
-            "heading": "슈퍼 틱택토로 친구들과 도전하세요",
-            "tooltip": "여기서 봇이나 플레이어와 슈퍼 틱-택-토 게임을 해봐.",
             "description": "온라인 멀티플레이어 슈퍼 틱택토 게임을 체험해보세요! 친구들이나 봇과 함께 플레이하고 그리드를 마스터하세요! 가입 없이 바로 시작하세요! 오늘 재미를 찾아보세요!",
             "title": "온라인 멀티플레이 게임",
             "options": {
@@ -1181,8 +1163,6 @@
         },
         "CRIBBAGE": {
             "name": "크리브게",
-            "heading": "클래식 크리비지 온라인으로 즐기기",
-            "tooltip": "세계 각국의 플레이어들과 이 사랑받는 카드 게임에서 당신의 기술과 전략을 시험해 보세요.",
             "description": "지능을 높이고 크리브게이지 온라인 게임을 즐겨보세요! 독특한 점수 시스템과 전략적인 게임 플레이로 카드 게임 애호가들에게 끝없는 재미를 선사합니다.",
             "title": "친구들에게 도전하세요",
             "options": {
@@ -1263,8 +1243,6 @@
         },
         "WAR": {
             "name": "전쟁",
-            "heading": "온라인에서 전유의 전쟁 카드 배틀을 경험해보세요",
-            "tooltip": "세계 각지의 플레이어들과 함께 전쟁 카드 게임의 흥분을 경험해봐.",
             "description": "워에서 온라인 멀티플레이어 카드 배틀을 경험해보세요! 이 웹 기반 클래식에서 친구들과 라이벌들과 대결하세요.",
             "title": "카드 전투의 아레나에 들어가보세요",
             "options": {
@@ -1321,55 +1299,119 @@
             }
         },
         "GIN_RUMMY": {
-            "name": null,
-            "heading": {},
-            "tooltip": {},
+            "name": "진 러미",
             "description": {},
             "title": {},
             "options": {
                 "winAmount": {
-                    "help": null
+                    "help": "게임은 누군가 이 점수에 도달하면 끝나. 하지만 이게 꼭 이긴다는 건 아니야, 게임 끝날 때 보너스 점수가 주어지거든."
                 },
                 "knock": {
-                    "title": null,
-                    "help": null
+                    "title": "노크",
+                    "help": {
+                        "enabled": "'활성화됨'은 설정된 노크 기준에 따라 노크할 수 있게 해줘.",
+                        "firstDiscardCard": "'첫 번째 버린 카드 기준'은 첫 번째로 버린 카드를 기준으로 설정해; 만약 에이스가 나오면 무조건 진 해야 해.",
+                        "disabled": "'비활성화됨'은 진으로만 라운드를 끝낼 수 있게 해줘."
+                    },
+                    "data": {
+                        "firstDiscardCard": "첫 번째 버린 카드 기준으로"
+                    }
+                },
+                "knockBasedOnFirstCard": {
+                    "title": "첫 버림에 따라 노크",
+                    "help": "버튼을 켜면, 버려진 카드 더미의 첫 번째 카드가 노크 기준을 정해. 플레이어는 자신의 죽은 나무 점수가 이 카드의 값보다 작거나 같을 때만 노크할 수 있어."
                 },
                 "knockThreshold": {
-                    "title": null,
-                    "help": null
+                    "title": "노크 임계값",
+                    "help": "플레이어는 자신의 차례에 죽은 패가 설정된 기준 이하일 때 노크할 수 있어."
                 },
                 "ginPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "진",
+                    "help": "진을 외쳤을 때 주는 점수야, 그건 손에 있는 카드가 모두 멜드로 묶여 있을 때야."
                 },
                 "bigGinPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "대형 진",
+                    "help": "빅 진을 부를 때 주는 점수야. 이건 손에 있는 모든 카드랑 뽑은 카드가 다 한 세트로 묶여서, 남는 카드가 없을 때 발생해."
                 },
                 "undercutPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "언더컷",
+                    "help": "언더컷은 한 플레이어가 노크했는데, 상대방의 죽은 점수가 같거나 더 적을 때 발생해. 이럴 땐 상대방이 추가 점수를 받게 돼."
                 },
                 "firstBonusPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "보너스: 먼저 이기기",
+                    "help": "게임 끝나고 주는 보상이에요. '승리 금액'에 제일 먼저 도달한 플레이어한테 보너스를 줘요."
                 },
                 "roundBonusPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "보너스: 라운드",
+                    "help": "게임 끝나고 주는 거야. 각 플레이어가 이긴 라운드마다 이 점수를 줘, 비긴 건 제외하고."
                 },
                 "shutoutBonusPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "보너스: 완전 차단",
+                    "help": "게임 끝나고 주는 보상이에요. 모든 라운드에서 이겼으면 이 점수만큼 추가 보너스를 줘요."
                 }
             },
-            "presets": {},
-            "help": {}
+            "presets": {
+                "straightGin": {
+                    "title": "진 straight",
+                    "description": [
+                        "노크 금지",
+                        "보너스 없음"
+                    ]
+                },
+                "oklahomaGin": {
+                    "title": "오클라호마 진",
+                    "description": [
+                        "첫 버림에 따라 노크 값 결정하기"
+                    ]
+                }
+            },
+            "help": {
+                "rounds": {
+                    "title": "라운드",
+                    "description": [
+                        "게임은 여러 라운드로 이루어져 있어. 매 라운드마다 플레이어는 10장의 카드를 받고, 더미에서 한 장의 카드가 공개돼. 플레이어는 패스를 하거나 더미에서 제일 위에 있는 카드를 가져갈 수 있어.",
+                        "턴이 번갈아 가면서 진행되고, 네 턴이 오면 더미나 덱에서 카드를 가져올 수 있어. 그 다음엔 반드시 한 장의 카드를 더미에 다시 내놔야 해."
+                    ]
+                },
+                "deadwood": {
+                    "title": "죽은 나무",
+                    "description": [
+                        "데드우드는 어떤 멜드에도 포함되지 않은 카드들을 말해. 데드우드의 가치는 이런 카드들의 점수를 합쳐서 계산해 (예: 킹 두 장이랑 5가 있으면 총 25점이야).",
+                        "멜드를 만들고 멜드에 없는 고점 카드들을 버리면서 데드우드를 최대한 낮게 유지하는 게 목표야."
+                    ]
+                },
+                "melds": {
+                    "title": "조합하기",
+                    "description": [
+                        "멜드는 같은 무늬 카드 3장 이상(예: 3D, 4D, 5D)이나 같은 숫자 카드 3장 이상(예: 3H, 3D, 3S)으로 만들 수 있어.",
+                        "멜드는 너의 손패랑 인터페이스에서 자동으로 강조되니까, 카드 더미 잘 봐! 상대방이 네가 필요한 카드를 버릴 수도 있어!"
+                    ]
+                },
+                "knock": {
+                    "title": "노크해봐",
+                    "description": [
+                        "죽은 카드가 10보다 적으면 노크할 수 있어. 노크하면 모든 카드가 공개되고, 상대의 죽은 카드를 볼 수 있어. 만약 네 죽은 카드가 더 많으면 상대가 보너스와 함께 라운드를 이겨.",
+                        "노크 점수 계산은 간단해: 네 죽은 카드에서 상대의 죽은 카드를 빼면 돼. 예를 들어, 네 죽은 카드가 5고 상대의 죽은 카드가 25면, 너는 20점을 얻는 거야."
+                    ]
+                },
+                "gin": {
+                    "title": "진과 빅진",
+                    "description": [
+                        "만약 너의 죽은 카드가 0이거나 마지막 죽은 카드를 버린 후에 0이 될 수 있다면, 너는 진(Gin)이야. 이건 승리를 보장하고 보너스랑 죽은 카드 차이도 줘.",
+                        "빅 진(Big Gin)은 더 좋아: 만약 너의 손패 전체랑 방금 뽑은 카드가 모두 조합이 된다면, 더 큰 보너스를 받아! 빅 진이 생기면 바로 외쳐!"
+                    ]
+                },
+                "goal": {
+                    "title": "목표 설정하기",
+                    "description": [
+                        "목표는 가능한 한 많은 라운드를 이기고 100점에 먼저 도달하는 거야. 그러면 게임이 끝나고 최종 점수랑 보너스 점수도 공개돼.",
+                        "기본적으로, 라운드를 이길 때마다 25점을 추가로 받고, 100점에 먼저 도달하면 100점을 더 받아!"
+                    ]
+                }
+            }
         },
         "AI_ASSASSIN": {
             "name": "AI 암살자",
-            "heading": "AI 암살자에서 암살자가 되거나 목표를 생존하세요!",
-            "tooltip": "모든 힌트가 중요한 고위험 지능 게임. 너는 암살자인가, 아니면 목표인가?",
             "description": "AI Assassin은 목표를 제거하거나 암살자를 능가하는 스릴 넘치는 멀티플레이어 게임입니다. 목표 달성과 성공을 위해 전략적인 프롬프트를 사용하세요.",
             "title": "더 똑똑해져서, 제거하고, 생존하자",
             "options": {},
@@ -1453,11 +1495,11 @@
             "removingRow": "행 제거하기",
             "yourTurn": "당신 차례 %{extra}",
             "nameTurn": "%{name}님의 차례",
-            "tieEndedRound": null,
-            "youEndedRound": null,
-            "nameEndedRound": null,
-            "youWonRound": null,
-            "nameWonRound": null,
+            "tieEndedRound": "라운드가 무승부로 끝났어",
+            "youEndedRound": "너가 라운드를 끝냈어",
+            "nameEndedRound": "%{name}가 라운드를 끝냈어",
+            "youWonRound": "너가 라운드에서 이겼어",
+            "nameWonRound": "%{name}가 라운드에서 이겼어",
             "yourTurnBreaking": "당신이 %{extra}을 깨고 있어요",
             "nameTurnBreaking": "%{name}이(가) 고장 나고 있어요",
             "roundSummary": "라운드 요약",
@@ -1553,7 +1595,7 @@
         "basic": "기본적인",
         "language": "언어",
         "rules": "규칙",
-        "points": null,
+        "points": "포인트",
         "fouls": "반칙에 대한 대응"
     },
     "month": {
@@ -1703,9 +1745,9 @@
         "restartNotice": "서버가 {count}분 후에 재시작돼요. 게임 끝내세요. | 서버가 {count}분 후에 재시작돼요. 게임 끝내세요. | 서버가 {count}분 후에 재시작돼요. 게임 끝내세요."
     },
     "misc": {
-        "roundWinner": null,
-        "sort": null,
-        "pass": null,
+        "roundWinner": "라운드 우승자",
+        "sort": "정렬",
+        "pass": "패스",
         "permanent": "영구적인",
         "total": "총합",
         "judge": "판사",
@@ -1738,6 +1780,7 @@
         "rollAgain": "다시 굴리기",
         "rolling": "굴리는 중",
         "finalRoll": "마지막 굴리기",
+        "remaining": "남은 것",
         "noRollsRemaining": "더 이상 굴릴 수 없음",
         "congratulations": "축하해!",
         "privacy": "개인정보",
@@ -1850,8 +1893,12 @@
         "words": "단어들",
         "longestWord": "가장 긴 단어",
         "length": "길이",
+        "bonus": "보너스",
+        "round": "라운드",
         "score": "점수",
         "highestScore": "최고 점수",
+        "totalScore": "총 점수",
+        "finalScore": "최종 점수",
         "hits": "히트",
         "hitRate": "히트율",
         "rank": "순위",
@@ -1924,8 +1971,8 @@
         "empty": "카드 없음",
         "total": "총 카드",
         "view": "카드 보기",
-        "melds": null,
-        "deadwood": null,
+        "melds": "멜드",
+        "deadwood": "죽은 나무",
         "editor": {
             "title": "카드 편집기",
             "name": "카드 세트 이름",
@@ -2219,9 +2266,9 @@
             "noEmail": "이메일이 안 왔어? 스팸 폴더를 확인하고 이 이메일 주소가 너의 계정에 연결되어 있는지 확인해봐."
         },
         "cards": {
-            "sortHandBy": null,
-            "cardRank": null,
-            "cardSuit": null,
+            "sortHandBy": "손패 정렬하기",
+            "cardRank": "카드 랭크",
+            "cardSuit": "카드 무늬",
             "selfRanOut": "카드가 다 떨어졌어!",
             "nameRanOut": "%{name}의 카드가 다 떨어졌어!"
         },
@@ -2322,13 +2369,16 @@
         },
         "ginRummy": {
             "title": {
-                "gin": null,
-                "bigGin": null,
-                "knock": null
+                "tie": "무승부",
+                "undercut": "언더컷",
+                "gin": "진",
+                "bigGin": "빅 진",
+                "knock": "노크"
             },
-            "scoreDescription": null,
-            "yourMeldAfterKnock": null,
-            "nameMeldAfterKnock": null
+            "tieDescription": "카드가 부족해서 더 이상 못해! 비겼어!",
+            "scoreDescription": "점수는 각 플레이어의 죽은 카드 총합의 차이로 결정돼.",
+            "yourMeldAfterKnock": "아, 안돼... %{name}의 죽은 카드 중 일부를 네 멜드로 옮길 수 있어!",
+            "nameMeldAfterKnock": "좋아! 네 죽은 카드 중 일부를 %{name}의 멜드로 옮길 수 있어!"
         },
         "yacht": {
             "title": {

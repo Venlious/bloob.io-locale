@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 1550,
-        "missing": 50
+        "total": 1562,
+        "missing": 10
     },
     "name": "Bloob.io",
     "error": {
@@ -55,6 +55,7 @@
             "againstAgainstInactiveUser": "不能对非活跃用户进行此操作。",
             "invalidUser": "指定ID的用户不在这场比赛中。",
             "invalidTime": "你现在不能进行这个操作。",
+            "versionMismatch": "你现在用的是 \"%{client}\" 版本，而服务器是 \"%{server}\" 版本。这可能是因为正在进行更新。请过几分钟刷新一下这个页面，更新到最新版本。",
             "clipboard": "复制到剪贴板失败。"
         },
         "config": {
@@ -104,8 +105,8 @@
             "wordTooLong": "选择的词太长了（最多 %{max}）"
         },
         "card": {
-            "handLocked": null,
-            "handTooFull": null,
+            "handLocked": "现在不能从手牌中选择一张卡。",
+            "handTooFull": "现在只能丢弃手牌中的一张卡。",
             "loadingSets": "无法下载卡组。",
             "invalid": "提供的卡片数据无效。",
             "invalidSet": "提供的卡组无效。",
@@ -171,12 +172,15 @@
     },
     "game": {
         "generic": {
-            "heading": "你可以在Bloob.io上找到的多人游戏",
             "title": "免费在线多人游戏 | 无需注册",
             "description": "一系列无需注册账号的多人在线浏览器游戏。轻松玩耍，根据你的喜好定制体验。",
             "options": {
                 "public": {
                     "title": "比赛隐私"
+                },
+                "handSize": {
+                    "title": "手大小",
+                    "help": "每个人手里有多少张牌。"
                 },
                 "maxUsers": {
                     "title": "最大玩家数",
@@ -259,8 +263,6 @@
         },
         "WORDRACE": {
             "name": "文字竞赛",
-            "heading": "玩一个独特的寻字游戏",
-            "tooltip": "在一个随机生成的场地中，以任何方向寻找单词，同时和有着相同目标的其他人竞赛。",
             "description": "Wordrace是一个免费的独特的找词游戏，可自定义设置，给每个玩家带来挑战。无需任何注册。现在就来玩吧。",
             "title": "独特的多人在线文字游戏 | Bloob.io",
             "options": {
@@ -392,8 +394,6 @@
         },
         "FOUR_IN_A_ROW": {
             "name": "四子连线",
-            "heading": "与朋友在线连四子",
-            "tooltip": "在经典游戏模式或可用变体中，最多六个玩家玩四连行。",
             "description": "《四子连珠》是一款休闲的免费游戏。玩这款经典的四子连珠游戏，一次最多可以和6个朋友一起玩，这款游戏既有趣又容易上手。",
             "title": "简单免费多人游戏 | Bloob.io",
             "options": {
@@ -481,8 +481,6 @@
         },
         "ROTTEN_APPLES": {
             "name": "烂苹果",
-            "heading": "与朋友一起在线玩《人性的弱点》多人游戏",
-            "tooltip": "玩一款《人性的弱点》克隆游戏，根据你的喜好定制你的体验。",
             "description": "玩一款《人性的弱点》克隆游戏，根据自己的喜好定制体验。创建自己的定制卡片组，并在下一场比赛中使用它们。",
             "title": "多人对战《人性的弱点》| Bloob.io",
             "options": {
@@ -491,10 +489,6 @@
                         "first": "第一个得到<b>0</b>分 | 第一个得到<b>1</b>分 | 第一个得到<b>{count}</b>分",
                         "most": "在<b>0</b>轮后得分最多 | 在<b>1</b>轮后得分最多 | 在<b>{count}</b>轮后得分最多"
                     }
-                },
-                "handSize": {
-                    "title": "手牌大小",
-                    "help": "每个人在任何时候手里持有的回应卡数量。"
                 },
                 "judgeSystem": {
                     "title": "裁判系统",
@@ -629,8 +623,6 @@
         },
         "CHECKERS": {
             "name": "跳棋",
-            "heading": "和朋友在线玩跳棋",
-            "tooltip": "无论你叫它跳棋还是国际跳棋，在这里你可以和多达4位玩家一起玩，还可以自定义各种规则。",
             "description": "跳棋是你熟悉且喜爱的经典快节奏棋盘游戏，还有令人兴奋的新变化！你可以自由掌控规则。现在就和朋友们一起玩吧。",
             "title": "经典多人在线棋盘游戏 | Bloob.io",
             "options": {
@@ -740,8 +732,6 @@
         },
         "BLOMBER": {
             "name": "炸弹人",
-            "heading": "与朋友一起在线玩炸弹人游戏",
-            "tooltip": "在这款经典的炸弹人游戏中，你可以在一个充满能量提升的紧张近战战场上炸飞你的对手。",
             "description": "Blomber是一款多人游戏，比大多数其他游戏更具可玩性。免费，易玩，可定制，无需注册。现在就来玩吧。",
             "title": "炸弹人多人游戏 | Bloob.io",
             "options": {
@@ -829,8 +819,6 @@
         },
         "EIGHT_BALL_POOL": {
             "name": "八球台球",
-            "heading": "与朋友在线玩8球池",
-            "tooltip": "在这里和机器人或玩家玩流行的台球游戏。",
             "description": "在在线多人游戏中展现你的台球技术！将所有球打进洞，最后完成8号球，赢得比赛！",
             "title": "免费的2人多人在线游戏",
             "options": {
@@ -981,8 +969,6 @@
         },
         "YACHT": {
             "name": "游艇",
-            "heading": "在线玩经典的骰子游戏游艇",
-            "tooltip": "在这里玩超火的游艇游戏，可以跟多达4个机器人或玩家对战。",
             "description": "在Bloob.io上与朋友们一起玩经典的骰子游戏游艇，也被称为Yahtzee或Yatzy。一起掷骰，得分，赢得胜利！",
             "title": "免费多人在线骰子游戏",
             "options": {
@@ -1074,8 +1060,6 @@
         },
         "BATTLESHIP": {
             "name": "战舰游戏",
-            "heading": "参与在线史诗般的舰船战斗 - 玩战舰游戏",
-            "tooltip": "在这款刺激的在线海战游戏中，指挥你的舰队，征服高海！",
             "description": "在《战舰》中掌握战术战舰，击沉敌人，征服海洋！今天就参与史诗级的多人船战吧。",
             "title": "征服海洋 - 现在就来玩战舰游戏吧",
             "options": {
@@ -1135,8 +1119,6 @@
         },
         "SUPER_TIC_TAC_TOE": {
             "name": "超级井字游戏",
-            "heading": "用超级井字游戏挑战朋友们",
-            "tooltip": "在这里玩超级井字游戏，可以跟机器人或者玩家对战。",
             "description": "体验在线多人超级井字游戏！和朋友一起玩，或挑战机器人，掌握游戏技巧！无需注册，立即加入我们的乐趣吧！",
             "title": "在线多人游戏",
             "options": {
@@ -1181,8 +1163,6 @@
         },
         "CRIBBAGE": {
             "name": "牌九",
-            "heading": "在线享受经典的纸牌游戏",
-            "tooltip": "在这款深受喜爱的卡牌游戏中，和全球的玩家一起测试你的技巧和策略。",
             "description": "锐化你的智慧，来玩在线的Cribbage吧！凭借其独特的计分系统和策略性的游戏玩法，Cribbage为纸牌游戏爱好者提供了无尽的乐趣。",
             "title": "挑战你的朋友们",
             "options": {
@@ -1263,8 +1243,6 @@
         },
         "WAR": {
             "name": "战争",
-            "heading": "在线体验刺激的战争卡牌对战",
-            "tooltip": "体验和来自世界各地的玩家一起玩战争纸牌游戏的刺激吧。",
             "description": "在War中体验在线多人卡牌战斗！在这个网络经典游戏中与朋友和对手对战。",
             "title": "进入卡牌对战竞技场",
             "options": {
@@ -1321,55 +1299,119 @@
             }
         },
         "GIN_RUMMY": {
-            "name": null,
-            "heading": {},
-            "tooltip": {},
+            "name": "金拉米",
             "description": {},
             "title": {},
             "options": {
                 "winAmount": {
-                    "help": null
+                    "help": "游戏一旦有玩家得到了这个分数就结束了。不过，这并不保证能赢，因为游戏结束时会发放额外的分数。"
                 },
                 "knock": {
-                    "title": null,
-                    "help": null
+                    "title": "敲门",
+                    "help": {
+                        "enabled": "'启用'可以根据设定的敲门阈值来敲门。",
+                        "firstDiscardCard": "'根据第一张弃牌'用第一张弃牌来设定阈值；如果抽到一张A，你必须去Gin。",
+                        "disabled": "'禁用'只能用Gin结束一局。"
+                    },
+                    "data": {
+                        "firstDiscardCard": "根据第一张弃牌"
+                    }
+                },
+                "knockBasedOnFirstCard": {
+                    "title": "根据第一次弃牌敲门",
+                    "help": "启用后，弃牌堆里的第一张牌决定了敲门的门槛。玩家只有在他们的死牌值低于或等于这张牌的点数时才能敲门。"
                 },
                 "knockThreshold": {
-                    "title": null,
-                    "help": null
+                    "title": "敲击阈值",
+                    "help": "玩家可以在轮到他们的时候敲牌，只要他们的死牌数量低于或等于设定的阈值。"
                 },
                 "ginPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "金酒",
+                    "help": "叫Gin时，玩家获得的点数，也就是手里的牌全都成组了。"
                 },
                 "bigGinPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "大金",
+                    "help": "叫大金时，玩家获得的分数，这种情况是手里的所有牌加上抽到的牌都成了组合，没有多余的牌。"
                 },
                 "undercutPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "削发",
+                    "help": "当一个玩家出牌时，如果对手的死牌点数一样或更少，就会发生“下切”。这种情况下，对手会得到额外的分数。"
                 },
                 "firstBonusPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "奖励：先赢者",
+                    "help": "游戏结束时颁发。给第一个达到“赢得金额”的玩家一个奖励。"
                 },
                 "roundBonusPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "奖励：回合",
+                    "help": "游戏结束时颁发。每个玩家根据他们赢的回合数（不包括平局）获得这个分数。"
                 },
                 "shutoutBonusPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "额外奖励：零封",
+                    "help": "游戏结束时颁发。如果玩家每一轮都赢了，就会额外获得这个分数的奖励。"
                 }
             },
-            "presets": {},
-            "help": {}
+            "presets": {
+                "straightGin": {
+                    "title": "纯金酒",
+                    "description": [
+                        "不要敲门",
+                        "没有奖励"
+                    ]
+                },
+                "oklahomaGin": {
+                    "title": "俄克拉荷马金",
+                    "description": [
+                        "根据第一次弃牌的点数"
+                    ]
+                }
+            },
+            "help": {
+                "rounds": {
+                    "title": "回合",
+                    "description": [
+                        "这个游戏有好几轮。每轮发10张牌，堆里会露出一张牌。玩家可以选择跳过或者拿堆顶的牌。",
+                        "轮流进行，轮到你时可以从堆里或牌堆里拿一张牌。之后，你必须把一张牌还回堆里。"
+                    ]
+                },
+                "deadwood": {
+                    "title": "死木",
+                    "description": [
+                        "死牌指的是不属于任何组合的牌。死牌的点数是把这些牌的点数加起来算的（比如，两张国王和一张五，总共25点）。",
+                        "尽量把你的死牌保持在最低，通过组合牌和丢掉不在组合里的高点数牌来实现。"
+                    ]
+                },
+                "melds": {
+                    "title": "组合",
+                    "description": [
+                        "组合可以由三张或更多同花色的牌组成（比如3♦、4♦、5♦）或者三张或更多同等级的牌（比如3♥、3♦、3♠）。",
+                        "组合会在你的手牌和界面上自动高亮显示，所以要注意牌堆——对手可能会丢出你需要的牌！"
+                    ]
+                },
+                "knock": {
+                    "title": "敲门",
+                    "description": [
+                        "如果你的死牌少于10，可以敲门。敲门后，所有牌都会亮出来，你能看到对手的死牌。如果你的死牌更多，对手就赢了这一局，还能得分。",
+                        "敲门得分很简单：用对手的死牌减去你的死牌。比如说，你的死牌是5，对手的是25，那你得20分。"
+                    ]
+                },
+                "gin": {
+                    "title": "[1] 金酒和大金酒",
+                    "description": [
+                        "如果你的死牌是0或者在扔掉最后一张死牌后能变成0，那你就赢了，叫做Gin。这保证你获胜，还会给你额外的奖励和死牌差额的分数。",
+                        "Big Gin 更牛逼：如果你手里的牌加上你刚抽的牌都能组合成牌组，那你会得到更大的奖励。只要有Big Gin，赶紧叫出来！"
+                    ]
+                },
+                "goal": {
+                    "title": "目标",
+                    "description": [
+                        "目标是赢尽可能多的回合，先到100分就赢了。游戏结束后会显示最终得分，包括额外的分数。",
+                        "默认情况下，每赢一回合你会多得25分，先到100分还会额外得100分。"
+                    ]
+                }
+            }
         },
         "AI_ASSASSIN": {
             "name": "AI刺客",
-            "heading": "在AI刺客游戏中，成为刺客或者作为目标生存下来！",
-            "tooltip": "这是一场高风险的智力游戏，每个提示都很重要。你是刺客还是目标？",
             "description": "\"AI刺客\"是一款刺激的多人游戏，你可以消灭目标或智胜刺客。使用策略提示来达成你的目标并取得成功。",
             "title": "智胜，消灭，生存",
             "options": {},
@@ -1453,11 +1495,11 @@
             "removingRow": "移除行",
             "yourTurn": "轮到你了 %{extra}",
             "nameTurn": "轮到%{name}了",
-            "tieEndedRound": null,
-            "youEndedRound": null,
-            "nameEndedRound": null,
-            "youWonRound": null,
-            "nameWonRound": null,
+            "tieEndedRound": "这一局平局了",
+            "youEndedRound": "你结束了这一局",
+            "nameEndedRound": "%{name} 结束了这一局",
+            "youWonRound": "你赢了这一局",
+            "nameWonRound": "%{name} 赢了这一局",
             "yourTurnBreaking": "你正在破坏 %{extra}",
             "nameTurnBreaking": "%{name}正在坏掉",
             "roundSummary": "回合总结",
@@ -1553,7 +1595,7 @@
         "basic": "基础",
         "language": "语言",
         "rules": "规则",
-        "points": null,
+        "points": "积分",
         "fouls": "对犯规的回应"
     },
     "month": {
@@ -1703,9 +1745,9 @@
         "restartNotice": "服务器将在 {count} 分钟后重启。请完成你的游戏。 | 服务器将在 {count} 分钟后重启。请完成你的游戏。 | 服务器将在 {count} 分钟后重启。请完成你的游戏。"
     },
     "misc": {
-        "roundWinner": null,
-        "sort": null,
-        "pass": null,
+        "roundWinner": "回合赢家",
+        "sort": "排序",
+        "pass": "通过",
         "permanent": "永久",
         "total": "总数",
         "judge": "裁判",
@@ -1738,6 +1780,7 @@
         "rollAgain": "再掷一次",
         "rolling": "正在掷骰",
         "finalRoll": "最后一掷",
+        "remaining": "剩余",
         "noRollsRemaining": "没有剩余掷骰次数",
         "congratulations": "恭喜！",
         "privacy": "隐私",
@@ -1850,8 +1893,12 @@
         "words": "单词",
         "longestWord": "最长的单词",
         "length": "长度",
+        "bonus": "奖励",
+        "round": "回合",
         "score": "分数",
         "highestScore": "最高分",
+        "totalScore": "总分",
+        "finalScore": "最终得分",
         "hits": "命中",
         "hitRate": "命中率",
         "rank": "排名",
@@ -1924,8 +1971,8 @@
         "empty": "没有卡片",
         "total": "总卡片",
         "view": "查看卡片",
-        "melds": null,
-        "deadwood": null,
+        "melds": "组合",
+        "deadwood": "废牌",
         "editor": {
             "title": "卡片编辑器",
             "name": "卡组名称",
@@ -2219,9 +2266,9 @@
             "noEmail": "没收到邮件？检查一下你的垃圾邮件文件夹，确认一下这个邮箱地址是不是跟你的账户绑定的。"
         },
         "cards": {
-            "sortHandBy": null,
-            "cardRank": null,
-            "cardSuit": null,
+            "sortHandBy": "按照顺序整理手牌",
+            "cardRank": "卡牌等级",
+            "cardSuit": "卡牌花色",
             "selfRanOut": "你的牌已经用完了！",
             "nameRanOut": "%{name}的牌已经用完了！"
         },
@@ -2322,13 +2369,16 @@
         },
         "ginRummy": {
             "title": {
-                "gin": null,
-                "bigGin": null,
-                "knock": null
+                "tie": "平局",
+                "undercut": "反击",
+                "gin": "胜利",
+                "bigGin": "大胜利",
+                "knock": "敲打"
             },
-            "scoreDescription": null,
-            "yourMeldAfterKnock": null,
-            "nameMeldAfterKnock": null
+            "tieDescription": "剩下的牌不够继续玩了，平局！",
+            "scoreDescription": "分数是通过计算每个玩家手中死牌的总值差来决定的。",
+            "yourMeldAfterKnock": "哎呀... %{name} 的一些死牌可以移到你的组合里！",
+            "nameMeldAfterKnock": "不错！ 你的一些死牌可以移到 %{name} 的组合里！"
         },
         "yacht": {
             "title": {

@@ -2,8 +2,8 @@
     "_meta": {
         "language": null,
         "rtl": null,
-        "total": 1550,
-        "missing": 1536
+        "total": 1562,
+        "missing": 1548
     },
     "name": "Bloob.io",
     "error": {
@@ -55,6 +55,7 @@
             "againstAgainstInactiveUser": null,
             "invalidUser": null,
             "invalidTime": null,
+            "versionMismatch": null,
             "clipboard": null
         },
         "config": {
@@ -171,12 +172,15 @@
     },
     "game": {
         "generic": {
-            "heading": null,
             "title": null,
             "description": null,
             "options": {
                 "public": {
                     "title": null
+                },
+                "handSize": {
+                    "title": null,
+                    "help": null
                 },
                 "maxUsers": {
                     "title": null,
@@ -259,8 +263,6 @@
         },
         "WORDRACE": {
             "name": null,
-            "heading": null,
-            "tooltip": null,
             "description": null,
             "title": null,
             "options": {
@@ -392,8 +394,6 @@
         },
         "FOUR_IN_A_ROW": {
             "name": null,
-            "heading": null,
-            "tooltip": null,
             "description": null,
             "title": null,
             "options": {
@@ -481,8 +481,6 @@
         },
         "ROTTEN_APPLES": {
             "name": null,
-            "heading": null,
-            "tooltip": null,
             "description": null,
             "title": null,
             "options": {
@@ -491,10 +489,6 @@
                         "first": null,
                         "most": null
                     }
-                },
-                "handSize": {
-                    "title": null,
-                    "help": null
                 },
                 "judgeSystem": {
                     "title": null,
@@ -629,8 +623,6 @@
         },
         "CHECKERS": {
             "name": null,
-            "heading": null,
-            "tooltip": null,
             "description": null,
             "title": null,
             "options": {
@@ -740,8 +732,6 @@
         },
         "BLOMBER": {
             "name": null,
-            "heading": null,
-            "tooltip": null,
             "description": null,
             "title": null,
             "options": {
@@ -829,8 +819,6 @@
         },
         "EIGHT_BALL_POOL": {
             "name": null,
-            "heading": null,
-            "tooltip": null,
             "description": null,
             "title": null,
             "options": {
@@ -981,8 +969,6 @@
         },
         "YACHT": {
             "name": null,
-            "heading": null,
-            "tooltip": null,
             "description": null,
             "title": null,
             "options": {
@@ -1074,8 +1060,6 @@
         },
         "BATTLESHIP": {
             "name": null,
-            "heading": null,
-            "tooltip": null,
             "description": null,
             "title": null,
             "options": {
@@ -1135,8 +1119,6 @@
         },
         "SUPER_TIC_TAC_TOE": {
             "name": null,
-            "heading": null,
-            "tooltip": null,
             "description": null,
             "title": null,
             "options": {
@@ -1181,8 +1163,6 @@
         },
         "CRIBBAGE": {
             "name": null,
-            "heading": null,
-            "tooltip": null,
             "description": null,
             "title": null,
             "options": {
@@ -1263,8 +1243,6 @@
         },
         "WAR": {
             "name": null,
-            "heading": null,
-            "tooltip": null,
             "description": null,
             "title": null,
             "options": {
@@ -1322,8 +1300,6 @@
         },
         "GIN_RUMMY": {
             "name": null,
-            "heading": {},
-            "tooltip": {},
             "description": {},
             "title": {},
             "options": {
@@ -1331,6 +1307,17 @@
                     "help": null
                 },
                 "knock": {
+                    "title": null,
+                    "help": {
+                        "enabled": null,
+                        "firstDiscardCard": null,
+                        "disabled": null
+                    },
+                    "data": {
+                        "firstDiscardCard": null
+                    }
+                },
+                "knockBasedOnFirstCard": {
                     "title": null,
                     "help": null
                 },
@@ -1363,13 +1350,68 @@
                     "help": null
                 }
             },
-            "presets": {},
-            "help": {}
+            "presets": {
+                "straightGin": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "oklahomaGin": {
+                    "title": null,
+                    "description": [
+                        null
+                    ]
+                }
+            },
+            "help": {
+                "rounds": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "deadwood": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "melds": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "knock": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "gin": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "goal": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                }
+            }
         },
         "AI_ASSASSIN": {
             "name": null,
-            "heading": null,
-            "tooltip": null,
             "description": null,
             "title": null,
             "options": {},
@@ -1738,6 +1780,7 @@
         "rollAgain": null,
         "rolling": null,
         "finalRoll": null,
+        "remaining": null,
         "noRollsRemaining": null,
         "congratulations": null,
         "privacy": null,
@@ -1850,8 +1893,12 @@
         "words": null,
         "longestWord": null,
         "length": null,
+        "bonus": null,
+        "round": null,
         "score": null,
         "highestScore": null,
+        "totalScore": null,
+        "finalScore": null,
         "hits": null,
         "hitRate": null,
         "rank": null,
@@ -2322,10 +2369,13 @@
         },
         "ginRummy": {
             "title": {
+                "tie": null,
+                "undercut": null,
                 "gin": null,
                 "bigGin": null,
                 "knock": null
             },
+            "tieDescription": null,
             "scoreDescription": null,
             "yourMeldAfterKnock": null,
             "nameMeldAfterKnock": null

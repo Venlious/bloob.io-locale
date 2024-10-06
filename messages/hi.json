@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Hindi script",
         "rtl": false,
-        "total": 1550,
-        "missing": 50
+        "total": 1562,
+        "missing": 10
     },
     "name": "Bloob.io",
     "error": {
@@ -55,6 +55,7 @@
             "againstAgainstInactiveUser": "निष्क्रिय उपयोगकर्ता पर यह कार्य नहीं कर सकते।",
             "invalidUser": "दिए गए ID वाला उपयोगकर्ता इस मैच में नहीं है।",
             "invalidTime": "आप इस समय यह कार्य नहीं कर सकते।",
+            "versionMismatch": "आप \"%{client}\" वर्ज़न चला रहे हैं जबकि सर्वर \"%{server}\" वर्ज़न चला रहा है। ये तब हो सकता है जब कोई अपडेट रोल आउट हो रहा हो। कृपया कुछ मिनटों में इस पेज को रिफ्रेश करें ताकि आप लेटेस्ट वर्ज़न पर अपडेट हो सकें।",
             "clipboard": "क्लिपबोर्ड में कॉपी करने में विफल।"
         },
         "config": {
@@ -104,8 +105,8 @@
             "wordTooLong": "शब्द चयन बहुत लंबा है (अधिकतम %{max})"
         },
         "card": {
-            "handLocked": null,
-            "handTooFull": null,
+            "handLocked": "Is waqt tum apne haath se koi card nahi chuni sakte.",
+            "handTooFull": "Is waqt tum sirf apne haath se ek card ko fenk sakte ho.",
             "loadingSets": "कार्ड सेट डाउनलोड करने में असमर्थ।",
             "invalid": "दिया गया कार्ड डाटा अमान्य है।",
             "invalidSet": "दिया गया कार्ड सेट अमान्य है।",
@@ -171,12 +172,15 @@
     },
     "game": {
         "generic": {
-            "heading": "Bloob.io पर आपको मिलने वाले मल्टीप्लेयर गेम्स",
             "title": "मुफ्त मल्टीप्लेयर गेम्स ऑनलाइन | साइन-अप की जरूरत नहीं",
             "description": "बिना खाता बनाए बहुखिलाड़ी ब्राउज़र-आधारित खेलों का संग्रह। बिना परेशानी खेलें और अपनी पसंद के अनुसार अनुभव को अनुकूलित करें।",
             "options": {
                 "public": {
                     "title": "मैच की गोपनीयता"
+                },
+                "handSize": {
+                    "title": "हाथ का साइज",
+                    "help": "हर किसी के हाथ में कितने कार्ड हैं।"
                 },
                 "maxUsers": {
                     "title": "अधिकतम खिलाड़ी",
@@ -259,8 +263,6 @@
         },
         "WORDRACE": {
             "name": "शब्द दौड़",
-            "heading": "एक अद्वितीय शब्द खोजने वाला गेम खेलें",
-            "tooltip": "किसी भी दिशा में शब्दों को ढूंढो एक बेतरतीब रूप से उत्पन्न किए गए मैदान पर, जबकि दूसरों के साथ दौड़ रहे हो जिनका उद्देश्य भी वही है।",
             "description": "Wordrace एक मुफ्त खेलने वाला अद्वितीय शब्द खोजने वाला गेम है, जिसमें हर खिलाड़ी को चुनौती देने के लिए सेटिंग्स कस्टमाइज़ की जा सकती हैं। इसे खेलने के लिए साइन अप की जरूरत नहीं है। अभी खेलें।",
             "title": "अद्वितीय मल्टीप्लेयर शब्द खेल | Bloob.io",
             "options": {
@@ -392,8 +394,6 @@
         },
         "FOUR_IN_A_ROW": {
             "name": "चार की कतार",
-            "heading": "ऑनलाइन दोस्तों के साथ चार कड़ी जोड़ें",
-            "tooltip": "चारों की पंक्ति में खेलें, जिसमें छह खिलाड़ियों तक की संख्या हो सकती है, या तो क्लासिक गेममोड में या उपलब्ध विभिन्नताओं में.",
             "description": "Four in a Row एक आकस्मिक मुफ्त खेल है। इस मजेदार, आदतबद्द, और आसान सीखने वाले खेल में 6 दोस्तों के साथ एक साथ क्लासिक कनेक्ट फोर गेम खेलें।",
             "title": "आसान मुफ्त मल्टीप्लेयर गेम | Bloob.io",
             "options": {
@@ -481,8 +481,6 @@
         },
         "ROTTEN_APPLES": {
             "name": "सड़े हुए सेब",
-            "heading": "दोस्तों के साथ ऑनलाइन मल्टीप्लेयर कार्ड्स अगेनस्ट ह्यूमैनिटी खेलें",
-            "tooltip": "Cards Against Humanity क्लोन खेलो और अपने अनुभव को अपनी पसंद के अनुसार कस्टमाइज करो.",
             "description": "Cards Against Humanity क्लोन खेलें और अपने अनुभव को अपनी पसंद के अनुसार कस्टमाइज करें. अपने कस्टम कार्ड सेट बनाएं और उन्हें अपने अगले मैच में शामिल करें.",
             "title": "मल्टीप्लेयर कार्ड्स एगेंस्ट ह्यूमैनिटी | ब्लूब.आईओ",
             "options": {
@@ -491,10 +489,6 @@
                         "first": "पहले <b>0</b> अंक प्राप्त करने वाले | पहले <b>1</b> अंक प्राप्त करने वाले | पहले <b>{count}</b> अंक प्राप्त करने वाले",
                         "most": "<b>0</b> दौरों के बाद सबसे अधिक अंक | <b>1</b> दौर के बाद सबसे अधिक अंक | <b>{count}</b> दौरों के बाद सबसे अधिक अंक"
                     }
-                },
-                "handSize": {
-                    "title": "हाथ का आकार",
-                    "help": "हर किसी के हाथ में किसी भी समय मौजूद प्रतिक्रिया कार्डों की मात्रा।"
                 },
                 "judgeSystem": {
                     "title": "न्याय प्रणाली",
@@ -629,8 +623,6 @@
         },
         "CHECKERS": {
             "name": "चेकर्स",
-            "heading": "दोस्तों के साथ ऑनलाइन ड्राफ्ट्स खेलें",
-            "tooltip": "इसे चेकर्स या ड्राफ्ट्स कहो, यहां 4 खिलाड़ियों के साथ खेलो, सभी प्रकार के अनुकूलन योग्य नियमों के साथ।",
             "description": "चेकर्स वह तेजगति वाला क्लासिक बोर्ड गेम है जिसे आप जानते हैं और प्यार करते हैं, रोमांचक मोड़ों के साथ! नियंत्रण में रहें और नियमों को अपनी पसंद के अनुसार बदलें। अब दोस्तों के साथ खेलें।",
             "title": "क्लासिक मल्टीप्लेयर बोर्ड गेम | ब्लूब.आईओ",
             "options": {
@@ -740,8 +732,6 @@
         },
         "BLOMBER": {
             "name": "ब्लॉम्बर",
-            "heading": "दोस्तों के साथ बॉम्बरमैन ऑनलाइन खेलें",
-            "tooltip": "इस क्लासिक Bomberman गेम में पावर अप्स से भरे हुए घनिष्ठ क्वार्टर्स युद्धभूमि में अपने प्रतिद्वंद्वियों को उड़ा दो।",
             "description": "Blomber, Bomberman multiplayer game है जिसमें अन्य खेलों से अधिक बार खेलने की क्षमता है। यह मुफ्त, आसान, अनुकूलनीय है और साइन-अप की आवश्यकता नहीं है। अभी खेलें।",
             "title": "Bomberman बहुखिलाड़ी गेम | Bloob.io",
             "options": {
@@ -829,8 +819,6 @@
         },
         "EIGHT_BALL_POOL": {
             "name": "8 Ball Pool",
-            "heading": "अपने दोस",
-            "tooltip": "यहाँ एक बॉट या खिलाड़ी के खिलाफ लोकप्रिय बिलियर्ड्स गेम खेलें।",
             "description": "ऑनलाइन मल्टीप्लेयर पूल में अपनी सबसे अच्छी शॉट लें! अपनी सभी गेंदों को डूबोएं और 8 बॉल के साथ समाप्त करें और टेबल पर जीतें!",
             "title": "2 खिलाड़ियों के लिए मुफ्त मल्टीप्लेयर गेम",
             "options": {
@@ -981,8 +969,6 @@
         },
         "YACHT": {
             "name": "यॉट",
-            "heading": "ऑनलाइन खेलें यॉट, क्लासिक डाइस गेम",
-            "tooltip": "यहाँ प्रसिद्ध यॉट गेम खेलें, चाहे वो 4 बॉट्स के खिलाफ हो या खिलाड़ियों के खिलाफ।",
             "description": "Bloob.io पर दोस्तों के साथ Yacht, जिसे Yahtzee या Yatzy भी कहा जाता है, क्लासिक डाइस गेम खेलें। साथ में रोल, स्कोर, और जीतें!",
             "title": "मुफ्त मल्टीप्लेयर पासा खेल",
             "options": {
@@ -1074,8 +1060,6 @@
         },
         "BATTLESHIP": {
             "name": "युद्धपोत",
-            "heading": "ऑनलाइन में शानदार जहाज़ की लड़ाई में हिस्सा लें - बैटलशिप खेलें",
-            "tooltip": "अपने नौसेना को कमांड करो और इस रोमांचक ऑनलाइन बैटलशिप गेम में उच्च समुद्रों को जीतो।",
             "description": "मास्टर टैक्टिकल बैटलशिप्स में शत्रुओं को डूबाएं और Battleship में समुद्रों को जीतें! आज ही शानदार मल्टीप्लेयर शिप बैटल में सहभागी हों।",
             "title": "समुद्रों को जीतें - अब बैटलशिप खेलें",
             "options": {
@@ -1135,8 +1119,6 @@
         },
         "SUPER_TIC_TAC_TOE": {
             "name": "सुपर टिक-टैक-टो",
-            "heading": "अपने दोस्तों को सुपर टिक-टैक-टो के साथ चुनौती दें",
-            "tooltip": "यहाँ Super Tic-Tac-Toe गेम खेलो, बॉट के खिलाफ या खिलाड़ी के साथ।",
             "description": "ऑनलाइन मल्टीप्लेयर सुपर टिक-टैक-टो गेम का अनुभव करें! दोस्तों के साथ या बॉट्स के खिलाफ खेलें और ग्रिड को मास्टर करें! साइन अप की जरूरत नहीं। आज ही मज़े में शामिल हों!",
             "title": "ऑनलाइन मल्टीप्लेयर गेम",
             "options": {
@@ -1181,8 +1163,6 @@
         },
         "CRIBBAGE": {
             "name": "क्रिबेज",
-            "heading": "ऑनलाइन क्लासिक क्रिबेज का आनंद लें",
-            "tooltip": "अपनी कौशल और रणनीति का परीक्षण करें इस प्रिय कार्ड खेल में, दुनिया भर के खिलाड़ियों के खिलाफ.",
             "description": "अपनी बुद्धि को तेज करें और ऑनलाइन Cribbage खेलें! इसकी अद्वितीय स्कोरिंग सिस्टम और रणनीतिक गेमप्ले के साथ, Cribbage कार्ड गेम प्रेमियों के लिए अनंत घंटों का मजा प्रदान करता है।",
             "title": "अपने दोस्तों को चुनौती दें",
             "options": {
@@ -1263,8 +1243,6 @@
         },
         "WAR": {
             "name": "युद्ध",
-            "heading": "ऑनलाइन युद्ध कार्ड बैटल में रोमांचक अनुभव प्राप्त करें",
-            "tooltip": "वार कार्ड गेम की रोमांचकता का अनुभव करें, जिसमें दुनिया के हर कोने से खिलाड़ी शामिल हैं।",
             "description": "ऑनलाइन मल्टीप्लेयर कार्ड बैटल का अनुभव लें वार के साथ! इस वेब-आधारित क्लासिक में दोस्तों और प्रतिद्वंद्वियों के खिलाफ खेलें।",
             "title": "कार्ड संघर्ष के अखाड़े में प्रवेश करें",
             "options": {
@@ -1321,55 +1299,119 @@
             }
         },
         "GIN_RUMMY": {
-            "name": null,
-            "heading": {},
-            "tooltip": {},
+            "name": "जिन रमि",
             "description": {},
             "title": {},
             "options": {
                 "winAmount": {
-                    "help": null
+                    "help": "game tab khatam hota hai jab koi player is amount of points tak pahunchta hai. Lekin, isse jeet ki guarantee nahi milti, kyunki game ke end mein bonus points diye jaate hain."
                 },
                 "knock": {
-                    "title": null,
-                    "help": null
+                    "title": "खटखट",
+                    "help": {
+                        "enabled": "'Enabled' ka matlab hai ki aap knock kar sakte ho jo aapne threshold set kiya hai.",
+                        "firstDiscardCard": "'Based on first discard card' ka matlab hai ki pehli discard card ko threshold set karne ke liye use kiya jata hai; agar Ace aata hai, toh aapko Gin karna padega.",
+                        "disabled": "'Disabled' ka matlab hai ki round sirf Gin ke saath hi khatam ho sakta hai."
+                    },
+                    "data": {
+                        "firstDiscardCard": "pehli discard card ke aadhar par"
+                    }
+                },
+                "knockBasedOnFirstCard": {
+                    "title": "[1] पहले डिस्कार पर नॉक",
+                    "help": "जब ये ऑन होता है, तो डिस्कार्ड पाइल में पहली कार्ड नॉक थ्रेशोल्ड तय करता है। प्लेयर तभी नॉक कर सकते हैं जब उनका डेडवुड इस कार्ड के वैल्यू से कम या बराबर हो।"
                 },
                 "knockThreshold": {
-                    "title": null,
-                    "help": null
+                    "title": "Knock Threshold - खटखटाने की सीमा",
+                    "help": "ek player knock kar sakta hai jab uska turn ho aur uska deadwood configured threshold se kam ya barabar ho."
                 },
                 "ginPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "जिन",
+                    "help": "Gin ke liye player ko diye gaye points ki sankhya, jab saare cards ek haath mein meld mein hote hain."
                 },
                 "bigGinPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "बिग जिन",
+                    "help": "बिग जिन बोलने पर एक प्लेयर को मिले पॉइंट्स की संख्या, जो तब होती है जब हाथ में सभी कार्ड और खींचा गया कार्ड एक मेल्ड में होते हैं, और कोई डेडवुड नहीं बचता।"
                 },
                 "undercutPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "अंडरकट",
+                    "help": "undercut tab hota hai jab ek player knock karta hai, lekin uska opponent ke paas same ya kam deadwood points hote hain. Is case mein, opponent ko extra points milte hain."
                 },
                 "firstBonusPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "बोनस: पहले जीतने वाला",
+                    "help": "गेम के अंत में दिया जाता है। जो प्लेयर 'विन अमाउंट' तक सबसे पहले पहुंचता है, उसे एक बोनस मिलता है।"
                 },
                 "roundBonusPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "बोनस: राउंड",
+                    "help": "गेम के अंत में दिया जाता है। हर प्लेयर को ये पॉइंट्स मिलते हैं हर राउंड के लिए जो उन्होंने जीते हैं, टाई को छोड़कर।"
                 },
                 "shutoutBonusPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "बोनस: शटआउट",
+                    "help": "game ke end pe diya jata hai. Jo winner hai usko is amount ka extra bonus milta hai agar usne har round jeeta hai."
                 }
             },
-            "presets": {},
-            "help": {}
+            "presets": {
+                "straightGin": {
+                    "title": "स्ट्रेट जिन",
+                    "description": [
+                        "कोई खटखटाना नहीं",
+                        "कोई बोनस नहीं"
+                    ]
+                },
+                "oklahomaGin": {
+                    "title": "ओक्लाहोमा जिन",
+                    "description": [
+                        "[1] पहले डिस्कार के आधार पर नॉक वैल्यू"
+                    ]
+                }
+            },
+            "help": {
+                "rounds": {
+                    "title": "राउंड्स",
+                    "description": [
+                        "गेम में कई राउंड होते हैं। हर राउंड में, खिलाड़ियों को 10 कार्ड दिए जाते हैं, और एक कार्ड ढेर में दिखाया जाता है। खिलाड़ी पास करने या ढेर से ऊपर वाला कार्ड लेने का चुनाव कर सकते हैं।",
+                        "टर्न्स बारी-बारी से होते हैं, और आपके टर्न पर, आप ढेर से या डेक से एक कार्ड ले सकते हैं। उसके बाद, आपको एक कार्ड ढेर में वापस करना होता है।"
+                    ]
+                },
+                "deadwood": {
+                    "title": "डेडवुड",
+                    "description": [
+                        "डेडवुड उन कार्ड्स को कहते हैं जो किसी भी मेल्ड का हिस्सा नहीं होते। डेडवुड की वैल्यू इन कार्ड्स के वैल्यू को जोड़कर निकाली जाती है (जैसे, दो किंग्स और एक फाइव मिलाकर टोटल 25)।",
+                        "कोशिश करो कि तुम्हारा डेडवुड जितना हो सके उतना कम रहे, मेल्ड बनाकर और हाई-वैल्यू कार्ड्स को फेंककर जो मेल्ड में नहीं हैं।"
+                    ]
+                },
+                "melds": {
+                    "title": "मिलाना",
+                    "description": [
+                        "Melds tab banane ke liye tumhe ek hi suit ke teen ya usse zyada cards chahiye hote hain (jaise, 3D, 4D, 5D) ya phir ek hi rank ke teen ya usse zyada cards (jaise, 3H, 3D, 3S).",
+                        "Melds tumhare haath aur interface mein automatically highlight ho jaate hain, toh pile par nazar rakho—tumhara opponent wo card gira sakta hai jo tumhe chahiye!"
+                    ]
+                },
+                "knock": {
+                    "title": "खटखट",
+                    "description": [
+                        "Agar tumhara deadwood 10 se kam hai, toh tum knock kar sakte ho. Jab tum knock karte ho, sab cards dikh jaate hain, aur tum apne opponent ka deadwood dekh sakte ho. Agar tumhara deadwood zyada hai, toh tumhara opponent round jeet jaata hai bonus ke saath.",
+                        "Knock karne ka scoring simple hai: apna deadwood opponent ke deadwood se ghata do. Jaise, agar tumhara deadwood 5 hai aur opponent ka 25 hai, toh tumhe 20 points milte hain."
+                    ]
+                },
+                "gin": {
+                    "title": "जिन और बिग जिन",
+                    "description": [
+                        "Agar tumhara deadwood 0 hai ya tum apni aakhri deadwood card discard karne ke baad 0 kar sakte ho, toh tumhe Gin mil gaya. Ye jeet ki guarantee deta hai aur tumhe ek bonus aur deadwood difference milta hai.",
+                        "Big Gin toh aur bhi badiya hai: agar tumhara poora haath, plus jo card tumne abhi khicha hai, melds banata hai, toh tumhe ek bada bonus milta hai. Jab bhi tumhe Big Gin mile, turant bula do!"
+                    ]
+                },
+                "goal": {
+                    "title": "लक्ष्य",
+                    "description": [
+                        "मकसद है जितनी ज्यादा राउंड जीत सको, और पहले 100 पॉइंट्स तक पहुंचना। इससे गेम खत्म हो जाएगा और फाइनल स्कोर दिखेगा, जिसमें बोनस पॉइंट्स भी शामिल होंगे।",
+                        "डिफॉल्ट के तौर पर, हर राउंड जीतने पर तुम्हें 25 एक्स्ट्रा पॉइंट्स मिलते हैं और पहले 100 पॉइंट्स तक पहुंचने पर 100 और पॉइंट्स मिलते हैं।"
+                    ]
+                }
+            }
         },
         "AI_ASSASSIN": {
             "name": "AI हत्यारा",
-            "heading": "AI Assassin में अस्सासिन बनें या टारगेट के रूप में बचें!",
-            "tooltip": "एक उच्च दांव का बुद्धिमत्ता का खेल जहां हर प्रेरणा महत्वपूर्ण है। क्या आप अस्सासिन हैं या निशाना?",
             "description": "AI Assassin एक रोमांचक मल्टीप्लेयर गेम है जहां आप लक्ष्य को नष्ट करते हैं या असैसिन्स को हराते हैं। अपने लक्ष्य को प्राप्त करने के लिए रणनीतिक संकेतों का उपयोग करें और सफल हों।",
             "title": "चतुराई से बाहर निकलो, हटाओ, जीवित रहो",
             "options": {},
@@ -1453,11 +1495,11 @@
             "removingRow": "पंक्ति हटा रहे हैं",
             "yourTurn": "तुम्हारी बारी %{extra}",
             "nameTurn": "%{name} की बारी",
-            "tieEndedRound": null,
-            "youEndedRound": null,
-            "nameEndedRound": null,
-            "youWonRound": null,
-            "nameWonRound": null,
+            "tieEndedRound": "राउंड टाई पर खत्म हुआ",
+            "youEndedRound": "तुमने राउंड खत्म कर दिया",
+            "nameEndedRound": "%{name} ने राउंड खत्म कर दिया",
+            "youWonRound": "तुमने राउंड जीत लिया",
+            "nameWonRound": "%{name} ने राउंड जीत लिया",
             "yourTurnBreaking": "तुम %{extra} तोड़ रहे हो",
             "nameTurnBreaking": "%{name} टूट रहा है",
             "roundSummary": "दौर का सारांश",
@@ -1553,7 +1595,7 @@
         "basic": "बुनियादी",
         "language": "Bhasha",
         "rules": "Niyam",
-        "points": null,
+        "points": "पॉइंट्स",
         "fouls": "Galat Ka Jawab"
     },
     "month": {
@@ -1703,9 +1745,9 @@
         "restartNotice": "सर्वर {count} मिनट में रीस्टार्ट होगा। कृपया अपना गेम खत्म करो। | सर्वर {count} मिनट में रीस्टार्ट होगा। कृपया अपना गेम खत्म करो। | सर्वर {count} मिनट में रीस्टार्ट होगा। कृपया अपना गेम खत्म करो।"
     },
     "misc": {
-        "roundWinner": null,
-        "sort": null,
-        "pass": null,
+        "roundWinner": "राउंड विजेता",
+        "sort": "सॉर्ट",
+        "pass": "पास",
         "permanent": "स्थायी",
         "total": "कुल",
         "judge": "न्यायाधीश",
@@ -1738,6 +1780,7 @@
         "rollAgain": "फिर से घुमाओ",
         "rolling": "घुमा रहा है",
         "finalRoll": "अंतिम बार घुमाओ",
+        "remaining": "बचा हुआ",
         "noRollsRemaining": "और कोई घुमाने का मौका नहीं है",
         "congratulations": "बधाई हो!",
         "privacy": "गोपनीयता",
@@ -1850,8 +1893,12 @@
         "words": "शब्द",
         "longestWord": "सबसे लंबा शब्द",
         "length": "लंबाई",
+        "bonus": "बोनस",
+        "round": "राउंड",
         "score": "स्कोर",
         "highestScore": "सबसे अधिक स्कोर",
+        "totalScore": "टोटल स्कोर",
+        "finalScore": "फाइनल स्कोर",
         "hits": "हिट्स",
         "hitRate": "हिट दर",
         "rank": "रैंक",
@@ -1924,8 +1971,8 @@
         "empty": "कोई कार्ड नहीं",
         "total": "कुल कार्ड",
         "view": "कार्ड देखें",
-        "melds": null,
-        "deadwood": null,
+        "melds": "मेल्ड्स",
+        "deadwood": "डेडवुड",
         "editor": {
             "title": "कार्ड संपादक",
             "name": "कार्ड सेट का नाम",
@@ -2219,9 +2266,9 @@
             "noEmail": "कोई ईमेल नहीं? अपने स्पैम फ़ोल्डर की जांच करें और यह सुनिश्चित करें कि यह ईमेल पता आपके खाते से जुड़ा हुआ है।"
         },
         "cards": {
-            "sortHandBy": null,
-            "cardRank": null,
-            "cardSuit": null,
+            "sortHandBy": "हाथ को इस तरह से सजाओ",
+            "cardRank": "कार्ड का रैंक",
+            "cardSuit": "कार्ड का सूट",
             "selfRanOut": "आपके पास खेलने के लिए कार्ड खत्म हो गए!",
             "nameRanOut": "%{name} के पास खेलने के लिए कार्ड खत्म हो गए!"
         },
@@ -2322,13 +2369,16 @@
         },
         "ginRummy": {
             "title": {
-                "gin": null,
-                "bigGin": null,
-                "knock": null
+                "tie": "टाई",
+                "undercut": "अंडरकट",
+                "gin": "जिन",
+                "bigGin": "बिग जिन",
+                "knock": "नॉक"
             },
-            "scoreDescription": null,
-            "yourMeldAfterKnock": null,
-            "nameMeldAfterKnock": null
+            "tieDescription": "Kafi cards nahi bache hain khelne ke liye. Yeh tie hai!",
+            "scoreDescription": "Score ka pata tab chalta hai jab har player ke haath mein deadwood cards ke total values ka difference nikala jata hai.",
+            "yourMeldAfterKnock": "Oh nahi... %{name} ke kuch deadwood tumhare melds mein daale ja sakte hain!",
+            "nameMeldAfterKnock": "Wah! Tumhare kuch deadwood %{name} ke melds mein daale ja sakte hain!"
         },
         "yacht": {
             "title": {

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Danish",
         "rtl": false,
-        "total": 1550,
-        "missing": 50
+        "total": 1562,
+        "missing": 10
     },
     "name": "Bloob.io",
     "error": {
@@ -55,6 +55,7 @@
             "againstAgainstInactiveUser": "Du kan ikke udføre denne handling på en inaktiv bruger.",
             "invalidUser": "Brugeren med det givne ID er ikke i denne kamp.",
             "invalidTime": "Du kan ikke udføre denne handling lige nu.",
+            "versionMismatch": "Du kører version \"%{client}\", mens serveren kører version \"%{server}\". Det kan ske, når der bliver rullet en opdatering ud. Opdater lige denne side om et par minutter for at få den nyeste version.",
             "clipboard": "Kunne ikke kopiere til udklipsholder."
         },
         "config": {
@@ -104,8 +105,8 @@
             "wordTooLong": "Ordvalget er for langt (Max. %{max})"
         },
         "card": {
-            "handLocked": null,
-            "handTooFull": null,
+            "handLocked": "Du kan ikke vælge et kort fra din hånd lige nu.",
+            "handTooFull": "Du kan kun smide et kort fra din hånd lige nu.",
             "loadingSets": "Kan ikke downloade kort sættene.",
             "invalid": "Ugyldige kortdata givet.",
             "invalidSet": "Ugyldigt kort sæt givet.",
@@ -171,12 +172,15 @@
     },
     "game": {
         "generic": {
-            "heading": "Multiplayer Spil Du Kan Finde på Bloob.io",
             "title": "Gratis Multiplayer Spil Online | Ingen Tilmelding Nødvendig",
             "description": "En samling af multiplayer browser-baserede spil uden behov for at lave en konto. Spil uden besvær og tilpas oplevelsen efter din smag.",
             "options": {
                 "public": {
                     "title": "Match Privatliv"
+                },
+                "handSize": {
+                    "title": "Håndstørrelse",
+                    "help": "Antallet af kort, som alle har på hånden."
                 },
                 "maxUsers": {
                     "title": "Maks. Spillere",
@@ -259,8 +263,6 @@
         },
         "WORDRACE": {
             "name": "Wordrace",
-            "heading": "Spil et Unikt Ord Finder Spil",
-            "tooltip": "Find ord i enhver retning på et tilfældigt genereret felt, mens du konkurrerer mod andre med det samme mål.",
             "description": "Wordrace er et gratis unikt ordfindings spil med tilpasselige indstillinger for at give hver spiller en udfordring. Det kræver ingen tilmelding. Spil nu.",
             "title": "Unikt Multiplayer Ordspil | Bloob.io",
             "options": {
@@ -392,8 +394,6 @@
         },
         "FOUR_IN_A_ROW": {
             "name": "Fire på Stribe",
-            "heading": "Forbind Fire på Stribe Online med Venner",
-            "tooltip": "Spil Fire på Række med op til seks spillere i enten den klassiske spiltilstand eller tilgængelige variationer.",
             "description": "Fire på Stribe er et afslappet gratis spil. Spil dette klassiske forbind fire spil med op til 6 venner på én gang i dette sjove, vanedannende og let at lære spil.",
             "title": "Nemt Gratis Multiplayer Spil | Bloob.io",
             "options": {
@@ -481,8 +481,6 @@
         },
         "ROTTEN_APPLES": {
             "name": "Rådne Æbler",
-            "heading": "Spil et Online Multiplayer Cards Against Humanity med Venner",
-            "tooltip": "Spil en klon af Cards Against Humanity og tilpas din oplevelse efter din smag.",
             "description": "Spil en klon af Cards Against Humanity og tilpas din oplevelse efter din smag. Lav dine egne brugerdefinerede kort sæt og inkluder dem i din næste kamp.",
             "title": "Multiplayer Kort Mod Menneskeheden | Bloob.io",
             "options": {
@@ -491,10 +489,6 @@
                         "first": "Første til at få <b>0</b> point | Første til at få <b>1</b> point | Første til at få <b>{count}</b> point",
                         "most": "Flest point efter <b>0</b> runder | Flest point efter <b>1</b> runde | Flest point efter <b>{count}</b> runder"
                     }
-                },
-                "handSize": {
-                    "title": "Håndstørrelse",
-                    "help": "Mængden af svarkort alle holder i deres hånd på et hvilket som helst tidspunkt."
                 },
                 "judgeSystem": {
                     "title": "Dommer System",
@@ -629,8 +623,6 @@
         },
         "CHECKERS": {
             "name": "Dame",
-            "heading": "Spil Online Dam med Venner",
-            "tooltip": "Kald det dam eller checkers, spil det her med op til 4 spillere med alle mulige tilpasselige regler.",
             "description": "Checkers er det klassiske hurtige brætspil, du kender og elsker med spændende twists! Vær i kontrol og ændre reglerne, som du vil. Spil med venner nu.",
             "title": "Klassisk Multiplayer Brætspil | Bloob.io",
             "options": {
@@ -740,8 +732,6 @@
         },
         "BLOMBER": {
             "name": "Blomber",
-            "heading": "Spil Bomberman Online Med Venner",
-            "tooltip": "Spræng dine modstandere i luften på en intens nærkamp slagmark fyldt med power ups i dette klassiske Bomberman spil.",
             "description": "Blomber er et Bomberman multiplayer spil med mere genspilningsværdi end de fleste andre spil. Det er gratis, nemt at spille, kan tilpasses, og kræver ingen tilmelding. Spil nu.",
             "title": "Bomberman Multiplayer Spil | Bloob.io",
             "options": {
@@ -829,8 +819,6 @@
         },
         "EIGHT_BALL_POOL": {
             "name": "8 Ball Pool",
-            "heading": "Spil 8 Ball Pool Online Med Venner",
-            "tooltip": "Spil det populære billardspil her mod en bot eller spiller.",
             "description": "Tag dit bedste skud i online multiplayer pool! Synk alle dine bolde og afslut med 8 Ball for at vinde ved bordet!",
             "title": "Gratis Multiplayer Spil for 2 Spillere",
             "options": {
@@ -981,8 +969,6 @@
         },
         "YACHT": {
             "name": "Yacht",
-            "heading": "Spil Yacht, det Klassiske Terningespil Online",
-            "tooltip": "Spil det populære Yacht-spil her mod op til 4 bots eller spillere.",
             "description": "Spil Yacht, det klassiske terningspil også kendt som Yahtzee eller Yatzy, med venner på Bloob.io. Rul, score og vind sammen!",
             "title": "Gratis Multiplayer Terningespil",
             "options": {
@@ -1074,8 +1060,6 @@
         },
         "BATTLESHIP": {
             "name": "Slagskib",
-            "heading": "Deltag i Episke Skibskampe Online - Spil Slagskib",
-            "tooltip": "Kommandér din flåde og erobre de høje have i dette spændende online Slagskib spil.",
             "description": "Mestre taktiske slagskibe, sænk fjender og erobre havene i Battleship! Deltag i episke multiplayer skibskampe i dag.",
             "title": "Erobre Havene - Spil Skibsspil Nu",
             "options": {
@@ -1135,8 +1119,6 @@
         },
         "SUPER_TIC_TAC_TOE": {
             "name": "Super Kryds og Bolle",
-            "heading": "Udfordr Venner med Super Kryds og Bolle",
-            "tooltip": "Spil Super Kryds og Bolle spillet her mod en bot eller spiller.",
             "description": "Oplev det online multiplayer Super Kryds og Bolle spil! Spil med venner eller mod bots og mestre gitteret! Ingen tilmelding nødvendig. Deltag i sjovet i dag!",
             "title": "Online Multiplayer Spil",
             "options": {
@@ -1181,8 +1163,6 @@
         },
         "CRIBBAGE": {
             "name": "Cribbage",
-            "heading": "Nyd Klassisk Cribbage Online",
-            "tooltip": "Test dine færdigheder og strategi i dette elskede kortspil mod spillere over hele verden.",
             "description": "Skærp din hjerne og spil Cribbage online! Med sit unikke point system og strategiske gameplay, tilbyder Cribbage uendelige timer med sjov for kortspil entusiaster.",
             "title": "Udfordr Dine Venner",
             "options": {
@@ -1263,8 +1243,6 @@
         },
         "WAR": {
             "name": "Krig",
-            "heading": "Oplev Spændende Krigskort Kampe Online",
-            "tooltip": "Oplev spændingen ved krigskortspillet med spillere fra alle verdenshjørner.",
             "description": "Oplev multiplayer kortkampe online med War! Spil mod venner og rivaler i denne web-baserede klassiker.",
             "title": "Træd ind i kortkampens arena",
             "options": {
@@ -1321,55 +1299,119 @@
             }
         },
         "GIN_RUMMY": {
-            "name": null,
-            "heading": {},
-            "tooltip": {},
+            "name": "Gin Rummy",
             "description": {},
             "title": {},
             "options": {
                 "winAmount": {
-                    "help": null
+                    "help": "Spillet slutter, så snart en spiller når det her antal point. Men det betyder ikke, at man automatisk vinder, for der gives bonuspoint til sidst i spillet."
                 },
                 "knock": {
-                    "title": null,
-                    "help": null
+                    "title": "Banke",
+                    "help": {
+                        "enabled": "'Aktiveret' gør, at du kan banke baseret på den indstillede bankegrænse.",
+                        "firstDiscardCard": "'Baseret på det første kasserede kort' bruger det første kasserede kort til at sætte grænsen; hvis der trækkes et es, skal du gå Gin.",
+                        "disabled": "'Deaktiveret' gør, at du kun kan afslutte en runde med en Gin."
+                    },
+                    "data": {
+                        "firstDiscardCard": "Baseret på det første kasserede kort"
+                    }
+                },
+                "knockBasedOnFirstCard": {
+                    "title": "Knock baseret på første discard",
+                    "help": "Når det er tændt, bestemmer det første kort i bunken, hvor meget man må \"knock\" ved. Spillere kan kun \"knocke\", hvis deres døde træ er lig med eller mindre end værdien af det kort."
                 },
                 "knockThreshold": {
-                    "title": null,
-                    "help": null
+                    "title": "Bankegrænse",
+                    "help": "En spiller kan \"knock\", når det er deres tur, og deres døde træ er lig med eller under den indstillede grænse."
                 },
                 "ginPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "Gin",
+                    "help": "Antallet af point, en spiller får for at kalde Gin, når alle kort i hånden er i en meld."
                 },
                 "bigGinPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "Stort Gin",
+                    "help": "Antallet af point, en spiller får for at kalde Big Gin, som sker når alle kort i hånden plus det trukne kort er i en meld, så der ikke er noget dødt træ."
                 },
                 "undercutPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "Undercut",
+                    "help": "En undercut sker, når en spiller banker, men deres modstander har samme eller færre deadwood point. I det tilfælde får modstanderen ekstra point."
                 },
                 "firstBonusPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "Bonus: Første til at vinde",
+                    "help": "Givet ved slutningen af spillet. Giver den spiller, der først når 'Vinderbeløbet', en bonus."
                 },
                 "roundBonusPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "Bonus: Runde",
+                    "help": "Givet ved slutningen af spillet. Giver hver spiller det her antal point for hver runde, de har vundet, uden at tælle uafgjorte."
                 },
                 "shutoutBonusPointAmount": {
-                    "title": null,
-                    "help": null
+                    "title": "Bonus: Shutout",
+                    "help": "Givet ved slutningen af spillet. Giver vinderen et ekstra bonus på det her antal point, hvis de har vundet hver runde."
                 }
             },
-            "presets": {},
-            "help": {}
+            "presets": {
+                "straightGin": {
+                    "title": "Ren gin",
+                    "description": [
+                        "Ingen banke på",
+                        "Ingen bonus"
+                    ]
+                },
+                "oklahomaGin": {
+                    "title": "Oklahoma Gin",
+                    "description": [
+                        "Knock værdi baseret på første discard"
+                    ]
+                }
+            },
+            "help": {
+                "rounds": {
+                    "title": "Runder",
+                    "description": [
+                        "Spillet består af flere runder. Hver runde får spillerne 10 kort, og et kort vises i bunken. Spillerne kan vælge at passe eller tage det øverste kort fra bunken.",
+                        "Turene skiftes, og når det er din tur, kan du tage et kort fra bunken eller stakken. Derefter skal du returnere et kort til bunken."
+                    ]
+                },
+                "deadwood": {
+                    "title": "Dødt Træ",
+                    "description": [
+                        "Deadwood betyder kort, der ikke er en del af nogen melds. Værdien af deadwood regnes ved at lægge værdierne af de kort sammen (f.eks. to konger og en femmer giver i alt 25).",
+                        "Prøv at holde dit deadwood så lavt som muligt ved at lave melds og smide de dyre kort væk, der ikke er i melds."
+                    ]
+                },
+                "melds": {
+                    "title": "Meldinger",
+                    "description": [
+                        "Melds kan laves ved at have en sekvens af tre eller flere kort af samme farve (f.eks. 3R, 4R, 5R) eller tre eller flere af samme værdi (f.eks. 3H, 3R, 3S).",
+                        "Melds bliver automatisk fremhævet i din hånd og i interface, så hold øje med bunken—din modstander kan smide det kort, du mangler!"
+                    ]
+                },
+                "knock": {
+                    "title": "Bank på",
+                    "description": [
+                        "Du kan banke, hvis dit deadwood er under 10. Når du banker, bliver alle kortene afsløret, og du kan se din modstanders deadwood. Hvis dit deadwood er højere, vinder din modstander runden med et bonuspoint.",
+                        "At score for en bank er nemt: træk dit deadwood fra din modstanders. For eksempel, hvis dit deadwood er 5, og din modstanders er 25, får du 20 point."
+                    ]
+                },
+                "gin": {
+                    "title": "1. Gin og Big Gin",
+                    "description": [
+                        "Hvis dit deadwood er 0, eller kan blive 0 efter du smider dit sidste deadwood kort, så har du en Gin. Det garanterer en sejr og giver dig en bonus plus forskellen i deadwood.",
+                        "En Big Gin er endnu federe: hvis hele din hånd, plus det kort du lige har trukket, danner melds, så får du en større bonus. Husk altid at kalde en Big Gin så snart du har den!"
+                    ]
+                },
+                "goal": {
+                    "title": "Mål",
+                    "description": [
+                        "Målet er at vinde så mange runder som muligt og være den første til at nå 100 point. Så slutter spillet, og de endelige point bliver vist, inklusive bonuspoint.",
+                        "Som standard får du 25 ekstra point for hver runde, du vinder, og 100 ekstra point for at være den første til at nå 100 point."
+                    ]
+                }
+            }
         },
         "AI_ASSASSIN": {
             "name": "AI Snigmorder",
-            "heading": "Vær Snigmorderen eller Overlev som Målet i AI Snigmorder!",
-            "tooltip": "Et højrisiko spil om snilde, hvor hvert hint tæller. Er du snigmorderen eller målet?",
             "description": "AI Assassin er et spændende multiplayer spil, hvor du enten fjerner målet eller overgår snigmorderne. Brug strategiske prompts til at nå dit mål og lykkes.",
             "title": "Overlist, Eliminer, Overlev",
             "options": {},
@@ -1453,11 +1495,11 @@
             "removingRow": "Fjerner række",
             "yourTurn": "Din tur %{extra}",
             "nameTurn": "%{name}s tur",
-            "tieEndedRound": null,
-            "youEndedRound": null,
-            "nameEndedRound": null,
-            "youWonRound": null,
-            "nameWonRound": null,
+            "tieEndedRound": "Runden er endt uafgjort",
+            "youEndedRound": "Du har afsluttet runden",
+            "nameEndedRound": "%{name} har afsluttet runden",
+            "youWonRound": "Du har vundet runden",
+            "nameWonRound": "%{name} har vundet runden",
             "yourTurnBreaking": "Du bryder %{extra}",
             "nameTurnBreaking": "%{name} bryder",
             "roundSummary": "Rundeoversigt",
@@ -1553,7 +1595,7 @@
         "basic": "Grundlæggende",
         "language": "Sprog",
         "rules": "Regler",
-        "points": null,
+        "points": "Point",
         "fouls": "Reaktion på Overtrædelse"
     },
     "month": {
@@ -1703,9 +1745,9 @@
         "restartNotice": "Serveren genstarter om {count} minutter. Bliv færdig med dit spil. | Serveren genstarter om {count} minut. Bliv færdig med dit spil. | Serveren genstarter om {count} minutter. Bliv færdig med dit spil."
     },
     "misc": {
-        "roundWinner": null,
-        "sort": null,
-        "pass": null,
+        "roundWinner": "Runde Vinder",
+        "sort": "Sorter",
+        "pass": "Giv videre",
         "permanent": "Permanent",
         "total": "Total",
         "judge": "Dommer",
@@ -1738,6 +1780,7 @@
         "rollAgain": "Rul Igen",
         "rolling": "Ruller",
         "finalRoll": "Sidste Rul",
+        "remaining": "Resterende",
         "noRollsRemaining": "Ingen Rul Tilbage",
         "congratulations": "Tillykke!",
         "privacy": "Privatliv",
@@ -1850,8 +1893,12 @@
         "words": "Ord",
         "longestWord": "Længste Ord",
         "length": "Længde",
+        "bonus": "Bonus",
+        "round": "Runde",
         "score": "Score",
         "highestScore": "Højeste Score",
+        "totalScore": "Total Score",
+        "finalScore": "Slut Score",
         "hits": "Hits",
         "hitRate": "Træfsats",
         "rank": "Rang",
@@ -1924,8 +1971,8 @@
         "empty": "Ingen Kort",
         "total": "Total Kort",
         "view": "Se Kort",
-        "melds": null,
-        "deadwood": null,
+        "melds": "Melds",
+        "deadwood": "Døde træer",
         "editor": {
             "title": "Kort Editor",
             "name": "Kort Sæt Navn",
@@ -2219,9 +2266,9 @@
             "noEmail": "Ingen email? Tjek din spammappe og bekræft at denne emailadresse er tilknyttet din konto."
         },
         "cards": {
-            "sortHandBy": null,
-            "cardRank": null,
-            "cardSuit": null,
+            "sortHandBy": "Sortér hånden efter",
+            "cardRank": "Kortværdi",
+            "cardSuit": "Kortfarve",
             "selfRanOut": "Du løb tør for kort at spille med!",
             "nameRanOut": "%{name} løb tør for kort at spille med!"
         },
@@ -2322,13 +2369,16 @@
         },
         "ginRummy": {
             "title": {
-                "gin": null,
-                "bigGin": null,
-                "knock": null
+                "tie": "Uafgjort",
+                "undercut": "Undercut",
+                "gin": "Gin",
+                "bigGin": "Big Gin",
+                "knock": "Knock"
             },
-            "scoreDescription": null,
-            "yourMeldAfterKnock": null,
-            "nameMeldAfterKnock": null
+            "tieDescription": "Der er ikke flere kort tilbage til at spille. Det ender uafgjort!",
+            "scoreDescription": "Scoren bliver regnet ud ved at tage forskellen mellem værdierne af døde kort i hver spillers hånd.",
+            "yourMeldAfterKnock": "Åh nej... Nogle af %{name}'s døde kort kan flyttes til dine melds!",
+            "nameMeldAfterKnock": "Fedt! Nogle af dine døde kort kan flyttes til %{name}'s melds!"
         },
         "yacht": {
             "title": {
