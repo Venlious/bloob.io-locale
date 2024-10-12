@@ -314,6 +314,9 @@ export default class TranslationClass {
 		this.generateTranslationTask([`info`, `authentication`, `relogin`])
 		this.generateTranslationTask([`info`, `authentication`, `loginCode`])
 		this.generateTranslationTask([`info`, `authentication`, `ready`])
+		this.generateTranslationTask([`info`, `connection`])
+		this.generateTranslationTask([`info`, `connection`, `header`])
+		this.generateTranslationTask([`info`, `connection`, `content`])
 		this.generateTranslationTask([`info`, `yacht`])
 		this.generateTranslationTask(
 			[`info`, `yacht`, `title`],
@@ -354,11 +357,11 @@ export default class TranslationClass {
 		)
 		this.generateTranslationTask(
 			[`info`, `ginRummy`, `title`],
-			`This translation is a Gin Rummy action or outcome..`
+			`This translation is a Gin Rummy action or outcome.`
 		)
 		this.generateTranslationTask(
 			[`info`, `ginRummy`],
-			`This translation is a Gin Rummy action or outcome..`
+			`This translation is a Gin Rummy action or outcome.`
 		)
 		const cribbageTypes = Object.keys(EN_MESSAGES[`info`][`cribbage`][`type`])
 		for (const type of cribbageTypes) {
