@@ -317,6 +317,7 @@ export default class TranslationClass {
 		this.generateTranslationTask([`info`, `connection`])
 		this.generateTranslationTask([`info`, `connection`, `header`])
 		this.generateTranslationTask([`info`, `connection`, `content`])
+		this.generateTranslationTask([`info`, `friend`])
 		this.generateTranslationTask([`info`, `yacht`])
 		this.generateTranslationTask(
 			[`info`, `yacht`, `title`],
