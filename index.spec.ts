@@ -21,13 +21,19 @@ const checkForVariables = (english, translation) => {
 			checkForVariables(value, translation[key])
 		} else if (typeof value === `string`) {
 			// If value is not an object, check if it contains any variables
-			const englishVariables = value.match(variablePattern)
-			if (englishVariables === null) continue
+			const englishVariables = value.match(variablePattern) || []
 
 			// Iterate through the variables in the English text
 			for (const variable of englishVariables) {
 				// Assert that each variable is present in the translation
 				expect(translation[key]).toContain(variable)
+			}
+
+			// Check if the target language does not contain MORE translations than the source
+			const targetVariables = translation[key].match(variablePattern) || []
+			for (const variable of targetVariables) {
+				// Assert that each variable is present in the English source
+				expect(englishVariables).toContain(variable)
 			}
 		}
 	}
