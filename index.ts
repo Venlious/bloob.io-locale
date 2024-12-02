@@ -1,4 +1,4 @@
-import { SupportedLocale } from './types/index'
+import type { SupportedLocale } from './types/index'
 
 const supportedLocales = <SupportedLocale[]>[
 	`en`,
