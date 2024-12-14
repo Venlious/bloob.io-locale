@@ -1,5 +1,3 @@
-import type { SupportedLocale } from './types/index'
-
 const supportedLocales = [
 	`en`,
 	`nl`,
@@ -22,5 +20,5 @@ const supportedLocales = [
 	`fi`,
 	`da`,
 	`sv`
-] as SupportedLocale[]
+]
 export { supportedLocales }
