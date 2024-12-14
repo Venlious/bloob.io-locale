@@ -1,7 +1,6 @@
 import type { SupportedLocale } from './types/index'
 
-// eslint-disable-next-line
-const supportedLocales = <SupportedLocale[]>[
+const supportedLocales: SupportedLocale[] = [
 	`en`,
 	`nl`,
 	`de`,
