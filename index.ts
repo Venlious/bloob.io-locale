@@ -1,6 +1,6 @@
 import type { SupportedLocale } from './types/index'
 
-const supportedLocales: SupportedLocale[] = [
+const supportedLocales = [
 	`en`,
 	`nl`,
 	`de`,
@@ -22,5 +22,5 @@ const supportedLocales: SupportedLocale[] = [
 	`fi`,
 	`da`,
 	`sv`
-]
+] as SupportedLocale[]
 export { supportedLocales }
