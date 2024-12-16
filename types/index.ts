@@ -34,7 +34,8 @@ export enum GameType {
 	cribbage = `CRIBBAGE`,
 	war = `WAR`,
 	aiAssassin = `AI_ASSASSIN`,
-	ginRummy = `GIN_RUMMY`
+	ginRummy = `GIN_RUMMY`,
+	numberShowdown = `NUMBER_SHOWDOWN`
 }
 
 export enum CheckersKingType {
