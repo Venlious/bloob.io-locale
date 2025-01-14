@@ -1451,6 +1451,16 @@
                     "title": "Reveal Speed",
                     "help": "The speed at which the round reveal is done whenever everyone is ready."
                 },
+                "multiplier": {
+                    "title": "Multipliers",
+                    "help": "Multipliers can appear on a single or multiple numbers at the same time. When a hider picks a number with a multiplier they will multiply their points. However, since everyone can see the multipliers it is risky and increases the chances of being found.",
+                    "data": {
+                        "off": "Turned Off",
+                        "uncommon": "Uncommon",
+                        "common": "Common",
+                        "veryCommon": "Very Common"
+                    }
+                },
                 "dynamicScoring": {
                     "title": "Dynamic Scoring",
                     "help": {
@@ -1577,6 +1587,7 @@
             "roundSummary": "Round summary",
             "roundCount": "Round %{current} out of %{total}",
             "roundCurrent": "Round %{current}",
+            "startingNewRound": "Starting new round...",
             "war": "War!",
             "outcome": "Outcome",
             "input": "Awaiting your input",
@@ -2030,6 +2041,8 @@
         "coinsBlank": "%{value} coins",
         "receivedBlank": "Received %{value}",
         "lessThanBlank": "Less than %{value}",
+        "blank": "%{value}",
+        "byBlank": "By %{value}",
         "sendVerification": "Send Verification",
         "noThanks": "No thanks",
         "ready": "Ready",
@@ -2549,7 +2562,10 @@
                 "seeker": "You're a seeker",
                 "hider": "You're a hider",
 				"alive": "Pick a number",
-				"dead": "You picked wrong"
+				"dead": "You picked wrong",
+				"foundSelf": "You were found!",
+				"foundOther": "You found someone!",
+				"collidedSelf": "You collided!"
             },
             "description": {
                 "seeker": "Try to guess where a hider might go.",
