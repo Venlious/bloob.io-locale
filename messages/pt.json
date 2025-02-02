@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Brazilian Portuguese",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1666,
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Desculpa, esse usuário já atingiu o limite de amigos de %{amount}.",
             "pendingFriendLimitSelf": "Você não pode ter mais de %{amount} amizades pendentes.",
             "pendingFriendLimitOther": "Desculpa, esse usuário já tem muitas amizades pendentes.",
+            "userOffline": "Desculpa, esse usuário tá offline.",
             "notFriends": "Vocês não são amigos e não tem pedido de amizade pendente.",
             "alreadyFriends": "Você já é amigo desse usuário.",
             "pendingFriends": "Já tem um pedido de amizade pendente com esse usuário.",
@@ -1426,6 +1427,82 @@
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Duelo de Números",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "O jogo vai acabar assim que um jogador atingir essa quantidade de pontos."
+                },
+                "mode": {
+                    "title": "Modo",
+                    "help": "Um modo de jogo diferente vai mudar como os pontos são dados e como o jogo é jogado.",
+                    "data": {
+                        "SINGLE_HIDER": "Escondido Único",
+                        "HIDE_AND_SEEK": "Esconde-Esconde",
+                        "LAST_STANDING": "Último em Pé"
+                    }
+                },
+                "field": {
+                    "title": "Campo",
+                    "help": "Determina quantos números aparecem no campo de jogo."
+                },
+                "revealSpeed": {
+                    "title": "Velocidade de Revelação",
+                    "help": "A velocidade com que a rodada é revelada quando todo mundo tá pronto."
+                },
+                "multiplier": {
+                    "title": "Multiplicadores",
+                    "help": "Os multiplicadores podem aparecer em um ou mais números ao mesmo tempo. Quando um escondido escolhe um número com um multiplicador, ele multiplica seus pontos. Mas, como todo mundo pode ver os multiplicadores, é arriscado e aumenta as chances de ser encontrado.",
+                    "data": {
+                        "off": "Desligado",
+                        "uncommon": "Incomum",
+                        "common": "Comum",
+                        "veryCommon": "Muito Comum"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Pontuação Dinâmica",
+                    "help": {
+                        "introduction": "Dê pontos de acordo com a probabilidade de sucesso. Por exemplo, se um buscador achar um escondido no começo do jogo, ele vai ganhar mais pontos. Se um escondido conseguir ficar camuflado com só algumas peças restantes, ele também vai ganhar mais pontos.",
+                        "calculation": "Quando ativado, os pontos são calculados automaticamente com base nos pontos mínimos e máximos configurados."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Encontrando um Escondido",
+                    "help": "Premiado a um buscador por encontrar um escondido."
+                },
+                "minPointsFind": {
+                    "title": "Min. Encontrar um Escondido"
+                },
+                "maxPointsFind": {
+                    "title": "Máx. Encontrando um Escondido"
+                },
+                "pointsHideRound": {
+                    "title": "Oculto por Rodada",
+                    "help": "Premiado pra quem se escondeu bem em cada rodada."
+                },
+                "minPointsHideRound": {
+                    "title": "Min. Oculto por Rodada"
+                },
+                "maxPointsHideRound": {
+                    "title": "Máx. Ocultos por Rodada"
+                },
+                "pointsLastAlive": {
+                    "title": "Último Sobrevivente",
+                    "help": "Concedido ao último jogador que sobrou no jogo quando todo mundo já foi eliminado."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Último Restante"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Máx. Último Restante"
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1512,6 +1589,7 @@
             "roundSummary": "Resumo da rodada",
             "roundCount": "Rodada %{current} de %{total}",
             "roundCurrent": "Rodada %{current}",
+            "startingNewRound": "Começando uma nova rodada...",
             "war": "Guerra!",
             "outcome": "Resultado",
             "input": "Aguardando sua jogada",
@@ -1735,6 +1813,7 @@
         "wins": "0 vitórias | 1 vitória | {count} vitórias",
         "cards": "0 cartas | 1 carta | {count} cartas",
         "moves": "0 jogadas | 1 jogada | {count} jogadas",
+        "tiles": "0 azulejos | 1 azulejo | {count} azulejos",
         "playing": "0 jogando | 1 jogando | {count} jogando",
         "players": "0 jogadores | 1 jogador | {count} jogadores",
         "selectedCards": "Nenhuma carta selecionada | 1 carta selecionada | {count} cartas selecionadas",
@@ -1942,6 +2021,7 @@
         "fouls": "Faltas",
         "and": "e",
         "vs": "vs",
+        "dismiss": "Fechar",
         "rename": "Renomear",
         "created": "Criado",
         "lastSeen": "Última Vez Visto",
@@ -1964,6 +2044,10 @@
         "coinsBlank": "%{value} moedas",
         "receivedBlank": "Recebido %{value}",
         "lessThanBlank": "Menos que %{value}",
+        "lastSeenBlankAgo": "Visto pela última vez há %{value}",
+        "lastSeenJustNow": "Visto pela última vez agora",
+        "blank": "%{value}",
+        "byBlank": "Por %{value}",
         "sendVerification": "Enviar Verificação",
         "noThanks": "Não, obrigado",
         "ready": "Pronto",
@@ -1982,6 +2066,7 @@
         "volume": "Volume",
         "volumeInterface": "Volume da interface",
         "volumeEffects": "Efeitos Volume",
+        "volumeMusic": "Volume da Música",
         "selectYourLanguage": "Selecione seu idioma",
         "selectYourColor": "Selecione sua cor",
         "latestChanges": "Últimas mudanças",
@@ -2182,6 +2267,7 @@
         "loginToPurchase": "Pra fazer uma compra, você precisa primeiro entrar ou criar uma conta.",
         "seasonalItem": "Um item nesse slot só fica disponível por alguns dias no ano.",
         "cardInteractHint": "Clique em uma carta para fazer sua escolha.",
+        "gameInvite": "Convite pra Jogo",
         "awaitingPurchaseConfirmation": {
             "title": "Aguardando Confirmação de Compra",
             "description": "Isso geralmente leva apenas alguns segundos. Dependendo do seu método de pagamento, pode demorar mais. Fique à vontade para fechar essa tela."
@@ -2190,7 +2276,9 @@
             "noFriends": "Sem Amigos",
             "noAccount": "Faça login ou crie uma conta pra começar a fazer amigos!",
             "description": "Fique conectado! Veja seus amigos online, os jogos deles e entre nas salas privadas!",
-            "removeDescription": "Você tá prestes a acabar sua amizade com \"%{name}\"."
+            "removeDescription": "Você tá prestes a acabar sua amizade com \"%{name}\".",
+            "inviteReceived": "Oi! O %{name} te chamou pra jogar %{game}",
+            "inviteSent": "O convite pra jogar foi enviado!"
         },
         "settings": {
             "redeemCode": {
@@ -2476,6 +2564,24 @@
             "earnsPoints": "Ganha %{points}.",
             "earnsSum": "Ganha o total de todos os dados combinados.",
             "noPointsWarning": "Essa jogada não vai te dar nenhum ponto. Tem outras escolhas que te dão pontos."
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
         },
         "ai": {
             "ready": null,

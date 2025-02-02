@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Dutch",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1666,
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Sorry, deze gebruiker heeft zijn vriendenlimiet van %{amount} bereikt.",
             "pendingFriendLimitSelf": "Je kunt niet meer dan %{amount} vriendschappen in afwachting hebben.",
             "pendingFriendLimitOther": "Sorry, deze gebruiker heeft al te veel vriendschappen in afwachting.",
+            "userOffline": "Sorry, deze gebruiker is offline.",
             "notFriends": "Jullie zijn geen vrienden en er is geen vriendschapsverzoek in behandeling.",
             "alreadyFriends": "Je bent al vrienden met deze gebruiker.",
             "pendingFriends": "Er is al een vriendschapsverzoek in behandeling bij deze gebruiker.",
@@ -1426,6 +1427,82 @@
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Nummer Showdown",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "Het spel eindigt zodra een speler dit aantal punten heeft bereikt."
+                },
+                "mode": {
+                    "title": "Modus",
+                    "help": "Een andere gamemodus gaat invloed hebben op hoe punten worden uitgedeeld en hoe het spel gespeeld wordt.",
+                    "data": {
+                        "SINGLE_HIDER": "Enkele Verstopper",
+                        "HIDE_AND_SEEK": "Verstoppertje",
+                        "LAST_STANDING": "Laatste Overlevende"
+                    }
+                },
+                "field": {
+                    "title": "Veld",
+                    "help": "Bepaalt hoeveel nummers er op het speelveld staan."
+                },
+                "revealSpeed": {
+                    "title": "Ontdek Snelheid",
+                    "help": "De snelheid waarmee de ronde onthulling gebeurt als iedereen klaar is."
+                },
+                "multiplier": {
+                    "title": "Vermenigvuldigers",
+                    "help": "Vermeerders kunnen op één of meerdere nummers tegelijk verschijnen. Als een vermeerder een nummer met een multiplier kiest, vermenigvuldigt hij zijn punten. Maar omdat iedereen die multipliers kan zien, is het riskant en vergroot het de kans om gevonden te worden.",
+                    "data": {
+                        "off": "Uitgeschakeld",
+                        "uncommon": "Ongewoon",
+                        "common": "Gewoon",
+                        "veryCommon": "Heel Gewoon"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Dynamische Score",
+                    "help": {
+                        "introduction": "Geef punten op basis van de kans op succes. Bijvoorbeeld, als een zoeker een verstopper vroeg in het spel vindt, krijgen ze meer punten. Als een verstopper erin slaagt om verstopt te blijven met nog maar een paar tegels over, krijgen ze ook meer punten.",
+                        "calculation": "Als het aanstaat, worden de punten automatisch berekend op basis van de ingestelde min. en max. punten."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Een Hider Vinden",
+                    "help": "Toegekend aan een zoeker die een verstopper heeft gevonden."
+                },
+                "minPointsFind": {
+                    "title": "Min. Zoek een Verstoppertje"
+                },
+                "maxPointsFind": {
+                    "title": "Max. Een Hider Vinden"
+                },
+                "pointsHideRound": {
+                    "title": "Verborgen per Ronde",
+                    "help": "Toegekend aan een verstopper die per ronde verborgen blijft."
+                },
+                "minPointsHideRound": {
+                    "title": "Min. Verborgen per Ronde"
+                },
+                "maxPointsHideRound": {
+                    "title": "Max. Verborgen per Ronde"
+                },
+                "pointsLastAlive": {
+                    "title": "Laatste Overlevende",
+                    "help": "Uitgereikt aan de laatste speler die nog in het spel is als de rest is geëlimineerd."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Laatste Overgebleven"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Max. Laatste Overlevende"
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1512,6 +1589,7 @@
             "roundSummary": "Ronde samenvatting",
             "roundCount": "Ronde %{current} van de %{total}",
             "roundCurrent": "Ronde %{current}",
+            "startingNewRound": "Nieuwe ronde begint...",
             "war": "Oorlog!",
             "outcome": "Uitslag",
             "input": "Wachten op jouw invoer",
@@ -1735,6 +1813,7 @@
         "wins": "0 overwinningen | 1 overwinning | {count} overwinningen",
         "cards": "0 kaarten | 1 kaart | {count} kaarten",
         "moves": "0 zetten | 1 zet | {count} zetten",
+        "tiles": "0 tegels | 1 tegel | {count} tegels",
         "playing": "0 spelen nu | 1 speelt nu | {count} spelen nu",
         "players": "0 spelers | 1 speler | {count} spelers",
         "selectedCards": "Geen kaarten geselecteerd | 1 kaart geselecteerd | {count} kaarten geselecteerd",
@@ -1942,6 +2021,7 @@
         "fouls": "Fouten",
         "and": "en",
         "vs": "vs",
+        "dismiss": "Afwijzen",
         "rename": "Hernoemen",
         "created": "Gemaakt",
         "lastSeen": "Laatst Gezien",
@@ -1964,6 +2044,10 @@
         "coinsBlank": "%{value} munten",
         "receivedBlank": "Ontvangen %{value}",
         "lessThanBlank": "Minder dan %{value}",
+        "lastSeenBlankAgo": "Laatst gezien %{value} geleden",
+        "lastSeenJustNow": "Laatst gezien net nu",
+        "blank": "%{value}",
+        "byBlank": "Door %{value}",
         "sendVerification": "Verificatie verzenden",
         "noThanks": "Nee bedankt",
         "ready": "Klaar",
@@ -1982,6 +2066,7 @@
         "volume": "Volume",
         "volumeInterface": "Interface Volume",
         "volumeEffects": "Effecten Volume",
+        "volumeMusic": "Muziekvolume",
         "selectYourLanguage": "Selecteer Jouw Taal",
         "selectYourColor": "Selecteer Jouw Kleur",
         "latestChanges": "Laatste Wijzigingen",
@@ -2182,6 +2267,7 @@
         "loginToPurchase": "Om iets te kopen moet je eerst inloggen of een account aanmaken.",
         "seasonalItem": "Een item in deze slot is maar een paar dagen per jaar beschikbaar.",
         "cardInteractHint": "Klik op een kaart om je keuze te maken.",
+        "gameInvite": "Uitnodiging voor het spel",
         "awaitingPurchaseConfirmation": {
             "title": "Wachten op Bevestiging van Aankoop",
             "description": "Dit duurt meestal maar een paar seconden. Afhankelijk van je betaalmethode kan dit langer duren. Je mag dit scherm gerust sluiten."
@@ -2190,7 +2276,9 @@
             "noFriends": "Geen vrienden",
             "noAccount": "Log in of maak een account aan om vrienden te maken!",
             "description": "Blijf in contact! Zie je vrienden online, hun games en sluit je aan bij hun privé-lobby's!",
-            "removeDescription": "Je staat op het punt om je vriendschap met \"%{name}\" te beëindigen."
+            "removeDescription": "Je staat op het punt om je vriendschap met \"%{name}\" te beëindigen.",
+            "inviteReceived": "%{name} heeft je uitgenodigd om %{game} te spelen",
+            "inviteSent": "De game-uitnodiging is verstuurd!"
         },
         "settings": {
             "redeemCode": {
@@ -2476,6 +2564,24 @@
             "earnsPoints": "Verdient %{points}.",
             "earnsSum": "Verdient het totaal van alle dobbelstenen samen.",
             "noPointsWarning": "Deze zet je geen punten op. Er zijn andere keuzes die je wel punten kunnen opleveren."
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
         },
         "ai": {
             "ready": null,

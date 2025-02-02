@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal French",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1666,
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Désolé, cet utilisateur a déjà atteint sa limite d'amis de %{amount}.",
             "pendingFriendLimitSelf": "Tu peux pas avoir plus de %{amount} demandes d'amis en attente.",
             "pendingFriendLimitOther": "Désolé, cet utilisateur a déjà trop de demandes d'amis en attente.",
+            "userOffline": "Désolé, ce gars est déconnecté.",
             "notFriends": "Vous n'êtes pas amis et y'a pas de demande d'ami en attente.",
             "alreadyFriends": "T'es déjà amis avec ce gars.",
             "pendingFriends": "Y'a déjà une demande d'ami en attente avec ce gars.",
@@ -1426,6 +1427,82 @@
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Bataille de Chiffres",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "Le jeu se finira dès qu'un joueur aura atteint ce nombre de points."
+                },
+                "mode": {
+                    "title": "Mode",
+                    "help": "Un mode de jeu différent va changer la façon dont les points sont attribués et comment on joue.",
+                    "data": {
+                        "SINGLE_HIDER": "Cacher tout seul",
+                        "HIDE_AND_SEEK": "Cache-cache",
+                        "LAST_STANDING": "Dernier debout"
+                    }
+                },
+                "field": {
+                    "title": "Terrain",
+                    "help": "Détermine combien de chiffres sont affichés sur le terrain de jeu."
+                },
+                "revealSpeed": {
+                    "title": "Vitesse de révélation",
+                    "help": "La vitesse à laquelle le tour se dévoile quand tout le monde est prêt."
+                },
+                "multiplier": {
+                    "title": "Multiplicateurs",
+                    "help": "Les multiplicateurs peuvent apparaître sur un seul ou plusieurs numéros en même temps. Quand un cacheur choisit un numéro avec un multiplicateur, il va multiplier ses points. Mais comme tout le monde peut voir les multiplicateurs, c'est risqué et ça augmente les chances de se faire dénicher.",
+                    "data": {
+                        "off": "Éteint",
+                        "uncommon": "Pas courant",
+                        "common": "Commun",
+                        "veryCommon": "Très commun"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Score Dynamique",
+                    "help": {
+                        "introduction": "Donne des points en fonction de la probabilité de succès. Par exemple, si un chercheur trouve un cacheur tôt dans le jeu, il recevra plus de points. Si un cacheur réussit à rester caché avec seulement quelques tuiles restantes, il gagnera aussi plus de points.",
+                        "calculation": "Quand c'est activé, les points sont calculés automatiquement selon les points min. et max. configurés."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Trouver un cacheur",
+                    "help": "Récompensé à un chercheur pour avoir trouvé un cacheur."
+                },
+                "minPointsFind": {
+                    "title": "Min. Trouver un Cacheur"
+                },
+                "maxPointsFind": {
+                    "title": "Max. Trouver un Cacheur"
+                },
+                "pointsHideRound": {
+                    "title": "Caché par Manche",
+                    "help": "Récompensé à un planqué pour être resté caché par tour."
+                },
+                "minPointsHideRound": {
+                    "title": "Min. Caché par Tour"
+                },
+                "maxPointsHideRound": {
+                    "title": "Max. cachés par tour"
+                },
+                "pointsLastAlive": {
+                    "title": "Dernier Survivant",
+                    "help": "Récompensé au dernier joueur qui reste dans le jeu quand tout le monde a été éliminé."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Dernier Restant"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Max. Dernier Survivant"
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1512,6 +1589,7 @@
             "roundSummary": "Résumé de la manche",
             "roundCount": "Ronde %{current} de %{total}",
             "roundCurrent": "Tour %{current}",
+            "startingNewRound": "On commence un nouveau round...",
             "war": "Guerre !",
             "outcome": "Résultat",
             "input": "En attente de ton choix",
@@ -1735,6 +1813,7 @@
         "wins": "0 victoires | 1 victoire | {count} victoires",
         "cards": "0 cartes | 1 carte | {count} cartes",
         "moves": "0 mouvements | 1 mouvement | {count} mouvements",
+        "tiles": "0 carreaux | 1 carreau | {count} carreaux",
         "playing": "0 jeu | 1 jeu | {count} jeu",
         "players": "0 joueurs | 1 joueur | {count} joueurs",
         "selectedCards": "Aucune carte sélectionnée | 1 carte sélectionnée | {count} cartes sélectionnées",
@@ -1942,6 +2021,7 @@
         "fouls": "Fautes",
         "and": "et",
         "vs": "vs",
+        "dismiss": "Ignorer",
         "rename": "Renommer",
         "created": "Créé",
         "lastSeen": "Dernière Fois Vu",
@@ -1964,6 +2044,10 @@
         "coinsBlank": "%{value} pièces",
         "receivedBlank": "Reçu %{value}",
         "lessThanBlank": "Moins de %{value}",
+        "lastSeenBlankAgo": "Vu il y a %{value}",
+        "lastSeenJustNow": "Vu tout à l'heure",
+        "blank": "%{value}",
+        "byBlank": "Par %{value}",
         "sendVerification": "Envoyer la vérification",
         "noThanks": "Non merci",
         "ready": "Prêt",
@@ -1982,6 +2066,7 @@
         "volume": "Volume",
         "volumeInterface": "Volume de l'interface",
         "volumeEffects": "Volume des effets",
+        "volumeMusic": "Volume de la musique",
         "selectYourLanguage": "Sélectionnez votre langue",
         "selectYourColor": "Choisis ta couleur",
         "latestChanges": "Derniers changements",
@@ -2182,6 +2267,7 @@
         "loginToPurchase": "Pour faire un achat, tu dois d'abord te connecter ou créer un compte.",
         "seasonalItem": "Un article dans cet emplacement n'est disponible que quelques jours par an.",
         "cardInteractHint": "Clique sur une carte pour faire ton choix.",
+        "gameInvite": "Invitation au jeu",
         "awaitingPurchaseConfirmation": {
             "title": "En attente de confirmation d'achat",
             "description": "Ça prend généralement que quelques secondes. Selon votre méthode de paiement, cela peut prendre plus de temps. N'hésitez pas à fermer cet écran."
@@ -2190,7 +2276,9 @@
             "noFriends": "Pas d'amis",
             "noAccount": "Connecte-toi ou crée un compte pour commencer à te faire des potes !",
             "description": "Reste connecté ! Vois tes amis en ligne, leurs jeux, et rejoins leurs salons privés !",
-            "removeDescription": "Tu es sur le point de mettre fin à ton amitié avec \"%{name}\"."
+            "removeDescription": "Tu es sur le point de mettre fin à ton amitié avec \"%{name}\".",
+            "inviteReceived": "%{name} t'a invité à jouer à %{game}",
+            "inviteSent": "L'invite de jeu a été envoyée !"
         },
         "settings": {
             "redeemCode": {
@@ -2476,6 +2564,24 @@
             "earnsPoints": "Gagne %{points}.",
             "earnsSum": "Gagne le total de tous les dés combinés.",
             "noPointsWarning": "Ce mouvement ne te rapportera aucun point. Il y a d'autres choix qui te donnent des points."
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
         },
         "ai": {
             "ready": null,

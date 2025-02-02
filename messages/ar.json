@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Egyptian Arabic",
         "rtl": true,
-        "total": 1608,
-        "missing": 10
+        "total": 1666,
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "آسف، الشخص ده وصل للحد الأقصى من الأصحاب بتوعه، وهو %{amount}.",
             "pendingFriendLimitSelf": "مش هتقدر يكون عندك أكتر من %{amount} صداقات في الانتظار.",
             "pendingFriendLimitOther": "آسف، الشخص ده عنده كتير من الصداقات في الانتظار.",
+            "userOffline": "آسف، المستخدم ده مش متصل.",
             "notFriends": "إنتوا مش أصدقاء ومفيش طلب صداقة معلق.",
             "alreadyFriends": "إنتوا أصلاً أصدقاء.",
             "pendingFriends": "في طلب صداقة معلق مع الشخص ده.",
@@ -1426,6 +1427,82 @@
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "مواجهة الأرقام",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "اللعبة هتنتهي أول ما لاعب يوصل للعدد ده من النقاط."
+                },
+                "mode": {
+                    "title": "وضع",
+                    "help": "وضع لعبة مختلف هيأثر على طريقة توزيع النقاط وطريقة اللعب.",
+                    "data": {
+                        "SINGLE_HIDER": "واحد مختفي",
+                        "HIDE_AND_SEEK": "استغماية",
+                        "LAST_STANDING": "آخر واحد واقف"
+                    }
+                },
+                "field": {
+                    "title": "الميدان",
+                    "help": "بيحدد كام رقم هيتعرضوا في الملعب."
+                },
+                "revealSpeed": {
+                    "title": "سرعة الكشف",
+                    "help": "سرعة الكشف عن الجولة لما الكل يكون جاهز."
+                },
+                "multiplier": {
+                    "title": "مضاعفات",
+                    "help": "المضاعفات ممكن تظهر على رقم واحد أو أكتر في نفس الوقت. لما واحد يختار رقم عليه مضاعف، هيزود نقاطه. بس، بما إن الكل شايف المضاعفات، الموضوع بيكون risky وبيزود فرص إنه يتكتشف.",
+                    "data": {
+                        "off": "مطفي",
+                        "uncommon": "نادر",
+                        "common": "عادي",
+                        "veryCommon": "عادي جداً"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "نقاط متغيرة",
+                    "help": {
+                        "introduction": "ادي نقاط حسب احتمال النجاح. يعني لو واحد لقى واحد مختفي في بداية اللعبة، هيحصل على نقاط أكتر. ولو المختفي قدر يفضل مختفي مع شوية بلاطات بس، هيحصل على نقاط أكتر كمان.",
+                        "calculation": "لما تكون مفعلة، النقاط بتتحسب أوتوماتيكي بناءً على النقاط الدنيا والعليا اللي انت محددها."
+                    }
+                },
+                "pointsFind": {
+                    "title": "مهمة البحث عن المختبئ",
+                    "help": "مكافأة للباحث اللي لقى المختفي."
+                },
+                "minPointsFind": {
+                    "title": "أقل عدد للبحث عن مختبئ"
+                },
+                "maxPointsFind": {
+                    "title": "أقصى حد. لاقي المختفي"
+                },
+                "pointsHideRound": {
+                    "title": "مخفي في كل جولة",
+                    "help": "مكافأة لللي بيستخبوا عشان يفضلوا مختفين في كل جولة."
+                },
+                "minPointsHideRound": {
+                    "title": "أقل حاجة مخفية في الجولة"
+                },
+                "maxPointsHideRound": {
+                    "title": "أقصى عدد مخفي في الجولة"
+                },
+                "pointsLastAlive": {
+                    "title": "آخر واحد باقي",
+                    "help": "مُعطى لللاعب الأخير اللي باقي في اللعبة لما كل الباقيين يتشالوا."
+                },
+                "minPointsLastAlive": {
+                    "title": "الحد الأدنى. آخر واحد باقي"
+                },
+                "maxPointsLastAlive": {
+                    "title": "أقصى حد. آخر واحد باقي"
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1512,6 +1589,7 @@
             "roundSummary": "ملخص الجولة",
             "roundCount": "جولة %{current} من %{total}",
             "roundCurrent": "الجولة %{current}",
+            "startingNewRound": "بداية جولة جديدة...",
             "war": "حرب!",
             "outcome": "النتيجة",
             "input": "مستني رأيك",
@@ -1735,6 +1813,7 @@
         "wins": "0 انتصارات | انتصار واحد | {count} انتصارات",
         "cards": "0 كروت | كارت واحد | {count} كروت",
         "moves": "0 حركات | حركة واحدة | {count} حركات",
+        "tiles": "0 بلاطة | بلاطة واحدة | {count} بلاطة",
         "playing": "0 بيلعب | واحد بيلعب | {count} بيلعب",
         "players": "0 لاعبين | لاعب واحد | {count} لاعبين",
         "selectedCards": "مفيش كروت مختارة | كارت واحد مختار | {count} كروت مختارة",
@@ -1942,6 +2021,7 @@
         "fouls": "أخطاء",
         "and": "و",
         "vs": "ضد",
+        "dismiss": "ارفض",
         "rename": "غير الاسم",
         "created": "تم الإنشاء",
         "lastSeen": "شوفته آخر مرة",
@@ -1964,6 +2044,10 @@
         "coinsBlank": "%{value} عملات",
         "receivedBlank": "استلمت %{value}",
         "lessThanBlank": "أقل من %{value}",
+        "lastSeenBlankAgo": "آخر ظهور من %{value}",
+        "lastSeenJustNow": "آخر ظهور دلوقتي",
+        "blank": "%{value}",
+        "byBlank": "بواسطة %{value}",
         "sendVerification": "ابعت التحقق",
         "noThanks": "لا شكرا",
         "ready": "جاهز",
@@ -1982,6 +2066,7 @@
         "volume": "الصوت",
         "volumeInterface": "صوت الواجهة",
         "volumeEffects": "صوت التأثيرات",
+        "volumeMusic": "مستوى الصوت للموسيقى",
         "selectYourLanguage": "اختار اللغة بتاعتك",
         "selectYourColor": "اختار اللون بتاعك",
         "latestChanges": "آخر التغييرات",
@@ -2182,6 +2267,7 @@
         "loginToPurchase": "عشان تشتري حاجة لازم أولاً تسجل دخولك أو تعمل حساب.",
         "seasonalItem": "في حاجة في المكان ده بتتوفر بس ليومين أو تلاتة في السنة.",
         "cardInteractHint": "اضغط على الورقة عشان تختار.",
+        "gameInvite": "دعوة للعبة",
         "awaitingPurchaseConfirmation": {
             "title": "بنستنى تأكيد الشراء",
             "description": "العادة كده بياخد شوية ثواني. بس على حسب طريقة الدفع بتاعتك، ممكن يطول شوية. مافيش مشكلة لو قفلت الشاشة دي."
@@ -2190,7 +2276,9 @@
             "noFriends": "مفيش أصحاب",
             "noAccount": "سجل دخول أو اعمل حساب عشان تبدأ تكوّن أصحاب!",
             "description": "خليك متواصل! شوف أصحابك أونلاين، ألعابهم، وانضم لليوبهم الخاصة!",
-            "removeDescription": "انت على وشك تخلص صداقتك مع \"%{name}\"."
+            "removeDescription": "انت على وشك تخلص صداقتك مع \"%{name}\".",
+            "inviteReceived": "%{name} دعاك تلعب %{game}",
+            "inviteSent": "دعوة اللعبة اتبعت!"
         },
         "settings": {
             "redeemCode": {
@@ -2476,6 +2564,24 @@
             "earnsPoints": "بتكسب %{points}.",
             "earnsSum": "بتكسب مجموع الزهر كله مجموع.",
             "noPointsWarning": "الحركة دي مش هتجيبلك أي نقاط. فيه خيارات تانية ممكن تجيبلك نقاط."
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
         },
         "ai": {
             "ready": null,

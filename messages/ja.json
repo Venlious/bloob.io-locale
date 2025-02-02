@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Japanese",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1666,
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "ごめん、このユーザーは友達の上限に達しちゃってるよ、%{amount}人だって。",
             "pendingFriendLimitSelf": "%{amount}件以上の友達リクエストは受けられないよ。",
             "pendingFriendLimitOther": "ごめん、このユーザーはもう友達リクエストが多すぎるんだ。",
+            "userOffline": "ごめん、今このユーザーはオフラインだよ。",
             "notFriends": "あなたはこの人と友達じゃないし、友達リクエストも待ってないよ。",
             "alreadyFriends": "あなたはもうこの人と友達だよ。",
             "pendingFriends": "この人にはもう友達リクエストが待ってるよ。",
@@ -1426,6 +1427,82 @@
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "ナンバーショーダウン",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "ゲームは、誰かがこのポイントに達したらすぐに終わるよ。"
+                },
+                "mode": {
+                    "title": "モード",
+                    "help": "別のゲームモードだと、ポイントのもらい方やゲームの進め方が変わるよ。",
+                    "data": {
+                        "SINGLE_HIDER": "シングルハイダー",
+                        "HIDE_AND_SEEK": "かくれんぼ",
+                        "LAST_STANDING": "ラストスタンディング"
+                    }
+                },
+                "field": {
+                    "title": "フィールド",
+                    "help": "プレイフィールドに表示される数字の数を決める。"
+                },
+                "revealSpeed": {
+                    "title": "表示スピード",
+                    "help": "みんなが準備できたときにラウンドの公開がどれくらい早く行われるか。"
+                },
+                "multiplier": {
+                    "title": "倍率",
+                    "help": "マルチプライヤーは、1つの数字や複数の数字に同時に出ることがあるよ。隠れてる人がマルチプライヤーのついた数字を選ぶと、ポイントが増えるんだ。でも、みんながそのマルチプライヤーを見えるから、リスクがあって見つかる可能性が高くなるんだよね。",
+                    "data": {
+                        "off": "オフになった",
+                        "uncommon": "レアじゃない",
+                        "common": "普通",
+                        "veryCommon": "超普通"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "ダイナミックスコア",
+                    "help": {
+                        "introduction": "成功する確率に応じてポイントを与えよう。例えば、シーカーが早い段階でハイダーを見つけたら、もっとポイントがもらえるよ。ハイダーが残りのタイルが少ない状態で隠れ続けられたら、そっちももっとポイントゲットだね。",
+                        "calculation": "有効にすると、設定した最小ポイントと最大ポイントに基づいて自動的にポイントが計算されるよ。"
+                    }
+                },
+                "pointsFind": {
+                    "title": "隠れん坊を探す",
+                    "help": "隠れてるやつを見つけた探求者に贈られるやつ。"
+                },
+                "minPointsFind": {
+                    "title": "隠れん坊探しの時間"
+                },
+                "maxPointsFind": {
+                    "title": "最大。隠れてるやつを見つける"
+                },
+                "pointsHideRound": {
+                    "title": "ラウンドごとの隠し要素",
+                    "help": "隠れてた人に、ラウンドごとに隠れ続けたらもらえるやつ。"
+                },
+                "minPointsHideRound": {
+                    "title": "ラウンドごとの最小隠しアイテム"
+                },
+                "maxPointsHideRound": {
+                    "title": "ラウンドごとの最大隠れ数"
+                },
+                "pointsLastAlive": {
+                    "title": "最後の一人",
+                    "help": "最後まで残ったプレイヤーに贈られるやつ、他の人が全員排除されたときにね。"
+                },
+                "minPointsLastAlive": {
+                    "title": "最小残り"
+                },
+                "maxPointsLastAlive": {
+                    "title": "最大の最後の生存者"
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1512,6 +1589,7 @@
             "roundSummary": "ラウンドのまとめ",
             "roundCount": "現在のラウンドは%{current}、全体のラウンドは%{total}だよ",
             "roundCurrent": "ラウンド%{current}",
+            "startingNewRound": "新しいラウンドを始めるよ…",
             "war": "戦争だ！",
             "outcome": "結果",
             "input": "あなたの入力を待っています",
@@ -1735,6 +1813,7 @@
         "wins": "勝利0回 | 勝利1回 | 勝利{count}回",
         "cards": "カード0枚 | カード1枚 | カード{count}枚",
         "moves": "0手 | 1手 | {count}手",
+        "tiles": "0枚のタイル | 1枚のタイル | {count}枚のタイル",
         "playing": "0人がプレイ中 | 1人がプレイ中 | {count}人がプレイ中",
         "players": "0人のプレイヤー | 1人のプレイヤー | {count}人のプレイヤー",
         "selectedCards": "カード選択なし | 1枚のカード選択 | {count}枚のカード選択",
@@ -1942,6 +2021,7 @@
         "fouls": "ファウル",
         "and": "そして",
         "vs": "対",
+        "dismiss": "閉じる",
         "rename": "名前を変更する",
         "created": "作成された",
         "lastSeen": "最後に見た",
@@ -1964,6 +2044,10 @@
         "coinsBlank": "%{value}コイン",
         "receivedBlank": "%{value}を受け取った",
         "lessThanBlank": "%{value}より少ない",
+        "lastSeenBlankAgo": "最後に見たのは %{value} 前",
+        "lastSeenJustNow": "今見たばっか",
+        "blank": "%{value}",
+        "byBlank": "%{value} による",
         "sendVerification": "認証を送る",
         "noThanks": "結構です",
         "ready": "準備OK",
@@ -1982,6 +2066,7 @@
         "volume": "音量",
         "volumeInterface": "インターフェースの音量",
         "volumeEffects": "エフェクトの音量",
+        "volumeMusic": "音量",
         "selectYourLanguage": "言語を選択してね",
         "selectYourColor": "色を選んでね",
         "latestChanges": "最新の変更点",
@@ -2182,6 +2267,7 @@
         "loginToPurchase": "購入するには、まずログインするかアカウントを作成する必要があります。",
         "seasonalItem": "このスロットのアイテムは年に数日しか利用できません。",
         "cardInteractHint": "選ぶカードをクリックしてね。",
+        "gameInvite": "ゲームに招待するよ！",
         "awaitingPurchaseConfirmation": {
             "title": "購入確認待ち",
             "description": "だいたい数秒で終わるよ。でも、支払い方法によってはもうちょっと時間かかるかもね。この画面を閉じても大丈夫だよ。"
@@ -2190,7 +2276,9 @@
             "noFriends": "友達いない",
             "noAccount": "ログインするかアカウント作って友達作ろう！",
             "description": "つながってる？友達のオンライン状況やゲーム、プライベートロビーに参加できるよ！",
-            "removeDescription": "\"%{name}\"との友情を終わらせようとしてるよ。"
+            "removeDescription": "\"%{name}\"との友情を終わらせようとしてるよ。",
+            "inviteReceived": "%{name}が%{game}を一緒にやろうって誘ってるよ！",
+            "inviteSent": "ゲームの招待を送ったよ！"
         },
         "settings": {
             "redeemCode": {
@@ -2476,6 +2564,24 @@
             "earnsPoints": "%{points}を獲得するよ。",
             "earnsSum": "全てのダイスの合計を獲得するよ。",
             "noPointsWarning": "この動きでポイントは稼げないよ。ポイントがもらえる他の選択肢もあるからさ。"
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
         },
         "ai": {
             "ready": null,

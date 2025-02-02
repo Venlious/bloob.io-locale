@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Danish",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1666,
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Sorry, den her bruger har nået sin vennegrænse på %{amount}.",
             "pendingFriendLimitSelf": "Du kan ikke have mere end %{amount} ventende venskaber.",
             "pendingFriendLimitOther": "Sorry, den her bruger har allerede for mange ventende venskaber.",
+            "userOffline": "Beklager, den her bruger er offline.",
             "notFriends": "I er ikke venner, og der er ingen venneanmodning i gang.",
             "alreadyFriends": "I er allerede venner med den her bruger.",
             "pendingFriends": "Der er allerede en venneanmodning i gang med den her bruger.",
@@ -1426,6 +1427,82 @@
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Nummer Duel",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "Spillet slutter, så snart en spiller har nået det her antal point."
+                },
+                "mode": {
+                    "title": "Tilstand",
+                    "help": "En anden spilmåde vil påvirke, hvordan point gives, og hvordan spillet spilles.",
+                    "data": {
+                        "SINGLE_HIDER": "Enkelt Gemmer",
+                        "HIDE_AND_SEEK": "Gemmeleg",
+                        "LAST_STANDING": "Sidste Mand Stående"
+                    }
+                },
+                "field": {
+                    "title": "Mark",
+                    "help": "Bestemmer hvor mange tal der vises på spillefeltet."
+                },
+                "revealSpeed": {
+                    "title": "Afsløringshastighed",
+                    "help": "Hastigheden, hvormed runden bliver afsløret, når alle er klar."
+                },
+                "multiplier": {
+                    "title": "Multiplikatorer",
+                    "help": "Multiplikatorer kan dukke op på et enkelt eller flere numre på én gang. Når en gemmer vælger et nummer med en multiplikator, så ganger de deres point. Men fordi alle kan se multiplikatorerne, er det lidt risikabelt og øger chancerne for at blive fundet.",
+                    "data": {
+                        "off": "Slukket",
+                        "uncommon": "Usædvanlig",
+                        "common": "Almindelig",
+                        "veryCommon": "Meget almindelig"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Dynamisk Scoring",
+                    "help": {
+                        "introduction": "Giv point alt efter chancerne for at få succes. For eksempel, hvis en søger finder en gemmer tidligt i spillet, får de flere point. Hvis en gemmer kan holde sig skjult, selvom der kun er få fliser tilbage, får de også flere point.",
+                        "calculation": "Når det er tændt, bliver pointene automatisk regnet ud baseret på de indstillede min. og max. point."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Finder en Gemmer",
+                    "help": "Givet til en, der finder en gemmer."
+                },
+                "minPointsFind": {
+                    "title": "Min. Finder en Gemmer"
+                },
+                "maxPointsFind": {
+                    "title": "Max. Finder en Gemmer"
+                },
+                "pointsHideRound": {
+                    "title": "Skjult pr. Runde",
+                    "help": "Givet til en gemmer for at forblive skjult pr. runde."
+                },
+                "minPointsHideRound": {
+                    "title": "Min. skjulte pr. runde"
+                },
+                "maxPointsHideRound": {
+                    "title": "Maks. skjulte pr. runde"
+                },
+                "pointsLastAlive": {
+                    "title": "Sidste Overlevende",
+                    "help": "Givet til den sidste spiller, der er tilbage i spillet, når alle andre er blevet elimineret."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Sidste Overlevende"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Max. Sidste Overlevende"
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1512,6 +1589,7 @@
             "roundSummary": "Rundeoversigt",
             "roundCount": "Runde %{current} ud af %{total}",
             "roundCurrent": "Runde %{current}",
+            "startingNewRound": "Starter ny runde...",
             "war": "Krig!",
             "outcome": "Resultat",
             "input": "Venter på din indtastning",
@@ -1735,6 +1813,7 @@
         "wins": "0 sejre | 1 sejr | {count} sejre",
         "cards": "0 kort | 1 kort | {count} kort",
         "moves": "0 træk | 1 træk | {count} træk",
+        "tiles": "0 fliser | 1 flise | {count} fliser",
         "playing": "0 spiller | 1 spiller | {count} spiller",
         "players": "0 spillere | 1 spiller | {count} spillere",
         "selectedCards": "Ingen kort valgt | 1 kort valgt | {count} kort valgt",
@@ -1942,6 +2021,7 @@
         "fouls": "Fejl",
         "and": "og",
         "vs": "vs",
+        "dismiss": "Luk",
         "rename": "Omdøb",
         "created": "Oprettet",
         "lastSeen": "Sidst Set",
@@ -1964,6 +2044,10 @@
         "coinsBlank": "%{value} mønter",
         "receivedBlank": "Modtaget %{value}",
         "lessThanBlank": "Mindre end %{value}",
+        "lastSeenBlankAgo": "Sidst set for %{value} siden",
+        "lastSeenJustNow": "Sidst set lige nu",
+        "blank": "%{value}",
+        "byBlank": "Af %{value}",
         "sendVerification": "Send verifikation",
         "noThanks": "Nej tak",
         "ready": "Klar",
@@ -1982,6 +2066,7 @@
         "volume": "Lydstyrke",
         "volumeInterface": "Interface lydstyrke",
         "volumeEffects": "Lydeffekters Volumen",
+        "volumeMusic": "Musiklyd",
         "selectYourLanguage": "Vælg Dit Sprog",
         "selectYourColor": "Vælg Din Farve",
         "latestChanges": "Seneste Ændringer",
@@ -2182,6 +2267,7 @@
         "loginToPurchase": "For at foretage et køb skal du først logge ind eller oprette en konto.",
         "seasonalItem": "Et item i denne slot er kun tilgængeligt et par dage om året.",
         "cardInteractHint": "Klik på et kort for at vælge.",
+        "gameInvite": "Inviter til spil",
         "awaitingPurchaseConfirmation": {
             "title": "Venter på købsbekræftelse",
             "description": "Dette tager normalt kun et par sekunder. Afhængig af din betalingsmetode kan det tage længere tid. Du er velkommen til at lukke denne skærm."
@@ -2190,7 +2276,9 @@
             "noFriends": "Ingen venner",
             "noAccount": "Log ind eller opret en konto for at begynde at få venner!",
             "description": "Hold forbindelsen! Se dine venner online, deres spil, og join deres private lobbies!",
-            "removeDescription": "Du er ved at afslutte dit venskab med \"%{name}\"."
+            "removeDescription": "Du er ved at afslutte dit venskab med \"%{name}\".",
+            "inviteReceived": "%{name} har inviteret dig til at spille %{game}",
+            "inviteSent": "Spilinvitationen er sendt!"
         },
         "settings": {
             "redeemCode": {
@@ -2476,6 +2564,24 @@
             "earnsPoints": "Tjener %{points}.",
             "earnsSum": "Tjener det samlede antal af alle terninger kombineret.",
             "noPointsWarning": "Denne bevægelse giver dig ikke nogen point. Der er andre valg, som faktisk kan give dig point."
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
         },
         "ai": {
             "ready": null,

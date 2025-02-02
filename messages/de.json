@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal German",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1666,
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Sorry, dieser Nutzer hat sein Freundelimit von %{amount} erreicht.",
             "pendingFriendLimitSelf": "Du kannst nicht mehr als %{amount} ausstehende Freundschaften haben.",
             "pendingFriendLimitOther": "Sorry, dieser Nutzer hat schon zu viele ausstehende Freundschaften.",
+            "userOffline": "Sorry, der User ist offline.",
             "notFriends": "Ihr seid keine Freunde und habt keine ausstehende Freundschaftsanfrage.",
             "alreadyFriends": "Ihr seid schon Freunde mit diesem Nutzer.",
             "pendingFriends": "Da ist schon eine Freundschaftsanfrage bei diesem Nutzer offen.",
@@ -1426,6 +1427,82 @@
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Zahlen-Duell",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "Das Spiel endet, sobald ein Spieler diese Punktzahl erreicht hat."
+                },
+                "mode": {
+                    "title": "Modus",
+                    "help": "Ein anderer Spielmodus wird beeinflussen, wie Punkte vergeben werden und wie das Spiel gespielt wird.",
+                    "data": {
+                        "SINGLE_HIDER": "Einzelner Verstecker",
+                        "HIDE_AND_SEEK": "Verstecken spielen",
+                        "LAST_STANDING": "Letzter Überlebender"
+                    }
+                },
+                "field": {
+                    "title": "Feld",
+                    "help": "Bestimmt, wie viele Zahlen auf dem Spielfeld angezeigt werden."
+                },
+                "revealSpeed": {
+                    "title": "Enthüllungsgeschwindigkeit",
+                    "help": "Die Geschwindigkeit, mit der die Runde gestartet wird, sobald alle bereit sind."
+                },
+                "multiplier": {
+                    "title": "Multiplikatoren",
+                    "help": "Multiplikatoren können gleichzeitig auf einer oder mehreren Zahlen erscheinen. Wenn ein Verstecker eine Zahl mit einem Multiplikator wählt, multipliziert er seine Punkte. Aber da alle die Multiplikatoren sehen können, ist das riskant und erhöht die Chancen, gefunden zu werden.",
+                    "data": {
+                        "off": "Ausgeschaltet",
+                        "uncommon": "Ungewöhnlich",
+                        "common": "Gewöhnlich",
+                        "veryCommon": "Sehr gewöhnlich"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Dynamische Punktevergabe",
+                    "help": {
+                        "introduction": "Vergib Punkte je nach Erfolgschance. Wenn ein Sucher zum Beispiel einen Verstecker früh im Spiel findet, gibt's mehr Punkte. Wenn ein Verstecker es schafft, sich bis zum Schluss zu verstecken, kriegt er auch mehr Punkte.",
+                        "calculation": "Wenn's aktiviert ist, werden die Punkte automatisch basierend auf den festgelegten Min. und Max. Punkten berechnet."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Hider finden",
+                    "help": "Für einen Sucher, der einen Verstecker gefunden hat."
+                },
+                "minPointsFind": {
+                    "title": "Min. Versteckten finden"
+                },
+                "maxPointsFind": {
+                    "title": "Max. Einen Verstecker finden"
+                },
+                "pointsHideRound": {
+                    "title": "Versteckt pro Runde",
+                    "help": "Wird einem Verstecker für jede Runde verliehen, in der er versteckt bleibt."
+                },
+                "minPointsHideRound": {
+                    "title": "Min. Versteckte pro Runde"
+                },
+                "maxPointsHideRound": {
+                    "title": "Max. Versteckte pro Runde"
+                },
+                "pointsLastAlive": {
+                    "title": "Letzter Überlebender",
+                    "help": "Wird dem letzten Spieler gegeben, der im Spiel bleibt, wenn alle anderen raus sind."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Letzte Überlebende"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Max. Letzter Überlebender"
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1512,6 +1589,7 @@
             "roundSummary": "Rundenübersicht",
             "roundCount": "Runde %{current} von %{total}",
             "roundCurrent": "Runde %{current}",
+            "startingNewRound": "Neue Runde startet...",
             "war": "Krieg!",
             "outcome": "Ergebnis",
             "input": "Warte auf deine Eingabe",
@@ -1735,6 +1813,7 @@
         "wins": "0 Siege | 1 Sieg | {count} Siege",
         "cards": "0 Karten | 1 Karte | {count} Karten",
         "moves": "0 Züge | 1 Zug | {count} Züge",
+        "tiles": "0 Fliesen | 1 Fliese | {count} Fliesen",
         "playing": "0 spielen | 1 spielt | {count} spielen",
         "players": "0 Spieler | 1 Spieler | {count} Spieler",
         "selectedCards": "Keine Karten ausgewählt | 1 Karte ausgewählt | {count} Karten ausgewählt",
@@ -1942,6 +2021,7 @@
         "fouls": "Fouls",
         "and": "und",
         "vs": "vs",
+        "dismiss": "Ablehnen",
         "rename": "Umbenennen",
         "created": "Erstellt",
         "lastSeen": "Zuletzt gesehen",
@@ -1964,6 +2044,10 @@
         "coinsBlank": "%{value} Münzen",
         "receivedBlank": "Erhalten %{value}",
         "lessThanBlank": "Weniger als %{value}",
+        "lastSeenBlankAgo": "Zuletzt gesehen vor %{value}",
+        "lastSeenJustNow": "Zuletzt gerade eben gesehen",
+        "blank": "%{value}",
+        "byBlank": "Von %{value}",
         "sendVerification": "Bestätigung senden",
         "noThanks": "Nein danke",
         "ready": "Bereit",
@@ -1982,6 +2066,7 @@
         "volume": "Lautstärke",
         "volumeInterface": "Bildschirmlautstärke",
         "volumeEffects": "Effektlautstärke",
+        "volumeMusic": "Musiklautstärke",
         "selectYourLanguage": "Sprache auswählen",
         "selectYourColor": "Farbe auswählen",
         "latestChanges": "Letzte Änderungen",
@@ -2182,6 +2267,7 @@
         "loginToPurchase": "Um einen Kauf zu tätigen, musst du dich zuerst einloggen oder ein Konto erstellen.",
         "seasonalItem": "Ein Artikel in diesem Slot ist nur ein paar Tage im Jahr verfügbar.",
         "cardInteractHint": "Klick auf eine Karte, um deine Auswahl zu treffen.",
+        "gameInvite": "Lade ein zum Spiel",
         "awaitingPurchaseConfirmation": {
             "title": "Warten auf Kaufbestätigung",
             "description": "Das dauert normalerweise nur ein paar Sekunden. Je nach Zahlungsmethode kann es länger dauern. Du kannst diesen Bildschirm ruhig schließen."
@@ -2190,7 +2276,9 @@
             "noFriends": "Keine Freunde",
             "noAccount": "Melde dich an oder leg dir ein Konto zu, um Freunde zu finden!",
             "description": "Bleib in Kontakt! Sieh, welche Freunde online sind, was sie zocken und tritt ihren privaten Lobbys bei!",
-            "removeDescription": "Du bist kurz davor, die Freundschaft mit \"%{name}\" zu beenden."
+            "removeDescription": "Du bist kurz davor, die Freundschaft mit \"%{name}\" zu beenden.",
+            "inviteReceived": "%{name} hat dich eingeladen, %{game} zu zocken!",
+            "inviteSent": "Die Spiel-Einladung wurde verschickt!"
         },
         "settings": {
             "redeemCode": {
@@ -2476,6 +2564,24 @@
             "earnsPoints": "Verdient %{points}.",
             "earnsSum": "Verdient die Gesamtsumme aller Würfel zusammen.",
             "noPointsWarning": "Mit diesem Zug bekommst du keine Punkte. Es gibt andere Optionen, die dir Punkte geben."
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
         },
         "ai": {
             "ready": null,
