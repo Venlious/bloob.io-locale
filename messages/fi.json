@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1666,
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Anteeksi, tälle käyttäjälle on jo tullut kaveriraja vastaan, joka on %{amount}.",
             "pendingFriendLimitSelf": "Et voi olla enemmän kuin %{amount} odottavaa kaveruutta.",
             "pendingFriendLimitOther": "Anteeksi, tälle käyttäjälle on jo liikaa odottavaa kaveruutta.",
+            "userOffline": "Anteeks, tää käyttäjä on offline.",
             "notFriends": "Ette ole kavereita, eikä teillä ole odottavaa kaveripyyntöä.",
             "alreadyFriends": "Olette jo kavereita tämän käyttäjän kanssa.",
             "pendingFriends": "Tällä käyttäjällä on jo odottava kaveripyyntö.",
@@ -1426,6 +1427,82 @@
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Numeroiden Taistelu",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "Peli loppuu heti, kun joku pelaaja on saanut tän verran pisteitä."
+                },
+                "mode": {
+                    "title": "Tila",
+                    "help": "Eri pelimuoto vaikuttaa siihen, miten pisteitä jaetaan ja miten peliä pelataan.",
+                    "data": {
+                        "SINGLE_HIDER": "Yksinäinen piilottaja",
+                        "HIDE_AND_SEEK": "Piilosta",
+                        "LAST_STANDING": "Viimeinen pystyssä"
+                    }
+                },
+                "field": {
+                    "title": "Kenttä",
+                    "help": "Määrittää, kuinka monta numeroa näkyy pelialueella."
+                },
+                "revealSpeed": {
+                    "title": "Paljastusnopeus",
+                    "help": "Kierroksen paljastus tapahtuu heti kun kaikki on valmiina."
+                },
+                "multiplier": {
+                    "title": "Kerrottimet",
+                    "help": "Kerrottimet voi ilmestyä yhdelle tai useammalle numerolle samaan aikaan. Kun piilottaja valitsee numeron, jossa on kerroin, he moninkertaistavat pisteensä. Mutta koska kaikki näkee kertoimet, se on riskialtista ja lisää mahdollisuuksia tulla löydetyksi.",
+                    "data": {
+                        "off": "Pois päältä",
+                        "uncommon": "Epätavallinen",
+                        "common": "Tavallinen",
+                        "veryCommon": "Erittäin tavallinen"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Dynaaminen pisteytys",
+                    "help": {
+                        "introduction": "Anna pisteitä sen mukaan, kuinka todennäköisesti onnistuu. Esimerkiksi, jos etsijä löytää piilottelijan pelin alussa, he saavat enemmän pisteitä. Jos piilottelija onnistuu pysymään piilossa vain muutamalla laatalla, he saavat myös enemmän pisteitä.",
+                        "calculation": "Kun tämä on päällä, pisteet lasketaan automaattisesti asetettujen minimien ja maksimi-pisteiden mukaan."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Piilottajan etsiminen",
+                    "help": "Palkinto etsijälle, joka löytää piilottelijan."
+                },
+                "minPointsFind": {
+                    "title": "Min. Löydä piilottelija"
+                },
+                "maxPointsFind": {
+                    "title": "Maks. Löydä piilottelija"
+                },
+                "pointsHideRound": {
+                    "title": "Piilotettu kierroksittain",
+                    "help": "Palkinto piilottelijalle, joka pysyy piilossa joka kierroksella."
+                },
+                "minPointsHideRound": {
+                    "title": "Min. Piilotettu kierroksessa"
+                },
+                "maxPointsHideRound": {
+                    "title": "Maks. piilotettua per kierros"
+                },
+                "pointsLastAlive": {
+                    "title": "Viimeinen Jäljellä",
+                    "help": "Palkinto annetaan viimeiselle pelaajalle, joka jää peliin, kun kaikki muut on tiputettu."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Viimeinen Jäljellä"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Maks. Viimeinen Jäljellä oleva"
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1512,6 +1589,7 @@
             "roundSummary": "Kierroksen yhteenveto",
             "roundCount": "Kierros %{current} / %{total}",
             "roundCurrent": "Kierros %{current}",
+            "startingNewRound": "Aloitetaan uusi kierros...",
             "war": "Sota!",
             "outcome": "Lopputulos",
             "input": "Odotetaan sinun syötettäsi",
@@ -1735,6 +1813,7 @@
         "wins": "0 voittoa | 1 voitto | {count} voittoa",
         "cards": "0 korttia | 1 kortti | {count} korttia",
         "moves": "0 siirtoa | 1 siirto | {count} siirtoa",
+        "tiles": "0 laattaa | 1 laatta | {count} laattaa",
         "playing": "0 pelaa | 1 pelaa | {count} pelaa",
         "players": "0 pelaajaa | 1 pelaaja | {count} pelaajaa",
         "selectedCards": "Ei valittuja kortteja | 1 valittu kortti | {count} valittua korttia",
@@ -1942,6 +2021,7 @@
         "fouls": "Rikkeet",
         "and": "ja",
         "vs": "vs",
+        "dismiss": "Sulje",
         "rename": "Nimeä uudelleen",
         "created": "Luotu",
         "lastSeen": "Viimeksi nähty",
@@ -1964,6 +2044,10 @@
         "coinsBlank": "%{value} kolikkoa",
         "receivedBlank": "Saatu %{value}",
         "lessThanBlank": "Vähemmän kuin %{value}",
+        "lastSeenBlankAgo": "Viimeksi nähty %{value} sitten",
+        "lastSeenJustNow": "Viimeksi nähty just nyt",
+        "blank": "%{value}",
+        "byBlank": "Tekijä %{value}",
         "sendVerification": "Lähetä vahvistus",
         "noThanks": "Ei kiitos",
         "ready": "Valmis",
@@ -1982,6 +2066,7 @@
         "volume": "Äänenvoimakkuus",
         "volumeInterface": "Käyttöliittymän äänenvoimakkuus",
         "volumeEffects": "Efektien Äänenvoimakkuus",
+        "volumeMusic": "Musiikin äänenvoimakkuus",
         "selectYourLanguage": "Valitse Kieli",
         "selectYourColor": "Valitse Värisi",
         "latestChanges": "Viimeisimmät Muutokset",
@@ -2182,6 +2267,7 @@
         "loginToPurchase": "Ostoksen tekemiseksi sinun on ensin kirjauduttava sisään tai luotava tili.",
         "seasonalItem": "Tämän paikan esine on saatavilla vain muutamana päivänä vuodessa.",
         "cardInteractHint": "Klikkaa korttia tehdäksesi valintasi.",
+        "gameInvite": "Kutsu peliin",
         "awaitingPurchaseConfirmation": {
             "title": "Odotetaan ostovahvistusta",
             "description": "Tämä kestää yleensä vain muutaman sekunnin. Maksutavasta riippuen tämä saattaa kestää kauemmin. Voit huoletta sulkea tämän näytön."
@@ -2190,7 +2276,9 @@
             "noFriends": "Ei kavereita",
             "noAccount": "Kirjaudu sisään tai luo tili, niin voit alkaa tehdä kavereita!",
             "description": "Pysy yhteydessä! Näet kaverisi netissä, heidän pelinsä ja voit liittyä heidän yksityisiin lobbyihinsa!",
-            "removeDescription": "Olet juuri lopettamassa ystävyyttä \"%{name}\" kanssa."
+            "removeDescription": "Olet juuri lopettamassa ystävyyttä \"%{name}\" kanssa.",
+            "inviteReceived": "%{name} kutsui sut pelaamaan %{game}",
+            "inviteSent": "Pelikutsu on lähetetty!"
         },
         "settings": {
             "redeemCode": {
@@ -2476,6 +2564,24 @@
             "earnsPoints": "Ansaitsee %{points}.",
             "earnsSum": "Ansaitsee kaikkien noppien yhteissumman.",
             "noPointsWarning": "Tällä siirrolla et saa pisteitä. On muita valintoja, joista saat pisteitä."
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
         },
         "ai": {
             "ready": null,

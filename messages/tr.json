@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1666,
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Üzgünüm, bu kullanıcı %{amount} arkadaş sınırına ulaştı.",
             "pendingFriendLimitSelf": "%{amount} bekleyen arkadaşlıktan fazlasını alamazsın.",
             "pendingFriendLimitOther": "Üzgünüm, bu kullanıcının zaten çok fazla bekleyen arkadaşı var.",
+            "userOffline": "Üzgünüm, bu kullanıcı çevrimdışı.",
             "notFriends": "Seninle bu kişi arkadaş değil ve bekleyen bir arkadaşlık isteği yok.",
             "alreadyFriends": "Bu kişiyle zaten arkadaşsın.",
             "pendingFriends": "Bu kişiyle zaten bekleyen bir arkadaşlık isteğin var.",
@@ -1426,6 +1427,82 @@
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Sayı Kapışması",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "Oyun, bir oyuncu bu kadar puana ulaştığında hemen bitecek."
+                },
+                "mode": {
+                    "title": "Mod",
+                    "help": "Farklı bir oyun modu, puanların nasıl verileceğini ve oyunun nasıl oynanacağını etkileyecek.",
+                    "data": {
+                        "SINGLE_HIDER": "Tek Saklambaç",
+                        "HIDE_AND_SEEK": "Saklambaç",
+                        "LAST_STANDING": "Son Kalan"
+                    }
+                },
+                "field": {
+                    "title": "Alan",
+                    "help": "Oyun alanında kaç tane sayı gösterileceğini belirler."
+                },
+                "revealSpeed": {
+                    "title": "Açılma Hızı",
+                    "help": "Herkes hazır olduğunda turun ne kadar hızlı açıldığı."
+                },
+                "multiplier": {
+                    "title": "Çarpanlar",
+                    "help": "Çarpanlar tek bir ya da birden fazla sayıda aynı anda çıkabilir. Bir saklambaç oyuncusu çarpan olan bir sayıyı seçtiğinde puanlarını çarpar. Ama herkes çarpanları görebildiği için bu riskli ve yakalanma ihtimalini artırıyor.",
+                    "data": {
+                        "off": "Kapalı",
+                        "uncommon": "Nadir",
+                        "common": "Yaygın",
+                        "veryCommon": "Çok Yaygın"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Dinamik Puanlama",
+                    "help": {
+                        "introduction": "Başarı olasılığına göre puan ver. Mesela, bir arayıcı oyunun başında bir saklayıcıyı bulursa daha fazla puan alır. Eğer bir saklayıcı, sadece birkaç kare kalmasına rağmen gizli kalmayı başarırsa, o da daha fazla puan kapar.",
+                        "calculation": "Açık olduğunda, puanlar ayarlanan minimum ve maksimum puanlara göre otomatik olarak hesaplanır."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Saklananı Bulmak",
+                    "help": "Bir saklayanı bulan arayıcıya verilen ödül."
+                },
+                "minPointsFind": {
+                    "title": "Min. Saklananı Bulma"
+                },
+                "maxPointsFind": {
+                    "title": "Maks. Saklananı Bulmak"
+                },
+                "pointsHideRound": {
+                    "title": "Her Turda Gizli",
+                    "help": "Her turda gizli kalan bir saklambaççıya verilen ödül."
+                },
+                "minPointsHideRound": {
+                    "title": "Her Turda Gizli Min."
+                },
+                "maxPointsHideRound": {
+                    "title": "Her Turda Maks. Gizli"
+                },
+                "pointsLastAlive": {
+                    "title": "Son Kalan",
+                    "help": "Oyunda kalan son oyuncuya, diğer herkes elendiğinde verilen ödül."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Son Kalan"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Max. Son Kalan"
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1512,6 +1589,7 @@
             "roundSummary": "Tur Tur Özeti",
             "roundCount": "%{current} tur, toplam %{total} turdan",
             "roundCurrent": "Tur %{current}",
+            "startingNewRound": "Yeni tur başlıyor...",
             "war": "Savaş!",
             "outcome": "Sonuç",
             "input": "Senin girişini bekliyoruz",
@@ -1735,6 +1813,7 @@
         "wins": "0 galibiyet | 1 galibiyet | {count} galibiyet",
         "cards": "0 kart | 1 kart | {count} kart",
         "moves": "0 hamle | 1 hamle | {count} hamle",
+        "tiles": "0 karolar | 1 karo | {count} karo",
         "playing": "0 oynuyor | 1 oynuyor | {count} oynuyor",
         "players": "0 oyuncu | 1 oyuncu | {count} oyuncu",
         "selectedCards": "Kart seçilmedi | 1 kart seçildi | {count} kart seçildi",
@@ -1942,6 +2021,7 @@
         "fouls": "Fauler",
         "and": "ve",
         "vs": "aleyhinde",
+        "dismiss": "Kapat",
         "rename": "Yeniden Adlandır",
         "created": "Oluşturuldu",
         "lastSeen": "Son Görülme",
@@ -1964,6 +2044,10 @@
         "coinsBlank": "%{value} altın",
         "receivedBlank": "%{value} Alındı",
         "lessThanBlank": "%{value}'den daha az",
+        "lastSeenBlankAgo": "En son %{value} önce görüldü",
+        "lastSeenJustNow": "En son az önce görüldü",
+        "blank": "%{value}",
+        "byBlank": "%{value} tarafından",
         "sendVerification": "Doğrulama Gönder",
         "noThanks": "Teşekkürler, gerek yok",
         "ready": "Hazır",
@@ -1982,6 +2066,7 @@
         "volume": "Ses Seviyesi",
         "volumeInterface": "Arayüz Ses Seviyesi",
         "volumeEffects": "Efekt Ses Seviyesi",
+        "volumeMusic": "Müzik Ses Seviyesi",
         "selectYourLanguage": "Dilini Seç",
         "selectYourColor": "Rengini Seç",
         "latestChanges": "Son Değişiklikler",
@@ -2182,6 +2267,7 @@
         "loginToPurchase": "Bir şey satın almak için önce giriş yapmalı veya bir hesap oluşturmalısın.",
         "seasonalItem": "Bu slot'taki bir eşya yılda sadece birkaç gün boyunca kullanılabilir.",
         "cardInteractHint": "Seçimini yapmak için bir karta tıkla.",
+        "gameInvite": "Oyuna Davet",
         "awaitingPurchaseConfirmation": {
             "title": "Satın Alma Onayı Bekleniyor",
             "description": "Bu genellikle sadece birkaç saniye sürer. Ödeme yönteminize bağlı olarak daha uzun sürebilir. Bu ekranı kapatmakta özgürsünüz."
@@ -2190,7 +2276,9 @@
             "noFriends": "Arkadaş Yok",
             "noAccount": "Arkadaş edinmek için giriş yap ya da hesap oluştur!",
             "description": "Bağlantıda kal! Arkadaşlarını çevrimiçi gör, oyunlarını kontrol et ve özel lobilerine katıl!",
-            "removeDescription": "\"%{name}\" ile arkadaşlığını bitirmek üzeresin."
+            "removeDescription": "\"%{name}\" ile arkadaşlığını bitirmek üzeresin.",
+            "inviteReceived": "%{name} seni %{game} oynamaya davet etti",
+            "inviteSent": "Oyun daveti gönderildi!"
         },
         "settings": {
             "redeemCode": {
@@ -2476,6 +2564,24 @@
             "earnsPoints": "%{points} kazanır.",
             "earnsSum": "Tüm zarların toplamını kazanır.",
             "noPointsWarning": "Bu hamle sana hiç puan kazandırmayacak. Puan kazandıran başka seçenekler var."
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
         },
         "ai": {
             "ready": null,

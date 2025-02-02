@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1666,
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Maaf, pengguna ini udah mencapai batas temennya, yaitu %{amount}.",
             "pendingFriendLimitSelf": "Kamu nggak bisa punya lebih dari %{amount} permintaan pertemanan yang masih pending.",
             "pendingFriendLimitOther": "Maaf, pengguna ini udah kebanyakan permintaan pertemanan yang masih pending.",
+            "userOffline": "Maaf, pengguna ini lagi offline.",
             "notFriends": "Kalian bukan temen dan nggak ada permintaan pertemanan yang nunggu.",
             "alreadyFriends": "Kalian udah temenan sama pengguna ini.",
             "pendingFriends": "Udah ada permintaan pertemanan yang nunggu dari pengguna ini.",
@@ -1426,6 +1427,82 @@
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Pertarungan Angka",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "Permainan bakal selesai begitu ada pemain yang udah dapet jumlah poin ini."
+                },
+                "mode": {
+                    "title": "Mode",
+                    "help": "Mode permainan yang beda bakal ngaruh ke cara poin dikasih dan cara mainnya.",
+                    "data": {
+                        "SINGLE_HIDER": "Satu Penyembunyi",
+                        "HIDE_AND_SEEK": "Petak Umpet",
+                        "LAST_STANDING": "Terakhir Berdiri"
+                    }
+                },
+                "field": {
+                    "title": "Lapangan",
+                    "help": "Nentuin berapa banyak angka yang muncul di lapangan permainan."
+                },
+                "revealSpeed": {
+                    "title": "Kecepatan Tampilkan",
+                    "help": "Kecepatan saat putaran dibuka pas semua orang udah siap."
+                },
+                "multiplier": {
+                    "title": "Pengganda",
+                    "help": "Multiplier bisa muncul di satu atau beberapa angka sekaligus. Ketika seorang hider milih angka yang ada multipliernya, mereka bakal ngaliin poin mereka. Tapi, karena semua orang bisa liat multipliernya, ini jadi berisiko dan nambah kemungkinan ketahuan.",
+                    "data": {
+                        "off": "Dimatikan",
+                        "uncommon": "Langka",
+                        "common": "Umum",
+                        "veryCommon": "Sangat Umum"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Skor Dinamis",
+                    "help": {
+                        "introduction": "Kasih poin berdasarkan kemungkinan sukses. Misalnya, kalo seorang pencari nemuin si penyembunyi di awal permainan, mereka bakal dapet poin lebih banyak. Kalo si penyembunyi bisa tetap tersembunyi dengan cuma sisa beberapa ubin, mereka juga bakal dapet poin lebih banyak.",
+                        "calculation": "Kalo diaktifin, poinnya bakal dihitung otomatis berdasarkan poin min. dan max. yang udah diatur."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Mencari yang Nyembunyi",
+                    "help": "Diberikan ke pencari yang berhasil nemuin si penyembunyi."
+                },
+                "minPointsFind": {
+                    "title": "Min. Nyari yang Nyembunyi"
+                },
+                "maxPointsFind": {
+                    "title": "Maks. Nyari yang Nyembunyi"
+                },
+                "pointsHideRound": {
+                    "title": "Tersembunyi per Putaran",
+                    "help": "Diberikan ke penyembunyi yang tetap tersembunyi setiap ronde."
+                },
+                "minPointsHideRound": {
+                    "title": "Min. Tersembunyi per Putaran"
+                },
+                "maxPointsHideRound": {
+                    "title": "Max. Tersembunyi per Putaran"
+                },
+                "pointsLastAlive": {
+                    "title": "Sisa Terakhir",
+                    "help": "Diberikan ke pemain terakhir yang masih ada di game saat semua orang lain udah dieliminasi."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Sisa Terakhir"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Maks. Sisa Terakhir"
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1512,6 +1589,7 @@
             "roundSummary": "Ringkasan ronde",
             "roundCount": "Ronde %{current} dari %{total}",
             "roundCurrent": "Putaran %{current}",
+            "startingNewRound": "Mulai ronde baru...",
             "war": "Perang!",
             "outcome": "Hasil",
             "input": "Menunggu masukanmu",
@@ -1735,6 +1813,7 @@
         "wins": "0 menang | 1 menang | {count} menang",
         "cards": "0 kartu | 1 kartu | {count} kartu",
         "moves": "0 gerakan | 1 gerakan | {count} gerakan",
+        "tiles": "0 ubin | 1 ubin | {count} ubin",
         "playing": "0 main | 1 main | {count} main",
         "players": "0 pemain | 1 pemain | {count} pemain",
         "selectedCards": "Tidak ada kartu yang dipilih | 1 kartu dipilih | {count} kartu dipilih",
@@ -1942,6 +2021,7 @@
         "fouls": "Pelanggaran",
         "and": "dan",
         "vs": "vs",
+        "dismiss": "Tutup",
         "rename": "Ubah Nama",
         "created": "Dibuat",
         "lastSeen": "Terakhir Dilihat",
@@ -1964,6 +2044,10 @@
         "coinsBlank": "%{value} koin",
         "receivedBlank": "Diterima %{value}",
         "lessThanBlank": "Kurang dari %{value}",
+        "lastSeenBlankAgo": "Terakhir dilihat %{value} yang lalu",
+        "lastSeenJustNow": "Terakhir dilihat baru saja",
+        "blank": "%{value}",
+        "byBlank": "Oleh %{value}",
         "sendVerification": "Kirim Verifikasi",
         "noThanks": "Nggak, makasih",
         "ready": "Siap",
@@ -1982,6 +2066,7 @@
         "volume": "Volume",
         "volumeInterface": "Volume antarmuka",
         "volumeEffects": "Volume Efek",
+        "volumeMusic": "Volume Musik",
         "selectYourLanguage": "Pilih Bahasa Kamu",
         "selectYourColor": "Pilih Warna Kamu",
         "latestChanges": "Perubahan Terbaru",
@@ -2182,6 +2267,7 @@
         "loginToPurchase": "Buat belanja, kamu harus login atau buat akun dulu.",
         "seasonalItem": "Barang di slot ini cuma tersedia beberapa hari dalam setahun.",
         "cardInteractHint": "Klik kartu untuk pilihannya.",
+        "gameInvite": "Undangan Main Game",
         "awaitingPurchaseConfirmation": {
             "title": "Menunggu Konfirmasi Pembelian",
             "description": "Biasanya ini hanya butuh beberapa detik. Tergantung metode pembayaranmu, ini bisa memakan waktu lebih lama. Silakan tutup layar ini."
@@ -2190,7 +2276,9 @@
             "noFriends": "Gak Punya Temen",
             "noAccount": "Login atau bikin akun biar bisa mulai cari temen!",
             "description": "Tetap terhubung! Lihat temen-temenmu online, game mereka, dan gabung ke lobi pribadi mereka!",
-            "removeDescription": "Kamu mau putusin pertemanan sama \"%{name}\"."
+            "removeDescription": "Kamu mau putusin pertemanan sama \"%{name}\".",
+            "inviteReceived": "%{name} ngajak kamu main %{game}",
+            "inviteSent": "Undangan main udah dikirim!"
         },
         "settings": {
             "redeemCode": {
@@ -2476,6 +2564,24 @@
             "earnsPoints": "Dapetin %{points}.",
             "earnsSum": "Dapetin total dari semua dadu yang digabung.",
             "noPointsWarning": "Gerakan ini nggak bakal ngasih kamu poin. Ada pilihan lain yang bisa ngasih kamu poin."
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
         },
         "ai": {
             "ready": null,

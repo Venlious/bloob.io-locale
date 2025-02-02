@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Italian",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1666,
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Scusa, questo utente ha già raggiunto il limite di amici di %{amount}.",
             "pendingFriendLimitSelf": "Non puoi avere più di %{amount} richieste di amicizia in sospeso.",
             "pendingFriendLimitOther": "Scusa, questo utente ha già troppe richieste di amicizia in sospeso.",
+            "userOffline": "Scusa, questo utente è offline.",
             "notFriends": "Non siete amici e non hai richieste di amicizia in sospeso.",
             "alreadyFriends": "Sei già amico di questo utente.",
             "pendingFriends": "C'è già una richiesta di amicizia in sospeso con questo utente.",
@@ -1426,6 +1427,82 @@
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Scontro di Numeri",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "Il gioco finisce appena un giocatore arriva a questo numero di punti."
+                },
+                "mode": {
+                    "title": "Modalità",
+                    "help": "Un modo di gioco diverso cambierà il modo in cui vengono assegnati i punti e come si gioca.",
+                    "data": {
+                        "SINGLE_HIDER": "Nascondino Singolo",
+                        "HIDE_AND_SEEK": "Nascondino",
+                        "LAST_STANDING": "Ultimo in Piedi"
+                    }
+                },
+                "field": {
+                    "title": "Campo",
+                    "help": "Determina quanti numeri vengono mostrati sul campo di gioco."
+                },
+                "revealSpeed": {
+                    "title": "Velocità di Rivelazione",
+                    "help": "La velocità con cui si fa il reveal del turno quando tutti sono pronti."
+                },
+                "multiplier": {
+                    "title": "Moltiplicatori",
+                    "help": "I moltiplicatori possono apparire su un numero singolo o su più numeri contemporaneamente. Quando un nascondino sceglie un numero con un moltiplicatore, moltiplica i suoi punti. Però, visto che tutti possono vedere i moltiplicatori, è rischioso e aumenta le possibilità di essere scoperti.",
+                    "data": {
+                        "off": "Spento",
+                        "uncommon": "Poco comune",
+                        "common": "Comune",
+                        "veryCommon": "Molto comune"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Punteggio Dinamico",
+                    "help": {
+                        "introduction": "Dai punti in base alla probabilità di successo. Tipo, se un cercatore trova un nascosto all'inizio del gioco, prende più punti. Se un nascosto riesce a restare nascosto con solo pochi pezzi rimasti, prende più punti.",
+                        "calculation": "Quando è attivato, i punti vengono calcolati automaticamente in base ai punti minimi e massimi impostati."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Trovare un Nascondino",
+                    "help": "Assegnato a un cercatore per aver trovato un nascosto."
+                },
+                "minPointsFind": {
+                    "title": "Min. Trovare un Nascondino"
+                },
+                "maxPointsFind": {
+                    "title": "Max. Trova un Nascondino"
+                },
+                "pointsHideRound": {
+                    "title": "Nascosto per Round",
+                    "help": "Assegnato a un nascondino per essere rimasto nascosto per ogni turno."
+                },
+                "minPointsHideRound": {
+                    "title": "Min. Nascosti per Turno"
+                },
+                "maxPointsHideRound": {
+                    "title": "Max. Nascosti per Turno"
+                },
+                "pointsLastAlive": {
+                    "title": "Ultimo Rimasto",
+                    "help": "Assegnato all'ultimo giocatore rimasto in gioco quando tutti gli altri sono stati eliminati."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Ultimo Rimasto"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Max. Ultimo Rimasto"
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1512,6 +1589,7 @@
             "roundSummary": "Riepilogo del turno",
             "roundCount": "Arrotonda %{current} su %{total}",
             "roundCurrent": "Turno %{current}",
+            "startingNewRound": "Inizia un nuovo turno...",
             "war": "Guerra!",
             "outcome": "Risultato",
             "input": "In attesa del tuo input",
@@ -1735,6 +1813,7 @@
         "wins": "0 vittorie | 1 vittoria | {count} vittorie",
         "cards": "0 carte | 1 carta | {count} carte",
         "moves": "0 mosse | 1 mossa | {count} mosse",
+        "tiles": "0 piastrelle | 1 piastrella | {count} piastrelle",
         "playing": "0 in gioco | 1 in gioco | {count} in gioco",
         "players": "0 giocatori | 1 giocatore | {count} giocatori",
         "selectedCards": "Nessuna carta selezionata | 1 carta selezionata | {count} carte selezionate",
@@ -1942,6 +2021,7 @@
         "fouls": "Falli",
         "and": "e",
         "vs": "vs",
+        "dismiss": "Ignora",
         "rename": "Rinomina",
         "created": "Creato",
         "lastSeen": "Ultima volta visto",
@@ -1964,6 +2044,10 @@
         "coinsBlank": "%{value} monete",
         "receivedBlank": "Ricevuto %{value}",
         "lessThanBlank": "Meno di %{value}",
+        "lastSeenBlankAgo": "Ultima volta visto %{value} fa",
+        "lastSeenJustNow": "Ultima volta visto adesso",
+        "blank": "%{value}",
+        "byBlank": "Da %{value}",
         "sendVerification": "Invia Verifica",
         "noThanks": "No grazie",
         "ready": "Pronto",
@@ -1982,6 +2066,7 @@
         "volume": "Volume",
         "volumeInterface": "Volume dell'interfaccia",
         "volumeEffects": "Volume degli effetti",
+        "volumeMusic": "Volume Musica",
         "selectYourLanguage": "Seleziona la tua lingua",
         "selectYourColor": "Seleziona il tuo colore",
         "latestChanges": "Ultime modifiche",
@@ -2182,6 +2267,7 @@
         "loginToPurchase": "Per fare un acquisto devi prima accedere o creare un account.",
         "seasonalItem": "Un oggetto in questo slot è disponibile solo per pochi giorni all'anno.",
         "cardInteractHint": "Clicca su una carta per fare la tua scelta.",
+        "gameInvite": "Invito a Giocare",
         "awaitingPurchaseConfirmation": {
             "title": "In attesa di conferma d'acquisto",
             "description": "Di solito ci vogliono solo pochi secondi. A seconda del tuo metodo di pagamento, potrebbe volerci più tempo. Sentiti libero di chiudere questa schermata."
@@ -2190,7 +2276,9 @@
             "noFriends": "Niente amici",
             "noAccount": "Fai il login o crea un account per iniziare a farti amici!",
             "description": "Resta connesso! Vedi i tuoi amici online, i loro giochi e unisciti ai loro lobby privati!",
-            "removeDescription": "Stai per chiudere l'amicizia con \"%{name}\"."
+            "removeDescription": "Stai per chiudere l'amicizia con \"%{name}\".",
+            "inviteReceived": "%{name} ti ha invitato a giocare a %{game}",
+            "inviteSent": "L'invito al gioco è stato inviato!"
         },
         "settings": {
             "redeemCode": {
@@ -2476,6 +2564,24 @@
             "earnsPoints": "Guadagna %{points}.",
             "earnsSum": "Guadagna il totale di tutti i dadi combinati.",
             "noPointsWarning": "Questa mossa non ti farà guadagnare punti. Ci sono altre scelte che ti danno punti."
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
         },
         "ai": {
             "ready": null,

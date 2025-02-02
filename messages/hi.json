@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Hindi script",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1666,
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Sorry, is user ne apne dost ki limit %{amount} tak pahunch gayi hai.",
             "pendingFriendLimitSelf": "Tumhare paas %{amount} se zyada pending dosti nahi ho sakti.",
             "pendingFriendLimitOther": "Sorry, is user ke paas pehle se hi bahut zyada pending dosti hain.",
+            "userOffline": "सॉरी, ये यूजर ऑफलाइन है।",
             "notFriends": "Tum dost nahi ho aur koi pending friend request nahi hai.",
             "alreadyFriends": "Tum is user ke saath pehle se dost ho.",
             "pendingFriends": "Is user ke saath pehle se ek friend request pending hai.",
@@ -1426,6 +1427,82 @@
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "नंबर शोडाउन",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "Game tab khatam ho jayega jaise hi koi player is amount ke points tak pahunch jayega."
+                },
+                "mode": {
+                    "title": "मोड",
+                    "help": "ek alag game mode points dene ka tareeka aur game khelne ka tareeka dono ko badal dega.",
+                    "data": {
+                        "SINGLE_HIDER": "सिंगल हाइडर",
+                        "HIDE_AND_SEEK": "छुपन-छुपाई",
+                        "LAST_STANDING": "लास्ट स्टैंडिंग"
+                    }
+                },
+                "field": {
+                    "title": "मैदान",
+                    "help": "kya sankhya khel kshetra par dikhai ja rahi hai, yeh tay karta hai."
+                },
+                "revealSpeed": {
+                    "title": "[1] रिवील स्पीड",
+                    "help": "jab sab ready hote hain, tab round reveal hone ki speed."
+                },
+                "multiplier": {
+                    "title": "मल्टीप्लायर्स",
+                    "help": "Multipliers ek hi ya multiple numbers par ek saath aa sakte hain. Jab ek hider kisi number ko multiplier ke saath choose karta hai, toh unke points multiply ho jaate hain. Lekin, kyunki sabko multipliers dikhte hain, yeh risky hota hai aur pakde jaane ke chances badha deta hai.",
+                    "data": {
+                        "off": "बंद किया",
+                        "uncommon": "अनकॉमन",
+                        "common": "कॉमन",
+                        "veryCommon": "बहुत कॉमन"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "डायनामिक स्कोरिंग",
+                    "help": {
+                        "introduction": "Safalta ki sambhavna ke adhar par points do. Jaise agar ek seeker shuruat mein hi hider ko dhoond leta hai, toh usse zyada points milenge. Agar ek hider sirf kuch tiles bache hone par chhupa rehne mein safal hota hai, toh usse bhi zyada points milenge.",
+                        "calculation": "Jab yeh chalu hota hai, toh points automatically configured min. aur max. points ke adhar par calculate hote hain."
+                    }
+                },
+                "pointsFind": {
+                    "title": "छिपने वाले को ढूंढना",
+                    "help": "छुपाने वाले को ढूंढने वाले को दिया गया इनाम।"
+                },
+                "minPointsFind": {
+                    "title": "छोटा: छुपने वाले को ढूंढना"
+                },
+                "maxPointsFind": {
+                    "title": "मैक्स. छिपने वाले को ढूंढना"
+                },
+                "pointsHideRound": {
+                    "title": "[1] हर राउंड में छिपा",
+                    "help": "छुपने वाले को हर राउंड में छुपे रहने के लिए दिया जाता है।"
+                },
+                "minPointsHideRound": {
+                    "title": "हर राउंड में मिन. छिपे हुए"
+                },
+                "maxPointsHideRound": {
+                    "title": "मैक्स. छुपे हुए प्रति राउंड"
+                },
+                "pointsLastAlive": {
+                    "title": "आखिरी बचे हुए",
+                    "help": "बचे हुए आखिरी प्लेयर को दिया जाता है जब बाकी सब बाहर हो जाते हैं।"
+                },
+                "minPointsLastAlive": {
+                    "title": "न्यूनतम. आखिरी बचे हुए"
+                },
+                "maxPointsLastAlive": {
+                    "title": "मैक्स. आखिरी बचे हुए"
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1512,6 +1589,7 @@
             "roundSummary": "दौर का सारांश",
             "roundCount": "%{current} गोल बाहर %{total} का",
             "roundCurrent": "दौर %{current}",
+            "startingNewRound": "नया राउंड शुरू हो रहा है...",
             "war": "युद्ध!",
             "outcome": "परिणाम",
             "input": "आपकी प्रविष्टि का इंतजार कर रहे हैं",
@@ -1735,6 +1813,7 @@
         "wins": "0 जीतें | 1 जीत | {count} जीतें",
         "cards": "0 कार्ड | 1 कार्ड | {count} कार्ड",
         "moves": "0 चालें | 1 चाल | {count} चालें",
+        "tiles": "0 टाइल्स | 1 टाइल | {count} टाइल्स",
         "playing": "0 खेल रहे हैं | 1 खेल रहा है | {count} खेल रहे हैं",
         "players": "0 खिलाड़ी | 1 खिलाड़ी | {count} खिलाड़ी",
         "selectedCards": "कोई कार्ड नहीं चुना | 1 कार्ड चुना | {count} कार्ड चुने",
@@ -1942,6 +2021,7 @@
         "fouls": "फाउल्स",
         "and": "और",
         "vs": "बनाम",
+        "dismiss": "बंद करो",
         "rename": "नाम बदलें",
         "created": "बनाया गया",
         "lastSeen": "अंतिम बार देखा गया",
@@ -1964,6 +2044,10 @@
         "coinsBlank": "%{value} सिक्के",
         "receivedBlank": "%{value} प्राप्त किया",
         "lessThanBlank": "%{value} से कम",
+        "lastSeenBlankAgo": "आखिरी बार %{value} पहले देखा गया",
+        "lastSeenJustNow": "अभी अभी देखा गया",
+        "blank": "%{value}",
+        "byBlank": "द्वारा %{value}",
         "sendVerification": "सत्यापन भेजें",
         "noThanks": "नहीं, धन्यवाद",
         "ready": "तैयार",
@@ -1982,6 +2066,7 @@
         "volume": "आवाज",
         "volumeInterface": "इंटरफ़ेस आवाज",
         "volumeEffects": "प्रभावों की आवाज़",
+        "volumeMusic": "म्यूजिक वॉल्यूम",
         "selectYourLanguage": "अपनी भाषा चुनें",
         "selectYourColor": "अपना रंग चुनें",
         "latestChanges": "नवीनतम परिवर्तन",
@@ -2182,6 +2267,7 @@
         "loginToPurchase": "खरीदारी करने के लिए आपको पहले लॉगिन करना होगा या एक खाता बनाना होगा।",
         "seasonalItem": "इस स्लॉट में एक आइटम सिर्फ साल में कुछ ही दिनों के लिए उपलब्ध होता है।",
         "cardInteractHint": "अपनी चुनाव करने के लिए कार्ड पर क्लिक करें।",
+        "gameInvite": "गेम में बुलावा",
         "awaitingPurchaseConfirmation": {
             "title": "खरीद की पुष्टि का इंतजार कर रहे हैं",
             "description": "यह आमतौर पर कुछ ही सेकंड लेता है। आपके भुगतान विधि पर निर्भर करता है, यह अधिक समय ले सकता है। इस स्क्रीन को बंद करने में स्वतंत्र महसूस करें।"
@@ -2190,7 +2276,9 @@
             "noFriends": "कोई दोस्त नहीं",
             "noAccount": "लॉगिन करो या एक अकाउंट बनाओ ताकि दोस्त बनाना शुरू कर सको!",
             "description": "जुड़े रहो! अपने दोस्तों को ऑनलाइन देखो, उनके गेम्स और उनके प्राइवेट लॉबी में शामिल हो जाओ!",
-            "removeDescription": "तुम \"%{name}\" के साथ अपनी दोस्ती खत्म करने वाले हो।"
+            "removeDescription": "तुम \"%{name}\" के साथ अपनी दोस्ती खत्म करने वाले हो।",
+            "inviteReceived": "%{name} ne tumhe %{game} khelne ke liye bulaya hai",
+            "inviteSent": "Game ka invite bhej diya gaya hai!"
         },
         "settings": {
             "redeemCode": {
@@ -2476,6 +2564,24 @@
             "earnsPoints": "%{points} प्राप्त करता है.",
             "earnsSum": "सभी पासों का संयुक्त योगदान प्राप्त करता है.",
             "noPointsWarning": "यह चाल तुम्हें कोई अंक नहीं दिलाएगी। और भी विकल्प हैं जो तुम्हें अंक देते हैं।"
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
         },
         "ai": {
             "ready": null,

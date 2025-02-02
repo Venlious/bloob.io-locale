@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1666,
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "抱歉，这个用户已经达到好友上限 %{amount} 了。",
             "pendingFriendLimitSelf": "你不能有超过 %{amount} 个待处理的好友请求。",
             "pendingFriendLimitOther": "抱歉，这个用户已经有太多待处理的好友请求了。",
+            "userOffline": "抱歉，这个用户不在线。",
             "notFriends": "你们不是朋友，也没有待处理的好友请求。",
             "alreadyFriends": "你已经和这个用户是朋友了。",
             "pendingFriends": "你已经向这个用户发送了好友请求。",
@@ -1426,6 +1427,82 @@
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "数字对决",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "游戏一旦有玩家得到了这个分数，就会结束。"
+                },
+                "mode": {
+                    "title": "模式",
+                    "help": "不同的游戏模式会影响得分方式和游戏玩法。",
+                    "data": {
+                        "SINGLE_HIDER": "单人藏匿",
+                        "HIDE_AND_SEEK": "捉迷藏",
+                        "LAST_STANDING": "最后幸存者"
+                    }
+                },
+                "field": {
+                    "title": "场地",
+                    "help": "决定在游戏场上显示多少个数字。"
+                },
+                "revealSpeed": {
+                    "title": "显示速度",
+                    "help": "大家准备好时，轮次揭示的速度。"
+                },
+                "multiplier": {
+                    "title": "倍数器",
+                    "help": "乘数可以同时出现在一个或多个数字上。当隐藏者选择了一个带乘数的数字，他们的分数会翻倍。不过，因为大家都能看到乘数，这样做有风险，容易被找到。",
+                    "data": {
+                        "off": "关掉了",
+                        "uncommon": "不常见",
+                        "common": "常见",
+                        "veryCommon": "很常见"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "动态评分",
+                    "help": {
+                        "introduction": "根据成功的概率来奖励积分。比如，如果寻找者在游戏早期找到藏匿者，他们会获得更多积分。如果藏匿者在只剩几块砖的时候还能保持隐蔽，他们也会获得更多积分。",
+                        "calculation": "开启后，积分会根据设置的最小和最大积分自动计算。"
+                    }
+                },
+                "pointsFind": {
+                    "title": "找藏匿者",
+                    "help": "给找到藏身者的寻宝者颁发的奖励。"
+                },
+                "minPointsFind": {
+                    "title": "最少找到一个藏匿者"
+                },
+                "maxPointsFind": {
+                    "title": "最大。寻找隐藏者"
+                },
+                "pointsHideRound": {
+                    "title": "每回合隐藏",
+                    "help": "每轮保持隐身的玩家会获得这个奖励。"
+                },
+                "minPointsHideRound": {
+                    "title": "每轮最少隐藏数量"
+                },
+                "maxPointsHideRound": {
+                    "title": "每轮最多隐藏数量"
+                },
+                "pointsLastAlive": {
+                    "title": "最后的幸存者",
+                    "help": "颁给最后一个留在游戏里的玩家，当其他人都被淘汰时。"
+                },
+                "minPointsLastAlive": {
+                    "title": "最少剩余"
+                },
+                "maxPointsLastAlive": {
+                    "title": "最大剩余"
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1512,6 +1589,7 @@
             "roundSummary": "回合总结",
             "roundCount": "第%{current}轮，总共%{total}轮",
             "roundCurrent": "第%{current}轮",
+            "startingNewRound": "开始新一轮...",
             "war": "战争！",
             "outcome": "结果",
             "input": "等待你的操作",
@@ -1735,6 +1813,7 @@
         "wins": "0胜 | 1胜 | {count}胜",
         "cards": "0张卡 | 1张卡 | {count}张卡",
         "moves": "0步 | 1步 | {count}步",
+        "tiles": "0块 | 1块 | {count}块",
         "playing": "0在玩 | 1在玩 | {count}在玩",
         "players": "0玩家 | 1玩家 | {count}玩家",
         "selectedCards": "没选卡 | 选了1张卡 | 选了{count}张卡",
@@ -1942,6 +2021,7 @@
         "fouls": "犯规",
         "and": "和",
         "vs": "对",
+        "dismiss": "关闭",
         "rename": "重命名",
         "created": "已创建",
         "lastSeen": "最后出现",
@@ -1964,6 +2044,10 @@
         "coinsBlank": "%{value} 金币",
         "receivedBlank": "收到 %{value}",
         "lessThanBlank": "小于%{value}",
+        "lastSeenBlankAgo": "上次在线 %{value} 前",
+        "lastSeenJustNow": "刚刚在线",
+        "blank": "%{value}",
+        "byBlank": "由 %{value} 提供",
         "sendVerification": "发送验证",
         "noThanks": "不用了，谢谢",
         "ready": "准备好了",
@@ -1982,6 +2066,7 @@
         "volume": "音量",
         "volumeInterface": "界面音量",
         "volumeEffects": "效果音量",
+        "volumeMusic": "音乐音量",
         "selectYourLanguage": "选择你的语言",
         "selectYourColor": "选择你的颜色",
         "latestChanges": "最新更改",
@@ -2182,6 +2267,7 @@
         "loginToPurchase": "要购买东西，你得先登录或者创建一个账号。",
         "seasonalItem": "这个位置的物品一年只有几天能买到。",
         "cardInteractHint": "点击一张卡片来选择。",
+        "gameInvite": "邀请你来玩游戏",
         "awaitingPurchaseConfirmation": {
             "title": "等待购买确认",
             "description": "这通常只需要几秒钟。根据你的付款方式，可能需要更长时间。随时可以关闭这个屏幕。"
@@ -2190,7 +2276,9 @@
             "noFriends": "没有朋友",
             "noAccount": "登录或创建账号开始交朋友吧！",
             "description": "保持联系！看看你朋友在线、他们在玩什么，加入他们的私人房间！",
-            "removeDescription": "你快要和 \"%{name}\" 结束友谊了。"
+            "removeDescription": "你快要和 \"%{name}\" 结束友谊了。",
+            "inviteReceived": "%{name} 邀请你玩 %{game}",
+            "inviteSent": "游戏邀请已发送！"
         },
         "settings": {
             "redeemCode": {
@@ -2476,6 +2564,24 @@
             "earnsPoints": "获得%{points}分。",
             "earnsSum": "获得所有骰子总和的分数。",
             "noPointsWarning": "这个动作不会给你加分。还有其他可以加分的选择。"
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
         },
         "ai": {
             "ready": null,

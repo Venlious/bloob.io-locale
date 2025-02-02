@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Korean",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1666,
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "미안, 이 사용자는 이미 %{amount}명의 친구 한도에 도달했어.",
             "pendingFriendLimitSelf": "보류 중인 친구 요청은 %{amount}개 이상 가질 수 없어.",
             "pendingFriendLimitOther": "미안, 이 사용자는 이미 보류 중인 친구 요청이 너무 많아.",
+            "userOffline": "죄송해요, 이 사용자는 오프라인이에요.",
             "notFriends": "너희는 친구가 아니고 친구 요청도 없어.",
             "alreadyFriends": "너는 이미 이 사용자와 친구야.",
             "pendingFriends": "이 사용자한테는 이미 친구 요청이 있어.",
@@ -1426,6 +1427,82 @@
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "넘버 쇼다운",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "게임은 누군가 이 점수에 도달하면 바로 끝나."
+                },
+                "mode": {
+                    "title": "모드",
+                    "help": "다른 게임 모드가 점수 주는 방식이랑 게임하는 방식을 바꿀 거야.",
+                    "data": {
+                        "SINGLE_HIDER": "혼자 숨는 사람",
+                        "HIDE_AND_SEEK": "술래잡기",
+                        "LAST_STANDING": "마지막 남은 사람"
+                    }
+                },
+                "field": {
+                    "title": "필드",
+                    "help": "게임 필드에 몇 개의 숫자가 보일지를 정해."
+                },
+                "revealSpeed": {
+                    "title": "드러내는 속도",
+                    "help": "모두 준비되면 라운드 공개하는 속도야."
+                },
+                "multiplier": {
+                    "title": "배수 설정",
+                    "help": "곱셈기가 하나의 숫자나 여러 숫자에 동시에 나타날 수 있어. 숨는 사람이 곱셈기가 있는 숫자를 고르면 점수가 곱해져. 근데 다들 곱셈기를 볼 수 있으니까 위험하고 발견될 확률이 높아져.",
+                    "data": {
+                        "off": "꺼짐",
+                        "uncommon": "드물게",
+                        "common": "흔함",
+                        "veryCommon": "아주 흔함"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "동적 점수 시스템",
+                    "help": {
+                        "introduction": "성공 확률에 따라 포인트를 줘. 예를 들어, 찾는 사람이 초반에 숨는 사람을 찾으면 더 많은 포인트를 받고, 숨는 사람이 몇 개의 타일만 남기고 잘 숨으면 더 많은 포인트를 받아.",
+                        "calculation": "활성화되면, 설정한 최소 및 최대 포인트에 따라 포인트가 자동으로 계산돼."
+                    }
+                },
+                "pointsFind": {
+                    "title": "숨바꼭질 찾기",
+                    "help": "숨는 사람을 찾은 탐색자에게 주는 상."
+                },
+                "minPointsFind": {
+                    "title": "숨는 사람 찾기 최소한"
+                },
+                "maxPointsFind": {
+                    "title": "최대. 숨은 사람 찾기"
+                },
+                "pointsHideRound": {
+                    "title": "라운드당 숨김",
+                    "help": "라운드마다 숨은 사람한테 주는 상이야."
+                },
+                "minPointsHideRound": {
+                    "title": "라운드당 최소 숨겨진 수"
+                },
+                "maxPointsHideRound": {
+                    "title": "라운드당 최대 숨겨진 수"
+                },
+                "pointsLastAlive": {
+                    "title": "마지막 남은 것",
+                    "help": "게임에서 다른 모든 플레이어가 제거되고 마지막으로 남은 플레이어에게 주어지는 상."
+                },
+                "minPointsLastAlive": {
+                    "title": "최소 잔여량"
+                },
+                "maxPointsLastAlive": {
+                    "title": "최후의 남은 자"
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1512,6 +1589,7 @@
             "roundSummary": "라운드 요약",
             "roundCount": "총 %{total} 라운드 중 %{current} 라운드",
             "roundCurrent": "라운드 %{current}",
+            "startingNewRound": "새 라운드 시작해요...",
             "war": "전쟁!",
             "outcome": "결과",
             "input": "당신의 입력을 기다리는 중",
@@ -1735,6 +1813,7 @@
         "wins": "승리 없음 | 1승 | {count}승",
         "cards": "카드 없음 | 1장의 카드 | {count}장의 카드",
         "moves": "움직임 없음 | 1번 움직임 | {count}번 움직임",
+        "tiles": "0 타일 | 1 타일 | {count} 타일",
         "playing": "아무도 안 함 | 1명이 함 | {count}명이 함",
         "players": "플레이어 없음 | 1명 플레이어 | {count}명 플레이어",
         "selectedCards": "카드 선택 안 함 | 1장 카드 선택 | {count}장 카드 선택",
@@ -1942,6 +2021,7 @@
         "fouls": "반칙들",
         "and": "그리고",
         "vs": "대",
+        "dismiss": "닫기",
         "rename": "이름 바꾸기",
         "created": "생성됨",
         "lastSeen": "마지막으로 본",
@@ -1964,6 +2044,10 @@
         "coinsBlank": "%{value} 코인들",
         "receivedBlank": "%{value} 받았어요",
         "lessThanBlank": "%{value}보다 작음",
+        "lastSeenBlankAgo": "마지막으로 본 게 %{value} 전",
+        "lastSeenJustNow": "방금 전에 봤어",
+        "blank": "%{value}",
+        "byBlank": "%{value}에 의해",
         "sendVerification": "인증 보내기",
         "noThanks": "괜찮아요",
         "ready": "준비됨",
@@ -1982,6 +2066,7 @@
         "volume": "볼륨",
         "volumeInterface": "인터페이스 볼륨",
         "volumeEffects": "효과음 볼륨",
+        "volumeMusic": "음악 볼륨",
         "selectYourLanguage": "언어 선택하기",
         "selectYourColor": "색상 선택하기",
         "latestChanges": "최근 변경사항",
@@ -2182,6 +2267,7 @@
         "loginToPurchase": "물건을 사려면 먼저 로그인하거나 계정을 만들어야 해.",
         "seasonalItem": "이 슬롯의 아이템은 일년에 몇 일 동안만 사용할 수 있어.",
         "cardInteractHint": "카드를 선택하려면 클릭해.",
+        "gameInvite": "게임 초대해!",
         "awaitingPurchaseConfirmation": {
             "title": "구매 확인 대기 중",
             "description": "보통 이 과정은 몇 초밖에 안 걸립니다. 결제 방법에 따라서는 시간이 더 걸릴 수 있어요. 이 화면을 닫아도 괜찮아요."
@@ -2190,7 +2276,9 @@
             "noFriends": "친구 없음",
             "noAccount": "로그인 하거나 계정 만들어서 친구 만들기 시작해!",
             "description": "연결 유지해! 친구들이 온라인인지, 어떤 게임 하는지 보고 그들의 개인 로비에 들어가!",
-            "removeDescription": "\"%{name}\"과의 우정을 끝내려고 해."
+            "removeDescription": "\"%{name}\"과의 우정을 끝내려고 해.",
+            "inviteReceived": "%{name}가 너를 %{game} 하자고 초대했어",
+            "inviteSent": "게임 초대가 전송됐어!"
         },
         "settings": {
             "redeemCode": {
@@ -2476,6 +2564,24 @@
             "earnsPoints": "%{points}를 얻어요.",
             "earnsSum": "모든 주사위의 총합을 얻어요.",
             "noPointsWarning": "이 동작으로는 점수를 얻을 수 없어. 다른 선택지에서는 점수를 얻을 수 있어."
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
         },
         "ai": {
             "ready": null,
