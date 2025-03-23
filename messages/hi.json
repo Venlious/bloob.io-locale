@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Hindi script",
         "rtl": false,
-        "total": 1670,
-        "missing": 24
+        "total": 1719,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
@@ -101,6 +101,7 @@
             "incorrectValue": "दिया गया मान उम्मीद के अनुसार मेल नहीं खाता।",
             "invalidMove": "दिया गया चाल अमान्य है।",
             "invalidVote": "आपका दिया गया वोट अमान्य है।",
+            "noLives": "तुम्हारे पास कोई ज़िंदगी नहीं बची है।",
             "alreadyPlaced": "तुमने पहले ही कुछ रख दिया है।",
             "alreadyVoted": "तुमने पहले ही वोट कर दिया है।",
             "invalidPlacement": "तुम्हारी पीस की जगह गलत है।",
@@ -1105,7 +1106,8 @@
                         "pier": "Ghaat",
                         "littleIsland": "Chhota Dweep",
                         "keys": "Kunjiyan",
-                        "lagoon": "झील"
+                        "lagoon": "झील",
+                        "ocean": "समुद्र"
                     }
                 },
                 "levelOrientation": {
@@ -1126,6 +1128,10 @@
                 "shipReveal": {
                     "title": "जहाज का प्रकटन",
                     "help": "जब सक्रिय किया जाता है, तो आपको जहाज दिखाई देगा जब आपने उसे डुबो दिया होगा। जब निष्क्रिय किया जाता है, तो केवल शेष रहने वाले जहाजों के साथ एक काउंटर दिखाई देता है।"
+                },
+                "hitAfterHit": {
+                    "title": "हिट के बाद हिट",
+                    "help": "jab yeh chalu hota hai, tab tumhe ek ship ko hit karne ke baad phir se fire karne ki ijazat milti hai. jab yeh band hota hai, tab tumhe har turn mein sirf ek shot milta hai."
                 }
             },
             "presets": {},
@@ -1425,12 +1431,77 @@
             }
         },
         "AI_ASSASSIN": {
-            "name": "AI हत्यारा",
-            "title": "चतुराई से बाहर निकलो, हटाओ, जीवित रहो",
-            "description": "AI Assassin एक रोमांचक मल्टीप्लेयर गेम है जहां आप लक्ष्य को नष्ट करते हैं या असैसिन्स को हराते हैं। अपने लक्ष्य को प्राप्त करने के लिए रणनीतिक संकेतों का उपयोग करें और सफल हों।",
+            "name": "एआई असैसिन",
+            "title": null,
+            "description": null,
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "रॉक पेपर कैंची",
+            "title": null,
+            "description": null,
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "पत्थर कैंची को हरा देता है",
+                        "paper": "कागज पत्थर को हरा देता है",
+                        "scissors": "कैंची कागज को हरा देती है"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "आखिरी बचे हुए (<b>0</b> जिंदगी) | आखिरी बचे हुए (<b>1</b> जिंदगी) | आखिरी बचे हुए (<b>{count}</b> जिंदगी)",
+                        "FIRST": "पहले को <b>0</b> अंक मिलें | पहले को <b>1</b> अंक मिले | पहले को <b>{count}</b> अंक मिले",
+                        "HIGHEST_AFTER": "<b>0</b> राउंड के बाद सबसे ज्यादा अंक | <b>1</b> राउंड के बाद सबसे ज्यादा अंक | <b>{count}</b> राउंड के बाद सबसे ज्यादा अंक"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "रेस",
+                    "description": [
+                        "5 पॉइंट्स तक"
+                    ]
+                },
+                "survival": {
+                    "title": "सर्वाइवल",
+                    "description": [
+                        "5 जिंदगियाँ",
+                        "हर हारने वाले राउंड के लिए एक जिंदगी खो दो",
+                        "आखिरी बचे खिलाड़ी की जीत होती है"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "सीरीज का बेस्ट",
+                    "description": [
+                        "5 राउंड के बाद सबसे ज्यादा पॉइंट्स वाला प्लेयर जीतता है।"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "नियम",
+                    "description": [
+                        "रॉक पेपर कैंची बहुत आसान है: रॉक, पेपर, या कैंची चुनो। रॉक कैंची को हरा देता है, पेपर रॉक को, और कैंची पेपर को।",
+                        "हर राउंड में, अपने विरोधी की पसंद का अंदाजा लगाओ और उसी हिसाब से जवाब दो!"
+                    ]
+                },
+                "group": {
+                    "title": "ग्रुप",
+                    "description": [
+                        "4 players ke saath khelo! Har round mein sirf ek hi jeet sakta hai. Agar tum pehle hi out ho gaye, toh baaki players tab tak khelte rahenge jab tak ek winner nahi mil jaata.",
+                        "Survival mode mein, har player ke paas kuch zindgiyan hoti hain. Jeetne ke liye aakhri player bano!"
+                    ]
+                },
+                "bots": {
+                    "title": "बॉट्स",
+                    "description": [
+                        "बॉट्स के खिलाफ खेलो! ये एक रैंडम स्ट्रेटेजी फॉलो करते हैं, तो अगर तुम इसे समझ लो, तो तुम इन्हें लगातार हरा सकते हो!"
+                    ]
+                }
+            }
         },
         "NUMBER_SHOWDOWN": {
             "name": "नंबर शोडाउन",
@@ -1835,6 +1906,9 @@
         "restartNotice": "सर्वर {count} मिनट में रीस्टार्ट होगा। कृपया अपना गेम खत्म करो। | सर्वर {count} मिनट में रीस्टार्ट होगा। कृपया अपना गेम खत्म करो। | सर्वर {count} मिनट में रीस्टार्ट होगा। कृपया अपना गेम खत्म करो।"
     },
     "misc": {
+        "rock": "पत्थर",
+        "paper": "कागज",
+        "scissors": "कैंची",
         "lobby": "लॉबी",
         "inGame": "इन-गेम",
         "matchmakingSearch": "गेम ढूंढ रहे हैं",
@@ -2017,6 +2091,7 @@
         "games": "खेल",
         "winRatio": "जीत का अनुपात",
         "killDeathRatio": "K/D अनुपात",
+        "lives": "ज़िंदगी",
         "points": "अंक",
         "wins": "जीत",
         "grids": "ग्रिड्स",
@@ -2037,6 +2112,7 @@
         "myDevices": "मेरे उपकरण",
         "myData": "मेरा डाटा",
         "redeemCode": "कोड रिडीम करें",
+        "contact": "संपर्क",
         "leaderboard": "लीडरबोर्ड",
         "elapsedTime": "%{time} बीत गया",
         "startingInTime": "%{time} में शुरू हो रहा है",
@@ -2226,6 +2302,14 @@
         }
     },
     "info": {
+        "roundEndTie": "Yeh tie hai!",
+        "roundEndStalemate": "Yeh stalemate hai!",
+        "roundWin": "Tum jeet gaye!",
+        "roundLost": "Tum haar gaye!",
+        "youLostThisRound": "Tum is round mein haar gaye!",
+        "youAreOutOfLives": "Tumhare paas zindagiyan khatam ho gayi hain",
+        "waitForRoundEnd": "Kripya round khatam hone ka intezaar karo.",
+        "waitForWinner": "Thoda intezaar karo aur dekhte hain winner kaun banta hai!",
         "serverRestart": "सर्वर अब रीस्टार्ट हो रहा है। कृपया कुछ मिनट बाद चेक करो।",
         "clearOldListings": "सभी 'अनुपलब्ध' मैचों को हटा दो।",
         "accountLinkSuggestion": "अब आप %{level} हो गए हैं! अपनी प्रगति की सुरक्षा के लिए एक खाता बनाने पर विचार करें।",
@@ -2286,6 +2370,7 @@
             "inviteReceived": "%{name} ne tumhe %{game} khelne ke liye bulaya hai",
             "inviteSent": "Game ka invite bhej diya gaya hai!"
         },
+        "contact": "Agar tumhe koi dikkat hoti hai, koi sujhav hai, ya koi sawaal hai toh bina jhijhak sampark karo! Tum email bhej kar ya Bloob.io Discord join karke sampark kar sakte ho.",
         "settings": {
             "redeemCode": {
                 "title": "कोड रिडीम करें",
@@ -2306,6 +2391,14 @@
                 "description": "Bloob.io एक गोपनीयता-अनुकूल, स्वयं की मेजबानी वाले Matomo विश्लेषण सर्वर का उपयोग करके गुमनाम रूप से विश्लेषण करता है। आपका डाटा कभी भी दूसरों के साथ साझा नहीं किया जाता। यदि आप चाहें, तो आप इसे छोड़ सकते हैं।",
                 "blocked": "विश्लेषण सक्रिय नहीं हैं। आपका ब्राउज़र या एक्सटेंशन ने इसे ब्लॉक कर दिया हो सकता है।",
                 "dnt": "आपके ब्राउज़र में \"ट्रैक न करें\" (DNT) सेटिंग सक्रिय है। हम आपकी अनुरोध का सम्मान करते हैं और हम आपका ट्रैकिंग नहीं कर रहे हैं।"
+            },
+            "ads": {
+                "title": "ऐड्स",
+                "description": "हम Playwire के ऐड्स दिखाते हैं। Bloob.io पर ऐड्स, चाहे पूरे हों या हिस्से में, Playwire LLC द्वारा संभाले जाते हैं। अगर तुम Bloob.io पर ऐड्स नहीं देखना चाहते, तो तुम स्टोर से कॉइन्स खरीदकर ऐड-फ्री हो सकते हो। इससे तुम्हारे अकाउंट से सारे ऐड्स अपने आप हट जाएंगे।",
+                "complaint": "Bloob.io के लिए ये ज़रूरी है कि जो ऐड्स तुम देखते हो वो नैतिक और बिना किसी रुकावट के हों। अगर तुमको ऐसे ऐड्स दिखते हैं जो तुम्हारे गेमप्ले में दखल देते हैं, तो कृपया \"About\" सेक्शन में जाकर संपर्क करो।",
+                "consent": "अपने ऐड सहमति विकल्प अपडेट करने के लिए यहाँ क्लिक करो",
+                "exempt": "ऐड्स सक्रिय नहीं हैं। तुम्हारा अकाउंट ऐड-फ्री है। तुम्हारे समर्थन के लिए धन्यवाद!",
+                "blocked": "एड्स एक्टिव नहीं हैं। तुम्हारा ब्राउज़र या एक्सटेंशन ने इसे ब्लॉक कर दिया होगा।"
             },
             "serverData": {
                 "title": "सर्वर डाटा",

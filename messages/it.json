@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Italian",
         "rtl": false,
-        "total": 1670,
-        "missing": 24
+        "total": 1719,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
@@ -101,6 +101,7 @@
             "incorrectValue": "Il valore che è stato dato non corrisponde a quello previsto.",
             "invalidMove": "La mossa specificata è invalida.",
             "invalidVote": "Il voto che hai tentato di fare non è valido.",
+            "noLives": "Non hai più vite rimaste.",
             "alreadyPlaced": "Hai già posizionato qualcosa.",
             "alreadyVoted": "Hai già votato.",
             "invalidPlacement": "Il posizionamento della tua pedina è invalido.",
@@ -1105,7 +1106,8 @@
                         "pier": "Molo",
                         "littleIsland": "Isolotto",
                         "keys": "Le Chiavi",
-                        "lagoon": "Laguna"
+                        "lagoon": "Laguna",
+                        "ocean": "Oceano"
                     }
                 },
                 "levelOrientation": {
@@ -1126,6 +1128,10 @@
                 "shipReveal": {
                     "title": "Rivelazione della Nave",
                     "help": "Quando attivato, vedrai la nave quando l'hai affondata. Quando disattivato, viene mostrato solo un contatore con le navi rimanenti."
+                },
+                "hitAfterHit": {
+                    "title": "Colpo dopo colpo",
+                    "help": "Quando è attivato, puoi sparare di nuovo dopo aver colpito una nave. Quando è disattivato, hai solo un colpo per turno."
                 }
             },
             "presets": {},
@@ -1426,11 +1432,76 @@
         },
         "AI_ASSASSIN": {
             "name": "Assassino AI",
-            "title": "Inganna, Elimina, Sopravvivi",
-            "description": "AI Assassin è un emozionante gioco multiplayer dove devi eliminare il bersaglio o ingannare gli assassini. Usa suggerimenti strategici per raggiungere il tuo obiettivo e avere successo.",
+            "title": null,
+            "description": null,
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Carta Forbice Sasso",
+            "title": null,
+            "description": null,
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "La pietra batte le forbici",
+                        "paper": "La carta batte la pietra",
+                        "scissors": "Le forbici battono la carta"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Ultimo in piedi (<b>0</b> vite) | Ultimo in piedi (<b>1</b> vita) | Ultimo in piedi (<b>{count}</b> vite)",
+                        "FIRST": "Primo a prendere <b>0</b> punti | Primo a prendere <b>1</b> punto | Primo a prendere <b>{count}</b> punti",
+                        "HIGHEST_AFTER": "Più punti dopo <b>0</b> turni | Più punti dopo <b>1</b> turno | Più punti dopo <b>{count}</b> turni"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Corsa",
+                    "description": [
+                        "Primo a 5 punti"
+                    ]
+                },
+                "survival": {
+                    "title": "Sopravvivenza",
+                    "description": [
+                        "5 vite",
+                        "Perdi una vita per ogni round perso",
+                        "L'ultimo giocatore rimasto vince"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Il meglio della serie",
+                    "description": [
+                        "Il giocatore con più punti dopo 5 turni vince."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Regole",
+                    "description": [
+                        "Carta, forbice, sasso è facile: scegli sasso, carta o forbice. Il sasso batte la forbice, la carta batte il sasso e la forbice batte la carta.",
+                        "In ogni turno, cerca di indovinare cosa sceglie il tuo avversario e rispondi di conseguenza!"
+                    ]
+                },
+                "group": {
+                    "title": "Gruppo",
+                    "description": [
+                        "Gioca con fino a 4 giocatori! Solo uno può vincere ogni round. Se esci presto, gli altri continuano finché non si trova un vincitore.",
+                        "Nella modalità sopravvivenza, ogni giocatore ha un numero fisso di vite. Sii l'ultimo giocatore rimasto per vincere!"
+                    ]
+                },
+                "bots": {
+                    "title": "[1] Bottoni",
+                    "description": [
+                        "Gioca contro i bot! Seguono una strategia casuale, quindi se riesci a capirla, puoi batterli sempre!"
+                    ]
+                }
+            }
         },
         "NUMBER_SHOWDOWN": {
             "name": "Scontro di Numeri",
@@ -1835,6 +1906,9 @@
         "restartNotice": "Il server si riavvierà tra {count} minuti. Finisci la tua partita. | Il server si riavvierà tra {count} minuto. Finisci la tua partita. | Il server si riavvierà tra {count} minuti. Finisci la tua partita."
     },
     "misc": {
+        "rock": "Pietra",
+        "paper": "Carta",
+        "scissors": "Forbici",
         "lobby": "Lobby",
         "inGame": "In gioco",
         "matchmakingSearch": "Cerco una partita",
@@ -2017,6 +2091,7 @@
         "games": "Giochi",
         "winRatio": "Rapporto vittorie",
         "killDeathRatio": "Rapporto K/D",
+        "lives": "Vite",
         "points": "Punti",
         "wins": "Vittorie",
         "grids": "Griglie",
@@ -2037,6 +2112,7 @@
         "myDevices": "I Miei Dispositivi",
         "myData": "I Miei Dati",
         "redeemCode": "Riscatta Codice",
+        "contact": "Contatti",
         "leaderboard": "Classifica",
         "elapsedTime": "%{time} trascorso",
         "startingInTime": "Inizia tra %{time}",
@@ -2226,6 +2302,14 @@
         }
     },
     "info": {
+        "roundEndTie": "È un pareggio!",
+        "roundEndStalemate": "È una situazione di stallo!",
+        "roundWin": "Hai vinto!",
+        "roundLost": "Hai perso!",
+        "youLostThisRound": "Hai perso questo turno!",
+        "youAreOutOfLives": "Sei a corto di vite",
+        "waitForRoundEnd": "Aspetta che il turno finisca.",
+        "waitForWinner": "Resta sintonizzato e aspetta che esca un vincitore!",
         "serverRestart": "Il server sta riavviandosi adesso. Torna tra qualche minuto.",
         "clearOldListings": "Elimina tutte le partite 'Non disponibili'.",
         "accountLinkSuggestion": "Sei ora al %{level}! Considera di creare un account per proteggere il tuo progresso.",
@@ -2286,6 +2370,7 @@
             "inviteReceived": "%{name} ti ha invitato a giocare a %{game}",
             "inviteSent": "L'invito al gioco è stato inviato!"
         },
+        "contact": "Non esitare a contattarci se hai problemi, suggerimenti o domande! Puoi scriverci un'email o unirti al Discord di Bloob.io.",
         "settings": {
             "redeemCode": {
                 "title": "Inserisci codice",
@@ -2306,6 +2391,14 @@
                 "description": "Bloob.io traccia in modo anonimo le analisi utilizzando un server Matomo di analisi rispettoso della privacy, ospitato in proprio. I tuoi dati non vengono mai condivisi con altri. Puoi optare per non partecipare se lo desideri.",
                 "blocked": "Le analisi non sono attive. Il tuo browser o estensione potrebbe averlo bloccato.",
                 "dnt": "Il tuo browser ha l'impostazione \"Non tracciare\" (DNT) abilitata. Rispettiamo la tua richiesta e non ti stiamo tracciando."
+            },
+            "ads": {
+                "title": "Pubblicità",
+                "description": "Mostriamo pubblicità da Playwire. La pubblicità su Bloob.io, sia in parte che in tutto, è gestita da Playwire LLC. Se non vuoi vedere pubblicità su Bloob.io, puoi andare senza pubblicità comprando monete dal negozio. Questo rimuoverà automaticamente tutte le pubblicità dal tuo account.",
+                "complaint": "È importante per Bloob.io che le pubblicità che vedi siano etiche e non invadenti. Se noti pubblicità che disturbano il tuo gioco, contattaci controllando la sezione \"Informazioni\".",
+                "consent": "Clicca qui per aggiornare le tue preferenze sui consensi pubblicitari",
+                "exempt": "Le pubblicità non sono attive. Il tuo account è senza pubblicità. Grazie per il tuo supporto!",
+                "blocked": "Gli annunci non sono attivi. Il tuo browser o l'estensione potrebbero averli bloccati."
             },
             "serverData": {
                 "title": "Dati del server",

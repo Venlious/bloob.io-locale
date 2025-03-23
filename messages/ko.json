@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Korean",
         "rtl": false,
-        "total": 1670,
-        "missing": 24
+        "total": 1719,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
@@ -101,6 +101,7 @@
             "incorrectValue": "주어진 값이 예상한 값과 맞지 않아요.",
             "invalidMove": "주어진 움직임은 유효하지 않아요.",
             "invalidVote": "시도한 투표는 유효하지 않아요.",
+            "noLives": "남은 생명이 없어.",
             "alreadyPlaced": "이미 뭔가를 놓았어.",
             "alreadyVoted": "이미 투표했어.",
             "invalidPlacement": "너의 말 놓기가 유효하지 않아.",
@@ -1105,7 +1106,8 @@
                         "pier": "부두",
                         "littleIsland": "작은 섬",
                         "keys": "키즈",
-                        "lagoon": "네가"
+                        "lagoon": "네가",
+                        "ocean": "바다"
                     }
                 },
                 "levelOrientation": {
@@ -1126,6 +1128,10 @@
                 "shipReveal": {
                     "title": "선박 공개",
                     "help": "활성화하면, 당신이 침몰시킨 배를 볼 수 있어. 비활성화하면, 남은 배의 카운터만 보여."
+                },
+                "hitAfterHit": {
+                    "title": "연속 타격",
+                    "help": "활성화되면 배를 맞춘 후 다시 쏠 수 있어. 비활성화되면 턴당 한 번만 쏠 수 있어."
                 }
             },
             "presets": {},
@@ -1426,11 +1432,76 @@
         },
         "AI_ASSASSIN": {
             "name": "AI 암살자",
-            "title": "더 똑똑해져서, 제거하고, 생존하자",
-            "description": "AI Assassin은 목표를 제거하거나 암살자를 능가하는 스릴 넘치는 멀티플레이어 게임입니다. 목표 달성과 성공을 위해 전략적인 프롬프트를 사용하세요.",
+            "title": null,
+            "description": null,
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "가위 바위 보",
+            "title": null,
+            "description": null,
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "바위가 가위를 이겨",
+                        "paper": "종이가 바위를 이겨",
+                        "scissors": "가위가 종이를 이겨"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "마지막 남은 사람 (<b>0</b> 목숨) | 마지막 남은 사람 (<b>1</b> 목숨) | 마지막 남은 사람 (<b>{count}</b> 목숨)",
+                        "FIRST": "제일 먼저 <b>0</b>점 얻기 | 제일 먼저 <b>1</b>점 얻기 | 제일 먼저 <b>{count}</b>점 얻기",
+                        "HIGHEST_AFTER": "<b>0</b> 라운드 후 가장 많은 점수 | <b>1</b> 라운드 후 가장 많은 점수 | <b>{count}</b> 라운드 후 가장 많은 점수"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "경주",
+                    "description": [
+                        "5점 먼저 가기"
+                    ]
+                },
+                "survival": {
+                    "title": "생존",
+                    "description": [
+                        "5번의 생명",
+                        "라운드마다 져서 생명 하나 잃어",
+                        "마지막까지 남은 사람이 이김"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "시리즈 최고!",
+                    "description": [
+                        "5라운드 끝나고 점수 제일 높은 사람이 이겨!"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "규칙 알아보기",
+                    "description": [
+                        "가위 바위 보 진짜 간단해: 바위, 보, 가위 중에서 골라! 바위는 가위를 이기고, 보가 바위를 이기고, 가위는 보를 이겨.",
+                        "매 라운드마다 상대방이 뭘 고를지 예측하고 그에 맞게 대처해!"
+                    ]
+                },
+                "group": {
+                    "title": "그룹",
+                    "description": [
+                        "최대 4명까지 같이 놀 수 있어! 매 라운드마다 한 명만 이길 수 있어. 일찍 나가면 남은 플레이어들이 계속해서 승자를 가릴 때까지 놀아.",
+                        "생존 모드에서는 각 플레이어가 정해진 생명을 가지고 있어. 마지막까지 남아있는 플레이어가 이기는 거야!"
+                    ]
+                },
+                "bots": {
+                    "title": "봇들",
+                    "description": [
+                        "봇이랑 대결해봐! 걔네는 랜덤 전략으로 움직이니까, 그거 파악하면 계속 이길 수 있어!"
+                    ]
+                }
+            }
         },
         "NUMBER_SHOWDOWN": {
             "name": "넘버 쇼다운",
@@ -1835,6 +1906,9 @@
         "restartNotice": "서버가 {count}분 후에 재시작돼요. 게임 끝내세요. | 서버가 {count}분 후에 재시작돼요. 게임 끝내세요. | 서버가 {count}분 후에 재시작돼요. 게임 끝내세요."
     },
     "misc": {
+        "rock": "바위",
+        "paper": "종이",
+        "scissors": "가위",
         "lobby": "로비",
         "inGame": "게임 중",
         "matchmakingSearch": "게임 찾는 중",
@@ -2017,6 +2091,7 @@
         "games": "게임들",
         "winRatio": "승률",
         "killDeathRatio": "K/D 비율",
+        "lives": "목숨",
         "points": "점수",
         "wins": "승리",
         "grids": "그리드",
@@ -2037,6 +2112,7 @@
         "myDevices": "내 기기들",
         "myData": "내 데이터",
         "redeemCode": "코드 사용하기",
+        "contact": "연락하기",
         "leaderboard": "랭킹 보기",
         "elapsedTime": "%{time} 경과",
         "startingInTime": "%{time} 후 시작",
@@ -2226,6 +2302,14 @@
         }
     },
     "info": {
+        "roundEndTie": "비겼어!",
+        "roundEndStalemate": "막혔네!",
+        "roundWin": "너 이겼어!",
+        "roundLost": "너 졌어!",
+        "youLostThisRound": "이번 라운드 졌어!",
+        "youAreOutOfLives": "목숨 다 썼어",
+        "waitForRoundEnd": "라운드 끝날 때까지 기다려줘.",
+        "waitForWinner": "좀 기다려봐, 누가 이길지 나올 때까지!",
         "serverRestart": "서버가 지금 재시작 중이야. 몇 분 후에 다시 확인해줘.",
         "clearOldListings": "'사용 불가능한' 매치를 모두 지워.",
         "accountLinkSuggestion": "이제 %{level}이 되었어요! 진행 상황을 보호하기 위해 계정을 만들어 보세요.",
@@ -2286,6 +2370,7 @@
             "inviteReceived": "%{name}가 너를 %{game} 하자고 초대했어",
             "inviteSent": "게임 초대가 전송됐어!"
         },
+        "contact": "문제 생기거나 제안, 질문 있으면 언제든지 연락해! 이메일 보내거나 Bloob.io 디스코드에 들어와도 돼.",
         "settings": {
             "redeemCode": {
                 "title": "코드 사용하기",
@@ -2306,6 +2391,14 @@
                 "description": "Bloob.io는 개인정보 친화적이고, 스스로 호스팅하는 Matomo 분석 서버를 이용해 익명으로 분석을 추적합니다. 당신의 데이터는 절대 다른 사람과 공유되지 않습니다. 원한다면 이 기능을 끌 수 있습니다.",
                 "blocked": "분석이 활성화되지 않았습니다. 당신의 브라우저나 확장 프로그램이 이를 차단했을 수 있습니다.",
                 "dnt": "당신의 브라우저에 \"추적 금지\"(DNT) 설정이 활성화되어 있습니다. 우리는 당신의 요청을 존중하고 당신을 추적하지 않습니다."
+            },
+            "ads": {
+                "title": "광고",
+                "description": "우리는 Playwire에서 광고를 보여줘. Bloob.io의 광고는 전부 또는 일부가 Playwire LLC에서 처리해. 만약 Bloob.io에서 광고를 보고 싶지 않다면, 상점에서 코인을 사서 광고 없는 상태로 바꿀 수 있어. 그러면 너의 계정에서 모든 광고가 자동으로 사라져.",
+                "complaint": "Bloob.io에선 네가 보는 광고가 윤리적이고 방해가 안 되게 하는 게 중요해. 게임 플레이에 방해되는 광고가 보이면 \"정보\" 섹션을 확인해서 연락해줘.",
+                "consent": "여기 클릭해서 광고 동의 설정을 업데이트해.",
+                "exempt": "광고가 활성화되어 있지 않아. 너의 계정은 광고가 없어서 고마워!",
+                "blocked": "광고가 활성화되어 있지 않아. 너의 브라우저나 확장 프로그램이 막았을 수도 있어."
             },
             "serverData": {
                 "title": "서버 데이터",

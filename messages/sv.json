@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Swedish",
         "rtl": false,
-        "total": 1670,
-        "missing": 24
+        "total": 1719,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
@@ -101,6 +101,7 @@
             "incorrectValue": "Värdet som gavs stämmer inte överens med det förväntade.",
             "invalidMove": "Det drag du försökte göra är ogiltigt.",
             "invalidVote": "Rösten du försökte göra är ogiltig.",
+            "noLives": "Du har inga liv kvar.",
             "alreadyPlaced": "Du har redan lagt nåt.",
             "alreadyVoted": "Du har redan röstat.",
             "invalidPlacement": "Din pjäsplacering är ogiltig.",
@@ -1105,7 +1106,8 @@
                         "pier": "Bryggan",
                         "littleIsland": "Lilla ön",
                         "keys": "Nycklarna",
-                        "lagoon": "Lagun"
+                        "lagoon": "Lagun",
+                        "ocean": "Hav"
                     }
                 },
                 "levelOrientation": {
@@ -1126,6 +1128,10 @@
                 "shipReveal": {
                     "title": "Visa Skepp",
                     "help": "När det är påslaget, kommer du att se skeppet när du har sänkt det. När det är avstängt, visas bara en räknare med kvarvarande skepp."
+                },
+                "hitAfterHit": {
+                    "title": "Slag efter slag",
+                    "help": "När det är påslaget kan du skjuta igen efter att du träffat ett skepp. När det är avstängt får du bara en skott per tur."
                 }
             },
             "presets": {},
@@ -1426,11 +1432,76 @@
         },
         "AI_ASSASSIN": {
             "name": "AI Mördare",
-            "title": "Lura, Eliminera, Överlev",
-            "description": "AI Assassin är ett spännande multiplayer-spel där du antingen eliminerar målet eller lurar lönnmördarna. Använd strategiska tips för att nå ditt mål och lyckas.",
+            "title": null,
+            "description": null,
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Sten Sax Påse",
+            "title": null,
+            "description": null,
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "Sten slår sax",
+                        "paper": "Papper slår sten",
+                        "scissors": "Sax slår papper"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Sista kvar (<b>0</b> liv) | Sista kvar (<b>1</b> liv) | Sista kvar (<b>{count}</b> liv)",
+                        "FIRST": "Först att få <b>0</b> poäng | Först att få <b>1</b> poäng | Först att få <b>{count}</b> poäng",
+                        "HIGHEST_AFTER": "Flest poäng efter <b>0</b> rundor | Flest poäng efter <b>1</b> runda | Flest poäng efter <b>{count}</b> rundor"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Ras",
+                    "description": [
+                        "Först till 5 poäng"
+                    ]
+                },
+                "survival": {
+                    "title": "Överlevnad",
+                    "description": [
+                        "5 liv",
+                        "Förlora ett liv för varje runda du förlorar",
+                        "Sista spelaren som står kvar vinner"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Bästa av serien",
+                    "description": [
+                        "Spelaren med flest poäng efter 5 rundor vinner."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Regler",
+                    "description": [
+                        "Sten Sax Påse är enkelt: välj sten, sax eller påse. Sten slår sax, påse slår sten, och sax slår påse.",
+                        "I varje runda, gissa vad din motståndare väljer och svara därefter!"
+                    ]
+                },
+                "group": {
+                    "title": "Grupp",
+                    "description": [
+                        "Spela med upp till 4 spelare! Bara en kan vinna varje runda. Om du åker ut tidigt fortsätter de andra spelarna tills en vinnare är utsedd.",
+                        "I överlevnadsläget har varje spelare ett visst antal liv. Var den sista spelaren som står kvar för att vinna!"
+                    ]
+                },
+                "bots": {
+                    "title": "Botsar",
+                    "description": [
+                        "Spela mot bots! De kör en random strategi, så om du kan lista ut den, kan du slå dem hela tiden!"
+                    ]
+                }
+            }
         },
         "NUMBER_SHOWDOWN": {
             "name": "Nummerduell",
@@ -1835,6 +1906,9 @@
         "restartNotice": "Servern kommer starta om om {count} minuter. Avsluta ditt spel. | Servern kommer starta om om {count} minut. Avsluta ditt spel. | Servern kommer starta om om {count} minuter. Avsluta ditt spel."
     },
     "misc": {
+        "rock": "Sten",
+        "paper": "Papper",
+        "scissors": "Sax",
         "lobby": "Lobbyn",
         "inGame": "I spelet",
         "matchmakingSearch": "Letar efter ett spel",
@@ -2017,6 +2091,7 @@
         "games": "Spel",
         "winRatio": "Vinstförhållande",
         "killDeathRatio": "K/D Förhållande",
+        "lives": "Liv",
         "points": "Poäng",
         "wins": "Vinster",
         "grids": "Rutnät",
@@ -2037,6 +2112,7 @@
         "myDevices": "Mina Enheter",
         "myData": "Min Data",
         "redeemCode": "Lösa in Kod",
+        "contact": "Kontakt",
         "leaderboard": "Topplista",
         "elapsedTime": "%{time} har passerat",
         "startingInTime": "Startar om %{time}",
@@ -2226,6 +2302,14 @@
         }
     },
     "info": {
+        "roundEndTie": "Det är oavgjort!",
+        "roundEndStalemate": "Det är en dödläge!",
+        "roundWin": "Du vann!",
+        "roundLost": "Du förlorade!",
+        "youLostThisRound": "Du förlorade den här rundan!",
+        "youAreOutOfLives": "Du har slut på liv",
+        "waitForRoundEnd": "Vänta lite tills rundan är klar.",
+        "waitForWinner": "Häng kvar och vänta på att en vinnare dyker upp!",
         "serverRestart": "Servern startas om nu. Kolla tillbaka om några minuter.",
         "clearOldListings": "Rensa alla 'Otillgängliga' matcher.",
         "accountLinkSuggestion": "Du är nu %{level}! Fundera på att skapa ett konto för att skydda dina framsteg.",
@@ -2286,6 +2370,7 @@
             "inviteReceived": "%{name} har bjudit in dig att spela %{game}",
             "inviteSent": "Spel-inbjudan har skickats!"
         },
+        "contact": "Tveka inte att höra av dig om du stöter på problem, har förslag eller frågor! Du kan kontakta oss genom att skicka ett mejl eller gå med i Bloob.io Discord.",
         "settings": {
             "redeemCode": {
                 "title": "Lös in kod",
@@ -2306,6 +2391,14 @@
                 "description": "Bloob.io spårar anonymt analys med en integritetsvänlig, självhostad Matomo-analysserver. Dina data delas aldrig med andra. Du kan välja att hoppa över om du vill.",
                 "blocked": "Analys är inte aktiva. Din webbläsare eller tillägg kan ha blockerat det.",
                 "dnt": "Din webbläsare har inställningen \"Spåra inte\" (DNT) aktiverad. Vi respekterar din begäran och spårar dig inte."
+            },
+            "ads": {
+                "title": "Reklam",
+                "description": "Vi visar annonser från Playwire. Reklamen på Bloob.io, oavsett om den är hel eller delvis, sköts av Playwire LLC. Om du inte vill se annonser på Bloob.io kan du gå reklamfri genom att köpa mynt i butiken. Det tar automatiskt bort alla annonser för ditt konto.",
+                "complaint": "Det är viktigt för Bloob.io att annonserna du ser är etiska och inte störande. Om du ser annonser som stör ditt spelande, hör av dig genom att kolla i \"Om\"-sektionen.",
+                "consent": "Klicka här för att uppdatera dina reklampreferenser",
+                "exempt": "Annonser är inte aktiva. Ditt konto är reklamfritt. Tack för ditt stöd!",
+                "blocked": "Annonserna är inte aktiva. Din webbläsare eller tillägg kan ha blockerat dem."
             },
             "serverData": {
                 "title": "Serverdata",

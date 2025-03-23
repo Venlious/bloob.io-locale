@@ -95,6 +95,7 @@
             "incorrectValue": false,
             "invalidMove": false,
             "invalidVote": false,
+            "noLives": false,
             "alreadyPlaced": false,
             "alreadyVoted": false,
             "invalidPlacement": false,
@@ -1099,7 +1100,8 @@
                         "pier": false,
                         "littleIsland": false,
                         "keys": false,
-                        "lagoon": false
+                        "lagoon": false,
+                        "ocean": false
                     }
                 },
                 "levelOrientation": {
@@ -1118,6 +1120,10 @@
                     "help": false
                 },
                 "shipReveal": {
+                    "title": false,
+                    "help": false
+                },
+                "hitAfterHit": {
                     "title": false,
                     "help": false
                 }
@@ -1420,11 +1426,76 @@
         },
         "AI_ASSASSIN": {
             "name": false,
-            "title": {},
-            "description": {},
+            "title": false,
+            "description": false,
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": false,
+            "title": false,
+            "description": false,
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": false,
+                        "paper": false,
+                        "scissors": false
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": false,
+                        "FIRST": false,
+                        "HIGHEST_AFTER": false
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": false,
+                    "description": [
+                        false
+                    ]
+                },
+                "survival": {
+                    "title": false,
+                    "description": [
+                        false,
+                        false,
+                        false
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": false,
+                    "description": [
+                        false
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": false,
+                    "description": [
+                        false,
+                        false
+                    ]
+                },
+                "group": {
+                    "title": false,
+                    "description": [
+                        false,
+                        false
+                    ]
+                },
+                "bots": {
+                    "title": false,
+                    "description": [
+                        false
+                    ]
+                }
+            }
         },
         "NUMBER_SHOWDOWN": {
             "name": false,
@@ -1829,6 +1900,9 @@
         "restartNotice": false
     },
     "misc": {
+        "rock": false,
+        "paper": false,
+        "scissors": false,
         "lobby": false,
         "inGame": false,
         "matchmakingSearch": false,
@@ -2011,6 +2085,7 @@
         "games": false,
         "winRatio": false,
         "killDeathRatio": false,
+        "lives": false,
         "points": false,
         "wins": false,
         "grids": false,
@@ -2031,6 +2106,7 @@
         "myDevices": false,
         "myData": false,
         "redeemCode": false,
+        "contact": false,
         "leaderboard": false,
         "elapsedTime": false,
         "startingInTime": false,
@@ -2220,6 +2296,14 @@
         }
     },
     "info": {
+        "roundEndTie": false,
+        "roundEndStalemate": false,
+        "roundWin": false,
+        "roundLost": false,
+        "youLostThisRound": false,
+        "youAreOutOfLives": false,
+        "waitForRoundEnd": false,
+        "waitForWinner": false,
         "serverRestart": false,
         "clearOldListings": false,
         "accountLinkSuggestion": false,
@@ -2280,6 +2364,7 @@
             "inviteReceived": false,
             "inviteSent": false
         },
+        "contact": false,
         "settings": {
             "redeemCode": {
                 "title": false,
@@ -2300,6 +2385,14 @@
                 "description": false,
                 "blocked": false,
                 "dnt": false
+            },
+            "ads": {
+                "title": false,
+                "description": false,
+                "complaint": false,
+                "consent": false,
+                "exempt": false,
+                "blocked": false
             },
             "serverData": {
                 "title": false,

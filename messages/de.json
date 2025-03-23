@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal German",
         "rtl": false,
-        "total": 1670,
-        "missing": 24
+        "total": 1719,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
@@ -101,6 +101,7 @@
             "incorrectValue": "Der gegebene Wert stimmt nicht mit dem erwarteten überein.",
             "invalidMove": "Dieser Zug ist nicht möglich.",
             "invalidVote": "Die Stimme, die du abgeben wolltest, ist ungültig.",
+            "noLives": "Du hast keine Leben mehr.",
             "alreadyPlaced": "Du hast schon etwas platziert.",
             "alreadyVoted": "Du hast schon abgestimmt.",
             "invalidPlacement": "Ungültige Figurenplatzierung.",
@@ -1105,7 +1106,8 @@
                         "pier": "Steg",
                         "littleIsland": "Kleine Insel",
                         "keys": "Die Schlüssel",
-                        "lagoon": "Lagune"
+                        "lagoon": "Lagune",
+                        "ocean": "Ozean"
                     }
                 },
                 "levelOrientation": {
@@ -1126,6 +1128,10 @@
                 "shipReveal": {
                     "title": "Schiffsenthüllung",
                     "help": "Wenn aktiviert, siehst du das Schiff, wenn du es versenkt hast. Wenn deaktiviert, wird nur ein Zähler mit den verbleibenden Schiffen angezeigt."
+                },
+                "hitAfterHit": {
+                    "title": "Treffer um Treffer",
+                    "help": "Wenn's aktiviert ist, kannst du nach dem Treffer auf ein Schiff nochmal feuern. Wenn's deaktiviert ist, hast du nur einen Schuss pro Runde."
                 }
             },
             "presets": {},
@@ -1425,12 +1431,77 @@
             }
         },
         "AI_ASSASSIN": {
-            "name": "KI Attentäter",
-            "title": "Überliste, Eliminiere, Überlebe",
-            "description": "AI Assassin ist ein spannendes Multiplayer-Spiel, bei dem du entweder das Ziel ausschaltest oder die Assassinen überlistest. Nutze strategische Hinweise, um dein Ziel zu erreichen und erfolgreich zu sein.",
+            "name": "AI Attentäter",
+            "title": null,
+            "description": null,
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Schere Stein Papier",
+            "title": null,
+            "description": null,
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "Stein schlägt Schere",
+                        "paper": "Papier schlägt Stein",
+                        "scissors": "Schere schlägt Papier"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Letzte/r Überlebende (<b>0</b> Leben) | Letzte/r Überlebende (<b>1</b> Leben) | Letzte/r Überlebende (<b>{count}</b> Leben)",
+                        "FIRST": "Als erstes <b>0</b> Punkte bekommen | Als erstes <b>1</b> Punkt bekommen | Als erstes <b>{count}</b> Punkte bekommen",
+                        "HIGHEST_AFTER": "Die meisten Punkte nach <b>0</b> Runden | Die meisten Punkte nach <b>1</b> Runde | Die meisten Punkte nach <b>{count}</b> Runden"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Rennen",
+                    "description": [
+                        "Erster, der 5 Punkte hat"
+                    ]
+                },
+                "survival": {
+                    "title": "Überleben",
+                    "description": [
+                        "5 Leben",
+                        "Für jede verlorene Runde ein Leben verlieren",
+                        "Der letzte Spieler, der noch steht, gewinnt"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Best of Serie",
+                    "description": [
+                        "Der Spieler mit den meisten Punkten nach 5 Runden gewinnt."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Regeln",
+                    "description": [
+                        "Schere Stein Papier ist easy: wähl Stein, Papier oder Schere. Stein schlägt Schere, Papier schlägt Stein und Schere schlägt Papier.",
+                        "In jeder Runde, versuch vorherzusagen, was dein Gegner wählt und reagier entsprechend!"
+                    ]
+                },
+                "group": {
+                    "title": "Gruppe",
+                    "description": [
+                        "Spiel mit bis zu 4 Leuten! Nur einer kann jede Runde gewinnen. Wenn du früh rausfliegst, spielen die anderen weiter, bis ein Gewinner feststeht.",
+                        "Im Überlebensmodus hat jeder Spieler eine bestimmte Anzahl an Leben. Sei der letzte Spieler, der übrig bleibt, um zu gewinnen!"
+                    ]
+                },
+                "bots": {
+                    "title": "Bots",
+                    "description": [
+                        "Spiel gegen Bots! Die zocken nach einer zufälligen Strategie, also wenn du das rauskriegst, kannst du die immer besiegen!"
+                    ]
+                }
+            }
         },
         "NUMBER_SHOWDOWN": {
             "name": "Zahlen-Duell",
@@ -1835,6 +1906,9 @@
         "restartNotice": "Der Server startet in {count} Minuten neu. Beende bitte dein Spiel. | Der Server startet in {count} Minute neu. Beende bitte dein Spiel. | Der Server startet in {count} Minuten neu. Beende bitte dein Spiel."
     },
     "misc": {
+        "rock": "Stein",
+        "paper": "Papier",
+        "scissors": "Schere",
         "lobby": "Lobby",
         "inGame": "Im Spiel",
         "matchmakingSearch": "Suche nach einem Spiel",
@@ -2017,6 +2091,7 @@
         "games": "Spiele",
         "winRatio": "Winnrate",
         "killDeathRatio": "K/D-Verhältnis",
+        "lives": "Leben",
         "points": "Punkte",
         "wins": "Gewinnt",
         "grids": "Gitter",
@@ -2037,6 +2112,7 @@
         "myDevices": "Meine Geräte",
         "myData": "Meine Daten",
         "redeemCode": "Code einlösen",
+        "contact": "Kontakt",
         "leaderboard": "Leaderboard",
         "elapsedTime": "%{time} vergangen",
         "startingInTime": "Startet in %{time}",
@@ -2226,6 +2302,14 @@
         }
     },
     "info": {
+        "roundEndTie": "Unentschieden!",
+        "roundEndStalemate": "Patt!",
+        "roundWin": "Du hast gewonnen!",
+        "roundLost": "Du hast verloren!",
+        "youLostThisRound": "Du hast diese Runde verloren.",
+        "youAreOutOfLives": "Du hast keine Leben mehr",
+        "waitForRoundEnd": "Bitte warte, bis die Runde zu Ende ist.",
+        "waitForWinner": "Bleib locker und warte, bis ein Gewinner feststeht!",
         "serverRestart": "Der Server wird jetzt neu gestartet. Schau in ein paar Minuten nochmal vorbei.",
         "clearOldListings": "Lösche alle 'Nicht verfügbar' Spiele.",
         "accountLinkSuggestion": "Du bist jetzt %{level}! Überlege dir, ein Konto zu erstellen, um deinen Fortschritt zu schützen.",
@@ -2286,6 +2370,7 @@
             "inviteReceived": "%{name} hat dich eingeladen, %{game} zu zocken!",
             "inviteSent": "Die Spiel-Einladung wurde verschickt!"
         },
+        "contact": "Zögere nicht, dich zu melden, wenn du Probleme hast, Vorschläge hast oder Fragen hast! Du kannst uns per E-Mail erreichen oder dem Bloob.io Discord beitreten.",
         "settings": {
             "redeemCode": {
                 "title": "Code einlösen",
@@ -2306,6 +2391,14 @@
                 "description": "Bloob.io verfolgt anonym Analytics mit einem datenschutzfreundlichen, selbstgehosteten Matomo Analytics-Server. Deine Daten werden niemals mit anderen geteilt. Du kannst dich auch abmelden, wenn du möchtest.",
                 "blocked": "Analytics sind nicht aktiv. Dein Browser oder Erweiterung könnten es blockiert haben.",
                 "dnt": "Dein Browser hat die \"Do Not Track\"-Einstellung aktiviert. Wir respektieren deine Anfrage und verfolgen dich nicht."
+            },
+            "ads": {
+                "title": "Werbung",
+                "description": "Wir zeigen Werbung von Playwire. Die Werbung auf Bloob.io, egal ob ganz oder teilweise, wird von Playwire LLC verwaltet. Wenn du keine Werbung auf Bloob.io sehen willst, kannst du dir Coins im Shop kaufen und bist dann werbefrei. Das entfernt automatisch alle Ads für dein Konto.",
+                "complaint": "Uns ist es bei Bloob.io wichtig, dass die Werbung, die du siehst, ethisch und nicht aufdringlich ist. Wenn dir Ads auffallen, die dein Spiel stören, melde dich bitte über den Bereich \"Über\".",
+                "consent": "Klick hier, um deine Werbeeinwilligungs-Einstellungen zu aktualisieren",
+                "exempt": "Werbung ist nicht aktiv. Dein Konto ist werbefrei. Danke für deine Unterstützung!",
+                "blocked": "Die Werbung ist nicht aktiv. Dein Browser oder eine Erweiterung könnte das blockiert haben."
             },
             "serverData": {
                 "title": "Server-Daten",

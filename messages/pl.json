@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Polish",
         "rtl": false,
-        "total": 1670,
-        "missing": 24
+        "total": 1719,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
@@ -101,6 +101,7 @@
             "incorrectValue": "Podana wartość nie zgadza się z oczekiwaną.",
             "invalidMove": "Podany ruch jest nieprawidłowy.",
             "invalidVote": "Głos, który próbowałeś złożyć, jest nieprawidłowy.",
+            "noLives": "Nie masz już żadnych żyć.",
             "alreadyPlaced": "Już coś postawiłeś.",
             "alreadyVoted": "Już głosowałeś.",
             "invalidPlacement": "Twoje umieszczenie kawałka jest nieprawidłowe.",
@@ -1105,7 +1106,8 @@
                         "pier": "Molo",
                         "littleIsland": "Mała Wyspa",
                         "keys": "Klucze",
-                        "lagoon": "Laguna"
+                        "lagoon": "Laguna",
+                        "ocean": "Ocean - Ocean"
                     }
                 },
                 "levelOrientation": {
@@ -1126,6 +1128,10 @@
                 "shipReveal": {
                     "title": "Odsłonięcie statku",
                     "help": "Gdy włączone, zobaczysz statek, kiedy go zatopisz. Gdy wyłączone, pokazuje się tylko licznik z pozostałymi statkami."
+                },
+                "hitAfterHit": {
+                    "title": "Cios za ciosem",
+                    "help": "Kiedy to włączone, możesz strzelać znowu po trafieniu w statek. Jak wyłączone, masz tylko jeden strzał na turę."
                 }
             },
             "presets": {},
@@ -1425,12 +1431,77 @@
             }
         },
         "AI_ASSASSIN": {
-            "name": "Sztuczna Inteligencja - Zabójca",
-            "title": "Przechytrz, Wyeliminuj, Przetrwaj",
-            "description": "AI Assassin to ekscytująca gra wieloosobowa, gdzie albo eliminujesz cel, albo przechytrzasz zabójców. Używaj strategicznych wskazówek, aby osiągnąć swój cel i odnieść sukces.",
+            "name": "Zabójca AI",
+            "title": null,
+            "description": null,
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Papier Kamień Nożyce",
+            "title": null,
+            "description": null,
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "Kamień bije nożyczki",
+                        "paper": "Papier bije kamień",
+                        "scissors": "Nożyczki biją papier"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Ostatni na placu boju (<b>0</b> żyć) | Ostatni na placu boju (<b>1</b> życie) | Ostatni na placu boju (<b>{count}</b> żyć)",
+                        "FIRST": "Pierwszy, kto zdobędzie <b>0</b> punktów | Pierwszy, kto zdobędzie <b>1</b> punkt | Pierwszy, kto zdobędzie <b>{count}</b> punktów",
+                        "HIGHEST_AFTER": "Najwięcej punktów po <b>0</b> rundach | Najwięcej punktów po <b>1</b> rundzie | Najwięcej punktów po <b>{count}</b> rundach"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Wyścig",
+                    "description": [
+                        "Pierwszy do 5 punktów"
+                    ]
+                },
+                "survival": {
+                    "title": "Przetrwanie",
+                    "description": [
+                        "5 żyć",
+                        "Tracisz życie za każdą przegraną rundę",
+                        "Ostatni gracz na placu boju wygrywa"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Najlepsze z serii",
+                    "description": [
+                        "Gracz z największą liczbą punktów po 5 rundach wygrywa."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Zasady",
+                    "description": [
+                        "Papier, kamień, nożyczki to prosta gra: wybierz kamień, papier albo nożyczki. Kamień bije nożyczki, papier bije kamień, a nożyczki biją papier.",
+                        "W każdej rundzie zgadnij, co wybierze twój przeciwnik i odpowiedz na to!"
+                    ]
+                },
+                "group": {
+                    "title": "Grupa",
+                    "description": [
+                        "Graj z maksymalnie 4 graczami! Tylko jeden może wygrać każdą rundę. Jak wylecisz za szybko, to reszta gra dalej, aż ktoś wygra.",
+                        "W trybie przetrwania każdy gracz ma określoną liczbę żyć. Bądź ostatnim graczem na placu boju, żeby wygrać!"
+                    ]
+                },
+                "bots": {
+                    "title": "Boty",
+                    "description": [
+                        "Gra przeciwko botom! Działają na losowej strategii, więc jak ogarniesz, jak to działa, to możesz je regularnie pokonywać!"
+                    ]
+                }
+            }
         },
         "NUMBER_SHOWDOWN": {
             "name": "Pojedynek Liczb",
@@ -1835,6 +1906,9 @@
         "restartNotice": "Serwer zrestartuje się za {count} minut. Skończ swoją grę. | Serwer zrestartuje się za {count} minutę. Skończ swoją grę. | Serwer zrestartuje się za {count} minut. Skończ swoją grę."
     },
     "misc": {
+        "rock": "Kamień",
+        "paper": "Papier",
+        "scissors": "Nożyczki",
         "lobby": "Lobby",
         "inGame": "W grze",
         "matchmakingSearch": "Szukam gry",
@@ -2017,6 +2091,7 @@
         "games": "Gry",
         "winRatio": "Stosunek wygranych",
         "killDeathRatio": "Stosunek zabójstw do śmierci",
+        "lives": "Życia",
         "points": "Punkty",
         "wins": "Wygrane",
         "grids": "Siatki",
@@ -2037,6 +2112,7 @@
         "myDevices": "Moje urządzenia",
         "myData": "Moje dane",
         "redeemCode": "Wprowadź kod",
+        "contact": "Kontakt",
         "leaderboard": "Tablica wyników",
         "elapsedTime": "Minęło %{time}",
         "startingInTime": "Start za %{time}",
@@ -2226,6 +2302,14 @@
         }
     },
     "info": {
+        "roundEndTie": "Remis!",
+        "roundEndStalemate": "Pat!",
+        "roundWin": "Wygrałeś!",
+        "roundLost": "Przegrałeś!",
+        "youLostThisRound": "Przegrałeś tę rundę!",
+        "youAreOutOfLives": "Nie masz już żyć",
+        "waitForRoundEnd": "Poczekaj, aż runda się skończy.",
+        "waitForWinner": "Siedź spokojnie i czekaj, aż ktoś wygra!",
         "serverRestart": "Serwer teraz się restartuje. Sprawdź za kilka minut.",
         "clearOldListings": "Usuń wszystkie mecze oznaczone jako 'Niedostępne'.",
         "accountLinkSuggestion": "Teraz jesteś %{level}! Rozważ stworzenie konta, aby chronić swój postęp.",
@@ -2286,6 +2370,7 @@
             "inviteReceived": "%{name} zaprosił cię do grania w %{game}",
             "inviteSent": "Zaproszenie do gry zostało wysłane!"
         },
+        "contact": "Nie krępuj się pisać, jakbyś miał jakieś problemy, pomysły albo pytania! Możesz się skontaktować, wysyłając maila albo dołączając do Discorda Bloob.io.",
         "settings": {
             "redeemCode": {
                 "title": "Wprowadź kod",
@@ -2306,6 +2391,14 @@
                 "description": "Bloob.io anonimowo śledzi analizy za pomocą prywatnego, samodzielnie hostowanego serwera analitycznego Matomo. Twoje dane nigdy nie są udostępniane innym. Możesz wycofać się, jeśli chcesz.",
                 "blocked": "Analizy nie są aktywne. Twoja przeglądarka lub rozszerzenie mogły je zablokować.",
                 "dnt": "Twoja przeglądarka ma włączone ustawienie \"Do Not Track\" (DNT). Szanujemy Twoją prośbę i nie śledzimy Cię."
+            },
+            "ads": {
+                "title": "Reklamy",
+                "description": "Wyświetlamy reklamy od Playwire. Reklamy na Bloob.io, w całości lub częściowo, są obsługiwane przez Playwire LLC. Jeśli nie chcesz widzieć reklam na Bloob.io, możesz przejść na wersję bez reklam, kupując monety w sklepie. To automatycznie usunie wszystkie reklamy z twojego konta.",
+                "complaint": "Dla Bloob.io ważne jest, żeby reklamy, które widzisz, były etyczne i nieinwazyjne. Jeśli zauważysz reklamy, które przeszkadzają w grze, daj znać, sprawdzając sekcję \"O nas\".",
+                "consent": "Kliknij tutaj, żeby zaktualizować swoje preferencje dotyczące zgody na reklamy",
+                "exempt": "Reklamy są wyłączone. Twoje konto jest bez reklam. Dzięki za wsparcie!",
+                "blocked": "Reklamy są wyłączone. Może twój przeglądarka albo dodatek to zablokowały."
             },
             "serverData": {
                 "title": "Dane serwera",

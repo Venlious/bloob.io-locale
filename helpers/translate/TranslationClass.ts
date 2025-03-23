@@ -299,6 +299,7 @@ export default class TranslationClass {
 		this.generateTranslationTask([`info`, `settings`, `controlYourData`])
 		this.generateTranslationTask([`info`, `settings`, `localStorage`])
 		this.generateTranslationTask([`info`, `settings`, `myDevices`])
+		this.generateTranslationTask([`info`, `settings`, `ads`])
 		this.generateTranslationTask([`info`, `authentication`])
 		this.generateTranslationTask([`info`, `authentication`, `login`])
 		this.generateTranslationTask([`info`, `authentication`, `setup`])

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Japanese",
         "rtl": false,
-        "total": 1670,
-        "missing": 24
+        "total": 1719,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
@@ -101,6 +101,7 @@
             "incorrectValue": "与えられた値が期待されるものと一致しません。",
             "invalidMove": "与えられた動きは無効です。",
             "invalidVote": "あなたが試みた投票は無効です。",
+            "noLives": "残りのライフがないよ。",
             "alreadyPlaced": "もう何かを置いてるよ。",
             "alreadyVoted": "もう投票してるよ。",
             "invalidPlacement": "君の駒の配置は無効だよ。",
@@ -1105,7 +1106,8 @@
                         "pier": "桟橋",
                         "littleIsland": "小さな島",
                         "keys": "キーズ",
-                        "lagoon": "ラグーン"
+                        "lagoon": "ラグーン",
+                        "ocean": "海 (うみ)"
                     }
                 },
                 "levelOrientation": {
@@ -1126,6 +1128,10 @@
                 "shipReveal": {
                     "title": "船の公開",
                     "help": "有効にすると、沈めた船が見えるようになるよ。無効にすると、残ってる船のカウンターだけが表示されるんだよ。"
+                },
+                "hitAfterHit": {
+                    "title": "連続ヒット",
+                    "help": "発動すると、船に当たった後にもう一度撃てるようになるよ。無効だと、ターンごとに一発しか撃てないんだ。"
                 }
             },
             "presets": {},
@@ -1425,12 +1431,77 @@
             }
         },
         "AI_ASSASSIN": {
-            "name": "AI アサシン",
-            "title": "賢く, 撃退, 生き残る",
-            "description": "AIアサシンはスリリングなマルチプレイヤーゲームです。ターゲットを排除するか、アサシンを出し抜くかを選びます。戦略的なプロンプトを使って目標を達成し、成功を収めましょう。",
+            "name": "AIアサシン",
+            "title": null,
+            "description": null,
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "じゃんけん",
+            "title": null,
+            "description": null,
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "岩はハサミに勝つ",
+                        "paper": "紙は岩に勝つ",
+                        "scissors": "ハサミは紙に勝つ"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "最後の一人（<b>0</b>ライフ） | 最後の一人（<b>1</b>ライフ） | 最後の一人（<b>{count}</b>ライフ）",
+                        "FIRST": "最初に<b>0</b>ポイントゲット | 最初に<b>1</b>ポイントゲット | 最初に<b>{count}</b>ポイントゲット",
+                        "HIGHEST_AFTER": "<b>0</b>ラウンド後のポイント数 | <b>1</b>ラウンド後のポイント数 | <b>{count}</b>ラウンド後のポイント数"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "レース",
+                    "description": [
+                        "5ポイント先取"
+                    ]
+                },
+                "survival": {
+                    "title": "サバイバル",
+                    "description": [
+                        "5ライフ",
+                        "ラウンド負けるごとにライフ1つ減るよ",
+                        "最後まで残ったプレイヤーが勝ち！"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "シリーズのベスト",
+                    "description": [
+                        "5ラウンド終わった後に一番ポイントが多いプレイヤーが勝ち！"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "ルール",
+                    "description": [
+                        "じゃんけんは簡単だよ：グー、チョキ、パーの中から選んでね。グーはチョキに勝つし、パーはグーに勝つ、チョキはパーに勝つんだ。",
+                        "各ラウンドで相手の選ぶものを予想して、それに合わせて返そう！"
+                    ]
+                },
+                "group": {
+                    "title": "グループ",
+                    "description": [
+                        "最大4人で遊べるよ！毎ラウンド、勝てるのは1人だけ。早く負けちゃったら、残りのプレイヤーが勝者が決まるまで続けるよ。",
+                        "サバイバルモードでは、各プレイヤーに決まった数のライフがあるんだ。最後まで残ったプレイヤーが勝ち！"
+                    ]
+                },
+                "bots": {
+                    "title": "ボット",
+                    "description": [
+                        "ボットと対戦しよう！彼らはランダムな戦略を使ってるから、もしそれを見抜ければ、ずっと勝てるよ！"
+                    ]
+                }
+            }
         },
         "NUMBER_SHOWDOWN": {
             "name": "ナンバーショーダウン",
@@ -1835,6 +1906,9 @@
         "restartNotice": "サーバーは{count}分後に再起動するよ。ゲームを終わらせてね。 | サーバーは{count}分後に再起動するよ。ゲームを終わらせてね。 | サーバーは{count}分後に再起動するよ。ゲームを終わらせてね。"
     },
     "misc": {
+        "rock": "グー",
+        "paper": "チョキ",
+        "scissors": "パー",
         "lobby": "ロビー",
         "inGame": "ゲーム中",
         "matchmakingSearch": "ゲームを探してる",
@@ -2017,6 +2091,7 @@
         "games": "ゲーム数",
         "winRatio": "勝率",
         "killDeathRatio": "K/D比率",
+        "lives": "ライフ",
         "points": "ポイント",
         "wins": "勝利数",
         "grids": "グリッド",
@@ -2037,6 +2112,7 @@
         "myDevices": "私のデバイス",
         "myData": "私のデータ",
         "redeemCode": "コードを引き換える",
+        "contact": "連絡",
         "leaderboard": "ランキング",
         "elapsedTime": "%{time} 経過した",
         "startingInTime": "%{time}後に開始",
@@ -2226,6 +2302,14 @@
         }
     },
     "info": {
+        "roundEndTie": "引き分けだね！",
+        "roundEndStalemate": "動かないね！",
+        "roundWin": "勝ったよ！",
+        "roundLost": "負けた！",
+        "youLostThisRound": "今回は負けたね。",
+        "youAreOutOfLives": "ライフがなくなっちゃったよ",
+        "waitForRoundEnd": "ラウンドが終わるまで待っててね。",
+        "waitForWinner": "じっとしてて、勝者が出るのを待とう！",
         "serverRestart": "サーバーが今再起動中だよ。ちょっと待っててね。",
         "clearOldListings": "「Unavailable」のマッチを全部クリアしてね。",
         "accountLinkSuggestion": "あなたは今%{level}だよ！進行状況を保護するためにアカウントを作成してみては？",
@@ -2286,6 +2370,7 @@
             "inviteReceived": "%{name}が%{game}を一緒にやろうって誘ってるよ！",
             "inviteSent": "ゲームの招待を送ったよ！"
         },
+        "contact": "何か問題があったり、提案があったり、質問があったら気軽に連絡してね！メール送るか、Bloob.ioのDiscordに参加してくれればOKだよ。",
         "settings": {
             "redeemCode": {
                 "title": "コードを引き換える",
@@ -2306,6 +2391,14 @@
                 "description": "Bloob.ioはプライバシーフレンドリーな自己ホスト型のMatomoアナリティクスサーバーを使って匿名でアナリティクスを追跡しています。あなたのデータは他人と共有されません。もし希望するなら、オプトアウトすることができます。",
                 "blocked": "アナリティクスは有効ではありません。あなたのブラウザや拡張機能がそれをブロックしているかもしれません。",
                 "dnt": "あなたのブラウザは\"Do Not Track\"（DNT）設定が有効になっています。私たちはあなたのリクエストを尊重し、あなたを追跡していません。"
+            },
+            "ads": {
+                "title": "広告",
+                "description": "Bloob.ioではPlaywireの広告を表示してるよ。Bloob.ioの広告は、全部または一部がPlaywire LLCによって管理されてるんだ。もしBloob.ioで広告を見たくないなら、ストアでコインを買って広告なしにできるよ。これで自動的にアカウントの広告が全部消えるからね。",
+                "complaint": "Bloob.ioでは、君が見る広告が倫理的で邪魔にならないことが大事なんだ。もしゲームプレイに干渉する広告を見つけたら、「About」セクションをチェックして連絡してね。",
+                "consent": "ここをクリックして広告の同意設定を更新してね",
+                "exempt": "広告はアクティブじゃないよ。君のアカウントは広告なしだ。サポートありがとう！",
+                "blocked": "広告が表示されてないよ。ブラウザか拡張機能がブロックしてるかも。"
             },
             "serverData": {
                 "title": "サーバーデータ",

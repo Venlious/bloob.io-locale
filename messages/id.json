@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 1670,
-        "missing": 24
+        "total": 1719,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
@@ -101,6 +101,7 @@
             "incorrectValue": "Nilai yang diberikan nggak cocok sama yang diharapkan.",
             "invalidMove": "Gerakan yang diberikan itu nggak valid.",
             "invalidVote": "Suara yang coba kamu berikan itu nggak valid.",
+            "noLives": "Kamu udah nggak punya nyawa sisa.",
             "alreadyPlaced": "Kamu udah naro sesuatu.",
             "alreadyVoted": "Kamu udah nyoblos.",
             "invalidPlacement": "Tempat kamu naruh bidak itu salah.",
@@ -1105,7 +1106,8 @@
                         "pier": "Dermaga",
                         "littleIsland": "Pulau Kecil",
                         "keys": "Kunci-Kunci",
-                        "lagoon": "Laguna"
+                        "lagoon": "Laguna",
+                        "ocean": "Laut"
                     }
                 },
                 "levelOrientation": {
@@ -1126,6 +1128,10 @@
                 "shipReveal": {
                     "title": "Pengungkapan Kapal",
                     "help": "Ketika diaktifkan, kamu akan melihat kapal saat kamu berhasil menenggelamkannya. Ketika dinonaktifkan, hanya ada penghitung dengan kapal yang tersisa yang ditampilkan."
+                },
+                "hitAfterHit": {
+                    "title": "Pukulan Beruntun",
+                    "help": "Kalau diaktifin, kamu bisa nembak lagi setelah nabrak kapal. Kalau dimatiin, kamu cuma dapet satu tembakan per giliran."
                 }
             },
             "presets": {},
@@ -1426,11 +1432,76 @@
         },
         "AI_ASSASSIN": {
             "name": "Pembunuh AI",
-            "title": "Kalahkan, Singkirkan, Bertahan Hidup",
-            "description": "AI Assassin adalah game multiplayer seru dimana kamu bisa menghabisi target atau mengelabui para pembunuh. Gunakan petunjuk strategis untuk mencapai tujuan dan berhasil.",
+            "title": null,
+            "description": null,
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Gunting Batu Kertas",
+            "title": null,
+            "description": null,
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "Batu ngalahin gunting",
+                        "paper": "Kertas ngalahin batu",
+                        "scissors": "Gunting ngalahin kertas"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Bertahan terakhir (<b>0</b> nyawa) | Bertahan terakhir (<b>1</b> nyawa) | Bertahan terakhir (<b>{count}</b> nyawa)",
+                        "FIRST": "Pertama yang dapet <b>0</b> poin | Pertama yang dapet <b>1</b> poin | Pertama yang dapet <b>{count}</b> poin",
+                        "HIGHEST_AFTER": "Poin terbanyak setelah <b>0</b> ronde | Poin terbanyak setelah <b>1</b> ronde | Poin terbanyak setelah <b>{count}</b> ronde"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Balapan",
+                    "description": [
+                        "Pertama yang dapet 5 poin"
+                    ]
+                },
+                "survival": {
+                    "title": "Bertahan hidup",
+                    "description": [
+                        "5 nyawa",
+                        "Kehilangan 1 nyawa setiap ronde yang kalah",
+                        "Pemain terakhir yang bertahan menang"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Best of Series: Yang Terbaik dari Seri",
+                    "description": [
+                        "Pemain dengan poin terbanyak setelah 5 ronde menang."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Aturan Main",
+                    "description": [
+                        "Batu Kertas Gunting itu gampang: pilih batu, kertas, atau gunting. Batu ngalahin gunting, kertas ngalahin batu, dan gunting ngalahin kertas.",
+                        "Di setiap ronde, tebak pilihan lawanmu dan respon sesuai!"
+                    ]
+                },
+                "group": {
+                    "title": "Grup",
+                    "description": [
+                        "Main bareng sampai 4 orang! Cuma satu yang bisa menang di setiap ronde. Kalo kamu udah kalah lebih awal, pemain yang lain lanjut sampai ada yang menang.",
+                        "Di mode bertahan hidup, setiap pemain punya jumlah nyawa yang ditentukan. Jadi pemain terakhir yang masih berdiri yang menang!"
+                    ]
+                },
+                "bots": {
+                    "title": "Bot-Bot",
+                    "description": [
+                        "Main lawan bot! Mereka ngikutin strategi acak, jadi kalo kamu bisa paham, kamu bisa kalahin mereka terus!"
+                    ]
+                }
+            }
         },
         "NUMBER_SHOWDOWN": {
             "name": "Pertarungan Angka",
@@ -1835,6 +1906,9 @@
         "restartNotice": "Server bakal restart dalam {count} menit. Selesaikan gamenya ya. | Server bakal restart dalam {count} menit. Selesaikan gamenya ya. | Server bakal restart dalam {count} menit. Selesaikan gamenya ya."
     },
     "misc": {
+        "rock": "Batu",
+        "paper": "Kertas",
+        "scissors": "Gunting",
         "lobby": "Lobi",
         "inGame": "Dalam permainan",
         "matchmakingSearch": "Nyari game",
@@ -2017,6 +2091,7 @@
         "games": "Game",
         "winRatio": "Rasio Menang",
         "killDeathRatio": "Rasio K/D",
+        "lives": "Nyawa",
         "points": "Poin",
         "wins": "Menang",
         "grids": "Kotak-kotak",
@@ -2037,6 +2112,7 @@
         "myDevices": "Perangkat Saya",
         "myData": "Data Saya",
         "redeemCode": "Tukar Kode",
+        "contact": "Kontak",
         "leaderboard": "Papan Peringkat",
         "elapsedTime": "%{time} telah berlalu",
         "startingInTime": "Mulai dalam %{time}",
@@ -2226,6 +2302,14 @@
         }
     },
     "info": {
+        "roundEndTie": "Seri nih!",
+        "roundEndStalemate": "Stalemate!",
+        "roundWin": "Kamu menang!",
+        "roundLost": "Kamu kalah!",
+        "youLostThisRound": "Kamu kalah di ronde ini!",
+        "youAreOutOfLives": "Kamu kehabisan nyawa",
+        "waitForRoundEnd": "Tunggu sebentar sampai ronde selesai.",
+        "waitForWinner": "Santai aja dan tunggu pemenangnya muncul!",
         "serverRestart": "Server lagi di-restart. Cek lagi beberapa menit ya.",
         "clearOldListings": "Hapus semua pertandingan yang 'Tidak tersedia'.",
         "accountLinkSuggestion": "Kamu sekarang level %{level}! Pertimbangkan untuk membuat akun biar progresmu aman.",
@@ -2286,6 +2370,7 @@
             "inviteReceived": "%{name} ngajak kamu main %{game}",
             "inviteSent": "Undangan main udah dikirim!"
         },
+        "contact": "Jangan ragu buat hubungi kalau ada masalah, saran, atau pertanyaan! Kamu bisa kontak lewat email atau join Discord-nya Bloob.io.",
         "settings": {
             "redeemCode": {
                 "title": "Tukar Kode",
@@ -2306,6 +2391,14 @@
                 "description": "Bloob.io melacak analitik secara anonim menggunakan server analitik Matomo yang ramah privasi dan di-host sendiri. Data Anda tidak pernah dibagikan dengan orang lain. Anda bisa memilih untuk tidak ikut jika mau.",
                 "blocked": "Analitik tidak aktif. Browser atau ekstensi Anda mungkin telah memblokirnya.",
                 "dnt": "Browser Anda memiliki pengaturan \"Jangan Lacak\" (DNT) yang diaktifkan. Kami menghormati permintaan Anda dan tidak melacak Anda."
+            },
+            "ads": {
+                "title": "Iklan",
+                "description": "Kami nampilin iklan dari Playwire. Iklan di Bloob.io, baik sebagian atau keseluruhan, ditangani sama Playwire LLC. Kalo kamu nggak mau liat iklan di Bloob.io, kamu bisa bebas iklan dengan beli koin dari toko. Ini bakal otomatis ngilangin semua iklan di akun kamu.",
+                "complaint": "Penting buat Bloob.io supaya iklan yang kamu liat itu etis dan nggak ganggu. Kalo kamu liat iklan yang ganggu permainanmu, silakan hubungi kami lewat bagian \"Tentang\".",
+                "consent": "Klik di sini buat update preferensi persetujuan iklan kamu",
+                "exempt": "Iklan lagi nggak aktif. Akun kamu bebas iklan. Makasih atas dukungannya!",
+                "blocked": "Iklan nggak aktif. Browser atau ekstensi kamu mungkin udah ngeblokirnya."
             },
             "serverData": {
                 "title": "Data Server",

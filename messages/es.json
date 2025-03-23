@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Mexican Spanish",
         "rtl": false,
-        "total": 1670,
-        "missing": 24
+        "total": 1719,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
@@ -101,6 +101,7 @@
             "incorrectValue": "El valor que se dio no coincide con el esperado.",
             "invalidMove": "La jugada dada no es válida.",
             "invalidVote": "El voto que ha intentado realizar no es válido.",
+            "noLives": "No te quedan vidas.",
             "alreadyPlaced": "Ya has colocado algo.",
             "alreadyVoted": "Ya ha votado.",
             "invalidPlacement": "La colocación de tu pieza no es válida.",
@@ -1105,7 +1106,8 @@
                         "pier": "Muelle",
                         "littleIsland": "Islita",
                         "keys": "Los Cayos",
-                        "lagoon": "Laguna"
+                        "lagoon": "Laguna",
+                        "ocean": "Océano"
                     }
                 },
                 "levelOrientation": {
@@ -1126,6 +1128,10 @@
                 "shipReveal": {
                     "title": "Revelación de Nave",
                     "help": "Cuando está activado, verás el barco cuando lo hayas hundido. Cuando está desactivado, solo se muestra un contador con los barcos restantes."
+                },
+                "hitAfterHit": {
+                    "title": "Golpe Tras Golpe",
+                    "help": "Cuando está activado, podrás disparar de nuevo después de darle a un barco. Cuando está desactivado, solo tienes un tiro por turno."
                 }
             },
             "presets": {},
@@ -1425,12 +1431,77 @@
             }
         },
         "AI_ASSASSIN": {
-            "name": "Asesino de Inteligencia Artificial",
-            "title": "Engaña, Elimina, Sobrevive",
-            "description": "AI Assassin es un emocionante juego multijugador donde eliminas al objetivo o engañas a los asesinos. Usa indicaciones estratégicas para lograr tu meta y triunfar.",
+            "name": "Asesino AI",
+            "title": null,
+            "description": null,
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Piedra Papel o Tijera",
+            "title": null,
+            "description": null,
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "Piedra le gana a tijeras",
+                        "paper": "Papel le gana a piedra",
+                        "scissors": "Tijeras le gana a papel"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Último en pie (<b>0</b> vidas) | Último en pie (<b>1</b> vida) | Último en pie (<b>{count}</b> vidas)",
+                        "FIRST": "Primero en conseguir <b>0</b> puntos | Primero en conseguir <b>1</b> punto | Primero en conseguir <b>{count}</b> puntos",
+                        "HIGHEST_AFTER": "Más puntos después de <b>0</b> rondas | Más puntos después de <b>1</b> ronda | Más puntos después de <b>{count}</b> rondas"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Carrera",
+                    "description": [
+                        "El primero en llegar a 5 puntos"
+                    ]
+                },
+                "survival": {
+                    "title": "Supervivencia",
+                    "description": [
+                        "5 vidas",
+                        "Pierde una vida por cada ronda que pierdas",
+                        "El último jugador en pie gana"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Lo mejor de la serie",
+                    "description": [
+                        "El jugador con más puntos después de 5 rondas gana."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Reglas",
+                    "description": [
+                        "Piedra Papel o Tijera es bien fácil: elige piedra, papel o tijera. La piedra le gana a la tijera, el papel le gana a la piedra, y la tijera le gana al papel.",
+                        "En cada ronda, adivina qué va a elegir tu oponente y responde como se debe!"
+                    ]
+                },
+                "group": {
+                    "title": "Grupo",
+                    "description": [
+                        "¡Juega con hasta 4 jugadores! Solo uno puede ganar en cada ronda. Si te quedas fuera temprano, los demás siguen hasta que se determine un ganador.",
+                        "En el modo supervivencia, cada jugador tiene un número limitado de vidas. ¡Sé el último jugador en pie para ganar!"
+                    ]
+                },
+                "bots": {
+                    "title": "Bots",
+                    "description": [
+                        "¡Juega contra bots! Siguen una estrategia al azar, así que si logras entenderla, ¡los puedes vencer siempre!"
+                    ]
+                }
+            }
         },
         "NUMBER_SHOWDOWN": {
             "name": "Duelo de Números",
@@ -1835,6 +1906,9 @@
         "restartNotice": "El servidor se reiniciará en {count} minutos. Termina tu juego. | El servidor se reiniciará en {count} minuto. Termina tu juego. | El servidor se reiniciará en {count} minutos. Termina tu juego."
     },
     "misc": {
+        "rock": "Piedra",
+        "paper": "Papel",
+        "scissors": "Tijeras",
         "lobby": "Lobby",
         "inGame": "En juego",
         "matchmakingSearch": "Buscando una partida",
@@ -2017,6 +2091,7 @@
         "games": "Juegos",
         "winRatio": "Relación de Ganancias",
         "killDeathRatio": "Relación K/D",
+        "lives": "Vidas",
         "points": "Puntos",
         "wins": "Victorias",
         "grids": "Cuadrículas",
@@ -2037,6 +2112,7 @@
         "myDevices": "Mis Dispositivos",
         "myData": "Mis Datos",
         "redeemCode": "Canjear Código",
+        "contact": "Contacto",
         "leaderboard": "Tabla de líderes",
         "elapsedTime": "%{time} transcurrido",
         "startingInTime": "Comenzando en %{time}",
@@ -2226,6 +2302,14 @@
         }
     },
     "info": {
+        "roundEndTie": "¡Es un empate!",
+        "roundEndStalemate": "¡Es un estancamiento!",
+        "roundWin": "¡Ganaste!",
+        "roundLost": "¡Perdiste!",
+        "youLostThisRound": "Perdiste esta ronda.",
+        "youAreOutOfLives": "Ya no tienes vidas",
+        "waitForRoundEnd": "Espera a que termine la ronda.",
+        "waitForWinner": "¡Relájate y espera a que salga un ganador!",
         "serverRestart": "El servidor se está reiniciando. Checa de nuevo en unos minutos.",
         "clearOldListings": "Borra todos los partidos 'No disponibles'.",
         "accountLinkSuggestion": "¡Ahora eres %{level}! Considera crear una cuenta para proteger tu progreso.",
@@ -2286,6 +2370,7 @@
             "inviteReceived": "%{name} te invitó a jugar %{game}",
             "inviteSent": "¡La invitación para el juego ya se envió!"
         },
+        "contact": "No dudes en contactarnos si tienes problemas, sugerencias o preguntas. Puedes escribir un correo o unirte al Discord de Bloob.io.",
         "settings": {
             "redeemCode": {
                 "title": "Canjear código",
@@ -2306,6 +2391,14 @@
                 "description": "Bloob.io rastrea anónimamente las analíticas usando un servidor de Matomo de análisis amigable con la privacidad, alojado por usted mismo. Sus datos nunca se comparten con otros. Puede optar por no participar si lo desea.",
                 "blocked": "Las analíticas no están activas. Su navegador o extensión pueden haberlas bloqueado.",
                 "dnt": "Su navegador tiene la configuración \"No rastrear\" (DNT) habilitada. Respetamos su solicitud y no lo estamos rastreando."
+            },
+            "ads": {
+                "title": "Anuncios",
+                "description": "Mostramos anuncios de Playwire. La publicidad en Bloob.io, ya sea en su totalidad o en parte, la maneja Playwire LLC. Si no quieres ver anuncios en Bloob.io, puedes quitar los anuncios comprando monedas en la tienda. Esto quitará automáticamente todos los anuncios de tu cuenta.",
+                "complaint": "Para Bloob.io es importante que los anuncios que ves sean éticos y no molestos. Si notas anuncios que interfieren con tu juego, porfa contáctanos revisando la sección de \"Acerca de\".",
+                "consent": "Haz clic aquí para actualizar tus preferencias de consentimiento de anuncios",
+                "exempt": "Los anuncios no están activos. Tu cuenta está libre de anuncios. ¡Gracias por tu apoyo!",
+                "blocked": "Los anuncios no están activos. Tu navegador o extensión puede que los haya bloqueado."
             },
             "serverData": {
                 "title": "Datos del servidor",

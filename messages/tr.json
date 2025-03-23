@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 1670,
-        "missing": 24
+        "total": 1719,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
@@ -101,6 +101,7 @@
             "incorrectValue": "Verilen değer, beklenenle uyuşmuyor.",
             "invalidMove": "Yaptığın hamle geçersiz.",
             "invalidVote": "Yapmaya çalıştığın oylama geçersiz.",
+            "noLives": "Hayatta kalan canın kalmadı.",
             "alreadyPlaced": "Zaten bir şey yerleştirdin.",
             "alreadyVoted": "Zaten oy kullandın.",
             "invalidPlacement": "Parça yerleştirmen geçersiz.",
@@ -1105,7 +1106,8 @@
                         "pier": "İskele",
                         "littleIsland": "Küçük Ada",
                         "keys": "Anahtarlar",
-                        "lagoon": "Lagün"
+                        "lagoon": "Lagün",
+                        "ocean": "Okyanus"
                     }
                 },
                 "levelOrientation": {
@@ -1126,6 +1128,10 @@
                 "shipReveal": {
                     "title": "Gemi Gösterimi",
                     "help": "Etkinleştirildiğinde, gemiyi batırdığında onu göreceksin. Devre dışı bırakıldığında, sadece kalan gemileri gösteren bir sayaç görünür."
+                },
+                "hitAfterHit": {
+                    "title": "Arka Arkaya Vuruş",
+                    "help": "Açık olduğunda, bir gemiye vurduktan sonra tekrar ateş etme iznin olacak. Kapalı olduğunda, her turda sadece bir atış yapabiliyorsun."
                 }
             },
             "presets": {},
@@ -1425,12 +1431,77 @@
             }
         },
         "AI_ASSASSIN": {
-            "name": "AI Suikastçı",
-            "title": "Daha Akıllı Ol, Yok Et, Hayatta Kal",
-            "description": "AI Assassin, hedefi ortadan kaldırma veya suikastçıları alt etme üzerine heyecan verici bir çok oyunculu oyun. Hedefine ulaşmak ve başarılı olmak için stratejik ipuçlarını kullan.",
+            "name": "Yapay Zeka Suikastçi",
+            "title": null,
+            "description": null,
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Taş Kağıt Makas",
+            "title": null,
+            "description": null,
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "Taş makası yener",
+                        "paper": "Kağıt taşı yener",
+                        "scissors": "Makas kağıdı yener"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Son kalan (<b>0</b> can) | Son kalan (<b>1</b> can) | Son kalan (<b>{count}</b> can",
+                        "FIRST": "İlk <b>0</b> puanı alan | İlk <b>1</b> puanı alan | İlk <b>{count}</b> puanı alan",
+                        "HIGHEST_AFTER": "<b>0</b> turdan sonra en çok puan | <b>1</b> turdan sonra en çok puan | <b>{count}</b> turdan sonra en çok puan"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Yarış",
+                    "description": [
+                        "5 puana ilk ulaşan"
+                    ]
+                },
+                "survival": {
+                    "title": "Hayatta kalma",
+                    "description": [
+                        "5 canım",
+                        "Her kaybedilen turda bir can kaybedersin",
+                        "Son kalan oyuncu kazanır"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Serinin En İyisi",
+                    "description": [
+                        "5 turdan sonra en çok puanı olan oyuncu kazanır."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Kurallar",
+                    "description": [
+                        "Taş Kağıt Makas basit: taş, kağıt ya da makas seç. Taş makası yener, kağıt taşı yener, makas kağıdı yener.",
+                        "Her turda, rakibinin ne seçeceğini tahmin et ve ona göre cevap ver!"
+                    ]
+                },
+                "group": {
+                    "title": "Grup",
+                    "description": [
+                        "4 oyuncuya kadar oynayabilirsin! Her turda sadece bir kişi kazanıyor. Eğer erken elenirsen, kalan oyuncular kazanan belirlenene kadar devam ediyor.",
+                        "Hayatta kalma modunda, her oyuncunun belirli sayıda canı var. Kazanmak için son kalan oyuncu olmalısın!"
+                    ]
+                },
+                "bots": {
+                    "title": "Botlar",
+                    "description": [
+                        "Botlarla oyna! Onlar rastgele bir strateji izliyor, yani eğer bunu çözebilirsen, onları sürekli yenebilirsin!"
+                    ]
+                }
+            }
         },
         "NUMBER_SHOWDOWN": {
             "name": "Sayı Kapışması",
@@ -1835,6 +1906,9 @@
         "restartNotice": "Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir."
     },
     "misc": {
+        "rock": "Taş",
+        "paper": "Kağıt",
+        "scissors": "Makas",
         "lobby": "Lobi",
         "inGame": "Oyun içi",
         "matchmakingSearch": "Oyun arıyorum",
@@ -2017,6 +2091,7 @@
         "games": "Oyunlar",
         "winRatio": "Kazanma Oranı",
         "killDeathRatio": "K/D Oranı",
+        "lives": "Hayatlar",
         "points": "Puanlar",
         "wins": "Kazanmalar",
         "grids": "Izgaralar",
@@ -2037,6 +2112,7 @@
         "myDevices": "Cihazlarım",
         "myData": "Verilerim",
         "redeemCode": "Kodu Kullan",
+        "contact": "İletişim",
         "leaderboard": "Lider Tablosu",
         "elapsedTime": "%{time} süre geçti",
         "startingInTime": "%{time} içinde başlıyor",
@@ -2226,6 +2302,14 @@
         }
     },
     "info": {
+        "roundEndTie": "Beraberlik!",
+        "roundEndStalemate": "Pat durum!",
+        "roundWin": "Kazandın!",
+        "roundLost": "Kaybettin!",
+        "youLostThisRound": "Bu turu kaybettin!",
+        "youAreOutOfLives": "Hayatın kalmadı",
+        "waitForRoundEnd": "Turun bitmesini bekle lütfen.",
+        "waitForWinner": "Sıkı dur, kazananın çıkmasını bekle!",
         "serverRestart": "Sunucu şimdi yeniden başlatılıyor. Birkaç dakika sonra tekrar kontrol et.",
         "clearOldListings": "Tüm 'Kullanılamaz' maçları temizle.",
         "accountLinkSuggestion": "Artık %{level} seviyesindesin! İlerlemeni korumak için bir hesap oluşturmayı düşün.",
@@ -2286,6 +2370,7 @@
             "inviteReceived": "%{name} seni %{game} oynamaya davet etti",
             "inviteSent": "Oyun daveti gönderildi!"
         },
+        "contact": "Herhangi bir sorunla karşılaşırsan, önerilerin varsa ya da soruların olursa çekinme, bize ulaş! E-posta atarak ya da Bloob.io Discord'a katılarak iletişime geçebilirsin.",
         "settings": {
             "redeemCode": {
                 "title": "Kodu Kullan",
@@ -2306,6 +2391,14 @@
                 "description": "Bloob.io, gizlilik dostu, kendi sunucusunda barındırılan Matomo analitik sunucusunu kullanarak anonim olarak analitik izler. Verileriniz asla başkalarıyla paylaşılmaz. İsterseniz bu durumdan çıkabilirsiniz.",
                 "blocked": "Analitikler aktif değil. Tarayıcınız veya eklentiniz bunu engellemiş olabilir.",
                 "dnt": "Tarayıcınızda \"Takip Etme\" (DNT) ayarı etkin. Talebinizi onaylıyoruz ve sizi takip etmiyoruz."
+            },
+            "ads": {
+                "title": "Reklamlar",
+                "description": "Bloob.io'da Playwire'dan reklamlar gösteriyoruz. Bloob.io'daki reklamlar, kısmen ya da tamamen, Playwire LLC tarafından yönetiliyor. Eğer Bloob.io'da reklam görmek istemiyorsan, mağazadan jeton alarak reklamsız bir deneyim yaşayabilirsin. Bu, hesabındaki tüm reklamları otomatik olarak kaldırır.",
+                "complaint": "Bloob.io için önemli olan, gördüğün reklamların etik ve rahatsız edici olmaması. Eğer oyununu etkileyen reklamlar görüyorsan, \"Hakkında\" bölümüne bakarak bizimle iletişime geç.",
+                "consent": "Reklam onay tercihlerini güncellemek için buraya tıkla",
+                "exempt": "Reklamlar aktif değil. Hesabın reklamsız. Desteğin için teşekkürler!",
+                "blocked": "Reklamlar aktif değil. Tarayıcın ya da uzantın bunu engellemiş olabilir."
             },
             "serverData": {
                 "title": "Sunucu Verisi",

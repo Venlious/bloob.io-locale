@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal French",
         "rtl": false,
-        "total": 1670,
-        "missing": 24
+        "total": 1719,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
@@ -101,6 +101,7 @@
             "incorrectValue": "La valeur donnée ne correspond pas à celle attendue.",
             "invalidMove": "Le mouvement donné est invalide.",
             "invalidVote": "Votre vote est invalide.",
+            "noLives": "T'as plus de vies.",
             "alreadyPlaced": "Tu as déjà placé quelque chose.",
             "alreadyVoted": "Vous avez déjà voté.",
             "invalidPlacement": "Ton placement de pièce est invalide.",
@@ -1105,7 +1106,8 @@
                         "pier": "Le Quai",
                         "littleIsland": "La Petite Île",
                         "keys": "Les Clés",
-                        "lagoon": "Lagon"
+                        "lagoon": "Lagon",
+                        "ocean": "Océan"
                     }
                 },
                 "levelOrientation": {
@@ -1126,6 +1128,10 @@
                 "shipReveal": {
                     "title": "Révélation du Navire",
                     "help": "Quand activé, tu verras le navire quand tu l'auras coulé. Quand désactivé, seul un compteur avec les navires restants est affiché."
+                },
+                "hitAfterHit": {
+                    "title": "Coup sur coup",
+                    "help": "Quand c'est activé, tu peux tirer à nouveau après avoir touché un bateau. Quand c'est désactivé, t'as qu'un seul tir par tour."
                 }
             },
             "presets": {},
@@ -1426,11 +1432,76 @@
         },
         "AI_ASSASSIN": {
             "name": "Assassin IA",
-            "title": "Déjoue, Élimine, Survie",
-            "description": "AI Assassin est un jeu multijoueur palpitant où tu élimines la cible ou déjoues les assassins. Utilise des astuces stratégiques pour atteindre ton but et réussir.",
+            "title": null,
+            "description": null,
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Pierre Papier Ciseaux",
+            "title": null,
+            "description": null,
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "La pierre bat les ciseaux",
+                        "paper": "Le papier bat la pierre",
+                        "scissors": "Les ciseaux battent le papier"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Dernier debout (<b>0</b> vies) | Dernier debout (<b>1</b> vie) | Dernier debout (<b>{count}</b> vies)",
+                        "FIRST": "Premier à avoir <b>0</b> points | Premier à avoir <b>1</b> point | Premier à avoir <b>{count}</b> points",
+                        "HIGHEST_AFTER": "Le plus de points après <b>0</b> manches | Le plus de points après <b>1</b> manche | Le plus de points après <b>{count}</b> manches"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Course",
+                    "description": [
+                        "Le premier à 5 points"
+                    ]
+                },
+                "survival": {
+                    "title": "Survie",
+                    "description": [
+                        "5 vies",
+                        "Perds une vie à chaque round perdu",
+                        "Le dernier joueur en lice gagne"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Meilleur de la série",
+                    "description": [
+                        "Le joueur avec le plus de points après 5 manches gagne."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Règles du jeu",
+                    "description": [
+                        "Pierre Feuille Ciseaux, c'est simple : choisis pierre, feuille ou ciseaux. La pierre bat les ciseaux, la feuille bat la pierre, et les ciseaux battent la feuille.",
+                        "À chaque tour, devine ce que ton adversaire va choisir et réagis en conséquence !"
+                    ]
+                },
+                "group": {
+                    "title": "Groupe",
+                    "description": [
+                        "Joue avec jusqu'à 4 joueurs ! Un seul peut gagner à chaque manche. Si tu es éliminé tôt, les autres continuent jusqu'à ce qu'il y ait un gagnant.",
+                        "En mode survie, chaque joueur a un nombre de vies limité. Sois le dernier joueur en vie pour gagner !"
+                    ]
+                },
+                "bots": {
+                    "title": "Bots - Les bots",
+                    "description": [
+                        "Joue contre des bots ! Ils ont une stratégie aléatoire, donc si tu arrives à comprendre comment ça marche, tu peux les battre tout le temps !"
+                    ]
+                }
+            }
         },
         "NUMBER_SHOWDOWN": {
             "name": "Bataille de Chiffres",
@@ -1835,6 +1906,9 @@
         "restartNotice": "Le serveur va redémarrer dans {count} minutes. Finissez votre partie. | Le serveur va redémarrer dans {count} minute. Finissez votre partie. | Le serveur va redémarrer dans {count} minutes. Finissez votre partie."
     },
     "misc": {
+        "rock": "Pierre",
+        "paper": "Feuille",
+        "scissors": "Ciseaux",
         "lobby": "Hall",
         "inGame": "En jeu",
         "matchmakingSearch": "À la recherche d'une partie",
@@ -2017,6 +2091,7 @@
         "games": "Jeux",
         "winRatio": "Ratio de victoires",
         "killDeathRatio": "Ratio K/D",
+        "lives": "Vies",
         "points": "Points",
         "wins": "Victoires",
         "grids": "Grilles",
@@ -2037,6 +2112,7 @@
         "myDevices": "Mes appareils",
         "myData": "Mes données",
         "redeemCode": "Utiliser un code",
+        "contact": "Contact",
         "leaderboard": "Tableau des leaders",
         "elapsedTime": "%{time} écoulé",
         "startingInTime": "Commence dans %{time}",
@@ -2226,6 +2302,14 @@
         }
     },
     "info": {
+        "roundEndTie": "C'est un match nul !",
+        "roundEndStalemate": "C'est une impasse !",
+        "roundWin": "T'as gagné !",
+        "roundLost": "T'as perdu !",
+        "youLostThisRound": "T'as perdu ce round.",
+        "youAreOutOfLives": "T'as plus de vies",
+        "waitForRoundEnd": "Attends que le round se termine.",
+        "waitForWinner": "Reste tranquille et attends qu'un gagnant se pointe !",
         "serverRestart": "Le serveur est en train de redémarrer. Reviens dans quelques minutes.",
         "clearOldListings": "Efface tous les matchs 'Indisponibles'.",
         "accountLinkSuggestion": "Vous êtes maintenant %{level}! Pensez à créer un compte pour protéger votre progression.",
@@ -2286,6 +2370,7 @@
             "inviteReceived": "%{name} t'a invité à jouer à %{game}",
             "inviteSent": "L'invite de jeu a été envoyée !"
         },
+        "contact": "N'hésite pas à nous contacter si t'as des soucis, des idées, ou des questions ! Tu peux nous écrire un mail ou rejoindre le Discord de Bloob.io.",
         "settings": {
             "redeemCode": {
                 "title": "Entrez un code",
@@ -2306,6 +2391,14 @@
                 "description": "Bloob.io suit anonymement les données analytiques à l'aide d'un serveur Matomo analytique privé et respectueux de la vie privée. Vos données ne sont jamais partagées avec d'autres. Vous pouvez vous désinscrire si vous le souhaitez.",
                 "blocked": "Les données analytiques ne sont pas actives. Votre navigateur ou extension peut l'avoir bloqué.",
                 "dnt": "Votre navigateur a le paramètre \"Ne pas suivre\" (DNT) activé. Nous respectons votre demande et ne vous suivons pas."
+            },
+            "ads": {
+                "title": "Annonces",
+                "description": "On affiche des pubs de Playwire. La pub sur Bloob.io, que ce soit en entier ou en partie, est gérée par Playwire LLC. Si tu veux pas voir de pubs sur Bloob.io, tu peux te débarrasser des pubs en achetant des pièces dans la boutique. Ça va enlever toutes les pubs pour ton compte automatiquement.",
+                "complaint": "C'est important pour Bloob.io que les pubs que tu vois soient éthiques et pas intrusives. Si tu vois des pubs qui gênent ton jeu, fais-nous signe en regardant la section \"À propos\".",
+                "consent": "Clique ici pour mettre à jour tes préférences de consentement pour les pubs",
+                "exempt": "Les pubs ne sont pas actives. Ton compte est sans pub. Merci pour ton soutien !",
+                "blocked": "Les pubs sont pas actives. Ton navigateur ou une extension a peut-être bloqué ça."
             },
             "serverData": {
                 "title": "Données du serveur",

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 1670,
-        "missing": 24
+        "total": 1719,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
@@ -101,6 +101,7 @@
             "incorrectValue": "给出的值和预期的不匹配。",
             "invalidMove": "提供的移动无效。",
             "invalidVote": "你试图进行的投票无效。",
+            "noLives": "你没有剩余的生命了。",
             "alreadyPlaced": "你已经放了东西。",
             "alreadyVoted": "你已经投过票了。",
             "invalidPlacement": "你放的棋子位置不对。",
@@ -1105,7 +1106,8 @@
                         "pier": "码头",
                         "littleIsland": "小岛",
                         "keys": "钥匙群岛",
-                        "lagoon": "泻湖"
+                        "lagoon": "泻湖",
+                        "ocean": "海洋"
                     }
                 },
                 "levelOrientation": {
@@ -1126,6 +1128,10 @@
                 "shipReveal": {
                     "title": "显示船只",
                     "help": "启用后，你会看到你击沉的船。禁用后，只会显示剩余船只的计数器。"
+                },
+                "hitAfterHit": {
+                    "title": "连击不断",
+                    "help": "开启后，击中船只后可以再次开火。关闭时，每回合只能开一次枪。"
                 }
             },
             "presets": {},
@@ -1425,12 +1431,77 @@
             }
         },
         "AI_ASSASSIN": {
-            "name": "AI刺客",
-            "title": "智胜，消灭，生存",
-            "description": "\"AI刺客\"是一款刺激的多人游戏，你可以消灭目标或智胜刺客。使用策略提示来达成你的目标并取得成功。",
+            "name": "人工智能刺客",
+            "title": null,
+            "description": null,
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "剪刀石头布",
+            "title": null,
+            "description": null,
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "石头赢剪刀",
+                        "paper": "布赢石头",
+                        "scissors": "剪刀赢布"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "最后一个站着的（<b>0</b> 条命） | 最后一个站着的（<b>1</b> 条命） | 最后一个站着的（<b>{count}</b> 条命）",
+                        "FIRST": "第一个得到 <b>0</b> 分 | 第一个得到 <b>1</b> 分 | 第一个得到 <b>{count}</b> 分",
+                        "HIGHEST_AFTER": "<b>0</b> 轮后得分最多 | <b>1</b> 轮后得分最多 | <b>{count}</b> 轮后得分最多"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "比赛",
+                    "description": [
+                        "先到5分"
+                    ]
+                },
+                "survival": {
+                    "title": "生存",
+                    "description": [
+                        "5条命",
+                        "每输一局就少一条命",
+                        "最后一个站着的玩家赢"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "系列最佳",
+                    "description": [
+                        "五轮后得分最高的玩家获胜"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "规则",
+                    "description": [
+                        "剪刀石头布很简单：选石头、布或剪刀。石头赢剪刀，布赢石头，剪刀赢布。",
+                        "每一轮，猜猜对手会选什么，然后做出相应的反应！"
+                    ]
+                },
+                "group": {
+                    "title": "组队",
+                    "description": [
+                        "最多可以4个人一起玩！每轮只有一个能赢。如果你早早被淘汰了，剩下的玩家会继续，直到决出胜者。",
+                        "在生存模式中，每个玩家有固定的生命值。最后一个站着的玩家获胜！"
+                    ]
+                },
+                "bots": {
+                    "title": "机器人",
+                    "description": [
+                        "和机器人对战！它们会随机出招，只要你能看穿它们的套路，就能一直赢！"
+                    ]
+                }
+            }
         },
         "NUMBER_SHOWDOWN": {
             "name": "数字对决",
@@ -1835,6 +1906,9 @@
         "restartNotice": "服务器将在 {count} 分钟后重启。请完成你的游戏。 | 服务器将在 {count} 分钟后重启。请完成你的游戏。 | 服务器将在 {count} 分钟后重启。请完成你的游戏。"
     },
     "misc": {
+        "rock": "石头",
+        "paper": "剪刀",
+        "scissors": "布",
         "lobby": "大厅",
         "inGame": "游戏中",
         "matchmakingSearch": "找游戏中",
@@ -2017,6 +2091,7 @@
         "games": "游戏",
         "winRatio": "胜率",
         "killDeathRatio": "击杀/死亡比率",
+        "lives": "生命",
         "points": "分数",
         "wins": "胜利次数",
         "grids": "网格",
@@ -2037,6 +2112,7 @@
         "myDevices": "我的设备",
         "myData": "我的数据",
         "redeemCode": "兑换码",
+        "contact": "联系",
         "leaderboard": "排行榜",
         "elapsedTime": "已过去%{time}",
         "startingInTime": "在 %{time} 后开始",
@@ -2226,6 +2302,14 @@
         }
     },
     "info": {
+        "roundEndTie": "平局啦！",
+        "roundEndStalemate": "僵局了！",
+        "roundWin": "你赢了！",
+        "roundLost": "你输了！",
+        "youLostThisRound": "你这一局输了！",
+        "youAreOutOfLives": "你没命了",
+        "waitForRoundEnd": "请等一下，等回合结束。",
+        "waitForWinner": "稍等一下，等着看谁赢！",
         "serverRestart": "服务器现在正在重启，请过几分钟再来看看。",
         "clearOldListings": "清除所有的“不可用”比赛。",
         "accountLinkSuggestion": "你现在是%{level}级了！考虑创建一个账户来保护你的进度吧。",
@@ -2286,6 +2370,7 @@
             "inviteReceived": "%{name} 邀请你玩 %{game}",
             "inviteSent": "游戏邀请已发送！"
         },
+        "contact": "如果你遇到问题、有什么建议或者有问题，别犹豫，随时联系我！可以发邮件或者加Bloob.io的Discord。",
         "settings": {
             "redeemCode": {
                 "title": "兑换码",
@@ -2306,6 +2391,14 @@
                 "description": "Bloob.io 使用隐私友好的、自托管的 Matomo 分析服务器匿名跟踪数据分析。你的数据永远不会与他人共享。如果你愿意，可以选择退出。",
                 "blocked": "数据分析未激活。你的浏览器或扩展可能已经阻止了它。",
                 "dnt": "你的浏览器已启用\"Do Not Track\"（DNT）设置。我们尊重你的请求，不会跟踪你。"
+            },
+            "ads": {
+                "title": "广告",
+                "description": "我们在Bloob.io上展示Playwire的广告。Bloob.io上的广告，无论是全部还是部分，都是由Playwire LLC处理的。如果你不想在Bloob.io上看到广告，可以通过购买商店里的金币来去广告。这会自动为你的账户移除所有广告。",
+                "complaint": "Bloob.io很重视你看到的广告是合乎道德且不打扰的。如果你发现有广告影响了你的游戏体验，请通过查看“关于”部分来联系我们。",
+                "consent": "点击这里更新你的广告同意偏好",
+                "exempt": "广告未激活。你的账户是无广告的。谢谢你的支持！",
+                "blocked": "广告没有激活。你的浏览器或扩展可能把它挡住了。"
             },
             "serverData": {
                 "title": "服务器数据",

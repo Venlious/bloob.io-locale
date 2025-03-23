@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Danish",
         "rtl": false,
-        "total": 1670,
-        "missing": 24
+        "total": 1719,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
@@ -101,6 +101,7 @@
             "incorrectValue": "Den værdi, der blev givet, stemmer ikke overens med den forventede.",
             "invalidMove": "Det træk, du prøvede, er ugyldigt.",
             "invalidVote": "Den stemme, du forsøgte at afgive, er ugyldig.",
+            "noLives": "Du har ingen liv tilbage.",
             "alreadyPlaced": "Du har allerede placeret noget.",
             "alreadyVoted": "Du har allerede stemt.",
             "invalidPlacement": "Din brikplacering er ugyldig.",
@@ -1105,7 +1106,8 @@
                         "pier": "Bro",
                         "littleIsland": "Lille Ø",
                         "keys": "Nøglerne",
-                        "lagoon": "Lagune"
+                        "lagoon": "Lagune",
+                        "ocean": "Hav"
                     }
                 },
                 "levelOrientation": {
@@ -1126,6 +1128,10 @@
                 "shipReveal": {
                     "title": "Skib Afsløring",
                     "help": "Når det er slået til, vil du se skibet, når du har sænket det. Når det er slået fra, vises kun en tæller med de resterende skibe."
+                },
+                "hitAfterHit": {
+                    "title": "Hit efter hit",
+                    "help": "Når det er tændt, kan du skyde igen efter at have rammet et skib. Når det er slukket, får du kun ét skud pr. tur."
                 }
             },
             "presets": {},
@@ -1425,12 +1431,77 @@
             }
         },
         "AI_ASSASSIN": {
-            "name": "AI Snigmorder",
-            "title": "Overlist, Eliminer, Overlev",
-            "description": "AI Assassin er et spændende multiplayer spil, hvor du enten fjerner målet eller overgår snigmorderne. Brug strategiske prompts til at nå dit mål og lykkes.",
+            "name": "AI Morder",
+            "title": null,
+            "description": null,
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Sten Saks Papir",
+            "title": null,
+            "description": null,
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "Sten slår saks",
+                        "paper": "Papir slår sten",
+                        "scissors": "Saks slår papir"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Sidste mand stående (<b>0</b> liv) | Sidste mand stående (<b>1</b> liv) | Sidste mand stående (<b>{count}</b> liv)",
+                        "FIRST": "Første til at få <b>0</b> point | Første til at få <b>1</b> point | Første til at få <b>{count}</b> point",
+                        "HIGHEST_AFTER": "Flest point efter <b>0</b> runder | Flest point efter <b>1</b> runde | Flest point efter <b>{count}</b> runder"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Race",
+                    "description": [
+                        "Første til 5 point"
+                    ]
+                },
+                "survival": {
+                    "title": "Overlevelse",
+                    "description": [
+                        "5 liv",
+                        "Mister et liv for hver runde, man taber",
+                        "Sidste spiller, der står tilbage, vinder"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Bedste af serien",
+                    "description": [
+                        "Spilleren med flest point efter 5 runder vinder."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Regler",
+                    "description": [
+                        "Sten Saks Papir er nemt: vælg sten, papir eller saks. Sten slår saks, papir slår sten, og saks slår papir.",
+                        "I hver runde skal du gætte, hvad din modstander vælger, og så reagere derefter!"
+                    ]
+                },
+                "group": {
+                    "title": "Gruppe",
+                    "description": [
+                        "Spil med op til 4 spillere! Kun én kan vinde hver runde. Hvis du ryger ud tidligt, fortsætter de andre spillere, indtil der er en vinder.",
+                        "I overlevelsesmode har hver spiller et bestemt antal liv. Vær den sidste spiller, der står tilbage, for at vinde!"
+                    ]
+                },
+                "bots": {
+                    "title": "Bots",
+                    "description": [
+                        "Spil mod bots! De følger en tilfældig strategi, så hvis du kan finde ud af det, kan du slå dem hele tiden!"
+                    ]
+                }
+            }
         },
         "NUMBER_SHOWDOWN": {
             "name": "Nummer Duel",
@@ -1835,6 +1906,9 @@
         "restartNotice": "Serveren genstarter om {count} minutter. Bliv færdig med dit spil. | Serveren genstarter om {count} minut. Bliv færdig med dit spil. | Serveren genstarter om {count} minutter. Bliv færdig med dit spil."
     },
     "misc": {
+        "rock": "Sten",
+        "paper": "Papir",
+        "scissors": "Saks",
         "lobby": "Lobby",
         "inGame": "I spillet",
         "matchmakingSearch": "Leder efter et spil",
@@ -2017,6 +2091,7 @@
         "games": "Spil",
         "winRatio": "Sejrsforhold",
         "killDeathRatio": "K/D Forhold",
+        "lives": "Liv",
         "points": "Point",
         "wins": "Sejre",
         "grids": "Gitter",
@@ -2037,6 +2112,7 @@
         "myDevices": "Mine Enheder",
         "myData": "Mine Data",
         "redeemCode": "Indløs Kode",
+        "contact": "Kontakt",
         "leaderboard": "Rangliste",
         "elapsedTime": "%{time} er gået",
         "startingInTime": "Starter om %{time}",
@@ -2226,6 +2302,14 @@
         }
     },
     "info": {
+        "roundEndTie": "Det er uafgjort!",
+        "roundEndStalemate": "Det er en stilling!",
+        "roundWin": "Du vandt!",
+        "roundLost": "Du tabte!",
+        "youLostThisRound": "Du tabte denne runde.",
+        "youAreOutOfLives": "Du har ikke flere liv",
+        "waitForRoundEnd": "Vent lige på, at runden slutter.",
+        "waitForWinner": "Sid stille og vent på, at der kommer en vinder!",
         "serverRestart": "Serveren bliver nu genstartet. Tjek lige om et par minutter.",
         "clearOldListings": "Fjern alle 'Ikke tilgængelige' kampe.",
         "accountLinkSuggestion": "Du er nu %{level}! Overvej at oprette en konto for at beskytte din fremgang.",
@@ -2286,6 +2370,7 @@
             "inviteReceived": "%{name} har inviteret dig til at spille %{game}",
             "inviteSent": "Spilinvitationen er sendt!"
         },
+        "contact": "Tøv ikke med at skrive, hvis du har problemer, forslag eller spørgsmål! Du kan kontakte os ved at sende en mail eller hoppe ind i Bloob.io Discorden.",
         "settings": {
             "redeemCode": {
                 "title": "Indløs Kode",
@@ -2306,6 +2391,14 @@
                 "description": "Bloob.io sporer anonymt din analyse ved hjælp af en privatlivsvenlig, selvhostet Matomo analyse server. Dine data deles aldrig med andre. Du kan fravælge det, hvis du ønsker det.",
                 "blocked": "Analyse er ikke aktiv. Din browser eller udvidelse kan have blokeret det.",
                 "dnt": "Din browser har \"Spor mig ikke\" (DNT) indstillingen aktiveret. Vi respekterer din anmodning og sporer dig ikke."
+            },
+            "ads": {
+                "title": "Reklamer",
+                "description": "Vi viser reklamer fra Playwire. Reklamerne på Bloob.io, om de er hele eller delvise, bliver håndteret af Playwire LLC. Hvis du ikke vil se reklamer på Bloob.io, kan du gå reklamefri ved at købe mønter i butikken. Det fjerner automatisk alle reklamer fra din konto.",
+                "complaint": "Det er vigtigt for Bloob.io, at de reklamer, du ser, er etiske og ikke forstyrrer. Hvis du ser reklamer, der går ud over dit gameplay, så giv os et praj ved at tjekke \"Om\"-sektionen.",
+                "consent": "Klik her for at opdatere dine præferencer for reklamegodkendelse",
+                "exempt": "Reklamer er ikke aktive. Din konto er reklamefri. Tak for din støtte!",
+                "blocked": "Annoncerne er ikke aktive. Din browser eller udvidelse har måske blokeret dem."
             },
             "serverData": {
                 "title": "Server Data",

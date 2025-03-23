@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Dutch",
         "rtl": false,
-        "total": 1670,
-        "missing": 24
+        "total": 1719,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
@@ -101,6 +101,7 @@
             "incorrectValue": "De opgegeven waarde komt niet overeen met de verwachte waarde.",
             "invalidMove": "Gegeven set is niet mogelijk.",
             "invalidVote": "De stem die je probeerde uit te brengen is ongeldig.",
+            "noLives": "Je hebt geen levens meer over.",
             "alreadyPlaced": "Je hebt al iets geplaatst.",
             "alreadyVoted": "Je hebt al gestemd.",
             "invalidPlacement": "Jouw schijf plaatsing is ongeldig.",
@@ -1105,7 +1106,8 @@
                         "pier": "Steiger",
                         "littleIsland": "Klein Eiland",
                         "keys": "De Sleutels",
-                        "lagoon": "Lagune"
+                        "lagoon": "Lagune",
+                        "ocean": "Oceaan"
                     }
                 },
                 "levelOrientation": {
@@ -1126,6 +1128,10 @@
                 "shipReveal": {
                     "title": "Schip Onthulling",
                     "help": "Als je het inschakelt, zie je het schip als je het hebt gezonken. Als je het uitschakelt, zie je alleen een teller met de overgebleven schepen."
+                },
+                "hitAfterHit": {
+                    "title": "Hit na Hit",
+                    "help": "Als je het aanzet, mag je weer schieten nadat je een schip hebt geraakt. Als het uitstaat, krijg je maar één schot per beurt."
                 }
             },
             "presets": {},
@@ -1426,11 +1432,76 @@
         },
         "AI_ASSASSIN": {
             "name": "AI Moordenaar",
-            "title": "Versla, Elimineer, Overleef",
-            "description": "AI Assassin is een spannend multiplayer spel waar je het doelwit uitschakelt of de moordenaars te slim af bent. Gebruik strategische aanwijzingen om je doel te bereiken en te winnen.",
+            "title": null,
+            "description": null,
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Steen Papier Schaar",
+            "title": null,
+            "description": null,
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "Steen wint van schaar",
+                        "paper": "Papier wint van steen",
+                        "scissors": "Schaar wint van papier"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Laatste overlevende (<b>0</b> levens) | Laatste overlevende (<b>1</b> leven) | Laatste overlevende (<b>{count}</b> levens)",
+                        "FIRST": "Eerste die <b>0</b> punten haalt | Eerste die <b>1</b> punt haalt | Eerste die <b>{count}</b> punten haalt",
+                        "HIGHEST_AFTER": "Meeste punten na <b>0</b> rondes | Meeste punten na <b>1</b> ronde | Meeste punten na <b>{count}</b> rondes"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Race",
+                    "description": [
+                        "Eerst tot 5 punten"
+                    ]
+                },
+                "survival": {
+                    "title": "Overleven",
+                    "description": [
+                        "5 levens",
+                        "Verlies een leven voor elke ronde die je verliest",
+                        "Laatste speler die overblijft wint"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Beste van de Serie",
+                    "description": [
+                        "De speler met de meeste punten na 5 rondes wint."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Regels",
+                    "description": [
+                        "Steen Papier Schaar is simpel: kies steen, papier of schaar. Steen verslaat schaar, papier verslaat steen, en schaar verslaat papier.",
+                        "In elke ronde, probeer te raden wat je tegenstander kiest en reageer daarop!"
+                    ]
+                },
+                "group": {
+                    "title": "Groep",
+                    "description": [
+                        "Speel met maximaal 4 spelers! Slechts één kan elke ronde winnen. Als je er vroeg uit ligt, gaan de overgebleven spelers door totdat er een winnaar is.",
+                        "In survival mode heeft elke speler een bepaald aantal levens. Wees de laatste speler die overblijft om te winnen!"
+                    ]
+                },
+                "bots": {
+                    "title": "Bots",
+                    "description": [
+                        "Speel tegen bots! Ze volgen een random strategie, dus als je het doorhebt, kun je ze steeds verslaan!"
+                    ]
+                }
+            }
         },
         "NUMBER_SHOWDOWN": {
             "name": "Nummer Showdown",
@@ -1835,6 +1906,9 @@
         "restartNotice": "Server gaat over {count} minuten opnieuw opstarten. Maak je game af. | Server gaat over {count} minuut opnieuw opstarten. Maak je game af. | Server gaat over {count} minuten opnieuw opstarten. Maak je game af."
     },
     "misc": {
+        "rock": "Steen",
+        "paper": "Papier",
+        "scissors": "Schaar",
         "lobby": "Lobby",
         "inGame": "In-game",
         "matchmakingSearch": "Op zoek naar een game",
@@ -2017,6 +2091,7 @@
         "games": "Spellen",
         "winRatio": "Winratio",
         "killDeathRatio": "K/D-ratio",
+        "lives": "Levens",
         "points": "Punten",
         "wins": "Zeges",
         "grids": "Roosters",
@@ -2037,6 +2112,7 @@
         "myDevices": "Mijn Apparaten",
         "myData": "Mijn Gegevens",
         "redeemCode": "Inwisselcode",
+        "contact": "Contact",
         "leaderboard": "Leaderbord",
         "elapsedTime": "%{time} verstreken",
         "startingInTime": "Begint over %{time}",
@@ -2226,6 +2302,14 @@
         }
     },
     "info": {
+        "roundEndTie": "Het is gelijkspel!",
+        "roundEndStalemate": "Het is een pat!",
+        "roundWin": "Je hebt gewonnen!",
+        "roundLost": "Je hebt verloren!",
+        "youLostThisRound": "Je hebt deze ronde verloren.",
+        "youAreOutOfLives": "Je hebt geen levens meer",
+        "waitForRoundEnd": "Even wachten tot de ronde voorbij is.",
+        "waitForWinner": "Blijf rustig zitten en wacht tot er een winnaar is!",
         "serverRestart": "De server wordt nu opnieuw opgestart. Kijk over een paar minuten weer even.",
         "clearOldListings": "Verwijder alle 'Niet beschikbaar' wedstrijden.",
         "accountLinkSuggestion": "Je bent nu %{level}! Overweeg om een account aan te maken om je vooruitgang te beschermen.",
@@ -2286,6 +2370,7 @@
             "inviteReceived": "%{name} heeft je uitgenodigd om %{game} te spelen",
             "inviteSent": "De game-uitnodiging is verstuurd!"
         },
+        "contact": "Aarzel niet om contact op te nemen als je problemen hebt, suggesties hebt of vragen hebt! Je kunt ons bereiken door een e-mail te sturen of door de Bloob.io Discord te joinen.",
         "settings": {
             "redeemCode": {
                 "title": "Code inwisselen",
@@ -2306,6 +2391,14 @@
                 "description": "Bloob.io volgt anoniem analytics bij met een privacy-vriendelijke, zelf gehoste Matomo analytics server. Je gegevens worden nooit met anderen gedeeld. Als je dat wilt, kun je je uitschrijven.",
                 "blocked": "Analytics zijn niet actief. Jouw browser of extensie heeft het misschien geblokkeerd.",
                 "dnt": "Jouw browser heeft de \"Do Not Track\" (DNT) instelling ingeschakeld. We respecteren je verzoek en volgen je niet."
+            },
+            "ads": {
+                "title": "Advertenties",
+                "description": "We tonen advertenties van Playwire. De advertenties op Bloob.io, of het nou helemaal of gedeeltelijk is, worden geregeld door Playwire LLC. Als je geen advertenties op Bloob.io wilt zien, kun je ad-vrij gaan door munten in de winkel te kopen. Dit verwijdert automatisch alle advertenties voor jouw account.",
+                "complaint": "Het is belangrijk voor Bloob.io dat de advertenties die je ziet ethisch en niet opdringerig zijn. Als je advertenties opmerkt die je gameplay verstoren, laat het ons weten via de \"Over\" sectie.",
+                "consent": "Klik hier om je voorkeuren voor advertentie toestemming bij te werken",
+                "exempt": "Advertenties zijn niet actief. Je account is ad-vrij. Bedankt voor je steun!",
+                "blocked": "Advertenties zijn niet actief. Je browser of extensie heeft het misschien geblokkeerd."
             },
             "serverData": {
                 "title": "Servergegevens",

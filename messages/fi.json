@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 1670,
-        "missing": 24
+        "total": 1719,
+        "missing": 28
     },
     "name": "Bloob.io",
     "error": {
@@ -101,6 +101,7 @@
             "incorrectValue": "Antamasi arvo ei täsmää odotettuun.",
             "invalidMove": "Antamasi siirto on virheellinen.",
             "invalidVote": "Yritetty äänesi on virheellinen.",
+            "noLives": "Sulla ei oo enää elämää jäljellä.",
             "alreadyPlaced": "Oot jo laittanut jotain.",
             "alreadyVoted": "Oot jo äänestänyt.",
             "invalidPlacement": "Sun nappulan sijoitus on virheellinen.",
@@ -1105,7 +1106,8 @@
                         "pier": "Laituri",
                         "littleIsland": "Pieni Saari",
                         "keys": "Avaimet",
-                        "lagoon": "Laguuni"
+                        "lagoon": "Laguuni",
+                        "ocean": "Meri"
                     }
                 },
                 "levelOrientation": {
@@ -1126,6 +1128,10 @@
                 "shipReveal": {
                     "title": "Aluksen Paljastus",
                     "help": "Kun tämä on päällä, näet laivan kun olet upottanut sen. Kun se on pois päältä, näkyy vain laskuri jäljellä oleville laivoille."
+                },
+                "hitAfterHit": {
+                    "title": "Isku iskun perään",
+                    "help": "Kun tää on päällä, saat ampua uudestaan, kun osut laivaan. Kun tää on pois päältä, saat vaan yhden laukauksen vuorolla."
                 }
             },
             "presets": {},
@@ -1425,12 +1431,77 @@
             }
         },
         "AI_ASSASSIN": {
-            "name": "Tehtävä: Tappaa AI",
-            "title": "Päihitä, Eliminoi, Selviydy",
-            "description": "AI Assassin on jännittävä moninpeli, jossa eliminoit kohteen tai harhautat salamurhaajia. Käytä strategisia vihjeitä tavoitteesi saavuttamiseksi ja menestyäksesi.",
+            "name": "AI Murhaaja",
+            "title": null,
+            "description": null,
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Kivi Paperi Sakset",
+            "title": null,
+            "description": null,
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "Kivi voittaa sakset",
+                        "paper": "Paperi voittaa kiven",
+                        "scissors": "Sakset voittaa paperin"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Viimeinen pystyssä (<b>0</b> elämää) | Viimeinen pystyssä (<b>1</b> elämä) | Viimeinen pystyssä (<b>{count}</b> elämää)",
+                        "FIRST": "Ensimmäinen, joka saa <b>0</b> pistettä | Ensimmäinen, joka saa <b>1</b> pisteen | Ensimmäinen, joka saa <b>{count}</b> pistettä",
+                        "HIGHEST_AFTER": "Eniten pisteitä jälkeen <b>0</b> kierrosta | Eniten pisteitä jälkeen <b>1</b> kierroksen | Eniten pisteitä jälkeen <b>{count}</b> kierrosta"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Kilpailu",
+                    "description": [
+                        "Ensimmäinen viiteen pisteeseen"
+                    ]
+                },
+                "survival": {
+                    "title": "Selviytyminen",
+                    "description": [
+                        "5 elämää",
+                        "Häviä yksi elämä jokaisesta hävitystä kierroksesta",
+                        "Viimeinen pystyssä oleva voittaa"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Sarjan parhaat",
+                    "description": [
+                        "Viiden kierroksen jälkeen eniten pisteitä saanut pelaaja voittaa."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Säännöt",
+                    "description": [
+                        "Kivi, paperi, sakset on tosi helppo: valitse kivi, paperi tai sakset. Kivi voittaa sakset, paperi voittaa kiven ja sakset voittaa paperin.",
+                        "Jokaisessa kierroksessa yritä arvata, mitä sun vastustaja valitsee ja reagoi sen mukaan!"
+                    ]
+                },
+                "group": {
+                    "title": "Ryhmä",
+                    "description": [
+                        "Pelaa jopa 4 pelaajalla! Vain yksi voi voittaa jokaisessa kierroksessa. Jos putoat aikaisin, muut pelaajat jatkaa, kunnes voittaja löytyy.",
+                        "Selviytymismoodissa jokaisella pelaajalla on tietty määrä elämiä. Ole viimeinen pystyssä voittaaksesi!"
+                    ]
+                },
+                "bots": {
+                    "title": "Bottien salat",
+                    "description": [
+                        "Pelaa botteja vastaan! Ne seuraa satunnaista strategiaa, joten jos saat sen selville, voit voittaa ne aina!"
+                    ]
+                }
+            }
         },
         "NUMBER_SHOWDOWN": {
             "name": "Numeroiden Taistelu",
@@ -1835,6 +1906,9 @@
         "restartNotice": "Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi."
     },
     "misc": {
+        "rock": "Kivi",
+        "paper": "Paperi",
+        "scissors": "Sakset",
         "lobby": "Aulassa",
         "inGame": "Pelissä",
         "matchmakingSearch": "Etsitään peliä",
@@ -2017,6 +2091,7 @@
         "games": "Pelit",
         "winRatio": "Voittojen suhde",
         "killDeathRatio": "K/D Suhde",
+        "lives": "Elämät",
         "points": "Pisteet",
         "wins": "Voitot",
         "grids": "Ruudukot",
@@ -2037,6 +2112,7 @@
         "myDevices": "Mun laitteet",
         "myData": "Mun data",
         "redeemCode": "Lunasta koodi",
+        "contact": "Ota yhteyttä",
         "leaderboard": "Tulostaulukko",
         "elapsedTime": "%{time} kulunut",
         "startingInTime": "Alkaa %{time} päästä",
@@ -2226,6 +2302,14 @@
         }
     },
     "info": {
+        "roundEndTie": "Se on tasapeli!",
+        "roundEndStalemate": "Se on pattitilanne!",
+        "roundWin": "Sä voitit!",
+        "roundLost": "Sä hävisit!",
+        "youLostThisRound": "Sä hävisit tän kierroksen.",
+        "youAreOutOfLives": "Elämäsi on loppu",
+        "waitForRoundEnd": "Odota, että kierros loppuu.",
+        "waitForWinner": "Pysy rauhassa ja odota, että voittaja nousee!",
         "serverRestart": "Serveri käynnistetään nyt uudelleen. Käy tsekkaamassa muutaman minuutin päästä.",
         "clearOldListings": "Poista kaikki 'Ei saatavilla' -ottelut.",
         "accountLinkSuggestion": "Olet nyt %{level}! Harkitse tilin luomista edistymisesi suojaamiseksi.",
@@ -2286,6 +2370,7 @@
             "inviteReceived": "%{name} kutsui sut pelaamaan %{game}",
             "inviteSent": "Pelikutsu on lähetetty!"
         },
+        "contact": "Älä epäröi ottaa yhteyttä, jos tulee ongelmia, on ehdotuksia tai kysymyksiä! Voit laittaa meilillä tai liittyä Bloob.io Discordiin.",
         "settings": {
             "redeemCode": {
                 "title": "Lunasta Koodi",
@@ -2306,6 +2391,14 @@
                 "description": "Bloob.io seuraa anonyymisti analytiikkaa yksityisyyttä kunnioittavalla, itse isännöidyllä Matomo-analytiikkapalvelimella. Tietojasi ei jaeta koskaan muiden kanssa. Voit halutessasi kieltäytyä tästä.",
                 "blocked": "Analytiikka ei ole aktiivinen. Selaimesi tai laajennuksesi saattaa olla estänyt sen.",
                 "dnt": "Selaimesi on asetettu \"Älä seuraa\" (DNT) -tilaan. Kunnioitamme pyyntöäsi emmekä seuraa sinua."
+            },
+            "ads": {
+                "title": "Mainokset",
+                "description": "Me näytetään mainoksia Playwireltä. Mainonta Bloob.io:ssa, olipa se sitten kokonaan tai osittain, hoitaa Playwire LLC. Jos et halua nähdä mainoksia Bloob.io:ssa, voit ostaa kolikoita kaupasta ja päästä mainoksista eroon. Tämä poistaa automaattisesti kaikki mainokset sun tililtä.",
+                "complaint": "Bloob.io:lle on tärkeää, että näkemäsi mainokset on eettisiä eikä ne häiritse peliäsi. Jos huomaat mainoksia, jotka sotkevat sun pelailua, ota yhteyttä tarkistamalla \"Tietoa\" osio.",
+                "consent": "Klikkaa tästä päivittääksesi mainosasetuksesi",
+                "exempt": "Mainokset ei ole aktiivisia. Sun tili on ilman mainoksia. Kiitos tuestasi!",
+                "blocked": "Mainokset ei oo päällä. Sun selain tai laajennus on ehkä estänyt ne."
             },
             "serverData": {
                 "title": "Palvelimen tiedot",
