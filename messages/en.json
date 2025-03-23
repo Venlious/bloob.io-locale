@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal American English",
         "rtl": false,
-        "total": 1670,
+        "total": 1697,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1106,7 +1106,8 @@
                         "pier": "Pier",
                         "littleIsland": "Little Island",
                         "keys": "The Keys",
-                        "lagoon": "Lagoon"
+                        "lagoon": "Lagoon",
+                        "ocean": "Ocean"
                     }
                 },
                 "levelOrientation": {
@@ -1127,6 +1128,10 @@
                 "shipReveal": {
                     "title": "Ship Reveal",
                     "help": "When enabled, you will see the ship when you have sunk it. When disabled, only a counter with remaining ships is shown."
+                },
+                "hitAfterHit": {
+                    "title": "Hit After Hit",
+                    "help": "When enabled, you will be allowed to fire again after hitting a ship. When disabled, you only get one shot per turn."
                 }
             },
             "presets": {},
@@ -1427,17 +1432,24 @@
         },
         "AI_ASSASSIN": {
             "name": "AI Assassin",
-            "title": "Outsmart, Eliminate, Survive",
-            "description": "AI Assassin is a thrilling multiplayer game where you either eliminate the target or outsmart the assassins. Use strategic prompts to achieve your goal and succeed.",
+            "title": "Play AI Assassin | Free AI Prompt Game | Online Multiplayer Fun",
+            "description": "Enjoy AI Assassin, a free AI prompt game with no account needed. Play online multiplayer matches with friends or bots in thrilling AI battles today!",
             "options": {},
             "presets": {},
             "help": {}
         },
         "ROCK_PAPER_SCISSORS": {
             "name": "Rock Paper Scissors",
-            "title": "",
-            "description": "",
+            "title": "Play Rock Paper Scissors Online | Free Multiplayer RPS Game",
+            "description": "Play Rock Paper Scissors online for free with 2-4 players. No account needed. Enjoy classic multiplayer RPS matches with friends, strangers, or bots.",
             "options": {
+				"result": {
+					"data": {
+						"rock": "Rock beats scissors",
+						"paper": "Paper beats rock",
+						"scissors": "Scissors beats paper"
+					}
+				},
                 "winCondition": {
                     "data": {
                         "LAST_STANDING": "Last standing (<b>0</b> lives) | Last standing (<b>1</b> live) | Last standing (<b>{count}</b> lives)",
@@ -1445,7 +1457,7 @@
                         "HIGHEST_AFTER": "Most points after <b>0</b> rounds | Most points after <b>1</b> round | Most points after <b>{count}</b> rounds"
                     }
                 }
-			},
+            },
             "presets": {
                 "default": {
                     "title": "Race",
@@ -1458,7 +1470,7 @@
                     "description": [
                         "5 lives",
                         "Lose a life for each round lost",
-						"Last player standing wins"
+                        "Last player standing wins"
                     ]
                 },
                 "bestOfSeries": {
@@ -1468,7 +1480,28 @@
                     ]
                 }
             },
-            "help": {}
+            "help": {
+                "rules": {
+                    "title": "Rules",
+                    "description": [
+                        "Rock Paper Scissors is simple: choose rock, paper, or scissors. Rock beats scissors, paper beats rock, and scissors beat paper.",
+						"In each round, predict your opponent's choice and respond accordingly!"
+                    ]
+                },
+                "group": {
+                    "title": "Group",
+                    "description": [
+                        "Play with up to 4 players! Only one can win each round. If you're out early, the remaining players continue until a winner is determined.",
+            			"In survival mode, each player has a set number of lives. Be the last player standing to win!"
+                    ]
+                },
+                "bots": {
+                    "title": "Bots",
+                    "description": [
+                        "Play against bots! They follow a random strategy, so if you can figure it out, you can beat them consistently!"
+                    ]
+                }
+			}
         },
         "NUMBER_SHOWDOWN": {
             "name": "Number Showdown",
@@ -1873,9 +1906,9 @@
         "restartNotice": "Server will restart in {count} minutes. Please finish your game. | Server will restart in {count} minute. Please finish your game. | Server will restart in {count} minutes. Please finish your game."
     },
     "misc": {
-		"rock": "Rock",
-		"paper": "Paper",
-		"scissors": "Scissors",
+        "rock": "Rock",
+        "paper": "Paper",
+        "scissors": "Scissors",
         "lobby": "Lobby",
         "inGame": "In-game",
         "matchmakingSearch": "Looking for a game",
@@ -2079,6 +2112,7 @@
         "myDevices": "My Devices",
         "myData": "My Data",
         "redeemCode": "Redeem Code",
+        "contact": "Contact",
         "leaderboard": "Leaderboard",
         "elapsedTime": "%{time} elapsed",
         "startingInTime": "Starting in %{time}",
@@ -2268,14 +2302,14 @@
         }
     },
     "info": {
-		"roundEndTie": "It's a tie!",
-		"roundEndStalemate": "It's a stalemate!",
-		"roundWin": "You won!",
-		"roundLost": "You lost!",
-		"youLostThisRound": "You lost this round",
-		"youAreOutOfLives": "You are out of lives",
-		"waitForRoundEnd": "Please wait for the round to conclude.",
-		"waitForWinner": "Sit tight and wait for a winner to emerge!",
+        "roundEndTie": "It's a tie!",
+        "roundEndStalemate": "It's a stalemate!",
+        "roundWin": "You won!",
+        "roundLost": "You lost!",
+        "youLostThisRound": "You lost this round",
+        "youAreOutOfLives": "You are out of lives",
+        "waitForRoundEnd": "Please wait for the round to conclude.",
+        "waitForWinner": "Sit tight and wait for a winner to emerge!",
         "serverRestart": "The server is now being restarted. Please check back in a few minutes.",
         "clearOldListings": "Clear all 'Unavailable' matches.",
         "accountLinkSuggestion": "You are now %{level}! Consider creating an account to protect your progress.",
@@ -2336,6 +2370,7 @@
             "inviteReceived": "%{name} invited you to play %{game}",
             "inviteSent": "The game invite has been sent!"
         },
+		"contact": "Don't hesitate to reach out if you encounter any issues, have suggestions, or have any questions! You can get in touch by sending an email or by joining the Bloob.io Discord.",
         "settings": {
             "redeemCode": {
                 "title": "Redeem Code",
@@ -2356,6 +2391,14 @@
                 "description": "Bloob.io anonymously tracks analytics using a privacy-friendly, self-hosted Matomo analytics server. Your data is never shared with others. You may opt out if you wish.",
                 "blocked": "Analytics are not active. Your browser or extension may have blocked it.",
                 "dnt": "Your browser has the \"Do Not Track\" (DNT) setting enabled. We honor your request and are not tracking you."
+            },
+            "ads": {
+                "title": "Ads",
+                "description": "We display advertisements from Playwire. The advertising on Bloob.io, whether in full or in part, is handled by Playwire LLC. If you do not want to see ads on Bloob.io, you can go ad free by purchasing coins from the store. This will automatically remove all ads for your account.",
+                "complaint": "It is important to Bloob.io that the ads you see are ethical and non intrusive. If you notice ads that interfere with your gameplay please reach out by checking the \"About\" section.",
+                "consent": "Click here to update your ad consent preferences",
+                "exempt": "Ads are not active. Your account is ad-free. Thank you for your support!",
+                "blocked": "Ads are not active. Your browser or extension may have blocked it."
             },
             "serverData": {
                 "title": "Server Data",
