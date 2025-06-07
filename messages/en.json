@@ -244,6 +244,38 @@
                         "off": "No limit"
                     }
                 },
+                "scoringSystem": {
+                    "title": "Scoring System",
+                    "help": {
+						"default": "Determine the system for how points are awarded for getting a question right.",
+                        "SPEED": "Points are based on how quickly the question is answered.",
+                        "ORDER": "Points are based on who was the quickest between players.",
+                        "FIXED": "Each question awards the same amount of points.",
+                        "PROGRESSIVE": "Points earned increase after each question.",
+                        "STREAK": "Earn extra points for consecutive correct answers; resets after an incorrect answer."
+                    },
+                    "data": {
+                        "SPEED": "Speed",
+                        "ORDER": "Order",
+                        "FIXED": "Fixed",
+                        "PROGRESSIVE": "Progressive",
+                        "STREAK": "Streak"
+                    }
+                },
+                "mode": {
+                    "title": "Mode",
+                    "help": {
+						"default": "Choose how players will compete: individually, as a team, or collaboratively.",
+                        "SOLO": "Each player competes alone.",
+                        "CO_OP": "All players work together as a team.",
+                        "TEAM": "Players are divided into teams, and they can choose their own group to collaborate with."
+                    },
+                    "data": {
+                        "SOLO": "Solo",
+                        "CO_OP": "Co-op",
+                        "TEAM": "Teams"
+                    }
+                },
                 "deckSize": {
                     "title": "Deck Size",
                     "help": "Play without time limits. Disable all turn timers and enjoy a relaxed gameplay experience where you can play at your own pace. Not recommended against random opponents.",
@@ -1578,6 +1610,27 @@
             },
             "presets": {},
             "help": {}
+        },
+        "TRIVIA": {
+            "name": "Trivia",
+            "title": "",
+            "description": "",
+            "options": {
+                "consensus": {
+                    "title": "Consensus",
+                    "help": "In team mode, should the team's answer be based on a majority vote (Consensus)? If not, any team member can change the answer for everyone."
+                },
+                "lockAnswer": {
+                    "title": "Lock answer",
+                    "help": "When enabled, players cannot change their answer when they have selected one."
+                },
+                "eliminationChallenge": {
+                    "title": "Elimination Challenge",
+                    "help": "When enabled, a player or team is eliminated immediately after answering a question incorrectly."
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1908,6 +1961,9 @@
         "restartNotice": "Server will restart in {count} minutes. Please finish your game. | Server will restart in {count} minute. Please finish your game. | Server will restart in {count} minutes. Please finish your game."
     },
     "misc": {
+        "questions": "Questions",
+        "teamAndQuestions": "Team & Questions",
+        "questionPacks": "Question Packs",
         "rock": "Rock",
         "paper": "Paper",
         "scissors": "Scissors",
@@ -2153,6 +2209,7 @@
         "volumeMusic": "Music Volume",
         "selectYourLanguage": "Select Your Language",
         "selectYourColor": "Select Your Color",
+        "selectYourTeam": "Select Your Team",
         "latestChanges": "Latest Changes",
         "noChangesDetected": "No Changes Detected",
         "newChanges": "New Changes",
