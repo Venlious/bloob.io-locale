@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 1719,
-        "missing": 24
+        "total": 1762,
+        "missing": 79
     },
     "name": "Bloob.io",
     "error": {
@@ -82,6 +82,7 @@
         "start": {
             "fieldRows": "Bidang yang dipilih nggak bisa nampung lebih dari %{rows} baris",
             "fieldCannotFitUsers": "Bidang yang dipilih nggak bisa nampung lebih dari %{users} pemain",
+            "questionThreshold": null,
             "whiteCardThreshold": "Game ini butuh minimal %{count} kartu respons (putih)",
             "blackCardThreshold": "Game ini butuh minimal %{count} kartu aksi (hitam)",
             "insufficientPlayers": "Butuh minimal %{min} pemain buat mulai pertandingan."
@@ -242,6 +243,38 @@
                     "help": "Main tanpa batas waktu. Nonaktifkan semua timer giliran dan nikmati pengalaman bermain yang santai di mana kamu bisa main sesuai ritme sendiri. Tidak disarankan melawan lawan acak.",
                     "data": {
                         "off": "Tanpa batas"
+                    }
+                },
+                "scoringSystem": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    },
+                    "data": {
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    }
+                },
+                "mode": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
+                    },
+                    "data": {
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
                     }
                 },
                 "deckSize": {
@@ -1578,36 +1611,87 @@
             },
             "presets": {},
             "help": {}
+        },
+        "TRIVIA": {
+            "name": null,
+            "title": null,
+            "description": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "lockAnswer": {
+                    "title": null,
+                    "help": null
+                },
+                "eliminationChallenge": {
+                    "title": null,
+                    "help": null
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coop": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "teams": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
-		"leftTheGame": "keluar dari game",
-		"affirmative": "Oke.",
-		"thanks": "Makasih!",
-		"sorry": "Maaf!",
-		"goodLuck": "Semoga beruntung!",
-		"brb": "Bentar, aku balik lagi ya!",
-		"go": "Aku harus pergi nih.",
-		"glhf": "Semoga beruntung, ya!",
-		"gg": "Pertandingan bagus!",
-		"readyCheck": "Semua siap?",
-		"changeSettings": "Ubah pengaturan!",
-		"ready": "Siap!",
-		"wait": "Tunggu sebentar!",
-		"letsGo": "Ayo pergi!",
-		"greeting": "Hai!",
-		"how": "Gimana sih!?",
-		"closeOne": "Hampir saja!",
-		"niceOne": "Bagus sekali!",
-		"remindMove": "Giliranmu!",
-		"wow": "Wow!",
-		"oops": "Ups!",
-		"no": "Nggak!",
-		"ohNo": "Oh tidak!",
-		"wellPlayed": "Bagus mainnya!",
-		"rematch": "Balas dendam!",
-		"fun": "Seru banget!",
-		"bye": "Dadah!"
+        "leftTheGame": "keluar dari game",
+        "affirmative": "Oke.",
+        "thanks": "Makasih!",
+        "sorry": "Maaf!",
+        "goodLuck": "Semoga beruntung!",
+        "brb": "Bentar, aku balik lagi ya!",
+        "go": "Aku harus pergi nih.",
+        "glhf": "Semoga beruntung, ya!",
+        "gg": "Pertandingan bagus!",
+        "readyCheck": "Semua siap?",
+        "changeSettings": "Ubah pengaturan!",
+        "ready": "Siap!",
+        "wait": "Tunggu sebentar!",
+        "letsGo": "Ayo pergi!",
+        "greeting": "Hai!",
+        "how": "Gimana sih!?",
+        "closeOne": "Hampir saja!",
+        "niceOne": "Bagus sekali!",
+        "remindMove": "Giliranmu!",
+        "wow": "Wow!",
+        "oops": "Ups!",
+        "no": "Nggak!",
+        "ohNo": "Oh tidak!",
+        "wellPlayed": "Bagus mainnya!",
+        "rematch": "Balas dendam!",
+        "fun": "Seru banget!",
+        "bye": "Dadah!"
     },
     "header": {
         "message": {
@@ -1644,6 +1728,8 @@
             "roundCount": "Ronde %{current} dari %{total}",
             "roundCurrent": "Putaran %{current}",
             "startingNewRound": "Mulai ronde baru...",
+            "questionCount": null,
+            "questionCurrent": null,
             "war": "Perang!",
             "outcome": "Hasil",
             "input": "Menunggu masukanmu",
@@ -1885,6 +1971,9 @@
         "restartNotice": "Server bakal restart dalam {count} menit. Selesaikan gamenya ya. | Server bakal restart dalam {count} menit. Selesaikan gamenya ya. | Server bakal restart dalam {count} menit. Selesaikan gamenya ya."
     },
     "misc": {
+        "questions": null,
+        "teamAndQuestions": null,
+        "questionPacks": null,
         "rock": "Batu",
         "paper": "Kertas",
         "scissors": "Gunting",
@@ -2038,7 +2127,6 @@
         "view": "Lihat",
         "forfeit": "Menyerah Game",
         "processFiles": "Proses File",
-        "sendMessage": "Kirim Pesan",
         "checkAgain": "Cek Lagi",
         "refreshWindow": "Segarkan Jendela",
         "makeHost": "Jadikan Host",
@@ -2059,6 +2147,7 @@
         "highestScore": "Skor Tertinggi",
         "totalScore": "Skor Total",
         "finalScore": "Skor Akhir",
+        "flawlessGames": null,
         "hits": "Hitungan",
         "hitRate": "Tingkat Hit",
         "rank": "Peringkat",
@@ -2068,6 +2157,7 @@
         "assassinations": "Pembunuhan",
         "survivals": "Bertahan hidup",
         "games": "Game",
+        "correctRatio": null,
         "winRatio": "Rasio Menang",
         "killDeathRatio": "Rasio K/D",
         "lives": "Nyawa",
@@ -2130,6 +2220,7 @@
         "volumeMusic": "Volume Musik",
         "selectYourLanguage": "Pilih Bahasa Kamu",
         "selectYourColor": "Pilih Warna Kamu",
+        "selectYourTeam": null,
         "latestChanges": "Perubahan Terbaru",
         "noChangesDetected": "Tidak Ada Perubahan yang Terdeteksi",
         "newChanges": "Perubahan Baru",
@@ -2287,10 +2378,13 @@
         "roundLost": "Kamu kalah!",
         "youLostThisRound": "Kamu kalah di ronde ini!",
         "youAreOutOfLives": "Kamu kehabisan nyawa",
+        "playerIsEliminated": null,
+        "youAreEliminated": null,
         "waitForRoundEnd": "Tunggu sebentar sampai ronde selesai.",
         "waitForWinner": "Santai aja dan tunggu pemenangnya muncul!",
         "serverRestart": "Server lagi di-restart. Cek lagi beberapa menit ya.",
         "clearOldListings": "Hapus semua pertandingan yang 'Tidak tersedia'.",
+        "flawlessGame": null,
         "accountLinkSuggestion": "Kamu sekarang level %{level}! Pertimbangkan untuk membuat akun biar progresmu aman.",
         "accountLinked": "Akun ini terhubung dengan alamat email: %{email}.",
         "incompleteTranslationNotice": "Bahasa yang kamu pilih sekitar {percentage}% selesai. Kalau ada terjemahan yang hilang, bakal ditampilkan dalam Bahasa Inggris.",
@@ -2726,6 +2820,7 @@
             "developedBy": "Dikembangkan oleh %{name}",
             "iconsSource": "Ikon disediakan oleh %{name} (Berlisensi)",
             "soundsSource": "Suara disediakan oleh %{name} (Berlisensi)",
+            "emojiSource": null,
             "rottenApplesSource": "Apel Busuk berdasarkan %{name} (BY-NC-SA 2.0)",
             "diceSource": "Model Dadu oleh %{name} (CC-BY-4.0)",
             "localization": "Lokalisasi oleh kontributor sukarela"

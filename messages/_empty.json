@@ -2,8 +2,8 @@
     "_meta": {
         "language": null,
         "rtl": null,
-        "total": 1719,
-        "missing": 1705
+        "total": 1762,
+        "missing": 1758
     },
     "name": "Bloob.io",
     "error": {
@@ -82,6 +82,7 @@
         "start": {
             "fieldRows": null,
             "fieldCannotFitUsers": null,
+            "questionThreshold": null,
             "whiteCardThreshold": null,
             "blackCardThreshold": null,
             "insufficientPlayers": null
@@ -242,6 +243,38 @@
                     "help": null,
                     "data": {
                         "off": null
+                    }
+                },
+                "scoringSystem": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    },
+                    "data": {
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    }
+                },
+                "mode": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
+                    },
+                    "data": {
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
                     }
                 },
                 "deckSize": {
@@ -1578,36 +1611,87 @@
             },
             "presets": {},
             "help": {}
+        },
+        "TRIVIA": {
+            "name": null,
+            "title": null,
+            "description": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "lockAnswer": {
+                    "title": null,
+                    "help": null
+                },
+                "eliminationChallenge": {
+                    "title": null,
+                    "help": null
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coop": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "teams": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
-		"leftTheGame": null,
-		"affirmative": null,
-		"thanks": null,
-		"sorry": null,
-		"goodLuck": null,
-		"brb": null,
-		"go": null,
-		"glhf": null,
-		"gg": null,
-		"readyCheck": null,
-		"changeSettings": null,
-		"ready": null,
-		"wait": null,
-		"letsGo": null,
-		"greeting": null,
-		"how": null,
-		"closeOne": null,
-		"niceOne": null,
-		"remindMove": null,
-		"wow": null,
-		"oops": null,
-		"no": null,
-		"ohNo": null,
-		"wellPlayed": null,
-		"rematch": null,
-		"fun": null,
-		"bye": null
+        "leftTheGame": null,
+        "affirmative": null,
+        "thanks": null,
+        "sorry": null,
+        "goodLuck": null,
+        "brb": null,
+        "go": null,
+        "glhf": null,
+        "gg": null,
+        "readyCheck": null,
+        "changeSettings": null,
+        "ready": null,
+        "wait": null,
+        "letsGo": null,
+        "greeting": null,
+        "how": null,
+        "closeOne": null,
+        "niceOne": null,
+        "remindMove": null,
+        "wow": null,
+        "oops": null,
+        "no": null,
+        "ohNo": null,
+        "wellPlayed": null,
+        "rematch": null,
+        "fun": null,
+        "bye": null
     },
     "header": {
         "message": {
@@ -1644,6 +1728,8 @@
             "roundCount": null,
             "roundCurrent": null,
             "startingNewRound": null,
+            "questionCount": null,
+            "questionCurrent": null,
             "war": null,
             "outcome": null,
             "input": null,
@@ -1885,6 +1971,9 @@
         "restartNotice": null
     },
     "misc": {
+        "questions": null,
+        "teamAndQuestions": null,
+        "questionPacks": null,
         "rock": null,
         "paper": null,
         "scissors": null,
@@ -2038,7 +2127,6 @@
         "view": null,
         "forfeit": null,
         "processFiles": null,
-        "sendMessage": null,
         "checkAgain": null,
         "refreshWindow": null,
         "makeHost": null,
@@ -2059,6 +2147,7 @@
         "highestScore": null,
         "totalScore": null,
         "finalScore": null,
+        "flawlessGames": null,
         "hits": null,
         "hitRate": null,
         "rank": null,
@@ -2068,6 +2157,7 @@
         "assassinations": null,
         "survivals": null,
         "games": null,
+        "correctRatio": null,
         "winRatio": null,
         "killDeathRatio": null,
         "lives": null,
@@ -2130,6 +2220,7 @@
         "volumeMusic": null,
         "selectYourLanguage": null,
         "selectYourColor": null,
+        "selectYourTeam": null,
         "latestChanges": null,
         "noChangesDetected": null,
         "newChanges": null,
@@ -2287,10 +2378,13 @@
         "roundLost": null,
         "youLostThisRound": null,
         "youAreOutOfLives": null,
+        "playerIsEliminated": null,
+        "youAreEliminated": null,
         "waitForRoundEnd": null,
         "waitForWinner": null,
         "serverRestart": null,
         "clearOldListings": null,
+        "flawlessGame": null,
         "accountLinkSuggestion": null,
         "accountLinked": null,
         "incompleteTranslationNotice": null,
@@ -2726,6 +2820,7 @@
             "developedBy": null,
             "iconsSource": null,
             "soundsSource": null,
+            "emojiSource": null,
             "rottenApplesSource": null,
             "diceSource": null,
             "localization": null

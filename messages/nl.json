@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Dutch",
         "rtl": false,
-        "total": 1719,
-        "missing": 24
+        "total": 1762,
+        "missing": 79
     },
     "name": "Bloob.io",
     "error": {
@@ -82,6 +82,7 @@
         "start": {
             "fieldRows": "Geselecteerd speelveld ondersteunt niet meer dan %{rows} rijen",
             "fieldCannotFitUsers": "Geselecteerd speelveld ondersteunt niet meer dan %{users} spelers",
+            "questionThreshold": null,
             "whiteCardThreshold": "Het spel vereist minstens %{count} antwoordkaarten (wit)",
             "blackCardThreshold": "Het spel vereist minstens %{count} actiekaarten (zwart)",
             "insufficientPlayers": "Je hebt minstens %{min} spelers nodig om het spel te beginnen."
@@ -242,6 +243,38 @@
                     "help": "Speel zonder tijdslimieten. Schakel alle beurt timers uit en geniet van een ontspannen spelervaring waar je in je eigen tempo kunt spelen. Niet aanbevolen tegen willekeurige tegenstanders.",
                     "data": {
                         "off": "Geen limiet"
+                    }
+                },
+                "scoringSystem": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    },
+                    "data": {
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    }
+                },
+                "mode": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
+                    },
+                    "data": {
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
                     }
                 },
                 "deckSize": {
@@ -1578,36 +1611,87 @@
             },
             "presets": {},
             "help": {}
+        },
+        "TRIVIA": {
+            "name": null,
+            "title": null,
+            "description": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "lockAnswer": {
+                    "title": null,
+                    "help": null
+                },
+                "eliminationChallenge": {
+                    "title": null,
+                    "help": null
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coop": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "teams": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
-		"leftTheGame": "heeft het spel verlaten",
-		"affirmative": "Oke.",
-		"thanks": "Dankje!",
-		"sorry": "Sorry!",
-		"goodLuck": "Veel plezier!",
-		"brb": "Ik ben zo terug!",
-		"go": "Ik moet gaan.",
-		"glhf": "glhf",
-		"gg": "gg",
-		"readyCheck": "Iedereen klaar?",
-		"changeSettings": "Wijzig instellingen!",
-		"ready": "Klaar!",
-		"wait": "Wacht even!",
-		"letsGo": "Kom op!",
-		"greeting": "Hallo!",
-		"how": "Hoe!?",
-		"closeOne": "Bijna!",
-		"niceOne": "Mooi gedaan!",
-		"remindMove": "Jouw beurt!",
-		"wow": "Wow!",
-		"oops": "Oeps!",
-		"no": "Neeee!",
-		"ohNo": "Oh nee!",
-		"wellPlayed": "Goed gespeeld!",
-		"rematch": "Nog een keer!",
-		"fun": "Dat was leuk!",
-		"bye": "Doei!"
+        "leftTheGame": "heeft het spel verlaten",
+        "affirmative": "Oke.",
+        "thanks": "Dankje!",
+        "sorry": "Sorry!",
+        "goodLuck": "Veel plezier!",
+        "brb": "Ik ben zo terug!",
+        "go": "Ik moet gaan.",
+        "glhf": "glhf",
+        "gg": "gg",
+        "readyCheck": "Iedereen klaar?",
+        "changeSettings": "Wijzig instellingen!",
+        "ready": "Klaar!",
+        "wait": "Wacht even!",
+        "letsGo": "Kom op!",
+        "greeting": "Hallo!",
+        "how": "Hoe!?",
+        "closeOne": "Bijna!",
+        "niceOne": "Mooi gedaan!",
+        "remindMove": "Jouw beurt!",
+        "wow": "Wow!",
+        "oops": "Oeps!",
+        "no": "Neeee!",
+        "ohNo": "Oh nee!",
+        "wellPlayed": "Goed gespeeld!",
+        "rematch": "Nog een keer!",
+        "fun": "Dat was leuk!",
+        "bye": "Doei!"
     },
     "header": {
         "message": {
@@ -1644,6 +1728,8 @@
             "roundCount": "Ronde %{current} van de %{total}",
             "roundCurrent": "Ronde %{current}",
             "startingNewRound": "Nieuwe ronde begint...",
+            "questionCount": null,
+            "questionCurrent": null,
             "war": "Oorlog!",
             "outcome": "Uitslag",
             "input": "Wachten op jouw invoer",
@@ -1885,6 +1971,9 @@
         "restartNotice": "Server gaat over {count} minuten opnieuw opstarten. Maak je game af. | Server gaat over {count} minuut opnieuw opstarten. Maak je game af. | Server gaat over {count} minuten opnieuw opstarten. Maak je game af."
     },
     "misc": {
+        "questions": null,
+        "teamAndQuestions": null,
+        "questionPacks": null,
         "rock": "Steen",
         "paper": "Papier",
         "scissors": "Schaar",
@@ -2038,7 +2127,6 @@
         "view": "Bekijk",
         "forfeit": "Verklaar Verlies",
         "processFiles": "Verwerk Bestanden",
-        "sendMessage": "Verstuur Bericht",
         "checkAgain": "Opnieuw controleren",
         "refreshWindow": "Ververs Scherm",
         "makeHost": "Leiderschap Overdragen",
@@ -2059,6 +2147,7 @@
         "highestScore": "Hoogste Score",
         "totalScore": "Totaalscore",
         "finalScore": "Eindscore",
+        "flawlessGames": null,
         "hits": "Hits",
         "hitRate": "Hitpercentage",
         "rank": "Plaats",
@@ -2068,6 +2157,7 @@
         "assassinations": "Moorden",
         "survivals": "Overlevingen",
         "games": "Spellen",
+        "correctRatio": null,
         "winRatio": "Winratio",
         "killDeathRatio": "K/D-ratio",
         "lives": "Levens",
@@ -2130,6 +2220,7 @@
         "volumeMusic": "Muziekvolume",
         "selectYourLanguage": "Selecteer Jouw Taal",
         "selectYourColor": "Selecteer Jouw Kleur",
+        "selectYourTeam": null,
         "latestChanges": "Laatste Wijzigingen",
         "noChangesDetected": "Geen Wijzigingen Gevonden",
         "newChanges": "Nieuw",
@@ -2287,10 +2378,13 @@
         "roundLost": "Je hebt verloren!",
         "youLostThisRound": "Je hebt deze ronde verloren.",
         "youAreOutOfLives": "Je hebt geen levens meer",
+        "playerIsEliminated": null,
+        "youAreEliminated": null,
         "waitForRoundEnd": "Even wachten tot de ronde voorbij is.",
         "waitForWinner": "Blijf rustig zitten en wacht tot er een winnaar is!",
         "serverRestart": "De server wordt nu opnieuw opgestart. Kijk over een paar minuten weer even.",
         "clearOldListings": "Verwijder alle 'Niet beschikbaar' wedstrijden.",
+        "flawlessGame": null,
         "accountLinkSuggestion": "Je bent nu %{level}! Overweeg om een account aan te maken om je vooruitgang te beschermen.",
         "accountLinked": "Dit account is gekoppeld aan het volgende e-mailadres: %{email}.",
         "incompleteTranslationNotice": "De taal die je hebt geselecteerd is ongeveer {percentage}% compleet. Elke ontbrekende vertaling zal in het Engels verschijnen.",
@@ -2726,6 +2820,7 @@
             "developedBy": "Ontwikkeld door %{name}",
             "iconsSource": "Icoontjes met dank aan %{name} (Licentie)",
             "soundsSource": "Geluiden voorzien door %{name} (Licentie)",
+            "emojiSource": null,
             "rottenApplesSource": "Rotten Apples gebaseerd op %{name} (BY-NC-SA 2.0)",
             "diceSource": "Dice model van %{name} (CC-BY-4.0)",
             "localization": "Lokalisatie door vrijwillige bijdragers"

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 1719,
-        "missing": 24
+        "total": 1762,
+        "missing": 79
     },
     "name": "Bloob.io",
     "error": {
@@ -82,6 +82,7 @@
         "start": {
             "fieldRows": "Seçili alan %{rows} satırdan fazlasını destekleyemez",
             "fieldCannotFitUsers": "Seçili alan %{users} oyuncudan fazlasını destekleyemez",
+            "questionThreshold": null,
             "whiteCardThreshold": "Oyun en az %{count} yanıt kartı (beyaz) gerektirir",
             "blackCardThreshold": "Oyun en az %{count} eylem kartı (siyah) gerektirir",
             "insufficientPlayers": "Maçı başlatmak için en az %{min} oyuncuya ihtiyaç var."
@@ -242,6 +243,38 @@
                     "help": "Zaman sınırlaması olmadan oyna. Tüm tur zamanlayıcılarını devre dışı bırak ve kendi hızında oynayabileceğin rahat bir oyun deneyimi yaşa. Rastgele rakiplere karşı önerilmez.",
                     "data": {
                         "off": "Sınırsız"
+                    }
+                },
+                "scoringSystem": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    },
+                    "data": {
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    }
+                },
+                "mode": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
+                    },
+                    "data": {
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
                     }
                 },
                 "deckSize": {
@@ -1578,36 +1611,87 @@
             },
             "presets": {},
             "help": {}
+        },
+        "TRIVIA": {
+            "name": null,
+            "title": null,
+            "description": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "lockAnswer": {
+                    "title": null,
+                    "help": null
+                },
+                "eliminationChallenge": {
+                    "title": null,
+                    "help": null
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coop": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "teams": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
-		"leftTheGame": "Oyundan ayrıldı",
-		"affirmative": "Tamam.",
-		"thanks": "Teşekkürler!",
-		"sorry": "Özür dilerim!",
-		"goodLuck": "İyi şanslar!",
-		"brb": "Hemen dönüyorum!",
-		"go": "Gitmem lazım.",
-		"glhf": "İyi eğlenceler",
-		"gg": "İyi oyun",
-		"readyCheck": "Herkes hazır mı?",
-		"changeSettings": "Ayarları değiştir!",
-		"ready": "Hazırım!",
-		"wait": "Lütfen bekleyin!",
-		"letsGo": "Hadi gidelim!",
-		"greeting": "Merhaba!",
-		"how": "Nasıl!?",
-		"closeOne": "İyi kurtardın!",
-		"niceOne": "Güzel hamle!",
-		"remindMove": "Sıra sende!",
-		"wow": "Vay be!",
-		"oops": "Hoppala!",
-		"no": "Hayır!",
-		"ohNo": "Oh hayır!",
-		"wellPlayed": "Güzel oynadın!",
-		"rematch": "Tekrar oynayalım!",
-		"fun": "Çok eğlenceliydi!",
-		"bye": "Hoşça kal!"
+        "leftTheGame": "Oyundan ayrıldı",
+        "affirmative": "Tamam.",
+        "thanks": "Teşekkürler!",
+        "sorry": "Özür dilerim!",
+        "goodLuck": "İyi şanslar!",
+        "brb": "Hemen dönüyorum!",
+        "go": "Gitmem lazım.",
+        "glhf": "İyi eğlenceler",
+        "gg": "İyi oyun",
+        "readyCheck": "Herkes hazır mı?",
+        "changeSettings": "Ayarları değiştir!",
+        "ready": "Hazırım!",
+        "wait": "Lütfen bekleyin!",
+        "letsGo": "Hadi gidelim!",
+        "greeting": "Merhaba!",
+        "how": "Nasıl!?",
+        "closeOne": "İyi kurtardın!",
+        "niceOne": "Güzel hamle!",
+        "remindMove": "Sıra sende!",
+        "wow": "Vay be!",
+        "oops": "Hoppala!",
+        "no": "Hayır!",
+        "ohNo": "Oh hayır!",
+        "wellPlayed": "Güzel oynadın!",
+        "rematch": "Tekrar oynayalım!",
+        "fun": "Çok eğlenceliydi!",
+        "bye": "Hoşça kal!"
     },
     "header": {
         "message": {
@@ -1644,6 +1728,8 @@
             "roundCount": "%{current} tur, toplam %{total} turdan",
             "roundCurrent": "Tur %{current}",
             "startingNewRound": "Yeni tur başlıyor...",
+            "questionCount": null,
+            "questionCurrent": null,
             "war": "Savaş!",
             "outcome": "Sonuç",
             "input": "Senin girişini bekliyoruz",
@@ -1885,6 +1971,9 @@
         "restartNotice": "Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir."
     },
     "misc": {
+        "questions": null,
+        "teamAndQuestions": null,
+        "questionPacks": null,
         "rock": "Taş",
         "paper": "Kağıt",
         "scissors": "Makas",
@@ -2038,7 +2127,6 @@
         "view": "Görüntüle",
         "forfeit": "Oyunu Bırak",
         "processFiles": "Dosyaları İşle",
-        "sendMessage": "Mesaj Gönder",
         "checkAgain": "Tekrar Kontrol Et",
         "refreshWindow": "Pencereyi Yenile",
         "makeHost": "Ev Sahibi Yap",
@@ -2059,6 +2147,7 @@
         "highestScore": "En Yüksek Skor",
         "totalScore": "Toplam Puan",
         "finalScore": "Son Puan",
+        "flawlessGames": null,
         "hits": "Vuruşlar",
         "hitRate": "Vuruş Oranı",
         "rank": "Sıralama",
@@ -2068,6 +2157,7 @@
         "assassinations": "Suikastlar",
         "survivals": "Hayatta Kalma",
         "games": "Oyunlar",
+        "correctRatio": null,
         "winRatio": "Kazanma Oranı",
         "killDeathRatio": "K/D Oranı",
         "lives": "Hayatlar",
@@ -2130,6 +2220,7 @@
         "volumeMusic": "Müzik Ses Seviyesi",
         "selectYourLanguage": "Dilini Seç",
         "selectYourColor": "Rengini Seç",
+        "selectYourTeam": null,
         "latestChanges": "Son Değişiklikler",
         "noChangesDetected": "Değişiklik Tespit Edilmedi",
         "newChanges": "Yeni Değişiklikler",
@@ -2287,10 +2378,13 @@
         "roundLost": "Kaybettin!",
         "youLostThisRound": "Bu turu kaybettin!",
         "youAreOutOfLives": "Hayatın kalmadı",
+        "playerIsEliminated": null,
+        "youAreEliminated": null,
         "waitForRoundEnd": "Turun bitmesini bekle lütfen.",
         "waitForWinner": "Sıkı dur, kazananın çıkmasını bekle!",
         "serverRestart": "Sunucu şimdi yeniden başlatılıyor. Birkaç dakika sonra tekrar kontrol et.",
         "clearOldListings": "Tüm 'Kullanılamaz' maçları temizle.",
+        "flawlessGame": null,
         "accountLinkSuggestion": "Artık %{level} seviyesindesin! İlerlemeni korumak için bir hesap oluşturmayı düşün.",
         "accountLinked": "Bu hesap şu e-posta adresine bağlı: %{email}.",
         "incompleteTranslationNotice": "Seçtiğin dil yaklaşık olarak %{percentage}% tamamlandı. Eksik çeviriler İngilizce olacak.",
@@ -2726,6 +2820,7 @@
             "developedBy": "%{name} tarafından geliştirildi",
             "iconsSource": "İkonlar %{name}'in nezaketine (Lisanslı)",
             "soundsSource": "Sesler %{name} tarafından sağlandı (Lisanslı)",
+            "emojiSource": null,
             "rottenApplesSource": "%{name} temelli Çürük Elmalar (BY-NC-SA 2.0)",
             "diceSource": "Zar modeli, %{name} tarafından (CC-BY-4.0)",
             "localization": "Gönüllü katılımcılar tarafından yerelleştirme"

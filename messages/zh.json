@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 1719,
-        "missing": 24
+        "total": 1762,
+        "missing": 79
     },
     "name": "Bloob.io",
     "error": {
@@ -82,6 +82,7 @@
         "start": {
             "fieldRows": "选中的区域最多只能支持%{rows}行",
             "fieldCannotFitUsers": "选中的区域最多只能支持%{users}个玩家",
+            "questionThreshold": null,
             "whiteCardThreshold": "游戏至少需要%{count}张回应卡（白色）",
             "blackCardThreshold": "游戏至少需要%{count}张动作卡（黑色）",
             "insufficientPlayers": "至少需要%{min}个玩家才能开始比赛。"
@@ -242,6 +243,38 @@
                     "help": "无时间限制玩耍。关闭所有回合计时器，享受轻松的游戏体验，你可以按自己的节奏玩。不建议对随机对手使用。",
                     "data": {
                         "off": "没有限制"
+                    }
+                },
+                "scoringSystem": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    },
+                    "data": {
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    }
+                },
+                "mode": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
+                    },
+                    "data": {
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
                     }
                 },
                 "deckSize": {
@@ -1578,36 +1611,87 @@
             },
             "presets": {},
             "help": {}
+        },
+        "TRIVIA": {
+            "name": null,
+            "title": null,
+            "description": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "lockAnswer": {
+                    "title": null,
+                    "help": null
+                },
+                "eliminationChallenge": {
+                    "title": null,
+                    "help": null
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coop": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "teams": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
-		"leftTheGame": "退出了游戏",
-		"affirmative": "好的。",
-		"thanks": "谢谢！",
-		"sorry": "对不起！",
-		"goodLuck": "祝你好运！",
-		"brb": "我马上回来！",
-		"go": "我得走了。",
-		"glhf": "祝你好运，玩得开心",
-		"gg": "好游戏",
-		"readyCheck": "大家准备好了吗？",
-		"changeSettings": "改变设置！",
-		"ready": "准备好了！",
-		"wait": "请等一下！",
-		"letsGo": "我们走吧！",
-		"greeting": "嗨！",
-		"how": "怎么回事！？",
-		"closeOne": "差点儿！",
-		"niceOne": "做得好！",
-		"remindMove": "你的回合！",
-		"wow": "哇！",
-		"oops": "哎呀！",
-		"no": "不要啊！",
-		"ohNo": "哦不！",
-		"wellPlayed": "打得好！",
-		"rematch": "再来一局！",
-		"fun": "玩得真开心！",
-		"bye": "拜拜！"
+        "leftTheGame": "退出了游戏",
+        "affirmative": "好的。",
+        "thanks": "谢谢！",
+        "sorry": "对不起！",
+        "goodLuck": "祝你好运！",
+        "brb": "我马上回来！",
+        "go": "我得走了。",
+        "glhf": "祝你好运，玩得开心",
+        "gg": "好游戏",
+        "readyCheck": "大家准备好了吗？",
+        "changeSettings": "改变设置！",
+        "ready": "准备好了！",
+        "wait": "请等一下！",
+        "letsGo": "我们走吧！",
+        "greeting": "嗨！",
+        "how": "怎么回事！？",
+        "closeOne": "差点儿！",
+        "niceOne": "做得好！",
+        "remindMove": "你的回合！",
+        "wow": "哇！",
+        "oops": "哎呀！",
+        "no": "不要啊！",
+        "ohNo": "哦不！",
+        "wellPlayed": "打得好！",
+        "rematch": "再来一局！",
+        "fun": "玩得真开心！",
+        "bye": "拜拜！"
     },
     "header": {
         "message": {
@@ -1644,6 +1728,8 @@
             "roundCount": "第%{current}轮，总共%{total}轮",
             "roundCurrent": "第%{current}轮",
             "startingNewRound": "开始新一轮...",
+            "questionCount": null,
+            "questionCurrent": null,
             "war": "战争！",
             "outcome": "结果",
             "input": "等待你的操作",
@@ -1885,6 +1971,9 @@
         "restartNotice": "服务器将在 {count} 分钟后重启。请完成你的游戏。 | 服务器将在 {count} 分钟后重启。请完成你的游戏。 | 服务器将在 {count} 分钟后重启。请完成你的游戏。"
     },
     "misc": {
+        "questions": null,
+        "teamAndQuestions": null,
+        "questionPacks": null,
         "rock": "石头",
         "paper": "剪刀",
         "scissors": "布",
@@ -2038,7 +2127,6 @@
         "view": "查看",
         "forfeit": "认输游戏",
         "processFiles": "处理文件",
-        "sendMessage": "发送消息",
         "checkAgain": "再检查一次",
         "refreshWindow": "刷新窗口",
         "makeHost": "设为主机",
@@ -2059,6 +2147,7 @@
         "highestScore": "最高分",
         "totalScore": "总分",
         "finalScore": "最终得分",
+        "flawlessGames": null,
         "hits": "命中",
         "hitRate": "命中率",
         "rank": "排名",
@@ -2068,6 +2157,7 @@
         "assassinations": "刺杀",
         "survivals": "生存",
         "games": "游戏",
+        "correctRatio": null,
         "winRatio": "胜率",
         "killDeathRatio": "击杀/死亡比率",
         "lives": "生命",
@@ -2130,6 +2220,7 @@
         "volumeMusic": "音乐音量",
         "selectYourLanguage": "选择你的语言",
         "selectYourColor": "选择你的颜色",
+        "selectYourTeam": null,
         "latestChanges": "最新更改",
         "noChangesDetected": "没有检测到更改",
         "newChanges": "新的更改",
@@ -2287,10 +2378,13 @@
         "roundLost": "你输了！",
         "youLostThisRound": "你这一局输了！",
         "youAreOutOfLives": "你没命了",
+        "playerIsEliminated": null,
+        "youAreEliminated": null,
         "waitForRoundEnd": "请等一下，等回合结束。",
         "waitForWinner": "稍等一下，等着看谁赢！",
         "serverRestart": "服务器现在正在重启，请过几分钟再来看看。",
         "clearOldListings": "清除所有的“不可用”比赛。",
+        "flawlessGame": null,
         "accountLinkSuggestion": "你现在是%{level}级了！考虑创建一个账户来保护你的进度吧。",
         "accountLinked": "这个账户已经和以下的电子邮件地址链接了：%{email}。",
         "incompleteTranslationNotice": "你选择的语言大概完成了{percentage}%。任何缺失的翻译都会用英语显示。",
@@ -2726,6 +2820,7 @@
             "developedBy": "开发者是%{name}",
             "iconsSource": "图标由%{name}提供（已获得许可）",
             "soundsSource": "音效由%{name}提供（已获得许可）",
+            "emojiSource": null,
             "rottenApplesSource": "基于%{name}的烂苹果 (BY-NC-SA 2.0)",
             "diceSource": "%{name}的骰子模型 (CC-BY-4.0)",
             "localization": "由志愿者贡献者进行的本地化"

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Korean",
         "rtl": false,
-        "total": 1719,
-        "missing": 24
+        "total": 1762,
+        "missing": 79
     },
     "name": "Bloob.io",
     "error": {
@@ -82,6 +82,7 @@
         "start": {
             "fieldRows": "선택한 필드는 %{rows} 행 이상 지원할 수 없어요",
             "fieldCannotFitUsers": "선택한 필드는 %{users} 명 이상의 플레이어를 지원할 수 없어요",
+            "questionThreshold": null,
             "whiteCardThreshold": "게임은 최소 %{count} 개의 응답 카드(하얀색)가 필요해요",
             "blackCardThreshold": "게임은 최소 %{count} 개의 액션 카드(검은색)가 필요해요",
             "insufficientPlayers": "경기를 시작하려면 최소 %{min} 명의 플레이어가 필요해요."
@@ -242,6 +243,38 @@
                     "help": "시간 제한 없이 플레이하세요. 모든 턴 타이",
                     "data": {
                         "off": "제한 없어"
+                    }
+                },
+                "scoringSystem": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    },
+                    "data": {
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    }
+                },
+                "mode": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
+                    },
+                    "data": {
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
                     }
                 },
                 "deckSize": {
@@ -1578,36 +1611,87 @@
             },
             "presets": {},
             "help": {}
+        },
+        "TRIVIA": {
+            "name": null,
+            "title": null,
+            "description": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "lockAnswer": {
+                    "title": null,
+                    "help": null
+                },
+                "eliminationChallenge": {
+                    "title": null,
+                    "help": null
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coop": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "teams": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
-		"leftTheGame": "게임에서 나갔어",
-		"affirmative": "알았어.",
-		"thanks": "고마워!",
-		"sorry": "미안!",
-		"goodLuck": "행운을 빕니다!",
-		"brb": "금방 돌아올게!",
-		"go": "나 가야 해.",
-		"glhf": "행운을 빕니다, 즐겁게 해요",
-		"gg": "잘 했어",
-		"readyCheck": "다들 준비 됐어?",
-		"changeSettings": "설정 바꿔!",
-		"ready": "준비 됐어!",
-		"wait": "잠깐만 기다려!",
-		"letsGo": "가자!",
-		"greeting": "안녕!",
-		"how": "어떻게!?",
-		"closeOne": "간신히!",
-		"niceOne": "잘했어!",
-		"remindMove": "너 차례야!",
-		"wow": "와!",
-		"oops": "어머!",
-		"no": "아니야!",
-		"ohNo": "아이고!",
-		"wellPlayed": "잘 했어!",
-		"rematch": "재경기!",
-		"fun": "재밌었어!",
-		"bye": "잘 가!"
+        "leftTheGame": "게임에서 나갔어",
+        "affirmative": "알았어.",
+        "thanks": "고마워!",
+        "sorry": "미안!",
+        "goodLuck": "행운을 빕니다!",
+        "brb": "금방 돌아올게!",
+        "go": "나 가야 해.",
+        "glhf": "행운을 빕니다, 즐겁게 해요",
+        "gg": "잘 했어",
+        "readyCheck": "다들 준비 됐어?",
+        "changeSettings": "설정 바꿔!",
+        "ready": "준비 됐어!",
+        "wait": "잠깐만 기다려!",
+        "letsGo": "가자!",
+        "greeting": "안녕!",
+        "how": "어떻게!?",
+        "closeOne": "간신히!",
+        "niceOne": "잘했어!",
+        "remindMove": "너 차례야!",
+        "wow": "와!",
+        "oops": "어머!",
+        "no": "아니야!",
+        "ohNo": "아이고!",
+        "wellPlayed": "잘 했어!",
+        "rematch": "재경기!",
+        "fun": "재밌었어!",
+        "bye": "잘 가!"
     },
     "header": {
         "message": {
@@ -1644,6 +1728,8 @@
             "roundCount": "총 %{total} 라운드 중 %{current} 라운드",
             "roundCurrent": "라운드 %{current}",
             "startingNewRound": "새 라운드 시작해요...",
+            "questionCount": null,
+            "questionCurrent": null,
             "war": "전쟁!",
             "outcome": "결과",
             "input": "당신의 입력을 기다리는 중",
@@ -1885,6 +1971,9 @@
         "restartNotice": "서버가 {count}분 후에 재시작돼요. 게임 끝내세요. | 서버가 {count}분 후에 재시작돼요. 게임 끝내세요. | 서버가 {count}분 후에 재시작돼요. 게임 끝내세요."
     },
     "misc": {
+        "questions": null,
+        "teamAndQuestions": null,
+        "questionPacks": null,
         "rock": "바위",
         "paper": "종이",
         "scissors": "가위",
@@ -2038,7 +2127,6 @@
         "view": "보기",
         "forfeit": "게임 포기하기",
         "processFiles": "파일 처리하기",
-        "sendMessage": "메시지 보내기",
         "checkAgain": "다시 확인해봐",
         "refreshWindow": "창 새로고침",
         "makeHost": "호스트 만들기",
@@ -2059,6 +2147,7 @@
         "highestScore": "최고 점수",
         "totalScore": "총 점수",
         "finalScore": "최종 점수",
+        "flawlessGames": null,
         "hits": "히트",
         "hitRate": "히트율",
         "rank": "순위",
@@ -2068,6 +2157,7 @@
         "assassinations": "암살",
         "survivals": "생존",
         "games": "게임들",
+        "correctRatio": null,
         "winRatio": "승률",
         "killDeathRatio": "K/D 비율",
         "lives": "목숨",
@@ -2130,6 +2220,7 @@
         "volumeMusic": "음악 볼륨",
         "selectYourLanguage": "언어 선택하기",
         "selectYourColor": "색상 선택하기",
+        "selectYourTeam": null,
         "latestChanges": "최근 변경사항",
         "noChangesDetected": "변경사항 없음",
         "newChanges": "새로운 변경사항",
@@ -2287,10 +2378,13 @@
         "roundLost": "너 졌어!",
         "youLostThisRound": "이번 라운드 졌어!",
         "youAreOutOfLives": "목숨 다 썼어",
+        "playerIsEliminated": null,
+        "youAreEliminated": null,
         "waitForRoundEnd": "라운드 끝날 때까지 기다려줘.",
         "waitForWinner": "좀 기다려봐, 누가 이길지 나올 때까지!",
         "serverRestart": "서버가 지금 재시작 중이야. 몇 분 후에 다시 확인해줘.",
         "clearOldListings": "'사용 불가능한' 매치를 모두 지워.",
+        "flawlessGame": null,
         "accountLinkSuggestion": "이제 %{level}이 되었어요! 진행 상황을 보호하기 위해 계정을 만들어 보세요.",
         "accountLinked": "이 계정은 다음 이메일 주소에 연결되어 있어요: %{email}.",
         "incompleteTranslationNotice": "선택하신 언어는 대략 {percentage}% 완성되었어요. 누락된 번역은 영어로 표시될 거예요.",
@@ -2726,6 +2820,7 @@
             "developedBy": "%{name}에 의해 개발됨",
             "iconsSource": "아이콘 제공: %{name} (라이선스 받음)",
             "soundsSource": "사운드 제공: %{name} (라이선스 받음)",
+            "emojiSource": null,
             "rottenApplesSource": "%{name} 기반의 썩은 사과들 (BY-NC-SA 2.0)",
             "diceSource": "%{name}의 주사위 모델 (CC-BY-4.0)",
             "localization": "자원봉사자들에 의한 현지화"

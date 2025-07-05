@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal French",
         "rtl": false,
-        "total": 1719,
-        "missing": 24
+        "total": 1762,
+        "missing": 79
     },
     "name": "Bloob.io",
     "error": {
@@ -82,6 +82,7 @@
         "start": {
             "fieldRows": "Les champs sélectionnés ne peuvent supporter plus de %{rows} rangées.",
             "fieldCannotFitUsers": "Les champs sélectionnés ne peuvent supporter plus de %{users} joueurs.",
+            "questionThreshold": null,
             "whiteCardThreshold": "Le jeu nécessite au moins %{count} cartes de réponse (blanches).",
             "blackCardThreshold": "Le jeu nécessite au moins %{count} cartes d'action (noires).",
             "insufficientPlayers": "Au moins %{min} joueurs sont requis pour commencer la partie."
@@ -242,6 +243,38 @@
                     "help": "Joue sans limites de temps. Désactive tous les chronos et profite d'une expérience de jeu détendue où tu peux jouer à ton propre rythme. Pas recommandé contre des adversaires aléatoires.",
                     "data": {
                         "off": "Sans limite"
+                    }
+                },
+                "scoringSystem": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    },
+                    "data": {
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    }
+                },
+                "mode": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
+                    },
+                    "data": {
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
                     }
                 },
                 "deckSize": {
@@ -1578,36 +1611,87 @@
             },
             "presets": {},
             "help": {}
+        },
+        "TRIVIA": {
+            "name": null,
+            "title": null,
+            "description": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "lockAnswer": {
+                    "title": null,
+                    "help": null
+                },
+                "eliminationChallenge": {
+                    "title": null,
+                    "help": null
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coop": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "teams": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
-		"leftTheGame": "a quitté le jeu.",
-		"affirmative": "Ok.",
-		"thanks": "Merci!",
-		"sorry": "Désolé!",
-		"goodLuck": "Bonne chance!",
-		"brb": "Je reviens tout de suite!",
-		"go": "Je dois y aller.",
-		"glhf": "Bonne chance, amuse-toi!",
-		"gg": "Bonne partie.",
-		"readyCheck": "Tout le monde est prêt?",
-		"changeSettings": "Change les paramètres!",
-		"ready": "Prêt!",
-		"wait": "Attends, stp!",
-		"letsGo": "Allons-y!",
-		"greeting": "Salut!",
-		"how": "Comment!?",
-		"closeOne": "C'était proche!",
-		"niceOne": "Super!",
-		"remindMove": "À ton tour!",
-		"wow": "Wow!",
-		"oops": "Oups!",
-		"no": "Nooooon!",
-		"ohNo": "Oh non!",
-		"wellPlayed": "Bien joué!",
-		"rematch": "Revanche!",
-		"fun": "C'était amusant!",
-		"bye": "Bye!"
+        "leftTheGame": "a quitté le jeu.",
+        "affirmative": "Ok.",
+        "thanks": "Merci!",
+        "sorry": "Désolé!",
+        "goodLuck": "Bonne chance!",
+        "brb": "Je reviens tout de suite!",
+        "go": "Je dois y aller.",
+        "glhf": "Bonne chance, amuse-toi!",
+        "gg": "Bonne partie.",
+        "readyCheck": "Tout le monde est prêt?",
+        "changeSettings": "Change les paramètres!",
+        "ready": "Prêt!",
+        "wait": "Attends, stp!",
+        "letsGo": "Allons-y!",
+        "greeting": "Salut!",
+        "how": "Comment!?",
+        "closeOne": "C'était proche!",
+        "niceOne": "Super!",
+        "remindMove": "À ton tour!",
+        "wow": "Wow!",
+        "oops": "Oups!",
+        "no": "Nooooon!",
+        "ohNo": "Oh non!",
+        "wellPlayed": "Bien joué!",
+        "rematch": "Revanche!",
+        "fun": "C'était amusant!",
+        "bye": "Bye!"
     },
     "header": {
         "message": {
@@ -1644,6 +1728,8 @@
             "roundCount": "Ronde %{current} de %{total}",
             "roundCurrent": "Tour %{current}",
             "startingNewRound": "On commence un nouveau round...",
+            "questionCount": null,
+            "questionCurrent": null,
             "war": "Guerre !",
             "outcome": "Résultat",
             "input": "En attente de ton choix",
@@ -1885,6 +1971,9 @@
         "restartNotice": "Le serveur va redémarrer dans {count} minutes. Finissez votre partie. | Le serveur va redémarrer dans {count} minute. Finissez votre partie. | Le serveur va redémarrer dans {count} minutes. Finissez votre partie."
     },
     "misc": {
+        "questions": null,
+        "teamAndQuestions": null,
+        "questionPacks": null,
         "rock": "Pierre",
         "paper": "Feuille",
         "scissors": "Ciseaux",
@@ -2038,7 +2127,6 @@
         "view": "Voir",
         "forfeit": "Déclarer forfait",
         "processFiles": "Traiter les fichiers",
-        "sendMessage": "Envoyer un message",
         "checkAgain": "Vérifie encore",
         "refreshWindow": "Réactualiser la fenêtre",
         "makeHost": "Rendre cette personne l'hôte",
@@ -2059,6 +2147,7 @@
         "highestScore": "Meilleur Score",
         "totalScore": "Score total",
         "finalScore": "Score final",
+        "flawlessGames": null,
         "hits": "Coups",
         "hitRate": "Taux de Coups",
         "rank": "Rang",
@@ -2068,6 +2157,7 @@
         "assassinations": "Assassinats",
         "survivals": "Survies",
         "games": "Jeux",
+        "correctRatio": null,
         "winRatio": "Ratio de victoires",
         "killDeathRatio": "Ratio K/D",
         "lives": "Vies",
@@ -2130,6 +2220,7 @@
         "volumeMusic": "Volume de la musique",
         "selectYourLanguage": "Sélectionnez votre langue",
         "selectYourColor": "Choisis ta couleur",
+        "selectYourTeam": null,
         "latestChanges": "Derniers changements",
         "noChangesDetected": "Aucun changement détecté",
         "newChanges": "Nouveaux changements",
@@ -2287,10 +2378,13 @@
         "roundLost": "T'as perdu !",
         "youLostThisRound": "T'as perdu ce round.",
         "youAreOutOfLives": "T'as plus de vies",
+        "playerIsEliminated": null,
+        "youAreEliminated": null,
         "waitForRoundEnd": "Attends que le round se termine.",
         "waitForWinner": "Reste tranquille et attends qu'un gagnant se pointe !",
         "serverRestart": "Le serveur est en train de redémarrer. Reviens dans quelques minutes.",
         "clearOldListings": "Efface tous les matchs 'Indisponibles'.",
+        "flawlessGame": null,
         "accountLinkSuggestion": "Vous êtes maintenant %{level}! Pensez à créer un compte pour protéger votre progression.",
         "accountLinked": "Ce compte est lié à l'adresse email suivante: %{email}.",
         "incompleteTranslationNotice": "La langue que vous avez sélectionnée est à environ {percentage}% complète. Les traductions manquantes seront en anglais.",
@@ -2726,6 +2820,7 @@
             "developedBy": "Developpé par %{name}",
             "iconsSource": "Icônes gracieuseté de %{name} (Sous licence)",
             "soundsSource": "Sons fournis par %{name} (Sous licence)",
+            "emojiSource": null,
             "rottenApplesSource": "Pommes pourries basées sur %{name} (Creative Commons BY-NC-SA 2.0)",
             "diceSource": "Modèle de dé par %{name} (CC-BY-4.0)",
             "localization": "Localisation par des contributeurs bénévoles"

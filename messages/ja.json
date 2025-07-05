@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Japanese",
         "rtl": false,
-        "total": 1719,
-        "missing": 24
+        "total": 1762,
+        "missing": 79
     },
     "name": "Bloob.io",
     "error": {
@@ -82,6 +82,7 @@
         "start": {
             "fieldRows": "選択したフィールドは%{rows}行以上は対応できません",
             "fieldCannotFitUsers": "選択したフィールドは%{users}人以上のプレイヤーは対応できません",
+            "questionThreshold": null,
             "whiteCardThreshold": "ゲームは最低でも%{count}枚のレスポンスカード（白）が必要です",
             "blackCardThreshold": "ゲームは最低でも%{count}枚のアクションカード（黒）が必要です",
             "insufficientPlayers": "マッチを開始するには最低でも%{min}人のプレイヤーが必要です。"
@@ -242,6 +243,38 @@
                     "help": "時間制限なしで遊べるよ。全てのターンタイマーを無効にして、自分のペースで遊べるリラックスしたゲーム体験を楽しもう。ランダムな対戦相手に対してはおすすめしないよ。",
                     "data": {
                         "off": "制限なし"
+                    }
+                },
+                "scoringSystem": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    },
+                    "data": {
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    }
+                },
+                "mode": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
+                    },
+                    "data": {
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
                     }
                 },
                 "deckSize": {
@@ -1578,36 +1611,87 @@
             },
             "presets": {},
             "help": {}
+        },
+        "TRIVIA": {
+            "name": null,
+            "title": null,
+            "description": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "lockAnswer": {
+                    "title": null,
+                    "help": null
+                },
+                "eliminationChallenge": {
+                    "title": null,
+                    "help": null
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coop": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "teams": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
-		"leftTheGame": "ゲームを抜けたよ",
-		"affirmative": "了解。",
-		"thanks": "ありがとう！",
-		"sorry": "ごめん！",
-		"goodLuck": "頑張って！",
-		"brb": "すぐ戻るよ！",
-		"go": "行かなきゃ。",
-		"glhf": "頑張って楽しんでね",
-		"gg": "よくやったね",
-		"readyCheck": "みんな準備できた？",
-		"changeSettings": "設定を変えて！",
-		"ready": "準備OK！",
-		"wait": "待ってください！",
-		"letsGo": "行こう！",
-		"greeting": "やあ！",
-		"how": "どうやって！？",
-		"closeOne": "ギリギリだったね！",
-		"niceOne": "いいぞ！",
-		"remindMove": "君の番だよ！",
-		"wow": "わお！",
-		"oops": "おっと！",
-		"no": "いやーん！",
-		"ohNo": "ああ、だめ！",
-		"wellPlayed": "上手くやったよ！",
-		"rematch": "再戦しよう！",
-		"fun": "楽しかったね！",
-		"bye": "バイバイ！"
+        "leftTheGame": "ゲームを抜けたよ",
+        "affirmative": "了解。",
+        "thanks": "ありがとう！",
+        "sorry": "ごめん！",
+        "goodLuck": "頑張って！",
+        "brb": "すぐ戻るよ！",
+        "go": "行かなきゃ。",
+        "glhf": "頑張って楽しんでね",
+        "gg": "よくやったね",
+        "readyCheck": "みんな準備できた？",
+        "changeSettings": "設定を変えて！",
+        "ready": "準備OK！",
+        "wait": "待ってください！",
+        "letsGo": "行こう！",
+        "greeting": "やあ！",
+        "how": "どうやって！？",
+        "closeOne": "ギリギリだったね！",
+        "niceOne": "いいぞ！",
+        "remindMove": "君の番だよ！",
+        "wow": "わお！",
+        "oops": "おっと！",
+        "no": "いやーん！",
+        "ohNo": "ああ、だめ！",
+        "wellPlayed": "上手くやったよ！",
+        "rematch": "再戦しよう！",
+        "fun": "楽しかったね！",
+        "bye": "バイバイ！"
     },
     "header": {
         "message": {
@@ -1644,6 +1728,8 @@
             "roundCount": "現在のラウンドは%{current}、全体のラウンドは%{total}だよ",
             "roundCurrent": "ラウンド%{current}",
             "startingNewRound": "新しいラウンドを始めるよ…",
+            "questionCount": null,
+            "questionCurrent": null,
             "war": "戦争だ！",
             "outcome": "結果",
             "input": "あなたの入力を待っています",
@@ -1885,6 +1971,9 @@
         "restartNotice": "サーバーは{count}分後に再起動するよ。ゲームを終わらせてね。 | サーバーは{count}分後に再起動するよ。ゲームを終わらせてね。 | サーバーは{count}分後に再起動するよ。ゲームを終わらせてね。"
     },
     "misc": {
+        "questions": null,
+        "teamAndQuestions": null,
+        "questionPacks": null,
         "rock": "グー",
         "paper": "チョキ",
         "scissors": "パー",
@@ -2038,7 +2127,6 @@
         "view": "見る",
         "forfeit": "ゲームを投げる",
         "processFiles": "ファイルを処理する",
-        "sendMessage": "メッセージを送る",
         "checkAgain": "もう一回チェックしてみて",
         "refreshWindow": "ウィンドウを更新する",
         "makeHost": "ホストにする",
@@ -2059,6 +2147,7 @@
         "highestScore": "最高スコア",
         "totalScore": "トータルスコア",
         "finalScore": "ファイナルスコア",
+        "flawlessGames": null,
         "hits": "ヒット",
         "hitRate": "ヒット率",
         "rank": "ランク",
@@ -2068,6 +2157,7 @@
         "assassinations": "暗殺",
         "survivals": "生存",
         "games": "ゲーム数",
+        "correctRatio": null,
         "winRatio": "勝率",
         "killDeathRatio": "K/D比率",
         "lives": "ライフ",
@@ -2130,6 +2220,7 @@
         "volumeMusic": "音量",
         "selectYourLanguage": "言語を選択してね",
         "selectYourColor": "色を選んでね",
+        "selectYourTeam": null,
         "latestChanges": "最新の変更点",
         "noChangesDetected": "変更は見つからなかったよ",
         "newChanges": "新しい変更",
@@ -2287,10 +2378,13 @@
         "roundLost": "負けた！",
         "youLostThisRound": "今回は負けたね。",
         "youAreOutOfLives": "ライフがなくなっちゃったよ",
+        "playerIsEliminated": null,
+        "youAreEliminated": null,
         "waitForRoundEnd": "ラウンドが終わるまで待っててね。",
         "waitForWinner": "じっとしてて、勝者が出るのを待とう！",
         "serverRestart": "サーバーが今再起動中だよ。ちょっと待っててね。",
         "clearOldListings": "「Unavailable」のマッチを全部クリアしてね。",
+        "flawlessGame": null,
         "accountLinkSuggestion": "あなたは今%{level}だよ！進行状況を保護するためにアカウントを作成してみては？",
         "accountLinked": "このアカウントは次のメールアドレスにリンクされています：%{email}。",
         "incompleteTranslationNotice": "選択した言語は約{percentage}% 完成しています。翻訳が足りない部分は英語で表示されます。",
@@ -2726,6 +2820,7 @@
             "developedBy": "開発者は%{name}だよ",
             "iconsSource": "アイコンは%{name}の提供だよ（ライセンス付き）",
             "soundsSource": "音声は%{name}が提供してるよ（ライセンス付き）",
+            "emojiSource": null,
             "rottenApplesSource": "%{name}に基づく腐ったリンゴ (BY-NC-SA 2.0)",
             "diceSource": "%{name}によるダイスモデル (CC-BY-4.0)",
             "localization": "ボランティア貢献者によるローカライゼーション"

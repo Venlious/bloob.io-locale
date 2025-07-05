@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 1719,
-        "missing": 24
+        "total": 1762,
+        "missing": 79
     },
     "name": "Bloob.io",
     "error": {
@@ -82,6 +82,7 @@
         "start": {
             "fieldRows": "Valittu kenttä ei voi tukea enempää kuin %{rows} riviä",
             "fieldCannotFitUsers": "Valittu kenttä ei voi tukea enempää kuin %{users} pelaajaa",
+            "questionThreshold": null,
             "whiteCardThreshold": "Peli vaatii vähintään %{count} vastauskorttia (valkoista)",
             "blackCardThreshold": "Peli vaatii vähintään %{count} toimintakorttia (mustaa)",
             "insufficientPlayers": "Tarvitaan vähintään %{min} pelaajaa aloittamaan matsi."
@@ -242,6 +243,38 @@
                     "help": "Pelaa ilman aikarajoituksia. Poista kaikki vuorokellot käytöstä ja nauti rennosta pelikokemuksesta, jossa voit pelata omaan tahtiisi. Ei suositella satunnaisia vastustajia vastaan.",
                     "data": {
                         "off": "Ei rajoituksia"
+                    }
+                },
+                "scoringSystem": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    },
+                    "data": {
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    }
+                },
+                "mode": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
+                    },
+                    "data": {
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
                     }
                 },
                 "deckSize": {
@@ -1578,36 +1611,87 @@
             },
             "presets": {},
             "help": {}
+        },
+        "TRIVIA": {
+            "name": null,
+            "title": null,
+            "description": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "lockAnswer": {
+                    "title": null,
+                    "help": null
+                },
+                "eliminationChallenge": {
+                    "title": null,
+                    "help": null
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coop": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "teams": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
-		"leftTheGame": "lähti pelistä",
-		"affirmative": "Okei.",
-		"thanks": "Kiitos!",
-		"sorry": "Anteeksi!",
-		"goodLuck": "Onnea matkaan!",
-		"brb": "Palataan hetken päästä!",
-		"go": "Mun pitää mennä.",
-		"glhf": "Pidä hauskaa",
-		"gg": "Hyvä peli",
-		"readyCheck": "Kaikki valmiina?",
-		"changeSettings": "Vaihda asetuksia!",
-		"ready": "Valmis!",
-		"wait": "Odota hetki!",
-		"letsGo": "Mennään!",
-		"greeting": "Hei!",
-		"how": "Miten!?",
-		"closeOne": "Läheltä piti!",
-		"niceOne": "Hyvä veto!",
-		"remindMove": "Sinun vuorosi!",
-		"wow": "Vau!",
-		"oops": "Hups!",
-		"no": "Eiiii!",
-		"ohNo": "Voi ei!",
-		"wellPlayed": "Hyvin pelattu!",
-		"rematch": "Uusintaottelu!",
-		"fun": "Oli hauskaa!",
-		"bye": "Moi moi!"
+        "leftTheGame": "lähti pelistä",
+        "affirmative": "Okei.",
+        "thanks": "Kiitos!",
+        "sorry": "Anteeksi!",
+        "goodLuck": "Onnea matkaan!",
+        "brb": "Palataan hetken päästä!",
+        "go": "Mun pitää mennä.",
+        "glhf": "Pidä hauskaa",
+        "gg": "Hyvä peli",
+        "readyCheck": "Kaikki valmiina?",
+        "changeSettings": "Vaihda asetuksia!",
+        "ready": "Valmis!",
+        "wait": "Odota hetki!",
+        "letsGo": "Mennään!",
+        "greeting": "Hei!",
+        "how": "Miten!?",
+        "closeOne": "Läheltä piti!",
+        "niceOne": "Hyvä veto!",
+        "remindMove": "Sinun vuorosi!",
+        "wow": "Vau!",
+        "oops": "Hups!",
+        "no": "Eiiii!",
+        "ohNo": "Voi ei!",
+        "wellPlayed": "Hyvin pelattu!",
+        "rematch": "Uusintaottelu!",
+        "fun": "Oli hauskaa!",
+        "bye": "Moi moi!"
     },
     "header": {
         "message": {
@@ -1644,6 +1728,8 @@
             "roundCount": "Kierros %{current} / %{total}",
             "roundCurrent": "Kierros %{current}",
             "startingNewRound": "Aloitetaan uusi kierros...",
+            "questionCount": null,
+            "questionCurrent": null,
             "war": "Sota!",
             "outcome": "Lopputulos",
             "input": "Odotetaan sinun syötettäsi",
@@ -1885,6 +1971,9 @@
         "restartNotice": "Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi."
     },
     "misc": {
+        "questions": null,
+        "teamAndQuestions": null,
+        "questionPacks": null,
         "rock": "Kivi",
         "paper": "Paperi",
         "scissors": "Sakset",
@@ -2038,7 +2127,6 @@
         "view": "Katso",
         "forfeit": "Luovuta Peli",
         "processFiles": "Käsittele Tiedostoja",
-        "sendMessage": "Lähetä viesti",
         "checkAgain": "Tsekkaa taas",
         "refreshWindow": "Päivitä ikkuna",
         "makeHost": "Tee isännäksi",
@@ -2059,6 +2147,7 @@
         "highestScore": "Korkein pistemäärä",
         "totalScore": "Yhteispisteet",
         "finalScore": "Lopputulos",
+        "flawlessGames": null,
         "hits": "Osumat",
         "hitRate": "Osuma-aste",
         "rank": "Sijoitus",
@@ -2068,6 +2157,7 @@
         "assassinations": "Murhat",
         "survivals": "Selviytymiset",
         "games": "Pelit",
+        "correctRatio": null,
         "winRatio": "Voittojen suhde",
         "killDeathRatio": "K/D Suhde",
         "lives": "Elämät",
@@ -2130,6 +2220,7 @@
         "volumeMusic": "Musiikin äänenvoimakkuus",
         "selectYourLanguage": "Valitse Kieli",
         "selectYourColor": "Valitse Värisi",
+        "selectYourTeam": null,
         "latestChanges": "Viimeisimmät Muutokset",
         "noChangesDetected": "Ei Muutoksia Havaittu",
         "newChanges": "Uudet Muutokset",
@@ -2287,10 +2378,13 @@
         "roundLost": "Sä hävisit!",
         "youLostThisRound": "Sä hävisit tän kierroksen.",
         "youAreOutOfLives": "Elämäsi on loppu",
+        "playerIsEliminated": null,
+        "youAreEliminated": null,
         "waitForRoundEnd": "Odota, että kierros loppuu.",
         "waitForWinner": "Pysy rauhassa ja odota, että voittaja nousee!",
         "serverRestart": "Serveri käynnistetään nyt uudelleen. Käy tsekkaamassa muutaman minuutin päästä.",
         "clearOldListings": "Poista kaikki 'Ei saatavilla' -ottelut.",
+        "flawlessGame": null,
         "accountLinkSuggestion": "Olet nyt %{level}! Harkitse tilin luomista edistymisesi suojaamiseksi.",
         "accountLinked": "Tämä tili on yhdistetty seuraavaan sähköpostiosoitteeseen: %{email}.",
         "incompleteTranslationNotice": "Valitsemasi kieli on suurin piirtein {percentage}% valmis. Puuttuvat käännökset ovat englanniksi.",
@@ -2726,6 +2820,7 @@
             "developedBy": "Kehittänyt %{name}",
             "iconsSource": "Ikoni-kiitokset %{name}:lle (Lisensioitu)",
             "soundsSource": "Äänet tarjoaa %{name} (Lisensioitu)",
+            "emojiSource": null,
             "rottenApplesSource": "Mädäntyneet omenat perustuen %{name} (BY-NC-SA 2.0)",
             "diceSource": "Noppamalli tekijältä %{name} (CC-BY-4.0)",
             "localization": "Paikallistaminen vapaaehtoisten avustajien toimesta"

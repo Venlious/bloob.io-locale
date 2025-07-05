@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Russian",
         "rtl": false,
-        "total": 1719,
-        "missing": 24
+        "total": 1762,
+        "missing": 79
     },
     "name": "Bloob.io",
     "error": {
@@ -82,6 +82,7 @@
         "start": {
             "fieldRows": "Выбранное поле не может поддерживать больше %{rows} строк",
             "fieldCannotFitUsers": "Выбранное поле не может поддерживать больше %{users} игроков",
+            "questionThreshold": null,
             "whiteCardThreshold": "В игре требуется как минимум %{count} ответных карт (белых)",
             "blackCardThreshold": "В игре требуется как минимум %{count} действующих карт (черных)",
             "insufficientPlayers": "Нужно как минимум %{min} игроков, чтобы начать матч."
@@ -242,6 +243,38 @@
                     "help": "Играй без ограничений по времени. Отключи все таймеры ходов и наслаждайся расслабленной игрой, где ты можешь играть в своем темпе. Не рекомендуется против случайных противников.",
                     "data": {
                         "off": "Без ограничений"
+                    }
+                },
+                "scoringSystem": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    },
+                    "data": {
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    }
+                },
+                "mode": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
+                    },
+                    "data": {
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
                     }
                 },
                 "deckSize": {
@@ -1578,36 +1611,87 @@
             },
             "presets": {},
             "help": {}
+        },
+        "TRIVIA": {
+            "name": null,
+            "title": null,
+            "description": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "lockAnswer": {
+                    "title": null,
+                    "help": null
+                },
+                "eliminationChallenge": {
+                    "title": null,
+                    "help": null
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coop": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "teams": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
-		"leftTheGame": "покинул игру",
-		"affirmative": "Окей.",
-		"thanks": "Спасибо!",
-		"sorry": "Извини!",
-		"goodLuck": "Удачи!",
-		"brb": "Сейчас вернусь!",
-		"go": "Мне нужно идти.",
-		"glhf": "Удачи в игре, веселитесь",
-		"gg": "Хорошей игры!",
-		"readyCheck": "Все готовы?",
-		"changeSettings": "Измените настройки!",
-		"ready": "Готов!",
-		"wait": "Подождите, пожалуйста!",
-		"letsGo": "Поехали!",
-		"greeting": "Привет!",
-		"how": "Как!?",
-		"closeOne": "Еле-еле!",
-		"niceOne": "Классно!",
-		"remindMove": "Твой ход!",
-		"wow": "Вау!",
-		"oops": "Ой!",
-		"no": "Нееет!",
-		"ohNo": "О нет!",
-		"wellPlayed": "Классно сыграл!",
-		"rematch": "Реванш!",
-		"fun": "Было весело!",
-		"bye": "Пока!"
+        "leftTheGame": "покинул игру",
+        "affirmative": "Окей.",
+        "thanks": "Спасибо!",
+        "sorry": "Извини!",
+        "goodLuck": "Удачи!",
+        "brb": "Сейчас вернусь!",
+        "go": "Мне нужно идти.",
+        "glhf": "Удачи в игре, веселитесь",
+        "gg": "Хорошей игры!",
+        "readyCheck": "Все готовы?",
+        "changeSettings": "Измените настройки!",
+        "ready": "Готов!",
+        "wait": "Подождите, пожалуйста!",
+        "letsGo": "Поехали!",
+        "greeting": "Привет!",
+        "how": "Как!?",
+        "closeOne": "Еле-еле!",
+        "niceOne": "Классно!",
+        "remindMove": "Твой ход!",
+        "wow": "Вау!",
+        "oops": "Ой!",
+        "no": "Нееет!",
+        "ohNo": "О нет!",
+        "wellPlayed": "Классно сыграл!",
+        "rematch": "Реванш!",
+        "fun": "Было весело!",
+        "bye": "Пока!"
     },
     "header": {
         "message": {
@@ -1644,6 +1728,8 @@
             "roundCount": "Раунд %{current} из %{total}",
             "roundCurrent": "Раунд %{current}",
             "startingNewRound": "Начинаем новый раунд...",
+            "questionCount": null,
+            "questionCurrent": null,
             "war": "Война!",
             "outcome": "Итог",
             "input": "Ждем твоего хода",
@@ -1885,6 +1971,9 @@
         "restartNotice": "Сервер перезапустится через {count} минут. Пожалуйста, закончи свою игру. | Сервер перезапустится через {count} минуту. Пожалуйста, закончи свою игру. | Сервер перезапустится через {count} минут. Пожалуйста, закончи свою игру."
     },
     "misc": {
+        "questions": null,
+        "teamAndQuestions": null,
+        "questionPacks": null,
         "rock": "Камень",
         "paper": "Бумага",
         "scissors": "Ножницы",
@@ -2038,7 +2127,6 @@
         "view": "Посмотреть",
         "forfeit": "Сдаться в игре",
         "processFiles": "Обработать Файлы",
-        "sendMessage": "Отправить Сообщение",
         "checkAgain": "Проверь ещё раз",
         "refreshWindow": "Обновить Окно",
         "makeHost": "Сделать Хостом",
@@ -2059,6 +2147,7 @@
         "highestScore": "Самый высокий счет",
         "totalScore": "Общий счёт",
         "finalScore": "Финальный счёт",
+        "flawlessGames": null,
         "hits": "Попадания",
         "hitRate": "Процент попаданий",
         "rank": "Ранг",
@@ -2068,6 +2157,7 @@
         "assassinations": "Убийства",
         "survivals": "Выживание",
         "games": "Игры",
+        "correctRatio": null,
         "winRatio": "Процент побед",
         "killDeathRatio": "Соотношение У/С",
         "lives": "Жизни",
@@ -2130,6 +2220,7 @@
         "volumeMusic": "Громкость музыки",
         "selectYourLanguage": "Выбери свой Язык",
         "selectYourColor": "Выбери свой Цвет",
+        "selectYourTeam": null,
         "latestChanges": "Последние Изменения",
         "noChangesDetected": "Изменений Не Обнаружено",
         "newChanges": "Новые Изменения",
@@ -2287,10 +2378,13 @@
         "roundLost": "Ты проиграл!",
         "youLostThisRound": "Ты проиграл этот раунд.",
         "youAreOutOfLives": "У тебя закончились жизни",
+        "playerIsEliminated": null,
+        "youAreEliminated": null,
         "waitForRoundEnd": "Пожалуйста, подожди, пока раунд не закончится.",
         "waitForWinner": "Сиди спокойно и жди, пока не появится победитель!",
         "serverRestart": "Сервер сейчас перезагружается. Загляни через пару минут.",
         "clearOldListings": "Удали все матчи, помеченные как 'Недоступные'.",
+        "flawlessGame": null,
         "accountLinkSuggestion": "Ты теперь %{level} уровня! Подумай о создании аккаунта, чтобы сохранить свой прогресс.",
         "accountLinked": "Этот аккаунт привязан к следующему адресу электронной почты: %{email}.",
         "incompleteTranslationNotice": "Выбранный тобой язык переведен примерно на {percentage}%. Все недостающие переводы будут на английском.",
@@ -2726,6 +2820,7 @@
             "developedBy": "Разработано %{name}",
             "iconsSource": "Иконки предоставлены %{name} (Лицензировано)",
             "soundsSource": "Звуки предоставлены %{name} (Лицензировано)",
+            "emojiSource": null,
             "rottenApplesSource": "Гнилые Яблоки на основе %{name} (BY-NC-SA 2.0)",
             "diceSource": "Модель кубика от %{name} (CC-BY-4.0)",
             "localization": "Локализация от добровольных участников"

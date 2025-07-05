@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Danish",
         "rtl": false,
-        "total": 1719,
-        "missing": 24
+        "total": 1762,
+        "missing": 79
     },
     "name": "Bloob.io",
     "error": {
@@ -82,6 +82,7 @@
         "start": {
             "fieldRows": "Det valgte felt kan ikke understøtte mere end %{rows} rækker",
             "fieldCannotFitUsers": "Det valgte felt kan ikke understøtte mere end %{users} spillere",
+            "questionThreshold": null,
             "whiteCardThreshold": "Spillet kræver mindst %{count} svar kort (hvide)",
             "blackCardThreshold": "Spillet kræver mindst %{count} aktionskort (sorte)",
             "insufficientPlayers": "Har brug for mindst %{min} spillere for at starte kampen."
@@ -242,6 +243,38 @@
                     "help": "Spil uden tidsbegrænsninger. Slå alle tur-timere fra og nyd en afslappet spiloplevelse, hvor du kan spille i dit eget tempo. Ikke anbefalet mod tilfældige modstandere.",
                     "data": {
                         "off": "Ingen grænse"
+                    }
+                },
+                "scoringSystem": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    },
+                    "data": {
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    }
+                },
+                "mode": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
+                    },
+                    "data": {
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
                     }
                 },
                 "deckSize": {
@@ -1578,36 +1611,87 @@
             },
             "presets": {},
             "help": {}
+        },
+        "TRIVIA": {
+            "name": null,
+            "title": null,
+            "description": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "lockAnswer": {
+                    "title": null,
+                    "help": null
+                },
+                "eliminationChallenge": {
+                    "title": null,
+                    "help": null
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coop": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "teams": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
-		"leftTheGame": "forlod spillet",
-		"affirmative": "Okay.",
-		"thanks": "Tak!",
-		"sorry": "Undskyld!",
-		"goodLuck": "Held og lykke!",
-		"brb": "Jeg er straks tilbage!",
-		"go": "Jeg skal smutte.",
-		"glhf": "Held og lykke, ha' det sjovt",
-		"gg": "Godt spil",
-		"readyCheck": "Er alle klar?",
-		"changeSettings": "Skift indstillinger!",
-		"ready": "Klar!",
-		"wait": "Vent venligst!",
-		"letsGo": "Lad os komme i gang!",
-		"greeting": "Hej!",
-		"how": "Hvordan!?",
-		"closeOne": "Det var tæt på!",
-		"niceOne": "Godt gået!",
-		"remindMove": "Din tur!",
-		"wow": "Wow!",
-		"oops": "Ups!",
-		"no": "Nej!",
-		"ohNo": "Åh nej!",
-		"wellPlayed": "Godt spillet!",
-		"rematch": "Revanche!",
-		"fun": "Det var sjovt!",
-		"bye": "Farvel!"
+        "leftTheGame": "forlod spillet",
+        "affirmative": "Okay.",
+        "thanks": "Tak!",
+        "sorry": "Undskyld!",
+        "goodLuck": "Held og lykke!",
+        "brb": "Jeg er straks tilbage!",
+        "go": "Jeg skal smutte.",
+        "glhf": "Held og lykke, ha' det sjovt",
+        "gg": "Godt spil",
+        "readyCheck": "Er alle klar?",
+        "changeSettings": "Skift indstillinger!",
+        "ready": "Klar!",
+        "wait": "Vent venligst!",
+        "letsGo": "Lad os komme i gang!",
+        "greeting": "Hej!",
+        "how": "Hvordan!?",
+        "closeOne": "Det var tæt på!",
+        "niceOne": "Godt gået!",
+        "remindMove": "Din tur!",
+        "wow": "Wow!",
+        "oops": "Ups!",
+        "no": "Nej!",
+        "ohNo": "Åh nej!",
+        "wellPlayed": "Godt spillet!",
+        "rematch": "Revanche!",
+        "fun": "Det var sjovt!",
+        "bye": "Farvel!"
     },
     "header": {
         "message": {
@@ -1644,6 +1728,8 @@
             "roundCount": "Runde %{current} ud af %{total}",
             "roundCurrent": "Runde %{current}",
             "startingNewRound": "Starter ny runde...",
+            "questionCount": null,
+            "questionCurrent": null,
             "war": "Krig!",
             "outcome": "Resultat",
             "input": "Venter på din indtastning",
@@ -1885,6 +1971,9 @@
         "restartNotice": "Serveren genstarter om {count} minutter. Bliv færdig med dit spil. | Serveren genstarter om {count} minut. Bliv færdig med dit spil. | Serveren genstarter om {count} minutter. Bliv færdig med dit spil."
     },
     "misc": {
+        "questions": null,
+        "teamAndQuestions": null,
+        "questionPacks": null,
         "rock": "Sten",
         "paper": "Papir",
         "scissors": "Saks",
@@ -2038,7 +2127,6 @@
         "view": "Se",
         "forfeit": "Giv op i spillet",
         "processFiles": "Behandl filer",
-        "sendMessage": "Send Besked",
         "checkAgain": "Tjek igen",
         "refreshWindow": "Opdater Vindue",
         "makeHost": "Lav Vært",
@@ -2059,6 +2147,7 @@
         "highestScore": "Højeste Score",
         "totalScore": "Total Score",
         "finalScore": "Slut Score",
+        "flawlessGames": null,
         "hits": "Hits",
         "hitRate": "Træfsats",
         "rank": "Rang",
@@ -2068,6 +2157,7 @@
         "assassinations": "Mord",
         "survivals": "Overlevelser",
         "games": "Spil",
+        "correctRatio": null,
         "winRatio": "Sejrsforhold",
         "killDeathRatio": "K/D Forhold",
         "lives": "Liv",
@@ -2130,6 +2220,7 @@
         "volumeMusic": "Musiklyd",
         "selectYourLanguage": "Vælg Dit Sprog",
         "selectYourColor": "Vælg Din Farve",
+        "selectYourTeam": null,
         "latestChanges": "Seneste Ændringer",
         "noChangesDetected": "Ingen Ændringer Fundet",
         "newChanges": "Nye Ændringer",
@@ -2287,10 +2378,13 @@
         "roundLost": "Du tabte!",
         "youLostThisRound": "Du tabte denne runde.",
         "youAreOutOfLives": "Du har ikke flere liv",
+        "playerIsEliminated": null,
+        "youAreEliminated": null,
         "waitForRoundEnd": "Vent lige på, at runden slutter.",
         "waitForWinner": "Sid stille og vent på, at der kommer en vinder!",
         "serverRestart": "Serveren bliver nu genstartet. Tjek lige om et par minutter.",
         "clearOldListings": "Fjern alle 'Ikke tilgængelige' kampe.",
+        "flawlessGame": null,
         "accountLinkSuggestion": "Du er nu %{level}! Overvej at oprette en konto for at beskytte din fremgang.",
         "accountLinked": "Denne konto er knyttet til følgende e-mailadresse: %{email}.",
         "incompleteTranslationNotice": "Det sprog, du har valgt, er cirka {percentage}% færdigt. Eventuelle manglende oversættelser vil være på engelsk.",
@@ -2726,6 +2820,7 @@
             "developedBy": "Udviklet af %{name}",
             "iconsSource": "Ikoner takket være %{name} (Licenseret)",
             "soundsSource": "Lyde leveret af %{name} (Licenseret)",
+            "emojiSource": null,
             "rottenApplesSource": "Rådne Æbler baseret på %{name} (BY-NC-SA 2.0)",
             "diceSource": "Terning model af %{name} (CC-BY-4.0)",
             "localization": "Lokalisering af frivillige bidragydere"

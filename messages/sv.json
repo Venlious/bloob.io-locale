@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Swedish",
         "rtl": false,
-        "total": 1719,
-        "missing": 24
+        "total": 1762,
+        "missing": 79
     },
     "name": "Bloob.io",
     "error": {
@@ -82,6 +82,7 @@
         "start": {
             "fieldRows": "Valda fältet kan inte stödja mer än %{rows} rader",
             "fieldCannotFitUsers": "Valda fältet kan inte stödja mer än %{users} spelare",
+            "questionThreshold": null,
             "whiteCardThreshold": "Spelet kräver minst %{count} svarskort (vita)",
             "blackCardThreshold": "Spelet kräver minst %{count} aktionskort (svarta)",
             "insufficientPlayers": "Behöver minst %{min} spelare för att starta matchen."
@@ -242,6 +243,38 @@
                     "help": "Spela utan tidsgränser. Stäng av alla tur-timers och njut av en avslappnad spelupplevelse där du kan spela i din egen takt. Rekommenderas inte mot slumpmässiga motståndare.",
                     "data": {
                         "off": "Ingen gräns"
+                    }
+                },
+                "scoringSystem": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    },
+                    "data": {
+                        "SPEED": null,
+                        "ORDER": null,
+                        "FIXED": null,
+                        "PROGRESSIVE": null,
+                        "STREAK": null
+                    }
+                },
+                "mode": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
+                    },
+                    "data": {
+                        "SOLO": null,
+                        "CO_OP": null,
+                        "TEAM": null
                     }
                 },
                 "deckSize": {
@@ -1578,36 +1611,87 @@
             },
             "presets": {},
             "help": {}
+        },
+        "TRIVIA": {
+            "name": null,
+            "title": null,
+            "description": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "lockAnswer": {
+                    "title": null,
+                    "help": null
+                },
+                "eliminationChallenge": {
+                    "title": null,
+                    "help": null
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coop": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                },
+                "teams": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {}
         }
     },
     "chat": {
-		"leftTheGame": "lämnade spelet",
-		"affirmative": "Okej.",
-		"thanks": "Tack!",
-		"sorry": "Ursäkta!",
-		"goodLuck": "Lycka till!",
-		"brb": "Jag kommer strax tillbaka!",
-		"go": "Jag måste gå.",
-		"glhf": "Lycka till, ha kul",
-		"gg": "Bra spel",
-		"readyCheck": "Alla redo?",
-		"changeSettings": "Ändra inställningar!",
-		"ready": "Redo!",
-		"wait": "Vänta snälla!",
-		"letsGo": "Låt oss köra!",
-		"greeting": "Hej!",
-		"how": "Hur!?",
-		"closeOne": "Nära ögat!",
-		"niceOne": "Bra gjort!",
-		"remindMove": "Din tur!",
-		"wow": "Wow!",
-		"oops": "Hoppsan!",
-		"no": "Neeeej!",
-		"ohNo": "Åh nej!",
-		"wellPlayed": "Bra spelat!",
-		"rematch": "Returmatch!",
-		"fun": "Det var kul!",
-		"bye": "Hej då!"
+        "leftTheGame": "lämnade spelet",
+        "affirmative": "Okej.",
+        "thanks": "Tack!",
+        "sorry": "Ursäkta!",
+        "goodLuck": "Lycka till!",
+        "brb": "Jag kommer strax tillbaka!",
+        "go": "Jag måste gå.",
+        "glhf": "Lycka till, ha kul",
+        "gg": "Bra spel",
+        "readyCheck": "Alla redo?",
+        "changeSettings": "Ändra inställningar!",
+        "ready": "Redo!",
+        "wait": "Vänta snälla!",
+        "letsGo": "Låt oss köra!",
+        "greeting": "Hej!",
+        "how": "Hur!?",
+        "closeOne": "Nära ögat!",
+        "niceOne": "Bra gjort!",
+        "remindMove": "Din tur!",
+        "wow": "Wow!",
+        "oops": "Hoppsan!",
+        "no": "Neeeej!",
+        "ohNo": "Åh nej!",
+        "wellPlayed": "Bra spelat!",
+        "rematch": "Returmatch!",
+        "fun": "Det var kul!",
+        "bye": "Hej då!"
     },
     "header": {
         "message": {
@@ -1644,6 +1728,8 @@
             "roundCount": "Omgång %{current} av %{total}",
             "roundCurrent": "Runda %{current}",
             "startingNewRound": "Börjar ny runda...",
+            "questionCount": null,
+            "questionCurrent": null,
             "war": "Krig!",
             "outcome": "Resultat",
             "input": "Väntar på din input",
@@ -1885,6 +1971,9 @@
         "restartNotice": "Servern kommer starta om om {count} minuter. Avsluta ditt spel. | Servern kommer starta om om {count} minut. Avsluta ditt spel. | Servern kommer starta om om {count} minuter. Avsluta ditt spel."
     },
     "misc": {
+        "questions": null,
+        "teamAndQuestions": null,
+        "questionPacks": null,
         "rock": "Sten",
         "paper": "Papper",
         "scissors": "Sax",
@@ -2038,7 +2127,6 @@
         "view": "Visa",
         "forfeit": "Ge upp spelet",
         "processFiles": "Bearbeta filer",
-        "sendMessage": "Skicka Meddelande",
         "checkAgain": "Kolla igen",
         "refreshWindow": "Uppdatera Fönster",
         "makeHost": "Bli Värd",
@@ -2059,6 +2147,7 @@
         "highestScore": "Högsta Poäng",
         "totalScore": "Totalt Poäng",
         "finalScore": "Slutpoäng",
+        "flawlessGames": null,
         "hits": "Träffar",
         "hitRate": "Träfffrekvens",
         "rank": "Rankning",
@@ -2068,6 +2157,7 @@
         "assassinations": "Mord",
         "survivals": "Överlevnader",
         "games": "Spel",
+        "correctRatio": null,
         "winRatio": "Vinstförhållande",
         "killDeathRatio": "K/D Förhållande",
         "lives": "Liv",
@@ -2130,6 +2220,7 @@
         "volumeMusic": "Musikvolym",
         "selectYourLanguage": "Välj Ditt Språk",
         "selectYourColor": "Välj Din Färg",
+        "selectYourTeam": null,
         "latestChanges": "Senaste Ändringar",
         "noChangesDetected": "Inga Ändringar Upptäckta",
         "newChanges": "Nya Ändringar",
@@ -2287,10 +2378,13 @@
         "roundLost": "Du förlorade!",
         "youLostThisRound": "Du förlorade den här rundan!",
         "youAreOutOfLives": "Du har slut på liv",
+        "playerIsEliminated": null,
+        "youAreEliminated": null,
         "waitForRoundEnd": "Vänta lite tills rundan är klar.",
         "waitForWinner": "Häng kvar och vänta på att en vinnare dyker upp!",
         "serverRestart": "Servern startas om nu. Kolla tillbaka om några minuter.",
         "clearOldListings": "Rensa alla 'Otillgängliga' matcher.",
+        "flawlessGame": null,
         "accountLinkSuggestion": "Du är nu %{level}! Fundera på att skapa ett konto för att skydda dina framsteg.",
         "accountLinked": "Det här kontot är kopplat till följande e-postadress: %{email}.",
         "incompleteTranslationNotice": "Språket du har valt är ungefär {percentage}% komplett. Alla saknade översättningar kommer att vara på engelska.",
@@ -2726,6 +2820,7 @@
             "developedBy": "Utvecklat av %{name}",
             "iconsSource": "Ikoner tack vare %{name} (Licensierade)",
             "soundsSource": "Ljud tillhandahålls av %{name} (Licensierade)",
+            "emojiSource": null,
             "rottenApplesSource": "Ruttna Äpplen baserat på %{name} (BY-NC-SA 2.0)",
             "diceSource": "Tärningsmodell av %{name} (CC-BY-4.0)",
             "localization": "Lokalisering av frivilliga bidragsgivare"
