@@ -399,16 +399,7 @@ export default class TranslationClass {
 		 */
 		this.generateTranslationTask(
 			[`chat`, `UNIVERSAL`],
-			`These are short informal chat messages.`
-		)
-		this.generateTranslationTask(
-			[`chat`, `PRE_GAME`],
-			`These are short informal chat messages.`
-		)
-		this.generateTranslationTask([`chat`, `GAME`], `These are short informal chat messages.`)
-		this.generateTranslationTask(
-			[`chat`, `POST_GAME`],
-			`These are short informal chat messages.`
+			`These are short informal chat messages used in a videogame.`
 		)
 
 		/**
