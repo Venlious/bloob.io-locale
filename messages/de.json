@@ -37,8 +37,8 @@
             "pendingFriendLimitOther": "Sorry, dieser Nutzer hat schon zu viele ausstehende Freundschaften.",
             "userOffline": "Sorry, der User ist offline.",
             "notFriends": "Ihr seid keine Freunde und habt keine ausstehende Freundschaftsanfrage.",
-            "alreadyFriends": "Ihr seid schon Freunde mit diesem Nutzer.",
-            "pendingFriends": "Da ist schon eine Freundschaftsanfrage bei diesem Nutzer offen.",
+            "alreadyFriends": "Dieser Nutzer ist bereits dein Freund.",
+            "pendingFriends": "Es ist schon eine Freundschaftsanfrage bei diesem Nutzer offen.",
             "startingUp": "Der Server startet immer noch. Versuch später mal, diese Seite neu zu laden.",
             "incorrectProductPrice": "Kauf abgebrochen wegen Preisunterschied. Erwartet: %{expectedAmount}. Erhalten: %{receivedAmount}.",
             "insufficientBalance": "Du hast nicht genug Münzen für diesen Kauf.",
@@ -64,7 +64,7 @@
             "againstAgainstInactiveUser": "Du kannst diese Aktion nicht an einem inaktiven Benutzer ausführen.",
             "invalidUser": "Der Benutzer mit der angegebenen ID ist nicht in diesem Spiel.",
             "invalidTime": "Du kannst diese Aktion gerade nicht ausführen.",
-            "versionMismatch": "Du benutzt die Version \"%{client}\", während der Server die Version \"%{server}\" am Laufen hat. Das kann passieren, wenn ein Update ausgerollt wird. Refresh die Seite einfach in ein paar Minuten, um die neueste Version zu bekommen.",
+            "versionMismatch": "Du benutzt die Version \"%{client}\", während der Server die Version \"%{server}\" am Laufen hat. Das kann passieren, wenn ein Update ausgerollt wird. Aktualisiere die Seite einfach in ein paar Minuten, um die neueste Version zu bekommen.",
             "clipboard": "Kopieren in die Zwischenablage nicht möglich."
         },
         "config": {
@@ -157,7 +157,7 @@
             "missingData": "Fehlende Daten für Spitzname und/oder Bild.",
             "invalidNickname": "Spitzname ungültig.",
             "invalidPicture": "Bild ungültig.",
-            "lockedPicture": "Bild enthält gesperrte Sachen, die du nicht benutzen darfst.",
+            "lockedPicture": "Bild enthält gesperrte Inhalte, die du nicht benutzen darfst.",
             "nicknameMaxLength": "Spitzname zu lang (%{current}/%{max})",
             "nicknameMinLength": "Spitzname zu kurz (%{current}/%{min})",
             "nicknameAllowedCharacters": "Spitzname darf nur alphanumerische Zeichen und die Sonderzeichen _- enthalten.",
@@ -170,8 +170,8 @@
             "credentials": "Anmeldedaten ungültig.",
             "validAccount": "Dein Konto wurde noch nicht validiert. Bitte speichere deine Profiländerungen.",
             "inLobby": "Du kannst diese Aktion nicht durchführen, da das Spiel bereits begonnen hat.",
-            "notJudge": "Du kannst diese Aktion als Bewerter nicht durchführen.",
-            "judge": "Du kannst diese Aktion nur als Bewerter durchführen.",
+            "notJudge": "Du kannst diese Aktion als Richter nicht durchführen.",
+            "judge": "Du kannst diese Aktion nur als Richter durchführen.",
             "turn": "Du kannst diese Aktion nicht durchführen, da du nicht am Zug bist.",
             "duringGame": "Du kannst diese Aktion nur während dem Spiel durchführen.",
             "finishedGame": "Du kannst diese Aktion erst nach dem Spiel durchführen.",
@@ -279,10 +279,10 @@
                 },
                 "deckSize": {
                     "title": "Deckgröße",
-                    "help": "Spiele ohne Zeitlimits. Deaktiviere alle Runden-Timer und genieße ein entspanntes Spielerlebnis, bei dem du in deinem eigenen Tempo spielen kannst. Nicht empfohlen gegen zufällige Gegner.",
+                    "help": "Wähle die bevorzugte Deckgröße für das Spiel.",
                     "data": {
                         "half": "Halbes Deck",
-                        "full": "Volles Deck",
+                        "full": "Vollständiges Deck",
                         "double": "Doppeltes Deck"
                     }
                 }
@@ -299,7 +299,7 @@
                 "timeFreedom": {
                     "title": "Zeitfreiheit",
                     "description": [
-                        "Keine Zeitmesser",
+                        "Keine Zeitlimits",
                         "Warte, bis alle bereit sind"
                     ]
                 }
@@ -376,7 +376,7 @@
                         "10x8": "Klein (10x8)",
                         "13x10": "Mittel (13x10)",
                         "17x13": "Groß (17x13)",
-                        "20x15": "Extrem (20x15)"
+                        "20x15": "Riesig (20x15)"
                     }
                 },
                 "_gameDuration": {
@@ -449,12 +449,12 @@
                         "9x4": "Gestreckt (9x4)",
                         "9x6": "Groß (9x6)",
                         "13x8": "Sehr Groß (13x8)",
-                        "17x10": "Extrem (17x10)"
+                        "17x10": "Riesig (17x10)"
                     }
                 },
                 "piecesInRow": {
                     "title": "Siegbedingung",
-                    "help": "Wie viele Steine in einer Reihe sein müssen um das Spiel zu gewinnen.",
+                    "help": "Wie viele Chips in einer Reihe sein müssen um das Spiel zu gewinnen.",
                     "data": {
                         "3": "Drei gewinnt (3)",
                         "4": "Vier gewinnt (4)",
@@ -463,12 +463,12 @@
                     }
                 },
                 "sideColumns": {
-                    "title": "Randspalten",
-                    "help": "Fügt eine Spalte mit Steinen in abwechselnden Farben auf beiden Seiten hinzu."
+                    "title": "Seitenspalten",
+                    "help": "Fügt eine Spalte mit Chips in abwechselnden Farben auf beiden Seiten hinzu."
                 },
                 "flip": {
                     "title": "Spielfelddrehung",
-                    "help": "Macht das Spiel interessanter indem die Steine umgedreht werden. Ein Zähler zeigt die Anzahl der Züge bis zur nächsten Drehung an.",
+                    "help": "Macht das Spiel interessanter indem die Chips umgedreht werden. Ein Zähler zeigt die Anzahl der Züge bis zur nächsten Drehung an.",
                     "data": {
                         "everyTurn": "Nach jedem Zug",
                         "countTurns": "Alle %{count} Züge"
@@ -476,21 +476,21 @@
                 },
                 "turnsUntilFlip": {
                     "title": "Züge pro Drehung",
-                    "help": "Das Setzen eines Spielsteines zählt als Zug. Das legt fest, wie viele Spielsteine gesetzt werden müssen, bis das Spielfeld gedreht wird."
+                    "help": "Das Spielen eines Chips zählt als Zug. Das legt fest, wie viele Chips gespielt werden müssen, bis das Spielfeld gedreht wird."
                 },
                 "tetrisMode": {
                     "title": "Tetris-Modus",
-                    "help": "Wenn aktiviert, verschwinden die Spielsteine einer Reihe sobald diese voll ist und alle anderen rutschen nach. Das macht ein Unentschieden unmöglich."
+                    "help": "Wenn aktiviert, verschwinden die Chips einer Reihe sobald diese voll ist und alle anderen rutschen nach. Das macht ein Unentschieden unmöglich."
                 }
             },
             "presets": {
                 "default": {
-                    "title": "Vier in einer Reihe"
+                    "title": "Vier gewinnt"
                 },
                 "fiveInARow": {
                     "title": "Fünf gewinnt",
                     "description": [
-                        "Seiten Spalten",
+                        "Seitenspalten",
                         "Großes Feld"
                     ]
                 },
@@ -501,23 +501,23 @@
                 "flipParty": {
                     "title": "Flip Party",
                     "description": [
-                        "Wechsel das Feld alle 13 Runden",
+                        "Wechsle das Feld alle 13 Runden",
                         "Sehr großes Feld"
                     ]
                 }
             },
             "help": {
                 "placement": {
-                    "title": "Platzierung der Spielsteine",
+                    "title": "Platzierung der Chips",
                     "description": [
-                        "Spielsteine können auf mehrere Arten gesetzt werden. Fahre mit der Maus über eine Spalte und klicke, nutze die Tastatur, oder ziehe sie mit der Maus umher.",
+                        "Chips können auf mehrere Arten gespielt werden. Fahre mit der Maus über eine Spalte und klicke, nutze die Tastatur, oder ziehe sie mit der Maus umher.",
                         "Du kannst sehen, auf welcher Spalte sich der Gegner gerade befindet. Behalte dies im Kopf und nutze es zu deinem Vorteil."
                     ]
                 },
                 "win": {
                     "title": "Spielende",
                     "description": [
-                        "Standardmäßig gewinnt die erste Person mit vier Spielsteinen in einer Reihe das Spiel. Reihen können waagrecht, senkrecht und diagonal gebildet werden.",
+                        "Standardmäßig gewinnt die erste Person mit vier Chips in einer Reihe das Spiel. Reihen können waagrecht, senkrecht und diagonal gebildet werden.",
                         "Der Spielleiter kann die Siegbedingung einstellen und verschiedene Bedingungen zulassen."
                     ]
                 }
@@ -536,18 +536,18 @@
                 },
                 "judgeSystem": {
                     "title": "Abstimmungssystem",
-                    "help": "Entweder gibt es einen einzigen Bewerter, oder jeder darf entscheiden, wer in jeder Runde die besten Karten gespielt hat.",
+                    "help": "Entweder gibt es einen einzigen Richter, oder jeder darf entscheiden, wer in jeder Runde die besten Karten gespielt hat.",
                     "data": {
-                        "single": "Neuer Bewerter jede Runde",
+                        "single": "Neuer Richter jede Runde",
                         "everyone": "Jeder stimmt ab"
                     }
                 },
                 "pickBlackCard": {
                     "title": "Aktionskarte auswählen",
-                    "help": "Wenn aktiviert, kann der Bewerter zwischen drei zufälligen Aktionskarten wählen."
+                    "help": "Wenn aktiviert, kann der Richter zwischen drei zufälligen Aktionskarten wählen."
                 },
                 "handPreview": {
-                    "title": "Hand Vorschau",
+                    "title": "Handvorschau",
                     "help": "Wenn aktiviert, wird zu Beginn des Spiels und nach jeder Runde eine Zeitspanne hinzugefügt, während dieser jeder Spieler seine Karten auf der Hand sehen kann."
                 },
                 "dumpRound": {
@@ -574,11 +574,11 @@
                     "help": "Aktive Filter sorgen dafür, dass Karten, die die folgenden Kriterien erfüllen, ausgelassen werden:"
                 },
                 "timePicking": {
-                    "title": "Auswählzeit Aktionskarten",
+                    "title": "Auswahlzeit für Aktionskarten",
                     "help": "Legt fest, wie viel Zeit jeder hat, um eine Aktionskarte für diese Runde zu wählen."
                 },
                 "responseCardLimit": {
-                    "title": "Antwortkarten Limit",
+                    "title": "Antwortkarten-Limit",
                     "help": "Standardmäßig kannst du mit den Aktionskarten maximal 3 Antwortkarten ziehen. Durch die Änderung dieses Limits werden Aktionskarten, die über diesem Limit liegen, aus dem Spiel herausgefiltert."
                 },
                 "timeDeciding": {
@@ -596,7 +596,7 @@
                     }
                 },
                 "timeReveal": {
-                    "title": "Zeit für die Offenlegung der Stimme (pro Karte)",
+                    "title": "Anzeigedauer des Ergebnisses (pro Karte)",
                     "help": {
                         "intro": "Lege fest, wie lange jeder die Gewinnerauswahl sehen kann.",
                         "calc": "Die Gesamtzeit berechnet sich durch <b>ANTWORTKARTEN * DIESE ZEIT</b>"
@@ -639,7 +639,7 @@
                     "title": "Aktionskarte",
                     "description": [
                         "In jeder Runde wird eine neue schwarze Aktionskarte mit Leerstellen (___) aufgedeckt, die von den Spielern auszufüllen sind.",
-                        "Die Lücken werden mit den weißen Antwortkarten auf der Hand ausgefüllt. Wenn alle Spieler fertig sind, wählt der Bewerter seine Lieblingsantwort aus."
+                        "Die Lücken werden mit den weißen Antwortkarten auf der Hand ausgefüllt. Wenn alle Spieler fertig sind, wählt der Richter seine Lieblingsantwort aus."
                     ]
                 },
                 "move": {
@@ -652,8 +652,8 @@
                 "vote": {
                     "title": "Abstimmung",
                     "description": [
-                        "Die Stimmabgabe erfolgt entweder durch einen einzelnen Bewerter oder durch alle. Dies hängt davon ab, wie der Gastgeber das Spiel konfiguriert hat.",
-                        "Am Ende jeder Runde können die Bewerter für ihre Lieblingsantwort stimmen. Der Gewinner erhält einen Punkt."
+                        "Die Stimmabgabe erfolgt entweder durch einen einzelnen Richter oder durch alle. Dies hängt davon ab, wie der Gastgeber das Spiel konfiguriert hat.",
+                        "Am Ende jeder Runde können die Richter für ihre Lieblingsantwort stimmen. Der Gewinner erhält einen Punkt."
                     ]
                 },
                 "sets": {
@@ -728,19 +728,19 @@
             "presets": {
                 "default": {
                     "title": "Englisches Dame (Standard)",
-                    "description": "8x8 Feld — 24 Stücke"
+                    "description": "8x8 Feld — 24 Spielsteine"
                 },
                 "international": {
                     "title": "Internationales Dame",
-                    "description": "10x10 Feld — 40 Stücke — Nimm rückwärts"
+                    "description": "10x10 Feld — 40 Spielsteine — Nimm rückwärts"
                 },
                 "canadian": {
                     "title": "Kanadisches Dame",
-                    "description": "12x12 Feld — 60 Stücke — Nimm rückwärts"
+                    "description": "12x12 Feld — 60 Spielsteine — Nimm rückwärts"
                 },
                 "party": {
                     "title": "Party Dame",
-                    "description": "Plusfeld - 36 Stück - 4 Spieler"
+                    "description": "Plusfeld - 36 Spielsteine - 4 Spieler"
                 }
             },
             "help": {
@@ -868,59 +868,59 @@
             "options": {
                 "aimingLine": {
                     "title": "Ziel-Linie",
-                    "help": "Die Ziel-Linie zeigt, wo die Spielkugel hinrollt, nachdem du sie getroffen hast."
+                    "help": "Die Ziel-Linie zeigt an, wohin sich die Weiße nach dem Stoß bewegt."
                 },
                 "speed": {
                     "title": "Geschwindigkeit",
                     "help": "Wie schnell die Pool-Animation abgespielt wird."
                 },
                 "illegalBallPocket": {
-                    "title": "Illegales Ball-Einstecken"
+                    "title": "Illegales Loch"
                 },
                 "ruleContactRailOnBreak": {
-                    "title": "Auf Schienen durchbrechen",
-                    "help": "Beim Brechen bestimme, wie viele Bälle mit der Bande in Kontakt kommen müssen. Diese Regel gilt nicht, wenn du einen Ball versenkst.",
+                    "title": "Bande beim Anstoß",
+                    "help": "Lege fest, wie viele Kugeln beim Anstoß mindestens eine Bande berühren müssen. Diese Regel gilt nicht, wenn eine Kugel versenkt wird.",
                     "data": {
-                        "one": "Ein Ball",
-                        "two": "Zwei Bälle",
-                        "three": "Drei Bälle",
-                        "four": "Vier Bälle"
+                        "one": "Eine Kugel",
+                        "two": "Zwei Kugeln",
+                        "three": "Drei Kugeln",
+                        "four": "Vier Kugeln"
                     }
                 },
                 "assignedGroup": {
                     "title": "Zugewiesene Gruppe",
-                    "help": "Bestimme, wie jeder Spieler seiner Gruppe (Solide oder Streifen) zugewiesen wird.",
+                    "help": "Legt fest, wie jeder Spieler seine Gruppe (Volle oder Halbe) erhält.",
                     "data": {
-                        "pocket": "In der Tasche",
-                        "random": "Zufällig am Anfang"
+                        "pocket": "Beim Versenken",
+                        "random": "Zufällig zu Beginn"
                     }
                 },
                 "ruleTurnCanHitBall": {
-                    "title": "Kann Ball Schlagen",
-                    "help": "Passiert, wenn der Spieler einen Ball trifft, den er nicht darf. Regel gilt nicht beim Brechen.",
+                    "title": "Erlaubte Kugel",
+                    "help": "Tritt ein, wenn der Spieler eine Kugel trifft, die er nicht treffen darf. Diese Regel gilt nicht beim Anstoß.",
                     "data": {
-                        "assignedGroup": "Zugewiesene Gruppe",
-                        "assignedGroupPlus": "Zugewiesene Gruppe + 8 Ball",
-                        "eitherGroup": "Entweder Gruppe",
-                        "anyBall": "Jeder Ball"
+                        "assignedGroup": "Eigene Gruppe",
+                        "assignedGroupPlus": "Eigene Gruppe + 8-Ball",
+                        "eitherGroup": "Beliebige Gruppe",
+                        "anyBall": "Beliebige Kugel"
                     }
                 },
                 "ruleTurnMustHitBall": {
-                    "title": "Muss Ball treffen",
-                    "help": "Passiert, wenn der Spieler keinen Ball trifft, während seinem Zug."
+                    "title": "Muss Kugel treffen",
+                    "help": "Tritt ein, wenn der Spieler während seines Zuges keine zulässige Kugel (aus \"Erlaubte Kugel\") trifft."
                 },
                 "ruleTurnContactRail": {
-                    "title": "Kontaktiere die Eisenbahnen.",
-                    "help": "Kein Ball trifft die Bande, dann gilt diese Regel nicht, es sei denn, der Spieler versenkt einen Ball."
+                    "title": "Muss Bande berühren",
+                    "help": "Tritt ein, wenn keine Kugel eine Bande berührt. Diese Regel gilt nicht, wenn der Spieler eine Kugel versenkt."
                 },
                 "ruleConsecutiveFouls": {
                     "title": "Aufeinanderfolgende Fouls",
-                    "help": "Bestimme, was passieren soll, wenn ein Spieler mehrere Fouls hintereinander macht. Diese Regel verhindert unsportliches Verhalten.",
+                    "help": "Legt fest, was passiert, wenn ein Spieler mehrere Fouls hintereinander begeht. Diese Regel soll unsportliches Verhalten unterbinden.",
                     "data": {
                         "off": "Aus",
-                        "loseOnTwo": "Verlust nach zwei",
-                        "loseOnThree": "Verlust nach drei",
-                        "loseOnFour": "Verlust nach vier"
+                        "loseOnTwo": "Niederlage nach zwei",
+                        "loseOnThree": "Niederlage nach drei",
+                        "loseOnFour": "Niederlage nach vier"
                     }
                 },
                 "foul": {
@@ -928,97 +928,97 @@
                         "disabled": "Foul ist mit den aktuellen Einstellungen deaktiviert."
                     },
                     "data": {
-                        "nothing": "Nichts",
-                        "keepTurn": "Weitermachen",
-                        "endTurn": "Runde beenden",
-                        "endTurnHand": "Runde beenden + Ball in der Hand",
-                        "reset": "Runde beenden + Feld wiederherstellen",
-                        "resetHand": "Runde beenden + Feld wiederherstellen + Ball in der Hand",
+                        "nothing": "Keine Strafe",
+                        "keepTurn": "Zug behalten",
+                        "endTurn": "Zug beenden",
+                        "endTurnHand": "Zug beenden + Kugel in der Hand",
+                        "reset": "Zug beenden + Feld zurücksetzen",
+                        "resetHand": "Zug beenden + Feld zurücksetzen + Kugel in der Hand",
                         "instantWin": "Sofortiger Sieg",
                         "instantLoss": "Sofortige Niederlage"
                     }
                 },
                 "foulPocketCueBall": {
-                    "title": "Taschen die Kugel ein",
-                    "help": "Passiert, wenn ein Spieler die Kugel versenkt."
+                    "title": "Weiße Kugel versenkt",
+                    "help": "Tritt ein, wenn ein Spieler die Weiße versenkt."
                 },
                 "foulPocketOpponentBall": {
-                    "title": "Gegnerischen Ball einlochen",
-                    "help": "Passiert, wenn ein Spieler den Ball des Gegners versenkt. Andere Fouls haben Vorrang vor diesem (z.B. zuerst den falschen Ball treffen)."
+                    "title": "Gegnerische Kugel versenkt",
+                    "help": "Tritt ein, wenn ein Spieler eine gegnerische Kugel versenkt. Andere Fouls haben Vorrang (z. B. zuerst die falsche Kugel treffen)."
                 },
                 "foulPocketOwnAndOpponentBall": {
-                    "title": "Eigene und Gegnerische Kugel Einlochen",
-                    "help": "Passiert, wenn ein Spieler eine eigene und die Kugel des Gegners versenkt. Andere Fouls haben Vorrang vor diesem (z.B. zuerst die falsche Kugel treffen)."
+                    "title": "Eigene + gegnerische Kugel versenkt",
+                    "help": "Tritt ein, wenn ein Spieler sowohl eine eigene als auch eine gegnerische Kugel versenkt. Andere Fouls haben Vorrang (z. B. zuerst die falsche Kugel treffen)."
                 },
                 "foulIllegalEightBallBreak": {
-                    "title": "8-Ball während des Breaks einlochen",
-                    "help": "Passiert, wenn ein Spieler es schafft, die 8 Kugel beim Break zu versenken."
+                    "title": "8-Ball beim Anstoß versenkt",
+                    "help": "Tritt ein, wenn ein Spieler den 8-Ball beim Anstoß versenkt."
                 },
                 "foulIllegalEightBallPocket": {
-                    "title": "Illegales Pocketen des 8-Ball",
-                    "help": "Passiert, wenn ein Spieler die 8-Kugel versenkt, während er gleichzeitig ein anderes Foul begeht (z.B. die Queue-Kugel versenken)."
+                    "title": "8-Ball regelwidrig versenkt",
+                    "help": "Tritt ein, wenn ein Spieler den 8-Ball versenkt und dabei gleichzeitig ein anderes Foul begeht (z. B. auch die Weiße versenken)."
                 },
                 "foulIllegalEightBallPocketTooSoon": {
-                    "title": "Pocketen 8 Ball Zu Früh",
-                    "help": "Passiert, wenn ein Spieler die 8-Kugel versenkt, während er noch andere Kugeln versenken muss."
+                    "title": "8-Ball zu früh versenkt",
+                    "help": "Tritt ein, wenn ein Spieler den 8-Ball versenkt, obwohl er noch andere Objektkugeln übrig hat."
                 }
             },
             "presets": {
                 "default": {
-                    "title": "Regeln für Bloob.io"
+                    "title": "Bloob.io-Regelwerk"
                 },
                 "wpa": {
                     "title": "WPA-Regelwerk",
-                    "description": "Ähnelt den Regeln der World Pool-Billiard Association sehr"
+                    "description": "Entspricht weitgehend den Regeln der World Pool-Billiard Association"
                 },
                 "upa": {
                     "title": "UPA-Regelwerk",
-                    "description": "Ähnelt den Regeln der US Professional Poolplayers Association sehr"
+                    "description": "Entspricht weitgehend den Regeln der US Professional Poolplayers Association"
                 },
                 "relaxed": {
-                    "title": "Lockerregelwerk",
+                    "title": "Entspanntes Regelwerk",
                     "description": "Mildere Strafen und weniger Regeln"
                 },
                 "ruthless": {
-                    "title": "Skrupellose Regeln",
-                    "description": "Jedes Foul führt zu einem sofortigen Verlust"
+                    "title": "Unerbittliches Regelwerk",
+                    "description": "Jedes Foul führt zu einer sofortigen Niederlage"
                 }
             },
             "help": {
                 "field": {
-                    "title": "Spielfeld spielen",
+                    "title": "Spielfeld",
                     "description": [
-                        "Es gibt 6 Löcher, in die die Bälle gespielt werden können. Insgesamt gibt es 16 Bälle, einer davon ist der Spielball, den du bei deinem Zug anschlägst.",
-                        "Es gibt 7 gestreifte und 7 einfarbige Bälle, sowie einen schwarzen Achtball. Zu Beginn des Spiels sind alle Bälle in einem Dreieck angeordnet, wobei der Achtball in der Mitte steht. Der Spielball steht weiter weg."
+                        "Das Spielfeld hat sechs Taschen, in die Kugeln versenkt werden können. Insgesamt gibt es 16 Kugeln, darunter die Weiße, die du in deinem Zug stößt.",
+                        "Es gibt sieben Halbe und sieben Volle Kugeln sowie einen schwarzen 8-Ball. Zu Beginn des Spiels liegen alle Kugeln in einem Dreieck mit dem 8-Ball in der Mitte. Die Weiße wird weiter entfernt aufgelegt."
                     ]
                 },
                 "breaking": {
-                    "title": "Das Spiel starten (brechen)",
+                    "title": "Spielbeginn (Anstoß)",
                     "description": [
-                        "Wer als erstes an der Reihe ist, kann die Kugel bewegen und auf das Dreieck der Kugeln (ihre Ausgangsposition) schlagen.",
-                        "Es gibt Regeln für das Brechen. Die Kugel darf nicht versenkt werden und mindestens zwei Kugeln (außer der Kugel) müssen ein Kissen (die Wände um das Feld) treffen. Wenn man beim Brechen eine Kugel versenkt, bekommt man sofort noch einen Zug."
+                        "Der Spieler, der zuerst an der Reihe ist, darf die Weiße frei positionieren und in das Dreieck der Objektkugeln stoßen.",
+                        "Beim Anstoß gelten Regeln: Die Weiße darf nicht versenkt werden und mindestens zwei Kugeln (außer der Weißen) müssen eine Bande berühren. Versenkt man beim Anstoß eine Kugel, erhält man automatisch einen weiteren Zug."
                     ]
                 },
                 "gameplay": {
-                    "title": "Spielmechanik",
+                    "title": "Spielablauf",
                     "description": [
-                        "Es gibt sowohl gestreifte als auch solide Bälle. Wer als erstes einen Ball versenkt, wird zu dieser Ballgruppe und bekommt noch einen Zug. Ab diesem Punkt musst du nur noch gestreifte oder solide Bälle versenken.",
-                        "Die Reihenfolge, in der du deine Bälle versenkst, spielt keine Rolle. Wenn du ein Foul begehst, darf dein Gegner den Spielball für seinen Zug bewegen."
+                        "Es gibt Halbe und Volle Kugeln. Wer zuerst eine Kugel versenkt, erhält diese Gruppe und bekommt einen weiteren Zug. Ab diesem Zeitpunkt darfst du nur noch deine Gruppe (Volle oder Halbe) versenken.",
+                        "Die Reihenfolge, in der du deine Kugeln versenkst, ist egal. Begehst du ein Foul, darf dein Gegner für seinen Zug die Weiße beliebig platzieren."
                     ]
                 },
                 "objective": {
-                    "title": "Ziel:",
+                    "title": "Ziel",
                     "description": [
-                        "Du musst die schwarze Acht erst vermeiden, bis du alle deine Kugeln versenkt hast. Du beendest dann das Spiel, indem du die Acht versenkst. Es ist wichtig, dass du dabei kein Foul begehst, sonst verlierst du.",
-                        "Wenn du die Acht zu früh versenkst, bedeutet das sofortiger Verlust. Achte darauf, dass du sorgfältig zielst!"
+                        "Du darfst den schwarzen 8-Ball erst versenken, nachdem du all deine Kugeln versenkt hast. Das Spiel wird beendet, indem du anschließend den 8-Ball versenkst. Dabei darfst du kein Foul begehen, sonst verlierst du.",
+                        "Wird der 8-Ball zu früh versenkt, führt das zu einer sofortigen Niederlage. Ziele also sorgfältig!"
                     ]
                 }
             }
         },
         "YACHT": {
             "name": "Kniffel",
-            "title": "Kniffel Online | Kostenlos Yahtzee mit Freunden und Bots spielen",
-            "description": "Spiele kostenlos Kniffel online, ganz ohne Anmeldung! Tritt live gegen Freunde, Fremde oder Bots an und erlebe den Spaß des klassischen Yahtzee.",
+            "title": "Kniffel Online | Kostenlos Kniffel mit Freunden und Bots spielen",
+            "description": "Spiele Kniffel kostenlos online, ganz ohne Anmeldung! Tritt live gegen Freunde, Fremde oder Bots an und erlebe den Spaß des Klassikers Kniffel.",
             "options": {
                 "rolls": {
                     "title": "Würfe",
@@ -1046,11 +1046,11 @@
                 },
                 "additionalYacht": {
                     "title": "Zusätzliche Kniffel",
-                    "help": "Gib an, wie das Spiel eine Situation handhaben soll, in der ein Spieler noch ein Kniffel würfelt, nachdem er bereits Punkte dafür erzielt hat."
+                    "help": "Gib an, wie das Spiel eine Situation handhaben soll, in der ein Spieler noch einen Kniffel würfelt, nachdem er bereits Punkte dafür erzielt hat."
                 },
                 "additionalYachtReward": {
                     "title": "Belohnung",
-                    "help": "Die Anzahl der Punkte, die denen gegeben werden, die noch eine Kniffel würfeln."
+                    "help": "Die Anzahl der Punkte, die denen gegeben werden, die noch einen Kniffel würfeln."
                 }
             },
             "presets": {},
@@ -1070,14 +1070,14 @@
                     ]
                 },
                 "holding_dice": {
-                    "title": "Würfel halten",
+                    "title": "Würfel behalten",
                     "description": [
-                        "Nach deinem ersten Wurf, klick auf einen Würfel, um ihn \"festzuhalten\". Der festgehaltene Würfel ändert sich in deinem nächsten Wurf nicht. Klick nochmal auf den Würfel, um ihn wieder ins Spiel zu bringen.",
-                        "Zum Beispiel, wenn du beim ersten Wurf drei 6en würfelst, halte sie fest. Dann würfle die übrigen Würfel, um mehr 6en zu versuchen und deine Punktzahl zu erhöhen."
+                        "Nach deinem ersten Wurf, klick auf einen Würfel, um ihn zu \"behalten\". Der behaltene Würfel ändert sich in deinem nächsten Wurf nicht. Klick nochmal auf den Würfel, um ihn wieder ins Spiel zu bringen.",
+                        "Zum Beispiel, wenn du beim ersten Wurf drei 6en würfelst, behalte sie. Dann würfle die übrigen Würfel, um zu versuchen, mehr 6en zu bekommen und deine Punktzahl zu erhöhen."
                     ]
                 },
                 "earning_points": {
-                    "title": "Punkte Verdienen",
+                    "title": "Punkte verdienen",
                     "description": [
                         "Die Punktekarte enthält mehrere Kategorien. Jede Kategorie hat unterschiedliche Anforderungen.",
                         "Du kannst mit der Maus über eine Kategorie in der Punktekarte fahren, um zu sehen, was die Anforderungen sind und wie viele Punkte du damit verdienen kannst."
@@ -1113,9 +1113,9 @@
             }
         },
         "BATTLESHIP": {
-            "name": "Schlachtschiff",
-            "title": "Schlachtschiff Online | Kostenloses Spiel Schiffe versenken!",
-            "description": "Kostenlos Schiffe versenken spielen! Schlachtschiff online, ohne Anmeldung, mit Freunden, Fremden oder Bots. Starte Multiplayer-Matches jetzt!",
+            "name": "Schiffe versenken",
+            "title": "Schiffe versenken Online | Kostenloses Spiel Schiffe versenken!",
+            "description": "Kostenlos Schiffe versenken spielen! Schiffe versenken online, ohne Anmeldung, mit Freunden, Fremden oder Bots. Starte Multiplayer-Matches jetzt!",
             "options": {
                 "placementTime": {
                     "title": "Platzierungszeit",
@@ -1162,7 +1162,7 @@
                 },
                 "shipSpacing": {
                     "title": "Schiffsabstand",
-                    "help": "Wenn aktiviert, müssen Schiffe mindestens eine Zelle Abstand voneinander haben und dürfen sich nicht direkt berühren."
+                    "help": "Wenn aktiviert, müssen Schiffe mindestens ein Feld Abstand voneinander haben und dürfen sich nicht direkt berühren."
                 },
                 "shipReveal": {
                     "title": "Schiffsenthüllung",
@@ -1221,8 +1221,8 @@
             }
         },
         "CRIBBAGE": {
-            "name": "Kribbeln",
-            "title": "Klassisches Cribbage online kostenlos spielen | Kribbeln Spiel",
+            "name": "Cribbage",
+            "title": "Cribbage online kostenlos spielen | Klassisches Kartenspiel",
             "description": "Spiele klassisches Cribbage kostenlos online ohne Anmeldung! Tritt gegen Freunde, Fremde oder Bots in spannenden Brettmatches an und lerne die Regeln.",
             "options": {
                 "summaryEnabled": {
@@ -1238,12 +1238,12 @@
                     "help": "Wie lange jeder Spieler Zeit hat, eine Karte aus seiner Hand auszuwählen und ins laufende Spiel einzubringen."
                 },
                 "cribTime": {
-                    "title": "Kinderbett Zeit",
-                    "help": "Wie lange jeder Spieler Zeit hat zu entscheiden, welche Karten er zur Krippe schickt."
+                    "title": "Crib-Zeit",
+                    "help": "Wie lange jeder Spieler Zeit hat zu entscheiden, welche Karten er in den Crib legt."
                 },
                 "starterCardTime": {
-                    "title": "Startkarten Zeit",
-                    "help": "Wie lange der ausgewählte Spieler Zeit hat, die Startkarte aus dem Stapel zu ziehen. Die Startkarte wird als fünfte Karte verwendet, wenn es darum geht, die Punkte für alle Hände und die Krippe zu berechnen."
+                    "title": "Startkarten-Zeit",
+                    "help": "Wie lange der ausgewählte Spieler Zeit hat, die Startkarte aus dem Stapel zu ziehen. Die Startkarte wird als fünfte Karte verwendet, wenn es um die Wertung aller Hände und des Cribs geht."
                 },
                 "revealSpeed": {
                     "title": "Enthüllungsgeschwindigkeit",
@@ -1251,7 +1251,7 @@
                 },
                 "dealerExtraCard": {
                     "title": "Zusätzliche Karte des Dealers",
-                    "help": "Wenn es in 3-Spieler-Spielen aktiviert ist, bekommt der Geber eine extra Krippe-Karte. Wenn es deaktiviert ist, geht die vierte Karte automatisch zur Krippe."
+                    "help": "Wenn diese Option in 3-Spieler-Partien aktiviert ist, erhält der Geber eine zusätzliche Crib-Karte. Ist sie deaktiviert, wandert die vierte Karte automatisch in den Crib."
                 },
                 "winCondition": {
                     "data": {
@@ -1280,8 +1280,8 @@
                 "deal": {
                     "title": "Der Deal",
                     "description": [
-                        "Jeder Spieler bekommt 5 oder 6 Karten, je nachdem wie viele Spieler da sind. Jeder Spieler muss 4 Karten auswählen, die er behalten möchte und die anderen in die \"Krippe\" werfen, die dem Geber gehört.",
-                        "Die Krippe kann man als eine zweite Hand sehen, die dem Geber zusätzliche Punkte gibt, wenn es darum geht, die Punkte zu zählen."
+                        "Jeder Spieler bekommt 5 oder 6 Karten, je nachdem wie viele Spieler teilnehmen. Jeder Spieler muss 4 Karten auswählen, die er behalten möchte, und die übrigen in den \"Crib\" des Gebers legen.",
+                        "Der Crib kann als zweite Hand betrachtet werden und verschafft dem Geber zusätzliche Punkte, wenn es ans Zählen geht."
                     ]
                 },
                 "play": {
@@ -1294,7 +1294,7 @@
                 "show": {
                     "title": "Die Show",
                     "description": [
-                        "Nachdem alle Spieler während des Spiels ihre Hände geleert haben, werden die Punkte gezählt. Der Geber wird immer zuletzt gezählt und bekommt auch Punkte für seine Krippe.",
+                        "Nachdem alle Spieler während des Spiels ihre Hände geleert haben, werden die Punkte gezählt. Der Geber wird immer zuletzt gewertet und erhält außerdem Punkte für seinen Crib.",
                         "Spieler können Punkte für verschiedene Kombinationen verdienen. Klick im Spiel auf den Button \"Punktesystem\", um einen vollständigen Überblick zu bekommen."
                     ]
                 }
@@ -1433,7 +1433,7 @@
                     ]
                 },
                 "deadwood": {
-                    "title": "Deadwood - Totenkopfstadt",
+                    "title": "Deadwood",
                     "description": [
                         "Deadwood sind Karten, die nicht zu irgendwelchen Meldungen gehören. Der Wert von Deadwood wird berechnet, indem man die Werte dieser Karten zusammenzählt (z.B. zwei Könige und eine fünf ergeben insgesamt 25).",
                         "Versuch, dein Deadwood so niedrig wie möglich zu halten, indem du Meldungen bildest und hochpreisige Karten, die nicht in Meldungen sind, abwirfst."
@@ -1442,8 +1442,8 @@
                 "melds": {
                     "title": "Meldungen",
                     "description": [
-                        "Melds kannst du bilden, indem du eine Reihe von drei oder mehr Karten derselben Farbe hast (z.B. 3Kreuz, 4Kreuz, 5Kreuz) oder drei oder mehr Karten mit dem gleichen Wert (z.B. 3Herz, 3Kreuz, 3Pik).",
-                        "Melds werden automatisch in deiner Hand und im Interface hervorgehoben, also schau auf den Stapel—dein Gegner könnte die Karte abwerfen, die du brauchst!"
+                        "Meldungen kannst du bilden, indem du eine Reihe von drei oder mehr Karten derselben Farbe hast (z.B. 3Kreuz, 4Kreuz, 5Kreuz) oder drei oder mehr Karten mit dem gleichen Wert (z.B. 3Herz, 3Kreuz, 3Pik).",
+                        "Meldungen werden automatisch in deiner Hand und im Interface hervorgehoben, also schau auf den Stapel—dein Gegner könnte die Karte abwerfen, die du brauchst!"
                     ]
                 },
                 "knock": {
@@ -1744,8 +1744,8 @@
             "dealingCards": "Karten werden ausgeteilt...",
             "youPickStarterCard": "Du musst die Startkarte auswählen",
             "namePickStarterCard": "%{name} muss die Startkarte auswählen",
-            "yourCrib": "Dein Kinderbett",
-            "nameCrib": "%{name}s Kinderbett"
+            "yourCrib": "Dein Crib",
+            "nameCrib": "%{name}s Crib"
         },
         "description": {
             "waitingForPlayers": "Warte auf Spieler",
@@ -1804,7 +1804,7 @@
         "online": "<b>{count}</b> online",
         "connection": "Verbindung",
         "ping": "Ping",
-        "timeOffset": "Zeitverschiebung",
+        "timeOffset": "Latenz",
         "version": "Version",
         "userId": "Benutzer ID",
         "notice": "Hinweis"
@@ -1863,27 +1863,27 @@
             "description": "Steigere dein Erlebnis! Hebe dich ab mit einer wunderschönen Farbpalette."
         },
         "maskedPack": {
-            "title": "Maskiertes Paket",
+            "title": "Masken-Paket",
             "description": "Verstecke deine Identität mit einer Vielzahl von Gegenständen."
         },
         "dapperPack": {
-            "title": "Schicker Pack",
+            "title": "Stil-Paket",
             "description": "Lebe das Detektivleben! Rüste deinen Charakter mit einem Detektivhut, einem Zylinder, einem stylischen Schnurrbart und sogar einem Monokel aus."
         },
         "militaryPack": {
-            "title": "Militärpaket",
+            "title": "Militär-Paket",
             "description": "Mach dich bereit für Action! Zieh einen harten Helm und eine Baskenmütze an und tarne dich mit mehreren Tarnhintergründen."
         },
         "piratePack": {
-            "title": "Piratenpaket",
+            "title": "Piraten-Paket",
             "description": "Ahoi Kumpel! Verwandle deinen Charakter in einen Piraten mit Augenklappe, schiefen Zähnen und setze dem Ganzen mit einem Piratenhut die Krone auf."
         },
         "holidaysPack": {
-            "title": "Urlaubspaket",
+            "title": "Weihnachts-Paket",
             "description": "Komm in Weihnachtsstimmung mit einer Auswahl an festlichen Hüten!"
         },
         "animalPack": {
-            "title": "Tierpaket",
+            "title": "Tier-Paket",
             "description": "Sei süß und verspielt! Gib deinem Charakter Hasenohren, Katzenohren und niedliche Münder. Die Ohren passen sich der Hintergrundfarbe an, die du auswählst."
         },
         "halloweenPack": {
@@ -1891,11 +1891,11 @@
             "description": "Stürz dich in die gruselige Jahreszeit! Wähle aus schaurigen Skelett- und Zombieaugen, zusammen mit gespenstischen Mündern, um eine gruselige und lustige Atmosphäre im Spiel zu schaffen."
         },
         "americanFootballPack": {
-            "title": "Amerikanisches Football Paket",
+            "title": "Football-Paket",
             "description": "Mach dich bereit für das große Spiel! Rüste deinen Charakter mit stylischen Football-Helmen in verschiedenen Farben aus."
         },
         "celebrationPack": {
-            "title": "Feierpaket",
+            "title": "Feier-Paket",
             "description": "Partyzeit! Bring deinem Charakter Freude mit einer Sammlung von bunten Partyhüten in verschiedenen Farben."
         },
         "developer": {
@@ -1912,39 +1912,39 @@
         }
     },
     "title": {
-        "rookie": "Anfänger",
+        "rookie": "Neuling",
         "beginner": "Anfänger",
-        "novice": "Anfänger",
+        "novice": "Einsteiger",
         "apprentice": "Lehrling",
-        "competitor": "Konkurrent",
+        "competitor": "Wettkämpfer",
         "challenger": "Herausforderer",
         "strategist": "Stratege",
         "tactician": "Taktiker",
-        "skilledPlayer": "Erfahrener Spieler",
-        "risingStar": "Aufstrebender Stern",
-        "contender": "Herausforderer",
+        "skilledPlayer": "Geschickter Spieler",
+        "risingStar": "Aufsteigender Stern",
+        "contender": "Anwärter",
         "crazyLarry": "Verrückter Larry",
         "acePlayer": "Ass-Spieler",
-        "mastermind": "Meisterhirn",
-        "eliteCompetitor": "Elite-Konkurrent",
-        "grandStrategist": "Großer Stratege",
+        "mastermind": "Mastermind",
+        "eliteCompetitor": "Elite-Wettkämpfer",
+        "grandStrategist": "Großstratege",
         "prodigy": "Wunderkind",
         "veteran": "Veteran",
-        "allStar": "Alles-Sterne",
+        "allStar": "Allstar",
         "legendaryPlayer": "Legendärer Spieler",
-        "supremeTactician": "Oberster Taktiker",
-        "whizkid": "Wunderkind",
-        "maestro": "Meister",
-        "tacticalGenius": "Taktischer Genießer",
+        "supremeTactician": "Meistertaktiker",
+        "whizkid": "Schlaukopf",
+        "maestro": "Maestro",
+        "tacticalGenius": "Taktisches Genie",
         "grandmaster": "Großmeister",
         "champion": "Champion",
         "virtuoso": "Virtuose",
         "superstar": "Superstar",
-        "luminary": "Leuchte",
-        "grandDynamo": "Großer Dynamo",
-        "strategicMastermind": "Strategischer Meisterdenker",
+        "luminary": "Koryphäe",
+        "grandDynamo": "Großes Kraftpaket",
+        "strategicMastermind": "Strategisches Mastermind",
         "tacticalVirtuoso": "Taktischer Virtuose",
-        "supremeChampion": "Oberster Champion",
+        "supremeChampion": "Oberchampion",
         "legendaryStrategist": "Legendärer Stratege",
         "masterOfGames": "Meister der Spiele"
     },
@@ -1956,7 +1956,7 @@
         "lives": "0 Leben | 1 Leben | {count} Leben",
         "files": "0 Dateien | 1 Datei | {count} Dateien",
         "points": "0 Punkte | 1 Punkt | {count} Punkte",
-        "pieces": "0 Spielfiguren | 1 Spielfigur | {count} Spielfiguren",
+        "pieces": "0 Spielsteine | 1 Spielstein | {count} Spielsteine",
         "wins": "0 Siege | 1 Sieg | {count} Siege",
         "cards": "0 Karten | 1 Karte | {count} Karten",
         "moves": "0 Züge | 1 Zug | {count} Züge",
@@ -1968,10 +1968,10 @@
         "matchesFound": "0 Spiele gefunden | 1 Spiel gefunden | {count} Spiele gefunden",
         "matchesWaiting": "0 Spiele warten | 1 Spiel wartet | {count} Spiele warten",
         "needMorePlayers": "Benötigt noch 0 Spieler | Benötigt noch 1 Spieler | Benötigt noch {count} Spieler",
-        "playAgainstBots": "Gegen Bots spielen | Gegen einen Bot spielen | Gegen Bots spielen",
+        "playAgainstBots": "Spiele gegen Bots | Spiele gegen einen Bot | Spiele gegen Bots",
         "playRandomOpponents": "Spiele gegen zufällige Gegner",
         "turnsToFlip": "Züge bis zum Umdrehen | Zug bis zum Umdrehen | Züge bis zum Umdrehen",
-        "increment": "%{count}er Inkremente",
+        "increment": "0er Erhöhungen | 1er Erhöhungen | {count}er Erhöhungen",
         "remaining": "Keine mehr übrig | 1 übrig | {count} übrig",
         "shipsRemaining": "0 Schiffe übrig | 1 Schiff übrig | {count} Schiffe übrig",
         "includesItems": "Beinhaltet {count} Artikel | Beinhaltet {count} Artikel | Beinhaltet {count} Artikel",
@@ -2018,10 +2018,10 @@
         "averageWaitTime": "Durchschnittliche Wartezeit",
         "unknown": "Unbekannt",
         "none": "Keine",
-        "seasonal": "Saisonbedingt",
-        "items": "Kram",
+        "seasonal": "Saisonal",
+        "items": "Artikel",
         "purchaseCoins": "Münzen kaufen",
-        "store": "Laden",
+        "store": "Shop",
         "buyNow": "Jetzt kaufen",
         "expired": "Abgelaufen",
         "yourCoins": "Deine Münzen",
@@ -2029,9 +2029,9 @@
         "transactions": "Transaktionen",
         "userData": "Benutzerdaten",
         "price": "Preis",
-        "roll": "Rollen",
-        "rollAgain": "Nochmal rollen",
-        "rolling": "Am Rollen",
+        "roll": "Würfeln",
+        "rollAgain": "Nochmal würfeln",
+        "rolling": "Am Würfeln",
         "finalRoll": "Letzter Wurf",
         "remaining": "Übrig",
         "noRollsRemaining": "Keine Würfe mehr übrig",
@@ -2076,7 +2076,7 @@
         "vibration": "Vibration",
         "locked": "Gesperrt",
         "available": "Verfügbar",
-        "owned": "Besitzt",
+        "owned": "Im Besitz",
         "unavailable": "Nicht verfügbar",
         "changeLog": "Change Log",
         "status": "Status",
@@ -2107,7 +2107,7 @@
         "host": "Gastgeber",
         "player": "Spieler",
         "players": "Spieler",
-        "loading": "Laden...",
+        "loading": "Lade...",
         "percentage": "{percentage}%",
         "percentageDisabled": "{percentage}% (Deaktiviert)",
         "scrollBackDown": "Zurück scrollen",
@@ -2132,7 +2132,7 @@
         "download": "Herunterladen",
         "share": "Teilen",
         "copy": "Kopieren",
-        "view": "Ansicht",
+        "view": "Anzeigen",
         "forfeit": "Aufgeben",
         "processFiles": "Dateien verarbeiten",
         "checkAgain": "Nochmal prüfen",
@@ -2145,7 +2145,7 @@
         "playAsGuest": "Als Gast spielen",
         "largestTake": "Größter Schlag",
         "takes": "Schläge",
-        "pieces": "Spielfiguren",
+        "pieces": "Spielsteine",
         "words": "Wörter",
         "longestWord": "Längstes Wort",
         "length": "Länge",
@@ -2190,7 +2190,7 @@
         "myData": "Meine Daten",
         "redeemCode": "Code einlösen",
         "contact": "Kontakt",
-        "leaderboard": "Leaderboard",
+        "leaderboard": "Rangliste",
         "elapsedTime": "%{time} vergangen",
         "startingInTime": "Startet in %{time}",
         "averageWaitTimeBlank": "Durchschnittliche Wartezeit %{value}",
@@ -2201,7 +2201,7 @@
         "orBlank": "Oder %{value}",
         "saveBlank": "Speichern %{value}",
         "coinsBlank": "%{value} Münzen",
-        "receivedBlank": "Erhalten %{value}",
+        "receivedBlank": "%{value} erhalten",
         "lessThanBlank": "Weniger als %{value}",
         "lastSeenBlankAgo": "Zuletzt gesehen vor %{value}",
         "lastSeenJustNow": "Zuletzt gerade eben gesehen",
@@ -2222,9 +2222,9 @@
         "selectedOfLimit": "%{current} von maximal %{total} ausgewählt",
         "helpLocalize": "Zur Verbesserung der Lokalisierung beitragen",
         "goAdFree": null,
-        "discord": "Join unser Discord",
+        "discord": "Trete unserem Discordserver bei",
         "volume": "Lautstärke",
-        "volumeInterface": "Bildschirmlautstärke",
+        "volumeInterface": "Interface-Lautstärke",
         "volumeEffects": "Effektlautstärke",
         "volumeMusic": "Musiklautstärke",
         "selectYourLanguage": "Sprache auswählen",
@@ -2233,21 +2233,21 @@
         "latestChanges": "Letzte Änderungen",
         "noChangesDetected": "Keine Änderungen festgestellt",
         "newChanges": "Neue Änderungen",
-        "saveChanges": "Änderungen Speichern",
+        "saveChanges": "Änderungen speichern",
         "previousChanges": "Frühere Änderungen ansehen"
     },
     "card": {
         "empty": "Keine Karten",
         "total": "Karten gesamt",
         "view": "Karten ansehen",
-        "melds": "Melds - Melds",
-        "deadwood": "Deadwood - Totholz",
+        "melds": "Meldungen",
+        "deadwood": "Deadwood",
         "editor": {
             "title": "Karteneditor",
             "name": "Name des Kartensets",
             "type": "Kartentyp",
             "content": "Karteninhalt",
-            "contentUnderscore": "Nutze _ um ein Lehrzeichen in Reaktionskarten zu markieren",
+            "contentUnderscore": "Nutze _ um ein Leerzeichen in Reaktionskarten zu markieren",
             "pick": "Karten auswählen",
             "create": "Karten erstellen",
             "deleted": "Erfolgreich gelöscht!",
@@ -2270,7 +2270,7 @@
             "default": "Standard Kartensets",
             "noneFound": "Keine Sets gefunden",
             "noneSelected": "Keine Sets ausgewählt",
-            "importById": "Importieren Sie Kartensets nach ID (z. B. von Many Decks)",
+            "importById": "Importiere Kartensets nach ID (z. B. von Many Decks)",
             "notInOwnLibrary": "Fehlendes Set",
             "addToLibrary": "Zur Bibliothek hinzufügen",
             "entrySave": "Kartenset speichern",
@@ -2295,8 +2295,8 @@
         },
         "info": {
             "pickAction": "Wähle eine Aktionskarte für diese Runde",
-            "judgePickingActionCard": "Bewerter %{name} wählt eine Aktionskarte aus",
-            "waitForSelections": "Du bist der <b>Bewerter</b> in dieser Runde — warte, bis jeder seine Auswahl getroffen hat",
+            "judgePickingActionCard": "Richter %{name} wählt eine Aktionskarte aus",
+            "waitForSelections": "Du bist der <b>Richter</b> in dieser Runde — warte, bis jeder seine Auswahl getroffen hat",
             "preview": "Nehem dir einen Moment um deine (neuen) Karten anzusehen",
             "dump": "Wähle Karten aus die du abwerfen möchtest",
             "noType": "Es gibt keine %{type} Karten",
@@ -2305,7 +2305,7 @@
             "winningOption": "%{name} hat diese Runde mit der Auswahl %{selection} gewonnen",
             "actionResponseCardCounter": "Aktions- und Antwortkartenzähler. Einige Sets verwenden die gleichen Karten; Duplikate werden automatisch entfernt. Nach <b>NSFW</b> oder <b>Spezifischen Karten</b> zu filtern verringert auch die Kartenanzahl.",
             "navigateSelf": "Selbst navigieren",
-            "navigateFollowJudge": "Sehe was der Bewerter sieht"
+            "navigateFollowJudge": "Sehe was der Richter sieht"
         }
     },
     "match": {
@@ -2313,9 +2313,9 @@
         "createPublic": "Öffentliches Spiel erstellen",
         "leave": "Spiel verlassen",
         "join": "Spiel beitreten",
-        "joinById": "Match nach ID beitreten",
+        "joinById": "Match mit ID beitreten",
         "joinFriend": "Freund beitreten",
-        "full": "Volles Spiel",
+        "full": "Spiel ist voll",
         "rematch": "Revanche",
         "lobby": {
             "start": "Spiel starten",
@@ -2335,7 +2335,7 @@
             "aroundMyLevel": "Ungefähr mein Level"
         },
         "matchmaking": {
-            "searching": "Auf der Suche nach nem Match...",
+            "searching": "Suche nach einem Match...",
             "settings": {
                 "publicMatches": {
                     "title": "Öffentliche Spiele",
@@ -2438,7 +2438,7 @@
         "areYouSure": "Bist du sicher?",
         "customizePreset": "Pass dieses Voreinstellung nach deinem Geschmack an.",
         "loginToPurchase": "Um einen Kauf zu tätigen, musst du dich zuerst einloggen oder ein Konto erstellen.",
-        "seasonalItem": "Ein Artikel in diesem Slot ist nur ein paar Tage im Jahr verfügbar.",
+        "seasonalItem": "Artikel in diesem Bereich sind nur ein paar Tage im Jahr verfügbar.",
         "cardInteractHint": "Klick auf eine Karte, um deine Auswahl zu treffen.",
         "gameInvite": "Lade ein zum Spiel",
         "keyboardShortcutCombination": null,
@@ -2569,13 +2569,13 @@
             "title": "Du kannst dich nicht mit dem Spielserver verbinden.",
             "header": {
                 "processing": "Verbindung wird überprüft...",
-                "clientOffline": "Überprüf mal deine Verbindung",
+                "clientOffline": "Überprüfe deine Verbindung",
                 "serverOffline": "Server ist offline",
                 "serverMaintenance": "Serverwartung",
                 "unknown": "Kein Problem gefunden"
             },
             "content": {
-                "clientOffline": "Sie scheinst offline zu sein. Check mal deine Internetverbindung.",
+                "clientOffline": "Du scheinst offline zu sein. Überprüfe deine Internetverbindung.",
                 "serverMaintenance": "Der Spieleserver wird gerade gewartet, um dein Erlebnis zu verbessern. Schau bald wieder vorbei!",
                 "serverOffline": "Der Spieleserver ist unerwartet offline. Guck mal auf die Statusseite für Updates. Wir arbeiten daran, alles wieder online zu kriegen!",
                 "serverUnavailable": "Wir konnten den Serverstatus nicht überprüfen. Du kannst es auch manuell versuchen.",
@@ -2661,14 +2661,14 @@
                 "hand": "Hand",
                 "show": "Zeigen",
                 "play": "Spielen",
-                "crib": "Kinderbettchen",
+                "crib": "Crib",
                 "skunkedSelf": "Selbst skunked",
                 "skunkedOther": "Anderen skunked"
             },
-            "yourCribSelection": "Wähle %{cards} für deine Krippe",
-            "nameCribSelection": "Wähle %{cards} für %{name}s Krippe",
-            "yourCribSelectionSubmit": "Schick die hervorgehobenen Karten zu deiner Krippe!",
-            "nameCribSelectionSubmit": "Schick die hervorgehobenen Karten zu %{name}s Krippe!",
+            "yourCribSelection": "Wähle %{cards} für deinen Crib",
+            "nameCribSelection": "Wähle %{cards} für %{name}s Crib",
+            "yourCribSelectionSubmit": "Schick die hervorgehobenen Karten in deinen Crib!",
+            "nameCribSelectionSubmit": "Schick die hervorgehobenen Karten zum Crib von %{name}!",
             "singleSkunk": "Gestunken! Dieser Spieler hatte weniger als %{points}.",
             "doubleSkunk": "Doppelt gestunken! Dieser Spieler hatte weniger als %{points}.",
             "selfJackHeelsPoints": "%{turn} hat einen Bube gezogen! Du bekommst %{points} für seine Fersen.",
@@ -2681,7 +2681,7 @@
             "selfCannotPlay": "Keine deiner Karten kann im Spiel verwendet werden.",
             "nameCannotPlay": "%{name} hat keine Karten, die im Spiel verwendet werden können.",
             "cardPlayBoardLimit": "Diese Karte kann nicht gespielt werden. Der Wert des Bretts darf %{limit} nicht überschreiten.",
-            "sendCardsToCrib": "Karten zum Kinderbett schicken",
+            "sendCardsToCrib": "Karten in den Crib legen",
             "pointsDisclaimer": "Diese Punkte zählen nicht, weil das Spiel frühzeitig beendet wurde."
         },
         "battleship": {
@@ -2706,43 +2706,43 @@
         },
         "yacht": {
             "title": {
-                "ones": "Einsen",
-                "twos": "Zweien",
-                "threes": "Dreien",
-                "fours": "Vieren",
-                "fives": "Fünfen",
-                "sixes": "Sechsen",
-                "threeOfAKind": "Drei Gleiche",
-                "fourOfAKind": "Vier Gleiche",
-                "fullHouse": "Volles Haus",
+                "ones": "Einser",
+                "twos": "Zweier",
+                "threes": "Dreier",
+                "fours": "Vierer",
+                "fives": "Fünfer",
+                "sixes": "Sechser",
+                "threeOfAKind": "Dreierpasch",
+                "fourOfAKind": "Viererpasch",
+                "fullHouse": "Full House",
                 "smallStraight": "Kleine Straße",
                 "largeStraight": "Große Straße",
                 "yacht": "KNIFFEL",
-                "chance": "Zufall",
+                "chance": "Chance",
                 "sum": "Summe",
                 "bonus": "Bonus",
                 "totalScore": "Gesamtpunktzahl"
             },
             "shortTitle": {
-                "threeOfAKind": "3 Gleiche",
-                "fourOfAKind": "4 Gleiche",
+                "threeOfAKind": "3er Pasch",
+                "fourOfAKind": "4er Pasch",
                 "smallStraight": "Kl. Straße",
                 "largeStraight": "Gr. Straße",
                 "totalScore": "Gesamt"
             },
             "description": {
                 "bonus": "Wenn die Summe deiner Punkte im oberen Bereich %{sum} oder höher ist, bekommst du einen Bonus von %{points}.",
-                "number": "Versuche so viele Würfel mit der Nummer %{number} zu bekommen wie möglich.",
-                "threeOfAKind": "Versuche drei Würfel mit der gleichen Nummer zu bekommen. Wie zum Beispiel drei 4en.",
-                "fourOfAKind": "Versuche vier Würfel mit der gleichen Nummer zu bekommen. Wie zum Beispiel vier 2en.",
-                "fullHouse": "Du brauchst drei Würfel mit einer Nummer und zwei Würfel mit einer anderen Nummer. Zum Beispiel könntest du 3-3-3-5-5 würfeln.",
-                "smallStraight": "Krieg vier Würfel in einer Reihe, wie 2-3-4-5.",
-                "largeStraight": "Krieg fünf Würfel in einer Reihe, wie 2-3-4-5-6.",
-                "yacht": "Würfel fünf Würfel mit der gleichen Nummer.",
+                "number": "Versuche so viele Würfel mit der Zahl %{number} zu bekommen wie möglich.",
+                "threeOfAKind": "Versuche drei Würfel mit der gleichen Zahl zu bekommen. Wie zum Beispiel drei 4en.",
+                "fourOfAKind": "Versuche vier Würfel mit der gleichen Zahl zu bekommen. Wie zum Beispiel vier 2en.",
+                "fullHouse": "Du brauchst drei Würfel mit einer Zahl und zwei Würfel mit einer anderen Zahl. Zum Beispiel könntest du 3-3-3-5-5 würfeln.",
+                "smallStraight": "Bekomme vier Würfel in einer Reihe, wie 2-3-4-5.",
+                "largeStraight": "Bekomme fünf Würfel in einer Reihe, wie 2-3-4-5-6.",
+                "yacht": "Würfel fünf Würfel mit der gleichen Zahl.",
                 "yachtBonus": "Wenn du nach einem bereits erzielten Kniffel noch einen Kniffel würfelst, bekommst du extra %{points}. Aber denk dran, diese Punkte bekommst du nur, wenn du einen Zug machst, der dir Punkte einbringt.",
                 "chance": "Jede Kombination von Würfeln kann verwendet werden."
             },
-            "scoreHint": "Klick auf eine orangene Nummer, um diese Punkte zu kassieren!",
+            "scoreHint": "Klick auf eine orangene Zahl, um diese Punkte zu kassieren!",
             "holdHint": "Klick auf einen Würfel, um ihn festzuhalten oder loszulassen.",
             "earnsMatch": "Verdient die Summe aller passenden Würfel.",
             "earnsPoints": "Verdient %{points}.",
@@ -2780,12 +2780,12 @@
             "joinAssassinChat": null
         },
         "poolType": {
-            "SOLID": "Festekugeln",
-            "STRIPE": "Streifenkugeln"
+            "SOLID": "Volle",
+            "STRIPE": "Halbe"
         },
         "poolFoul": {
             "other": {
-                "CUE_BALL_POCKET": "%{name} hat die Queue-Kugel eingelocht!",
+                "CUE_BALL_POCKET": "%{name} hat die weiße Kugel eingelocht!",
                 "CUE_BALL_HIT_NO_BALL": "%{name} hat keine andere Kugel getroffen!",
                 "CUE_BALL_HIT_WRONG_BALL": "%{name} hat zuerst die falsche Kugel getroffen!",
                 "CUSHION_HIT_MIN_ON_BREAK": "%{name} hat nicht genug Kugeln getroffen, um beim Anstoß die Bande zu erreichen. (Min. %{min})",
@@ -2797,11 +2797,11 @@
                 "POCKETED_WRONG_BALL": "%{name} hat die falsche Kugel versenkt."
             },
             "self": {
-                "CUE_BALL_POCKET": "Du hast die Spielkugel eingelocht!",
-                "CUE_BALL_HIT_NO_BALL": "Du hast keinen anderen Ball getroffen!",
-                "CUE_BALL_HIT_WRONG_BALL": "Du hast zuerst den falschen Ball getroffen!",
-                "CUSHION_HIT_MIN_ON_BREAK": "Du hast nicht genug Bälle getroffen, um beim Break auf die Bande zu kommen. (Min. %{min})",
-                "CUSHION_HIT_INVALID": "Du hast keinen gültigen Ball getroffen, um eine Bande zu treffen, während kein Ball eingelocht wurde.",
+                "CUE_BALL_POCKET": "Du hast die weiße Kugel eingelocht!",
+                "CUE_BALL_HIT_NO_BALL": "Du hast keine andere Kugel getroffen!",
+                "CUE_BALL_HIT_WRONG_BALL": "Du hast zuerst die falsche Kugel getroffen!",
+                "CUSHION_HIT_MIN_ON_BREAK": "Du hast nicht genug Kugeln getroffen, um beim Break auf die Bande zu kommen. (Min. %{min})",
+                "CUSHION_HIT_INVALID": "Du hast keine gültige Kugel getroffen, um eine Bande zu treffen, während keine Kugel eingelocht wurde.",
                 "CONSECUTIVE_FOULS_EXCEEDED": "Du hast %{fouls} Fouls hintereinander begangen.",
                 "ILLEGAL_8_BALL_POCKET": "Du hast die Acht beim Begehen eines Fouls eingelocht.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Du hast die Acht zu früh eingelocht.",
