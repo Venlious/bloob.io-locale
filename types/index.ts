@@ -10,7 +10,6 @@ export type SupportedLocale =
 	| `id`
 	| `tr`
 	| `ar`
-	| `hi`
 	| `ru`
 	| `uk`
 	| `ko`
