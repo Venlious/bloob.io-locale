@@ -3,7 +3,7 @@
         "language": "informal simplified Chinese",
         "rtl": false,
         "total": 1768,
-        "missing": 87
+        "missing": 27
     },
     "name": "Bloob.io",
     "error": {
@@ -82,7 +82,7 @@
         "start": {
             "fieldRows": "选中的区域最多只能支持%{rows}行",
             "fieldCannotFitUsers": "选中的区域最多只能支持%{users}个玩家",
-            "questionThreshold": null,
+            "questionThreshold": "游戏至少需要 %{count} 个问题",
             "whiteCardThreshold": "游戏至少需要%{count}张回应卡（白色）",
             "blackCardThreshold": "游戏至少需要%{count}张动作卡（黑色）",
             "insufficientPlayers": "至少需要%{min}个玩家才能开始比赛。"
@@ -246,40 +246,40 @@
                     }
                 },
                 "scoringSystem": {
-                    "title": null,
+                    "title": "得分系统",
                     "help": {
-                        "default": null,
-                        "SPEED": null,
-                        "ORDER": null,
-                        "FIXED": null,
-                        "PROGRESSIVE": null,
-                        "STREAK": null
+                        "default": "确定一下答对问题得分的规则。",
+                        "SPEED": "得分跟回答问题的速度有关。",
+                        "ORDER": "得分看谁答得最快。",
+                        "FIXED": "每个问题得的分数都是一样的。",
+                        "PROGRESSIVE": "每答完一个问题，得分会增加。",
+                        "STREAK": "连续答对可以赚额外分数；答错后会重置。"
                     },
                     "data": {
-                        "SPEED": null,
-                        "ORDER": null,
-                        "FIXED": null,
-                        "PROGRESSIVE": null,
-                        "STREAK": null
+                        "SPEED": "速度",
+                        "ORDER": "顺序",
+                        "FIXED": "固定",
+                        "PROGRESSIVE": "进步",
+                        "STREAK": "连胜"
                     }
                 },
                 "mode": {
-                    "title": null,
+                    "title": "模式",
                     "help": {
-                        "default": null,
-                        "SOLO": null,
-                        "CO_OP": null,
-                        "TEAM": null
+                        "default": "选择玩家的竞争方式：单独、团队还是合作。",
+                        "SOLO": "每个玩家单独竞争。",
+                        "CO_OP": "所有玩家一起合作。",
+                        "TEAM": "玩家分成团队，可以选择自己想合作的小组。"
                     },
                     "data": {
-                        "SOLO": null,
-                        "CO_OP": null,
-                        "TEAM": null
+                        "SOLO": "单独",
+                        "CO_OP": "合作",
+                        "TEAM": "团队"
                     }
                 },
                 "deckSize": {
                     "title": "牌组大小",
-                    "help": null,
+                    "help": "选择你喜欢的牌组大小。",
                     "data": {
                         "half": "半副牌",
                         "full": "一副完整的牌",
@@ -1105,9 +1105,9 @@
                     ]
                 },
                 "shortcuts": {
-                    "title": null,
+                    "title": "快捷键",
                     "description": [
-                        null
+                        "想一次移动很多相同的骰子吗？用中间鼠标键点击，或者按住Shift键再点击一个骰子，所有面朝上相同的骰子就会一起移动！"
                     ]
                 }
             }
@@ -1619,51 +1619,51 @@
             "help": {}
         },
         "TRIVIA": {
-            "name": null,
+            "name": "问答游戏",
             "title": null,
             "description": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "共识",
+                    "help": "在团队模式下，团队的答案应该根据多数投票（共识）来决定吗？如果不是，任何团队成员都可以为大家更改答案。"
                 },
                 "lockAnswer": {
-                    "title": null,
-                    "help": null
+                    "title": "锁定答案",
+                    "help": "开启后，玩家选了答案就不能再改了。"
                 },
                 "eliminationChallenge": {
-                    "title": null,
-                    "help": null
+                    "title": "淘汰挑战",
+                    "help": "开启后，玩家或队伍在回答错误问题后会立刻被淘汰。"
                 }
             },
             "presets": {
                 "versus": {
-                    "title": null,
+                    "title": "对战",
                     "description": [
-                        null,
-                        null
+                        "单人",
+                        "后面的问题得更多分"
                     ]
                 },
                 "hardcoreVersus": {
-                    "title": null,
+                    "title": "硬核对战",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "没错",
+                        "锁定答案",
+                        "根据速度得分"
                     ]
                 },
                 "coop": {
-                    "title": null,
+                    "title": "合作模式",
                     "description": [
-                        null,
-                        null
+                        "一起干",
+                        "固定点"
                     ]
                 },
                 "teams": {
-                    "title": null,
+                    "title": "队伍",
                     "description": [
-                        null,
-                        null
+                        "团队合作",
+                        "按顺序得分"
                     ]
                 }
             },
@@ -1697,8 +1697,8 @@
         "rematch": "再来一局！",
         "fun": "玩得真开心！",
         "bye": "拜拜！",
-        "shortYes": null,
-        "shortNo": null
+        "shortYes": "好的。",
+        "shortNo": "不行。"
     },
     "header": {
         "message": {
@@ -1735,8 +1735,8 @@
             "roundCount": "第%{current}轮，总共%{total}轮",
             "roundCurrent": "第%{current}轮",
             "startingNewRound": "开始新一轮...",
-            "questionCount": null,
-            "questionCurrent": null,
+            "questionCount": "第 %{current} 题 / 共 %{total} 题",
+            "questionCurrent": "第 %{current} 题",
             "war": "战争！",
             "outcome": "结果",
             "input": "等待你的操作",
@@ -1978,9 +1978,9 @@
         "restartNotice": "服务器将在 {count} 分钟后重启。请完成你的游戏。 | 服务器将在 {count} 分钟后重启。请完成你的游戏。 | 服务器将在 {count} 分钟后重启。请完成你的游戏。"
     },
     "misc": {
-        "questions": null,
-        "teamAndQuestions": null,
-        "questionPacks": null,
+        "questions": "问题",
+        "teamAndQuestions": "团队与问题",
+        "questionPacks": "问题包",
         "rock": "石头",
         "paper": "剪刀",
         "scissors": "布",
@@ -2103,7 +2103,7 @@
         "specificCards": "特定卡片",
         "matchId": "比赛ID",
         "chat": "聊天",
-        "sendMessage": null,
+        "sendMessage": "发消息",
         "host": "主持人",
         "player": "玩家",
         "players": "玩家们",
@@ -2155,7 +2155,7 @@
         "highestScore": "最高分",
         "totalScore": "总分",
         "finalScore": "最终得分",
-        "flawlessGames": null,
+        "flawlessGames": "完美游戏",
         "hits": "命中",
         "hitRate": "命中率",
         "rank": "排名",
@@ -2165,7 +2165,7 @@
         "assassinations": "刺杀",
         "survivals": "生存",
         "games": "游戏",
-        "correctRatio": null,
+        "correctRatio": "正确比例",
         "winRatio": "胜率",
         "killDeathRatio": "击杀/死亡比率",
         "lives": "生命",
@@ -2221,7 +2221,7 @@
         "madeBy": "%{name} 制作的",
         "selectedOfLimit": "已选中 %{current}，总数 %{total} 上限",
         "helpLocalize": "帮助改善本地化",
-        "goAdFree": null,
+        "goAdFree": "去除广告",
         "discord": "加入我们的Discord",
         "volume": "音量",
         "volumeInterface": "界面音量",
@@ -2229,7 +2229,7 @@
         "volumeMusic": "音乐音量",
         "selectYourLanguage": "选择你的语言",
         "selectYourColor": "选择你的颜色",
-        "selectYourTeam": null,
+        "selectYourTeam": "选择你的队伍",
         "latestChanges": "最新更改",
         "noChangesDetected": "没有检测到更改",
         "newChanges": "新的更改",
@@ -2387,13 +2387,13 @@
         "roundLost": "你输了！",
         "youLostThisRound": "你这一局输了！",
         "youAreOutOfLives": "你没命了",
-        "playerIsEliminated": null,
-        "youAreEliminated": null,
+        "playerIsEliminated": "玩家被淘汰了",
+        "youAreEliminated": "你被淘汰了",
         "waitForRoundEnd": "请等一下，等回合结束。",
         "waitForWinner": "稍等一下，等着看谁赢！",
         "serverRestart": "服务器现在正在重启，请过几分钟再来看看。",
         "clearOldListings": "清除所有的“不可用”比赛。",
-        "flawlessGame": null,
+        "flawlessGame": "完美游戏！没有犯错。",
         "accountLinkSuggestion": "你现在是%{level}级了！考虑创建一个账户来保护你的进度吧。",
         "accountLinked": "这个账户已经和以下的电子邮件地址链接了：%{email}。",
         "incompleteTranslationNotice": "你选择的语言大概完成了{percentage}%。任何缺失的翻译都会用英语显示。",
@@ -2420,7 +2420,7 @@
         "inactiveOpponents": "所有的对手都没动静",
         "waitForOpponent": "等待你的对手...",
         "waitForOpponents": "等待你的对手们....",
-        "nameLeftTheGame": null,
+        "nameLeftTheGame": "%{name} 退出了游戏",
         "selfNoPoints": "你没有得到任何分数。",
         "nameNoPoints": "%{name}没有得到任何分数。",
         "gameMenu": "想玩别的游戏吗？",
@@ -2441,8 +2441,8 @@
         "seasonalItem": "这个位置的物品一年只有几天能买到。",
         "cardInteractHint": "点击一张卡片来选择。",
         "gameInvite": "邀请你来玩游戏",
-        "keyboardShortcutCombination": null,
-        "goAdFree": null,
+        "keyboardShortcutCombination": "要使用快捷键 {combination}，先按住 {firstKey} 然后再按 {secondKey}",
+        "goAdFree": "如果你通过购买任何数量的金币来支持开发，你的账号广告会永久禁用。",
         "awaitingPurchaseConfirmation": {
             "title": "等待购买确认",
             "description": "这通常只需要几秒钟。根据你的付款方式，可能需要更长时间。随时可以关闭这个屏幕。"
@@ -2830,7 +2830,7 @@
             "developedBy": "开发者是%{name}",
             "iconsSource": "图标由%{name}提供（已获得许可）",
             "soundsSource": "音效由%{name}提供（已获得许可）",
-            "emojiSource": null,
+            "emojiSource": "由 %{name} 提供的表情符号 (CC-BY 4.0)",
             "rottenApplesSource": "基于%{name}的烂苹果 (BY-NC-SA 2.0)",
             "diceSource": "%{name}的骰子模型 (CC-BY-4.0)",
             "localization": "由志愿者贡献者进行的本地化"

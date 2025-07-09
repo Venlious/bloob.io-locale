@@ -3,7 +3,7 @@
         "language": "informal Polish",
         "rtl": false,
         "total": 1768,
-        "missing": 87
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -82,7 +82,7 @@
         "start": {
             "fieldRows": "Nie można wybrać więcej niż %{rows} wierszy.",
             "fieldCannotFitUsers": "Nie można wybrać więcej niż %{users} graczy.",
-            "questionThreshold": null,
+            "questionThreshold": "Gra wymaga przynajmniej %{count} pytań.",
             "whiteCardThreshold": "Gra wymaga co najmniej %{count} kart odpowiedzi (białych).",
             "blackCardThreshold": "Gra wymaga co najmniej %{count} kart akcji (czarnych).",
             "insufficientPlayers": "Potrzeba co najmniej %{min} graczy, aby rozpocząć mecz."
@@ -246,40 +246,40 @@
                     }
                 },
                 "scoringSystem": {
-                    "title": null,
+                    "title": "System punktacji",
                     "help": {
-                        "default": null,
-                        "SPEED": null,
-                        "ORDER": null,
-                        "FIXED": null,
-                        "PROGRESSIVE": null,
-                        "STREAK": null
+                        "default": "Ustal, jak przyznawane są punkty za poprawne odpowiedzi.",
+                        "SPEED": "Punkty zależą od tego, jak szybko odpowiesz na pytanie.",
+                        "ORDER": "Punkty dostaje ten, kto był najszybszy między graczami.",
+                        "FIXED": "Każde pytanie daje taką samą liczbę punktów.",
+                        "PROGRESSIVE": "Punkty rosną po każdym pytaniu.",
+                        "STREAK": "Zarabiaj dodatkowe punkty za kolejne poprawne odpowiedzi; resetuje się po błędnej odpowiedzi."
                     },
                     "data": {
-                        "SPEED": null,
-                        "ORDER": null,
-                        "FIXED": null,
-                        "PROGRESSIVE": null,
-                        "STREAK": null
+                        "SPEED": "Szybkość",
+                        "ORDER": "Zamówienie",
+                        "FIXED": "Naprawione",
+                        "PROGRESSIVE": "Postępowe",
+                        "STREAK": "Seria"
                     }
                 },
                 "mode": {
-                    "title": null,
+                    "title": "Tryb",
                     "help": {
-                        "default": null,
-                        "SOLO": null,
-                        "CO_OP": null,
-                        "TEAM": null
+                        "default": "Wybierz, jak będą rywalizować gracze: indywidualnie, w drużynach, czy wspólnie.",
+                        "SOLO": "Każdy gracz rywalizuje sam.",
+                        "CO_OP": "Wszyscy gracze pracują razem jako drużyna.",
+                        "TEAM": "Gracze są podzieleni na drużyny i mogą wybrać swoją grupę do współpracy."
                     },
                     "data": {
-                        "SOLO": null,
-                        "CO_OP": null,
-                        "TEAM": null
+                        "SOLO": "Solo",
+                        "CO_OP": "Co-op",
+                        "TEAM": "Drużyny"
                     }
                 },
                 "deckSize": {
                     "title": "Rozmiar Talii",
-                    "help": null,
+                    "help": "Wybierz rozmiar talii, który ci pasuje do gry.",
                     "data": {
                         "half": "Pół talii",
                         "full": "Pełna talia",
@@ -1105,9 +1105,9 @@
                     ]
                 },
                 "shortcuts": {
-                    "title": null,
+                    "title": "Skróty",
                     "description": [
-                        null
+                        "Chcesz przenieść dużo tych samych kości na raz? Użyj środkowego przycisku myszy albo przytrzymaj klawisz Shift, klikając na kość, a wszystkie kości z tym samym wynikiem przeniosą się razem!"
                     ]
                 }
             }
@@ -1619,51 +1619,51 @@
             "help": {}
         },
         "TRIVIA": {
-            "name": null,
+            "name": "Quizik",
             "title": null,
             "description": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "Zgoda",
+                    "help": "W trybie drużynowym, czy odpowiedź drużyny powinna być oparta na głosowaniu większości (Konsensus)? Jeśli nie, to każdy członek drużyny może zmienić odpowiedź dla wszystkich."
                 },
                 "lockAnswer": {
-                    "title": null,
-                    "help": null
+                    "title": "Zablokuj odpowiedź",
+                    "help": "Kiedy to jest włączone, gracze nie mogą zmienić swojej odpowiedzi, jak już jedną wybiorą."
                 },
                 "eliminationChallenge": {
-                    "title": null,
-                    "help": null
+                    "title": "Wyzwanie Eliminacji",
+                    "help": "Kiedy to jest włączone, gracz lub drużyna od razu odpada po złej odpowiedzi na pytanie."
                 }
             },
             "presets": {
                 "versus": {
-                    "title": null,
+                    "title": "Na przeciwko",
                     "description": [
-                        null,
-                        null
+                        "Solo",
+                        "Więcej punktów za późniejsze pytania"
                     ]
                 },
                 "hardcoreVersus": {
-                    "title": null,
+                    "title": "Hardkorowe Starcie",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Bez błędów",
+                        "Zablokowana odpowiedź",
+                        "Punkty za szybkość"
                     ]
                 },
                 "coop": {
-                    "title": null,
+                    "title": "Kooperacja",
                     "description": [
-                        null,
-                        null
+                        "Działajcie razem",
+                        "Stałe punkty"
                     ]
                 },
                 "teams": {
-                    "title": null,
+                    "title": "Drużyny",
                     "description": [
-                        null,
-                        null
+                        "Pracujcie w zespołach",
+                        "Punkty za kolejność"
                     ]
                 }
             },
@@ -1697,8 +1697,8 @@
         "rematch": "Remis!",
         "fun": "To było fajne!",
         "bye": "Cześć!",
-        "shortYes": null,
-        "shortNo": null
+        "shortYes": "Tak.",
+        "shortNo": "Nie."
     },
     "header": {
         "message": {
@@ -1735,8 +1735,8 @@
             "roundCount": "Runda %{current} z %{total}",
             "roundCurrent": "Runda %{current}",
             "startingNewRound": "Zaczynamy nową rundę...",
-            "questionCount": null,
-            "questionCurrent": null,
+            "questionCount": "Pytanie %{current} z %{total}",
+            "questionCurrent": "Pytanie %{current}",
             "war": "Wojna!",
             "outcome": "Wynik",
             "input": "Czekam na twój ruch",
@@ -1978,9 +1978,9 @@
         "restartNotice": "Serwer zrestartuje się za {count} minut. Skończ swoją grę. | Serwer zrestartuje się za {count} minutę. Skończ swoją grę. | Serwer zrestartuje się za {count} minut. Skończ swoją grę."
     },
     "misc": {
-        "questions": null,
-        "teamAndQuestions": null,
-        "questionPacks": null,
+        "questions": "Pytania",
+        "teamAndQuestions": "Zespół i pytania",
+        "questionPacks": "Zestawy pytań",
         "rock": "Kamień",
         "paper": "Papier",
         "scissors": "Nożyczki",
@@ -2103,7 +2103,7 @@
         "specificCards": "Określone Karty",
         "matchId": "Identyfikator meczu",
         "chat": "Czat",
-        "sendMessage": null,
+        "sendMessage": "Wyślij wiadomość",
         "host": "Gospodarz",
         "player": "Gracz",
         "players": "Gracze",
@@ -2155,7 +2155,7 @@
         "highestScore": "Najwyższy Wynik",
         "totalScore": "Łączny wynik",
         "finalScore": "Ostateczny wynik",
-        "flawlessGames": null,
+        "flawlessGames": "Idealne gry",
         "hits": "Trafienia",
         "hitRate": "Skuteczność",
         "rank": "Ranga",
@@ -2165,7 +2165,7 @@
         "assassinations": "Zabójstwa",
         "survivals": "Przetrwania",
         "games": "Gry",
-        "correctRatio": null,
+        "correctRatio": "Poprawny stosunek",
         "winRatio": "Stosunek wygranych",
         "killDeathRatio": "Stosunek zabójstw do śmierci",
         "lives": "Życia",
@@ -2221,7 +2221,7 @@
         "madeBy": "Stworzone przez %{name}",
         "selectedOfLimit": "Wybrano %{current} z %{total} limitu",
         "helpLocalize": "Pomóż ulepszyć lokalizację",
-        "goAdFree": null,
+        "goAdFree": "Przejdź na wersję bez reklam",
         "discord": "Dołącz do Discord",
         "volume": "Głośność",
         "volumeInterface": "Głośność interfejsu",
@@ -2229,7 +2229,7 @@
         "volumeMusic": "Głośność Muzyki",
         "selectYourLanguage": "Wybierz swój język",
         "selectYourColor": "Wybierz swój kolor",
-        "selectYourTeam": null,
+        "selectYourTeam": "Wybierz swoją drużynę",
         "latestChanges": "Najnowsze zmiany",
         "noChangesDetected": "Nie wykryto żadnych zmian",
         "newChanges": "Nowe zmiany",
@@ -2387,13 +2387,13 @@
         "roundLost": "Przegrałeś!",
         "youLostThisRound": "Przegrałeś tę rundę!",
         "youAreOutOfLives": "Nie masz już żyć",
-        "playerIsEliminated": null,
-        "youAreEliminated": null,
+        "playerIsEliminated": "Gracz został wyeliminowany",
+        "youAreEliminated": "Zostałeś wyeliminowany",
         "waitForRoundEnd": "Poczekaj, aż runda się skończy.",
         "waitForWinner": "Siedź spokojnie i czekaj, aż ktoś wygra!",
         "serverRestart": "Serwer teraz się restartuje. Sprawdź za kilka minut.",
         "clearOldListings": "Usuń wszystkie mecze oznaczone jako 'Niedostępne'.",
-        "flawlessGame": null,
+        "flawlessGame": "Gra bezbłędna! Żadnych pomyłek.",
         "accountLinkSuggestion": "Teraz jesteś %{level}! Rozważ stworzenie konta, aby chronić swój postęp.",
         "accountLinked": "To konto jest połączone z następującym adresem e-mail: %{email}.",
         "incompleteTranslationNotice": "Wybrany język jest w zaawansowaniu około {percentage}%. Brakujące tłumaczenia będą w języku angielskim.",
@@ -2420,7 +2420,7 @@
         "inactiveOpponents": "Wszyscy przeciwnicy byli nieaktywni",
         "waitForOpponent": "Czekam na twojego przeciwnika...",
         "waitForOpponents": "Czekam na twoich przeciwników...",
-        "nameLeftTheGame": null,
+        "nameLeftTheGame": "%{name} opuścił grę",
         "selfNoPoints": "Nie dostałeś żadnych punktów.",
         "nameNoPoints": "%{name} nie dostał żadnych punktów.",
         "gameMenu": "Masz ochotę zagrać w coś innego?",
@@ -2441,8 +2441,8 @@
         "seasonalItem": "Przedmiot w tym miejscu jest dostępny tylko przez kilka dni w roku.",
         "cardInteractHint": "Kliknij na kartę, żeby wybrać.",
         "gameInvite": "Zaproszenie do gry",
-        "keyboardShortcutCombination": null,
-        "goAdFree": null,
+        "keyboardShortcutCombination": "Żeby używać skrótów klawiszowych, takich jak {combination}, przytrzymaj {firstKey} i potem naciśnij {secondKey}",
+        "goAdFree": "Reklamy są na stałe wyłączone na twoim koncie, jeśli wspierasz rozwój, kupując jakąkolwiek ilość monet.",
         "awaitingPurchaseConfirmation": {
             "title": "Czekam na potwierdzenie zakupu",
             "description": "Zazwyczaj to trwa tylko kilka sekund. W zależności od metody płatności, może to potrwać dłużej. Śmiało możesz zamknąć ten ekran."
@@ -2830,7 +2830,7 @@
             "developedBy": "Stworzone przez %{name}",
             "iconsSource": "Ikony dzięki uprzejmości %{name} (Licencjonowane)",
             "soundsSource": "Dźwięki dostarczone przez %{name} (Licencjonowane)",
-            "emojiSource": null,
+            "emojiSource": "Emotikony od %{name} (CC-BY 4.0)",
             "rottenApplesSource": "Rotten Apples oparte na %{name} (Creative Commons BY-NC-SA 2.0)",
             "diceSource": "Model kostki stworzony przez %{name} (CC-BY-4.0)",
             "localization": "Lokalizacja przez wolontariuszy"

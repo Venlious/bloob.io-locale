@@ -3,7 +3,7 @@
         "language": "informal Dutch",
         "rtl": false,
         "total": 1768,
-        "missing": 87
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -82,7 +82,7 @@
         "start": {
             "fieldRows": "Geselecteerd speelveld ondersteunt niet meer dan %{rows} rijen",
             "fieldCannotFitUsers": "Geselecteerd speelveld ondersteunt niet meer dan %{users} spelers",
-            "questionThreshold": null,
+            "questionThreshold": "Het spel heeft minstens %{count} vragen nodig.",
             "whiteCardThreshold": "Het spel vereist minstens %{count} antwoordkaarten (wit)",
             "blackCardThreshold": "Het spel vereist minstens %{count} actiekaarten (zwart)",
             "insufficientPlayers": "Je hebt minstens %{min} spelers nodig om het spel te beginnen."
@@ -246,40 +246,40 @@
                     }
                 },
                 "scoringSystem": {
-                    "title": null,
+                    "title": "Score Systeem",
                     "help": {
-                        "default": null,
-                        "SPEED": null,
-                        "ORDER": null,
-                        "FIXED": null,
-                        "PROGRESSIVE": null,
-                        "STREAK": null
+                        "default": "Bepaal hoe het systeem werkt voor het toekennen van punten als je een vraag goed hebt.",
+                        "SPEED": "Punten hangen af van hoe snel je de vraag beantwoordt.",
+                        "ORDER": "Punten zijn gebaseerd op wie het snelst was tussen de spelers.",
+                        "FIXED": "Elke vraag geeft hetzelfde aantal punten.",
+                        "PROGRESSIVE": "De punten die je verdient, worden meer na elke vraag.",
+                        "STREAK": "Verdien extra punten voor achtereenvolgende goede antwoorden; reset na een fout antwoord."
                     },
                     "data": {
-                        "SPEED": null,
-                        "ORDER": null,
-                        "FIXED": null,
-                        "PROGRESSIVE": null,
-                        "STREAK": null
+                        "SPEED": "Snelheid",
+                        "ORDER": "Bestelling",
+                        "FIXED": "Vast",
+                        "PROGRESSIVE": "Progressief",
+                        "STREAK": "Reeks"
                     }
                 },
                 "mode": {
-                    "title": null,
+                    "title": "Modus",
                     "help": {
-                        "default": null,
-                        "SOLO": null,
-                        "CO_OP": null,
-                        "TEAM": null
+                        "default": "Kies hoe spelers gaan strijden: alleen, als een team, of samen.",
+                        "SOLO": "Elke speler doet het alleen.",
+                        "CO_OP": "Alle spelers werken samen als een team.",
+                        "TEAM": "Spelers worden in teams verdeeld en ze kunnen zelf kiezen met wie ze willen samenwerken."
                     },
                     "data": {
-                        "SOLO": null,
-                        "CO_OP": null,
-                        "TEAM": null
+                        "SOLO": "Solo",
+                        "CO_OP": "Co-op",
+                        "TEAM": "Teams"
                     }
                 },
                 "deckSize": {
                     "title": "Deck Grootte",
-                    "help": null,
+                    "help": "Kies je favoriete deckgrootte voor het spel.",
                     "data": {
                         "half": "Half Deck",
                         "full": "Volledig Deck",
@@ -1105,9 +1105,9 @@
                     ]
                 },
                 "shortcuts": {
-                    "title": null,
+                    "title": "Sneltoetsen",
                     "description": [
-                        null
+                        "Wil je veel van dezelfde dobbelstenen in één keer verplaatsen? Gebruik je middelste muisknop of houd de Shift-toets ingedrukt terwijl je op een dobbelsteen klikt, en dan worden alle dobbelstenen met dezelfde kant in één keer verplaatst!"
                     ]
                 }
             }
@@ -1619,51 +1619,51 @@
             "help": {}
         },
         "TRIVIA": {
-            "name": null,
+            "name": "Trivia",
             "title": null,
             "description": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "Consensus",
+                    "help": "In team mode, moet het antwoord van het team dan gebaseerd zijn op een meerderheid (Consensus)? Zo niet, kan elk teamlid het antwoord voor iedereen veranderen."
                 },
                 "lockAnswer": {
-                    "title": null,
-                    "help": null
+                    "title": "Antwoord vergrendelen",
+                    "help": "Als het aanstaat, kunnen spelers hun antwoord niet meer veranderen als ze er eentje hebben gekozen."
                 },
                 "eliminationChallenge": {
-                    "title": null,
-                    "help": null
+                    "title": "Eliminatie Uitdaging",
+                    "help": "Als dit aan staat, wordt een speler of team meteen uitgeschakeld als ze een vraag fout beantwoorden."
                 }
             },
             "presets": {
                 "versus": {
-                    "title": null,
+                    "title": "Tegenwoordig",
                     "description": [
-                        null,
-                        null
+                        "Solo",
+                        "Meer punten voor latere vragen"
                     ]
                 },
                 "hardcoreVersus": {
-                    "title": null,
+                    "title": "Hardcore Tegen elkaar",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Geen fouten",
+                        "Vergrendeld antwoord",
+                        "Punten op snelheid"
                     ]
                 },
                 "coop": {
-                    "title": null,
+                    "title": "Co-op",
                     "description": [
-                        null,
-                        null
+                        "Samenwerken",
+                        "Vaste punten"
                     ]
                 },
                 "teams": {
-                    "title": null,
+                    "title": "Teams",
                     "description": [
-                        null,
-                        null
+                        "Werk in teams",
+                        "Punten op volgorde"
                     ]
                 }
             },
@@ -1735,8 +1735,8 @@
             "roundCount": "Ronde %{current} van de %{total}",
             "roundCurrent": "Ronde %{current}",
             "startingNewRound": "Nieuwe ronde begint...",
-            "questionCount": null,
-            "questionCurrent": null,
+            "questionCount": "Vraag %{current} van %{total}",
+            "questionCurrent": "Vraag %{current}",
             "war": "Oorlog!",
             "outcome": "Uitslag",
             "input": "Wachten op jouw invoer",
@@ -1978,9 +1978,9 @@
         "restartNotice": "Server gaat over {count} minuten opnieuw opstarten. Maak je game af. | Server gaat over {count} minuut opnieuw opstarten. Maak je game af. | Server gaat over {count} minuten opnieuw opstarten. Maak je game af."
     },
     "misc": {
-        "questions": null,
-        "teamAndQuestions": null,
-        "questionPacks": null,
+        "questions": "Vragen",
+        "teamAndQuestions": "Team & Vragen",
+        "questionPacks": "Vraagpakketten",
         "rock": "Steen",
         "paper": "Papier",
         "scissors": "Schaar",
@@ -2103,7 +2103,7 @@
         "specificCards": "Specifieke Kaarten",
         "matchId": "Spel ID",
         "chat": "Chat",
-        "sendMessage": null,
+        "sendMessage": "Stuur een bericht",
         "host": "Spelleider",
         "player": "Speler",
         "players": "Spelers",
@@ -2155,7 +2155,7 @@
         "highestScore": "Hoogste Score",
         "totalScore": "Totaalscore",
         "finalScore": "Eindscore",
-        "flawlessGames": null,
+        "flawlessGames": "Perfecte Spellen",
         "hits": "Hits",
         "hitRate": "Hitpercentage",
         "rank": "Plaats",
@@ -2165,7 +2165,7 @@
         "assassinations": "Moorden",
         "survivals": "Overlevingen",
         "games": "Spellen",
-        "correctRatio": null,
+        "correctRatio": "Correct ratio",
         "winRatio": "Winratio",
         "killDeathRatio": "K/D-ratio",
         "lives": "Levens",
@@ -2221,7 +2221,7 @@
         "madeBy": "Gemaakt door %{name}",
         "selectedOfLimit": "%{current} geselecteerd van %{total} limiet",
         "helpLocalize": "Help de lokalisatie te verbeteren",
-        "goAdFree": null,
+        "goAdFree": "Geen advertenties",
         "discord": "Join onze Discord",
         "volume": "Volume",
         "volumeInterface": "Interface Volume",
@@ -2229,7 +2229,7 @@
         "volumeMusic": "Muziekvolume",
         "selectYourLanguage": "Selecteer Jouw Taal",
         "selectYourColor": "Selecteer Jouw Kleur",
-        "selectYourTeam": null,
+        "selectYourTeam": "Kies je Team",
         "latestChanges": "Laatste Wijzigingen",
         "noChangesDetected": "Geen Wijzigingen Gevonden",
         "newChanges": "Nieuw",
@@ -2387,13 +2387,13 @@
         "roundLost": "Je hebt verloren!",
         "youLostThisRound": "Je hebt deze ronde verloren.",
         "youAreOutOfLives": "Je hebt geen levens meer",
-        "playerIsEliminated": null,
-        "youAreEliminated": null,
+        "playerIsEliminated": "Speler is eruit",
+        "youAreEliminated": "Jij bent eruit",
         "waitForRoundEnd": "Even wachten tot de ronde voorbij is.",
         "waitForWinner": "Blijf rustig zitten en wacht tot er een winnaar is!",
         "serverRestart": "De server wordt nu opnieuw opgestart. Kijk over een paar minuten weer even.",
         "clearOldListings": "Verwijder alle 'Niet beschikbaar' wedstrijden.",
-        "flawlessGame": null,
+        "flawlessGame": "Perfect spel! Foutloos gespeeld.",
         "accountLinkSuggestion": "Je bent nu %{level}! Overweeg om een account aan te maken om je vooruitgang te beschermen.",
         "accountLinked": "Dit account is gekoppeld aan het volgende e-mailadres: %{email}.",
         "incompleteTranslationNotice": "De taal die je hebt geselecteerd is ongeveer {percentage}% compleet. Elke ontbrekende vertaling zal in het Engels verschijnen.",
@@ -2420,7 +2420,7 @@
         "inactiveOpponents": "Alle tegenstanders waren inactief",
         "waitForOpponent": "Wachten op je tegenstander...",
         "waitForOpponents": "Wachten op je tegenstanders....",
-        "nameLeftTheGame": null,
+        "nameLeftTheGame": "%{name} heeft het spel verlaten",
         "selfNoPoints": "Je hebt geen punten ontvangen.",
         "nameNoPoints": "%{name} heeft geen punten ontvangen.",
         "gameMenu": "Wil je iets anders spelen?",
@@ -2441,8 +2441,8 @@
         "seasonalItem": "Een item in deze slot is maar een paar dagen per jaar beschikbaar.",
         "cardInteractHint": "Klik op een kaart om je keuze te maken.",
         "gameInvite": "Uitnodiging voor het spel",
-        "keyboardShortcutCombination": null,
-        "goAdFree": null,
+        "keyboardShortcutCombination": "Om sneltoetsen te gebruiken zoals {combination}, houd {firstKey} ingedrukt en druk dan op {secondKey}",
+        "goAdFree": "Je advertenties zijn permanent uitgeschakeld voor je account als je de ontwikkeling steunt door een bedrag aan munten te kopen.",
         "awaitingPurchaseConfirmation": {
             "title": "Wachten op Bevestiging van Aankoop",
             "description": "Dit duurt meestal maar een paar seconden. Afhankelijk van je betaalmethode kan dit langer duren. Je mag dit scherm gerust sluiten."
@@ -2830,7 +2830,7 @@
             "developedBy": "Ontwikkeld door %{name}",
             "iconsSource": "Icoontjes met dank aan %{name} (Licentie)",
             "soundsSource": "Geluiden voorzien door %{name} (Licentie)",
-            "emojiSource": null,
+            "emojiSource": "Emojis geleverd door %{name} (CC-BY 4.0)",
             "rottenApplesSource": "Rotten Apples gebaseerd op %{name} (BY-NC-SA 2.0)",
             "diceSource": "Dice model van %{name} (CC-BY-4.0)",
             "localization": "Lokalisatie door vrijwillige bijdragers"

@@ -3,7 +3,7 @@
         "language": "informal Japanese",
         "rtl": false,
         "total": 1768,
-        "missing": 87
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -82,7 +82,7 @@
         "start": {
             "fieldRows": "選択したフィールドは%{rows}行以上は対応できません",
             "fieldCannotFitUsers": "選択したフィールドは%{users}人以上のプレイヤーは対応できません",
-            "questionThreshold": null,
+            "questionThreshold": "ゲームには少なくとも%{count}問の質問が必要だよ。",
             "whiteCardThreshold": "ゲームは最低でも%{count}枚のレスポンスカード（白）が必要です",
             "blackCardThreshold": "ゲームは最低でも%{count}枚のアクションカード（黒）が必要です",
             "insufficientPlayers": "マッチを開始するには最低でも%{min}人のプレイヤーが必要です。"
@@ -246,40 +246,40 @@
                     }
                 },
                 "scoringSystem": {
-                    "title": null,
+                    "title": "スコアシステム",
                     "help": {
-                        "default": null,
-                        "SPEED": null,
-                        "ORDER": null,
-                        "FIXED": null,
-                        "PROGRESSIVE": null,
-                        "STREAK": null
+                        "default": "正解したらポイントがどうやってもらえるか決めてね。",
+                        "SPEED": "ポイントは質問に答える速さで決まるよ。",
+                        "ORDER": "誰が一番早く答えたかでポイントが決まるんだ。",
+                        "FIXED": "どの質問も同じポイントがもらえるよ。",
+                        "PROGRESSIVE": "質問ごとにもらえるポイントが増えていくよ。",
+                        "STREAK": "連続で正解するとポイントがもらえるよ。間違えるとリセットされるから気をつけてね！"
                     },
                     "data": {
-                        "SPEED": null,
-                        "ORDER": null,
-                        "FIXED": null,
-                        "PROGRESSIVE": null,
-                        "STREAK": null
+                        "SPEED": "スピード",
+                        "ORDER": "オーダー",
+                        "FIXED": "フィックス",
+                        "PROGRESSIVE": "プログレッシブ",
+                        "STREAK": "ストリーク"
                     }
                 },
                 "mode": {
-                    "title": null,
+                    "title": "モード",
                     "help": {
-                        "default": null,
-                        "SOLO": null,
-                        "CO_OP": null,
-                        "TEAM": null
+                        "default": "プレイヤーがどう競うか選んでね：個人、チーム、または協力して。",
+                        "SOLO": "各プレイヤーは一人で競うよ。",
+                        "CO_OP": "みんなでチームとして協力するよ。",
+                        "TEAM": "プレイヤーはチームに分かれて、自分たちで協力するグループを選べるよ。"
                     },
                     "data": {
-                        "SOLO": null,
-                        "CO_OP": null,
-                        "TEAM": null
+                        "SOLO": "ソロ",
+                        "CO_OP": "協力プレイ",
+                        "TEAM": "チーム戦"
                     }
                 },
                 "deckSize": {
                     "title": "デッキの大きさ",
-                    "help": null,
+                    "help": "ゲームのデッキサイズを選んでね。",
                     "data": {
                         "half": "ハーフデッキ",
                         "full": "フルデッキ",
@@ -1105,9 +1105,9 @@
                     ]
                 },
                 "shortcuts": {
-                    "title": null,
+                    "title": "ショートカット",
                     "description": [
-                        null
+                        "同じ目のサイコロを一気に動かしたい？真ん中のマウスボタンを使うか、Shiftキーを押しながらサイコロをクリックすると、同じ目のサイコロが一緒に動くよ！"
                     ]
                 }
             }
@@ -1619,51 +1619,51 @@
             "help": {}
         },
         "TRIVIA": {
-            "name": null,
+            "name": "トリビア",
             "title": null,
             "description": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "合意",
+                    "help": "チームモードでは、チームの答えは多数決（コンセンサス）で決めるべき？そうじゃなければ、誰かがみんなの答えを変えられるよ。"
                 },
                 "lockAnswer": {
-                    "title": null,
-                    "help": null
+                    "title": "ロックされた答え",
+                    "help": "選んだら、プレイヤーは答えを変えられなくなるよ。"
                 },
                 "eliminationChallenge": {
-                    "title": null,
-                    "help": null
+                    "title": "エリミネーションチャレンジ",
+                    "help": "間違った答えを出すと、プレイヤーやチームがすぐに脱落しちゃうよ。"
                 }
             },
             "presets": {
                 "versus": {
-                    "title": null,
+                    "title": "対決 (たいけつ)",
                     "description": [
-                        null,
-                        null
+                        "ソロ",
+                        "後の質問でポイントがもっともらえるよ"
                     ]
                 },
                 "hardcoreVersus": {
-                    "title": null,
+                    "title": "ハードコアバトル",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "ミスなし",
+                        "ロックされた答え",
+                        "スピードでポイント"
                     ]
                 },
                 "coop": {
-                    "title": null,
+                    "title": "協力プレイ",
                     "description": [
-                        null,
-                        null
+                        "一緒にやろう",
+                        "固定ポイント"
                     ]
                 },
                 "teams": {
-                    "title": null,
+                    "title": "チーム",
                     "description": [
-                        null,
-                        null
+                        "チームでやろう",
+                        "順番でポイントゲット"
                     ]
                 }
             },
@@ -1697,8 +1697,8 @@
         "rematch": "再戦しよう！",
         "fun": "楽しかったね！",
         "bye": "バイバイ！",
-        "shortYes": null,
-        "shortNo": null
+        "shortYes": "うん。",
+        "shortNo": "いいえ。"
     },
     "header": {
         "message": {
@@ -1735,8 +1735,8 @@
             "roundCount": "現在のラウンドは%{current}、全体のラウンドは%{total}だよ",
             "roundCurrent": "ラウンド%{current}",
             "startingNewRound": "新しいラウンドを始めるよ…",
-            "questionCount": null,
-            "questionCurrent": null,
+            "questionCount": "問題 %{current} / %{total}",
+            "questionCurrent": "問題 %{current}",
             "war": "戦争だ！",
             "outcome": "結果",
             "input": "あなたの入力を待っています",
@@ -1978,9 +1978,9 @@
         "restartNotice": "サーバーは{count}分後に再起動するよ。ゲームを終わらせてね。 | サーバーは{count}分後に再起動するよ。ゲームを終わらせてね。 | サーバーは{count}分後に再起動するよ。ゲームを終わらせてね。"
     },
     "misc": {
-        "questions": null,
-        "teamAndQuestions": null,
-        "questionPacks": null,
+        "questions": "質問",
+        "teamAndQuestions": "チームと質問",
+        "questionPacks": "質問パック",
         "rock": "グー",
         "paper": "チョキ",
         "scissors": "パー",
@@ -2103,7 +2103,7 @@
         "specificCards": "特定のカード",
         "matchId": "マッチID",
         "chat": "チャット",
-        "sendMessage": null,
+        "sendMessage": "メッセージを送る",
         "host": "ホスト",
         "player": "選手",
         "players": "選手たち",
@@ -2155,7 +2155,7 @@
         "highestScore": "最高スコア",
         "totalScore": "トータルスコア",
         "finalScore": "ファイナルスコア",
-        "flawlessGames": null,
+        "flawlessGames": "完璧なゲーム",
         "hits": "ヒット",
         "hitRate": "ヒット率",
         "rank": "ランク",
@@ -2165,7 +2165,7 @@
         "assassinations": "暗殺",
         "survivals": "生存",
         "games": "ゲーム数",
-        "correctRatio": null,
+        "correctRatio": "正しい比率",
         "winRatio": "勝率",
         "killDeathRatio": "K/D比率",
         "lives": "ライフ",
@@ -2221,7 +2221,7 @@
         "madeBy": "%{name} 作",
         "selectedOfLimit": "%{total}の上限から%{current}を選択",
         "helpLocalize": "ローカライズの改善を手伝って",
-        "goAdFree": null,
+        "goAdFree": "広告なしで楽しむ",
         "discord": "私たちのDiscordに参加",
         "volume": "音量",
         "volumeInterface": "インターフェースの音量",
@@ -2229,7 +2229,7 @@
         "volumeMusic": "音量",
         "selectYourLanguage": "言語を選択してね",
         "selectYourColor": "色を選んでね",
-        "selectYourTeam": null,
+        "selectYourTeam": "チームを選んでね",
         "latestChanges": "最新の変更点",
         "noChangesDetected": "変更は見つからなかったよ",
         "newChanges": "新しい変更",
@@ -2387,13 +2387,13 @@
         "roundLost": "負けた！",
         "youLostThisRound": "今回は負けたね。",
         "youAreOutOfLives": "ライフがなくなっちゃったよ",
-        "playerIsEliminated": null,
-        "youAreEliminated": null,
+        "playerIsEliminated": "プレイヤーがやられた",
+        "youAreEliminated": "あなたがやられた",
         "waitForRoundEnd": "ラウンドが終わるまで待っててね。",
         "waitForWinner": "じっとしてて、勝者が出るのを待とう！",
         "serverRestart": "サーバーが今再起動中だよ。ちょっと待っててね。",
         "clearOldListings": "「Unavailable」のマッチを全部クリアしてね。",
-        "flawlessGame": null,
+        "flawlessGame": "完璧なゲーム！ミスなし！",
         "accountLinkSuggestion": "あなたは今%{level}だよ！進行状況を保護するためにアカウントを作成してみては？",
         "accountLinked": "このアカウントは次のメールアドレスにリンクされています：%{email}。",
         "incompleteTranslationNotice": "選択した言語は約{percentage}% 完成しています。翻訳が足りない部分は英語で表示されます。",
@@ -2420,7 +2420,7 @@
         "inactiveOpponents": "全ての相手が非アクティブだったよ",
         "waitForOpponent": "相手を待ってるよ…",
         "waitForOpponents": "相手たちを待ってるよ…",
-        "nameLeftTheGame": null,
+        "nameLeftTheGame": "%{name}がゲームを抜けた",
         "selfNoPoints": "ポイントはゼロだよ。",
         "nameNoPoints": "%{name}はポイントゼロだよ。",
         "gameMenu": "他のゲームをやりたい気分？",
@@ -2441,8 +2441,8 @@
         "seasonalItem": "このスロットのアイテムは年に数日しか利用できません。",
         "cardInteractHint": "選ぶカードをクリックしてね。",
         "gameInvite": "ゲームに招待するよ！",
-        "keyboardShortcutCombination": null,
-        "goAdFree": null,
+        "keyboardShortcutCombination": "キーボードショートカットを使うには、{firstKey}を押し続けてから{secondKey}を押してね",
+        "goAdFree": "広告は、コインを買って開発をサポートすると、あなたのアカウントで永久に無効になるよ。",
         "awaitingPurchaseConfirmation": {
             "title": "購入確認待ち",
             "description": "だいたい数秒で終わるよ。でも、支払い方法によってはもうちょっと時間かかるかもね。この画面を閉じても大丈夫だよ。"
@@ -2830,7 +2830,7 @@
             "developedBy": "開発者は%{name}だよ",
             "iconsSource": "アイコンは%{name}の提供だよ（ライセンス付き）",
             "soundsSource": "音声は%{name}が提供してるよ（ライセンス付き）",
-            "emojiSource": null,
+            "emojiSource": "%{name}が提供した絵文字だよ (CC-BY 4.0)",
             "rottenApplesSource": "%{name}に基づく腐ったリンゴ (BY-NC-SA 2.0)",
             "diceSource": "%{name}によるダイスモデル (CC-BY-4.0)",
             "localization": "ボランティア貢献者によるローカライゼーション"

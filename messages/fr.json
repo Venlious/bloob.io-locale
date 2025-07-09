@@ -3,7 +3,7 @@
         "language": "informal French",
         "rtl": false,
         "total": 1768,
-        "missing": 87
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -82,7 +82,7 @@
         "start": {
             "fieldRows": "Les champs sélectionnés ne peuvent supporter plus de %{rows} rangées.",
             "fieldCannotFitUsers": "Les champs sélectionnés ne peuvent supporter plus de %{users} joueurs.",
-            "questionThreshold": null,
+            "questionThreshold": "Le jeu nécessite au moins %{count} questions.",
             "whiteCardThreshold": "Le jeu nécessite au moins %{count} cartes de réponse (blanches).",
             "blackCardThreshold": "Le jeu nécessite au moins %{count} cartes d'action (noires).",
             "insufficientPlayers": "Au moins %{min} joueurs sont requis pour commencer la partie."
@@ -246,40 +246,40 @@
                     }
                 },
                 "scoringSystem": {
-                    "title": null,
+                    "title": "Système de points",
                     "help": {
-                        "default": null,
-                        "SPEED": null,
-                        "ORDER": null,
-                        "FIXED": null,
-                        "PROGRESSIVE": null,
-                        "STREAK": null
+                        "default": "Détermine comment on gagne des points en répondant juste à une question.",
+                        "SPEED": "Les points dépendent de la rapidité avec laquelle tu réponds.",
+                        "ORDER": "Les points sont attribués à celui qui est le plus rapide entre les joueurs.",
+                        "FIXED": "Chaque question donne le même nombre de points.",
+                        "PROGRESSIVE": "Les points gagnés augmentent après chaque question.",
+                        "STREAK": "Gagne des points en plus pour chaque bonne réponse à la suite ; ça se remet à zéro après une mauvaise réponse."
                     },
                     "data": {
-                        "SPEED": null,
-                        "ORDER": null,
-                        "FIXED": null,
-                        "PROGRESSIVE": null,
-                        "STREAK": null
+                        "SPEED": "Vitesse",
+                        "ORDER": "Commande",
+                        "FIXED": "Fixe",
+                        "PROGRESSIVE": "Progressif",
+                        "STREAK": "Série"
                     }
                 },
                 "mode": {
-                    "title": null,
+                    "title": "Mode de jeu",
                     "help": {
-                        "default": null,
-                        "SOLO": null,
-                        "CO_OP": null,
-                        "TEAM": null
+                        "default": "Choisissez comment les joueurs vont s'affronter : individuellement, en équipe, ou en mode collaboratif.",
+                        "SOLO": "Chaque joueur joue solo.",
+                        "CO_OP": "Tous les joueurs bossent ensemble en équipe.",
+                        "TEAM": "Les joueurs sont répartis en équipes, et ils peuvent choisir leur propre groupe pour collaborer."
                     },
                     "data": {
-                        "SOLO": null,
-                        "CO_OP": null,
-                        "TEAM": null
+                        "SOLO": "Solo",
+                        "CO_OP": "En équipe",
+                        "TEAM": "Équipes"
                     }
                 },
                 "deckSize": {
                     "title": "Taille du Deck",
-                    "help": null,
+                    "help": "Choisis la taille de deck que tu préfères pour le jeu.",
                     "data": {
                         "half": "Demi Paquet",
                         "full": "Paquet Complet",
@@ -1105,9 +1105,9 @@
                     ]
                 },
                 "shortcuts": {
-                    "title": null,
+                    "title": "Raccourcis",
                     "description": [
-                        null
+                        "Tu veux déplacer plein de dés identiques d'un coup ? Utilise le bouton du milieu de ta souris ou maintiens la touche Shift en cliquant sur un dé, et tous les dés avec la même face seront déplacés en même temps !"
                     ]
                 }
             }
@@ -1619,51 +1619,51 @@
             "help": {}
         },
         "TRIVIA": {
-            "name": null,
+            "name": "Quiz sympa",
             "title": null,
             "description": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "Accord",
+                    "help": "En mode équipe, la réponse de l'équipe doit-elle être basée sur un vote majoritaire (Consensus) ? Sinon, n'importe quel membre de l'équipe peut changer la réponse pour tout le monde."
                 },
                 "lockAnswer": {
-                    "title": null,
-                    "help": null
+                    "title": "Verrouiller la réponse",
+                    "help": "Quand c'est activé, les joueurs peuvent pas changer leur réponse une fois qu'ils en ont choisi une."
                 },
                 "eliminationChallenge": {
-                    "title": null,
-                    "help": null
+                    "title": "Défi d'élimination",
+                    "help": "Quand c'est activé, un joueur ou une équipe est éliminé direct après avoir répondu faux à une question."
                 }
             },
             "presets": {
                 "versus": {
-                    "title": null,
+                    "title": "Contre",
                     "description": [
-                        null,
-                        null
+                        "Solo",
+                        "Plus de points pour les questions d'après"
                     ]
                 },
                 "hardcoreVersus": {
-                    "title": null,
+                    "title": "Hardcore contre hardcore",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Pas d'erreurs",
+                        "Réponse verrouillée",
+                        "Points basés sur la vitesse"
                     ]
                 },
                 "coop": {
-                    "title": null,
+                    "title": "Coop",
                     "description": [
-                        null,
-                        null
+                        "Bossez ensemble",
+                        "Points fixes"
                     ]
                 },
                 "teams": {
-                    "title": null,
+                    "title": "Équipes",
                     "description": [
-                        null,
-                        null
+                        "Bosser en équipe",
+                        "Points selon l'ordre"
                     ]
                 }
             },
@@ -1697,8 +1697,8 @@
         "rematch": "Revanche!",
         "fun": "C'était amusant!",
         "bye": "Bye!",
-        "shortYes": null,
-        "shortNo": null
+        "shortYes": "Ouais.",
+        "shortNo": "Nan."
     },
     "header": {
         "message": {
@@ -1735,8 +1735,8 @@
             "roundCount": "Ronde %{current} de %{total}",
             "roundCurrent": "Tour %{current}",
             "startingNewRound": "On commence un nouveau round...",
-            "questionCount": null,
-            "questionCurrent": null,
+            "questionCount": "Question %{current} sur %{total}",
+            "questionCurrent": "Question %{current}",
             "war": "Guerre!",
             "outcome": "Résultat",
             "input": "En attente de ton choix",
@@ -1978,9 +1978,9 @@
         "restartNotice": "Le serveur va redémarrer dans {count} minutes. Finissez votre partie. | Le serveur va redémarrer dans {count} minute. Finissez votre partie. | Le serveur va redémarrer dans {count} minutes. Finissez votre partie."
     },
     "misc": {
-        "questions": null,
-        "teamAndQuestions": null,
-        "questionPacks": null,
+        "questions": "Questions",
+        "teamAndQuestions": "Équipe & Questions",
+        "questionPacks": "Packs de Questions",
         "rock": "Pierre",
         "paper": "Feuille",
         "scissors": "Ciseaux",
@@ -2103,7 +2103,7 @@
         "specificCards": "Cartes spécifiques",
         "matchId": "ID de la partie",
         "chat": "Chat",
-        "sendMessage": null,
+        "sendMessage": "Envoyer un message",
         "host": "Hôte",
         "player": "Joueur",
         "players": "Joueurs",
@@ -2155,7 +2155,7 @@
         "highestScore": "Meilleur Score",
         "totalScore": "Score total",
         "finalScore": "Score final",
-        "flawlessGames": null,
+        "flawlessGames": "Jeux Parfaits",
         "hits": "Coups",
         "hitRate": "Taux de Coups",
         "rank": "Rang",
@@ -2165,7 +2165,7 @@
         "assassinations": "Assassinats",
         "survivals": "Survies",
         "games": "Jeux",
-        "correctRatio": null,
+        "correctRatio": "Ratio correct",
         "winRatio": "Ratio de victoires",
         "killDeathRatio": "Ratio K/D",
         "lives": "Vies",
@@ -2221,7 +2221,7 @@
         "madeBy": "Fait par %{name}",
         "selectedOfLimit": "Sélectionné %{current} d'une limite de %{total}",
         "helpLocalize": "Aidez à améliorer la localisation",
-        "goAdFree": null,
+        "goAdFree": "Passe en mode sans pub",
         "discord": "Rejoignez notre Discord",
         "volume": "Volume",
         "volumeInterface": "Volume de l'interface",
@@ -2229,7 +2229,7 @@
         "volumeMusic": "Volume de la musique",
         "selectYourLanguage": "Sélectionnez votre langue",
         "selectYourColor": "Choisis ta couleur",
-        "selectYourTeam": null,
+        "selectYourTeam": "Choisis ton équipe",
         "latestChanges": "Derniers changements",
         "noChangesDetected": "Aucun changement détecté",
         "newChanges": "Nouveaux changements",
@@ -2387,13 +2387,13 @@
         "roundLost": "T'as perdu!",
         "youLostThisRound": "T'as perdu ce round.",
         "youAreOutOfLives": "T'as plus de vies",
-        "playerIsEliminated": null,
-        "youAreEliminated": null,
+        "playerIsEliminated": "Le joueur a été éliminé",
+        "youAreEliminated": "T'es éliminé",
         "waitForRoundEnd": "Attends que le round se termine.",
         "waitForWinner": "Reste tranquille et attends qu'un gagnant se pointe!",
         "serverRestart": "Le serveur est en train de redémarrer. Reviens dans quelques minutes.",
         "clearOldListings": "Efface tous les matchs 'Indisponibles'.",
-        "flawlessGame": null,
+        "flawlessGame": "Partie parfaite! Aucune erreur.",
         "accountLinkSuggestion": "Vous êtes maintenant %{level}! Pensez à créer un compte pour protéger votre progression.",
         "accountLinked": "Ce compte est lié à l'adresse email suivante: %{email}.",
         "incompleteTranslationNotice": "La langue que vous avez sélectionnée est à environ {percentage}% complète. Les traductions manquantes seront en anglais.",
@@ -2420,7 +2420,7 @@
         "inactiveOpponents": "Tous les adversaires étaient inactifs",
         "waitForOpponent": "En attente de ton adversaire...",
         "waitForOpponents": "En attente de tes adversaires...",
-        "nameLeftTheGame": null,
+        "nameLeftTheGame": "%{name} a quitté le jeu",
         "selfNoPoints": "Tu n'as reçu aucun point.",
         "nameNoPoints": "%{name} n'a reçu aucun point.",
         "gameMenu": "Vous avez envie de jouer à autre chose ?",
@@ -2441,8 +2441,8 @@
         "seasonalItem": "Un article dans cet emplacement n'est disponible que quelques jours par an.",
         "cardInteractHint": "Clique sur une carte pour faire ton choix.",
         "gameInvite": "Invitation au jeu",
-        "keyboardShortcutCombination": null,
-        "goAdFree": null,
+        "keyboardShortcutCombination": "Pour utiliser les raccourcis clavier comme {combination}, maintiens {firstKey} enfoncé et appuie sur {secondKey}",
+        "goAdFree": "Les pubs sont désactivées pour ton compte si tu soutiens le développement en achetant des pièces, peu importe le montant.",
         "awaitingPurchaseConfirmation": {
             "title": "En attente de confirmation d'achat",
             "description": "Ça prend généralement que quelques secondes. Selon votre méthode de paiement, cela peut prendre plus de temps. N'hésitez pas à fermer cet écran."
@@ -2830,7 +2830,7 @@
             "developedBy": "Developpé par %{name}",
             "iconsSource": "Icônes gracieuseté de %{name} (Sous licence)",
             "soundsSource": "Sons fournis par %{name} (Sous licence)",
-            "emojiSource": null,
+            "emojiSource": "Émojis fournis par %{name} (CC-BY 4.0)",
             "rottenApplesSource": "Pommes pourries basées sur %{name} (Creative Commons BY-NC-SA 2.0)",
             "diceSource": "Modèle de dé par %{name} (CC-BY-4.0)",
             "localization": "Localisation par des contributeurs bénévoles"

@@ -3,7 +3,7 @@
         "language": "informal Korean",
         "rtl": false,
         "total": 1768,
-        "missing": 87
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -82,7 +82,7 @@
         "start": {
             "fieldRows": "선택한 필드는 %{rows} 행 이상 지원할 수 없어요",
             "fieldCannotFitUsers": "선택한 필드는 %{users} 명 이상의 플레이어를 지원할 수 없어요",
-            "questionThreshold": null,
+            "questionThreshold": "게임은 최소 %{count}개의 질문이 필요해.",
             "whiteCardThreshold": "게임은 최소 %{count} 개의 응답 카드(하얀색)가 필요해요",
             "blackCardThreshold": "게임은 최소 %{count} 개의 액션 카드(검은색)가 필요해요",
             "insufficientPlayers": "경기를 시작하려면 최소 %{min} 명의 플레이어가 필요해요."
@@ -246,40 +246,40 @@
                     }
                 },
                 "scoringSystem": {
-                    "title": null,
+                    "title": "점수 시스템",
                     "help": {
-                        "default": null,
-                        "SPEED": null,
-                        "ORDER": null,
-                        "FIXED": null,
-                        "PROGRESSIVE": null,
-                        "STREAK": null
+                        "default": "질문 맞추면 점수 주는 시스템 정해봐.",
+                        "SPEED": "점수는 질문에 답하는 속도에 따라 달라.",
+                        "ORDER": "누가 제일 빨리 답했는지에 따라 점수가 정해져.",
+                        "FIXED": "각 질문마다 주는 점수는 똑같아.",
+                        "PROGRESSIVE": "질문이 끝날 때마다 얻는 점수가 늘어나.",
+                        "STREAK": "연속으로 맞춘 답변에 대해 추가 점수를 얻어! 틀리면 리셋돼."
                     },
                     "data": {
-                        "SPEED": null,
-                        "ORDER": null,
-                        "FIXED": null,
-                        "PROGRESSIVE": null,
-                        "STREAK": null
+                        "SPEED": "속도",
+                        "ORDER": "주문",
+                        "FIXED": "고정",
+                        "PROGRESSIVE": "점진적",
+                        "STREAK": "연속"
                     }
                 },
                 "mode": {
-                    "title": null,
+                    "title": "모드",
                     "help": {
-                        "default": null,
-                        "SOLO": null,
-                        "CO_OP": null,
-                        "TEAM": null
+                        "default": "플레이어들이 경쟁하는 방식을 선택해: 개인적으로, 팀으로, 아니면 협력해서.",
+                        "SOLO": "각 플레이어는 혼자서 경쟁해.",
+                        "CO_OP": "모든 플레이어가 팀으로 함께 일해.",
+                        "TEAM": "플레이어들이 팀으로 나뉘고, 협력할 그룹을 스스로 선택할 수 있어."
                     },
                     "data": {
-                        "SOLO": null,
-                        "CO_OP": null,
-                        "TEAM": null
+                        "SOLO": "솔로",
+                        "CO_OP": "협동",
+                        "TEAM": "팀"
                     }
                 },
                 "deckSize": {
                     "title": "덱 크기",
-                    "help": null,
+                    "help": "게임에 사용할 덱 크기를 선택해!",
                     "data": {
                         "half": "반 덱",
                         "full": "풀 덱",
@@ -1105,9 +1105,9 @@
                     ]
                 },
                 "shortcuts": {
-                    "title": null,
+                    "title": "단축키",
                     "description": [
-                        null
+                        "같은 주사위를 한 번에 많이 옮기고 싶어? 중간 마우스 버튼을 누르거나 Shift 키를 누른 채로 주사위를 클릭하면 같은 면을 가진 주사위가 한 번에 다 옮겨져!"
                     ]
                 }
             }
@@ -1619,51 +1619,51 @@
             "help": {}
         },
         "TRIVIA": {
-            "name": null,
+            "name": "퀴즈 게임",
             "title": null,
             "description": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "합의",
+                    "help": "팀 모드에서 팀의 답변은 다수결(합의)에 따라야 해? 아니면, 아무 팀원이든지 모든 사람의 답변을 바꿀 수 있어?"
                 },
                 "lockAnswer": {
-                    "title": null,
-                    "help": null
+                    "title": "답변 잠금",
+                    "help": "선택한 답변을 고르면, 그때부터는 답변을 바꿀 수 없어."
                 },
                 "eliminationChallenge": {
-                    "title": null,
-                    "help": null
+                    "title": "제거 챌린지",
+                    "help": "잘못된 질문에 대답하면 바로 플레이어나 팀이 탈락해."
                 }
             },
             "presets": {
                 "versus": {
-                    "title": null,
+                    "title": "대결",
                     "description": [
-                        null,
-                        null
+                        "솔로",
+                        "나중 질문에 더 많은 포인트!"
                     ]
                 },
                 "hardcoreVersus": {
-                    "title": null,
+                    "title": "하드코어 대결",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "실수 없음",
+                        "잠긴 답변",
+                        "속도 기반 포인트"
                     ]
                 },
                 "coop": {
-                    "title": null,
+                    "title": "협동 게임",
                     "description": [
-                        null,
-                        null
+                        "같이 일하자",
+                        "고정된 지점"
                     ]
                 },
                 "teams": {
-                    "title": null,
+                    "title": "팀들",
                     "description": [
-                        null,
-                        null
+                        "팀으로 일해요",
+                        "순서에 따라 점수 줘요"
                     ]
                 }
             },
@@ -1697,8 +1697,8 @@
         "rematch": "재경기!",
         "fun": "재밌었어!",
         "bye": "잘 가!",
-        "shortYes": null,
-        "shortNo": null
+        "shortYes": "응.",
+        "shortNo": "아니."
     },
     "header": {
         "message": {
@@ -1735,8 +1735,8 @@
             "roundCount": "총 %{total} 라운드 중 %{current} 라운드",
             "roundCurrent": "라운드 %{current}",
             "startingNewRound": "새 라운드 시작해요...",
-            "questionCount": null,
-            "questionCurrent": null,
+            "questionCount": "질문 %{current} / %{total}",
+            "questionCurrent": "질문 %{current}",
             "war": "전쟁!",
             "outcome": "결과",
             "input": "당신의 입력을 기다리는 중",
@@ -1978,9 +1978,9 @@
         "restartNotice": "서버가 {count}분 후에 재시작돼요. 게임 끝내세요. | 서버가 {count}분 후에 재시작돼요. 게임 끝내세요. | 서버가 {count}분 후에 재시작돼요. 게임 끝내세요."
     },
     "misc": {
-        "questions": null,
-        "teamAndQuestions": null,
-        "questionPacks": null,
+        "questions": "질문",
+        "teamAndQuestions": "팀 & 질문",
+        "questionPacks": "질문 팩",
         "rock": "바위",
         "paper": "종이",
         "scissors": "가위",
@@ -2103,7 +2103,7 @@
         "specificCards": "특정 카드들",
         "matchId": "매치 ID",
         "chat": "채팅",
-        "sendMessage": null,
+        "sendMessage": "메시지 보내기",
         "host": "호스트",
         "player": "플레이어",
         "players": "플레이어들",
@@ -2155,7 +2155,7 @@
         "highestScore": "최고 점수",
         "totalScore": "총 점수",
         "finalScore": "최종 점수",
-        "flawlessGames": null,
+        "flawlessGames": "완벽한 게임",
         "hits": "히트",
         "hitRate": "히트율",
         "rank": "순위",
@@ -2165,7 +2165,7 @@
         "assassinations": "암살",
         "survivals": "생존",
         "games": "게임들",
-        "correctRatio": null,
+        "correctRatio": "맞는 비율",
         "winRatio": "승률",
         "killDeathRatio": "K/D 비율",
         "lives": "목숨",
@@ -2221,7 +2221,7 @@
         "madeBy": "%{name} 제작",
         "selectedOfLimit": "총 %{total} 중 %{current} 선택됨",
         "helpLocalize": "지역화 개선 도와주세요",
-        "goAdFree": null,
+        "goAdFree": "광고 없이 보기",
         "discord": "우리의 디스코드에 가입하세요",
         "volume": "볼륨",
         "volumeInterface": "인터페이스 볼륨",
@@ -2229,7 +2229,7 @@
         "volumeMusic": "음악 볼륨",
         "selectYourLanguage": "언어 선택하기",
         "selectYourColor": "색상 선택하기",
-        "selectYourTeam": null,
+        "selectYourTeam": "팀 선택하기",
         "latestChanges": "최근 변경사항",
         "noChangesDetected": "변경사항 없음",
         "newChanges": "새로운 변경사항",
@@ -2387,13 +2387,13 @@
         "roundLost": "너 졌어!",
         "youLostThisRound": "이번 라운드 졌어!",
         "youAreOutOfLives": "목숨 다 썼어",
-        "playerIsEliminated": null,
-        "youAreEliminated": null,
+        "playerIsEliminated": "플레이어가 탈락했어요",
+        "youAreEliminated": "당신이 탈락했어요",
         "waitForRoundEnd": "라운드 끝날 때까지 기다려줘.",
         "waitForWinner": "좀 기다려봐, 누가 이길지 나올 때까지!",
         "serverRestart": "서버가 지금 재시작 중이야. 몇 분 후에 다시 확인해줘.",
         "clearOldListings": "'사용 불가능한' 매치를 모두 지워.",
-        "flawlessGame": null,
+        "flawlessGame": "완벽한 게임! 실수 하나도 없었어요.",
         "accountLinkSuggestion": "이제 %{level}이 되었어요! 진행 상황을 보호하기 위해 계정을 만들어 보세요.",
         "accountLinked": "이 계정은 다음 이메일 주소에 연결되어 있어요: %{email}.",
         "incompleteTranslationNotice": "선택하신 언어는 대략 {percentage}% 완성되었어요. 누락된 번역은 영어로 표시될 거예요.",
@@ -2420,7 +2420,7 @@
         "inactiveOpponents": "모든 상대방들이 비활성 상태였어",
         "waitForOpponent": "상대를 기다리는 중...",
         "waitForOpponents": "상대들을 기다리는 중....",
-        "nameLeftTheGame": null,
+        "nameLeftTheGame": "%{name}가 게임을 나갔어요",
         "selfNoPoints": "포인트를 받지 못했어.",
         "nameNoPoints": "%{name}는 포인트를 받지 못했어.",
         "gameMenu": "다른 게임 하고 싶어?",
@@ -2441,8 +2441,8 @@
         "seasonalItem": "이 슬롯의 아이템은 일년에 몇 일 동안만 사용할 수 있어.",
         "cardInteractHint": "카드를 선택하려면 클릭해.",
         "gameInvite": "게임 초대해!",
-        "keyboardShortcutCombination": null,
-        "goAdFree": null,
+        "keyboardShortcutCombination": "{combination} 같은 키보드 단축키를 사용하려면 {firstKey}를 누르고 {secondKey}를 눌러야 해요.",
+        "goAdFree": "광고는 너의 계정에서 영구적으로 비활성화돼. 코인을 얼마든지 사서 개발을 지원하면 그렇게 돼.",
         "awaitingPurchaseConfirmation": {
             "title": "구매 확인 대기 중",
             "description": "보통 이 과정은 몇 초밖에 안 걸립니다. 결제 방법에 따라서는 시간이 더 걸릴 수 있어요. 이 화면을 닫아도 괜찮아요."
@@ -2830,7 +2830,7 @@
             "developedBy": "%{name}에 의해 개발됨",
             "iconsSource": "아이콘 제공: %{name} (라이선스 받음)",
             "soundsSource": "사운드 제공: %{name} (라이선스 받음)",
-            "emojiSource": null,
+            "emojiSource": "%{name}가 제공한 이모지 (CC-BY 4.0)",
             "rottenApplesSource": "%{name} 기반의 썩은 사과들 (BY-NC-SA 2.0)",
             "diceSource": "%{name}의 주사위 모델 (CC-BY-4.0)",
             "localization": "자원봉사자들에 의한 현지화"

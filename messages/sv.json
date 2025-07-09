@@ -3,7 +3,7 @@
         "language": "informal Swedish",
         "rtl": false,
         "total": 1768,
-        "missing": 87
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -82,7 +82,7 @@
         "start": {
             "fieldRows": "Valda fältet kan inte stödja mer än %{rows} rader",
             "fieldCannotFitUsers": "Valda fältet kan inte stödja mer än %{users} spelare",
-            "questionThreshold": null,
+            "questionThreshold": "Spelet kräver minst %{count} frågor",
             "whiteCardThreshold": "Spelet kräver minst %{count} svarskort (vita)",
             "blackCardThreshold": "Spelet kräver minst %{count} aktionskort (svarta)",
             "insufficientPlayers": "Behöver minst %{min} spelare för att starta matchen."
@@ -246,40 +246,40 @@
                     }
                 },
                 "scoringSystem": {
-                    "title": null,
+                    "title": "Poängsystem",
                     "help": {
-                        "default": null,
-                        "SPEED": null,
-                        "ORDER": null,
-                        "FIXED": null,
-                        "PROGRESSIVE": null,
-                        "STREAK": null
+                        "default": "Bestäm hur poängen delas ut för att svara rätt på en fråga.",
+                        "SPEED": "Poängen baseras på hur snabbt man svarar på frågan.",
+                        "ORDER": "Poängen baseras på vem som var snabbast av spelarna.",
+                        "FIXED": "Varje fråga ger samma mängd poäng.",
+                        "PROGRESSIVE": "Poängen man tjänar ökar efter varje fråga.",
+                        "STREAK": "Tjäna extra poäng för varje rätt svar i rad; nollställs efter ett felaktigt svar."
                     },
                     "data": {
-                        "SPEED": null,
-                        "ORDER": null,
-                        "FIXED": null,
-                        "PROGRESSIVE": null,
-                        "STREAK": null
+                        "SPEED": "Hastighet",
+                        "ORDER": "Beställning",
+                        "FIXED": "Fast",
+                        "PROGRESSIVE": "Progressiv",
+                        "STREAK": "Svit"
                     }
                 },
                 "mode": {
-                    "title": null,
+                    "title": "Läge",
                     "help": {
-                        "default": null,
-                        "SOLO": null,
-                        "CO_OP": null,
-                        "TEAM": null
+                        "default": "Välj hur spelarna ska tävla: individuellt, som ett lag, eller samarbeta.",
+                        "SOLO": "Varje spelare tävlar ensam.",
+                        "CO_OP": "Alla spelare jobbar tillsammans som ett lag.",
+                        "TEAM": "Spelarna delas in i lag, och de kan välja sin egen grupp att samarbeta med."
                     },
                     "data": {
-                        "SOLO": null,
-                        "CO_OP": null,
-                        "TEAM": null
+                        "SOLO": "Solo",
+                        "CO_OP": "Co-op",
+                        "TEAM": "Lag"
                     }
                 },
                 "deckSize": {
                     "title": "Kortleksstorlek",
-                    "help": null,
+                    "help": "Välj hur stor kortlek du vill ha för spelet.",
                     "data": {
                         "half": "Halvt kortlek",
                         "full": "Full kortlek",
@@ -1105,9 +1105,9 @@
                     ]
                 },
                 "shortcuts": {
-                    "title": null,
+                    "title": "Genvägar",
                     "description": [
-                        null
+                        "Vill du flytta många av samma tärning på en gång? Använd din scrollknapp eller håll ner Shift-tangenten medan du klickar på en tärning, så flyttas alla tärningar med samma sida på en gång!"
                     ]
                 }
             }
@@ -1619,51 +1619,51 @@
             "help": {}
         },
         "TRIVIA": {
-            "name": null,
+            "name": "Frågesport",
             "title": null,
             "description": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "Konsensus",
+                    "help": "I lagläge, ska lagets svar baseras på en majoritetsröst (Konsensus)? Om inte, kan vilken lagmedlem som helst ändra svaret för alla."
                 },
                 "lockAnswer": {
-                    "title": null,
-                    "help": null
+                    "title": "Lås svar",
+                    "help": "När det är påslaget kan spelarna inte ändra sitt svar när de har valt ett."
                 },
                 "eliminationChallenge": {
-                    "title": null,
-                    "help": null
+                    "title": "Elimineringsutmaning",
+                    "help": "När det här är på, så åker en spelare eller ett lag ut direkt om de svarar fel på en fråga."
                 }
             },
             "presets": {
                 "versus": {
-                    "title": null,
+                    "title": "Mot varandra",
                     "description": [
-                        null,
-                        null
+                        "Solo",
+                        "Fler poäng för senare frågor"
                     ]
                 },
                 "hardcoreVersus": {
-                    "title": null,
+                    "title": "Hardcore Mot Varandra",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Inga misstag",
+                        "Låst svar",
+                        "Poäng baserat på hastighet"
                     ]
                 },
                 "coop": {
-                    "title": null,
+                    "title": "Co-op",
                     "description": [
-                        null,
-                        null
+                        "Jobba tillsammans",
+                        "Fasta punkter"
                     ]
                 },
                 "teams": {
-                    "title": null,
+                    "title": "Lag",
                     "description": [
-                        null,
-                        null
+                        "Jobba i lag",
+                        "Poäng baserat på ordning"
                     ]
                 }
             },
@@ -1697,8 +1697,8 @@
         "rematch": "Returmatch!",
         "fun": "Det var kul!",
         "bye": "Hej då!",
-        "shortYes": null,
-        "shortNo": null
+        "shortYes": "Ja.",
+        "shortNo": "Nej."
     },
     "header": {
         "message": {
@@ -1735,8 +1735,8 @@
             "roundCount": "Omgång %{current} av %{total}",
             "roundCurrent": "Runda %{current}",
             "startingNewRound": "Börjar ny runda...",
-            "questionCount": null,
-            "questionCurrent": null,
+            "questionCount": "Fråga %{current} av %{total}",
+            "questionCurrent": "Fråga %{current}",
             "war": "Krig!",
             "outcome": "Resultat",
             "input": "Väntar på din input",
@@ -1978,9 +1978,9 @@
         "restartNotice": "Servern kommer starta om om {count} minuter. Avsluta ditt spel. | Servern kommer starta om om {count} minut. Avsluta ditt spel. | Servern kommer starta om om {count} minuter. Avsluta ditt spel."
     },
     "misc": {
-        "questions": null,
-        "teamAndQuestions": null,
-        "questionPacks": null,
+        "questions": "Frågor",
+        "teamAndQuestions": "Team & Frågor",
+        "questionPacks": "Frågepaket",
         "rock": "Sten",
         "paper": "Papper",
         "scissors": "Sax",
@@ -2103,7 +2103,7 @@
         "specificCards": "Specifika kort",
         "matchId": "Match ID",
         "chat": "Chatta",
-        "sendMessage": null,
+        "sendMessage": "Skicka ett meddelande",
         "host": "Värd",
         "player": "Spelare",
         "players": "Spelare",
@@ -2155,7 +2155,7 @@
         "highestScore": "Högsta Poäng",
         "totalScore": "Totalt Poäng",
         "finalScore": "Slutpoäng",
-        "flawlessGames": null,
+        "flawlessGames": "Perfekta spel",
         "hits": "Träffar",
         "hitRate": "Träfffrekvens",
         "rank": "Rankning",
@@ -2165,7 +2165,7 @@
         "assassinations": "Mord",
         "survivals": "Överlevnader",
         "games": "Spel",
-        "correctRatio": null,
+        "correctRatio": "Rätt förhållande",
         "winRatio": "Vinstförhållande",
         "killDeathRatio": "K/D Förhållande",
         "lives": "Liv",
@@ -2221,7 +2221,7 @@
         "madeBy": "Gjord av %{name}",
         "selectedOfLimit": "Vald %{current} av %{total} gräns",
         "helpLocalize": "Hjälp till att förbättra lokaliseringen",
-        "goAdFree": null,
+        "goAdFree": "Gå utan reklam",
         "discord": "Gå med i vår Discord",
         "volume": "Volym",
         "volumeInterface": "Gränssnittsvolym",
@@ -2229,7 +2229,7 @@
         "volumeMusic": "Musikvolym",
         "selectYourLanguage": "Välj Ditt Språk",
         "selectYourColor": "Välj Din Färg",
-        "selectYourTeam": null,
+        "selectYourTeam": "Välj ditt lag",
         "latestChanges": "Senaste Ändringar",
         "noChangesDetected": "Inga Ändringar Upptäckta",
         "newChanges": "Nya Ändringar",
@@ -2387,13 +2387,13 @@
         "roundLost": "Du förlorade!",
         "youLostThisRound": "Du förlorade den här rundan!",
         "youAreOutOfLives": "Du har slut på liv",
-        "playerIsEliminated": null,
-        "youAreEliminated": null,
+        "playerIsEliminated": "Spelaren har åkt ut",
+        "youAreEliminated": "Du är ute",
         "waitForRoundEnd": "Vänta lite tills rundan är klar.",
         "waitForWinner": "Häng kvar och vänta på att en vinnare dyker upp!",
         "serverRestart": "Servern startas om nu. Kolla tillbaka om några minuter.",
         "clearOldListings": "Rensa alla 'Otillgängliga' matcher.",
-        "flawlessGame": null,
+        "flawlessGame": "Perfekt spel! Inga misstag gjordes.",
         "accountLinkSuggestion": "Du är nu %{level}! Fundera på att skapa ett konto för att skydda dina framsteg.",
         "accountLinked": "Det här kontot är kopplat till följande e-postadress: %{email}.",
         "incompleteTranslationNotice": "Språket du har valt är ungefär {percentage}% komplett. Alla saknade översättningar kommer att vara på engelska.",
@@ -2420,7 +2420,7 @@
         "inactiveOpponents": "Alla motståndare var inaktiva",
         "waitForOpponent": "Väntar på din motståndare...",
         "waitForOpponents": "Väntar på dina motståndare....",
-        "nameLeftTheGame": null,
+        "nameLeftTheGame": "%{name} lämnade spelet",
         "selfNoPoints": "Du fick inga poäng.",
         "nameNoPoints": "%{name} fick inga poäng.",
         "gameMenu": "Känner du för att spela något annat?",
@@ -2441,8 +2441,8 @@
         "seasonalItem": "Ett föremål i den här platsen är bara tillgängligt några dagar om året.",
         "cardInteractHint": "Klicka på ett kort för att göra ditt val.",
         "gameInvite": "Inbjudan till spelet",
-        "keyboardShortcutCombination": null,
-        "goAdFree": null,
+        "keyboardShortcutCombination": "För att använda kortkommandon som {kombination} håll ner {firstKey} och tryck sen på {secondKey}",
+        "goAdFree": "Reklam är permanent avstängd för ditt konto om du stöttar utvecklingen genom att köpa mynt, oavsett belopp.",
         "awaitingPurchaseConfirmation": {
             "title": "Väntar på köpbekräftelse",
             "description": "Det här tar vanligtvis bara några sekunder. Beroende på din betalningsmetod kan det ta längre tid. Du kan lugnt stänga den här skärmen."
@@ -2830,7 +2830,7 @@
             "developedBy": "Utvecklat av %{name}",
             "iconsSource": "Ikoner tack vare %{name} (Licensierade)",
             "soundsSource": "Ljud tillhandahålls av %{name} (Licensierade)",
-            "emojiSource": null,
+            "emojiSource": "Emojis fixade av %{name} (CC-BY 4.0)",
             "rottenApplesSource": "Ruttna Äpplen baserat på %{name} (BY-NC-SA 2.0)",
             "diceSource": "Tärningsmodell av %{name} (CC-BY-4.0)",
             "localization": "Lokalisering av frivilliga bidragsgivare"

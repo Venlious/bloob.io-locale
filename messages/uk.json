@@ -3,7 +3,7 @@
         "language": "informal Ukrainian",
         "rtl": false,
         "total": 1768,
-        "missing": 87
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -82,7 +82,7 @@
         "start": {
             "fieldRows": "Обране поле не може вмістити більше ніж %{rows} рядків",
             "fieldCannotFitUsers": "Обране поле не може вмістити більше ніж %{users} гравців",
-            "questionThreshold": null,
+            "questionThreshold": "Гра вимагає щонайменше %{count} запитань.",
             "whiteCardThreshold": "Для гри потрібно принаймні %{count} відповідних карток (білих)",
             "blackCardThreshold": "Для гри потрібно принаймні %{count} дієвих карток (чорних)",
             "insufficientPlayers": "Щоб почати матч, потрібно принаймні %{min} гравців."
@@ -246,40 +246,40 @@
                     }
                 },
                 "scoringSystem": {
-                    "title": null,
+                    "title": "Система балів",
                     "help": {
-                        "default": null,
-                        "SPEED": null,
-                        "ORDER": null,
-                        "FIXED": null,
-                        "PROGRESSIVE": null,
-                        "STREAK": null
+                        "default": "Визначте, як нараховуються бали за правильні відповіді.",
+                        "SPEED": "Бали залежать від того, як швидко ви відповіли на питання.",
+                        "ORDER": "Бали нараховуються тому, хто був найшвидшим між гравцями.",
+                        "FIXED": "За кожне питання дається однакова кількість балів.",
+                        "PROGRESSIVE": "Бали, які ви заробляєте, зростають після кожного питання.",
+                        "STREAK": "Заробляй додаткові бали за підряд правильні відповіді; скидається після неправильної відповіді."
                     },
                     "data": {
-                        "SPEED": null,
-                        "ORDER": null,
-                        "FIXED": null,
-                        "PROGRESSIVE": null,
-                        "STREAK": null
+                        "SPEED": "Швидкість",
+                        "ORDER": "Замовлення",
+                        "FIXED": "Фіксований",
+                        "PROGRESSIVE": "Прогресивний",
+                        "STREAK": "Серія"
                     }
                 },
                 "mode": {
-                    "title": null,
+                    "title": "Режим",
                     "help": {
-                        "default": null,
-                        "SOLO": null,
-                        "CO_OP": null,
-                        "TEAM": null
+                        "default": "Вибери, як гравці будуть змагатися: поодинці, в команді чи разом.",
+                        "SOLO": "Кожен гравець змагається сам.",
+                        "CO_OP": "Усі гравці працюють разом в команді.",
+                        "TEAM": "Гравців ділять на команди, і вони можуть вибрати свою групу для співпраці."
                     },
                     "data": {
-                        "SOLO": null,
-                        "CO_OP": null,
-                        "TEAM": null
+                        "SOLO": "Наодинці",
+                        "CO_OP": "Вдвоєм",
+                        "TEAM": "Команди"
                     }
                 },
                 "deckSize": {
                     "title": "Розмір колоди",
-                    "help": null,
+                    "help": "Вибери, який розмір колоди тобі підходить для гри.",
                     "data": {
                         "half": "Півколоди",
                         "full": "Повна колода",
@@ -1105,9 +1105,9 @@
                     ]
                 },
                 "shortcuts": {
-                    "title": null,
+                    "title": "Гарячі клавіші",
                     "description": [
-                        null
+                        "Хочеш пересунути багато однакових кубиків за раз? Використовуй середню кнопку миші або тримай Shift, поки клікаєш на кубик, і всі кубики з такою ж стороною пересунуться одразу!"
                     ]
                 }
             }
@@ -1619,51 +1619,51 @@
             "help": {}
         },
         "TRIVIA": {
-            "name": null,
+            "name": "Тривіалка",
             "title": null,
             "description": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "Згода",
+                    "help": "В командному режимі, чи має відповідь команди базуватися на більшості голосів (Консенсус)? Якщо ні, то будь-який учасник може змінити відповідь для всіх."
                 },
                 "lockAnswer": {
-                    "title": null,
-                    "help": null
+                    "title": "Заблокувати відповідь",
+                    "help": "Коли це ввімкнено, гравці не можуть змінити свою відповідь, якщо вже вибрали одну."
                 },
                 "eliminationChallenge": {
-                    "title": null,
-                    "help": null
+                    "title": "Виклик на виживання",
+                    "help": "Коли це ввімкнено, гравець або команда відразу вибуває, якщо відповість неправильно на питання."
                 }
             },
             "presets": {
                 "versus": {
-                    "title": null,
+                    "title": "Проти",
                     "description": [
-                        null,
-                        null
+                        "Соло",
+                        "Більше балів за наступні питання"
                     ]
                 },
                 "hardcoreVersus": {
-                    "title": null,
+                    "title": "Хардкор Проти",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Без помилок",
+                        "Заблокована відповідь",
+                        "Бали за швидкість"
                     ]
                 },
                 "coop": {
-                    "title": null,
+                    "title": "Кооператив",
                     "description": [
-                        null,
-                        null
+                        "Працюйте разом",
+                        "Фіксовані точки"
                     ]
                 },
                 "teams": {
-                    "title": null,
+                    "title": "Команди",
                     "description": [
-                        null,
-                        null
+                        "Працюйте в командах",
+                        "Бали за порядок"
                     ]
                 }
             },
@@ -1697,8 +1697,8 @@
         "rematch": "Реванш!",
         "fun": "Було весело!",
         "bye": "Бувай!",
-        "shortYes": null,
-        "shortNo": null
+        "shortYes": "Так.",
+        "shortNo": "Ні."
     },
     "header": {
         "message": {
@@ -1735,8 +1735,8 @@
             "roundCount": "Раунд %{current} з %{total}",
             "roundCurrent": "Раунд %{current}",
             "startingNewRound": "Починаємо новий раунд...",
-            "questionCount": null,
-            "questionCurrent": null,
+            "questionCount": "Питання %{current} з %{total}",
+            "questionCurrent": "Питання %{current}",
             "war": "Війна!",
             "outcome": "Результат",
             "input": "Чекаємо твоїх дій",
@@ -1978,9 +1978,9 @@
         "restartNotice": "Сервер перезавантажиться за {count} хвилин. Закінчуй свою гру. | Сервер перезавантажиться за {count} хвилину. Закінчуй свою гру. | Сервер перезавантажиться за {count} хвилин. Закінчуй свою гру."
     },
     "misc": {
-        "questions": null,
-        "teamAndQuestions": null,
-        "questionPacks": null,
+        "questions": "Питання",
+        "teamAndQuestions": "Команда та Питання",
+        "questionPacks": "Пакети Питань",
         "rock": "Камінь",
         "paper": "Папір",
         "scissors": "Ножиці",
@@ -2103,7 +2103,7 @@
         "specificCards": "Конкретні картки",
         "matchId": "ID матчу",
         "chat": "Чат",
-        "sendMessage": null,
+        "sendMessage": "Надіслати повідомлення",
         "host": "Хост",
         "player": "Гравець",
         "players": "Гравці",
@@ -2155,7 +2155,7 @@
         "highestScore": "Найвищий Рахунок",
         "totalScore": "Загальний рахунок",
         "finalScore": "Остаточний рахунок",
-        "flawlessGames": null,
+        "flawlessGames": "Бездоганні Ігри",
         "hits": "Удари",
         "hitRate": "Частота Ударів",
         "rank": "Ранг",
@@ -2165,7 +2165,7 @@
         "assassinations": "Вбивства",
         "survivals": "Виживання",
         "games": "Ігри",
-        "correctRatio": null,
+        "correctRatio": "Правильне співвідношення",
         "winRatio": "Відсоток перемог",
         "killDeathRatio": "Співвідношення В/С",
         "lives": "Життя",
@@ -2221,7 +2221,7 @@
         "madeBy": "Зроблено %{name}",
         "selectedOfLimit": "Обрано %{current} з %{total} ліміту",
         "helpLocalize": "Допоможіть покращити локалізацію",
-        "goAdFree": null,
+        "goAdFree": "Перейти без реклами",
         "discord": "Приєднуйтесь до нашого Discord",
         "volume": "Гучність",
         "volumeInterface": "Гучність інтерфейсу",
@@ -2229,7 +2229,7 @@
         "volumeMusic": "Гучність музики",
         "selectYourLanguage": "Виберіть вашу мову",
         "selectYourColor": "Виберіть ваш колір",
-        "selectYourTeam": null,
+        "selectYourTeam": "Обери свою команду",
         "latestChanges": "Останні зміни",
         "noChangesDetected": "Змін не виявлено",
         "newChanges": "Нові Зміни",
@@ -2387,13 +2387,13 @@
         "roundLost": "Ти програв!",
         "youLostThisRound": "Ти програв цей раунд!",
         "youAreOutOfLives": "У тебе закінчилися життя",
-        "playerIsEliminated": null,
-        "youAreEliminated": null,
+        "playerIsEliminated": "Гравець вибув",
+        "youAreEliminated": "Ти вибув",
         "waitForRoundEnd": "Чекай, поки раунд закінчиться.",
         "waitForWinner": "Сиди спокійно і чекай, поки з'явиться переможець!",
         "serverRestart": "Сервер зараз перезавантажується. Заходь через кілька хвилин.",
         "clearOldListings": "Видаліть усі матчі, що позначені як 'Недоступні'.",
-        "flawlessGame": null,
+        "flawlessGame": "Бездоганна гра! Помилок не було.",
         "accountLinkSuggestion": "Ти тепер %{level}! Подумай про створення акаунту, щоб захистити свій прогрес.",
         "accountLinked": "Цей акаунт прив'язаний до наступної електронної адреси: %{email}.",
         "incompleteTranslationNotice": "Мова, яку ти обрав, приблизно на {percentage}% готова. Всі неперекладені частини будуть англійською.",
@@ -2420,7 +2420,7 @@
         "inactiveOpponents": "Усі суперники були неактивні",
         "waitForOpponent": "Чекаємо на твого суперника...",
         "waitForOpponents": "Чекаємо на твоїх суперників....",
-        "nameLeftTheGame": null,
+        "nameLeftTheGame": "%{name} вийшов з гри",
         "selfNoPoints": "Ти не отримав жодного бала.",
         "nameNoPoints": "%{name} не отримав жодного бала.",
         "gameMenu": "Хочеш зіграти в щось інше?",
@@ -2441,8 +2441,8 @@
         "seasonalItem": "Предмет у цьому слоті доступний лише кілька днів на рік.",
         "cardInteractHint": "Натисни на картку, щоб зробити свій вибір.",
         "gameInvite": "Запрошення в гру",
-        "keyboardShortcutCombination": null,
-        "goAdFree": null,
+        "keyboardShortcutCombination": "Щоб користуватися комбінаціями клавіш, тримай {firstKey} і потім натискай {secondKey}",
+        "goAdFree": "Рекламу для твого акаунта назавжди вимкнуть, якщо ти підтримуєш розвиток, купуючи будь-яку кількість монет.",
         "awaitingPurchaseConfirmation": {
             "title": "Очікуємо підтвердження покупки",
             "description": "Зазвичай це займає лише кілька секунд. Залежно від вашого способу оплати, це може зайняти трохи більше часу. Ви спокійно можете закрити цей екран."
@@ -2830,7 +2830,7 @@
             "developedBy": "Розроблено %{name}",
             "iconsSource": "Іконки надані %{name} (Ліцензовано)",
             "soundsSource": "Звуки надані %{name} (Ліцензовано)",
-            "emojiSource": null,
+            "emojiSource": "Емодзі від %{name} (CC-BY 4.0)",
             "rottenApplesSource": "Гнилі яблука на основі %{name} (BY-NC-SA 2.0)",
             "diceSource": "Модель кубиків від %{name} (CC-BY-4.0)",
             "localization": "Локалізація від волонтерів"

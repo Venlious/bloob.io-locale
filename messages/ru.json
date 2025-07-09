@@ -3,7 +3,7 @@
         "language": "informal Russian",
         "rtl": false,
         "total": 1768,
-        "missing": 87
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -82,7 +82,7 @@
         "start": {
             "fieldRows": "Выбранное поле не может поддерживать больше %{rows} строк",
             "fieldCannotFitUsers": "Выбранное поле не может поддерживать больше %{users} игроков",
-            "questionThreshold": null,
+            "questionThreshold": "Игра требует минимум %{count} вопросов.",
             "whiteCardThreshold": "В игре требуется как минимум %{count} ответных карт (белых)",
             "blackCardThreshold": "В игре требуется как минимум %{count} действующих карт (черных)",
             "insufficientPlayers": "Нужно как минимум %{min} игроков, чтобы начать матч."
@@ -246,40 +246,40 @@
                     }
                 },
                 "scoringSystem": {
-                    "title": null,
+                    "title": "Система очков",
                     "help": {
-                        "default": null,
-                        "SPEED": null,
-                        "ORDER": null,
-                        "FIXED": null,
-                        "PROGRESSIVE": null,
-                        "STREAK": null
+                        "default": "Определи, как начисляются очки за правильные ответы.",
+                        "SPEED": "Очки зависят от того, как быстро ты ответил на вопрос.",
+                        "ORDER": "Очки зависят от того, кто из игроков ответил быстрее.",
+                        "FIXED": "За каждый вопрос дают одинаковое количество очков.",
+                        "PROGRESSIVE": "Очки увеличиваются после каждого вопроса.",
+                        "STREAK": "Зарабатывай дополнительные очки за подряд правильные ответы; сбрасывается после неправильного ответа."
                     },
                     "data": {
-                        "SPEED": null,
-                        "ORDER": null,
-                        "FIXED": null,
-                        "PROGRESSIVE": null,
-                        "STREAK": null
+                        "SPEED": "Скорость",
+                        "ORDER": "Заказ",
+                        "FIXED": "Фиксированный",
+                        "PROGRESSIVE": "Прогрессивный",
+                        "STREAK": "Серия"
                     }
                 },
                 "mode": {
-                    "title": null,
+                    "title": "Режим",
                     "help": {
-                        "default": null,
-                        "SOLO": null,
-                        "CO_OP": null,
-                        "TEAM": null
+                        "default": "Выбирай, как игроки будут соревноваться: по отдельности, в команде или вместе.",
+                        "SOLO": "Каждый игрок играет один.",
+                        "CO_OP": "Все игроки работают вместе в команде.",
+                        "TEAM": "Игроки делятся на команды, и они могут выбрать свою группу для совместной работы."
                     },
                     "data": {
-                        "SOLO": null,
-                        "CO_OP": null,
-                        "TEAM": null
+                        "SOLO": "В одиночку",
+                        "CO_OP": "В кооперативе",
+                        "TEAM": "Команды"
                     }
                 },
                 "deckSize": {
                     "title": "Размер колоды",
-                    "help": null,
+                    "help": "Выбери, какой размер колоды тебе нравится для игры.",
                     "data": {
                         "half": "Половина колоды",
                         "full": "Полная колода",
@@ -1105,9 +1105,9 @@
                     ]
                 },
                 "shortcuts": {
-                    "title": null,
+                    "title": "Горячие клавиши",
                     "description": [
-                        null
+                        "Хочешь сдвинуть кучу одинаковых кубиков сразу? Используй среднюю кнопку мыши или зажми Shift и кликни по кубику — все кубики с такой же гранью сдвинутся сразу!"
                     ]
                 }
             }
@@ -1619,51 +1619,51 @@
             "help": {}
         },
         "TRIVIA": {
-            "name": null,
+            "name": "Тривиа",
             "title": null,
             "description": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "Согласие",
+                    "help": "В командном режиме, ответ команды должен основываться на большинстве голосов (Консенсус)? Если нет, то любой участник может изменить ответ для всех."
                 },
                 "lockAnswer": {
-                    "title": null,
-                    "help": null
+                    "title": "Запереть ответ",
+                    "help": "Когда включено, игроки не могут менять свой ответ, как только выбрали его."
                 },
                 "eliminationChallenge": {
-                    "title": null,
-                    "help": null
+                    "title": "Элиминационный челлендж",
+                    "help": "Когда включено, игрока или команду сразу выкидывают, если они ответили на вопрос неправильно."
                 }
             },
             "presets": {
                 "versus": {
-                    "title": null,
+                    "title": "Против",
                     "description": [
-                        null,
-                        null
+                        "Соло",
+                        "Больше очков за последующие вопросы"
                     ]
                 },
                 "hardcoreVersus": {
-                    "title": null,
+                    "title": "Хардкор против",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Без ошибок",
+                        "Заблокированный ответ",
+                        "Очки за скорость"
                     ]
                 },
                 "coop": {
-                    "title": null,
+                    "title": "Кооператив",
                     "description": [
-                        null,
-                        null
+                        "Работайте вместе",
+                        "Фиксированные точки"
                     ]
                 },
                 "teams": {
-                    "title": null,
+                    "title": "Команды",
                     "description": [
-                        null,
-                        null
+                        "Работайте в командах",
+                        "Очки по порядку"
                     ]
                 }
             },
@@ -1697,8 +1697,8 @@
         "rematch": "Реванш!",
         "fun": "Было весело!",
         "bye": "Пока!",
-        "shortYes": null,
-        "shortNo": null
+        "shortYes": "Да.",
+        "shortNo": "Нет."
     },
     "header": {
         "message": {
@@ -1735,8 +1735,8 @@
             "roundCount": "Раунд %{current} из %{total}",
             "roundCurrent": "Раунд %{current}",
             "startingNewRound": "Начинаем новый раунд...",
-            "questionCount": null,
-            "questionCurrent": null,
+            "questionCount": "Вопрос %{current} из %{total}",
+            "questionCurrent": "Вопрос %{current}",
             "war": "Война!",
             "outcome": "Итог",
             "input": "Ждем твоего хода",
@@ -1978,9 +1978,9 @@
         "restartNotice": "Сервер перезапустится через {count} минут. Пожалуйста, закончи свою игру. | Сервер перезапустится через {count} минуту. Пожалуйста, закончи свою игру. | Сервер перезапустится через {count} минут. Пожалуйста, закончи свою игру."
     },
     "misc": {
-        "questions": null,
-        "teamAndQuestions": null,
-        "questionPacks": null,
+        "questions": "Вопросы",
+        "teamAndQuestions": "Команда и вопросы",
+        "questionPacks": "Пакеты вопросов",
         "rock": "Камень",
         "paper": "Бумага",
         "scissors": "Ножницы",
@@ -2103,7 +2103,7 @@
         "specificCards": "Конкретные Карты",
         "matchId": "ID матча",
         "chat": "Чат",
-        "sendMessage": null,
+        "sendMessage": "Отправить сообщение",
         "host": "Хост",
         "player": "Игрок",
         "players": "Игроки",
@@ -2155,7 +2155,7 @@
         "highestScore": "Самый высокий счет",
         "totalScore": "Общий счёт",
         "finalScore": "Финальный счёт",
-        "flawlessGames": null,
+        "flawlessGames": "Идеальные игры",
         "hits": "Попадания",
         "hitRate": "Процент попаданий",
         "rank": "Ранг",
@@ -2165,7 +2165,7 @@
         "assassinations": "Убийства",
         "survivals": "Выживание",
         "games": "Игры",
-        "correctRatio": null,
+        "correctRatio": "Правильное соотношение",
         "winRatio": "Процент побед",
         "killDeathRatio": "Соотношение У/С",
         "lives": "Жизни",
@@ -2221,7 +2221,7 @@
         "madeBy": "Сделано %{name}",
         "selectedOfLimit": "Выбрано %{current} из %{total} возможных",
         "helpLocalize": "Помоги улучшить локализацию",
-        "goAdFree": null,
+        "goAdFree": "Без рекламы",
         "discord": "Присоединяйся к нашему Discord",
         "volume": "Громкость",
         "volumeInterface": "Громкость интерфейса",
@@ -2229,7 +2229,7 @@
         "volumeMusic": "Громкость музыки",
         "selectYourLanguage": "Выбери свой Язык",
         "selectYourColor": "Выбери свой Цвет",
-        "selectYourTeam": null,
+        "selectYourTeam": "Выбери свою команду",
         "latestChanges": "Последние Изменения",
         "noChangesDetected": "Изменений Не Обнаружено",
         "newChanges": "Новые Изменения",
@@ -2387,13 +2387,13 @@
         "roundLost": "Ты проиграл!",
         "youLostThisRound": "Ты проиграл этот раунд.",
         "youAreOutOfLives": "У тебя закончились жизни",
-        "playerIsEliminated": null,
-        "youAreEliminated": null,
+        "playerIsEliminated": "Игрок вылетел",
+        "youAreEliminated": "Ты вылетел",
         "waitForRoundEnd": "Пожалуйста, подожди, пока раунд не закончится.",
         "waitForWinner": "Сиди спокойно и жди, пока не появится победитель!",
         "serverRestart": "Сервер сейчас перезагружается. Загляни через пару минут.",
         "clearOldListings": "Удали все матчи, помеченные как 'Недоступные'.",
-        "flawlessGame": null,
+        "flawlessGame": "Игра без косяков! Никаких ошибок.",
         "accountLinkSuggestion": "Ты теперь %{level} уровня! Подумай о создании аккаунта, чтобы сохранить свой прогресс.",
         "accountLinked": "Этот аккаунт привязан к следующему адресу электронной почты: %{email}.",
         "incompleteTranslationNotice": "Выбранный тобой язык переведен примерно на {percentage}%. Все недостающие переводы будут на английском.",
@@ -2420,7 +2420,7 @@
         "inactiveOpponents": "Все соперники были неактивны",
         "waitForOpponent": "Ждем соперника...",
         "waitForOpponents": "Ждем соперников....",
-        "nameLeftTheGame": null,
+        "nameLeftTheGame": "%{name} вышел из игры",
         "selfNoPoints": "Ты не получил очков.",
         "nameNoPoints": "%{name} не получил очков.",
         "gameMenu": "Хочешь поиграть во что-нибудь другое?",
@@ -2441,8 +2441,8 @@
         "seasonalItem": "Предмет в этом слоте доступен только несколько дней в году.",
         "cardInteractHint": "Нажми на карту, чтобы сделать выбор.",
         "gameInvite": "Приглашение в игру",
-        "keyboardShortcutCombination": null,
-        "goAdFree": null,
+        "keyboardShortcutCombination": "Чтобы использовать горячие клавиши, такие как {combination}, зажми {firstKey} и потом нажми {secondKey}",
+        "goAdFree": "Реклама навсегда отключена для твоего аккаунта, если ты поддерживаешь развитие, покупая любые монетки.",
         "awaitingPurchaseConfirmation": {
             "title": "Ждем подтверждения покупки",
             "description": "Обычно это занимает всего несколько секунд. В зависимости от вашего способа оплаты, это может занять больше времени. Можете спокойно закрыть этот экран."
@@ -2830,7 +2830,7 @@
             "developedBy": "Разработано %{name}",
             "iconsSource": "Иконки предоставлены %{name} (Лицензировано)",
             "soundsSource": "Звуки предоставлены %{name} (Лицензировано)",
-            "emojiSource": null,
+            "emojiSource": "Эмодзи от %{name} (CC-BY 4.0)",
             "rottenApplesSource": "Гнилые Яблоки на основе %{name} (BY-NC-SA 2.0)",
             "diceSource": "Модель кубика от %{name} (CC-BY-4.0)",
             "localization": "Локализация от добровольных участников"
