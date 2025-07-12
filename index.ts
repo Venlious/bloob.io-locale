@@ -10,7 +10,6 @@ const supportedLocales = [
 	`id`,
 	`tr`,
 	`ar`,
-	`hi`,
 	`ru`,
 	`uk`,
 	`ko`,

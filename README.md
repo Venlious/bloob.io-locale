@@ -43,8 +43,10 @@ You're now good to go. There's no build process. Use `bun lint:fix` to automatic
 # Contributors
 
 -   Tristan Volk ([@Venlious](https://github.com/Venlious))
-    -   English (UK)
+    -   English (EN)
     -   Dutch (NL)
 -   Jay ([@untypedjay](https://github.com/untypedjay))
+    -   German (DE)
+-   Eric ([@DerErizzle](https://github.com/DerErizzle))
     -   German (DE)
 -   ... you? :)

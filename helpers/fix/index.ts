@@ -11,7 +11,6 @@ import * as osPath from 'path'
 // Data
 import { supportedLocales } from '../../index'
 const LOCALE_FOLDER = `../../messages`
-const EN_MESSAGES = require(`../../messages/en.json`)
 
 /**
  * Ensures the locale file is consistent with the source.
@@ -43,59 +42,6 @@ const checkAndFixLocale = async (source: string, target: string) => {
 	}
 }
 
-const fixVerifyObject = (obj: any): void => {
-	if (Array.isArray(obj)) {
-		obj.forEach((item, index) => {
-			if (typeof item !== `boolean`) {
-				obj[index] = false
-			}
-		})
-	} else if (typeof obj === null) {
-		obj = false
-	} else if (typeof obj === `object`) {
-		for (const key in obj) {
-			if (obj.hasOwnProperty(key)) {
-				const value = obj[key]
-				if (value !== null && typeof value === `object`) {
-					fixVerifyObject(value)
-				} else if (typeof value !== `boolean`) {
-					obj[key] = false
-				}
-			}
-		}
-	} else if (typeof obj !== `boolean`) {
-		obj = false
-	}
-}
-
-/**
- * Ensures the locale file is consistent with the source.
- *
- * @param target Target file to modify to match
- */
-const checkAndFixVerified = async (target: string) => {
-	const { LOCALE_TARGET } = await loadMessages(target, `verified/${target}`)
-
-	try {
-		// Add missing entries to the object
-		let data = addMissingEntriesToObject(EN_MESSAGES, LOCALE_TARGET)
-
-		// Ensure order is consistent with source
-		data = ensureSameOrder(EN_MESSAGES, data)
-
-		// Delete meta data
-		delete data._meta
-		fixVerifyObject(data)
-
-		// Write file
-		writeFile(osPath.join(__dirname, `${LOCALE_FOLDER}/verified/${target}.json`), data)
-		console.info(`Updated "verified/${target}.json"...`)
-	} catch (error) {
-		console.error(error)
-		throw `Failed to validate or write output file for "verified/${target}.json".`
-	}
-}
-
 const process = async () => {
 	/**
 	 * Loops through all supported locales and fixes the following:
@@ -108,13 +54,6 @@ const process = async () => {
 		await checkAndFixLocale(`en`, locale)
 	})
 	await checkAndFixLocale(`en`, `_empty`)
-
-	/**
-	 * Checks and validates the verified files for all languages.
-	 */
-	supportedLocales.forEach(async locale => {
-		await checkAndFixVerified(locale)
-	})
 }
 
 process()

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Mexican Spanish",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1768,
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Lo siento, este usuario ya llegó a su límite de amigos de %{amount}.",
             "pendingFriendLimitSelf": "No puedes tener más de %{amount} solicitudes de amistad pendientes.",
             "pendingFriendLimitOther": "Lo siento, este usuario ya tiene demasiadas solicitudes de amistad pendientes.",
+            "userOffline": "Lo siento, este usuario está desconectado.",
             "notFriends": "No son amigos y no tienes ninguna solicitud de amistad pendiente.",
             "alreadyFriends": "Ya son amigos con este usuario.",
             "pendingFriends": "Ya hay una solicitud de amistad pendiente con este usuario.",
@@ -81,6 +82,7 @@
         "start": {
             "fieldRows": "El campo seleccionado no admite más de %{rows} filas",
             "fieldCannotFitUsers": "El campo seleccionado no puede admitir más de %{users} jugadores",
+            "questionThreshold": "El juego necesita al menos %{count} preguntas.",
             "whiteCardThreshold": "El juego requiere al menos %{count} cartas de respuesta (blancas)",
             "blackCardThreshold": "El juego requiere al menos %{count} cartas de respuesta (negras)",
             "insufficientPlayers": "Necesita al menos %{min} jugadores para empezar el partido."
@@ -100,6 +102,7 @@
             "incorrectValue": "El valor que se dio no coincide con el esperado.",
             "invalidMove": "La jugada dada no es válida.",
             "invalidVote": "El voto que ha intentado realizar no es válido.",
+            "noLives": "No te quedan vidas.",
             "alreadyPlaced": "Ya has colocado algo.",
             "alreadyVoted": "Ya ha votado.",
             "invalidPlacement": "La colocación de tu pieza no es válida.",
@@ -242,9 +245,41 @@
                         "off": "Sin límite"
                     }
                 },
+                "scoringSystem": {
+                    "title": "Sistema de Puntuación",
+                    "help": {
+                        "default": "Determina cómo se van a dar los puntos por contestar una pregunta bien.",
+                        "SPEED": "Los puntos dependen de qué tan rápido contestes la pregunta.",
+                        "ORDER": "Los puntos se dan según quién fue el más rápido entre los jugadores.",
+                        "FIXED": "Cada pregunta da la misma cantidad de puntos.",
+                        "PROGRESSIVE": "Los puntos que ganas aumentan después de cada pregunta.",
+                        "STREAK": "Gana puntos extra por respuestas correctas seguidas; se reinicia después de una respuesta incorrecta."
+                    },
+                    "data": {
+                        "SPEED": "Velocidad",
+                        "ORDER": "Orden",
+                        "FIXED": "Fijo",
+                        "PROGRESSIVE": "Progresivo",
+                        "STREAK": "Racha"
+                    }
+                },
+                "mode": {
+                    "title": "Modo",
+                    "help": {
+                        "default": "Elige cómo van a competir los jugadores: individualmente, en equipo, o colaborando.",
+                        "SOLO": "Cada jugador compite solo.",
+                        "CO_OP": "Todos los jugadores trabajan juntos como un equipo.",
+                        "TEAM": "Los jugadores se dividen en equipos, y pueden elegir su propio grupo para colaborar."
+                    },
+                    "data": {
+                        "SOLO": "Solo",
+                        "CO_OP": "En equipo",
+                        "TEAM": "Equipos"
+                    }
+                },
                 "deckSize": {
                     "title": "Tamaño del Mazo",
-                    "help": "Juega sin límites de tiempo. Desactiva todos los temporizadores de turno y disfruta de una experiencia de juego relajada donde puedes jugar a tu propio ritmo. No se recomienda contra oponentes aleatorios.",
+                    "help": "Elige el tamaño de mazo que prefieras para el juego.",
                     "data": {
                         "half": "Medio Mazo",
                         "full": "Mazo Completo",
@@ -835,6 +870,10 @@
                     "title": "Línea de Apuntado",
                     "help": "La línea de tiro muestra hacia dónde va a ir la bola blanca después de que la golpeen."
                 },
+                "speed": {
+                    "title": "Velocidad",
+                    "help": "Qué tan rápido se reproduce la animación de la alberca."
+                },
                 "illegalBallPocket": {
                     "title": "Bola Ilegal de Bolsillo"
                 },
@@ -1064,6 +1103,12 @@
                         "También puedes hacer clic en una entrada naranja vacía y obtener 0 puntos. Esto puede ser útil si tu única otra opción te daría muy pocos puntos para esa categoría.",
                         "Esto puede ser útil en caso de que quieras ir por el bono en la sección superior, por ejemplo."
                     ]
+                },
+                "shortcuts": {
+                    "title": "Atajos",
+                    "description": [
+                        "¿Quieres mover un chorro de dados iguales de un jalón? Usa el botón del medio del mouse o mantén presionada la tecla Shift mientras haces clic en un dado y todos los dados con la misma cara se moverán al mismo tiempo."
+                    ]
                 }
             }
         },
@@ -1100,7 +1145,8 @@
                         "pier": "Muelle",
                         "littleIsland": "Islita",
                         "keys": "Los Cayos",
-                        "lagoon": "Laguna"
+                        "lagoon": "Laguna",
+                        "ocean": "Océano"
                     }
                 },
                 "levelOrientation": {
@@ -1121,6 +1167,10 @@
                 "shipReveal": {
                     "title": "Revelación de Nave",
                     "help": "Cuando está activado, verás el barco cuando lo hayas hundido. Cuando está desactivado, solo se muestra un contador con los barcos restantes."
+                },
+                "hitAfterHit": {
+                    "title": "Golpe Tras Golpe",
+                    "help": "Cuando está activado, podrás disparar de nuevo después de darle a un barco. Cuando está desactivado, solo tienes un tiro por turno."
                 }
             },
             "presets": {},
@@ -1420,63 +1470,235 @@
             }
         },
         "AI_ASSASSIN": {
-            "name": "Asesino de Inteligencia Artificial",
-            "title": "Engaña, Elimina, Sobrevive",
-            "description": "AI Assassin es un emocionante juego multijugador donde eliminas al objetivo o engañas a los asesinos. Usa indicaciones estratégicas para lograr tu meta y triunfar.",
+            "name": "Asesino AI",
+            "title": "Asesino de IA: Diviértete en este juego de prompts multijugador",
+            "description": "Juega gratis Asesino de IA, un juego de prompts de inteligencia artificial sin cuenta. Disfruta partidas multijugador en línea con amigos o bots.",
             "options": {},
             "presets": {},
+            "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Piedra Papel o Tijera",
+            "title": "Piedra Papel o Tijera | Multijugador Gratis en Línea con Amigos",
+            "description": "Juega Piedra Papel o Tijera en línea gratis sin registro; disfruta del clásico RPS multijugador con amigos, desconocidos o bots. ¡Diviértete ya!",
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "Piedra le gana a tijeras",
+                        "paper": "Papel le gana a piedra",
+                        "scissors": "Tijeras le gana a papel"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Último en pie (<b>0</b> vidas) | Último en pie (<b>1</b> vida) | Último en pie (<b>{count}</b> vidas)",
+                        "FIRST": "Primero en conseguir <b>0</b> puntos | Primero en conseguir <b>1</b> punto | Primero en conseguir <b>{count}</b> puntos",
+                        "HIGHEST_AFTER": "Más puntos después de <b>0</b> rondas | Más puntos después de <b>1</b> ronda | Más puntos después de <b>{count}</b> rondas"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Carrera",
+                    "description": [
+                        "El primero en llegar a 5 puntos"
+                    ]
+                },
+                "survival": {
+                    "title": "Supervivencia",
+                    "description": [
+                        "5 vidas",
+                        "Pierde una vida por cada ronda que pierdas",
+                        "El último jugador en pie gana"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Lo mejor de la serie",
+                    "description": [
+                        "El jugador con más puntos después de 5 rondas gana."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Reglas",
+                    "description": [
+                        "Piedra Papel o Tijera es bien fácil: elige piedra, papel o tijera. La piedra le gana a la tijera, el papel le gana a la piedra, y la tijera le gana al papel.",
+                        "En cada ronda, adivina qué va a elegir tu oponente y responde como se debe!"
+                    ]
+                },
+                "group": {
+                    "title": "Grupo",
+                    "description": [
+                        "¡Juega con hasta 4 jugadores! Solo uno puede ganar en cada ronda. Si te quedas fuera temprano, los demás siguen hasta que se determine un ganador.",
+                        "En el modo supervivencia, cada jugador tiene un número limitado de vidas. ¡Sé el último jugador en pie para ganar!"
+                    ]
+                },
+                "bots": {
+                    "title": "Bots",
+                    "description": [
+                        "¡Juega contra bots! Siguen una estrategia al azar, así que si logras entenderla, ¡los puedes vencer siempre!"
+                    ]
+                }
+            }
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Duelo de Números",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "El juego se va a acabar en cuanto un jugador llegue a esta cantidad de puntos."
+                },
+                "mode": {
+                    "title": "Modo",
+                    "help": "Un modo de juego diferente va a cambiar cómo se dan los puntos y cómo se juega el juego.",
+                    "data": {
+                        "SINGLE_HIDER": "Ocultador Único",
+                        "HIDE_AND_SEEK": "Escondidas",
+                        "LAST_STANDING": "Último en Pie"
+                    }
+                },
+                "field": {
+                    "title": "Campo",
+                    "help": "Determina cuántos números se muestran en el campo de juego."
+                },
+                "revealSpeed": {
+                    "title": "Velocidad de Revelación",
+                    "help": "La velocidad con la que se hace la ronda de revelación cuando todos están listos."
+                },
+                "multiplier": {
+                    "title": "Multiplicadores",
+                    "help": "Los multiplicadores pueden aparecer en un solo número o en varios al mismo tiempo. Cuando un escondido elige un número con un multiplicador, multiplica sus puntos. Pero como todos pueden ver los multiplicadores, es arriesgado y aumenta las posibilidades de ser encontrado.",
+                    "data": {
+                        "off": "Apagado",
+                        "uncommon": "Poco común",
+                        "common": "Común",
+                        "veryCommon": "Muy común"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Puntuación Dinámica",
+                    "help": {
+                        "introduction": "Da puntos según la probabilidad de éxito. Por ejemplo, si un buscador encuentra a un escondido al principio del juego, le darán más puntos. Si un escondido logra mantenerse oculto con solo unos pocos espacios restantes, también le darán más puntos.",
+                        "calculation": "Cuando está activado, los puntos se calculan automáticamente según los puntos mínimos y máximos configurados."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Encontrar a un escondido",
+                    "help": "Premio para un buscador que encuentra a un escondido."
+                },
+                "minPointsFind": {
+                    "title": "Min. Encontrar a un Escondido"
+                },
+                "maxPointsFind": {
+                    "title": "Máx. Encontrar a un Ocultador"
+                },
+                "pointsHideRound": {
+                    "title": "Oculto por Ronda",
+                    "help": "Premio para el que se esconde por seguir oculto en cada ronda."
+                },
+                "minPointsHideRound": {
+                    "title": "Min. Oculto por Ronda"
+                },
+                "maxPointsHideRound": {
+                    "title": "Máx. Ocultos por Ronda"
+                },
+                "pointsLastAlive": {
+                    "title": "Último que queda",
+                    "help": "Premiado al último jugador que queda en el juego cuando todos los demás han sido eliminados."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Último Que Queda"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Máx. Último que queda"
+                }
+            },
+            "presets": {},
+            "help": {}
+        },
+        "TRIVIA": {
+            "name": "Trivia",
+            "title": null,
+            "description": null,
+            "options": {
+                "consensus": {
+                    "title": "Consenso",
+                    "help": "En modo equipo, ¿la respuesta del equipo debería basarse en una votación mayoritaria (consenso)? Si no, cualquier miembro del equipo puede cambiar la respuesta para todos."
+                },
+                "lockAnswer": {
+                    "title": "Bloquear respuesta",
+                    "help": "Cuando está activado, los jugadores no pueden cambiar su respuesta una vez que han elegido una."
+                },
+                "eliminationChallenge": {
+                    "title": "Desafío de Eliminación",
+                    "help": "Cuando está activado, un jugador o equipo es eliminado de inmediato después de responder una pregunta incorrectamente."
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": "Versus",
+                    "description": [
+                        "Solo",
+                        "Más puntos para las preguntas de después"
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": "Versus Hardcore",
+                    "description": [
+                        "Sin errores",
+                        "Respuesta bloqueada",
+                        "Puntos por velocidad"
+                    ]
+                },
+                "coop": {
+                    "title": "Co-op",
+                    "description": [
+                        "Trabaja en equipo",
+                        "Puntos fijos"
+                    ]
+                },
+                "teams": {
+                    "title": "Equipos",
+                    "description": [
+                        "Trabaja en equipo",
+                        "Puntos por orden"
+                    ]
+                }
+            },
             "help": {}
         }
     },
     "chat": {
-        "EMOJI": {
-            "love": "❤️",
-            "luck": "🍀",
-            "fire": "🔥",
-            "celebration": "🎉",
-            "thumbsUp": "👍",
-            "mindBlowing": "🤯",
-            "thinking": "🤔",
-            "clap": "👏",
-            "cry": "😭",
-            "cool": "😎"
-        },
-        "UNIVERSAL": {
-            "leftTheGame": "dejó el juego",
-            "affirmative": "Okay.",
-            "thanks": "¡Gracias!",
-            "sorry": "¡Lo siento!",
-            "goodLuck": "¡Buena suerte!",
-            "brb": "¡Ya vuelvo!",
-            "go": "Me tengo que ir.",
-            "glhf": "glhf",
-            "gg": "gg"
-        },
-        "PRE_GAME": {
-            "readyCheck": "¿Todos listos?",
-            "changeSettings": "¡Cambiar la configuración!",
-            "ready": "¡Preparados!",
-            "wait": "¡Espera, por favor!",
-            "go": "¡Vamos!",
-            "greeting": "¡Hola! 👋"
-        },
-        "GAME": {
-            "how": "¿Cómo?",
-            "closeOne": "¡Estuvo cerca!",
-            "niceOne": "¡Bien hecho!",
-            "remindMove": "¡Tu turno!",
-            "wow": "¡Vaya!",
-            "oops": "¡Uy!",
-            "no": "¡Nooo!",
-            "ohNo": "¡Oh, no!"
-        },
-        "POST_GAME": {
-            "closeOne": "¡Cierra la puerta!",
-            "wellPlayed": "¡Bien jugado!",
-            "rematch": "¡Revancha!",
-            "fun": "¡Fue divertido!",
-            "bye": "¡Adiós!"
-        }
+        "affirmative": "Okay.",
+        "thanks": "¡Gracias!",
+        "sorry": "¡Lo siento!",
+        "goodLuck": "¡Buena suerte!",
+        "brb": "¡Ya vuelvo!",
+        "go": "Me tengo que ir.",
+        "glhf": "glhf",
+        "gg": "gg",
+        "readyCheck": "¿Todos listos?",
+        "changeSettings": "¡Cambiar la configuración!",
+        "ready": "¡Preparados!",
+        "wait": "¡Espera, por favor!",
+        "letsGo": "¡Vamos!",
+        "greeting": "¡Hola!",
+        "how": "¿Cómo?",
+        "closeOne": "¡Estuvo cerca!",
+        "niceOne": "¡Bien hecho!",
+        "remindMove": "¡Tu turno!",
+        "wow": "¡Vaya!",
+        "oops": "¡Uy!",
+        "no": "¡Nooo!",
+        "ohNo": "¡Oh, no!",
+        "wellPlayed": "¡Bien jugado!",
+        "rematch": "¡Revancha!",
+        "fun": "¡Fue divertido!",
+        "bye": "¡Adiós!",
+        "shortYes": "Sí.",
+        "shortNo": "No."
     },
     "header": {
         "message": {
@@ -1512,6 +1734,9 @@
             "roundSummary": "Resumen de la ronda",
             "roundCount": "Ronda %{current} de %{total}",
             "roundCurrent": "Ronda %{current}",
+            "startingNewRound": "Iniciando nueva ronda...",
+            "questionCount": "Pregunta %{current} de %{total}",
+            "questionCurrent": "Pregunta %{current}",
             "war": "¡Guerra!",
             "outcome": "Resultado",
             "input": "Esperando tu respuesta",
@@ -1735,6 +1960,7 @@
         "wins": "0 victorias | 1 victoria | {count} victorias",
         "cards": "0 tarjetas | 1 tarjeta | {count} tarjetas",
         "moves": "0 movimientos | 1 movimiento | {count} movimientos",
+        "tiles": "0 azulejos | 1 azulejo | {count} azulejos",
         "playing": "0 jugando | 1 jugando | {count} jugando",
         "players": "0 jugadores | 1 jugador | {count} jugadores",
         "selectedCards": "Ninguna carta seleccionada | 1 carta seleccionada | {count} cartas seleccionadas",
@@ -1752,6 +1978,12 @@
         "restartNotice": "El servidor se reiniciará en {count} minutos. Termina tu juego. | El servidor se reiniciará en {count} minuto. Termina tu juego. | El servidor se reiniciará en {count} minutos. Termina tu juego."
     },
     "misc": {
+        "questions": "Preguntas",
+        "teamAndQuestions": "Equipo y Preguntas",
+        "questionPacks": "Paquetes de Preguntas",
+        "rock": "Piedra",
+        "paper": "Papel",
+        "scissors": "Tijeras",
         "lobby": "Lobby",
         "inGame": "En juego",
         "matchmakingSearch": "Buscando una partida",
@@ -1787,7 +2019,7 @@
         "unknown": "Desconocido",
         "none": "Ninguno",
         "seasonal": "De Temporada",
-        "items": "10. Clasificar",
+        "items": "Artículos",
         "purchaseCoins": "Comprar Monedas",
         "store": "Tienda",
         "buyNow": "Comprar Ahora",
@@ -1834,7 +2066,7 @@
         "submit": "Enviar",
         "settings": "Ajustes",
         "options": "Opciones",
-        "localPlayers": "Jugadores Locales",
+        "localPlayers": "Jugadores Local",
         "preset": "Preselección",
         "custom": "Personalizado",
         "you": "Tú",
@@ -1852,6 +2084,8 @@
         "language": "Idioma",
         "toggle": "Activar",
         "login": "Iniciar sesión",
+        "loginToExistingAccount": "Iniciar sesión en mi cuenta",
+        "createMyAccount": "Crear mi cuenta",
         "logout": "Cerrar sesión",
         "hats": "Sombreros",
         "eyes": "Ojos",
@@ -1869,6 +2103,7 @@
         "specificCards": "Cartas escíficas",
         "matchId": "ID del partido",
         "chat": "Chat",
+        "sendMessage": "Enviar un mensaje",
         "host": "Host",
         "player": "Jugador",
         "players": "Jugadores",
@@ -1900,7 +2135,6 @@
         "view": "Ver",
         "forfeit": "Salir del juego",
         "processFiles": "Procesar archivos",
-        "sendMessage": "Enviar mensaje",
         "checkAgain": "Revisar de nuevo",
         "refreshWindow": "Refrescar ventana",
         "makeHost": "Hacer host",
@@ -1921,6 +2155,7 @@
         "highestScore": "Puntuación Más Alta",
         "totalScore": "Puntuación Total",
         "finalScore": "Puntuación Final",
+        "flawlessGames": "Juegos Perfectos",
         "hits": "Golpes",
         "hitRate": "Tasa de Golpes",
         "rank": "Rango",
@@ -1930,8 +2165,10 @@
         "assassinations": "Asesinatos",
         "survivals": "Supervivencias",
         "games": "Juegos",
+        "correctRatio": "Relación Correcta",
         "winRatio": "Relación de Ganancias",
         "killDeathRatio": "Relación K/D",
+        "lives": "Vidas",
         "points": "Puntos",
         "wins": "Victorias",
         "grids": "Cuadrículas",
@@ -1942,6 +2179,7 @@
         "fouls": "Faltas",
         "and": "y",
         "vs": "vs",
+        "dismiss": "Ignorar",
         "rename": "Renombrar",
         "created": "Creado",
         "lastSeen": "Última vez visto",
@@ -1951,6 +2189,7 @@
         "myDevices": "Mis Dispositivos",
         "myData": "Mis Datos",
         "redeemCode": "Canjear Código",
+        "contact": "Contacto",
         "leaderboard": "Tabla de líderes",
         "elapsedTime": "%{time} transcurrido",
         "startingInTime": "Comenzando en %{time}",
@@ -1964,6 +2203,10 @@
         "coinsBlank": "%{value} monedas",
         "receivedBlank": "Recibido %{value}",
         "lessThanBlank": "Menos de %{value}",
+        "lastSeenBlankAgo": "Visto por última vez hace %{value}",
+        "lastSeenJustNow": "Visto por última vez hace un momento",
+        "blank": "%{value}",
+        "byBlank": "Por %{value}",
         "sendVerification": "Enviar verificación",
         "noThanks": "No, gracias",
         "ready": "Listo",
@@ -1978,12 +2221,15 @@
         "madeBy": "Hecho por %{name}",
         "selectedOfLimit": "Seleccionado %{current} del límite de %{total}",
         "helpLocalize": "Ayudar a mejorar la localización",
+        "goAdFree": "Ir sin anuncios",
         "discord": "Únase a nuestro Discord",
         "volume": "Volumen",
         "volumeInterface": "Volumen de la interfaz",
         "volumeEffects": "Volumen de efectos",
+        "volumeMusic": "Volumen de Música",
         "selectYourLanguage": "Seleccione su idioma",
         "selectYourColor": "Selecciona tu color",
+        "selectYourTeam": "Selecciona tu equipo",
         "latestChanges": "Últimos cambios",
         "noChangesDetected": "No se detectaron cambios",
         "newChanges": "Nuevos cambios",
@@ -2016,7 +2262,7 @@
             "title": "Conjuntos de cartas",
             "contribute": "Contribuye a esta Lista",
             "create": "Crear Conjunto",
-            "browser": "Explorar e importar conjuntos personalizados",
+            "browser": "Ver sets de cartas públicos",
             "import": "Importar Conjunto",
             "importer": "Importador de conjuntos de tarjetas",
             "namedTitle": "Conjunto de tarjetas \"%{title}\"",
@@ -2135,8 +2381,19 @@
         }
     },
     "info": {
+        "roundEndTie": "¡Es un empate!",
+        "roundEndStalemate": "¡Es un estancamiento!",
+        "roundWin": "¡Ganaste!",
+        "roundLost": "¡Perdiste!",
+        "youLostThisRound": "Perdiste esta ronda.",
+        "youAreOutOfLives": "Ya no tienes vidas",
+        "playerIsEliminated": "El jugador ha sido eliminado",
+        "youAreEliminated": "Estás eliminado",
+        "waitForRoundEnd": "Espera a que termine la ronda.",
+        "waitForWinner": "¡Relájate y espera a que salga un ganador!",
         "serverRestart": "El servidor se está reiniciando. Checa de nuevo en unos minutos.",
         "clearOldListings": "Borra todos los partidos 'No disponibles'.",
+        "flawlessGame": "¡Juego perfecto! No se cometieron errores.",
         "accountLinkSuggestion": "¡Ahora eres %{level}! Considera crear una cuenta para proteger tu progreso.",
         "accountLinked": "Esta cuenta está vinculada a la siguiente dirección de correo electrónico: %{email}.",
         "incompleteTranslationNotice": "El idioma que has seleccionado está completado en un {percentage}% aproximadamente. Las traducciones que falten estarán en inglés.",
@@ -2163,6 +2420,7 @@
         "inactiveOpponents": "Todos los oponentes estaban inactivos",
         "waitForOpponent": "Esperando a tu oponente...",
         "waitForOpponents": "Esperando a tus oponentes...",
+        "nameLeftTheGame": "%{name} salió del juego",
         "selfNoPoints": "No recibiste puntos.",
         "nameNoPoints": "%{name} no recibió puntos.",
         "gameMenu": "¿Quieres jugar a otra cosa?",
@@ -2182,6 +2440,9 @@
         "loginToPurchase": "Para hacer una compra primero tienes que iniciar sesión o crear una cuenta.",
         "seasonalItem": "Un artículo en este espacio solo está disponible unos pocos días al año.",
         "cardInteractHint": "Haz clic en una carta para hacer tu selección.",
+        "gameInvite": "Invitación al juego",
+        "keyboardShortcutCombination": "Para usar los atajos de teclado como {combination}, mantén presionado {firstKey} y luego presiona {secondKey}",
+        "goAdFree": "Los anuncios están desactivados permanentemente en tu cuenta si apoyas el desarrollo comprando cualquier cantidad de monedas.",
         "awaitingPurchaseConfirmation": {
             "title": "Esperando Confirmación de Compra",
             "description": "Normalmente esto solo toma unos segundos. Dependiendo de tu método de pago, puede tardar más. Siéntete libre de cerrar esta pantalla."
@@ -2190,8 +2451,11 @@
             "noFriends": "Sin amigos",
             "noAccount": "Inicia sesión o crea una cuenta para empezar a hacer amigos!",
             "description": "¡Mantente conectado! Ve a tus amigos en línea, sus juegos y únete a sus lobbies privados!",
-            "removeDescription": "Estás a punto de terminar tu amistad con \"%{name}\"."
+            "removeDescription": "Estás a punto de terminar tu amistad con \"%{name}\".",
+            "inviteReceived": "%{name} te invitó a jugar %{game}",
+            "inviteSent": "¡La invitación para el juego ya se envió!"
         },
+        "contact": "No dudes en contactarnos si tienes problemas, sugerencias o preguntas. Puedes escribir un correo o unirte al Discord de Bloob.io.",
         "settings": {
             "redeemCode": {
                 "title": "Canjear código",
@@ -2212,6 +2476,14 @@
                 "description": "Bloob.io rastrea anónimamente las analíticas usando un servidor de Matomo de análisis amigable con la privacidad, alojado por usted mismo. Sus datos nunca se comparten con otros. Puede optar por no participar si lo desea.",
                 "blocked": "Las analíticas no están activas. Su navegador o extensión pueden haberlas bloqueado.",
                 "dnt": "Su navegador tiene la configuración \"No rastrear\" (DNT) habilitada. Respetamos su solicitud y no lo estamos rastreando."
+            },
+            "ads": {
+                "title": "Anuncios",
+                "description": "Mostramos anuncios de Playwire. La publicidad en Bloob.io, ya sea en su totalidad o en parte, la maneja Playwire LLC. Si no quieres ver anuncios en Bloob.io, puedes quitar los anuncios comprando monedas en la tienda. Esto quitará automáticamente todos los anuncios de tu cuenta.",
+                "complaint": "Para Bloob.io es importante que los anuncios que ves sean éticos y no molestos. Si notas anuncios que interfieren con tu juego, porfa contáctanos revisando la sección de \"Acerca de\".",
+                "consent": "Haz clic aquí para actualizar tus preferencias de consentimiento de anuncios",
+                "exempt": "Los anuncios no están activos. Tu cuenta está libre de anuncios. ¡Gracias por tu apoyo!",
+                "blocked": "Los anuncios no están activos. Tu navegador o extensión puede que los haya bloqueado."
             },
             "serverData": {
                 "title": "Datos del servidor",
@@ -2234,7 +2506,7 @@
         "authentication": {
             "login": {
                 "title": "Iniciar sesión",
-                "description": "Por favor, tenga en cuenta que iniciar sesión en su cuenta borrará todos los avances para el usuario que está usando actualmente (%{name})."
+                "description": "¡Atención! El usuario que estás usando, ${name} que es ${level}, todavía no está vinculado a una cuenta. Iniciar sesión con una cuenta existente borrará permanentemente a este usuario. ¿Quizás querías crear tu cuenta en lugar de eso?"
             },
             "setupThreshold": {
                 "title": "¡Llegaste temprano %{name}!",
@@ -2477,6 +2749,24 @@
             "earnsSum": "Gana el total de todos los dados combinados.",
             "noPointsWarning": "Este movimiento no te dará ningún punto. Hay otras opciones que sí te dan puntos."
         },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
+        },
         "ai": {
             "ready": null,
             "findingTarget": null,
@@ -2485,9 +2775,7 @@
             "assassinAssignment": null,
             "targetAssignment": null,
             "assassinDescription": null,
-            "targetDescription": null,
-            "startAssassinChat": null,
-            "joinAssassinChat": null
+            "targetDescription": null
         },
         "poolType": {
             "SOLID": "Sólidas",
@@ -2542,6 +2830,7 @@
             "developedBy": "Desarrollado por %{name}",
             "iconsSource": "Iconos por cortesía de %{name} (con licencia)",
             "soundsSource": "Sonidos proporcionados por %{name} (con licencia)",
+            "emojiSource": "Emojis proporcionados por %{name} (CC-BY 4.0)",
             "rottenApplesSource": "Manzanas podridas basadas en %{name} (Creative Commons BY-NC-SA 2.0)",
             "diceSource": "Modelo de dados por %{name} (CC-BY-4.0)",
             "localization": "Localización por colaboradores voluntarios"
