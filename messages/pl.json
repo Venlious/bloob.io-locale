@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Polish",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1774,
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Przykro mi, ten użytkownik osiągnął limit znajomych, czyli %{amount}.",
             "pendingFriendLimitSelf": "Nie możesz mieć więcej niż %{amount} oczekujących znajomości.",
             "pendingFriendLimitOther": "Przykro mi, ten użytkownik ma już za dużo oczekujących znajomości.",
+            "userOffline": "Przykro mi, ten użytkownik jest offline.",
             "notFriends": "Nie jesteście kumplami i nie macie żadnej oczekującej prośby o znajomość.",
             "alreadyFriends": "Już jesteś kumplem z tym użytkownikiem.",
             "pendingFriends": "Masz już oczekującą prośbę o znajomość z tym użytkownikiem.",
@@ -81,6 +82,7 @@
         "start": {
             "fieldRows": "Nie można wybrać więcej niż %{rows} wierszy.",
             "fieldCannotFitUsers": "Nie można wybrać więcej niż %{users} graczy.",
+            "questionThreshold": "Gra wymaga przynajmniej %{count} pytań.",
             "whiteCardThreshold": "Gra wymaga co najmniej %{count} kart odpowiedzi (białych).",
             "blackCardThreshold": "Gra wymaga co najmniej %{count} kart akcji (czarnych).",
             "insufficientPlayers": "Potrzeba co najmniej %{min} graczy, aby rozpocząć mecz."
@@ -100,6 +102,7 @@
             "incorrectValue": "Podana wartość nie zgadza się z oczekiwaną.",
             "invalidMove": "Podany ruch jest nieprawidłowy.",
             "invalidVote": "Głos, który próbowałeś złożyć, jest nieprawidłowy.",
+            "noLives": "Nie masz już żadnych żyć.",
             "alreadyPlaced": "Już coś postawiłeś.",
             "alreadyVoted": "Już głosowałeś.",
             "invalidPlacement": "Twoje umieszczenie kawałka jest nieprawidłowe.",
@@ -185,14 +188,14 @@
             "description": "Graj darmowo w przeglądarce na Bloob.io! Wypróbuj multiplayer z przyjaciółmi, obcymi lub botami. Bez konta, pełna zabawa zawsze pod ręką!",
             "options": {
                 "public": {
-                    "title": "Ustawienia prywatności dopasowania"
+                    "title": "Prywatność meczu"
                 },
                 "handSize": {
                     "title": "Rozmiar Ręki",
                     "help": "Liczba kart, które każdy ma w ręce."
                 },
                 "maxUsers": {
-                    "title": "Maksymalna liczba graczy: 4",
+                    "title": "Max. Graczy",
                     "help": "Ile graczy jest dozwolonych w meczu?"
                 },
                 "botCount": {
@@ -242,9 +245,41 @@
                         "off": "Bez limitu"
                     }
                 },
+                "scoringSystem": {
+                    "title": "System punktacji",
+                    "help": {
+                        "default": "Ustal, jak przyznawane są punkty za poprawne odpowiedzi.",
+                        "SPEED": "Punkty zależą od tego, jak szybko odpowiesz na pytanie.",
+                        "ORDER": "Punkty dostaje ten, kto był najszybszy między graczami.",
+                        "FIXED": "Każde pytanie daje taką samą liczbę punktów.",
+                        "PROGRESSIVE": "Punkty rosną po każdym pytaniu.",
+                        "STREAK": "Zarabiaj dodatkowe punkty za kolejne poprawne odpowiedzi; resetuje się po błędnej odpowiedzi."
+                    },
+                    "data": {
+                        "SPEED": "Szybkość",
+                        "ORDER": "Zamówienie",
+                        "FIXED": "Naprawione",
+                        "PROGRESSIVE": "Postępowe",
+                        "STREAK": "Seria"
+                    }
+                },
+                "mode": {
+                    "title": "Tryb",
+                    "help": {
+                        "default": "Wybierz, jak będą rywalizować gracze: indywidualnie, w drużynach, czy wspólnie.",
+                        "SOLO": "Każdy gracz rywalizuje sam.",
+                        "CO_OP": "Wszyscy gracze pracują razem jako drużyna.",
+                        "TEAM": "Gracze są podzieleni na drużyny i mogą wybrać swoją grupę do współpracy."
+                    },
+                    "data": {
+                        "SOLO": "Solo",
+                        "CO_OP": "Co-op",
+                        "TEAM": "Drużyny"
+                    }
+                },
                 "deckSize": {
                     "title": "Rozmiar Talii",
-                    "help": "Graj bez limitu czasu. Wyłącz wszystkie timery tur i ciesz się zrelaksowaną rozgrywką, w której możesz grać we własnym tempie. Nie zaleca się tego przeciwko losowym przeciwnikom.",
+                    "help": "Wybierz rozmiar talii, który ci pasuje do gry.",
                     "data": {
                         "half": "Pół talii",
                         "full": "Pełna talia",
@@ -835,6 +870,10 @@
                     "title": "Linia celowania",
                     "help": "Linia celowania pokazuje, gdzie pójdzie bila po uderzeniu."
                 },
+                "speed": {
+                    "title": "Szybkość",
+                    "help": "Jak szybko leci animacja basenu."
+                },
                 "illegalBallPocket": {
                     "title": "Nielegalne wrzucanie piłki do kieszeni"
                 },
@@ -1064,6 +1103,12 @@
                         "Możesz też kliknąć na puste pomarańczowe pole i dostać 0 punktów. To może być pomocne, jeśli twoja jedyna inna opcja dałaby ci bardzo mało punktów w tej kategorii.",
                         "To może być pomocne, na przykład, jeśli chcesz zdobyć bonus w górnej sekcji."
                     ]
+                },
+                "shortcuts": {
+                    "title": "Skróty",
+                    "description": [
+                        "Chcesz przenieść dużo tych samych kości na raz? Użyj środkowego przycisku myszy albo przytrzymaj klawisz Shift, klikając na kość, a wszystkie kości z tym samym wynikiem przeniosą się razem!"
+                    ]
                 }
             }
         },
@@ -1100,7 +1145,8 @@
                         "pier": "Molo",
                         "littleIsland": "Mała Wyspa",
                         "keys": "Klucze",
-                        "lagoon": "Laguna"
+                        "lagoon": "Laguna",
+                        "ocean": "Ocean - Ocean"
                     }
                 },
                 "levelOrientation": {
@@ -1121,6 +1167,10 @@
                 "shipReveal": {
                     "title": "Odsłonięcie statku",
                     "help": "Gdy włączone, zobaczysz statek, kiedy go zatopisz. Gdy wyłączone, pokazuje się tylko licznik z pozostałymi statkami."
+                },
+                "hitAfterHit": {
+                    "title": "Cios za ciosem",
+                    "help": "Kiedy to włączone, możesz strzelać znowu po trafieniu w statek. Jak wyłączone, masz tylko jeden strzał na turę."
                 }
             },
             "presets": {},
@@ -1420,63 +1470,236 @@
             }
         },
         "AI_ASSASSIN": {
-            "name": "Sztuczna Inteligencja - Zabójca",
-            "title": "Przechytrz, Wyeliminuj, Przetrwaj",
-            "description": "AI Assassin to ekscytująca gra wieloosobowa, gdzie albo eliminujesz cel, albo przechytrzasz zabójców. Używaj strategicznych wskazówek, aby osiągnąć swój cel i odnieść sukces.",
+            "name": "Zabójca AI",
+            "title": "Zabójca AI | Gra z Podpowiedziami AI | Graj Online z Przyjaciółmi",
+            "description": "Graj za darmo w Zabójca AI, grę z podpowiedziami AI bez rejestracji! Połącz siły online z przyjaciółmi lub botami i staw czoła sztucznej inteligencji.",
             "options": {},
             "presets": {},
+            "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Papier Kamień Nożyce",
+            "title": "Gra Papier Kamień Nożyce KPN | Online | Darmowa | Wieloosobowa",
+            "description": "Zagraj w darmową grę Papier Kamień Nożyce online bez konta! Zaproś znajomych, graj wieloosobowo lub z botami. Klasyczna zabawa od 2 do 4 graczy!",
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "Kamień bije nożyczki",
+                        "paper": "Papier bije kamień",
+                        "scissors": "Nożyczki biją papier"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Ostatni na placu boju (<b>0</b> żyć) | Ostatni na placu boju (<b>1</b> życie) | Ostatni na placu boju (<b>{count}</b> żyć)",
+                        "FIRST": "Pierwszy, kto zdobędzie <b>0</b> punktów | Pierwszy, kto zdobędzie <b>1</b> punkt | Pierwszy, kto zdobędzie <b>{count}</b> punktów",
+                        "HIGHEST_AFTER": "Najwięcej punktów po <b>0</b> rundach | Najwięcej punktów po <b>1</b> rundzie | Najwięcej punktów po <b>{count}</b> rundach"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Wyścig",
+                    "description": [
+                        "Pierwszy do 5 punktów"
+                    ]
+                },
+                "survival": {
+                    "title": "Przetrwanie",
+                    "description": [
+                        "5 żyć",
+                        "Tracisz życie za każdą przegraną rundę",
+                        "Ostatni gracz na placu boju wygrywa"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Najlepsze z serii",
+                    "description": [
+                        "Gracz z największą liczbą punktów po 5 rundach wygrywa."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Zasady",
+                    "description": [
+                        "Papier, kamień, nożyczki to prosta gra: wybierz kamień, papier albo nożyczki. Kamień bije nożyczki, papier bije kamień, a nożyczki biją papier.",
+                        "W każdej rundzie zgadnij, co wybierze twój przeciwnik i odpowiedz na to!"
+                    ]
+                },
+                "group": {
+                    "title": "Grupa",
+                    "description": [
+                        "Graj z maksymalnie 4 graczami! Tylko jeden może wygrać każdą rundę. Jak wylecisz za szybko, to reszta gra dalej, aż ktoś wygra.",
+                        "W trybie przetrwania każdy gracz ma określoną liczbę żyć. Bądź ostatnim graczem na placu boju, żeby wygrać!"
+                    ]
+                },
+                "bots": {
+                    "title": "Boty",
+                    "description": [
+                        "Gra przeciwko botom! Działają na losowej strategii, więc jak ogarniesz, jak to działa, to możesz je regularnie pokonywać!"
+                    ]
+                }
+            }
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Pojedynek Liczb",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "Gra skończy się, jak tylko któryś z graczy zdobędzie tę ilość punktów."
+                },
+                "mode": {
+                    "title": "Tryb",
+                    "help": "Inny tryb gry wpłynie na to, jak przyznawane są punkty i jak się gra.",
+                    "data": {
+                        "SINGLE_HIDER": "Pojedynczy Chowany",
+                        "HIDE_AND_SEEK": "Chowanego",
+                        "LAST_STANDING": "Ostatni na placu boju"
+                    }
+                },
+                "field": {
+                    "title": "Pole",
+                    "help": "Określa, ile liczb jest wyświetlanych na planszy."
+                },
+                "revealSpeed": {
+                    "title": "Szybkość Odkrywania",
+                    "help": "Szybkość, z jaką ujawnia się rundę, gdy wszyscy są gotowi."
+                },
+                "multiplier": {
+                    "title": "Mnożniki",
+                    "help": "Mnożniki mogą się pojawić na jednym lub kilku numerach jednocześnie. Kiedy ukrywający wybierze numer z mnożnikiem, pomnoży swoje punkty. Ale, ponieważ wszyscy widzą te mnożniki, to ryzykowne i zwiększa szanse na to, że zostanie znaleziony.",
+                    "data": {
+                        "off": "Wyłączone",
+                        "uncommon": "Niezbyt popularne",
+                        "common": "Zwykłe",
+                        "veryCommon": "Bardzo zwykłe"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Dynamiczne Punkty",
+                    "help": {
+                        "introduction": "Przyznawaj punkty w zależności od szans na sukces. Na przykład, jeśli poszukiwacz znajdzie ukrywającego się na początku gry, dostanie więcej punktów. Jeśli ukrywający się uda się schować, gdy zostało tylko kilka kafelków, też dostanie więcej punktów.",
+                        "calculation": "Gdy to włączone, punkty są automatycznie obliczane na podstawie ustawionych minimalnych i maksymalnych punktów."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Znalezienie Chowanego",
+                    "help": "Przyznawane poszukiwaczowi za znalezienie ukrywającego się."
+                },
+                "minPointsFind": {
+                    "title": "Min. Znalezienie Chowanego"
+                },
+                "maxPointsFind": {
+                    "title": "Max. Znalezienie Ukrywacza"
+                },
+                "pointsHideRound": {
+                    "title": "Ukryte na rundę",
+                    "help": "Przyznawane chowanemu za to, że przez całą rundę się schował."
+                },
+                "minPointsHideRound": {
+                    "title": "Min. ukrytych na rundę"
+                },
+                "maxPointsHideRound": {
+                    "title": "Max. ukrytych na rundę"
+                },
+                "pointsLastAlive": {
+                    "title": "Ostatni Zostały",
+                    "help": "Przyznawane ostatniemu graczowi, który został w grze, gdy wszyscy inni zostali wyeliminowani."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Ostatnia Reszta"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Max. Ostatni Zostały"
+                }
+            },
+            "presets": {},
+            "help": {}
+        },
+        "TRIVIA": {
+            "name": "Quizik",
+            "title": null,
+            "description": null,
+            "options": {
+                "consensus": {
+                    "title": "Zgoda",
+                    "help": "W trybie drużynowym, czy odpowiedź drużyny powinna być oparta na głosowaniu większości (Konsensus)? Jeśli nie, to każdy członek drużyny może zmienić odpowiedź dla wszystkich."
+                },
+                "lockAnswer": {
+                    "title": "Zablokuj odpowiedź",
+                    "help": "Kiedy to jest włączone, gracze nie mogą zmienić swojej odpowiedzi, jak już jedną wybiorą."
+                },
+                "eliminationChallenge": {
+                    "title": "Wyzwanie Eliminacji",
+                    "help": "Kiedy to jest włączone, gracz lub drużyna od razu odpada po złej odpowiedzi na pytanie."
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": "Na przeciwko",
+                    "description": [
+                        "Solo",
+                        "Więcej punktów za późniejsze pytania"
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": "Hardkorowe Starcie",
+                    "description": [
+                        "Bez błędów",
+                        "Zablokowana odpowiedź",
+                        "Punkty za szybkość"
+                    ]
+                },
+                "coop": {
+                    "title": "Kooperacja",
+                    "description": [
+                        "Działajcie razem",
+                        "Stałe punkty"
+                    ]
+                },
+                "teams": {
+                    "title": "Drużyny",
+                    "description": [
+                        "Pracujcie w zespołach",
+                        "Punkty za kolejność"
+                    ]
+                }
+            },
             "help": {}
         }
     },
     "chat": {
-        "EMOJI": {
-            "love": "❤️",
-            "luck": "🍀",
-            "fire": "🔥",
-            "celebration": "🎉",
-            "thumbsUp": "👍",
-            "mindBlowing": "🤯",
-            "thinking": "🤔",
-            "clap": "👏",
-            "cry": "😭",
-            "cool": "😎"
-        },
-        "UNIVERSAL": {
-            "leftTheGame": "Wyszedł z gry",
-            "affirmative": "Ok.",
-            "thanks": "Dzięki!",
-            "sorry": "Przepraszam!",
-            "goodLuck": "Powodzenia!",
-            "brb": "Zaraz wracam!",
-            "go": "Muszę iść.",
-            "glhf": "Powodzenia w grze!",
-            "gg": "Gratulacje!"
-        },
-        "PRE_GAME": {
-            "readyCheck": "Wszyscy gotowi?",
-            "changeSettings": "Zmień ustawienia!",
-            "ready": "Gotowy!",
-            "wait": "Proszę czekać!",
-            "go": "Chodźmy!",
-            "greeting": "Cześć! 👋"
-        },
-        "GAME": {
-            "how": "Jak to!?",
-            "closeOne": "Świetny wyczyn!",
-            "niceOne": "Świetnie!",
-            "remindMove": "Twoja kolej!",
-            "wow": "Wow!",
-            "oops": "Ojej!",
-            "no": "Nieeee!",
-            "ohNo": "O nie!"
-        },
-        "POST_GAME": {
-            "closeOne": "Świetny wynik!",
-            "wellPlayed": "Dobra robota!",
-            "rematch": "Remis!",
-            "fun": "To było fajne!",
-            "bye": "Cześć!"
-        }
+        "affirmative": "Ok.",
+        "thanks": "Dzięki!",
+        "sorry": "Przepraszam!",
+        "goodLuck": "Powodzenia!",
+        "brb": "Zaraz wracam!",
+        "go": "Muszę iść.",
+        "glhf": "Powodzenia w grze!",
+        "gg": "Gratulacje!",
+        "readyCheck": "Wszyscy gotowi?",
+        "changeSettings": "Zmień ustawienia!",
+        "ready": "Gotowy!",
+        "wait": "Proszę czekać!",
+        "letsGo": "Chodźmy!",
+        "greeting": "Cześć!",
+        "how": "Jak to!?",
+        "closeOne": "Świetny wyczyn!",
+        "niceOne": "Świetnie!",
+        "checkThisOut": "Sprawdź to!",
+        "remindMove": "Twoja kolej!",
+        "wow": "Wow!",
+        "oops": "Ojej!",
+        "no": "Nieeee!",
+        "ohNo": "O nie!",
+        "wellPlayed": "Dobra robota!",
+        "rematch": "Remis!",
+        "fun": "To było fajne!",
+        "bye": "Cześć!",
+        "shortYes": "Tak.",
+        "shortNo": "Nie."
     },
     "header": {
         "message": {
@@ -1512,6 +1735,9 @@
             "roundSummary": "Podsumowanie rundy",
             "roundCount": "Runda %{current} z %{total}",
             "roundCurrent": "Runda %{current}",
+            "startingNewRound": "Zaczynamy nową rundę...",
+            "questionCount": "Pytanie %{current} z %{total}",
+            "questionCurrent": "Pytanie %{current}",
             "war": "Wojna!",
             "outcome": "Wynik",
             "input": "Czekam na twój ruch",
@@ -1603,7 +1829,12 @@
         "language": "Język",
         "rules": "Zasady",
         "points": "Punkty",
-        "fouls": "Reakcja na nieuczciwą grę"
+        "fouls": "Reakcja na nieuczciwą grę",
+        "sciences": "Nauki",
+        "artsAndEntertainment": "Sztuka i Rozrywka",
+        "geography": "Geografia",
+        "gaming": "Gry",
+        "technology": "Technologia"
     },
     "month": {
         "short": {
@@ -1735,6 +1966,7 @@
         "wins": "0 zwycięstw | 1 zwycięstwo | {count} zwycięstw",
         "cards": "0 kart | 1 karta | {count} kart",
         "moves": "0 ruchów | 1 ruch | {count} ruchów",
+        "tiles": "0 kafli | 1 kafel | {count} kafli",
         "playing": "0 grających | 1 grający | {count} grających",
         "players": "0 graczy | 1 gracz | {count} graczy",
         "selectedCards": "Nie wybrano kart | 1 wybrana karta | {count} wybranych kart",
@@ -1752,6 +1984,12 @@
         "restartNotice": "Serwer zrestartuje się za {count} minut. Skończ swoją grę. | Serwer zrestartuje się za {count} minutę. Skończ swoją grę. | Serwer zrestartuje się za {count} minut. Skończ swoją grę."
     },
     "misc": {
+        "questions": "Pytania",
+        "teamAndQuestions": "Zespół i pytania",
+        "questionPacks": "Zestawy pytań",
+        "rock": "Kamień",
+        "paper": "Papier",
+        "scissors": "Nożyczki",
         "lobby": "Lobby",
         "inGame": "W grze",
         "matchmakingSearch": "Szukam gry",
@@ -1787,7 +2025,7 @@
         "unknown": "Nieznane",
         "none": "Brak",
         "seasonal": "Sezonowe",
-        "items": "Sure! Please provide the list of items you'd like me to translate.",
+        "items": "Przedmioty",
         "purchaseCoins": "Kup Monety",
         "store": "Sklep",
         "buyNow": "Kup Teraz",
@@ -1852,6 +2090,8 @@
         "language": "Język",
         "toggle": "Przełącznik",
         "login": "Zaloguj się",
+        "loginToExistingAccount": "Zaloguj się na istniejące konto",
+        "createMyAccount": "Stwórz moje konto",
         "logout": "Wyloguj się",
         "hats": "Kapelusze",
         "eyes": "Oczy",
@@ -1869,6 +2109,7 @@
         "specificCards": "Określone Karty",
         "matchId": "Identyfikator meczu",
         "chat": "Czat",
+        "sendMessage": "Wyślij wiadomość",
         "host": "Gospodarz",
         "player": "Gracz",
         "players": "Gracze",
@@ -1900,7 +2141,6 @@
         "view": "Zobacz",
         "forfeit": "Porzuć grę",
         "processFiles": "Przetwarzaj pliki",
-        "sendMessage": "Wyślij wiadomość",
         "checkAgain": "Sprawdź jeszcze raz",
         "refreshWindow": "Odśwież okno",
         "makeHost": "Utwórz gospodarza",
@@ -1921,6 +2161,7 @@
         "highestScore": "Najwyższy Wynik",
         "totalScore": "Łączny wynik",
         "finalScore": "Ostateczny wynik",
+        "flawlessGames": "Idealne gry",
         "hits": "Trafienia",
         "hitRate": "Skuteczność",
         "rank": "Ranga",
@@ -1930,8 +2171,10 @@
         "assassinations": "Zabójstwa",
         "survivals": "Przetrwania",
         "games": "Gry",
+        "correctRatio": "Poprawny stosunek",
         "winRatio": "Stosunek wygranych",
         "killDeathRatio": "Stosunek zabójstw do śmierci",
+        "lives": "Życia",
         "points": "Punkty",
         "wins": "Wygrane",
         "grids": "Siatki",
@@ -1942,6 +2185,7 @@
         "fouls": "Faule",
         "and": "i",
         "vs": "przeciwko",
+        "dismiss": "Odrzuć",
         "rename": "Zmień nazwę",
         "created": "Utworzone",
         "lastSeen": "Ostatnio widziane",
@@ -1951,6 +2195,7 @@
         "myDevices": "Moje urządzenia",
         "myData": "Moje dane",
         "redeemCode": "Wprowadź kod",
+        "contact": "Kontakt",
         "leaderboard": "Tablica wyników",
         "elapsedTime": "Minęło %{time}",
         "startingInTime": "Start za %{time}",
@@ -1964,6 +2209,10 @@
         "coinsBlank": "%{value} monet",
         "receivedBlank": "Otrzymano %{value}",
         "lessThanBlank": "Mniej niż %{value}",
+        "lastSeenBlankAgo": "Ostatnio widziano %{value} temu",
+        "lastSeenJustNow": "Ostatnio widziano przed chwilą",
+        "blank": "%{value}",
+        "byBlank": "Przez %{value}",
         "sendVerification": "Wyślij weryfikację",
         "noThanks": "Nie, dziękuję",
         "ready": "Gotowy",
@@ -1978,12 +2227,15 @@
         "madeBy": "Stworzone przez %{name}",
         "selectedOfLimit": "Wybrano %{current} z %{total} limitu",
         "helpLocalize": "Pomóż ulepszyć lokalizację",
+        "goAdFree": "Bez reklam",
         "discord": "Dołącz do Discord",
         "volume": "Głośność",
         "volumeInterface": "Głośność interfejsu",
         "volumeEffects": "Głośność efektów",
+        "volumeMusic": "Głośność Muzyki",
         "selectYourLanguage": "Wybierz swój język",
         "selectYourColor": "Wybierz swój kolor",
+        "selectYourTeam": "Wybierz swoją drużynę",
         "latestChanges": "Najnowsze zmiany",
         "noChangesDetected": "Nie wykryto żadnych zmian",
         "newChanges": "Nowe zmiany",
@@ -2016,7 +2268,7 @@
             "title": "Zestawy kart",
             "contribute": "Dołącz do tej listy",
             "create": "Stwórz zestaw",
-            "browser": "Przeglądaj i importuj własne zestawy",
+            "browser": "Przeglądaj publiczne talie",
             "import": "Importuj zestaw",
             "importer": "Importowanie zestawu kart",
             "namedTitle": "Zestaw kart „%{title}”",
@@ -2135,8 +2387,19 @@
         }
     },
     "info": {
+        "roundEndTie": "Remis!",
+        "roundEndStalemate": "Pat!",
+        "roundWin": "Wygrałeś!",
+        "roundLost": "Przegrałeś!",
+        "youLostThisRound": "Przegrałeś tę rundę!",
+        "youAreOutOfLives": "Nie masz już żyć",
+        "playerIsEliminated": "Gracz został wyeliminowany",
+        "youAreEliminated": "Zostałeś wyeliminowany",
+        "waitForRoundEnd": "Poczekaj, aż runda się skończy.",
+        "waitForWinner": "Siedź spokojnie i czekaj, aż ktoś wygra!",
         "serverRestart": "Serwer teraz się restartuje. Sprawdź za kilka minut.",
         "clearOldListings": "Usuń wszystkie mecze oznaczone jako 'Niedostępne'.",
+        "flawlessGame": "Gra bezbłędna! Żadnych pomyłek.",
         "accountLinkSuggestion": "Teraz jesteś %{level}! Rozważ stworzenie konta, aby chronić swój postęp.",
         "accountLinked": "To konto jest połączone z następującym adresem e-mail: %{email}.",
         "incompleteTranslationNotice": "Wybrany język jest w zaawansowaniu około {percentage}%. Brakujące tłumaczenia będą w języku angielskim.",
@@ -2163,6 +2426,7 @@
         "inactiveOpponents": "Wszyscy przeciwnicy byli nieaktywni",
         "waitForOpponent": "Czekam na twojego przeciwnika...",
         "waitForOpponents": "Czekam na twoich przeciwników...",
+        "nameLeftTheGame": "%{name} opuścił grę",
         "selfNoPoints": "Nie dostałeś żadnych punktów.",
         "nameNoPoints": "%{name} nie dostał żadnych punktów.",
         "gameMenu": "Masz ochotę zagrać w coś innego?",
@@ -2182,6 +2446,9 @@
         "loginToPurchase": "Żeby coś kupić, musisz się najpierw zalogować albo założyć konto.",
         "seasonalItem": "Przedmiot w tym miejscu jest dostępny tylko przez kilka dni w roku.",
         "cardInteractHint": "Kliknij na kartę, żeby wybrać.",
+        "gameInvite": "Zaproszenie do gry",
+        "keyboardShortcutCombination": "Żeby używać skrótów klawiszowych, takich jak {combination}, przytrzymaj {firstKey} i potem naciśnij {secondKey}",
+        "goAdFree": "Reklamy są na stałe wyłączone na twoim koncie, jeśli wspierasz rozwój, kupując jakąkolwiek ilość monet.",
         "awaitingPurchaseConfirmation": {
             "title": "Czekam na potwierdzenie zakupu",
             "description": "Zazwyczaj to trwa tylko kilka sekund. W zależności od metody płatności, może to potrwać dłużej. Śmiało możesz zamknąć ten ekran."
@@ -2190,8 +2457,11 @@
             "noFriends": "Brak znajomych",
             "noAccount": "Zaloguj się albo załóż konto, żeby zacząć poznawać znajomych!",
             "description": "Bądź na bieżąco! Zobacz, którzy znajomi są online, w co grają i dołącz do ich prywatnych lobby!",
-            "removeDescription": "Zaraz zakończysz swoją przyjaźń z \"%{name}\"."
+            "removeDescription": "Zaraz zakończysz swoją przyjaźń z \"%{name}\".",
+            "inviteReceived": "%{name} zaprosił cię do grania w %{game}",
+            "inviteSent": "Zaproszenie do gry zostało wysłane!"
         },
+        "contact": "Nie krępuj się pisać, jakbyś miał jakieś problemy, pomysły albo pytania! Możesz się skontaktować, wysyłając maila albo dołączając do Discorda Bloob.io.",
         "settings": {
             "redeemCode": {
                 "title": "Wprowadź kod",
@@ -2212,6 +2482,14 @@
                 "description": "Bloob.io anonimowo śledzi analizy za pomocą prywatnego, samodzielnie hostowanego serwera analitycznego Matomo. Twoje dane nigdy nie są udostępniane innym. Możesz wycofać się, jeśli chcesz.",
                 "blocked": "Analizy nie są aktywne. Twoja przeglądarka lub rozszerzenie mogły je zablokować.",
                 "dnt": "Twoja przeglądarka ma włączone ustawienie \"Do Not Track\" (DNT). Szanujemy Twoją prośbę i nie śledzimy Cię."
+            },
+            "ads": {
+                "title": "Reklamy",
+                "description": "Wyświetlamy reklamy od Playwire. Reklamy na Bloob.io, w całości lub częściowo, są obsługiwane przez Playwire LLC. Jeśli nie chcesz widzieć reklam na Bloob.io, możesz przejść na wersję bez reklam, kupując monety w sklepie. To automatycznie usunie wszystkie reklamy z twojego konta.",
+                "complaint": "Dla Bloob.io ważne jest, żeby reklamy, które widzisz, były etyczne i nieinwazyjne. Jeśli zauważysz reklamy, które przeszkadzają w grze, daj znać, sprawdzając sekcję \"O nas\".",
+                "consent": "Kliknij tutaj, żeby zaktualizować swoje preferencje dotyczące zgody na reklamy",
+                "exempt": "Reklamy są wyłączone. Twoje konto jest bez reklam. Dzięki za wsparcie!",
+                "blocked": "Reklamy są wyłączone. Może twój przeglądarka albo dodatek to zablokowały."
             },
             "serverData": {
                 "title": "Dane serwera",
@@ -2234,7 +2512,7 @@
         "authentication": {
             "login": {
                 "title": "Zaloguj się",
-                "description": "Proszę zauważyć, że logowanie do Twojego konta wyczyści wszystkie postępy dla użytkownika, którego obecnie używasz (%{name})."
+                "description": "Uwaga! Użytkownik, którego teraz używasz, ${name}, który jest na poziomie ${level}, nie jest jeszcze przypisany do konta. Zalogowanie się na istniejące konto spowoduje trwałe usunięcie tego użytkownika. Może chciałeś stworzyć swoje konto zamiast tego?"
             },
             "setupThreshold": {
                 "title": "Jesteś wcześnie, %{name}!",
@@ -2477,6 +2755,24 @@
             "earnsSum": "Zarabiasz sumę wszystkich kości razem wziętych.",
             "noPointsWarning": "Ten ruch nie da ci żadnych punktów. Są inne wybory, które ci punkty przyniosą."
         },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
+        },
         "ai": {
             "ready": null,
             "findingTarget": null,
@@ -2485,9 +2781,7 @@
             "assassinAssignment": null,
             "targetAssignment": null,
             "assassinDescription": null,
-            "targetDescription": null,
-            "startAssassinChat": null,
-            "joinAssassinChat": null
+            "targetDescription": null
         },
         "poolType": {
             "SOLID": "Kule pełne",
@@ -2542,6 +2836,7 @@
             "developedBy": "Stworzone przez %{name}",
             "iconsSource": "Ikony dzięki uprzejmości %{name} (Licencjonowane)",
             "soundsSource": "Dźwięki dostarczone przez %{name} (Licencjonowane)",
+            "emojiSource": "Emotikony od %{name} (CC-BY 4.0)",
             "rottenApplesSource": "Rotten Apples oparte na %{name} (Creative Commons BY-NC-SA 2.0)",
             "diceSource": "Model kostki stworzony przez %{name} (CC-BY-4.0)",
             "localization": "Lokalizacja przez wolontariuszy"

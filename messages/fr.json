@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal French",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1774,
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Désolé, cet utilisateur a déjà atteint sa limite d'amis de %{amount}.",
             "pendingFriendLimitSelf": "Tu peux pas avoir plus de %{amount} demandes d'amis en attente.",
             "pendingFriendLimitOther": "Désolé, cet utilisateur a déjà trop de demandes d'amis en attente.",
+            "userOffline": "Désolé, ce gars est déconnecté.",
             "notFriends": "Vous n'êtes pas amis et y'a pas de demande d'ami en attente.",
             "alreadyFriends": "T'es déjà amis avec ce gars.",
             "pendingFriends": "Y'a déjà une demande d'ami en attente avec ce gars.",
@@ -81,6 +82,7 @@
         "start": {
             "fieldRows": "Les champs sélectionnés ne peuvent supporter plus de %{rows} rangées.",
             "fieldCannotFitUsers": "Les champs sélectionnés ne peuvent supporter plus de %{users} joueurs.",
+            "questionThreshold": "Le jeu nécessite au moins %{count} questions.",
             "whiteCardThreshold": "Le jeu nécessite au moins %{count} cartes de réponse (blanches).",
             "blackCardThreshold": "Le jeu nécessite au moins %{count} cartes d'action (noires).",
             "insufficientPlayers": "Au moins %{min} joueurs sont requis pour commencer la partie."
@@ -100,6 +102,7 @@
             "incorrectValue": "La valeur donnée ne correspond pas à celle attendue.",
             "invalidMove": "Le mouvement donné est invalide.",
             "invalidVote": "Votre vote est invalide.",
+            "noLives": "T'as plus de vies.",
             "alreadyPlaced": "Tu as déjà placé quelque chose.",
             "alreadyVoted": "Vous avez déjà voté.",
             "invalidPlacement": "Ton placement de pièce est invalide.",
@@ -242,9 +245,41 @@
                         "off": "Sans limite"
                     }
                 },
+                "scoringSystem": {
+                    "title": "Système de points",
+                    "help": {
+                        "default": "Détermine comment on gagne des points en répondant juste à une question.",
+                        "SPEED": "Les points dépendent de la rapidité avec laquelle tu réponds.",
+                        "ORDER": "Les points sont attribués à celui qui est le plus rapide entre les joueurs.",
+                        "FIXED": "Chaque question donne le même nombre de points.",
+                        "PROGRESSIVE": "Les points gagnés augmentent après chaque question.",
+                        "STREAK": "Gagne des points en plus pour chaque bonne réponse à la suite ; ça se remet à zéro après une mauvaise réponse."
+                    },
+                    "data": {
+                        "SPEED": "Vitesse",
+                        "ORDER": "Commande",
+                        "FIXED": "Fixe",
+                        "PROGRESSIVE": "Progressif",
+                        "STREAK": "Série"
+                    }
+                },
+                "mode": {
+                    "title": "Mode de jeu",
+                    "help": {
+                        "default": "Choisissez comment les joueurs vont s'affronter : individuellement, en équipe, ou en mode collaboratif.",
+                        "SOLO": "Chaque joueur joue solo.",
+                        "CO_OP": "Tous les joueurs bossent ensemble en équipe.",
+                        "TEAM": "Les joueurs sont répartis en équipes, et ils peuvent choisir leur propre groupe pour collaborer."
+                    },
+                    "data": {
+                        "SOLO": "Solo",
+                        "CO_OP": "En équipe",
+                        "TEAM": "Équipes"
+                    }
+                },
                 "deckSize": {
                     "title": "Taille du Deck",
-                    "help": "Joue sans limites de temps. Désactive tous les chronos et profite d'une expérience de jeu détendue où tu peux jouer à ton propre rythme. Pas recommandé contre des adversaires aléatoires.",
+                    "help": "Choisis la taille de deck que tu préfères pour le jeu.",
                     "data": {
                         "half": "Demi Paquet",
                         "full": "Paquet Complet",
@@ -835,6 +870,10 @@
                     "title": "Ligne de visée",
                     "help": "La ligne de visée montre où la boule blanche va aller après avoir été frappée."
                 },
+                "speed": {
+                    "title": "Vitesse",
+                    "help": "La vitesse à laquelle l'animation de la piscine se joue."
+                },
                 "illegalBallPocket": {
                     "title": "Mise de Boule Illégale"
                 },
@@ -1064,6 +1103,12 @@
                         "Tu peux aussi cliquer sur une case orange vide et obtenir 0 point. Ça peut être utile si ton autre option te donnerait très peu de points pour cette catégorie.",
                         "Ça peut être utile par exemple si tu veux tenter le bonus dans la section du haut."
                     ]
+                },
+                "shortcuts": {
+                    "title": "Raccourcis",
+                    "description": [
+                        "Tu veux déplacer plein de dés identiques d'un coup ? Utilise le bouton du milieu de ta souris ou maintiens la touche Shift en cliquant sur un dé, et tous les dés avec la même face seront déplacés en même temps !"
+                    ]
                 }
             }
         },
@@ -1100,7 +1145,8 @@
                         "pier": "Le Quai",
                         "littleIsland": "La Petite Île",
                         "keys": "Les Clés",
-                        "lagoon": "Lagon"
+                        "lagoon": "Lagon",
+                        "ocean": "Océan"
                     }
                 },
                 "levelOrientation": {
@@ -1121,6 +1167,10 @@
                 "shipReveal": {
                     "title": "Révélation du Navire",
                     "help": "Quand activé, tu verras le navire quand tu l'auras coulé. Quand désactivé, seul un compteur avec les navires restants est affiché."
+                },
+                "hitAfterHit": {
+                    "title": "Coup sur coup",
+                    "help": "Quand c'est activé, tu peux tirer à nouveau après avoir touché un bateau. Quand c'est désactivé, t'as qu'un seul tir par tour."
                 }
             },
             "presets": {},
@@ -1393,11 +1443,11 @@
                     "title": "Mélanges",
                     "description": [
                         "Les combinaisons peuvent se faire avec une suite de trois cartes ou plus de la même couleur (par exemple, 3 de carreau, 4 de carreau, 5 de carreau) ou trois cartes ou plus de la même valeur (par exemple, 3 de cœur, 3 de carreau, 3 de pique).",
-                        "Les combinaisons sont automatiquement mises en avant dans ta main et l'interface, donc fais gaffe à la pile—ton adversaire pourrait balancer la carte qu'il te faut !"
+                        "Les combinaisons sont automatiquement mises en avant dans ta main et l'interface, donc fais gaffe à la pile—ton adversaire pourrait balancer la carte qu'il te faut!"
                     ]
                 },
                 "knock": {
-                    "title": "Frappe !",
+                    "title": "Frappe!",
                     "description": [
                         "Tu peux frapper si ton deadwood est en dessous de 10. Quand tu frappes, toutes les cartes sont révélées, et tu vois le deadwood de ton adversaire. Si ton deadwood est plus élevé, ton adversaire gagne le round avec un bonus.",
                         "Le scoring pour un knock, c'est simple : tu soustrais ton deadwood de celui de ton adversaire. Par exemple, si ton deadwood est à 5 et celui de ton adversaire à 25, tu marques 20 points."
@@ -1407,7 +1457,7 @@
                     "title": "1. Gin et Big Gin",
                     "description": [
                         "Si t'as plus de deadwood ou que tu peux le rendre à 0 après avoir défaussé ta dernière carte deadwood, t'as un Gin. Ça te garantit la victoire et tu gagnes un bonus plus la différence de deadwood.",
-                        "Un Big Gin, c'est encore mieux : si toute ta main, plus la carte que t'as piochée, forme des combinaisons, tu reçois un bonus plus gros. Appelle toujours un Big Gin dès que t'en as un !"
+                        "Un Big Gin, c'est encore mieux : si toute ta main, plus la carte que t'as piochée, forme des combinaisons, tu reçois un bonus plus gros. Appelle toujours un Big Gin dès que t'en as un!"
                     ]
                 },
                 "goal": {
@@ -1421,62 +1471,235 @@
         },
         "AI_ASSASSIN": {
             "name": "Assassin IA",
-            "title": "Déjoue, Élimine, Survie",
-            "description": "AI Assassin est un jeu multijoueur palpitant où tu élimines la cible ou déjoues les assassins. Utilise des astuces stratégiques pour atteindre ton but et réussir.",
+            "title": "Joue Gratuit à Assassin IA | Jeu de Prompts Multijoueur en Ligne",
+            "description": "Joue gratuitement à Assassin IA, sans compte! Défie tes amis, inconnus ou bots dans ce jeu de prompts multijoueur en ligne avec intelligence artificielle.",
             "options": {},
             "presets": {},
+            "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Pierre Papier Ciseaux",
+            "title": "Pierre Papier Ciseaux en Ligne | Gratuit & Multijoueur Fun!",
+            "description": "Jouez gratuitement à Pierre Papier Ciseaux en ligne sans inscription! Affrontez amis ou bots en multijoueur, de 2 à 4 joueurs, fun garanti!",
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "La pierre bat les ciseaux",
+                        "paper": "Le papier bat la pierre",
+                        "scissors": "Les ciseaux battent le papier"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Dernier debout (<b>0</b> vies) | Dernier debout (<b>1</b> vie) | Dernier debout (<b>{count}</b> vies)",
+                        "FIRST": "Premier à avoir <b>0</b> points | Premier à avoir <b>1</b> point | Premier à avoir <b>{count}</b> points",
+                        "HIGHEST_AFTER": "Le plus de points après <b>0</b> manches | Le plus de points après <b>1</b> manche | Le plus de points après <b>{count}</b> manches"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Course",
+                    "description": [
+                        "Le premier à 5 points"
+                    ]
+                },
+                "survival": {
+                    "title": "Survie",
+                    "description": [
+                        "5 vies",
+                        "Perds une vie à chaque round perdu",
+                        "Le dernier joueur en lice gagne"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Meilleur de la série",
+                    "description": [
+                        "Le joueur avec le plus de points après 5 manches gagne."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Règles du jeu",
+                    "description": [
+                        "Pierre Feuille Ciseaux, c'est simple : choisis pierre, feuille ou ciseaux. La pierre bat les ciseaux, la feuille bat la pierre, et les ciseaux battent la feuille.",
+                        "À chaque tour, devine ce que ton adversaire va choisir et réagis en conséquence!"
+                    ]
+                },
+                "group": {
+                    "title": "Groupe",
+                    "description": [
+                        "Joue avec jusqu'à 4 joueurs! Un seul peut gagner à chaque manche. Si tu es éliminé tôt, les autres continuent jusqu'à ce qu'il y ait un gagnant.",
+                        "En mode survie, chaque joueur a un nombre de vies limité. Sois le dernier joueur en vie pour gagner!"
+                    ]
+                },
+                "bots": {
+                    "title": "Bots - Les bots",
+                    "description": [
+                        "Joue contre des bots! Ils ont une stratégie aléatoire, donc si tu arrives à comprendre comment ça marche, tu peux les battre tout le temps!"
+                    ]
+                }
+            }
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Bataille de Chiffres",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "Le jeu se finira dès qu'un joueur aura atteint ce nombre de points."
+                },
+                "mode": {
+                    "title": "Mode",
+                    "help": "Un mode de jeu différent va changer la façon dont les points sont attribués et comment on joue.",
+                    "data": {
+                        "SINGLE_HIDER": "Cacher tout seul",
+                        "HIDE_AND_SEEK": "Cache-cache",
+                        "LAST_STANDING": "Dernier debout"
+                    }
+                },
+                "field": {
+                    "title": "Terrain",
+                    "help": "Détermine combien de chiffres sont affichés sur le terrain de jeu."
+                },
+                "revealSpeed": {
+                    "title": "Vitesse de révélation",
+                    "help": "La vitesse à laquelle le tour se dévoile quand tout le monde est prêt."
+                },
+                "multiplier": {
+                    "title": "Multiplicateurs",
+                    "help": "Les multiplicateurs peuvent apparaître sur un seul ou plusieurs numéros en même temps. Quand un cacheur choisit un numéro avec un multiplicateur, il va multiplier ses points. Mais comme tout le monde peut voir les multiplicateurs, c'est risqué et ça augmente les chances de se faire dénicher.",
+                    "data": {
+                        "off": "Éteint",
+                        "uncommon": "Pas courant",
+                        "common": "Commun",
+                        "veryCommon": "Très commun"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Score Dynamique",
+                    "help": {
+                        "introduction": "Donne des points en fonction de la probabilité de succès. Par exemple, si un chercheur trouve un cacheur tôt dans le jeu, il recevra plus de points. Si un cacheur réussit à rester caché avec seulement quelques tuiles restantes, il gagnera aussi plus de points.",
+                        "calculation": "Quand c'est activé, les points sont calculés automatiquement selon les points min. et max. configurés."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Trouver un cacheur",
+                    "help": "Récompensé à un chercheur pour avoir trouvé un cacheur."
+                },
+                "minPointsFind": {
+                    "title": "Min. Trouver un Cacheur"
+                },
+                "maxPointsFind": {
+                    "title": "Max. Trouver un Cacheur"
+                },
+                "pointsHideRound": {
+                    "title": "Caché par Manche",
+                    "help": "Récompensé à un planqué pour être resté caché par tour."
+                },
+                "minPointsHideRound": {
+                    "title": "Min. Caché par Tour"
+                },
+                "maxPointsHideRound": {
+                    "title": "Max. cachés par tour"
+                },
+                "pointsLastAlive": {
+                    "title": "Dernier Survivant",
+                    "help": "Récompensé au dernier joueur qui reste dans le jeu quand tout le monde a été éliminé."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Dernier Restant"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Max. Dernier Survivant"
+                }
+            },
+            "presets": {},
+            "help": {}
+        },
+        "TRIVIA": {
+            "name": "Quiz sympa",
+            "title": null,
+            "description": null,
+            "options": {
+                "consensus": {
+                    "title": "Accord",
+                    "help": "En mode équipe, la réponse de l'équipe doit-elle être basée sur un vote majoritaire (Consensus) ? Sinon, n'importe quel membre de l'équipe peut changer la réponse pour tout le monde."
+                },
+                "lockAnswer": {
+                    "title": "Verrouiller la réponse",
+                    "help": "Quand c'est activé, les joueurs peuvent pas changer leur réponse une fois qu'ils en ont choisi une."
+                },
+                "eliminationChallenge": {
+                    "title": "Défi d'élimination",
+                    "help": "Quand c'est activé, un joueur ou une équipe est éliminé direct après avoir répondu faux à une question."
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": "Contre",
+                    "description": [
+                        "Solo",
+                        "Plus de points pour les questions d'après"
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": "Hardcore contre hardcore",
+                    "description": [
+                        "Pas d'erreurs",
+                        "Réponse verrouillée",
+                        "Points basés sur la vitesse"
+                    ]
+                },
+                "coop": {
+                    "title": "Coop",
+                    "description": [
+                        "Bossez ensemble",
+                        "Points fixes"
+                    ]
+                },
+                "teams": {
+                    "title": "Équipes",
+                    "description": [
+                        "Bosser en équipe",
+                        "Points selon l'ordre"
+                    ]
+                }
+            },
             "help": {}
         }
     },
     "chat": {
-        "EMOJI": {
-            "love": "❤️",
-            "luck": "🍀",
-            "fire": "🔥",
-            "celebration": "🎉",
-            "thumbsUp": "👍",
-            "mindBlowing": "🤯",
-            "thinking": "🤔",
-            "clap": "👏",
-            "cry": "😭",
-            "cool": "😎"
-        },
-        "UNIVERSAL": {
-            "leftTheGame": "a quitté le jeu.",
-            "affirmative": "Ok.",
-            "thanks": "Merci!",
-            "sorry": "Désolé!",
-            "goodLuck": "Bonne chance!",
-            "brb": "Je reviens tout de suite!",
-            "go": "Je dois y aller.",
-            "glhf": "Bonne chance, amuse-toi!",
-            "gg": "Bonne partie."
-        },
-        "PRE_GAME": {
-            "readyCheck": "Tout le monde est prêt?",
-            "changeSettings": "Change les paramètres!",
-            "ready": "Prêt!",
-            "wait": "Attends, stp!",
-            "go": "Allons-y!",
-            "greeting": "Salut! 👋"
-        },
-        "GAME": {
-            "how": "Comment!?",
-            "closeOne": "C'était proche!",
-            "niceOne": "Super!",
-            "remindMove": "À ton tour!",
-            "wow": "Wow!",
-            "oops": "Oups!",
-            "no": "Nooooon!",
-            "ohNo": "Oh non!"
-        },
-        "POST_GAME": {
-            "closeOne": "C'était proche!",
-            "wellPlayed": "Bien joué!",
-            "rematch": "Revanche!",
-            "fun": "C'était amusant!",
-            "bye": "Bye!"
-        }
+        "affirmative": "Ok.",
+        "thanks": "Merci!",
+        "sorry": "Désolé!",
+        "goodLuck": "Bonne chance!",
+        "brb": "Je reviens tout de suite!",
+        "go": "Je dois y aller.",
+        "glhf": "Bonne chance, amuse-toi!",
+        "gg": "Bonne partie.",
+        "readyCheck": "Tout le monde est prêt?",
+        "changeSettings": "Change les paramètres!",
+        "ready": "Prêt!",
+        "wait": "Attends, stp!",
+        "letsGo": "Allons-y!",
+        "greeting": "Salut!",
+        "how": "Comment!?",
+        "closeOne": "C'était proche!",
+        "niceOne": "Super!",
+        "checkThisOut": "Regarde ça !",
+        "remindMove": "À ton tour!",
+        "wow": "Wow!",
+        "oops": "Oups!",
+        "no": "Nooooon!",
+        "ohNo": "Oh non!",
+        "wellPlayed": "Bien joué!",
+        "rematch": "Revanche!",
+        "fun": "C'était amusant!",
+        "bye": "Bye!",
+        "shortYes": "Ouais.",
+        "shortNo": "Nan."
     },
     "header": {
         "message": {
@@ -1512,7 +1735,10 @@
             "roundSummary": "Résumé de la manche",
             "roundCount": "Ronde %{current} de %{total}",
             "roundCurrent": "Tour %{current}",
-            "war": "Guerre !",
+            "startingNewRound": "On commence un nouveau round...",
+            "questionCount": "Question %{current} sur %{total}",
+            "questionCurrent": "Question %{current}",
+            "war": "Guerre!",
             "outcome": "Résultat",
             "input": "En attente de ton choix",
             "waitingForAI": "En attente de l'IA...",
@@ -1603,7 +1829,12 @@
         "language": "Langue",
         "rules": "Règles",
         "points": "Points",
-        "fouls": "Réponse à la mauvaise conduite"
+        "fouls": "Réponse à la mauvaise conduite",
+        "sciences": "Sciences",
+        "artsAndEntertainment": "Arts & Divertissement",
+        "geography": "Géo",
+        "gaming": "Jeux",
+        "technology": "Tech"
     },
     "month": {
         "short": {
@@ -1635,7 +1866,7 @@
     "perk": {
         "gradientPack": {
             "title": "Pack de Dégradé",
-            "description": "Rehausse ton expérience ! Démarque-toi avec une belle palette de couleurs."
+            "description": "Rehausse ton expérience! Démarque-toi avec une belle palette de couleurs."
         },
         "maskedPack": {
             "title": "Pack Masqué",
@@ -1643,35 +1874,35 @@
         },
         "dapperPack": {
             "title": "Pack Élégant",
-            "description": "Adopte la vie de détective ! Équipe ton personnage avec un chapeau de détective, un haut-de-forme, une moustache stylée, et même un monocle."
+            "description": "Adopte la vie de détective! Équipe ton personnage avec un chapeau de détective, un haut-de-forme, une moustache stylée, et même un monocle."
         },
         "militaryPack": {
             "title": "Pack Militaire",
-            "description": "Prépare-toi pour l'action ! Mets un casque dur et un béret, et fonde-toi dans les environs avec plusieurs fonds de camouflage."
+            "description": "Prépare-toi pour l'action! Mets un casque dur et un béret, et fonde-toi dans les environs avec plusieurs fonds de camouflage."
         },
         "piratePack": {
             "title": "Pack de Pirate",
-            "description": "Hé matelot ! Transforme ton personnage en pirate avec un bandeau sur l'œil, des dents tordues, et termine avec un chapeau de pirate."
+            "description": "Hé matelot! Transforme ton personnage en pirate avec un bandeau sur l'œil, des dents tordues, et termine avec un chapeau de pirate."
         },
         "holidaysPack": {
             "title": "Pack de Vacances",
-            "description": "Entrez dans l'esprit des fêtes avec une gamme de chapeaux festifs !"
+            "description": "Entrez dans l'esprit des fêtes avec une gamme de chapeaux festifs!"
         },
         "animalPack": {
             "title": "Pack d'Animaux",
-            "description": "Sois mignon et amusant ! Donne à ton personnage des oreilles de lapin, des oreilles de chat et des bouches adorables. Les oreilles s'adapteront à la couleur de fond que tu choisis."
+            "description": "Sois mignon et amusant! Donne à ton personnage des oreilles de lapin, des oreilles de chat et des bouches adorables. Les oreilles s'adapteront à la couleur de fond que tu choisis."
         },
         "halloweenPack": {
             "title": "Pack d'Halloween",
-            "description": "Plonge dans la saison effrayante ! Choisis parmi des yeux de squelette et de zombie qui font froid dans le dos, ainsi que des bouches hantées, pour créer une ambiance amusante et effrayante dans le jeu."
+            "description": "Plonge dans la saison effrayante! Choisis parmi des yeux de squelette et de zombie qui font froid dans le dos, ainsi que des bouches hantées, pour créer une ambiance amusante et effrayante dans le jeu."
         },
         "americanFootballPack": {
             "title": "Pack de Football Américain",
-            "description": "Prépare-toi pour le grand match ! Équipe ton personnage avec des casques de football stylés dans une variété de couleurs."
+            "description": "Prépare-toi pour le grand match! Équipe ton personnage avec des casques de football stylés dans une variété de couleurs."
         },
         "celebrationPack": {
             "title": "Pack de Fête",
-            "description": "C'est la fête ! Apporte de la joie à ton personnage avec une collection de chapeaux de fête colorés et variés."
+            "description": "C'est la fête! Apporte de la joie à ton personnage avec une collection de chapeaux de fête colorés et variés."
         },
         "developer": {
             "title": "Développeur"
@@ -1735,6 +1966,7 @@
         "wins": "0 victoires | 1 victoire | {count} victoires",
         "cards": "0 cartes | 1 carte | {count} cartes",
         "moves": "0 mouvements | 1 mouvement | {count} mouvements",
+        "tiles": "0 carreaux | 1 carreau | {count} carreaux",
         "playing": "0 jeu | 1 jeu | {count} jeu",
         "players": "0 joueurs | 1 joueur | {count} joueurs",
         "selectedCards": "Aucune carte sélectionnée | 1 carte sélectionnée | {count} cartes sélectionnées",
@@ -1752,6 +1984,12 @@
         "restartNotice": "Le serveur va redémarrer dans {count} minutes. Finissez votre partie. | Le serveur va redémarrer dans {count} minute. Finissez votre partie. | Le serveur va redémarrer dans {count} minutes. Finissez votre partie."
     },
     "misc": {
+        "questions": "Questions",
+        "teamAndQuestions": "Équipe & Questions",
+        "questionPacks": "Packs de Questions",
+        "rock": "Pierre",
+        "paper": "Feuille",
+        "scissors": "Ciseaux",
         "lobby": "Hall",
         "inGame": "En jeu",
         "matchmakingSearch": "À la recherche d'une partie",
@@ -1787,7 +2025,7 @@
         "unknown": "Inconnu",
         "none": "Aucun",
         "seasonal": "Saisonnier",
-        "items": "Items -> Objets",
+        "items": "Objets",
         "purchaseCoins": "Acheter des Pièces",
         "store": "Boutique",
         "buyNow": "Acheter Maintenant",
@@ -1852,6 +2090,8 @@
         "language": "Langue",
         "toggle": "Basculer",
         "login": "Connexion",
+        "loginToExistingAccount": "Se connecter à mon compte",
+        "createMyAccount": "Créer mon compte",
         "logout": "Se déconnecter",
         "hats": "Chapeaux",
         "eyes": "Yeux",
@@ -1869,6 +2109,7 @@
         "specificCards": "Cartes spécifiques",
         "matchId": "ID de la partie",
         "chat": "Chat",
+        "sendMessage": "Envoyer un message",
         "host": "Hôte",
         "player": "Joueur",
         "players": "Joueurs",
@@ -1900,7 +2141,6 @@
         "view": "Voir",
         "forfeit": "Déclarer forfait",
         "processFiles": "Traiter les fichiers",
-        "sendMessage": "Envoyer un message",
         "checkAgain": "Vérifie encore",
         "refreshWindow": "Réactualiser la fenêtre",
         "makeHost": "Rendre cette personne l'hôte",
@@ -1921,6 +2161,7 @@
         "highestScore": "Meilleur Score",
         "totalScore": "Score total",
         "finalScore": "Score final",
+        "flawlessGames": "Jeux Parfaits",
         "hits": "Coups",
         "hitRate": "Taux de Coups",
         "rank": "Rang",
@@ -1930,8 +2171,10 @@
         "assassinations": "Assassinats",
         "survivals": "Survies",
         "games": "Jeux",
+        "correctRatio": "Ratio correct",
         "winRatio": "Ratio de victoires",
         "killDeathRatio": "Ratio K/D",
+        "lives": "Vies",
         "points": "Points",
         "wins": "Victoires",
         "grids": "Grilles",
@@ -1942,6 +2185,7 @@
         "fouls": "Fautes",
         "and": "et",
         "vs": "vs",
+        "dismiss": "Ignorer",
         "rename": "Renommer",
         "created": "Créé",
         "lastSeen": "Dernière Fois Vu",
@@ -1951,6 +2195,7 @@
         "myDevices": "Mes appareils",
         "myData": "Mes données",
         "redeemCode": "Utiliser un code",
+        "contact": "Contact",
         "leaderboard": "Tableau des leaders",
         "elapsedTime": "%{time} écoulé",
         "startingInTime": "Commence dans %{time}",
@@ -1964,6 +2209,10 @@
         "coinsBlank": "%{value} pièces",
         "receivedBlank": "Reçu %{value}",
         "lessThanBlank": "Moins de %{value}",
+        "lastSeenBlankAgo": "Vu il y a %{value}",
+        "lastSeenJustNow": "Vu tout à l'heure",
+        "blank": "%{value}",
+        "byBlank": "Par %{value}",
         "sendVerification": "Envoyer la vérification",
         "noThanks": "Non merci",
         "ready": "Prêt",
@@ -1978,12 +2227,15 @@
         "madeBy": "Fait par %{name}",
         "selectedOfLimit": "Sélectionné %{current} d'une limite de %{total}",
         "helpLocalize": "Aidez à améliorer la localisation",
+        "goAdFree": "Va sans pub",
         "discord": "Rejoignez notre Discord",
         "volume": "Volume",
         "volumeInterface": "Volume de l'interface",
         "volumeEffects": "Volume des effets",
+        "volumeMusic": "Volume de la musique",
         "selectYourLanguage": "Sélectionnez votre langue",
         "selectYourColor": "Choisis ta couleur",
+        "selectYourTeam": "Choisis ton équipe",
         "latestChanges": "Derniers changements",
         "noChangesDetected": "Aucun changement détecté",
         "newChanges": "Nouveaux changements",
@@ -2016,7 +2268,7 @@
             "title": "Ensembles de cartes",
             "contribute": "Contribuer à cette liste",
             "create": "Créer un ensemble",
-            "browser": "Parcourir et importer des ensembles personnalisés",
+            "browser": "Voir jeux de cartes publics",
             "import": "Importer un ensemble",
             "importer": "Importateur d'ensembles de cartes",
             "namedTitle": "Ensemble de cartes \"%{title}\"",
@@ -2055,7 +2307,7 @@
             "dump": "Sélectionne les cartes que tu veux jeter",
             "noType": "Il n'y a pas de cartes %{type}",
             "delete": "Tu vas supprimer la carte \"%{info}\".",
-            "winningOptionSelf": "Tu as gagné ce tour !",
+            "winningOptionSelf": "Tu as gagné ce tour!",
             "winningOption": "%{name} a gagné cette manche avec la sélection %{selection}",
             "actionResponseCardCounter": "Compteur de cartes action et réponse. Certains jeux utilisent les mêmes cartes ; les doublons sont automatiquement retirés. Le filtrage <b>NSFW</b> ou <b>Cartes spécifiques</b> réduit également le nombre total.",
             "navigateSelf": "Dirige-toi vers le compteur de <b>cartes action et réponse</b>",
@@ -2126,8 +2378,8 @@
             "rematchWaiting": "En attentte que l'autre joueur accepte la revanche...",
             "rematchRequest": "%{name} voudrais une revanche",
             "joinById": "Tu peux joindre une partie privée en entrant l'ID à quatre chiffres.",
-            "public": "<b>Public : </b>N'importe qui peut se joindre en parcourant les parties disponibles.",
-            "private": "<b>Privé : </b>Les joueurs peuvent seulement se joindre en utilisant l'URL ou l'ID à 4 chiffres.",
+            "public": "<b>Public: </b>N'importe qui peut se joindre en parcourant les parties disponibles.",
+            "private": "<b>Privé: </b>Les joueurs peuvent seulement se joindre en utilisant l'URL ou l'ID à 4 chiffres.",
             "finishedSettings": "Tu as fini de modifier les paramètres de la partie?",
             "leave": "Tu pourrais ne pas pouvoir rejoindre la partie si tu décides de quitter maintenant.",
             "leaveLast": "Puisque tu es la seule personne dans le jeu, la partie sera terminée lorsque tu auras quitté le jeu.",
@@ -2135,8 +2387,19 @@
         }
     },
     "info": {
+        "roundEndTie": "C'est un match nul!",
+        "roundEndStalemate": "C'est une impasse!",
+        "roundWin": "T'as gagné!",
+        "roundLost": "T'as perdu!",
+        "youLostThisRound": "T'as perdu ce round.",
+        "youAreOutOfLives": "T'as plus de vies",
+        "playerIsEliminated": "Le joueur a été éliminé",
+        "youAreEliminated": "T'es éliminé",
+        "waitForRoundEnd": "Attends que le round se termine.",
+        "waitForWinner": "Reste tranquille et attends qu'un gagnant se pointe!",
         "serverRestart": "Le serveur est en train de redémarrer. Reviens dans quelques minutes.",
         "clearOldListings": "Efface tous les matchs 'Indisponibles'.",
+        "flawlessGame": "Partie parfaite! Aucune erreur.",
         "accountLinkSuggestion": "Vous êtes maintenant %{level}! Pensez à créer un compte pour protéger votre progression.",
         "accountLinked": "Ce compte est lié à l'adresse email suivante: %{email}.",
         "incompleteTranslationNotice": "La langue que vous avez sélectionnée est à environ {percentage}% complète. Les traductions manquantes seront en anglais.",
@@ -2162,7 +2425,8 @@
         "inactiveOpponent": "Votre adversaire était inactif",
         "inactiveOpponents": "Tous les adversaires étaient inactifs",
         "waitForOpponent": "En attente de ton adversaire...",
-        "waitForOpponents": "En attente de tes adversaires....",
+        "waitForOpponents": "En attente de tes adversaires...",
+        "nameLeftTheGame": "%{name} a quitté le jeu",
         "selfNoPoints": "Tu n'as reçu aucun point.",
         "nameNoPoints": "%{name} n'a reçu aucun point.",
         "gameMenu": "Vous avez envie de jouer à autre chose ?",
@@ -2182,22 +2446,28 @@
         "loginToPurchase": "Pour faire un achat, tu dois d'abord te connecter ou créer un compte.",
         "seasonalItem": "Un article dans cet emplacement n'est disponible que quelques jours par an.",
         "cardInteractHint": "Clique sur une carte pour faire ton choix.",
+        "gameInvite": "Invitation au jeu",
+        "keyboardShortcutCombination": "Pour utiliser les raccourcis clavier comme {combination}, maintiens {firstKey} enfoncé et appuie sur {secondKey}",
+        "goAdFree": "Les pubs sont désactivées pour ton compte si tu soutiens le développement en achetant des pièces, peu importe le montant.",
         "awaitingPurchaseConfirmation": {
             "title": "En attente de confirmation d'achat",
             "description": "Ça prend généralement que quelques secondes. Selon votre méthode de paiement, cela peut prendre plus de temps. N'hésitez pas à fermer cet écran."
         },
         "friend": {
             "noFriends": "Pas d'amis",
-            "noAccount": "Connecte-toi ou crée un compte pour commencer à te faire des potes !",
-            "description": "Reste connecté ! Vois tes amis en ligne, leurs jeux, et rejoins leurs salons privés !",
-            "removeDescription": "Tu es sur le point de mettre fin à ton amitié avec \"%{name}\"."
+            "noAccount": "Connecte-toi ou crée un compte pour commencer à te faire des potes!",
+            "description": "Reste connecté! Vois tes amis en ligne, leurs jeux, et rejoins leurs salons privés!",
+            "removeDescription": "Tu es sur le point de mettre fin à ton amitié avec \"%{name}\".",
+            "inviteReceived": "%{name} t'a invité à jouer à %{game}",
+            "inviteSent": "L'invite de jeu a été envoyée!"
         },
+        "contact": "N'hésite pas à nous contacter si t'as des soucis, des idées, ou des questions! Tu peux nous écrire un mail ou rejoindre le Discord de Bloob.io.",
         "settings": {
             "redeemCode": {
                 "title": "Entrez un code",
                 "description": "Entrez un code unique ci-dessous pour débloquer des objets spéciaux pour encore plus de personnalisation. Chaque code ne peut être utilisé qu'une seule fois.",
                 "unlinked": "Désolé, vous ne pouvez pas utiliser un code avant d'avoir lié votre compte à une adresse e-mail.",
-                "success": "Tu as réussi à obtenir %{item} !"
+                "success": "Tu as réussi à obtenir %{item}!"
             },
             "experience": {
                 "title": "Expérience",
@@ -2212,6 +2482,14 @@
                 "description": "Bloob.io suit anonymement les données analytiques à l'aide d'un serveur Matomo analytique privé et respectueux de la vie privée. Vos données ne sont jamais partagées avec d'autres. Vous pouvez vous désinscrire si vous le souhaitez.",
                 "blocked": "Les données analytiques ne sont pas actives. Votre navigateur ou extension peut l'avoir bloqué.",
                 "dnt": "Votre navigateur a le paramètre \"Ne pas suivre\" (DNT) activé. Nous respectons votre demande et ne vous suivons pas."
+            },
+            "ads": {
+                "title": "Annonces",
+                "description": "On affiche des pubs de Playwire. La pub sur Bloob.io, que ce soit en entier ou en partie, est gérée par Playwire LLC. Si tu veux pas voir de pubs sur Bloob.io, tu peux te débarrasser des pubs en achetant des pièces dans la boutique. Ça va enlever toutes les pubs pour ton compte automatiquement.",
+                "complaint": "C'est important pour Bloob.io que les pubs que tu vois soient éthiques et pas intrusives. Si tu vois des pubs qui gênent ton jeu, fais-nous signe en regardant la section \"À propos\".",
+                "consent": "Clique ici pour mettre à jour tes préférences de consentement pour les pubs",
+                "exempt": "Les pubs ne sont pas actives. Ton compte est sans pub. Merci pour ton soutien!",
+                "blocked": "Les pubs sont pas actives. Ton navigateur ou une extension a peut-être bloqué ça."
             },
             "serverData": {
                 "title": "Données du serveur",
@@ -2234,11 +2512,11 @@
         "authentication": {
             "login": {
                 "title": "Connectez-vous",
-                "description": "Veuillez noter que la connexion à votre compte effacera tous les progrès pour l'utilisateur que vous utilisez actuellement (%{name})."
+                "description": "Attention! L'utilisateur actuel que tu utilises, ${name} qui est ${level}, n'est pas encore lié à un compte. Se connecter avec un compte existant va supprimer cet utilisateur définitivement. Peut-être que tu voulais plutôt créer ton compte ?"
             },
             "setupThreshold": {
-                "title": "T'es en avance %{name} !",
-                "description": "Tu dois être niveau %{level} ou plus pour créer un compte. Tu es à %{percentage} du chemin !"
+                "title": "T'es en avance %{name}!",
+                "description": "Tu dois être niveau %{level} ou plus pour créer un compte. Tu es à %{percentage} du chemin!"
             },
             "setup": {
                 "title": "Salut, %{name}!",
@@ -2304,14 +2582,14 @@
             },
             "content": {
                 "clientOffline": "On dirait que t'es hors ligne. Vérifie ta connexion internet.",
-                "serverMaintenance": "Le serveur du jeu est en maintenance pour améliorer ton expérience. Reviens vite !",
-                "serverOffline": "On dirait que le serveur du jeu est tombé hors ligne de manière inattendue. Regarde la page de statut pour les mises à jour. On bosse pour tout remettre en ligne !",
+                "serverMaintenance": "Le serveur du jeu est en maintenance pour améliorer ton expérience. Reviens vite!",
+                "serverOffline": "On dirait que le serveur du jeu est tombé hors ligne de manière inattendue. Regarde la page de statut pour les mises à jour. On bosse pour tout remettre en ligne!",
                 "serverUnavailable": "On n'a pas pu vérifier le statut du serveur. Tu peux essayer de le vérifier manuellement à la place.",
                 "clientRestrictedNetwork": "On dirait que t'es sur un réseau restreint (comme à l'école ou au boulot), ça peut affecter ta connexion. Essaie d'utiliser un VPN ou passe sur les données mobiles.",
                 "clientChangingNetwork": "On dirait que t'as changé de réseau. On a détecté au moins %{networkCount} changements de réseau. Ça peut arriver si tu toggles les données mobiles, que tu changes de lieu de VPN, ou que tu bouges entre des réseaux Wi-Fi. Pour garder une connexion stable, essaie de rester sur un seul réseau.",
                 "clientFrequentlyOffline": "Ta connexion a l'air instable. On a remarqué que ton réseau est tombé hors ligne au moins %{offlineCount} fois. Pense à toggler tes données mobiles, ton VPN, ou à changer de réseau.",
                 "clientFrequentlyReconnected": "Ta connexion au serveur semble instable. Ton ping est de %{ping}ms et t'as %{reconnectedCount} tentatives de reconnexion. Si tu peux, essaie de changer ta connexion en allumant/éteignant tes données mobiles ou ton VPN.",
-                "unknown": "Tout a l'air ok, essaie de rafraîchir la page. Tu vois toujours cette page ? N'hésite pas à nous contacter !"
+                "unknown": "Tout a l'air ok, essaie de rafraîchir la page. Tu vois toujours cette page ? N'hésite pas à nous contacter!"
             }
         },
         "cards": {
@@ -2322,10 +2600,10 @@
             "nameRanOut": "%{name} n'a plus de cartes à jouer!"
         },
         "war": {
-            "title": "Guerre !",
+            "title": "Guerre!",
             "selfWarNotIncluded": "Attends que la guerre entre tes adversaires se termine...",
-            "selfWarPlaceCards": "T'es en guerre ! Pose %{cards}.",
-            "selfWarPlaceFinalCard": "T'es en guerre ! Pose ta dernière carte."
+            "selfWarPlaceCards": "T'es en guerre! Pose %{cards}.",
+            "selfWarPlaceFinalCard": "T'es en guerre! Pose ta dernière carte."
         },
         "cribbage": {
             "type": {
@@ -2398,10 +2676,10 @@
             "yourCribSelectionSubmit": "Envoie les cartes en surbrillance à ton berceau!",
             "nameCribSelectionSubmit": "Envoie les cartes en surbrillance au berceau de %{name}!",
             "singleSkunk": "Putoisé! Ce joueur avait moins de %{points}.",
-            "doubleSkunk": "Double mouffeté ! Ce joueur avait moins de %{points}.",
-            "selfJackHeelsPoints": "%{turn} a tiré un valet ! Tu gagnes %{points} pour ses talons.",
-            "nameJackHeelsPoints": "%{turn} a tiré un valet ! %{name} gagne %{points} pour ses talons.",
-            "nameSelfJackHeelsPoints": "Tu as tiré un valet ! %{name} gagne %{points} pour ses talons.",
+            "doubleSkunk": "Double mouffeté! Ce joueur avait moins de %{points}.",
+            "selfJackHeelsPoints": "%{turn} a tiré un valet! Tu gagnes %{points} pour ses talons.",
+            "nameJackHeelsPoints": "%{turn} a tiré un valet! %{name} gagne %{points} pour ses talons.",
+            "nameSelfJackHeelsPoints": "Tu as tiré un valet! %{name} gagne %{points} pour ses talons.",
             "selfPlayOfOne": "Tu gagnes %{points} pour %{0}.",
             "selfPlayOfTwo": "Tu gagnes %{points} pour %{0} et %{1}.",
             "namePlayOfOne": "%{name} gagne %{points} pour %{0}.",
@@ -2427,10 +2705,10 @@
                 "knock": "Frapper",
                 "knockSuccessRate": "Knock réussi"
             },
-            "tieDescription": "Y'a pas assez de cartes pour continuer à jouer. C'est une égalité !",
+            "tieDescription": "Y'a pas assez de cartes pour continuer à jouer. C'est une égalité!",
             "scoreDescription": "Le score se calcule en regardant la différence entre la valeur totale des cartes mortes dans chaque main.",
-            "yourMeldAfterKnock": "Oh non... Une partie des cartes mortes de %{name} peut être ajoutée à tes combinaisons !",
-            "nameMeldAfterKnock": "Génial ! Une partie de tes cartes mortes peut aller dans les combinaisons de %{name} !"
+            "yourMeldAfterKnock": "Oh non... Une partie des cartes mortes de %{name} peut être ajoutée à tes combinaisons!",
+            "nameMeldAfterKnock": "Génial! Une partie de tes cartes mortes peut aller dans les combinaisons de %{name}!"
         },
         "yacht": {
             "title": {
@@ -2470,12 +2748,30 @@
                 "yachtBonus": "Si tu lances un autre Yams après en avoir déjà obtenu un, tu gagneras %{points} supplémentaires. Mais n'oublie pas, tu n'obtiendras ces points que si tu fais un mouvement qui te rapporte des points.",
                 "chance": "N'importe quelle combinaison de dés peut être utilisée."
             },
-            "scoreHint": "Clique sur un numéro orange pour réclamer ces points !",
+            "scoreHint": "Clique sur un numéro orange pour réclamer ces points!",
             "holdHint": "Clique sur un dé pour le garder ou le lâcher.",
             "earnsMatch": "Gagne le total de tous les dés correspondants.",
             "earnsPoints": "Gagne %{points}.",
             "earnsSum": "Gagne le total de tous les dés combinés.",
             "noPointsWarning": "Ce mouvement ne te rapportera aucun point. Il y a d'autres choix qui te donnent des points."
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
         },
         "ai": {
             "ready": null,
@@ -2485,9 +2781,7 @@
             "assassinAssignment": null,
             "targetAssignment": null,
             "assassinDescription": null,
-            "targetDescription": null,
-            "startAssassinChat": null,
-            "joinAssassinChat": null
+            "targetDescription": null
         },
         "poolType": {
             "SOLID": "Hautes",
@@ -2495,9 +2789,9 @@
         },
         "poolFoul": {
             "other": {
-                "CUE_BALL_POCKET": "%{name} a empoché la bille blanche !",
-                "CUE_BALL_HIT_NO_BALL": "%{name} n'a touché aucune autre bille !",
-                "CUE_BALL_HIT_WRONG_BALL": "%{name} a touché la mauvaise bille en premier !",
+                "CUE_BALL_POCKET": "%{name} a empoché la bille blanche!",
+                "CUE_BALL_HIT_NO_BALL": "%{name} n'a touché aucune autre bille!",
+                "CUE_BALL_HIT_WRONG_BALL": "%{name} a touché la mauvaise bille en premier!",
                 "CUSHION_HIT_MIN_ON_BREAK": "%{name} n'a pas réussi à faire toucher assez de billes au bandage lors du break. (Min. %{min})",
                 "CUSHION_HIT_INVALID": "%{name} n'a pas réussi à faire toucher une bille valide au bandage alors qu'aucune bille n'a été empochée.",
                 "CONSECUTIVE_FOULS_EXCEEDED": "%{name} a commis %{fouls} fautes consécutives.",
@@ -2507,9 +2801,9 @@
                 "POCKETED_WRONG_BALL": "%{name} a empoché la mauvaise balle."
             },
             "self": {
-                "CUE_BALL_POCKET": "Tu as empoché la bille blanche !",
-                "CUE_BALL_HIT_NO_BALL": "Tu n'as touché aucune autre bille !",
-                "CUE_BALL_HIT_WRONG_BALL": "Tu as touché la mauvaise bille en premier !",
+                "CUE_BALL_POCKET": "Tu as empoché la bille blanche!",
+                "CUE_BALL_HIT_NO_BALL": "Tu n'as touché aucune autre bille!",
+                "CUE_BALL_HIT_WRONG_BALL": "Tu as touché la mauvaise bille en premier!",
                 "CUSHION_HIT_MIN_ON_BREAK": "Tu n'as pas touché assez de billes pour atteindre la bande lors du break. (Min. %{min})",
                 "CUSHION_HIT_INVALID": "Tu n'as pas touché une bille valide pour atteindre une bande alors qu'aucune bille n'a été empochée.",
                 "CONSECUTIVE_FOULS_EXCEEDED": "Tu as commis %{fouls} fautes consécutives.",
@@ -2542,6 +2836,7 @@
             "developedBy": "Developpé par %{name}",
             "iconsSource": "Icônes gracieuseté de %{name} (Sous licence)",
             "soundsSource": "Sons fournis par %{name} (Sous licence)",
+            "emojiSource": "Émojis fournis par %{name} (CC-BY 4.0)",
             "rottenApplesSource": "Pommes pourries basées sur %{name} (Creative Commons BY-NC-SA 2.0)",
             "diceSource": "Modèle de dé par %{name} (CC-BY-4.0)",
             "localization": "Localisation par des contributeurs bénévoles"
