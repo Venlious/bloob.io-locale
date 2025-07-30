@@ -386,6 +386,10 @@ export default class TranslationClass {
 			[`info`, `ginRummy`],
 			`This translation is a Gin Rummy action or outcome.`
 		)
+		this.generateTranslationTask(
+			[`info`, `graphicsAcceleration`],
+			`This translation is related to the user's graphics acceleration setting.`
+		)
 		const cribbageTypes = Object.keys(EN_MESSAGES[`info`][`cribbage`][`type`])
 		for (const type of cribbageTypes) {
 			const target = EN_MESSAGES[`info`][`cribbage`][`type`][type]
