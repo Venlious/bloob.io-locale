@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1804,
+        "missing": 22
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Anteeksi, tälle käyttäjälle on jo tullut kaveriraja vastaan, joka on %{amount}.",
             "pendingFriendLimitSelf": "Et voi olla enemmän kuin %{amount} odottavaa kaveruutta.",
             "pendingFriendLimitOther": "Anteeksi, tälle käyttäjälle on jo liikaa odottavaa kaveruutta.",
+            "userOffline": "Anteeks, tää käyttäjä on offline.",
             "notFriends": "Ette ole kavereita, eikä teillä ole odottavaa kaveripyyntöä.",
             "alreadyFriends": "Olette jo kavereita tämän käyttäjän kanssa.",
             "pendingFriends": "Tällä käyttäjällä on jo odottava kaveripyyntö.",
@@ -81,6 +82,7 @@
         "start": {
             "fieldRows": "Valittu kenttä ei voi tukea enempää kuin %{rows} riviä",
             "fieldCannotFitUsers": "Valittu kenttä ei voi tukea enempää kuin %{users} pelaajaa",
+            "questionThreshold": "Peli vaatii vähintään %{count} kysymystä.",
             "whiteCardThreshold": "Peli vaatii vähintään %{count} vastauskorttia (valkoista)",
             "blackCardThreshold": "Peli vaatii vähintään %{count} toimintakorttia (mustaa)",
             "insufficientPlayers": "Tarvitaan vähintään %{min} pelaajaa aloittamaan matsi."
@@ -100,6 +102,7 @@
             "incorrectValue": "Antamasi arvo ei täsmää odotettuun.",
             "invalidMove": "Antamasi siirto on virheellinen.",
             "invalidVote": "Yritetty äänesi on virheellinen.",
+            "noLives": "Sulla ei oo enää elämää jäljellä.",
             "alreadyPlaced": "Oot jo laittanut jotain.",
             "alreadyVoted": "Oot jo äänestänyt.",
             "invalidPlacement": "Sun nappulan sijoitus on virheellinen.",
@@ -181,6 +184,7 @@
     },
     "game": {
         "generic": {
+            "name": "Koti",
             "title": "Bloob.io | Pelaa ilmaiseksi kaverien kanssa tai bottien",
             "description": "Koe iloinen pelikokemus Bloob.io:ssa! Pelaa ilmaisia selainpelejä moninpelinä kavereiden, tuntemattomien tai bottien kanssa ilman tiliä.",
             "options": {
@@ -197,6 +201,15 @@
                 },
                 "botCount": {
                     "help": "Tuo bottisi peliin muiden pelaajien kanssa."
+                },
+                "pointer": {
+                    "title": "Kohdistin",
+                    "help": "Salli muille pelaajille nähdä, mihin osoitat hiirelläsi. Joissain tapauksissa voit valita, että se pysyy vain sun porukan/timmin tiedossa.",
+                    "data": {
+                        "OFF": "Pois",
+                        "PRIVATE": "Yksityinen",
+                        "EVERYONE": "Kaikki"
+                    }
                 },
                 "botDifficulty": {
                     "title": "Botin Vaikeustaso",
@@ -242,9 +255,41 @@
                         "off": "Ei rajoituksia"
                     }
                 },
+                "scoringSystem": {
+                    "title": "Pisteytys",
+                    "help": {
+                        "default": "Päättää, miten pisteitä jaetaan, kun kysymykseen vastataan oikein.",
+                        "SPEED": "Pisteet riippuu siitä, kuinka nopeasti kysymykseen vastataan.",
+                        "ORDER": "Pisteet määräytyy sen mukaan, kuka pelaajista oli nopein.",
+                        "FIXED": "Jokaisesta kysymyksestä saa saman verran pisteitä.",
+                        "PROGRESSIVE": "Ansaitut pisteet kasvaa jokaisen kysymyksen jälkeen.",
+                        "STREAK": "Saa lisäpisteitä peräkkäisistä oikeista vastauksista; nollautuu, jos vastaat väärin."
+                    },
+                    "data": {
+                        "SPEED": "Nopeus",
+                        "ORDER": "Järjestys",
+                        "FIXED": "Kiinteä",
+                        "PROGRESSIVE": "Progressiivinen",
+                        "STREAK": "Putki"
+                    }
+                },
+                "mode": {
+                    "title": "Tila",
+                    "help": {
+                        "default": "Valitse, miten pelaajat kilpailee: yksin, tiiminä tai yhteistyössä.",
+                        "SOLO": "Jokainen pelaaja kilpailee yksin.",
+                        "CO_OP": "Kaikki pelaajat tekee yhteistyötä tiiminä.",
+                        "TEAM": "Pelaajat jaetaan tiimeihin, ja ne voi valita oman porukan, jonka kanssa tehdä duunia."
+                    },
+                    "data": {
+                        "SOLO": "Soolo",
+                        "CO_OP": "Co-op",
+                        "TEAM": "Tiimit"
+                    }
+                },
                 "deckSize": {
                     "title": "Pakan Koko",
-                    "help": "Pelaa ilman aikarajoituksia. Poista kaikki vuorokellot käytöstä ja nauti rennosta pelikokemuksesta, jossa voit pelata omaan tahtiisi. Ei suositella satunnaisia vastustajia vastaan.",
+                    "help": "Valitse sun suosikkikoko pelille.",
                     "data": {
                         "half": "Puolikas pakka",
                         "full": "Täysi pakka",
@@ -835,6 +880,10 @@
                     "title": "Tähtäysviiva",
                     "help": "Aiming-viiva näyttää, mihin kuula menee, kun sitä on lyöty."
                 },
+                "speed": {
+                    "title": "Nopeus",
+                    "help": "Kuinka nopeesti uima-altaan animaatio pyörii."
+                },
                 "illegalBallPocket": {
                     "title": "Laiton Pallo Taskussa"
                 },
@@ -1009,12 +1058,23 @@
                     "title": "Lisävene",
                     "help": "Määritä, miten pelin pitäisi käsitellä tilanne, jossa pelaaja heittää toisen jahdin jo saatuaan pisteitä yhdestä."
                 },
+                "jokerYacht": {
+                    "title": "Jahti Joker",
+                    "help": "Kun tämä asetus on päällä, voit kerätä pisteitä mistä tahansa lisä-Yachtista täyskäden, pienen suoran tai suuren suoran muodossa. Tämä vaihtoehto tulee saataville vain, jos vastaava nopan silmäluku ja Yacht-kategoria on jo täytetty."
+                },
                 "additionalYachtReward": {
                     "title": "Palkinto",
                     "help": "Pisteet, jotka annetaan niille, jotka heittävät taas uuden Jahtin."
                 }
             },
-            "presets": {},
+            "presets": {
+                "joker": {
+                    "title": "Jokeri",
+                    "description": [
+                        "Enemmän vaihtoehtoja kun saat Jahti"
+                    ]
+                }
+            },
             "help": {
                 "objective": {
                     "title": "Ymmärtäminen Tehtävää",
@@ -1064,6 +1124,12 @@
                         "Voit myös klikata tyhjää oranssia kohtaa ja saada 0 pistettä. Tämä voi olla hyödyllistä, jos ainoa muu vaihtoehtosi antaisi sinulle hyvin vähän pisteitä kyseisestä kategoriasta.",
                         "Tämä voi olla hyödyllistä, jos haluat esimerkiksi tavoitella bonusta yläosion puolella."
                     ]
+                },
+                "shortcuts": {
+                    "title": "Pikanäppäimet",
+                    "description": [
+                        "Haluatko siirtää paljon samoja noppia kerralla? Käytä keskimmäistä hiiren nappia tai pidä Shift-näppäintä pohjassa, kun klikkaat noppaa, niin kaikki samanlaiset nopat siirtyy kerralla!"
+                    ]
                 }
             }
         },
@@ -1100,7 +1166,8 @@
                         "pier": "Laituri",
                         "littleIsland": "Pieni Saari",
                         "keys": "Avaimet",
-                        "lagoon": "Laguuni"
+                        "lagoon": "Laguuni",
+                        "ocean": "Meri"
                     }
                 },
                 "levelOrientation": {
@@ -1121,6 +1188,10 @@
                 "shipReveal": {
                     "title": "Aluksen Paljastus",
                     "help": "Kun tämä on päällä, näet laivan kun olet upottanut sen. Kun se on pois päältä, näkyy vain laskuri jäljellä oleville laivoille."
+                },
+                "hitAfterHit": {
+                    "title": "Isku iskun perään",
+                    "help": "Kun tää on päällä, saat ampua uudestaan, kun osut laivaan. Kun tää on pois päältä, saat vaan yhden laukauksen vuorolla."
                 }
             },
             "presets": {},
@@ -1420,63 +1491,257 @@
             }
         },
         "AI_ASSASSIN": {
-            "name": "Tehtävä: Tappaa AI",
-            "title": "Päihitä, Eliminoi, Selviydy",
-            "description": "AI Assassin on jännittävä moninpeli, jossa eliminoit kohteen tai harhautat salamurhaajia. Käytä strategisia vihjeitä tavoitteesi saavuttamiseksi ja menestyäksesi.",
+            "name": "AI Murhaaja",
+            "title": "Pelaa AI Murhaajaa netissä | Ilmainen tekoälypeli moninpelinä",
+            "description": "Pelaa AI Murhaajaa ilmaiseksi netissä! Ei tiliä tarvita. Haasta ystävät tai botit tekoälypeliin moninpelinä. Tervetuloa salaliittoon!",
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Kivi Paperi Sakset",
+            "title": "Kivi Paperi Sakset | Pelaa RPS:n moninpeliä netissä ilmaiseksi",
+            "description": "Pelaa Kivi Paperi Sakset -klassikkopeliä netissä ilmaiseksi! Ei tiliä tarvita. Haasta kaverit, tuntemattomat tai botit moninpelissä helposti!",
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "Kivi voittaa sakset",
+                        "paper": "Paperi voittaa kiven",
+                        "scissors": "Sakset voittaa paperin"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Viimeinen pystyssä (<b>0</b> elämää) | Viimeinen pystyssä (<b>1</b> elämä) | Viimeinen pystyssä (<b>{count}</b> elämää)",
+                        "FIRST": "Ensimmäinen, joka saa <b>0</b> pistettä | Ensimmäinen, joka saa <b>1</b> pisteen | Ensimmäinen, joka saa <b>{count}</b> pistettä",
+                        "HIGHEST_AFTER": "Eniten pisteitä jälkeen <b>0</b> kierrosta | Eniten pisteitä jälkeen <b>1</b> kierroksen | Eniten pisteitä jälkeen <b>{count}</b> kierrosta"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Kilpailu",
+                    "description": [
+                        "Ensimmäinen viiteen pisteeseen"
+                    ]
+                },
+                "survival": {
+                    "title": "Selviytyminen",
+                    "description": [
+                        "5 elämää",
+                        "Häviä yksi elämä jokaisesta hävitystä kierroksesta",
+                        "Viimeinen pystyssä oleva voittaa"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Sarjan parhaat",
+                    "description": [
+                        "Viiden kierroksen jälkeen eniten pisteitä saanut pelaaja voittaa."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Säännöt",
+                    "description": [
+                        "Kivi, paperi, sakset on tosi helppo: valitse kivi, paperi tai sakset. Kivi voittaa sakset, paperi voittaa kiven ja sakset voittaa paperin.",
+                        "Jokaisessa kierroksessa yritä arvata, mitä sun vastustaja valitsee ja reagoi sen mukaan!"
+                    ]
+                },
+                "group": {
+                    "title": "Ryhmä",
+                    "description": [
+                        "Pelaa jopa 4 pelaajalla! Vain yksi voi voittaa jokaisessa kierroksessa. Jos putoat aikaisin, muut pelaajat jatkaa, kunnes voittaja löytyy.",
+                        "Selviytymismoodissa jokaisella pelaajalla on tietty määrä elämiä. Ole viimeinen pystyssä voittaaksesi!"
+                    ]
+                },
+                "bots": {
+                    "title": "Bottien salat",
+                    "description": [
+                        "Pelaa botteja vastaan! Ne seuraa satunnaista strategiaa, joten jos saat sen selville, voit voittaa ne aina!"
+                    ]
+                }
+            }
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Numeroiden Taistelu",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "Peli loppuu heti, kun joku pelaaja on saanut tän verran pisteitä."
+                },
+                "mode": {
+                    "title": "Tila",
+                    "help": "Eri pelimuoto vaikuttaa siihen, miten pisteitä jaetaan ja miten peliä pelataan.",
+                    "data": {
+                        "SINGLE_HIDER": "Yksinäinen piilottaja",
+                        "HIDE_AND_SEEK": "Piilosta",
+                        "LAST_STANDING": "Viimeinen pystyssä"
+                    }
+                },
+                "field": {
+                    "title": "Kenttä",
+                    "help": "Määrittää, kuinka monta numeroa näkyy pelialueella."
+                },
+                "revealSpeed": {
+                    "title": "Paljastusnopeus",
+                    "help": "Kierroksen paljastus tapahtuu heti kun kaikki on valmiina."
+                },
+                "multiplier": {
+                    "title": "Kerrottimet",
+                    "help": "Kerrottimet voi ilmestyä yhdelle tai useammalle numerolle samaan aikaan. Kun piilottaja valitsee numeron, jossa on kerroin, he moninkertaistavat pisteensä. Mutta koska kaikki näkee kertoimet, se on riskialtista ja lisää mahdollisuuksia tulla löydetyksi.",
+                    "data": {
+                        "off": "Pois päältä",
+                        "uncommon": "Epätavallinen",
+                        "common": "Tavallinen",
+                        "veryCommon": "Erittäin tavallinen"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Dynaaminen pisteytys",
+                    "help": {
+                        "introduction": "Anna pisteitä sen mukaan, kuinka todennäköisesti onnistuu. Esimerkiksi, jos etsijä löytää piilottelijan pelin alussa, he saavat enemmän pisteitä. Jos piilottelija onnistuu pysymään piilossa vain muutamalla laatalla, he saavat myös enemmän pisteitä.",
+                        "calculation": "Kun tämä on päällä, pisteet lasketaan automaattisesti asetettujen minimien ja maksimi-pisteiden mukaan."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Piilottajan etsiminen",
+                    "help": "Palkinto etsijälle, joka löytää piilottelijan."
+                },
+                "minPointsFind": {
+                    "title": "Min. Löydä piilottelija"
+                },
+                "maxPointsFind": {
+                    "title": "Maks. Löydä piilottelija"
+                },
+                "pointsHideRound": {
+                    "title": "Piilotettu kierroksittain",
+                    "help": "Palkinto piilottelijalle, joka pysyy piilossa joka kierroksella."
+                },
+                "minPointsHideRound": {
+                    "title": "Min. Piilotettu kierroksessa"
+                },
+                "maxPointsHideRound": {
+                    "title": "Maks. piilotettua per kierros"
+                },
+                "pointsLastAlive": {
+                    "title": "Viimeinen Jäljellä",
+                    "help": "Palkinto annetaan viimeiselle pelaajalle, joka jää peliin, kun kaikki muut on tiputettu."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Viimeinen Jäljellä"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Maks. Viimeinen Jäljellä oleva"
+                }
+            },
+            "presets": {},
+            "help": {}
+        },
+        "TRIVIA": {
+            "name": "Tietovisa",
+            "title": "Tietovisa: Ilmainen Trivia netissä | Moninpeli kavereiden kanssa",
+            "description": "Pelaa Tietovisaa ilmaiseksi netissä! Ei vaadi tiliä, ja voit pelata reaaliaikaisia moninpelejä kavereiden tai vieraiden kanssa. Sopii 1-12 pelaajalle.",
+            "options": {
+                "consensus": {
+                    "title": "Yhteisymmärrys",
+                    "help": "Tiimimoodissa, pitäisikö tiimin vastaus perustua enemmistöön (konsensukseen)? Jos ei, niin kuka tahansa tiimin jäsen voi muuttaa vastausta kaikille."
+                },
+                "lockAnswer": {
+                    "title": "Lukitse vastaus",
+                    "help": "Kun tää on päällä, pelaajat ei voi vaihtaa vastaustaan, kun ne on valinnut yhden."
+                },
+                "eliminationChallenge": {
+                    "title": "Eliminointikisa",
+                    "help": "Kun tää on päällä, pelaaja tai tiimi tippuu heti, jos vastaa kysymykseen väärin."
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": "Vastaan",
+                    "description": [
+                        "Soolo",
+                        "Enemmän pisteitä myöhempiä kysymyksiä varten"
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": "Hardcore Vastaansyöksy",
+                    "description": [
+                        "Ei virheitä",
+                        "Lukittu vastaus",
+                        "Nopeuteen perustuvat pisteet"
+                    ]
+                },
+                "coop": {
+                    "title": "Kamu-peli",
+                    "description": [
+                        "Tehdään yhdessä",
+                        "Kiinteet pisteet"
+                    ]
+                },
+                "teams": {
+                    "title": "Tiimit",
+                    "description": [
+                        "Tee tiimissä",
+                        "Pisteet tilauksen mukaan"
+                    ]
+                }
+            },
+            "help": {
+                "soloOrWorkTogether": {
+                    "title": "Yksin vai yhdessä?",
+                    "description": [
+                        "Voit valita, haluatko mennä yksin, tehdä yhteistyötä porukassa tai muodostaa pienempiä tiimejä.",
+                        "Kun teet tiimissä tai porukassa, näet myös, mitä muut arvaavat!"
+                    ]
+                },
+                "questionPacks": {
+                    "title": "Kysymyspaketit",
+                    "description": [
+                        "Eikö joku kysymyskategoria nappaa? Voit laittaa päälle tai pois ne kategoriat, jotka ei kiinnosta sua tai sun porukkaa menemällä kysymykset-välilehteen aulassa.",
+                        "Kysymykset tulee automaattisesti niin, että näet mahdollisimman vähän samoja kysymyksiä sun aulassa."
+                    ]
+                },
+                "star": {
+                    "title": "Tähtisymboli",
+                    "description": [
+                        "Jos onnistut pelaamaan täydellisen pelin, eli et saa yhtään kysymystä väärin, saat tähden nimesi viereen, ja se näkyy sun henkilöstatsseissa!"
+                    ]
+                }
+            }
         }
     },
     "chat": {
-        "EMOJI": {
-            "love": "❤️",
-            "luck": "🍀",
-            "fire": "🔥",
-            "celebration": "🎉",
-            "thumbsUp": "👍",
-            "mindBlowing": "🤯",
-            "thinking": "🤔",
-            "clap": "👏",
-            "cry": "😭",
-            "cool": "😎"
-        },
-        "UNIVERSAL": {
-            "leftTheGame": "lähti pelistä",
-            "affirmative": "Okei.",
-            "thanks": "Kiitos!",
-            "sorry": "Anteeksi!",
-            "goodLuck": "Onnea matkaan!",
-            "brb": "Palataan hetken päästä!",
-            "go": "Mun pitää mennä.",
-            "glhf": "Pidä hauskaa",
-            "gg": "Hyvä peli"
-        },
-        "PRE_GAME": {
-            "readyCheck": "Kaikki valmiina?",
-            "changeSettings": "Vaihda asetuksia!",
-            "ready": "Valmis!",
-            "wait": "Odota hetki!",
-            "go": "Mennään!",
-            "greeting": "Hei! 👋"
-        },
-        "GAME": {
-            "how": "Miten!?",
-            "closeOne": "Läheltä piti!",
-            "niceOne": "Hyvä veto!",
-            "remindMove": "Sinun vuorosi!",
-            "wow": "Vau!",
-            "oops": "Hups!",
-            "no": "Eiiii!",
-            "ohNo": "Voi ei!"
-        },
-        "POST_GAME": {
-            "closeOne": "Lähellä kävi!",
-            "wellPlayed": "Hyvin pelattu!",
-            "rematch": "Uusintaottelu!",
-            "fun": "Oli hauskaa!",
-            "bye": "Moi moi!"
-        }
+        "affirmative": "Okei.",
+        "thanks": "Kiitos!",
+        "sorry": "Anteeksi!",
+        "goodLuck": "Onnea matkaan!",
+        "brb": "Palataan hetken päästä!",
+        "go": "Mun pitää mennä.",
+        "glhf": "Pidä hauskaa",
+        "gg": "Hyvä peli",
+        "readyCheck": "Kaikki valmiina?",
+        "changeSettings": "Vaihda asetuksia!",
+        "ready": "Valmis!",
+        "wait": "Odota hetki!",
+        "letsGo": "Mennään!",
+        "greeting": "Hei!",
+        "how": "Miten!?",
+        "closeOne": "Läheltä piti!",
+        "niceOne": "Hyvä veto!",
+        "checkThisOut": "Kato tätä!",
+        "remindMove": "Sinun vuorosi!",
+        "wow": "Vau!",
+        "oops": "Hups!",
+        "no": "Eiiii!",
+        "ohNo": "Voi ei!",
+        "wellPlayed": "Hyvin pelattu!",
+        "rematch": "Uusintaottelu!",
+        "fun": "Oli hauskaa!",
+        "bye": "Moi moi!",
+        "shortYes": "Joo.",
+        "shortNo": "Ei."
     },
     "header": {
         "message": {
@@ -1512,6 +1777,9 @@
             "roundSummary": "Kierroksen yhteenveto",
             "roundCount": "Kierros %{current} / %{total}",
             "roundCurrent": "Kierros %{current}",
+            "startingNewRound": "Aloitetaan uusi kierros...",
+            "questionCount": "Kysymys %{current} yhteensä %{total}",
+            "questionCurrent": "Kysymys %{current}",
             "war": "Sota!",
             "outcome": "Lopputulos",
             "input": "Odotetaan sinun syötettäsi",
@@ -1603,7 +1871,15 @@
         "language": "Kieli",
         "rules": "Säännöt",
         "points": "Pisteet",
-        "fouls": "Rikkeeseen Vastaus"
+        "fouls": "Rikkeeseen Vastaus",
+        "sciences": "Tieteet",
+        "artsAndEntertainment": "Taide & Viihde",
+        "geography": "Maantieto",
+        "gaming": "Pelit",
+        "technology": "Tekniikka",
+        "popCulture": "Pop-kulttuuri",
+        "sports": "Urheilu",
+        "history": "Historia"
     },
     "month": {
         "short": {
@@ -1735,6 +2011,7 @@
         "wins": "0 voittoa | 1 voitto | {count} voittoa",
         "cards": "0 korttia | 1 kortti | {count} korttia",
         "moves": "0 siirtoa | 1 siirto | {count} siirtoa",
+        "tiles": "0 laattaa | 1 laatta | {count} laattaa",
         "playing": "0 pelaa | 1 pelaa | {count} pelaa",
         "players": "0 pelaajaa | 1 pelaaja | {count} pelaajaa",
         "selectedCards": "Ei valittuja kortteja | 1 valittu kortti | {count} valittua korttia",
@@ -1752,6 +2029,14 @@
         "restartNotice": "Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi."
     },
     "misc": {
+        "example": "Esimerkki",
+        "learnMore": "Opettele lisää",
+        "questions": "Kysymykset",
+        "teamAndQuestions": "Tiimi & Kysymykset",
+        "questionPacks": "Kysymyspaketit",
+        "rock": "Kivi",
+        "paper": "Paperi",
+        "scissors": "Sakset",
         "lobby": "Aulassa",
         "inGame": "Pelissä",
         "matchmakingSearch": "Etsitään peliä",
@@ -1787,7 +2072,7 @@
         "unknown": "Tuntematon",
         "none": "Ei mitään",
         "seasonal": "Kausiluonteinen",
-        "items": "Items - Tavarat",
+        "items": "Tavarat",
         "purchaseCoins": "Osta kolikoita",
         "store": "Kauppa",
         "buyNow": "Osta nyt",
@@ -1834,7 +2119,7 @@
         "submit": "Lähetä",
         "settings": "Asetukset",
         "options": "Asetukset",
-        "localPlayers": "Paikalliset pelaajat",
+        "localPlayers": "Paikalliset",
         "preset": "Esiasetettu",
         "custom": "Mukautettu",
         "you": "Sinä",
@@ -1852,6 +2137,8 @@
         "language": "Kieli",
         "toggle": "Vaihda",
         "login": "Kirjaudu sisään",
+        "loginToExistingAccount": "Kirjaudu sisään olemassaolevaan tiliin",
+        "createMyAccount": "Luo mun tili",
         "logout": "Kirjaudu ulos",
         "hats": "Hatut",
         "eyes": "Silmät",
@@ -1869,6 +2156,7 @@
         "specificCards": "Tiettyjä Kortteja",
         "matchId": "Ottelun ID",
         "chat": "Chatti",
+        "sendMessage": "Lähetä viesti",
         "host": "Isäntä",
         "player": "Pelaaja",
         "players": "Pelaajat",
@@ -1900,7 +2188,6 @@
         "view": "Katso",
         "forfeit": "Luovuta Peli",
         "processFiles": "Käsittele Tiedostoja",
-        "sendMessage": "Lähetä viesti",
         "checkAgain": "Tsekkaa taas",
         "refreshWindow": "Päivitä ikkuna",
         "makeHost": "Tee isännäksi",
@@ -1921,6 +2208,7 @@
         "highestScore": "Korkein pistemäärä",
         "totalScore": "Yhteispisteet",
         "finalScore": "Lopputulos",
+        "flawlessGames": "Virheettömät pelit",
         "hits": "Osumat",
         "hitRate": "Osuma-aste",
         "rank": "Sijoitus",
@@ -1930,8 +2218,10 @@
         "assassinations": "Murhat",
         "survivals": "Selviytymiset",
         "games": "Pelit",
+        "correctRatio": "Oikea suhde",
         "winRatio": "Voittojen suhde",
         "killDeathRatio": "K/D Suhde",
+        "lives": "Elämät",
         "points": "Pisteet",
         "wins": "Voitot",
         "grids": "Ruudukot",
@@ -1942,6 +2232,7 @@
         "fouls": "Rikkeet",
         "and": "ja",
         "vs": "vs",
+        "dismiss": "Sulje",
         "rename": "Nimeä uudelleen",
         "created": "Luotu",
         "lastSeen": "Viimeksi nähty",
@@ -1951,6 +2242,7 @@
         "myDevices": "Mun laitteet",
         "myData": "Mun data",
         "redeemCode": "Lunasta koodi",
+        "contact": "Ota yhteyttä",
         "leaderboard": "Tulostaulukko",
         "elapsedTime": "%{time} kulunut",
         "startingInTime": "Alkaa %{time} päästä",
@@ -1964,6 +2256,10 @@
         "coinsBlank": "%{value} kolikkoa",
         "receivedBlank": "Saatu %{value}",
         "lessThanBlank": "Vähemmän kuin %{value}",
+        "lastSeenBlankAgo": "Viimeksi nähty %{value} sitten",
+        "lastSeenJustNow": "Viimeksi nähty just nyt",
+        "blank": "%{value}",
+        "byBlank": "Tekijä %{value}",
         "sendVerification": "Lähetä vahvistus",
         "noThanks": "Ei kiitos",
         "ready": "Valmis",
@@ -1978,12 +2274,15 @@
         "madeBy": "Tehnyt %{name}",
         "selectedOfLimit": "Valittu %{current} %{total} rajasta",
         "helpLocalize": "Auta parantamaan paikallistamista",
+        "goAdFree": "Mene ilman mainoksia",
         "discord": "Liity Discordiimme",
         "volume": "Äänenvoimakkuus",
         "volumeInterface": "Käyttöliittymän äänenvoimakkuus",
         "volumeEffects": "Efektien Äänenvoimakkuus",
+        "volumeMusic": "Musiikin äänenvoimakkuus",
         "selectYourLanguage": "Valitse Kieli",
         "selectYourColor": "Valitse Värisi",
+        "selectYourTeam": "Valitse tiimisi",
         "latestChanges": "Viimeisimmät Muutokset",
         "noChangesDetected": "Ei Muutoksia Havaittu",
         "newChanges": "Uudet Muutokset",
@@ -2135,8 +2434,19 @@
         }
     },
     "info": {
+        "roundEndTie": "Se on tasapeli!",
+        "roundEndStalemate": "Se on pattitilanne!",
+        "roundWin": "Sä voitit!",
+        "roundLost": "Sä hävisit!",
+        "youLostThisRound": "Sä hävisit tän kierroksen.",
+        "youAreOutOfLives": "Elämäsi on loppu",
+        "playerIsEliminated": "Pelaaja on tippunut",
+        "youAreEliminated": "Sä oot tippunut",
+        "waitForRoundEnd": "Odota, että kierros loppuu.",
+        "waitForWinner": "Pysy rauhassa ja odota, että voittaja nousee!",
         "serverRestart": "Serveri käynnistetään nyt uudelleen. Käy tsekkaamassa muutaman minuutin päästä.",
         "clearOldListings": "Poista kaikki 'Ei saatavilla' -ottelut.",
+        "flawlessGame": "Täydellinen peli! Ei virheitä.",
         "accountLinkSuggestion": "Olet nyt %{level}! Harkitse tilin luomista edistymisesi suojaamiseksi.",
         "accountLinked": "Tämä tili on yhdistetty seuraavaan sähköpostiosoitteeseen: %{email}.",
         "incompleteTranslationNotice": "Valitsemasi kieli on suurin piirtein {percentage}% valmis. Puuttuvat käännökset ovat englanniksi.",
@@ -2163,10 +2473,13 @@
         "inactiveOpponents": "Kaikki vastustajat olivat passiivisia",
         "waitForOpponent": "Odotetaan vastustajaasi...",
         "waitForOpponents": "Odotetaan vastustajiasi....",
+        "nameLeftTheGame": "%{name} lähti pelistä",
         "selfNoPoints": "Et saanut pisteitä.",
         "nameNoPoints": "%{name} ei saanut pisteitä.",
         "gameMenu": "Tekisikö mieli pelata jotain muuta?",
         "forfeit": "Pelistä luopuminen johtaa sinulle tappioon.",
+        "namePointsForMove": "%{name} sai %{points} liikettä.",
+        "selfPointsForMove": "Sun liikettä sai %{points}.",
         "nameForfeited": "%{name} luovutti ja hävisi automaattisesti.",
         "selfForfeited": "Sinä luovutit ja hävisit automaattisesti.",
         "unsavedChanges": "Sinulla on tallentamattomia muutoksia, jotka poistuvat, jos jatkat.",
@@ -2182,6 +2495,12 @@
         "loginToPurchase": "Ostoksen tekemiseksi sinun on ensin kirjauduttava sisään tai luotava tili.",
         "seasonalItem": "Tämän paikan esine on saatavilla vain muutamana päivänä vuodessa.",
         "cardInteractHint": "Klikkaa korttia tehdäksesi valintasi.",
+        "gameInvite": "Kutsu peliin",
+        "keyboardShortcutCombination": "Käytä näppäinyhdistelmiä kuten {combination} pitämällä {firstKey} pohjassa ja painamalla sitten {secondKey}",
+        "keyboardShortcutSpinSelector": "Voit myös käyttää nuolinäppäimiä {keys} muuttaaksesi pyörimistä.",
+        "goAdFree": "Mainokset on pysyvästi pois päältä sun tililtä, jos tuet kehitystä ostamalla mitä tahansa kolikoita.",
+        "chatEmojiAlt": "Chat-emoji tyypillä {type}",
+        "zoomOutHint": "Sä oot liikaa lähellä! Purista sormilla, niin saat zoomattua ulos ja peliohjaus paranee.",
         "awaitingPurchaseConfirmation": {
             "title": "Odotetaan ostovahvistusta",
             "description": "Tämä kestää yleensä vain muutaman sekunnin. Maksutavasta riippuen tämä saattaa kestää kauemmin. Voit huoletta sulkea tämän näytön."
@@ -2190,8 +2509,11 @@
             "noFriends": "Ei kavereita",
             "noAccount": "Kirjaudu sisään tai luo tili, niin voit alkaa tehdä kavereita!",
             "description": "Pysy yhteydessä! Näet kaverisi netissä, heidän pelinsä ja voit liittyä heidän yksityisiin lobbyihinsa!",
-            "removeDescription": "Olet juuri lopettamassa ystävyyttä \"%{name}\" kanssa."
+            "removeDescription": "Olet juuri lopettamassa ystävyyttä \"%{name}\" kanssa.",
+            "inviteReceived": "%{name} kutsui sut pelaamaan %{game}",
+            "inviteSent": "Pelikutsu on lähetetty!"
         },
+        "contact": "Älä epäröi ottaa yhteyttä, jos tulee ongelmia, on ehdotuksia tai kysymyksiä! Voit laittaa meilillä tai liittyä Bloob.io Discordiin.",
         "settings": {
             "redeemCode": {
                 "title": "Lunasta Koodi",
@@ -2212,6 +2534,14 @@
                 "description": "Bloob.io seuraa anonyymisti analytiikkaa yksityisyyttä kunnioittavalla, itse isännöidyllä Matomo-analytiikkapalvelimella. Tietojasi ei jaeta koskaan muiden kanssa. Voit halutessasi kieltäytyä tästä.",
                 "blocked": "Analytiikka ei ole aktiivinen. Selaimesi tai laajennuksesi saattaa olla estänyt sen.",
                 "dnt": "Selaimesi on asetettu \"Älä seuraa\" (DNT) -tilaan. Kunnioitamme pyyntöäsi emmekä seuraa sinua."
+            },
+            "ads": {
+                "title": "Mainokset",
+                "description": "Me näytetään mainoksia Playwireltä. Mainonta Bloob.io:ssa, olipa se sitten kokonaan tai osittain, hoitaa Playwire LLC. Jos et halua nähdä mainoksia Bloob.io:ssa, voit ostaa kolikoita kaupasta ja päästä mainoksista eroon. Tämä poistaa automaattisesti kaikki mainokset sun tililtä.",
+                "complaint": "Bloob.io:lle on tärkeää, että näkemäsi mainokset on eettisiä eikä ne häiritse peliäsi. Jos huomaat mainoksia, jotka sotkevat sun pelailua, ota yhteyttä tarkistamalla \"Tietoa\" osio.",
+                "consent": "Klikkaa tästä päivittääksesi mainosasetuksesi",
+                "exempt": "Mainokset ei ole aktiivisia. Sun tili on ilman mainoksia. Kiitos tuestasi!",
+                "blocked": "Mainokset ei oo päällä. Sun selain tai laajennus on ehkä estänyt ne."
             },
             "serverData": {
                 "title": "Palvelimen tiedot",
@@ -2234,7 +2564,7 @@
         "authentication": {
             "login": {
                 "title": "Kirjaudu sisään",
-                "description": "Huomaa, että kirjautuminen tilillesi poistaa kaiken edistymisen nykyiseltä käyttäjältä (%{name})."
+                "description": "Hei! Tällä hetkellä käytössäsi oleva käyttäjä, {name}, joka on {level}, ei oo vielä liitetty mihinkään tiliin. Kirjautuminen olemassa olevaan tiliin poistaa tämän käyttäjän pysyvästi. Ehkä halusitkin luoda oman tilin?"
             },
             "setupThreshold": {
                 "title": "Olet aikaisin %{name}!",
@@ -2477,6 +2807,28 @@
             "earnsSum": "Ansaitsee kaikkien noppien yhteissumman.",
             "noPointsWarning": "Tällä siirrolla et saa pisteitä. On muita valintoja, joista saat pisteitä."
         },
+        "graphicsAcceleration": {
+            "notice": "Grafiikkakiihdytys on pois päältä. Tää voi vaikuttaa pelin sujuvuuteen.",
+            "search": "Miten saa grafiikkakiihdytyksen päälle?"
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
+        },
         "ai": {
             "ready": null,
             "findingTarget": null,
@@ -2485,9 +2837,7 @@
             "assassinAssignment": null,
             "targetAssignment": null,
             "assassinDescription": null,
-            "targetDescription": null,
-            "startAssassinChat": null,
-            "joinAssassinChat": null
+            "targetDescription": null
         },
         "poolType": {
             "SOLID": "Täysväriset",
@@ -2542,6 +2892,7 @@
             "developedBy": "Kehittänyt %{name}",
             "iconsSource": "Ikoni-kiitokset %{name}:lle (Lisensioitu)",
             "soundsSource": "Äänet tarjoaa %{name} (Lisensioitu)",
+            "emojiSource": "Emojit on tuottanut %{name} (CC-BY 4.0)",
             "rottenApplesSource": "Mädäntyneet omenat perustuen %{name} (BY-NC-SA 2.0)",
             "diceSource": "Noppamalli tekijältä %{name} (CC-BY-4.0)",
             "localization": "Paikallistaminen vapaaehtoisten avustajien toimesta"

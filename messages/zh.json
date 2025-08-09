@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1804,
+        "missing": 22
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "抱歉，这个用户已经达到好友上限 %{amount} 了。",
             "pendingFriendLimitSelf": "你不能有超过 %{amount} 个待处理的好友请求。",
             "pendingFriendLimitOther": "抱歉，这个用户已经有太多待处理的好友请求了。",
+            "userOffline": "抱歉，这个用户不在线。",
             "notFriends": "你们不是朋友，也没有待处理的好友请求。",
             "alreadyFriends": "你已经和这个用户是朋友了。",
             "pendingFriends": "你已经向这个用户发送了好友请求。",
@@ -81,6 +82,7 @@
         "start": {
             "fieldRows": "选中的区域最多只能支持%{rows}行",
             "fieldCannotFitUsers": "选中的区域最多只能支持%{users}个玩家",
+            "questionThreshold": "游戏至少需要 %{count} 个问题",
             "whiteCardThreshold": "游戏至少需要%{count}张回应卡（白色）",
             "blackCardThreshold": "游戏至少需要%{count}张动作卡（黑色）",
             "insufficientPlayers": "至少需要%{min}个玩家才能开始比赛。"
@@ -100,6 +102,7 @@
             "incorrectValue": "给出的值和预期的不匹配。",
             "invalidMove": "提供的移动无效。",
             "invalidVote": "你试图进行的投票无效。",
+            "noLives": "你没有剩余的生命了。",
             "alreadyPlaced": "你已经放了东西。",
             "alreadyVoted": "你已经投过票了。",
             "invalidPlacement": "你放的棋子位置不对。",
@@ -181,6 +184,7 @@
     },
     "game": {
         "generic": {
+            "name": "家",
             "title": "Bloob.io | 免费在线玩多人小游戏，无需账户注册自由对战",
             "description": "在Bloob.io上，您可以免费享受多人游戏，无需注册账户，直接在浏览器中与好友、陌生人或机器人展开激烈对战，体验无限乐趣和挑战！快来试试！",
             "options": {
@@ -197,6 +201,15 @@
                 },
                 "botCount": {
                     "help": "把机器人和其他玩家一起引入你的游戏。"
+                },
+                "pointer": {
+                    "title": "指针",
+                    "help": "让其他玩家看到你用光标指的地方。在某些情况下，你可以选择只让你的组/队伍看到。",
+                    "data": {
+                        "OFF": "关",
+                        "PRIVATE": "私密",
+                        "EVERYONE": "大家"
+                    }
                 },
                 "botDifficulty": {
                     "title": "机器人难度",
@@ -242,9 +255,41 @@
                         "off": "没有限制"
                     }
                 },
+                "scoringSystem": {
+                    "title": "得分系统",
+                    "help": {
+                        "default": "确定一下答对问题得分的规则。",
+                        "SPEED": "得分跟回答问题的速度有关。",
+                        "ORDER": "得分看谁答得最快。",
+                        "FIXED": "每个问题得的分数都是一样的。",
+                        "PROGRESSIVE": "每答完一个问题，得分会增加。",
+                        "STREAK": "连续答对可以赚额外分数；答错后会重置。"
+                    },
+                    "data": {
+                        "SPEED": "速度",
+                        "ORDER": "顺序",
+                        "FIXED": "固定",
+                        "PROGRESSIVE": "进步",
+                        "STREAK": "连胜"
+                    }
+                },
+                "mode": {
+                    "title": "模式",
+                    "help": {
+                        "default": "选择玩家的竞争方式：单独、团队还是合作。",
+                        "SOLO": "每个玩家单独竞争。",
+                        "CO_OP": "所有玩家一起合作。",
+                        "TEAM": "玩家分成团队，可以选择自己想合作的小组。"
+                    },
+                    "data": {
+                        "SOLO": "单独",
+                        "CO_OP": "合作",
+                        "TEAM": "团队"
+                    }
+                },
                 "deckSize": {
                     "title": "牌组大小",
-                    "help": "无时间限制玩耍。关闭所有回合计时器，享受轻松的游戏体验，你可以按自己的节奏玩。不建议对随机对手使用。",
+                    "help": "选择你喜欢的牌组大小。",
                     "data": {
                         "half": "半副牌",
                         "full": "一副完整的牌",
@@ -835,6 +880,10 @@
                     "title": "瞄准线",
                     "help": "瞄准线显示了击球后白球会去哪里。"
                 },
+                "speed": {
+                    "title": "速度",
+                    "help": "泳池动画播放得有多快。"
+                },
                 "illegalBallPocket": {
                     "title": "非法进球袋"
                 },
@@ -1009,12 +1058,23 @@
                     "title": "额外游艇",
                     "help": "指定游戏应如何处理玩家在已经得分的情况下再次掷出游艇的情况。"
                 },
+                "jokerYacht": {
+                    "title": "游艇小丑",
+                    "help": "开启后，这个设置让你可以把任何额外的游艇算作满屋、小顺子或大顺子来得分。这个选项只有在对应的骰子面数和游艇类别已经填满的情况下才能使用。"
+                },
                 "additionalYachtReward": {
                     "title": "奖励",
                     "help": "掷出又一个游艇的人获得的分数。"
                 }
             },
-            "presets": {},
+            "presets": {
+                "joker": {
+                    "title": "小丑",
+                    "description": [
+                        "获得雅兹时有更多选择"
+                    ]
+                }
+            },
             "help": {
                 "objective": {
                     "title": "理解游戏目标",
@@ -1064,6 +1124,12 @@
                         "你也可以点击空的橙色条目，得到0分。如果你在那个类别里的其他选项只能得到很少的分数，这可能会有帮助。",
                         "例如，如果你想在上面的部分争取奖金，这可能会有帮助。"
                     ]
+                },
+                "shortcuts": {
+                    "title": "快捷键",
+                    "description": [
+                        "想一次移动很多相同的骰子吗？用中间鼠标键点击，或者按住Shift键再点击一个骰子，所有面朝上相同的骰子就会一起移动！"
+                    ]
                 }
             }
         },
@@ -1100,7 +1166,8 @@
                         "pier": "码头",
                         "littleIsland": "小岛",
                         "keys": "钥匙群岛",
-                        "lagoon": "泻湖"
+                        "lagoon": "泻湖",
+                        "ocean": "海洋"
                     }
                 },
                 "levelOrientation": {
@@ -1121,6 +1188,10 @@
                 "shipReveal": {
                     "title": "显示船只",
                     "help": "启用后，你会看到你击沉的船。禁用后，只会显示剩余船只的计数器。"
+                },
+                "hitAfterHit": {
+                    "title": "连击不断",
+                    "help": "开启后，击中船只后可以再次开火。关闭时，每回合只能开一次枪。"
                 }
             },
             "presets": {},
@@ -1420,63 +1491,257 @@
             }
         },
         "AI_ASSASSIN": {
-            "name": "AI刺客",
-            "title": "智胜，消灭，生存",
-            "description": "\"AI刺客\"是一款刺激的多人游戏，你可以消灭目标或智胜刺客。使用策略提示来达成你的目标并取得成功。",
+            "name": "人工智能刺客",
+            "title": "人工智能刺客多人在线游戏 | 免费畅玩 无需注册账号随时加入",
+            "description": "免费畅玩多人在线人工智能刺客AI提示游戏，无需注册账号，随时与全球好友、陌生人组队竞技，挑战强大AI对手，探索无尽创意、策略和乐趣的精彩世界！",
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "剪刀石头布",
+            "title": "免费在线多人经典石头剪刀布游戏，与好友和全球玩家一起对战竞技",
+            "description": "免费在线多人经典石头剪刀布游戏，无需注册，邀好友、全球玩家或AI畅玩对战，体验刺激的精彩竞技，共享无尽欢乐与互动时光！随时随地开启乐趣之旅！",
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "石头赢剪刀",
+                        "paper": "布赢石头",
+                        "scissors": "剪刀赢布"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "最后一个站着的（<b>0</b> 条命） | 最后一个站着的（<b>1</b> 条命） | 最后一个站着的（<b>{count}</b> 条命）",
+                        "FIRST": "第一个得到 <b>0</b> 分 | 第一个得到 <b>1</b> 分 | 第一个得到 <b>{count}</b> 分",
+                        "HIGHEST_AFTER": "<b>0</b> 轮后得分最多 | <b>1</b> 轮后得分最多 | <b>{count}</b> 轮后得分最多"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "比赛",
+                    "description": [
+                        "先到5分"
+                    ]
+                },
+                "survival": {
+                    "title": "生存",
+                    "description": [
+                        "5条命",
+                        "每输一局就少一条命",
+                        "最后一个站着的玩家赢"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "系列最佳",
+                    "description": [
+                        "五轮后得分最高的玩家获胜"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "规则",
+                    "description": [
+                        "剪刀石头布很简单：选石头、布或剪刀。石头赢剪刀，布赢石头，剪刀赢布。",
+                        "每一轮，猜猜对手会选什么，然后做出相应的反应！"
+                    ]
+                },
+                "group": {
+                    "title": "组队",
+                    "description": [
+                        "最多可以4个人一起玩！每轮只有一个能赢。如果你早早被淘汰了，剩下的玩家会继续，直到决出胜者。",
+                        "在生存模式中，每个玩家有固定的生命值。最后一个站着的玩家获胜！"
+                    ]
+                },
+                "bots": {
+                    "title": "机器人",
+                    "description": [
+                        "和机器人对战！它们会随机出招，只要你能看穿它们的套路，就能一直赢！"
+                    ]
+                }
+            }
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "数字对决",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "游戏一旦有玩家得到了这个分数，就会结束。"
+                },
+                "mode": {
+                    "title": "模式",
+                    "help": "不同的游戏模式会影响得分方式和游戏玩法。",
+                    "data": {
+                        "SINGLE_HIDER": "单人藏匿",
+                        "HIDE_AND_SEEK": "捉迷藏",
+                        "LAST_STANDING": "最后幸存者"
+                    }
+                },
+                "field": {
+                    "title": "场地",
+                    "help": "决定在游戏场上显示多少个数字。"
+                },
+                "revealSpeed": {
+                    "title": "显示速度",
+                    "help": "大家准备好时，轮次揭示的速度。"
+                },
+                "multiplier": {
+                    "title": "倍数器",
+                    "help": "乘数可以同时出现在一个或多个数字上。当隐藏者选择了一个带乘数的数字，他们的分数会翻倍。不过，因为大家都能看到乘数，这样做有风险，容易被找到。",
+                    "data": {
+                        "off": "关掉了",
+                        "uncommon": "不常见",
+                        "common": "常见",
+                        "veryCommon": "很常见"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "动态评分",
+                    "help": {
+                        "introduction": "根据成功的概率来奖励积分。比如，如果寻找者在游戏早期找到藏匿者，他们会获得更多积分。如果藏匿者在只剩几块砖的时候还能保持隐蔽，他们也会获得更多积分。",
+                        "calculation": "开启后，积分会根据设置的最小和最大积分自动计算。"
+                    }
+                },
+                "pointsFind": {
+                    "title": "找藏匿者",
+                    "help": "给找到藏身者的寻宝者颁发的奖励。"
+                },
+                "minPointsFind": {
+                    "title": "最少找到一个藏匿者"
+                },
+                "maxPointsFind": {
+                    "title": "最大。寻找隐藏者"
+                },
+                "pointsHideRound": {
+                    "title": "每回合隐藏",
+                    "help": "每轮保持隐身的玩家会获得这个奖励。"
+                },
+                "minPointsHideRound": {
+                    "title": "每轮最少隐藏数量"
+                },
+                "maxPointsHideRound": {
+                    "title": "每轮最多隐藏数量"
+                },
+                "pointsLastAlive": {
+                    "title": "最后的幸存者",
+                    "help": "颁给最后一个留在游戏里的玩家，当其他人都被淘汰时。"
+                },
+                "minPointsLastAlive": {
+                    "title": "最少剩余"
+                },
+                "maxPointsLastAlive": {
+                    "title": "最大剩余"
+                }
+            },
+            "presets": {},
+            "help": {}
+        },
+        "TRIVIA": {
+            "name": "问答游戏",
+            "title": "免费多人在线问答游戏 | 实时测验合作挑战等你和朋友们一起参与",
+            "description": "体验免费多人在线问答游戏，无需账号，实时与好友或陌生人组队对战，享受无尽的测验乐趣和刺激挑战！加入这场精彩的智力对决，立刻开始你的冒险之旅吧！",
+            "options": {
+                "consensus": {
+                    "title": "共识",
+                    "help": "在团队模式下，团队的答案应该根据多数投票（共识）来决定吗？如果不是，任何团队成员都可以为大家更改答案。"
+                },
+                "lockAnswer": {
+                    "title": "锁定答案",
+                    "help": "开启后，玩家选了答案就不能再改了。"
+                },
+                "eliminationChallenge": {
+                    "title": "淘汰挑战",
+                    "help": "开启后，玩家或队伍在回答错误问题后会立刻被淘汰。"
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": "对战",
+                    "description": [
+                        "单人",
+                        "后面的问题得更多分"
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": "硬核对战",
+                    "description": [
+                        "没错",
+                        "锁定答案",
+                        "根据速度得分"
+                    ]
+                },
+                "coop": {
+                    "title": "合作模式",
+                    "description": [
+                        "一起干",
+                        "固定点"
+                    ]
+                },
+                "teams": {
+                    "title": "队伍",
+                    "description": [
+                        "团队合作",
+                        "按顺序得分"
+                    ]
+                }
+            },
+            "help": {
+                "soloOrWorkTogether": {
+                    "title": "单干还是合作",
+                    "description": [
+                        "你可以选择单打独斗、组队合作，或者组成小团队。",
+                        "组队的时候，你可以看到大家的猜测哦！"
+                    ]
+                },
+                "questionPacks": {
+                    "title": "问答包",
+                    "description": [
+                        "不喜欢某些问题类型？你可以在大厅的“问题”标签里开关那些你或你的小组不感兴趣的类型。",
+                        "问题会自动安排，尽量减少你在大厅看到重复的问题。"
+                    ]
+                },
+                "star": {
+                    "title": "星星",
+                    "description": [
+                        "如果你能玩得完美，也就是一个问题都答对，你的名字旁边会有颗星星，这会记录在你的个人统计里！"
+                    ]
+                }
+            }
         }
     },
     "chat": {
-        "EMOJI": {
-            "love": "❤️",
-            "luck": "🍀",
-            "fire": "🔥",
-            "celebration": "🎉",
-            "thumbsUp": "👍",
-            "mindBlowing": "🤯",
-            "thinking": "🤔",
-            "clap": "👏",
-            "cry": "😭",
-            "cool": "😎"
-        },
-        "UNIVERSAL": {
-            "leftTheGame": "退出了游戏",
-            "affirmative": "好的。",
-            "thanks": "谢谢！",
-            "sorry": "对不起！",
-            "goodLuck": "祝你好运！",
-            "brb": "我马上回来！",
-            "go": "我得走了。",
-            "glhf": "祝你好运，玩得开心",
-            "gg": "好游戏"
-        },
-        "PRE_GAME": {
-            "readyCheck": "大家准备好了吗？",
-            "changeSettings": "改变设置！",
-            "ready": "准备好了！",
-            "wait": "请等一下！",
-            "go": "我们走吧！",
-            "greeting": "嗨！👋"
-        },
-        "GAME": {
-            "how": "怎么回事！？",
-            "closeOne": "差点儿！",
-            "niceOne": "做得好！",
-            "remindMove": "你的回合！",
-            "wow": "哇！",
-            "oops": "哎呀！",
-            "no": "不要啊！",
-            "ohNo": "哦不！"
-        },
-        "POST_GAME": {
-            "closeOne": "差一点！",
-            "wellPlayed": "打得好！",
-            "rematch": "再来一局！",
-            "fun": "玩得真开心！",
-            "bye": "拜拜！"
-        }
+        "affirmative": "好的。",
+        "thanks": "谢谢！",
+        "sorry": "对不起！",
+        "goodLuck": "祝你好运！",
+        "brb": "我马上回来！",
+        "go": "我得走了。",
+        "glhf": "祝你好运，玩得开心",
+        "gg": "好游戏",
+        "readyCheck": "大家准备好了吗？",
+        "changeSettings": "改变设置！",
+        "ready": "准备好了！",
+        "wait": "请等一下！",
+        "letsGo": "我们走吧！",
+        "greeting": "嗨！",
+        "how": "怎么回事！？",
+        "closeOne": "差点儿！",
+        "niceOne": "做得好！",
+        "checkThisOut": "看看这个！",
+        "remindMove": "你的回合！",
+        "wow": "哇！",
+        "oops": "哎呀！",
+        "no": "不要啊！",
+        "ohNo": "哦不！",
+        "wellPlayed": "打得好！",
+        "rematch": "再来一局！",
+        "fun": "玩得真开心！",
+        "bye": "拜拜！",
+        "shortYes": "好的。",
+        "shortNo": "不行。"
     },
     "header": {
         "message": {
@@ -1512,6 +1777,9 @@
             "roundSummary": "回合总结",
             "roundCount": "第%{current}轮，总共%{total}轮",
             "roundCurrent": "第%{current}轮",
+            "startingNewRound": "开始新一轮...",
+            "questionCount": "第 %{current} 题 / 共 %{total} 题",
+            "questionCurrent": "第 %{current} 题",
             "war": "战争！",
             "outcome": "结果",
             "input": "等待你的操作",
@@ -1603,7 +1871,15 @@
         "language": "语言",
         "rules": "规则",
         "points": "积分",
-        "fouls": "对犯规的回应"
+        "fouls": "对犯规的回应",
+        "sciences": "科学",
+        "artsAndEntertainment": "艺术与娱乐",
+        "geography": "地理",
+        "gaming": "游戏",
+        "technology": "科技",
+        "popCulture": "流行文化",
+        "sports": "体育",
+        "history": "历史"
     },
     "month": {
         "short": {
@@ -1735,6 +2011,7 @@
         "wins": "0胜 | 1胜 | {count}胜",
         "cards": "0张卡 | 1张卡 | {count}张卡",
         "moves": "0步 | 1步 | {count}步",
+        "tiles": "0块 | 1块 | {count}块",
         "playing": "0在玩 | 1在玩 | {count}在玩",
         "players": "0玩家 | 1玩家 | {count}玩家",
         "selectedCards": "没选卡 | 选了1张卡 | 选了{count}张卡",
@@ -1752,6 +2029,14 @@
         "restartNotice": "服务器将在 {count} 分钟后重启。请完成你的游戏。 | 服务器将在 {count} 分钟后重启。请完成你的游戏。 | 服务器将在 {count} 分钟后重启。请完成你的游戏。"
     },
     "misc": {
+        "example": "示例",
+        "learnMore": "了解更多",
+        "questions": "问题",
+        "teamAndQuestions": "团队与问题",
+        "questionPacks": "问题包",
+        "rock": "石头",
+        "paper": "剪刀",
+        "scissors": "布",
         "lobby": "大厅",
         "inGame": "游戏中",
         "matchmakingSearch": "找游戏中",
@@ -1787,7 +2072,7 @@
         "unknown": "未知",
         "none": "无",
         "seasonal": "季节性",
-        "items": "请给我需要翻译的项目列表。",
+        "items": "商品",
         "purchaseCoins": "购买金币",
         "store": "商店",
         "buyNow": "立即购买",
@@ -1852,6 +2137,8 @@
         "language": "语言",
         "toggle": "切换",
         "login": "登录",
+        "loginToExistingAccount": "登录已有账号",
+        "createMyAccount": "创建我的账号",
         "logout": "注销",
         "hats": "帽子",
         "eyes": "眼睛",
@@ -1869,6 +2156,7 @@
         "specificCards": "特定卡片",
         "matchId": "比赛ID",
         "chat": "聊天",
+        "sendMessage": "发消息",
         "host": "主持人",
         "player": "玩家",
         "players": "玩家们",
@@ -1900,7 +2188,6 @@
         "view": "查看",
         "forfeit": "认输游戏",
         "processFiles": "处理文件",
-        "sendMessage": "发送消息",
         "checkAgain": "再检查一次",
         "refreshWindow": "刷新窗口",
         "makeHost": "设为主机",
@@ -1921,6 +2208,7 @@
         "highestScore": "最高分",
         "totalScore": "总分",
         "finalScore": "最终得分",
+        "flawlessGames": "完美游戏",
         "hits": "命中",
         "hitRate": "命中率",
         "rank": "排名",
@@ -1930,8 +2218,10 @@
         "assassinations": "刺杀",
         "survivals": "生存",
         "games": "游戏",
+        "correctRatio": "正确比例",
         "winRatio": "胜率",
-        "killDeathRatio": "击杀/死亡比率",
+        "killDeathRatio": "击杀比",
+        "lives": "生命",
         "points": "分数",
         "wins": "胜利次数",
         "grids": "网格",
@@ -1942,6 +2232,7 @@
         "fouls": "犯规",
         "and": "和",
         "vs": "对",
+        "dismiss": "关闭",
         "rename": "重命名",
         "created": "已创建",
         "lastSeen": "最后出现",
@@ -1951,6 +2242,7 @@
         "myDevices": "我的设备",
         "myData": "我的数据",
         "redeemCode": "兑换码",
+        "contact": "联系",
         "leaderboard": "排行榜",
         "elapsedTime": "已过去%{time}",
         "startingInTime": "在 %{time} 后开始",
@@ -1964,6 +2256,10 @@
         "coinsBlank": "%{value} 金币",
         "receivedBlank": "收到 %{value}",
         "lessThanBlank": "小于%{value}",
+        "lastSeenBlankAgo": "上次在线 %{value} 前",
+        "lastSeenJustNow": "刚刚在线",
+        "blank": "%{value}",
+        "byBlank": "由 %{value} 提供",
         "sendVerification": "发送验证",
         "noThanks": "不用了，谢谢",
         "ready": "准备好了",
@@ -1978,12 +2274,15 @@
         "madeBy": "%{name} 制作的",
         "selectedOfLimit": "已选中 %{current}，总数 %{total} 上限",
         "helpLocalize": "帮助改善本地化",
+        "goAdFree": "去除广告",
         "discord": "加入我们的Discord",
         "volume": "音量",
         "volumeInterface": "界面音量",
         "volumeEffects": "效果音量",
+        "volumeMusic": "音乐音量",
         "selectYourLanguage": "选择你的语言",
         "selectYourColor": "选择你的颜色",
+        "selectYourTeam": "选择你的队伍",
         "latestChanges": "最新更改",
         "noChangesDetected": "没有检测到更改",
         "newChanges": "新的更改",
@@ -2135,8 +2434,19 @@
         }
     },
     "info": {
+        "roundEndTie": "平局啦！",
+        "roundEndStalemate": "僵局了！",
+        "roundWin": "你赢了！",
+        "roundLost": "你输了！",
+        "youLostThisRound": "你这一局输了！",
+        "youAreOutOfLives": "你没命了",
+        "playerIsEliminated": "玩家被淘汰了",
+        "youAreEliminated": "你被淘汰了",
+        "waitForRoundEnd": "请等一下，等回合结束。",
+        "waitForWinner": "稍等一下，等着看谁赢！",
         "serverRestart": "服务器现在正在重启，请过几分钟再来看看。",
         "clearOldListings": "清除所有的“不可用”比赛。",
+        "flawlessGame": "完美游戏！没有犯错。",
         "accountLinkSuggestion": "你现在是%{level}级了！考虑创建一个账户来保护你的进度吧。",
         "accountLinked": "这个账户已经和以下的电子邮件地址链接了：%{email}。",
         "incompleteTranslationNotice": "你选择的语言大概完成了{percentage}%。任何缺失的翻译都会用英语显示。",
@@ -2163,10 +2473,13 @@
         "inactiveOpponents": "所有的对手都没动静",
         "waitForOpponent": "等待你的对手...",
         "waitForOpponents": "等待你的对手们....",
+        "nameLeftTheGame": "%{name} 退出了游戏",
         "selfNoPoints": "你没有得到任何分数。",
         "nameNoPoints": "%{name}没有得到任何分数。",
         "gameMenu": "想玩别的游戏吗？",
         "forfeit": "放弃游戏会让你输掉。",
+        "namePointsForMove": "%{name}的动作得到了%{points}。",
+        "selfPointsForMove": "你的动作得到了%{points}。",
         "nameForfeited": "%{name}放弃了，自动输了。",
         "selfForfeited": "你放弃了，自动输了。",
         "unsavedChanges": "你有未保存的更改，如果继续进行，这些更改将被删除。",
@@ -2182,6 +2495,12 @@
         "loginToPurchase": "要购买东西，你得先登录或者创建一个账号。",
         "seasonalItem": "这个位置的物品一年只有几天能买到。",
         "cardInteractHint": "点击一张卡片来选择。",
+        "gameInvite": "邀请你来玩游戏",
+        "keyboardShortcutCombination": "要使用快捷键 {combination}，先按住 {firstKey} 然后再按 {secondKey}",
+        "keyboardShortcutSpinSelector": "你也可以用方向键 {keys} 来调整旋转。",
+        "goAdFree": "如果你通过购买任何数量的金币来支持开发，你的账号广告会永久禁用。",
+        "chatEmojiAlt": "聊天表情 {type}",
+        "zoomOutHint": "你放大了！捏一下缩小，能更好控制游戏。",
         "awaitingPurchaseConfirmation": {
             "title": "等待购买确认",
             "description": "这通常只需要几秒钟。根据你的付款方式，可能需要更长时间。随时可以关闭这个屏幕。"
@@ -2190,8 +2509,11 @@
             "noFriends": "没有朋友",
             "noAccount": "登录或创建账号开始交朋友吧！",
             "description": "保持联系！看看你朋友在线、他们在玩什么，加入他们的私人房间！",
-            "removeDescription": "你快要和 \"%{name}\" 结束友谊了。"
+            "removeDescription": "你快要和 \"%{name}\" 结束友谊了。",
+            "inviteReceived": "%{name} 邀请你玩 %{game}",
+            "inviteSent": "游戏邀请已发送！"
         },
+        "contact": "如果你遇到问题、有什么建议或者有问题，别犹豫，随时联系我！可以发邮件或者加Bloob.io的Discord。",
         "settings": {
             "redeemCode": {
                 "title": "兑换码",
@@ -2212,6 +2534,14 @@
                 "description": "Bloob.io 使用隐私友好的、自托管的 Matomo 分析服务器匿名跟踪数据分析。你的数据永远不会与他人共享。如果你愿意，可以选择退出。",
                 "blocked": "数据分析未激活。你的浏览器或扩展可能已经阻止了它。",
                 "dnt": "你的浏览器已启用\"Do Not Track\"（DNT）设置。我们尊重你的请求，不会跟踪你。"
+            },
+            "ads": {
+                "title": "广告",
+                "description": "我们在Bloob.io上展示Playwire的广告。Bloob.io上的广告，无论是全部还是部分，都是由Playwire LLC处理的。如果你不想在Bloob.io上看到广告，可以通过购买商店里的金币来去广告。这会自动为你的账户移除所有广告。",
+                "complaint": "Bloob.io很重视你看到的广告是合乎道德且不打扰的。如果你发现有广告影响了你的游戏体验，请通过查看“关于”部分来联系我们。",
+                "consent": "点击这里更新你的广告同意偏好",
+                "exempt": "广告未激活。你的账户是无广告的。谢谢你的支持！",
+                "blocked": "广告没有激活。你的浏览器或扩展可能把它挡住了。"
             },
             "serverData": {
                 "title": "服务器数据",
@@ -2234,7 +2564,7 @@
         "authentication": {
             "login": {
                 "title": "登录",
-                "description": "请注意，登录到您的账户将清除您当前使用的用户（%{name}）的所有进度。"
+                "description": "注意！你现在使用的用户是 {name}，等级是 {level}，还没有绑定到任何账户。用已有账户登录会永久删除这个用户。你是不是想创建自己的账户呢？"
             },
             "setupThreshold": {
                 "title": "你来得早啊，%{name}！",
@@ -2477,6 +2807,28 @@
             "earnsSum": "获得所有骰子总和的分数。",
             "noPointsWarning": "这个动作不会给你加分。还有其他可以加分的选择。"
         },
+        "graphicsAcceleration": {
+            "notice": "图形加速已关闭。这可能会影响游戏性能。",
+            "search": "怎么开启图形加速？"
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
+        },
         "ai": {
             "ready": null,
             "findingTarget": null,
@@ -2485,9 +2837,7 @@
             "assassinAssignment": null,
             "targetAssignment": null,
             "assassinDescription": null,
-            "targetDescription": null,
-            "startAssassinChat": null,
-            "joinAssassinChat": null
+            "targetDescription": null
         },
         "poolType": {
             "SOLID": "实色球",
@@ -2542,6 +2892,7 @@
             "developedBy": "开发者是%{name}",
             "iconsSource": "图标由%{name}提供（已获得许可）",
             "soundsSource": "音效由%{name}提供（已获得许可）",
+            "emojiSource": "由 %{name} 提供的表情符号 (CC-BY 4.0)",
             "rottenApplesSource": "基于%{name}的烂苹果 (BY-NC-SA 2.0)",
             "diceSource": "%{name}的骰子模型 (CC-BY-4.0)",
             "localization": "由志愿者贡献者进行的本地化"

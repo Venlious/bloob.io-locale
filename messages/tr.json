@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1804,
+        "missing": 22
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Üzgünüm, bu kullanıcı %{amount} arkadaş sınırına ulaştı.",
             "pendingFriendLimitSelf": "%{amount} bekleyen arkadaşlıktan fazlasını alamazsın.",
             "pendingFriendLimitOther": "Üzgünüm, bu kullanıcının zaten çok fazla bekleyen arkadaşı var.",
+            "userOffline": "Üzgünüm, bu kullanıcı çevrimdışı.",
             "notFriends": "Seninle bu kişi arkadaş değil ve bekleyen bir arkadaşlık isteği yok.",
             "alreadyFriends": "Bu kişiyle zaten arkadaşsın.",
             "pendingFriends": "Bu kişiyle zaten bekleyen bir arkadaşlık isteğin var.",
@@ -81,6 +82,7 @@
         "start": {
             "fieldRows": "Seçili alan %{rows} satırdan fazlasını destekleyemez",
             "fieldCannotFitUsers": "Seçili alan %{users} oyuncudan fazlasını destekleyemez",
+            "questionThreshold": "Oyun en az %{count} soru istiyor.",
             "whiteCardThreshold": "Oyun en az %{count} yanıt kartı (beyaz) gerektirir",
             "blackCardThreshold": "Oyun en az %{count} eylem kartı (siyah) gerektirir",
             "insufficientPlayers": "Maçı başlatmak için en az %{min} oyuncuya ihtiyaç var."
@@ -100,6 +102,7 @@
             "incorrectValue": "Verilen değer, beklenenle uyuşmuyor.",
             "invalidMove": "Yaptığın hamle geçersiz.",
             "invalidVote": "Yapmaya çalıştığın oylama geçersiz.",
+            "noLives": "Hayatta kalan canın kalmadı.",
             "alreadyPlaced": "Zaten bir şey yerleştirdin.",
             "alreadyVoted": "Zaten oy kullandın.",
             "invalidPlacement": "Parça yerleştirmen geçersiz.",
@@ -181,6 +184,7 @@
     },
     "game": {
         "generic": {
+            "name": "Ev",
             "title": "Bloob.io | Ücretsiz ve Hesapsız Online Çok Oyunculu Oyunlar",
             "description": "Bloob.io'da ücretsiz, hesapsız tarayıcı oyunlarına dal! Arkadaşlarınla ya da rastgele kişilerle çok oyunculu keyifli anlar seni bekliyor!",
             "options": {
@@ -197,6 +201,15 @@
                 },
                 "botCount": {
                     "help": "Oyununa botları diğer oyuncularla birlikte tanıt."
+                },
+                "pointer": {
+                    "title": "İşaretçi",
+                    "help": "Diğer oyuncuların imlecinle nereye baktığını görmesine izin ver. Bazı durumlarda bunu sadece grubuna/ekibine özel tutmayı seçebilirsin.",
+                    "data": {
+                        "OFF": "Kapalı",
+                        "PRIVATE": "Özel",
+                        "EVERYONE": "Herkes"
+                    }
                 },
                 "botDifficulty": {
                     "title": "Bot Zorluğu",
@@ -242,9 +255,41 @@
                         "off": "Sınırsız"
                     }
                 },
+                "scoringSystem": {
+                    "title": "Puanlama Sistemi",
+                    "help": {
+                        "default": "Soruyu doğru yanıtladığında puanların nasıl verileceğini belirle.",
+                        "SPEED": "Puanlar, sorunun ne kadar hızlı yanıtlandığına göre veriliyor.",
+                        "ORDER": "Puanlar, oyuncular arasında en hızlı olanın kim olduğuna göre belirleniyor.",
+                        "FIXED": "Her soru aynı miktarda puan veriyor.",
+                        "PROGRESSIVE": "Her sorudan sonra kazanılan puanlar artıyor.",
+                        "STREAK": "Arka arkaya doğru cevaplar verince ekstra puan kazanırsın; yanlış cevap verince sıfırlanır."
+                    },
+                    "data": {
+                        "SPEED": "Hız",
+                        "ORDER": "Sıra",
+                        "FIXED": "Sabit",
+                        "PROGRESSIVE": "İlerleyici",
+                        "STREAK": "Seri"
+                    }
+                },
+                "mode": {
+                    "title": "Mod seçeneği",
+                    "help": {
+                        "default": "Oyuncuların nasıl yarışacağını seç: bireysel, takım olarak ya da işbirliğiyle.",
+                        "SOLO": "Her oyuncu tek başına yarışıyor.",
+                        "CO_OP": "Tüm oyuncular bir takım olarak birlikte çalışıyor.",
+                        "TEAM": "Oyuncular takımlara ayrılıyor ve işbirliği yapacakları grubu kendileri seçebiliyor."
+                    },
+                    "data": {
+                        "SOLO": "Tek başına",
+                        "CO_OP": "Takımca",
+                        "TEAM": "Ekipler"
+                    }
+                },
                 "deckSize": {
                     "title": "Deste Boyutu",
-                    "help": "Zaman sınırlaması olmadan oyna. Tüm tur zamanlayıcılarını devre dışı bırak ve kendi hızında oynayabileceğin rahat bir oyun deneyimi yaşa. Rastgele rakiplere karşı önerilmez.",
+                    "help": "Oyunda tercih ettiğin deste boyutunu seç.",
                     "data": {
                         "half": "Yarım Destesi",
                         "full": "Tam Destesi",
@@ -255,7 +300,7 @@
             "help": {},
             "presets": {
                 "custom": {
-                    "title": "Özel",
+                    "title": "Özelleştirilmiş",
                     "description": "Senin tarafından yapılan değişiklikler — Son güncelleme %{timestamp}"
                 },
                 "default": {
@@ -835,6 +880,10 @@
                     "title": "Hedef Çizgisi",
                     "help": "Nişan çizgisi, beyaz topa vurulduktan sonra nereye gideceğini gösteriyor."
                 },
+                "speed": {
+                    "title": "Hız",
+                    "help": "Havuz animasyonunun ne kadar hızlı oynandığı."
+                },
                 "illegalBallPocket": {
                     "title": "Geçersiz Top Cebi"
                 },
@@ -1009,12 +1058,23 @@
                     "title": "Ekstra Yat",
                     "help": "Oyunun, bir oyuncunun zaten bir Yacht için puan aldıktan sonra başka bir Yacht attığı durumu nasıl ele alması gerektiğini belirt."
                 },
+                "jokerYacht": {
+                    "title": "Yat Joker",
+                    "help": "Bu ayar açıldığında, ek bir Yat için Tam Ev, Küçük Düz veya Büyük Düz olarak puan almanı sağlar. Bu seçenek, ilgili zar yüzü numarası ve Yat kategorisi zaten doldurulduysa ancak o zaman kullanılabilir."
+                },
                 "additionalYachtReward": {
                     "title": "Ödül",
                     "help": "Yacht bir kez daha atanlara verilen puan miktarı."
                 }
             },
-            "presets": {},
+            "presets": {
+                "joker": {
+                    "title": "Joker",
+                    "description": [
+                        "Yatzy aldığında daha fazla seçenek"
+                    ]
+                }
+            },
             "help": {
                 "objective": {
                     "title": "Amaçları Anlama",
@@ -1064,6 +1124,12 @@
                         "Ayrıca boş bir turuncu girişe tıklayıp 0 puan alabilirsin. Bu, o kategoride çok az puan alacağın başka bir seçeneğin olması durumunda işine yarayabilir.",
                         "Örneğin, üst bölümdeki bonusu hedefliyorsan bu işine yarayabilir."
                     ]
+                },
+                "shortcuts": {
+                    "title": "Kısayollar",
+                    "description": [
+                        "Aynı yüzeydeki bir sürü zar taşımak mı istiyorsun? Orta fare tuşunu kullan ya da bir zarın üstüne tıklarken Shift tuşuna basılı tut, böylece aynı yüzeydeki tüm zarlar bir anda taşınacak!"
+                    ]
                 }
             }
         },
@@ -1100,7 +1166,8 @@
                         "pier": "İskele",
                         "littleIsland": "Küçük Ada",
                         "keys": "Anahtarlar",
-                        "lagoon": "Lagün"
+                        "lagoon": "Lagün",
+                        "ocean": "Okyanus"
                     }
                 },
                 "levelOrientation": {
@@ -1121,6 +1188,10 @@
                 "shipReveal": {
                     "title": "Gemi Gösterimi",
                     "help": "Etkinleştirildiğinde, gemiyi batırdığında onu göreceksin. Devre dışı bırakıldığında, sadece kalan gemileri gösteren bir sayaç görünür."
+                },
+                "hitAfterHit": {
+                    "title": "Arka Arkaya Vuruş",
+                    "help": "Açık olduğunda, bir gemiye vurduktan sonra tekrar ateş etme iznin olacak. Kapalı olduğunda, her turda sadece bir atış yapabiliyorsun."
                 }
             },
             "presets": {},
@@ -1420,63 +1491,257 @@
             }
         },
         "AI_ASSASSIN": {
-            "name": "AI Suikastçı",
-            "title": "Daha Akıllı Ol, Yok Et, Hayatta Kal",
-            "description": "AI Assassin, hedefi ortadan kaldırma veya suikastçıları alt etme üzerine heyecan verici bir çok oyunculu oyun. Hedefine ulaşmak ve başarılı olmak için stratejik ipuçlarını kullan.",
+            "name": "Yapay Zeka Suikastçi",
+            "title": "Yapay Zeka Suikastçı Oyunu | Ücretsiz Çok Oyunculu Çevrimiçi",
+            "description": "Yapay zeka destekli suikastçı oyununu ücretsiz oyna! Kayıt gerekmez, çevrimiçi çok oyunculu olarak arkadaşların veya botlarla heyecanı yaşa!",
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Taş Kağıt Makas",
+            "title": "Ücretsiz Taş Kağıt Makas | Çevrimiçi RPS | Çok Oyunculu Oyna",
+            "description": "Ücretsiz Taş Kağıt Makas online oynayın! Klasik RPS eğlencesi, 2-4 kişilik çok oyunculu modlar ve robot rakiplerle kayıt olmadan burada seni bekliyor!",
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "Taş makası yener",
+                        "paper": "Kağıt taşı yener",
+                        "scissors": "Makas kağıdı yener"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Son kalan (<b>0</b> can) | Son kalan (<b>1</b> can) | Son kalan (<b>{count}</b> can",
+                        "FIRST": "İlk <b>0</b> puanı alan | İlk <b>1</b> puanı alan | İlk <b>{count}</b> puanı alan",
+                        "HIGHEST_AFTER": "<b>0</b> turdan sonra en çok puan | <b>1</b> turdan sonra en çok puan | <b>{count}</b> turdan sonra en çok puan"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Yarış",
+                    "description": [
+                        "5 puana ilk ulaşan"
+                    ]
+                },
+                "survival": {
+                    "title": "Hayatta kalma",
+                    "description": [
+                        "5 canım",
+                        "Her kaybedilen turda bir can kaybedersin",
+                        "Son kalan oyuncu kazanır"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Serinin En İyisi",
+                    "description": [
+                        "5 turdan sonra en çok puanı olan oyuncu kazanır."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Kurallar",
+                    "description": [
+                        "Taş Kağıt Makas basit: taş, kağıt ya da makas seç. Taş makası yener, kağıt taşı yener, makas kağıdı yener.",
+                        "Her turda, rakibinin ne seçeceğini tahmin et ve ona göre cevap ver!"
+                    ]
+                },
+                "group": {
+                    "title": "Grup",
+                    "description": [
+                        "4 oyuncuya kadar oynayabilirsin! Her turda sadece bir kişi kazanıyor. Eğer erken elenirsen, kalan oyuncular kazanan belirlenene kadar devam ediyor.",
+                        "Hayatta kalma modunda, her oyuncunun belirli sayıda canı var. Kazanmak için son kalan oyuncu olmalısın!"
+                    ]
+                },
+                "bots": {
+                    "title": "Botlar",
+                    "description": [
+                        "Botlarla oyna! Onlar rastgele bir strateji izliyor, yani eğer bunu çözebilirsen, onları sürekli yenebilirsin!"
+                    ]
+                }
+            }
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Sayı Kapışması",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "Oyun, bir oyuncu bu kadar puana ulaştığında hemen bitecek."
+                },
+                "mode": {
+                    "title": "Mod",
+                    "help": "Farklı bir oyun modu, puanların nasıl verileceğini ve oyunun nasıl oynanacağını etkileyecek.",
+                    "data": {
+                        "SINGLE_HIDER": "Tek Saklambaç",
+                        "HIDE_AND_SEEK": "Saklambaç",
+                        "LAST_STANDING": "Son Kalan"
+                    }
+                },
+                "field": {
+                    "title": "Alan",
+                    "help": "Oyun alanında kaç tane sayı gösterileceğini belirler."
+                },
+                "revealSpeed": {
+                    "title": "Açılma Hızı",
+                    "help": "Herkes hazır olduğunda turun ne kadar hızlı açıldığı."
+                },
+                "multiplier": {
+                    "title": "Çarpanlar",
+                    "help": "Çarpanlar tek bir ya da birden fazla sayıda aynı anda çıkabilir. Bir saklambaç oyuncusu çarpan olan bir sayıyı seçtiğinde puanlarını çarpar. Ama herkes çarpanları görebildiği için bu riskli ve yakalanma ihtimalini artırıyor.",
+                    "data": {
+                        "off": "Kapalı",
+                        "uncommon": "Nadir",
+                        "common": "Yaygın",
+                        "veryCommon": "Çok Yaygın"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Dinamik Puanlama",
+                    "help": {
+                        "introduction": "Başarı olasılığına göre puan ver. Mesela, bir arayıcı oyunun başında bir saklayıcıyı bulursa daha fazla puan alır. Eğer bir saklayıcı, sadece birkaç kare kalmasına rağmen gizli kalmayı başarırsa, o da daha fazla puan kapar.",
+                        "calculation": "Açık olduğunda, puanlar ayarlanan minimum ve maksimum puanlara göre otomatik olarak hesaplanır."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Saklananı Bulmak",
+                    "help": "Bir saklayanı bulan arayıcıya verilen ödül."
+                },
+                "minPointsFind": {
+                    "title": "Min. Saklananı Bulma"
+                },
+                "maxPointsFind": {
+                    "title": "Maks. Saklananı Bulmak"
+                },
+                "pointsHideRound": {
+                    "title": "Her Turda Gizli",
+                    "help": "Her turda gizli kalan bir saklambaççıya verilen ödül."
+                },
+                "minPointsHideRound": {
+                    "title": "Her Turda Gizli Min."
+                },
+                "maxPointsHideRound": {
+                    "title": "Her Turda Maks. Gizli"
+                },
+                "pointsLastAlive": {
+                    "title": "Son Kalan",
+                    "help": "Oyunda kalan son oyuncuya, diğer herkes elendiğinde verilen ödül."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Son Kalan"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Max. Son Kalan"
+                }
+            },
+            "presets": {},
+            "help": {}
+        },
+        "TRIVIA": {
+            "name": "Bilgi Yarışması",
+            "title": "Bilgi Yarışması | Çevrimiçi Ücretsiz Trivia | Arkadaşlarla Oyna",
+            "description": "Oyunu ücretsiz oyna! Bilgi Yarışması çevrimiçi eğlence sunuyor. Hesap gerekmez, arkadaşlarınla veya yabancılarla çok oyunculu kapış!",
+            "options": {
+                "consensus": {
+                    "title": "Konsensüs",
+                    "help": "Takım modunda, takımın cevabı çoğunluk oylamasına mı dayanmalı (Konsensüs)? Eğer değilse, herhangi bir takım üyesi herkesin cevabını değiştirebilir."
+                },
+                "lockAnswer": {
+                    "title": "Cevabı kilitle",
+                    "help": "Seçtikten sonra, oyuncular cevaplarını değiştiremiyor."
+                },
+                "eliminationChallenge": {
+                    "title": "Eliminasyon Mücadelesi",
+                    "help": "Yanlış cevap verince, oyuncu ya da takım hemen eleniyor."
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": "Karşılaşma",
+                    "description": [
+                        "Solo",
+                        "Sonraki sorular için daha fazla puan"
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": "Hardcore Karşılaşma",
+                    "description": [
+                        "Hata yok",
+                        "Kilitli cevap",
+                        "Hıza dayalı puanlar"
+                    ]
+                },
+                "coop": {
+                    "title": "Ko-op",
+                    "description": [
+                        "Birlikte çalışalım",
+                        "Sabit noktalar"
+                    ]
+                },
+                "teams": {
+                    "title": "Takımlar",
+                    "description": [
+                        "Takım halinde çalışın",
+                        "Sıralama bazlı puanlar"
+                    ]
+                }
+            },
+            "help": {
+                "soloOrWorkTogether": {
+                    "title": "Tek başına mı yoksa birlikte mi?",
+                    "description": [
+                        "İstersen tek başına gidebilirsin, istersen kooperatifte grup olarak çalışabilirsin ya da daha küçük takımlar kurabilirsin.",
+                        "Takım ya da grup olarak çalışırken, diğer herkesin ne tahmin ettiğini de görebilirsin!"
+                    ]
+                },
+                "questionPacks": {
+                    "title": "Soru Paketleri",
+                    "description": [
+                        "Bazı soru kategorilerini sevmiyor musun? İlginizi çekmeyen ya da lobinizde istemediğiniz kategorileri açıp kapatmak için lobideki sorular sekmesine gidebilirsin.",
+                        "Sorular, lobinizde gördüğünüz tekrar soru sayısını en aza indirmek için otomatik olarak sunuluyor."
+                    ]
+                },
+                "star": {
+                    "title": "Yıldız",
+                    "description": [
+                        "Eğer mükemmel bir oyun oynarsan, yani hiç yanlış cevap vermezsen, isminin yanına bir yıldız gelecek, bu da kişisel istatistiklerinde takip edilecek!"
+                    ]
+                }
+            }
         }
     },
     "chat": {
-        "EMOJI": {
-            "love": "❤️",
-            "luck": "🍀",
-            "fire": "🔥",
-            "celebration": "🎉",
-            "thumbsUp": "👍",
-            "mindBlowing": "🤯",
-            "thinking": "🤔",
-            "clap": "👏",
-            "cry": "😭",
-            "cool": "😎"
-        },
-        "UNIVERSAL": {
-            "leftTheGame": "Oyundan ayrıldı",
-            "affirmative": "Tamam.",
-            "thanks": "Teşekkürler!",
-            "sorry": "Özür dilerim!",
-            "goodLuck": "İyi şanslar!",
-            "brb": "Hemen dönüyorum!",
-            "go": "Gitmem lazım.",
-            "glhf": "İyi eğlenceler",
-            "gg": "İyi oyun"
-        },
-        "PRE_GAME": {
-            "readyCheck": "Herkes hazır mı?",
-            "changeSettings": "Ayarları değiştir!",
-            "ready": "Hazırım!",
-            "wait": "Lütfen bekleyin!",
-            "go": "Hadi gidelim!",
-            "greeting": "Merhaba! 👋"
-        },
-        "GAME": {
-            "how": "Nasıl!?",
-            "closeOne": "İyi kurtardın!",
-            "niceOne": "Güzel hamle!",
-            "remindMove": "Sıra sende!",
-            "wow": "Vay be!",
-            "oops": "Hoppala!",
-            "no": "Hayır!",
-            "ohNo": "Oh hayır!"
-        },
-        "POST_GAME": {
-            "closeOne": "İyi kapışma!",
-            "wellPlayed": "Güzel oynadın!",
-            "rematch": "Tekrar oynayalım!",
-            "fun": "Çok eğlenceliydi!",
-            "bye": "Hoşça kal!"
-        }
+        "affirmative": "Tamam.",
+        "thanks": "Teşekkürler!",
+        "sorry": "Özür dilerim!",
+        "goodLuck": "İyi şanslar!",
+        "brb": "Hemen dönüyorum!",
+        "go": "Gitmem lazım.",
+        "glhf": "İyi eğlenceler",
+        "gg": "İyi oyun",
+        "readyCheck": "Herkes hazır mı?",
+        "changeSettings": "Ayarları değiştir!",
+        "ready": "Hazırım!",
+        "wait": "Lütfen bekleyin!",
+        "letsGo": "Hadi gidelim!",
+        "greeting": "Merhaba!",
+        "how": "Nasıl!?",
+        "closeOne": "İyi kurtardın!",
+        "niceOne": "Güzel hamle!",
+        "checkThisOut": "Buna bak!",
+        "remindMove": "Sıra sende!",
+        "wow": "Vay be!",
+        "oops": "Hoppala!",
+        "no": "Hayır!",
+        "ohNo": "Oh hayır!",
+        "wellPlayed": "Güzel oynadın!",
+        "rematch": "Tekrar oynayalım!",
+        "fun": "Çok eğlenceliydi!",
+        "bye": "Hoşça kal!",
+        "shortYes": "Evet.",
+        "shortNo": "Hayır."
     },
     "header": {
         "message": {
@@ -1512,6 +1777,9 @@
             "roundSummary": "Tur Tur Özeti",
             "roundCount": "%{current} tur, toplam %{total} turdan",
             "roundCurrent": "Tur %{current}",
+            "startingNewRound": "Yeni tur başlıyor...",
+            "questionCount": "Soru %{current} / %{total}",
+            "questionCurrent": "Soru %{current}",
             "war": "Savaş!",
             "outcome": "Sonuç",
             "input": "Senin girişini bekliyoruz",
@@ -1603,7 +1871,15 @@
         "language": "Dil",
         "rules": "Kurallar",
         "points": "Puanlar",
-        "fouls": "Faula Tepki"
+        "fouls": "Faula Tepki",
+        "sciences": "Bilimler",
+        "artsAndEntertainment": "Sanat & Eğlence",
+        "geography": "Coğrafya",
+        "gaming": "Oyun",
+        "technology": "Teknoloji",
+        "popCulture": "Pop Kültür",
+        "sports": "Sporlar",
+        "history": "Tarih"
     },
     "month": {
         "short": {
@@ -1735,6 +2011,7 @@
         "wins": "0 galibiyet | 1 galibiyet | {count} galibiyet",
         "cards": "0 kart | 1 kart | {count} kart",
         "moves": "0 hamle | 1 hamle | {count} hamle",
+        "tiles": "0 karolar | 1 karo | {count} karo",
         "playing": "0 oynuyor | 1 oynuyor | {count} oynuyor",
         "players": "0 oyuncu | 1 oyuncu | {count} oyuncu",
         "selectedCards": "Kart seçilmedi | 1 kart seçildi | {count} kart seçildi",
@@ -1752,6 +2029,14 @@
         "restartNotice": "Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir."
     },
     "misc": {
+        "example": "Başka bir şey var mı?",
+        "learnMore": "Daha fazla öğren!",
+        "questions": "Sorular",
+        "teamAndQuestions": "Takım & Sorular",
+        "questionPacks": "Soru Paketleri",
+        "rock": "Taş",
+        "paper": "Kağıt",
+        "scissors": "Makas",
         "lobby": "Lobi",
         "inGame": "Oyun içi",
         "matchmakingSearch": "Oyun arıyorum",
@@ -1787,7 +2072,7 @@
         "unknown": "Bilinmeyen",
         "none": "Yok",
         "seasonal": "Mevsimlik",
-        "items": "Tabii, çevirileri yapabilirim. Lütfen çevirmemi istediğin maddeleri paylaş.",
+        "items": "Ürünler",
         "purchaseCoins": "Jeton Satın Al",
         "store": "Mağaza",
         "buyNow": "Hemen Al",
@@ -1813,7 +2098,7 @@
         "perks": "Avantajlar",
         "beta": "Beta",
         "about": "Hakkında",
-        "public": "Herkese Açık",
+        "public": "Kamusal",
         "private": "Özel",
         "add": "Ekle",
         "remove": "Kaldır",
@@ -1836,7 +2121,7 @@
         "options": "Seçenekler",
         "localPlayers": "Yerel Oyuncular",
         "preset": "Ön Ayar",
-        "custom": "Özel",
+        "custom": "Özelleştirilmiş",
         "you": "Sen",
         "home": "Ana Sayfa",
         "bot": "Bot",
@@ -1852,6 +2137,8 @@
         "language": "Dil",
         "toggle": "Değiştir",
         "login": "Giriş Yap",
+        "loginToExistingAccount": "Mevcut Hesaba Giriş Yap",
+        "createMyAccount": "Hesabımı Oluştur",
         "logout": "Çıkış Yap",
         "hats": "Şapkalar",
         "eyes": "Gözler",
@@ -1869,6 +2156,7 @@
         "specificCards": "Belirli Kartlar",
         "matchId": "Maç ID",
         "chat": "Sohbet",
+        "sendMessage": "Mesaj Gönder",
         "host": "Ev Sahibi",
         "player": "Oyuncu",
         "players": "Oyuncular",
@@ -1900,7 +2188,6 @@
         "view": "Görüntüle",
         "forfeit": "Oyunu Bırak",
         "processFiles": "Dosyaları İşle",
-        "sendMessage": "Mesaj Gönder",
         "checkAgain": "Tekrar Kontrol Et",
         "refreshWindow": "Pencereyi Yenile",
         "makeHost": "Ev Sahibi Yap",
@@ -1921,6 +2208,7 @@
         "highestScore": "En Yüksek Skor",
         "totalScore": "Toplam Puan",
         "finalScore": "Son Puan",
+        "flawlessGames": "Kusursuz Oyunlar",
         "hits": "Vuruşlar",
         "hitRate": "Vuruş Oranı",
         "rank": "Sıralama",
@@ -1930,8 +2218,10 @@
         "assassinations": "Suikastlar",
         "survivals": "Hayatta Kalma",
         "games": "Oyunlar",
+        "correctRatio": "Doğru Oran",
         "winRatio": "Kazanma Oranı",
         "killDeathRatio": "K/D Oranı",
+        "lives": "Hayatlar",
         "points": "Puanlar",
         "wins": "Kazanmalar",
         "grids": "Izgaralar",
@@ -1942,6 +2232,7 @@
         "fouls": "Fauler",
         "and": "ve",
         "vs": "aleyhinde",
+        "dismiss": "Kapat",
         "rename": "Yeniden Adlandır",
         "created": "Oluşturuldu",
         "lastSeen": "Son Görülme",
@@ -1951,6 +2242,7 @@
         "myDevices": "Cihazlarım",
         "myData": "Verilerim",
         "redeemCode": "Kodu Kullan",
+        "contact": "İletişim",
         "leaderboard": "Lider Tablosu",
         "elapsedTime": "%{time} süre geçti",
         "startingInTime": "%{time} içinde başlıyor",
@@ -1964,6 +2256,10 @@
         "coinsBlank": "%{value} altın",
         "receivedBlank": "%{value} Alındı",
         "lessThanBlank": "%{value}'den daha az",
+        "lastSeenBlankAgo": "En son %{value} önce görüldü",
+        "lastSeenJustNow": "En son az önce görüldü",
+        "blank": "%{value}",
+        "byBlank": "%{value} tarafından",
         "sendVerification": "Doğrulama Gönder",
         "noThanks": "Teşekkürler, gerek yok",
         "ready": "Hazır",
@@ -1978,12 +2274,15 @@
         "madeBy": "%{name} tarafından yapıldı",
         "selectedOfLimit": "Seçilen %{current}, %{total} limitinden",
         "helpLocalize": "Yerelleştirmeyi geliştirmeye yardımcı ol",
+        "goAdFree": "Reklamsız devam et",
         "discord": "Discord'umuza katıl",
         "volume": "Ses Seviyesi",
         "volumeInterface": "Arayüz Ses Seviyesi",
         "volumeEffects": "Efekt Ses Seviyesi",
+        "volumeMusic": "Müzik Ses Seviyesi",
         "selectYourLanguage": "Dilini Seç",
         "selectYourColor": "Rengini Seç",
+        "selectYourTeam": "Takımını Seç",
         "latestChanges": "Son Değişiklikler",
         "noChangesDetected": "Değişiklik Tespit Edilmedi",
         "newChanges": "Yeni Değişiklikler",
@@ -2126,7 +2425,7 @@
             "rematchWaiting": "Diğer oyuncunun rövanşı kabul etmesini bekliyor...",
             "rematchRequest": "%{name} tekrar maç yapmak istiyor.",
             "joinById": "Dört haneli ID'yi doldurarak (özel) bir maça katılabilirsin.",
-            "public": "<b>Herkes için: </b>Herkes, mevcut maçları göz atarak katılabilir.",
+            "public": "<b>Kamusal: </b>Herkes, mevcut maçları göz atarak katılabilir.",
             "private": "<b>Özel: </b>Oyuncular sadece URL veya 4 haneli ID kullanarak katılabilir.",
             "finishedSettings": "Maç ayarlarını düzenlemeyi bitirdin mi?",
             "leave": "Eğer çıkmayı seçersen, geri dönemeyebilirsin.",
@@ -2135,8 +2434,19 @@
         }
     },
     "info": {
+        "roundEndTie": "Beraberlik!",
+        "roundEndStalemate": "Pat durum!",
+        "roundWin": "Kazandın!",
+        "roundLost": "Kaybettin!",
+        "youLostThisRound": "Bu turu kaybettin!",
+        "youAreOutOfLives": "Hayatın kalmadı",
+        "playerIsEliminated": "Oyuncu elendi",
+        "youAreEliminated": "Sen elendin",
+        "waitForRoundEnd": "Turun bitmesini bekle lütfen.",
+        "waitForWinner": "Sıkı dur, kazananın çıkmasını bekle!",
         "serverRestart": "Sunucu şimdi yeniden başlatılıyor. Birkaç dakika sonra tekrar kontrol et.",
         "clearOldListings": "Tüm 'Kullanılamaz' maçları temizle.",
+        "flawlessGame": "Kusursuz oyun! Hiç hata yapılmadı.",
         "accountLinkSuggestion": "Artık %{level} seviyesindesin! İlerlemeni korumak için bir hesap oluşturmayı düşün.",
         "accountLinked": "Bu hesap şu e-posta adresine bağlı: %{email}.",
         "incompleteTranslationNotice": "Seçtiğin dil yaklaşık olarak %{percentage}% tamamlandı. Eksik çeviriler İngilizce olacak.",
@@ -2163,10 +2473,13 @@
         "inactiveOpponents": "Tüm rakipler hareketsizdi",
         "waitForOpponent": "Rakibini bekliyor...",
         "waitForOpponents": "Rakiplerini bekliyor...",
+        "nameLeftTheGame": "%{name} oyundan ayrıldı",
         "selfNoPoints": "Hiç puan almadın.",
         "nameNoPoints": "%{name} hiç puan almadı.",
         "gameMenu": "Başka bir şey oynamak ister misin?",
         "forfeit": "Oyunu terk etmek senin için bir kayıp anlamına gelecek.",
+        "namePointsForMove": "%{name}'in hamlesi %{points} aldı.",
+        "selfPointsForMove": "Senin hamlen %{points} aldı.",
         "nameForfeited": "%{name} pes etti ve otomatik olarak kaybetti.",
         "selfForfeited": "Pes ettin ve otomatik olarak kaybettin.",
         "unsavedChanges": "Kaydedilmemiş değişikliklerin var ve ilerlersen bunlar silinecek.",
@@ -2182,6 +2495,12 @@
         "loginToPurchase": "Bir şey satın almak için önce giriş yapmalı veya bir hesap oluşturmalısın.",
         "seasonalItem": "Bu slot'taki bir eşya yılda sadece birkaç gün boyunca kullanılabilir.",
         "cardInteractHint": "Seçimini yapmak için bir karta tıkla.",
+        "gameInvite": "Oyuna Davet",
+        "keyboardShortcutCombination": "{combination} gibi klavye kısayollarını kullanmak için {firstKey} tuşuna basılı tut ve sonra {secondKey} tuşuna bas.",
+        "keyboardShortcutSpinSelector": "Ok tuşlarını {keys} kullanarak dönüşü değiştirebilirsin.",
+        "goAdFree": "Reklamlar, herhangi bir miktarda jeton alarak geliştirmeye destek verirsen, hesabın için kalıcı olarak devre dışı bırakılır.",
+        "chatEmojiAlt": "Chat emojisi türü {type}",
+        "zoomOutHint": "Büyütmüşsün! Daha iyi oyun kontrolleri için parmaklarını birleştirip küçült.",
         "awaitingPurchaseConfirmation": {
             "title": "Satın Alma Onayı Bekleniyor",
             "description": "Bu genellikle sadece birkaç saniye sürer. Ödeme yönteminize bağlı olarak daha uzun sürebilir. Bu ekranı kapatmakta özgürsünüz."
@@ -2190,8 +2509,11 @@
             "noFriends": "Arkadaş Yok",
             "noAccount": "Arkadaş edinmek için giriş yap ya da hesap oluştur!",
             "description": "Bağlantıda kal! Arkadaşlarını çevrimiçi gör, oyunlarını kontrol et ve özel lobilerine katıl!",
-            "removeDescription": "\"%{name}\" ile arkadaşlığını bitirmek üzeresin."
+            "removeDescription": "\"%{name}\" ile arkadaşlığını bitirmek üzeresin.",
+            "inviteReceived": "%{name} seni %{game} oynamaya davet etti",
+            "inviteSent": "Oyun daveti gönderildi!"
         },
+        "contact": "Herhangi bir sorunla karşılaşırsan, önerilerin varsa ya da soruların olursa çekinme, bize ulaş! E-posta atarak ya da Bloob.io Discord'a katılarak iletişime geçebilirsin.",
         "settings": {
             "redeemCode": {
                 "title": "Kodu Kullan",
@@ -2212,6 +2534,14 @@
                 "description": "Bloob.io, gizlilik dostu, kendi sunucusunda barındırılan Matomo analitik sunucusunu kullanarak anonim olarak analitik izler. Verileriniz asla başkalarıyla paylaşılmaz. İsterseniz bu durumdan çıkabilirsiniz.",
                 "blocked": "Analitikler aktif değil. Tarayıcınız veya eklentiniz bunu engellemiş olabilir.",
                 "dnt": "Tarayıcınızda \"Takip Etme\" (DNT) ayarı etkin. Talebinizi onaylıyoruz ve sizi takip etmiyoruz."
+            },
+            "ads": {
+                "title": "Reklamlar",
+                "description": "Bloob.io'da Playwire'dan reklamlar gösteriyoruz. Bloob.io'daki reklamlar, kısmen ya da tamamen, Playwire LLC tarafından yönetiliyor. Eğer Bloob.io'da reklam görmek istemiyorsan, mağazadan jeton alarak reklamsız bir deneyim yaşayabilirsin. Bu, hesabındaki tüm reklamları otomatik olarak kaldırır.",
+                "complaint": "Bloob.io için önemli olan, gördüğün reklamların etik ve rahatsız edici olmaması. Eğer oyununu etkileyen reklamlar görüyorsan, \"Hakkında\" bölümüne bakarak bizimle iletişime geç.",
+                "consent": "Reklam onay tercihlerini güncellemek için buraya tıkla",
+                "exempt": "Reklamlar aktif değil. Hesabın reklamsız. Desteğin için teşekkürler!",
+                "blocked": "Reklamlar aktif değil. Tarayıcın ya da uzantın bunu engellemiş olabilir."
             },
             "serverData": {
                 "title": "Sunucu Verisi",
@@ -2234,7 +2564,7 @@
         "authentication": {
             "login": {
                 "title": "Giriş Yap",
-                "description": "Lütfen dikkat, hesabınıza giriş yapmak, şu anda kullandığınız kullanıcı (%{name}) için tüm ilerlemeyi silecektir."
+                "description": "Dikkat! Şu an kullandığın kullanıcı, {name} ve seviyesi {level}, henüz bir hesaba bağlı değil. Var olan bir hesapla giriş yaparsan bu kullanıcı kalıcı olarak silinecek. Belki de hesabını oluşturmak istemişsindir?"
             },
             "setupThreshold": {
                 "title": "Erkencisin %{name}!",
@@ -2477,6 +2807,28 @@
             "earnsSum": "Tüm zarların toplamını kazanır.",
             "noPointsWarning": "Bu hamle sana hiç puan kazandırmayacak. Puan kazandıran başka seçenekler var."
         },
+        "graphicsAcceleration": {
+            "notice": "Grafik hızlandırma kapalı. Bu, oyunun performansını etkileyebilir.",
+            "search": "Grafik hızlandırmayı nasıl açarım?"
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
+        },
         "ai": {
             "ready": null,
             "findingTarget": null,
@@ -2485,9 +2837,7 @@
             "assassinAssignment": null,
             "targetAssignment": null,
             "assassinDescription": null,
-            "targetDescription": null,
-            "startAssassinChat": null,
-            "joinAssassinChat": null
+            "targetDescription": null
         },
         "poolType": {
             "SOLID": "Düzler",
@@ -2542,6 +2892,7 @@
             "developedBy": "%{name} tarafından geliştirildi",
             "iconsSource": "İkonlar %{name}'in nezaketine (Lisanslı)",
             "soundsSource": "Sesler %{name} tarafından sağlandı (Lisanslı)",
+            "emojiSource": "%{name} tarafından sağlanan emojiler (CC-BY 4.0)",
             "rottenApplesSource": "%{name} temelli Çürük Elmalar (BY-NC-SA 2.0)",
             "diceSource": "Zar modeli, %{name} tarafından (CC-BY-4.0)",
             "localization": "Gönüllü katılımcılar tarafından yerelleştirme"

@@ -10,7 +10,6 @@ export type SupportedLocale =
 	| `id`
 	| `tr`
 	| `ar`
-	| `hi`
 	| `ru`
 	| `uk`
 	| `ko`
@@ -35,7 +34,9 @@ export enum GameType {
 	war = `WAR`,
 	aiAssassin = `AI_ASSASSIN`,
 	ginRummy = `GIN_RUMMY`,
-	numberShowdown = `NUMBER_SHOWDOWN`
+	numberShowdown = `NUMBER_SHOWDOWN`,
+	rockPaperScissors = `ROCK_PAPER_SCISSORS`,
+	trivia = `TRIVIA`
 }
 
 export enum CheckersKingType {

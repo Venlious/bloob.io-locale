@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Korean",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1804,
+        "missing": 22
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "미안, 이 사용자는 이미 %{amount}명의 친구 한도에 도달했어.",
             "pendingFriendLimitSelf": "보류 중인 친구 요청은 %{amount}개 이상 가질 수 없어.",
             "pendingFriendLimitOther": "미안, 이 사용자는 이미 보류 중인 친구 요청이 너무 많아.",
+            "userOffline": "죄송해요, 이 사용자는 오프라인이에요.",
             "notFriends": "너희는 친구가 아니고 친구 요청도 없어.",
             "alreadyFriends": "너는 이미 이 사용자와 친구야.",
             "pendingFriends": "이 사용자한테는 이미 친구 요청이 있어.",
@@ -81,6 +82,7 @@
         "start": {
             "fieldRows": "선택한 필드는 %{rows} 행 이상 지원할 수 없어요",
             "fieldCannotFitUsers": "선택한 필드는 %{users} 명 이상의 플레이어를 지원할 수 없어요",
+            "questionThreshold": "게임은 최소 %{count}개의 질문이 필요해.",
             "whiteCardThreshold": "게임은 최소 %{count} 개의 응답 카드(하얀색)가 필요해요",
             "blackCardThreshold": "게임은 최소 %{count} 개의 액션 카드(검은색)가 필요해요",
             "insufficientPlayers": "경기를 시작하려면 최소 %{min} 명의 플레이어가 필요해요."
@@ -100,6 +102,7 @@
             "incorrectValue": "주어진 값이 예상한 값과 맞지 않아요.",
             "invalidMove": "주어진 움직임은 유효하지 않아요.",
             "invalidVote": "시도한 투표는 유효하지 않아요.",
+            "noLives": "남은 생명이 없어.",
             "alreadyPlaced": "이미 뭔가를 놓았어.",
             "alreadyVoted": "이미 투표했어.",
             "invalidPlacement": "너의 말 놓기가 유효하지 않아.",
@@ -181,6 +184,7 @@
     },
     "game": {
         "generic": {
+            "name": "집",
             "title": "Bloob.io | 로그인 없이 친구랑 무료 게임 즐기기!",
             "description": "친구와 무료로 즐길 수 있는 멀티플레이어 브라우저 게임, 로그인 없이 지금 바로 시작해 끝없는 재미와 흥미로운 도전을 만끽하세요!",
             "options": {
@@ -197,6 +201,15 @@
                 },
                 "botCount": {
                     "help": "게임에 봇들을 다른 플레이어들과 함께 소개해봐."
+                },
+                "pointer": {
+                    "title": "포인터",
+                    "help": "다른 플레이어들이 네가 커서를 어디 가리키고 있는지 볼 수 있게 해줘. 어떤 경우에는 그걸 네 그룹/팀만 볼 수 있게 비공개로 설정할 수도 있어.",
+                    "data": {
+                        "OFF": "꺼짐",
+                        "PRIVATE": "비공식",
+                        "EVERYONE": "모두"
+                    }
                 },
                 "botDifficulty": {
                     "title": "봇 난이도",
@@ -242,9 +255,41 @@
                         "off": "제한 없어"
                     }
                 },
+                "scoringSystem": {
+                    "title": "점수 시스템",
+                    "help": {
+                        "default": "질문 맞추면 점수 주는 시스템 정해봐.",
+                        "SPEED": "점수는 질문에 답하는 속도에 따라 달라.",
+                        "ORDER": "누가 제일 빨리 답했는지에 따라 점수가 정해져.",
+                        "FIXED": "각 질문마다 주는 점수는 똑같아.",
+                        "PROGRESSIVE": "질문이 끝날 때마다 얻는 점수가 늘어나.",
+                        "STREAK": "연속으로 맞춘 답변에 대해 추가 점수를 얻어! 틀리면 리셋돼."
+                    },
+                    "data": {
+                        "SPEED": "속도",
+                        "ORDER": "순서",
+                        "FIXED": "고정",
+                        "PROGRESSIVE": "점진적",
+                        "STREAK": "연속"
+                    }
+                },
+                "mode": {
+                    "title": "모드",
+                    "help": {
+                        "default": "플레이어들이 경쟁하는 방식을 선택해: 개인적으로, 팀으로, 아니면 협력해서.",
+                        "SOLO": "각 플레이어는 혼자서 경쟁해.",
+                        "CO_OP": "모든 플레이어가 팀으로 함께 일해.",
+                        "TEAM": "플레이어들이 팀으로 나뉘고, 협력할 그룹을 스스로 선택할 수 있어."
+                    },
+                    "data": {
+                        "SOLO": "솔로",
+                        "CO_OP": "협동",
+                        "TEAM": "팀"
+                    }
+                },
                 "deckSize": {
                     "title": "덱 크기",
-                    "help": "시간 제한 없이 플레이하세요. 모든 턴 타이머를 비활성화하고 여유롭게 게임을 즐길 수 있어요. 자신의 속도에 맞춰 플레이할 수 있어요. 랜덤 상대에게는 추천하지 않아요.",
+                    "help": "게임에 사용할 덱 크기를 선택해!",
                     "data": {
                         "half": "반 덱",
                         "full": "풀 덱",
@@ -835,6 +880,10 @@
                     "title": "조준선",
                     "help": "조준선은 큐볼이 맞고 나서 어디로 갈지를 보여줘."
                 },
+                "speed": {
+                    "title": "속도",
+                    "help": "풀 애니메이션이 얼마나 빨리 재생되는지."
+                },
                 "illegalBallPocket": {
                     "title": "불법적인 공 주머니"
                 },
@@ -1009,12 +1058,23 @@
                     "title": "추가 요트",
                     "help": "게임이 어떻게 처리해야 하는지 명시해봐. 플레이어가 이미 한 번 점수를 얻은 후에 다시 Yacht를 굴렸을 때 말이야."
                 },
+                "jokerYacht": {
+                    "title": "요트 조커",
+                    "help": "이 설정을 켜면, 추가 요트를 풀 하우스, 스몰 스트레이트, 또는 라지 스트레이트로 점수를 받을 수 있어. 이 옵션은 해당 주사위 면 번호와 요트 카테고리가 이미 채워져 있을 때만 사용할 수 있어."
+                },
                 "additionalYachtReward": {
                     "title": "보상",
                     "help": "야추를 또 굴린 사람에게 주어지는 점수의 양."
                 }
             },
-            "presets": {},
+            "presets": {
+                "joker": {
+                    "title": "조커",
+                    "description": [
+                        "야츠를 얻으면 더 많은 선택지가 생겨"
+                    ]
+                }
+            },
             "help": {
                 "objective": {
                     "title": "목표 이해하기",
@@ -1064,6 +1124,12 @@
                         "빈 주황색 항목을 클릭해서 0점을 얻을 수도 있어요. 다른 선택지가 있지만 그 카테고리에서 별로 점수를 못 얻을 거라면 이 방법이 도움이 될 수 있어요.",
                         "예를 들어, 상단 섹션의 보너스를 획득하려는 경우에 이 방법이 도움이 될 수 있어요."
                     ]
+                },
+                "shortcuts": {
+                    "title": "단축키",
+                    "description": [
+                        "같은 주사위를 한 번에 많이 옮기고 싶어? 중간 마우스 버튼을 누르거나 Shift 키를 누른 채로 주사위를 클릭하면 같은 면을 가진 주사위가 한 번에 다 옮겨져!"
+                    ]
                 }
             }
         },
@@ -1100,7 +1166,8 @@
                         "pier": "부두",
                         "littleIsland": "작은 섬",
                         "keys": "키즈",
-                        "lagoon": "네가"
+                        "lagoon": "네가",
+                        "ocean": "바다"
                     }
                 },
                 "levelOrientation": {
@@ -1121,6 +1188,10 @@
                 "shipReveal": {
                     "title": "선박 공개",
                     "help": "활성화하면, 당신이 침몰시킨 배를 볼 수 있어. 비활성화하면, 남은 배의 카운터만 보여."
+                },
+                "hitAfterHit": {
+                    "title": "연속 타격",
+                    "help": "활성화되면 배를 맞춘 후 다시 쏠 수 있어. 비활성화되면 턴당 한 번만 쏠 수 있어."
                 }
             },
             "presets": {},
@@ -1421,62 +1492,256 @@
         },
         "AI_ASSASSIN": {
             "name": "AI 암살자",
-            "title": "더 똑똑해져서, 제거하고, 생존하자",
-            "description": "AI Assassin은 목표를 제거하거나 암살자를 능가하는 스릴 넘치는 멀티플레이어 게임입니다. 목표 달성과 성공을 위해 전략적인 프롬프트를 사용하세요.",
+            "title": "AI 암살자 | 무료 멀티플레이어 온라인 프롬프트 게임",
+            "description": "AI 암살자: 무료 온라인 AI 프롬프트 게임으로, 계정 없이 친구나 AI와 멀티플레이어 대결을 즐기고 신나는 순간을 경험해보세요!",
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "가위 바위 보",
+            "title": "가위바위보 무료 멀티플레이 온라인 게임 | 친구들과 즐기기",
+            "description": "가위바위보 알피에스 온라인 무료 게임! 계정 없이 최대 4명과 친구, 낯선 사람, 봇과 규칙 없이 다같이 멀티플레이어로 즐겨보세요!",
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "바위가 가위를 이겨",
+                        "paper": "종이가 바위를 이겨",
+                        "scissors": "가위가 종이를 이겨"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "마지막 남은 사람 (<b>0</b> 목숨) | 마지막 남은 사람 (<b>1</b> 목숨) | 마지막 남은 사람 (<b>{count}</b> 목숨)",
+                        "FIRST": "제일 먼저 <b>0</b>점 얻기 | 제일 먼저 <b>1</b>점 얻기 | 제일 먼저 <b>{count}</b>점 얻기",
+                        "HIGHEST_AFTER": "<b>0</b> 라운드 후 가장 많은 점수 | <b>1</b> 라운드 후 가장 많은 점수 | <b>{count}</b> 라운드 후 가장 많은 점수"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "경주",
+                    "description": [
+                        "5점 먼저 가기"
+                    ]
+                },
+                "survival": {
+                    "title": "생존",
+                    "description": [
+                        "5번의 생명",
+                        "라운드마다 져서 생명 하나 잃어",
+                        "마지막까지 남은 사람이 이김"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "시리즈 최고!",
+                    "description": [
+                        "5라운드 끝나고 점수 제일 높은 사람이 이겨!"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "규칙 알아보기",
+                    "description": [
+                        "가위 바위 보 진짜 간단해: 바위, 보, 가위 중에서 골라! 바위는 가위를 이기고, 보가 바위를 이기고, 가위는 보를 이겨.",
+                        "매 라운드마다 상대방이 뭘 고를지 예측하고 그에 맞게 대처해!"
+                    ]
+                },
+                "group": {
+                    "title": "그룹",
+                    "description": [
+                        "최대 4명까지 같이 놀 수 있어! 매 라운드마다 한 명만 이길 수 있어. 일찍 나가면 남은 플레이어들이 계속해서 승자를 가릴 때까지 놀아.",
+                        "생존 모드에서는 각 플레이어가 정해진 생명을 가지고 있어. 마지막까지 남아있는 플레이어가 이기는 거야!"
+                    ]
+                },
+                "bots": {
+                    "title": "봇들",
+                    "description": [
+                        "봇이랑 대결해봐! 걔네는 랜덤 전략으로 움직이니까, 그거 파악하면 계속 이길 수 있어!"
+                    ]
+                }
+            }
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "넘버 쇼다운",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "게임은 누군가 이 점수에 도달하면 바로 끝나."
+                },
+                "mode": {
+                    "title": "모드",
+                    "help": "다른 게임 모드가 점수 주는 방식이랑 게임하는 방식을 바꿀 거야.",
+                    "data": {
+                        "SINGLE_HIDER": "혼자 숨는 사람",
+                        "HIDE_AND_SEEK": "술래잡기",
+                        "LAST_STANDING": "마지막 남은 사람"
+                    }
+                },
+                "field": {
+                    "title": "필드",
+                    "help": "게임 필드에 몇 개의 숫자가 보일지를 정해."
+                },
+                "revealSpeed": {
+                    "title": "드러내는 속도",
+                    "help": "모두 준비되면 라운드 공개하는 속도야."
+                },
+                "multiplier": {
+                    "title": "배수 설정",
+                    "help": "곱셈기가 하나의 숫자나 여러 숫자에 동시에 나타날 수 있어. 숨는 사람이 곱셈기가 있는 숫자를 고르면 점수가 곱해져. 근데 다들 곱셈기를 볼 수 있으니까 위험하고 발견될 확률이 높아져.",
+                    "data": {
+                        "off": "꺼짐",
+                        "uncommon": "드물게",
+                        "common": "흔함",
+                        "veryCommon": "아주 흔함"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "동적 점수 시스템",
+                    "help": {
+                        "introduction": "성공 확률에 따라 포인트를 줘. 예를 들어, 찾는 사람이 초반에 숨는 사람을 찾으면 더 많은 포인트를 받고, 숨는 사람이 몇 개의 타일만 남기고 잘 숨으면 더 많은 포인트를 받아.",
+                        "calculation": "활성화되면, 설정한 최소 및 최대 포인트에 따라 포인트가 자동으로 계산돼."
+                    }
+                },
+                "pointsFind": {
+                    "title": "숨바꼭질 찾기",
+                    "help": "숨는 사람을 찾은 탐색자에게 주는 상."
+                },
+                "minPointsFind": {
+                    "title": "숨는 사람 찾기 최소한"
+                },
+                "maxPointsFind": {
+                    "title": "최대. 숨은 사람 찾기"
+                },
+                "pointsHideRound": {
+                    "title": "라운드당 숨김",
+                    "help": "라운드마다 숨은 사람한테 주는 상이야."
+                },
+                "minPointsHideRound": {
+                    "title": "라운드당 최소 숨겨진 수"
+                },
+                "maxPointsHideRound": {
+                    "title": "라운드당 최대 숨겨진 수"
+                },
+                "pointsLastAlive": {
+                    "title": "마지막 남은 것",
+                    "help": "게임에서 다른 모든 플레이어가 제거되고 마지막으로 남은 플레이어에게 주어지는 상."
+                },
+                "minPointsLastAlive": {
+                    "title": "최소 잔여량"
+                },
+                "maxPointsLastAlive": {
+                    "title": "최후의 남은 자"
+                }
+            },
+            "presets": {},
+            "help": {}
+        },
+        "TRIVIA": {
+            "name": "퀴즈 게임",
+            "title": "온라인 퀴즈 게임 | 친구들과 실시간 협동 플레이로 질문 풀기!",
+            "description": "무료 퀴즈 게임을 즐겨보세요! 계정 없이 친구들과 온라인 실시간 멀티플레이어 협동 플레이로 도전하고 끝없이 재미를 느껴보세요!",
+            "options": {
+                "consensus": {
+                    "title": "합의",
+                    "help": "팀 모드에서 팀의 답변은 다수결(합의)에 따라야 해? 아니면, 아무 팀원이든지 모든 사람의 답변을 바꿀 수 있어?"
+                },
+                "lockAnswer": {
+                    "title": "답변 잠금",
+                    "help": "선택한 답변을 고르면, 그때부터는 답변을 바꿀 수 없어."
+                },
+                "eliminationChallenge": {
+                    "title": "제거 챌린지",
+                    "help": "잘못된 질문에 대답하면 바로 플레이어나 팀이 탈락해."
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": "대결",
+                    "description": [
+                        "솔로",
+                        "나중 질문에 더 많은 포인트!"
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": "하드코어 대결",
+                    "description": [
+                        "실수 없음",
+                        "잠긴 답변",
+                        "속도 기반 포인트"
+                    ]
+                },
+                "coop": {
+                    "title": "협동 게임",
+                    "description": [
+                        "같이 일하자",
+                        "고정된 지점"
+                    ]
+                },
+                "teams": {
+                    "title": "팀들",
+                    "description": [
+                        "팀으로 일해요",
+                        "순서에 따라 점수 줘요"
+                    ]
+                }
+            },
+            "help": {
+                "soloOrWorkTogether": {
+                    "title": "혼자 할래, 같이 할래?",
+                    "description": [
+                        "혼자 할지, 협동해서 할지, 아니면 작은 팀으로 나눌지 선택할 수 있어!",
+                        "팀이나 그룹으로 할 때는 다른 사람들이 뭘 추측하는지도 볼 수 있어!"
+                    ]
+                },
+                "questionPacks": {
+                    "title": "질문 팩",
+                    "description": [
+                        "특정 질문 카테고리가 마음에 안 들어? 관심 없는 카테고리는 끄거나 켤 수 있어, 로비의 질문 탭에서 설정하면 돼.",
+                        "질문은 자동으로 제공돼서 로비에서 반복되는 질문을 최소화해."
+                    ]
+                },
+                "star": {
+                    "title": "별",
+                    "description": [
+                        "완벽한 게임을 하면, 즉 질문 하나도 틀리지 않으면, 너의 이름 옆에 별이 생겨! 이건 너의 개인 통계에 기록돼!"
+                    ]
+                }
+            }
         }
     },
     "chat": {
-        "EMOJI": {
-            "love": "❤️",
-            "luck": "🍀",
-            "fire": "🔥",
-            "celebration": "🎉",
-            "thumbsUp": "👍",
-            "mindBlowing": "🤯",
-            "thinking": "🤔",
-            "clap": "👏",
-            "cry": "😭",
-            "cool": "😎"
-        },
-        "UNIVERSAL": {
-            "leftTheGame": "게임에서 나갔어",
-            "affirmative": "알았어.",
-            "thanks": "고마워!",
-            "sorry": "미안!",
-            "goodLuck": "행운을 빕니다!",
-            "brb": "금방 돌아올게!",
-            "go": "나 가야 해.",
-            "glhf": "행운을 빕니다, 즐겁게 해요",
-            "gg": "잘 했어"
-        },
-        "PRE_GAME": {
-            "readyCheck": "다들 준비 됐어?",
-            "changeSettings": "설정 바꿔!",
-            "ready": "준비 됐어!",
-            "wait": "잠깐만 기다려!",
-            "go": "가자!",
-            "greeting": "안녕! 👋"
-        },
-        "GAME": {
-            "how": "어떻게!?",
-            "closeOne": "아슬아슬했어!",
-            "niceOne": "잘했어!",
-            "remindMove": "너 차례야!",
-            "wow": "와!",
-            "oops": "어머!",
-            "no": "아니야!",
-            "ohNo": "아이고!"
-        },
-        "POST_GAME": {
-            "closeOne": "간신히!",
-            "wellPlayed": "잘 했어!",
-            "rematch": "재경기!",
-            "fun": "재밌었어!",
-            "bye": "잘 가!"
-        }
+        "affirmative": "알았어.",
+        "thanks": "고마워!",
+        "sorry": "미안!",
+        "goodLuck": "행운을 빕니다!",
+        "brb": "금방 돌아올게!",
+        "go": "나 가야 해.",
+        "glhf": "행운을 빕니다, 즐겁게 해요",
+        "gg": "잘 했어",
+        "readyCheck": "다들 준비 됐어?",
+        "changeSettings": "설정 바꿔!",
+        "ready": "준비 됐어!",
+        "wait": "잠깐만 기다려!",
+        "letsGo": "가자!",
+        "greeting": "안녕!",
+        "how": "어떻게!?",
+        "closeOne": "간신히!",
+        "niceOne": "잘했어!",
+        "checkThisOut": "이거 봐!",
+        "remindMove": "너 차례야!",
+        "wow": "와!",
+        "oops": "어머!",
+        "no": "아니야!",
+        "ohNo": "아이고!",
+        "wellPlayed": "잘 했어!",
+        "rematch": "재경기!",
+        "fun": "재밌었어!",
+        "bye": "잘 가!",
+        "shortYes": "응.",
+        "shortNo": "아니."
     },
     "header": {
         "message": {
@@ -1512,6 +1777,9 @@
             "roundSummary": "라운드 요약",
             "roundCount": "총 %{total} 라운드 중 %{current} 라운드",
             "roundCurrent": "라운드 %{current}",
+            "startingNewRound": "새 라운드 시작해요...",
+            "questionCount": "질문 %{current} / %{total}",
+            "questionCurrent": "질문 %{current}",
             "war": "전쟁!",
             "outcome": "결과",
             "input": "당신의 입력을 기다리는 중",
@@ -1603,7 +1871,15 @@
         "language": "언어",
         "rules": "규칙",
         "points": "포인트",
-        "fouls": "반칙에 대한 대응"
+        "fouls": "반칙에 대한 대응",
+        "sciences": "과학",
+        "artsAndEntertainment": "예술 & 오락",
+        "geography": "지리",
+        "gaming": "게임",
+        "technology": "기술",
+        "popCulture": "대중문화",
+        "sports": "스포츠",
+        "history": "역사"
     },
     "month": {
         "short": {
@@ -1735,6 +2011,7 @@
         "wins": "승리 없음 | 1승 | {count}승",
         "cards": "카드 없음 | 1장의 카드 | {count}장의 카드",
         "moves": "움직임 없음 | 1번 움직임 | {count}번 움직임",
+        "tiles": "0 타일 | 1 타일 | {count} 타일",
         "playing": "아무도 안 함 | 1명이 함 | {count}명이 함",
         "players": "플레이어 없음 | 1명 플레이어 | {count}명 플레이어",
         "selectedCards": "카드 선택 안 함 | 1장 카드 선택 | {count}장 카드 선택",
@@ -1752,6 +2029,14 @@
         "restartNotice": "서버가 {count}분 후에 재시작돼요. 게임 끝내세요. | 서버가 {count}분 후에 재시작돼요. 게임 끝내세요. | 서버가 {count}분 후에 재시작돼요. 게임 끝내세요."
     },
     "misc": {
+        "example": "예시",
+        "learnMore": "더 알아보기",
+        "questions": "질문",
+        "teamAndQuestions": "팀 & 질문",
+        "questionPacks": "질문 팩",
+        "rock": "바위",
+        "paper": "종이",
+        "scissors": "가위",
         "lobby": "로비",
         "inGame": "게임 중",
         "matchmakingSearch": "게임 찾는 중",
@@ -1780,14 +2065,14 @@
         "starter": "초보자",
         "cards": "카드들",
         "type": "유형",
-        "iUnderstand": "이해해",
+        "iUnderstand": "이해했습니다",
         "scoringSystem": "점수 체계",
         "notEnoughData": "데이터 부족",
         "averageWaitTime": "평균 대기 시간",
         "unknown": "알 수 없음",
         "none": "없음",
         "seasonal": "계절별",
-        "items": "아이템들",
+        "items": "상품",
         "purchaseCoins": "코인 구매하기",
         "store": "상점",
         "buyNow": "지금 사기",
@@ -1852,6 +2137,8 @@
         "language": "언어",
         "toggle": "토글",
         "login": "로그인",
+        "loginToExistingAccount": "기존 계정 로그인",
+        "createMyAccount": "내 계정 만들기",
         "logout": "로그아웃",
         "hats": "모자",
         "eyes": "눈",
@@ -1869,6 +2156,7 @@
         "specificCards": "특정 카드들",
         "matchId": "매치 ID",
         "chat": "채팅",
+        "sendMessage": "메시지 보내기",
         "host": "호스트",
         "player": "플레이어",
         "players": "플레이어들",
@@ -1900,7 +2188,6 @@
         "view": "보기",
         "forfeit": "게임 포기하기",
         "processFiles": "파일 처리하기",
-        "sendMessage": "메시지 보내기",
         "checkAgain": "다시 확인해봐",
         "refreshWindow": "창 새로고침",
         "makeHost": "호스트 만들기",
@@ -1921,6 +2208,7 @@
         "highestScore": "최고 점수",
         "totalScore": "총 점수",
         "finalScore": "최종 점수",
+        "flawlessGames": "완벽한 게임",
         "hits": "히트",
         "hitRate": "히트율",
         "rank": "순위",
@@ -1930,8 +2218,10 @@
         "assassinations": "암살",
         "survivals": "생존",
         "games": "게임들",
+        "correctRatio": "맞는 비율",
         "winRatio": "승률",
         "killDeathRatio": "K/D 비율",
+        "lives": "목숨",
         "points": "점수",
         "wins": "승리",
         "grids": "그리드",
@@ -1942,6 +2232,7 @@
         "fouls": "반칙들",
         "and": "그리고",
         "vs": "대",
+        "dismiss": "닫기",
         "rename": "이름 바꾸기",
         "created": "생성됨",
         "lastSeen": "마지막으로 본",
@@ -1951,6 +2242,7 @@
         "myDevices": "내 기기들",
         "myData": "내 데이터",
         "redeemCode": "코드 사용하기",
+        "contact": "연락하기",
         "leaderboard": "랭킹 보기",
         "elapsedTime": "%{time} 경과",
         "startingInTime": "%{time} 후 시작",
@@ -1964,6 +2256,10 @@
         "coinsBlank": "%{value} 코인들",
         "receivedBlank": "%{value} 받았어요",
         "lessThanBlank": "%{value}보다 작음",
+        "lastSeenBlankAgo": "마지막으로 본 게 %{value} 전",
+        "lastSeenJustNow": "방금 전에 봤어",
+        "blank": "%{value}",
+        "byBlank": "%{value}에 의해",
         "sendVerification": "인증 보내기",
         "noThanks": "괜찮아요",
         "ready": "준비됨",
@@ -1978,12 +2274,15 @@
         "madeBy": "%{name} 제작",
         "selectedOfLimit": "총 %{total} 중 %{current} 선택됨",
         "helpLocalize": "지역화 개선 도와주세요",
+        "goAdFree": "광고 없이 보기",
         "discord": "우리의 디스코드에 가입하세요",
         "volume": "볼륨",
         "volumeInterface": "인터페이스 볼륨",
         "volumeEffects": "효과음 볼륨",
+        "volumeMusic": "음악 볼륨",
         "selectYourLanguage": "언어 선택하기",
         "selectYourColor": "색상 선택하기",
+        "selectYourTeam": "팀 선택하기",
         "latestChanges": "최근 변경사항",
         "noChangesDetected": "변경사항 없음",
         "newChanges": "새로운 변경사항",
@@ -2135,8 +2434,19 @@
         }
     },
     "info": {
+        "roundEndTie": "비겼어!",
+        "roundEndStalemate": "막혔네!",
+        "roundWin": "너 이겼어!",
+        "roundLost": "너 졌어!",
+        "youLostThisRound": "이번 라운드 졌어!",
+        "youAreOutOfLives": "목숨 다 썼어",
+        "playerIsEliminated": "플레이어가 탈락했어요",
+        "youAreEliminated": "당신이 탈락했어요",
+        "waitForRoundEnd": "라운드 끝날 때까지 기다려줘.",
+        "waitForWinner": "좀 기다려봐, 누가 이길지 나올 때까지!",
         "serverRestart": "서버가 지금 재시작 중이야. 몇 분 후에 다시 확인해줘.",
         "clearOldListings": "'사용 불가능한' 매치를 모두 지워.",
+        "flawlessGame": "완벽한 게임! 실수 하나도 없었어요.",
         "accountLinkSuggestion": "이제 %{level}이 되었어요! 진행 상황을 보호하기 위해 계정을 만들어 보세요.",
         "accountLinked": "이 계정은 다음 이메일 주소에 연결되어 있어요: %{email}.",
         "incompleteTranslationNotice": "선택하신 언어는 대략 {percentage}% 완성되었어요. 누락된 번역은 영어로 표시될 거예요.",
@@ -2163,10 +2473,13 @@
         "inactiveOpponents": "모든 상대방들이 비활성 상태였어",
         "waitForOpponent": "상대를 기다리는 중...",
         "waitForOpponents": "상대들을 기다리는 중....",
+        "nameLeftTheGame": "%{name}가 게임을 나갔어요",
         "selfNoPoints": "포인트를 받지 못했어.",
         "nameNoPoints": "%{name}는 포인트를 받지 못했어.",
         "gameMenu": "다른 게임 하고 싶어?",
         "forfeit": "게임을 포기하면 너한테 패배로 간주돼.",
+        "namePointsForMove": "%{name}의 공격이 %{points} 받았어.",
+        "selfPointsForMove": "너의 공격이 %{points} 받았어.",
         "nameForfeited": "%{name}이(가) 기권했고, 자동으로 패배했어.",
         "selfForfeited": "너가 기권하고 자동으로 패배했어.",
         "unsavedChanges": "저장하지 않은 변경 사항이 있어. 계속하면 이 사항들은 지워질 거야.",
@@ -2182,6 +2495,12 @@
         "loginToPurchase": "물건을 사려면 먼저 로그인하거나 계정을 만들어야 해.",
         "seasonalItem": "이 슬롯의 아이템은 일년에 몇 일 동안만 사용할 수 있어.",
         "cardInteractHint": "카드를 선택하려면 클릭해.",
+        "gameInvite": "게임 초대해!",
+        "keyboardShortcutCombination": "{combination} 같은 키보드 단축키를 사용하려면 {firstKey}를 누르고 {secondKey}를 눌러야 해요.",
+        "keyboardShortcutSpinSelector": "화살표 키 {keys}로 스핀을 조정할 수도 있어!",
+        "goAdFree": "광고는 너의 계정에서 영구적으로 비활성화돼. 코인을 얼마든지 사서 개발을 지원하면 그렇게 돼.",
+        "chatEmojiAlt": "채팅 이모지 타입 {type}",
+        "zoomOutHint": "줌이 너무 확대됐어! 두 손가락으로 쪼그려서 줌 아웃해봐, 게임 조작이 더 편해질 거야.",
         "awaitingPurchaseConfirmation": {
             "title": "구매 확인 대기 중",
             "description": "보통 이 과정은 몇 초밖에 안 걸립니다. 결제 방법에 따라서는 시간이 더 걸릴 수 있어요. 이 화면을 닫아도 괜찮아요."
@@ -2190,8 +2509,11 @@
             "noFriends": "친구 없음",
             "noAccount": "로그인 하거나 계정 만들어서 친구 만들기 시작해!",
             "description": "연결 유지해! 친구들이 온라인인지, 어떤 게임 하는지 보고 그들의 개인 로비에 들어가!",
-            "removeDescription": "\"%{name}\"과의 우정을 끝내려고 해."
+            "removeDescription": "\"%{name}\"과의 우정을 끝내려고 해.",
+            "inviteReceived": "%{name}가 너를 %{game} 하자고 초대했어",
+            "inviteSent": "게임 초대가 전송됐어!"
         },
+        "contact": "문제 생기거나 제안, 질문 있으면 언제든지 연락해! 이메일 보내거나 Bloob.io 디스코드에 들어와도 돼.",
         "settings": {
             "redeemCode": {
                 "title": "코드 사용하기",
@@ -2212,6 +2534,14 @@
                 "description": "Bloob.io는 개인정보 친화적이고, 스스로 호스팅하는 Matomo 분석 서버를 이용해 익명으로 분석을 추적합니다. 당신의 데이터는 절대 다른 사람과 공유되지 않습니다. 원한다면 이 기능을 끌 수 있습니다.",
                 "blocked": "분석이 활성화되지 않았습니다. 당신의 브라우저나 확장 프로그램이 이를 차단했을 수 있습니다.",
                 "dnt": "당신의 브라우저에 \"추적 금지\"(DNT) 설정이 활성화되어 있습니다. 우리는 당신의 요청을 존중하고 당신을 추적하지 않습니다."
+            },
+            "ads": {
+                "title": "광고",
+                "description": "우리는 Playwire에서 광고를 보여줘. Bloob.io의 광고는 전부 또는 일부가 Playwire LLC에서 처리해. 만약 Bloob.io에서 광고를 보고 싶지 않다면, 상점에서 코인을 사서 광고 없는 상태로 바꿀 수 있어. 그러면 너의 계정에서 모든 광고가 자동으로 사라져.",
+                "complaint": "Bloob.io에선 네가 보는 광고가 윤리적이고 방해가 안 되게 하는 게 중요해. 게임 플레이에 방해되는 광고가 보이면 \"정보\" 섹션을 확인해서 연락해줘.",
+                "consent": "여기 클릭해서 광고 동의 설정을 업데이트해.",
+                "exempt": "광고가 활성화되어 있지 않아. 너의 계정은 광고가 없어서 고마워!",
+                "blocked": "광고가 활성화되어 있지 않아. 너의 브라우저나 확장 프로그램이 막았을 수도 있어."
             },
             "serverData": {
                 "title": "서버 데이터",
@@ -2234,7 +2564,7 @@
         "authentication": {
             "login": {
                 "title": "로그인",
-                "description": "현재 사용 중인 사용자(%{name})의 모든 진행 상황이 초기화됩니다. 로그인에 주의해 주세요."
+                "description": "알림! 지금 사용 중인 유저 {name}는 {level}인데, 아직 계정에 연결되어 있지 않아. 기존 계정으로 로그인하면 이 유저는 영구적으로 삭제돼. 아마 계정을 만들려고 했던 거 아닐까?"
             },
             "setupThreshold": {
                 "title": "일찍 왔네, %{name}!",
@@ -2477,6 +2807,28 @@
             "earnsSum": "모든 주사위의 총합을 얻어요.",
             "noPointsWarning": "이 동작으로는 점수를 얻을 수 없어. 다른 선택지에서는 점수를 얻을 수 있어."
         },
+        "graphicsAcceleration": {
+            "notice": "그래픽 가속이 꺼져 있어. 이거 게임 성능에 영향을 줄 수 있어.",
+            "search": "그래픽 가속을 어떻게 켜?"
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
+        },
         "ai": {
             "ready": null,
             "findingTarget": null,
@@ -2485,9 +2837,7 @@
             "assassinAssignment": null,
             "targetAssignment": null,
             "assassinDescription": null,
-            "targetDescription": null,
-            "startAssassinChat": null,
-            "joinAssassinChat": null
+            "targetDescription": null
         },
         "poolType": {
             "SOLID": "단색",
@@ -2521,7 +2871,7 @@
         },
         "accountWarning": {
             "title": "계정 경고",
-            "description": "공식 계정 경고를 받았어. 여러 번 경고 받으면 처벌이 더욱 심해질 거야.",
+            "description": "공식 계정에게 경고를 받았습니다. 경고가 여러 번 누적될 경우 처벌이 더 심해질 수 있습니다.",
             "reasonTitle": "이유",
             "punishmentTitle": "처벌",
             "reason": {
@@ -2542,6 +2892,7 @@
             "developedBy": "%{name}에 의해 개발됨",
             "iconsSource": "아이콘 제공: %{name} (라이선스 받음)",
             "soundsSource": "사운드 제공: %{name} (라이선스 받음)",
+            "emojiSource": "%{name}가 제공한 이모지 (CC-BY 4.0)",
             "rottenApplesSource": "%{name} 기반의 썩은 사과들 (BY-NC-SA 2.0)",
             "diceSource": "%{name}의 주사위 모델 (CC-BY-4.0)",
             "localization": "자원봉사자들에 의한 현지화"

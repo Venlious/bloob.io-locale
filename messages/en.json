@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal American English",
         "rtl": false,
-        "total": 1608,
+        "total": 1804,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -35,6 +35,7 @@
             "friendLimitOther": "Sorry, this user has reached their friend limit of %{amount}.",
             "pendingFriendLimitSelf": "You cannot have more than %{amount} pending friendships.",
             "pendingFriendLimitOther": "Sorry, this user already has too many pending friendships.",
+            "userOffline": "Sorry, this user is offline.",
             "notFriends": "You are not friends and have no pending friend request.",
             "alreadyFriends": "You are already friends with this user.",
             "pendingFriends": "There is already a friend request pending with this user.",
@@ -81,6 +82,7 @@
         "start": {
             "fieldRows": "Selected field cannot support more than %{rows} rows",
             "fieldCannotFitUsers": "Selected field cannot support more than %{users} players",
+            "questionThreshold": "Game requires at least %{count} questions",
             "whiteCardThreshold": "Game requires at least %{count} response cards (white)",
             "blackCardThreshold": "Game requires at least %{count} action cards (black)",
             "insufficientPlayers": "Need at least %{min} players to start the match."
@@ -100,6 +102,7 @@
             "incorrectValue": "The value that was given does not match up with the expected one.",
             "invalidMove": "Given move is invalid.",
             "invalidVote": "The vote you attempted to make is invalid.",
+            "noLives": "You have no remaining lives.",
             "alreadyPlaced": "You have already placed something.",
             "alreadyVoted": "You have already voted.",
             "invalidPlacement": "Your piece placement is invalid.",
@@ -181,6 +184,7 @@
     },
     "game": {
         "generic": {
+            "name": "Home",
             "title": "Bloob.io | Free Online Multiplayer Games With Friends & Bots",
             "description": "Play free multiplayer games in your browser on Bloob.io. Enjoy easy access, no account needed, and join matches with friends, strangers, or bots today!",
             "options": {
@@ -197,6 +201,15 @@
                 },
                 "botCount": {
                     "help": "Introduce bots to your game along with other players."
+                },
+                "pointer": {
+                    "title": "Pointer",
+                    "help": "Allow other players to see where you are pointing with your cursor. In some cases you can choose to keep it private to your group/team.",
+                    "data": {
+                        "OFF": "Off",
+                        "PRIVATE": "Private",
+                        "EVERYONE": "Everyone"
+                    }
                 },
                 "botDifficulty": {
                     "title": "Bot Difficulty",
@@ -240,6 +253,38 @@
                     "help": "Play without time limits. Disable all turn timers and enjoy a relaxed gameplay experience where you can play at your own pace. Not recommended against random opponents.",
                     "data": {
                         "off": "No limit"
+                    }
+                },
+                "scoringSystem": {
+                    "title": "Scoring System",
+                    "help": {
+                        "default": "Determine the system for how points are awarded for getting a question right.",
+                        "SPEED": "Points are based on how quickly the question is answered.",
+                        "ORDER": "Points are based on who was the quickest between players.",
+                        "FIXED": "Each question awards the same amount of points.",
+                        "PROGRESSIVE": "Points earned increase after each question.",
+                        "STREAK": "Earn extra points for consecutive correct answers; resets after an incorrect answer."
+                    },
+                    "data": {
+                        "SPEED": "Speed",
+                        "ORDER": "Order",
+                        "FIXED": "Fixed",
+                        "PROGRESSIVE": "Progressive",
+                        "STREAK": "Streak"
+                    }
+                },
+                "mode": {
+                    "title": "Mode",
+                    "help": {
+                        "default": "Choose how players will compete: individually, as a team, or collaboratively.",
+                        "SOLO": "Each player competes alone.",
+                        "CO_OP": "All players work together as a team.",
+                        "TEAM": "Players are divided into teams, and they can choose their own group to collaborate with."
+                    },
+                    "data": {
+                        "SOLO": "Solo",
+                        "CO_OP": "Co-op",
+                        "TEAM": "Teams"
                     }
                 },
                 "deckSize": {
@@ -835,6 +880,10 @@
                     "title": "Aiming Line",
                     "help": "The aiming line shows where the cue ball will go after it has been hit."
                 },
+                "speed": {
+                    "title": "Speed",
+                    "help": "How fast the pool animation is played."
+                },
                 "illegalBallPocket": {
                     "title": "Illegal Ball Pocket"
                 },
@@ -977,9 +1026,9 @@
             }
         },
         "YACHT": {
-            "name": "Yacht",
-            "title": "Play Free Yacht | Online Dice Game with Friends and Bots",
-            "description": "Play free Yacht, the online Yahtzee dice game! No account needed. Enjoy multiplayer matches with friends, strangers, or bots. Score big today!",
+            "name": "Yahtzee",
+            "title": "Free Online Yahtzee Game | Play with Friends & Score Dice Today",
+            "description": "Play free online Yahtzee with friends or solo! No account needed. Enjoy multiplayer matches, score your dice, and master the rules today!",
             "options": {
                 "rolls": {
                     "title": "Rolls",
@@ -1009,17 +1058,28 @@
                     "title": "Additional Yacht",
                     "help": "Specify how the game should handle a situation where a player rolls another Yacht after already scoring points for one."
                 },
+                "jokerYacht": {
+                    "title": "Yacht Joker",
+                    "help": "When enabled, this setting allows you to claim points for any additional Yacht as a Full House, Small Straight, or Large Straight. This option becomes available only if the corresponding dice face number and Yacht category have already been filled."
+                },
                 "additionalYachtReward": {
                     "title": "Reward",
                     "help": "The amount of points awarded to those who roll yet another Yacht."
                 }
             },
-            "presets": {},
+            "presets": {
+                "joker": {
+                    "title": "Joker",
+                    "description": [
+                        "More options when you get a Yacht"
+                    ]
+                }
+            },
             "help": {
                 "objective": {
                     "title": "Understanding the Objective",
                     "description": [
-                        "The goal of Yacht is to score the most points by rolling specific combinations of dice.",
+                        "The goal of Yahtzee is to score the most points by rolling specific combinations of dice.",
                         "Familiarise yourself with the game interface. There is a dice area, a scorecard, and a button to roll the dice."
                     ]
                 },
@@ -1064,6 +1124,12 @@
                         "You can also click on an empty orange entry and get 0 points. This can be helpful if your only other option would give you very little points for that category.",
                         "This can be helpful in case you want to go for the bonus in the upper section for example."
                     ]
+                },
+                "shortcuts": {
+                    "title": "Shortcuts",
+                    "description": [
+                        "Want to move a lot of the same dice in one go? Use your middle mouse button or hold down the Shift key while clicking a dice and all the dice with the same face will be moved at once!"
+                    ]
                 }
             }
         },
@@ -1100,7 +1166,8 @@
                         "pier": "Pier",
                         "littleIsland": "Little Island",
                         "keys": "The Keys",
-                        "lagoon": "Lagoon"
+                        "lagoon": "Lagoon",
+                        "ocean": "Ocean"
                     }
                 },
                 "levelOrientation": {
@@ -1121,6 +1188,10 @@
                 "shipReveal": {
                     "title": "Ship Reveal",
                     "help": "When enabled, you will see the ship when you have sunk it. When disabled, only a counter with remaining ships is shown."
+                },
+                "hitAfterHit": {
+                    "title": "Hit After Hit",
+                    "help": "When enabled, you will be allowed to fire again after hitting a ship. When disabled, you only get one shot per turn."
                 }
             },
             "presets": {},
@@ -1421,62 +1492,256 @@
         },
         "AI_ASSASSIN": {
             "name": "AI Assassin",
-            "title": "Outsmart, Eliminate, Survive",
-            "description": "AI Assassin is a thrilling multiplayer game where you either eliminate the target or outsmart the assassins. Use strategic prompts to achieve your goal and succeed.",
+            "title": "Play AI Assassin | Free AI Prompt Game | Online Multiplayer Fun",
+            "description": "Enjoy AI Assassin, a free AI prompt game with no account needed. Play online multiplayer matches with friends or bots in thrilling AI battles today!",
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Rock Paper Scissors",
+            "title": "Play Rock Paper Scissors Online | Free Multiplayer RPS Game",
+            "description": "Play Rock Paper Scissors online for free with 2-4 players. No account needed. Enjoy classic multiplayer RPS matches with friends, strangers, or bots.",
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "Rock beats scissors",
+                        "paper": "Paper beats rock",
+                        "scissors": "Scissors beats paper"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Last standing (<b>0</b> lives) | Last standing (<b>1</b> live) | Last standing (<b>{count}</b> lives)",
+                        "FIRST": "First to get <b>0</b> points | First to get <b>1</b> point | First to get <b>{count}</b> points",
+                        "HIGHEST_AFTER": "Most points after <b>0</b> rounds | Most points after <b>1</b> round | Most points after <b>{count}</b> rounds"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Race",
+                    "description": [
+                        "First to 5 points"
+                    ]
+                },
+                "survival": {
+                    "title": "Survival",
+                    "description": [
+                        "5 lives",
+                        "Lose a life for each round lost",
+                        "Last player standing wins"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Best of Series",
+                    "description": [
+                        "Player with most points after 5 rounds wins"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Rules",
+                    "description": [
+                        "Rock Paper Scissors is simple: choose rock, paper, or scissors. Rock beats scissors, paper beats rock, and scissors beat paper.",
+                        "In each round, predict your opponent's choice and respond accordingly!"
+                    ]
+                },
+                "group": {
+                    "title": "Group",
+                    "description": [
+                        "Play with up to 4 players! Only one can win each round. If you're out early, the remaining players continue until a winner is determined.",
+                        "In survival mode, each player has a set number of lives. Be the last player standing to win!"
+                    ]
+                },
+                "bots": {
+                    "title": "Bots",
+                    "description": [
+                        "Play against bots! They follow a random strategy, so if you can figure it out, you can beat them consistently!"
+                    ]
+                }
+            }
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Number Showdown",
+            "title": "",
+            "description": "",
+            "options": {
+                "winAmount": {
+                    "help": "The game will end as soon as a player has reached this amount of points."
+                },
+                "mode": {
+                    "title": "Mode",
+                    "help": "A different game mode will affect the way points are awarded and the way the game is played.",
+                    "data": {
+                        "SINGLE_HIDER": "Single Hider",
+                        "HIDE_AND_SEEK": "Hide and Seek",
+                        "LAST_STANDING": "Last Standing"
+                    }
+                },
+                "field": {
+                    "title": "Field",
+                    "help": "Determines how many numbers are shown on the playing field."
+                },
+                "revealSpeed": {
+                    "title": "Reveal Speed",
+                    "help": "The speed at which the round reveal is done whenever everyone is ready."
+                },
+                "multiplier": {
+                    "title": "Multipliers",
+                    "help": "Multipliers can appear on a single or multiple numbers at the same time. When a hider picks a number with a multiplier they will multiply their points. However, since everyone can see the multipliers it is risky and increases the chances of being found.",
+                    "data": {
+                        "off": "Turned Off",
+                        "uncommon": "Uncommon",
+                        "common": "Common",
+                        "veryCommon": "Very Common"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Dynamic Scoring",
+                    "help": {
+                        "introduction": "Award points based on the probability of success. For example, if a seeker finds a hider in the early game they will be awarded more points. If a hider manages to remain hidden with only a few tiles remaining, they will be awarded more points.",
+                        "calculation": "When enabled, the points are automatically calculated based on the configured min. and max. points."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Finding a Hider",
+                    "help": "Awarded to a seeker for finding a hider."
+                },
+                "minPointsFind": {
+                    "title": "Min. Finding a Hider"
+                },
+                "maxPointsFind": {
+                    "title": "Max. Finding a Hider"
+                },
+                "pointsHideRound": {
+                    "title": "Hidden per Round",
+                    "help": "Awarded to a hider for remaining hidden per round."
+                },
+                "minPointsHideRound": {
+                    "title": "Min. Hidden per Round"
+                },
+                "maxPointsHideRound": {
+                    "title": "Max. Hidden per Round"
+                },
+                "pointsLastAlive": {
+                    "title": "Last Remaining",
+                    "help": "Awarded to the last player remaining in the game when everyone else has been eliminated."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Last Remaining"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Max. Last Remaining"
+                }
+            },
+            "presets": {},
+            "help": {}
+        },
+        "TRIVIA": {
+            "name": "Trivia",
+            "title": "Free Online Trivia Quiz Game | Multiplayer | Real-Time Play",
+            "description": "Enjoy free online multiplayer Trivia with friends. No account needed! Play co-op in real-time, competing in quizzes on diverse topics.",
+            "options": {
+                "consensus": {
+                    "title": "Consensus",
+                    "help": "In team mode, should the team's answer be based on a majority vote (Consensus)? If not, any team member can change the answer for everyone."
+                },
+                "lockAnswer": {
+                    "title": "Lock answer",
+                    "help": "When enabled, players cannot change their answer when they have selected one."
+                },
+                "eliminationChallenge": {
+                    "title": "Elimination Challenge",
+                    "help": "When enabled, a player or team is eliminated immediately after answering a question incorrectly."
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": "Versus",
+                    "description": [
+                        "Solo",
+                        "More points for later questions"
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": "Hardcore Versus",
+                    "description": [
+                        "No mistakes",
+                        "Locked answer",
+                        "Speed based points"
+                    ]
+                },
+                "coop": {
+                    "title": "Co-op",
+                    "description": [
+                        "Work together",
+                        "Fixed points"
+                    ]
+                },
+                "teams": {
+                    "title": "Teams",
+                    "description": [
+                        "Work in teams",
+                        "Order based points"
+                    ]
+                }
+            },
+            "help": {
+                "soloOrWorkTogether": {
+                    "title": "Solo or Work Together",
+                    "description": [
+                        "You can choose whether you want to go solo, work as a group in co-op, or form smaller teams.",
+                        "When working as a team or group, you can see what everyone else is guessing too!"
+                    ]
+                },
+                "questionPacks": {
+                    "title": "Question Packs",
+                    "description": [
+                        "Don't like certain question categories? You can turn on or off categories that don't interest you or your lobby by going to the questions tab in the lobby.",
+                        "Questions are automatically served to minimize the number of repeat questions you see in your lobby."
+                    ]
+                },
+                "star": {
+                    "title": "Star",
+                    "description": [
+                        "If you manage to play the perfect game, meaning you don't get a single question wrong, you will receive a star next to your name, which is tracked in your personal statistics!"
+                    ]
+                }
+            }
         }
     },
     "chat": {
-        "EMOJI": {
-            "love": "❤️",
-            "luck": "🍀",
-            "fire": "🔥",
-            "celebration": "🎉",
-            "thumbsUp": "👍",
-            "mindBlowing": "🤯",
-            "thinking": "🤔",
-            "clap": "👏",
-            "cry": "😭",
-            "cool": "😎"
-        },
-        "UNIVERSAL": {
-            "leftTheGame": "left the game",
-            "affirmative": "Okay.",
-            "thanks": "Thanks!",
-            "sorry": "Sorry!",
-            "goodLuck": "Good luck!",
-            "brb": "I'll be right back!",
-            "go": "I must go.",
-            "glhf": "glhf",
-            "gg": "gg"
-        },
-        "PRE_GAME": {
-            "readyCheck": "Everybody ready?",
-            "changeSettings": "Change settings!",
-            "ready": "Ready!",
-            "wait": "Wait please!",
-            "go": "Let's go!",
-            "greeting": "Hi! 👋"
-        },
-        "GAME": {
-            "how": "How!?",
-            "closeOne": "Close one!",
-            "niceOne": "Nice one!",
-            "remindMove": "Your move!",
-            "wow": "Wow!",
-            "oops": "Oops!",
-            "no": "Noooo!",
-            "ohNo": "Oh no!"
-        },
-        "POST_GAME": {
-            "closeOne": "Close one!",
-            "wellPlayed": "Well played!",
-            "rematch": "Rematch!",
-            "fun": "That was fun!",
-            "bye": "Bye!"
-        }
+        "affirmative": "Okay.",
+        "thanks": "Thanks!",
+        "sorry": "Sorry!",
+        "goodLuck": "Good luck!",
+        "brb": "I'll be right back!",
+        "go": "I must go.",
+        "glhf": "glhf",
+        "gg": "gg",
+        "readyCheck": "Everybody ready?",
+        "changeSettings": "Change settings!",
+        "ready": "Ready!",
+        "wait": "Wait please!",
+        "letsGo": "Let's go!",
+        "greeting": "Hi!",
+        "how": "How!?",
+        "closeOne": "Close one!",
+        "niceOne": "Nice one!",
+        "checkThisOut": "Check this out!",
+        "remindMove": "Your move!",
+        "wow": "Wow!",
+        "oops": "Oops!",
+        "no": "Noooo!",
+        "ohNo": "Oh no!",
+        "wellPlayed": "Well played!",
+        "rematch": "Rematch!",
+        "fun": "That was fun!",
+        "bye": "Bye!",
+        "shortYes": "Yes.",
+        "shortNo": "No."
     },
     "header": {
         "message": {
@@ -1512,6 +1777,9 @@
             "roundSummary": "Round summary",
             "roundCount": "Round %{current} out of %{total}",
             "roundCurrent": "Round %{current}",
+            "startingNewRound": "Starting new round...",
+            "questionCount": "Question %{current} out of %{total}",
+            "questionCurrent": "Question %{current}",
             "war": "War!",
             "outcome": "Outcome",
             "input": "Awaiting your input",
@@ -1603,7 +1871,15 @@
         "language": "Language",
         "rules": "Rules",
         "points": "Points",
-        "fouls": "Response to Foul"
+        "fouls": "Response to Foul",
+        "sciences": "Sciences",
+        "artsAndEntertainment": "Arts & Entertainment",
+        "geography": "Geography",
+        "gaming": "Gaming",
+        "technology": "Technology",
+        "popCulture": "Pop Culture",
+        "sports": "Sports",
+        "history": "History"
     },
     "month": {
         "short": {
@@ -1735,6 +2011,7 @@
         "wins": "0 wins | 1 win | {count} wins",
         "cards": "0 cards | 1 card | {count} cards",
         "moves": "0 moves | 1 move | {count} moves",
+        "tiles": "0 tiles | 1 tile | {count} tiles",
         "playing": "0 playing | 1 playing | {count} playing",
         "players": "0 players | 1 player | {count} players",
         "selectedCards": "No cards selected | 1 card selected | {count} cards selected",
@@ -1752,6 +2029,14 @@
         "restartNotice": "Server will restart in {count} minutes. Please finish your game. | Server will restart in {count} minute. Please finish your game. | Server will restart in {count} minutes. Please finish your game."
     },
     "misc": {
+        "example": "Example",
+        "learnMore": "Learn more",
+        "questions": "Questions",
+        "teamAndQuestions": "Team & Questions",
+        "questionPacks": "Question Packs",
+        "rock": "Rock",
+        "paper": "Paper",
+        "scissors": "Scissors",
         "lobby": "Lobby",
         "inGame": "In-game",
         "matchmakingSearch": "Looking for a game",
@@ -1852,6 +2137,8 @@
         "language": "Language",
         "toggle": "Toggle",
         "login": "Login",
+        "loginToExistingAccount": "Login to Existing Account",
+        "createMyAccount": "Create My Account",
         "logout": "Logout",
         "hats": "Hats",
         "eyes": "Eyes",
@@ -1869,6 +2156,7 @@
         "specificCards": "Specific Cards",
         "matchId": "Match ID",
         "chat": "Chat",
+        "sendMessage": "Send a message",
         "host": "Host",
         "player": "Player",
         "players": "Players",
@@ -1900,7 +2188,6 @@
         "view": "View",
         "forfeit": "Forfeit Game",
         "processFiles": "Process Files",
-        "sendMessage": "Send Message",
         "checkAgain": "Check Again",
         "refreshWindow": "Refresh Window",
         "makeHost": "Make Host",
@@ -1921,6 +2208,7 @@
         "highestScore": "Highest Score",
         "totalScore": "Total Score",
         "finalScore": "Final Score",
+        "flawlessGames": "Flawless Games",
         "hits": "Hits",
         "hitRate": "Hit Rate",
         "rank": "Rank",
@@ -1930,8 +2218,10 @@
         "assassinations": "Assassinations",
         "survivals": "Survivals",
         "games": "Games",
+        "correctRatio": "Correct Ratio",
         "winRatio": "Win Ratio",
         "killDeathRatio": "K/D Ratio",
+        "lives": "Lives",
         "points": "Points",
         "wins": "Wins",
         "grids": "Grids",
@@ -1942,6 +2232,7 @@
         "fouls": "Fouls",
         "and": "and",
         "vs": "vs",
+        "dismiss": "Dismiss",
         "rename": "Rename",
         "created": "Created",
         "lastSeen": "Last Seen",
@@ -1951,6 +2242,7 @@
         "myDevices": "My Devices",
         "myData": "My Data",
         "redeemCode": "Redeem Code",
+        "contact": "Contact",
         "leaderboard": "Leaderboard",
         "elapsedTime": "%{time} elapsed",
         "startingInTime": "Starting in %{time}",
@@ -1964,6 +2256,10 @@
         "coinsBlank": "%{value} coins",
         "receivedBlank": "Received %{value}",
         "lessThanBlank": "Less than %{value}",
+        "lastSeenBlankAgo": "Last seen %{value} ago",
+        "lastSeenJustNow": "Last seen just now",
+        "blank": "%{value}",
+        "byBlank": "By %{value}",
         "sendVerification": "Send Verification",
         "noThanks": "No thanks",
         "ready": "Ready",
@@ -1978,12 +2274,15 @@
         "madeBy": "Made by %{name}",
         "selectedOfLimit": "Selected %{current} out of %{total} limit",
         "helpLocalize": "Help improve localization",
+        "goAdFree": "Go ad-free",
         "discord": "Join our Discord",
         "volume": "Volume",
         "volumeInterface": "Interface Volume",
         "volumeEffects": "Effects Volume",
+        "volumeMusic": "Music Volume",
         "selectYourLanguage": "Select Your Language",
         "selectYourColor": "Select Your Color",
+        "selectYourTeam": "Select Your Team",
         "latestChanges": "Latest Changes",
         "noChangesDetected": "No Changes Detected",
         "newChanges": "New Changes",
@@ -2135,8 +2434,19 @@
         }
     },
     "info": {
+        "roundEndTie": "It's a tie!",
+        "roundEndStalemate": "It's a stalemate!",
+        "roundWin": "You won!",
+        "roundLost": "You lost!",
+        "youLostThisRound": "You lost this round",
+        "youAreOutOfLives": "You are out of lives",
+        "playerIsEliminated": "Player has been eliminated",
+        "youAreEliminated": "You are eliminated",
+        "waitForRoundEnd": "Please wait for the round to conclude.",
+        "waitForWinner": "Sit tight and wait for a winner to emerge!",
         "serverRestart": "The server is now being restarted. Please check back in a few minutes.",
         "clearOldListings": "Clear all 'Unavailable' matches.",
+        "flawlessGame": "Flawless game! No mistakes were made.",
         "accountLinkSuggestion": "You are now %{level}! Consider creating an account to protect your progress.",
         "accountLinked": "This account is linked to the following email address: %{email}.",
         "incompleteTranslationNotice": "The language you have selected is roughly {percentage}% complete. Any missing translations will be in English.",
@@ -2163,10 +2473,13 @@
         "inactiveOpponents": "All opponents were inactive",
         "waitForOpponent": "Waiting for your opponent...",
         "waitForOpponents": "Waiting for your opponents....",
+        "nameLeftTheGame": "%{name} left the game",
         "selfNoPoints": "You received no points.",
         "nameNoPoints": "%{name} received no points.",
         "gameMenu": "Feel like playing something else?",
         "forfeit": "Forfeiting the game will result in a loss for you.",
+        "namePointsForMove": "%{name}'s move received %{points}.",
+        "selfPointsForMove": "Your move received %{points}.",
         "nameForfeited": "%{name} forfeited and has lost automatically.",
         "selfForfeited": "You have forfeited and lost automatically.",
         "unsavedChanges": "You have unsaved changes which will be erased if you proceed.",
@@ -2182,6 +2495,12 @@
         "loginToPurchase": "To make a purchase you must first login or create an account.",
         "seasonalItem": "An item in this slot is only available for a few days per year.",
         "cardInteractHint": "Click on a card to make your selection.",
+        "gameInvite": "Invite to Game",
+        "keyboardShortcutCombination": "To use keyboard shortcuts such as {combination} hold down {firstKey} and then press {secondKey}",
+        "keyboardShortcutSpinSelector": "You can also use your arrow keys {keys} to modiy the spin.",
+        "goAdFree": "Ads are permanently disabled for your account if you support the development by purchasing any amount of coins.",
+        "chatEmojiAlt": "Chat emoji with type {type}",
+        "zoomOutHint": "You're zoomed in! Pinch in to zoom out for better game controls.",
         "awaitingPurchaseConfirmation": {
             "title": "Awaiting Purchase Confirmation",
             "description": "This typically takes just a few seconds. Depending on your payment method this may take longer. Feel free to close this screen."
@@ -2190,8 +2509,11 @@
             "noFriends": "No Friends",
             "noAccount": "Login or create an account to start making friends!",
             "description": "Stay connected! See your friends online, their games, and join their private lobbies!",
-            "removeDescription": "You are about to end your friendship with \"%{name}\"."
+            "removeDescription": "You are about to end your friendship with \"%{name}\".",
+            "inviteReceived": "%{name} invited you to play %{game}",
+            "inviteSent": "The game invite has been sent!"
         },
+        "contact": "Don't hesitate to reach out if you encounter any issues, have suggestions, or have any questions! You can get in touch by sending an email or by joining the Bloob.io Discord.",
         "settings": {
             "redeemCode": {
                 "title": "Redeem Code",
@@ -2212,6 +2534,14 @@
                 "description": "Bloob.io anonymously tracks analytics using a privacy-friendly, self-hosted Matomo analytics server. Your data is never shared with others. You may opt out if you wish.",
                 "blocked": "Analytics are not active. Your browser or extension may have blocked it.",
                 "dnt": "Your browser has the \"Do Not Track\" (DNT) setting enabled. We honor your request and are not tracking you."
+            },
+            "ads": {
+                "title": "Ads",
+                "description": "We display advertisements from Playwire. The advertising on Bloob.io, whether in full or in part, is handled by Playwire LLC. If you do not want to see ads on Bloob.io, you can go ad-free by purchasing coins from the store. This will automatically remove all ads for your account.",
+                "complaint": "It is important to Bloob.io that the ads you see are ethical and non intrusive. If you notice ads that interfere with your gameplay please reach out by checking the \"About\" section.",
+                "consent": "Click here to update your ad consent preferences",
+                "exempt": "Ads are not active. Your account is ad-free. Thank you for your support!",
+                "blocked": "Ads are not active. Your browser or extension may have blocked it."
             },
             "serverData": {
                 "title": "Server Data",
@@ -2234,7 +2564,7 @@
         "authentication": {
             "login": {
                 "title": "Login",
-                "description": "Please note logging into your account will clear all progress for the user you are currently using (%{name})."
+                "description": "Heads up! The current user you are using, {name} which is {level}, is not yet attached to an account. Logging in with an existing account will permanently delete this user. Maybe you meant to create your account instead?"
             },
             "setupThreshold": {
                 "title": "You're early %{name}!",
@@ -2477,6 +2807,28 @@
             "earnsSum": "Earns the total of all dice combined.",
             "noPointsWarning": "This move won't score you any points. There are other choices which do give you points."
         },
+        "graphicsAcceleration": {
+            "notice": "Graphics acceleration is disabled. This may impact game performance.",
+            "search": "How to enable graphics acceleration?"
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": "You're a seeker",
+                "hider": "You're a hider",
+                "alive": "Pick a number",
+                "dead": "You picked wrong",
+                "foundSelf": "You were found!",
+                "foundOther": "You found someone!",
+                "collidedSelf": "You collided!"
+            },
+            "description": {
+                "seeker": "Try to guess where a hider might go.",
+                "hider": "Try to evade the seekers!",
+                "alive": "Avoid picking the same number as others!",
+                "dead": "Somebody else picked the same number.",
+                "hidersWin": "The hiders win this round! There are not enough tiles remaining."
+            }
+        },
         "ai": {
             "ready": "Ready!",
             "findingTarget": "Finding a target",
@@ -2485,9 +2837,7 @@
             "assassinAssignment": "You're an assassin",
             "targetAssignment": "You're the target",
             "assassinDescription": "Try to eliminate the target.",
-            "targetDescription": "Try to outwit the assassins and survive.",
-            "startAssassinChat": "Start Assassin Chat",
-            "joinAssassinChat": "Join Assassin Chat"
+            "targetDescription": "Try to outwit the assassins and survive."
         },
         "poolType": {
             "SOLID": "Solids",
@@ -2542,6 +2892,7 @@
             "developedBy": "Developed by %{name}",
             "iconsSource": "Icons courtesy of %{name} (Licensed)",
             "soundsSource": "Sounds provided by %{name} (Licensed)",
+            "emojiSource": "Emojis provided by %{name} (CC-BY 4.0)",
             "rottenApplesSource": "Rotten Apples based on %{name} (BY-NC-SA 2.0)",
             "diceSource": "Dice model by %{name} (CC-BY-4.0)",
             "localization": "Localization by volunteer contributors"

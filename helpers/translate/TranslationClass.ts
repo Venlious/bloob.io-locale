@@ -32,7 +32,7 @@ const openai = new OpenAI({
 })
 
 /**
- * Translate and
+ * Translate and resolve issues.
  *
  * @param source Source language file name (usually "en" for English)
  * @param target Target language file name
@@ -115,27 +115,30 @@ export default class TranslationClass {
 		this.processTranslationQueue()
 	}
 
+	async checkAndFixTranslations(): Promise<void> {
+		await this.checkAndEnforceLength(
+			[`card`, `sets`, `browser`],
+			35,
+			`This translation is related to a dialog in which the user can select and pick custom card sets to use in their game. If needed, it can be condensed to "View Public Card Sets".`
+		)
+	}
+
 	async finishTranslation(interrupted = false): Promise<void> {
 		if (this.finished) return
 		this.finished = true
 
-		// Set up & write to output file
-		const date = new Date()
-		const timestamp = `${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`
-		const name = this.skipDateInFileName ? this.target : `${this.target}.${timestamp}`
+		await this.checkAndFixTranslations()
 
 		if (interrupted) {
-			console.info(`Translation was interrupted! Writing output file "${name}" now...`)
+			console.info(
+				`Translation was interrupted! Writing output file for ${this.language} now...`
+			)
 		} else {
-			console.info(`Translation completed! Writing output file "${name}" now...`)
+			console.info(`Translation completed! Writing output file ${this.language} now...`)
 		}
 
 		try {
-			writeFile(
-				osPath.join(__dirname, `${LOCALE_FOLDER}/${name}.json`),
-				ensureSameOrder(this.messages.source, this.messages.target)
-			)
-			console.info(`Finished. File is now available.`)
+			this.writeFile()
 			if (this.finishCallback) {
 				this.finishCallback()
 			} else {
@@ -147,10 +150,27 @@ export default class TranslationClass {
 		}
 	}
 
+	async writeFile() {
+		try {
+			const date = new Date()
+			const timestamp = `${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`
+			const name = this.skipDateInFileName ? this.target : `${this.target}.${timestamp}`
+			writeFile(
+				osPath.join(__dirname, `${LOCALE_FOLDER}/${name}.json`),
+				ensureSameOrder(this.messages.source, this.messages.target)
+			)
+		} catch (error) {
+			console.error(error)
+			throw `Failed to write output file.`
+		}
+	}
+
 	async processTranslationQueue() {
 		const tasks = this.queue.length
 		if (tasks) {
-			console.info(`A total of ${tasks} translation tasks were found. Processing now...`)
+			console.info(
+				`A total of ${tasks} translation tasks were found (${this.language}). Processing now...`
+			)
 
 			/**
 			 * Check progress to update user on progress or finish translation.
@@ -187,9 +207,10 @@ export default class TranslationClass {
 				checkProgress(count.completed / count.total)
 			})
 		} else {
-			console.info(
-				`There were no missing translations found. No further action will be taken.`
-			)
+			console.info(`There were no missing translations found. Running potential fixes.`)
+			await this.checkAndFixTranslations()
+
+			this.writeFile()
 			if (this.finishCallback) {
 				this.finishCallback()
 			} else {
@@ -299,6 +320,7 @@ export default class TranslationClass {
 		this.generateTranslationTask([`info`, `settings`, `controlYourData`])
 		this.generateTranslationTask([`info`, `settings`, `localStorage`])
 		this.generateTranslationTask([`info`, `settings`, `myDevices`])
+		this.generateTranslationTask([`info`, `settings`, `ads`])
 		this.generateTranslationTask([`info`, `authentication`])
 		this.generateTranslationTask([`info`, `authentication`, `login`])
 		this.generateTranslationTask([`info`, `authentication`, `setup`])
@@ -364,6 +386,10 @@ export default class TranslationClass {
 			[`info`, `ginRummy`],
 			`This translation is a Gin Rummy action or outcome.`
 		)
+		this.generateTranslationTask(
+			[`info`, `graphicsAcceleration`],
+			`This translation is related to the user's graphics acceleration setting.`
+		)
 		const cribbageTypes = Object.keys(EN_MESSAGES[`info`][`cribbage`][`type`])
 		for (const type of cribbageTypes) {
 			const target = EN_MESSAGES[`info`][`cribbage`][`type`][type]
@@ -397,17 +423,8 @@ export default class TranslationClass {
 		 * Chat messsages
 		 */
 		this.generateTranslationTask(
-			[`chat`, `UNIVERSAL`],
-			`These are short informal chat messages.`
-		)
-		this.generateTranslationTask(
-			[`chat`, `PRE_GAME`],
-			`These are short informal chat messages.`
-		)
-		this.generateTranslationTask([`chat`, `GAME`], `These are short informal chat messages.`)
-		this.generateTranslationTask(
-			[`chat`, `POST_GAME`],
-			`These are short informal chat messages.`
+			[`chat`],
+			`These are short informal chat messages used in a videogame.`
 		)
 
 		/**
@@ -542,6 +559,67 @@ export default class TranslationClass {
 					this.generateTranslationTask([`game`, value, `options`, title, `data`])
 				}
 			}
+		}
+	}
+
+	async checkAndEnforceLength(path: string[], maxLength: number, contextDescription: string) {
+		const source = getContentToPath([...path], this.messages.source)
+		const target = getContentToPath([...path], this.messages.target)
+		if (
+			typeof source !== `string` ||
+			typeof target !== `string` ||
+			target.length <= maxLength
+		) {
+			return
+		}
+
+		const messages: ChatCompletionMessageParam[] = [
+			{
+				role: `system`,
+				content: `You are a game translation service. You must translate any given word, sentence, or phrase into ${this.language}. It is important that the length of the result is kept under ${maxLength} characters. You are prompted to offer valid alternatives for a translation that follow the rules. Only return the outcome and nothing else. Do not acknowledge this prompt.`
+			},
+			{
+				role: `user`,
+				content: `Please translate "${source}" into ${this.language}. The previous translation "${target}" was too long. Offer an alternative that is less than ${maxLength} characters. ${contextDescription}`
+			}
+		]
+
+		let attempts = 0
+		let outcome = undefined
+		while (outcome === undefined && attempts < 3) {
+			attempts++
+			const response = await openai.chat.completions.create({
+				model: `gpt-4.1`,
+				messages,
+				temperature: 0.5,
+				max_tokens: 2048,
+				top_p: 1,
+				frequency_penalty: 0,
+				presence_penalty: 0
+			})
+
+			// Extract the translated text from the response
+			const output = response.choices[0].message.content
+			if (!output) {
+				console.error(`Something went wrong with the output!`, response.choices)
+				continue
+			} else if (output.length > maxLength) {
+				continue
+			}
+			outcome = output
+		}
+
+		if (outcome) {
+			this.setContentFromTask([...path], this.messages.target, [outcome], {
+				type: `string`
+			} as TranslateTask)
+			console.info(
+				`Shortened target ${path.join(`.`)} in ${
+					this.language
+				} successfully! Result is "${outcome}"`
+			)
+		} else {
+			console.info(`Failed to shorten target ${path.join(`.`)} in ${this.language}`)
 		}
 	}
 

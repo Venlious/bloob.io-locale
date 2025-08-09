@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Japanese",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1804,
+        "missing": 22
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "ごめん、このユーザーは友達の上限に達しちゃってるよ、%{amount}人だって。",
             "pendingFriendLimitSelf": "%{amount}件以上の友達リクエストは受けられないよ。",
             "pendingFriendLimitOther": "ごめん、このユーザーはもう友達リクエストが多すぎるんだ。",
+            "userOffline": "ごめん、今このユーザーはオフラインだよ。",
             "notFriends": "あなたはこの人と友達じゃないし、友達リクエストも待ってないよ。",
             "alreadyFriends": "あなたはもうこの人と友達だよ。",
             "pendingFriends": "この人にはもう友達リクエストが待ってるよ。",
@@ -81,6 +82,7 @@
         "start": {
             "fieldRows": "選択したフィールドは%{rows}行以上は対応できません",
             "fieldCannotFitUsers": "選択したフィールドは%{users}人以上のプレイヤーは対応できません",
+            "questionThreshold": "ゲームには少なくとも%{count}問の質問が必要だよ。",
             "whiteCardThreshold": "ゲームは最低でも%{count}枚のレスポンスカード（白）が必要です",
             "blackCardThreshold": "ゲームは最低でも%{count}枚のアクションカード（黒）が必要です",
             "insufficientPlayers": "マッチを開始するには最低でも%{min}人のプレイヤーが必要です。"
@@ -100,6 +102,7 @@
             "incorrectValue": "与えられた値が期待されるものと一致しません。",
             "invalidMove": "与えられた動きは無効です。",
             "invalidVote": "あなたが試みた投票は無効です。",
+            "noLives": "残りのライフがないよ。",
             "alreadyPlaced": "もう何かを置いてるよ。",
             "alreadyVoted": "もう投票してるよ。",
             "invalidPlacement": "君の駒の配置は無効だよ。",
@@ -181,6 +184,7 @@
     },
     "game": {
         "generic": {
+            "name": "ホーム",
             "title": "Bloob.io | アカウント不要で友達と無料オンライン対戦！",
             "description": "アカウント不要の無料ブラウザゲーム！友達や世界中のプレイヤーと一緒に、オンラインでのマルチプレイヤー対戦をたっぷり楽しもう！思いっきり遊べる！",
             "options": {
@@ -197,6 +201,15 @@
                 },
                 "botCount": {
                     "help": "他のプレイヤーと一緒に、ゲームにボットを紹介してみてね。"
+                },
+                "pointer": {
+                    "title": "ポインター",
+                    "help": "他のプレイヤーにカーソルの指してる場所を見せることができるよ。場合によっては、自分のグループやチームだけにプライベートにすることもできる。",
+                    "data": {
+                        "OFF": "オフ",
+                        "PRIVATE": "プライベート",
+                        "EVERYONE": "みんな"
+                    }
                 },
                 "botDifficulty": {
                     "title": "ボットの難易度",
@@ -242,9 +255,41 @@
                         "off": "制限なし"
                     }
                 },
+                "scoringSystem": {
+                    "title": "スコアシステム",
+                    "help": {
+                        "default": "正解したらポイントがどうやってもらえるか決めてね。",
+                        "SPEED": "ポイントは質問に答える速さで決まるよ。",
+                        "ORDER": "誰が一番早く答えたかでポイントが決まるんだ。",
+                        "FIXED": "どの質問も同じポイントがもらえるよ。",
+                        "PROGRESSIVE": "質問ごとにもらえるポイントが増えていくよ。",
+                        "STREAK": "連続で正解するとポイントがもらえるよ。間違えるとリセットされるから気をつけてね！"
+                    },
+                    "data": {
+                        "SPEED": "スピード",
+                        "ORDER": "順番",
+                        "FIXED": "フィックス",
+                        "PROGRESSIVE": "プログレッシブ",
+                        "STREAK": "ストリーク"
+                    }
+                },
+                "mode": {
+                    "title": "モード",
+                    "help": {
+                        "default": "プレイヤーがどう競うか選んでね：個人、チーム、または協力して。",
+                        "SOLO": "各プレイヤーは一人で競うよ。",
+                        "CO_OP": "みんなでチームとして協力するよ。",
+                        "TEAM": "プレイヤーはチームに分かれて、自分たちで協力するグループを選べるよ。"
+                    },
+                    "data": {
+                        "SOLO": "ソロ",
+                        "CO_OP": "協力プレイ",
+                        "TEAM": "チーム戦"
+                    }
+                },
                 "deckSize": {
                     "title": "デッキの大きさ",
-                    "help": "時間制限なしで遊べるよ。全てのターンタイマーを無効にして、自分のペースで遊べるリラックスしたゲーム体験を楽しもう。ランダムな対戦相手に対してはおすすめしないよ。",
+                    "help": "ゲームのデッキサイズを選んでね。",
                     "data": {
                         "half": "ハーフデッキ",
                         "full": "フルデッキ",
@@ -835,6 +880,10 @@
                     "title": "[1] 照準ライン",
                     "help": "狙い線は、キューボールが当たった後にどこに行くかを示してるよ。"
                 },
+                "speed": {
+                    "title": "スピード",
+                    "help": "プールのアニメーションがどれくらい速く再生されるか。"
+                },
                 "illegalBallPocket": {
                     "title": "違法なボールポケット"
                 },
@@ -1009,12 +1058,23 @@
                     "title": "追加のヨット",
                     "help": "ゲームはプレイヤーがすでにヨットのポイントを獲得した後に再度ヨットを出した場合、どう対処するべきかを明確にしてください。"
                 },
+                "jokerYacht": {
+                    "title": "ヨットジョーカー",
+                    "help": "この設定をオンにすると、フルハウス、スモールストレート、またはラージストレートとして追加のヤットを獲得できるよ。このオプションは、対応するサイコロの面の数字とヤットのカテゴリーがすでに埋まってる場合にだけ使えるようになるんだ。"
+                },
                 "additionalYachtReward": {
                     "title": "報酬",
                     "help": "ヨットをまた一つ出した人に与えられるポイントの数。"
                 }
             },
-            "presets": {},
+            "presets": {
+                "joker": {
+                    "title": "ジョーカー",
+                    "description": [
+                        "ヤットを取ったらもっと選択肢が増える"
+                    ]
+                }
+            },
             "help": {
                 "objective": {
                     "title": "目標の理解方法",
@@ -1064,6 +1124,12 @@
                         "空のオレンジ色のエントリーをクリックすると、ポイントは0になります。他の選択肢がそのカテゴリーでほとんどポイントをもたらさない場合、これは役立つかもしれません。",
                         "例えば、上部セクションのボーナスを狙いたい場合など、これは役立つかもしれません。"
                     ]
+                },
+                "shortcuts": {
+                    "title": "ショートカット",
+                    "description": [
+                        "同じ目のサイコロを一気に動かしたい？真ん中のマウスボタンを使うか、Shiftキーを押しながらサイコロをクリックすると、同じ目のサイコロが一緒に動くよ！"
+                    ]
                 }
             }
         },
@@ -1100,7 +1166,8 @@
                         "pier": "桟橋",
                         "littleIsland": "小さな島",
                         "keys": "キーズ",
-                        "lagoon": "ラグーン"
+                        "lagoon": "ラグーン",
+                        "ocean": "海 (うみ)"
                     }
                 },
                 "levelOrientation": {
@@ -1121,6 +1188,10 @@
                 "shipReveal": {
                     "title": "船の公開",
                     "help": "有効にすると、沈めた船が見えるようになるよ。無効にすると、残ってる船のカウンターだけが表示されるんだよ。"
+                },
+                "hitAfterHit": {
+                    "title": "連続ヒット",
+                    "help": "発動すると、船に当たった後にもう一度撃てるようになるよ。無効だと、ターンごとに一発しか撃てないんだ。"
                 }
             },
             "presets": {},
@@ -1420,63 +1491,257 @@
             }
         },
         "AI_ASSASSIN": {
-            "name": "AI アサシン",
-            "title": "賢く, 撃退, 生き残る",
-            "description": "AIアサシンはスリリングなマルチプレイヤーゲームです。ターゲットを排除するか、アサシンを出し抜くかを選びます。戦略的なプロンプトを使って目標を達成し、成功を収めましょう。",
+            "name": "AIアサシン",
+            "title": "AIアサシン | 無料AIプロンプトゲーム！オンラインで対戦しよう",
+            "description": "無料で遊べるAIプロンプトゲーム「AIアサシン」！アカウント不要で最大5人の友達やAIとオンラインで対戦を楽しめるスリル満点のゲームを今すぐ体験しよう！",
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "じゃんけん",
+            "title": "じゃんけんRPSオンライン | 最大4人で無料対戦プレイしよう",
+            "description": "アカウント不要で遊べる無料じゃんけんRPS！オンラインで最大4人と友達や他のプレイヤー、そしてボットと対戦して、クラシックなゲームを楽しもう！",
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "岩はハサミに勝つ",
+                        "paper": "紙は岩に勝つ",
+                        "scissors": "ハサミは紙に勝つ"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "最後の一人（<b>0</b>ライフ） | 最後の一人（<b>1</b>ライフ） | 最後の一人（<b>{count}</b>ライフ）",
+                        "FIRST": "最初に<b>0</b>ポイントゲット | 最初に<b>1</b>ポイントゲット | 最初に<b>{count}</b>ポイントゲット",
+                        "HIGHEST_AFTER": "<b>0</b>ラウンド後のポイント数 | <b>1</b>ラウンド後のポイント数 | <b>{count}</b>ラウンド後のポイント数"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "レース",
+                    "description": [
+                        "5ポイント先取"
+                    ]
+                },
+                "survival": {
+                    "title": "サバイバル",
+                    "description": [
+                        "5ライフ",
+                        "ラウンド負けるごとにライフ1つ減るよ",
+                        "最後まで残ったプレイヤーが勝ち！"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "シリーズのベスト",
+                    "description": [
+                        "5ラウンド終わった後に一番ポイントが多いプレイヤーが勝ち！"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "ルール",
+                    "description": [
+                        "じゃんけんは簡単だよ：グー、チョキ、パーの中から選んでね。グーはチョキに勝つし、パーはグーに勝つ、チョキはパーに勝つんだ。",
+                        "各ラウンドで相手の選ぶものを予想して、それに合わせて返そう！"
+                    ]
+                },
+                "group": {
+                    "title": "グループ",
+                    "description": [
+                        "最大4人で遊べるよ！毎ラウンド、勝てるのは1人だけ。早く負けちゃったら、残りのプレイヤーが勝者が決まるまで続けるよ。",
+                        "サバイバルモードでは、各プレイヤーに決まった数のライフがあるんだ。最後まで残ったプレイヤーが勝ち！"
+                    ]
+                },
+                "bots": {
+                    "title": "ボット",
+                    "description": [
+                        "ボットと対戦しよう！彼らはランダムな戦略を使ってるから、もしそれを見抜ければ、ずっと勝てるよ！"
+                    ]
+                }
+            }
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "ナンバーショーダウン",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "ゲームは、誰かがこのポイントに達したらすぐに終わるよ。"
+                },
+                "mode": {
+                    "title": "モード",
+                    "help": "別のゲームモードだと、ポイントのもらい方やゲームの進め方が変わるよ。",
+                    "data": {
+                        "SINGLE_HIDER": "シングルハイダー",
+                        "HIDE_AND_SEEK": "かくれんぼ",
+                        "LAST_STANDING": "ラストスタンディング"
+                    }
+                },
+                "field": {
+                    "title": "フィールド",
+                    "help": "プレイフィールドに表示される数字の数を決める。"
+                },
+                "revealSpeed": {
+                    "title": "表示スピード",
+                    "help": "みんなが準備できたときにラウンドの公開がどれくらい早く行われるか。"
+                },
+                "multiplier": {
+                    "title": "倍率",
+                    "help": "マルチプライヤーは、1つの数字や複数の数字に同時に出ることがあるよ。隠れてる人がマルチプライヤーのついた数字を選ぶと、ポイントが増えるんだ。でも、みんながそのマルチプライヤーを見えるから、リスクがあって見つかる可能性が高くなるんだよね。",
+                    "data": {
+                        "off": "オフになった",
+                        "uncommon": "レアじゃない",
+                        "common": "普通",
+                        "veryCommon": "超普通"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "ダイナミックスコア",
+                    "help": {
+                        "introduction": "成功する確率に応じてポイントを与えよう。例えば、シーカーが早い段階でハイダーを見つけたら、もっとポイントがもらえるよ。ハイダーが残りのタイルが少ない状態で隠れ続けられたら、そっちももっとポイントゲットだね。",
+                        "calculation": "有効にすると、設定した最小ポイントと最大ポイントに基づいて自動的にポイントが計算されるよ。"
+                    }
+                },
+                "pointsFind": {
+                    "title": "隠れん坊を探す",
+                    "help": "隠れてるやつを見つけた探求者に贈られるやつ。"
+                },
+                "minPointsFind": {
+                    "title": "隠れん坊探しの時間"
+                },
+                "maxPointsFind": {
+                    "title": "最大。隠れてるやつを見つける"
+                },
+                "pointsHideRound": {
+                    "title": "ラウンドごとの隠し要素",
+                    "help": "隠れてた人に、ラウンドごとに隠れ続けたらもらえるやつ。"
+                },
+                "minPointsHideRound": {
+                    "title": "ラウンドごとの最小隠しアイテム"
+                },
+                "maxPointsHideRound": {
+                    "title": "ラウンドごとの最大隠れ数"
+                },
+                "pointsLastAlive": {
+                    "title": "最後の一人",
+                    "help": "最後まで残ったプレイヤーに贈られるやつ、他の人が全員排除されたときにね。"
+                },
+                "minPointsLastAlive": {
+                    "title": "最小残り"
+                },
+                "maxPointsLastAlive": {
+                    "title": "最大の最後の生存者"
+                }
+            },
+            "presets": {},
+            "help": {}
+        },
+        "TRIVIA": {
+            "name": "トリビア",
+            "title": "トリビアクイズゲーム | 友達とオンラインで協力プレイしよう",
+            "description": "無料で遊べるトリビアクイズ！アカウント不要、友達とリアルタイムオンラインで協力プレイやマルチプレイを思い切り楽しもう！質問カテゴリーも選べるよ！",
+            "options": {
+                "consensus": {
+                    "title": "合意",
+                    "help": "チームモードでは、チームの答えは多数決（コンセンサス）で決めるべき？そうじゃなければ、誰かがみんなの答えを変えられるよ。"
+                },
+                "lockAnswer": {
+                    "title": "ロックされた答え",
+                    "help": "選んだら、プレイヤーは答えを変えられなくなるよ。"
+                },
+                "eliminationChallenge": {
+                    "title": "エリミネーションチャレンジ",
+                    "help": "間違った答えを出すと、プレイヤーやチームがすぐに脱落しちゃうよ。"
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": "対決 (たいけつ)",
+                    "description": [
+                        "ソロ",
+                        "後の質問でポイントがもっともらえるよ"
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": "ハードコアバトル",
+                    "description": [
+                        "ミスなし",
+                        "ロックされた答え",
+                        "スピードでポイント"
+                    ]
+                },
+                "coop": {
+                    "title": "協力プレイ",
+                    "description": [
+                        "一緒にやろう",
+                        "固定ポイント"
+                    ]
+                },
+                "teams": {
+                    "title": "チーム",
+                    "description": [
+                        "チームでやろう",
+                        "順番でポイントゲット"
+                    ]
+                }
+            },
+            "help": {
+                "soloOrWorkTogether": {
+                    "title": "一人でやる？それともみんなでやる？",
+                    "description": [
+                        "ソロで行くか、みんなで協力するか、小さいチームを作るか、好きなように選べるよ！",
+                        "チームやグループでやると、みんなの予想も見えるからね！"
+                    ]
+                },
+                "questionPacks": {
+                    "title": "[1] 質問パック",
+                    "description": [
+                        "特定の質問カテゴリが気に入らない？興味ないカテゴリはロビーの質問タブでオンオフできるよ。",
+                        "質問は自動的に出されて、ロビーで同じ質問が繰り返し出ないようになってるよ。"
+                    ]
+                },
+                "star": {
+                    "title": "星",
+                    "description": [
+                        "完璧なゲームをプレイできたら、つまり一つも間違えなかったら、名前の横に星がつくよ！それは君の個人統計に記録されるんだ！"
+                    ]
+                }
+            }
         }
     },
     "chat": {
-        "EMOJI": {
-            "love": "❤️",
-            "luck": "🍀",
-            "fire": "🔥",
-            "celebration": "🎉",
-            "thumbsUp": "👍",
-            "mindBlowing": "🤯",
-            "thinking": "🤔",
-            "clap": "👏",
-            "cry": "😭",
-            "cool": "😎"
-        },
-        "UNIVERSAL": {
-            "leftTheGame": "ゲームを抜けたよ",
-            "affirmative": "了解。",
-            "thanks": "ありがとう！",
-            "sorry": "ごめん！",
-            "goodLuck": "頑張って！",
-            "brb": "すぐ戻るよ！",
-            "go": "行かなきゃ。",
-            "glhf": "頑張って楽しんでね",
-            "gg": "よくやったね"
-        },
-        "PRE_GAME": {
-            "readyCheck": "みんな準備できた？",
-            "changeSettings": "設定を変えて！",
-            "ready": "準備OK！",
-            "wait": "待ってください！",
-            "go": "行こう！",
-            "greeting": "やあ！👋"
-        },
-        "GAME": {
-            "how": "どうやって！？",
-            "closeOne": "ギリギリだったね！",
-            "niceOne": "いいぞ！",
-            "remindMove": "君の番だよ！",
-            "wow": "わお！",
-            "oops": "おっと！",
-            "no": "いやーん！",
-            "ohNo": "ああ、だめ！"
-        },
-        "POST_GAME": {
-            "closeOne": "ギリギリだったね！",
-            "wellPlayed": "上手くやったよ！",
-            "rematch": "再戦しよう！",
-            "fun": "楽しかったね！",
-            "bye": "バイバイ！"
-        }
+        "affirmative": "了解。",
+        "thanks": "ありがとう！",
+        "sorry": "ごめん！",
+        "goodLuck": "頑張って！",
+        "brb": "すぐ戻るよ！",
+        "go": "行かなきゃ。",
+        "glhf": "頑張って楽しんでね",
+        "gg": "よくやったね",
+        "readyCheck": "みんな準備できた？",
+        "changeSettings": "設定を変えて！",
+        "ready": "準備OK！",
+        "wait": "待ってください！",
+        "letsGo": "行こう！",
+        "greeting": "やあ！",
+        "how": "どうやって！？",
+        "closeOne": "ギリギリだったね！",
+        "niceOne": "いいぞ！",
+        "checkThisOut": "これ見て！",
+        "remindMove": "君の番だよ！",
+        "wow": "わお！",
+        "oops": "おっと！",
+        "no": "いやーん！",
+        "ohNo": "ああ、だめ！",
+        "wellPlayed": "上手くやったよ！",
+        "rematch": "再戦しよう！",
+        "fun": "楽しかったね！",
+        "bye": "バイバイ！",
+        "shortYes": "うん。",
+        "shortNo": "いいえ。"
     },
     "header": {
         "message": {
@@ -1512,6 +1777,9 @@
             "roundSummary": "ラウンドのまとめ",
             "roundCount": "現在のラウンドは%{current}、全体のラウンドは%{total}だよ",
             "roundCurrent": "ラウンド%{current}",
+            "startingNewRound": "新しいラウンドを始めるよ…",
+            "questionCount": "問題 %{current} / %{total}",
+            "questionCurrent": "問題 %{current}",
             "war": "戦争だ！",
             "outcome": "結果",
             "input": "あなたの入力を待っています",
@@ -1603,7 +1871,15 @@
         "language": "言語",
         "rules": "ルール",
         "points": "ポイント",
-        "fouls": "ファウルへの反応"
+        "fouls": "ファウルへの反応",
+        "sciences": "サイエンス",
+        "artsAndEntertainment": "アート＆エンタメ",
+        "geography": "地理",
+        "gaming": "ゲーム",
+        "technology": "テクノロジー",
+        "popCulture": "ポップカルチャー",
+        "sports": "スポーツ",
+        "history": "歴史"
     },
     "month": {
         "short": {
@@ -1735,6 +2011,7 @@
         "wins": "勝利0回 | 勝利1回 | 勝利{count}回",
         "cards": "カード0枚 | カード1枚 | カード{count}枚",
         "moves": "0手 | 1手 | {count}手",
+        "tiles": "0枚のタイル | 1枚のタイル | {count}枚のタイル",
         "playing": "0人がプレイ中 | 1人がプレイ中 | {count}人がプレイ中",
         "players": "0人のプレイヤー | 1人のプレイヤー | {count}人のプレイヤー",
         "selectedCards": "カード選択なし | 1枚のカード選択 | {count}枚のカード選択",
@@ -1752,6 +2029,14 @@
         "restartNotice": "サーバーは{count}分後に再起動するよ。ゲームを終わらせてね。 | サーバーは{count}分後に再起動するよ。ゲームを終わらせてね。 | サーバーは{count}分後に再起動するよ。ゲームを終わらせてね。"
     },
     "misc": {
+        "example": "例え",
+        "learnMore": "もっと知る",
+        "questions": "質問",
+        "teamAndQuestions": "チームと質問",
+        "questionPacks": "質問パック",
+        "rock": "グー",
+        "paper": "チョキ",
+        "scissors": "パー",
         "lobby": "ロビー",
         "inGame": "ゲーム中",
         "matchmakingSearch": "ゲームを探してる",
@@ -1834,7 +2119,7 @@
         "submit": "提出する",
         "settings": "設定",
         "options": "オプション",
-        "localPlayers": "ローカルプレイヤー",
+        "localPlayers": "ローカル選手",
         "preset": "プリセット",
         "custom": "カスタム",
         "you": "あなた",
@@ -1852,6 +2137,8 @@
         "language": "言語",
         "toggle": "切り替え",
         "login": "ログイン",
+        "loginToExistingAccount": "既存のアカウントにログイン",
+        "createMyAccount": "アカウント作成する",
         "logout": "ログアウト",
         "hats": "帽子",
         "eyes": "目",
@@ -1869,9 +2156,10 @@
         "specificCards": "特定のカード",
         "matchId": "マッチID",
         "chat": "チャット",
+        "sendMessage": "メッセージを送る",
         "host": "ホスト",
-        "player": "プレイヤー",
-        "players": "プレイヤーたち",
+        "player": "選手",
+        "players": "選手たち",
         "loading": "読み込み中...",
         "percentage": "{percentage}%",
         "percentageDisabled": "{percentage}% (無効)",
@@ -1900,7 +2188,6 @@
         "view": "見る",
         "forfeit": "ゲームを投げる",
         "processFiles": "ファイルを処理する",
-        "sendMessage": "メッセージを送る",
         "checkAgain": "もう一回チェックしてみて",
         "refreshWindow": "ウィンドウを更新する",
         "makeHost": "ホストにする",
@@ -1921,6 +2208,7 @@
         "highestScore": "最高スコア",
         "totalScore": "トータルスコア",
         "finalScore": "ファイナルスコア",
+        "flawlessGames": "完璧なゲーム",
         "hits": "ヒット",
         "hitRate": "ヒット率",
         "rank": "ランク",
@@ -1930,8 +2218,10 @@
         "assassinations": "暗殺",
         "survivals": "生存",
         "games": "ゲーム数",
+        "correctRatio": "正しい比率",
         "winRatio": "勝率",
         "killDeathRatio": "K/D比率",
+        "lives": "ライフ",
         "points": "ポイント",
         "wins": "勝利数",
         "grids": "グリッド",
@@ -1942,6 +2232,7 @@
         "fouls": "ファウル",
         "and": "そして",
         "vs": "対",
+        "dismiss": "閉じる",
         "rename": "名前を変更する",
         "created": "作成された",
         "lastSeen": "最後に見た",
@@ -1951,6 +2242,7 @@
         "myDevices": "私のデバイス",
         "myData": "私のデータ",
         "redeemCode": "コードを引き換える",
+        "contact": "連絡",
         "leaderboard": "ランキング",
         "elapsedTime": "%{time} 経過した",
         "startingInTime": "%{time}後に開始",
@@ -1964,6 +2256,10 @@
         "coinsBlank": "%{value}コイン",
         "receivedBlank": "%{value}を受け取った",
         "lessThanBlank": "%{value}より少ない",
+        "lastSeenBlankAgo": "最後に見たのは %{value} 前",
+        "lastSeenJustNow": "今見たばっか",
+        "blank": "%{value}",
+        "byBlank": "%{value} による",
         "sendVerification": "認証を送る",
         "noThanks": "結構です",
         "ready": "準備OK",
@@ -1978,12 +2274,15 @@
         "madeBy": "%{name} 作",
         "selectedOfLimit": "%{total}の上限から%{current}を選択",
         "helpLocalize": "ローカライズの改善を手伝って",
+        "goAdFree": "広告なしで楽しむ",
         "discord": "私たちのDiscordに参加",
         "volume": "音量",
         "volumeInterface": "インターフェースの音量",
         "volumeEffects": "エフェクトの音量",
+        "volumeMusic": "音量",
         "selectYourLanguage": "言語を選択してね",
         "selectYourColor": "色を選んでね",
+        "selectYourTeam": "チームを選んでね",
         "latestChanges": "最新の変更点",
         "noChangesDetected": "変更は見つからなかったよ",
         "newChanges": "新しい変更",
@@ -2135,8 +2434,19 @@
         }
     },
     "info": {
+        "roundEndTie": "引き分けだね！",
+        "roundEndStalemate": "動かないね！",
+        "roundWin": "勝ったよ！",
+        "roundLost": "負けた！",
+        "youLostThisRound": "今回は負けたね。",
+        "youAreOutOfLives": "ライフがなくなっちゃったよ",
+        "playerIsEliminated": "プレイヤーがやられた",
+        "youAreEliminated": "あなたがやられた",
+        "waitForRoundEnd": "ラウンドが終わるまで待っててね。",
+        "waitForWinner": "じっとしてて、勝者が出るのを待とう！",
         "serverRestart": "サーバーが今再起動中だよ。ちょっと待っててね。",
         "clearOldListings": "「Unavailable」のマッチを全部クリアしてね。",
+        "flawlessGame": "完璧なゲーム！ミスなし！",
         "accountLinkSuggestion": "あなたは今%{level}だよ！進行状況を保護するためにアカウントを作成してみては？",
         "accountLinked": "このアカウントは次のメールアドレスにリンクされています：%{email}。",
         "incompleteTranslationNotice": "選択した言語は約{percentage}% 完成しています。翻訳が足りない部分は英語で表示されます。",
@@ -2163,10 +2473,13 @@
         "inactiveOpponents": "全ての相手が非アクティブだったよ",
         "waitForOpponent": "相手を待ってるよ…",
         "waitForOpponents": "相手たちを待ってるよ…",
+        "nameLeftTheGame": "%{name}がゲームを抜けた",
         "selfNoPoints": "ポイントはゼロだよ。",
         "nameNoPoints": "%{name}はポイントゼロだよ。",
         "gameMenu": "他のゲームをやりたい気分？",
         "forfeit": "ゲームを投げると、あなたの負けになるよ。",
+        "namePointsForMove": "%{name}の技が%{points}もらったよ。",
+        "selfPointsForMove": "あなたの技が%{points}もらったよ。",
         "nameForfeited": "%{name}さんが降参したから、自動的に負けちゃったよ。",
         "selfForfeited": "あなたが降参したから、自動的に負けちゃったよ。",
         "unsavedChanges": "保存してない変更があるんだけど、進むと全部消えちゃうよ。",
@@ -2182,6 +2495,12 @@
         "loginToPurchase": "購入するには、まずログインするかアカウントを作成する必要があります。",
         "seasonalItem": "このスロットのアイテムは年に数日しか利用できません。",
         "cardInteractHint": "選ぶカードをクリックしてね。",
+        "gameInvite": "ゲームに招待するよ！",
+        "keyboardShortcutCombination": "キーボードショートカット {combination} を使うには、{firstKey}を押し続けてから{secondKey}を押してね。",
+        "keyboardShortcutSpinSelector": "矢印キー {keys} を使ってスピンを調整することもできるよ。",
+        "goAdFree": "広告は、コインを買って開発をサポートすると、あなたのアカウントで永久に無効になるよ。",
+        "chatEmojiAlt": "チャット絵文字 {type}",
+        "zoomOutHint": "ズームインしちゃってるよ！ピンチしてズームアウトして、ゲームの操作を楽にしよう！",
         "awaitingPurchaseConfirmation": {
             "title": "購入確認待ち",
             "description": "だいたい数秒で終わるよ。でも、支払い方法によってはもうちょっと時間かかるかもね。この画面を閉じても大丈夫だよ。"
@@ -2190,8 +2509,11 @@
             "noFriends": "友達いない",
             "noAccount": "ログインするかアカウント作って友達作ろう！",
             "description": "つながってる？友達のオンライン状況やゲーム、プライベートロビーに参加できるよ！",
-            "removeDescription": "\"%{name}\"との友情を終わらせようとしてるよ。"
+            "removeDescription": "\"%{name}\"との友情を終わらせようとしてるよ。",
+            "inviteReceived": "%{name}が%{game}を一緒にやろうって誘ってるよ！",
+            "inviteSent": "ゲームの招待を送ったよ！"
         },
+        "contact": "何か問題があったり、提案があったり、質問があったら気軽に連絡してね！メール送るか、Bloob.ioのDiscordに参加してくれればOKだよ。",
         "settings": {
             "redeemCode": {
                 "title": "コードを引き換える",
@@ -2212,6 +2534,14 @@
                 "description": "Bloob.ioはプライバシーフレンドリーな自己ホスト型のMatomoアナリティクスサーバーを使って匿名でアナリティクスを追跡しています。あなたのデータは他人と共有されません。もし希望するなら、オプトアウトすることができます。",
                 "blocked": "アナリティクスは有効ではありません。あなたのブラウザや拡張機能がそれをブロックしているかもしれません。",
                 "dnt": "あなたのブラウザは\"Do Not Track\"（DNT）設定が有効になっています。私たちはあなたのリクエストを尊重し、あなたを追跡していません。"
+            },
+            "ads": {
+                "title": "広告",
+                "description": "Bloob.ioではPlaywireの広告を表示してるよ。Bloob.ioの広告は、全部または一部がPlaywire LLCによって管理されてるんだ。もしBloob.ioで広告を見たくないなら、ストアでコインを買って広告なしにできるよ。これで自動的にアカウントの広告が全部消えるからね。",
+                "complaint": "Bloob.ioでは、君が見る広告が倫理的で邪魔にならないことが大事なんだ。もしゲームプレイに干渉する広告を見つけたら、「About」セクションをチェックして連絡してね。",
+                "consent": "ここをクリックして広告の同意設定を更新してね",
+                "exempt": "広告はアクティブじゃないよ。君のアカウントは広告なしだ。サポートありがとう！",
+                "blocked": "広告が表示されてないよ。ブラウザか拡張機能がブロックしてるかも。"
             },
             "serverData": {
                 "title": "サーバーデータ",
@@ -2234,7 +2564,7 @@
         "authentication": {
             "login": {
                 "title": "ログイン",
-                "description": "ご注意ください、あなたのアカウントにログインすると、現在使用しているユーザー（%{name}）のすべての進行状況がクリアされます。"
+                "description": "注意！今使ってるユーザー、{name}（レベル：{level}）はまだアカウントに紐付いてないよ。既存のアカウントでログインすると、このユーザーは永久に消えちゃうから気をつけてね。もしかして、アカウントを作りたかったのかな？"
             },
             "setupThreshold": {
                 "title": "早いね、%{name}さん！",
@@ -2477,6 +2807,28 @@
             "earnsSum": "全てのダイスの合計を獲得するよ。",
             "noPointsWarning": "この動きでポイントは稼げないよ。ポイントがもらえる他の選択肢もあるからさ。"
         },
+        "graphicsAcceleration": {
+            "notice": "グラフィックアクセラレーションが無効になってるよ。これ、ゲームのパフォーマンスに影響するかも。",
+            "search": "グラフィックアクセラレーションを有効にするにはどうすればいいの？"
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
+        },
         "ai": {
             "ready": null,
             "findingTarget": null,
@@ -2485,9 +2837,7 @@
             "assassinAssignment": null,
             "targetAssignment": null,
             "assassinDescription": null,
-            "targetDescription": null,
-            "startAssassinChat": null,
-            "joinAssassinChat": null
+            "targetDescription": null
         },
         "poolType": {
             "SOLID": "ソリッド",
@@ -2542,6 +2892,7 @@
             "developedBy": "開発者は%{name}だよ",
             "iconsSource": "アイコンは%{name}の提供だよ（ライセンス付き）",
             "soundsSource": "音声は%{name}が提供してるよ（ライセンス付き）",
+            "emojiSource": "%{name}が提供した絵文字だよ (CC-BY 4.0)",
             "rottenApplesSource": "%{name}に基づく腐ったリンゴ (BY-NC-SA 2.0)",
             "diceSource": "%{name}によるダイスモデル (CC-BY-4.0)",
             "localization": "ボランティア貢献者によるローカライゼーション"

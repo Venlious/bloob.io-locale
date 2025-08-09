@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Swedish",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1804,
+        "missing": 22
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Förlåt, den här användaren har nått sin vängräns på %{amount}.",
             "pendingFriendLimitSelf": "Du kan inte ha mer än %{amount} vänförfrågningar som väntar.",
             "pendingFriendLimitOther": "Förlåt, den här användaren har redan för många vänförfrågningar som väntar.",
+            "userOffline": "Tyvärr, den här användaren är offline.",
             "notFriends": "Ni är inte vänner och har ingen vänförfrågan som väntar.",
             "alreadyFriends": "Ni är redan vänner med den här användaren.",
             "pendingFriends": "Det finns redan en vänförfrågan som väntar med den här användaren.",
@@ -81,6 +82,7 @@
         "start": {
             "fieldRows": "Valda fältet kan inte stödja mer än %{rows} rader",
             "fieldCannotFitUsers": "Valda fältet kan inte stödja mer än %{users} spelare",
+            "questionThreshold": "Spelet kräver minst %{count} frågor",
             "whiteCardThreshold": "Spelet kräver minst %{count} svarskort (vita)",
             "blackCardThreshold": "Spelet kräver minst %{count} aktionskort (svarta)",
             "insufficientPlayers": "Behöver minst %{min} spelare för att starta matchen."
@@ -100,6 +102,7 @@
             "incorrectValue": "Värdet som gavs stämmer inte överens med det förväntade.",
             "invalidMove": "Det drag du försökte göra är ogiltigt.",
             "invalidVote": "Rösten du försökte göra är ogiltig.",
+            "noLives": "Du har inga liv kvar.",
             "alreadyPlaced": "Du har redan lagt nåt.",
             "alreadyVoted": "Du har redan röstat.",
             "invalidPlacement": "Din pjäsplacering är ogiltig.",
@@ -181,6 +184,7 @@
     },
     "game": {
         "generic": {
+            "name": "Hem",
             "title": "Bloob.io | Spela gratis multiplayer-spel online med vänner",
             "description": "Spela gratis webbläsarspel på Bloob.io! Ingen registrering krävs – utmana vänner, möt nya spelare eller spela mot bots i roliga flerspelarlägen.",
             "options": {
@@ -197,6 +201,15 @@
                 },
                 "botCount": {
                     "help": "Introducera bots i ditt spel tillsammans med andra spelare."
+                },
+                "pointer": {
+                    "title": "Pekare",
+                    "help": "Låt andra spelare se vart du pekar med musen. I vissa fall kan du välja att hålla det privat för din grupp/lag.",
+                    "data": {
+                        "OFF": "Av",
+                        "PRIVATE": "Privat",
+                        "EVERYONE": "Alla"
+                    }
                 },
                 "botDifficulty": {
                     "title": "Bot Svårighetsgrad",
@@ -242,9 +255,41 @@
                         "off": "Ingen gräns"
                     }
                 },
+                "scoringSystem": {
+                    "title": "Poängsystem",
+                    "help": {
+                        "default": "Bestäm hur poängen delas ut för att svara rätt på en fråga.",
+                        "SPEED": "Poängen baseras på hur snabbt man svarar på frågan.",
+                        "ORDER": "Poängen baseras på vem som var snabbast av spelarna.",
+                        "FIXED": "Varje fråga ger samma mängd poäng.",
+                        "PROGRESSIVE": "Poängen man tjänar ökar efter varje fråga.",
+                        "STREAK": "Tjäna extra poäng för varje rätt svar i rad; nollställs efter ett felaktigt svar."
+                    },
+                    "data": {
+                        "SPEED": "Hastighet",
+                        "ORDER": "Ordning",
+                        "FIXED": "Fast",
+                        "PROGRESSIVE": "Progressiv",
+                        "STREAK": "Svit"
+                    }
+                },
+                "mode": {
+                    "title": "Läge",
+                    "help": {
+                        "default": "Välj hur spelarna ska tävla: individuellt, som ett lag, eller samarbeta.",
+                        "SOLO": "Varje spelare tävlar ensam.",
+                        "CO_OP": "Alla spelare jobbar tillsammans som ett lag.",
+                        "TEAM": "Spelarna delas in i lag, och de kan välja sin egen grupp att samarbeta med."
+                    },
+                    "data": {
+                        "SOLO": "Solo",
+                        "CO_OP": "Co-op",
+                        "TEAM": "Lag"
+                    }
+                },
                 "deckSize": {
                     "title": "Kortleksstorlek",
-                    "help": "Spela utan tidsgränser. Stäng av alla tur-timers och njut av en avslappnad spelupplevelse där du kan spela i din egen takt. Rekommenderas inte mot slumpmässiga motståndare.",
+                    "help": "Välj hur stor kortlek du vill ha för spelet.",
                     "data": {
                         "half": "Halvt kortlek",
                         "full": "Full kortlek",
@@ -835,6 +880,10 @@
                     "title": "Sikte Linje",
                     "help": "Siktlinjen visar vart köbollen kommer att gå efter att den har träffats."
                 },
+                "speed": {
+                    "title": "Hastighet",
+                    "help": "Hur snabbt poolanimationen spelas upp."
+                },
                 "illegalBallPocket": {
                     "title": "Olaglig Bollficka"
                 },
@@ -1009,12 +1058,23 @@
                     "title": "Extra Yacht",
                     "help": "Ange hur spelet ska hantera en situation där en spelare slår en annan Yacht efter att redan ha fått poäng för en."
                 },
+                "jokerYacht": {
+                    "title": "Yacht Joker",
+                    "help": "När det här är påslaget kan du få poäng för vilken extra Yacht som helst som en Full House, Small Straight eller Large Straight. Den här grejen blir tillgänglig först när rätt tärningssiffra och Yacht-kategori redan är ifyllda."
+                },
                 "additionalYachtReward": {
                     "title": "Belöning",
                     "help": "Antalet poäng som ges till de som rullar ännu en Yacht."
                 }
             },
-            "presets": {},
+            "presets": {
+                "joker": {
+                    "title": "Joker",
+                    "description": [
+                        "Fler alternativ när du får en Yatzy"
+                    ]
+                }
+            },
             "help": {
                 "objective": {
                     "title": "Förstå Målet",
@@ -1064,6 +1124,12 @@
                         "Du kan också klicka på en tom orange ruta och få 0 poäng. Det kan vara hjälpsamt om ditt enda andra alternativ skulle ge dig väldigt få poäng för den kategorin.",
                         "Det kan vara hjälpsamt om du till exempel vill gå efter bonusen i den övre sektionen."
                     ]
+                },
+                "shortcuts": {
+                    "title": "Genvägar",
+                    "description": [
+                        "Vill du flytta många av samma tärning på en gång? Använd din scrollknapp eller håll ner Shift-tangenten medan du klickar på en tärning, så flyttas alla tärningar med samma sida på en gång!"
+                    ]
                 }
             }
         },
@@ -1100,7 +1166,8 @@
                         "pier": "Bryggan",
                         "littleIsland": "Lilla ön",
                         "keys": "Nycklarna",
-                        "lagoon": "Lagun"
+                        "lagoon": "Lagun",
+                        "ocean": "Hav"
                     }
                 },
                 "levelOrientation": {
@@ -1121,6 +1188,10 @@
                 "shipReveal": {
                     "title": "Visa Skepp",
                     "help": "När det är påslaget, kommer du att se skeppet när du har sänkt det. När det är avstängt, visas bara en räknare med kvarvarande skepp."
+                },
+                "hitAfterHit": {
+                    "title": "Slag efter slag",
+                    "help": "När det är påslaget kan du skjuta igen efter att du träffat ett skepp. När det är avstängt får du bara en skott per tur."
                 }
             },
             "presets": {},
@@ -1421,62 +1492,256 @@
         },
         "AI_ASSASSIN": {
             "name": "AI Mördare",
-            "title": "Lura, Eliminera, Överlev",
-            "description": "AI Assassin är ett spännande multiplayer-spel där du antingen eliminerar målet eller lurar lönnmördarna. Använd strategiska tips för att nå ditt mål och lyckas.",
+            "title": "AI Lönnmördare Online | Spela AI Promptspel Gratis med Vänner",
+            "description": "Spela AI Lönnmördare gratis online! Inga konton behövs. Utmana vänner, främlingar och bots i ett kul AI promptspel med flerspelarläge.",
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Sten Sax Påse",
+            "title": "Sten Sax Påse Online | Spela Gratis RPS med Vänner & Bots",
+            "description": "Spela Sten Sax Påse online gratis! Utmana vänner eller bots i RPS-klassiskt spel med upp till 4 spelare. Ingen registrering krävs, börja nu!",
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "Sten slår sax",
+                        "paper": "Papper slår sten",
+                        "scissors": "Sax slår papper"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Sista kvar (<b>0</b> liv) | Sista kvar (<b>1</b> liv) | Sista kvar (<b>{count}</b> liv)",
+                        "FIRST": "Först att få <b>0</b> poäng | Först att få <b>1</b> poäng | Först att få <b>{count}</b> poäng",
+                        "HIGHEST_AFTER": "Flest poäng efter <b>0</b> rundor | Flest poäng efter <b>1</b> runda | Flest poäng efter <b>{count}</b> rundor"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Ras",
+                    "description": [
+                        "Först till 5 poäng"
+                    ]
+                },
+                "survival": {
+                    "title": "Överlevnad",
+                    "description": [
+                        "5 liv",
+                        "Förlora ett liv för varje runda du förlorar",
+                        "Sista spelaren som står kvar vinner"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Bästa av serien",
+                    "description": [
+                        "Spelaren med flest poäng efter 5 rundor vinner."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Regler",
+                    "description": [
+                        "Sten Sax Påse är enkelt: välj sten, sax eller påse. Sten slår sax, påse slår sten, och sax slår påse.",
+                        "I varje runda, gissa vad din motståndare väljer och svara därefter!"
+                    ]
+                },
+                "group": {
+                    "title": "Grupp",
+                    "description": [
+                        "Spela med upp till 4 spelare! Bara en kan vinna varje runda. Om du åker ut tidigt fortsätter de andra spelarna tills en vinnare är utsedd.",
+                        "I överlevnadsläget har varje spelare ett visst antal liv. Var den sista spelaren som står kvar för att vinna!"
+                    ]
+                },
+                "bots": {
+                    "title": "Botsar",
+                    "description": [
+                        "Spela mot bots! De kör en random strategi, så om du kan lista ut den, kan du slå dem hela tiden!"
+                    ]
+                }
+            }
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Nummerduell",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "Spelet slutar så fort en spelare har nått den här poängen."
+                },
+                "mode": {
+                    "title": "Läge",
+                    "help": "En annan spelläge kommer att påverka hur poäng delas ut och hur spelet spelas.",
+                    "data": {
+                        "SINGLE_HIDER": "Ensam Gömma",
+                        "HIDE_AND_SEEK": "Gömma och Söka",
+                        "LAST_STANDING": "Sista Stående"
+                    }
+                },
+                "field": {
+                    "title": "Fält",
+                    "help": "Bestämmer hur många siffror som visas på spelplanen."
+                },
+                "revealSpeed": {
+                    "title": "Avslöja Hastighet",
+                    "help": "Hastigheten på hur snabbt rundan avslöjas när alla är redo."
+                },
+                "multiplier": {
+                    "title": "Multiplikatorer",
+                    "help": "Multiplikatorer kan dyka upp på ett eller flera nummer samtidigt. När en gömmare väljer ett nummer med en multiplikator så multiplicerar de sina poäng. Men eftersom alla kan se multiplikatorerna är det lite riskigt och ökar chansen att bli hittad.",
+                    "data": {
+                        "off": "Avstängd",
+                        "uncommon": "Ovanlig",
+                        "common": "Vanlig",
+                        "veryCommon": "Jättevanlig"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Dynamisk Poängsättning",
+                    "help": {
+                        "introduction": "Ge poäng baserat på hur stor chans det är att lyckas. Till exempel, om en sökare hittar en gömmer tidigt i spelet får de fler poäng. Om en gömmer lyckas hålla sig gömd med bara några få rutor kvar, får de också fler poäng.",
+                        "calculation": "När det är aktiverat, räknas poängen automatiskt baserat på de inställda min- och maxpoängen."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Hitta en gömmare",
+                    "help": "Utdelad till en sökare för att ha hittat en gömmer."
+                },
+                "minPointsFind": {
+                    "title": "Min. Hitta en gömmer"
+                },
+                "maxPointsFind": {
+                    "title": "Max. Hitta en gömmer"
+                },
+                "pointsHideRound": {
+                    "title": "Dolt per Runda",
+                    "help": "Utdelas till en gömmare för att hålla sig gömd varje runda."
+                },
+                "minPointsHideRound": {
+                    "title": "Min. Dolda per Runda"
+                },
+                "maxPointsHideRound": {
+                    "title": "Max. Dolda per Runda"
+                },
+                "pointsLastAlive": {
+                    "title": "Sista överlevande",
+                    "help": "Utdelas till den sista spelaren som är kvar i spelet när alla andra har åkt ut."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Sista kvar"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Max. Sista kvar"
+                }
+            },
+            "presets": {},
+            "help": {}
+        },
+        "TRIVIA": {
+            "name": "Frågesport",
+            "title": "Frågesport | Spela gratis online trivia med kompisar i realtid",
+            "description": "Spela Frågesport gratis! Utmana vänner i realtid utan konto, i olika quizlägen. Njut av online multiplayer och ha kul med kompisar eller främlingar.",
+            "options": {
+                "consensus": {
+                    "title": "Konsensus",
+                    "help": "I lagläge, ska lagets svar baseras på en majoritetsröst (Konsensus)? Om inte, kan vilken lagmedlem som helst ändra svaret för alla."
+                },
+                "lockAnswer": {
+                    "title": "Lås svar",
+                    "help": "När det är påslaget kan spelarna inte ändra sitt svar när de har valt ett."
+                },
+                "eliminationChallenge": {
+                    "title": "Elimineringsutmaning",
+                    "help": "När det här är på, så åker en spelare eller ett lag ut direkt om de svarar fel på en fråga."
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": "Mot varandra",
+                    "description": [
+                        "Solo",
+                        "Fler poäng för senare frågor"
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": "Hardcore Mot Varandra",
+                    "description": [
+                        "Inga misstag",
+                        "Låst svar",
+                        "Poäng baserat på hastighet"
+                    ]
+                },
+                "coop": {
+                    "title": "Co-op",
+                    "description": [
+                        "Jobba tillsammans",
+                        "Fasta punkter"
+                    ]
+                },
+                "teams": {
+                    "title": "Lag",
+                    "description": [
+                        "Jobba i lag",
+                        "Poäng baserat på ordning"
+                    ]
+                }
+            },
+            "help": {
+                "soloOrWorkTogether": {
+                    "title": "Solo eller Jobba Tillsammans",
+                    "description": [
+                        "Du kan välja om du vill köra solo, jobba i grupp i co-op, eller bilda mindre team.",
+                        "När ni jobbar som ett team eller grupp kan du se vad alla andra gissar också!"
+                    ]
+                },
+                "questionPacks": {
+                    "title": "Frågepaket",
+                    "description": [
+                        "Gillar du inte vissa frågekategorier? Du kan slå på eller av kategorier som inte intresserar dig eller ditt gäng genom att gå till frågetabben i lobbyn.",
+                        "Frågor serveras automatiskt för att minska antalet upprepade frågor du ser i din lobby."
+                    ]
+                },
+                "star": {
+                    "title": "Stjärna",
+                    "description": [
+                        "Om du lyckas spela det perfekta spelet, alltså att du inte svarar fel på en enda fråga, så får du en stjärna bredvid ditt namn, och det syns i dina personliga statistik!"
+                    ]
+                }
+            }
         }
     },
     "chat": {
-        "EMOJI": {
-            "love": "❤️",
-            "luck": "🍀",
-            "fire": "🔥",
-            "celebration": "🎉",
-            "thumbsUp": "👍",
-            "mindBlowing": "🤯",
-            "thinking": "🤔",
-            "clap": "👏",
-            "cry": "😭",
-            "cool": "😎"
-        },
-        "UNIVERSAL": {
-            "leftTheGame": "lämnade spelet",
-            "affirmative": "Okej.",
-            "thanks": "Tack!",
-            "sorry": "Ursäkta!",
-            "goodLuck": "Lycka till!",
-            "brb": "Jag kommer strax tillbaka!",
-            "go": "Jag måste gå.",
-            "glhf": "Lycka till, ha kul",
-            "gg": "Bra spel"
-        },
-        "PRE_GAME": {
-            "readyCheck": "Alla redo?",
-            "changeSettings": "Ändra inställningar!",
-            "ready": "Redo!",
-            "wait": "Vänta snälla!",
-            "go": "Låt oss köra!",
-            "greeting": "Hej! 👋"
-        },
-        "GAME": {
-            "how": "Hur!?",
-            "closeOne": "Det var nära!",
-            "niceOne": "Bra gjort!",
-            "remindMove": "Din tur!",
-            "wow": "Wow!",
-            "oops": "Hoppsan!",
-            "no": "Neeeej!",
-            "ohNo": "Åh nej!"
-        },
-        "POST_GAME": {
-            "closeOne": "Nära ögat!",
-            "wellPlayed": "Bra spelat!",
-            "rematch": "Returmatch!",
-            "fun": "Det var kul!",
-            "bye": "Hej då!"
-        }
+        "affirmative": "Okej.",
+        "thanks": "Tack!",
+        "sorry": "Ursäkta!",
+        "goodLuck": "Lycka till!",
+        "brb": "Jag kommer strax tillbaka!",
+        "go": "Jag måste gå.",
+        "glhf": "Lycka till, ha kul",
+        "gg": "Bra spel",
+        "readyCheck": "Alla redo?",
+        "changeSettings": "Ändra inställningar!",
+        "ready": "Redo!",
+        "wait": "Vänta snälla!",
+        "letsGo": "Låt oss köra!",
+        "greeting": "Hej!",
+        "how": "Hur!?",
+        "closeOne": "Nära ögat!",
+        "niceOne": "Bra gjort!",
+        "checkThisOut": "Kolla in det här!",
+        "remindMove": "Din tur!",
+        "wow": "Wow!",
+        "oops": "Hoppsan!",
+        "no": "Neeeej!",
+        "ohNo": "Åh nej!",
+        "wellPlayed": "Bra spelat!",
+        "rematch": "Returmatch!",
+        "fun": "Det var kul!",
+        "bye": "Hej då!",
+        "shortYes": "Ja.",
+        "shortNo": "Nej."
     },
     "header": {
         "message": {
@@ -1512,6 +1777,9 @@
             "roundSummary": "Sammanfattning av rundan",
             "roundCount": "Omgång %{current} av %{total}",
             "roundCurrent": "Runda %{current}",
+            "startingNewRound": "Börjar ny runda...",
+            "questionCount": "Fråga %{current} av %{total}",
+            "questionCurrent": "Fråga %{current}",
             "war": "Krig!",
             "outcome": "Resultat",
             "input": "Väntar på din input",
@@ -1603,7 +1871,15 @@
         "language": "Språk",
         "rules": "Regler",
         "points": "Poäng",
-        "fouls": "Svar på Fusk"
+        "fouls": "Svar på Fusk",
+        "sciences": "Vetenskap",
+        "artsAndEntertainment": "Konst & Underhållning",
+        "geography": "Geografi",
+        "gaming": "Spelande",
+        "technology": "Teknik",
+        "popCulture": "Popkultur",
+        "sports": "Sport",
+        "history": "Historia"
     },
     "month": {
         "short": {
@@ -1735,6 +2011,7 @@
         "wins": "0 vinster | 1 vinst | {count} vinster",
         "cards": "0 kort | 1 kort | {count} kort",
         "moves": "0 drag | 1 drag | {count} drag",
+        "tiles": "0 plattor | 1 platta | {count} plattor",
         "playing": "0 spelar | 1 spelar | {count} spelar",
         "players": "0 spelare | 1 spelare | {count} spelare",
         "selectedCards": "Inga kort valda | 1 kort valt | {count} kort valda",
@@ -1752,6 +2029,14 @@
         "restartNotice": "Servern kommer starta om om {count} minuter. Avsluta ditt spel. | Servern kommer starta om om {count} minut. Avsluta ditt spel. | Servern kommer starta om om {count} minuter. Avsluta ditt spel."
     },
     "misc": {
+        "example": "Sure! Just provide me with the list of items you want translated, and I'll take care of it.",
+        "learnMore": "Lär dig mer",
+        "questions": "Frågor",
+        "teamAndQuestions": "Team & Frågor",
+        "questionPacks": "Frågepaket",
+        "rock": "Sten",
+        "paper": "Papper",
+        "scissors": "Sax",
         "lobby": "Lobbyn",
         "inGame": "I spelet",
         "matchmakingSearch": "Letar efter ett spel",
@@ -1787,7 +2072,7 @@
         "unknown": "Okänd",
         "none": "Ingen",
         "seasonal": "Säsongsmässig",
-        "items": "Sure! Please provide the list of items you'd like me to translate.",
+        "items": "Objekt",
         "purchaseCoins": "Köp Mynt",
         "store": "Butik",
         "buyNow": "Köp Nu",
@@ -1852,6 +2137,8 @@
         "language": "Språk",
         "toggle": "Växla",
         "login": "Logga in",
+        "loginToExistingAccount": "Logga in på befintligt konto",
+        "createMyAccount": "Skapa mitt konto",
         "logout": "Logga ut",
         "hats": "Hattar",
         "eyes": "Ögon",
@@ -1869,6 +2156,7 @@
         "specificCards": "Specifika kort",
         "matchId": "Match ID",
         "chat": "Chatta",
+        "sendMessage": "Skicka ett meddelande",
         "host": "Värd",
         "player": "Spelare",
         "players": "Spelare",
@@ -1900,7 +2188,6 @@
         "view": "Visa",
         "forfeit": "Ge upp spelet",
         "processFiles": "Bearbeta filer",
-        "sendMessage": "Skicka Meddelande",
         "checkAgain": "Kolla igen",
         "refreshWindow": "Uppdatera Fönster",
         "makeHost": "Bli Värd",
@@ -1921,6 +2208,7 @@
         "highestScore": "Högsta Poäng",
         "totalScore": "Totalt Poäng",
         "finalScore": "Slutpoäng",
+        "flawlessGames": "Perfekta spel",
         "hits": "Träffar",
         "hitRate": "Träfffrekvens",
         "rank": "Rankning",
@@ -1930,8 +2218,10 @@
         "assassinations": "Mord",
         "survivals": "Överlevnader",
         "games": "Spel",
-        "winRatio": "Vinstförhållande",
+        "correctRatio": "Rätt förhållande",
+        "winRatio": "Segerprocent",
         "killDeathRatio": "K/D Förhållande",
+        "lives": "Liv",
         "points": "Poäng",
         "wins": "Vinster",
         "grids": "Rutnät",
@@ -1942,6 +2232,7 @@
         "fouls": "Regelbrott",
         "and": "och",
         "vs": "mot",
+        "dismiss": "Stäng",
         "rename": "Byt namn",
         "created": "Skapad",
         "lastSeen": "Senast sedd",
@@ -1951,6 +2242,7 @@
         "myDevices": "Mina Enheter",
         "myData": "Min Data",
         "redeemCode": "Lösa in Kod",
+        "contact": "Kontakt",
         "leaderboard": "Topplista",
         "elapsedTime": "%{time} har passerat",
         "startingInTime": "Startar om %{time}",
@@ -1964,6 +2256,10 @@
         "coinsBlank": "%{value} mynt",
         "receivedBlank": "Mottaget %{value}",
         "lessThanBlank": "Mindre än %{value}",
+        "lastSeenBlankAgo": "Senast sedd för %{value} sen",
+        "lastSeenJustNow": "Senast sedd nyss",
+        "blank": "%{value}",
+        "byBlank": "Av %{value}",
         "sendVerification": "Skicka Verifiering",
         "noThanks": "Nej tack",
         "ready": "Klar",
@@ -1978,12 +2274,15 @@
         "madeBy": "Gjord av %{name}",
         "selectedOfLimit": "Vald %{current} av %{total} gräns",
         "helpLocalize": "Hjälp till att förbättra lokaliseringen",
+        "goAdFree": "Gå utan reklam",
         "discord": "Gå med i vår Discord",
         "volume": "Volym",
         "volumeInterface": "Gränssnittsvolym",
         "volumeEffects": "Effektljudets Volym",
+        "volumeMusic": "Musikvolym",
         "selectYourLanguage": "Välj Ditt Språk",
         "selectYourColor": "Välj Din Färg",
+        "selectYourTeam": "Välj ditt lag",
         "latestChanges": "Senaste Ändringar",
         "noChangesDetected": "Inga Ändringar Upptäckta",
         "newChanges": "Nya Ändringar",
@@ -2135,8 +2434,19 @@
         }
     },
     "info": {
+        "roundEndTie": "Det är oavgjort!",
+        "roundEndStalemate": "Det är en dödläge!",
+        "roundWin": "Du vann!",
+        "roundLost": "Du förlorade!",
+        "youLostThisRound": "Du förlorade den här rundan!",
+        "youAreOutOfLives": "Du har slut på liv",
+        "playerIsEliminated": "Spelaren har åkt ut",
+        "youAreEliminated": "Du är ute",
+        "waitForRoundEnd": "Vänta lite tills rundan är klar.",
+        "waitForWinner": "Häng kvar och vänta på att en vinnare dyker upp!",
         "serverRestart": "Servern startas om nu. Kolla tillbaka om några minuter.",
         "clearOldListings": "Rensa alla 'Otillgängliga' matcher.",
+        "flawlessGame": "Perfekt spel! Inga misstag gjordes.",
         "accountLinkSuggestion": "Du är nu %{level}! Fundera på att skapa ett konto för att skydda dina framsteg.",
         "accountLinked": "Det här kontot är kopplat till följande e-postadress: %{email}.",
         "incompleteTranslationNotice": "Språket du har valt är ungefär {percentage}% komplett. Alla saknade översättningar kommer att vara på engelska.",
@@ -2163,10 +2473,13 @@
         "inactiveOpponents": "Alla motståndare var inaktiva",
         "waitForOpponent": "Väntar på din motståndare...",
         "waitForOpponents": "Väntar på dina motståndare....",
+        "nameLeftTheGame": "%{name} lämnade spelet",
         "selfNoPoints": "Du fick inga poäng.",
         "nameNoPoints": "%{name} fick inga poäng.",
         "gameMenu": "Känner du för att spela något annat?",
         "forfeit": "Om du ger upp spelet kommer du att förlora.",
+        "namePointsForMove": "%{name} fick %{points} för sitt drag.",
+        "selfPointsForMove": "Ditt drag fick %{points}.",
         "nameForfeited": "%{name} gav upp och förlorade automatiskt.",
         "selfForfeited": "Du gav upp och förlorade automatiskt.",
         "unsavedChanges": "Du har osparade ändringar som kommer att raderas om du fortsätter.",
@@ -2182,6 +2495,12 @@
         "loginToPurchase": "För att göra ett köp måste du först logga in eller skapa ett konto.",
         "seasonalItem": "Ett föremål i den här platsen är bara tillgängligt några dagar om året.",
         "cardInteractHint": "Klicka på ett kort för att göra ditt val.",
+        "gameInvite": "Inbjudan till spelet",
+        "keyboardShortcutCombination": "För att använda kortkommandon som {combination} håll ner {firstKey} och tryck sen på {secondKey}",
+        "keyboardShortcutSpinSelector": "Du kan också använda piltangenterna {keys} för att ändra snurren.",
+        "goAdFree": "Reklam är permanent avstängd för ditt konto om du stöttar utvecklingen genom att köpa mynt, oavsett belopp.",
+        "chatEmojiAlt": "Chat emoji med typ {type}",
+        "zoomOutHint": "Du är inzoomad! Klia ihop för att zooma ut och få bättre kontroll över spelet.",
         "awaitingPurchaseConfirmation": {
             "title": "Väntar på köpbekräftelse",
             "description": "Det här tar vanligtvis bara några sekunder. Beroende på din betalningsmetod kan det ta längre tid. Du kan lugnt stänga den här skärmen."
@@ -2190,8 +2509,11 @@
             "noFriends": "Inga kompisar",
             "noAccount": "Logga in eller skapa ett konto för att börja skaffa kompisar!",
             "description": "Håll kontakten! Kolla vilka av dina kompisar som är online, deras spel och gå med i deras privata lobbys!",
-            "removeDescription": "Du är på väg att avsluta din vänskap med \"%{name}\"."
+            "removeDescription": "Du är på väg att avsluta din vänskap med \"%{name}\".",
+            "inviteReceived": "%{name} har bjudit in dig att spela %{game}",
+            "inviteSent": "Spel-inbjudan har skickats!"
         },
+        "contact": "Tveka inte att höra av dig om du stöter på problem, har förslag eller frågor! Du kan kontakta oss genom att skicka ett mejl eller gå med i Bloob.io Discord.",
         "settings": {
             "redeemCode": {
                 "title": "Lös in kod",
@@ -2212,6 +2534,14 @@
                 "description": "Bloob.io spårar anonymt analys med en integritetsvänlig, självhostad Matomo-analysserver. Dina data delas aldrig med andra. Du kan välja att hoppa över om du vill.",
                 "blocked": "Analys är inte aktiva. Din webbläsare eller tillägg kan ha blockerat det.",
                 "dnt": "Din webbläsare har inställningen \"Spåra inte\" (DNT) aktiverad. Vi respekterar din begäran och spårar dig inte."
+            },
+            "ads": {
+                "title": "Reklam",
+                "description": "Vi visar annonser från Playwire. Reklamen på Bloob.io, oavsett om den är hel eller delvis, sköts av Playwire LLC. Om du inte vill se annonser på Bloob.io kan du gå reklamfri genom att köpa mynt i butiken. Det tar automatiskt bort alla annonser för ditt konto.",
+                "complaint": "Det är viktigt för Bloob.io att annonserna du ser är etiska och inte störande. Om du ser annonser som stör ditt spelande, hör av dig genom att kolla i \"Om\"-sektionen.",
+                "consent": "Klicka här för att uppdatera dina reklampreferenser",
+                "exempt": "Annonser är inte aktiva. Ditt konto är reklamfritt. Tack för ditt stöd!",
+                "blocked": "Annonserna är inte aktiva. Din webbläsare eller tillägg kan ha blockerat dem."
             },
             "serverData": {
                 "title": "Serverdata",
@@ -2234,7 +2564,7 @@
         "authentication": {
             "login": {
                 "title": "Logga in",
-                "description": "Observera att om du loggar in på ditt konto kommer all framsteg att raderas för den användare du använder just nu (%{name})."
+                "description": "Tja! Den nuvarande användaren du har, {name} som är {level}, är inte kopplad till något konto än. Om du loggar in med ett befintligt konto kommer den här användaren att raderas för alltid. Kanske ville du skapa ditt konto istället?"
             },
             "setupThreshold": {
                 "title": "Du är tidig %{name}!",
@@ -2477,6 +2807,28 @@
             "earnsSum": "Tjänar totalt av alla tärningar tillsammans.",
             "noPointsWarning": "Det här draget ger dig inga poäng. Det finns andra val som faktiskt ger dig poäng."
         },
+        "graphicsAcceleration": {
+            "notice": "Grafikkraften är avstängd. Det kan påverka spelprestandan.",
+            "search": "Hur slår man på grafikkraften?"
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
+        },
         "ai": {
             "ready": null,
             "findingTarget": null,
@@ -2485,9 +2837,7 @@
             "assassinAssignment": null,
             "targetAssignment": null,
             "assassinDescription": null,
-            "targetDescription": null,
-            "startAssassinChat": null,
-            "joinAssassinChat": null
+            "targetDescription": null
         },
         "poolType": {
             "SOLID": "Enfärgade",
@@ -2542,6 +2892,7 @@
             "developedBy": "Utvecklat av %{name}",
             "iconsSource": "Ikoner tack vare %{name} (Licensierade)",
             "soundsSource": "Ljud tillhandahålls av %{name} (Licensierade)",
+            "emojiSource": "Emojis fixade av %{name} (CC-BY 4.0)",
             "rottenApplesSource": "Ruttna Äpplen baserat på %{name} (BY-NC-SA 2.0)",
             "diceSource": "Tärningsmodell av %{name} (CC-BY-4.0)",
             "localization": "Lokalisering av frivilliga bidragsgivare"

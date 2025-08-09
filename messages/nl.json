@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Dutch",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1804,
+        "missing": 22
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Sorry, deze gebruiker heeft zijn vriendenlimiet van %{amount} bereikt.",
             "pendingFriendLimitSelf": "Je kunt niet meer dan %{amount} vriendschappen in afwachting hebben.",
             "pendingFriendLimitOther": "Sorry, deze gebruiker heeft al te veel vriendschappen in afwachting.",
+            "userOffline": "Sorry, deze gebruiker is offline.",
             "notFriends": "Jullie zijn geen vrienden en er is geen vriendschapsverzoek in behandeling.",
             "alreadyFriends": "Je bent al vrienden met deze gebruiker.",
             "pendingFriends": "Er is al een vriendschapsverzoek in behandeling bij deze gebruiker.",
@@ -81,6 +82,7 @@
         "start": {
             "fieldRows": "Geselecteerd speelveld ondersteunt niet meer dan %{rows} rijen",
             "fieldCannotFitUsers": "Geselecteerd speelveld ondersteunt niet meer dan %{users} spelers",
+            "questionThreshold": "Het spel heeft minstens %{count} vragen nodig.",
             "whiteCardThreshold": "Het spel vereist minstens %{count} antwoordkaarten (wit)",
             "blackCardThreshold": "Het spel vereist minstens %{count} actiekaarten (zwart)",
             "insufficientPlayers": "Je hebt minstens %{min} spelers nodig om het spel te beginnen."
@@ -100,6 +102,7 @@
             "incorrectValue": "De opgegeven waarde komt niet overeen met de verwachte waarde.",
             "invalidMove": "Gegeven set is niet mogelijk.",
             "invalidVote": "De stem die je probeerde uit te brengen is ongeldig.",
+            "noLives": "Je hebt geen levens meer over.",
             "alreadyPlaced": "Je hebt al iets geplaatst.",
             "alreadyVoted": "Je hebt al gestemd.",
             "invalidPlacement": "Jouw schijf plaatsing is ongeldig.",
@@ -181,6 +184,7 @@
     },
     "game": {
         "generic": {
+            "name": "Home",
             "title": "Bloob.io | Gratis Browser Games | Multiplayer met Vrienden",
             "description": "Speel gratis multiplayer browser spellen op Bloob.io zonder account! Daag vrienden, vreemden of bots uit in spannende, directe online wedstrijden.",
             "options": {
@@ -197,6 +201,15 @@
                 },
                 "botCount": {
                     "help": "Voeg bots toe aan je spel samen met andere spelers."
+                },
+                "pointer": {
+                    "title": "Cursor",
+                    "help": "Laat andere spelers zien waar je met je cursor naartoe wijst. In sommige gevallen kun je ervoor kiezen om het privé te houden voor je groep/team.",
+                    "data": {
+                        "OFF": "Uit",
+                        "PRIVATE": "Privé",
+                        "EVERYONE": "Iedereen"
+                    }
                 },
                 "botDifficulty": {
                     "title": "Bot Moeilijkheidsgraad",
@@ -242,9 +255,41 @@
                         "off": "Geen limiet"
                     }
                 },
+                "scoringSystem": {
+                    "title": "Score Systeem",
+                    "help": {
+                        "default": "Bepaal hoe het systeem werkt voor het toekennen van punten als je een vraag goed hebt.",
+                        "SPEED": "Punten hangen af van hoe snel je de vraag beantwoordt.",
+                        "ORDER": "Punten zijn gebaseerd op wie het snelst was tussen de spelers.",
+                        "FIXED": "Elke vraag geeft hetzelfde aantal punten.",
+                        "PROGRESSIVE": "De punten die je verdient, worden meer na elke vraag.",
+                        "STREAK": "Verdien extra punten voor achtereenvolgende goede antwoorden; reset na een fout antwoord."
+                    },
+                    "data": {
+                        "SPEED": "Snelheid",
+                        "ORDER": "Volgorde",
+                        "FIXED": "Vast",
+                        "PROGRESSIVE": "Progressief",
+                        "STREAK": "Reeks"
+                    }
+                },
+                "mode": {
+                    "title": "Modus",
+                    "help": {
+                        "default": "Kies hoe spelers gaan strijden: alleen, als een team, of samen.",
+                        "SOLO": "Elke speler doet het alleen.",
+                        "CO_OP": "Alle spelers werken samen als een team.",
+                        "TEAM": "Spelers worden in teams verdeeld en ze kunnen zelf kiezen met wie ze willen samenwerken."
+                    },
+                    "data": {
+                        "SOLO": "Solo",
+                        "CO_OP": "Co-op",
+                        "TEAM": "Teams"
+                    }
+                },
                 "deckSize": {
                     "title": "Deck Grootte",
-                    "help": "Speel zonder tijdslimieten. Schakel alle beurt timers uit en geniet van een ontspannen spelervaring waar je in je eigen tempo kunt spelen. Niet aanbevolen tegen willekeurige tegenstanders.",
+                    "help": "Kies je favoriete deckgrootte voor het spel.",
                     "data": {
                         "half": "Half Deck",
                         "full": "Volledig Deck",
@@ -827,13 +872,17 @@
             }
         },
         "EIGHT_BALL_POOL": {
-            "name": "8-bal Poolbiljart ",
+            "name": "8-bal Poolbiljart",
             "title": "Speel 8 Bal Pool Online | Multiplayer met Vrienden & Bots",
             "description": "Speel gratis 8-bal poolbiljart online zonder account! Geniet van multiplayer matches met vrienden, vreemden of bots op een simpele en leuke manier.",
             "options": {
                 "aimingLine": {
                     "title": "Richtlijn",
                     "help": "De richtlijn laat zien waar de cue-bal na het raken naartoe gaat."
+                },
+                "speed": {
+                    "title": "Snelheid",
+                    "help": "Hoe snel de zwembadanimatie afspeelt."
                 },
                 "illegalBallPocket": {
                     "title": "Foutieve Bal Pot"
@@ -1009,12 +1058,23 @@
                     "title": "Extra Yacht",
                     "help": "Geef aan hoe het spel moet omgaan met een situatie waarin een speler nog een Yacht gooit nadat hij al eerder daarvoor punten heeft gescoord."
                 },
+                "jokerYacht": {
+                    "title": "Yacht Joker",
+                    "help": "Als je dit aanzet, kun je punten claimen voor elke extra Yacht als een Full House, Kleine straat of Grote straat. Deze optie is alleen beschikbaar als het bijbehorende dobbelsteen gezichtnummer en Yacht-categorie al ingevuld zijn."
+                },
                 "additionalYachtReward": {
                     "title": "Beloning",
                     "help": "Het aantal punten dat wordt beloond aan degenen die nog een Yacht rollen."
                 }
             },
-            "presets": {},
+            "presets": {
+                "joker": {
+                    "title": "Joker",
+                    "description": [
+                        "Meer opties als je een Yacht krijg"
+                    ]
+                }
+            },
             "help": {
                 "objective": {
                     "title": "Het Doel Begrijpen",
@@ -1064,6 +1124,12 @@
                         "Je kunt ook op een leeg oranje vakje klikken en 0 punten krijgen. Dit kan handig zijn als je enige andere optie je heel weinig punten zou geven voor die categorie.",
                         "Dit kan handig zijn als je bijvoorbeeld voor de bonus in het bovenste gedeelte wilt gaan."
                     ]
+                },
+                "shortcuts": {
+                    "title": "Sneltoetsen",
+                    "description": [
+                        "Wil je veel van dezelfde dobbelstenen in één keer verplaatsen? Gebruik je middelste muisknop of houd de Shift-toets ingedrukt terwijl je op een dobbelsteen klikt, en dan worden alle dobbelstenen met dezelfde kant in één keer verplaatst!"
+                    ]
                 }
             }
         },
@@ -1100,7 +1166,8 @@
                         "pier": "Steiger",
                         "littleIsland": "Klein Eiland",
                         "keys": "De Sleutels",
-                        "lagoon": "Lagune"
+                        "lagoon": "Lagune",
+                        "ocean": "Oceaan"
                     }
                 },
                 "levelOrientation": {
@@ -1121,6 +1188,10 @@
                 "shipReveal": {
                     "title": "Schip Onthulling",
                     "help": "Als je het inschakelt, zie je het schip als je het hebt gezonken. Als je het uitschakelt, zie je alleen een teller met de overgebleven schepen."
+                },
+                "hitAfterHit": {
+                    "title": "Hit na Hit",
+                    "help": "Als je het aanzet, mag je weer schieten nadat je een schip hebt geraakt. Als het uitstaat, krijg je maar één schot per beurt."
                 }
             },
             "presets": {},
@@ -1316,7 +1387,7 @@
                     "help": "Het spel eindigt zodra een speler dit aantal punten bereikt. Maar dat betekent niet dat je automatisch wint, want er worden aan het eind van het spel nog bonuspunten uitgedeeld."
                 },
                 "knock": {
-                    "title": "Klop maar!",
+                    "title": "Klop",
                     "help": {
                         "enabled": "'Ingeschakeld' laat je kloppen op basis van de ingestelde klopdrempel.",
                         "firstDiscardCard": "'Gebaseerd op de eerste afgeworpen kaart' gebruikt de eerste afgeworpen kaart om de drempel in te stellen; als er een Aas getrokken wordt, moet je Gin gaan.",
@@ -1328,7 +1399,7 @@
                 },
                 "knockBasedOnFirstCard": {
                     "title": "Klopt op Eerste Afval",
-                    "help": "Als het aan staat, bepaalt de eerste kaart in de aflegstapel de knock-drempel. Spelers kunnen alleen knokken als hun deadwood gelijk aan of lager is dan de waarde van deze kaart."
+                    "help": "Als het aan staat, bepaalt de eerste kaart in de aflegstapel de klop-drempel. Spelers kunnen alleen knokken als hun deadwood gelijk aan of lager is dan de waarde van deze kaart."
                 },
                 "knockThreshold": {
                     "title": "Klopdrempel",
@@ -1370,7 +1441,7 @@
                 "oklahomaGin": {
                     "title": "Oklahoma Gin",
                     "description": [
-                        "Knock waarde op basis van de eerste afleg"
+                        "Klop waarde op basis van de eerste afleg"
                     ]
                 }
             },
@@ -1421,62 +1492,256 @@
         },
         "AI_ASSASSIN": {
             "name": "AI Moordenaar",
-            "title": "Versla, Elimineer, Overleef",
-            "description": "AI Assassin is een spannend multiplayer spel waar je het doelwit uitschakelt of de moordenaars te slim af bent. Gebruik strategische aanwijzingen om je doel te bereiken en te winnen.",
+            "title": "Speel AI Moordenaar | Gratis online AI prompt spel met vrienden",
+            "description": "Speel AI Moordenaar gratis! Duik in het online ai prompt spel zonder account en geniet van spannende multiplayer matches met vrienden of bots.",
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Steen Papier Schaar",
+            "title": "Speel Steen Papier Schaar | Online Multiplayer RPS Gratis Spel",
+            "description": "Speel gratis en zonder account het klassieke Steen Papier Schaar online met vrienden, vreemden of bots in multiplayer RPS matches. Veel speelplezier!",
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "Steen wint van schaar",
+                        "paper": "Papier wint van steen",
+                        "scissors": "Schaar wint van papier"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Laatste overlevende (<b>0</b> levens) | Laatste overlevende (<b>1</b> leven) | Laatste overlevende (<b>{count}</b> levens)",
+                        "FIRST": "Eerste die <b>0</b> punten haalt | Eerste die <b>1</b> punt haalt | Eerste die <b>{count}</b> punten haalt",
+                        "HIGHEST_AFTER": "Meeste punten na <b>0</b> rondes | Meeste punten na <b>1</b> ronde | Meeste punten na <b>{count}</b> rondes"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Race",
+                    "description": [
+                        "Eerst tot 5 punten"
+                    ]
+                },
+                "survival": {
+                    "title": "Overleven",
+                    "description": [
+                        "5 levens",
+                        "Verlies een leven voor elke ronde die je verliest",
+                        "Laatste speler die overblijft wint"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Beste van de Serie",
+                    "description": [
+                        "De speler met de meeste punten na 5 rondes wint."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Regels",
+                    "description": [
+                        "Steen Papier Schaar is simpel: kies steen, papier of schaar. Steen verslaat schaar, papier verslaat steen, en schaar verslaat papier.",
+                        "In elke ronde, probeer te raden wat je tegenstander kiest en reageer daarop!"
+                    ]
+                },
+                "group": {
+                    "title": "Groep",
+                    "description": [
+                        "Speel met maximaal 4 spelers! Slechts één kan elke ronde winnen. Als je er vroeg uit ligt, gaan de overgebleven spelers door totdat er een winnaar is.",
+                        "In survival mode heeft elke speler een bepaald aantal levens. Wees de laatste speler die overblijft om te winnen!"
+                    ]
+                },
+                "bots": {
+                    "title": "Bots",
+                    "description": [
+                        "Speel tegen bots! Ze volgen een random strategie, dus als je het doorhebt, kun je ze steeds verslaan!"
+                    ]
+                }
+            }
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Nummer Showdown",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "Het spel eindigt zodra een speler dit aantal punten heeft bereikt."
+                },
+                "mode": {
+                    "title": "Modus",
+                    "help": "Een andere gamemodus gaat invloed hebben op hoe punten worden uitgedeeld en hoe het spel gespeeld wordt.",
+                    "data": {
+                        "SINGLE_HIDER": "Enkele Verstopper",
+                        "HIDE_AND_SEEK": "Verstoppertje",
+                        "LAST_STANDING": "Laatste Overlevende"
+                    }
+                },
+                "field": {
+                    "title": "Veld",
+                    "help": "Bepaalt hoeveel nummers er op het speelveld staan."
+                },
+                "revealSpeed": {
+                    "title": "Ontdek Snelheid",
+                    "help": "De snelheid waarmee de ronde onthulling gebeurt als iedereen klaar is."
+                },
+                "multiplier": {
+                    "title": "Vermenigvuldigers",
+                    "help": "Vermeerders kunnen op één of meerdere nummers tegelijk verschijnen. Als een vermeerder een nummer met een multiplier kiest, vermenigvuldigt hij zijn punten. Maar omdat iedereen die multipliers kan zien, is het riskant en vergroot het de kans om gevonden te worden.",
+                    "data": {
+                        "off": "Uitgeschakeld",
+                        "uncommon": "Ongewoon",
+                        "common": "Gewoon",
+                        "veryCommon": "Heel Gewoon"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Dynamische Score",
+                    "help": {
+                        "introduction": "Geef punten op basis van de kans op succes. Bijvoorbeeld, als een zoeker een verstopper vroeg in het spel vindt, krijgen ze meer punten. Als een verstopper erin slaagt om verstopt te blijven met nog maar een paar tegels over, krijgen ze ook meer punten.",
+                        "calculation": "Als het aanstaat, worden de punten automatisch berekend op basis van de ingestelde min. en max. punten."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Een Hider Vinden",
+                    "help": "Toegekend aan een zoeker die een verstopper heeft gevonden."
+                },
+                "minPointsFind": {
+                    "title": "Min. Zoek een Verstoppertje"
+                },
+                "maxPointsFind": {
+                    "title": "Max. Een Hider Vinden"
+                },
+                "pointsHideRound": {
+                    "title": "Verborgen per Ronde",
+                    "help": "Toegekend aan een verstopper die per ronde verborgen blijft."
+                },
+                "minPointsHideRound": {
+                    "title": "Min. Verborgen per Ronde"
+                },
+                "maxPointsHideRound": {
+                    "title": "Max. Verborgen per Ronde"
+                },
+                "pointsLastAlive": {
+                    "title": "Laatste Overlevende",
+                    "help": "Uitgereikt aan de laatste speler die nog in het spel is als de rest is geëlimineerd."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Laatste Overgebleven"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Max. Laatste Overlevende"
+                }
+            },
+            "presets": {},
+            "help": {}
+        },
+        "TRIVIA": {
+            "name": "Trivia",
+            "title": "Gratis Triviaspel Online | Speel Multiplayer Quiz met Vrienden",
+            "description": "Speel gratis online triviaspel zonder account! Daag vrienden of vreemden uit in spannende quiz multiplayer matches in real-time co-op!",
+            "options": {
+                "consensus": {
+                    "title": "Consensus",
+                    "help": "In team mode, moet het antwoord van het team dan gebaseerd zijn op een meerderheid (Consensus)? Zo niet, kan elk teamlid het antwoord voor iedereen veranderen."
+                },
+                "lockAnswer": {
+                    "title": "Antwoord vergrendelen",
+                    "help": "Als het aanstaat, kunnen spelers hun antwoord niet meer veranderen als ze er eentje hebben gekozen."
+                },
+                "eliminationChallenge": {
+                    "title": "Eliminatie Uitdaging",
+                    "help": "Als dit aan staat, wordt een speler of team meteen uitgeschakeld als ze een vraag fout beantwoorden."
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": "Tegenwoordig",
+                    "description": [
+                        "Solo",
+                        "Meer punten voor latere vragen"
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": "Hardcore Tegen elkaar",
+                    "description": [
+                        "Geen fouten",
+                        "Vergrendeld antwoord",
+                        "Punten op snelheid"
+                    ]
+                },
+                "coop": {
+                    "title": "Co-op",
+                    "description": [
+                        "Samenwerken",
+                        "Vaste punten"
+                    ]
+                },
+                "teams": {
+                    "title": "Teams",
+                    "description": [
+                        "Werk in teams",
+                        "Punten op volgorde"
+                    ]
+                }
+            },
+            "help": {
+                "soloOrWorkTogether": {
+                    "title": "Solo of Samenwerken",
+                    "description": [
+                        "Je kan kiezen of je solo wilt gaan, in een groep wilt samenwerken in co-op, of kleinere teams wilt vormen.",
+                        "Als je in een team of groep werkt, kan je ook zien wat iedereen aan het raden is!"
+                    ]
+                },
+                "questionPacks": {
+                    "title": "Vraagpakketten",
+                    "description": [
+                        "Hou je niet van bepaalde vraagcategorieën? Je kunt categorieën die je niet interesseren aan- of uitzetten via het vragen-tabblad in de lobby.",
+                        "Vragen worden automatisch geserveerd om te zorgen dat je niet te veel dezelfde vragen ziet in je lobby."
+                    ]
+                },
+                "star": {
+                    "title": "Ster",
+                    "description": [
+                        "Als je het voor elkaar krijgt om het perfecte spel te spelen, wat betekent dat je geen enkele vraag fout hebt, krijg je een ster naast je naam, die wordt bijgehouden in je persoonlijke statistieken!"
+                    ]
+                }
+            }
         }
     },
     "chat": {
-        "EMOJI": {
-            "love": "❤️",
-            "luck": "🍀",
-            "fire": "🔥",
-            "celebration": "🎉",
-            "thumbsUp": "👍",
-            "mindBlowing": "🤯",
-            "thinking": "🤔",
-            "clap": "👏",
-            "cry": "😭",
-            "cool": "😎"
-        },
-        "UNIVERSAL": {
-            "leftTheGame": "heeft het spel verlaten",
-            "affirmative": "Oke.",
-            "thanks": "Dankje!",
-            "sorry": "Sorry!",
-            "goodLuck": "Veel plezier!",
-            "brb": "Ik ben zo terug!",
-            "go": "Ik moet gaan.",
-            "glhf": "glhf",
-            "gg": "gg"
-        },
-        "PRE_GAME": {
-            "readyCheck": "Iedereen klaar?",
-            "changeSettings": "Wijzig instellingen!",
-            "ready": "Klaar!",
-            "wait": "Wacht even!",
-            "go": "Kom op!",
-            "greeting": "Hallo! 👋"
-        },
-        "GAME": {
-            "how": "Hoe!?",
-            "closeOne": "Bijna!",
-            "niceOne": "Mooi gedaan!",
-            "remindMove": "Jouw beurt!",
-            "wow": "Wow!",
-            "oops": "Oeps!",
-            "no": "Neeee!",
-            "ohNo": "Oh nee!"
-        },
-        "POST_GAME": {
-            "closeOne": "Bijna!",
-            "wellPlayed": "Goed gespeeld!",
-            "rematch": "Nog een keer!",
-            "fun": "Dat was leuk!",
-            "bye": "Doei!"
-        }
+        "affirmative": "Oke.",
+        "thanks": "Dankje!",
+        "sorry": "Sorry!",
+        "goodLuck": "Veel plezier!",
+        "brb": "Ik ben zo terug!",
+        "go": "Ik moet gaan.",
+        "glhf": "glhf",
+        "gg": "gg",
+        "readyCheck": "Iedereen klaar?",
+        "changeSettings": "Wijzig instellingen!",
+        "ready": "Klaar!",
+        "wait": "Wacht even!",
+        "letsGo": "Kom op!",
+        "greeting": "Hallo!",
+        "how": "Hoe!?",
+        "closeOne": "Bijna!",
+        "niceOne": "Mooi gedaan!",
+        "checkThisOut": "Kijk hier eens naar!",
+        "remindMove": "Jouw beurt!",
+        "wow": "Wow!",
+        "oops": "Oeps!",
+        "no": "Neeee!",
+        "ohNo": "Oh nee!",
+        "wellPlayed": "Goed gespeeld!",
+        "rematch": "Nog een keer!",
+        "fun": "Dat was leuk!",
+        "bye": "Doei!",
+        "shortYes": "Ja.",
+        "shortNo": "Nee."
     },
     "header": {
         "message": {
@@ -1512,6 +1777,9 @@
             "roundSummary": "Ronde samenvatting",
             "roundCount": "Ronde %{current} van de %{total}",
             "roundCurrent": "Ronde %{current}",
+            "startingNewRound": "Nieuwe ronde begint...",
+            "questionCount": "Vraag %{current} van %{total}",
+            "questionCurrent": "Vraag %{current}",
             "war": "Oorlog!",
             "outcome": "Uitslag",
             "input": "Wachten op jouw invoer",
@@ -1603,7 +1871,15 @@
         "language": "Taal",
         "rules": "Regels",
         "points": "Punten",
-        "fouls": "Antwoord op fout"
+        "fouls": "Antwoord op fout",
+        "sciences": "Wetenschappen",
+        "artsAndEntertainment": "Kunst & Vermaak",
+        "geography": "Aardrijkskunde",
+        "gaming": "Gamers",
+        "technology": "Technologie",
+        "popCulture": "Popcultuur",
+        "sports": "Sport",
+        "history": "Geschiedenis"
     },
     "month": {
         "short": {
@@ -1732,9 +2008,10 @@
         "files": "0 bestanden | 1 bestand | {count} bestanden",
         "points": "0 punten | 1 punt | {count} punten",
         "pieces": "0 schijven | 1 schijf | {count} schijven",
-        "wins": "0 overwinningen | 1 overwinning | {count} overwinningen",
+        "wins": "0 zeges | 1 zege | {count} zeges",
         "cards": "0 kaarten | 1 kaart | {count} kaarten",
         "moves": "0 zetten | 1 zet | {count} zetten",
+        "tiles": "0 tegels | 1 tegel | {count} tegels",
         "playing": "0 spelen nu | 1 speelt nu | {count} spelen nu",
         "players": "0 spelers | 1 speler | {count} spelers",
         "selectedCards": "Geen kaarten geselecteerd | 1 kaart geselecteerd | {count} kaarten geselecteerd",
@@ -1752,6 +2029,14 @@
         "restartNotice": "Server gaat over {count} minuten opnieuw opstarten. Maak je game af. | Server gaat over {count} minuut opnieuw opstarten. Maak je game af. | Server gaat over {count} minuten opnieuw opstarten. Maak je game af."
     },
     "misc": {
+        "example": "Voorbeeld",
+        "learnMore": "Meer leren",
+        "questions": "Vragen",
+        "teamAndQuestions": "Team & Vragen",
+        "questionPacks": "Vraagpakketten",
+        "rock": "Steen",
+        "paper": "Papier",
+        "scissors": "Schaar",
         "lobby": "Lobby",
         "inGame": "In-game",
         "matchmakingSearch": "Op zoek naar een game",
@@ -1787,7 +2072,7 @@
         "unknown": "Onbekend",
         "none": "Geen",
         "seasonal": "Seizoensgebonden",
-        "items": "Items -> Items",
+        "items": "Items",
         "purchaseCoins": "Munten Kopen",
         "store": "Winkel",
         "buyNow": "Koop Nu",
@@ -1852,6 +2137,8 @@
         "language": "Taal",
         "toggle": "Toggle",
         "login": "Login",
+        "loginToExistingAccount": "Inloggen op bestaand account",
+        "createMyAccount": "Maak mijn account aan",
         "logout": "Uitloggen",
         "hats": "Hoeden",
         "eyes": "Ogen",
@@ -1869,6 +2156,7 @@
         "specificCards": "Specifieke Kaarten",
         "matchId": "Spel ID",
         "chat": "Chat",
+        "sendMessage": "Stuur een bericht",
         "host": "Spelleider",
         "player": "Speler",
         "players": "Spelers",
@@ -1900,7 +2188,6 @@
         "view": "Bekijk",
         "forfeit": "Verklaar Verlies",
         "processFiles": "Verwerk Bestanden",
-        "sendMessage": "Verstuur Bericht",
         "checkAgain": "Opnieuw controleren",
         "refreshWindow": "Ververs Scherm",
         "makeHost": "Leiderschap Overdragen",
@@ -1921,6 +2208,7 @@
         "highestScore": "Hoogste Score",
         "totalScore": "Totaalscore",
         "finalScore": "Eindscore",
+        "flawlessGames": "Perfecte Spellen",
         "hits": "Hits",
         "hitRate": "Hitpercentage",
         "rank": "Plaats",
@@ -1930,10 +2218,12 @@
         "assassinations": "Moorden",
         "survivals": "Overlevingen",
         "games": "Spellen",
+        "correctRatio": "Correct ratio",
         "winRatio": "Winratio",
         "killDeathRatio": "K/D-ratio",
+        "lives": "Levens",
         "points": "Punten",
-        "wins": "Overwinningen",
+        "wins": "Zeges",
         "grids": "Roosters",
         "pocketed": "Gepot",
         "largestPocket": "Grootste pocket",
@@ -1942,6 +2232,7 @@
         "fouls": "Fouten",
         "and": "en",
         "vs": "vs",
+        "dismiss": "Afwijzen",
         "rename": "Hernoemen",
         "created": "Gemaakt",
         "lastSeen": "Laatst Gezien",
@@ -1951,6 +2242,7 @@
         "myDevices": "Mijn Apparaten",
         "myData": "Mijn Gegevens",
         "redeemCode": "Inwisselcode",
+        "contact": "Contact",
         "leaderboard": "Leaderbord",
         "elapsedTime": "%{time} verstreken",
         "startingInTime": "Begint over %{time}",
@@ -1960,10 +2252,14 @@
         "showBlank": "Toon %{value}",
         "hideBlank": "Verberg %{value}",
         "orBlank": "Of %{value}",
-        "saveBlank": "Bewaar %{value}",
+        "saveBlank": "Bespaar %{value}",
         "coinsBlank": "%{value} munten",
         "receivedBlank": "Ontvangen %{value}",
         "lessThanBlank": "Minder dan %{value}",
+        "lastSeenBlankAgo": "Laatst gezien %{value} geleden",
+        "lastSeenJustNow": "Laatst gezien net nu",
+        "blank": "%{value}",
+        "byBlank": "Door %{value}",
         "sendVerification": "Verificatie verzenden",
         "noThanks": "Nee bedankt",
         "ready": "Klaar",
@@ -1978,12 +2274,15 @@
         "madeBy": "Gemaakt door %{name}",
         "selectedOfLimit": "%{current} geselecteerd van %{total} limiet",
         "helpLocalize": "Help de lokalisatie te verbeteren",
+        "goAdFree": "Verwijder advertenties",
         "discord": "Join onze Discord",
         "volume": "Volume",
         "volumeInterface": "Interface Volume",
         "volumeEffects": "Effecten Volume",
+        "volumeMusic": "Muziekvolume",
         "selectYourLanguage": "Selecteer Jouw Taal",
         "selectYourColor": "Selecteer Jouw Kleur",
+        "selectYourTeam": "Kies je Team",
         "latestChanges": "Laatste Wijzigingen",
         "noChangesDetected": "Geen Wijzigingen Gevonden",
         "newChanges": "Nieuw",
@@ -2135,8 +2434,19 @@
         }
     },
     "info": {
+        "roundEndTie": "Het is gelijkspel!",
+        "roundEndStalemate": "Het is een pat!",
+        "roundWin": "Je hebt gewonnen!",
+        "roundLost": "Je hebt verloren!",
+        "youLostThisRound": "Je hebt deze ronde verloren.",
+        "youAreOutOfLives": "Je hebt geen levens meer",
+        "playerIsEliminated": "Speler is eruit",
+        "youAreEliminated": "Jij bent eruit",
+        "waitForRoundEnd": "Even wachten tot de ronde voorbij is.",
+        "waitForWinner": "Blijf rustig zitten en wacht tot er een winnaar is!",
         "serverRestart": "De server wordt nu opnieuw opgestart. Kijk over een paar minuten weer even.",
         "clearOldListings": "Verwijder alle 'Niet beschikbaar' wedstrijden.",
+        "flawlessGame": "Perfect spel! Foutloos gespeeld.",
         "accountLinkSuggestion": "Je bent nu %{level}! Overweeg om een account aan te maken om je vooruitgang te beschermen.",
         "accountLinked": "Dit account is gekoppeld aan het volgende e-mailadres: %{email}.",
         "incompleteTranslationNotice": "De taal die je hebt geselecteerd is ongeveer {percentage}% compleet. Elke ontbrekende vertaling zal in het Engels verschijnen.",
@@ -2163,10 +2473,13 @@
         "inactiveOpponents": "Alle tegenstanders waren inactief",
         "waitForOpponent": "Wachten op je tegenstander...",
         "waitForOpponents": "Wachten op je tegenstanders....",
+        "nameLeftTheGame": "%{name} heeft het spel verlaten",
         "selfNoPoints": "Je hebt geen punten ontvangen.",
         "nameNoPoints": "%{name} heeft geen punten ontvangen.",
         "gameMenu": "Wil je iets anders spelen?",
         "forfeit": "Door verlies te verklaren zal je het spel meteen verliezen.",
+        "namePointsForMove": "%{name}'s zet kreeg %{points}.",
+        "selfPointsForMove": "Jouw zet kreeg %{points}.",
         "nameForfeited": "%{name} heeft opgegeven en heeft automatisch verloren.",
         "selfForfeited": "Je hebt opgegeven en automatisch verloven.",
         "unsavedChanges": "Je hebt onopgeslagen wijzigingen die gewist zullen worden als je doorgaat.",
@@ -2182,6 +2495,12 @@
         "loginToPurchase": "Om iets te kopen moet je eerst inloggen of een account aanmaken.",
         "seasonalItem": "Een item in deze slot is maar een paar dagen per jaar beschikbaar.",
         "cardInteractHint": "Klik op een kaart om je keuze te maken.",
+        "gameInvite": "Uitnodiging voor het spel",
+        "keyboardShortcutCombination": "Om sneltoetsen te gebruiken zoals {combination}, houd {firstKey} ingedrukt en druk dan op {secondKey}",
+        "keyboardShortcutSpinSelector": "Je kunt ook je pijltoetsen {keys} gebruiken om de draai te veranderen.",
+        "goAdFree": "Je advertenties zijn permanent uitgeschakeld voor je account als je de ontwikkeling steunt door een bedrag aan munten te kopen.",
+        "chatEmojiAlt": "Chat emoji met type {type}",
+        "zoomOutHint": "Je bent ingezoomd! Knijp in om uit te zoomen voor betere gamecontrols.",
         "awaitingPurchaseConfirmation": {
             "title": "Wachten op Bevestiging van Aankoop",
             "description": "Dit duurt meestal maar een paar seconden. Afhankelijk van je betaalmethode kan dit langer duren. Je mag dit scherm gerust sluiten."
@@ -2190,8 +2509,11 @@
             "noFriends": "Geen vrienden",
             "noAccount": "Log in of maak een account aan om vrienden te maken!",
             "description": "Blijf in contact! Zie je vrienden online, hun games en sluit je aan bij hun privé-lobby's!",
-            "removeDescription": "Je staat op het punt om je vriendschap met \"%{name}\" te beëindigen."
+            "removeDescription": "Je staat op het punt om je vriendschap met \"%{name}\" te beëindigen.",
+            "inviteReceived": "%{name} heeft je uitgenodigd om %{game} te spelen",
+            "inviteSent": "De game-uitnodiging is verstuurd!"
         },
+        "contact": "Aarzel niet om contact op te nemen als je problemen hebt, suggesties hebt of vragen hebt! Je kunt ons bereiken door een e-mail te sturen of door de Bloob.io Discord te joinen.",
         "settings": {
             "redeemCode": {
                 "title": "Code inwisselen",
@@ -2212,6 +2534,14 @@
                 "description": "Bloob.io volgt anoniem analytics bij met een privacy-vriendelijke, zelf gehoste Matomo analytics server. Je gegevens worden nooit met anderen gedeeld. Als je dat wilt, kun je je uitschrijven.",
                 "blocked": "Analytics zijn niet actief. Jouw browser of extensie heeft het misschien geblokkeerd.",
                 "dnt": "Jouw browser heeft de \"Do Not Track\" (DNT) instelling ingeschakeld. We respecteren je verzoek en volgen je niet."
+            },
+            "ads": {
+                "title": "Advertenties",
+                "description": "We tonen advertenties van Playwire. De advertenties op Bloob.io, of het nou helemaal of gedeeltelijk is, worden geregeld door Playwire LLC. Als je geen advertenties op Bloob.io wilt zien, kun je ad-vrij gaan door munten in de winkel te kopen. Dit verwijdert automatisch alle advertenties voor jouw account.",
+                "complaint": "Het is belangrijk voor Bloob.io dat de advertenties die je ziet ethisch en niet opdringerig zijn. Als je advertenties opmerkt die je gameplay verstoren, laat het ons weten via de \"Over\" sectie.",
+                "consent": "Klik hier om je voorkeuren voor advertentie toestemming bij te werken",
+                "exempt": "Advertenties zijn niet actief. Je account is ad-vrij. Bedankt voor je steun!",
+                "blocked": "Advertenties zijn niet actief. Je browser of extensie heeft het misschien geblokkeerd."
             },
             "serverData": {
                 "title": "Servergegevens",
@@ -2234,7 +2564,7 @@
         "authentication": {
             "login": {
                 "title": "Log in",
-                "description": "Let op: als je inlogt op je account, worden alle voortgangen voor de gebruiker die je nu gebruikt (%{name}) gewist."
+                "description": "Let op! De huidige gebruiker die je gebruikt, {name} die is {level}, is nog niet aan een account gekoppeld. Inloggen met een bestaand account zal deze gebruiker permanent verwijderen. Misschien wilde je in plaats daarvan je account aanmaken?"
             },
             "setupThreshold": {
                 "title": "Je bent vroeg %{name}!",
@@ -2442,7 +2772,7 @@
                 "sixes": "Zessen",
                 "threeOfAKind": "Drie van een soort",
                 "fourOfAKind": "Vier van een soort",
-                "fullHouse": "Vol huis",
+                "fullHouse": "Full House",
                 "smallStraight": "Kleine straat",
                 "largeStraight": "Grote straat",
                 "yacht": "YACHT",
@@ -2454,8 +2784,8 @@
             "shortTitle": {
                 "threeOfAKind": "3 van 'n soort",
                 "fourOfAKind": "4 van 'n soort",
-                "smallStraight": "Kl. Reeks",
-                "largeStraight": "Gr. Reeks",
+                "smallStraight": "Kl. Straat",
+                "largeStraight": "Gr. Straat",
                 "totalScore": "Totaal"
             },
             "description": {
@@ -2477,6 +2807,28 @@
             "earnsSum": "Verdient het totaal van alle dobbelstenen samen.",
             "noPointsWarning": "Deze zet je geen punten op. Er zijn andere keuzes die je wel punten kunnen opleveren."
         },
+        "graphicsAcceleration": {
+            "notice": "Grafische versnelling is uitgeschakeld. Dit kan de gameprestaties beïnvloeden.",
+            "search": "Hoe zet je grafische versnelling aan?"
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
+        },
         "ai": {
             "ready": null,
             "findingTarget": null,
@@ -2485,9 +2837,7 @@
             "assassinAssignment": null,
             "targetAssignment": null,
             "assassinDescription": null,
-            "targetDescription": null,
-            "startAssassinChat": null,
-            "joinAssassinChat": null
+            "targetDescription": null
         },
         "poolType": {
             "SOLID": "Effen",
@@ -2527,7 +2877,7 @@
             "reason": {
                 "BAD_NAME": "Je (vorige) gebruikersnaam \"%{content}\" bevat een belediging, vloekwoord, of andere ongepaste taal.",
                 "GAME_QUIT": "Je hebt onsportief gedrag getoond in vorige spellen door te vertrekken voordat de match afgelopen was.",
-                "TOXIC_CHAT": "Je hebt giftig gedrag vertoond met je gebruik van de chat in vorige spellen."
+                "TOXIC_CHAT": "Je hebt vervelend of schadelijk gedrag vertoond met je gebruik van de chat in vorige spellen."
             },
             "punishment": {
                 "NAME_CHANGED": "Je gebruikersnaam is veranderd",
@@ -2542,6 +2892,7 @@
             "developedBy": "Ontwikkeld door %{name}",
             "iconsSource": "Icoontjes met dank aan %{name} (Licentie)",
             "soundsSource": "Geluiden voorzien door %{name} (Licentie)",
+            "emojiSource": "Emojis geleverd door %{name} (CC-BY 4.0)",
             "rottenApplesSource": "Rotten Apples gebaseerd op %{name} (BY-NC-SA 2.0)",
             "diceSource": "Dice model van %{name} (CC-BY-4.0)",
             "localization": "Lokalisatie door vrijwillige bijdragers"

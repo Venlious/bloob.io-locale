@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Norwegian (Bokmål)",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1804,
+        "missing": 22
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Beklager, denne brukeren har nådd venn grensen på %{amount}.",
             "pendingFriendLimitSelf": "Du kan ikke ha mer enn %{amount} ventende vennskap.",
             "pendingFriendLimitOther": "Beklager, denne brukeren har allerede for mange ventende vennskap.",
+            "userOffline": "Beklager, denne brukeren er offline.",
             "notFriends": "Dere er ikke venner og har ingen ventende vennforespørsel.",
             "alreadyFriends": "Du er allerede venn med denne brukeren.",
             "pendingFriends": "Det er allerede en vennforespørsel som venter med denne brukeren.",
@@ -81,6 +82,7 @@
         "start": {
             "fieldRows": "Valgte feltet kan ikke støtte mer enn %{rows} rader",
             "fieldCannotFitUsers": "Valgte feltet kan ikke støtte mer enn %{users} spillere",
+            "questionThreshold": "Spillet krever minst %{count} spørsmål.",
             "whiteCardThreshold": "Spillet krever minst %{count} svar kort (hvite)",
             "blackCardThreshold": "Spillet krever minst %{count} handling kort (svarte)",
             "insufficientPlayers": "Trenger minst %{min} spillere for å starte kampen."
@@ -100,6 +102,7 @@
             "incorrectValue": "Verdien som ble gitt stemmer ikke overens med den forventede.",
             "invalidMove": "Trekket du prøvde er ugyldig.",
             "invalidVote": "Stemmen du prøvde å gi er ugyldig.",
+            "noLives": "Du har ingen liv igjen.",
             "alreadyPlaced": "Du har allerede plassert noe.",
             "alreadyVoted": "Du har allerede stemt.",
             "invalidPlacement": "Plasseringen av brikken din er ugyldig.",
@@ -181,11 +184,12 @@
     },
     "game": {
         "generic": {
+            "name": "Hjem",
             "title": "Bloob.io | Gratis nettbaserte multiplayer spill med venner",
             "description": "Spill gratis flerspiller-spill i nettleseren på Bloob.io, uten konto! Spill med venner, fremmede eller mot bots, og ha det moro sammen!",
             "options": {
                 "public": {
-                    "title": "Kampinnstilling for personvern"
+                    "title": "Personvern"
                 },
                 "handSize": {
                     "title": "Håndstørrelse",
@@ -197,6 +201,15 @@
                 },
                 "botCount": {
                     "help": "Introduser bots til spillet ditt sammen med andre spillere."
+                },
+                "pointer": {
+                    "title": "Pekeren",
+                    "help": "La andre spillere se hvor du peker med musepekeren din. I noen tilfeller kan du velge å holde det privat for gruppa/de laget ditt.",
+                    "data": {
+                        "OFF": "Av",
+                        "PRIVATE": "Privat",
+                        "EVERYONE": "Alle"
+                    }
                 },
                 "botDifficulty": {
                     "title": "Bot Vanskelighetsgrad",
@@ -242,9 +255,41 @@
                         "off": "Ingen grense"
                     }
                 },
+                "scoringSystem": {
+                    "title": "Poengsystem",
+                    "help": {
+                        "default": "Bestem hvordan poeng blir delt ut for å svare riktig på et spørsmål.",
+                        "SPEED": "Poeng er basert på hvor raskt spørsmålet blir besvart.",
+                        "ORDER": "Poeng er basert på hvem som var raskest mellom spillerne.",
+                        "FIXED": "Hvert spørsmål gir samme mengde poeng.",
+                        "PROGRESSIVE": "Poengene du tjener øker etter hvert spørsmål.",
+                        "STREAK": "Tjen ekstra poeng for sammenhengende riktige svar; nullstilles etter et feil svar."
+                    },
+                    "data": {
+                        "SPEED": "Fart",
+                        "ORDER": "Rekkefølge",
+                        "FIXED": "Fast",
+                        "PROGRESSIVE": "Progressiv",
+                        "STREAK": "Rekke"
+                    }
+                },
+                "mode": {
+                    "title": "Modus",
+                    "help": {
+                        "default": "Velg hvordan spillerne skal konkurrere: individuelt, som et lag, eller sammen.",
+                        "SOLO": "Hver spiller konkurrerer alene.",
+                        "CO_OP": "Alle spillerne jobber sammen som et lag.",
+                        "TEAM": "Spillerne deles inn i lag, og de kan velge sin egen gruppe å samarbeide med."
+                    },
+                    "data": {
+                        "SOLO": "Enkeltspill",
+                        "CO_OP": "Samarbeid",
+                        "TEAM": "Lag"
+                    }
+                },
                 "deckSize": {
                     "title": "Størrelse på kortstokk",
-                    "help": "Spill uten tidsbegrensninger. Deaktiver alle tur-timere og nyt en avslappet spillopplevelse der du kan spille i ditt eget tempo. Anbefales ikke mot tilfeldige motstandere.",
+                    "help": "Velg hvor stor kortstokken din skal være for spillet.",
                     "data": {
                         "half": "Halvt kortstokk",
                         "full": "Full kortstokk",
@@ -835,6 +880,10 @@
                     "title": "Sikte Linje",
                     "help": "Sikte-linjen viser hvor køballen kommer til å gå etter at den har blitt truffet."
                 },
+                "speed": {
+                    "title": "Hastighet",
+                    "help": "Hvor raskt bassenganimasjonen spilles av."
+                },
                 "illegalBallPocket": {
                     "title": "Ulovlig Ball Lomme"
                 },
@@ -1009,12 +1058,23 @@
                     "title": "Ekstra Yacht",
                     "help": "Spesifiser hvordan spillet skal håndtere en situasjon der en spiller kaster en annen Yacht etter allerede å ha scoret poeng for en."
                 },
+                "jokerYacht": {
+                    "title": "Yacht Joker",
+                    "help": "Når denne innstillingen er aktivert, kan du kreve poeng for enhver ekstra Yacht som et Full House, Lite Straight eller Stort Straight. Denne muligheten blir tilgjengelig først når det tilsvarende terningansiktet og Yacht-kategorien allerede er fylt ut."
+                },
                 "additionalYachtReward": {
                     "title": "Belønning",
                     "help": "Antall poeng som gis til de som kaster enda en Yacht."
                 }
             },
-            "presets": {},
+            "presets": {
+                "joker": {
+                    "title": "Jokeren",
+                    "description": [
+                        "Flere alternativer når du får Yacht"
+                    ]
+                }
+            },
             "help": {
                 "objective": {
                     "title": "Forstå Målet",
@@ -1064,6 +1124,12 @@
                         "Du kan også klikke på en tom oransje oppføring og få 0 poeng. Dette kan være nyttig hvis det eneste andre alternativet ditt ville gi deg veldig få poeng for den kategorien.",
                         "Dette kan være nyttig hvis du for eksempel vil gå for bonusen i den øvre delen."
                     ]
+                },
+                "shortcuts": {
+                    "title": "Snarveier",
+                    "description": [
+                        "Vil du flytte mange av de samme terningene på en gang? Bruk midtknappen på musa di eller hold nede Shift-tasten mens du klikker på en terning, så flyttes alle terningene med samme ansikt samtidig!"
+                    ]
                 }
             }
         },
@@ -1100,7 +1166,8 @@
                         "pier": "Brygga",
                         "littleIsland": "Lilleøy",
                         "keys": "Nøklene",
-                        "lagoon": "Lagune"
+                        "lagoon": "Lagune",
+                        "ocean": "Hav"
                     }
                 },
                 "levelOrientation": {
@@ -1121,6 +1188,10 @@
                 "shipReveal": {
                     "title": "Avslør Skip",
                     "help": "Når denne er aktivert, vil du se skipet når du har senket det. Når den er deaktivert, vises bare en teller med gjenværende skip."
+                },
+                "hitAfterHit": {
+                    "title": "Treff etter treff",
+                    "help": "Når det er aktivert, kan du skyte igjen etter å ha truffet et skip. Når det er deaktivert, får du bare ett skudd per runde."
                 }
             },
             "presets": {},
@@ -1420,63 +1491,257 @@
             }
         },
         "AI_ASSASSIN": {
-            "name": "AI Snikmorder",
-            "title": "Overlist, Eliminer, Overlev",
-            "description": "AI Assassin er et spennende flerspiller spill hvor du enten eliminerer målet eller lurer morderne. Bruk strategiske hint for å nå målet ditt og lykkes.",
+            "name": "AI Morder",
+            "title": "Spill AI Leiemorder Online | Gratis Flerspiller Prompt-Spill",
+            "description": "Spill AI Leiemorder online gratis! Ingen konto kreves. Nyt kunstig intelligens, flerspiller-modus med venner, ukjente eller mot roboter. Prøv nå!",
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Stein Saks Papir",
+            "title": "Spill Stein Saks Papir Online | Gratis Flerspiller RPS for Alle",
+            "description": "Spill Stein Saks Papir online gratis! Ingen konto, bare start og spill RPS med venner, fremmede, eller bots. Flerspiller opp til 4 spillere. Kos deg!",
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "Stein slår saks",
+                        "paper": "Papir slår stein",
+                        "scissors": "Saks slår papir"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Siste som står igjen (<b>0</b> liv) | Siste som står igjen (<b>1</b> liv) | Siste som står igjen (<b>{count}</b> liv)",
+                        "FIRST": "Første til å få <b>0</b> poeng | Første til å få <b>1</b> poeng | Første til å få <b>{count}</b> poeng",
+                        "HIGHEST_AFTER": "Mest poeng etter <b>0</b> runder | Mest poeng etter <b>1</b> runde | Mest poeng etter <b>{count}</b> runder"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Rase",
+                    "description": [
+                        "Første til 5 poeng"
+                    ]
+                },
+                "survival": {
+                    "title": "Overlevelse",
+                    "description": [
+                        "5 liv",
+                        "Mister et liv for hver runde du taper",
+                        "Siste spiller som står igjen vinner"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Best of serien",
+                    "description": [
+                        "Spilleren med flest poeng etter 5 runder vinner."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Regler",
+                    "description": [
+                        "Stein Saks Papir er enkelt: velg stein, papir eller saks. Stein slår saks, papir slår stein, og saks slår papir.",
+                        "I hver runde, prøv å gjette hva motstanderen velger og svar deretter!"
+                    ]
+                },
+                "group": {
+                    "title": "Gruppe",
+                    "description": [
+                        "Spill med opptil 4 spillere! Bare én kan vinne hver runde. Hvis du ryker tidlig, fortsetter de andre spillerne til det er en vinner.",
+                        "I overlevelsesmodus har hver spiller et bestemt antall liv. Vær den siste spilleren som står igjen for å vinne!"
+                    ]
+                },
+                "bots": {
+                    "title": "Bots",
+                    "description": [
+                        "Spill mot roboter! De følger en tilfeldig strategi, så hvis du klarer å finne ut av det, kan du slå dem gang på gang!"
+                    ]
+                }
+            }
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Tallkonkurranse",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "Spillet slutter så snart en spiller har nådd dette antallet poeng."
+                },
+                "mode": {
+                    "title": "Modus",
+                    "help": "En annen spillmodus vil påvirke hvordan poeng blir utdelt og hvordan spillet spilles.",
+                    "data": {
+                        "SINGLE_HIDER": "Enkelt Skjulested",
+                        "HIDE_AND_SEEK": "Stikk og Søk",
+                        "LAST_STANDING": "Siste Mann Stående"
+                    }
+                },
+                "field": {
+                    "title": "Mark",
+                    "help": "Bestemmer hvor mange tall som vises på spillefeltet."
+                },
+                "revealSpeed": {
+                    "title": "Avsløringshastighet",
+                    "help": "Hastigheten på når runden blir avslørt, så snart alle er klare."
+                },
+                "multiplier": {
+                    "title": "Multiplikatorer",
+                    "help": "Multiplikatorer kan dukke opp på ett eller flere tall samtidig. Når en som gjemmer seg velger et tall med en multiplikator, så får de flere poeng. Men siden alle kan se multiplikatorene, er det risikabelt og øker sjansen for å bli funnet.",
+                    "data": {
+                        "off": "Skrudd av",
+                        "uncommon": "Uvanlig",
+                        "common": "Vanlig",
+                        "veryCommon": "Veldig vanlig"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Dynamisk poenggiving",
+                    "help": {
+                        "introduction": "Gi poeng basert på sjansen for å lykkes. For eksempel, hvis en søker finner en som gjemmer seg tidlig i spillet, får de flere poeng. Hvis en som gjemmer seg klarer å holde seg skjult med bare noen få fliser igjen, får de også flere poeng.",
+                        "calculation": "Når det er aktivert, blir poengene automatisk regnet ut basert på de innstilte minimums- og maksimumspoengene."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Finne en gjemmer",
+                    "help": "Tildelt en søker for å finne en som gjemmer seg."
+                },
+                "minPointsFind": {
+                    "title": "Min. Finne en som gjemmer seg"
+                },
+                "maxPointsFind": {
+                    "title": "Maks. Finne en som gjemmer seg"
+                },
+                "pointsHideRound": {
+                    "title": "Skjult per runde",
+                    "help": "Tildelt en som gjemmer seg for å være skjult hver runde."
+                },
+                "minPointsHideRound": {
+                    "title": "Min. skjulte per runde"
+                },
+                "maxPointsHideRound": {
+                    "title": "Maks. skjulte per runde"
+                },
+                "pointsLastAlive": {
+                    "title": "Siste Overlevende",
+                    "help": "Tildelt den siste spilleren som er igjen i spillet når alle andre har blitt eliminert."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Gjenstående"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Maks. Siste Gjenstående"
+                }
+            },
+            "presets": {},
+            "help": {}
+        },
+        "TRIVIA": {
+            "name": "Trivia",
+            "title": "Gratis Trivia Quiz Online | Spill med Venner i Sanntid",
+            "description": "Spill gratis Trivia online! Ingen konto nødvendig. Utfordre venner eller fremmede i sanntid, eller samarbeid i lag. Flerspiller moro for alle!",
+            "options": {
+                "consensus": {
+                    "title": "Enighet",
+                    "help": "I lagmodus, skal svaret til laget være basert på flertallsavstemning (konsensus)? Hvis ikke, kan hvilken som helst lagmedlem endre svaret for alle."
+                },
+                "lockAnswer": {
+                    "title": "Lås svar",
+                    "help": "Når det er aktivert, kan ikke spillerne endre svaret sitt når de har valgt ett."
+                },
+                "eliminationChallenge": {
+                    "title": "Utrenskningsutfordring",
+                    "help": "Når det er aktivert, blir en spiller eller et lag eliminert med en gang etter å ha svart feil på et spørsmål."
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": "Mot hverandre",
+                    "description": [
+                        "Solo",
+                        "Flere poeng for senere spørsmål"
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": "Hardcore motstand",
+                    "description": [
+                        "Ingen feil",
+                        "Låst svar",
+                        "Poeng basert på fart"
+                    ]
+                },
+                "coop": {
+                    "title": "Co-op",
+                    "description": [
+                        "Jobbe sammen",
+                        "Faste punkter"
+                    ]
+                },
+                "teams": {
+                    "title": "Lag",
+                    "description": [
+                        "Jobb i team",
+                        "Poeng basert på rekkefølge"
+                    ]
+                }
+            },
+            "help": {
+                "soloOrWorkTogether": {
+                    "title": "Solo eller Jobbe Sammen",
+                    "description": [
+                        "Du kan velge om du vil gå solo, jobbe i gruppe i co-op, eller danne mindre team.",
+                        "Når du jobber som et team eller i gruppe, kan du se hva alle andre gjetter også!"
+                    ]
+                },
+                "questionPacks": {
+                    "title": "Spørsmålspakker",
+                    "description": [
+                        "Liker du ikke visse spørsmålskategorier? Du kan skru av eller på kategorier som ikke interesserer deg eller lobbyen din ved å gå til spørsmål-fanen i lobbyen.",
+                        "Spørsmål blir automatisk delt ut for å minimere antall gjentatte spørsmål du ser i lobbyen din."
+                    ]
+                },
+                "star": {
+                    "title": "Stjerne",
+                    "description": [
+                        "Hvis du klarer å spille det perfekte spillet, altså at du ikke svarer feil på ett eneste spørsmål, får du en stjerne ved navnet ditt, som blir registrert i statistikken din!"
+                    ]
+                }
+            }
         }
     },
     "chat": {
-        "EMOJI": {
-            "love": "❤️",
-            "luck": "🍀",
-            "fire": "🔥",
-            "celebration": "🎉",
-            "thumbsUp": "👍",
-            "mindBlowing": "🤯",
-            "thinking": "🤔",
-            "clap": "👏",
-            "cry": "😭",
-            "cool": "😎"
-        },
-        "UNIVERSAL": {
-            "leftTheGame": "forlot spillet",
-            "affirmative": "Greit.",
-            "thanks": "Takk!",
-            "sorry": "Beklager!",
-            "goodLuck": "Lykke til!",
-            "brb": "Jeg er straks tilbake!",
-            "go": "Jeg må stikke.",
-            "glhf": "Lykke til, ha det gøy",
-            "gg": "Godt spill"
-        },
-        "PRE_GAME": {
-            "readyCheck": "Alle klare?",
-            "changeSettings": "Endre innstillinger!",
-            "ready": "Klar!",
-            "wait": "Vent litt!",
-            "go": "La oss dra!",
-            "greeting": "Hei! 👋"
-        },
-        "GAME": {
-            "how": "Hvordan!?",
-            "closeOne": "Det var nære på!",
-            "niceOne": "Bra jobba!",
-            "remindMove": "Din tur!",
-            "wow": "Wow!",
-            "oops": "Oi da!",
-            "no": "Neiii!",
-            "ohNo": "Å nei!"
-        },
-        "POST_GAME": {
-            "closeOne": "Det var nære på!",
-            "wellPlayed": "Bra spilt!",
-            "rematch": "Omkamp!",
-            "fun": "Det var gøy!",
-            "bye": "Ha det!"
-        }
+        "affirmative": "Greit.",
+        "thanks": "Takk!",
+        "sorry": "Beklager!",
+        "goodLuck": "Lykke til!",
+        "brb": "Jeg er straks tilbake!",
+        "go": "Jeg må stikke.",
+        "glhf": "Lykke til, ha det gøy",
+        "gg": "Godt spill",
+        "readyCheck": "Alle klare?",
+        "changeSettings": "Endre innstillinger!",
+        "ready": "Klar!",
+        "wait": "Vent litt!",
+        "letsGo": "La oss dra!",
+        "greeting": "Hei!",
+        "how": "Hvordan!?",
+        "closeOne": "Det var nære på!",
+        "niceOne": "Bra jobba!",
+        "checkThisOut": "Sjekk dette ut!",
+        "remindMove": "Din tur!",
+        "wow": "Wow!",
+        "oops": "Oi da!",
+        "no": "Neiii!",
+        "ohNo": "Å nei!",
+        "wellPlayed": "Bra spilt!",
+        "rematch": "Omkamp!",
+        "fun": "Det var gøy!",
+        "bye": "Ha det!",
+        "shortYes": "Ja.",
+        "shortNo": "Nei."
     },
     "header": {
         "message": {
@@ -1512,6 +1777,9 @@
             "roundSummary": "Oppsummering av runden",
             "roundCount": "Runde %{current} av %{total}",
             "roundCurrent": "Runde %{current}",
+            "startingNewRound": "Starter ny runde...",
+            "questionCount": "Spørsmål %{current} av %{total}",
+            "questionCurrent": "Spørsmål %{current}",
             "war": "Krig!",
             "outcome": "Resultat",
             "input": "Venter på ditt valg",
@@ -1603,7 +1871,15 @@
         "language": "Språk",
         "rules": "Regler",
         "points": "Poeng",
-        "fouls": "Reaksjon på Regelbrudd"
+        "fouls": "Reaksjon på Regelbrudd",
+        "sciences": "Vitenskap",
+        "artsAndEntertainment": "Kunst & Underholdning",
+        "geography": "Geografi",
+        "gaming": "Spill",
+        "technology": "Teknologi",
+        "popCulture": "Popkultur",
+        "sports": "Sport",
+        "history": "Historie"
     },
     "month": {
         "short": {
@@ -1735,6 +2011,7 @@
         "wins": "0 seire | 1 seier | {count} seire",
         "cards": "0 kort | 1 kort | {count} kort",
         "moves": "0 trekk | 1 trekk | {count} trekk",
+        "tiles": "0 fliser | 1 flis | {count} fliser",
         "playing": "0 spiller | 1 spiller | {count} spiller",
         "players": "0 spillere | 1 spiller | {count} spillere",
         "selectedCards": "Ingen kort valgt | 1 kort valgt | {count} kort valgt",
@@ -1752,6 +2029,14 @@
         "restartNotice": "Serveren restarter om {count} minutter. Vennligst avslutt spillet ditt. | Serveren restarter om {count} minutt. Vennligst avslutt spillet ditt. | Serveren restarter om {count} minutter. Vennligst avslutt spillet ditt."
     },
     "misc": {
+        "example": "Eksempel",
+        "learnMore": "Lær mer",
+        "questions": "Spørsmål",
+        "teamAndQuestions": "Team & Spørsmål",
+        "questionPacks": "Spørsmålspakker",
+        "rock": "Stein",
+        "paper": "Papir",
+        "scissors": "Saks",
         "lobby": "Lobby",
         "inGame": "I spill",
         "matchmakingSearch": "Ser etter et spill",
@@ -1787,7 +2072,7 @@
         "unknown": "Ukjent",
         "none": "Ingen",
         "seasonal": "Sesongbasert",
-        "items": "Sure! Please provide the list of items you want me to translate.",
+        "items": "Varer",
         "purchaseCoins": "Kjøp Mynter",
         "store": "Butikk",
         "buyNow": "Kjøp Nå",
@@ -1852,6 +2137,8 @@
         "language": "Språk",
         "toggle": "Veksle",
         "login": "Logg inn",
+        "loginToExistingAccount": "Logg inn på eksisterende konto",
+        "createMyAccount": "Opprett kontoen min",
         "logout": "Logg ut",
         "hats": "Hatter",
         "eyes": "Øyne",
@@ -1869,6 +2156,7 @@
         "specificCards": "Spesifikke kort",
         "matchId": "Kamp ID",
         "chat": "Prat",
+        "sendMessage": "Send en melding",
         "host": "Vert",
         "player": "Spiller",
         "players": "Spillere",
@@ -1900,7 +2188,6 @@
         "view": "Se",
         "forfeit": "Gi opp spillet",
         "processFiles": "Behandle filer",
-        "sendMessage": "Send Melding",
         "checkAgain": "Sjekk igjen",
         "refreshWindow": "Oppdater Vindu",
         "makeHost": "Bli Vert",
@@ -1921,6 +2208,7 @@
         "highestScore": "Høyeste poengsum",
         "totalScore": "Total Poeng",
         "finalScore": "Slutt Poeng",
+        "flawlessGames": "Feilfrie spill",
         "hits": "Treff",
         "hitRate": "Treffrate",
         "rank": "Rangering",
@@ -1930,8 +2218,10 @@
         "assassinations": "Drap",
         "survivals": "Overlevelser",
         "games": "Spill",
+        "correctRatio": "Riktig forhold",
         "winRatio": "Seiersforhold",
         "killDeathRatio": "K/D-forhold",
+        "lives": "Liv",
         "points": "Poeng",
         "wins": "Seire",
         "grids": "Rutenett",
@@ -1942,6 +2232,7 @@
         "fouls": "Regelbrudd",
         "and": "og",
         "vs": "mot",
+        "dismiss": "Avvis",
         "rename": "Gi nytt navn",
         "created": "Opprettet",
         "lastSeen": "Sist sett",
@@ -1951,6 +2242,7 @@
         "myDevices": "Mine Enheter",
         "myData": "Mine Data",
         "redeemCode": "Løs Inn Kode",
+        "contact": "Kontakt",
         "leaderboard": "Toppliste",
         "elapsedTime": "%{time} har gått",
         "startingInTime": "Starter om %{time}",
@@ -1964,6 +2256,10 @@
         "coinsBlank": "%{value} mynter",
         "receivedBlank": "Mottatt %{value}",
         "lessThanBlank": "Mindre enn %{value}",
+        "lastSeenBlankAgo": "Sist sett for %{value} siden",
+        "lastSeenJustNow": "Sist sett nettopp",
+        "blank": "%{value}",
+        "byBlank": "Av %{value}",
         "sendVerification": "Send verifisering",
         "noThanks": "Nei takk",
         "ready": "Klar",
@@ -1978,12 +2274,15 @@
         "madeBy": "Laget av %{name}",
         "selectedOfLimit": "Valgt %{current} av %{total} grense",
         "helpLocalize": "Hjelp til med å forbedre lokaliseringen",
+        "goAdFree": "Gå uten annonser",
         "discord": "Bli med i vår Discord",
         "volume": "Volum",
         "volumeInterface": "Grensesnittvolum",
         "volumeEffects": "Lydeffekter Volum",
+        "volumeMusic": "Musikkvolum",
         "selectYourLanguage": "Velg Ditt Språk",
         "selectYourColor": "Velg Din Farge",
+        "selectYourTeam": "Velg laget ditt",
         "latestChanges": "Siste Endringer",
         "noChangesDetected": "Ingen Endringer Oppdaget",
         "newChanges": "Nye Endringer",
@@ -2016,7 +2315,7 @@
             "title": "Kortsett",
             "contribute": "Bidra til denne listen",
             "create": "Lag sett",
-            "browser": "Bla gjennom & importer egendefinerte sett",
+            "browser": "Se på offentlige kortsett",
             "import": "Importer sett",
             "importer": "Kortsett Importør",
             "namedTitle": "Kortsett \"%{title}\"",
@@ -2135,8 +2434,19 @@
         }
     },
     "info": {
+        "roundEndTie": "Det er uavgjort!",
+        "roundEndStalemate": "Det er stillstand!",
+        "roundWin": "Du vant!",
+        "roundLost": "Du tapte!",
+        "youLostThisRound": "Du tapte denne runden.",
+        "youAreOutOfLives": "Du har gått tom for liv",
+        "playerIsEliminated": "Spilleren er ute",
+        "youAreEliminated": "Du er ute",
+        "waitForRoundEnd": "Vent litt til runden er over.",
+        "waitForWinner": "Slapp av og vent på at en vinner dukker opp!",
         "serverRestart": "Serveren blir nå restartet. Sjekk tilbake om noen minutter.",
         "clearOldListings": "Fjern alle 'Utilgjengelige' kamper.",
+        "flawlessGame": "Perfekt spill! Ingen feil gjort.",
         "accountLinkSuggestion": "Du er nå %{level}! Vurder å lage en konto for å beskytte fremgangen din.",
         "accountLinked": "Denne kontoen er knyttet til følgende e-postadresse: %{email}.",
         "incompleteTranslationNotice": "Språket du har valgt er omtrent {percentage}% komplett. Eventuelle manglende oversettelser vil være på engelsk.",
@@ -2163,10 +2473,13 @@
         "inactiveOpponents": "Alle motstandere var inaktive",
         "waitForOpponent": "Venter på motstanderen din...",
         "waitForOpponents": "Venter på motstanderne dine....",
+        "nameLeftTheGame": "%{name} forlot spillet",
         "selfNoPoints": "Du fikk ingen poeng.",
         "nameNoPoints": "%{name} fikk ingen poeng.",
         "gameMenu": "Har du lyst til å spille noe annet?",
         "forfeit": "Hvis du gir opp spillet, vil det resultere i et tap for deg.",
+        "namePointsForMove": "%{name} fikk %{points} for trekket sitt.",
+        "selfPointsForMove": "Trekket ditt fikk %{points}.",
         "nameForfeited": "%{name} ga opp og har tapt automatisk.",
         "selfForfeited": "Du ga opp og tapte automatisk.",
         "unsavedChanges": "Du har ulagrede endringer som vil bli slettet hvis du fortsetter.",
@@ -2182,6 +2495,12 @@
         "loginToPurchase": "For å gjøre et kjøp må du først logge inn eller opprette en konto.",
         "seasonalItem": "En gjenstand i denne plassen er bare tilgjengelig noen få dager i året.",
         "cardInteractHint": "Klikk på et kort for å gjøre valget ditt.",
+        "gameInvite": "Invitasjon til spill",
+        "keyboardShortcutCombination": "For å bruke hurtigtaster som {combination}, hold nede {firstKey} og trykk så på {secondKey}",
+        "keyboardShortcutSpinSelector": "Du kan også bruke piltastene dine {keys} for å endre spinnet.",
+        "goAdFree": "Annonser blir permanent deaktivert for kontoen din hvis du støtter utviklingen ved å kjøpe en hvilken som helst mengde mynter.",
+        "chatEmojiAlt": "Chat emoji med type {type}",
+        "zoomOutHint": "Du er zoomet inn! Klem sammen for å zoome ut og få bedre kontroll over spillet.",
         "awaitingPurchaseConfirmation": {
             "title": "Venter på kjøpsbekreftelse",
             "description": "Dette tar vanligvis bare noen sekunder. Avhengig av betalingsmetoden din kan det ta lenger tid. Du kan trygt lukke denne skjermen."
@@ -2190,8 +2509,11 @@
             "noFriends": "Ingen venner",
             "noAccount": "Logg inn eller lag en konto for å begynne å få venner!",
             "description": "Hold kontakten! Se vennene dine på nett, spillene deres, og bli med i private lobbier!",
-            "removeDescription": "Du er i ferd med å avslutte vennskapet med \"%{name}\"."
+            "removeDescription": "Du er i ferd med å avslutte vennskapet med \"%{name}\".",
+            "inviteReceived": "%{name} har invitert deg til å spille %{game}",
+            "inviteSent": "Spillinvitasjonen er sendt!"
         },
+        "contact": "Ikke nøl med å ta kontakt hvis du har problemer, forslag eller spørsmål! Du kan sende en e-post eller bli med i Bloob.io Discorden.",
         "settings": {
             "redeemCode": {
                 "title": "Løs inn kode",
@@ -2212,6 +2534,14 @@
                 "description": "Bloob.io sporer anonymt analyse ved hjelp av en personvernvennlig, selvhostet Matomo analyse server. Dine data deles aldri med andre. Du kan velge å trekke deg hvis du ønsker det.",
                 "blocked": "Analyse er ikke aktiv. Nettleseren din eller utvidelsen kan ha blokkert det.",
                 "dnt": "Nettleseren din har \"Ikke spor\" (DNT) innstillingen aktivert. Vi respekterer forespørselen din og sporer deg ikke."
+            },
+            "ads": {
+                "title": "Annonser",
+                "description": "Vi viser annonser fra Playwire. Annonseringen på Bloob.io, enten helt eller delvis, håndteres av Playwire LLC. Hvis du ikke vil se annonser på Bloob.io, kan du gå annonsfri ved å kjøpe mynter i butikken. Dette fjerner automatisk alle annonser fra kontoen din.",
+                "complaint": "Det er viktig for Bloob.io at annonsene du ser er etiske og ikke forstyrrende. Hvis du ser annonser som påvirker spillopplevelsen din, ta gjerne kontakt ved å sjekke \"Om\"-seksjonen.",
+                "consent": "Klikk her for å oppdatere preferansene dine for annonseinnhold",
+                "exempt": "Annonser er ikke aktive. Kontoen din er annonsfri. Takk for støtten!",
+                "blocked": "Annonser er ikke aktive. Nettleseren din eller en utvidelse kan ha blokkert dem."
             },
             "serverData": {
                 "title": "Serverdata",
@@ -2234,7 +2564,7 @@
         "authentication": {
             "login": {
                 "title": "Logg inn",
-                "description": "Vær oppmerksom på at når du logger inn på kontoen din, vil all fremgang for brukeren du for øyeblikket bruker (%{name}) bli slettet."
+                "description": "Hei! Den brukeren du bruker nå, {name} som er {level}, er ikke knyttet til en konto enda. Hvis du logger inn med en eksisterende konto, vil denne brukeren bli slettet for alltid. Kanskje du mente å opprette kontoen din i stedet?"
             },
             "setupThreshold": {
                 "title": "Du er tidlig ute %{name}!",
@@ -2477,6 +2807,28 @@
             "earnsSum": "Tjener totalen av alle terningene kombinert.",
             "noPointsWarning": "Dette trekket gir deg ikke noen poeng. Det finnes andre valg som faktisk gir deg poeng."
         },
+        "graphicsAcceleration": {
+            "notice": "Grafikkakselerasjon er skrudd av. Dette kan påvirke spillytelsen.",
+            "search": "Hvordan skru på grafikkakselerasjon?"
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
+        },
         "ai": {
             "ready": null,
             "findingTarget": null,
@@ -2485,9 +2837,7 @@
             "assassinAssignment": null,
             "targetAssignment": null,
             "assassinDescription": null,
-            "targetDescription": null,
-            "startAssassinChat": null,
-            "joinAssassinChat": null
+            "targetDescription": null
         },
         "poolType": {
             "SOLID": "Ensfargede",
@@ -2542,6 +2892,7 @@
             "developedBy": "Utviklet av %{name}",
             "iconsSource": "Ikoner levert av %{name} (Lisensiert)",
             "soundsSource": "Lyder levert av %{name} (Lisensiert)",
+            "emojiSource": "Emojier fra %{name} (CC-BY 4.0)",
             "rottenApplesSource": "Råtne Epler basert på %{name} (BY-NC-SA 2.0)",
             "diceSource": "Terningmodell av %{name} (CC-BY-4.0)",
             "localization": "Lokalisering av frivillige bidragsytere"

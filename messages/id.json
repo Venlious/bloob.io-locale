@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 1608,
-        "missing": 10
+        "total": 1804,
+        "missing": 22
     },
     "name": "Bloob.io",
     "error": {
@@ -35,6 +35,7 @@
             "friendLimitOther": "Maaf, pengguna ini udah mencapai batas temennya, yaitu %{amount}.",
             "pendingFriendLimitSelf": "Kamu nggak bisa punya lebih dari %{amount} permintaan pertemanan yang masih pending.",
             "pendingFriendLimitOther": "Maaf, pengguna ini udah kebanyakan permintaan pertemanan yang masih pending.",
+            "userOffline": "Maaf, pengguna ini lagi offline.",
             "notFriends": "Kalian bukan temen dan nggak ada permintaan pertemanan yang nunggu.",
             "alreadyFriends": "Kalian udah temenan sama pengguna ini.",
             "pendingFriends": "Udah ada permintaan pertemanan yang nunggu dari pengguna ini.",
@@ -81,6 +82,7 @@
         "start": {
             "fieldRows": "Bidang yang dipilih nggak bisa nampung lebih dari %{rows} baris",
             "fieldCannotFitUsers": "Bidang yang dipilih nggak bisa nampung lebih dari %{users} pemain",
+            "questionThreshold": "Game butuh minimal %{count} pertanyaan.",
             "whiteCardThreshold": "Game ini butuh minimal %{count} kartu respons (putih)",
             "blackCardThreshold": "Game ini butuh minimal %{count} kartu aksi (hitam)",
             "insufficientPlayers": "Butuh minimal %{min} pemain buat mulai pertandingan."
@@ -100,6 +102,7 @@
             "incorrectValue": "Nilai yang diberikan nggak cocok sama yang diharapkan.",
             "invalidMove": "Gerakan yang diberikan itu nggak valid.",
             "invalidVote": "Suara yang coba kamu berikan itu nggak valid.",
+            "noLives": "Kamu udah nggak punya nyawa sisa.",
             "alreadyPlaced": "Kamu udah naro sesuatu.",
             "alreadyVoted": "Kamu udah nyoblos.",
             "invalidPlacement": "Tempat kamu naruh bidak itu salah.",
@@ -181,6 +184,7 @@
     },
     "game": {
         "generic": {
+            "name": "Rumah",
             "title": "Bloob.io | Main Gratis Tanpa Akun, Mabar Online Bareng Teman",
             "description": "Main gratis tanpa akun di Bloob.io, langsung mabar online bareng teman atau lawan bot! Nikmati serunya game multiplayer di browser kamu sekarang!",
             "options": {
@@ -197,6 +201,15 @@
                 },
                 "botCount": {
                     "help": "Kenalkan bot ke dalam game kamu bersama dengan pemain lainnya."
+                },
+                "pointer": {
+                    "title": "Pointer",
+                    "help": "Biar pemain lain bisa lihat kamu lagi nunjuk ke mana dengan kursor. Kadang-kadang kamu bisa milih buat tetap privat buat grup/tim kamu.",
+                    "data": {
+                        "OFF": "Mati",
+                        "PRIVATE": "Pribadi",
+                        "EVERYONE": "Semua orang"
+                    }
                 },
                 "botDifficulty": {
                     "title": "Kesulitan Bot",
@@ -242,9 +255,41 @@
                         "off": "Tanpa batas"
                     }
                 },
+                "scoringSystem": {
+                    "title": "Sistem Skor",
+                    "help": {
+                        "default": "Tentuin sistem buat ngasih poin kalo jawab pertanyaan bener.",
+                        "SPEED": "Poin ditentuin dari seberapa cepet jawab pertanyaannya.",
+                        "ORDER": "Poin ditentuin dari siapa yang paling cepet di antara pemain.",
+                        "FIXED": "Setiap pertanyaan ngasih jumlah poin yang sama.",
+                        "PROGRESSIVE": "Poin yang didapat nambah setelah setiap pertanyaan.",
+                        "STREAK": "Dapatkan poin tambahan buat jawaban bener berturut-turut; bakal reset setelah salah jawab."
+                    },
+                    "data": {
+                        "SPEED": "Kecepatan",
+                        "ORDER": "Urutan",
+                        "FIXED": "Tetap",
+                        "PROGRESSIVE": "Bertahap",
+                        "STREAK": "Rentetan"
+                    }
+                },
+                "mode": {
+                    "title": "Mode",
+                    "help": {
+                        "default": "Pilih cara pemain bakal bersaing: sendiri-sendiri, tim, atau bareng-bareng.",
+                        "SOLO": "Setiap pemain bersaing sendirian.",
+                        "CO_OP": "Semua pemain kerja bareng sebagai tim.",
+                        "TEAM": "Pemain dibagi jadi tim, dan mereka bisa milih grup sendiri buat kolaborasi."
+                    },
+                    "data": {
+                        "SOLO": "Sendirian",
+                        "CO_OP": "Kerja bareng",
+                        "TEAM": "Tim"
+                    }
+                },
                 "deckSize": {
                     "title": "Ukuran Dek",
-                    "help": "Main tanpa batas waktu. Nonaktifkan semua timer giliran dan nikmati pengalaman bermain yang santai di mana kamu bisa main sesuai ritme sendiri. Tidak disarankan melawan lawan acak.",
+                    "help": "Pilih ukuran deck yang kamu suka buat main.",
                     "data": {
                         "half": "Setengah Dek",
                         "full": "Dek Penuh",
@@ -835,6 +880,10 @@
                     "title": "Garis Bidik",
                     "help": "Garis bidik nunjukkin ke mana bola cue bakal meluncur setelah dipukul."
                 },
+                "speed": {
+                    "title": "Kecepatan",
+                    "help": "Seberapa cepat animasi kolam renangnya diputar."
+                },
                 "illegalBallPocket": {
                     "title": "Bola Masuk Lubang yang Salah"
                 },
@@ -1009,12 +1058,23 @@
                     "title": "Yacht Tambahan",
                     "help": "Tentukan bagaimana game harus menangani situasi ketika pemain mendapatkan Yacht lagi setelah sudah mendapatkan poin untuk satu Yacht sebelumnya."
                 },
+                "jokerYacht": {
+                    "title": "Yacht Joker",
+                    "help": "Kalau diaktifin, pengaturan ini bikin kamu bisa klaim poin buat Yacht tambahan sebagai Full House, Small Straight, atau Large Straight. Opsi ini cuma bisa dipake kalau nomor wajah dadu yang sesuai dan kategori Yacht udah terisi."
+                },
                 "additionalYachtReward": {
                     "title": "Hadiah",
                     "help": "Jumlah poin yang diberikan kepada mereka yang menggulirkan Yacht lagi."
                 }
             },
-            "presets": {},
+            "presets": {
+                "joker": {
+                    "title": "Joker",
+                    "description": [
+                        "Lebih banyak pilihan saat kamu dapat Yacht"
+                    ]
+                }
+            },
             "help": {
                 "objective": {
                     "title": "Memahami Tujuan",
@@ -1064,6 +1124,12 @@
                         "Kamu juga bisa klik di entri oranye yang kosong dan dapet 0 poin. Ini bisa berguna kalau opsi lainnya cuma bakal kasih kamu sedikit poin untuk kategori itu.",
                         "Ini bisa berguna misalnya kamu mau dapet bonus di bagian atas."
                     ]
+                },
+                "shortcuts": {
+                    "title": "Shortcut Jalan Pintas",
+                    "description": [
+                        "Mau pindahin banyak dadu yang sama sekaligus? Pake tombol tengah mouse kamu atau tahan tombol Shift sambil klik dadu, semua dadu yang punya muka yang sama bakal dipindahin sekaligus!"
+                    ]
                 }
             }
         },
@@ -1100,7 +1166,8 @@
                         "pier": "Dermaga",
                         "littleIsland": "Pulau Kecil",
                         "keys": "Kunci-Kunci",
-                        "lagoon": "Laguna"
+                        "lagoon": "Laguna",
+                        "ocean": "Laut"
                     }
                 },
                 "levelOrientation": {
@@ -1121,6 +1188,10 @@
                 "shipReveal": {
                     "title": "Pengungkapan Kapal",
                     "help": "Ketika diaktifkan, kamu akan melihat kapal saat kamu berhasil menenggelamkannya. Ketika dinonaktifkan, hanya ada penghitung dengan kapal yang tersisa yang ditampilkan."
+                },
+                "hitAfterHit": {
+                    "title": "Pukulan Beruntun",
+                    "help": "Kalau diaktifin, kamu bisa nembak lagi setelah nabrak kapal. Kalau dimatiin, kamu cuma dapet satu tembakan per giliran."
                 }
             },
             "presets": {},
@@ -1421,62 +1492,256 @@
         },
         "AI_ASSASSIN": {
             "name": "Pembunuh AI",
-            "title": "Kalahkan, Singkirkan, Bertahan Hidup",
-            "description": "AI Assassin adalah game multiplayer seru dimana kamu bisa menghabisi target atau mengelabui para pembunuh. Gunakan petunjuk strategis untuk mencapai tujuan dan berhasil.",
+            "title": "Mainkan Pembunuh AI Gratis | Game Multiplayer Daring Tanpa Akun",
+            "description": "Bermain Pembunuh AI gratis tanpa akun! Nikmati keseruan game AI prompt online dengan teman atau lawan acak, bahkan melawan bot. Gabung sekarang!",
             "options": {},
             "presets": {},
             "help": {}
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Gunting Batu Kertas",
+            "title": "Main Batu Kertas Gunting Online | Gratis & Multipemain RPS",
+            "description": "Mainkan Batu Kertas Gunting online gratis tanpa akun! Seru untuk multipemain, tanding RPS klasik bareng teman atau lawan bot. Ayo main sekarang!",
+            "options": {
+                "result": {
+                    "data": {
+                        "rock": "Batu ngalahin gunting",
+                        "paper": "Kertas ngalahin batu",
+                        "scissors": "Gunting ngalahin kertas"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "LAST_STANDING": "Bertahan terakhir (<b>0</b> nyawa) | Bertahan terakhir (<b>1</b> nyawa) | Bertahan terakhir (<b>{count}</b> nyawa)",
+                        "FIRST": "Pertama yang dapet <b>0</b> poin | Pertama yang dapet <b>1</b> poin | Pertama yang dapet <b>{count}</b> poin",
+                        "HIGHEST_AFTER": "Poin terbanyak setelah <b>0</b> ronde | Poin terbanyak setelah <b>1</b> ronde | Poin terbanyak setelah <b>{count}</b> ronde"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Balapan",
+                    "description": [
+                        "Pertama yang dapet 5 poin"
+                    ]
+                },
+                "survival": {
+                    "title": "Bertahan hidup",
+                    "description": [
+                        "5 nyawa",
+                        "Kehilangan 1 nyawa setiap ronde yang kalah",
+                        "Pemain terakhir yang bertahan menang"
+                    ]
+                },
+                "bestOfSeries": {
+                    "title": "Best of Series: Yang Terbaik dari Seri",
+                    "description": [
+                        "Pemain dengan poin terbanyak setelah 5 ronde menang."
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Aturan Main",
+                    "description": [
+                        "Batu Kertas Gunting itu gampang: pilih batu, kertas, atau gunting. Batu ngalahin gunting, kertas ngalahin batu, dan gunting ngalahin kertas.",
+                        "Di setiap ronde, tebak pilihan lawanmu dan respon sesuai!"
+                    ]
+                },
+                "group": {
+                    "title": "Grup",
+                    "description": [
+                        "Main bareng sampai 4 orang! Cuma satu yang bisa menang di setiap ronde. Kalo kamu udah kalah lebih awal, pemain yang lain lanjut sampai ada yang menang.",
+                        "Di mode bertahan hidup, setiap pemain punya jumlah nyawa yang ditentukan. Jadi pemain terakhir yang masih berdiri yang menang!"
+                    ]
+                },
+                "bots": {
+                    "title": "Bot-Bot",
+                    "description": [
+                        "Main lawan bot! Mereka ngikutin strategi acak, jadi kalo kamu bisa paham, kamu bisa kalahin mereka terus!"
+                    ]
+                }
+            }
+        },
+        "NUMBER_SHOWDOWN": {
+            "name": "Pertarungan Angka",
+            "title": null,
+            "description": null,
+            "options": {
+                "winAmount": {
+                    "help": "Permainan bakal selesai begitu ada pemain yang udah dapet jumlah poin ini."
+                },
+                "mode": {
+                    "title": "Mode",
+                    "help": "Mode permainan yang beda bakal ngaruh ke cara poin dikasih dan cara mainnya.",
+                    "data": {
+                        "SINGLE_HIDER": "Satu Penyembunyi",
+                        "HIDE_AND_SEEK": "Petak Umpet",
+                        "LAST_STANDING": "Terakhir Berdiri"
+                    }
+                },
+                "field": {
+                    "title": "Lapangan",
+                    "help": "Nentuin berapa banyak angka yang muncul di lapangan permainan."
+                },
+                "revealSpeed": {
+                    "title": "Kecepatan Tampilkan",
+                    "help": "Kecepatan saat putaran dibuka pas semua orang udah siap."
+                },
+                "multiplier": {
+                    "title": "Pengganda",
+                    "help": "Multiplier bisa muncul di satu atau beberapa angka sekaligus. Ketika seorang hider milih angka yang ada multipliernya, mereka bakal ngaliin poin mereka. Tapi, karena semua orang bisa liat multipliernya, ini jadi berisiko dan nambah kemungkinan ketahuan.",
+                    "data": {
+                        "off": "Dimatikan",
+                        "uncommon": "Langka",
+                        "common": "Umum",
+                        "veryCommon": "Sangat Umum"
+                    }
+                },
+                "dynamicScoring": {
+                    "title": "Skor Dinamis",
+                    "help": {
+                        "introduction": "Kasih poin berdasarkan kemungkinan sukses. Misalnya, kalo seorang pencari nemuin si penyembunyi di awal permainan, mereka bakal dapet poin lebih banyak. Kalo si penyembunyi bisa tetap tersembunyi dengan cuma sisa beberapa ubin, mereka juga bakal dapet poin lebih banyak.",
+                        "calculation": "Kalo diaktifin, poinnya bakal dihitung otomatis berdasarkan poin min. dan max. yang udah diatur."
+                    }
+                },
+                "pointsFind": {
+                    "title": "Mencari yang Nyembunyi",
+                    "help": "Diberikan ke pencari yang berhasil nemuin si penyembunyi."
+                },
+                "minPointsFind": {
+                    "title": "Min. Nyari yang Nyembunyi"
+                },
+                "maxPointsFind": {
+                    "title": "Maks. Nyari yang Nyembunyi"
+                },
+                "pointsHideRound": {
+                    "title": "Tersembunyi per Putaran",
+                    "help": "Diberikan ke penyembunyi yang tetap tersembunyi setiap ronde."
+                },
+                "minPointsHideRound": {
+                    "title": "Min. Tersembunyi per Putaran"
+                },
+                "maxPointsHideRound": {
+                    "title": "Max. Tersembunyi per Putaran"
+                },
+                "pointsLastAlive": {
+                    "title": "Sisa Terakhir",
+                    "help": "Diberikan ke pemain terakhir yang masih ada di game saat semua orang lain udah dieliminasi."
+                },
+                "minPointsLastAlive": {
+                    "title": "Min. Sisa Terakhir"
+                },
+                "maxPointsLastAlive": {
+                    "title": "Maks. Sisa Terakhir"
+                }
+            },
+            "presets": {},
+            "help": {}
+        },
+        "TRIVIA": {
+            "name": "Trivia",
+            "title": "Main Trivia Online Gratis | Main Bareng Teman dan Orang Lain",
+            "description": "Mainkan Trivia online gratis tanpa akun! Nikmati mode multiplayer waktu nyata dengan teman, orang lain & kuis kooperatif dari 1-12 pemain.",
+            "options": {
+                "consensus": {
+                    "title": "Kesepakatan",
+                    "help": "Dalam mode tim, apa jawaban tim harus berdasarkan suara terbanyak (Konsensus)? Kalau enggak, salah satu anggota tim bisa ganti jawaban buat semua orang."
+                },
+                "lockAnswer": {
+                    "title": "Kunci jawaban",
+                    "help": "Kalau udah diaktifin, pemain nggak bisa ganti jawaban setelah milih satu."
+                },
+                "eliminationChallenge": {
+                    "title": "Tantangan Eliminasi",
+                    "help": "Kalau diaktifin, pemain atau tim langsung keluar setelah jawab pertanyaan salah."
+                }
+            },
+            "presets": {
+                "versus": {
+                    "title": "Versus",
+                    "description": [
+                        "Solo",
+                        "Lebih banyak poin buat pertanyaan selanjutnya"
+                    ]
+                },
+                "hardcoreVersus": {
+                    "title": "Versus Hardcore",
+                    "description": [
+                        "Gak ada kesalahan",
+                        "Jawaban terkunci",
+                        "Poin berdasarkan kecepatan"
+                    ]
+                },
+                "coop": {
+                    "title": "Kerja bareng",
+                    "description": [
+                        "Kerja bareng",
+                        "Titik tetap"
+                    ]
+                },
+                "teams": {
+                    "title": "Tim-tim",
+                    "description": [
+                        "Kerja bareng tim",
+                        "Poin berdasarkan urutan"
+                    ]
+                }
+            },
+            "help": {
+                "soloOrWorkTogether": {
+                    "title": "Solo atau Kerja Bareng",
+                    "description": [
+                        "Lo bisa milih mau main sendirian, kerja bareng di co-op, atau bikin tim kecil.",
+                        "Kalo kerja bareng tim, lo bisa liat tebakan orang lain juga!"
+                    ]
+                },
+                "questionPacks": {
+                    "title": "Paket Pertanyaan",
+                    "description": [
+                        "Nggak suka sama kategori pertanyaan tertentu? Kamu bisa nyalain atau matiin kategori yang nggak menarik buat kamu atau lobby kamu lewat tab pertanyaan di lobby.",
+                        "Pertanyaan bakal muncul otomatis biar jumlah pertanyaan yang sama yang kamu liat di lobby bisa diminimalkan."
+                    ]
+                },
+                "star": {
+                    "title": "Bintang",
+                    "description": [
+                        "Kalau kamu berhasil main dengan sempurna, artinya nggak ada satu pun pertanyaan yang salah, kamu bakal dapet bintang di samping namamu, yang bakal dicatat di statistik pribadimu!"
+                    ]
+                }
+            }
         }
     },
     "chat": {
-        "EMOJI": {
-            "love": "❤️",
-            "luck": "🍀",
-            "fire": "🔥",
-            "celebration": "🎉",
-            "thumbsUp": "👍",
-            "mindBlowing": "🤯",
-            "thinking": "🤔",
-            "clap": "👏",
-            "cry": "😭",
-            "cool": "😎"
-        },
-        "UNIVERSAL": {
-            "leftTheGame": "keluar dari game",
-            "affirmative": "Oke.",
-            "thanks": "Makasih!",
-            "sorry": "Maaf!",
-            "goodLuck": "Semoga beruntung!",
-            "brb": "Bentar, aku balik lagi ya!",
-            "go": "Aku harus pergi nih.",
-            "glhf": "Semoga beruntung, ya!",
-            "gg": "Pertandingan bagus!"
-        },
-        "PRE_GAME": {
-            "readyCheck": "Semua siap?",
-            "changeSettings": "Ubah pengaturan!",
-            "ready": "Siap!",
-            "wait": "Tunggu sebentar!",
-            "go": "Ayo pergi!",
-            "greeting": "Hai! 👋"
-        },
-        "GAME": {
-            "how": "Gimana sih!?",
-            "closeOne": "Hampir saja!",
-            "niceOne": "Bagus sekali!",
-            "remindMove": "Giliranmu!",
-            "wow": "Wow!",
-            "oops": "Ups!",
-            "no": "Nggak!",
-            "ohNo": "Oh tidak!"
-        },
-        "POST_GAME": {
-            "closeOne": "Hampir saja!",
-            "wellPlayed": "Bagus mainnya!",
-            "rematch": "Balas dendam!",
-            "fun": "Seru banget!",
-            "bye": "Dadah!"
-        }
+        "affirmative": "Oke.",
+        "thanks": "Makasih!",
+        "sorry": "Maaf!",
+        "goodLuck": "Semoga beruntung!",
+        "brb": "Bentar, aku balik lagi ya!",
+        "go": "Aku harus pergi nih.",
+        "glhf": "Semoga beruntung, ya!",
+        "gg": "Pertandingan bagus!",
+        "readyCheck": "Semua siap?",
+        "changeSettings": "Ubah pengaturan!",
+        "ready": "Siap!",
+        "wait": "Tunggu sebentar!",
+        "letsGo": "Ayo pergi!",
+        "greeting": "Hai!",
+        "how": "Gimana sih!?",
+        "closeOne": "Hampir saja!",
+        "niceOne": "Bagus sekali!",
+        "checkThisOut": "Cek ini!",
+        "remindMove": "Giliranmu!",
+        "wow": "Wow!",
+        "oops": "Ups!",
+        "no": "Nggak!",
+        "ohNo": "Oh tidak!",
+        "wellPlayed": "Bagus mainnya!",
+        "rematch": "Balas dendam!",
+        "fun": "Seru banget!",
+        "bye": "Dadah!",
+        "shortYes": "Iya.",
+        "shortNo": "Enggak."
     },
     "header": {
         "message": {
@@ -1512,6 +1777,9 @@
             "roundSummary": "Ringkasan ronde",
             "roundCount": "Ronde %{current} dari %{total}",
             "roundCurrent": "Putaran %{current}",
+            "startingNewRound": "Mulai ronde baru...",
+            "questionCount": "Pertanyaan %{current} dari %{total}",
+            "questionCurrent": "Pertanyaan %{current}",
             "war": "Perang!",
             "outcome": "Hasil",
             "input": "Menunggu masukanmu",
@@ -1603,7 +1871,15 @@
         "language": "Bahasa",
         "rules": "Aturan",
         "points": "Poin",
-        "fouls": "Respon Pelanggaran"
+        "fouls": "Respon Pelanggaran",
+        "sciences": "Sains",
+        "artsAndEntertainment": "Seni & Hiburan",
+        "geography": "Geografi",
+        "gaming": "Game",
+        "technology": "Teknologi",
+        "popCulture": "Budaya Pop",
+        "sports": "Olahraga",
+        "history": "Sejarah"
     },
     "month": {
         "short": {
@@ -1735,6 +2011,7 @@
         "wins": "0 menang | 1 menang | {count} menang",
         "cards": "0 kartu | 1 kartu | {count} kartu",
         "moves": "0 gerakan | 1 gerakan | {count} gerakan",
+        "tiles": "0 ubin | 1 ubin | {count} ubin",
         "playing": "0 main | 1 main | {count} main",
         "players": "0 pemain | 1 pemain | {count} pemain",
         "selectedCards": "Tidak ada kartu yang dipilih | 1 kartu dipilih | {count} kartu dipilih",
@@ -1752,6 +2029,14 @@
         "restartNotice": "Server bakal restart dalam {count} menit. Selesaikan gamenya ya. | Server bakal restart dalam {count} menit. Selesaikan gamenya ya. | Server bakal restart dalam {count} menit. Selesaikan gamenya ya."
     },
     "misc": {
+        "example": "Contoh",
+        "learnMore": "Pelajari lebih lanjut",
+        "questions": "Pertanyaan",
+        "teamAndQuestions": "Tim & Pertanyaan",
+        "questionPacks": "Paket Pertanyaan",
+        "rock": "Batu",
+        "paper": "Kertas",
+        "scissors": "Gunting",
         "lobby": "Lobi",
         "inGame": "Dalam permainan",
         "matchmakingSearch": "Nyari game",
@@ -1787,7 +2072,7 @@
         "unknown": "Tidak diketahui",
         "none": "Tidak ada",
         "seasonal": "Musiman",
-        "items": "Sure! Please provide the list of items you want me to translate.",
+        "items": "Barang",
         "purchaseCoins": "Beli Koin",
         "store": "Toko",
         "buyNow": "Beli Sekarang",
@@ -1852,6 +2137,8 @@
         "language": "Bahasa",
         "toggle": "Beralih",
         "login": "Masuk",
+        "loginToExistingAccount": "Masuk ke Akun yang Ada",
+        "createMyAccount": "Buat Akun Saya",
         "logout": "Keluar",
         "hats": "Topi",
         "eyes": "Mata",
@@ -1869,6 +2156,7 @@
         "specificCards": "Kartu Spesifik",
         "matchId": "ID Pertandingan",
         "chat": "Obrolan",
+        "sendMessage": "Kirim pesan",
         "host": "Tuan Rumah",
         "player": "Pemain",
         "players": "Para Pemain",
@@ -1900,7 +2188,6 @@
         "view": "Lihat",
         "forfeit": "Menyerah Game",
         "processFiles": "Proses File",
-        "sendMessage": "Kirim Pesan",
         "checkAgain": "Cek Lagi",
         "refreshWindow": "Segarkan Jendela",
         "makeHost": "Jadikan Host",
@@ -1921,6 +2208,7 @@
         "highestScore": "Skor Tertinggi",
         "totalScore": "Skor Total",
         "finalScore": "Skor Akhir",
+        "flawlessGames": "Game Sempurna",
         "hits": "Hitungan",
         "hitRate": "Tingkat Hit",
         "rank": "Peringkat",
@@ -1930,8 +2218,10 @@
         "assassinations": "Pembunuhan",
         "survivals": "Bertahan hidup",
         "games": "Game",
+        "correctRatio": "Rasio yang Benar",
         "winRatio": "Rasio Menang",
         "killDeathRatio": "Rasio K/D",
+        "lives": "Nyawa",
         "points": "Poin",
         "wins": "Menang",
         "grids": "Kotak-kotak",
@@ -1942,6 +2232,7 @@
         "fouls": "Pelanggaran",
         "and": "dan",
         "vs": "vs",
+        "dismiss": "Tutup",
         "rename": "Ubah Nama",
         "created": "Dibuat",
         "lastSeen": "Terakhir Dilihat",
@@ -1951,6 +2242,7 @@
         "myDevices": "Perangkat Saya",
         "myData": "Data Saya",
         "redeemCode": "Tukar Kode",
+        "contact": "Kontak",
         "leaderboard": "Papan Peringkat",
         "elapsedTime": "%{time} telah berlalu",
         "startingInTime": "Mulai dalam %{time}",
@@ -1964,6 +2256,10 @@
         "coinsBlank": "%{value} koin",
         "receivedBlank": "Diterima %{value}",
         "lessThanBlank": "Kurang dari %{value}",
+        "lastSeenBlankAgo": "Terakhir dilihat %{value} yang lalu",
+        "lastSeenJustNow": "Terakhir dilihat baru saja",
+        "blank": "%{value}",
+        "byBlank": "Oleh %{value}",
         "sendVerification": "Kirim Verifikasi",
         "noThanks": "Nggak, makasih",
         "ready": "Siap",
@@ -1978,12 +2274,15 @@
         "madeBy": "Dibuat oleh %{name}",
         "selectedOfLimit": "Dipilih %{current} dari batas %{total}",
         "helpLocalize": "Bantu perbaiki lokalitas",
+        "goAdFree": "Pergi tanpa iklan",
         "discord": "Gabung di Discord kita",
         "volume": "Volume",
         "volumeInterface": "Volume antarmuka",
         "volumeEffects": "Volume Efek",
+        "volumeMusic": "Volume Musik",
         "selectYourLanguage": "Pilih Bahasa Kamu",
         "selectYourColor": "Pilih Warna Kamu",
+        "selectYourTeam": "Pilih Tim Kamu",
         "latestChanges": "Perubahan Terbaru",
         "noChangesDetected": "Tidak Ada Perubahan yang Terdeteksi",
         "newChanges": "Perubahan Baru",
@@ -2135,8 +2434,19 @@
         }
     },
     "info": {
+        "roundEndTie": "Seri nih!",
+        "roundEndStalemate": "Stalemate!",
+        "roundWin": "Kamu menang!",
+        "roundLost": "Kamu kalah!",
+        "youLostThisRound": "Kamu kalah di ronde ini!",
+        "youAreOutOfLives": "Kamu kehabisan nyawa",
+        "playerIsEliminated": "Pemain udah dieliminasi",
+        "youAreEliminated": "Kamu udah dieliminasi",
+        "waitForRoundEnd": "Tunggu sebentar sampai ronde selesai.",
+        "waitForWinner": "Santai aja dan tunggu pemenangnya muncul!",
         "serverRestart": "Server lagi di-restart. Cek lagi beberapa menit ya.",
         "clearOldListings": "Hapus semua pertandingan yang 'Tidak tersedia'.",
+        "flawlessGame": "Permainan sempurna! Gak ada kesalahan.",
         "accountLinkSuggestion": "Kamu sekarang level %{level}! Pertimbangkan untuk membuat akun biar progresmu aman.",
         "accountLinked": "Akun ini terhubung dengan alamat email: %{email}.",
         "incompleteTranslationNotice": "Bahasa yang kamu pilih sekitar {percentage}% selesai. Kalau ada terjemahan yang hilang, bakal ditampilkan dalam Bahasa Inggris.",
@@ -2163,10 +2473,13 @@
         "inactiveOpponents": "Semua lawan nggak aktif",
         "waitForOpponent": "Nunggu lawanmu...",
         "waitForOpponents": "Nunggu lawan-lawanmu....",
+        "nameLeftTheGame": "%{name} keluar dari permainan",
         "selfNoPoints": "Kamu nggak dapet poin.",
         "nameNoPoints": "%{name} nggak dapet poin.",
         "gameMenu": "Pengen main game lain?",
         "forfeit": "Kalau kamu menyerah, kamu bakal kalah nih.",
+        "namePointsForMove": "Gerakan %{name} dapet %{points}.",
+        "selfPointsForMove": "Gerakan kamu dapet %{points}.",
         "nameForfeited": "%{name} menyerah dan otomatis kalah.",
         "selfForfeited": "Kamu menyerah dan otomatis kalah.",
         "unsavedChanges": "Ada perubahan yang belum disimpan, nanti bakal hilang kalau kamu lanjut.",
@@ -2182,6 +2495,12 @@
         "loginToPurchase": "Buat belanja, kamu harus login atau buat akun dulu.",
         "seasonalItem": "Barang di slot ini cuma tersedia beberapa hari dalam setahun.",
         "cardInteractHint": "Klik kartu untuk pilihannya.",
+        "gameInvite": "Undangan Main Game",
+        "keyboardShortcutCombination": "Buat pakai pintasan keyboard kayak {combination}, tahan {firstKey} terus tekan {secondKey}",
+        "keyboardShortcutSpinSelector": "Kamu juga bisa pakai tombol panah {keys} buat ngubah putarannya.",
+        "goAdFree": "Iklan bakal dinonaktifkan selamanya di akun kamu kalo kamu dukung pengembangan dengan beli koin, berapa pun jumlahnya.",
+        "chatEmojiAlt": "Emoji chat dengan tipe {type}",
+        "zoomOutHint": "Kamu lagi zoom in! Coba cubit layar buat zoom out biar kontrol gamenya lebih enak.",
         "awaitingPurchaseConfirmation": {
             "title": "Menunggu Konfirmasi Pembelian",
             "description": "Biasanya ini hanya butuh beberapa detik. Tergantung metode pembayaranmu, ini bisa memakan waktu lebih lama. Silakan tutup layar ini."
@@ -2190,8 +2509,11 @@
             "noFriends": "Gak Punya Temen",
             "noAccount": "Login atau bikin akun biar bisa mulai cari temen!",
             "description": "Tetap terhubung! Lihat temen-temenmu online, game mereka, dan gabung ke lobi pribadi mereka!",
-            "removeDescription": "Kamu mau putusin pertemanan sama \"%{name}\"."
+            "removeDescription": "Kamu mau putusin pertemanan sama \"%{name}\".",
+            "inviteReceived": "%{name} ngajak kamu main %{game}",
+            "inviteSent": "Undangan main udah dikirim!"
         },
+        "contact": "Jangan ragu buat hubungi kalau ada masalah, saran, atau pertanyaan! Kamu bisa kontak lewat email atau join Discord-nya Bloob.io.",
         "settings": {
             "redeemCode": {
                 "title": "Tukar Kode",
@@ -2212,6 +2534,14 @@
                 "description": "Bloob.io melacak analitik secara anonim menggunakan server analitik Matomo yang ramah privasi dan di-host sendiri. Data Anda tidak pernah dibagikan dengan orang lain. Anda bisa memilih untuk tidak ikut jika mau.",
                 "blocked": "Analitik tidak aktif. Browser atau ekstensi Anda mungkin telah memblokirnya.",
                 "dnt": "Browser Anda memiliki pengaturan \"Jangan Lacak\" (DNT) yang diaktifkan. Kami menghormati permintaan Anda dan tidak melacak Anda."
+            },
+            "ads": {
+                "title": "Iklan",
+                "description": "Kami nampilin iklan dari Playwire. Iklan di Bloob.io, baik sebagian atau keseluruhan, ditangani sama Playwire LLC. Kalo kamu nggak mau liat iklan di Bloob.io, kamu bisa bebas iklan dengan beli koin dari toko. Ini bakal otomatis ngilangin semua iklan di akun kamu.",
+                "complaint": "Penting buat Bloob.io supaya iklan yang kamu liat itu etis dan nggak ganggu. Kalo kamu liat iklan yang ganggu permainanmu, silakan hubungi kami lewat bagian \"Tentang\".",
+                "consent": "Klik di sini buat update preferensi persetujuan iklan kamu",
+                "exempt": "Iklan lagi nggak aktif. Akun kamu bebas iklan. Makasih atas dukungannya!",
+                "blocked": "Iklan nggak aktif. Browser atau ekstensi kamu mungkin udah ngeblokirnya."
             },
             "serverData": {
                 "title": "Data Server",
@@ -2234,7 +2564,7 @@
         "authentication": {
             "login": {
                 "title": "Masuk",
-                "description": "Harap dicatat bahwa masuk ke akun Anda akan menghapus semua kemajuan untuk pengguna yang sedang Anda gunakan (%{name})."
+                "description": "Perhatian! Pengguna yang kamu pakai sekarang, {name} yang levelnya {level}, belum terhubung ke akun. Masuk dengan akun yang ada bakal ngapus pengguna ini selamanya. Mungkin kamu mau bikin akunmu sendiri, ya?"
             },
             "setupThreshold": {
                 "title": "Kamu datang lebih awal, %{name}!",
@@ -2477,6 +2807,28 @@
             "earnsSum": "Dapetin total dari semua dadu yang digabung.",
             "noPointsWarning": "Gerakan ini nggak bakal ngasih kamu poin. Ada pilihan lain yang bisa ngasih kamu poin."
         },
+        "graphicsAcceleration": {
+            "notice": "Akselerasi grafis dimatikan. Ini bisa ngaruh ke performa game.",
+            "search": "Gimana cara nyalain akselerasi grafis?"
+        },
+        "numberShowdown": {
+            "title": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "foundSelf": null,
+                "foundOther": null,
+                "collidedSelf": null
+            },
+            "description": {
+                "seeker": null,
+                "hider": null,
+                "alive": null,
+                "dead": null,
+                "hidersWin": null
+            }
+        },
         "ai": {
             "ready": null,
             "findingTarget": null,
@@ -2485,9 +2837,7 @@
             "assassinAssignment": null,
             "targetAssignment": null,
             "assassinDescription": null,
-            "targetDescription": null,
-            "startAssassinChat": null,
-            "joinAssassinChat": null
+            "targetDescription": null
         },
         "poolType": {
             "SOLID": "Bola Polos",
@@ -2542,6 +2892,7 @@
             "developedBy": "Dikembangkan oleh %{name}",
             "iconsSource": "Ikon disediakan oleh %{name} (Berlisensi)",
             "soundsSource": "Suara disediakan oleh %{name} (Berlisensi)",
+            "emojiSource": "Emojis yang disediain sama %{name} (CC-BY 4.0)",
             "rottenApplesSource": "Apel Busuk berdasarkan %{name} (BY-NC-SA 2.0)",
             "diceSource": "Model Dadu oleh %{name} (CC-BY-4.0)",
             "localization": "Lokalisasi oleh kontributor sukarela"
