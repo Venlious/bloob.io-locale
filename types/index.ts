@@ -36,7 +36,8 @@ export enum GameType {
 	ginRummy = `GIN_RUMMY`,
 	numberShowdown = `NUMBER_SHOWDOWN`,
 	rockPaperScissors = `ROCK_PAPER_SCISSORS`,
-	trivia = `TRIVIA`
+	trivia = `TRIVIA`,
+	snooker = `SNOOKER`
 }
 
 export enum CheckersKingType {
