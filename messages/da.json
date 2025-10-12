@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Danish",
         "rtl": false,
-        "total": 1833,
+        "total": 1852,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -917,7 +917,7 @@
                 },
                 "ruleTurnMustHitBall": {
                     "title": "Skal Ramme Bold",
-                    "help": "Sker når spilleren ikke rammer en bold (fra \"Kan Ramme Bold\") i deres tur."
+                    "help": "Sker når spilleren ikke rammer den forkerte bold i deres tur."
                 },
                 "ruleTurnContactRail": {
                     "title": "Skal kontakte skinne",
@@ -1759,6 +1759,52 @@
                     ]
                 }
             }
+        },
+        "NINE_BALL_POOL": {
+            "name": "9 Bold Pool",
+            "title": null,
+            "description": null,
+            "options": {
+                "pushOut": {
+                    "title": "Skub Ud",
+                    "help": "En push out kan kaldes efter et lovligt break, så spilleren kan ramme køballen til hvilken som helst position uden at skulle ramme den lavest nummererede bold først. At putte 9'eren under en push out tæller ikke."
+                }
+            },
+            "presets": {
+                "bca": {
+                    "title": "BCA Regler",
+                    "description": "Ligner ret meget reglerne fra Billiard Congress of America"
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Spillefelt",
+                    "description": [
+                        "Bordet har 6 lommer, hvor kuglerne kan gå i. Der er i alt 9 kugler, inklusive den hvide kugle, som du slår på din tur.",
+                        "Kuglerne er nummereret fra 1 til 9, og den hvide kugle bruges til at ramme de andre kugler. I starten af spillet er kuglerne sat op i en diamantform, med 1-kuglen øverst og 9-kuglen i midten."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Spilmekanikker",
+                    "description": [
+                        "Når det er din tur, skal du først ramme den lavest nummererede bold på bordet. Hvis du får den bold i hul, fortsætter du din tur og sigter efter den næste laveste bold. Du kan få hvilken som helst bold i hul, mens det er din tur.",
+                        "Hvis du får 9'eren i hul lovligt efter at have ramt den lavest nummererede bold først, vinder du spillet med det samme. Hvis du ikke rammer den rigtige bold først, eller hvis du ikke får nogen andre bolde i hul, slutter din tur."
+                    ]
+                },
+                "foul": {
+                    "title": "Foul",
+                    "description": [
+                        "Den bold, du skal sigte efter, bliver tydeligt vist. Hvis du rammer en bold først, der ikke er den lavest nummererede, så er det en fejl, og din modstander får bolden i hånden.",
+                        "Hvis du putter 9-bolden forkert, tæller det ikke, og din modstander beholder sin tur."
+                    ]
+                },
+                "objective": {
+                    "title": "Mål",
+                    "description": [
+                        "Målet med spillet er at få 9'eren i hul på lovlig vis. Det kan være så simpelt som at ramme den laveste nummererede kugle ind i 9'eren!"
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2080,6 +2126,7 @@
         "restartNotice": "Serveren genstarter om {count} minutter. Bliv færdig med dit spil. | Serveren genstarter om {count} minut. Bliv færdig med dit spil. | Serveren genstarter om {count} minutter. Bliv færdig med dit spil."
     },
     "misc": {
+        "skipTurn": "Spring over turen",
         "doublePointsQuestion": "Dobbelt Point Spørgsmål",
         "example": "Eksempel",
         "learnMore": "Lær mere",
@@ -2911,7 +2958,8 @@
                 "ILLEGAL_8_BALL_POCKET": "%{name} fik otterkuglen i hullet, men lavede en fejl.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} fik otterkuglen i hullet for tidligt.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} fik otterkuglen i hullet ved åbningsstødet.",
-                "POCKETED_WRONG_BALL": "%{name} fik den forkerte kugle i hullet."
+                "POCKETED_WRONG_BALL": "%{name} fik den forkerte kugle i hullet.",
+                "SKIP_TURN": "%{name} sprang over deres tur."
             },
             "self": {
                 "CUE_BALL_POCKET": "Du lommede købolden!",
@@ -2923,7 +2971,8 @@
                 "ILLEGAL_8_BALL_POCKET": "Du fik otterkuglen i hul mens du lavede en fejl.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Du fik otterkuglen i hul for tidligt.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Du fik otterkuglen i hul ved åbningsstødet.",
-                "POCKETED_WRONG_BALL": "Du fik den forkerte kugle i hul."
+                "POCKETED_WRONG_BALL": "Du fik den forkerte kugle i hul.",
+                "SKIP_TURN": "Du valgte at springe din tur over."
             }
         },
         "accountWarning": {

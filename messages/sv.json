@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Swedish",
         "rtl": false,
-        "total": 1833,
+        "total": 1852,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -917,7 +917,7 @@
                 },
                 "ruleTurnMustHitBall": {
                     "title": "Måste Träffa Bollen",
-                    "help": "Händer när spelaren inte träffar en boll (från \"Kan Träffa Boll\") under sin tur."
+                    "help": "Sker när spelaren inte träffar fel boll under sin tur."
                 },
                 "ruleTurnContactRail": {
                     "title": "Måste Kontakta Spåret",
@@ -1759,6 +1759,52 @@
                     ]
                 }
             }
+        },
+        "NINE_BALL_POOL": {
+            "name": "9-Boll Biljard",
+            "title": null,
+            "description": null,
+            "options": {
+                "pushOut": {
+                    "title": "Tryck Ut",
+                    "help": "En push out kan kallas efter en laglig break, vilket gör att spelaren kan slå cue-bollen till vilken position som helst utan att behöva träffa den lägsta numrerade bollen först. Att sätta 9:an under en push out räknas inte."
+                }
+            },
+            "presets": {
+                "bca": {
+                    "title": "BCA-regler",
+                    "description": "Liknar verkligen reglerna från Billiard Congress of America"
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Spelplan",
+                    "description": [
+                        "Spelplanen har 6 fickor där bollarna kan gå i. Totalt används 9 bollar, inklusive köbollen som du slår på din tur.",
+                        "Bollarna är numrerade från 1 till 9, och köbollen används för att slå de andra bollarna. I början av spelet är bollarna uppställda i en diamantform, med 1:an högst upp och 9:an i mitten."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Spelmekanik",
+                    "description": [
+                        "På din tur måste du först träffa den lägsta numrerade bollen på bordet. Om du sänker den bollen fortsätter du din tur och siktar på nästa lägsta boll. Du kan sänka vilken boll som helst under din tur.",
+                        "Om du sänker 9-bollen på ett lagligt sätt efter att ha träffat den lägsta numrerade bollen först, vinner du spelet direkt. Om du missar att träffa rätt boll först, eller om du inte sänker någon annan boll, så tar din tur slut."
+                    ]
+                },
+                "foul": {
+                    "title": "Foul",
+                    "description": [
+                        "Bollen du ska sikta på kommer att visas tydligt. Om du träffar en boll först som inte är den med lägst nummer, så är det en foul, och då får din motståndare spela med bollen i handen.",
+                        "Om du sätter 9-bollen fel, så räknas det inte, och din motståndare får fortsätta spela."
+                    ]
+                },
+                "objective": {
+                    "title": "Mål",
+                    "description": [
+                        "Målet med spelet är att på ett lagligt sätt få ner 9-bollen i fickan. Det kan vara så enkelt som att få ner 9-bollen genom att träffa den lägsta numrerade bollen först!"
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2080,6 +2126,7 @@
         "restartNotice": "Servern kommer starta om om {count} minuter. Avsluta ditt spel. | Servern kommer starta om om {count} minut. Avsluta ditt spel. | Servern kommer starta om om {count} minuter. Avsluta ditt spel."
     },
     "misc": {
+        "skipTurn": "Hoppa över turen",
         "doublePointsQuestion": "Dubbelpoängfråga",
         "example": "Sure! Just provide me with the list of items you want translated, and I'll take care of it.",
         "learnMore": "Lär dig mer",
@@ -2911,7 +2958,8 @@
                 "ILLEGAL_8_BALL_POCKET": "%{name} sänkte åttbollen samtidigt som hen gjorde en foul.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} sänkte åttbollen för tidigt.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} sänkte åttbollen på breaket.",
-                "POCKETED_WRONG_BALL": "%{name} sänkte fel boll."
+                "POCKETED_WRONG_BALL": "%{name} sänkte fel boll.",
+                "SKIP_TURN": "%{name} hoppade över sin tur."
             },
             "self": {
                 "CUE_BALL_POCKET": "Du sänkte klotet!",
@@ -2923,7 +2971,8 @@
                 "ILLEGAL_8_BALL_POCKET": "Du sänkte åttbollen samtidigt som du gjorde en foul.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Du sänkte åttbollen för tidigt.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Du sänkte åttbollen på breaket.",
-                "POCKETED_WRONG_BALL": "Du sänkte fel boll."
+                "POCKETED_WRONG_BALL": "Du sänkte fel boll.",
+                "SKIP_TURN": "Du valde att hoppa över din tur."
             }
         },
         "accountWarning": {

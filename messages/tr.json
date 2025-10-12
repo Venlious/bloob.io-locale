@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 1833,
+        "total": 1852,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -917,7 +917,7 @@
                 },
                 "ruleTurnMustHitBall": {
                     "title": "Topa Mutlaka Vur",
-                    "help": "Oyuncunun sırası geldiğinde bir topa vuramaması durumu (\"Topa Vurabilir\" durumundan)."
+                    "help": "Oyuncunun sırası geldiğinde yanlış topa vurmadığında olur."
                 },
                 "ruleTurnContactRail": {
                     "title": "Ray ile İletişim Kurmalı",
@@ -1759,6 +1759,52 @@
                     ]
                 }
             }
+        },
+        "NINE_BALL_POOL": {
+            "name": "9 Top Bilardo",
+            "title": null,
+            "description": null,
+            "options": {
+                "pushOut": {
+                    "title": "Dışarı At",
+                    "help": "Bir itme atışı, yasal bir break'ten sonra çağrılabilir, bu da oyuncunun bilardo topunu en düşük numaralı topa vurmadan istediği yere vurmasına izin verir. İtme atışında 9 numaralı topu sokmak sayılmaz."
+                }
+            },
+            "presets": {
+                "bca": {
+                    "title": "BCA Kuralları",
+                    "description": "Amerika Bilye Kongresi kurallarına çok benziyor"
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Oyun Alanı",
+                    "description": [
+                        "Alan 6 tane cepli, toplar buraya sokulabiliyor. Toplamda 9 top var, bunların içinde vuruş yaptığın beyaz top da var.",
+                        "Toplar 1'den 9'a kadar numaralandırılmış, beyaz top diğer toplara vurmak için kullanılıyor. Oyun başlarken toplar elmas şeklinde diziliyor, 1 numaralı top en üstte, 9 numaralı top da ortada."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Oynanış",
+                    "description": [
+                        "Sıra sende olduğunda, önce masadaki en düşük numaralı topa vurmalısın. O topu sokarsan, sıranı devam ettirip bir sonraki en düşük topa nişan alabilirsin. Sıra sende iken istediğin topu sokabilirsin.",
+                        "Eğer en düşük numaralı topa vurduktan sonra 9 topunu düzgün bir şekilde sokarsan, hemen oyunu kazanırsın. Doğru topa vurmazsan ya da başka bir top sokmazsan, sıran biter."
+                    ]
+                },
+                "foul": {
+                    "title": "Faul",
+                    "description": [
+                        "Hedef alman gereken top net bir şekilde gösterilecek. Eğer en düşük numaralı topa vurmadan başka bir topa vurursan, bu faul sayılır ve rakibin topu eline alır.",
+                        "9 numaralı topu yanlış sokarsan, sayılmaz ve rakibin sırası devam eder."
+                    ]
+                },
+                "objective": {
+                    "title": "Amaç",
+                    "description": [
+                        "Oyunun amacı 9 numaralı topu yasal bir şekilde cebinize atmak. Bu, en düşük numaralı topu vurup 9 numaralı topa sokmak kadar basit olabilir!"
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2080,6 +2126,7 @@
         "restartNotice": "Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir."
     },
     "misc": {
+        "skipTurn": "Sıra atla",
         "doublePointsQuestion": "Çift Puan Sorusu",
         "example": "Başka bir şey var mı?",
         "learnMore": "Daha fazla öğren!",
@@ -2911,7 +2958,8 @@
                 "ILLEGAL_8_BALL_POCKET": "%{name}, faul yaparken sekiz numaralı topu deliğe attı.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name}, sekiz numaralı topu çok erken deliğe attı.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name}, oyun başlarken sekiz numaralı topu deliğe attı.",
-                "POCKETED_WRONG_BALL": "%{name}, yanlış topu deliğe attı."
+                "POCKETED_WRONG_BALL": "%{name}, yanlış topu deliğe attı.",
+                "SKIP_TURN": "%{name} sırasını geçti."
             },
             "self": {
                 "CUE_BALL_POCKET": "İsteka topunu deliğe soktun!",
@@ -2923,7 +2971,8 @@
                 "ILLEGAL_8_BALL_POCKET": "Bir hata yaparken sekiz numaralı topu deliğe soktun.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Sekiz numaralı topu çok erken deliğe soktun.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Oyun başlarken sekiz numaralı topu deliğe soktun.",
-                "POCKETED_WRONG_BALL": "Yanlış topu deliğe soktun."
+                "POCKETED_WRONG_BALL": "Yanlış topu deliğe soktun.",
+                "SKIP_TURN": "Sıra atladın."
             }
         },
         "accountWarning": {

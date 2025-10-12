@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Italian",
         "rtl": false,
-        "total": 1833,
+        "total": 1852,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -917,7 +917,7 @@
                 },
                 "ruleTurnMustHitBall": {
                     "title": "Deve colpire la palla",
-                    "help": "Si verifica quando il giocatore non colpisce una palla (da \"Può colpire la palla\") durante il suo turno."
+                    "help": "Succede quando il giocatore non colpisce la palla sbagliata durante il suo turno."
                 },
                 "ruleTurnContactRail": {
                     "title": "Deve contattare la ferrovia",
@@ -1759,6 +1759,52 @@
                     ]
                 }
             }
+        },
+        "NINE_BALL_POOL": {
+            "name": "Biliardo 9 Palle",
+            "title": null,
+            "description": null,
+            "options": {
+                "pushOut": {
+                    "title": "Spingi Fuori",
+                    "help": "Dopo una rottura legale, si può chiedere un push out, che permette al giocatore di colpire la palla bianca da qualsiasi posizione senza dover colpire prima la palla col numero più basso. Mettere dentro la 9 durante un push out non conta."
+                }
+            },
+            "presets": {
+                "bca": {
+                    "title": "Regole BCA",
+                    "description": "Somigliano molto alle regole del Congresso dei Biliardi d'America"
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Campo di Gioco",
+                    "description": [
+                        "Il tavolo ha 6 buche dove puoi infilare le palle. Si usano in totale 9 palle, compresa la palla bianca che colpisci nel tuo turno.",
+                        "Le palle sono numerate da 1 a 9, e la palla bianca serve per colpire le altre palle. All'inizio del gioco, le palle sono sistemate a forma di diamante, con la palla 1 in cima e la palla 9 al centro."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Gioco",
+                    "description": [
+                        "Quando è il tuo turno, devi prima colpire la palla con il numero più basso sul tavolo. Se la metti in buca, continui il tuo turno e punti alla prossima palla più bassa. Puoi mettere in buca qualsiasi palla durante il tuo turno.",
+                        "Se metti in buca la palla 9 in modo legale dopo aver colpito prima la palla con il numero più basso, vinci subito la partita. Se non colpisci la palla giusta per prima, o non metti in buca nessun'altra palla, il tuo turno finisce."
+                    ]
+                },
+                "foul": {
+                    "title": "Fallo",
+                    "description": [
+                        "La palla che devi colpire sarà segnata chiaramente. Se colpisci prima una palla che non è quella col numero più basso, fai un fallo e il tuo avversario avrà la palla in mano.",
+                        "Se imbucchi la palla 9 nel modo sbagliato, non vale e il tuo avversario mantiene il turno."
+                    ]
+                },
+                "objective": {
+                    "title": "Obiettivo",
+                    "description": [
+                        "L'obiettivo del gioco è imbucare legalmente la 9. Può essere semplice come colpire la pallina col numero più basso e farla finire nella 9!"
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2080,6 +2126,7 @@
         "restartNotice": "Il server si riavvierà tra {count} minuti. Finisci la tua partita. | Il server si riavvierà tra {count} minuto. Finisci la tua partita. | Il server si riavvierà tra {count} minuti. Finisci la tua partita."
     },
     "misc": {
+        "skipTurn": "Salta turno",
         "doublePointsQuestion": "Domanda a Punti Doppio",
         "example": "Esempio",
         "learnMore": "Scopri di più",
@@ -2911,7 +2958,8 @@
                 "ILLEGAL_8_BALL_POCKET": "%{name} ha imbucato l'otto nero mentre commetteva un fallo.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} ha imbucato l'otto nero troppo presto.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} ha imbucato l'otto nero all'inizio.",
-                "POCKETED_WRONG_BALL": "%{name} ha imbucato la palla sbagliata."
+                "POCKETED_WRONG_BALL": "%{name} ha imbucato la palla sbagliata.",
+                "SKIP_TURN": "%{name} ha saltato il suo turno."
             },
             "self": {
                 "CUE_BALL_POCKET": "Hai mandato in buca la biglia bianca!",
@@ -2923,7 +2971,8 @@
                 "ILLEGAL_8_BALL_POCKET": "Hai imbucato l'otto nero mentre commettevi un fallo.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Hai imbucato l'otto nero troppo presto.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Hai imbucato l'otto nero all'inizio.",
-                "POCKETED_WRONG_BALL": "Hai imbucato la palla sbagliata."
+                "POCKETED_WRONG_BALL": "Hai imbucato la palla sbagliata.",
+                "SKIP_TURN": "Hai deciso di saltare il tuo turno."
             }
         },
         "accountWarning": {

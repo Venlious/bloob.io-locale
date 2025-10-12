@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal French",
         "rtl": false,
-        "total": 1833,
+        "total": 1852,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -917,7 +917,7 @@
                 },
                 "ruleTurnMustHitBall": {
                     "title": "Frapper la balle",
-                    "help": "Se produit lorsque le joueur ne frappe pas une balle pendant son tour."
+                    "help": "Ça arrive quand le joueur ne touche pas la mauvaise balle pendant son tour."
                 },
                 "ruleTurnContactRail": {
                     "title": "Contacter les Chemins de Fer",
@@ -1759,6 +1759,52 @@
                     ]
                 }
             }
+        },
+        "NINE_BALL_POOL": {
+            "name": "Billard à 9 boules",
+            "title": null,
+            "description": null,
+            "options": {
+                "pushOut": {
+                    "title": "Pousser dehors",
+                    "help": "Un push out peut être demandé après une casse légale, permettant au joueur de frapper la bille blanche où il veut sans avoir à toucher d'abord la bille de la plus basse valeur. Mettre la 9 dans la poche pendant un push out ne compte pas."
+                }
+            },
+            "presets": {
+                "bca": {
+                    "title": "Règles BCA",
+                    "description": "Ressemble beaucoup aux règles du Billiard Congress of America"
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Terrain de jeu",
+                    "description": [
+                        "Le terrain a 6 poches où tu peux mettre les billes. Y'a 9 billes au total, y compris la bille blanche que tu frappes à ton tour.",
+                        "Les billes sont numérotées de 1 à 9, et la bille blanche sert à frapper les autres billes. Au début du jeu, les billes sont disposées en forme de diamant, avec la bille 1 en haut et la bille 9 au centre."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Gameplay - Comment jouer",
+                    "description": [
+                        "À ton tour, tu dois d'abord toucher la boule avec le plus petit numéro sur la table. Si tu mets cette boule dans le trou, tu continues ton tour et tu vises la prochaine boule la plus basse. Tu peux mettre n'importe quelle boule pendant ton tour.",
+                        "Si tu mets la boule 9 dans le trou légalement après avoir touché la boule avec le plus petit numéro en premier, tu gagnes la partie tout de suite. Si tu rates la bonne boule en premier, ou que tu ne mets aucune autre boule, ton tour se termine."
+                    ]
+                },
+                "foul": {
+                    "title": "Faut pas faire ça !",
+                    "description": [
+                        "La balle que tu dois viser sera bien indiquée. Si tu touches une balle qui n'est pas la plus basse en premier, c'est une faute, et ton adversaire a le droit de jouer où il veut.",
+                        "Si tu mets la 9 dans le trou de la mauvaise façon, ça compte pas, et ton adversaire garde son tour."
+                    ]
+                },
+                "objective": {
+                    "title": "Objectif",
+                    "description": [
+                        "Le but du jeu, c'est de mettre la 9 dans le trou légalement. C'est aussi simple que de frapper la balle avec le plus petit numéro pour la faire tomber dans la 9 !"
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2080,6 +2126,7 @@
         "restartNotice": "Le serveur va redémarrer dans {count} minutes. Finissez votre partie. | Le serveur va redémarrer dans {count} minute. Finissez votre partie. | Le serveur va redémarrer dans {count} minutes. Finissez votre partie."
     },
     "misc": {
+        "skipTurn": "Passer le tour",
         "doublePointsQuestion": "[1] Question Double Points",
         "example": "D'accord, je suis prêt à traduire ! Donne-moi la liste d'éléments à traduire.",
         "learnMore": "En savoir plus",
@@ -2911,7 +2958,8 @@
                 "ILLEGAL_8_BALL_POCKET": "%{name} a empoché la huitième balle en commettant une faute.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} a empoché la huitième balle trop tôt.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} a empoché la huitième balle dès le début.",
-                "POCKETED_WRONG_BALL": "%{name} a empoché la mauvaise balle."
+                "POCKETED_WRONG_BALL": "%{name} a empoché la mauvaise balle.",
+                "SKIP_TURN": "%{name} a sauté son tour."
             },
             "self": {
                 "CUE_BALL_POCKET": "Tu as empoché la bille blanche!",
@@ -2923,7 +2971,8 @@
                 "ILLEGAL_8_BALL_POCKET": "Tu as empoché la huitième balle en commettant une faute.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Tu as empoché la huitième balle trop tôt.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Tu as empoché la huitième balle dès le début.",
-                "POCKETED_WRONG_BALL": "Tu as empoché la mauvaise balle."
+                "POCKETED_WRONG_BALL": "Tu as empoché la mauvaise balle.",
+                "SKIP_TURN": "T'as choisi de sauter ton tour."
             }
         },
         "accountWarning": {

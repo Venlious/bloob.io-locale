@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 1833,
+        "total": 1852,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -917,7 +917,7 @@
                 },
                 "ruleTurnMustHitBall": {
                     "title": "必须击球",
-                    "help": "当玩家在他们的回合中没有击中球（来自\"Can Hit Ball\"）时会发生。"
+                    "help": "玩家在自己回合没打到错误的球时发生。"
                 },
                 "ruleTurnContactRail": {
                     "title": "必须接触轨道",
@@ -1759,6 +1759,52 @@
                     ]
                 }
             }
+        },
+        "NINE_BALL_POOL": {
+            "name": "九球台球",
+            "title": null,
+            "description": null,
+            "options": {
+                "pushOut": {
+                    "title": "推出",
+                    "help": "在合法开球后，可以叫“推球”，允许玩家把母球打到任何位置，不用先打最小编号的球。推球时进9号球不算数。"
+                }
+            },
+            "presets": {
+                "bca": {
+                    "title": "BCA 规则",
+                    "description": "和美国台球大会的规则很像"
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "游戏场地",
+                    "description": [
+                        "这个场地有6个口子，可以把球打进。总共有9个球，包括你在自己回合打的白球。",
+                        "球的编号是1到9，白球用来击打其他球。游戏开始时，球是以菱形排列的，1号球在最上面，9号球在中间。"
+                    ]
+                },
+                "gameplay": {
+                    "title": "游戏玩法",
+                    "description": [
+                        "轮到你时，先得打桌子上号码最小的球。如果你把那个球打进了，就可以继续你的回合，瞄准下一个号码最小的球。你在回合中可以打进任何球。",
+                        "如果你在先打了号码最小的球后合法地把9号球打进了，那你就直接赢了。如果你没先打对球，或者没打进其他球，你的回合就结束了。"
+                    ]
+                },
+                "foul": {
+                    "title": "犯规",
+                    "description": [
+                        "你要瞄准的球会很明显地标出来。如果你先打了一个不是最小编号的球，那就犯规了，你的对手可以随便放球。",
+                        "如果你把9号球打进错了，那就不算数，你的对手继续他们的回合。"
+                    ]
+                },
+                "objective": {
+                    "title": "目标",
+                    "description": [
+                        "游戏的目标是合法地把9号球打进袋里。其实很简单，只要把最小号的球打到9号球上就行！"
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2080,6 +2126,7 @@
         "restartNotice": "服务器将在 {count} 分钟后重启。请完成你的游戏。 | 服务器将在 {count} 分钟后重启。请完成你的游戏。 | 服务器将在 {count} 分钟后重启。请完成你的游戏。"
     },
     "misc": {
+        "skipTurn": "跳过回合",
         "doublePointsQuestion": "双倍积分问题",
         "example": "示例",
         "learnMore": "了解更多",
@@ -2911,7 +2958,8 @@
                 "ILLEGAL_8_BALL_POCKET": "%{name}在犯规的同时把八号球打进了。",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name}把八号球打进得太早了。",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name}在开球时就把八号球打进了。",
-                "POCKETED_WRONG_BALL": "%{name}打进了错误的球。"
+                "POCKETED_WRONG_BALL": "%{name}打进了错误的球。",
+                "SKIP_TURN": "%{name} 跳过了他们的回合。"
             },
             "self": {
                 "CUE_BALL_POCKET": "你把母球打进洞了！",
@@ -2923,7 +2971,8 @@
                 "ILLEGAL_8_BALL_POCKET": "你在犯规的同时把八号球打进去了。",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "你把八号球打进去得太早了。",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "你在开球时就把八号球打进去了。",
-                "POCKETED_WRONG_BALL": "你打进去的是错的球。"
+                "POCKETED_WRONG_BALL": "你打进去的是错的球。",
+                "SKIP_TURN": "你选择跳过你的回合。"
             }
         },
         "accountWarning": {
