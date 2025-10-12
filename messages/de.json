@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal German",
         "rtl": false,
-        "total": 1833,
+        "total": 1854,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -917,7 +917,7 @@
                 },
                 "ruleTurnMustHitBall": {
                     "title": "Muss Kugel treffen",
-                    "help": "Tritt ein, wenn der Spieler während seines Zuges keine zulässige Kugel (aus \"Erlaubte Kugel\") trifft."
+                    "help": "Passiert, wenn der Spieler den falschen Ball nicht trifft, während er am Zug ist."
                 },
                 "ruleTurnContactRail": {
                     "title": "Muss Bande berühren",
@@ -1759,6 +1759,52 @@
                     ]
                 }
             }
+        },
+        "NINE_BALL_POOL": {
+            "name": "9-Ball Billard",
+            "title": "Kostenloses 9 Ball Pool | Multiplayer spielen mit Freunden online",
+            "description": "Spiele kostenlos 9 Ball Pool online gegen Freunde, Fremde oder Bots. Kein Account nötig. Multiplayer-Action bringt Neun Ball Spaß direkt zu dir!",
+            "options": {
+                "pushOut": {
+                    "title": "Rausdrücken",
+                    "help": "Nach einem legalen Break kann ein Push Out angesagt werden, was bedeutet, dass der Spieler die Weiße überall hinspielen kann, ohne zuerst die niedrigste Nummer treffen zu müssen. Die 9 Ball einzulochen zählt beim Push Out nicht."
+                }
+            },
+            "presets": {
+                "bca": {
+                    "title": "BCA Regeln",
+                    "description": "Ähnelt ziemlich den Regeln vom Billiard Congress of America"
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Spielfeld",
+                    "description": [
+                        "Das Feld hat 6 Taschen, wo die Kugeln reinfallen können. Insgesamt gibt's 9 Kugeln, inklusive der Spielkugel, die du bei deinem Zug anschlägst.",
+                        "Die Kugeln sind von 1 bis 9 nummeriert, und die Spielkugel benutzt du, um die anderen Kugeln zu treffen. Zu Beginn des Spiels sind die Kugeln in einer Diamant-Formation angeordnet, mit der 1 oben und der 9 in der Mitte."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Gameplay - So spielst du!",
+                    "description": [
+                        "In deinem Zug musst du zuerst die niedrigste Nummer auf dem Tisch anspielen. Wenn du die versenkst, machst du weiter und zielst auf die nächste niedrigste. Du kannst während deines Zugs jede Kugel versenken.",
+                        "Wenn du die 9er Kugel legal versenkst, nachdem du zuerst die niedrigste Kugel getroffen hast, gewinnst du sofort das Spiel. Wenn du die richtige Kugel nicht zuerst triffst oder keine andere Kugel versenkst, ist dein Zug vorbei."
+                    ]
+                },
+                "foul": {
+                    "title": "Foul",
+                    "description": [
+                        "Der Ball, den du anvisieren musst, wird klar angezeigt. Wenn du zuerst einen Ball triffst, der nicht die niedrigste Nummer hat, ist das ein Foul und dein Gegner bekommt den Ball in die Hand.",
+                        "Wenn du die 9 falsch versenkt, zählt das nicht und dein Gegner bleibt am Zug."
+                    ]
+                },
+                "objective": {
+                    "title": "Ziel",
+                    "description": [
+                        "Das Ziel des Spiels ist es, die 9er Kugel legal zu versenken. Das kann so einfach sein, wie die 9er Kugel zu versenken, indem man die Kugel mit der niedrigsten Nummer anstößt!"
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2080,6 +2126,7 @@
         "restartNotice": "Der Server startet in {count} Minuten neu. Beende bitte dein Spiel. | Der Server startet in {count} Minute neu. Beende bitte dein Spiel. | Der Server startet in {count} Minuten neu. Beende bitte dein Spiel."
     },
     "misc": {
+        "skipTurn": "Zug aussetzen",
         "doublePointsQuestion": "Doppelte Punkte Frage",
         "example": "Beispiel",
         "learnMore": "Mehr erfahren",
@@ -2911,7 +2958,8 @@
                 "ILLEGAL_8_BALL_POCKET": "%{name} hat die schwarze Acht versenkt, während er ein Foul begangen hat.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} hat die schwarze Acht zu früh versenkt.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} hat die schwarze Acht beim Anstoß versenkt.",
-                "POCKETED_WRONG_BALL": "%{name} hat die falsche Kugel versenkt."
+                "POCKETED_WRONG_BALL": "%{name} hat die falsche Kugel versenkt.",
+                "SKIP_TURN": "%{name} hat ihren Zug übersprungen."
             },
             "self": {
                 "CUE_BALL_POCKET": "Du hast die weiße Kugel eingelocht!",
@@ -2923,7 +2971,8 @@
                 "ILLEGAL_8_BALL_POCKET": "Du hast die Acht beim Begehen eines Fouls eingelocht.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Du hast die Acht zu früh eingelocht.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Du hast die Acht beim Anstoß eingelocht.",
-                "POCKETED_WRONG_BALL": "Du hast die falsche Kugel eingelocht."
+                "POCKETED_WRONG_BALL": "Du hast die falsche Kugel eingelocht.",
+                "SKIP_TURN": "Du hast dich entschieden, deinen Zug auszulassen."
             }
         },
         "accountWarning": {

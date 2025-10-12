@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Dutch",
         "rtl": false,
-        "total": 1833,
+        "total": 1854,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -917,7 +917,7 @@
                 },
                 "ruleTurnMustHitBall": {
                     "title": "Moet Bal Raken",
-                    "help": "Treedt op wanneer de speler geen bal slaat (van \"Mag Baltype Raken\") tijdens zijn beurt."
+                    "help": "Gebeurd als de speler de verkeerde bal niet raakt tijdens zijn beurt."
                 },
                 "ruleTurnContactRail": {
                     "title": "Moet Band Raken",
@@ -1759,6 +1759,52 @@
                     ]
                 }
             }
+        },
+        "NINE_BALL_POOL": {
+            "name": "9 Ball Pool",
+            "title": "Speel 9 Ball Pool online | Gratis multiplayer met vrienden",
+            "description": "Speel gratis 9 Ball Pool online met vrienden of vreemden, zonder account. Geniet van spannende multiplayer matches tegen spelers of bots.",
+            "options": {
+                "pushOut": {
+                    "title": "Duw eruit",
+                    "help": "Na een legale break kan er een push out gevraagd worden, waardoor de speler de cue bal naar elke plek mag slaan zonder dat hij eerst de laagste genummerde bal moet raken. De 9 Ball in de pocket krijgen tijdens een push out telt niet."
+                }
+            },
+            "presets": {
+                "bca": {
+                    "title": "BCA Regels",
+                    "description": "Lijkt veel op de regels van het Billiard Congress of America"
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Speelveld",
+                    "description": [
+                        "Het speelveld heeft 6 pockets waar je ballen in kunt potten. Je gebruikt in totaal 9 ballen, inclusief de stootbal die je op jouw beurt slaat.",
+                        "De ballen zijn genummerd van 1 tot 9, en de stootbal gebruik je om de andere ballen te raken. Aan het begin van het spel liggen de ballen in een ruitvorm, met de 1 bal bovenaan en de 9 bal in het midden."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Gameplay",
+                    "description": [
+                        "Tijdens jouw beurt moet je eerst de bal met het laagste nummer op tafel raken. Als je die bal in de pocket krijgt, mag je doorgaan en mik je op de volgende bal met het laagste nummer. Je mag tijdens je beurt elke bal in de pocket krijgen.",
+                        "Als je de 9-bal legaal in de pocket krijgt nadat je eerst de bal met het laagste nummer hebt geraakt, win je meteen het spel. Als je de juiste bal niet eerst raakt, of je krijgt geen andere bal in de pocket, dan is je beurt voorbij."
+                    ]
+                },
+                "foul": {
+                    "title": "Valse start",
+                    "description": [
+                        "De bal waar je op moet mikken wordt duidelijk aangegeven. Als je eerst een bal raakt die niet de laagste nummer is, is dat een fout, en dan krijgt je tegenstander de bal in hand.",
+                        "Als je de 9-ball verkeerd in de pocket stopt, telt het niet, en blijft je tegenstander aan de beurt."
+                    ]
+                },
+                "objective": {
+                    "title": "Doelstelling",
+                    "description": [
+                        "Het doel van het spel is om legaal de 9 bal in te potten. Dit kan zo simpel zijn als de 9 bal in te potten door de bal met het laagste nummer er tegenaan te stoten!"
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2080,6 +2126,7 @@
         "restartNotice": "Server gaat over {count} minuten opnieuw opstarten. Maak je game af. | Server gaat over {count} minuut opnieuw opstarten. Maak je game af. | Server gaat over {count} minuten opnieuw opstarten. Maak je game af."
     },
     "misc": {
+        "skipTurn": "Sla je beurt over",
         "doublePointsQuestion": "Dubbele Punten Vraag",
         "example": "Voorbeeld",
         "learnMore": "Meer leren",
@@ -2911,7 +2958,8 @@
                 "ILLEGAL_8_BALL_POCKET": "%{name} heeft de achtbal gepot terwijl hij een fout beging.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} heeft de achtbal te vroeg gepot.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} heeft de achtbal gepot bij de afstoot.",
-                "POCKETED_WRONG_BALL": "%{name} heeft de verkeerde bal gepot."
+                "POCKETED_WRONG_BALL": "%{name} heeft de verkeerde bal gepot.",
+                "SKIP_TURN": "%{name} heeft hun beurt overgeslagen."
             },
             "self": {
                 "CUE_BALL_POCKET": "Je hebt de speelbal gepot!",
@@ -2923,7 +2971,8 @@
                 "ILLEGAL_8_BALL_POCKET": "Je hebt de achtbal gepot terwijl je een fout beging.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Je hebt de achtbal te vroeg gepot.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Je hebt de achtbal bij de afstoot gepot.",
-                "POCKETED_WRONG_BALL": "Je hebt de verkeerde bal gepot."
+                "POCKETED_WRONG_BALL": "Je hebt de verkeerde bal gepot.",
+                "SKIP_TURN": "Je hebt ervoor gekozen om je beurt over te slaan."
             }
         },
         "accountWarning": {

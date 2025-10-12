@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Mexican Spanish",
         "rtl": false,
-        "total": 1833,
+        "total": 1854,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -917,7 +917,7 @@
                 },
                 "ruleTurnMustHitBall": {
                     "title": "Debes golpear la bola",
-                    "help": "Ocurre cuando el jugador no golpea una bola (de \"Puede golpear la bola\") durante su turno."
+                    "help": "Ocurre cuando el jugador no le pega a la bola equivocada durante su turno."
                 },
                 "ruleTurnContactRail": {
                     "title": "Debe contactar con el raíl",
@@ -1759,6 +1759,52 @@
                     ]
                 }
             }
+        },
+        "NINE_BALL_POOL": {
+            "name": "Billar 9 Ball",
+            "title": "Juega Billar 9 Bolas en Línea Gratis | Multijugador con Cuates",
+            "description": "Juega Billar 9 Ball en línea ¡gratis! Sin cuenta, multijugador con cuates o bots. Descubre la diversión del pool 9 bolas en cualquier momento.",
+            "options": {
+                "pushOut": {
+                    "title": "Sacar Fuera",
+                    "help": "Se puede pedir un \"push out\" después de un break legal, lo que permite al jugador golpear la bola blanca a cualquier posición sin necesidad de golpear primero la bola de menor número. Meter la 9 durante un \"push out\" no cuenta."
+                }
+            },
+            "presets": {
+                "bca": {
+                    "title": "Reglas de BCA",
+                    "description": "Se parecen mucho a las reglas del Congreso de Billar de América"
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Campo de Juego",
+                    "description": [
+                        "La mesa tiene 6 troneras donde se pueden meter las bolas. Se usan un total de 9 bolas, incluyendo la bola blanca que golpeas en tu turno.",
+                        "Las bolas están numeradas del 1 al 9, y la bola blanca se usa para golpear las otras bolas. Al inicio del juego, las bolas se colocan en forma de diamante, con la bola 1 en la parte de arriba y la bola 9 en el centro."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Jugabilidad",
+                    "description": [
+                        "En tu turno, primero tienes que golpear la bola con el número más bajo en la mesa. Si metes esa bola, sigues tu turno y apuntas a la siguiente bola más baja. Puedes meter cualquier bola durante tu turno.",
+                        "Si metes la bola 9 legalmente después de golpear primero la bola con el número más bajo, ganas el juego de inmediato. Si no golpeas la bola correcta primero, o no metes ninguna otra bola, se acaba tu turno."
+                    ]
+                },
+                "foul": {
+                    "title": "Falta",
+                    "description": [
+                        "La bola que debes apuntar se va a indicar claramente. Si le pegas a una bola primero que no sea la de menor número, eso es falta, y le das a tu oponente bola en mano.",
+                        "Si metes la bola 9 de manera incorrecta, no cuenta, y tu oponente sigue jugando."
+                    ]
+                },
+                "objective": {
+                    "title": "Objetivo",
+                    "description": [
+                        "El objetivo del juego es meter la bola 9 de manera legal. ¡Esto puede ser tan fácil como meter la bola 9 pegándole a la bola de menor número!"
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2080,6 +2126,7 @@
         "restartNotice": "El servidor se reiniciará en {count} minutos. Termina tu juego. | El servidor se reiniciará en {count} minuto. Termina tu juego. | El servidor se reiniciará en {count} minutos. Termina tu juego."
     },
     "misc": {
+        "skipTurn": "Saltar turno",
         "doublePointsQuestion": "[1] Pregunta de Doble Puntos",
         "example": "Ejemplo",
         "learnMore": "Saber más",
@@ -2911,7 +2958,8 @@
                 "ILLEGAL_8_BALL_POCKET": "%{name} embocó la bola ocho mientras cometía una falta.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} embocó la bola ocho demasiado pronto.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} embocó la bola ocho en el saque.",
-                "POCKETED_WRONG_BALL": "%{name} embocó la bola equivocada."
+                "POCKETED_WRONG_BALL": "%{name} embocó la bola equivocada.",
+                "SKIP_TURN": "%{name} se brincó su turno."
             },
             "self": {
                 "CUE_BALL_POCKET": "¡Metiste la bola blanca!",
@@ -2923,7 +2971,8 @@
                 "ILLEGAL_8_BALL_POCKET": "Metiste la bola ocho mientras cometías una falta.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Metiste la bola ocho demasiado pronto.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Metiste la bola ocho en el saque.",
-                "POCKETED_WRONG_BALL": "Metiste la bola equivocada."
+                "POCKETED_WRONG_BALL": "Metiste la bola equivocada.",
+                "SKIP_TURN": "Elegiste saltarte tu turno."
             }
         },
         "accountWarning": {

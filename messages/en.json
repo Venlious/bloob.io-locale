@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal American English",
         "rtl": false,
-        "total": 1833,
+        "total": 1854,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -917,7 +917,7 @@
                 },
                 "ruleTurnMustHitBall": {
                     "title": "Must Hit Ball",
-                    "help": "Occurs when the player does not hit a ball (from \"Can Hit Ball\") during their turn."
+                    "help": "Occurs when the player does not hits the wrong ball during their turn."
                 },
                 "ruleTurnContactRail": {
                     "title": "Must Contact Rail",
@@ -1759,6 +1759,52 @@
                     ]
                 }
             }
+        },
+        "NINE_BALL_POOL": {
+            "name": "9 Ball Pool",
+            "title": "Play 9 Ball Pool Online | Free Multiplayer Game with Friends",
+            "description": "Enjoy 9 Ball Pool online, a free multiplayer game with friends or bots. No account needed, just play 9 ball pool with anyone anytime!",
+            "options": {
+                "pushOut": {
+                    "title": "Push Out",
+                    "help": "A push out can be called for after a legal break, allowing the player to hit the cue ball to any position without the requirement to hit the lowest-numbered ball first. Pocketing the 9 Ball during a push out does not count."
+                }
+            },
+            "presets": {
+                "bca": {
+                    "title": "BCA Ruleset",
+                    "description": "Closely resembles Billiard Congress of America rules"
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Playing Field",
+                    "description": [
+                        "The field consists of 6 pockets where balls can be pocketed. A total of 9 balls are used, including the cue ball which you strike on your turn.",
+                        "The balls are numbered 1 through 9, with the cue ball serving to strike the other balls. At the start of the game, the balls are arranged in a diamond formation, with the 1 ball at the top and the 9 ball in the center."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Gameplay",
+                    "description": [
+                        "On your turn, you must first hit the lowest numbered ball on the table. If you pocket that ball, you continue your turn and aim for the next lowest ball. You may pocket any ball during your turn.",
+                        "If you pocket the 9 ball legally after hitting the lowest numbered ball first, you win the game immediately. If you fail to hit the correct ball first, or you don't pocket any other ball, your turn ends."
+                    ]
+                },
+                "foul": {
+                    "title": "Foul",
+                    "description": [
+                        "The ball you must target will be indicated clearly. If you strike a ball first that isn't the lowest numbered ball, that constitutes a foul, which grants your opponent ball-in-hand.",
+                        "If you pocket the 9 ball incorrectly, it does not count, and your opponent retains their turn."
+                    ]
+                },
+                "objective": {
+                    "title": "Objective",
+                    "description": [
+                        "The goal of the game is to legally pocket the 9 ball. This can be as simple as pocketing the 9 ball by hitting the lowest number ball into it!"
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2080,6 +2126,7 @@
         "restartNotice": "Server will restart in {count} minutes. Please finish your game. | Server will restart in {count} minute. Please finish your game. | Server will restart in {count} minutes. Please finish your game."
     },
     "misc": {
+        "skipTurn": "Skip turn",
         "doublePointsQuestion": "Double Points Question",
         "example": "Example",
         "learnMore": "Learn more",
@@ -2911,7 +2958,8 @@
                 "ILLEGAL_8_BALL_POCKET": "%{name} pocketed the eight ball while committing a foul.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} pocketed the eight ball too early.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} pocketed the eight ball on break.",
-                "POCKETED_WRONG_BALL": "%{name} pocketed the wrong ball."
+                "POCKETED_WRONG_BALL": "%{name} pocketed the wrong ball.",
+                "SKIP_TURN": "%{name} skipped their turn."
             },
             "self": {
                 "CUE_BALL_POCKET": "You pocketed the cue ball!",
@@ -2923,7 +2971,8 @@
                 "ILLEGAL_8_BALL_POCKET": "You pocketed the eight ball while committing a foul.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "You pocketed the eight ball too early.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "You pocketed the eight ball on break.",
-                "POCKETED_WRONG_BALL": "You pocketed the wrong ball."
+                "POCKETED_WRONG_BALL": "You pocketed the wrong ball.",
+                "SKIP_TURN": "You chose to skip your turn."
             }
         },
         "accountWarning": {

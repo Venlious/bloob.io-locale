@@ -37,7 +37,8 @@ export enum GameType {
 	numberShowdown = `NUMBER_SHOWDOWN`,
 	rockPaperScissors = `ROCK_PAPER_SCISSORS`,
 	trivia = `TRIVIA`,
-	snooker = `SNOOKER`
+	snooker = `SNOOKER`,
+	nineBallPool = `NINE_BALL_POOL`
 }
 
 export enum CheckersKingType {
@@ -67,5 +68,6 @@ export enum PoolGameFoulType {
 	cueBallHitWrongBall = `CUE_BALL_HIT_WRONG_BALL`,
 	cushionHitMinOnBreak = `CUSHION_HIT_MIN_ON_BREAK`,
 	cushionHitInvalid = `CUSHION_HIT_INVALID`,
-	pocketedWrongBall = `POCKETED_WRONG_BALL`
+	pocketedWrongBall = `POCKETED_WRONG_BALL`,
+	skipTurn = `SKIP_TURN`
 }

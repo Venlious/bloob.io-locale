@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 1833,
+        "total": 1854,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -917,7 +917,7 @@
                 },
                 "ruleTurnMustHitBall": {
                     "title": "Pallon on Osuttava",
-                    "help": "Tapahtuu, kun pelaaja ei osu palloon (\"Voi Lyödä Pallon\") vuorollaan."
+                    "help": "Tapahtuu, kun pelaaja ei lyö väärää palloa vuorollaan."
                 },
                 "ruleTurnContactRail": {
                     "title": "Ota Yhteys Kiskoon",
@@ -1759,6 +1759,52 @@
                     ]
                 }
             }
+        },
+        "NINE_BALL_POOL": {
+            "name": "9 Palloa Biljardissa",
+            "title": "9 Pallo Biljardi Netissä | Pelaa Ilmaiseksi Kaverien Kanssa",
+            "description": "Pelaa 9 pallo biljardia netissä ilmaiseksi! Kutsu kaverit moninpeliin tai haasta botit. Ei tarvita tiliä, nauti ysipallosta heti!",
+            "options": {
+                "pushOut": {
+                    "title": "Työnnä ulos",
+                    "help": "Push out voidaan pyytää laillisen breikin jälkeen, jolloin pelaaja voi lyödä kuulaa mihin tahansa paikkaan ilman, että pitää osua ensin alimmalla numerolla olevaan palloon. 9-pallon pussittaminen push outin aikana ei lasketa."
+                }
+            },
+            "presets": {
+                "bca": {
+                    "title": "BCA-säännöt",
+                    "description": "Aika lailla samanlaiset kuin Billiard Congress of America -säännöt"
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Pelaamisalue",
+                    "description": [
+                        "Kenttä koostuu kuudesta taskusta, joihin pallot voi laittaa. Yhteensä käytetään 9 palloa, mukaan lukien lyöntipallo, jota lyöt omalla vuorollasi.",
+                        "Pallot on numeroitu yhdestä yhdeksään, ja lyöntipallo on se, jolla lyöt muita palloja. Pelin alussa pallot on asetettu timantin muotoon, ykkönen on ylhäällä ja ykkösyhdeksän keskellä."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Peli-idea",
+                    "description": [
+                        "Sun vuorolla sun pitää ensin lyödä se matalin numero pallo pöydällä. Jos saat sen pallon pussitettua, voit jatkaa vuoroasi ja tähdätä seuraavaan matalampaan palloon. Voit pussittaa mitä tahansa palloa vuorosi aikana.",
+                        "Jos saat 9-pallon pussitettua laillisesti sen jälkeen kun oot lyönyt sen matalimman pallon ensin, voitat pelin heti. Jos et lyö oikeaa palloa ensin tai et pussita mitään muuta palloa, sun vuoro loppuu."
+                    ]
+                },
+                "foul": {
+                    "title": "Foulli",
+                    "description": [
+                        "Se pallo, jota sun pitää tähdätä, näkyy selvästi. Jos lyöt ensin palloa, joka ei oo se pienin numero, se on virhe, ja sun vastustaja saa pallon käteen.",
+                        "Jos pussitat 9-pallon väärin, se ei lasketa, ja sun vastustaja saa jatkaa."
+                    ]
+                },
+                "objective": {
+                    "title": "Tavoite",
+                    "description": [
+                        "Pelin tavoite on laillisesti pussittaa 9-pallo. Tää voi olla niin helppoa kuin pussittaa 9-pallo lyömällä siihen alhaisimman numeron pallo!"
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2080,6 +2126,7 @@
         "restartNotice": "Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi."
     },
     "misc": {
+        "skipTurn": "Ohita vuoro",
         "doublePointsQuestion": "Kaksinkertaiset pisteet kysymys",
         "example": "Esimerkki",
         "learnMore": "Opettele lisää",
@@ -2911,7 +2958,8 @@
                 "ILLEGAL_8_BALL_POCKET": "%{name} upotti mustan pallon tehdessään virheen.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} upotti mustan pallon liian aikaisin.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} upotti mustan pallon aloituslyönnillä.",
-                "POCKETED_WRONG_BALL": "%{name} upotti väärän pallon."
+                "POCKETED_WRONG_BALL": "%{name} upotti väärän pallon.",
+                "SKIP_TURN": "%{name} jätti vuoronsa väliin."
             },
             "self": {
                 "CUE_BALL_POCKET": "Upotit lyöntipallon!",
@@ -2923,7 +2971,8 @@
                 "ILLEGAL_8_BALL_POCKET": "Laitoit mustan pallon reikään tehdessäsi virheen.",
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Laitoit mustan pallon reikään liian aikaisin.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Laitoit mustan pallon reikään aloituslyönnillä.",
-                "POCKETED_WRONG_BALL": "Laitoit väärän pallon reikään."
+                "POCKETED_WRONG_BALL": "Laitoit väärän pallon reikään.",
+                "SKIP_TURN": "Sä valitsit ohittaa sun vuoron."
             }
         },
         "accountWarning": {
