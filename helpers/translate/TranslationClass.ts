@@ -390,6 +390,10 @@ export default class TranslationClass {
 			[`info`, `graphicsAcceleration`],
 			`This translation is related to the user's graphics acceleration setting.`
 		)
+		this.generateTranslationTask(
+			[`info`, `characterDownload`],
+			`This translation is related to the user's ability to export their character's picture.`
+		)
 		const cribbageTypes = Object.keys(EN_MESSAGES[`info`][`cribbage`][`type`])
 		for (const type of cribbageTypes) {
 			const target = EN_MESSAGES[`info`][`cribbage`][`type`][type]
