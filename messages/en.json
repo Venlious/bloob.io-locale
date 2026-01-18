@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal American English",
         "rtl": false,
-        "total": 1874,
+        "total": 1912,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -81,6 +81,8 @@
             "maxSubceedMinLength": "Max. length cannot be less than the min. length."
         },
         "start": {
+            "pointProgression": "Progression is not possible, adjust the point settings.",
+            "lowerStartPointAmount": "Start point amount must be lower than the win amount.",
             "configCancel": "Cancelled countdown due to a game settings update",
             "fieldRows": "Selected field cannot support more than %{rows} rows",
             "fieldCannotFitUsers": "Selected field cannot support more than %{users} players",
@@ -295,7 +297,22 @@
                     "data": {
                         "half": "Half Deck",
                         "full": "Full Deck",
-                        "double": "Double Deck"
+                        "double": "Double Deck",
+                        "triple": "Triple Deck",
+                        "four": "Four Deck",
+                        "five": "Five Deck",
+                        "six": "Six Deck",
+                        "seven": "Seven Deck",
+                        "eight": "Eight Deck"
+                    }
+                },
+                "shuffle": {
+                    "title": "Shuffle",
+                    "help": "Choose when a shuffle occurs. A shoe refers to the total amount of cards that are played with.",
+                    "data": {
+                        "EVERY_ROUND": "Every round",
+                        "HALFWAY": "Halfway through shoe",
+                        "WHEN_NEEDED": "When out of cards"
                     }
                 }
             },
@@ -1807,6 +1824,54 @@
                     ]
                 }
             }
+        },
+        "BLACKJACK": {
+            "name": "Blackjack",
+            "title": null,
+            "description": null,
+            "options": {
+                "wagerTime": {
+                    "title": "Wager Time",
+                    "help": "The amount of time every player has to make their wager for the round. This is only used if wagers are enabled."
+                },
+                "dealerSecondCard": {
+                    "title": "Dealer Second Card",
+                    "help": "Determines whether the dealer's second card is shown face-up (visible) or face-down (hidden). When the second card is visible, players gain a significant edge over the dealer."
+                },
+                "wager": {
+                    "title": "Wager",
+                    "help": "When enabled, players can wager points at the start of their turn. If they win the round, their wager is doubled; if they lose, they keep their original points. Players cannot wager more points than they have."
+                },
+                "startPointAmount": {
+                    "title": "Starting Points",
+                    "help": "The number of points each player begins with."
+                },
+                "basePointAmount": {
+                    "title": "Base Points",
+                    "help": "The points a player is guaranteed to earn when they win a round against the dealer."
+                },
+                "blackjackBonusPointAmount": {
+                    "title": "Bonus Blackjack Points",
+                    "help": "Additional points (on top of the \"Base Points\") awarded when a player wins a round with a blackjack."
+                },
+                "aceHandling": {
+                    "title": "Ace Handling",
+                    "help": "Choose how an Ace is scored. The dynamic option automatically counts the Ace as 1 if counting it as 11 would cause the hand to exceed 21.",
+                    "data": {
+                        "ONE_OR_ELEVEN": "Dynamic (1 or 11)",
+                        "ONE": "Always 1",
+                        "ELEVEN": "Always 11"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "FIRST": "First to reach <b>0</b> points | First to reach <b>1</b> point | First to reach <b>{count}</b> points",
+                        "HIGHEST_AFTER": "Most points after <b>0</b> rounds | Most points after <b>1</b> round | Most points after <b>{count}</b> rounds"
+                    }
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1838,7 +1903,8 @@
         "fun": "That was fun!",
         "bye": "Bye!",
         "shortYes": "Yes.",
-        "shortNo": "No."
+        "shortNo": "No.",
+		"myConnectionBad": "My connection's bad."
     },
     "header": {
         "message": {
@@ -1852,6 +1918,7 @@
             "inProgress": "Match in progress",
             "staleMoves": "Match staled — %{staleCount} moves with no take over",
             "forfeit": "Match finished — Opponent chose to forfeit",
+            "outOfPoints": "Match finished — Opponent ran out of points",
             "inactive": "Match ended due to inactivity",
             "pickActionCard": "Picking action card",
             "pickCardSelection": "Making card selection",
@@ -1864,7 +1931,9 @@
             "removingRow": "Removing row",
             "yourTurn": "Your turn %{extra}",
             "nameTurn": "%{name}'s turn",
+            "dealerTurn": "Dealer's turn",
             "tiedVote": "Tied vote",
+            "wager": "Wager",
             "tieEndedRound": "Round has ended in a tie",
             "youEndedRound": "You have ended the round",
             "nameEndedRound": "%{name} has ended the round",
@@ -2107,11 +2176,12 @@
     "count": {
         "levelShort": "LVL {count}",
         "experienceShort": "{count} XP",
+		"winStreak": "{count}-win streak!",
         "kills": "0 kills | 1 kill | {count} kills",
         "deaths": "0 deaths | 1 death | {count} deaths",
         "lives": "0 lives | 1 life | {count} lives",
         "files": "0 files | 1 file | {count} files",
-        "points": "0 points | 1 point | {count} points",
+        "points": "{count} points | {count} point | {count} points",
         "pieces": "0 pieces | 1 piece | {count} pieces",
         "wins": "0 wins | 1 win | {count} wins",
         "cards": "0 cards | 1 card | {count} cards",
@@ -2134,6 +2204,13 @@
         "restartNotice": "Server will restart in {count} minutes. Please finish your game. | Server will restart in {count} minute. Please finish your game. | Server will restart in {count} minutes. Please finish your game."
     },
     "misc": {
+		"wagerPoints": "Wager Points",
+        "hit": "Hit",
+        "stand": "Stand",
+        "bust": "Bust",
+        "push": "Push",
+        "hidden": "Hidden",
+        "visible": "Visible",
         "socialLinks": "Social links",
         "skipTurn": "Skip turn",
         "doublePointsQuestion": "Double Points Question",
@@ -2591,8 +2668,12 @@
         "inactiveOpponents": "All opponents were inactive",
         "waitForOpponent": "Waiting for your opponent...",
         "waitForOpponents": "Waiting for your opponents....",
+		"waitingForWagerFromOthers": "Waiting for everyone to make their wager...",
         "nameLeftTheGame": "%{name} left the game",
+		"selfRanOutOfPoints": "You ran out of points.",
         "selfNoPoints": "You received no points.",
+        "selfReceivedPoints": "You received %{points}.",
+        "selfLostPoints": "You lost %{points}.",
         "nameNoPoints": "%{name} received no points.",
         "gameMenu": "Feel like playing something else?",
         "forfeit": "Forfeiting the game will result in a loss for you.",
@@ -2622,6 +2703,7 @@
         "chatEmojiAlt": "Chat emoji with type {type}",
         "zoomOutHint": "You're zoomed in! Pinch in to zoom out for better game controls.",
         "noGameSelected": "You have no games selected.",
+		"dealerRules": "Dealer hits {hitValue} or less, stands on {standValue}+",
         "awaitingPurchaseConfirmation": {
             "title": "Awaiting Purchase Confirmation",
             "description": "This typically takes just a few seconds. Depending on your payment method this may take longer. Feel free to close this screen."
@@ -2965,6 +3047,13 @@
             "assassinDescription": "Try to eliminate the target.",
             "targetDescription": "Try to outwit the assassins and survive."
         },
+		"blackjackResult": {
+			"BUST": "You busted this round",
+			"LOSS": "You lost this round",
+			"WIN": "You won this round!",
+			"WIN_BLACKJACK": "Blackjack! You win this round!",
+			"PUSH": "This round is a push"
+		},
         "poolType": {
             "SOLID": "Solids",
             "STRIPE": "Stripes"
