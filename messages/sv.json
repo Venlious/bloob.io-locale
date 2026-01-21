@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Swedish",
         "rtl": false,
-        "total": 1874,
+        "total": 1945,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -81,6 +81,8 @@
             "maxSubceedMinLength": "Max. längd kan inte vara mindre än min. längd."
         },
         "start": {
+            "pointProgression": "Det går inte att gå vidare, justera poänginställningarna.",
+            "lowerStartPointAmount": "Startpoängen måste vara lägre än vinstbeloppet.",
             "configCancel": "Avbruten nedräkning pga en uppdatering av spelets inställningar",
             "fieldRows": "Valda fältet kan inte stödja mer än %{rows} rader",
             "fieldCannotFitUsers": "Valda fältet kan inte stödja mer än %{users} spelare",
@@ -275,6 +277,20 @@
                         "STREAK": "Svit"
                     }
                 },
+                "order": {
+                    "title": "Ordning",
+                    "help": {
+                        "default": "Bestäm ordningen för vem som får spela.",
+                        "ALTERNATE": "Vem som går först växlar varje gång.",
+                        "FIXED": "Ordningen är densamma varje gång.",
+                        "SIMULTANEOUS": "Alla får spela samtidigt."
+                    },
+                    "data": {
+                        "ALTERNATE": "Alternativ",
+                        "FIXED": "Fixad",
+                        "SIMULTANEOUS": "Samtidig"
+                    }
+                },
                 "mode": {
                     "title": "Läge",
                     "help": {
@@ -295,7 +311,22 @@
                     "data": {
                         "half": "Halvt kortlek",
                         "full": "Full kortlek",
-                        "double": "Dubbel kortlek"
+                        "double": "Dubbel kortlek",
+                        "triple": "Trippel Däck",
+                        "four": "Fyr Däck",
+                        "five": "Fem Däck",
+                        "six": "Sex Däck",
+                        "seven": "Sju Däck",
+                        "eight": "Åtta kortlekar"
+                    }
+                },
+                "shuffle": {
+                    "title": "Blanda",
+                    "help": "Välj när en blandning ska ske. En \"shoe\" syftar på den totala mängden kort som används.",
+                    "data": {
+                        "EVERY_ROUND": "Varje runda",
+                        "HALFWAY": "Halvvägs genom skorna",
+                        "WHEN_NEEDED": "När korten är slut"
                     }
                 }
             },
@@ -1807,6 +1838,54 @@
                     ]
                 }
             }
+        },
+        "BLACKJACK": {
+            "name": "Blackjack",
+            "title": "Spela Blackjack Online | Gratis med Kompisar och Mot Bots",
+            "description": "Spela Blackjack gratis online med kompisar eller mot bots. Ingen registrering behövs. Upplev tjugoett i spännande multiplayer-matcher!",
+            "options": {
+                "wagerTime": {
+                    "title": "Satsa Tid",
+                    "help": "Tiden varje spelare har för att lägga sitt spel för rundan. Det här används bara om spel är aktiverat."
+                },
+                "dealerSecondCard": {
+                    "title": "Dealerns Andra Kort",
+                    "help": "Avgör om dealerns andra kort visas upp (synligt) eller ner (dolt). När det andra kortet är synligt får spelarna en stor fördel över dealern."
+                },
+                "wager": {
+                    "title": "Satsning",
+                    "help": "När det är på, kan spelarna satsa poäng i början av sin tur. Om de vinner rundan dubblas deras insats; om de förlorar behåller de sina ursprungliga poäng. Spelarna kan inte satsa mer poäng än de har."
+                },
+                "startPointAmount": {
+                    "title": "Startpoäng",
+                    "help": "Antalet poäng varje spelare börjar med."
+                },
+                "basePointAmount": {
+                    "title": "Baspoäng",
+                    "help": "Poängen en spelare garanterat får när de vinner en runda mot dealern."
+                },
+                "blackjackBonusPointAmount": {
+                    "title": "Bonus Blackjack Poäng",
+                    "help": "Extra poäng (utöver \"Baspoängen\") som ges när en spelare vinner en runda med blackjack."
+                },
+                "aceHandling": {
+                    "title": "Bästa Hantering",
+                    "help": "Välj hur en ess ska räknas. Det dynamiska alternativet räknar automatiskt esset som 1 om det skulle göra att handen går över 21 om det räknas som 11.",
+                    "data": {
+                        "ONE_OR_ELEVEN": "Dynamisk (1 eller 11)",
+                        "ONE": "Alltid 1",
+                        "ELEVEN": "Alltid 11"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "FIRST": "Först till <b>0</b> poäng | Först till <b>1</b> poäng | Först till <b>{count}</b> poäng",
+                        "HIGHEST_AFTER": "Flest poäng efter <b>0</b> rundor | Flest poäng efter <b>1</b> runda | Flest poäng efter <b>{count}</b> rundor"
+                    }
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1838,7 +1917,8 @@
         "fun": "Det var kul!",
         "bye": "Hej då!",
         "shortYes": "Ja.",
-        "shortNo": "Nej."
+        "shortNo": "Nej.",
+        "myConnectionBad": "Min uppkoppling suger."
     },
     "header": {
         "message": {
@@ -1852,6 +1932,7 @@
             "inProgress": "Matchen pågår",
             "staleMoves": "Matchen har stannat — %{staleCount} drag utan övertag",
             "forfeit": "Matchen är slut — Motståndaren valde att ge upp",
+            "outOfPoints": "Matchen är slut — Motståndaren fick slut på poäng",
             "inactive": "Matchen avslutades på grund av inaktivitet",
             "pickActionCard": "Väljer aktionskort",
             "pickCardSelection": "Gör kortval",
@@ -1864,7 +1945,11 @@
             "removingRow": "Tar bort rad",
             "yourTurn": "Din tur %{extra}",
             "nameTurn": "%{name}s tur",
+            "dealerTurn": "Dags för dealern",
             "tiedVote": "Oavgjort röstning",
+            "makeYourMove": "Gör ditt drag",
+            "waitingForOthers": "Väntar på andra",
+            "wager": "Satsa",
             "tieEndedRound": "Rundan slutade oavgjort",
             "youEndedRound": "Du har avslutat rundan",
             "nameEndedRound": "%{name} har avslutat rundan",
@@ -2107,11 +2192,12 @@
     "count": {
         "levelShort": "LVL {count}",
         "experienceShort": "{count} XP",
+        "winStreak": "{count}-vinst streak!",
         "kills": "0 dödade | 1 dödad | {count} dödade",
         "deaths": "0 dödsfall | 1 dödsfall | {count} dödsfall",
         "lives": "0 liv | 1 liv | {count} liv",
         "files": "0 filer | 1 fil | {count} filer",
-        "points": "0 poäng | 1 poäng | {count} poäng",
+        "points": "{count} poäng | {count} poäng | {count} poäng",
         "pieces": "0 bitar | 1 bit | {count} bitar",
         "wins": "0 vinster | 1 vinst | {count} vinster",
         "cards": "0 kort | 1 kort | {count} kort",
@@ -2134,6 +2220,13 @@
         "restartNotice": "Servern kommer starta om om {count} minuter. Avsluta ditt spel. | Servern kommer starta om om {count} minut. Avsluta ditt spel. | Servern kommer starta om om {count} minuter. Avsluta ditt spel."
     },
     "misc": {
+        "wagerPoints": "Insatspoäng",
+        "hit": "Slå",
+        "stand": "Stå",
+        "bust": "Förlora",
+        "push": "Oavgjort",
+        "hidden": "Dold",
+        "visible": "Synlig",
         "socialLinks": "Sociala länkar",
         "skipTurn": "Hoppa över turen",
         "doublePointsQuestion": "Dubbelpoängfråga",
@@ -2320,6 +2413,10 @@
         "flawlessGames": "Perfekta spel",
         "hits": "Träffar",
         "hitRate": "Träfffrekvens",
+        "bustRate": "Bust Rate",
+        "successRate": "Framgångsrate",
+        "pushRate": "Tryckrate",
+        "blackjackRate": "Blackjack Insats",
         "rank": "Rankning",
         "kills": "Mord",
         "assassin": "Mördare",
@@ -2591,8 +2688,12 @@
         "inactiveOpponents": "Alla motståndare var inaktiva",
         "waitForOpponent": "Väntar på din motståndare...",
         "waitForOpponents": "Väntar på dina motståndare....",
+        "waitingForWagerFromOthers": "Väntar på att alla ska lägga sina insatser...",
         "nameLeftTheGame": "%{name} lämnade spelet",
+        "selfRanOutOfPoints": "Du har slut på poäng.",
         "selfNoPoints": "Du fick inga poäng.",
+        "selfReceivedPoints": "Du fick %{points}.",
+        "selfLostPoints": "Du förlorade %{points}.",
         "nameNoPoints": "%{name} fick inga poäng.",
         "gameMenu": "Känner du för att spela något annat?",
         "forfeit": "Om du ger upp spelet kommer du att förlora.",
@@ -2622,6 +2723,7 @@
         "chatEmojiAlt": "Chat emoji med typ {type}",
         "zoomOutHint": "Du är inzoomad! Klia ihop för att zooma ut och få bättre kontroll över spelet.",
         "noGameSelected": "Du har inga spel valda.",
+        "dealerRules": "Dealern drar kort om {hitValue} eller mindre, står på {standValue}+",
         "awaitingPurchaseConfirmation": {
             "title": "Väntar på köpbekräftelse",
             "description": "Det här tar vanligtvis bara några sekunder. Beroende på din betalningsmetod kan det ta längre tid. Du kan lugnt stänga den här skärmen."
@@ -2964,6 +3066,13 @@
             "targetAssignment": null,
             "assassinDescription": null,
             "targetDescription": null
+        },
+        "blackjackResult": {
+            "BUST": "Du spräckte den här rundan",
+            "LOSS": "Du förlorade den här rundan",
+            "WIN": "Du vann den här rundan!",
+            "WIN_BLACKJACK": "Blackjack! Du vinner den här rundan!",
+            "PUSH": "Den här rundan är oavgjord"
         },
         "poolType": {
             "SOLID": "Enfärgade",

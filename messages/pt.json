@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Brazilian Portuguese",
         "rtl": false,
-        "total": 1874,
+        "total": 1945,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -81,6 +81,8 @@
             "maxSubceedMinLength": "O comprimento máximo não pode ser menor do que o comprimento mínimo."
         },
         "start": {
+            "pointProgression": "Não dá pra progredir, ajusta as configurações dos pontos.",
+            "lowerStartPointAmount": "A quantidade de pontos de início tem que ser menor que a quantidade de pontos de vitória.",
             "configCancel": "Contagem regressiva cancelada por causa de uma atualização nas configurações do jogo.",
             "fieldRows": "O campo selecionado não pode suportar mais do que %{rows} linhas",
             "fieldCannotFitUsers": "O campo selecionado não pode suportar mais do que %{users} jogadores",
@@ -275,6 +277,20 @@
                         "STREAK": "Sequência"
                     }
                 },
+                "order": {
+                    "title": "Ordem",
+                    "help": {
+                        "default": "Define a ordem de quem joga.",
+                        "ALTERNATE": "Alterna quem vai primeiro a cada rodada.",
+                        "FIXED": "A ordem é sempre a mesma em cada rodada.",
+                        "SIMULTANEOUS": "Todo mundo joga ao mesmo tempo."
+                    },
+                    "data": {
+                        "ALTERNATE": "Alternativo",
+                        "FIXED": "Fixo",
+                        "SIMULTANEOUS": "Simultâneo"
+                    }
+                },
                 "mode": {
                     "title": "Modo",
                     "help": {
@@ -295,7 +311,22 @@
                     "data": {
                         "half": "Meio Baralho",
                         "full": "Baralho Completo",
-                        "double": "Baralho Duplo"
+                        "double": "Baralho Duplo",
+                        "triple": "Triplo Deck",
+                        "four": "Quatro Deck",
+                        "five": "Cinco Deck",
+                        "six": "Seis Deck",
+                        "seven": "Sete Deck",
+                        "eight": "Deck Oito"
+                    }
+                },
+                "shuffle": {
+                    "title": "Embaralhar",
+                    "help": "Escolha quando vai rolar um embaralhamento. Um \"shoe\" é a quantidade total de cartas que estão sendo usadas.",
+                    "data": {
+                        "EVERY_ROUND": "Todo round",
+                        "HALFWAY": "No meio do jogo",
+                        "WHEN_NEEDED": "Quando acabar as cartas"
                     }
                 }
             },
@@ -1807,6 +1838,54 @@
                     ]
                 }
             }
+        },
+        "BLACKJACK": {
+            "name": "Blackjack",
+            "title": "Jogar Blackjack Online Grátis | Desafie Amigos em 21 Agora!",
+            "description": "Jogue Blackjack online grátis com amigos ou desconhecidos, sem cadastro! Desfrute de partidas multiplayer e desafie-se contra bots no clássico 21.",
+            "options": {
+                "wagerTime": {
+                    "title": "Hora da Aposta",
+                    "help": "O tempo que cada jogador tem pra fazer a aposta da rodada. Isso só vale se as apostas estiverem liberadas."
+                },
+                "dealerSecondCard": {
+                    "title": "Carta Dois do Dealer",
+                    "help": "Determina se a segunda carta do dealer tá virada pra cima (visível) ou pra baixo (escondida). Quando a segunda carta tá visível, os jogadores têm uma vantagem bem grande sobre o dealer."
+                },
+                "wager": {
+                    "title": "Aposta",
+                    "help": "Quando ativado, os jogadores podem apostar pontos no começo da vez deles. Se eles ganharem a rodada, a aposta é dobrada; se perderem, ficam com os pontos que tinham. Os jogadores não podem apostar mais pontos do que eles têm."
+                },
+                "startPointAmount": {
+                    "title": "Pontos Iniciais",
+                    "help": "O número de pontos que cada jogador começa."
+                },
+                "basePointAmount": {
+                    "title": "Pontos Base",
+                    "help": "Os pontos que um jogador garante ganhar quando vence uma rodada contra o dealer."
+                },
+                "blackjackBonusPointAmount": {
+                    "title": "Pontos Bônus no Blackjack",
+                    "help": "Pontos extras (além dos \"Pontos Base\") que o jogador ganha quando vence uma rodada com um blackjack."
+                },
+                "aceHandling": {
+                    "title": "Manuseio de Craque",
+                    "help": "Escolha como um Ás é contado. A opção dinâmica conta automaticamente o Ás como 1 se contar como 11 fizer a mão passar de 21.",
+                    "data": {
+                        "ONE_OR_ELEVEN": "Dinâmico (1 ou 11)",
+                        "ONE": "Sempre 1",
+                        "ELEVEN": "Sempre 11"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "FIRST": "Primeiro a chegar em <b>0</b> pontos | Primeiro a chegar em <b>1</b> ponto | Primeiro a chegar em <b>{count}</b> pontos",
+                        "HIGHEST_AFTER": "Mais pontos depois de <b>0</b> rodadas | Mais pontos depois de <b>1</b> rodada | Mais pontos depois de <b>{count}</b> rodadas"
+                    }
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1838,7 +1917,8 @@
         "fun": "Isso foi show!",
         "bye": "Até mais!",
         "shortYes": "Sim.",
-        "shortNo": "Não."
+        "shortNo": "Não.",
+        "myConnectionBad": "Minha conexão tá ruim."
     },
     "header": {
         "message": {
@@ -1852,6 +1932,7 @@
             "inProgress": "Partida em andamento",
             "staleMoves": "Partida estagnada — %{staleCount} movimentos sem capturas",
             "forfeit": "Jogo concluído — O oponente optou por desistir",
+            "outOfPoints": "Jogo acabou — O adversário ficou sem pontos",
             "inactive": "Fim de jogo devido à inatividade",
             "pickActionCard": "Carta de ação para escolha",
             "pickCardSelection": "Fazendo a seleção da carta",
@@ -1864,7 +1945,11 @@
             "removingRow": "Removendo linha",
             "yourTurn": "Sua vez %{extra}",
             "nameTurn": "vez de %{name}",
+            "dealerTurn": "É a vez do dealer",
             "tiedVote": "Empate na votação",
+            "makeYourMove": "Faça sua jogada",
+            "waitingForOthers": "Esperando os outros",
+            "wager": "Aposta",
             "tieEndedRound": "A rodada terminou empatada",
             "youEndedRound": "Você terminou a rodada",
             "nameEndedRound": "%{name} terminou a rodada",
@@ -2107,11 +2192,12 @@
     "count": {
         "levelShort": "Nível {count}",
         "experienceShort": "{count} XP",
+        "winStreak": "{count} vitórias seguidas!",
         "kills": "Matou 0 | Matou 1 | Matou {count}",
         "deaths": "Morreu 0 | Morreu 1 | Morreu {count}",
         "lives": "0 vidas | 1 vida | {count} vidas",
         "files": "0 arquivos | 1 arquivo | {count} arquivos",
-        "points": "0 pontos | 1 ponto | {count} pontos",
+        "points": "{count} pontos | {count} ponto | {count} pontos",
         "pieces": "0 peças | 1 peça | {count} peças",
         "wins": "0 vitórias | 1 vitória | {count} vitórias",
         "cards": "0 cartas | 1 carta | {count} cartas",
@@ -2134,6 +2220,13 @@
         "restartNotice": "O servidor vai reiniciar em {count} minutos. Termina seu jogo. | O servidor vai reiniciar em {count} minuto. Termina seu jogo. | O servidor vai reiniciar em {count} minutos. Termina seu jogo."
     },
     "misc": {
+        "wagerPoints": "Pontos de Aposta",
+        "hit": "Bater",
+        "stand": "Manter",
+        "bust": "Estourar",
+        "push": "Empatar",
+        "hidden": "Oculto",
+        "visible": "Visível",
         "socialLinks": "Links sociais",
         "skipTurn": "Pular a vez",
         "doublePointsQuestion": "Pergunta de Pontos em Dobro",
@@ -2320,6 +2413,10 @@
         "flawlessGames": "Jogos Perfeitos",
         "hits": "Acertos",
         "hitRate": "Taxa de Acerto",
+        "bustRate": "Taxa de Bust",
+        "successRate": "Taxa de Sucesso",
+        "pushRate": "Taxa de Empurrão",
+        "blackjackRate": "Taxa de Blackjack",
         "rank": "Classificação",
         "kills": "Mortes realizadas",
         "assassin": "Assassino",
@@ -2591,8 +2688,12 @@
         "inactiveOpponents": "Todos os oponentes estavam inativos",
         "waitForOpponent": "Esperando pelo seu oponente...",
         "waitForOpponents": "Esperando pelos seus oponentes...",
+        "waitingForWagerFromOthers": "Esperando todo mundo fazer a aposta...",
         "nameLeftTheGame": "%{name} saiu do jogo",
+        "selfRanOutOfPoints": "Você ficou sem pontos.",
         "selfNoPoints": "Você não recebeu nenhum ponto.",
+        "selfReceivedPoints": "Você ganhou %{points}.",
+        "selfLostPoints": "Você perdeu %{points}.",
         "nameNoPoints": "%{name} não recebeu nenhum ponto.",
         "gameMenu": "Quer jogar outra coisa?",
         "forfeit": "A perda do jogo resultará em uma derrota para você.",
@@ -2622,6 +2723,7 @@
         "chatEmojiAlt": "Emoji de chat com tipo {type}",
         "zoomOutHint": "Você tá muito perto! Aperta pra dentro pra dar um zoom out e melhorar os controles do jogo.",
         "noGameSelected": "Você não tem nenhum jogo selecionado.",
+        "dealerRules": "O dealer bate até {hitValue} ou menos, e para em {standValue} ou mais.",
         "awaitingPurchaseConfirmation": {
             "title": "Aguardando Confirmação de Compra",
             "description": "Isso geralmente leva apenas alguns segundos. Dependendo do seu método de pagamento, pode demorar mais. Fique à vontade para fechar essa tela."
@@ -2964,6 +3066,13 @@
             "targetAssignment": null,
             "assassinDescription": null,
             "targetDescription": null
+        },
+        "blackjackResult": {
+            "BUST": "Você se ferrou nessa rodada",
+            "LOSS": "Você perdeu essa rodada",
+            "WIN": "Você ganhou essa rodada!",
+            "WIN_BLACKJACK": "Blackjack! Você ganhou essa rodada!",
+            "PUSH": "Essa rodada foi um empate"
         },
         "poolType": {
             "SOLID": "Sólidas",

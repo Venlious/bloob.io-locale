@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Dutch",
         "rtl": false,
-        "total": 1874,
-        "missing": 22
+        "total": 1945,
+        "missing": 24
     },
     "name": "Bloob.io",
     "error": {
@@ -81,6 +81,8 @@
             "maxSubceedMinLength": "Max. lengte kan niet kleiner zijn dan de min. lengte."
         },
         "start": {
+            "pointProgression": "Voortgang is niet mogelijk, pas de puntinstellingen aan.",
+            "lowerStartPointAmount": "Het startpuntbedrag moet lager zijn dan het winstbedrag.",
             "configCancel": "Countdown geannuleerd door een update van de game-instellingen.",
             "fieldRows": "Geselecteerd speelveld ondersteunt niet meer dan %{rows} rijen",
             "fieldCannotFitUsers": "Geselecteerd speelveld ondersteunt niet meer dan %{users} spelers",
@@ -275,6 +277,20 @@
                         "STREAK": "Reeks"
                     }
                 },
+                "order": {
+                    "title": "Volgorde",
+                    "help": {
+                        "default": "Bepaal in welke volgorde iedereen mag spelen.",
+                        "ALTERNATE": "Om de beurt wie er als eerste gaat elke keer.",
+                        "FIXED": "De volgorde is elke keer hetzelfde.",
+                        "SIMULTANEOUS": "Iedereen mag tegelijk spelen."
+                    },
+                    "data": {
+                        "ALTERNATE": "Alternatief",
+                        "FIXED": "Vast",
+                        "SIMULTANEOUS": "Gelijktijdig"
+                    }
+                },
                 "mode": {
                     "title": "Modus",
                     "help": {
@@ -295,7 +311,22 @@
                     "data": {
                         "half": "Half Deck",
                         "full": "Volledig Deck",
-                        "double": "Dubbel Deck"
+                        "double": "Dubbel Deck",
+                        "triple": "Drie Dek",
+                        "four": "Vier Dek",
+                        "five": "Vijf Dek",
+                        "six": "Zes Dek",
+                        "seven": "Zeven Dek",
+                        "eight": "Acht Deck"
+                    }
+                },
+                "shuffle": {
+                    "title": "Schudden",
+                    "help": "Kies wanneer er geschud wordt. Een shoe is het totaal aantal kaarten dat gebruikt wordt.",
+                    "data": {
+                        "EVERY_ROUND": "Elke ronde",
+                        "HALFWAY": "Halverwege de schoen",
+                        "WHEN_NEEDED": "Als je geen kaarten meer hebt"
                     }
                 }
             },
@@ -1807,6 +1838,54 @@
                     ]
                 }
             }
+        },
+        "BLACKJACK": {
+            "name": "Blackjack",
+            "title": null,
+            "description": null,
+            "options": {
+                "wagerTime": {
+                    "title": "Inzet Tijd",
+                    "help": "De tijd die elke speler heeft om hun inzet voor de ronde te plaatsen. Dit wordt alleen gebruikt als inzetten zijn ingeschakeld."
+                },
+                "dealerSecondCard": {
+                    "title": "Dealer Tweede Kaart",
+                    "help": "Bepaalt of de tweede kaart van de dealer met de afbeelding naar boven (zichtbaar) of met de afbeelding naar beneden (verborgen) ligt. Als de tweede kaart zichtbaar is, hebben spelers een flinke voorsprong op de dealer."
+                },
+                "wager": {
+                    "title": "Inzetten",
+                    "help": "Als het aanstaat, kunnen spelers punten inzetten aan het begin van hun beurt. Als ze de ronde winnen, wordt hun inzet verdubbeld; als ze verliezen, houden ze hun originele punten. Spelers kunnen niet meer punten inzetten dan ze hebben."
+                },
+                "startPointAmount": {
+                    "title": "Startpunten",
+                    "help": "Het aantal punten dat elke speler begint met."
+                },
+                "basePointAmount": {
+                    "title": "Basispunten",
+                    "help": "De punten die je zeker krijgt als je een ronde wint van de dealer."
+                },
+                "blackjackBonusPointAmount": {
+                    "title": "Bonus Blackjack Punten",
+                    "help": "Extra punten (bovenop de \"Basispunten\") die je krijgt als je een ronde wint met een blackjack."
+                },
+                "aceHandling": {
+                    "title": "Top Behandeling",
+                    "help": "Kies hoe een Aas wordt geteld. De dynamische optie telt de Aas automatisch als 1 als het tellen als 11 ervoor zou zorgen dat je boven de 21 komt.",
+                    "data": {
+                        "ONE_OR_ELEVEN": "Dynamisch (1 of 11)",
+                        "ONE": "Altijd 1",
+                        "ELEVEN": "Altijd 11"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "FIRST": "Als eerste <b>0</b> punten haalt | Als eerste <b>1</b> punt haalt | Als eerste <b>{count}</b> punten haalt",
+                        "HIGHEST_AFTER": "Meeste punten na <b>0</b> rondes | Meeste punten na <b>1</b> ronde | Meeste punten na <b>{count}</b> rondes"
+                    }
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1838,7 +1917,8 @@
         "fun": "Dat was leuk!",
         "bye": "Doei!",
         "shortYes": "Ja.",
-        "shortNo": "Nee."
+        "shortNo": "Nee.",
+        "myConnectionBad": "Mijn verbinding is kut."
     },
     "header": {
         "message": {
@@ -1852,6 +1932,7 @@
             "inProgress": "Spel is gaande",
             "staleMoves": "Spel verlopen — %{staleCount} zetten zonder overname",
             "forfeit": "Spel afgelopen — Tegenstander heeft opgegeven",
+            "outOfPoints": "Wedstrijd afgelopen — Tegenstander heeft geen punten meer",
             "inactive": "Spel beëindigd wegens inactiviteit",
             "pickActionCard": "Actiekaart kiezen",
             "pickCardSelection": "Maken van kaart selectie",
@@ -1864,7 +1945,11 @@
             "removingRow": "Verwijderen van rij",
             "yourTurn": "Jouw beurt %{extra}",
             "nameTurn": "%{name}s beurt",
+            "dealerTurn": "Beurt van de dealer",
             "tiedVote": "Gelijkspel in stemmen",
+            "makeYourMove": "Doe je zet",
+            "waitingForOthers": "Wachten op anderen",
+            "wager": "Inzet",
             "tieEndedRound": "Ronde is geëindigd in een gelijkspel",
             "youEndedRound": "Jij hebt de ronde beëindigd",
             "nameEndedRound": "%{name} heeft de ronde beëindigd",
@@ -2107,6 +2192,7 @@
     "count": {
         "levelShort": "LVL {count}",
         "experienceShort": "{count} XP",
+        "winStreak": "{count}-overwinning streak!",
         "kills": "0 kills | 1 kill | {count} kills",
         "deaths": "0 overlijden | 1 overlijden | {count} overlijden",
         "lives": "0 levens | 1 leven | {count} levens",
@@ -2134,6 +2220,13 @@
         "restartNotice": "Server gaat over {count} minuten opnieuw opstarten. Maak je game af. | Server gaat over {count} minuut opnieuw opstarten. Maak je game af. | Server gaat over {count} minuten opnieuw opstarten. Maak je game af."
     },
     "misc": {
+        "wagerPoints": "Inzetpunten",
+        "hit": "Hit",
+        "stand": "Staan",
+        "bust": "Verliezen",
+        "push": "Gelijkspel",
+        "hidden": "Verborgen",
+        "visible": "Zichtbaar",
         "socialLinks": "Sociale links",
         "skipTurn": "Sla je beurt over",
         "doublePointsQuestion": "Dubbele Punten Vraag",
@@ -2320,6 +2413,10 @@
         "flawlessGames": "Perfecte Spellen",
         "hits": "Hits",
         "hitRate": "Hitpercentage",
+        "bustRate": "Bustpercentage",
+        "successRate": "Succespercentage",
+        "pushRate": "Drukpercentage",
+        "blackjackRate": "Blackjack Tarief",
         "rank": "Plaats",
         "kills": "Kills",
         "assassin": "Moordenaar",
@@ -2591,8 +2688,12 @@
         "inactiveOpponents": "Alle tegenstanders waren inactief",
         "waitForOpponent": "Wachten op je tegenstander...",
         "waitForOpponents": "Wachten op je tegenstanders....",
+        "waitingForWagerFromOthers": "Wachten tot iedereen z'n inzet heeft gedaan...",
         "nameLeftTheGame": "%{name} heeft het spel verlaten",
+        "selfRanOutOfPoints": "Je hebt geen punten meer.",
         "selfNoPoints": "Je hebt geen punten ontvangen.",
+        "selfReceivedPoints": "Je hebt %{points} gekregen.",
+        "selfLostPoints": "Je hebt %{points} verloren.",
         "nameNoPoints": "%{name} heeft geen punten ontvangen.",
         "gameMenu": "Wil je iets anders spelen?",
         "forfeit": "Door verlies te verklaren zal je het spel meteen verliezen.",
@@ -2622,6 +2723,7 @@
         "chatEmojiAlt": "Chat emoji met type {type}",
         "zoomOutHint": "Je bent ingezoomd! Knijp in om uit te zoomen voor betere gamecontrols.",
         "noGameSelected": "Je hebt geen spellen geselecteerd.",
+        "dealerRules": "Dealer pakt bij {hitValue} of minder, staat stil bij {standValue} of meer.",
         "awaitingPurchaseConfirmation": {
             "title": "Wachten op Bevestiging van Aankoop",
             "description": "Dit duurt meestal maar een paar seconden. Afhankelijk van je betaalmethode kan dit langer duren. Je mag dit scherm gerust sluiten."
@@ -2964,6 +3066,13 @@
             "targetAssignment": null,
             "assassinDescription": null,
             "targetDescription": null
+        },
+        "blackjackResult": {
+            "BUST": "Je hebt deze ronde verloren",
+            "LOSS": "Je hebt deze ronde verloren",
+            "WIN": "Je hebt deze ronde gewonnen!",
+            "WIN_BLACKJACK": "Blackjack! Je wint deze ronde!",
+            "PUSH": "Deze ronde is gelijkspel"
         },
         "poolType": {
             "SOLID": "Effen",

@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 1874,
+        "total": 1945,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -81,6 +81,8 @@
             "maxSubceedMinLength": "Maksimipituus ei voi olla pienempi kuin minimipituus."
         },
         "start": {
+            "pointProgression": "Edistyminen ei oo mahdollista, säädä pisteasetuksia.",
+            "lowerStartPointAmount": "Alkupisteiden määrä pitää olla pienempi kuin voittosumma.",
             "configCancel": "Peruttu laskenta pelin asetusten päivityksen takia",
             "fieldRows": "Valittu kenttä ei voi tukea enempää kuin %{rows} riviä",
             "fieldCannotFitUsers": "Valittu kenttä ei voi tukea enempää kuin %{users} pelaajaa",
@@ -275,6 +277,20 @@
                         "STREAK": "Putki"
                     }
                 },
+                "order": {
+                    "title": "Järjestys",
+                    "help": {
+                        "default": "Päättäkää, missä järjestyksessä kaikki pääsee pelaamaan.",
+                        "ALTERNATE": "Vaihtelee, kuka menee ekana joka kierroksella.",
+                        "FIXED": "Järjestys on sama joka kierroksella.",
+                        "SIMULTANEOUS": "Kaikki pääsee pelaamaan samaan aikaan."
+                    },
+                    "data": {
+                        "ALTERNATE": "Vaihtoehtoinen",
+                        "FIXED": "Kiinteä",
+                        "SIMULTANEOUS": "Samanaikainen"
+                    }
+                },
                 "mode": {
                     "title": "Tila",
                     "help": {
@@ -295,7 +311,22 @@
                     "data": {
                         "half": "Puolikas pakka",
                         "full": "Täysi pakka",
-                        "double": "Tuplapakka"
+                        "double": "Tuplapakka",
+                        "triple": "Kolmonen pakka",
+                        "four": "Nelonen pakka",
+                        "five": "Viitonen pakka",
+                        "six": "Kuutonen pakka",
+                        "seven": "Seiska pakka",
+                        "eight": "Kahdeksan pakkaa"
+                    }
+                },
+                "shuffle": {
+                    "title": "Sekoita",
+                    "help": "Valitse, milloin sekoitus tapahtuu. Kenkä tarkoittaa kaikkia kortteja, joita pelissä käytetään.",
+                    "data": {
+                        "EVERY_ROUND": "Joka kierroksella",
+                        "HALFWAY": "Puolivälissä kenkää",
+                        "WHEN_NEEDED": "Kun kortit loppuu"
                     }
                 }
             },
@@ -1807,6 +1838,54 @@
                     ]
                 }
             }
+        },
+        "BLACKJACK": {
+            "name": "Betsibingo",
+            "title": "Pelaa Blackjack | Netissä ilmaiseksi kavereiden kanssa",
+            "description": "Pelaa klassista Blackjackia ilmaiseksi netissä! Ei rekisteröintiä, pelaa kavereiden, tuntemattomien tai bottien kanssa. Hauska moninpeli odottaa!",
+            "options": {
+                "wagerTime": {
+                    "title": "Panoshetki",
+                    "help": "Aika, joka jokaisella pelaajalla on tehdä panoksensa kierrokselle. Tätä käytetään vaan, jos panokset on päällä."
+                },
+                "dealerSecondCard": {
+                    "title": "Diilerin Toinen Kortti",
+                    "help": "Määrittää, näkyykö jakajan toinen kortti ylösalaisin (näkyvissä) vai alaspäin (piilossa). Kun toinen kortti on näkyvissä, pelaajilla on iso etu jakajaan verrattuna."
+                },
+                "wager": {
+                    "title": "Panosta",
+                    "help": "Kun tää on päällä, pelaajat voi lyödä vetoa pisteistään vuoronsa alussa. Jos ne voittaa kierroksen, niiden veto tuplataan; jos ne häviää, ne pitää alkuperäiset pisteensä. Pelaajat ei voi lyödä vetoa enempää pisteitä kuin mitä niillä on."
+                },
+                "startPointAmount": {
+                    "title": "Aloituspisteet",
+                    "help": "Pisteet, joilla jokainen pelaaja aloittaa."
+                },
+                "basePointAmount": {
+                    "title": "Peruspisteet",
+                    "help": "Pisteet, jotka pelaaja saa takuulla, kun voittaa kierroksen jakajaa vastaan."
+                },
+                "blackjackBonusPointAmount": {
+                    "title": "Bonus Blackjack Pisteet",
+                    "help": "Lisäpisteet (peruspisteiden päälle), kun pelaaja voittaa kierroksen blackjackilla."
+                },
+                "aceHandling": {
+                    "title": "Ässäohjaus",
+                    "help": "Valitse, miten ässä lasketaan. Dynaaminen vaihtoehto laskee ässän automaattisesti 1:ksi, jos sen laskeminen 11:ksi saisi käden ylittämään 21.",
+                    "data": {
+                        "ONE_OR_ELEVEN": "Dynaaminen (1 tai 11)",
+                        "ONE": "Aina 1",
+                        "ELEVEN": "Aina 11"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "FIRST": "Ensimmäinen, joka saa <b>0</b> pistettä | Ensimmäinen, joka saa <b>1</b> pisteen | Ensimmäinen, joka saa <b>{count}</b> pistettä",
+                        "HIGHEST_AFTER": "Eniten pisteitä <b>0</b> kierroksen jälkeen | Eniten pisteitä <b>1</b> kierroksen jälkeen | Eniten pisteitä <b>{count}</b> kierroksen jälkeen"
+                    }
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1838,7 +1917,8 @@
         "fun": "Oli hauskaa!",
         "bye": "Moi moi!",
         "shortYes": "Joo.",
-        "shortNo": "Ei."
+        "shortNo": "Ei.",
+        "myConnectionBad": "Mun netti on huono."
     },
     "header": {
         "message": {
@@ -1852,6 +1932,7 @@
             "inProgress": "Ottelu käynnissä",
             "staleMoves": "Ottelu jumissa — %{staleCount} siirtoa ilman valtausta",
             "forfeit": "Ottelu päättyi — Vastustaja valitsi luovuttaa",
+            "outOfPoints": "Peli loppu — Vastustajalta loppu pisteet",
             "inactive": "Ottelu päättyi toimettomuuden vuoksi",
             "pickActionCard": "Valitaan toimintakortti",
             "pickCardSelection": "Tehdään korttivalinta",
@@ -1864,7 +1945,11 @@
             "removingRow": "Poistetaan rivi",
             "yourTurn": "Sinun vuorosi %{extra}",
             "nameTurn": "%{name}:n vuoro",
+            "dealerTurn": "Jakajan vuoro",
             "tiedVote": "Tasapeli",
+            "makeYourMove": "Tee siirto",
+            "waitingForOthers": "Odotellaan muita",
+            "wager": "Panos",
             "tieEndedRound": "Kierros päättyi tasapeliin",
             "youEndedRound": "Sä lopetit kierroksen",
             "nameEndedRound": "%{name} lopetti kierroksen",
@@ -2107,11 +2192,12 @@
     "count": {
         "levelShort": "LVL {count}",
         "experienceShort": "{count} XP",
+        "winStreak": "{count}-voiton putki!",
         "kills": "0 tappoa | 1 tappo | {count} tappoa",
         "deaths": "0 kuolemaa | 1 kuolema | {count} kuolemaa",
         "lives": "0 elämää | 1 elämä | {count} elämää",
         "files": "0 tiedostoa | 1 tiedosto | {count} tiedostoa",
-        "points": "0 pistettä | 1 piste | {count} pistettä",
+        "points": "{count} pistettä | {count} piste | {count} pistettä",
         "pieces": "0 kappaletta | 1 kappale | {count} kappaletta",
         "wins": "0 voittoa | 1 voitto | {count} voittoa",
         "cards": "0 korttia | 1 kortti | {count} korttia",
@@ -2134,6 +2220,13 @@
         "restartNotice": "Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi."
     },
     "misc": {
+        "wagerPoints": "Panostuspisteet",
+        "hit": "Lyö",
+        "stand": "Pysy",
+        "bust": "Yli",
+        "push": "Tasapeli",
+        "hidden": "Piilotettu",
+        "visible": "Näkyvissä",
         "socialLinks": "Sosiaalilinkit",
         "skipTurn": "Ohita vuoro",
         "doublePointsQuestion": "Kaksinkertaiset pisteet kysymys",
@@ -2320,6 +2413,10 @@
         "flawlessGames": "Virheettömät pelit",
         "hits": "Osumat",
         "hitRate": "Osuma-aste",
+        "bustRate": "Rikkoutumisprosentti",
+        "successRate": "Onnistumisprosentti",
+        "pushRate": "Työntöprosentti",
+        "blackjackRate": "Blackjack-kurssi",
         "rank": "Sijoitus",
         "kills": "Tappot",
         "assassin": "Salamurhaaja",
@@ -2591,8 +2688,12 @@
         "inactiveOpponents": "Kaikki vastustajat olivat passiivisia",
         "waitForOpponent": "Odotetaan vastustajaasi...",
         "waitForOpponents": "Odotetaan vastustajiasi....",
+        "waitingForWagerFromOthers": "Odotellaan, että kaikki tekee panoksensa...",
         "nameLeftTheGame": "%{name} lähti pelistä",
+        "selfRanOutOfPoints": "Pisteet loppu.",
         "selfNoPoints": "Et saanut pisteitä.",
+        "selfReceivedPoints": "Sait %{points} pistettä.",
+        "selfLostPoints": "Hävisit %{points} pistettä.",
         "nameNoPoints": "%{name} ei saanut pisteitä.",
         "gameMenu": "Tekisikö mieli pelata jotain muuta?",
         "forfeit": "Pelistä luopuminen johtaa sinulle tappioon.",
@@ -2622,6 +2723,7 @@
         "chatEmojiAlt": "Chat-emoji tyypillä {type}",
         "zoomOutHint": "Sä oot liikaa lähellä! Purista sormilla, niin saat zoomattua ulos ja peliohjaus paranee.",
         "noGameSelected": "Ei oo valittuna mitään pelejä.",
+        "dealerRules": "Jakaja ottaa kortin, jos arvo on {hitValue} tai vähemmän, seisoo {standValue}+ kohdalla.",
         "awaitingPurchaseConfirmation": {
             "title": "Odotetaan ostovahvistusta",
             "description": "Tämä kestää yleensä vain muutaman sekunnin. Maksutavasta riippuen tämä saattaa kestää kauemmin. Voit huoletta sulkea tämän näytön."
@@ -2964,6 +3066,13 @@
             "targetAssignment": null,
             "assassinDescription": null,
             "targetDescription": null
+        },
+        "blackjackResult": {
+            "BUST": "Sä sait busterin tänä kierroksena",
+            "LOSS": "Sä hävisit tänä kierroksena",
+            "WIN": "Sä voitit tänä kierroksena!",
+            "WIN_BLACKJACK": "Blackjack! Sä voitit tänä kierroksena!",
+            "PUSH": "Tää kierros on tasapeli"
         },
         "poolType": {
             "SOLID": "Täysväriset",

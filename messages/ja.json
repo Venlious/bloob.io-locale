@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Japanese",
         "rtl": false,
-        "total": 1874,
+        "total": 1945,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -81,6 +81,8 @@
             "maxSubceedMinLength": "最大の長さは最小の長さより少なくはできないよ。"
         },
         "start": {
+            "pointProgression": "進行できないから、ポイント設定を調整してね。",
+            "lowerStartPointAmount": "スタートポイントの量は、勝ちの量より少なきゃダメだよ。",
             "configCancel": "ゲーム設定のアップデートでカウントダウンがキャンセルされたよ",
             "fieldRows": "選択したフィールドは%{rows}行以上は対応できません",
             "fieldCannotFitUsers": "選択したフィールドは%{users}人以上のプレイヤーは対応できません",
@@ -275,6 +277,20 @@
                         "STREAK": "ストリーク"
                     }
                 },
+                "order": {
+                    "title": "順序",
+                    "help": {
+                        "default": "みんなが遊ぶ順番を決めるよ。",
+                        "ALTERNATE": "毎回、誰が最初に行くか交代するんだ。",
+                        "FIXED": "順番は毎回同じだよ。",
+                        "SIMULTANEOUS": "みんな同時に遊べるよ。"
+                    },
+                    "data": {
+                        "ALTERNATE": "交互",
+                        "FIXED": "固定",
+                        "SIMULTANEOUS": "同時"
+                    }
+                },
                 "mode": {
                     "title": "モード",
                     "help": {
@@ -295,7 +311,22 @@
                     "data": {
                         "half": "ハーフデッキ",
                         "full": "フルデッキ",
-                        "double": "ダブルデッキ"
+                        "double": "ダブルデッキ",
+                        "triple": "トリプルデッキ",
+                        "four": "フォーデッキ",
+                        "five": "ファイブデッキ",
+                        "six": "シックスデッキ",
+                        "seven": "セブンデッキ",
+                        "eight": "8デッキ"
+                    }
+                },
+                "shuffle": {
+                    "title": "シャッフル",
+                    "help": "シャッフルが起こるタイミングを選んでね。シューっていうのは、使うカードの総数のことだよ。",
+                    "data": {
+                        "EVERY_ROUND": "毎ラウンド",
+                        "HALFWAY": "シューの半分",
+                        "WHEN_NEEDED": "カードがなくなったら"
                     }
                 }
             },
@@ -1807,6 +1838,54 @@
                     ]
                 }
             }
+        },
+        "BLACKJACK": {
+            "name": "ブラックジャック",
+            "title": "ブラックジャック無料でプレイ | 友達と21を遊ぼうオンライン",
+            "description": "無料でブラックジャックをプレイ！友達とオンライン対戦、アカウント不要！",
+            "options": {
+                "wagerTime": {
+                    "title": "賭けの時間",
+                    "help": "各プレイヤーがラウンドの賭けをするために使える時間だよ。これは賭けが有効なときだけ使われるんだ。"
+                },
+                "dealerSecondCard": {
+                    "title": "ディーラーの2枚目カード",
+                    "help": "ディーラーの2枚目のカードが表向き（見える）か裏向き（隠れてる）かを決めるんだ。2枚目のカードが見えてると、プレイヤーはディーラーに対してかなり有利になるよ。"
+                },
+                "wager": {
+                    "title": "賭ける",
+                    "help": "プレイヤーはターンの始めにポイントを賭けられるようになるよ。ラウンドに勝ったら賭けたポイントが倍になるし、負けたら元のポイントはそのまま。賭けられるポイントは持ってる分だけだからね。"
+                },
+                "startPointAmount": {
+                    "title": "スタート地点",
+                    "help": "各プレイヤーが最初に持ってるポイントの数。"
+                },
+                "basePointAmount": {
+                    "title": "ベースポイント",
+                    "help": "ディーラーに勝ったときにプレイヤーが確実にもらえるポイント。"
+                },
+                "blackjackBonusPointAmount": {
+                    "title": "ボーナスブラックジャックポイント",
+                    "help": "ブラックジャックでラウンドに勝ったときに追加でもらえるポイント（「ベースポイント」の上乗せ）。"
+                },
+                "aceHandling": {
+                    "title": "エース操作",
+                    "help": "エースの得点の仕方を選んでね。ダイナミックオプションだと、エースを11で数えると21を超えちゃう時は自動的に1としてカウントされるよ。",
+                    "data": {
+                        "ONE_OR_ELEVEN": "ダイナミック (1か11)",
+                        "ONE": "いつも1",
+                        "ELEVEN": "いつも11"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "FIRST": "最初に<b>0</b>ポイントに到達 | 最初に<b>1</b>ポイントに到達 | 最初に<b>{count}</b>ポイントに到達",
+                        "HIGHEST_AFTER": "<b>0</b>ラウンド後のポイント数 | <b>1</b>ラウンド後のポイント数 | <b>{count}</b>ラウンド後のポイント数"
+                    }
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1838,7 +1917,8 @@
         "fun": "楽しかったね！",
         "bye": "バイバイ！",
         "shortYes": "うん。",
-        "shortNo": "いいえ。"
+        "shortNo": "いいえ。",
+        "myConnectionBad": "接続が悪いわ。"
     },
     "header": {
         "message": {
@@ -1852,6 +1932,7 @@
             "inProgress": "マッチ進行中",
             "staleMoves": "マッチが停滞 — %{staleCount}手番経過で取り込みなし",
             "forfeit": "マッチ終了 — 相手が降参を選んだよ",
+            "outOfPoints": "試合終了 — 相手がポイント切れだよ",
             "inactive": "活動不足により試合終了",
             "pickActionCard": "アクションカードを選んでいる",
             "pickCardSelection": "カード選択中",
@@ -1864,7 +1945,11 @@
             "removingRow": "行を削除",
             "yourTurn": "%{extra}、君のターンだよ",
             "nameTurn": "%{name}のターンだよ",
+            "dealerTurn": "ディーラーのターン",
             "tiedVote": "同点だよ！",
+            "makeYourMove": "自分の番だよ",
+            "waitingForOthers": "他の人を待ってる",
+            "wager": "賭けてみて",
             "tieEndedRound": "ラウンドが引き分けになったよ",
             "youEndedRound": "あなたがラウンドを終えたよ",
             "nameEndedRound": "%{name}がラウンドを終えたよ",
@@ -2107,11 +2192,12 @@
     "count": {
         "levelShort": "レベル {count}",
         "experienceShort": "{count} XP",
+        "winStreak": "{count}連勝だ！",
         "kills": "0キル | 1キル | {count}キル",
         "deaths": "0デス | 1デス | {count}デス",
         "lives": "0ライフ | 1ライフ | {count}ライフ",
         "files": "ファイル0個 | ファイル1個 | ファイル{count}個",
-        "points": "ポイント0 | ポイント1 | ポイント{count}",
+        "points": "{count}ポイント | {count}ポイント | {count}ポイント",
         "pieces": "ピース0個 | ピース1個 | ピース{count}個",
         "wins": "勝利0回 | 勝利1回 | 勝利{count}回",
         "cards": "カード0枚 | カード1枚 | カード{count}枚",
@@ -2134,6 +2220,13 @@
         "restartNotice": "サーバーは{count}分後に再起動するよ。ゲームを終わらせてね。 | サーバーは{count}分後に再起動するよ。ゲームを終わらせてね。 | サーバーは{count}分後に再起動するよ。ゲームを終わらせてね。"
     },
     "misc": {
+        "wagerPoints": "ベットポイント",
+        "hit": "ヒット",
+        "stand": "スタンド",
+        "bust": "バスト",
+        "push": "プッシュ",
+        "hidden": "隠す",
+        "visible": "表示",
         "socialLinks": "ソーシャルリンク",
         "skipTurn": "ターンスキップ",
         "doublePointsQuestion": "ダブルポイントの質問",
@@ -2320,6 +2413,10 @@
         "flawlessGames": "完璧なゲーム",
         "hits": "ヒット",
         "hitRate": "ヒット率",
+        "bustRate": "バスト率",
+        "successRate": "成功率",
+        "pushRate": "プッシュ率",
+        "blackjackRate": "ブラックジャックレート",
         "rank": "ランク",
         "kills": "キル数",
         "assassin": "アサシン",
@@ -2591,8 +2688,12 @@
         "inactiveOpponents": "全ての相手が非アクティブだったよ",
         "waitForOpponent": "相手を待ってるよ…",
         "waitForOpponents": "相手たちを待ってるよ…",
+        "waitingForWagerFromOthers": "みんなが賭けるの待ってるよ…",
         "nameLeftTheGame": "%{name}がゲームを抜けた",
+        "selfRanOutOfPoints": "ポイントがなくなっちゃった。",
         "selfNoPoints": "ポイントはゼロだよ。",
+        "selfReceivedPoints": "%{points}ポイントもらったよ。",
+        "selfLostPoints": "%{points}ポイント失った。",
         "nameNoPoints": "%{name}はポイントゼロだよ。",
         "gameMenu": "他のゲームをやりたい気分？",
         "forfeit": "ゲームを投げると、あなたの負けになるよ。",
@@ -2622,6 +2723,7 @@
         "chatEmojiAlt": "チャット絵文字 {type}",
         "zoomOutHint": "ズームインしちゃってるよ！ピンチしてズームアウトして、ゲームの操作を楽にしよう！",
         "noGameSelected": "ゲームが選ばれてないよ。",
+        "dealerRules": "ディーラーは{hitValue}以下で引いて、{standValue}以上で止まるよ。",
         "awaitingPurchaseConfirmation": {
             "title": "購入確認待ち",
             "description": "だいたい数秒で終わるよ。でも、支払い方法によってはもうちょっと時間かかるかもね。この画面を閉じても大丈夫だよ。"
@@ -2964,6 +3066,13 @@
             "targetAssignment": null,
             "assassinDescription": null,
             "targetDescription": null
+        },
+        "blackjackResult": {
+            "BUST": "今回はバストしちゃったね",
+            "LOSS": "今回は負けたよ",
+            "WIN": "今回は勝ったね！",
+            "WIN_BLACKJACK": "ブラックジャック！今回勝ちだよ！",
+            "PUSH": "今回は引き分けだね"
         },
         "poolType": {
             "SOLID": "ソリッド",

@@ -38,7 +38,8 @@ export enum GameType {
 	rockPaperScissors = `ROCK_PAPER_SCISSORS`,
 	trivia = `TRIVIA`,
 	snooker = `SNOOKER`,
-	nineBallPool = `NINE_BALL_POOL`
+	nineBallPool = `NINE_BALL_POOL`,
+	blackjack = `BLACKJACK`
 }
 
 export enum CheckersKingType {

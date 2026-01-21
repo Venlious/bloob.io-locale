@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Korean",
         "rtl": false,
-        "total": 1874,
+        "total": 1945,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -81,6 +81,8 @@
             "maxSubceedMinLength": "최대 길이는 최소 길이보다 작을 수 없어요."
         },
         "start": {
+            "pointProgression": "진행이 불가능해, 포인트 설정 좀 조정해봐.",
+            "lowerStartPointAmount": "시작 포인트는 이길 포인트보다 적어야 해.",
             "configCancel": "게임 설정 업데이트 때문에 카운트다운이 취소됐어.",
             "fieldRows": "선택한 필드는 %{rows} 행 이상 지원할 수 없어요",
             "fieldCannotFitUsers": "선택한 필드는 %{users} 명 이상의 플레이어를 지원할 수 없어요",
@@ -275,6 +277,20 @@
                         "STREAK": "연속"
                     }
                 },
+                "order": {
+                    "title": "순서",
+                    "help": {
+                        "default": "누가 먼저 할지 순서를 정해.",
+                        "ALTERNATE": "매번 돌아가면서 누가 먼저 할지 바뀌어.",
+                        "FIXED": "순서는 매번 똑같아.",
+                        "SIMULTANEOUS": "모두 동시에 할 수 있어."
+                    },
+                    "data": {
+                        "ALTERNATE": "대체",
+                        "FIXED": "고정",
+                        "SIMULTANEOUS": "동시에"
+                    }
+                },
                 "mode": {
                     "title": "모드",
                     "help": {
@@ -295,7 +311,22 @@
                     "data": {
                         "half": "반 덱",
                         "full": "풀 덱",
-                        "double": "더블 덱"
+                        "double": "더블 덱",
+                        "triple": "트리플 덱",
+                        "four": "포 덱",
+                        "five": "파이브 덱",
+                        "six": "식스 덱",
+                        "seven": "세븐 덱",
+                        "eight": "8덱"
+                    }
+                },
+                "shuffle": {
+                    "title": "셔플",
+                    "help": "셔플이 언제 일어날지 선택해. 슈는 플레이하는 카드의 총량을 말해.",
+                    "data": {
+                        "EVERY_ROUND": "매 라운드마다",
+                        "HALFWAY": "신발 반쯤 다 썼을 때",
+                        "WHEN_NEEDED": "카드 다 떨어졌을 때"
                     }
                 }
             },
@@ -1807,6 +1838,54 @@
                     ]
                 }
             }
+        },
+        "BLACKJACK": {
+            "name": "블랙잭",
+            "title": "블랙잭 온라인 | 친구와 함께 놀며 21 도전!",
+            "description": "블랙잭 온라인: 계정 없이 무료 플레이! 친구, 낯선 이와 함께 21 도전하세요!",
+            "options": {
+                "wagerTime": {
+                    "title": "내기 시간",
+                    "help": "모든 플레이어가 라운드에 베팅할 시간을 말해. 이건 베팅이 가능할 때만 사용돼."
+                },
+                "dealerSecondCard": {
+                    "title": "딜러 두 번째 카드",
+                    "help": "딜러의 두 번째 카드가 보이는지 안 보이는지 결정해. 두 번째 카드가 보이면, 플레이어가 딜러보다 훨씬 유리해져."
+                },
+                "wager": {
+                    "title": "내기",
+                    "help": "시작할 때 포인트를 걸 수 있어. 라운드에서 이기면 걸었던 포인트가 두 배로 늘어나고, 지면 원래 포인트는 그대로야. 가진 포인트보다 더 많이 걸 수는 없어."
+                },
+                "startPointAmount": {
+                    "title": "시작 포인트",
+                    "help": "각 플레이어가 시작할 때 갖는 점수."
+                },
+                "basePointAmount": {
+                    "title": "기본 포인트",
+                    "help": "딜러랑 한 판 이겨서 보장받는 포인트야."
+                },
+                "blackjackBonusPointAmount": {
+                    "title": "보너스 블랙잭 포인트",
+                    "help": "블랙잭으로 라운드를 이기면 주는 추가 포인트(기본 포인트 위에)."
+                },
+                "aceHandling": {
+                    "title": "에이스 조작",
+                    "help": "에이스 점수 매기는 방법 선택해. 동적 옵션은 에이스를 11로 세면 21을 넘길 때 자동으로 1로 세어줘.",
+                    "data": {
+                        "ONE_OR_ELEVEN": "다이나믹 (1 또는 11)",
+                        "ONE": "항상 1",
+                        "ELEVEN": "항상 11"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "FIRST": "<b>0</b>점 먼저 도달 | <b>1</b>점 먼저 도달 | <b>{count}</b>점 먼저 도달",
+                        "HIGHEST_AFTER": "<b>0</b>라운드 후 가장 많은 점수 | <b>1</b>라운드 후 가장 많은 점수 | <b>{count}</b>라운드 후 가장 많은 점수"
+                    }
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1838,7 +1917,8 @@
         "fun": "재밌었어!",
         "bye": "잘 가!",
         "shortYes": "응.",
-        "shortNo": "아니."
+        "shortNo": "아니.",
+        "myConnectionBad": "내 인터넷 연결이 안 좋아."
     },
     "header": {
         "message": {
@@ -1852,6 +1932,7 @@
             "inProgress": "경기 진행 중",
             "staleMoves": "경기 정체 — %{staleCount}번의 움직임에도 변동 없음",
             "forfeit": "경기 종료 — 상대방이 포기를 선택했습니다",
+            "outOfPoints": "게임 끝났어 — 상대방 점 다 떨어졌어",
             "inactive": "활동 없어서 경기가 끝났어요",
             "pickActionCard": "액션 카드를 고르는 중",
             "pickCardSelection": "카드 선택 중",
@@ -1864,7 +1945,11 @@
             "removingRow": "행 제거하기",
             "yourTurn": "당신 차례 %{extra}",
             "nameTurn": "%{name}님의 차례",
+            "dealerTurn": "딜러 차례야",
             "tiedVote": "동점 투표",
+            "makeYourMove": "너의 차례야",
+            "waitingForOthers": "다른 사람 기다리는 중",
+            "wager": "베팅해봐",
             "tieEndedRound": "라운드가 무승부로 끝났어",
             "youEndedRound": "너가 라운드를 끝냈어",
             "nameEndedRound": "%{name}가 라운드를 끝냈어",
@@ -2107,11 +2192,12 @@
     "count": {
         "levelShort": "레벨 {count}",
         "experienceShort": "{count} 경험치",
+        "winStreak": "{count}연승!",
         "kills": "0 킬 | 1 킬 | {count} 킬",
         "deaths": "0 사망 | 1 사망 | {count} 사망",
         "lives": "0 목숨 | 1 목숨 | {count} 목숨",
         "files": "파일 없음 | 1개의 파일 | {count}개의 파일",
-        "points": "점수 없음 | 1점 | {count}점",
+        "points": "{count}점 | {count}점 | {count}점",
         "pieces": "조각 없음 | 1조각 | {count}조각",
         "wins": "승리 없음 | 1승 | {count}승",
         "cards": "카드 없음 | 1장의 카드 | {count}장의 카드",
@@ -2134,6 +2220,13 @@
         "restartNotice": "서버가 {count}분 후에 재시작돼요. 게임 끝내세요. | 서버가 {count}분 후에 재시작돼요. 게임 끝내세요. | 서버가 {count}분 후에 재시작돼요. 게임 끝내세요."
     },
     "misc": {
+        "wagerPoints": "베팅 포인트",
+        "hit": "히트",
+        "stand": "스탠드",
+        "bust": "버스트",
+        "push": "푸시",
+        "hidden": "숨김",
+        "visible": "보임",
         "socialLinks": "소셜 링크",
         "skipTurn": "턴 пропустить",
         "doublePointsQuestion": "더블 포인트 질문",
@@ -2320,6 +2413,10 @@
         "flawlessGames": "완벽한 게임",
         "hits": "히트",
         "hitRate": "히트율",
+        "bustRate": "터짐 비율",
+        "successRate": "성공 비율",
+        "pushRate": "밀기 비율",
+        "blackjackRate": "블랙잭 비율",
         "rank": "순위",
         "kills": "킬 수",
         "assassin": "암살자",
@@ -2591,8 +2688,12 @@
         "inactiveOpponents": "모든 상대방들이 비활성 상태였어",
         "waitForOpponent": "상대를 기다리는 중...",
         "waitForOpponents": "상대들을 기다리는 중....",
+        "waitingForWagerFromOthers": "다들 내기할 때까지 기다리고 있어...",
         "nameLeftTheGame": "%{name}가 게임을 나갔어요",
+        "selfRanOutOfPoints": "포인트가 다 떨어졌어.",
         "selfNoPoints": "포인트를 받지 못했어.",
+        "selfReceivedPoints": "%{points} 포인트를 받았어.",
+        "selfLostPoints": "%{points} 포인트를 잃었어.",
         "nameNoPoints": "%{name}는 포인트를 받지 못했어.",
         "gameMenu": "다른 게임 하고 싶어?",
         "forfeit": "게임을 포기하면 너한테 패배로 간주돼.",
@@ -2622,6 +2723,7 @@
         "chatEmojiAlt": "채팅 이모지 타입 {type}",
         "zoomOutHint": "줌이 너무 확대됐어! 두 손가락으로 쪼그려서 줌 아웃해봐, 게임 조작이 더 편해질 거야.",
         "noGameSelected": "게임을 선택한 게 없어.",
+        "dealerRules": "딜러는 {hitValue} 이하일 때 카드를 받고, {standValue} 이상일 때는 멈춰.",
         "awaitingPurchaseConfirmation": {
             "title": "구매 확인 대기 중",
             "description": "보통 이 과정은 몇 초밖에 안 걸립니다. 결제 방법에 따라서는 시간이 더 걸릴 수 있어요. 이 화면을 닫아도 괜찮아요."
@@ -2964,6 +3066,13 @@
             "targetAssignment": null,
             "assassinDescription": null,
             "targetDescription": null
+        },
+        "blackjackResult": {
+            "BUST": "이번 판에 너가 터졌어",
+            "LOSS": "이번 판에 너가 졌어",
+            "WIN": "이번 판에 너가 이겼어!",
+            "WIN_BLACKJACK": "블랙잭! 이번 판에 너가 이겼어!",
+            "PUSH": "이번 판은 비겼어"
         },
         "poolType": {
             "SOLID": "단색",
