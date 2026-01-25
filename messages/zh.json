@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 1874,
+        "total": 1948,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -81,6 +81,8 @@
             "maxSubceedMinLength": "最大长度不能小于最小长度。"
         },
         "start": {
+            "pointProgression": "进度无法进行，调整一下积分设置吧。",
+            "lowerStartPointAmount": "起始积分必须低于获胜积分。",
             "configCancel": "取消倒计时，因为游戏设置更新了",
             "fieldRows": "选中的区域最多只能支持%{rows}行",
             "fieldCannotFitUsers": "选中的区域最多只能支持%{users}个玩家",
@@ -275,6 +277,20 @@
                         "STREAK": "连胜"
                     }
                 },
+                "order": {
+                    "title": "顺序",
+                    "help": {
+                        "default": "确定大家玩游戏的顺序。",
+                        "ALTERNATE": "每轮轮流谁先来。",
+                        "FIXED": "每轮的顺序都是一样的。",
+                        "SIMULTANEOUS": "大家同时进行。"
+                    },
+                    "data": {
+                        "ALTERNATE": "备用",
+                        "FIXED": "固定",
+                        "SIMULTANEOUS": "同时"
+                    }
+                },
                 "mode": {
                     "title": "模式",
                     "help": {
@@ -295,7 +311,22 @@
                     "data": {
                         "half": "半副牌",
                         "full": "一副完整的牌",
-                        "double": "双副牌"
+                        "double": "双副牌",
+                        "triple": "三层甲板",
+                        "four": "四层甲板",
+                        "five": "五层甲板",
+                        "six": "六层甲板",
+                        "seven": "七层甲板",
+                        "eight": "八副牌"
+                    }
+                },
+                "shuffle": {
+                    "title": "洗牌",
+                    "help": "选择洗牌的时机。鞋子指的是一共用的牌的数量。",
+                    "data": {
+                        "EVERY_ROUND": "每局",
+                        "HALFWAY": "半场",
+                        "WHEN_NEEDED": "没牌了"
                     }
                 }
             },
@@ -1807,6 +1838,54 @@
                     ]
                 }
             }
+        },
+        "BLACKJACK": {
+            "name": "二十一点",
+            "title": "二十一点游戏官网 | 黑杰克在线多人玩",
+            "description": "免费玩黑杰克，无需账号！在线与好友或陌生人体验21点多人游戏。",
+            "options": {
+                "wagerTime": {
+                    "title": "下注时间",
+                    "help": "每个玩家在这一轮下注的时间。只有在允许下注的情况下才会用到。"
+                },
+                "dealerSecondCard": {
+                    "title": "发牌员第二张牌",
+                    "help": "决定庄家的第二张牌是明牌（可见）还是暗牌（隐藏）。当第二张牌是明牌时，玩家对庄家有很大的优势。"
+                },
+                "wager": {
+                    "title": "下注",
+                    "help": "开启后，玩家可以在自己回合开始时下注积分。如果赢了这一局，下注的积分会翻倍；如果输了，原来的积分还在。玩家不能下注超过自己拥有的积分。"
+                },
+                "startPointAmount": {
+                    "title": "起始点",
+                    "help": "每个玩家开始时的点数。"
+                },
+                "basePointAmount": {
+                    "title": "基础点数",
+                    "help": "玩家在跟庄家对战赢得一局时保证能获得的积分。"
+                },
+                "blackjackBonusPointAmount": {
+                    "title": "额外黑杰克积分",
+                    "help": "额外积分（在“基础积分”之上），当玩家用黑杰克赢得一局时会获得。"
+                },
+                "aceHandling": {
+                    "title": "高手操控",
+                    "help": "选择怎么算A。动态选项会自动把A算作1，如果把它算作11会让手牌超过21。",
+                    "data": {
+                        "ONE_OR_ELEVEN": "动态 (1 或 11)",
+                        "ONE": "永远是 1",
+                        "ELEVEN": "永远是 11"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "FIRST": "第一个到达 <b>0</b> 分 | 第一个到达 <b>1</b> 分 | 第一个到达 <b>{count}</b> 分",
+                        "HIGHEST_AFTER": "<b>0</b> 轮后得分最多 | <b>1</b> 轮后得分最多 | <b>{count}</b> 轮后得分最多"
+                    }
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1838,7 +1917,8 @@
         "fun": "玩得真开心！",
         "bye": "拜拜！",
         "shortYes": "好的。",
-        "shortNo": "不行。"
+        "shortNo": "不行。",
+        "myConnectionBad": "我网不好。"
     },
     "header": {
         "message": {
@@ -1852,6 +1932,7 @@
             "inProgress": "比赛进行中",
             "staleMoves": "比赛陷入僵局 — %{staleCount}步棋没有翻盘",
             "forfeit": "比赛结束 — 对手选择了认输",
+            "outOfPoints": "比赛结束 — 对手没分了",
             "inactive": "比赛因无活动而结束",
             "pickActionCard": "正在选行动卡",
             "pickCardSelection": "正在选卡片",
@@ -1864,7 +1945,11 @@
             "removingRow": "移除行",
             "yourTurn": "轮到你了 %{extra}",
             "nameTurn": "轮到%{name}了",
+            "dealerTurn": "发牌员的回合",
             "tiedVote": "平局投票",
+            "makeYourMove": "该你行动了",
+            "waitingForOthers": "等待其他人",
+            "wager": "赌注",
             "tieEndedRound": "这一局平局了",
             "youEndedRound": "你结束了这一局",
             "nameEndedRound": "%{name} 结束了这一局",
@@ -2107,11 +2192,12 @@
     "count": {
         "levelShort": "等级 {count}",
         "experienceShort": "{count} 经验",
+        "winStreak": "{count}连胜！",
         "kills": "0 击杀 | 1 击杀 | {count} 击杀",
         "deaths": "0 死亡 | 1 死亡 | {count} 死亡",
         "lives": "0 生命 | 1 生命 | {count} 生命",
         "files": "0个文件 | 1个文件 | {count}个文件",
-        "points": "0分 | 1分 | {count}分",
+        "points": "{count}分 | {count}分 | {count}分",
         "pieces": "0个部分 | 1个部分 | {count}个部分",
         "wins": "0胜 | 1胜 | {count}胜",
         "cards": "0张卡 | 1张卡 | {count}张卡",
@@ -2134,6 +2220,13 @@
         "restartNotice": "服务器将在 {count} 分钟后重启。请完成你的游戏。 | 服务器将在 {count} 分钟后重启。请完成你的游戏。 | 服务器将在 {count} 分钟后重启。请完成你的游戏。"
     },
     "misc": {
+        "wagerPoints": "赌注点",
+        "hit": "要牌",
+        "stand": "不要牌",
+        "bust": "爆掉",
+        "push": "平局",
+        "hidden": "隐藏",
+        "visible": "显示",
         "socialLinks": "社交链接",
         "skipTurn": "跳过回合",
         "doublePointsQuestion": "双倍积分问题",
@@ -2320,6 +2413,10 @@
         "flawlessGames": "完美游戏",
         "hits": "命中",
         "hitRate": "命中率",
+        "bustRate": "破产率",
+        "successRate": "成功率",
+        "pushRate": "推送率",
+        "blackjackRate": "黑杰克赔率",
         "rank": "排名",
         "kills": "击杀",
         "assassin": "刺客",
@@ -2591,8 +2688,12 @@
         "inactiveOpponents": "所有的对手都没动静",
         "waitForOpponent": "等待你的对手...",
         "waitForOpponents": "等待你的对手们....",
+        "waitingForWagerFromOthers": "等大家下注呢...",
         "nameLeftTheGame": "%{name} 退出了游戏",
+        "selfRanOutOfPoints": "你的积分用完了。",
         "selfNoPoints": "你没有得到任何分数。",
+        "selfReceivedPoints": "你得到了 %{points}。",
+        "selfLostPoints": "你输了 %{points}。",
         "nameNoPoints": "%{name}没有得到任何分数。",
         "gameMenu": "想玩别的游戏吗？",
         "forfeit": "放弃游戏会让你输掉。",
@@ -2612,6 +2713,9 @@
         "customizePreset": "根据你的喜好来自定义这个预设。",
         "loginToPurchase": "要购买东西，你得先登录或者创建一个账号。",
         "seasonalItem": "这个位置的物品一年只有几天能买到。",
+        "snookerRedBallHint": "红球得先进，才能进彩球。",
+        "snookerColoredBallHint": "只有在进了红球后，才能进彩球。",
+        "specificColoredBallHint": "红球都没了，现在得按顺序进彩球。",
         "cardInteractHint": "点击一张卡片来选择。",
         "gameInvite": "邀请你来玩游戏",
         "eliminationChallenge": "现在开始！错误的答案会把你淘汰。",
@@ -2622,6 +2726,7 @@
         "chatEmojiAlt": "聊天表情 {type}",
         "zoomOutHint": "你放大了！捏一下缩小，能更好控制游戏。",
         "noGameSelected": "你还没选任何游戏。",
+        "dealerRules": "发牌员在 {hitValue} 或更少时继续要牌，{standValue}+ 时停牌。",
         "awaitingPurchaseConfirmation": {
             "title": "等待购买确认",
             "description": "这通常只需要几秒钟。根据你的付款方式，可能需要更长时间。随时可以关闭这个屏幕。"
@@ -2964,6 +3069,13 @@
             "targetAssignment": null,
             "assassinDescription": null,
             "targetDescription": null
+        },
+        "blackjackResult": {
+            "BUST": "你这局爆了",
+            "LOSS": "你这局输了",
+            "WIN": "你这局赢了！",
+            "WIN_BLACKJACK": "黑杰克！你这局赢了！",
+            "PUSH": "这局平局"
         },
         "poolType": {
             "SOLID": "实色球",

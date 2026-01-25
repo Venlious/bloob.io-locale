@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Danish",
         "rtl": false,
-        "total": 1874,
+        "total": 1948,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -81,6 +81,8 @@
             "maxSubceedMinLength": "Max. længde kan ikke være mindre end min. længde."
         },
         "start": {
+            "pointProgression": "Fremskridt er ikke muligt, juster pointindstillingerne.",
+            "lowerStartPointAmount": "Startpointene skal være lavere end gevinstbeløbet.",
             "configCancel": "Afbrudt nedtælling pga. en opdatering af spilindstillingerne",
             "fieldRows": "Det valgte felt kan ikke understøtte mere end %{rows} rækker",
             "fieldCannotFitUsers": "Det valgte felt kan ikke understøtte mere end %{users} spillere",
@@ -275,6 +277,20 @@
                         "STREAK": "Række"
                     }
                 },
+                "order": {
+                    "title": "Rækkefølge",
+                    "help": {
+                        "default": "Bestem rækkefølgen, så alle kan spille.",
+                        "ALTERNATE": "Skifter hvem der går først hver gang.",
+                        "FIXED": "Rækkefølgen er den samme hver gang.",
+                        "SIMULTANEOUS": "Alle får lov at spille på samme tid."
+                    },
+                    "data": {
+                        "ALTERNATE": "Alternativ",
+                        "FIXED": "Fast",
+                        "SIMULTANEOUS": "Samtidig"
+                    }
+                },
                 "mode": {
                     "title": "Tilstand",
                     "help": {
@@ -295,7 +311,22 @@
                     "data": {
                         "half": "Halvt sæt kort",
                         "full": "Fuld sæt kort",
-                        "double": "Dobbelt sæt kort"
+                        "double": "Dobbelt sæt kort",
+                        "triple": "Tre dæk",
+                        "four": "Fire dæk",
+                        "five": "Fem dæk",
+                        "six": "Seks dæk",
+                        "seven": "Syv dæk",
+                        "eight": "Otte Dæk"
+                    }
+                },
+                "shuffle": {
+                    "title": "Bland",
+                    "help": "Vælg hvornår der skal shuffles. En \"shoe\" betyder det samlede antal kort, der bliver spillet med.",
+                    "data": {
+                        "EVERY_ROUND": "Hver runde",
+                        "HALFWAY": "Halvvejs gennem skoen",
+                        "WHEN_NEEDED": "Når man er løbet tør for kort"
                     }
                 }
             },
@@ -1807,6 +1838,54 @@
                     ]
                 }
             }
+        },
+        "BLACKJACK": {
+            "name": "Blackjack",
+            "title": "Gratis Blackjack Online | Spil med Venner eller Bots | 21",
+            "description": "Spil gratis Blackjack online uden konto! Udfordr venner, fremmede eller bots i spændende 21-multiplayer matches og nyd det klassiske kortspil nu!",
+            "options": {
+                "wagerTime": {
+                    "title": "Væddemålstid",
+                    "help": "Tiden hver spiller har til at placere deres indsats for runden. Det her bruges kun, hvis indsatser er aktiveret."
+                },
+                "dealerSecondCard": {
+                    "title": "Dealer Anden Kort",
+                    "help": "Bestemmer om dealerens andet kort er vist med forsiden op (synligt) eller med bagsiden op (skjult). Når det andet kort er synligt, får spillerne en kæmpe fordel over dealer."
+                },
+                "wager": {
+                    "title": "Væddemål",
+                    "help": "Når det er tændt, kan spillerne satse point i starten af deres tur. Hvis de vinder runden, bliver deres indsats fordoblet; hvis de taber, beholder de deres oprindelige point. Spillere kan ikke satse flere point, end de har."
+                },
+                "startPointAmount": {
+                    "title": "Startpoint ",
+                    "help": "Antallet af point, som hver spiller starter med."
+                },
+                "basePointAmount": {
+                    "title": "Basispoint ",
+                    "help": "De point, en spiller er sikker på at få, når de vinder en runde mod dealeren."
+                },
+                "blackjackBonusPointAmount": {
+                    "title": "Bonus Blackjack Point ",
+                    "help": "Ekstra point (oven i \"Basis Point\") givet når en spiller vinder en runde med en blackjack."
+                },
+                "aceHandling": {
+                    "title": "Mesterlig Håndtering",
+                    "help": "Vælg hvordan en Es skal tælles. Den dynamiske mulighed tæller automatisk Es'et som 1, hvis det at tælle det som 11 ville få hånden til at overskride 21.",
+                    "data": {
+                        "ONE_OR_ELEVEN": "Dynamisk (1 eller 11)",
+                        "ONE": "Altid 1",
+                        "ELEVEN": "Altid 11"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "FIRST": "Først til at nå <b>0</b> point | Først til at nå <b>1</b> point | Først til at nå <b>{count}</b> point",
+                        "HIGHEST_AFTER": "Flest point efter <b>0</b> runder | Flest point efter <b>1</b> runde | Flest point efter <b>{count}</b> runder"
+                    }
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1838,7 +1917,8 @@
         "fun": "Det var sjovt!",
         "bye": "Farvel!",
         "shortYes": "Ja.",
-        "shortNo": "Nej."
+        "shortNo": "Nej.",
+        "myConnectionBad": "Min forbindelse er dårlig."
     },
     "header": {
         "message": {
@@ -1852,6 +1932,7 @@
             "inProgress": "Kampen er i gang",
             "staleMoves": "Kampen er gået i stå — %{staleCount} træk uden overtagelse",
             "forfeit": "Kampen er slut — Modstanderen valgte at give op",
+            "outOfPoints": "Kampen er slut — Modstanderen løb tør for point",
             "inactive": "Kampen sluttede på grund af inaktivitet",
             "pickActionCard": "Vælger handling kort",
             "pickCardSelection": "Laver kortvalg",
@@ -1864,7 +1945,11 @@
             "removingRow": "Fjerner række",
             "yourTurn": "Din tur %{extra}",
             "nameTurn": "%{name}s tur",
+            "dealerTurn": "Dealeren skal spille",
             "tiedVote": "Uafgjort stemme",
+            "makeYourMove": "Tag dit træk",
+            "waitingForOthers": "Venter på andre",
+            "wager": "Indsats",
             "tieEndedRound": "Runden er endt uafgjort",
             "youEndedRound": "Du har afsluttet runden",
             "nameEndedRound": "%{name} har afsluttet runden",
@@ -2107,11 +2192,12 @@
     "count": {
         "levelShort": "LVL {count}",
         "experienceShort": "{count} XP",
+        "winStreak": "{count}-sejrsrække!",
         "kills": "0 drab | 1 drab | {count} drab",
         "deaths": "0 dødsfald | 1 dødsfald | {count} dødsfald",
         "lives": "0 liv | 1 liv | {count} liv",
         "files": "0 filer | 1 fil | {count} filer",
-        "points": "0 point | 1 point | {count} point",
+        "points": "{count} point | {count} point | {count} point",
         "pieces": "0 stykker | 1 stykke | {count} stykker",
         "wins": "0 sejre | 1 sejr | {count} sejre",
         "cards": "0 kort | 1 kort | {count} kort",
@@ -2134,6 +2220,13 @@
         "restartNotice": "Serveren genstarter om {count} minutter. Bliv færdig med dit spil. | Serveren genstarter om {count} minut. Bliv færdig med dit spil. | Serveren genstarter om {count} minutter. Bliv færdig med dit spil."
     },
     "misc": {
+        "wagerPoints": "Væddemålspoint",
+        "hit": "Slå",
+        "stand": "Stå",
+        "bust": "Bust",
+        "push": "Push",
+        "hidden": "Skjult",
+        "visible": "Synlig",
         "socialLinks": "Sociale links",
         "skipTurn": "Spring over turen",
         "doublePointsQuestion": "Dobbelt Point Spørgsmål",
@@ -2320,6 +2413,10 @@
         "flawlessGames": "Fejlfri Spil",
         "hits": "Hits",
         "hitRate": "Træfsats",
+        "bustRate": "Bust Rate",
+        "successRate": "Success Rate",
+        "pushRate": "Push Rate",
+        "blackjackRate": "Blackjack satsning",
         "rank": "Rang",
         "kills": "Drab",
         "assassin": "Snigmorder",
@@ -2591,8 +2688,12 @@
         "inactiveOpponents": "Alle modstandere var inaktive",
         "waitForOpponent": "Venter på din modstander...",
         "waitForOpponents": "Venter på dine modstandere....",
+        "waitingForWagerFromOthers": "Venter på at alle laver deres indsats...",
         "nameLeftTheGame": "%{name} forlod spillet",
+        "selfRanOutOfPoints": "Du er løbet tør for point.",
         "selfNoPoints": "Du fik ingen point.",
+        "selfReceivedPoints": "Du fik %{points}.",
+        "selfLostPoints": "Du tabte %{points}.",
         "nameNoPoints": "%{name} fik ingen point.",
         "gameMenu": "Har du lyst til at spille noget andet?",
         "forfeit": "Hvis du opgiver spillet, vil det resultere i et nederlag for dig.",
@@ -2612,6 +2713,9 @@
         "customizePreset": "Tilpas denne forudindstilling efter din smag.",
         "loginToPurchase": "For at foretage et køb skal du først logge ind eller oprette en konto.",
         "seasonalItem": "Et item i denne slot er kun tilgængeligt et par dage om året.",
+        "snookerRedBallHint": "De røde kugler skal i hul før nogen farvede kugler.",
+        "snookerColoredBallHint": "Farvede kugler kan kun komme i hul, når en rød kugle er kommet i.",
+        "specificColoredBallHint": "Der er ingen røde kugler tilbage. Nu skal de farvede kugler i hul i den rigtige rækkefølge.",
         "cardInteractHint": "Klik på et kort for at vælge.",
         "gameInvite": "Inviter til spil",
         "eliminationChallenge": "Vi starter nu! Et forkert svar vil eliminere dig.",
@@ -2622,6 +2726,7 @@
         "chatEmojiAlt": "Chat emoji med type {type}",
         "zoomOutHint": "Du er zoomet ind! Klem ind for at zoome ud og få bedre kontrol over spillet.",
         "noGameSelected": "Du har ikke valgt nogen spil.",
+        "dealerRules": "Dealeren slår {hitValue} eller mindre, står på {standValue}+.",
         "awaitingPurchaseConfirmation": {
             "title": "Venter på købsbekræftelse",
             "description": "Dette tager normalt kun et par sekunder. Afhængig af din betalingsmetode kan det tage længere tid. Du er velkommen til at lukke denne skærm."
@@ -2964,6 +3069,13 @@
             "targetAssignment": null,
             "assassinDescription": null,
             "targetDescription": null
+        },
+        "blackjackResult": {
+            "BUST": "Du gik over denne runde",
+            "LOSS": "Du tabte denne runde",
+            "WIN": "Du vandt denne runde!",
+            "WIN_BLACKJACK": "Blackjack! Du vinder denne runde!",
+            "PUSH": "Denne runde er uafgjort"
         },
         "poolType": {
             "SOLID": "Ensfarvede",

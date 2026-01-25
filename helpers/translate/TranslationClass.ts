@@ -394,6 +394,10 @@ export default class TranslationClass {
 			[`info`, `characterDownload`],
 			`This translation is related to the user's ability to export their character's picture.`
 		)
+		this.generateTranslationTask(
+			[`info`, `blackjackResult`],
+			`This translation is related to the outcome of a game of Blackjack.`
+		)
 		const cribbageTypes = Object.keys(EN_MESSAGES[`info`][`cribbage`][`type`])
 		for (const type of cribbageTypes) {
 			const target = EN_MESSAGES[`info`][`cribbage`][`type`][type]

@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Polish",
         "rtl": false,
-        "total": 1874,
+        "total": 1948,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -81,6 +81,8 @@
             "maxSubceedMinLength": "Maksymalna długość nie może być mniejsza niż minimalna długość."
         },
         "start": {
+            "pointProgression": "Nie da się przejść dalej, musisz zmienić ustawienia punktów.",
+            "lowerStartPointAmount": "Ilość punktów startowych musi być mniejsza niż kwota wygranej.",
             "configCancel": "Anulowane odliczanie z powodu aktualizacji ustawień gry",
             "fieldRows": "Nie można wybrać więcej niż %{rows} wierszy.",
             "fieldCannotFitUsers": "Nie można wybrać więcej niż %{users} graczy.",
@@ -275,6 +277,20 @@
                         "STREAK": "Seria"
                     }
                 },
+                "order": {
+                    "title": "Kolejność",
+                    "help": {
+                        "default": "Ustalcie, w jakiej kolejności każdy gra.",
+                        "ALTERNATE": "Zmienia się, kto idzie pierwszy w każdej turze.",
+                        "FIXED": "Kolejność jest taka sama w każdej turze.",
+                        "SIMULTANEOUS": "Wszyscy grają jednocześnie."
+                    },
+                    "data": {
+                        "ALTERNATE": "Alternatywny",
+                        "FIXED": "Naprawiony",
+                        "SIMULTANEOUS": "Równoczesny"
+                    }
+                },
                 "mode": {
                     "title": "Tryb",
                     "help": {
@@ -295,7 +311,22 @@
                     "data": {
                         "half": "Pół talii",
                         "full": "Pełna talia",
-                        "double": "Podwójna talia"
+                        "double": "Podwójna talia",
+                        "triple": "Potrójna talia",
+                        "four": "Czterokrotna talia",
+                        "five": "Pięciokrotna talia",
+                        "six": "Sześciokrotna talia",
+                        "seven": "Siedmiokrotna talia",
+                        "eight": "Osiem kart"
+                    }
+                },
+                "shuffle": {
+                    "title": "Mieszaj",
+                    "help": "Wybierz, kiedy ma być tasowanie. \"Shoe\" to całkowita liczba kart, które są używane w grze.",
+                    "data": {
+                        "EVERY_ROUND": "Każda runda",
+                        "HALFWAY": "W połowie buta",
+                        "WHEN_NEEDED": "Jak skończą się karty"
                     }
                 }
             },
@@ -1807,6 +1838,54 @@
                     ]
                 }
             }
+        },
+        "BLACKJACK": {
+            "name": "Blackjack",
+            "title": "Zagraj w Blackjack Online | Graj za Darmo z Przyjaciółmi i Botami",
+            "description": "Zagraj w darmowy blackjack online bez konta! Graj z przyjaciółmi, obcymi lub botami. Dołącz do zabawy i sprawdź swoje szczęście w 21!",
+            "options": {
+                "wagerTime": {
+                    "title": "Czas na zakład",
+                    "help": "Czas, jaki każdy gracz ma na postawienie zakładu w rundzie. To działa tylko, jeśli zakłady są włączone."
+                },
+                "dealerSecondCard": {
+                    "title": "Karta Drugiego Dealera",
+                    "help": "Określa, czy druga karta dilera jest pokazana na wierzchu (widoczna) czy zakryta (ukryta). Kiedy druga karta jest widoczna, gracze mają dużą przewagę nad dilerem."
+                },
+                "wager": {
+                    "title": "Zakład",
+                    "help": "Kiedy to włączone, gracze mogą stawiać punkty na początku swojej tury. Jak wygrają rundę, ich stawka się podwaja; jak przegrają, to zostają z oryginalnymi punktami. Gracze nie mogą stawiać więcej punktów, niż mają."
+                },
+                "startPointAmount": {
+                    "title": "Punkty startowe",
+                    "help": "Liczba punktów, z jakimi zaczyna każdy gracz."
+                },
+                "basePointAmount": {
+                    "title": "Punkty bazowe",
+                    "help": "Punkty, które gracz na pewno dostanie, jak wygra rundę z krupierem."
+                },
+                "blackjackBonusPointAmount": {
+                    "title": "Dodatkowe punkty do BlackJacka",
+                    "help": "Dodatkowe punkty (na dodatek do \"Punktów Bazowych\") przyznawane, gdy gracz wygra rundę z blackjackiem."
+                },
+                "aceHandling": {
+                    "title": "Zarządzanie Asami",
+                    "help": "Wybierz, jak punktować Asa. Opcja dynamiczna automatycznie liczy Asa jako 1, jeśli liczenie go jako 11 spowodowałoby, że ręka przekroczy 21.",
+                    "data": {
+                        "ONE_OR_ELEVEN": "Dynamiczny (1 albo 11)",
+                        "ONE": "Zawsze 1",
+                        "ELEVEN": "Zawsze 11"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "FIRST": "Pierwszy, kto zdobędzie <b>0</b> punktów | Pierwszy, kto zdobędzie <b>1</b> punkt | Pierwszy, kto zdobędzie <b>{count}</b> punktów",
+                        "HIGHEST_AFTER": "Najwięcej punktów po <b>0</b> rundach | Najwięcej punktów po <b>1</b> rundzie | Najwięcej punktów po <b>{count}</b> rundach"
+                    }
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1838,7 +1917,8 @@
         "fun": "To było fajne!",
         "bye": "Cześć!",
         "shortYes": "Tak.",
-        "shortNo": "Nie."
+        "shortNo": "Nie.",
+        "myConnectionBad": "Moje połączenie jest słabe."
     },
     "header": {
         "message": {
@@ -1852,6 +1932,7 @@
             "inProgress": "Mecz w toku",
             "staleMoves": "Mecz zatrzymany — %{staleCount} ruchów bez przejęcia",
             "forfeit": "Mecz zakończony — Przeciwnik wybrał rezygnację",
+            "outOfPoints": "Mecz skończony — Przeciwnik nie ma już punktów",
             "inactive": "Mecz zakończony z powodu braku aktywności",
             "pickActionCard": "Wybieranie karty akcji",
             "pickCardSelection": "Wybieranie karty",
@@ -1864,7 +1945,11 @@
             "removingRow": "Usuwanie rzędu",
             "yourTurn": "Twoja kolej %{extra}",
             "nameTurn": "Kolej %{name}",
+            "dealerTurn": "Tura krupiera",
             "tiedVote": "Remis głosów",
+            "makeYourMove": "Zrób swój ruch",
+            "waitingForOthers": "Czekam na innych",
+            "wager": "Zakład",
             "tieEndedRound": "Runda skończona remisem",
             "youEndedRound": "Skończyłeś rundę",
             "nameEndedRound": "%{name} skończył rundę",
@@ -2107,11 +2192,12 @@
     "count": {
         "levelShort": "LVL {count}",
         "experienceShort": "{count} DO",
+        "winStreak": "{count}-wygranych z rzędu!",
         "kills": "0 zabójstw | 1 zabójstwo | {count} zabójstw",
         "deaths": "0 śmierci | 1 śmierć | {count} śmierci",
         "lives": "0 żyć | 1 życie | {count} żyć",
         "files": "0 plików | 1 plik | {count} plików",
-        "points": "0 punktów | 1 punkt | {count} punktów",
+        "points": "{count} punkty | {count} punkt | {count} punkty",
         "pieces": "0 kawałków | 1 kawałek | {count} kawałków",
         "wins": "0 zwycięstw | 1 zwycięstwo | {count} zwycięstw",
         "cards": "0 kart | 1 karta | {count} kart",
@@ -2134,6 +2220,13 @@
         "restartNotice": "Serwer zrestartuje się za {count} minut. Skończ swoją grę. | Serwer zrestartuje się za {count} minutę. Skończ swoją grę. | Serwer zrestartuje się za {count} minut. Skończ swoją grę."
     },
     "misc": {
+        "wagerPoints": "Punkty zakładu",
+        "hit": "Traf",
+        "stand": "Stój",
+        "bust": "Przegrana",
+        "push": "Remis",
+        "hidden": "Ukryte",
+        "visible": "Widoczne",
         "socialLinks": "Linki społecznościowe",
         "skipTurn": "Pomiń turę",
         "doublePointsQuestion": "Podwójne Punkty Pytanie",
@@ -2320,6 +2413,10 @@
         "flawlessGames": "Idealne gry",
         "hits": "Trafienia",
         "hitRate": "Skuteczność",
+        "bustRate": "Szansa na busta",
+        "successRate": "Szansa na sukces",
+        "pushRate": "Szansa na pchnięcie",
+        "blackjackRate": "Stawka Blackjacka",
         "rank": "Ranga",
         "kills": "Zabójstwa",
         "assassin": "Zabójca",
@@ -2591,8 +2688,12 @@
         "inactiveOpponents": "Wszyscy przeciwnicy byli nieaktywni",
         "waitForOpponent": "Czekam na twojego przeciwnika...",
         "waitForOpponents": "Czekam na twoich przeciwników...",
+        "waitingForWagerFromOthers": "Czekamy, aż wszyscy postawią swoje zakłady...",
         "nameLeftTheGame": "%{name} opuścił grę",
+        "selfRanOutOfPoints": "Skończyły ci się punkty.",
         "selfNoPoints": "Nie dostałeś żadnych punktów.",
+        "selfReceivedPoints": "Dostałeś %{points}.",
+        "selfLostPoints": "Straciłeś %{points}.",
         "nameNoPoints": "%{name} nie dostał żadnych punktów.",
         "gameMenu": "Masz ochotę zagrać w coś innego?",
         "forfeit": "Porzucenie gry skutkować będzie porażką dla ciebie.",
@@ -2612,6 +2713,9 @@
         "customizePreset": "Dostosuj ten preset do swojego gustu.",
         "loginToPurchase": "Żeby coś kupić, musisz się najpierw zalogować albo założyć konto.",
         "seasonalItem": "Przedmiot w tym miejscu jest dostępny tylko przez kilka dni w roku.",
+        "snookerRedBallHint": "Czerwone kule muszą być wbite przed jakimikolwiek kolorowymi kulami.",
+        "snookerColoredBallHint": "Kolorowe kule można wbijać dopiero po wbiciu czerwonej kuli.",
+        "specificColoredBallHint": "Nie ma już czerwonych kul. Teraz kolorowe kule muszą być wbite w swojej kolejności.",
         "cardInteractHint": "Kliknij na kartę, żeby wybrać.",
         "gameInvite": "Zaproszenie do gry",
         "eliminationChallenge": "Zaczynamy teraz! Błędna odpowiedź cię wyeliminuje.",
@@ -2622,6 +2726,7 @@
         "chatEmojiAlt": "Emoji czatu z typem {type}",
         "zoomOutHint": "Jesteś za bardzo przybliżony! Złap za ekran i rozciągnij, żeby oddalić i lepiej ogarnąć sterowanie w grze.",
         "noGameSelected": "Nie masz wybranych gier.",
+        "dealerRules": "Krupier dobiera przy {hitValue} lub mniej, staje przy {standValue}+.",
         "awaitingPurchaseConfirmation": {
             "title": "Czekam na potwierdzenie zakupu",
             "description": "Zazwyczaj to trwa tylko kilka sekund. W zależności od metody płatności, może to potrwać dłużej. Śmiało możesz zamknąć ten ekran."
@@ -2964,6 +3069,13 @@
             "targetAssignment": null,
             "assassinDescription": null,
             "targetDescription": null
+        },
+        "blackjackResult": {
+            "BUST": "Przegrałeś w tej rundzie",
+            "LOSS": "Straciłeś w tej rundzie",
+            "WIN": "Wygrałeś w tej rundzie!",
+            "WIN_BLACKJACK": "Blackjack! Wygrałeś tę rundę!",
+            "PUSH": "Ta runda to remis"
         },
         "poolType": {
             "SOLID": "Kule pełne",

@@ -2,8 +2,8 @@
     "_meta": {
         "language": null,
         "rtl": null,
-        "total": 1874,
-        "missing": 1870
+        "total": 1948,
+        "missing": 1944
     },
     "name": "Bloob.io",
     "error": {
@@ -81,6 +81,8 @@
             "maxSubceedMinLength": null
         },
         "start": {
+            "pointProgression": null,
+            "lowerStartPointAmount": null,
             "configCancel": null,
             "fieldRows": null,
             "fieldCannotFitUsers": null,
@@ -275,6 +277,20 @@
                         "STREAK": null
                     }
                 },
+                "order": {
+                    "title": null,
+                    "help": {
+                        "default": null,
+                        "ALTERNATE": null,
+                        "FIXED": null,
+                        "SIMULTANEOUS": null
+                    },
+                    "data": {
+                        "ALTERNATE": null,
+                        "FIXED": null,
+                        "SIMULTANEOUS": null
+                    }
+                },
                 "mode": {
                     "title": null,
                     "help": {
@@ -295,7 +311,22 @@
                     "data": {
                         "half": null,
                         "full": null,
-                        "double": null
+                        "double": null,
+                        "triple": null,
+                        "four": null,
+                        "five": null,
+                        "six": null,
+                        "seven": null,
+                        "eight": null
+                    }
+                },
+                "shuffle": {
+                    "title": null,
+                    "help": null,
+                    "data": {
+                        "EVERY_ROUND": null,
+                        "HALFWAY": null,
+                        "WHEN_NEEDED": null
                     }
                 }
             },
@@ -1807,6 +1838,54 @@
                     ]
                 }
             }
+        },
+        "BLACKJACK": {
+            "name": null,
+            "title": null,
+            "description": null,
+            "options": {
+                "wagerTime": {
+                    "title": null,
+                    "help": null
+                },
+                "dealerSecondCard": {
+                    "title": null,
+                    "help": null
+                },
+                "wager": {
+                    "title": null,
+                    "help": null
+                },
+                "startPointAmount": {
+                    "title": null,
+                    "help": null
+                },
+                "basePointAmount": {
+                    "title": null,
+                    "help": null
+                },
+                "blackjackBonusPointAmount": {
+                    "title": null,
+                    "help": null
+                },
+                "aceHandling": {
+                    "title": null,
+                    "help": null,
+                    "data": {
+                        "ONE_OR_ELEVEN": null,
+                        "ONE": null,
+                        "ELEVEN": null
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "FIRST": null,
+                        "HIGHEST_AFTER": null
+                    }
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1838,7 +1917,8 @@
         "fun": null,
         "bye": null,
         "shortYes": null,
-        "shortNo": null
+        "shortNo": null,
+        "myConnectionBad": null
     },
     "header": {
         "message": {
@@ -1852,6 +1932,7 @@
             "inProgress": null,
             "staleMoves": null,
             "forfeit": null,
+            "outOfPoints": null,
             "inactive": null,
             "pickActionCard": null,
             "pickCardSelection": null,
@@ -1864,7 +1945,11 @@
             "removingRow": null,
             "yourTurn": null,
             "nameTurn": null,
+            "dealerTurn": null,
             "tiedVote": null,
+            "makeYourMove": null,
+            "waitingForOthers": null,
+            "wager": null,
             "tieEndedRound": null,
             "youEndedRound": null,
             "nameEndedRound": null,
@@ -2107,6 +2192,7 @@
     "count": {
         "levelShort": null,
         "experienceShort": null,
+        "winStreak": null,
         "kills": null,
         "deaths": null,
         "lives": null,
@@ -2134,6 +2220,13 @@
         "restartNotice": null
     },
     "misc": {
+        "wagerPoints": null,
+        "hit": null,
+        "stand": null,
+        "bust": null,
+        "push": null,
+        "hidden": null,
+        "visible": null,
         "socialLinks": null,
         "skipTurn": null,
         "doublePointsQuestion": null,
@@ -2320,6 +2413,10 @@
         "flawlessGames": null,
         "hits": null,
         "hitRate": null,
+        "bustRate": null,
+        "successRate": null,
+        "pushRate": null,
+        "blackjackRate": null,
         "rank": null,
         "kills": null,
         "assassin": null,
@@ -2591,8 +2688,12 @@
         "inactiveOpponents": null,
         "waitForOpponent": null,
         "waitForOpponents": null,
+        "waitingForWagerFromOthers": null,
         "nameLeftTheGame": null,
+        "selfRanOutOfPoints": null,
         "selfNoPoints": null,
+        "selfReceivedPoints": null,
+        "selfLostPoints": null,
         "nameNoPoints": null,
         "gameMenu": null,
         "forfeit": null,
@@ -2612,6 +2713,9 @@
         "customizePreset": null,
         "loginToPurchase": null,
         "seasonalItem": null,
+        "snookerRedBallHint": null,
+        "snookerColoredBallHint": null,
+        "specificColoredBallHint": null,
         "cardInteractHint": null,
         "gameInvite": null,
         "eliminationChallenge": null,
@@ -2622,6 +2726,7 @@
         "chatEmojiAlt": null,
         "zoomOutHint": null,
         "noGameSelected": null,
+        "dealerRules": null,
         "awaitingPurchaseConfirmation": {
             "title": null,
             "description": null
@@ -2964,6 +3069,13 @@
             "targetAssignment": null,
             "assassinDescription": null,
             "targetDescription": null
+        },
+        "blackjackResult": {
+            "BUST": null,
+            "LOSS": null,
+            "WIN": null,
+            "WIN_BLACKJACK": null,
+            "PUSH": null
         },
         "poolType": {
             "SOLID": null,

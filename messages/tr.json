@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 1874,
+        "total": 1948,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -81,6 +81,8 @@
             "maxSubceedMinLength": "Maks. uzunluk, min. uzunluktan az olamaz."
         },
         "start": {
+            "pointProgression": "İlerleme mümkün değil, puan ayarlarını değiştir.",
+            "lowerStartPointAmount": "Başlangıç puanı, kazanma miktarından az olmalı.",
             "configCancel": "Oyun ayarları güncellendiği için geri sayım iptal edildi.",
             "fieldRows": "Seçili alan %{rows} satırdan fazlasını destekleyemez",
             "fieldCannotFitUsers": "Seçili alan %{users} oyuncudan fazlasını destekleyemez",
@@ -275,6 +277,20 @@
                         "STREAK": "Seri"
                     }
                 },
+                "order": {
+                    "title": "Sıra",
+                    "help": {
+                        "default": "Herkesin sırayla oynamasını belirle.",
+                        "ALTERNATE": "Her seferde kimin önce gideceği değişiyor.",
+                        "FIXED": "Sıra her seferde aynı.",
+                        "SIMULTANEOUS": "Herkes aynı anda oynuyor."
+                    },
+                    "data": {
+                        "ALTERNATE": "Alternatif",
+                        "FIXED": "Sabit",
+                        "SIMULTANEOUS": "Eş zamanlı"
+                    }
+                },
                 "mode": {
                     "title": "Mod seçeneği",
                     "help": {
@@ -295,7 +311,22 @@
                     "data": {
                         "half": "Yarım Destesi",
                         "full": "Tam Destesi",
-                        "double": "Çift Destesi"
+                        "double": "Çift Destesi",
+                        "triple": "Üçlü Destek",
+                        "four": "Dörtlü Destek",
+                        "five": "Beşli Destek",
+                        "six": "Altılı Destek",
+                        "seven": "Yedili Destek",
+                        "eight": "Sekizli Deste"
+                    }
+                },
+                "shuffle": {
+                    "title": "Karıştır",
+                    "help": "Karıştırmanın ne zaman olacağını seç. \"Shoe\" ise oynanan toplam kart miktarını ifade eder.",
+                    "data": {
+                        "EVERY_ROUND": "Her tur",
+                        "HALFWAY": "Ayakkabının yarısında",
+                        "WHEN_NEEDED": "Kartlar bitince"
                     }
                 }
             },
@@ -1807,6 +1838,54 @@
                     ]
                 }
             }
+        },
+        "BLACKJACK": {
+            "name": "21 Oyunları",
+            "title": "Oyna Blackjack Çevrimiçi | 21 İle Arkadaşlarınla Rekabet Et",
+            "description": "Ücretsiz Blackjack oyna! Hesaba gerek yok. Arkadaşlarınla ya da yabancılarla çevrimiçi 21 deneyimini yaşa. Botlara karşı da oyna ve eğlen!",
+            "options": {
+                "wagerTime": {
+                    "title": "Bahis Zamanı",
+                    "help": "Her oyuncunun tur için bahisini yapması gereken süre. Bu sadece bahisler açıldığında kullanılır."
+                },
+                "dealerSecondCard": {
+                    "title": "Krupiyenin İkinci Kartı",
+                    "help": "İkinci kartın açık mı (görünür) yoksa kapalı mı (gizli) olduğunu belirler. İkinci kart görünür olduğunda, oyuncuların krupiyeye karşı büyük bir avantajı olur."
+                },
+                "wager": {
+                    "title": "Bahis",
+                    "help": "Oyuncular, sıralarının başında puanlarını bahse yatırdıklarında bu özellik açılır. Eğer turu kazanırlarsa, yatırdıkları puan iki katına çıkar; kaybederlerse, orijinal puanlarını korurlar. Oyuncular, sahip olduklarından daha fazla puan bahse yatıramazlar."
+                },
+                "startPointAmount": {
+                    "title": "Başlangıç Noktaları",
+                    "help": "Her oyuncunun başladığı puan sayısı."
+                },
+                "basePointAmount": {
+                    "title": "Temel Puanlar",
+                    "help": "Bir oyuncunun krupiyeye karşı bir turu kazandığında kesin olarak kazanacağı puanlar."
+                },
+                "blackjackBonusPointAmount": {
+                    "title": "Bonus Blackjack Puanları",
+                    "help": "Blackjack ile bir el kazandığında verilen \"Temel Puanlar\"ın üstüne ek puanlar."
+                },
+                "aceHandling": {
+                    "title": "Asa Kullanımı",
+                    "help": "Bir As'ın nasıl puanlandığını seç. Dinamik seçenek, As'ı 11 olarak saymanın elin 21'i geçmesine neden olacağı durumlarda otomatik olarak 1 olarak sayar.",
+                    "data": {
+                        "ONE_OR_ELEVEN": "Dinamik (1 ya da 11)",
+                        "ONE": "Her zaman 1",
+                        "ELEVEN": "Her zaman 11"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "FIRST": "İlk <b>0</b> puana ulaşan | İlk <b>1</b> puana ulaşan | İlk <b>{count}</b> puana ulaşan",
+                        "HIGHEST_AFTER": "<b>0</b> turdan sonra en çok puan | <b>1</b> turdan sonra en çok puan | <b>{count}</b> turdan sonra en çok puan"
+                    }
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1838,7 +1917,8 @@
         "fun": "Çok eğlenceliydi!",
         "bye": "Hoşça kal!",
         "shortYes": "Evet.",
-        "shortNo": "Hayır."
+        "shortNo": "Hayır.",
+        "myConnectionBad": "Bağlantım kötü."
     },
     "header": {
         "message": {
@@ -1852,6 +1932,7 @@
             "inProgress": "Maç devam ediyor",
             "staleMoves": "Maç durdu — %{staleCount} hamle boyunca hiç alım olmadı",
             "forfeit": "Maç bitti — Rakip pes etmeyi seçti",
+            "outOfPoints": "Oyun bitti — Rakip puanları tükendi",
             "inactive": "Maç, hareketsizlik nedeniyle sona erdi",
             "pickActionCard": "Eylem kartı seçiliyor",
             "pickCardSelection": "Kart seçimi yapılıyor",
@@ -1864,7 +1945,11 @@
             "removingRow": "Sırayı kaldır",
             "yourTurn": "Sıra sende %{extra}",
             "nameTurn": "Sıra %{name}'de",
+            "dealerTurn": "Krupiyenin sırası",
             "tiedVote": "Beraberlik oyları",
+            "makeYourMove": "Hamleni yap",
+            "waitingForOthers": "Diğerlerini bekliyoruz",
+            "wager": "Bahis",
             "tieEndedRound": "Tur bitti, berabere kaldı",
             "youEndedRound": "Turu sen bitirdin",
             "nameEndedRound": "%{name} turu bitirdi",
@@ -2107,11 +2192,12 @@
     "count": {
         "levelShort": "{count} SEV",
         "experienceShort": "{count} XP",
+        "winStreak": "{count} kazanma serisi!",
         "kills": "0 öldürme | 1 öldürme | {count} öldürme",
         "deaths": "0 ölüm | 1 ölüm | {count} ölüm",
         "lives": "0 can | 1 can | {count} can",
         "files": "0 dosya | 1 dosya | {count} dosya",
-        "points": "0 puan | 1 puan | {count} puan",
+        "points": "{count} puan | {count} puan | {count} puan",
         "pieces": "0 parça | 1 parça | {count} parça",
         "wins": "0 galibiyet | 1 galibiyet | {count} galibiyet",
         "cards": "0 kart | 1 kart | {count} kart",
@@ -2134,6 +2220,13 @@
         "restartNotice": "Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir."
     },
     "misc": {
+        "wagerPoints": "Bahis Puanları",
+        "hit": "Vur",
+        "stand": "Bekle",
+        "bust": "Patladın",
+        "push": "Beraberlik",
+        "hidden": "Gizli",
+        "visible": "Görünür",
         "socialLinks": "Sosyal bağlantılar",
         "skipTurn": "Sıra atla",
         "doublePointsQuestion": "Çift Puan Sorusu",
@@ -2320,6 +2413,10 @@
         "flawlessGames": "Kusursuz Oyunlar",
         "hits": "Vuruşlar",
         "hitRate": "Vuruş Oranı",
+        "bustRate": "Patlama Oranı",
+        "successRate": "Başarı Oranı",
+        "pushRate": "İtme Oranı",
+        "blackjackRate": "Blackjack Oranı",
         "rank": "Sıralama",
         "kills": "Öldürmeler",
         "assassin": "Suikastçı",
@@ -2591,8 +2688,12 @@
         "inactiveOpponents": "Tüm rakipler hareketsizdi",
         "waitForOpponent": "Rakibini bekliyor...",
         "waitForOpponents": "Rakiplerini bekliyor...",
+        "waitingForWagerFromOthers": "Herkesin bahsini yapmasını bekliyoruz...",
         "nameLeftTheGame": "%{name} oyundan ayrıldı",
+        "selfRanOutOfPoints": "Puanların bitti.",
         "selfNoPoints": "Hiç puan almadın.",
+        "selfReceivedPoints": "%{points} puan aldın.",
+        "selfLostPoints": "%{points} puan kaybettin.",
         "nameNoPoints": "%{name} hiç puan almadı.",
         "gameMenu": "Başka bir şey oynamak ister misin?",
         "forfeit": "Oyunu terk etmek senin için bir kayıp anlamına gelecek.",
@@ -2612,6 +2713,9 @@
         "customizePreset": "Bu ön ayarı istediğin gibi özelleştir.",
         "loginToPurchase": "Bir şey satın almak için önce giriş yapmalı veya bir hesap oluşturmalısın.",
         "seasonalItem": "Bu slot'taki bir eşya yılda sadece birkaç gün boyunca kullanılabilir.",
+        "snookerRedBallHint": "Kırmızı toplar, renkli toplardan önce sokulmalı.",
+        "snookerColoredBallHint": "Renkli toplar, ancak bir kırmızı top sokulduktan sonra sokulabilir.",
+        "specificColoredBallHint": "Artık kırmızı top kalmadı. Şimdi renkli topları kendi sıralarına göre sokmalısın.",
         "cardInteractHint": "Seçimini yapmak için bir karta tıkla.",
         "gameInvite": "Oyuna Davet",
         "eliminationChallenge": "Şimdi başlıyoruz! Yanlış bir cevap seni eler.",
@@ -2622,6 +2726,7 @@
         "chatEmojiAlt": "Chat emojisi türü {type}",
         "zoomOutHint": "Büyütmüşsün! Daha iyi oyun kontrolleri için parmaklarını birleştirip küçült.",
         "noGameSelected": "Hiç oyun seçmedin.",
+        "dealerRules": "Krupiye {hitValue} veya daha az alır, {standValue} ve üstünde durur.",
         "awaitingPurchaseConfirmation": {
             "title": "Satın Alma Onayı Bekleniyor",
             "description": "Bu genellikle sadece birkaç saniye sürer. Ödeme yönteminize bağlı olarak daha uzun sürebilir. Bu ekranı kapatmakta özgürsünüz."
@@ -2964,6 +3069,13 @@
             "targetAssignment": null,
             "assassinDescription": null,
             "targetDescription": null
+        },
+        "blackjackResult": {
+            "BUST": "Bu elde kaybettin",
+            "LOSS": "Bu elde kaybettin",
+            "WIN": "Bu elde kazandın!",
+            "WIN_BLACKJACK": "Blackjack! Bu elde kazandın!",
+            "PUSH": "Bu el berabere gitti"
         },
         "poolType": {
             "SOLID": "Düzler",

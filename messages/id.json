@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 1874,
+        "total": 1948,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -81,6 +81,8 @@
             "maxSubceedMinLength": "Panjang maks. nggak bisa kurang dari panjang min."
         },
         "start": {
+            "pointProgression": "Progresi nggak bisa, atur pengaturan poinnya.",
+            "lowerStartPointAmount": "Jumlah poin awal harus lebih rendah dari jumlah kemenangan.",
             "configCancel": "Pembatalan hitung mundur karena update pengaturan game.",
             "fieldRows": "Bidang yang dipilih nggak bisa nampung lebih dari %{rows} baris",
             "fieldCannotFitUsers": "Bidang yang dipilih nggak bisa nampung lebih dari %{users} pemain",
@@ -275,6 +277,20 @@
                         "STREAK": "Rentetan"
                     }
                 },
+                "order": {
+                    "title": "Urutan",
+                    "help": {
+                        "default": "Tentuin urutan siapa yang main dulu.",
+                        "ALTERNATE": "Bergantian siapa yang main pertama setiap putaran.",
+                        "FIXED": "Urutannya sama setiap putaran.",
+                        "SIMULTANEOUS": "Semua orang main barengan."
+                    },
+                    "data": {
+                        "ALTERNATE": "Alternatif",
+                        "FIXED": "Tetap",
+                        "SIMULTANEOUS": "Bersamaan"
+                    }
+                },
                 "mode": {
                     "title": "Mode",
                     "help": {
@@ -295,7 +311,22 @@
                     "data": {
                         "half": "Setengah Dek",
                         "full": "Dek Penuh",
-                        "double": "Dek Ganda"
+                        "double": "Dek Ganda",
+                        "triple": "Triple Deck - Tumpukan Tiga",
+                        "four": "Four Deck - Tumpukan Empat",
+                        "five": "Five Deck - Tumpukan Lima",
+                        "six": "Six Deck - Tumpukan Enam",
+                        "seven": "Seven Deck - Tumpukan Tujuh",
+                        "eight": "Delapan Deck"
+                    }
+                },
+                "shuffle": {
+                    "title": "Acak",
+                    "help": "Pilih kapan shuffle terjadi. \"Shoe\" itu maksudnya jumlah total kartu yang dipakai.",
+                    "data": {
+                        "EVERY_ROUND": "Setiap ronde",
+                        "HALFWAY": "Setengah jalan di sepatu",
+                        "WHEN_NEEDED": "Pas udah habis kartu"
                     }
                 }
             },
@@ -1807,6 +1838,54 @@
                     ]
                 }
             }
+        },
+        "BLACKJACK": {
+            "name": "Blackjack",
+            "title": "Main Blackjack Online Gratis | Teman & Bot | Tanpa Akun",
+            "description": "Mainkan Blackjack online gratis! Bebas akun, seru bersama teman atau lawan bot. Nikmati pengalaman main 21 di web dengan mudah dan cepat.",
+            "options": {
+                "wagerTime": {
+                    "title": "Waktu Taruhan",
+                    "help": "Waktu yang dimiliki setiap pemain buat pasang taruhan di ronde ini. Ini cuma dipake kalo taruhan diizinin."
+                },
+                "dealerSecondCard": {
+                    "title": "Kartu Kedua Dealer",
+                    "help": "Nentuin apakah kartu kedua dealer ditunjukin ke atas (kelihatan) atau ke bawah (tersembunyi). Kalo kartu kedua kelihatan, pemain bisa dapet keuntungan besar dibanding dealer."
+                },
+                "wager": {
+                    "title": "Taruhan",
+                    "help": "Pas diaktifin, pemain bisa taruhan poin di awal giliran mereka. Kalo mereka menang ronde, taruhan mereka jadi dua kali lipat; kalo kalah, mereka tetep dapet poin awal. Pemain gak bisa taruhan lebih banyak poin dari yang mereka punya."
+                },
+                "startPointAmount": {
+                    "title": "Titik Awal",
+                    "help": "Jumlah poin yang dimiliki setiap pemain di awal."
+                },
+                "basePointAmount": {
+                    "title": "Poin Dasar",
+                    "help": "Poin yang dijamin didapat pemain kalo mereka menang satu ronde lawan dealer."
+                },
+                "blackjackBonusPointAmount": {
+                    "title": "Poin Bonus Blackjack",
+                    "help": "Poin tambahan (di atas \"Poin Dasar\") yang dikasih kalau pemain menang ronde dengan blackjack."
+                },
+                "aceHandling": {
+                    "title": "Pengendalian Jago",
+                    "help": "Pilih cara ngitung Ace. Opsi dinamis otomatis ngitung Ace sebagai 1 kalo ngitungnya sebagai 11 bikin total tangan lebih dari 21.",
+                    "data": {
+                        "ONE_OR_ELEVEN": "Dinamis (1 atau 11)",
+                        "ONE": "Selalu 1",
+                        "ELEVEN": "Selalu 11"
+                    }
+                },
+                "winCondition": {
+                    "data": {
+                        "FIRST": "Pertama yang nyampe <b>0</b> poin | Pertama yang nyampe <b>1</b> poin | Pertama yang nyampe <b>{count}</b> poin",
+                        "HIGHEST_AFTER": "Poin terbanyak setelah <b>0</b> ronde | Poin terbanyak setelah <b>1</b> ronde | Poin terbanyak setelah <b>{count}</b> ronde"
+                    }
+                }
+            },
+            "presets": {},
+            "help": {}
         }
     },
     "chat": {
@@ -1838,7 +1917,8 @@
         "fun": "Seru banget!",
         "bye": "Dadah!",
         "shortYes": "Iya.",
-        "shortNo": "Enggak."
+        "shortNo": "Enggak.",
+        "myConnectionBad": "Koneksi gue jelek."
     },
     "header": {
         "message": {
@@ -1852,6 +1932,7 @@
             "inProgress": "Pertandingan sedang berlangsung",
             "staleMoves": "Pertandingan mandek — %{staleCount} gerakan tanpa ada yang mengambil alih",
             "forfeit": "Pertandingan selesai — Lawan memilih untuk menyerah",
+            "outOfPoints": "Pertandingan selesai — Lawan kehabisan poin",
             "inactive": "Pertandingan berakhir karena tidak ada aktivitas",
             "pickActionCard": "Memilih kartu aksi",
             "pickCardSelection": "Membuat seleksi kartu",
@@ -1864,7 +1945,11 @@
             "removingRow": "Menghapus baris",
             "yourTurn": "Giliranmu %{extra}",
             "nameTurn": "Giliran %{name}",
+            "dealerTurn": "Giliran dealer",
             "tiedVote": "Suara imbang",
+            "makeYourMove": "Ayo, gerak!",
+            "waitingForOthers": "Nunggu yang lain",
+            "wager": "Taruhan",
             "tieEndedRound": "Putaran udah selesai, seri nih",
             "youEndedRound": "Kamu udah selesaiin putaran",
             "nameEndedRound": "%{name} udah selesaiin putaran",
@@ -2107,11 +2192,12 @@
     "count": {
         "levelShort": "LVL {count}",
         "experienceShort": "{count} XP",
+        "winStreak": "Kemenangan beruntun {count}!",
         "kills": "0 bunuh | 1 bunuh | {count} bunuh",
         "deaths": "0 mati | 1 mati | {count} mati",
         "lives": "0 nyawa | 1 nyawa | {count} nyawa",
         "files": "0 file | 1 file | {count} file",
-        "points": "0 poin | 1 poin | {count} poin",
+        "points": "{count} poin | {count} poin | {count} poin",
         "pieces": "0 potong | 1 potong | {count} potong",
         "wins": "0 menang | 1 menang | {count} menang",
         "cards": "0 kartu | 1 kartu | {count} kartu",
@@ -2134,6 +2220,13 @@
         "restartNotice": "Server bakal restart dalam {count} menit. Selesaikan gamenya ya. | Server bakal restart dalam {count} menit. Selesaikan gamenya ya. | Server bakal restart dalam {count} menit. Selesaikan gamenya ya."
     },
     "misc": {
+        "wagerPoints": "Poin Taruhan",
+        "hit": "Pukul",
+        "stand": "Bertahan",
+        "bust": "Kalah",
+        "push": "Seri",
+        "hidden": "Tersembunyi",
+        "visible": "Terlihat",
         "socialLinks": "Link Sosial",
         "skipTurn": "Lewatin giliran",
         "doublePointsQuestion": "Pertanyaan Poin Ganda",
@@ -2320,6 +2413,10 @@
         "flawlessGames": "Game Sempurna",
         "hits": "Hitungan",
         "hitRate": "Tingkat Hit",
+        "bustRate": "Tingkat Bust",
+        "successRate": "Tingkat Sukses",
+        "pushRate": "Tingkat Dorong",
+        "blackjackRate": "Tarif Blackjack",
         "rank": "Peringkat",
         "kills": "Bunuh",
         "assassin": "Pembunuh bayaran",
@@ -2591,8 +2688,12 @@
         "inactiveOpponents": "Semua lawan nggak aktif",
         "waitForOpponent": "Nunggu lawanmu...",
         "waitForOpponents": "Nunggu lawan-lawanmu....",
+        "waitingForWagerFromOthers": "Nunggu semua orang buat taruhan...",
         "nameLeftTheGame": "%{name} keluar dari permainan",
+        "selfRanOutOfPoints": "Poinmu habis.",
         "selfNoPoints": "Kamu nggak dapet poin.",
+        "selfReceivedPoints": "Kamu dapet %{points}.",
+        "selfLostPoints": "Kamu kalah %{points}.",
         "nameNoPoints": "%{name} nggak dapet poin.",
         "gameMenu": "Pengen main game lain?",
         "forfeit": "Kalau kamu menyerah, kamu bakal kalah nih.",
@@ -2612,6 +2713,9 @@
         "customizePreset": "Sesuaikan preset ini sesuai selera kamu.",
         "loginToPurchase": "Buat belanja, kamu harus login atau buat akun dulu.",
         "seasonalItem": "Barang di slot ini cuma tersedia beberapa hari dalam setahun.",
+        "snookerRedBallHint": "Bola merah harus dimasukkan dulu sebelum bola berwarna.",
+        "snookerColoredBallHint": "Bola berwarna cuma bisa dimasukkan setelah bola merah dimasukkan.",
+        "specificColoredBallHint": "Gak ada bola merah lagi. Sekarang bola berwarna harus dimasukkan sesuai urutannya.",
         "cardInteractHint": "Klik kartu untuk pilihannya.",
         "gameInvite": "Undangan Main Game",
         "eliminationChallenge": "Kita mulai sekarang! Jawaban yang salah akan mengeliminasi kamu.",
@@ -2622,6 +2726,7 @@
         "chatEmojiAlt": "Emoji chat dengan tipe {type}",
         "zoomOutHint": "Kamu lagi zoom in! Coba cubit layar buat zoom out biar kontrol gamenya lebih enak.",
         "noGameSelected": "Kamu belum milih game apa-apa.",
+        "dealerRules": "Dealer ambil kartu kalau nilainya {hitValue} atau kurang, berhenti di {standValue} ke atas.",
         "awaitingPurchaseConfirmation": {
             "title": "Menunggu Konfirmasi Pembelian",
             "description": "Biasanya ini hanya butuh beberapa detik. Tergantung metode pembayaranmu, ini bisa memakan waktu lebih lama. Silakan tutup layar ini."
@@ -2964,6 +3069,13 @@
             "targetAssignment": null,
             "assassinDescription": null,
             "targetDescription": null
+        },
+        "blackjackResult": {
+            "BUST": "Kamu kalah di ronde ini",
+            "LOSS": "Kamu kalah di ronde ini",
+            "WIN": "Kamu menang di ronde ini!",
+            "WIN_BLACKJACK": "Blackjack! Kamu menang di ronde ini!",
+            "PUSH": "Ronde ini seri"
         },
         "poolType": {
             "SOLID": "Bola Polos",
