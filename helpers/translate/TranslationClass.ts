@@ -434,6 +434,10 @@ export default class TranslationClass {
 			[`chat`],
 			`These are short informal chat messages used in a videogame.`
 		)
+		this.generateTranslationTask(
+			[`chatSearchKeywords`],
+			`These are short informal chat keywords. Each item has a comma separated list with no spacing. Each item in the list is a valid input for the player to trigger the same translation. For example, "gg" and "good game" would both trigger the same translation. Include or reduce as many variations as are relevant for the target language.`
+		)
 
 		/**
 		 * Match messsages
