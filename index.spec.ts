@@ -8,7 +8,6 @@ import { supportedLocales } from './index'
 // Define a regex pattern to match variables in curly braces
 const variablePattern = /{([^{}]*)}/g
 
-// Define a recursive function to check for variables in a translation object
 const checkForVariables = (english, translation) => {
 	// Iterate through keys and values of English object
 	for (const [key, value] of Object.entries(english)) {
@@ -35,6 +34,36 @@ const checkForVariables = (english, translation) => {
 				// Assert that each variable is present in the English source
 				expect(englishVariables).toContain(variable)
 			}
+		}
+	}
+}
+
+const checkForCommonErrors = translation => {
+	// Iterate through keys and values of English object
+	for (const [key, value] of Object.entries(translation)) {
+		// Skip keys with null values in translation
+		if (translation[key] === null) {
+			continue
+		}
+
+		// Check if value is an object (indicating another nested layer)
+		if (typeof value === `object`) {
+			// If value is an object, recursively call the function on the nested objects
+			checkForCommonErrors(value)
+		} else if (typeof value === `string`) {
+			// If value is not an object, check if it contains any variables
+			const lowerCasedValue = value.toLowerCase()
+			expect(lowerCasedValue).not.toStartWith(`[0]`)
+			expect(lowerCasedValue).not.toStartWith(`0.`)
+			expect(lowerCasedValue).not.toStartWith(`0)`)
+			expect(lowerCasedValue).not.toStartWith(`(0)`)
+			expect(lowerCasedValue).not.toStartWith(`{0}`)
+			expect(lowerCasedValue).not.toStartWith(`[1]`)
+			expect(lowerCasedValue).not.toStartWith(`1.`)
+			expect(lowerCasedValue).not.toStartWith(`1)`)
+			expect(lowerCasedValue).not.toStartWith(`(1)`)
+			expect(lowerCasedValue).not.toStartWith(`{1}`)
+			expect(lowerCasedValue).not.toStartWith(`sure `)
 		}
 	}
 }
@@ -81,6 +110,12 @@ for (const folder of [...supportedLocales, `_empty`]) {
 	describe(`containCorrectVariables`, () => {
 		it(`should contain all variables from English text for "${folder}"`, () => {
 			checkForVariables(enMessage, messages)
+		})
+	})
+
+	describe(`containCorrectStart`, () => {
+		it(`language "${folder}" should not start with common errors`, () => {
+			checkForCommonErrors(messages)
 		})
 	})
 }
