@@ -49,4 +49,6 @@ You're now good to go. There's no build process. Use `bun lint:fix` to automatic
     -   German (DE)
 -   Eric ([@DerErizzle](https://github.com/DerErizzle))
     -   German (DE)
+-   玛桶
+    -   Simplified Chinese (ZH)
 -   ... you? :)
