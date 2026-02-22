@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 2011,
+        "total": 2031,
         "missing": 22
     },
     "name": "Bloob.io",
@@ -1872,6 +1872,22 @@
                     "title": "Bonus Blackjack Pisteet",
                     "help": "Lisäpisteet (peruspisteiden päälle), kun pelaaja voittaa kierroksen blackjackilla."
                 },
+                "doubleDown": {
+                    "title": "Tuplaa veto",
+                    "help": "Kun tämä on päällä, pelaajat voivat tuplata panoksensa ensimmäisellä siirrollaan, saada täsmälleen yhden lisäkortin ja sitten jäädä automaattisesti."
+                },
+                "split": {
+                    "title": "Jakaa",
+                    "help": "Kun tämä on päällä, pelaajat voivat jakaa alkuperäiset kaksi korttia kahdeksi erilliseksi kädeksi, jos molemmat kortit ovat samanarvoisia."
+                },
+                "insurance": {
+                    "title": "Vakuutus",
+                    "help": "Kun se on päällä ja jakajalla on ässä, pelaajat voivat laittaa vakuutussivupanin, jotta häviöt olisivat pienemmät, jos jakajalla on blackjack."
+                },
+                "naturalBlackjack": {
+                    "title": "Luonnollinen Blackjack",
+                    "help": "Kun se on päällä, niin kahden kortin 21 (ässä + 10-arvoinen kortti) voittaa käden heti."
+                },
                 "aceHandling": {
                     "title": "Ässäohjaus",
                     "help": "Valitse, miten ässä lasketaan. Dynaaminen vaihtoehto laskee ässän automaattisesti 1:ksi, jos sen laskeminen 11:ksi saisi käden ylittämään 21.",
@@ -1932,6 +1948,27 @@
                     "description": [
                         "Meidän blackjack-versiossa et voi pelata pelimerkeillä tai oikealla rahalla. Sen sijaan voit lyödä vetoa sun pelipisteillä, mikä antaa sulle mahdollisuuden voittaa vastustajat.",
                         "Jos lyöt vetoa 10 pisteellä ja voitat jakajan ilman, että menee yli, saat vielä 10 pistettä lisää. Mutta jos häviät, niin menetät ne 10 pistettä, mitä panostit."
+                    ]
+                },
+                "doubleDown": {
+                    "title": "Tuplaa veto!",
+                    "description": [
+                        "Double down antaa sun tuplata nykyisen panoksesi, kun sitoudut ottamaan just yhden kortin lisää.",
+                        "Kun saat sen kortin, sun käsi jää automaattisesti voimaan, joten tää on tosi riskialtis, mutta myös tosi palkitseva siirto."
+                    ]
+                },
+                "split": {
+                    "title": "Jakaa",
+                    "description": [
+                        "Jos sun kahdessa ekassa kortissa on sama arvo, voit jakaa ne kahdeksi erilliseksi kädeksi.",
+                        "Uudelle kädelle laitetaan sama panos, ja molempia käsiä pelataan itsenäisesti jakajaa vastaan."
+                    ]
+                },
+                "insurance": {
+                    "title": "Vakuutus",
+                    "description": [
+                        "Kun jakaja näyttää ässän, voit laittaa vapaaehtoisen sivupanoksen, jota kutsutaan vakuutukseksi.",
+                        "Vakuutus maksaa, jos jakajalla on blackjack, mutta se häviää, jos jakajalla ei ole."
                     ]
                 },
                 "winCondition": {
@@ -2313,6 +2350,9 @@
         "wagerPoints": "Panostuspisteet",
         "hit": "Lyö",
         "stand": "Pysy",
+        "doubleDown": "Tuplaa",
+        "split": "Jaa",
+        "insurance": "Vakuutus",
         "bust": "Yli",
         "push": "Tasapeli",
         "hidden": "Piilotettu",

@@ -254,6 +254,26 @@ export default class TranslationClass {
 			`The context of these are vue-i18n compliant pluralization entries (KEEP THEM SHORT)`
 		)
 		this.generateTranslationTask(
+			[`misc`, `hit`],
+			`Used for the Blackjack game when the player chooses to "hit".`
+		)
+		this.generateTranslationTask(
+			[`misc`, `stand`],
+			`Used for the Blackjack game when the player chooses to "stand".`
+		)
+		this.generateTranslationTask(
+			[`misc`, `doubleDown`],
+			`Used for the Blackjack game when the player chooses to "double down".`
+		)
+		this.generateTranslationTask(
+			[`misc`, `split`],
+			`Used for the Blackjack game when the player chooses to "split".`
+		)
+		this.generateTranslationTask(
+			[`misc`, `insurance`],
+			`Used for the Blackjack game when the player chooses to use insurance on the dealer's ace.`
+		)
+		this.generateTranslationTask(
 			[`misc`],
 			`The context behind these are typically buttons and columns.`
 		)
