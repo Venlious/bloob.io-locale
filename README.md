@@ -4,10 +4,6 @@
 
 https://bloob.io
 
-## Translation Editor
-
-The [built in translation editor](https://bloob.io/translation-editor) has been introduced to Bloob.io as of v1.6.0! On this page you are able to make changes, download the file as .csv, and submit them here or by mail to contribute.
-
 # Localization
 
 While the project itself is not open source, the localization is. Feel free to create pull requests with improvements, grammar fixes, or support for new languages.
@@ -17,7 +13,7 @@ While the project itself is not open source, the localization is. Feel free to c
 -   **How do I add a new language?**
     -   Please [make a new issue](https://github.com/Venlious/bloob.io-locale/issues/new) requesting the language you would like to see. If approved, the language will be generated and can then be verified by a person.
 -   **I found a grammatically error or spelling mistake. What do I do?**
-    -   Great! You can go to the [translation editor](https://bloob.io/translation-editor) and find and fix the issue there, resolve the issue in the repository directly, or you can [make a new issue](https://github.com/Venlious/bloob.io-locale/issues/new) with an explanation of the error you found.
+    -   Great! You can make a pull request with the edit to the file directly or you can [make a new issue](https://github.com/Venlious/bloob.io-locale/issues/new) with an explanation of the error you found.
 -   **I have another question!**
     -   Feel free to [make a new issue](https://github.com/Venlious/bloob.io-locale/issues/new) with your question.
 
