@@ -47,6 +47,8 @@ You're now good to go. There's no build process. Use `bun lint:fix` to automatic
     -   German (DE)
 -   Jeongyeon Park
     -   Korean (KO)
+-	Ilsoon Cho
+	-	Japanese (JA)
 -   玛桶
     -   Simplified Chinese (ZH)
 -   ... you? :)
