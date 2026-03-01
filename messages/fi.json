@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 1963,
+        "total": 2006,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1818,6 +1818,14 @@
                         "FIRST": "Ensimmäinen, joka saa <b>0</b> pistettä | Ensimmäinen, joka saa <b>1</b> pisteen | Ensimmäinen, joka saa <b>{count}</b> pistettä",
                         "HIGHEST_AFTER": "Eniten pisteitä <b>0</b> kierroksen jälkeen | Eniten pisteitä <b>1</b> kierroksen jälkeen | Eniten pisteitä <b>{count}</b> kierroksen jälkeen"
                     }
+                },
+                "splitSameFaceOnly": {
+                    "title": "Jako vain samalla kortilla",
+                    "help": "Kun tämä on päällä, jakaminen on sallittu vain jos molemmat aloituskortit ovat sama kortti (esim. K+K tai 8+8), eivät vain samanarvoisia numeroina."
+                },
+                "fiveCardCharlie": {
+                    "title": "Five Card Charlie",
+                    "help": "Kun tämä on päällä, mikä tahansa pelaajan käsi, jossa on viisi korttia ja yhteensä 21 tai vähemmän, voittaa automaattisesti. Tämä sääntö ei koske jakajaa."
                 }
             },
             "presets": {
@@ -1892,6 +1900,81 @@
                     "description": [
                         "Oletuksena peli loppuu 10 kierroksen jälkeen, ja voittaja valitaan sen mukaan, kuka on saanut eniten pisteitä.",
                         "Voit säätää sääntöjä ja voittokriteereitä sun omassa pelissä aulassa. Tai sit voit lopettaa pelin, kun joku pelaaja saavuttaa X määrän pisteitä."
+                    ]
+                }
+            }
+        },
+        "CUTTHROAT_POOL": {
+            "name": "Kovakourainen biljardi",
+            "title": "Pelaa Cutthroat Poolia ilmaiseksi verkossa ystävien kera!",
+            "description": "Pelaa Cutthroat Poolia verkossa ilmaiseksi! Ei tilinluontia, mutta silti mukavat biljardi-moninpelit ystävien, tuntemattomien ja bottien kanssa.",
+            "options": {
+                "ruleEliminatedCanReturn": {
+                    "title": "Eliminoidut voi palata",
+                    "help": "Oletusarvoisesti pelaaja tippuu pelistä, kun kaikki hänen pallonsa on pussitettu. Jos vastustaja tekee virheen, yksi sen pelaajan palloista voi palata pöydälle, mikä antaa mahdollisuuden palata peliin."
+                },
+                "foulPocketOwnBall": {
+                    "title": "Oman pallon pussittaminen",
+                    "help": "Tapahtuu, kun pelaaja laittaa oman pallonsa pussiin."
+                },
+                "breakLayout": {
+                    "title": "Aloitusasettelu",
+                    "help": "Valitse onko avausasetelma kiinteä vai satunnainen.",
+                    "data": {
+                        "fixed": "Kiinteä (virallinen)",
+                        "random": "Satunnainen"
+                    }
+                },
+                "breakFillers": {
+                    "title": "Käytä täytepalloja avauksessa",
+                    "help": "Kun asetus on päällä, täytepalloja lisätään avaukseen pelaajamäärillä jotka niitä tarvitsevat."
+                },
+                "ruleReturnOpponentBalls": {
+                    "title": "Palauta vastustajan pallo seuraavista",
+                    "help": "Valitse mitkä virheet voivat palauttaa vastustajan pallon pöydälle.",
+                    "data": {
+                        "anyFoul": "Mikä tahansa kelvollinen virhe",
+                        "ballInHand": "Vain pallo kädessä -virheet",
+                        "off": "Pois käytöstä"
+                    }
+                }
+            },
+            "presets": {
+                "random": {
+                    "title": "Satunnaiset ryhmät",
+                    "description": [
+                        "Määritetyt porukat",
+                        "Satunnainen hyllyjärjestys"
+                    ]
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Pelipöytä",
+                    "description": [
+                        "Pelaajamäärästä riippuen jokaiselle pelaajalle annetaan 3–7 pallon ryhmä tietyssä värissä.",
+                        "Toisin kuin 8 Ballissa, oma ryhmäsi on se, jota sinun pitää suojata. Tavoitteesi on pussittaa vastustajien palloja ja pitää samalla vähintään yksi omista palloistasi pöydällä."
+                    ]
+                },
+                "breaking": {
+                    "title": "Pelin aloitus (Avaus)",
+                    "description": [
+                        "Avauslyönti käynnistää ottelun hajottamalla asetelman. Asetuksissa voidaan käyttää kiinteää tai satunnaista avausasettelua, ja joillain pelaajamäärillä voidaan lisätä täytepalloja (merkitty punaisella rastilla).",
+                        "Laillinen avaus antaa reilun alun. Kuten muissakin biljardipeleissä, valkoisen pussittaminen avauksessa on virhe ja antaa yleensä vastustajille etua."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Pelinkulku",
+                    "description": [
+                        "Vuorollasi tähtäät ja pussitat muiden pelaajien palloja. Oman pallon pussittaminen on virhe.",
+                        "Jos kaikki ryhmäsi pallot pussitetaan, putoat pelistä. Joissain säännöissä virheet voivat palauttaa vastustajan pallon pöydälle, jolloin pudonnut pelaaja voi palata peliin."
+                    ]
+                },
+                "objective": {
+                    "title": "Tavoite",
+                    "description": [
+                        "Ole viimeinen pelaaja, jolla on vähintään yksi oman ryhmän pallo pöydällä. Kaikkien muiden täytyy pudota pelistä.",
+                        "Valitse lyönnit huolella: aggressiivinen peli voi pudottaa vastustajia nopeasti, mutta virheet voivat mitätöidä etenemisesi."
                     ]
                 }
             }
@@ -1986,6 +2069,8 @@
             "voteResults": "Äänestyksen tulokset",
             "flippingField": "Kentän kääntäminen",
             "removingRow": "Poistetaan rivi",
+            "yourPick": "Valitse sun juttu %{extra}",
+            "namePick": "%{name} valitsee nyt juttunsa",
             "yourTurn": "Sinun vuorosi %{extra}",
             "nameTurn": "%{name}:n vuoro",
             "dealerTurn": "Jakajan vuoro",
@@ -2232,6 +2317,7 @@
         "levelShort": "LVL {count}",
         "experienceShort": "{count} XP",
         "winStreak": "{count}-voiton putki!",
+        "balls": "0 palloa | 1 pallo | {count} palloa",
         "kills": "0 tappoa | 1 tappo | {count} tappoa",
         "deaths": "0 kuolemaa | 1 kuolema | {count} kuolemaa",
         "lives": "0 elämää | 1 elämä | {count} elämää",
@@ -3091,7 +3177,8 @@
             "LOSS": "Sä hävisit tänä kierroksena",
             "WIN": "Sä voitit tänä kierroksena!",
             "WIN_BLACKJACK": "Blackjack! Sä voitit tänä kierroksena!",
-            "PUSH": "Tää kierros on tasapeli"
+            "PUSH": "Tää kierros on tasapeli",
+            "FIVE_CARD_CHARLIE": "Five Card Charlie! Yksi käsistäsi voitti automaattisesti viidellä kortilla."
         },
         "poolType": {
             "SOLID": "Täysväriset",
@@ -3109,6 +3196,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} upotti mustan pallon liian aikaisin.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} upotti mustan pallon aloituslyönnillä.",
                 "POCKETED_WRONG_BALL": "%{name} upotti väärän pallon.",
+                "POCKETED_OWN_BALL": "${name} pisti oman pallonsa pussiin.",
                 "SKIP_TURN": "%{name} jätti vuoronsa väliin."
             },
             "self": {
@@ -3122,6 +3210,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Laitoit mustan pallon reikään liian aikaisin.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Laitoit mustan pallon reikään aloituslyönnillä.",
                 "POCKETED_WRONG_BALL": "Laitoit väärän pallon reikään.",
+                "POCKETED_OWN_BALL": "Sä pisti oman pallos sisään.",
                 "SKIP_TURN": "Sä valitsit ohittaa sun vuoron."
             }
         },

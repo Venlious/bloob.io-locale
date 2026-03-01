@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Polish",
         "rtl": false,
-        "total": 1963,
+        "total": 2006,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1818,6 +1818,14 @@
                         "FIRST": "Pierwszy, kto zdobędzie <b>0</b> punktów | Pierwszy, kto zdobędzie <b>1</b> punkt | Pierwszy, kto zdobędzie <b>{count}</b> punktów",
                         "HIGHEST_AFTER": "Najwięcej punktów po <b>0</b> rundach | Najwięcej punktów po <b>1</b> rundzie | Najwięcej punktów po <b>{count}</b> rundach"
                     }
+                },
+                "splitSameFaceOnly": {
+                    "title": "Podział tylko przy tej samej karcie",
+                    "help": "Po włączeniu podział jest dozwolony tylko wtedy, gdy obie karty startowe są tą samą kartą (np. K+K lub 8+8), a nie tylko mają tę samą wartość liczbową."
+                },
+                "fiveCardCharlie": {
+                    "title": "Five Card Charlie",
+                    "help": "Po włączeniu każda ręka gracza z pięcioma kartami i sumą 21 lub mniej wygrywa automatycznie. Ta zasada nie dotyczy krupiera."
                 }
             },
             "presets": {
@@ -1892,6 +1900,81 @@
                     "description": [
                         "Zazwyczaj gra kończy się po 10 rundach, a zwycięzca jest wybierany na podstawie tego, kto ma najwięcej punktów.",
                         "Możesz dostosować zasady i warunki wygranej w ustawieniach lobby swojej gry. Możesz też zakończyć grę, gdy któryś z graczy zdobędzie X punktów."
+                    ]
+                }
+            }
+        },
+        "CUTTHROAT_POOL": {
+            "name": "Zabójcza Bilardówka",
+            "title": "Graj w Bilard Cutthroat Online | Wieloosobowo ze Znajomymi",
+            "description": "Zagraj w darmowy bilard Cutthroat online, bez konta. Dołącz do wieloosobowych gier ze znajomymi, obcymi lub botami w tej klasycznej grze online!",
+            "options": {
+                "ruleEliminatedCanReturn": {
+                    "title": "Wyeliminowani mogą wrócić",
+                    "help": "Zazwyczaj gracz odpada, gdy wszystkie jego kule wpadną do kieszeni. Jeśli przeciwnik popełni faul, jedna z kul tego gracza może wrócić na stół, co pozwala mu wrócić do gry."
+                },
+                "foulPocketOwnBall": {
+                    "title": "Wbicie własnej bili",
+                    "help": "Dzieje się tak, gdy gracz wbija własną bilę do łuzy."
+                },
+                "breakLayout": {
+                    "title": "Układ rozbicia",
+                    "help": "Wybierz, czy początkowy układ do rozbicia ma być stały czy losowy.",
+                    "data": {
+                        "fixed": "Stały (oficjalny)",
+                        "random": "Losowy"
+                    }
+                },
+                "breakFillers": {
+                    "title": "Użyj kul wypełniających przy rozbiciu",
+                    "help": "Po włączeniu, przy liczbie graczy która tego wymaga, do rozbicia dodawane są kule wypełniające."
+                },
+                "ruleReturnOpponentBalls": {
+                    "title": "Zwracaj kule przeciwnika przy",
+                    "help": "Wybierz, które faule mogą zwracać kulę przeciwnika na stół.",
+                    "data": {
+                        "anyFoul": "Każdy kwalifikujący się faul",
+                        "ballInHand": "Tylko faule z bilą w ręku",
+                        "off": "Wyłączone"
+                    }
+                }
+            },
+            "presets": {
+                "random": {
+                    "title": "Losowe grupy",
+                    "description": [
+                        "Przypisane grupy",
+                        "Losowy układ półek"
+                    ]
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Stół do gry",
+                    "description": [
+                        "W zależności od liczby graczy każdy gracz otrzymuje grupę od 3 do 7 bil w określonym kolorze.",
+                        "W przeciwieństwie do 8 Ball, twoja grupa to zestaw, który musisz chronić. Twoim celem jest wbijanie bil przeciwników i jednoczesne utrzymanie co najmniej jednej własnej bili na stole."
+                    ]
+                },
+                "breaking": {
+                    "title": "Rozpoczęcie gry (Rozbicie)",
+                    "description": [
+                        "Strzał otwierający rozpoczyna mecz i rozbija ustawienie. Ustawienia meczu mogą używać stałego lub losowego układu rozbicia, a przy niektórych liczbach graczy mogą pojawić się kule wypełniające (oznaczone czerwonym krzyżykiem).",
+                        "Prawidłowe rozbicie daje uczciwy start. Jak w innych odmianach bilarda, wbicie białej bili przy rozbiciu to faul i zwykle daje przewagę przeciwnikom."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Rozgrywka",
+                    "description": [
+                        "W swojej turze celuj i wbijaj bile należące do innych graczy. Wbicie własnej bili to faul.",
+                        "Jeśli wszystkie bile z twojej grupy zostaną wbite, odpadasz. W niektórych zestawach zasad faule mogą przywrócić bilę przeciwnika na stół, co pozwala wrócić do gry wyeliminowanym graczom."
+                    ]
+                },
+                "objective": {
+                    "title": "Cel",
+                    "description": [
+                        "Zostań ostatnim graczem, który ma na stole co najmniej jedną bilę ze swojej grupy. Wszyscy pozostali muszą zostać wyeliminowani.",
+                        "Wybieraj uderzenia ostrożnie: agresywna gra może szybko eliminować rywali, ale błędy i faule mogą cofnąć twój postęp."
                     ]
                 }
             }
@@ -1986,6 +2069,8 @@
             "voteResults": "Wyniki głosowania",
             "flippingField": "Odwracanie pola",
             "removingRow": "Usuwanie rzędu",
+            "yourPick": "Wybierz swoją opcję %{extra}",
+            "namePick": "%{name} wybiera swoją opcję",
             "yourTurn": "Twoja kolej %{extra}",
             "nameTurn": "Kolej %{name}",
             "dealerTurn": "Tura krupiera",
@@ -2232,6 +2317,7 @@
         "levelShort": "LVL {count}",
         "experienceShort": "{count} DO",
         "winStreak": "{count}-wygranych z rzędu!",
+        "balls": "0 piłek | 1 piłka | {count} piłek",
         "kills": "0 zabójstw | 1 zabójstwo | {count} zabójstw",
         "deaths": "0 śmierci | 1 śmierć | {count} śmierci",
         "lives": "0 żyć | 1 życie | {count} żyć",
@@ -3091,7 +3177,8 @@
             "LOSS": "Straciłeś w tej rundzie",
             "WIN": "Wygrałeś w tej rundzie!",
             "WIN_BLACKJACK": "Blackjack! Wygrałeś tę rundę!",
-            "PUSH": "Ta runda to remis"
+            "PUSH": "Ta runda to remis",
+            "FIVE_CARD_CHARLIE": "Five Card Charlie! Jedna z twoich rąk wygrała automatycznie pięcioma kartami."
         },
         "poolType": {
             "SOLID": "Kule pełne",
@@ -3109,6 +3196,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} wpadł ósemkę za wcześnie.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} wpadł ósemkę na początku.",
                 "POCKETED_WRONG_BALL": "%{name} wpadł niewłaściwą bilę.",
+                "POCKETED_OWN_BALL": "${name} wbił swoją własną kulę.",
                 "SKIP_TURN": "%{name} olał swoją kolej."
             },
             "self": {
@@ -3122,6 +3210,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Wprowadziłeś ósemkę do kieszeni za wcześnie.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Wprowadziłeś ósemkę do kieszeni na początku gry.",
                 "POCKETED_WRONG_BALL": "Wprowadziłeś do kieszeni niewłaściwą bilę.",
+                "POCKETED_OWN_BALL": "Wpadłaś w swoją własną kulę.",
                 "SKIP_TURN": "Pominięłeś swoją kolej."
             }
         },

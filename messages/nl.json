@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Dutch",
         "rtl": false,
-        "total": 1963,
+        "total": 2006,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1818,6 +1818,14 @@
                         "FIRST": "Als eerste <b>0</b> punten haalt | Als eerste <b>1</b> punt haalt | Als eerste <b>{count}</b> punten haalt",
                         "HIGHEST_AFTER": "Meeste punten na <b>0</b> rondes | Meeste punten na <b>1</b> ronde | Meeste punten na <b>{count}</b> rondes"
                     }
+                },
+                "splitSameFaceOnly": {
+                    "title": "Split alleen met dezelfde kaart",
+                    "help": "Als dit aan staat, mag je alleen splitten als beide startkaarten dezelfde kaart hebben (bijvoorbeeld K+K of 8+8), niet alleen dezelfde numerieke waarde."
+                },
+                "fiveCardCharlie": {
+                    "title": "Five Card Charlie",
+                    "help": "Als dit aan staat, wint elke spelershand met vijf kaarten en een totaal van 21 of lager automatisch. Deze regel geldt niet voor de dealer."
                 }
             },
             "presets": {
@@ -1892,6 +1900,81 @@
                     "description": [
                         "Standaard eindigt het spel na 10 rondes, en wordt de winnaar gekozen op basis van wie de meeste punten heeft.",
                         "Je kunt de regels en de winstvoorwaarden voor je eigen spel aanpassen in de lobby-instellingen. Of je kunt het spel eindigen als een speler X aantal punten bereikt."
+                    ]
+                }
+            }
+        },
+        "CUTTHROAT_POOL": {
+            "name": "Cutthroat Pool",
+            "title": "Speel Cutthroat Pool online | Gratis multiplayer met vrienden",
+            "description": "Speel gratis Cutthroat Pool online! Geen account nodig. Daag vrienden, vreemden of bots uit in spannende multiplayer matches. Probeer het nu!",
+            "options": {
+                "ruleEliminatedCanReturn": {
+                    "title": "Geëlimineerden kunnen terugkomen",
+                    "help": "Standaard wordt een speler geëlimineerd wanneer al zijn ballen gepot zijn. Als een tegenstander een fout maakt, kan één van de ballen van die speler terug op tafel komen, waardoor die speler weer mee kan doen."
+                },
+                "foulPocketOwnBall": {
+                    "title": "Eigen bal potten",
+                    "help": "Gebeurt wanneer een speler zijn eigen bal pot."
+                },
+                "breakLayout": {
+                    "title": "Break-opstelling",
+                    "help": "Kies of de beginopstelling bij de break vast of willekeurig is.",
+                    "data": {
+                        "fixed": "Vast (officieel)",
+                        "random": "Willekeurig"
+                    }
+                },
+                "breakFillers": {
+                    "title": "Vulballen bij break gebruiken",
+                    "help": "Als dit aan staat, worden vulballen toegevoegd bij spelersaantallen die ze nodig hebben."
+                },
+                "ruleReturnOpponentBalls": {
+                    "title": "Tegenstanderballen terug bij",
+                    "help": "Kies bij welke fouls een bal van de tegenstander terug op tafel komt.",
+                    "data": {
+                        "anyFoul": "Elke geldige foul",
+                        "ballInHand": "Alleen ball-in-hand fouls",
+                        "off": "Uitgeschakeld"
+                    }
+                }
+            },
+            "presets": {
+                "random": {
+                    "title": "Randomized Groepen",
+                    "description": [
+                        "Toegewezen groepen",
+                        "Willekeurige rekindeling"
+                    ]
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Speelveld",
+                    "description": [
+                        "Afhankelijk van het aantal spelers krijgt elke speler een groep van 3 tot 7 ballen in een bepaalde kleur.",
+                        "In tegenstelling tot 8 Ball is jouw groep juist wat je moet beschermen. Je doel is om de ballen van je tegenstanders te potten terwijl je minstens één eigen bal op tafel houdt."
+                    ]
+                },
+                "breaking": {
+                    "title": "Start van het spel (Break)",
+                    "description": [
+                        "De openingsstoot start de wedstrijd door de beginopstelling open te spelen. De instellingen kunnen een vaste of willekeurige break-opstelling gebruiken, en bij sommige spelersaantallen worden vulballen toegevoegd (gemarkeerd met een rood kruis).",
+                        "Een geldige break zorgt voor een eerlijke start. Net als bij andere poolspellen is het potten van de witte bal op de break een foul en geeft dit je tegenstanders meestal voordeel."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Spelverloop",
+                    "description": [
+                        "In je beurt mik je op en pot je ballen die van andere spelers zijn. Een eigen bal potten is een foul.",
+                        "Als alle ballen uit jouw groep gepot zijn, ben je uitgeschakeld. In sommige regels kunnen fouls een bal van een tegenstander terug op tafel brengen, waardoor uitgeschakelde spelers kunnen terugkeren."
+                    ]
+                },
+                "objective": {
+                    "title": "Doel",
+                    "description": [
+                        "Blijf als laatste speler over met minstens één bal uit je eigen groep op tafel. Alle anderen moeten uitgeschakeld zijn.",
+                        "Kies je stoten slim: agressief spel kan tegenstanders snel uitschakelen, maar fouten en missers kunnen je voortgang ongedaan maken."
                     ]
                 }
             }
@@ -1986,6 +2069,8 @@
             "voteResults": "Stemresultaten",
             "flippingField": "Speelveld aan het omkeren",
             "removingRow": "Verwijderen van rij",
+            "yourPick": "Maak je keuze %{extra}",
+            "namePick": "%{name} maakt hun keuze",
             "yourTurn": "Jouw beurt %{extra}",
             "nameTurn": "%{name}s beurt",
             "dealerTurn": "Beurt van de dealer",
@@ -2232,6 +2317,7 @@
         "levelShort": "LVL {count}",
         "experienceShort": "{count} XP",
         "winStreak": "{count}-overwinning streak!",
+        "balls": "0 ballen | 1 bal | {count} ballen",
         "kills": "0 kills | 1 kill | {count} kills",
         "deaths": "0 overlijden | 1 overlijden | {count} overlijden",
         "lives": "0 levens | 1 leven | {count} levens",
@@ -3091,7 +3177,8 @@
             "LOSS": "Je hebt deze ronde verloren",
             "WIN": "Je hebt deze ronde gewonnen!",
             "WIN_BLACKJACK": "Blackjack! Je wint deze ronde!",
-            "PUSH": "Deze ronde is gelijkspel"
+            "PUSH": "Deze ronde is gelijkspel",
+            "FIVE_CARD_CHARLIE": "Five Card Charlie! Een van je handen won automatisch met vijf kaarten."
         },
         "poolType": {
             "SOLID": "Effen",
@@ -3109,6 +3196,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} heeft de achtbal te vroeg gepot.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} heeft de achtbal gepot bij de afstoot.",
                 "POCKETED_WRONG_BALL": "%{name} heeft de verkeerde bal gepot.",
+                "POCKETED_OWN_BALL": "${name} heeft z'n eigen bal in de pocket gestopt.",
                 "SKIP_TURN": "%{name} heeft hun beurt overgeslagen."
             },
             "self": {
@@ -3122,6 +3210,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Je hebt de achtbal te vroeg gepot.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Je hebt de achtbal bij de afstoot gepot.",
                 "POCKETED_WRONG_BALL": "Je hebt de verkeerde bal gepot.",
+                "POCKETED_OWN_BALL": "Je hebt je eigen bal in de pocket gestopt.",
                 "SKIP_TURN": "Je hebt ervoor gekozen om je beurt over te slaan."
             }
         },

@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal American English",
         "rtl": false,
-        "total": 1963,
+        "total": 2006,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1818,6 +1818,14 @@
                         "FIRST": "First to reach <b>0</b> points | First to reach <b>1</b> point | First to reach <b>{count}</b> points",
                         "HIGHEST_AFTER": "Most points after <b>0</b> rounds | Most points after <b>1</b> round | Most points after <b>{count}</b> rounds"
                     }
+                },
+                "splitSameFaceOnly": {
+                    "title": "Split Requires Same Face",
+                    "help": "When enabled, splitting is only allowed if both starting cards are the same face (for example K+K or 8+8), not just the same numeric value."
+                },
+                "fiveCardCharlie": {
+                    "title": "Five Card Charlie",
+                    "help": "When enabled, any player hand with five cards totaling 21 or less wins automatically. This rule does not apply to the dealer."
                 }
             },
             "presets": {
@@ -1892,6 +1900,81 @@
                     "description": [
                         "By default, the game ends after 10 rounds, and a winner is selected based on who has the most points.",
                         "You can customize the rules and win condition for your custom game in the lobby settings. Alternatively, you can end the game when a player reaches X amount of points."
+                    ]
+                }
+            }
+        },
+        "CUTTHROAT_POOL": {
+            "name": "Cutthroat Pool",
+            "title": "Play Cutthroat Pool Online | Free Multiplayer Pool Game Fun",
+            "description": "Play Cut Throat Pool online, a free multiplayer pool game supporting 2 to 5 players, no account required! Challenge friends, strangers, or bots now!",
+            "options": {
+                "ruleEliminatedCanReturn": {
+                    "title": "Eliminated Can Return",
+                    "help": "By default, a player is eliminated when all of their balls are pocketed. If an opponent commits a foul, one of that player's balls can return to the table, allowing them to re-enter the game."
+                },
+                "foulPocketOwnBall": {
+                    "title": "Pocketing Own Ball",
+                    "help": "Occurs when a player pockets their own ball."
+                },
+                "breakLayout": {
+                    "title": "Break Layout",
+                    "help": "Choose whether the opening rack layout is fixed or randomized.",
+                    "data": {
+                        "fixed": "Fixed (Official)",
+                        "random": "Random"
+                    }
+                },
+                "breakFillers": {
+                    "title": "Use Filler Balls On Break",
+                    "help": "When enabled, filler balls are added on the break for player counts that need them."
+                },
+                "ruleReturnOpponentBalls": {
+                    "title": "Return Opponent Balls On",
+                    "help": "Choose which fouls can return an opponent's ball to the table.",
+                    "data": {
+                        "anyFoul": "Any Eligible Foul",
+                        "ballInHand": "Ball in Hand Fouls Only",
+                        "off": "Disabled"
+                    }
+                }
+            },
+            "presets": {
+                "random": {
+                    "title": "Randomized Groups",
+                    "description": [
+                        "Assigned groups",
+                        "Random rack layout"
+                    ]
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Playing Field",
+                    "description": [
+                        "Depending on player count, each player is assigned a group of 3 to 7 balls in a given color.",
+                        "Unlike 8 Ball, your group is the set you must protect. Your goal is to pocket your opponents' balls while keeping at least one of your own on the table."
+                    ]
+                },
+                "breaking": {
+                    "title": "Starting the game (Breaking)",
+                    "description": [
+                        "The opening shot starts the match by spreading the rack. Match settings may use a fixed or random break layout, and some player counts can include filler balls (marked with a red cross).",
+                        "A legal break gives the game a fair start. As in other pool games, scratching the cue ball on break is a foul and usually gives your opponents an advantage."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Gameplay",
+                    "description": [
+                        "On your turn, target and pocket balls that belong to other players. Pocketing one of your own balls is a foul.",
+                        "If all balls from your group are pocketed, you are eliminated. In some rulesets, fouls can return an opponent's ball to the table, which can bring eliminated players back into the game."
+                    ]
+                },
+                "objective": {
+                    "title": "Objective",
+                    "description": [
+                        "Be the last player with at least one ball remaining from your group. Everyone else must be eliminated.",
+                        "Choose your shots carefully: aggressive play can eliminate opponents quickly, but mistakes and fouls can undo your progress."
                     ]
                 }
             }
@@ -1986,6 +2069,8 @@
             "voteResults": "Vote results",
             "flippingField": "Flipping field",
             "removingRow": "Removing row",
+            "yourPick": "Make your pick %{extra}",
+            "namePick": "%{name} is making their pick",
             "yourTurn": "Your turn %{extra}",
             "nameTurn": "%{name}'s turn",
             "dealerTurn": "Dealer's turn",
@@ -2232,6 +2317,7 @@
         "levelShort": "LVL {count}",
         "experienceShort": "{count} XP",
         "winStreak": "{count}-win streak!",
+        "balls": "0 balls | 1 ball | {count} balls",
         "kills": "0 kills | 1 kill | {count} kills",
         "deaths": "0 deaths | 1 death | {count} deaths",
         "lives": "0 lives | 1 life | {count} lives",
@@ -3091,7 +3177,8 @@
             "LOSS": "You lost this round",
             "WIN": "You won this round!",
             "WIN_BLACKJACK": "Blackjack! You win this round!",
-            "PUSH": "This round is a push"
+            "PUSH": "This round is a push",
+            "FIVE_CARD_CHARLIE": "Five Card Charlie! One of your hands won automatically with five cards."
         },
         "poolType": {
             "SOLID": "Solids",
@@ -3109,6 +3196,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} pocketed the eight ball too early.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} pocketed the eight ball on break.",
                 "POCKETED_WRONG_BALL": "%{name} pocketed the wrong ball.",
+                "POCKETED_OWN_BALL": "${name} pocketed their own ball.",
                 "SKIP_TURN": "%{name} skipped their turn."
             },
             "self": {
@@ -3122,6 +3210,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "You pocketed the eight ball too early.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "You pocketed the eight ball on break.",
                 "POCKETED_WRONG_BALL": "You pocketed the wrong ball.",
+                "POCKETED_OWN_BALL": "You pocketed your own ball.",
                 "SKIP_TURN": "You chose to skip your turn."
             }
         },

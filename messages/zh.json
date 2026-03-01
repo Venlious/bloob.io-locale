@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 1963,
+        "total": 2006,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1818,6 +1818,14 @@
                         "FIRST": "第一个到达 <b>0</b> 分 | 第一个到达 <b>1</b> 分 | 第一个到达 <b>{count}</b> 分",
                         "HIGHEST_AFTER": "<b>0</b> 轮后得分最多 | <b>1</b> 轮后得分最多 | <b>{count}</b> 轮后得分最多"
                     }
+                },
+                "splitSameFaceOnly": {
+                    "title": "仅同牌面可分牌",
+                    "help": "启用后，只有当两张起始牌是同一牌面时才能分牌（例如 K+K 或 8+8），而不只是点数相同。"
+                },
+                "fiveCardCharlie": {
+                    "title": "五张查理",
+                    "help": "启用后，玩家任意一手达到五张牌且总点数不超过 21 时将自动获胜。该规则不适用于庄家。"
                 }
             },
             "presets": {
@@ -1892,6 +1900,81 @@
                     "description": [
                         "默认情况下，游戏在10轮后结束，赢家是得分最高的玩家。",
                         "你可以在大厅设置中自定义规则和胜利条件。或者，当某个玩家达到X分时，你也可以结束游戏。"
+                    ]
+                }
+            }
+        },
+        "CUTTHROAT_POOL": {
+            "name": "无情台球",
+            "title": "杀手台球在线多人 | 随时随地与朋友对战",
+            "description": "台球经典杀手台球，免费多人在线，无需注册，与朋友与AI对战！",
+            "options": {
+                "ruleEliminatedCanReturn": {
+                    "title": "被淘汰的可以回归",
+                    "help": "默认情况下，玩家在所有球都进袋后被淘汰。如果对手犯规，那个玩家的一颗球可以回到台面上，让他们重新进入游戏。"
+                },
+                "foulPocketOwnBall": {
+                    "title": "将自己的球打入袋中",
+                    "help": "当玩家把自己的球打进袋子里时发生。"
+                },
+                "breakLayout": {
+                    "title": "开球摆球布局",
+                    "help": "选择开球时的初始摆球是固定还是随机。",
+                    "data": {
+                        "fixed": "固定（官方）",
+                        "random": "随机"
+                    }
+                },
+                "breakFillers": {
+                    "title": "开球时使用填充球",
+                    "help": "启用后，在需要的玩家人数下，开球会加入填充球。"
+                },
+                "ruleReturnOpponentBalls": {
+                    "title": "对手球返台规则",
+                    "help": "选择哪些犯规会让对手的球返回球台。",
+                    "data": {
+                        "anyFoul": "任何符合条件的犯规",
+                        "ballInHand": "仅限手中球犯规",
+                        "off": "关闭"
+                    }
+                }
+            },
+            "presets": {
+                "random": {
+                    "title": "随机分组",
+                    "description": [
+                        "分组情况",
+                        "随机架子布局"
+                    ]
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "球台",
+                    "description": [
+                        "根据玩家人数，每位玩家会分到一个特定颜色的球组，数量在3到7颗之间。",
+                        "与8 Ball不同，你自己的球组是需要保护的。你的目标是把对手的球打进袋，同时让自己至少一颗球留在台面上。"
+                    ]
+                },
+                "breaking": {
+                    "title": "开局（开球）",
+                    "description": [
+                        "开球会把球堆打散并开始比赛。根据设置，开球布局可以是固定或随机；在某些人数下还会加入填充球（红色叉号标记）。",
+                        "合法开球能保证公平开局。和其他台球玩法一样，开球时母球落袋属于犯规，通常会让对手获得优势。"
+                    ]
+                },
+                "gameplay": {
+                    "title": "游戏流程",
+                    "description": [
+                        "在你的回合中，目标是击打并打进其他玩家的球。把自己的球打进袋算犯规。",
+                        "如果你球组中的球全部被打进，你就会被淘汰。在某些规则下，犯规会让对手的一颗球回到台面，从而让已淘汰玩家重新回到比赛。"
+                    ]
+                },
+                "objective": {
+                    "title": "目标",
+                    "description": [
+                        "成为最后一位仍有至少一颗本组球留在台面的玩家。其他所有玩家都必须被淘汰。",
+                        "谨慎选择每一杆：激进打法可以快速淘汰对手，但失误和犯规也可能让你的优势前功尽弃。"
                     ]
                 }
             }
@@ -1986,6 +2069,8 @@
             "voteResults": "投票结果",
             "flippingField": "翻转场地",
             "removingRow": "移除行",
+            "yourPick": "选择你的选项 %{extra}",
+            "namePick": "%{name} 正在选择他们的选项",
             "yourTurn": "轮到你了 %{extra}",
             "nameTurn": "轮到%{name}了",
             "dealerTurn": "发牌员的回合",
@@ -2232,6 +2317,7 @@
         "levelShort": "等级 {count}",
         "experienceShort": "{count} 经验",
         "winStreak": "{count}连胜！",
+        "balls": "0 个球 | 1 个球 | {count} 个球",
         "kills": "0 击杀 | 1 击杀 | {count} 击杀",
         "deaths": "0 死亡 | 1 死亡 | {count} 死亡",
         "lives": "0 生命 | 1 生命 | {count} 生命",
@@ -3091,7 +3177,8 @@
             "LOSS": "你这局输了",
             "WIN": "你这局赢了！",
             "WIN_BLACKJACK": "黑杰克！你这局赢了！",
-            "PUSH": "这局平局"
+            "PUSH": "这局平局",
+            "FIVE_CARD_CHARLIE": "五张查理！你的其中一手以五张牌自动获胜。"
         },
         "poolType": {
             "SOLID": "实色球",
@@ -3109,6 +3196,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name}把八号球打进得太早了。",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name}在开球时就把八号球打进了。",
                 "POCKETED_WRONG_BALL": "%{name}打进了错误的球。",
+                "POCKETED_OWN_BALL": "${name} 把自己的球打进了。",
                 "SKIP_TURN": "%{name} 跳过了他们的回合。"
             },
             "self": {
@@ -3122,6 +3210,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "你把八号球打进去得太早了。",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "你在开球时把八号球打进去了。",
                 "POCKETED_WRONG_BALL": "你打进去的是错的球。",
+                "POCKETED_OWN_BALL": "你把自己的球打进了袋子。",
                 "SKIP_TURN": "你选择跳过你的回合。"
             }
         },

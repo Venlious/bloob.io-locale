@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Italian",
         "rtl": false,
-        "total": 1963,
+        "total": 2006,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1818,6 +1818,14 @@
                         "FIRST": "Primo a raggiungere <b>0</b> punti | Primo a raggiungere <b>1</b> punto | Primo a raggiungere <b>{count}</b> punti",
                         "HIGHEST_AFTER": "Maggior numero di punti dopo <b>0</b> turni | Maggior numero di punti dopo <b>1</b> turno | Maggior numero di punti dopo <b>{count}</b> turni"
                     }
+                },
+                "splitSameFaceOnly": {
+                    "title": "Split solo con la stessa carta",
+                    "help": "Quando è attivo, lo split è consentito solo se entrambe le carte iniziali sono la stessa carta (ad esempio K+K oppure 8+8), non solo lo stesso valore numerico."
+                },
+                "fiveCardCharlie": {
+                    "title": "Five Card Charlie",
+                    "help": "Quando è attivo, qualsiasi mano del giocatore con cinque carte e totale pari o inferiore a 21 vince automaticamente. Questa regola non si applica al dealer."
                 }
             },
             "presets": {
@@ -1892,6 +1900,81 @@
                     "description": [
                         "Di default, il gioco finisce dopo 10 turni e si sceglie un vincitore in base a chi ha più punti.",
                         "Puoi personalizzare le regole e le condizioni di vittoria per il tuo gioco personalizzato nelle impostazioni della lobby. In alternativa, puoi finire il gioco quando un giocatore raggiunge X punti."
+                    ]
+                }
+            }
+        },
+        "CUTTHROAT_POOL": {
+            "name": "Biliardo Spietato",
+            "title": "Gioca a Biliardo Cutthroat Online | Multigiocatore con Amici",
+            "description": "Gioca gratis a Biliardo Cutthroat online! Sfida amici o sconosciuti in partite multigiocatore senza registrazione, o affronta i bot!",
+            "options": {
+                "ruleEliminatedCanReturn": {
+                    "title": "Gli eliminati possono rientrare",
+                    "help": "Per impostazione predefinita, un giocatore viene eliminato quando tutte le sue palle sono imbucate. Se un avversario commette un fallo, una delle palle di quel giocatore può tornare sul tavolo, permettendogli di rientrare in gioco."
+                },
+                "foulPocketOwnBall": {
+                    "title": "Imbucare la propria palla",
+                    "help": "Succede quando un giocatore infila la propria palla."
+                },
+                "breakLayout": {
+                    "title": "Disposizione di apertura",
+                    "help": "Scegli se la disposizione iniziale del break è fissa o casuale.",
+                    "data": {
+                        "fixed": "Fissa (ufficiale)",
+                        "random": "Casuale"
+                    }
+                },
+                "breakFillers": {
+                    "title": "Usa palle riempitive al break",
+                    "help": "Quando è attivo, vengono aggiunte palle riempitive al break per i numeri di giocatori che ne hanno bisogno."
+                },
+                "ruleReturnOpponentBalls": {
+                    "title": "Ritorno palle avversarie su",
+                    "help": "Scegli quali falli possono far tornare una palla avversaria sul tavolo.",
+                    "data": {
+                        "anyFoul": "Qualsiasi fallo valido",
+                        "ballInHand": "Solo falli con palla in mano",
+                        "off": "Disattivato"
+                    }
+                }
+            },
+            "presets": {
+                "random": {
+                    "title": "Gruppi casuali",
+                    "description": [
+                        "Gruppi assegnati",
+                        "Layout del rack casuale"
+                    ]
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Tavolo di gioco",
+                    "description": [
+                        "In base al numero di giocatori, ogni giocatore riceve un gruppo da 3 a 7 palle di un determinato colore.",
+                        "A differenza di 8 Ball, il tuo gruppo è quello che devi proteggere. Il tuo obiettivo è imbucare le palle degli avversari mantenendo almeno una delle tue sul tavolo."
+                    ]
+                },
+                "breaking": {
+                    "title": "Inizio della partita (Break)",
+                    "description": [
+                        "Il tiro d'apertura avvia la partita aprendo il rack. Le impostazioni possono usare una disposizione fissa o casuale, e con alcuni numeri di giocatori si aggiungono palle riempitive (contrassegnate con una croce rossa).",
+                        "Un break regolare garantisce una partenza equilibrata. Come negli altri giochi di biliardo, mandare in buca la battente sul break è fallo e di solito dà vantaggio agli avversari."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Svolgimento",
+                    "description": [
+                        "Nel tuo turno, mira e imbuca le palle degli altri giocatori. Imbucare una tua palla è fallo.",
+                        "Se tutte le palle del tuo gruppo vengono imbucate, sei eliminato. In alcuni regolamenti, i falli possono riportare una palla avversaria sul tavolo e far rientrare giocatori eliminati."
+                    ]
+                },
+                "objective": {
+                    "title": "Obiettivo",
+                    "description": [
+                        "Rimani l'ultimo giocatore con almeno una palla del tuo gruppo sul tavolo. Tutti gli altri devono essere eliminati.",
+                        "Scegli con attenzione i tuoi tiri: un gioco aggressivo può eliminare rapidamente gli avversari, ma errori e falli possono annullare i tuoi progressi."
                     ]
                 }
             }
@@ -1986,6 +2069,8 @@
             "voteResults": "Risultati del voto",
             "flippingField": "Campo ribaltabile",
             "removingRow": "Rimozione della riga",
+            "yourPick": "Fai la tua scelta %{extra}",
+            "namePick": "%{name} sta facendo la sua scelta",
             "yourTurn": "Tocca a te %{extra}",
             "nameTurn": "Il turno di %{name}",
             "dealerTurn": "Tocca al mazziere",
@@ -2232,6 +2317,7 @@
         "levelShort": "LIV {count}",
         "experienceShort": "{count} XP",
         "winStreak": "{count} vittorie di fila!",
+        "balls": "0 palle | 1 palla | {count} palle",
         "kills": "0 uccisioni | 1 uccisione | {count} uccisioni",
         "deaths": "0 decessi | 1 decesso | {count} decessi",
         "lives": "0 vite | 1 vita | {count} vite",
@@ -3091,7 +3177,8 @@
             "LOSS": "Hai perso questo turno",
             "WIN": "Hai vinto questo turno!",
             "WIN_BLACKJACK": "Blackjack! Hai vinto questo turno!",
-            "PUSH": "Questo turno è un pareggio"
+            "PUSH": "Questo turno è un pareggio",
+            "FIVE_CARD_CHARLIE": "Five Card Charlie! Una delle tue mani ha vinto automaticamente con cinque carte."
         },
         "poolType": {
             "SOLID": "Solidi",
@@ -3109,6 +3196,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} ha imbucato l'otto nero troppo presto.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} ha imbucato l'otto nero all'inizio.",
                 "POCKETED_WRONG_BALL": "%{name} ha imbucato la palla sbagliata.",
+                "POCKETED_OWN_BALL": "${name} ha imbucato la sua palla.",
                 "SKIP_TURN": "%{name} ha saltato il suo turno."
             },
             "self": {
@@ -3122,6 +3210,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Hai imbucato l'otto nero troppo presto.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Hai imbucato l'otto nero all'inizio.",
                 "POCKETED_WRONG_BALL": "Hai imbucato la palla sbagliata.",
+                "POCKETED_OWN_BALL": "Hai imbucato la tua palla.",
                 "SKIP_TURN": "Hai deciso di saltare il tuo turno."
             }
         },

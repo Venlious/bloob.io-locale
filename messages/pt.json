@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Brazilian Portuguese",
         "rtl": false,
-        "total": 1963,
+        "total": 2006,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1818,6 +1818,14 @@
                         "FIRST": "Primeiro a chegar em <b>0</b> pontos | Primeiro a chegar em <b>1</b> ponto | Primeiro a chegar em <b>{count}</b> pontos",
                         "HIGHEST_AFTER": "Mais pontos depois de <b>0</b> rodadas | Mais pontos depois de <b>1</b> rodada | Mais pontos depois de <b>{count}</b> rodadas"
                     }
+                },
+                "splitSameFaceOnly": {
+                    "title": "Dividir só com a mesma carta",
+                    "help": "Quando ativado, só é permitido dividir se as duas cartas iniciais forem a mesma carta (por exemplo K+K ou 8+8), e não apenas o mesmo valor numérico."
+                },
+                "fiveCardCharlie": {
+                    "title": "Five Card Charlie",
+                    "help": "Quando ativado, qualquer mão do jogador com cinco cartas somando 21 ou menos vence automaticamente. Esta regra não se aplica ao dealer."
                 }
             },
             "presets": {
@@ -1892,6 +1900,81 @@
                     "description": [
                         "Por padrão, o jogo acaba depois de 10 rodadas, e um vencedor é escolhido com base em quem tem mais pontos.",
                         "Você pode personalizar as regras e a condição de vitória do seu jogo customizado nas configurações do lobby. Ou então, você pode acabar com o jogo quando um jogador atingir X quantidade de pontos."
+                    ]
+                }
+            }
+        },
+        "CUTTHROAT_POOL": {
+            "name": "Sinuca Perigosa",
+            "title": "Sinuca Cutthroat Online | Jogue Grátis com Amigos e Multijogador",
+            "description": "Jogue Sinuca Cutthroat online grátis, sem cadastro. Desafie amigos, estranhos ou bots em partidas multijogador emocionantes!",
+            "options": {
+                "ruleEliminatedCanReturn": {
+                    "title": "Eliminados Podem Voltar",
+                    "help": "Por padrão, um jogador é eliminado quando todas as suas bolas são encaçapadas. Se um oponente comete uma falta, uma das bolas daquele jogador pode voltar pra mesa, permitindo que ele entre de novo no jogo."
+                },
+                "foulPocketOwnBall": {
+                    "title": "Encaçapar a própria bola",
+                    "help": "Acontece quando um jogador encaçapa a própria bola."
+                },
+                "breakLayout": {
+                    "title": "Formação de saída",
+                    "help": "Escolha se a formação inicial da tacada de saída é fixa ou aleatória.",
+                    "data": {
+                        "fixed": "Fixa (oficial)",
+                        "random": "Aleatória"
+                    }
+                },
+                "breakFillers": {
+                    "title": "Usar bolas de preenchimento na saída",
+                    "help": "Quando ativado, bolas de preenchimento são adicionadas na saída para quantidades de jogadores que precisarem."
+                },
+                "ruleReturnOpponentBalls": {
+                    "title": "Retornar bolas do oponente em",
+                    "help": "Escolha quais faltas podem fazer uma bola do oponente voltar à mesa.",
+                    "data": {
+                        "anyFoul": "Qualquer falta elegível",
+                        "ballInHand": "Apenas faltas com bola na mão",
+                        "off": "Desativado"
+                    }
+                }
+            },
+            "presets": {
+                "random": {
+                    "title": "Grupos Aleatórios",
+                    "description": [
+                        "Grupos designados",
+                        "Layout de prateleira aleatório"
+                    ]
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Mesa de jogo",
+                    "description": [
+                        "Dependendo da quantidade de jogadores, cada jogador recebe um grupo de 3 a 7 bolas de uma cor específica.",
+                        "Ao contrário do 8 Ball, o seu grupo é o conjunto que você precisa proteger. Seu objetivo é encaçapar as bolas dos adversários enquanto mantém pelo menos uma sua na mesa."
+                    ]
+                },
+                "breaking": {
+                    "title": "Início da partida (Saída)",
+                    "description": [
+                        "A tacada de saída começa a partida espalhando o rack. As configurações podem usar formação fixa ou aleatória, e em alguns números de jogadores podem ser adicionadas bolas de preenchimento (marcadas com um X vermelho).",
+                        "Uma saída legal garante um começo justo. Como em outros jogos de sinuca, encaçapar a bola branca na saída é falta e normalmente dá vantagem aos adversários."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Jogabilidade",
+                    "description": [
+                        "No seu turno, mire e encaçape bolas que pertencem aos outros jogadores. Encaçapar uma bola sua é falta.",
+                        "Se todas as bolas do seu grupo forem encaçapadas, você é eliminado. Em algumas regras, faltas podem devolver uma bola do adversário para a mesa, trazendo jogadores eliminados de volta ao jogo."
+                    ]
+                },
+                "objective": {
+                    "title": "Objetivo",
+                    "description": [
+                        "Seja o último jogador com pelo menos uma bola do seu grupo ainda na mesa. Todos os outros devem ser eliminados.",
+                        "Escolha bem suas jogadas: um estilo agressivo pode eliminar adversários rápido, mas erros e faltas podem desfazer seu progresso."
                     ]
                 }
             }
@@ -1986,6 +2069,8 @@
             "voteResults": "Resultados da votação",
             "flippingField": "Campo de reversão",
             "removingRow": "Removendo linha",
+            "yourPick": "Faça sua escolha %{extra}",
+            "namePick": "%{name} tá fazendo a escolha deles",
             "yourTurn": "Sua vez %{extra}",
             "nameTurn": "vez de %{name}",
             "dealerTurn": "É a vez do dealer",
@@ -2232,6 +2317,7 @@
         "levelShort": "Nível {count}",
         "experienceShort": "{count} XP",
         "winStreak": "{count} vitórias seguidas!",
+        "balls": "0 bolas | 1 bola | {count} bolas",
         "kills": "Matou 0 | Matou 1 | Matou {count}",
         "deaths": "Morreu 0 | Morreu 1 | Morreu {count}",
         "lives": "0 vidas | 1 vida | {count} vidas",
@@ -3091,7 +3177,8 @@
             "LOSS": "Você perdeu essa rodada",
             "WIN": "Você ganhou essa rodada!",
             "WIN_BLACKJACK": "Blackjack! Você ganhou essa rodada!",
-            "PUSH": "Essa rodada foi um empate"
+            "PUSH": "Essa rodada foi um empate",
+            "FIVE_CARD_CHARLIE": "Five Card Charlie! Uma das suas mãos venceu automaticamente com cinco cartas."
         },
         "poolType": {
             "SOLID": "Sólidas",
@@ -3109,6 +3196,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} encaçapou a bola oito muito cedo.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} encaçapou a bola oito na quebra.",
                 "POCKETED_WRONG_BALL": "%{name} encaçapou a bola errada.",
+                "POCKETED_OWN_BALL": "${name} embolsou a própria bola.",
                 "SKIP_TURN": "%{name} pulou a vez."
             },
             "self": {
@@ -3122,6 +3210,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Você encaçapou a bola oito muito cedo.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Você encaçapou a bola oito na quebra.",
                 "POCKETED_WRONG_BALL": "Você encaçapou a bola errada.",
+                "POCKETED_OWN_BALL": "Você embolsou sua própria bola.",
                 "SKIP_TURN": "Você escolheu pular sua vez."
             }
         },

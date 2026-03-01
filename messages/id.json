@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 1963,
+        "total": 2006,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1818,6 +1818,14 @@
                         "FIRST": "Pertama yang nyampe <b>0</b> poin | Pertama yang nyampe <b>1</b> poin | Pertama yang nyampe <b>{count}</b> poin",
                         "HIGHEST_AFTER": "Poin terbanyak setelah <b>0</b> ronde | Poin terbanyak setelah <b>1</b> ronde | Poin terbanyak setelah <b>{count}</b> ronde"
                     }
+                },
+                "splitSameFaceOnly": {
+                    "title": "Split hanya dengan kartu yang sama",
+                    "help": "Saat diaktifkan, split hanya boleh jika kedua kartu awal adalah kartu yang sama (misalnya K+K atau 8+8), bukan hanya nilai angka yang sama."
+                },
+                "fiveCardCharlie": {
+                    "title": "Five Card Charlie",
+                    "help": "Saat diaktifkan, setiap tangan pemain dengan lima kartu dan total 21 atau kurang akan otomatis menang. Aturan ini tidak berlaku untuk dealer."
                 }
             },
             "presets": {
@@ -1892,6 +1900,81 @@
                     "description": [
                         "Secara default, game ini selesai setelah 10 ronde, dan pemenangnya ditentukan berdasarkan siapa yang punya poin terbanyak.",
                         "Lo bisa atur aturan dan syarat menang buat game kustom lo di pengaturan lobi. Atau, lo bisa selesaiin game pas ada pemain yang dapet X jumlah poin."
+                    ]
+                }
+            }
+        },
+        "CUTTHROAT_POOL": {
+            "name": "Kolam Pemotong Leher",
+            "title": "Main Biliar Cutthroat Online | Multiplayer Bareng Teman Gratis",
+            "description": "Mainkan Cutthroat Pool online gratis tanpa akun! Nikmati serunya main bareng teman, lawan orang lain, atau tantang bot dalam mode multiplayer.",
+            "options": {
+                "ruleEliminatedCanReturn": {
+                    "title": "Pemain yang tereliminasi bisa kembali",
+                    "help": "Secara default, pemain tereliminasi saat semua bolanya sudah masuk ke pocket. Jika lawan melakukan foul, satu bola milik pemain itu bisa kembali ke meja, sehingga dia bisa masuk lagi ke permainan."
+                },
+                "foulPocketOwnBall": {
+                    "title": "Memasukkan bola sendiri",
+                    "help": "Terjadi saat pemain masukin bola miliknya sendiri."
+                },
+                "breakLayout": {
+                    "title": "Formasi break",
+                    "help": "Pilih apakah formasi awal saat break tetap atau acak.",
+                    "data": {
+                        "fixed": "Tetap (resmi)",
+                        "random": "Acak"
+                    }
+                },
+                "breakFillers": {
+                    "title": "Gunakan bola pengisi saat break",
+                    "help": "Saat diaktifkan, bola pengisi ditambahkan saat break untuk jumlah pemain yang membutuhkannya."
+                },
+                "ruleReturnOpponentBalls": {
+                    "title": "Kembalikan bola lawan pada",
+                    "help": "Pilih foul mana yang bisa mengembalikan bola lawan ke meja.",
+                    "data": {
+                        "anyFoul": "Semua foul yang memenuhi syarat",
+                        "ballInHand": "Hanya foul ball-in-hand",
+                        "off": "Nonaktif"
+                    }
+                }
+            },
+            "presets": {
+                "random": {
+                    "title": "Grup Acak",
+                    "description": [
+                        "Grup yang ditugasin",
+                        "Tata letak rak acak"
+                    ]
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Meja permainan",
+                    "description": [
+                        "Tergantung jumlah pemain, setiap pemain mendapatkan grup berisi 3 sampai 7 bola dengan warna tertentu.",
+                        "Berbeda dari 8 Ball, grup milikmu adalah set yang harus kamu lindungi. Tujuanmu adalah memasukkan bola lawan sambil menjaga setidaknya satu bola milikmu tetap di meja."
+                    ]
+                },
+                "breaking": {
+                    "title": "Awal permainan (Break)",
+                    "description": [
+                        "Pukulan pembuka memulai pertandingan dengan menyebarkan rack. Pengaturan pertandingan bisa memakai formasi break tetap atau acak, dan pada jumlah pemain tertentu dapat ditambah bola pengisi (ditandai silang merah).",
+                        "Break yang sah memberi awal yang adil. Seperti game pool lainnya, memasukkan bola putih saat break adalah foul dan biasanya memberi keuntungan untuk lawan."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Alur permainan",
+                    "description": [
+                        "Di giliranmu, incar dan masukkan bola milik pemain lain. Memasukkan bola milik sendiri adalah foul.",
+                        "Jika semua bola dalam grupmu sudah masuk, kamu tereliminasi. Pada beberapa aturan, foul bisa mengembalikan bola lawan ke meja, sehingga pemain yang tereliminasi bisa kembali bermain."
+                    ]
+                },
+                "objective": {
+                    "title": "Tujuan",
+                    "description": [
+                        "Jadilah pemain terakhir yang masih memiliki setidaknya satu bola dari grupmu di meja. Semua pemain lain harus tereliminasi.",
+                        "Pilih pukulanmu dengan hati-hati: permainan agresif bisa cepat menyingkirkan lawan, tetapi kesalahan dan foul bisa membatalkan progresmu."
                     ]
                 }
             }
@@ -1986,6 +2069,8 @@
             "voteResults": "Hasil vote",
             "flippingField": "Memutar lapangan",
             "removingRow": "Menghapus baris",
+            "yourPick": "Pilih aja %{extra}",
+            "namePick": "%{name} lagi milih nih",
             "yourTurn": "Giliranmu %{extra}",
             "nameTurn": "Giliran %{name}",
             "dealerTurn": "Giliran dealer",
@@ -2232,6 +2317,7 @@
         "levelShort": "LVL {count}",
         "experienceShort": "{count} XP",
         "winStreak": "Kemenangan beruntun {count}!",
+        "balls": "0 bola | 1 bola | {count} bola",
         "kills": "0 bunuh | 1 bunuh | {count} bunuh",
         "deaths": "0 mati | 1 mati | {count} mati",
         "lives": "0 nyawa | 1 nyawa | {count} nyawa",
@@ -3091,7 +3177,8 @@
             "LOSS": "Kamu kalah di ronde ini",
             "WIN": "Kamu menang di ronde ini!",
             "WIN_BLACKJACK": "Blackjack! Kamu menang di ronde ini!",
-            "PUSH": "Ronde ini seri"
+            "PUSH": "Ronde ini seri",
+            "FIVE_CARD_CHARLIE": "Five Card Charlie! Salah satu tanganmu menang otomatis dengan lima kartu."
         },
         "poolType": {
             "SOLID": "Bola Polos",
@@ -3109,6 +3196,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} memasukkan bola delapan terlalu dini.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} memasukkan bola delapan saat istirahat.",
                 "POCKETED_WRONG_BALL": "%{name} memasukkan bola yang salah.",
+                "POCKETED_OWN_BALL": "${name} nyangkut bola mereka sendiri.",
                 "SKIP_TURN": "%{name} lewat gilirannya."
             },
             "self": {
@@ -3122,6 +3210,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Kamu memasukkan bola delapan terlalu dini.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Kamu memasukkan bola delapan saat break.",
                 "POCKETED_WRONG_BALL": "Kamu memasukkan bola yang salah.",
+                "POCKETED_OWN_BALL": "Kamu masukin bola milikmu sendiri.",
                 "SKIP_TURN": "Kamu milih buat lewatin giliranmu."
             }
         },

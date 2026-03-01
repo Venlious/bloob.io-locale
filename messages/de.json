@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal German",
         "rtl": false,
-        "total": 1963,
+        "total": 2006,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1818,6 +1818,14 @@
                         "FIRST": "Als Erster <b>0</b> Punkte erreichen | Als Erster <b>1</b> Punkt erreichen | Als Erster <b>{count}</b> Punkte erreichen",
                         "HIGHEST_AFTER": "Die meisten Punkte nach <b>0</b> Runden | Die meisten Punkte nach <b>1</b> Runde | Die meisten Punkte nach <b>{count}</b> Runden"
                     }
+                },
+                "splitSameFaceOnly": {
+                    "title": "Split nur bei gleichem Kartenbild",
+                    "help": "Wenn das aktiviert ist, ist Splitten nur erlaubt, wenn beide Startkarten dasselbe Kartenbild haben (zum Beispiel K+K oder 8+8), nicht nur denselben Zahlenwert."
+                },
+                "fiveCardCharlie": {
+                    "title": "Five Card Charlie",
+                    "help": "Wenn das aktiviert ist, gewinnt jede Spielerhand mit fünf Karten und 21 oder weniger automatisch. Diese Regel gilt nicht für den Dealer."
                 }
             },
             "presets": {
@@ -1892,6 +1900,81 @@
                     "description": [
                         "Standardmäßig endet das Spiel nach 10 Runden, und der Gewinner wird bestimmt, je nachdem, wer die meisten Punkte hat.",
                         "Du kannst die Regeln und die Gewinnbedingungen für dein eigenes Spiel in den Lobby-Einstellungen anpassen. Alternativ kannst du das Spiel auch beenden, wenn ein Spieler X Punkte erreicht."
+                    ]
+                }
+            }
+        },
+        "CUTTHROAT_POOL": {
+            "name": "Räuber-Pool",
+            "title": "Killer-Pool kostenlos online spielen | Mehrspieler mit Freunden",
+            "description": "Erlebe Killer-Pool, das kostenlose Billardspiel! Spiele online im Mehrspielermodus mit Freunden oder Fremden, ohne Konto oder Download.",
+            "options": {
+                "ruleEliminatedCanReturn": {
+                    "title": "Eliminierte können zurückkommen",
+                    "help": "Standardmäßig wird ein Spieler eliminiert, wenn alle seine Kugeln versenkt sind. Wenn ein Gegner ein Foul begeht, kann eine Kugel dieses Spielers zurück auf den Tisch kommen, wodurch er wieder ins Spiel einsteigen kann."
+                },
+                "foulPocketOwnBall": {
+                    "title": "Eigene Kugel versenken",
+                    "help": "Passiert, wenn ein Spieler seinen eigenen Ball versenkt."
+                },
+                "breakLayout": {
+                    "title": "Break-Aufstellung",
+                    "help": "Wähle, ob die Anfangsaufstellung beim Break fest oder zufällig ist.",
+                    "data": {
+                        "fixed": "Fest (offiziell)",
+                        "random": "Zufällig"
+                    }
+                },
+                "breakFillers": {
+                    "title": "Füllbälle beim Break verwenden",
+                    "help": "Wenn aktiviert, werden bei Spielerzahlen, die es benötigen, Füllbälle für den Break hinzugefügt."
+                },
+                "ruleReturnOpponentBalls": {
+                    "title": "Gegnerbälle zurück bei",
+                    "help": "Lege fest, bei welchen Fouls ein Ball des Gegners auf den Tisch zurückkehrt.",
+                    "data": {
+                        "anyFoul": "Jedes zulässige Foul",
+                        "ballInHand": "Nur Ball-in-Hand-Fouls",
+                        "off": "Deaktiviert"
+                    }
+                }
+            },
+            "presets": {
+                "random": {
+                    "title": "Zufällige Gruppen",
+                    "description": [
+                        "Zugewiesene Gruppen",
+                        "Zufällige Regalaufteilung"
+                    ]
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Spielfeld",
+                    "description": [
+                        "Je nach Spielerzahl erhält jeder Spieler eine Gruppe aus 3 bis 7 Kugeln in einer bestimmten Farbe.",
+                        "Anders als bei 8 Ball ist deine Gruppe die Kugelmenge, die du schützen musst. Dein Ziel ist es, die Kugeln der Gegner zu versenken und mindestens eine eigene Kugel auf dem Tisch zu behalten."
+                    ]
+                },
+                "breaking": {
+                    "title": "Spielstart (Break)",
+                    "description": [
+                        "Der Eröffnungsstoß startet das Match, indem er das Rack auflöst. In den Einstellungen kann das Break-Rack fest oder zufällig sein, und bei manchen Spielerzahlen werden Füllbälle genutzt (mit rotem Kreuz markiert).",
+                        "Ein gültiger Break sorgt für einen fairen Start. Wie in anderen Poolspielen ist ein Scratch auf dem Break ein Foul und verschafft den Gegnern meist einen Vorteil."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Spielverlauf",
+                    "description": [
+                        "In deinem Zug zielst du auf Kugeln anderer Spieler und versenkst sie. Eine eigene Kugel zu versenken ist ein Foul.",
+                        "Sind alle Kugeln deiner Gruppe weg, bist du ausgeschieden. In manchen Regeln können Fouls eine gegnerische Kugel auf den Tisch zurückbringen, wodurch ausgeschiedene Spieler zurückkommen können."
+                    ]
+                },
+                "objective": {
+                    "title": "Ziel",
+                    "description": [
+                        "Sei der letzte Spieler, der noch mindestens eine Kugel aus der eigenen Gruppe auf dem Tisch hat. Alle anderen müssen ausgeschieden sein.",
+                        "Wähle deine Stöße mit Bedacht: Aggressives Spiel kann Gegner schnell ausschalten, aber Fehler und Fouls können deinen Fortschritt wieder zunichtemachen."
                     ]
                 }
             }
@@ -1986,6 +2069,8 @@
             "voteResults": "Abstimmungsergebnisse",
             "flippingField": "Umkehrung des Spielfelds",
             "removingRow": "Reihe entfernen",
+            "yourPick": "Mach deine Wahl %{extra}",
+            "namePick": "%{name} trifft gerade ihre Wahl",
             "yourTurn": "Dein Zug %{extra}",
             "nameTurn": "%{name}'s Zug",
             "dealerTurn": "Jetzt ist der Dealer dran",
@@ -2232,6 +2317,7 @@
         "levelShort": "{count} LVL",
         "experienceShort": "{count} XP",
         "winStreak": "{count}-Siegeserie!",
+        "balls": "0 Bälle | 1 Ball | {count} Bälle",
         "kills": "0 Kills | 1 Kill | {count} Kills",
         "deaths": "0 Tode | 1 Tod | {count} Tode",
         "lives": "0 Leben | 1 Leben | {count} Leben",
@@ -3091,7 +3177,8 @@
             "LOSS": "Du hast diese Runde verloren",
             "WIN": "Du hast diese Runde gewonnen!",
             "WIN_BLACKJACK": "Blackjack! Du gewinnst diese Runde!",
-            "PUSH": "Diese Runde ist ein Unentschieden"
+            "PUSH": "Diese Runde ist ein Unentschieden",
+            "FIVE_CARD_CHARLIE": "Five Card Charlie! Eine deiner Hände hat automatisch mit fünf Karten gewonnen."
         },
         "poolType": {
             "SOLID": "Volle",
@@ -3109,6 +3196,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} hat die schwarze Acht zu früh versenkt.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} hat die schwarze Acht beim Anstoß versenkt.",
                 "POCKETED_WRONG_BALL": "%{name} hat die falsche Kugel versenkt.",
+                "POCKETED_OWN_BALL": "${name} hat ihren eigenen Ball versenkt.",
                 "SKIP_TURN": "%{name} hat ihren Zug übersprungen."
             },
             "self": {
@@ -3122,6 +3210,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Du hast die Acht zu früh eingelocht.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Du hast die Acht beim Anstoß eingelocht.",
                 "POCKETED_WRONG_BALL": "Du hast die falsche Kugel eingelocht.",
+                "POCKETED_OWN_BALL": "Du hast deinen eigenen Ball versenkt.",
                 "SKIP_TURN": "Du hast dich entschieden, deinen Zug auszulassen."
             }
         },

@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal French",
         "rtl": false,
-        "total": 1963,
+        "total": 2006,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1818,6 +1818,14 @@
                         "FIRST": "Premier à atteindre <b>0</b> points | Premier à atteindre <b>1</b> point | Premier à atteindre <b>{count}</b> points",
                         "HIGHEST_AFTER": "Le plus de points après <b>0</b> manches | Le plus de points après <b>1</b> manche | Le plus de points après <b>{count}</b> manches"
                     }
+                },
+                "splitSameFaceOnly": {
+                    "title": "Split uniquement avec la même carte",
+                    "help": "Quand c’est activé, le split est autorisé uniquement si les deux cartes de départ sont la même carte (par exemple K+K ou 8+8), pas seulement la même valeur numérique."
+                },
+                "fiveCardCharlie": {
+                    "title": "Five Card Charlie",
+                    "help": "Quand c’est activé, toute main du joueur avec cinq cartes et un total de 21 ou moins gagne automatiquement. Cette règle ne s’applique pas au croupier."
                 }
             },
             "presets": {
@@ -1892,6 +1900,81 @@
                     "description": [
                         "Par défaut, le jeu se termine après 10 manches, et on choisit un gagnant selon celui qui a le plus de points.",
                         "Tu peux personnaliser les règles et les conditions de victoire pour ton jeu perso dans les paramètres du lobby. Sinon, tu peux finir la partie quand un joueur atteint X points."
+                    ]
+                }
+            }
+        },
+        "CUTTHROAT_POOL": {
+            "name": "Billard à la loyale",
+            "title": "Jouez à Billard Cutthroat en Ligne | Gratuit et Multijoueur",
+            "description": "Jouez à Billard Cutthroat en ligne gratuitement ! Pas besoin de compte, affrontez amis ou inconnus en multijoueur, ou défiez des bots.",
+            "options": {
+                "ruleEliminatedCanReturn": {
+                    "title": "Les éliminés peuvent revenir",
+                    "help": "Par défaut, un joueur est éliminé quand toutes ses billes sont empochées. Si un adversaire commet une faute, une des billes de ce joueur peut revenir sur la table, ce qui lui permet de revenir dans la partie."
+                },
+                "foulPocketOwnBall": {
+                    "title": "Empocher sa propre bille",
+                    "help": "Ça arrive quand un joueur empoche sa propre bille."
+                },
+                "breakLayout": {
+                    "title": "Disposition de casse",
+                    "help": "Choisis si la disposition de départ à la casse est fixe ou aléatoire.",
+                    "data": {
+                        "fixed": "Fixe (officiel)",
+                        "random": "Aléatoire"
+                    }
+                },
+                "breakFillers": {
+                    "title": "Utiliser des billes de remplissage à la casse",
+                    "help": "Quand c'est activé, des billes de remplissage sont ajoutées à la casse pour les nombres de joueurs qui en ont besoin."
+                },
+                "ruleReturnOpponentBalls": {
+                    "title": "Renvoyer les billes adverses sur",
+                    "help": "Choisis quelles fautes peuvent renvoyer une bille adverse sur la table.",
+                    "data": {
+                        "anyFoul": "Toute faute admissible",
+                        "ballInHand": "Fautes bille en main uniquement",
+                        "off": "Désactivé"
+                    }
+                }
+            },
+            "presets": {
+                "random": {
+                    "title": "Groupes aléatoires",
+                    "description": [
+                        "Groupes assignés",
+                        "Disposition aléatoire des racks"
+                    ]
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Table de jeu",
+                    "description": [
+                        "Selon le nombre de joueurs, chaque joueur reçoit un groupe de 3 à 7 billes d'une couleur donnée.",
+                        "Contrairement au 8 Ball, ton groupe est celui que tu dois protéger. Ton objectif est d'empocher les billes des adversaires tout en gardant au moins une des tiennes sur la table."
+                    ]
+                },
+                "breaking": {
+                    "title": "Début de partie (Casse)",
+                    "description": [
+                        "Le coup d'ouverture lance la partie en éclatant le rack. Les réglages peuvent utiliser une disposition fixe ou aléatoire, et certains nombres de joueurs ajoutent des billes de remplissage (marquées d'une croix rouge).",
+                        "Une casse valide garantit un départ équitable. Comme dans les autres jeux de billard, empocher la blanche à la casse est une faute et donne souvent un avantage aux adversaires."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Déroulement",
+                    "description": [
+                        "Pendant ton tour, vise et empoche les billes des autres joueurs. Empocher une de tes propres billes est une faute.",
+                        "Si toutes les billes de ton groupe sont empochées, tu es éliminé. Avec certaines règles, une faute peut renvoyer une bille adverse sur la table, ce qui peut faire revenir des joueurs éliminés."
+                    ]
+                },
+                "objective": {
+                    "title": "Objectif",
+                    "description": [
+                        "Sois le dernier joueur à garder au moins une bille de ton groupe sur la table. Tous les autres doivent être éliminés.",
+                        "Choisis bien tes coups : un jeu agressif peut éliminer rapidement tes adversaires, mais les erreurs et les fautes peuvent annuler tes progrès."
                     ]
                 }
             }
@@ -1986,6 +2069,8 @@
             "voteResults": "Résultats du vote",
             "flippingField": "Revirement du champ",
             "removingRow": "Suppression de ligne",
+            "yourPick": "Fais ton choix %{extra}",
+            "namePick": "%{name} est en train de faire son choix",
             "yourTurn": "Ton tour %{extra}",
             "nameTurn": "Au tour de %{name}",
             "dealerTurn": "C'est le tour du croupier",
@@ -2232,6 +2317,7 @@
         "levelShort": "NIV {count}",
         "experienceShort": "{count} XP",
         "winStreak": "{count} victoires d'affilée !",
+        "balls": "0 balles | 1 balle | {count} balles",
         "kills": "0 tués | 1 tué | {count} tués",
         "deaths": "0 morts | 1 mort | {count} morts",
         "lives": "0 vies | 1 vie | {count} vies",
@@ -3091,7 +3177,8 @@
             "LOSS": "T'as perdu cette manche",
             "WIN": "T'as gagné cette manche !",
             "WIN_BLACKJACK": "Blackjack ! T'as gagné cette manche !",
-            "PUSH": "Cette manche est un push"
+            "PUSH": "Cette manche est un push",
+            "FIVE_CARD_CHARLIE": "Five Card Charlie! Une de tes mains a gagné automatiquement avec cinq cartes."
         },
         "poolType": {
             "SOLID": "Hautes",
@@ -3109,6 +3196,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} a empoché la huitième balle trop tôt.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} a empoché la huitième balle dès le début.",
                 "POCKETED_WRONG_BALL": "%{name} a empoché la mauvaise balle.",
+                "POCKETED_OWN_BALL": "${name} a mis sa propre boule.",
                 "SKIP_TURN": "%{name} a sauté son tour."
             },
             "self": {
@@ -3122,6 +3210,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Tu as empoché la huitième balle trop tôt.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Tu as empoché la huitième balle dès le début.",
                 "POCKETED_WRONG_BALL": "Tu as empoché la mauvaise balle.",
+                "POCKETED_OWN_BALL": "T'as mis ta propre bille dans le trou.",
                 "SKIP_TURN": "T'as choisi de sauter ton tour."
             }
         },

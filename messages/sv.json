@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Swedish",
         "rtl": false,
-        "total": 1963,
+        "total": 2006,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1818,6 +1818,14 @@
                         "FIRST": "Först till <b>0</b> poäng | Först till <b>1</b> poäng | Först till <b>{count}</b> poäng",
                         "HIGHEST_AFTER": "Flest poäng efter <b>0</b> rundor | Flest poäng efter <b>1</b> runda | Flest poäng efter <b>{count}</b> rundor"
                     }
+                },
+                "splitSameFaceOnly": {
+                    "title": "Dela bara med samma kort",
+                    "help": "När detta är aktiverat får du bara dela om båda startkorten är samma kort (till exempel K+K eller 8+8), inte bara samma numeriska värde."
+                },
+                "fiveCardCharlie": {
+                    "title": "Five Card Charlie",
+                    "help": "När detta är aktiverat vinner varje spelarhand med fem kort och totalt 21 eller lägre automatiskt. Denna regel gäller inte dealern."
                 }
             },
             "presets": {
@@ -1892,6 +1900,81 @@
                     "description": [
                         "Som standard slutar spelet efter 10 rundor, och en vinnare utses baserat på vem som har flest poäng.",
                         "Du kan anpassa reglerna och vinstvillkoren för ditt egna spel i lobbyns inställningar. Alternativt kan du avsluta spelet när en spelare når X antal poäng."
+                    ]
+                }
+            }
+        },
+        "CUTTHROAT_POOL": {
+            "name": "Skurkpool",
+            "title": "Cutthroat Pool Online | Spela Biljard Med Vänner & Främlingar",
+            "description": "Spela Cutthroat biljard gratis online med vänner, främlingar eller bots! Ingen registrering krävs, bara hoppa in i flerspelarläget och ha kul!",
+            "options": {
+                "ruleEliminatedCanReturn": {
+                    "title": "Utslagna kan komma tillbaka",
+                    "help": "Som standard åker en spelare ut när alla deras bollar är i fickan. Om en motståndare gör en foul kan en av den spelarens bollar komma tillbaka till bordet, vilket gör att de kan komma in i spelet igen."
+                },
+                "foulPocketOwnBall": {
+                    "title": "Sänka egen boll",
+                    "help": "Sker när en spelare sänker sin egen boll."
+                },
+                "breakLayout": {
+                    "title": "Break-layout",
+                    "help": "Välj om startlayouten vid break ska vara fast eller slumpmässig.",
+                    "data": {
+                        "fixed": "Fast (officiell)",
+                        "random": "Slumpmässig"
+                    }
+                },
+                "breakFillers": {
+                    "title": "Använd utfyllnadsbollar vid break",
+                    "help": "När aktiverat läggs utfyllnadsbollar till vid break för spelarantal som behöver det."
+                },
+                "ruleReturnOpponentBalls": {
+                    "title": "Återför motståndarens bollar vid",
+                    "help": "Välj vilka fouls som kan återföra en motståndarboll till bordet.",
+                    "data": {
+                        "anyFoul": "Alla giltiga fouls",
+                        "ballInHand": "Endast ball-in-hand-fouls",
+                        "off": "Avstängd"
+                    }
+                }
+            },
+            "presets": {
+                "random": {
+                    "title": "Slumptagna grupper",
+                    "description": [
+                        "Tilldelade grupper",
+                        "Slumprad layout"
+                    ]
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Spelbord",
+                    "description": [
+                        "Beroende på antal spelare får varje spelare en grupp med 3 till 7 bollar i en viss färg.",
+                        "Till skillnad från 8 Ball är din grupp den du måste skydda. Målet är att sänka motståndarnas bollar samtidigt som du behåller minst en av dina egna på bordet."
+                    ]
+                },
+                "breaking": {
+                    "title": "Start av spelet (Break)",
+                    "description": [
+                        "Öppningsstöten startar matchen genom att sprida racken. Inställningarna kan använda fast eller slumpmässig break-layout, och vid vissa spelarantal kan utfyllnadsbollar läggas till (markerade med ett rött kryss).",
+                        "Ett giltigt break ger en rättvis start. Precis som i andra biljardspel är det foul att sänka den vita bollen i breaket, och det ger oftast motståndarna en fördel."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Spelflöde",
+                    "description": [
+                        "På din tur siktar du på och sänker bollar som tillhör andra spelare. Att sänka en av dina egna bollar är foul.",
+                        "Om alla bollar i din grupp sänks blir du eliminerad. I vissa regeluppsättningar kan fouls föra tillbaka en motståndarboll till bordet, vilket kan låta eliminerade spelare komma tillbaka i matchen."
+                    ]
+                },
+                "objective": {
+                    "title": "Mål",
+                    "description": [
+                        "Var den sista spelaren som har minst en boll kvar på bordet från sin grupp. Alla andra måste vara eliminerade.",
+                        "Välj dina stötar noggrant: aggressivt spel kan eliminera motståndare snabbt, men misstag och fouls kan radera dina framsteg."
                     ]
                 }
             }
@@ -1986,6 +2069,8 @@
             "voteResults": "Röstresultat",
             "flippingField": "Vänder fältet",
             "removingRow": "Tar bort rad",
+            "yourPick": "Välj din grej %{extra}",
+            "namePick": "%{name} gör sitt val",
             "yourTurn": "Din tur %{extra}",
             "nameTurn": "%{name}s tur",
             "dealerTurn": "Dags för dealern",
@@ -2232,6 +2317,7 @@
         "levelShort": "LVL {count}",
         "experienceShort": "{count} XP",
         "winStreak": "{count}-vinst streak!",
+        "balls": "0 bollar | 1 boll | {count} bollar",
         "kills": "0 dödade | 1 dödad | {count} dödade",
         "deaths": "0 dödsfall | 1 dödsfall | {count} dödsfall",
         "lives": "0 liv | 1 liv | {count} liv",
@@ -3091,7 +3177,8 @@
             "LOSS": "Du förlorade den här rundan",
             "WIN": "Du vann den här rundan!",
             "WIN_BLACKJACK": "Blackjack! Du vinner den här rundan!",
-            "PUSH": "Den här rundan är oavgjord"
+            "PUSH": "Den här rundan är oavgjord",
+            "FIVE_CARD_CHARLIE": "Five Card Charlie! En av dina händer vann automatiskt med fem kort."
         },
         "poolType": {
             "SOLID": "Enfärgade",
@@ -3109,6 +3196,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} sänkte åttbollen för tidigt.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} sänkte åttbollen på breaket.",
                 "POCKETED_WRONG_BALL": "%{name} sänkte fel boll.",
+                "POCKETED_OWN_BALL": "${name} stoppade sin egen boll.",
                 "SKIP_TURN": "%{name} hoppade över sin tur."
             },
             "self": {
@@ -3122,6 +3210,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Du sänkte åttbollen för tidigt.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Du sänkte åttbollen på breaket.",
                 "POCKETED_WRONG_BALL": "Du sänkte fel boll.",
+                "POCKETED_OWN_BALL": "Du stoppade i din egen boll.",
                 "SKIP_TURN": "Du valde att hoppa över din tur."
             }
         },

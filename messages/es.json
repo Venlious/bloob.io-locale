@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Mexican Spanish",
         "rtl": false,
-        "total": 1963,
+        "total": 2006,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1818,6 +1818,14 @@
                         "FIRST": "Primero en llegar a <b>0</b> puntos | Primero en llegar a <b>1</b> punto | Primero en llegar a <b>{count}</b> puntos",
                         "HIGHEST_AFTER": "Más puntos después de <b>0</b> rondas | Más puntos después de <b>1</b> ronda | Más puntos después de <b>{count}</b> rondas"
                     }
+                },
+                "splitSameFaceOnly": {
+                    "title": "Dividir solo con la misma carta",
+                    "help": "Cuando está activado, solo puedes dividir si ambas cartas iniciales son la misma carta (por ejemplo K+K u 8+8), no solo el mismo valor numérico."
+                },
+                "fiveCardCharlie": {
+                    "title": "Five Card Charlie",
+                    "help": "Cuando está activado, cualquier mano del jugador con cinco cartas y un total de 21 o menos gana automáticamente. Esta regla no aplica al dealer."
                 }
             },
             "presets": {
@@ -1892,6 +1900,81 @@
                     "description": [
                         "Por default, el juego termina después de 10 rondas, y se elige un ganador según quién tenga más puntos.",
                         "Puedes personalizar las reglas y la condición de victoria para tu juego personalizado en la configuración del lobby. También puedes terminar el juego cuando un jugador llegue a X cantidad de puntos."
+                    ]
+                }
+            }
+        },
+        "CUTTHROAT_POOL": {
+            "name": "Pool a lo Bestia",
+            "title": "Billar Cutthroat | Multijugador en línea con amigos gratis",
+            "description": "Disfruta de Billar Cutthroat en línea, ¡gratis y sin cuenta! Juega con amigos, desconocidos o bots en emocionantes partidas multijugador.",
+            "options": {
+                "ruleEliminatedCanReturn": {
+                    "title": "Los eliminados pueden volver",
+                    "help": "Por defecto, un jugador queda eliminado cuando se embocan todas sus bolas. Si un oponente comete una falta, una de las bolas de ese jugador puede volver a la mesa, permitiéndole regresar al juego."
+                },
+                "foulPocketOwnBall": {
+                    "title": "Embocar tu propia bola",
+                    "help": "Ocurre cuando un jugador mete su propia bola."
+                },
+                "breakLayout": {
+                    "title": "Formación de salida",
+                    "help": "Elige si la formación inicial del break es fija o aleatoria.",
+                    "data": {
+                        "fixed": "Fija (oficial)",
+                        "random": "Aleatoria"
+                    }
+                },
+                "breakFillers": {
+                    "title": "Usar bolas de relleno en el break",
+                    "help": "Cuando está activado, se agregan bolas de relleno en el break para cantidades de jugadores que lo necesiten."
+                },
+                "ruleReturnOpponentBalls": {
+                    "title": "Devolver bolas del rival en",
+                    "help": "Elige qué faltas pueden devolver una bola del rival a la mesa.",
+                    "data": {
+                        "anyFoul": "Cualquier falta válida",
+                        "ballInHand": "Solo faltas de bola en mano",
+                        "off": "Desactivado"
+                    }
+                }
+            },
+            "presets": {
+                "random": {
+                    "title": "Grupos Aleatorios",
+                    "description": [
+                        "Grupos asignados",
+                        "Diseño de estantes aleatorio"
+                    ]
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Mesa de juego",
+                    "description": [
+                        "Según la cantidad de jugadores, cada persona recibe un grupo de 3 a 7 bolas de un color determinado.",
+                        "A diferencia del 8 Ball, tu grupo es el que debes proteger. Tu objetivo es embocar las bolas de tus rivales mientras mantienes al menos una de las tuyas en la mesa."
+                    ]
+                },
+                "breaking": {
+                    "title": "Inicio de la partida (Break)",
+                    "description": [
+                        "El tiro inicial empieza la partida abriendo el rack. En la configuración puede usarse una formación fija o aleatoria, y en algunos números de jugadores se agregan bolas de relleno (marcadas con una cruz roja).",
+                        "Un break legal da un inicio justo. Como en otros juegos de billar, meter la bola blanca en el break es falta y normalmente da ventaja a tus oponentes."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Jugabilidad",
+                    "description": [
+                        "En tu turno debes apuntar y embocar bolas que pertenecen a otros jugadores. Embocar una bola propia es falta.",
+                        "Si todas las bolas de tu grupo se embocan, quedas eliminado. En algunas reglas, las faltas pueden devolver una bola rival a la mesa, lo que puede hacer volver a jugadores eliminados."
+                    ]
+                },
+                "objective": {
+                    "title": "Objetivo",
+                    "description": [
+                        "Sé el último jugador con al menos una bola de tu grupo en la mesa. Todos los demás deben quedar eliminados.",
+                        "Elige bien tus tiros: jugar agresivo puede eliminar rivales rápido, pero los errores y las faltas pueden arruinar tu progreso."
                     ]
                 }
             }
@@ -1986,6 +2069,8 @@
             "voteResults": "Resultados de la votación",
             "flippingField": "Volteando el campo",
             "removingRow": "Eliminar fila",
+            "yourPick": "Elige lo que quieras %{extra}",
+            "namePick": "%{name} está eligiendo su opción",
             "yourTurn": "Tu turno %{extra}",
             "nameTurn": "Turno de %{name}",
             "dealerTurn": "Es turno del dealer",
@@ -2232,6 +2317,7 @@
         "levelShort": "NIV {count}",
         "experienceShort": "{count} XP",
         "winStreak": "¡Racha de {count} victorias!",
+        "balls": "0 pelotas | 1 pelota | {count} pelotas",
         "kills": "0 bajas | 1 baja | {count} bajas",
         "deaths": "0 muertes | 1 muerte | {count} muertes",
         "lives": "0 vidas | 1 vida | {count} vidas",
@@ -3091,7 +3177,8 @@
             "LOSS": "Perdiste esta ronda",
             "WIN": "¡Ganaste esta ronda!",
             "WIN_BLACKJACK": "¡Blackjack! ¡Ganaste esta ronda!",
-            "PUSH": "Esta ronda es un empate"
+            "PUSH": "Esta ronda es un empate",
+            "FIVE_CARD_CHARLIE": "Five Card Charlie! Una de tus manos ganó automáticamente con cinco cartas."
         },
         "poolType": {
             "SOLID": "Sólidas",
@@ -3109,6 +3196,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} embocó la bola ocho demasiado pronto.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} embocó la bola ocho en el saque.",
                 "POCKETED_WRONG_BALL": "%{name} embocó la bola equivocada.",
+                "POCKETED_OWN_BALL": "${name} metió su propia bola.",
                 "SKIP_TURN": "%{name} se brincó su turno."
             },
             "self": {
@@ -3122,6 +3210,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Metiste la bola ocho demasiado pronto.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Metiste la bola ocho en el saque.",
                 "POCKETED_WRONG_BALL": "Metiste la bola equivocada.",
+                "POCKETED_OWN_BALL": "Metiste tu propia bola en la bolsa.",
                 "SKIP_TURN": "Elegiste saltarte tu turno."
             }
         },

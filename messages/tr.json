@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 1963,
+        "total": 2006,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1818,6 +1818,14 @@
                         "FIRST": "İlk <b>0</b> puana ulaşan | İlk <b>1</b> puana ulaşan | İlk <b>{count}</b> puana ulaşan",
                         "HIGHEST_AFTER": "<b>0</b> turdan sonra en çok puan | <b>1</b> turdan sonra en çok puan | <b>{count}</b> turdan sonra en çok puan"
                     }
+                },
+                "splitSameFaceOnly": {
+                    "title": "Split sadece aynı kartla",
+                    "help": "Açıkken split yalnızca iki başlangıç kartı aynı kartsa yapılabilir (örneğin K+K veya 8+8), sadece sayısal değerlerinin aynı olması yetmez."
+                },
+                "fiveCardCharlie": {
+                    "title": "Five Card Charlie",
+                    "help": "Açıkken toplamı 21 veya daha az olan beş kartlı herhangi bir oyuncu eli otomatik kazanır. Bu kural krupiye uygulanmaz."
                 }
             },
             "presets": {
@@ -1892,6 +1900,81 @@
                     "description": [
                         "Oyun varsayılan olarak 10 turdan sonra bitiyor ve en çok puanı olan kazanıyor.",
                         "Lobby ayarlarında kendi oyununun kurallarını ve kazanma koşulunu ayarlayabilirsin. Ya da bir oyuncu X kadar puana ulaştığında oyunu bitirebilirsin."
+                    ]
+                }
+            }
+        },
+        "CUTTHROAT_POOL": {
+            "name": "Korsan Bilardo",
+            "title": "Cutthroat Pool | Çevrimiçi Bilardo | Ücretsiz Çok Oyunculu Oyna",
+            "description": "Ücretsiz Çevrimiçi Cutthroat Bilardo! Arkadaşlarınla veya yabancılarla kayıt gerektirmeyen çok oyunculu maçlar oyna, hatta botlara meydan oku!",
+            "options": {
+                "ruleEliminatedCanReturn": {
+                    "title": "Elenenler Geri Dönebilir",
+                    "help": "Varsayılan olarak, bir oyuncu tüm topları ceplendiğinde elenir. Eğer bir rakip faul yaparsa, o oyuncunun toplarından biri masaya geri dönebilir ve oyuncu oyuna yeniden girebilir."
+                },
+                "foulPocketOwnBall": {
+                    "title": "Kendi Topunu Cebe Sokmak",
+                    "help": "Bir oyuncu kendi topunu cebe soktuğunda gerçekleşir."
+                },
+                "breakLayout": {
+                    "title": "Açılış dizilimi",
+                    "help": "Açılış diziliminin sabit mi yoksa rastgele mi olacağını seçin.",
+                    "data": {
+                        "fixed": "Sabit (resmî)",
+                        "random": "Rastgele"
+                    }
+                },
+                "breakFillers": {
+                    "title": "Açılışta dolgu topları kullan",
+                    "help": "Açık olduğunda, gereken oyuncu sayılarında açılışa dolgu topları eklenir."
+                },
+                "ruleReturnOpponentBalls": {
+                    "title": "Rakip toplarını geri döndürme",
+                    "help": "Hangi faullerde rakibin topunun masaya geri dönebileceğini seçin.",
+                    "data": {
+                        "anyFoul": "Her uygun faul",
+                        "ballInHand": "Sadece top elde faulleri",
+                        "off": "Kapalı"
+                    }
+                }
+            },
+            "presets": {
+                "random": {
+                    "title": "Rastgele Gruplar",
+                    "description": [
+                        "Atanan gruplar",
+                        "Rastgele raf düzeni"
+                    ]
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Oyun masası",
+                    "description": [
+                        "Oyuncu sayısına bağlı olarak her oyuncuya belirli bir renkte 3 ila 7 toptan oluşan bir grup verilir.",
+                        "8 Ball'dan farklı olarak koruman gereken set kendi grubundur. Amacın, rakiplerin toplarını cebe sokarken kendi grubundan en az bir topu masada tutmaktır."
+                    ]
+                },
+                "breaking": {
+                    "title": "Oyunun başlangıcı (Açılış vuruşu)",
+                    "description": [
+                        "Açılış vuruşu maçı başlatır ve dizilimi dağıtır. Ayarlarda sabit veya rastgele açılış dizilimi seçilebilir ve bazı oyuncu sayılarında dolgu topları eklenebilir (kırmızı çarpı ile işaretlenir).",
+                        "Geçerli bir açılış adil bir başlangıç sağlar. Diğer bilardo oyunlarında olduğu gibi açılışta beyaz topu cebe sokmak fauldür ve genelde rakiplerine avantaj verir."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Oynanış",
+                    "description": [
+                        "Sıranda diğer oyunculara ait topları hedefleyip cebe sokmalısın. Kendi toplarından birini cebe sokmak fauldür.",
+                        "Grubundaki tüm toplar cebe girerse oyundan elenirsin. Bazı kurallarda fauller rakibin topunu masaya geri döndürebilir; bu da elenen oyuncuların oyuna dönmesini sağlayabilir."
+                    ]
+                },
+                "objective": {
+                    "title": "Amaç",
+                    "description": [
+                        "Kendi grubundan masada en az bir topu kalan son oyuncu ol. Diğer herkes elenmiş olmalıdır.",
+                        "Vuruşlarını dikkatle seç: agresif oyun rakipleri hızlıca eleyebilir, ancak hatalar ve fauller ilerlemeni geri çevirebilir."
                     ]
                 }
             }
@@ -1986,6 +2069,8 @@
             "voteResults": "Oylama sonuçları",
             "flippingField": "Alanı çevir",
             "removingRow": "Sırayı kaldır",
+            "yourPick": "Seçimini yap %{extra}",
+            "namePick": "%{name} seçimini yapıyor",
             "yourTurn": "Sıra sende %{extra}",
             "nameTurn": "Sıra %{name}'de",
             "dealerTurn": "Krupiyenin sırası",
@@ -2232,6 +2317,7 @@
         "levelShort": "{count} SEV",
         "experienceShort": "{count} XP",
         "winStreak": "{count} kazanma serisi!",
+        "balls": "0 top | 1 top | {count} top",
         "kills": "0 öldürme | 1 öldürme | {count} öldürme",
         "deaths": "0 ölüm | 1 ölüm | {count} ölüm",
         "lives": "0 can | 1 can | {count} can",
@@ -3091,7 +3177,8 @@
             "LOSS": "Bu elde kaybettin",
             "WIN": "Bu elde kazandın!",
             "WIN_BLACKJACK": "Blackjack! Bu elde kazandın!",
-            "PUSH": "Bu el berabere gitti"
+            "PUSH": "Bu el berabere gitti",
+            "FIVE_CARD_CHARLIE": "Five Card Charlie! Ellerinden biri beş kartla otomatik kazandı."
         },
         "poolType": {
             "SOLID": "Düzler",
@@ -3109,6 +3196,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name}, sekiz numaralı topu çok erken deliğe attı.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name}, oyun başlarken sekiz numaralı topu deliğe attı.",
                 "POCKETED_WRONG_BALL": "%{name}, yanlış topu deliğe attı.",
+                "POCKETED_OWN_BALL": "${name} kendi topunu cebine attı.",
                 "SKIP_TURN": "%{name} sırasını geçti."
             },
             "self": {
@@ -3122,6 +3210,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Sekiz numaralı topu çok erken deliğe soktun.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Oyun başlarken sekiz numaralı topu deliğe soktun.",
                 "POCKETED_WRONG_BALL": "Yanlış topu deliğe soktun.",
+                "POCKETED_OWN_BALL": "Kendi topunu cebine attın.",
                 "SKIP_TURN": "Sıra atladın."
             }
         },

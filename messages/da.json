@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Danish",
         "rtl": false,
-        "total": 1963,
+        "total": 2006,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1818,6 +1818,14 @@
                         "FIRST": "Først til at nå <b>0</b> point | Først til at nå <b>1</b> point | Først til at nå <b>{count}</b> point",
                         "HIGHEST_AFTER": "Flest point efter <b>0</b> runder | Flest point efter <b>1</b> runde | Flest point efter <b>{count}</b> runder"
                     }
+                },
+                "splitSameFaceOnly": {
+                    "title": "Split kun med samme kort",
+                    "help": "Når dette er aktiveret, er split kun tilladt, hvis begge startkort er det samme kort (for eksempel K+K eller 8+8), ikke kun samme numeriske værdi."
+                },
+                "fiveCardCharlie": {
+                    "title": "Five Card Charlie",
+                    "help": "Når dette er aktiveret, vinder enhver spillerhånd med fem kort og en samlet værdi på 21 eller mindre automatisk. Denne regel gælder ikke for dealeren."
                 }
             },
             "presets": {
@@ -1892,6 +1900,81 @@
                     "description": [
                         "Som standard slutter spillet efter 10 runder, og vinderen bliver valgt ud fra, hvem der har flest point.",
                         "Du kan tilpasse reglerne og vindbetingelserne for dit eget spil i lobbyindstillingerne. Alternativt kan du afslutte spillet, når en spiller når X antal point."
+                    ]
+                }
+            }
+        },
+        "CUTTHROAT_POOL": {
+            "name": "Skud i ryggen Pool",
+            "title": "Spil Cutthroat Pool Online | Gratis Multiplayer Billiard Venner",
+            "description": "Spil Cutthroat Pool billard online gratis! Multiplayer med venner, fremmede eller mod bots. Ingen konto nødvendig. Prøv det nu og få sjov med spillet!",
+            "options": {
+                "ruleEliminatedCanReturn": {
+                    "title": "Eliminerede kan komme tilbage",
+                    "help": "Som udgangspunkt bliver en spiller elimineret, når alle deres kugler er i lommen. Hvis en modstander laver en fejl, kan en af den spillers kugler komme tilbage på bordet, så de kan komme ind i spillet igen."
+                },
+                "foulPocketOwnBall": {
+                    "title": "Potte sin egen kugle",
+                    "help": "Sker når en spiller potter sin egen kugle i hul."
+                },
+                "breakLayout": {
+                    "title": "Break-opstilling",
+                    "help": "Vælg om startopstillingen ved break skal være fast eller tilfældig.",
+                    "data": {
+                        "fixed": "Fast (officiel)",
+                        "random": "Tilfældig"
+                    }
+                },
+                "breakFillers": {
+                    "title": "Brug fyldkugler ved break",
+                    "help": "Når aktiveret tilføjes fyldkugler ved break for spillerantal der har brug for det."
+                },
+                "ruleReturnOpponentBalls": {
+                    "title": "Returnér modstanderens kugler ved",
+                    "help": "Vælg hvilke fouls der kan få en modstanders kugle tilbage på bordet.",
+                    "data": {
+                        "anyFoul": "Enhver kvalificeret foul",
+                        "ballInHand": "Kun ball-in-hand fouls",
+                        "off": "Deaktiveret"
+                    }
+                }
+            },
+            "presets": {
+                "random": {
+                    "title": "Randomiserede grupper",
+                    "description": [
+                        "Tildelte grupper",
+                        "Tilfældig reolopsætning"
+                    ]
+                }
+            },
+            "help": {
+                "field": {
+                    "title": "Spillebord",
+                    "description": [
+                        "Afhængigt af antal spillere får hver spiller en gruppe på 3 til 7 kugler i en bestemt farve.",
+                        "I modsætning til 8 Ball er din gruppe den, du skal beskytte. Dit mål er at potte modstandernes kugler, mens du holder mindst én af dine egne på bordet."
+                    ]
+                },
+                "breaking": {
+                    "title": "Start på spillet (Break)",
+                    "description": [
+                        "Åbningsstødet starter kampen ved at sprede opstillingen. Indstillingerne kan bruge fast eller tilfældig break-opstilling, og ved nogle spillerantal kan der tilføjes fyldkugler (markeret med et rødt kryds).",
+                        "Et lovligt break giver en fair start. Som i andre poolspil er det en foul at potte den hvide kugle på break, og det giver som regel modstanderne en fordel."
+                    ]
+                },
+                "gameplay": {
+                    "title": "Spilforløb",
+                    "description": [
+                        "På din tur skal du sigte efter og potte kugler, der tilhører de andre spillere. At potte en af dine egne kugler er en foul.",
+                        "Hvis alle kugler i din gruppe bliver pottet, bliver du elimineret. I nogle regelsæt kan fouls sende en modstanders kugle tilbage på bordet, så eliminerede spillere kan komme tilbage i kampen."
+                    ]
+                },
+                "objective": {
+                    "title": "Mål",
+                    "description": [
+                        "Vær den sidste spiller med mindst én kugle fra din egen gruppe tilbage på bordet. Alle andre skal være elimineret.",
+                        "Vælg dine stød med omtanke: aggressivt spil kan hurtigt eliminere modstandere, men fejl og fouls kan ødelægge din fremgang."
                     ]
                 }
             }
@@ -1986,6 +2069,8 @@
             "voteResults": "Afstemningsresultater",
             "flippingField": "Vend spillefeltet",
             "removingRow": "Fjerner række",
+            "yourPick": "Vælg din ting %{extra}",
+            "namePick": "%{name} vælger deres ting",
             "yourTurn": "Din tur %{extra}",
             "nameTurn": "%{name}s tur",
             "dealerTurn": "Dealeren skal spille",
@@ -2232,6 +2317,7 @@
         "levelShort": "LVL {count}",
         "experienceShort": "{count} XP",
         "winStreak": "{count}-sejrsrække!",
+        "balls": "0 bolde | 1 bold | {count} bolde",
         "kills": "0 drab | 1 drab | {count} drab",
         "deaths": "0 dødsfald | 1 dødsfald | {count} dødsfald",
         "lives": "0 liv | 1 liv | {count} liv",
@@ -3091,7 +3177,8 @@
             "LOSS": "Du tabte denne runde",
             "WIN": "Du vandt denne runde!",
             "WIN_BLACKJACK": "Blackjack! Du vinder denne runde!",
-            "PUSH": "Denne runde er uafgjort"
+            "PUSH": "Denne runde er uafgjort",
+            "FIVE_CARD_CHARLIE": "Five Card Charlie! En af dine hænder vandt automatisk med fem kort."
         },
         "poolType": {
             "SOLID": "Ensfarvede",
@@ -3109,6 +3196,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "%{name} fik otterkuglen i hullet for tidligt.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "%{name} fik otterkuglen i hullet ved åbningsstødet.",
                 "POCKETED_WRONG_BALL": "%{name} fik den forkerte kugle i hullet.",
+                "POCKETED_OWN_BALL": "${name} puttede sin egen bold i hul.",
                 "SKIP_TURN": "%{name} sprang over deres tur."
             },
             "self": {
@@ -3122,6 +3210,7 @@
                 "ILLEGAL_8_BALL_POCKET_TOO_SOON": "Du fik otterkuglen i hul for tidligt.",
                 "ILLEGAL_8_BALL_POCKET_ON_BREAK": "Du fik otterkuglen i hul ved åbningsstødet.",
                 "POCKETED_WRONG_BALL": "Du fik den forkerte kugle i hul.",
+                "POCKETED_OWN_BALL": "Du har puttet din egen bold i lommen.",
                 "SKIP_TURN": "Du valgte at springe din tur over."
             }
         },

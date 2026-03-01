@@ -37,7 +37,8 @@ export enum GameType {
 	trivia = `TRIVIA`,
 	snooker = `SNOOKER`,
 	nineBallPool = `NINE_BALL_POOL`,
-	blackjack = `BLACKJACK`
+	blackjack = `BLACKJACK`,
+	cutthroatPool = `CUTTHROAT_POOL`
 }
 
 export enum CheckersKingType {
