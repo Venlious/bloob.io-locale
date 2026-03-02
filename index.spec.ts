@@ -68,6 +68,26 @@ const checkForCommonErrors = translation => {
 	}
 }
 
+const checkForCommonVariableErrors = translation => {
+	// Iterate through keys and values of English object
+	for (const [key, value] of Object.entries(translation)) {
+		// Skip keys with null values in translation
+		if (translation[key] === null) {
+			continue
+		}
+
+		// Check if value is an object (indicating another nested layer)
+		if (typeof value === `object`) {
+			// If value is an object, recursively call the function on the nested objects
+			checkForCommonVariableErrors(value)
+		} else if (typeof value === `string`) {
+			// Catch malformed interpolation placeholders like ${x}; valid forms are {x} and %{x}
+			const invalidVariables = value.match(/\$\{[^{}]*}/g) || []
+			expect(invalidVariables).toHaveLength(0)
+		}
+	}
+}
+
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const enMessage = require(`./messages/en.json`)
 const enMessageKeys = objectDeepKeys(enMessage)
@@ -110,6 +130,12 @@ for (const folder of [...supportedLocales, `_empty`]) {
 	describe(`containCorrectVariables`, () => {
 		it(`should contain all variables from English text for "${folder}"`, () => {
 			checkForVariables(enMessage, messages)
+		})
+	})
+
+	describe(`correctVariableFormatting`, () => {
+		it(`language "${folder}" should format variables correctly`, () => {
+			checkForCommonVariableErrors(messages)
 		})
 	})
 
