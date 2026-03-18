@@ -35,6 +35,7 @@ export enum GameType {
 	ginRummy = `GIN_RUMMY`,
 	rockPaperScissors = `ROCK_PAPER_SCISSORS`,
 	trivia = `TRIVIA`,
+	cashClashFinancialTrivia = `CASH_CLASH_FINANCIAL_TRIVIA`,
 	snooker = `SNOOKER`,
 	nineBallPool = `NINE_BALL_POOL`,
 	blackjack = `BLACKJACK`,
