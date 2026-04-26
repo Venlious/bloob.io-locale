@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Mexican Spanish",
         "rtl": false,
-        "total": 2036,
+        "total": 2060,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -37,6 +37,8 @@
             "pendingFriendLimitOther": "Lo siento, este usuario ya tiene demasiadas solicitudes de amistad pendientes.",
             "userOffline": "Lo siento, este usuario está desconectado.",
             "notFriends": "No son amigos y no tienes una solicitud de amistad pendiente.",
+            "notBlocked": "Este usuario no está en tu lista de bloqueados.",
+            "blockedUser": "No puedes hacer esta acción porque tienes bloqueado a este usuario.",
             "alreadyFriends": "Ya eres amigo con este usuario.",
             "pendingFriends": "Ya hay una solicitud de amistad pendiente con este usuario.",
             "socialLink": "No se pudo hacer el enlace de redes sociales con \"%{name}\". Si el problema sigue, contáctanos.",
@@ -141,6 +143,7 @@
         },
         "match": {
             "blocked": "Tu castigo no te permite unirte a partidas públicas o de emparejamiento.",
+            "joinBlocked": "No puedes unirte a esta partida.",
             "empty": "Partida cerrada. Todos los demás jugadores abandonaron la partida.",
             "rematchTimeout": "No aceptaste la solicitud de revancha y fuiste enviado de vuelta al menú principal.",
             "rematchCancelled": "¡Lo siento! No quedan suficientes jugadores para la revancha.",
@@ -2422,7 +2425,10 @@
         "addFriend": "Agregar amigo",
         "removeFriend": "Eliminar amigo",
         "rescindRequest": "Cancelar solicitud",
+        "blockedUser": "Usuario bloqueado",
         "block": "Bloquear",
+        "unblock": "Desbloquear",
+        "safety": "Seguridad",
         "accept": "Aceptar",
         "reject": "Rechazar",
         "outgoingFriendRequest": "Solicitud de Amistad Enviada",
@@ -2820,6 +2826,40 @@
         }
     },
     "info": {
+        "blockUser": {
+            "title": "Bloquear Jugador",
+            "description": "Bloquear a %{name} de aparecer en futuros partidos donde sea posible y ocultar sus mensajes. Puedes cambiar esto después.",
+            "reasonTitle": "Razón",
+            "reason": {
+                "toxic": {
+                    "title": "Comportamiento tóxico",
+                    "description": "Insultos, griefing o comportamiento hostil repetido."
+                },
+                "cheating": {
+                    "title": "Trampa",
+                    "description": "Usando exploits, automatización o ventajas injustas."
+                },
+                "spamming": {
+                    "title": "Spammin'",
+                    "description": "Invitaciones, mensajes o acciones molestas que se repiten."
+                },
+                "harassment": {
+                    "title": "Acoso",
+                    "description": "Abuso dirigido, intimidación o contacto no deseado persistente."
+                },
+                "other": {
+                    "title": "Otro",
+                    "description": "¿Hay algo más que haga que jugar con este usuario sea incómodo?"
+                }
+            }
+        },
+        "blockedUsers": {
+            "title": "Usuarios bloqueados",
+            "description": "Ve y maneja a todos los que has bloqueado.",
+            "empty": "No has bloqueado a ningún usuario.",
+            "count": "%{count} bloqueados"
+        },
+        "youBlockedUser": "Has bloqueado a este usuario.",
         "roundEndTie": "¡Es un empate!",
         "roundEndStalemate": "¡Están estancados!",
         "roundWin": "¡Ganaste!",

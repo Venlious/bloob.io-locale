@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 2036,
+        "total": 2060,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -37,6 +37,8 @@
             "pendingFriendLimitOther": "Maaf, pengguna ini udah kebanyakan permintaan pertemanan yang masih pending.",
             "userOffline": "Maaf, pengguna ini lagi offline.",
             "notFriends": "Kalian bukan temen dan nggak ada permintaan pertemanan yang nunggu.",
+            "notBlocked": "Pengguna ini nggak ada di daftar blokir kamu.",
+            "blockedUser": "Kamu nggak bisa melakukan aksi ini karena kamu udah memblokir pengguna ini.",
             "alreadyFriends": "Kalian udah temenan sama pengguna ini.",
             "pendingFriends": "Udah ada permintaan pertemanan yang nunggu dari pengguna ini.",
             "socialLink": "Gagal bikin tautan sosial \"%{name}\". Kalo masalah ini terus ada, silakan hubungi ya.",
@@ -141,6 +143,7 @@
         },
         "match": {
             "blocked": "Hukumanmu nggak membolehkan kamu ikutan matchmaking atau pertandingan publik.",
+            "joinBlocked": "Kamu nggak bisa ikut pertandingan ini.",
             "empty": "Pertandingan ditutup. Semua pemain lain telah meninggalkan pertandingan.",
             "rematchTimeout": "Kamu nggak terima permintaan rematch dan dikirim balik ke menu utama.",
             "rematchCancelled": "Maaf! Nggak cukup pemain untuk rematch.",
@@ -2422,7 +2425,10 @@
         "addFriend": "Tambah Teman",
         "removeFriend": "Hapus Teman",
         "rescindRequest": "Batalkan Permintaan",
+        "blockedUser": "Pengguna Diblokir",
         "block": "Blokir",
+        "unblock": "Buka Blokir",
+        "safety": "Keamanan",
         "accept": "Terima",
         "reject": "Tolak",
         "outgoingFriendRequest": "Permintaan Teman Keluar",
@@ -2820,6 +2826,40 @@
         }
     },
     "info": {
+        "blockUser": {
+            "title": "Blokir Pemain",
+            "description": "Blokir %{name} biar nggak muncul di pertandingan selanjutnya dan sembunyikan pesan-pesannya. Kamu bisa ubah ini nanti.",
+            "reasonTitle": "Alasan",
+            "reason": {
+                "toxic": {
+                    "title": "Perilaku toksik",
+                    "description": "Hujatan, ganggu orang, atau perilaku jahat yang berulang."
+                },
+                "cheating": {
+                    "title": "Curang",
+                    "description": "Menggunakan eksploit, otomatisasi, atau keuntungan yang nggak adil."
+                },
+                "spamming": {
+                    "title": "Spam",
+                    "description": "Undangan, pesan, atau tindakan yang mengganggu yang terus-menerus dan nggak diinginkan."
+                },
+                "harassment": {
+                    "title": "Pelecehan",
+                    "description": "Pelecehan yang ditargetkan, intimidasi, atau kontak yang terus-menerus dan nggak diinginkan."
+                },
+                "other": {
+                    "title": "Lain-lain",
+                    "description": "Ada hal lain yang bikin main sama pengguna ini jadi gak nyaman?"
+                }
+            }
+        },
+        "blockedUsers": {
+            "title": "Pengguna yang Diblokir",
+            "description": "Lihat dan kelola semua orang yang udah kamu blokir.",
+            "empty": "Kamu belum memblokir pengguna mana pun.",
+            "count": "%{count} diblokir"
+        },
+        "youBlockedUser": "Kamu udah ngeblok pengguna ini.",
         "roundEndTie": "Seri nih!",
         "roundEndStalemate": "Stalemate!",
         "roundWin": "Kamu menang!",

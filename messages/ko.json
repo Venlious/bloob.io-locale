@@ -2,7 +2,7 @@
     "_meta": {
         "language": "Korean (Haeyo-che, ~해요체 style)",
         "rtl": false,
-        "total": 2036,
+        "total": 2060,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -37,6 +37,8 @@
             "pendingFriendLimitOther": "죄송해요, 이 유저에게는 대기 중인 친구 요청이 너무 많아요.",
             "userOffline": "죄송해요, 현재 오프라인 상태인 유저예요.",
             "notFriends": "친구 관계가 아니며, 보류 중인 친구 요청도 없어요.",
+            "notBlocked": "이 사용자는 당신의 차단 목록에 없습니다.",
+            "blockedUser": "이 사용자를 차단했기 때문에 이 작업을 수행할 수 없습니다.",
             "alreadyFriends": "이미 친구인 유저예요.",
             "pendingFriends": "이 유저에게 이미 보낸 친구 요청이 있어요.",
             "socialLink": "\"%{name}\" 소셜 링크 생성에 실패했어요. 문제가 계속되면 문의해 주세요.",
@@ -141,6 +143,7 @@
         },
         "match": {
             "blocked": "제재로 인해 매치메이킹이나 공개 매치에 참여할 수 없어요.",
+            "joinBlocked": "이 매치에 참여할 수 없어요.",
             "empty": "매치가 종료되었어요. 다른 플레이어들이 모두 매치를 떠났어요.",
             "rematchTimeout": "재경기 요청을 수락하지 않아 메인 메뉴로 돌아갔어요.",
             "rematchCancelled": "죄송해요! 재경기를 위한 인원이 부족해요.",
@@ -2422,7 +2425,10 @@
         "addFriend": "친구 추가",
         "removeFriend": "친구 삭제",
         "rescindRequest": "요청 취소",
+        "blockedUser": "차단된 사용자",
         "block": "차단",
+        "unblock": "차단 해제",
+        "safety": "안전",
         "accept": "수락",
         "reject": "거절",
         "outgoingFriendRequest": "보낸 친구 요청",
@@ -2820,6 +2826,40 @@
         }
     },
     "info": {
+        "blockUser": {
+            "title": "플레이어 차단",
+            "description": "%{name}이 가능한 한 앞으로의 매치에 나타나지 않도록 차단하고 그들의 메시지를 숨길 수 있어요. 나중에 변경할 수 있어요.",
+            "reasonTitle": "이유",
+            "reason": {
+                "toxic": {
+                    "title": "유독한 행동",
+                    "description": "모욕, 괴롭힘, 또는 반복적인 적대적 행동이에요."
+                },
+                "cheating": {
+                    "title": "부정행위 해요",
+                    "description": "악용, 자동화 또는 불공정한 이점을 사용해요."
+                },
+                "spamming": {
+                    "title": "스팸하기",
+                    "description": "반복적인 원치 않는 초대, 메시지 또는 방해되는 행동이에요."
+                },
+                "harassment": {
+                    "title": "괴롭힘이에요",
+                    "description": "목표가 된 괴롭힘, 위협, 또는 지속적인 원치 않는 연락이에요."
+                },
+                "other": {
+                    "title": "기타",
+                    "description": "이 사용자와 함께 플레이하는 데 불편한 다른 것이 있나요?"
+                }
+            }
+        },
+        "blockedUsers": {
+            "title": "차단된 사용자",
+            "description": "차단한 모든 사용자를 보고 관리해요.",
+            "empty": "차단한 사용자가 없어요.",
+            "count": "%{count}명이 차단되었어요."
+        },
+        "youBlockedUser": "이 사용자를 차단했어요.",
         "roundEndTie": "무승부예요!",
         "roundEndStalemate": "교착 상태예요!",
         "roundWin": "승리했어요!",

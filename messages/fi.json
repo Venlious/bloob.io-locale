@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 2036,
+        "total": 2060,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -37,6 +37,8 @@
             "pendingFriendLimitOther": "Anteeksi, tälle käyttäjälle on jo liikaa odottavaa kaveruutta.",
             "userOffline": "Anteeks, tää käyttäjä on offline.",
             "notFriends": "Ette ole kavereita, eikä teillä ole odottavaa kaveripyyntöä.",
+            "notBlocked": "Tää käyttäjä ei oo sun estolistalla.",
+            "blockedUser": "Et voi tehdä tätä toimintoa, koska oot estänyt tän käyttäjän.",
             "alreadyFriends": "Olette jo kavereita tämän käyttäjän kanssa.",
             "pendingFriends": "Tällä käyttäjällä on jo odottava kaveripyyntö.",
             "socialLink": "Ei saatu tehtyä \"%{name}\" sosiaalista linkkiä. Jos tää ongelma jatkuu, ota yhteyttä.",
@@ -141,6 +143,7 @@
         },
         "match": {
             "blocked": "Rangaistuksesi estää sinua liittymästä matchmakingiin tai julkisiin otteluihin.",
+            "joinBlocked": "Et voi liittyä tähän matsiin.",
             "empty": "Ottelu suljettu. Kaikki muut pelaajat lähtivät matsista.",
             "rematchTimeout": "Et hyväksynyt uusintaottelupyyntöä ja sinut lähetettiin takaisin päävalikkoon.",
             "rematchCancelled": "Harmi! Pelaajia ei ole jäljellä tarpeeksi uusintaotteluun.",
@@ -2422,7 +2425,10 @@
         "addFriend": "Lisää kaveri",
         "removeFriend": "Poista kaveri",
         "rescindRequest": "Peru pyyntö",
+        "blockedUser": "Estetty käyttäjä",
         "block": "Estä",
+        "unblock": "Poista esto",
+        "safety": "Turvallisuus",
         "accept": "Hyväksy",
         "reject": "Hylkää",
         "outgoingFriendRequest": "Lähetetyt kaveripyynnöt",
@@ -2820,6 +2826,40 @@
         }
     },
     "info": {
+        "blockUser": {
+            "title": "Estä pelaaja",
+            "description": "Estä %{name} näkymästä tulevissa otteluissa, jos mahdollista, ja piilota heidän viestinsä. Voit muuttaa tämän myöhemmin.",
+            "reasonTitle": "Syytä",
+            "reason": {
+                "toxic": {
+                    "title": "Myrkyllinen käytös",
+                    "description": "Syrjintää, kiusaamista tai toistuvaa vihamielistä käytöstä."
+                },
+                "cheating": {
+                    "title": "Huijaaminen",
+                    "description": "Käyttämällä hyväksikäyttöjä, automaatiota tai epäreiluja etuja."
+                },
+                "spamming": {
+                    "title": "Spämmäys",
+                    "description": "Toistuvat ei-toivotut kutsut, viestit tai häiritsevät teot."
+                },
+                "harassment": {
+                    "title": "Häirintä",
+                    "description": "Kohdennettua kiusaamista, uhkailua tai jatkuvaa ei-toivottua yhteydenottoa."
+                },
+                "other": {
+                    "title": "Muut",
+                    "description": "Mikään muu, mikä tekee pelaamisesta tämän käyttäjän kanssa epämukavaa."
+                }
+            }
+        },
+        "blockedUsers": {
+            "title": "Estetyt käyttäjät",
+            "description": "Katso ja hallitse kaikkia, jotka olet estänyt.",
+            "empty": "Et ole estänyt yhtään käyttäjää.",
+            "count": "%{count} estetty"
+        },
+        "youBlockedUser": "Sä blokkasit tän käyttäjän.",
         "roundEndTie": "Se on tasapeli!",
         "roundEndStalemate": "Se on pattitilanne!",
         "roundWin": "Sä voitit!",

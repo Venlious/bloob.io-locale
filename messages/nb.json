@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Norwegian (Bokmål)",
         "rtl": false,
-        "total": 2036,
+        "total": 2060,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -37,6 +37,8 @@
             "pendingFriendLimitOther": "Beklager, denne brukeren har allerede for mange ventende vennskap.",
             "userOffline": "Beklager, denne brukeren er offline.",
             "notFriends": "Dere er ikke venner og har ingen ventende vennforespørsel.",
+            "notBlocked": "Denne brukeren er ikke på blokkeringslisten din.",
+            "blockedUser": "Du kan ikke gjøre denne handlingen siden du har blokkert denne brukeren.",
             "alreadyFriends": "Du er allerede venn med denne brukeren.",
             "pendingFriends": "Det er allerede en vennforespørsel som venter med denne brukeren.",
             "socialLink": "Klarte ikke å lage \"%{name}\" sosiale lenke. Hvis dette problemet fortsetter, ta kontakt.",
@@ -141,6 +143,7 @@
         },
         "match": {
             "blocked": "Straffen din tillater ikke at du deltar i matchmaking eller offentlige kamper.",
+            "joinBlocked": "Du kan ikke bli med i denne kampen.",
             "empty": "Kampen er avsluttet. Alle andre spillere har forlatt kampen.",
             "rematchTimeout": "Du godtok ikke omkamp forespørselen og ble sendt tilbake til hovedmenyen.",
             "rematchCancelled": "Beklager! Det er ikke nok spillere igjen for en omkamp.",
@@ -2422,7 +2425,10 @@
         "addFriend": "Legg til venn",
         "removeFriend": "Fjern venn",
         "rescindRequest": "Avbryt forespørsel",
+        "blockedUser": "Blokkert bruker",
         "block": "Blokker",
+        "unblock": "Fjern blokkering",
+        "safety": "Sikkerhet",
         "accept": "Godta",
         "reject": "Avslå",
         "outgoingFriendRequest": "Utsendt venneforespørsel",
@@ -2820,6 +2826,40 @@
         }
     },
     "info": {
+        "blockUser": {
+            "title": "Blokker spiller",
+            "description": "Blokker %{name} fra å dukke opp i fremtidige matcher der det er mulig, og skjul meldingene deres. Du kan endre dette senere.",
+            "reasonTitle": "Årsak",
+            "reason": {
+                "toxic": {
+                    "title": "Giftig oppførsel",
+                    "description": "Fornærmelser, graving, eller gjentatt fiendtlig oppførsel."
+                },
+                "cheating": {
+                    "title": "Juksing",
+                    "description": "Bruke utnyttelser, automatisering eller urettferdige fordeler."
+                },
+                "spamming": {
+                    "title": "Spammin'",
+                    "description": "Gjentatte uønskede invitasjoner, meldinger eller forstyrrende handlinger."
+                },
+                "harassment": {
+                    "title": "Trakassering",
+                    "description": "Målrettet trakassering, trusler eller vedvarende uønsket kontakt."
+                },
+                "other": {
+                    "title": "Annet",
+                    "description": "Er det noe annet som gjør det ubehagelig å spille med denne brukeren?"
+                }
+            }
+        },
+        "blockedUsers": {
+            "title": "Blokkerte brukere",
+            "description": "Se og styr alt du har blokkert.",
+            "empty": "Du har ikke blokkert noen brukere.",
+            "count": "%{count} blokkert"
+        },
+        "youBlockedUser": "Du blokkerte denne brukeren.",
         "roundEndTie": "Det er uavgjort!",
         "roundEndStalemate": "Det er stillstand!",
         "roundWin": "Du vant!",

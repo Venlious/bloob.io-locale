@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Swedish",
         "rtl": false,
-        "total": 2036,
+        "total": 2060,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -37,6 +37,8 @@
             "pendingFriendLimitOther": "Förlåt, den här användaren har redan för många vänförfrågningar som väntar.",
             "userOffline": "Tyvärr, den här användaren är offline.",
             "notFriends": "Ni är inte vänner och har ingen vänförfrågan som väntar.",
+            "notBlocked": "Den här användaren är inte på din blocklista.",
+            "blockedUser": "Du kan inte göra den här grejen eftersom du har blockerat den här användaren.",
             "alreadyFriends": "Ni är redan vänner med den här användaren.",
             "pendingFriends": "Det finns redan en vänförfrågan som väntar med den här användaren.",
             "socialLink": "Misslyckades med att skapa \"%{name}\" social länk. Om det här problemet fortsätter, hör av dig!",
@@ -141,6 +143,7 @@
         },
         "match": {
             "blocked": "Ditt straff tillåter inte att du deltar i matchning eller offentliga matcher.",
+            "joinBlocked": "Du kan inte gå med i den här matchen.",
             "empty": "Matchen är avslutad. Alla andra spelare lämnade matchen.",
             "rematchTimeout": "Du accepterade inte omkampsförfrågan och skickades tillbaka till huvudmenyn.",
             "rematchCancelled": "Tyvärr! Det finns inte tillräckligt med spelare kvar för en omkamp.",
@@ -2422,7 +2425,10 @@
         "addFriend": "Lägg till kompis",
         "removeFriend": "Ta bort kompis",
         "rescindRequest": "Ångra begäran",
+        "blockedUser": "Blockerad användare",
         "block": "Blockera",
+        "unblock": "Avblockera",
+        "safety": "Säkerhet",
         "accept": "Acceptera",
         "reject": "Avvisa",
         "outgoingFriendRequest": "Skicka vänförfrågan",
@@ -2820,6 +2826,40 @@
         }
     },
     "info": {
+        "blockUser": {
+            "title": "Blocka spelare",
+            "description": "Blocka %{name} från att dyka upp i framtida matcher där det går och göm deras meddelanden. Du kan ändra detta senare.",
+            "reasonTitle": "Orsak",
+            "reason": {
+                "toxic": {
+                    "title": "Toxiskt beteende",
+                    "description": "Förolämpningar, griefing eller upprepade fientliga beteenden."
+                },
+                "cheating": {
+                    "title": "Fusk",
+                    "description": "Använder exploits, automation eller orättvisa fördelar."
+                },
+                "spamming": {
+                    "title": "Spammande",
+                    "description": "Upprepade oönskade inbjudningar, meddelanden eller störande grejer."
+                },
+                "harassment": {
+                    "title": "Trakasserier",
+                    "description": "Målinriktad mobbning, hot, eller ständigt oönskad kontakt."
+                },
+                "other": {
+                    "title": "Annat",
+                    "description": "Är det något annat som gör det obekvämt att spela med den här användaren?"
+                }
+            }
+        },
+        "blockedUsers": {
+            "title": "Blockerade användare",
+            "description": "Kolla och hantera alla du har blockerat.",
+            "empty": "Du har inte blockerat några användare.",
+            "count": "%{count} blockerade"
+        },
+        "youBlockedUser": "Du har blockerat den här användaren.",
         "roundEndTie": "Det är oavgjort!",
         "roundEndStalemate": "Det är en dödläge!",
         "roundWin": "Du vann!",

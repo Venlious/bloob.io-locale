@@ -2,7 +2,7 @@
     "_meta": {
         "language": "Casual Gaming Japanese (カジュアルゲーム向け日本語)",
         "rtl": false,
-        "total": 2036,
+        "total": 2060,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -37,6 +37,8 @@
             "pendingFriendLimitOther": "ごめんね、このユーザーはもう友だちリクエストがいっぱいなんだ。",
             "userOffline": "ごめんね、今このユーザーはオフラインだよ。",
             "notFriends": "この人とは友だちじゃないし、友だちリクエストも送られていないよ。",
+            "notBlocked": "このユーザーはブロックリストにいません。",
+            "blockedUser": "このユーザーをブロックしているので、このアクションは実行できません。",
             "alreadyFriends": "この人とはもう友だちだよ。",
             "pendingFriends": "この人にはもう友だちリクエストを送っているよ。",
             "socialLink": "\"%{name}\"との連携ができなかったよ。もしこの問題が続く場合は連絡してね。",
@@ -141,6 +143,7 @@
         },
         "match": {
             "blocked": "ペナルティ制限中だから、対戦相手探しや公開対戦に参加できないよ。",
+            "joinBlocked": "このマッチには参加できません。",
             "empty": "対戦終了。他のプレイヤーは全員退出したよ。",
             "rematchTimeout": "再戦のリクエストを受け入れなかったから、メインメニューに戻されたよ。",
             "rematchCancelled": "ごめんね！再戦に必要な人数がたりないよ。",
@@ -2422,7 +2425,10 @@
         "addFriend": "友だち追加",
         "removeFriend": "友だち削除",
         "rescindRequest": "リクエストを取り消す",
+        "blockedUser": "ブロックされたユーザー",
         "block": "ブロック",
+        "unblock": "アンブロック",
+        "safety": "安全",
         "accept": "受け入れる",
         "reject": "拒否する",
         "outgoingFriendRequest": "送信中の友達リクエスト",
@@ -2820,6 +2826,40 @@
         }
     },
     "info": {
+        "blockUser": {
+            "title": "プレイヤーをブロック",
+            "description": "%{name} を今後のマッチに出てこないようにブロックして、メッセージを隠します。後で変更できますよ。",
+            "reasonTitle": "理由",
+            "reason": {
+                "toxic": {
+                    "title": "有害な行動",
+                    "description": "侮辱、グリーフィング、または繰り返しの敵対的な行動。"
+                },
+                "cheating": {
+                    "title": "チート",
+                    "description": "不正な手段や自動化、ズルを使うこと。"
+                },
+                "spamming": {
+                    "title": "スパム行為",
+                    "description": "繰り返しの迷惑な招待、メッセージ、または邪魔な行動。"
+                },
+                "harassment": {
+                    "title": "ハラスメント",
+                    "description": "ターゲットを絞った嫌がらせ、脅迫、またはしつこい迷惑な連絡。"
+                },
+                "other": {
+                    "title": "その他",
+                    "description": "このユーザーと遊ぶのが不快に感じることは他にありますか？"
+                }
+            }
+        },
+        "blockedUsers": {
+            "title": "ブロックしたユーザー",
+            "description": "ブロックしたユーザーを確認・管理できます。",
+            "empty": "あなたはまだユーザーをブロックしていません。",
+            "count": "%{count} ユーザーがブロックされています。"
+        },
+        "youBlockedUser": "このユーザーをブロックしました。",
         "roundEndTie": "引き分けだね！",
         "roundEndStalemate": "動かないね！",
         "roundWin": "勝ったよ！",

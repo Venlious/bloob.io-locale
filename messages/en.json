@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal American English",
         "rtl": false,
-        "total": 2036,
+        "total": 2060,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -37,6 +37,8 @@
             "pendingFriendLimitOther": "Sorry, this user already has too many pending friendships.",
             "userOffline": "Sorry, this user is offline.",
             "notFriends": "You are not friends and have no pending friend request.",
+            "notBlocked": "This user is not in your block list.",
+            "blockedUser": "You cannot perform this action as you have this user blocked.",
             "alreadyFriends": "You are already friends with this user.",
             "pendingFriends": "There is already a friend request pending with this user.",
             "socialLink": "Failed to make \"%{name}\" social link. If this issue persists, please reach out.",
@@ -141,6 +143,7 @@
         },
         "match": {
             "blocked": "Your punishment does not allow you to join matchmaking or public matches.",
+            "joinBlocked": "You cannot join this match.",
             "empty": "Match closed. All other players left the match.",
             "rematchTimeout": "You didn't accept the rematch request and were sent back to the main menu.",
             "rematchCancelled": "Sorry! There aren't enough players left for a rematch.",
@@ -2422,7 +2425,10 @@
         "addFriend": "Add Friend",
         "removeFriend": "Remove Friend",
         "rescindRequest": "Cancel Request",
+        "blockedUser": "Blocked User",
         "block": "Block",
+        "unblock": "Unblock",
+        "safety": "Safety",
         "accept": "Accept",
         "reject": "Reject",
         "outgoingFriendRequest": "Outgoing Friend Request",
@@ -2820,6 +2826,40 @@
         }
     },
     "info": {
+        "blockUser": {
+            "title": "Block Player",
+            "description": "Block %{name} from appearing in future matches where possible and hide their messages. You can change this later.",
+            "reasonTitle": "Reason",
+            "reason": {
+                "toxic": {
+                    "title": "Toxic behavior",
+                    "description": "Insults, griefing, or repeated hostile behavior."
+                },
+                "cheating": {
+                    "title": "Cheating",
+                    "description": "Using exploits, automation, or unfair advantages."
+                },
+                "spamming": {
+                    "title": "Spamming",
+                    "description": "Repeated unwanted invites, messages, or disruptive actions."
+                },
+                "harassment": {
+                    "title": "Harassment",
+                    "description": "Targeted abuse, intimidation, or persistent unwanted contact."
+                },
+                "other": {
+                    "title": "Other",
+                    "description": "Anything else that makes playing with this user uncomfortable."
+                }
+            }
+        },
+        "blockedUsers": {
+            "title": "Blocked Users",
+            "description": "View and manage everyone you have blocked.",
+            "empty": "You have not blocked any users.",
+            "count": "%{count} blocked"
+        },
+        "youBlockedUser": "You blocked this user.",
         "roundEndTie": "It's a tie!",
         "roundEndStalemate": "It's a stalemate!",
         "roundWin": "You won!",

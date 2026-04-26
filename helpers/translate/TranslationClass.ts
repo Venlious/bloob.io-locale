@@ -336,6 +336,30 @@ export default class TranslationClass {
 			[`info`, `recentlyPlayedWith`],
 			`These are used in the "Recently Played With" feature, which shows players you've recently played games with.`
 		)
+		this.generateTranslationTask(
+			[`info`, `blockUser`],
+			`These are used when a player chooses to block another user.`
+		)
+		const blockReasons = Object.keys(EN_MESSAGES[`info`][`blockUser`][`reason`])
+		for (const reason of blockReasons) {
+			const reasonTarget = EN_MESSAGES[`info`][`blockUser`][`reason`][reason]
+			if (reasonTarget.title) {
+				this.generateTranslationTask(
+					[`info`, `blockUser`, `reason`, reason, `title`],
+					`This translation is a short block reason title.`
+				)
+			}
+			if (reasonTarget.description) {
+				this.generateTranslationTask(
+					[`info`, `blockUser`, `reason`, reason, `description`],
+					`This translation is a block reason description shown in a safety dialog.`
+				)
+			}
+		}
+		this.generateTranslationTask(
+			[`info`, `blockedUsers`],
+			`These are used in the blocked users management dialog.`
+		)
 		this.generateTranslationTask([`info`, `settings`, `redeemCode`])
 		this.generateTranslationTask([`info`, `settings`, `experience`])
 		this.generateTranslationTask([`info`, `settings`, `statistics`])

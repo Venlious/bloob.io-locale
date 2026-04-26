@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 2036,
+        "total": 2060,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -37,6 +37,8 @@
             "pendingFriendLimitOther": "抱歉，这个用户已经有太多待处理的好友请求了。",
             "userOffline": "抱歉，这个用户不在线。",
             "notFriends": "你们不是好友，也没有待处理的好友请求。",
+            "notBlocked": "这个用户不在你的黑名单里。",
+            "blockedUser": "你不能执行这个操作，因为你把这个用户屏蔽了。",
             "alreadyFriends": "你已经和这个用户是好友了。",
             "pendingFriends": "你已经向这个用户发送了好友请求。",
             "socialLink": "无法建立 \"%{name}\" 的社交链接。如果这个问题持续，请联系我。",
@@ -141,6 +143,7 @@
         },
         "match": {
             "blocked": "你已被禁止参加匹配或公开比赛。",
+            "joinBlocked": "你不能加入这个比赛。",
             "empty": "比赛结束了，其他玩家都离开了房间",
             "rematchTimeout": "你没有接受重赛请求，所以返回主菜单了",
             "rematchCancelled": "抱歉！剩下的玩家数量不足，无法进行重赛",
@@ -2422,7 +2425,10 @@
         "addFriend": "加好友",
         "removeFriend": "删好友",
         "rescindRequest": "撤销请求",
+        "blockedUser": "被屏蔽的用户",
         "block": "拉黑",
+        "unblock": "解除屏蔽",
+        "safety": "安全",
         "accept": "接受",
         "reject": "拒绝",
         "outgoingFriendRequest": "发出的好友请求",
@@ -2820,6 +2826,40 @@
         }
     },
     "info": {
+        "blockUser": {
+            "title": "屏蔽玩家",
+            "description": "尽量不让 %{name} 出现在未来的比赛中，并隐藏他们的消息。你可以稍后更改这个设置。",
+            "reasonTitle": "原因",
+            "reason": {
+                "toxic": {
+                    "title": "有毒行为",
+                    "description": "侮辱、恶意捣乱或反复的敌对行为。"
+                },
+                "cheating": {
+                    "title": "作弊",
+                    "description": "使用漏洞、自动化或不公平的优势。"
+                },
+                "spamming": {
+                    "title": "刷屏",
+                    "description": "重复的骚扰邀请、消息或干扰行为。"
+                },
+                "harassment": {
+                    "title": "骚扰",
+                    "description": "针对性的骚扰、恐吓或持续的 unwanted 联系。"
+                },
+                "other": {
+                    "title": "其他",
+                    "description": "还有什么让你和这个用户玩得不舒服的事吗？"
+                }
+            }
+        },
+        "blockedUsers": {
+            "title": "被屏蔽的用户",
+            "description": "查看和管理你屏蔽的所有人。",
+            "empty": "你还没有屏蔽任何用户。",
+            "count": "%{count} 个已屏蔽"
+        },
+        "youBlockedUser": "你屏蔽了这个用户。",
         "roundEndTie": "平局啦！",
         "roundEndStalemate": "僵局了！",
         "roundWin": "你赢了！",

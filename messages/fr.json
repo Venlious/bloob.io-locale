@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal French",
         "rtl": false,
-        "total": 2036,
+        "total": 2060,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -37,6 +37,8 @@
             "pendingFriendLimitOther": "Désolé, cet utilisateur a déjà trop de demandes d'amis en attente.",
             "userOffline": "Désolé, ce gars est déconnecté.",
             "notFriends": "Vous n'êtes pas amis et y'a pas de demande d'ami en attente.",
+            "notBlocked": "Cet utilisateur n'est pas dans ta liste de blocage.",
+            "blockedUser": "Tu peux pas faire ça parce que t'as bloqué cet utilisateur.",
             "alreadyFriends": "T'es déjà amis avec ce gars.",
             "pendingFriends": "Y'a déjà une demande d'ami en attente avec ce gars.",
             "socialLink": "Échec de la création du lien social \"%{name}\". Si ça continue, fais-nous signe.",
@@ -141,6 +143,7 @@
         },
         "match": {
             "blocked": "Ta punition t'empêche de rejoindre le matchmaking ou les matchs publics.",
+            "joinBlocked": "Tu peux pas rejoindre ce match.",
             "empty": "La salle est fermée. Tous les autres joueurs ont quitté la partie.",
             "rematchTimeout": "Tu n'as pas accepté la demande de revanche et tu as été redirigé vers le menu principal.",
             "rematchCancelled": "Désolé! Il n'y a pas assez de joueurs restants pour une revanche.",
@@ -2422,7 +2425,10 @@
         "addFriend": "Ajouter un ami",
         "removeFriend": "Retirer un ami",
         "rescindRequest": "Annuler la demande",
+        "blockedUser": "Utilisateur bloqué",
         "block": "Bloquer",
+        "unblock": "Débloquer",
+        "safety": "Sécurité",
         "accept": "Accepter",
         "reject": "Rejeter",
         "outgoingFriendRequest": "Demande d'ami envoyée",
@@ -2820,6 +2826,40 @@
         }
     },
     "info": {
+        "blockUser": {
+            "title": "Bloquer le joueur",
+            "description": "Bloquer %{name} pour qu'il n'apparaisse pas dans les futurs matchs si possible et cacher ses messages. Tu peux changer ça plus tard.",
+            "reasonTitle": "Raison",
+            "reason": {
+                "toxic": {
+                    "title": "Comportement toxique",
+                    "description": "Insultes, trolling, ou comportement hostile répété."
+                },
+                "cheating": {
+                    "title": "Tricherie",
+                    "description": "Utiliser des exploits, de l'automatisation ou des avantages déloyaux."
+                },
+                "spamming": {
+                    "title": "Spam",
+                    "description": "Invitations, messages ou actions dérangeantes répétées et non désirées."
+                },
+                "harassment": {
+                    "title": "Harcèlement",
+                    "description": "Abus ciblé, intimidation ou contact non désiré persistant."
+                },
+                "other": {
+                    "title": "Autre",
+                    "description": "Y a-t-il autre chose qui rend le jeu avec cet utilisateur inconfortable ?"
+                }
+            }
+        },
+        "blockedUsers": {
+            "title": "Utilisateurs bloqués",
+            "description": "Regarde et gère tous ceux que t'as bloqués.",
+            "empty": "T'as bloqué aucun utilisateur.",
+            "count": "%{count} bloqués"
+        },
+        "youBlockedUser": "Tu as bloqué cet utilisateur.",
         "roundEndTie": "C'est un match nul!",
         "roundEndStalemate": "C'est une impasse!",
         "roundWin": "T'as gagné!",
