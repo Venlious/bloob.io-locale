@@ -581,43 +581,55 @@ export default class TranslationClass {
 			}
 
 			// Game preset
-			const presets = Object.keys(target.presets)
-			for (const title of presets) {
-				this.generateTranslationTask([`game`, value, `presets`, title])
-				const description = target.presets[title].description
-				if (Array.isArray(description)) {
-					this.generateTranslationTask([`game`, value, `presets`, title, `description`])
+			if (target.presets) {
+				const presets = Object.keys(target.presets)
+				for (const title of presets) {
+					this.generateTranslationTask([`game`, value, `presets`, title])
+					const description = target.presets[title].description
+					if (Array.isArray(description)) {
+						this.generateTranslationTask([
+							`game`,
+							value,
+							`presets`,
+							title,
+							`description`
+						])
+					}
 				}
 			}
 
 			// Game help
-			const help = Object.keys(target.help)
-			for (const title of help) {
-				if (target.help[title].title) {
-					this.generateTranslationTask(
-						[`game`, value, `help`, title, `title`],
-						`These translations must be a short game help tutorial title.`
-					)
-				}
-				if (target.help[title].description) {
-					this.generateTranslationTask([`game`, value, `help`, title, `description`])
+			if (target.help) {
+				const help = Object.keys(target.help)
+				for (const title of help) {
+					if (target.help[title].title) {
+						this.generateTranslationTask(
+							[`game`, value, `help`, title, `title`],
+							`These translations must be a short game help tutorial title.`
+						)
+					}
+					if (target.help[title].description) {
+						this.generateTranslationTask([`game`, value, `help`, title, `description`])
+					}
 				}
 			}
 
 			// Game options
-			const options = Object.keys(target.options)
-			for (const title of options) {
-				if (target.options[title].title) {
-					this.generateTranslationTask(
-						[`game`, value, `options`, title, `title`],
-						`These translations must be a short game settings option title.`
-					)
-				}
-				if (target.options[title].help) {
-					this.generateTranslationTask([`game`, value, `options`, title, `help`])
-				}
-				if (target.options[title].data) {
-					this.generateTranslationTask([`game`, value, `options`, title, `data`])
+			if (target.options) {
+				const options = Object.keys(target.options)
+				for (const title of options) {
+					if (target.options[title].title) {
+						this.generateTranslationTask(
+							[`game`, value, `options`, title, `title`],
+							`These translations must be a short game settings option title.`
+						)
+					}
+					if (target.options[title].help) {
+						this.generateTranslationTask([`game`, value, `options`, title, `help`])
+					}
+					if (target.options[title].data) {
+						this.generateTranslationTask([`game`, value, `options`, title, `data`])
+					}
 				}
 			}
 		}
