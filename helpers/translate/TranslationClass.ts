@@ -332,6 +332,7 @@ export default class TranslationClass {
 		)
 		this.generateTranslationTask([`info`, `about`])
 		this.generateTranslationTask([`info`, `awaitingPurchaseConfirmation`])
+		this.generateTranslationTask([`info`, `readyUpWarning`])
 		this.generateTranslationTask(
 			[`info`, `recentlyPlayedWith`],
 			`These are used in the "Recently Played With" feature, which shows players you've recently played games with.`
