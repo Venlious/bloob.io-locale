@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal American English",
         "rtl": false,
-        "total": 2104,
+        "total": 2108,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1111,6 +1111,10 @@
                     "title": "Speed",
                     "help": "How fast the dice roll animation is played."
                 },
+                "carryoverRolls": {
+                    "title": "Carryover Rolls",
+                    "help": "Unused rolls are banked and added to the player's next turn."
+                },
                 "addedRollTime": {
                     "title": "Added Time",
                     "help": "How much time is added after each roll. Will never exceed the turn time."
@@ -1141,6 +1145,12 @@
                 }
             },
             "presets": {
+                "carryoverRolls": {
+                    "title": "Carryover Rolls",
+                    "description": [
+                        "Unused rolls carry over into future turns"
+                    ]
+                },
                 "joker": {
                     "title": "Joker",
                     "description": [
@@ -2209,7 +2219,6 @@
         "exploreAllGames": "Explore all games",
         "playingAgainstBots": "Playing Against Bots",
         "playingAgainstPlayers": "Playing Against Players",
-        "matchesWaiting": "<b>0</b> matches waiting | <b>1</b> match waiting | <b>{count}</b> matches waiting",
         "playingGame": "<b>{count}</b> playing this game",
         "online": "<b>{count}</b> online",
         "connection": "Connection",
@@ -2381,6 +2390,7 @@
         "levelShort": "LVL {count}",
         "experienceShort": "{count} XP",
         "winStreak": "{count}-win streak!",
+        "rolls": "{count} rolls | {count} roll | {count} rolls",
         "balls": "0 balls | 1 ball | {count} balls",
         "kills": "0 kills | 1 kill | {count} kills",
         "deaths": "0 deaths | 1 death | {count} deaths",

@@ -250,6 +250,10 @@ export default class TranslationClass {
 			`The context of these are vue-i18n compliant pluralization entries.`
 		)
 		this.generateTranslationTask(
+			[`count`, `rolls`],
+			`The context of these are vue-i18n compliant pluralization entries. In this case rolls refers to the number of rolls, throwing dice, a player has in a game turn.`
+		)
+		this.generateTranslationTask(
 			[`count`],
 			`The context of these are vue-i18n compliant pluralization entries (KEEP THEM SHORT)`
 		)
