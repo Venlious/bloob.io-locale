@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal French",
         "rtl": false,
-        "total": 2104,
+        "total": 2108,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -1111,6 +1111,10 @@
                     "title": "Vitesse",
                     "help": "La vitesse à laquelle l'animation du lancer de dés est jouée."
                 },
+                "carryoverRolls": {
+                    "title": "Lancers reportés",
+                    "help": "Les lancers non utilisés sont conservés et ajoutés au prochain tour du joueur."
+                },
                 "addedRollTime": {
                     "title": "Temps Ajouté",
                     "help": "Combien de temps est ajouté après chaque lancer. Ça ne dépassera jamais le temps du tour."
@@ -1141,6 +1145,12 @@
                 }
             },
             "presets": {
+                "carryoverRolls": {
+                    "title": "Lancers reportés",
+                    "description": [
+                        "Les lancers non utilisés sont reportés aux tours suivants"
+                    ]
+                },
                 "joker": {
                     "title": "Joker",
                     "description": [
@@ -2209,7 +2219,6 @@
         "exploreAllGames": "Explore tous les jeux",
         "playingAgainstBots": "Jouer contre des robots",
         "playingAgainstPlayers": "Jouer contre des joueurs",
-        "matchesWaiting": "<b>0</b> matchs en attente | <b>1</b> match en attente | <b>{count}</b> matchs en attente",
         "playingGame": "<b>{count}</b> jouant à ce jeu",
         "online": "<b>{count}</b> en ligne",
         "connection": "Connexion",
@@ -2381,6 +2390,7 @@
         "levelShort": "NIV {count}",
         "experienceShort": "{count} XP",
         "winStreak": "{count} victoires d'affilée!",
+        "rolls": "{count} dés | {count} dé | {count} dés",
         "balls": "0 balles | 1 balle | {count} balles",
         "kills": "0 tués | 1 tué | {count} tués",
         "deaths": "0 morts | 1 mort | {count} morts",
