@@ -507,6 +507,10 @@ export default class TranslationClass {
 			[`match`, `opponentFilter`],
 			`These are filters that can be applied when matchmaking.`
 		)
+		this.generateTranslationTask(
+			[`match`, `publicMatchesFilter`],
+			`These are filters that can be applied when matchmaking. Specifically referring to 'Public Matches', which are matches that can be made by a user and customized.`
+		)
 		this.generateTranslationTask([`match`, `matchmaking`], `These are game matchmaking states.`)
 		this.generateTranslationTask(
 			[`match`, `matchmaking`, `settings`, `publicMatches`],
