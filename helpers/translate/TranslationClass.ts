@@ -334,6 +334,10 @@ export default class TranslationClass {
 			[`info`, `battleship`],
 			`These are used in a web based Battleships game.`
 		)
+		this.generateTranslationTask(
+			[`info`, `statLimit`],
+			`These are tooltips shown to the user when some statistics are not tracked.`
+		)
 		this.generateTranslationTask([`info`, `about`])
 		this.generateTranslationTask([`info`, `awaitingPurchaseConfirmation`])
 		this.generateTranslationTask([`info`, `readyUpWarning`])
