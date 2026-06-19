@@ -2054,6 +2054,104 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": "Tuned In",
+            "title": null,
+            "description": null,
+            "tooltip": "Give a clue. Dial it in.",
+            "options": {
+                "consensus": {
+                    "title": "Consensus Mode",
+                    "help": "When enabled, all players' guesses are averaged together to produce a shared answer. When disabled, only the last confirmed dial position counts."
+                },
+                "pickingTime": {
+                    "title": "Clue Writing Time"
+                },
+                "winCondition": {
+                    "data": {
+                        "FIRST": "First to <b>0</b> points | First to <b>1</b> point | First to <b>{count}</b> points",
+                        "HIGHEST_AFTER": "Most points after <b>0</b> scales | Most points after <b>1</b> scale | Most points after <b>{count}</b> scales"
+                    }
+                },
+                "promptSelection": {
+                    "title": "Prompt Selection",
+                    "help": "When enabled, players choose from 3 different spectrums each round instead of being assigned one."
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Versus",
+                    "description": [
+                        "Everyone against each other",
+                        "First to 20 points wins",
+                        "Points based on how close your guess is"
+                    ]
+                },
+                "coopConsensus": {
+                    "title": "Co-op (Consensus)",
+                    "description": [
+                        "Work together as one team",
+                        "Everyone's guesses are averaged for a single answer",
+                        "Score is shared equally"
+                    ]
+                }
+            },
+            "header": {
+                "picking": "Round {count} — Write your clue",
+                "guessing": "Dial it in!",
+                "reveal": "Reveal"
+            },
+            "phase": {
+                "picking": {
+                    "title": "Write a clue for your position",
+                    "description": "Others will try to guess where on the scale your clue falls. Stay vague but accurate!",
+                    "selectScale": "Choose your spectrum",
+                    "placeholder": "Enter your clue…",
+                    "submit": "Submit clue",
+                    "submitted": "Clue submitted!"
+                },
+                "guessing": {
+                    "prompt": "Where on the scale does this clue fall?",
+                    "submit": "Lock in",
+                    "submitted": "Locked in!",
+                    "stayQuiet": "Shh! This is your clue.",
+                    "stayQuietHint": "Don't give any extra hints while others are guessing."
+                },
+                "reveal": {
+                    "title": "Reveal",
+                    "pointsEarned": "No points | +1 point | +{count} points"
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "How to Play",
+                    "description": [
+                        "Each round, every player is shown a spectrum scale (e.g. Hot ← → Cold) and a secret target position on it.",
+                        "Write a clue that hints at your position without using the scale labels directly.",
+                        "Then everyone's clues are presented one by one — guess where each clue falls on the scale!",
+                        "Closer guesses earn more points. The prompt author earns a bonus if at least one player guesses well."
+                    ]
+                },
+                "scoring": {
+                    "title": "Scoring",
+                    "description": [
+                        "Dead-on (within 2.5%): 60 points",
+                        "Close (within 7.5%): 25 points",
+                        "Near (within 12.5%): 10 points",
+                        "Outside the range: 0 points",
+                        "The clue writer earns 10 bonus points if any guesser scores 25 or more."
+                    ]
+                },
+                "modes": {
+                    "title": "Game Modes",
+                    "description": [
+                        "Solo: Everyone competes individually for points.",
+                        "Co-op: All players work together toward a shared score. Enable Consensus to average everyone's guesses.",
+                        "Team: Players pick their team by selecting a color in the lobby. Each team scores independently."
+                    ]
+                }
+            }
         }
     },
     "chat": {
