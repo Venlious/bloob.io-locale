@@ -2,8 +2,8 @@
     "_meta": {
         "language": "Korean (Haeyo-che, ~해요체 style)",
         "rtl": false,
-        "total": 2127,
-        "missing": 0
+        "total": 2163,
+        "missing": 48
     },
     "name": "Bloob.io",
     "error": {
@@ -239,7 +239,12 @@
                 },
                 "winCondition": {
                     "title": "승리 조건",
-                    "help": "게임이 언제 끝날지 결정해요."
+                    "help": "게임이 언제 끝날지 결정해요.",
+                    "data": {
+                        "firstToPoints": "가장 먼저 <b>0</b>점에 도달할 때까지 | 가장 먼저 <b>1</b>점에 도달할 때까지 | 가장 먼저 <b>{count}</b>점에 도달할 때까지",
+                        "mostPoints": "<b>0</b>라운드 후 최다 득점 시 | <b>1</b>라운드 후 최다 득점 시 | <b>{count}</b>라운드 후 최다 득점 시",
+                        "lastStanding": "최후의 생존자 (목숨 <b>0</b>개) | 최후의 생존자 (목숨 <b>1</b>개) | 최후의 생존자 (목숨 <b>{count}</b>개)"
+                    }
                 },
                 "winAmount": {
                     "title": "승리 목표치"
@@ -579,12 +584,6 @@
             "title": "로튼 애플 플레이 | 무료 온라인 카드 어게인스트 휴머니티 게임",
             "description": "무료 온라인 카드 게임, 로튼 애플을 즐겨보세요! 별도의 가입 없이 3~16명의 친구나 랜덤 유저들과 함께 흥미진진한 멀티플레이를 즐길 수 있어요.",
             "options": {
-                "winCondition": {
-                    "data": {
-                        "first": "<b>0</b>점을 먼저 획득할 때까지 | <b>1</b>점을 먼저 획득할 때까지 | <b>{count}</b>점을 먼저 획득할 때까지",
-                        "most": "<b>0</b>라운드 후 최다 득점 시 | <b>1</b>라운드 후 최다 득점 시 | <b>{count}</b>라운드 후 최다 득점 시"
-                    }
-                },
                 "judgeSystem": {
                     "title": "심판 시스템",
                     "help": "매 라운드마다 심판 한 명이 결정할지, 아니면 모두가 투표하여 최고의 플레이를 뽑을지 선택해요.",
@@ -605,7 +604,6 @@
                     "title": "패 버리기 라운드",
                     "help": "패 버리기 라운드에서는 손에 든 카드 중 버리고 싶은 카드를 선택할 수 있어요. 라운드가 끝나면 새 응답 카드로 교체돼요.",
                     "data": {
-                        "disabled": "비활성화",
                         "round": "<b>0</b>라운드마다 | <b>1</b>라운드마다 | <b>{count}</b>라운드마다"
                     }
                 },
@@ -751,8 +749,7 @@
                     "data": {
                         "OPPOSITE_SIDE": "반대편 도달",
                         "TAKE": "상대방의 말을 잡았을 때",
-                        "ALL": "모든 말이 왕으로 시작",
-                        "NONE": "비활성화"
+                        "ALL": "모든 말이 왕으로 시작"
                     }
                 },
                 "backwardsTake": {
@@ -841,7 +838,6 @@
                 },
                 "winCondition": {
                     "data": {
-                        "LAST_STANDING": "최후의 생존자 (목숨 <b>0</b>개) | 최후의 생존자 (목숨 <b>1</b>개) | 최후의 생존자 (목숨 <b>{count}</b>개)",
                         "KILL_COUNT": "가장 먼저 <b>0</b>킬 달성 | 가장 먼저 <b>1</b>킬 달성 | 가장 먼저 <b>{count}</b>킬 달성",
                         "TIME": "<b>0</b>분 후 최다 킬 | <b>1</b>분 후 최다 킬 | <b>{count}</b>분 후 최다 킬"
                     }
@@ -1242,7 +1238,6 @@
                     "title": "그리드 크기",
                     "help": "게임을 플레이할 그리드 크기를 선택해요.",
                     "data": {
-                        "random": "랜덤",
                         "7x7": "7x7",
                         "11x11": "11x11",
                         "15x15": "15x15"
@@ -1252,7 +1247,6 @@
                     "title": "맵",
                     "help": "플레이하고 싶은 맵을 선택해요.",
                     "data": {
-                        "random": "랜덤",
                         "peninsula": "반도",
                         "archipelago": "군도",
                         "canal": "운하",
@@ -1270,7 +1264,6 @@
                     "title": "방향",
                     "help": "레벨이 표시될 방향을 선택해요.",
                     "data": {
-                        "random": "랜덤",
                         "NORTH": "북쪽",
                         "EAST": "동쪽",
                         "SOUTH": "남쪽",
@@ -1376,7 +1369,6 @@
                 },
                 "winCondition": {
                     "data": {
-                        "FIRST": "가장 먼저 <b>0</b>점에 도달할 때까지 | 가장 먼저 <b>1</b>점에 도달할 때까지 | 가장 먼저 <b>{count}</b>점에 도달할 때까지",
                         "HIGHEST_AFTER": "<b>0</b>점에 도달한 후 최다 득점 | <b>1</b>점에 도달한 후 최다 득점 | <b>{count}</b>점에 도달한 후 최다 득점"
                     }
                 }
@@ -1600,13 +1592,6 @@
                         "rock": "바위는 가위를 이겨요",
                         "paper": "보는 바위를 이겨요",
                         "scissors": "가위는 보를 이겨요"
-                    }
-                },
-                "winCondition": {
-                    "data": {
-                        "LAST_STANDING": "최후의 생존자 (목숨 <b>0</b>개) | 최후의 생존자 (목숨 <b>1</b>개) | 최후의 생존자 (목숨 <b>{count}</b>개)",
-                        "FIRST": "<b>0</b>점을 먼저 획득할 때까지 | <b>1</b>점을 먼저 획득할 때까지 | <b>{count}</b>점을 먼저 획득할 때까지",
-                        "HIGHEST_AFTER": "<b>0</b>라운드 후 최다 득점 시 | <b>1</b>라운드 후 최다 득점 시 | <b>{count}</b>라운드 후 최다 득점 시"
                     }
                 }
             },
@@ -1886,12 +1871,6 @@
                         "ELEVEN": "항상 11"
                     }
                 },
-                "winCondition": {
-                    "data": {
-                        "FIRST": "가장 먼저 <b>0</b>점에 도달할 때까지 | 가장 먼저 <b>1</b>점에 도달할 때까지 | 가장 먼저 <b>{count}</b>점에 도달할 때까지",
-                        "HIGHEST_AFTER": "<b>0</b>라운드 후 최다 득점 시 | <b>1</b>라운드 후 최다 득점 시 | <b>{count}</b>라운드 후 최다 득점 시"
-                    }
-                },
                 "splitSameFaceOnly": {
                     "title": "같은 카드일 때만 스플릿",
                     "help": "활성화하면 시작 카드 2장이 같은 카드일 때만 스플릿할 수 있습니다(예: K+K 또는 8+8). 숫자 값만 같아서는 안 됩니다."
@@ -1994,8 +1973,7 @@
                     "title": "브레이크 배치",
                     "help": "브레이크 시작 배치를 고정으로 할지 무작위로 할지 선택하세요.",
                     "data": {
-                        "fixed": "고정 (공식)",
-                        "random": "무작위"
+                        "fixed": "고정 (공식)"
                     }
                 },
                 "breakFillers": {
@@ -2007,8 +1985,7 @@
                     "help": "어떤 반칙에서 상대 공을 테이블로 되돌릴지 선택하세요.",
                     "data": {
                         "anyFoul": "적용 가능한 모든 반칙",
-                        "ballInHand": "볼 인 핸드 반칙만",
-                        "off": "비활성화"
+                        "ballInHand": "볼 인 핸드 반칙만"
                     }
                 }
             },
@@ -2054,6 +2031,86 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": null,
+            "title": {},
+            "description": {},
+            "tooltip": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "pickingTime": {
+                    "title": null
+                },
+                "promptSelection": {
+                    "title": null,
+                    "help": null
+                },
+                "visibility": {
+                    "title": null,
+                    "help": null,
+                    "data": {
+                        "ALL": null,
+                        "TEAM": null,
+                        "PRIVATE": null
+                    },
+                    "description": {
+                        "ALL": null,
+                        "TEAM": null,
+                        "PRIVATE": null
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coopConsensus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "scoring": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "modes": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2160,6 +2217,9 @@
             "makeYourMove": "수를 두세요",
             "waitingForOthers": "다른 플레이어들을 기다리는 중이에요",
             "wager": "베팅 중",
+            "yourClue": null,
+            "nameClue": null,
+            "writeYourClue": null,
             "tieEndedRound": "무승부로 라운드가 종료되었어요",
             "youEndedRound": "라운드를 종료했어요",
             "nameEndedRound": "%{name}님이 라운드를 종료했어요",
@@ -2192,6 +2252,7 @@
         }
     },
     "placeholder": {
+        "clue": null,
         "cardSetId": "카드 세트 ID를 입력하세요...",
         "cardContent": "카드 내용을 입력하세요...",
         "cardSetName": "카드 세트 이름을 입력하세요...",
@@ -2432,6 +2493,7 @@
         "restartNotice": "{count}분 후에 서버가 재시작됩니다. 게임을 마무리해 주세요. | {count}분 후에 서버가 재시작됩니다. 게임을 마무리해 주세요. | {count}분 후에 서버가 재시작됩니다. 게임을 마무리해 주세요."
     },
     "misc": {
+        "refresh": null,
         "automatic": "자동",
         "title": "제목",
         "current": "현재",
@@ -2743,7 +2805,8 @@
         "noChangesDetected": "변경 사항 없음",
         "newChanges": "새로운 변경 사항",
         "saveChanges": "변경 사항 저장",
-        "previousChanges": "이전 변경 사항 보기"
+        "previousChanges": "이전 변경 사항 보기",
+        "random": "랜덤"
     },
     "card": {
         "empty": "카드 없음",
@@ -2927,6 +2990,10 @@
             "empty": "차단한 사용자가 없어요.",
             "count": "%{count}명이 차단되었어요."
         },
+        "cluePicking": {
+            "title": null,
+            "description": null
+        },
         "youBlockedUser": "이 사용자를 차단했어요.",
         "playerProfile": {
             "unavailable": "지금은 이 프로필을 불러올 수 없어요.",
@@ -2983,6 +3050,9 @@
         "votePick": "%{option}에 투표해요",
         "votePickChange": "투표 대상을 %{option}(으)로 바꿔요",
         "votePickSelected": "%{option}에 투표했어요",
+        "clueSelf": null,
+        "clueOther": null,
+        "stayQuietHint": null,
         "tiedVoteSelf": "투표 결과가 동점이에요! 무작위로 선택 중...",
         "tiedVoteOther": "잠시만요, 상대 팀의 투표 결과가 동점이에요.",
         "waitForOpponent": "상대방을 기다리는 중이에요...",

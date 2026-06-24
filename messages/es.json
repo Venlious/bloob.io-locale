@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Mexican Spanish",
         "rtl": false,
-        "total": 2127,
-        "missing": 0
+        "total": 2163,
+        "missing": 48
     },
     "name": "Bloob.io",
     "error": {
@@ -239,7 +239,12 @@
                 },
                 "winCondition": {
                     "title": "Condición para ganar",
-                    "help": "Determina cuándo debe concluir el juego"
+                    "help": "Determina cuándo debe concluir el juego",
+                    "data": {
+                        "firstToPoints": "El primero en llegar a <b>0</b> puntos | El primero en llegar a <b>1</b> punto | El primero en llegar a <b>{count}</b> puntos",
+                        "mostPoints": "El que tenga más puntos después de <b>0</b> rondas | El que tenga más puntos después de <b>1</b> ronda | El que tenga más puntos después de <b>{count}</b> rondas",
+                        "lastStanding": "El último en quedar vivo (<b>0</b> vidas) | El último en quedar vivo (<b>1</b> vidas) | El último en quedar vivo (<b>{count}</b> vidas)"
+                    }
                 },
                 "winAmount": {
                     "title": "Cantidad para ganar"
@@ -579,12 +584,6 @@
             "title": "Juega a Manzanas Podridas | Juego gratis de Cartas contra la humanidad en línea",
             "description": "Diviértete con Manzanas Podridas, el juego en línea gratuito de Cartas contra la humanidad. No necesitas cuenta, juega con entre 3 y 16 amigos o desconocidos en emocionantes partidas multijugador.",
             "options": {
-                "winCondition": {
-                    "data": {
-                        "first": "El primero en conseguir <b>0</b> puntos | El primero en conseguir <b>1</b> punto | El primero en conseguir <b>{count}</b> puntos",
-                        "most": "El mayor número de puntos después de <b>0</b> rondas | El mayor número de puntos después de <b>1</b> ronda | El mayor número de puntos después de <b>{count}</b> rondas"
-                    }
-                },
                 "judgeSystem": {
                     "title": "Sistema de jueces",
                     "help": "Un juez o todos determinan quién hizo la mejor jugada en cada ronda.",
@@ -605,7 +604,6 @@
                     "title": "Ronda de descarte",
                     "help": "Una ronda de descarte permite a cada jugador seleccionar las cartas de su mano que le gustaría eliminar. Se dan nuevas cartas de respuesta como reemplazo después de que termina la ronda.",
                     "data": {
-                        "disabled": "Desactivado",
                         "round": "Cada <b>0</b> rondas | Cada <b>1</b> ronda | Cada <b>{count}</b> rondas"
                     }
                 },
@@ -751,8 +749,7 @@
                     "data": {
                         "OPPOSITE_SIDE": "Llegar al lado opuesto",
                         "TAKE": "Tomar una pieza",
-                        "ALL": "Empezar con solo Damas",
-                        "NONE": "Desactivado"
+                        "ALL": "Empezar con solo Damas"
                     }
                 },
                 "backwardsTake": {
@@ -841,7 +838,6 @@
                 },
                 "winCondition": {
                     "data": {
-                        "LAST_STANDING": "El último en quedar vivo (<b>0</b> vidas) | El último en quedar vivo (<b>1</b> vidas) | El último en quedar vivo (<b>{count}</b> vidas)",
                         "KILL_COUNT": "El primero en conseguir <b>0</b> eliminaciones | El primero en conseguir <b>1</b> eliminaciones | El primero en conseguir <b>{count}</b> eliminaciones",
                         "TIME": "El mayor número de eliminaciones tras <b>0</b> min. | El mayor número de eliminaciones tras <b>1</b> min. | El mayor número de eliminaciones tras <b>{count}</b> min."
                     }
@@ -1242,7 +1238,6 @@
                     "title": "Tamaño de la cuadrícula",
                     "help": "Selecciona el tamaño del nivel en el que quieres jugar.",
                     "data": {
-                        "random": "Aleatorio",
                         "7x7": "7x7",
                         "11x11": "11x11",
                         "15x15": "15x15"
@@ -1252,7 +1247,6 @@
                     "title": "Mapa",
                     "help": "Selecciona el mapa en el que te gustaría jugar.",
                     "data": {
-                        "random": "Aleatorio",
                         "peninsula": "Península",
                         "archipelago": "Archipiélago",
                         "canal": "Canal",
@@ -1270,7 +1264,6 @@
                     "title": "Orientación",
                     "help": "Selecciona la orientación en la que se mostrará el nivel.",
                     "data": {
-                        "random": "Aleatorio",
                         "NORTH": "Norte",
                         "EAST": "Este",
                         "SOUTH": "Sur",
@@ -1376,7 +1369,6 @@
                 },
                 "winCondition": {
                     "data": {
-                        "FIRST": "El primero en llegar a <b>0</b> puntos | El primero en llegar a <b>1</b> punto | El primero en llegar a <b>{count}</b> puntos",
                         "HIGHEST_AFTER": "Más puntos después de llegar a <b>0</b> puntos | Más puntos después de llegar a <b>1</b> punto | Más puntos después de llegar a <b>{count}</b> puntos"
                     }
                 }
@@ -1600,13 +1592,6 @@
                         "rock": "Piedra le gana a tijera",
                         "paper": "Papel le gana a piedra",
                         "scissors": "Tijera le gana a papel"
-                    }
-                },
-                "winCondition": {
-                    "data": {
-                        "LAST_STANDING": "Último en pie (<b>0</b> vidas) | Último en pie (<b>1</b> vida) | Último en pie (<b>{count}</b> vidas)",
-                        "FIRST": "El primero en conseguir <b>0</b> puntos | El primero en conseguir <b>1</b> punto | El primero en conseguir <b>{count}</b> puntos",
-                        "HIGHEST_AFTER": "Más puntos después de <b>0</b> rondas | Más puntos después de <b>1</b> ronda | Más puntos después de <b>{count}</b> rondas"
                     }
                 }
             },
@@ -1886,12 +1871,6 @@
                         "ELEVEN": "Siempre 11"
                     }
                 },
-                "winCondition": {
-                    "data": {
-                        "FIRST": "El primero en llegar a <b>0</b> puntos | El primero en llegar a <b>1</b> punto | El primero en llegar a <b>{count}</b> puntos",
-                        "HIGHEST_AFTER": "El que tenga más puntos después de <b>0</b> rondas | El que tenga más puntos después de <b>1</b> ronda | El que tenga más puntos después de <b>{count}</b> rondas"
-                    }
-                },
                 "splitSameFaceOnly": {
                     "title": "Dividir solo con la misma carta",
                     "help": "Cuando está activado, solo puedes dividir si ambas cartas iniciales son la misma carta (por ejemplo K+K u 8+8), no solo el mismo valor numérico."
@@ -1994,8 +1973,7 @@
                     "title": "Formación de salida",
                     "help": "Elige si la formación inicial del break es fija o aleatoria.",
                     "data": {
-                        "fixed": "Fija (oficial)",
-                        "random": "Aleatoria"
+                        "fixed": "Fija (oficial)"
                     }
                 },
                 "breakFillers": {
@@ -2007,8 +1985,7 @@
                     "help": "Elige qué faltas pueden devolver una bola del rival a la mesa.",
                     "data": {
                         "anyFoul": "Cualquier falta válida",
-                        "ballInHand": "Solo faltas de bola en mano",
-                        "off": "Desactivado"
+                        "ballInHand": "Solo faltas de bola en mano"
                     }
                 }
             },
@@ -2054,6 +2031,86 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": null,
+            "title": {},
+            "description": {},
+            "tooltip": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "pickingTime": {
+                    "title": null
+                },
+                "promptSelection": {
+                    "title": null,
+                    "help": null
+                },
+                "visibility": {
+                    "title": null,
+                    "help": null,
+                    "data": {
+                        "ALL": null,
+                        "TEAM": null,
+                        "PRIVATE": null
+                    },
+                    "description": {
+                        "ALL": null,
+                        "TEAM": null,
+                        "PRIVATE": null
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coopConsensus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "scoring": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "modes": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2160,6 +2217,9 @@
             "makeYourMove": "Haz tu jugada",
             "waitingForOthers": "Esperando a los demás",
             "wager": "Apuesta",
+            "yourClue": null,
+            "nameClue": null,
+            "writeYourClue": null,
             "tieEndedRound": "La ronda terminó en empate",
             "youEndedRound": "Has terminado la ronda",
             "nameEndedRound": "%{name} ha terminado la ronda",
@@ -2192,6 +2252,7 @@
         }
     },
     "placeholder": {
+        "clue": null,
         "cardSetId": "Escribe el ID del conjunto de cartas...",
         "cardContent": "Escribe el contenido de la carta...",
         "cardSetName": "Escribe el nombre de este conjunto de cartas...",
@@ -2432,6 +2493,7 @@
         "restartNotice": "El servidor se reiniciará en {count} minutos. Termina tu juego. | El servidor se reiniciará en {count} minuto. Termina tu juego. | El servidor se reiniciará en {count} minutos. Termina tu juego."
     },
     "misc": {
+        "refresh": null,
         "automatic": "Auto",
         "title": "Título",
         "current": "Actual",
@@ -2743,7 +2805,8 @@
         "noChangesDetected": "No se detectaron cambios",
         "newChanges": "Nuevos cambios",
         "saveChanges": "Guardar cambios",
-        "previousChanges": "Ver los cambios anteriores"
+        "previousChanges": "Ver los cambios anteriores",
+        "random": "Aleatorio"
     },
     "card": {
         "empty": "Sin cartas",
@@ -2927,6 +2990,10 @@
             "empty": "No has bloqueado a ningún usuario.",
             "count": "%{count} bloqueados"
         },
+        "cluePicking": {
+            "title": null,
+            "description": null
+        },
         "youBlockedUser": "Has bloqueado a este usuario.",
         "playerProfile": {
             "unavailable": "No se pudo cargar este perfil en este momento.",
@@ -2983,6 +3050,9 @@
         "votePick": "Vota por %{option}",
         "votePickChange": "Cambiar el voto a %{option}",
         "votePickSelected": "Has votado por %{option}",
+        "clueSelf": null,
+        "clueOther": null,
+        "stayQuietHint": null,
         "tiedVoteSelf": "¡Tu grupo tiene un empate en la votación! Se elegirá una opción al azar...",
         "tiedVoteOther": "Espera un segundo, tus oponentes tienen un empate en la votación.",
         "waitForOpponent": "Esperando a tu oponente...",

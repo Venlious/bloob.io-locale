@@ -2,8 +2,8 @@
     "_meta": {
         "language": "Casual Gaming Japanese (カジュアルゲーム向け日本語)",
         "rtl": false,
-        "total": 2127,
-        "missing": 0
+        "total": 2163,
+        "missing": 48
     },
     "name": "Bloob.io",
     "error": {
@@ -239,7 +239,12 @@
                 },
                 "winCondition": {
                     "title": "勝利条件",
-                    "help": "ゲームをいつ終了にするか決めてね。"
+                    "help": "ゲームをいつ終了にするか決めてね。",
+                    "data": {
+                        "firstToPoints": "最初に<b>0</b>ポイントに到達 | 最初に<b>1</b>ポイントに到達 | 最初に<b>{count}</b>ポイントに到達",
+                        "mostPoints": "<b>0</b>ラウンド後のポイント数 | <b>1</b>ラウンド後のポイント数 | <b>{count}</b>ラウンド後のポイント数",
+                        "lastStanding": "最後の生存者（<b>0</b> ライフ） | 最後の生存者（<b>1</b> ライフ） | 最後の生存者（<b>{count}</b> ライフ）"
+                    }
                 },
                 "winAmount": {
                     "title": "勝利に必要な数"
@@ -579,12 +584,6 @@
             "title": "ロッテン・アップル | 無料で遊べる大喜利カードゲーム",
             "description": "無料で遊べる大喜利系カードゲームです。アカウント不要で友達や世界中のプレイヤーと3〜16人で対戦可能。独自のルールやカードセットで盛り上がりましょう！",
             "options": {
-                "winCondition": {
-                    "data": {
-                        "first": "最初に<b>0</b>点を取る | 最初に<b>1</b>点を取る | 最初に<b>{count}</b>点を取る",
-                        "most": "<b>0</b>ラウンド後の最高点 | <b>1</b>ラウンド後の最高点 | <b>{count}</b>ラウンド後の最高点"
-                    }
-                },
                 "judgeSystem": {
                     "title": "審判システム",
                     "help": "各ラウンドごとに、誰が一番おもしろかったかを審判が決めるか、全員で決まるか選べるよ。",
@@ -605,7 +604,6 @@
                     "title": "手札の入れ替えラウンド",
                     "help": "手札のカード中からいらないカードを捨てて、新しいカードと交換できる特別なラウンドだよ。ラウンドが終わった後に新しい回答カードが代わりに与えられるよ。",
                     "data": {
-                        "disabled": "無効",
                         "round": "<b>0</b>ラウンドごと | 毎<b>1</b>ラウンドごと | <b>{count}</b>ラウンドごと"
                     }
                 },
@@ -751,8 +749,7 @@
                     "data": {
                         "OPPOSITE_SIDE": "反対側に到達したとき",
                         "TAKE": "相手の駒を取ったとき",
-                        "ALL": "全てキングから始める",
-                        "NONE": "キングなし"
+                        "ALL": "全てキングから始める"
                     }
                 },
                 "backwardsTake": {
@@ -841,7 +838,6 @@
                 },
                 "winCondition": {
                     "data": {
-                        "LAST_STANDING": "最後の生存者（<b>0</b> ライフ） | 最後の生存者（<b>1</b> ライフ） | 最後の生存者（<b>{count}</b> ライフ）",
                         "KILL_COUNT": "最初に <b>0</b> キルを取る | 最初に <b>1</b> キルを取る | 最初に <b>{count}</b> キルを取る",
                         "TIME": "<b>0</b> 分後の最多キル | <b>1</b> 分後の最多キル | <b>{count}</b> 分後の最多キル"
                     }
@@ -1242,7 +1238,6 @@
                     "title": "グリッドサイズ",
                     "help": "戦いの舞台となるエリアの広さを選べるよ。",
                     "data": {
-                        "random": "おまかせ",
                         "7x7": "7x7",
                         "11x11": "11x11",
                         "15x15": "15x15"
@@ -1252,7 +1247,6 @@
                     "title": "マップ",
                     "help": "遊びたいマップを選んでね。",
                     "data": {
-                        "random": "ランダム",
                         "peninsula": "半島",
                         "archipelago": "群島",
                         "canal": "運河",
@@ -1270,7 +1264,6 @@
                     "title": "向き",
                     "help": "マップが表示される向きを選べるよ。",
                     "data": {
-                        "random": "おまかせ",
                         "NORTH": "北",
                         "EAST": "東",
                         "SOUTH": "南",
@@ -1376,7 +1369,6 @@
                 },
                 "winCondition": {
                     "data": {
-                        "FIRST": "最初に<b>0</b>点に到達 | 最初に<b>1</b>点に到達 | 最初に<b>{count}</b>点に到達",
                         "HIGHEST_AFTER": "<b>0</b>点に到達した後で最も点数が多い | <b>1</b>点に到達した後で最も点数が多い | <b>{count}</b>点に到達した後で最も点数が多い"
                     }
                 }
@@ -1600,13 +1592,6 @@
                         "rock": "グーはチョキに勝つ",
                         "paper": "パーはグーに勝つ",
                         "scissors": "チョキはパーに勝つ"
-                    }
-                },
-                "winCondition": {
-                    "data": {
-                        "LAST_STANDING": "最後の一人（<b>0</b>ライフ） | 最後の一人（<b>1</b>ライフ） | 最後の一人（<b>{count}</b>ライフ）",
-                        "FIRST": "最初に<b>0</b>ポイントゲット | 最初に<b>1</b>ポイントゲット | 最初に<b>{count}</b>ポイントゲット",
-                        "HIGHEST_AFTER": "<b>0</b>ラウンド後のポイント数 | <b>1</b>ラウンド後のポイント数 | <b>{count}</b>ラウンド後のポイント数"
                     }
                 }
             },
@@ -1886,12 +1871,6 @@
                         "ELEVEN": "常に11として計算"
                     }
                 },
-                "winCondition": {
-                    "data": {
-                        "FIRST": "最初に<b>0</b>ポイントに到達 | 最初に<b>1</b>ポイントに到達 | 最初に<b>{count}</b>ポイントに到達",
-                        "HIGHEST_AFTER": "<b>0</b>ラウンド後のポイント数 | <b>1</b>ラウンド後のポイント数 | <b>{count}</b>ラウンド後のポイント数"
-                    }
-                },
                 "splitSameFaceOnly": {
                     "title": "同じ札でのみスプリット",
                     "help": "有効にすると、スプリットは最初の2枚が同じ札（例: K+K や 8+8）の場合にのみ可能です。数値が同じだけではできません。"
@@ -1994,8 +1973,7 @@
                     "title": "ブレイク時の配置",
                     "help": "ブレイク時の初期配置を固定にするかランダムにするかを選びます。",
                     "data": {
-                        "fixed": "固定（公式）",
-                        "random": "ランダム"
+                        "fixed": "固定（公式）"
                     }
                 },
                 "breakFillers": {
@@ -2007,8 +1985,7 @@
                     "help": "どのファウルで相手のボールをテーブルに戻すかを選びます。",
                     "data": {
                         "anyFoul": "対象となるすべてのファウル",
-                        "ballInHand": "ボールインハンドのファウルのみ",
-                        "off": "無効"
+                        "ballInHand": "ボールインハンドのファウルのみ"
                     }
                 }
             },
@@ -2054,6 +2031,86 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": null,
+            "title": {},
+            "description": {},
+            "tooltip": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "pickingTime": {
+                    "title": null
+                },
+                "promptSelection": {
+                    "title": null,
+                    "help": null
+                },
+                "visibility": {
+                    "title": null,
+                    "help": null,
+                    "data": {
+                        "ALL": null,
+                        "TEAM": null,
+                        "PRIVATE": null
+                    },
+                    "description": {
+                        "ALL": null,
+                        "TEAM": null,
+                        "PRIVATE": null
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coopConsensus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "scoring": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "modes": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2160,6 +2217,9 @@
             "makeYourMove": "君の番だよ",
             "waitingForOthers": "他の人を待ってる",
             "wager": "賭けてみて",
+            "yourClue": null,
+            "nameClue": null,
+            "writeYourClue": null,
             "tieEndedRound": "ラウンドが引き分けになったよ",
             "youEndedRound": "君がラウンドを終えたよ",
             "nameEndedRound": "%{name}がラウンドを終えたよ",
@@ -2192,6 +2252,7 @@
         }
     },
     "placeholder": {
+        "clue": null,
         "cardSetId": "カードセットIDを入力してね...",
         "cardContent": "カードの内容を入力してね...",
         "cardSetName": "このカードセットの名前を入力してね...",
@@ -2432,6 +2493,7 @@
         "restartNotice": "サーバーは{count}分後に再起動するよ。ゲームを終わらせてね。 | サーバーは{count}分後に再起動するよ。ゲームを終わらせてね。 | サーバーは{count}分後に再起動するよ。ゲームを終わらせてね。"
     },
     "misc": {
+        "refresh": null,
         "automatic": "自動",
         "title": "タイトル",
         "current": "現在",
@@ -2743,7 +2805,8 @@
         "noChangesDetected": "変更は見つからなかったよ",
         "newChanges": "新しい変更",
         "saveChanges": "変更を保存",
-        "previousChanges": "前の変更を見る"
+        "previousChanges": "前の変更を見る",
+        "random": "おまかせ"
     },
     "card": {
         "empty": "カードなし",
@@ -2927,6 +2990,10 @@
             "empty": "あなたはまだユーザーをブロックしていません。",
             "count": "%{count} ユーザーがブロックされています。"
         },
+        "cluePicking": {
+            "title": null,
+            "description": null
+        },
         "youBlockedUser": "このユーザーをブロックしました。",
         "playerProfile": {
             "unavailable": "このプロフィールは現在読み込めません。",
@@ -2983,6 +3050,9 @@
         "votePick": "%{option}に投票する",
         "votePickChange": "%{option}に投票しなおす",
         "votePickSelected": "%{option}に投票したよ",
+        "clueSelf": null,
+        "clueOther": null,
+        "stayQuietHint": null,
         "tiedVoteSelf": "みんなの投票が同点だよ！ランダムで選ぶね．．．",
         "tiedVoteOther": "相手の投票が同点だよ。ちょっと待ってね。",
         "waitForOpponent": "相手を待ってるよ．．．",

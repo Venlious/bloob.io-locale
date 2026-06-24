@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 2127,
-        "missing": 0
+        "total": 2163,
+        "missing": 48
     },
     "name": "Bloob.io",
     "error": {
@@ -239,7 +239,12 @@
                 },
                 "winCondition": {
                     "title": "Voittoehto",
-                    "help": "Päätä, milloin pelin pitäisi päättyä."
+                    "help": "Päätä, milloin pelin pitäisi päättyä.",
+                    "data": {
+                        "firstToPoints": "Ensimmäinen, joka saa <b>0</b> pistettä | Ensimmäinen, joka saa <b>1</b> pisteen | Ensimmäinen, joka saa <b>{count}</b> pistettä",
+                        "mostPoints": "Eniten pisteitä <b>0</b> kierroksen jälkeen | Eniten pisteitä <b>1</b> kierroksen jälkeen | Eniten pisteitä <b>{count}</b> kierroksen jälkeen",
+                        "lastStanding": "Viimeinen jäljellä (<b>0</b> elämää) | Viimeinen jäljellä (<b>1</b> elämä) | Viimeinen jäljellä (<b>{count}</b> elämää)"
+                    }
                 },
                 "winAmount": {
                     "title": "Voittosumma"
@@ -579,12 +584,6 @@
             "title": "Pelaa Mädäntyneet Omenat | Korttipeli netissä | Ei tilejä",
             "description": "Pelaa Mädäntyneet Omenat netissä ilmaiseksi! Ei vaadi tiliä, pelaa 3-16 pelaajalla. Naura yhdessä ystävien tai uusien tuttavuuksien kanssa!",
             "options": {
-                "winCondition": {
-                    "data": {
-                        "first": "Ensimmäinen, joka saa <b>0</b> pistettä | Ensimmäinen, joka saa <b>1</b> pisteen | Ensimmäinen, joka saa <b>{count}</b> pistettä",
-                        "most": "Eniten pisteitä <b>0</b> kierroksen jälkeen | Eniten pisteitä <b>1</b> kierroksen jälkeen | Eniten pisteitä <b>{count}</b> kierroksen jälkeen"
-                    }
-                },
                 "judgeSystem": {
                     "title": "Tuomarijärjestelmä",
                     "help": "Joko tuomari tai kaikki saavat päättää, kuka teki parhaan siirron joka kierroksella.",
@@ -605,7 +604,6 @@
                     "title": "Hylkäyskierros",
                     "help": "Dump-kierros antaa kaikille mahdollisuuden valita käsistään kortteja, jotka he haluaisivat poistaa. Uudet vastauskortit annetaan korvikkeena kierroksen päätyttyä.",
                     "data": {
-                        "disabled": "Pois käytöstä",
                         "round": "Joka <b>0</b>. kierros | Joka <b>1</b>. kierros | Joka <b>{count}</b>. kierros"
                     }
                 },
@@ -751,8 +749,7 @@
                     "data": {
                         "OPPOSITE_SIDE": "Pääse vastakkaiselle puolelle",
                         "TAKE": "Ota pala",
-                        "ALL": "Aloita kaikilla kuninkailla",
-                        "NONE": "Pois käytöstä"
+                        "ALL": "Aloita kaikilla kuninkailla"
                     }
                 },
                 "backwardsTake": {
@@ -841,7 +838,6 @@
                 },
                 "winCondition": {
                     "data": {
-                        "LAST_STANDING": "Viimeinen jäljellä (<b>0</b> elämää) | Viimeinen jäljellä (<b>1</b> elämä) | Viimeinen jäljellä (<b>{count}</b> elämää)",
                         "KILL_COUNT": "Ensimmäinen, joka saa <b>0</b> tappoa | Ensimmäinen, joka saa <b>1</b> tappon | Ensimmäinen, joka saa <b>{count}</b> tappoa",
                         "TIME": "Eniten tappoja <b>0</b> min. jälkeen | Eniten tappoja <b>1</b> min. jälkeen | Eniten tappoja <b>{count}</b> min. jälkeen"
                     }
@@ -1242,7 +1238,6 @@
                     "title": "Ruudukon Koko",
                     "help": "Valitse pelattavan tason koko.",
                     "data": {
-                        "random": "Satunnainen",
                         "7x7": "7x7",
                         "11x11": "11x11",
                         "15x15": "15x15"
@@ -1252,7 +1247,6 @@
                     "title": "Kartta",
                     "help": "Valitse kartta, jossa haluaisit pelata.",
                     "data": {
-                        "random": "Satunnainen",
                         "peninsula": "Niemimaa",
                         "archipelago": "Saaristo",
                         "canal": "Kanava",
@@ -1270,7 +1264,6 @@
                     "title": "Suunta",
                     "help": "Valitse suunta, jossa taso näytetään.",
                     "data": {
-                        "random": "Satunnainen",
                         "NORTH": "Pohjoinen",
                         "EAST": "Itä",
                         "SOUTH": "Etelä",
@@ -1376,7 +1369,6 @@
                 },
                 "winCondition": {
                     "data": {
-                        "FIRST": "Ensimmäinen, joka saa <b>0</b> pistettä | Ensimmäinen, joka saa <b>1</b> pisteen | Ensimmäinen, joka saa <b>{count}</b> pistettä",
                         "HIGHEST_AFTER": "Eniten pisteitä, kun <b>0</b> pistettä on saavutettu | Eniten pisteitä, kun <b>1</b> piste on saavutettu | Eniten pisteitä, kun <b>{count}</b> pistettä on saavutettu"
                     }
                 }
@@ -1600,13 +1592,6 @@
                         "rock": "Kivi voittaa sakset",
                         "paper": "Paperi voittaa kiven",
                         "scissors": "Sakset voittaa paperin"
-                    }
-                },
-                "winCondition": {
-                    "data": {
-                        "LAST_STANDING": "Viimeinen pystyssä (<b>0</b> elämää) | Viimeinen pystyssä (<b>1</b> elämä) | Viimeinen pystyssä (<b>{count}</b> elämää)",
-                        "FIRST": "Ensimmäinen, joka saa <b>0</b> pistettä | Ensimmäinen, joka saa <b>1</b> pisteen | Ensimmäinen, joka saa <b>{count}</b> pistettä",
-                        "HIGHEST_AFTER": "Eniten pisteitä jälkeen <b>0</b> kierrosta | Eniten pisteitä jälkeen <b>1</b> kierroksen | Eniten pisteitä jälkeen <b>{count}</b> kierrosta"
                     }
                 }
             },
@@ -1886,12 +1871,6 @@
                         "ELEVEN": "Aina 11"
                     }
                 },
-                "winCondition": {
-                    "data": {
-                        "FIRST": "Ensimmäinen, joka saa <b>0</b> pistettä | Ensimmäinen, joka saa <b>1</b> pisteen | Ensimmäinen, joka saa <b>{count}</b> pistettä",
-                        "HIGHEST_AFTER": "Eniten pisteitä <b>0</b> kierroksen jälkeen | Eniten pisteitä <b>1</b> kierroksen jälkeen | Eniten pisteitä <b>{count}</b> kierroksen jälkeen"
-                    }
-                },
                 "splitSameFaceOnly": {
                     "title": "Jako vain samalla kortilla",
                     "help": "Kun tämä on päällä, jakaminen on sallittu vain jos molemmat aloituskortit ovat sama kortti (esim. K+K tai 8+8), eivät vain samanarvoisia numeroina."
@@ -1994,8 +1973,7 @@
                     "title": "Aloitusasettelu",
                     "help": "Valitse onko avausasetelma kiinteä vai satunnainen.",
                     "data": {
-                        "fixed": "Kiinteä (virallinen)",
-                        "random": "Satunnainen"
+                        "fixed": "Kiinteä (virallinen)"
                     }
                 },
                 "breakFillers": {
@@ -2007,8 +1985,7 @@
                     "help": "Valitse mitkä virheet voivat palauttaa vastustajan pallon pöydälle.",
                     "data": {
                         "anyFoul": "Mikä tahansa kelvollinen virhe",
-                        "ballInHand": "Vain pallo kädessä -virheet",
-                        "off": "Pois käytöstä"
+                        "ballInHand": "Vain pallo kädessä -virheet"
                     }
                 }
             },
@@ -2054,6 +2031,86 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": null,
+            "title": {},
+            "description": {},
+            "tooltip": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "pickingTime": {
+                    "title": null
+                },
+                "promptSelection": {
+                    "title": null,
+                    "help": null
+                },
+                "visibility": {
+                    "title": null,
+                    "help": null,
+                    "data": {
+                        "ALL": null,
+                        "TEAM": null,
+                        "PRIVATE": null
+                    },
+                    "description": {
+                        "ALL": null,
+                        "TEAM": null,
+                        "PRIVATE": null
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coopConsensus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "scoring": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "modes": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2160,6 +2217,9 @@
             "makeYourMove": "Tee siirto",
             "waitingForOthers": "Odotellaan muita",
             "wager": "Panos",
+            "yourClue": null,
+            "nameClue": null,
+            "writeYourClue": null,
             "tieEndedRound": "Kierros päättyi tasapeliin",
             "youEndedRound": "Sä lopetit kierroksen",
             "nameEndedRound": "%{name} lopetti kierroksen",
@@ -2192,6 +2252,7 @@
         }
     },
     "placeholder": {
+        "clue": null,
         "cardSetId": "Täytä korttipaketin ID...",
         "cardContent": "Täytä kortin sisältö...",
         "cardSetName": "Anna nimi tälle korttipaketille...",
@@ -2432,6 +2493,7 @@
         "restartNotice": "Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi."
     },
     "misc": {
+        "refresh": null,
         "automatic": "Auto",
         "title": "Otsikko",
         "current": "Nykyinen",
@@ -2743,7 +2805,8 @@
         "noChangesDetected": "Ei Muutoksia Havaittu",
         "newChanges": "Uudet Muutokset",
         "saveChanges": "Tallenna Muutokset",
-        "previousChanges": "Katso Aikaisemmat Muutokset"
+        "previousChanges": "Katso Aikaisemmat Muutokset",
+        "random": "Satunnainen"
     },
     "card": {
         "empty": "Ei kortteja",
@@ -2927,6 +2990,10 @@
             "empty": "Et ole estänyt yhtään käyttäjää.",
             "count": "%{count} estetty"
         },
+        "cluePicking": {
+            "title": null,
+            "description": null
+        },
         "youBlockedUser": "Sä blokkasit tän käyttäjän.",
         "playerProfile": {
             "unavailable": "Profiilia ei voitu ladata juuri nyt.",
@@ -2983,6 +3050,9 @@
         "votePick": "Äänestä %{option}",
         "votePickChange": "Vaihda äänesi kohteeksi %{option}",
         "votePickSelected": "Äänestit kohteen %{option} puolesta",
+        "clueSelf": null,
+        "clueOther": null,
+        "stayQuietHint": null,
         "tiedVoteSelf": "Teidän porukalla on tasapeli! Valitaan satunnaisesti...",
         "tiedVoteOther": "Odota hetki, teidän vastustajilla on tasapeli.",
         "waitForOpponent": "Odotetaan vastustajaasi...",

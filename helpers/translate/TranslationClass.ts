@@ -370,6 +370,10 @@ export default class TranslationClass {
 			[`info`, `blockedUsers`],
 			`These are used in the blocked users management dialog.`
 		)
+		this.generateTranslationTask(
+			[`info`, `cluePicking`],
+			`These are related to informing the user they can now write a clue for a game.`
+		)
 		this.generateTranslationTask([`info`, `settings`, `redeemCode`])
 		this.generateTranslationTask([`info`, `settings`, `experience`])
 		this.generateTranslationTask([`info`, `settings`, `statistics`])

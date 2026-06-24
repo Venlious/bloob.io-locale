@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 2127,
-        "missing": 0
+        "total": 2163,
+        "missing": 48
     },
     "name": "Bloob.io",
     "error": {
@@ -239,7 +239,12 @@
                 },
                 "winCondition": {
                     "title": "胜利条件",
-                    "help": "确定如何对局获得胜利。"
+                    "help": "确定如何对局获得胜利。",
+                    "data": {
+                        "firstToPoints": "第一个到达 <b>0</b> 分 | 第一个到达 <b>1</b> 分 | 第一个到达 <b>{count}</b> 分",
+                        "mostPoints": "<b>0</b> 轮后得分最多 | <b>1</b> 轮后得分最多 | <b>{count}</b> 轮后得分最多",
+                        "lastStanding": "最后的存活者（<b>0</b>条命）| 最后的存活者（<b>1</b>条命）| 最后的存活者（<b>{count}</b>条命）"
+                    }
                 },
                 "winAmount": {
                     "title": "赢取金额"
@@ -579,12 +584,6 @@
             "title": "免费在线玩无需注册的卡牌套组游戏 | 烂苹果规则挑战赛等你来战",
             "description": "免费在线玩高能卡牌套组游戏，无需注册，支持多人在线规则挑战，立即邀请好友或陌生人参与热血对决，最多16人同局，乐趣无限！快来体验精彩纷呈的卡牌对战吧！",
             "options": {
-                "winCondition": {
-                    "data": {
-                        "first": "第一个得到<b>0</b>分 | 第一个得到<b>1</b>分 | 第一个得到<b>{count}</b>分",
-                        "most": "在<b>0</b>轮后得分最多 | 在<b>1</b>轮后得分最多 | 在<b>{count}</b>轮后得分最多"
-                    }
-                },
                 "judgeSystem": {
                     "title": "裁判系统",
                     "help": "裁判或所有人决定每轮谁的表现最好。",
@@ -605,7 +604,6 @@
                     "title": "丢弃回合",
                     "help": "\"倾倒回合\"让每个人都可以选择他们想要丢弃的手牌。回合结束后，会给出新的应对卡作为替换。",
                     "data": {
-                        "disabled": "禁用",
                         "round": "每<b>0</b>轮 | 每<b>1</b>轮 | 每<b>{count}</b>轮"
                     }
                 },
@@ -751,8 +749,7 @@
                     "data": {
                         "OPPOSITE_SIDE": "到达对面",
                         "TAKE": "选择任意一个",
-                        "ALL": "全部都是“王”",
-                        "NONE": "禁用"
+                        "ALL": "全部都是“王”"
                     }
                 },
                 "backwardsTake": {
@@ -841,7 +838,6 @@
                 },
                 "winCondition": {
                     "data": {
-                        "LAST_STANDING": "最后的存活者（<b>0</b>条命）| 最后的存活者（<b>1</b>条命）| 最后的存活者（<b>{count}</b>条命）",
                         "KILL_COUNT": "首个达到<b>0</b>杀的人 | 首个达到<b>1</b>杀的人 | 首个达到<b>{count}</b>杀的人",
                         "TIME": "<b>0</b>分钟后杀人最多的人 | <b>1</b>分钟后杀人最多的人 | <b>{count}</b>分钟后杀人最多的人"
                     }
@@ -1242,7 +1238,6 @@
                     "title": "网格大小",
                     "help": "选择要玩的网格大小。",
                     "data": {
-                        "random": "随机",
                         "7x7": "7x7",
                         "11x11": "11x11",
                         "15x15": "15x15"
@@ -1252,7 +1247,6 @@
                     "title": "地图",
                     "help": "选择你想玩的地图。",
                     "data": {
-                        "random": "随机",
                         "peninsula": "半岛",
                         "archipelago": "群岛",
                         "canal": "运河",
@@ -1270,7 +1264,6 @@
                     "title": "方向",
                     "help": "选择关卡显示的方向。",
                     "data": {
-                        "random": "随机",
                         "NORTH": "北",
                         "EAST": "东",
                         "SOUTH": "南",
@@ -1376,7 +1369,6 @@
                 },
                 "winCondition": {
                     "data": {
-                        "FIRST": "首先达到<b>0</b>分 | 首先达到<b>1</b>分 | 首先达到<b>{count}</b>分",
                         "HIGHEST_AFTER": "达到<b>0</b>分后得分最多 | 达到<b>1</b>分后得分最多 | 达到<b>{count}</b>分后得分最多"
                     }
                 }
@@ -1600,13 +1592,6 @@
                         "rock": "石头赢剪刀",
                         "paper": "布赢石头",
                         "scissors": "剪刀赢布"
-                    }
-                },
-                "winCondition": {
-                    "data": {
-                        "LAST_STANDING": "最后一个存活的（<b>0</b> 条命） | 最后一个存活的（<b>1</b> 条命） | 最后一个存活的（<b>{count}</b> 条命）",
-                        "FIRST": "第一个得到 <b>0</b> 分 | 第一个得到 <b>1</b> 分 | 第一个得到 <b>{count}</b> 分",
-                        "HIGHEST_AFTER": "<b>0</b> 轮后得分最多 | <b>1</b> 轮后得分最多 | <b>{count}</b> 轮后得分最多"
                     }
                 }
             },
@@ -1886,12 +1871,6 @@
                         "ELEVEN": "永远是 11"
                     }
                 },
-                "winCondition": {
-                    "data": {
-                        "FIRST": "第一个到达 <b>0</b> 分 | 第一个到达 <b>1</b> 分 | 第一个到达 <b>{count}</b> 分",
-                        "HIGHEST_AFTER": "<b>0</b> 轮后得分最多 | <b>1</b> 轮后得分最多 | <b>{count}</b> 轮后得分最多"
-                    }
-                },
                 "splitSameFaceOnly": {
                     "title": "仅同牌面可分牌",
                     "help": "启用后，只有当两张起始牌是同一牌面时才能分牌（例如 K+K 或 8+8），而不只是点数相同。"
@@ -1994,8 +1973,7 @@
                     "title": "开球摆球布局",
                     "help": "选择开球时的初始摆球是固定还是随机的。",
                     "data": {
-                        "fixed": "固定（默认）",
-                        "random": "随机"
+                        "fixed": "固定（默认）"
                     }
                 },
                 "breakFillers": {
@@ -2007,8 +1985,7 @@
                     "help": "选择哪些犯规会让对手的球返回球台。",
                     "data": {
                         "anyFoul": "任何符合条件的犯规",
-                        "ballInHand": "仅限手中球犯规",
-                        "off": "关闭"
+                        "ballInHand": "仅限手中球犯规"
                     }
                 }
             },
@@ -2054,6 +2031,86 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": null,
+            "title": {},
+            "description": {},
+            "tooltip": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "pickingTime": {
+                    "title": null
+                },
+                "promptSelection": {
+                    "title": null,
+                    "help": null
+                },
+                "visibility": {
+                    "title": null,
+                    "help": null,
+                    "data": {
+                        "ALL": null,
+                        "TEAM": null,
+                        "PRIVATE": null
+                    },
+                    "description": {
+                        "ALL": null,
+                        "TEAM": null,
+                        "PRIVATE": null
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coopConsensus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "scoring": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "modes": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2160,6 +2217,9 @@
             "makeYourMove": "该你行动了",
             "waitingForOthers": "等待其他人",
             "wager": "赌注",
+            "yourClue": null,
+            "nameClue": null,
+            "writeYourClue": null,
             "tieEndedRound": "这一局平局了",
             "youEndedRound": "你结束了这一局",
             "nameEndedRound": "%{name} 结束了这一局",
@@ -2192,6 +2252,7 @@
         }
     },
     "placeholder": {
+        "clue": null,
         "cardSetId": "填写卡片集ID...",
         "cardContent": "填写卡片内容...",
         "cardSetName": "为这个卡片集起个名字...",
@@ -2432,6 +2493,7 @@
         "restartNotice": "服务器将在 {count} 分钟后重启，请尽快完成你的游戏。 | 服务器将在 {count} 分钟后重启，请尽快你的游戏。 | 服务器将在 {count} 分钟后重启，请尽快完成你的游戏。"
     },
     "misc": {
+        "refresh": null,
         "automatic": "自动",
         "title": "头衔",
         "current": "当前",
@@ -2743,7 +2805,8 @@
         "noChangesDetected": "没有检测到更改",
         "newChanges": "新更新",
         "saveChanges": "保存更改",
-        "previousChanges": "查看之前的更改"
+        "previousChanges": "查看之前的更改",
+        "random": "随机"
     },
     "card": {
         "empty": "没有卡片",
@@ -2927,6 +2990,10 @@
             "empty": "你还没有拉黑任何用户。",
             "count": "已拉黑%{count} 人"
         },
+        "cluePicking": {
+            "title": null,
+            "description": null
+        },
         "youBlockedUser": "你拉黑了这个用户。",
         "playerProfile": {
             "unavailable": "无法加载该资料。",
@@ -2983,6 +3050,9 @@
         "votePick": "投票给 %{option}",
         "votePickChange": "把票改投给 %{option}",
         "votePickSelected": "你投的票是 %{option}",
+        "clueSelf": null,
+        "clueOther": null,
+        "stayQuietHint": null,
         "tiedVoteSelf": "你们组平票了！随机选一个吧...",
         "tiedVoteOther": "请等一下，你们的对手也平票了。",
         "waitForOpponent": "等待你的对手...",

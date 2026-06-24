@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Egyptian Arabic",
         "rtl": true,
-        "total": 2127,
-        "missing": 0
+        "total": 2163,
+        "missing": 48
     },
     "name": "Bloob.io",
     "error": {
@@ -239,7 +239,12 @@
                 },
                 "winCondition": {
                     "title": "شروط الفوز",
-                    "help": "اعرف امتى المفروض اللعبة تخلص."
+                    "help": "اعرف امتى المفروض اللعبة تخلص.",
+                    "data": {
+                        "firstToPoints": "أول واحد يوصل <b>0</b> نقطة | أول واحد يوصل <b>1</b> نقطة | أول واحد يوصل <b>{count}</b> نقاط",
+                        "mostPoints": "أكتر نقاط بعد <b>0</b> جولة | أكتر نقاط بعد <b>1</b> جولة | أكتر نقاط بعد <b>{count}</b> جولات",
+                        "lastStanding": "الأخير اللي هايقف (<b>0</b> حياة) | الأخير اللي هايقف (<b>1</b> حياة) | الأخير اللي هايقف (<b>{count}</b> حياة)"
+                    }
                 },
                 "winAmount": {
                     "title": "كمية الفوز"
@@ -579,12 +584,6 @@
             "title": "لعب كروت ضد الإنسانية أونلاين | جرب مجموعات كروت جديدة",
             "description": "استمتع بلعبة كروت ضد الإنسانية أونلاين مجانًا ومن غير حساب! العب مع صحابك أو ناس غريبة واكتشف مجموعات كروت جديدة وممتعة لحد 16 لاعب.",
             "options": {
-                "winCondition": {
-                    "data": {
-                        "first": "أول واحد يجيب <b>0</b> نقاط | أول واحد يجيب <b>1</b> نقطة | أول واحد يجيب <b>{count}</b> نقاط",
-                        "most": "أكتر نقاط بعد <b>0</b> جولات | أكتر نقاط بعد <b>1</b> جولة | أكتر نقاط بعد <b>{count}</b> جولات"
-                    }
-                },
                 "judgeSystem": {
                     "title": "نظام التحكيم",
                     "help": "يا إما الحكم أو الكل بيقرروا مين اللي لعب أحسن في كل جولة.",
@@ -605,7 +604,6 @@
                     "title": "دورة الرمي",
                     "help": "جولة الرمي بتسمح لكل اللاعبين يختاروا الكروت اللي عايزين يتخلصوا منها من ايديهم. كروت الرد الجديدة بتتوزع بعد ما تخلص الجولة.",
                     "data": {
-                        "disabled": "معطل",
                         "round": "كل <b>0</b> جولات | كل <b>1</b> جولة | كل <b>{count}</b> جولات"
                     }
                 },
@@ -751,8 +749,7 @@
                     "data": {
                         "OPPOSITE_SIDE": "وصل للجانب التاني",
                         "TAKE": "خد قطعة",
-                        "ALL": "ابدأ بكل الملوك",
-                        "NONE": "معطل"
+                        "ALL": "ابدأ بكل الملوك"
                     }
                 },
                 "backwardsTake": {
@@ -841,7 +838,6 @@
                 },
                 "winCondition": {
                     "data": {
-                        "LAST_STANDING": "الأخير اللي هايقف (<b>0</b> حياة) | الأخير اللي هايقف (<b>1</b> حياة) | الأخير اللي هايقف (<b>{count}</b> حياة)",
                         "KILL_COUNT": "الأول اللي هايجيب <b>0</b> قتلة | الأول اللي هايجيب <b>1</b> قتلة | الأول اللي هايجيب <b>{count}</b> قتلة",
                         "TIME": "أكتر واحد جاب قتلة بعد <b>0</b> دقيقة. | أكتر واحد جاب قتلة بعد <b>1</b> دقيقة. | أكتر واحد جاب قتلة بعد <b>{count}</b> دقيقة."
                     }
@@ -1242,7 +1238,6 @@
                     "title": "حجم الشبكة",
                     "help": "اختار حجم المرحلة اللي عايز تلعب فيها.",
                     "data": {
-                        "random": "عشوائي",
                         "7x7": "7x7",
                         "11x11": "11x11",
                         "15x15": "15x15"
@@ -1252,7 +1247,6 @@
                     "title": "الخريطة",
                     "help": "اختار الخريطة اللي عايز تلعب فيها.",
                     "data": {
-                        "random": "عشوائي",
                         "peninsula": "شبه جزيرة",
                         "archipelago": "أرخبيل",
                         "canal": "قناة",
@@ -1270,7 +1264,6 @@
                     "title": "الاتجاه",
                     "help": "اختار اتجاه الليفل هيتعرض فيه.",
                     "data": {
-                        "random": "عشوائي",
                         "NORTH": "شمال",
                         "EAST": "شرق",
                         "SOUTH": "جنوب",
@@ -1376,7 +1369,6 @@
                 },
                 "winCondition": {
                     "data": {
-                        "FIRST": "أول واحد يوصل لـ <b>0</b> نقطة | أول واحد يوصل لـ <b>1</b> نقطة | أول واحد يوصل لـ <b>{count}</b> نقطة",
                         "HIGHEST_AFTER": "أكتر نقاط بعد ما توصل لـ <b>0</b> نقطة | أكتر نقاط بعد ما توصل لـ <b>1</b> نقطة | أكتر نقاط بعد ما توصل لـ <b>{count}</b> نقطة"
                     }
                 }
@@ -1600,13 +1592,6 @@
                         "rock": "الحجر يكسر المقص",
                         "paper": "الورقة تكسر الحجر",
                         "scissors": "المقص يكسر الورقة"
-                    }
-                },
-                "winCondition": {
-                    "data": {
-                        "LAST_STANDING": "آخر واحد واقف (<b>0</b> حياة) | آخر واحد واقف (<b>1</b> حياة) | آخر واحد واقف (<b>{count}</b> حياة)",
-                        "FIRST": "أول واحد يجيب <b>0</b> نقاط | أول واحد يجيب <b>1</b> نقطة | أول واحد يجيب <b>{count}</b> نقاط",
-                        "HIGHEST_AFTER": "أكتر نقاط بعد <b>0</b> جولة | أكتر نقاط بعد <b>1</b> جولة | أكتر نقاط بعد <b>{count}</b> جولات"
                     }
                 }
             },
@@ -1886,12 +1871,6 @@
                         "ELEVEN": "دايمًا 11"
                     }
                 },
-                "winCondition": {
-                    "data": {
-                        "FIRST": "أول واحد يوصل <b>0</b> نقطة | أول واحد يوصل <b>1</b> نقطة | أول واحد يوصل <b>{count}</b> نقاط",
-                        "HIGHEST_AFTER": "أكتر نقاط بعد <b>0</b> جولة | أكتر نقاط بعد <b>1</b> جولة | أكتر نقاط بعد <b>{count}</b> جولات"
-                    }
-                },
                 "splitSameFaceOnly": {
                     "title": "الانقسام فقط مع نفس الورقة",
                     "help": "عند التفعيل، يُسمح بالانقسام فقط إذا كانت ورقتا البداية نفس الورقة (مثل K+K أو 8+8)، وليس فقط نفس القيمة الرقمية."
@@ -1994,8 +1973,7 @@
                     "title": "ترتيب كسر البداية",
                     "help": "اختر ما إذا كان ترتيب الكرات عند البداية ثابتًا أم عشوائيًا.",
                     "data": {
-                        "fixed": "ثابت (رسمي)",
-                        "random": "عشوائي"
+                        "fixed": "ثابت (رسمي)"
                     }
                 },
                 "breakFillers": {
@@ -2007,8 +1985,7 @@
                     "help": "اختر أنواع الأخطاء التي تسمح بإرجاع كرة للخصم إلى الطاولة.",
                     "data": {
                         "anyFoul": "أي خطأ مؤهل",
-                        "ballInHand": "أخطاء الكرة في اليد فقط",
-                        "off": "معطّل"
+                        "ballInHand": "أخطاء الكرة في اليد فقط"
                     }
                 }
             },
@@ -2054,6 +2031,86 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": null,
+            "title": {},
+            "description": {},
+            "tooltip": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "pickingTime": {
+                    "title": null
+                },
+                "promptSelection": {
+                    "title": null,
+                    "help": null
+                },
+                "visibility": {
+                    "title": null,
+                    "help": null,
+                    "data": {
+                        "ALL": null,
+                        "TEAM": null,
+                        "PRIVATE": null
+                    },
+                    "description": {
+                        "ALL": null,
+                        "TEAM": null,
+                        "PRIVATE": null
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coopConsensus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "scoring": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "modes": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2160,6 +2217,9 @@
             "makeYourMove": "اعمل حركتك",
             "waitingForOthers": "مستني الباقيين",
             "wager": "رهان",
+            "yourClue": null,
+            "nameClue": null,
+            "writeYourClue": null,
             "tieEndedRound": "الجولة خلصت بالتعادل",
             "youEndedRound": "انت خلصت الجولة",
             "nameEndedRound": "%{name} خلص الجولة",
@@ -2192,6 +2252,7 @@
         }
     },
     "placeholder": {
+        "clue": null,
         "cardSetId": "املى رقم مجموعة الكروت...",
         "cardContent": "املى محتوى الكارت...",
         "cardSetName": "املى اسم لمجموعة الكروت دي...",
@@ -2432,6 +2493,7 @@
         "restartNotice": "السيرفر هيعيد تشغيله بعد {count} دقيقة. يلا خلص لعبتك. | السيرفر هيعيد تشغيله بعد {count} دقيقة. يلا خلص لعبتك. | السيرفر هيعيد تشغيله بعد {count} دقيقة. يلا خلص لعبتك."
     },
     "misc": {
+        "refresh": null,
         "automatic": "أوتوماتيكي",
         "title": "عنوان",
         "current": "الحالي",
@@ -2743,7 +2805,8 @@
         "noChangesDetected": "مافيش تغييرات مكتشفة",
         "newChanges": "تغييرات جديدة",
         "saveChanges": "حفظ التغييرات",
-        "previousChanges": "شوف التغييرات اللى فاتت"
+        "previousChanges": "شوف التغييرات اللى فاتت",
+        "random": "عشوائي"
     },
     "card": {
         "empty": "مفيش كروت",
@@ -2927,6 +2990,10 @@
             "empty": "انت محظرتش أي مستخدمين.",
             "count": "%{count} محظورين"
         },
+        "cluePicking": {
+            "title": null,
+            "description": null
+        },
         "youBlockedUser": "أنت حظرت المستخدم ده.",
         "playerProfile": {
             "unavailable": "تعذر تحميل هذا الملف الشخصي الآن.",
@@ -2983,6 +3050,9 @@
         "votePick": "صوت لـ %{option}",
         "votePickChange": "غير صوتك لـ %{option}",
         "votePickSelected": "انت صوتيت لـ %{option}",
+        "clueSelf": null,
+        "clueOther": null,
+        "stayQuietHint": null,
         "tiedVoteSelf": "صوتوا على حاجة واحدة! هنجرب نختار حاجة عشوائي...",
         "tiedVoteOther": "استنى شوية، خصومك صوتوا على حاجة واحدة.",
         "waitForOpponent": "مستني خصمك...",

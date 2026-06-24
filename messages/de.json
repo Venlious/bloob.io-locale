@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal German",
         "rtl": false,
-        "total": 2127,
-        "missing": 0
+        "total": 2163,
+        "missing": 48
     },
     "name": "Bloob.io",
     "error": {
@@ -239,7 +239,12 @@
                 },
                 "winCondition": {
                     "title": "Siegbedingung",
-                    "help": "Bestimme, wann das Spiel enden soll. Dies ist mit der Einstellung \"Gewinnzahl\" verbunden."
+                    "help": "Bestimme, wann das Spiel enden soll. Dies ist mit der Einstellung \"Gewinnzahl\" verbunden.",
+                    "data": {
+                        "firstToPoints": "Als Erster <b>0</b> Punkte erreichen | Als Erster <b>1</b> Punkt erreichen | Als Erster <b>{count}</b> Punkte erreichen",
+                        "mostPoints": "Die meisten Punkte nach <b>0</b> Runden | Die meisten Punkte nach <b>1</b> Runde | Die meisten Punkte nach <b>{count}</b> Runden",
+                        "lastStanding": "Letzter Überlebender (<b>0</b> Leben) | Letzter Überlebender (<b>1</b> Leben) | Letzter Überlebender (<b>{count}</b> Leben)"
+                    }
                 },
                 "winAmount": {
                     "title": "Gewinnzahl"
@@ -579,12 +584,6 @@
             "title": "Rotten Apples | Karten gegen die Menschlichkeit online spielen",
             "description": "Spiel rotten Apples online - das geniale Kartenspiel wie Cards Against Humanity! Koste es aus, ohne Account, mit Freunden oder Fremden, kostenlos!",
             "options": {
-                "winCondition": {
-                    "data": {
-                        "first": "Erster mit <b>0</b> Punkten | Erster mit <b>1</b> Punkt | Erster mit <b>{count}</b> Punkten",
-                        "most": "Meiste Punkte nach <b>0</b> Runden | Meiste Punkte nach <b>1</b> Runde | Meiste Punkte nach <b>{count}</b> Runden"
-                    }
-                },
                 "judgeSystem": {
                     "title": "Abstimmungssystem",
                     "help": "Entweder gibt es einen einzigen Richter, oder jeder darf entscheiden, wer in jeder Runde die besten Karten gespielt hat.",
@@ -605,7 +604,6 @@
                     "title": "Abwurfrunde",
                     "help": "In einer Abwurfrunde darf jeder eine Karte auf der Hand wählen, die er ablegen möchte. Am Ende der Runde erhält jeder neue Antwortkarten, um sie zu ersetzen.",
                     "data": {
-                        "disabled": "Deaktiviert",
                         "round": "Alle <b>0</b> Runden | Alle <b>1</b> Runden | Alle <b>{count}</b> Runden"
                     }
                 },
@@ -751,8 +749,7 @@
                     "data": {
                         "OPPOSITE_SIDE": "Erreichen der anderen Seite",
                         "TAKE": "Schlagen eines Spielsteins",
-                        "ALL": "Jeder Spielstein ist gekrönt",
-                        "NONE": "Deaktiviert"
+                        "ALL": "Jeder Spielstein ist gekrönt"
                     }
                 },
                 "backwardsTake": {
@@ -841,7 +838,6 @@
                 },
                 "winCondition": {
                     "data": {
-                        "LAST_STANDING": "Letzter Überlebender (<b>0</b> Leben) | Letzter Überlebender (<b>1</b> Leben) | Letzter Überlebender (<b>{count}</b> Leben)",
                         "KILL_COUNT": "Erster mit <b>0</b> Kills | Erster mit <b>1</b> Kill | Erster mit <b>{count}</b> Kills",
                         "TIME": "Die meisten Kills nach <b>0</b> min. | Die meisten Kills nach <b>1</b> min. | Die meisten Kills nach <b>{count}</b> min."
                     }
@@ -1242,7 +1238,6 @@
                     "title": "Rastergröße",
                     "help": "Wähle die Größe des Levels, in dem du spielen möchtest.",
                     "data": {
-                        "random": "Zufällig",
                         "7x7": "7x7",
                         "11x11": "11x11",
                         "15x15": "15x15"
@@ -1252,7 +1247,6 @@
                     "title": "Karte",
                     "help": "Wähle die Karte aus, auf der du spielen möchtest.",
                     "data": {
-                        "random": "Zufällig",
                         "peninsula": "Halbinsel",
                         "archipelago": "Inselgruppe",
                         "canal": "Kanal",
@@ -1270,7 +1264,6 @@
                     "title": "Ausrichtung",
                     "help": "Wähle die Ausrichtung aus, in der das Level angezeigt wird.",
                     "data": {
-                        "random": "Zufällig",
                         "NORTH": "Norden",
                         "EAST": "Osten",
                         "SOUTH": "Süden",
@@ -1376,7 +1369,6 @@
                 },
                 "winCondition": {
                     "data": {
-                        "FIRST": "Als Erster <b>0</b> Punkte erreichen | Als Erster <b>1</b> Punkt erreichen | Als Erster <b>{count}</b> Punkte erreichen",
                         "HIGHEST_AFTER": "Die meisten Punkte, nachdem <b>0</b> Punkte erreicht wurden | Die meisten Punkte, nachdem <b>1</b> Punkt erreicht wurde | Die meisten Punkte, nachdem <b>{count}</b> Punkte erreicht wurden"
                     }
                 }
@@ -1600,13 +1592,6 @@
                         "rock": "Stein schlägt Schere",
                         "paper": "Papier schlägt Stein",
                         "scissors": "Schere schlägt Papier"
-                    }
-                },
-                "winCondition": {
-                    "data": {
-                        "LAST_STANDING": "Letzte/r Überlebende (<b>0</b> Leben) | Letzte/r Überlebende (<b>1</b> Leben) | Letzte/r Überlebende (<b>{count}</b> Leben)",
-                        "FIRST": "Als erstes <b>0</b> Punkte bekommen | Als erstes <b>1</b> Punkt bekommen | Als erstes <b>{count}</b> Punkte bekommen",
-                        "HIGHEST_AFTER": "Die meisten Punkte nach <b>0</b> Runden | Die meisten Punkte nach <b>1</b> Runde | Die meisten Punkte nach <b>{count}</b> Runden"
                     }
                 }
             },
@@ -1886,12 +1871,6 @@
                         "ELEVEN": "Immer 11"
                     }
                 },
-                "winCondition": {
-                    "data": {
-                        "FIRST": "Als Erster <b>0</b> Punkte erreichen | Als Erster <b>1</b> Punkt erreichen | Als Erster <b>{count}</b> Punkte erreichen",
-                        "HIGHEST_AFTER": "Die meisten Punkte nach <b>0</b> Runden | Die meisten Punkte nach <b>1</b> Runde | Die meisten Punkte nach <b>{count}</b> Runden"
-                    }
-                },
                 "splitSameFaceOnly": {
                     "title": "Split nur bei gleichem Kartenbild",
                     "help": "Wenn das aktiviert ist, ist Splitten nur erlaubt, wenn beide Startkarten dasselbe Kartenbild haben (zum Beispiel K+K oder 8+8), nicht nur denselben Zahlenwert."
@@ -1994,8 +1973,7 @@
                     "title": "Break-Aufstellung",
                     "help": "Wähle, ob die Anfangsaufstellung beim Break fest oder zufällig ist.",
                     "data": {
-                        "fixed": "Fest (offiziell)",
-                        "random": "Zufällig"
+                        "fixed": "Fest (offiziell)"
                     }
                 },
                 "breakFillers": {
@@ -2007,8 +1985,7 @@
                     "help": "Lege fest, bei welchen Fouls ein Ball des Gegners auf den Tisch zurückkehrt.",
                     "data": {
                         "anyFoul": "Jedes zulässige Foul",
-                        "ballInHand": "Nur Ball-in-Hand-Fouls",
-                        "off": "Deaktiviert"
+                        "ballInHand": "Nur Ball-in-Hand-Fouls"
                     }
                 }
             },
@@ -2054,6 +2031,86 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": null,
+            "title": {},
+            "description": {},
+            "tooltip": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "pickingTime": {
+                    "title": null
+                },
+                "promptSelection": {
+                    "title": null,
+                    "help": null
+                },
+                "visibility": {
+                    "title": null,
+                    "help": null,
+                    "data": {
+                        "ALL": null,
+                        "TEAM": null,
+                        "PRIVATE": null
+                    },
+                    "description": {
+                        "ALL": null,
+                        "TEAM": null,
+                        "PRIVATE": null
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coopConsensus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "scoring": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "modes": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2160,6 +2217,9 @@
             "makeYourMove": "Mach deinen Zug",
             "waitingForOthers": "Warten auf andere",
             "wager": "Setz deinen Einsatz",
+            "yourClue": null,
+            "nameClue": null,
+            "writeYourClue": null,
             "tieEndedRound": "Runde ist unentschieden ausgegangen",
             "youEndedRound": "Du hast die Runde beendet",
             "nameEndedRound": "%{name} hat die Runde beendet",
@@ -2192,6 +2252,7 @@
         }
     },
     "placeholder": {
+        "clue": null,
         "cardSetId": "Ausfüllen des Kartensets ID...",
         "cardContent": "Karteninhalt ausfüllen...",
         "cardSetName": "Name des Kartensets eingeben...",
@@ -2432,6 +2493,7 @@
         "restartNotice": "Der Server startet in {count} Minuten neu. Beende bitte dein Spiel. | Der Server startet in {count} Minute neu. Beende bitte dein Spiel. | Der Server startet in {count} Minuten neu. Beende bitte dein Spiel."
     },
     "misc": {
+        "refresh": null,
         "automatic": "Auto",
         "title": "Titel",
         "current": "Aktuell",
@@ -2743,7 +2805,8 @@
         "noChangesDetected": "Keine Änderungen festgestellt",
         "newChanges": "Neue Änderungen",
         "saveChanges": "Änderungen speichern",
-        "previousChanges": "Frühere Änderungen ansehen"
+        "previousChanges": "Frühere Änderungen ansehen",
+        "random": "Zufällig"
     },
     "card": {
         "empty": "Keine Karten",
@@ -2927,6 +2990,10 @@
             "empty": "Du hast keine Nutzer blockiert.",
             "count": "%{count} blockiert"
         },
+        "cluePicking": {
+            "title": null,
+            "description": null
+        },
         "youBlockedUser": "Du hast diesen Nutzer blockiert.",
         "playerProfile": {
             "unavailable": "Dieses Profil konnte gerade nicht geladen werden.",
@@ -2983,6 +3050,9 @@
         "votePick": "Stimme für %{option} ab",
         "votePickChange": "Stimme auf %{option} ändern",
         "votePickSelected": "Du hast für %{option} abgestimmt",
+        "clueSelf": null,
+        "clueOther": null,
+        "stayQuietHint": null,
         "tiedVoteSelf": "Eure Gruppe hat ein Unentschieden! Wir ziehen jetzt einfach mal was zufällig aus...",
         "tiedVoteOther": "Wartet mal kurz, eure Gegner haben auch ein Unentschieden.",
         "waitForOpponent": "Warte auf deinen Gegner...",

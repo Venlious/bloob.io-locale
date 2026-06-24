@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Polish",
         "rtl": false,
-        "total": 2127,
-        "missing": 0
+        "total": 2163,
+        "missing": 48
     },
     "name": "Bloob.io",
     "error": {
@@ -239,7 +239,12 @@
                 },
                 "winCondition": {
                     "title": "Warunek zwycięstwa",
-                    "help": "Określ, kiedy gra powinna dobiec końca."
+                    "help": "Określ, kiedy gra powinna dobiec końca.",
+                    "data": {
+                        "firstToPoints": "Pierwszy, kto zdobędzie <b>0</b> punktów | Pierwszy, kto zdobędzie <b>1</b> punkt | Pierwszy, kto zdobędzie <b>{count}</b> punktów",
+                        "mostPoints": "Najwięcej punktów po <b>0</b> rundach | Najwięcej punktów po <b>1</b> rundzie | Najwięcej punktów po <b>{count}</b> rundach",
+                        "lastStanding": "Ostatni przy życiu (0 żyć) | Ostatni przy życiu (1 życie) | Ostatni przy życiu ({count} żyć)"
+                    }
                 },
                 "winAmount": {
                     "title": "Kwota wygranej"
@@ -579,12 +584,6 @@
             "title": "Zgniłe Jabłka | Karty Przeciwko Ludzkości Online z Przyjaciółmi",
             "description": "Graj w Zgniłe Jabłka bez konta, darmowo i online! Zbieraj przyjaciół albo graj z obcymi. Karty przeciwko ludzkości w wersji internetowej!",
             "options": {
-                "winCondition": {
-                    "data": {
-                        "first": "Pierwszy, który zdobędzie <b>0</b> punktów | Pierwszy, który zdobędzie <b>1</b> punkt | Pierwszy, który zdobędzie <b>{count}</b> punktów",
-                        "most": "Najwięcej punktów po <b>0</b> rundach | Najwięcej punktów po <b>1</b> rundzie | Najwięcej punktów po <b>{count}</b> rundach"
-                    }
-                },
                 "judgeSystem": {
                     "title": "System Sędziowania",
                     "help": "Albo sędzia, albo wszyscy decydują, kto miał najlepszą grę w każdej rundzie.",
@@ -605,7 +604,6 @@
                     "title": "Runda Wyśmiewania",
                     "help": "Runda wymiany pozwala każdemu wybrać karty z ręki, które chce usunąć. Nowe karty odpowiedzi są dawane jako zastępstwo po zakończeniu rundy.",
                     "data": {
-                        "disabled": "Niepełnosprawni",
                         "round": "Co <b>0</b> rund | Co <b>1</b> runda | Co <b>{count}</b> rund"
                     }
                 },
@@ -751,8 +749,7 @@
                     "data": {
                         "OPPOSITE_SIDE": "Dotrzeć na przeciwległą stronę",
                         "TAKE": "Weźmij kawałek",
-                        "ALL": "Zacznij od wszystkich królów",
-                        "NONE": "Niepełnosprawny"
+                        "ALL": "Zacznij od wszystkich królów"
                     }
                 },
                 "backwardsTake": {
@@ -841,7 +838,6 @@
                 },
                 "winCondition": {
                     "data": {
-                        "LAST_STANDING": "Ostatni przy życiu (0 żyć) | Ostatni przy życiu (1 życie) | Ostatni przy życiu ({count} żyć)",
                         "KILL_COUNT": "Pierwszy zdobywca 0 zabójstw | Pierwszy zdobywca 1 zabójstwa | Pierwszy zdobywca ({count}) zabójstw",
                         "TIME": "Najwięcej zabójstw po 0 min. | Najwięcej zabójstw po 1 min. | Najwięcej zabójstw po ({count}) min."
                     }
@@ -1242,7 +1238,6 @@
                     "title": "Rozmiar siatki",
                     "help": "Wybierz rozmiar poziomu, na którym chcesz grać.",
                     "data": {
-                        "random": "Losowy",
                         "7x7": "7x7",
                         "11x11": "11x11",
                         "15x15": "15x15"
@@ -1252,7 +1247,6 @@
                     "title": "Mapa",
                     "help": "Wybierz mapę, na której chciałbyś zagrać.",
                     "data": {
-                        "random": "Losowy",
                         "peninsula": "Półwysep",
                         "archipelago": "Archipelag",
                         "canal": "Kanał",
@@ -1270,7 +1264,6 @@
                     "title": "Orientacja",
                     "help": "Wybierz orientację, w której będzie wyświetlany poziom.",
                     "data": {
-                        "random": "Losowy",
                         "NORTH": "Północ",
                         "EAST": "Wschód",
                         "SOUTH": "Południe",
@@ -1376,7 +1369,6 @@
                 },
                 "winCondition": {
                     "data": {
-                        "FIRST": "Pierwszy, który zdobędzie <b>0</b> punktów | Pierwszy, który zdobędzie <b>1</b> punkt | Pierwszy, który zdobędzie <b>{count}</b> punktów",
                         "HIGHEST_AFTER": "Najwięcej punktów po zdobyciu <b>0</b> punktów | Najwięcej punktów po zdobyciu <b>1</b> punktu | Najwięcej punktów po zdobyciu <b>{count}</b> punktów"
                     }
                 }
@@ -1600,13 +1592,6 @@
                         "rock": "Kamień bije nożyczki",
                         "paper": "Papier bije kamień",
                         "scissors": "Nożyczki biją papier"
-                    }
-                },
-                "winCondition": {
-                    "data": {
-                        "LAST_STANDING": "Ostatni na placu boju (<b>0</b> żyć) | Ostatni na placu boju (<b>1</b> życie) | Ostatni na placu boju (<b>{count}</b> żyć)",
-                        "FIRST": "Pierwszy, kto zdobędzie <b>0</b> punktów | Pierwszy, kto zdobędzie <b>1</b> punkt | Pierwszy, kto zdobędzie <b>{count}</b> punktów",
-                        "HIGHEST_AFTER": "Najwięcej punktów po <b>0</b> rundach | Najwięcej punktów po <b>1</b> rundzie | Najwięcej punktów po <b>{count}</b> rundach"
                     }
                 }
             },
@@ -1886,12 +1871,6 @@
                         "ELEVEN": "Zawsze 11"
                     }
                 },
-                "winCondition": {
-                    "data": {
-                        "FIRST": "Pierwszy, kto zdobędzie <b>0</b> punktów | Pierwszy, kto zdobędzie <b>1</b> punkt | Pierwszy, kto zdobędzie <b>{count}</b> punktów",
-                        "HIGHEST_AFTER": "Najwięcej punktów po <b>0</b> rundach | Najwięcej punktów po <b>1</b> rundzie | Najwięcej punktów po <b>{count}</b> rundach"
-                    }
-                },
                 "splitSameFaceOnly": {
                     "title": "Podział tylko przy tej samej karcie",
                     "help": "Po włączeniu podział jest dozwolony tylko wtedy, gdy obie karty startowe są tą samą kartą (np. K+K lub 8+8), a nie tylko mają tę samą wartość liczbową."
@@ -1994,8 +1973,7 @@
                     "title": "Układ rozbicia",
                     "help": "Wybierz, czy początkowy układ do rozbicia ma być stały czy losowy.",
                     "data": {
-                        "fixed": "Stały (oficjalny)",
-                        "random": "Losowy"
+                        "fixed": "Stały (oficjalny)"
                     }
                 },
                 "breakFillers": {
@@ -2007,8 +1985,7 @@
                     "help": "Wybierz, które faule mogą zwracać kulę przeciwnika na stół.",
                     "data": {
                         "anyFoul": "Każdy kwalifikujący się faul",
-                        "ballInHand": "Tylko faule z bilą w ręku",
-                        "off": "Wyłączone"
+                        "ballInHand": "Tylko faule z bilą w ręku"
                     }
                 }
             },
@@ -2054,6 +2031,86 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": null,
+            "title": {},
+            "description": {},
+            "tooltip": null,
+            "options": {
+                "consensus": {
+                    "title": null,
+                    "help": null
+                },
+                "pickingTime": {
+                    "title": null
+                },
+                "promptSelection": {
+                    "title": null,
+                    "help": null
+                },
+                "visibility": {
+                    "title": null,
+                    "help": null,
+                    "data": {
+                        "ALL": null,
+                        "TEAM": null,
+                        "PRIVATE": null
+                    },
+                    "description": {
+                        "ALL": null,
+                        "TEAM": null,
+                        "PRIVATE": null
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "coopConsensus": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "scoring": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "modes": {
+                    "title": null,
+                    "description": [
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2160,6 +2217,9 @@
             "makeYourMove": "Zrób swój ruch",
             "waitingForOthers": "Czekam na innych",
             "wager": "Zakład",
+            "yourClue": null,
+            "nameClue": null,
+            "writeYourClue": null,
             "tieEndedRound": "Runda skończona remisem",
             "youEndedRound": "Skończyłeś rundę",
             "nameEndedRound": "%{name} skończył rundę",
@@ -2192,6 +2252,7 @@
         }
     },
     "placeholder": {
+        "clue": null,
         "cardSetId": "Wpisz ID zestawu kart...",
         "cardContent": "Wpisz zawartość karty...",
         "cardSetName": "Wpisz nazwę dla tego zestawu kart...",
@@ -2432,6 +2493,7 @@
         "restartNotice": "Serwer zrestartuje się za {count} minut. Skończ swoją grę. | Serwer zrestartuje się za {count} minutę. Skończ swoją grę. | Serwer zrestartuje się za {count} minut. Skończ swoją grę."
     },
     "misc": {
+        "refresh": null,
         "automatic": "Auto",
         "title": "Tytuł",
         "current": "Obecnie",
@@ -2743,7 +2805,8 @@
         "noChangesDetected": "Nie wykryto żadnych zmian",
         "newChanges": "Nowe zmiany",
         "saveChanges": "Zapisz zmiany",
-        "previousChanges": "Przejrzyj poprzednie zmiany"
+        "previousChanges": "Przejrzyj poprzednie zmiany",
+        "random": "Losowy"
     },
     "card": {
         "empty": "Brak kart",
@@ -2927,6 +2990,10 @@
             "empty": "Nie zablokowałeś żadnych użytkowników.",
             "count": "%{count} zablokowanych"
         },
+        "cluePicking": {
+            "title": null,
+            "description": null
+        },
         "youBlockedUser": "Zablokowałeś tego użytkownika.",
         "playerProfile": {
             "unavailable": "Nie udało się teraz załadować tego profilu.",
@@ -2983,6 +3050,9 @@
         "votePick": "Głosuj na %{option}",
         "votePickChange": "Zmień głos na %{option}",
         "votePickSelected": "Głosowałeś na %{option}",
+        "clueSelf": null,
+        "clueOther": null,
+        "stayQuietHint": null,
         "tiedVoteSelf": "Wasza ekipa ma remis! Losujemy wybór...",
         "tiedVoteOther": "Poczekaj chwilę, wasi przeciwnicy mają remis.",
         "waitForOpponent": "Czekam na twojego przeciwnika...",
