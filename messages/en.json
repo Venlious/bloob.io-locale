@@ -150,6 +150,7 @@
             "blocked": "Your punishment does not allow you to join matchmaking or public matches.",
             "joinBlocked": "You cannot join this match.",
             "empty": "Match closed. All other players left the match.",
+			"noAgreement": "The match was closed because no agreement could be reached. Statistics were not recorded.",
             "rematchTimeout": "You didn't accept the rematch request and were sent back to the main menu.",
             "rematchCancelled": "Sorry! There aren't enough players left for a rematch.",
             "inactive": "The match you were in has been closed as it has been inactive for too long.",
@@ -2042,6 +2043,13 @@
                     "title": "Consensus Mode",
                     "help": "When enabled, all players' guesses are averaged together to produce a shared answer. When disabled, only the last confirmed dial position counts."
                 },
+                "winAmountRounds": {
+                    "title": "Rounds",
+                    "help": "How many rounds the match lasts. Auto scales the round count based on how many players are in the match: 4 rounds for 2 players, 3 for 3-4, 2 for 5-6, and 1 for 7 or more.",
+                    "data": {
+                        "fixed": "<b>0</b> rounds | <b>1</b> round | <b>{count}</b> rounds"
+                    }
+                },
                 "pickingTime": {
                     "title": "Clue Writing Time"
                 },
@@ -2052,6 +2060,10 @@
                 "promptSelection": {
                     "title": "Prompt Selection",
                     "help": "When enabled, players choose from 3 different spectrums each round instead of being assigned one."
+                },
+                "stepScoring": {
+                    "title": "Step Scoring",
+                    "help": "When enabled, points are awarded in fixed bands (75/50/25) based on distance from the target instead of scaling smoothly."
                 },
                 "visibility": {
                     "title": "Live Positions",
@@ -2073,7 +2085,7 @@
                     "title": "Versus",
                     "description": [
                         "Everyone against each other",
-                        "First to 20 points wins",
+                        "Rounds scale automatically with player count",
                         "Points based on how close your guess is"
                     ]
                 },
@@ -2224,6 +2236,8 @@
             "yourClue": "Broadcasting your clue",
             "nameClue": "Tune into %{name}'s clue",
             "writeYourClue": "Write your clue",
+            "languageSelect": "Language selection",
+            "languageAgreed": "Language agreed",
             "tieEndedRound": "Round has ended in a tie",
             "youEndedRound": "You have ended the round",
             "nameEndedRound": "%{name} has ended the round",
@@ -2257,6 +2271,7 @@
     },
     "placeholder": {
         "clue": "Enter your clue...",
+        "clueInLanguage": "Enter your clue in {language}...",
         "cardSetId": "Fill in card set ID...",
         "cardContent": "Fill in card content...",
         "cardSetName": "Fill in name for this card set...",
@@ -2531,6 +2546,8 @@
         "questions": "Questions",
         "teamAndQuestions": "Team & Questions",
         "questionPacks": "Question Packs",
+        "packs": "Packs",
+        "teamAndPacks": "Team & Packs",
         "rock": "Rock",
         "paper": "Paper",
         "scissors": "Scissors",
@@ -3057,6 +3074,14 @@
         "clueSelf": "Your clue",
         "clueOther": "%{name}'s clue",
         "stayQuietHint": "Don't give any extra hints while others are guessing!",
+        "multipleLanguages": {
+            "title": "Multiple languages detected",
+            "description": "We noticed players using different languages. To ensure everyone understands the clues, select all the languages you understand — once everyone has at least one in common, the game will start.",
+            "leave": "I can't participate in any of these languages",
+            "leaveDescription": "That's completely fine — no statistics or wins will be recorded for anyone if you leave now.",
+            "agreedTitle": "You're all set!",
+            "agreedDescription": "Everyone agrees to use {language} for their clues!"
+        },
         "tiedVoteSelf": "Your group has a tied vote! Picking a selection at random...",
         "tiedVoteOther": "Please wait a second, your opponents have a tied vote.",
         "waitForOpponent": "Waiting for your opponent...",
