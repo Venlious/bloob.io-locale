@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 2163,
-        "missing": 48
+        "total": 2184,
+        "missing": 0
     },
     "name": "Bloob.io",
     "error": {
@@ -150,6 +150,7 @@
             "blocked": "Cezan dolayısıyla eşleştirme oyunlarına ya da genel maçlara katılmana izin verilmiyor.",
             "joinBlocked": "Bu maça katılamazsın.",
             "empty": "Maç kapandı. Diğer tüm oyuncular maçı terk etti.",
+            "noAgreement": "Maç kapandı çünkü anlaşma sağlanamadı. İstatistikler kaydedilmedi.",
             "rematchTimeout": "Yeniden maç teklifini kabul etmedin ve ana menüye geri gönderildin.",
             "rematchCancelled": "Üzgünüm! Yeniden maç için yeterli oyuncu kalmadı.",
             "inactive": "İçinde bulunduğun maç, çok uzun süre aktif olmadığı için kapatıldı.",
@@ -2036,78 +2037,99 @@
             "name": "Tuned In",
             "title": "Tuned In | Ücretsiz Çevrimiçi Parti Oyunu | Çok Oyunculu",
             "description": "Oynaması ücretsiz Tuned In, hesap gerektirmeyen çevrimiçi parti oyunu. Arkadaşlarla, yabancılarla ve takımlar halinde çok oyunculu oynayın!",
-            "tooltip": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "Paylaşılan Göstergeler",
+                    "help": "Açık olduğunda, takım ya da kooperatif grup tek bir göstergeyi paylaşır ve herkes birlikte hareket eder — nereye giderse gitsin, orası cevap. Kapalı olduğunda, her oyuncunun kendi göstergesi olur ve takımın cevabı herkesin son pozisyonunun ortalamasıdır."
+                },
+                "winAmountRounds": {
+                    "title": "Turlar",
+                    "help": "Maç kaç tur sürüyor? Oyuncu sayısına göre tur sayısını otomatik ayarlıyor: 2 oyuncu için 4 tur, 3-4 oyuncu için 3 tur, 5-6 oyuncu için 2 tur, 7 veya daha fazla oyuncu için 1 tur.",
+                    "data": {
+                        "fixed": "<b>0</b> tur | <b>1</b> tur | <b>{count}</b> tur"
+                    }
                 },
                 "pickingTime": {
-                    "title": null
+                    "title": "İpucu Yazma Süresi"
+                },
+                "revealTime": {
+                    "title": "Sonuç Gösterim Süresi",
+                    "help": "Her ipucu açıldıktan sonra sonuçlar ne kadar süre gösteriliyor?"
                 },
                 "promptSelection": {
-                    "title": null,
-                    "help": null
+                    "title": "Seçenek Belirleme",
+                    "help": "Açık olduğunda, oyuncular her turda birine atanmak yerine 3 farklı spektrumdan birini seçiyor."
+                },
+                "stepScoring": {
+                    "title": "Adım Puanlama",
+                    "help": "Açık olduğunda, hedefe olan mesafeye göre sabit bantlarda (75/50/25) puan verilir, yani pürüzsüz bir şekilde artmaz."
                 },
                 "visibility": {
-                    "title": null,
-                    "help": null,
+                    "title": "Canlı Pozisyonlar",
+                    "help": "Kontrol eder, kimin diğerlerinin spektrumda nerede hareket ettiğini gerçek zamanlı olarak görebileceğini.",
                     "data": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "Herkes",
+                        "TEAM": "Sadece takım",
+                        "PRIVATE": "Gizli"
                     },
                     "description": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "Tüm oyuncular, diğerlerinin spektrum üzerindeki canlı konumunu görebiliyor.",
+                        "TEAM": "Oyuncular sadece takım arkadaşlarının canlı konumlarını görebiliyor.",
+                        "PRIVATE": "Hiç kimse diğerlerinin spektrumda nerede olduğunu göremez."
                     }
                 }
             },
             "presets": {
                 "default": {
-                    "title": null,
+                    "title": "Karşısında",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Herkes birbirine karşı",
+                        "Tahmininin ne kadar yakın olduğuna göre puanlar"
+                    ]
+                },
+                "teams": {
+                    "title": "Takımlar",
+                    "description": [
+                        "Seçtiğin takımlarla yarış",
+                        "Tahmin, takımının ortalamasıdır"
                     ]
                 },
                 "coopConsensus": {
-                    "title": null,
+                    "title": "Klasik Kooperatif",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Bir takım gibi birlikte çalışın",
+                        "Tek bir ortak göstergeyi birlikte hareket ettirin",
+                        "Puanlar sabit aralıklarda kazanılır"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "Demokrasi Kooperatifi",
+                    "description": [
+                        "Bir takım gibi birlikte çalışın",
+                        "Tahmin, takımınızın ortalamasıdır"
                     ]
                 }
             },
             "help": {
                 "rules": {
-                    "title": null,
+                    "title": "Nasıl Oynanır",
                     "description": [
-                        null,
-                        null,
-                        null,
-                        null
-                    ]
-                },
-                "scoring": {
-                    "title": null,
-                    "description": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null
+                        "Her turda, her oyuncu bir spektrumda gizli bir hedef alıyor (mesela Sıcak ← → Soğuk) ve bunu işaret eden bir ipucu yazıyor, ama ölçeğin kendi kelimelerini kullanmadan.",
+                        "Sonra tüm oyuncular, birbirlerinin ipuçlarının nerede olduğunu tahmin etme şansına sahip. Tahmin ne kadar yakınsa, o kadar çok puan kazanıyorsun."
                     ]
                 },
                 "modes": {
-                    "title": null,
+                    "title": "Oyun Modları",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Solo: Herkes kendi başına tahmin yapar ve bireysel puan alır.",
+                        "Co-op: Tüm grup tek bir puanı paylaşır.",
+                        "Team: Lobiye bir takım rengi seç; her takım ayrı puan alır."
+                    ]
+                },
+                "customize": {
+                    "title": "Kuralları Özelleştir",
+                    "description": [
+                        "Lobi ayarlarında puanlama, göstergeler ve daha fazlasını ayarla. Mesafeye dayalı puanlamadan adım bazlı puanlamaya geçmek gibi ayarlar."
                     ]
                 }
             }
@@ -2217,9 +2239,11 @@
             "makeYourMove": "Hamleni yap",
             "waitingForOthers": "Diğerlerini bekliyoruz",
             "wager": "Bahis",
-            "yourClue": null,
-            "nameClue": null,
-            "writeYourClue": null,
+            "yourClue": "İpucunu yayımlıyorsun",
+            "nameClue": "%{name}'in ipucuna kulak ver",
+            "writeYourClue": "İpucunu yaz",
+            "languageSelect": "Dil seçimi",
+            "languageAgreed": "Dil kabul edildi",
             "tieEndedRound": "Tur bitti, berabere kaldı",
             "youEndedRound": "Turu sen bitirdin",
             "nameEndedRound": "%{name} turu bitirdi",
@@ -2252,7 +2276,8 @@
         }
     },
     "placeholder": {
-        "clue": null,
+        "clue": "İpucunu gir...",
+        "clueInLanguage": "İpucunu {language} dilinde gir...",
         "cardSetId": "Kart seti ID'sini doldur...",
         "cardContent": "Kart içeriğini doldur...",
         "cardSetName": "Bu kart seti için bir isim belirle...",
@@ -2493,7 +2518,7 @@
         "restartNotice": "Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir."
     },
     "misc": {
-        "refresh": null,
+        "refresh": "Yenile",
         "automatic": "Otomatik",
         "title": "Başlık",
         "current": "Güncel",
@@ -2527,6 +2552,8 @@
         "questions": "Sorular",
         "teamAndQuestions": "Takım & Sorular",
         "questionPacks": "Soru Paketleri",
+        "packs": "Paketler",
+        "teamAndPacks": "Takım & Paketler",
         "rock": "Taş",
         "paper": "Kağıt",
         "scissors": "Makas",
@@ -2733,6 +2760,8 @@
         "winLossDelta": "G/M farkı",
         "killDeathRatio": "K/D Oranı",
         "quitRatio": "Oyundan çıkma oranı",
+        "clueSuccessRatio": "İpucu Başarı Oranı",
+        "guessHitRatio": "Tahmin Isabet Oranı",
         "lives": "Hayatlar",
         "points": "Puanlar",
         "wins": "Kazanmalar",
@@ -2991,8 +3020,8 @@
             "count": "%{count} engellendi"
         },
         "cluePicking": {
-            "title": null,
-            "description": null
+            "title": "İpucunu yaz",
+            "description": "İpucunu belirsiz ama doğru tut — diğerleri senin pozisyonunu tahmin etmek için bunu kullanacak."
         },
         "youBlockedUser": "Bu kullanıcıyı engelledin.",
         "playerProfile": {
@@ -3050,9 +3079,17 @@
         "votePick": "%{option} için oy ver",
         "votePickChange": "Oyunu %{option} olarak değiştir",
         "votePickSelected": "Oyun %{option} için kullanıldı",
-        "clueSelf": null,
-        "clueOther": null,
-        "stayQuietHint": null,
+        "clueSelf": "İpucun",
+        "clueOther": "%{name}'in ipucu",
+        "stayQuietHint": "Diğerleri tahmin yaparken ekstra ipucu verme!",
+        "multipleLanguages": {
+            "title": "Birden fazla dil tespit edildi",
+            "description": "Farklı diller kullanan oyuncular olduğunu fark ettik. Herkesin ipuçlarını anlaması için, anladığınız tüm dilleri seçin — herkesin en az bir ortak dili olduğunda oyun başlayacak.",
+            "leave": "Bu dillerden hiçbirinde katılamıyorum",
+            "leaveDescription": "Bu tamamen sorun değil — şimdi çıkarsanız kimse için istatistik veya kazanımlar kaydedilmeyecek.",
+            "agreedTitle": "Hazırsınız!",
+            "agreedDescription": "Herkes ipuçları için {language} kullanmayı kabul etti!"
+        },
         "tiedVoteSelf": "Grubunuzda oylar eşit! Rastgele bir seçim yapılıyor...",
         "tiedVoteOther": "Bir saniye bekle, rakiplerinizin oyları da eşit.",
         "waitForOpponent": "Rakibini bekliyor...",

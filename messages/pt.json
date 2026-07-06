@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Brazilian Portuguese",
         "rtl": false,
-        "total": 2163,
-        "missing": 48
+        "total": 2184,
+        "missing": 0
     },
     "name": "Bloob.io",
     "error": {
@@ -150,6 +150,7 @@
             "blocked": "Sua punição não te permite entrar em partidas públicas ou de seleção.",
             "joinBlocked": "Você não pode entrar nessa partida.",
             "empty": "Sala fechada. Todos os outros jogadores deixaram a partida.",
+            "noAgreement": "A partida foi encerrada porque não rolou um acordo. As estatísticas não foram registradas.",
             "rematchTimeout": "Você não aceitou o pedido de revanche e foi enviado de volta para o menu principal.",
             "rematchCancelled": "Desculpe! Não há jogadores suficientes para uma revanche.",
             "inactive": "A partida em que você estava foi encerrada, pois ficou inativa por muito tempo.",
@@ -2036,78 +2037,99 @@
             "name": "Tuned In",
             "title": "Jogue Tuned In | Festa Online com Amigos!",
             "description": "Jogue Tuned In! Um jogo de festa online multijogador grátis, sem conta, pra curtir com amigos. Descubra, coopere e divirta-se!",
-            "tooltip": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "Indicador Compartilhado",
+                    "help": "Quando ativado, a equipe ou grupo de cooperação compartilha um único indicador que todo mundo se move junto — onde quer que ele termine é a resposta. Quando desativado, cada jogador tem seu próprio indicador, e a resposta da equipe é a média da posição final de todo mundo."
+                },
+                "winAmountRounds": {
+                    "title": "Rodadas",
+                    "help": "Quantas rodadas a partida dura. O número de rodadas se ajusta automaticamente com base em quantos jogadores estão na partida: 4 rodadas para 2 jogadores, 3 para 3-4, 2 para 5-6 e 1 para 7 ou mais.",
+                    "data": {
+                        "fixed": "<b>0</b> rodadas | <b>1</b> rodada | <b>{count}</b> rodadas"
+                    }
                 },
                 "pickingTime": {
-                    "title": null
+                    "title": "Tempo de Escrever Dicas"
+                },
+                "revealTime": {
+                    "title": "Tempo de Exibição do Resultado",
+                    "help": "Quanto tempo os resultados aparecem depois que cada dica é revelada?"
                 },
                 "promptSelection": {
-                    "title": null,
-                    "help": null
+                    "title": "Seleção de Prompt",
+                    "help": "Quando ativado, os jogadores escolhem entre 3 espectros diferentes a cada rodada em vez de receber um."
+                },
+                "stepScoring": {
+                    "title": "Pontuação de Passos",
+                    "help": "Quando ativado, os pontos são dados em faixas fixas (75/50/25) com base na distância do alvo, em vez de aumentar de forma suave."
                 },
                 "visibility": {
-                    "title": null,
-                    "help": null,
+                    "title": "Posições Ao Vivo",
+                    "help": "Controla quem pode ver pra onde os outros tão se movendo no espectro em tempo real.",
                     "data": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "Todo mundo",
+                        "TEAM": "Só a equipe",
+                        "PRIVATE": "Escondido"
                     },
                     "description": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "Todos os jogadores veem a posição ao vivo uns dos outros no espectro.",
+                        "TEAM": "Os jogadores só veem as posições ao vivo dos seus companheiros de time.",
+                        "PRIVATE": "Ninguém consegue ver onde os outros estão no espectro."
                     }
                 }
             },
             "presets": {
                 "default": {
-                    "title": null,
+                    "title": "Versus",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Todo mundo contra todo mundo",
+                        "Pontos baseados em quão perto sua aposta tá"
+                    ]
+                },
+                "teams": {
+                    "title": "Times",
+                    "description": [
+                        "Compita em times que você escolher",
+                        "O palpite é a média do seu time"
                     ]
                 },
                 "coopConsensus": {
-                    "title": null,
+                    "title": "Co-op Clássico",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Trabalhem juntos como um time",
+                        "Movam um único indicador compartilhado juntos",
+                        "Os pontos são marcados em faixas fixas"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "Cooperativa da Democracia",
+                    "description": [
+                        "Trabalhem juntos como um time",
+                        "O palpite é a média do seu time"
                     ]
                 }
             },
             "help": {
                 "rules": {
-                    "title": null,
+                    "title": "Como Jogar",
                     "description": [
-                        null,
-                        null,
-                        null,
-                        null
-                    ]
-                },
-                "scoring": {
-                    "title": null,
-                    "description": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null
+                        "A cada rodada, cada jogador recebe um alvo secreto em um espectro (tipo, Quente ← → Frio) e escreve uma dica pra dar uma pista, sem usar as palavras da escala.",
+                        "Depois, todos os jogadores tentam adivinhar onde a dica se encaixa nas dicas dos outros. Quanto mais perto você acertar, mais pontos você ganha."
                     ]
                 },
                 "modes": {
-                    "title": null,
+                    "title": "Modos de Jogo",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Solo: Cada um chuta por conta e faz a pontuação individualmente.",
+                        "Co-op: O grupo todo compartilha uma pontuação só.",
+                        "Time: Escolhe uma cor de time no lobby; cada time faz a pontuação separada."
+                    ]
+                },
+                "customize": {
+                    "title": "Personalize as Regras",
+                    "description": [
+                        "Ajuste a pontuação, os indicadores e mais nas configurações do lobby. Configurações como mudar para pontuação baseada em passos em vez de distância."
                     ]
                 }
             }
@@ -2217,9 +2239,11 @@
             "makeYourMove": "Faça sua jogada",
             "waitingForOthers": "Esperando os outros",
             "wager": "Aposta",
-            "yourClue": null,
-            "nameClue": null,
-            "writeYourClue": null,
+            "yourClue": "Enviando sua dica",
+            "nameClue": "Sintonize na dica do %{name}",
+            "writeYourClue": "Escreva sua dica",
+            "languageSelect": "Seleção de idioma",
+            "languageAgreed": "Idioma escolhido",
             "tieEndedRound": "A rodada terminou empatada",
             "youEndedRound": "Você terminou a rodada",
             "nameEndedRound": "%{name} terminou a rodada",
@@ -2252,7 +2276,8 @@
         }
     },
     "placeholder": {
-        "clue": null,
+        "clue": "Digite sua dica...",
+        "clueInLanguage": "Digite sua dica em {language}...",
         "cardSetId": "Preencha o ID do conjunto de cartas...",
         "cardContent": "Preencha o conteúdo da carta...",
         "cardSetName": "Preencha o nome para este conjunto de cartas...",
@@ -2493,7 +2518,7 @@
         "restartNotice": "O servidor vai reiniciar em {count} minutos. Termina seu jogo. | O servidor vai reiniciar em {count} minuto. Termina seu jogo. | O servidor vai reiniciar em {count} minutos. Termina seu jogo."
     },
     "misc": {
-        "refresh": null,
+        "refresh": "Atualizar",
         "automatic": "Auto",
         "title": "Título",
         "current": "Atual",
@@ -2527,6 +2552,8 @@
         "questions": "Perguntas",
         "teamAndQuestions": "Time & Perguntas",
         "questionPacks": "Pacotes de Perguntas",
+        "packs": "Pacotes",
+        "teamAndPacks": "Time & Pacotes",
         "rock": "Pedra",
         "paper": "Papel",
         "scissors": "Tesoura",
@@ -2733,6 +2760,8 @@
         "winLossDelta": "Dif. V/D",
         "killDeathRatio": "Taxa K/D",
         "quitRatio": "Taxa de desistência",
+        "clueSuccessRatio": "Taxa de Sucesso da Dica",
+        "guessHitRatio": "Taxa de Acerto do Palpite",
         "lives": "Vidas",
         "points": "Pontos",
         "wins": "Vitórias",
@@ -2991,8 +3020,8 @@
             "count": "%{count} bloqueados"
         },
         "cluePicking": {
-            "title": null,
-            "description": null
+            "title": "Escreva sua dica",
+            "description": "Mantenha sua dica vaga, mas precisa — os outros vão usar isso pra adivinhar sua posição."
         },
         "youBlockedUser": "Você bloqueou esse usuário.",
         "playerProfile": {
@@ -3050,9 +3079,17 @@
         "votePick": "Vote em %{option}",
         "votePickChange": "Alterar voto para %{option}",
         "votePickSelected": "Você votou em %{option}",
-        "clueSelf": null,
-        "clueOther": null,
-        "stayQuietHint": null,
+        "clueSelf": "Sua dica",
+        "clueOther": "A dica do %{name}",
+        "stayQuietHint": "Não dá mais dicas enquanto os outros estão adivinhando!",
+        "multipleLanguages": {
+            "title": "Vários idiomas detectados",
+            "description": "Notamos que os jogadores estão usando idiomas diferentes. Pra garantir que todo mundo entenda as dicas, escolha todos os idiomas que você entende — assim que todo mundo tiver pelo menos um em comum, o jogo vai começar.",
+            "leave": "Eu não consigo participar em nenhum desses idiomas",
+            "leaveDescription": "Tranquilo — nenhuma estatística ou vitória vai ser registrada pra ninguém se você sair agora.",
+            "agreedTitle": "Tudo certo!",
+            "agreedDescription": "Todo mundo concorda em usar {language} para as dicas!"
+        },
         "tiedVoteSelf": "Seu grupo tá com um empate! Escolhendo uma opção aleatória...",
         "tiedVoteOther": "Espera um segundo, seus adversários tão com um empate.",
         "waitForOpponent": "Esperando pelo seu oponente...",

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "Korean (Haeyo-che, ~해요체 style)",
         "rtl": false,
-        "total": 2163,
-        "missing": 48
+        "total": 2184,
+        "missing": 0
     },
     "name": "Bloob.io",
     "error": {
@@ -150,6 +150,7 @@
             "blocked": "제재로 인해 매치메이킹이나 공개 매치에 참여할 수 없어요.",
             "joinBlocked": "이 매치에 참여할 수 없어요.",
             "empty": "매치가 종료되었어요. 다른 플레이어들이 모두 매치를 떠났어요.",
+            "noAgreement": "경기가 종료됐어요, 합의에 도달할 수 없어서요. 통계는 기록되지 않았어요.",
             "rematchTimeout": "재경기 요청을 수락하지 않아 메인 메뉴로 돌아갔어요.",
             "rematchCancelled": "죄송해요! 재경기를 위한 인원이 부족해요.",
             "inactive": "오랫동안 활동이 없어 참여 중이던 매치가 종료되었어요.",
@@ -2036,78 +2037,99 @@
             "name": "Tuned In",
             "title": "Tuned In | 내 마음의 주파수(Wavelength) 파티 게임 | 온라인 멀티플레이",
             "description": "무료 웹게임 Tuned In 즐기세요: 계정 없이 친구와 온라인 멀티플레이어 지원해요!",
-            "tooltip": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "공유 지표",
+                    "help": "활성화되면 팀이나 협동 그룹이 모두 함께 움직이는 단일 지표를 공유해요 — 어디에 도착하든 그게 정답이에요. 비활성화되면 각 플레이어는 자신의 지표를 가지게 되고, 팀의 정답은 모든 사람의 최종 위치의 평균이에요."
+                },
+                "winAmountRounds": {
+                    "title": "라운드",
+                    "help": "경기가 얼마나 오래 지속되는지 알려줘요. 플레이어 수에 따라 라운드 수가 자동으로 조정돼요: 2명일 때는 4라운드, 3-4명일 때는 3라운드, 5-6명일 때는 2라운드, 7명 이상일 때는 1라운드예요.",
+                    "data": {
+                        "fixed": "<b>0</b> 라운드 | <b>1</b> 라운드 | <b>{count}</b> 라운드"
+                    }
                 },
                 "pickingTime": {
-                    "title": null
+                    "title": "단서 작성 시간"
+                },
+                "revealTime": {
+                    "title": "결과 표시 시간",
+                    "help": "각 단서가 공개된 후 결과가 얼마나 오래 표시되는지요?"
                 },
                 "promptSelection": {
-                    "title": null,
-                    "help": null
+                    "title": "프롬프트 선택해요",
+                    "help": "활성화되면, 플레이어는 매 라운드마다 하나가 아닌 3가지 다른 스펙트럼 중에서 선택해요."
+                },
+                "stepScoring": {
+                    "title": "스텝 점수 설정해요",
+                    "help": "활성화되면, 목표에서의 거리 기반으로 고정된 범위(75/50/25)로 점수가 부여돼요. 부드럽게 스케일링되는 대신에요."
                 },
                 "visibility": {
-                    "title": null,
-                    "help": null,
+                    "title": "실시간 위치",
+                    "help": "실시간으로 다른 사람들이 스펙트럼에서 어디로 이동하는지 볼 수 있는 사람을 제어해요.",
                     "data": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "모두",
+                        "TEAM": "팀만",
+                        "PRIVATE": "숨겨진"
                     },
                     "description": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "모든 플레이어는 서로의 실시간 위치를 스펙트럼에서 볼 수 있어요.",
+                        "TEAM": "플레이어는 자신의 팀원들의 실시간 위치만 볼 수 있어요.",
+                        "PRIVATE": "아무도 다른 사람들이 스펙트럼에서 어디에 있는지 볼 수 없어요."
                     }
                 }
             },
             "presets": {
                 "default": {
-                    "title": null,
+                    "title": "대결해요",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "서로 대결해요",
+                        "추측이 얼마나 가까운지에 따라 점수를 줘요"
+                    ]
+                },
+                "teams": {
+                    "title": "팀들 해요.",
+                    "description": [
+                        "네가 선택한 팀으로 경쟁해요",
+                        "추측은 너의 팀의 평균이에요"
                     ]
                 },
                 "coopConsensus": {
-                    "title": null,
+                    "title": "클래식 협동해요",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "하나의 팀으로 함께 일해요",
+                        "함께 하나의 공유 지표를 움직여요",
+                        "점수는 고정된 구간에서 획득해요"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "민주주의 협동조합이에요.",
+                    "description": [
+                        "하나의 팀으로 함께 일해요",
+                        "추측은 당신 팀의 평균이에요"
                     ]
                 }
             },
             "help": {
                 "rules": {
-                    "title": null,
+                    "title": "게임 방법 안내해요",
                     "description": [
-                        null,
-                        null,
-                        null,
-                        null
-                    ]
-                },
-                "scoring": {
-                    "title": null,
-                    "description": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null
+                        "매 라운드마다 각 플레이어는 스펙트럼에서 비밀 타겟을 받고 (예: 뜨거움 ← → 차가움) 그에 대한 힌트를 적어요. 스케일의 단어는 사용하지 않아요.",
+                        "그 후 모든 플레이어는 서로의 힌트가 어디에 위치하는지 추측할 수 있어요. 추측이 가까울수록 더 많은 점수를 얻어요."
                     ]
                 },
                 "modes": {
-                    "title": null,
+                    "title": "게임 모드 해요",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "솔로: 모두 각자 추측하고 개별적으로 점수를 매겨요.",
+                        "협동: 전체 그룹이 하나의 점수를 공유해요.",
+                        "팀: 로비에서 팀 색상을 선택해요; 각 팀은 따로 점수를 매겨요."
+                    ]
+                },
+                "customize": {
+                    "title": "규칙을 커스터마이즈해요",
+                    "description": [
+                        "로비 설정에서 점수, 지표 등을 조정해요. 거리 기반 대신 단계 기반 점수로 전환하는 것 같은 설정이 있어요."
                     ]
                 }
             }
@@ -2217,9 +2239,11 @@
             "makeYourMove": "수를 두세요",
             "waitingForOthers": "다른 플레이어들을 기다리는 중이에요",
             "wager": "베팅 중",
-            "yourClue": null,
-            "nameClue": null,
-            "writeYourClue": null,
+            "yourClue": "당신의 단서를 방송해요",
+            "nameClue": "%{name}의 단서를 들어봐요",
+            "writeYourClue": "당신의 단서를 작성해요",
+            "languageSelect": "언어 선택",
+            "languageAgreed": "언어가 합의되었어요",
             "tieEndedRound": "무승부로 라운드가 종료되었어요",
             "youEndedRound": "라운드를 종료했어요",
             "nameEndedRound": "%{name}님이 라운드를 종료했어요",
@@ -2252,7 +2276,8 @@
         }
     },
     "placeholder": {
-        "clue": null,
+        "clue": "당신의 단서를 입력해요...",
+        "clueInLanguage": "{language}로 당신의 단서를 입력해요...",
         "cardSetId": "카드 세트 ID를 입력하세요...",
         "cardContent": "카드 내용을 입력하세요...",
         "cardSetName": "카드 세트 이름을 입력하세요...",
@@ -2493,7 +2518,7 @@
         "restartNotice": "{count}분 후에 서버가 재시작됩니다. 게임을 마무리해 주세요. | {count}분 후에 서버가 재시작됩니다. 게임을 마무리해 주세요. | {count}분 후에 서버가 재시작됩니다. 게임을 마무리해 주세요."
     },
     "misc": {
-        "refresh": null,
+        "refresh": "새로 고침",
         "automatic": "자동",
         "title": "제목",
         "current": "현재",
@@ -2527,6 +2552,8 @@
         "questions": "문제",
         "teamAndQuestions": "팀 및 문제",
         "questionPacks": "문제 팩",
+        "packs": "팩",
+        "teamAndPacks": "팀 & 팩",
         "rock": "바위",
         "paper": "보",
         "scissors": "가위",
@@ -2733,6 +2760,8 @@
         "winLossDelta": "승/패 차이",
         "killDeathRatio": "K/D 비율",
         "quitRatio": "중도 이탈 비율",
+        "clueSuccessRatio": "단서 성공 비율",
+        "guessHitRatio": "추측 적중 비율",
         "lives": "목숨",
         "points": "점수",
         "wins": "승리",
@@ -2991,8 +3020,8 @@
             "count": "%{count}명이 차단되었어요."
         },
         "cluePicking": {
-            "title": null,
-            "description": null
+            "title": "너의 단서를 써봐요",
+            "description": "너의 단서는 모호하지만 정확하게 유지해요 — 다른 사람들이 너의 위치를 추측하는 데 사용할 거예요."
         },
         "youBlockedUser": "이 사용자를 차단했어요.",
         "playerProfile": {
@@ -3050,9 +3079,17 @@
         "votePick": "%{option}에 투표해요",
         "votePickChange": "투표 대상을 %{option}(으)로 바꿔요",
         "votePickSelected": "%{option}에 투표했어요",
-        "clueSelf": null,
-        "clueOther": null,
-        "stayQuietHint": null,
+        "clueSelf": "너의 단서",
+        "clueOther": "%{name}의 단서",
+        "stayQuietHint": "다른 사람들이 추측하는 동안 추가 힌트를 주지 마세요!",
+        "multipleLanguages": {
+            "title": "여러 언어가 감지되었어요.",
+            "description": "플레이어들이 서로 다른 언어를 사용하고 있는 것을 확인했어요. 모든 사람이 단서를 이해할 수 있도록, 이해할 수 있는 모든 언어를 선택해 주세요. 모두가 공통으로 하나 이상 선택하면 게임이 시작될 거예요.",
+            "leave": "저는 이 언어들 중 어떤 것도 참여할 수 없어요.",
+            "leaveDescription": "괜찮아요 — 지금 나가면 누구의 통계나 승리가 기록되지 않을 거예요.",
+            "agreedTitle": "준비 완료예요!",
+            "agreedDescription": "모두가 단서에 {language}를 사용하기로 동의해요!"
+        },
         "tiedVoteSelf": "투표 결과가 동점이에요! 무작위로 선택 중...",
         "tiedVoteOther": "잠시만요, 상대 팀의 투표 결과가 동점이에요.",
         "waitForOpponent": "상대방을 기다리는 중이에요...",

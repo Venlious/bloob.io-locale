@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 2163,
-        "missing": 48
+        "total": 2184,
+        "missing": 0
     },
     "name": "Bloob.io",
     "error": {
@@ -150,6 +150,7 @@
             "blocked": "Rangaistuksesi estää sinua liittymästä matchmakingiin tai julkisiin otteluihin.",
             "joinBlocked": "Et voi liittyä tähän matsiin.",
             "empty": "Ottelu suljettu. Kaikki muut pelaajat lähtivät matsista.",
+            "noAgreement": "Ottelu suljettiin, koska sopimukseen ei päästy. Tilastoja ei kirjattu.",
             "rematchTimeout": "Et hyväksynyt uusintaottelupyyntöä ja sinut lähetettiin takaisin päävalikkoon.",
             "rematchCancelled": "Harmi! Pelaajia ei ole jäljellä tarpeeksi uusintaotteluun.",
             "inactive": "Ottelu, jossa olit, on suljettu, koska se on ollut liian kauan toimettomana.",
@@ -2036,78 +2037,99 @@
             "name": "Tuned In",
             "title": "Tuned In | Ilmainen nettipeli | Pelaa kavereiden kanssa yhdessä",
             "description": "Pelaa Tuned In - huikea ilmainen nettipeli ilman tiliä! Innokkaana, synkassa kavereiden kanssa moninpelissä; bilepeli täynnä yhteistyötä!",
-            "tooltip": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "Jaettu Indikaattori",
+                    "help": "Kun tämä on päällä, tiimillä tai co-op-ryhmällä on yksi yhteinen merkki, jota kaikki liikkuu yhdessä — minne se päätyy, se on vastaus. Kun se on pois päältä, jokaisella pelaajalla on oma merkki, ja tiimin vastaus on kaikkien lopullisten sijaintien keskiarvo."
+                },
+                "winAmountRounds": {
+                    "title": "Kierrokset",
+                    "help": "Kuinka monta kierrosta matsissa on. Kierrosten määrä säätyy automaattisesti pelaajien mukaan: 4 kierrosta 2 pelaajalle, 3 kierrosta 3-4 pelaajalle, 2 kierrosta 5-6 pelaajalle ja 1 kierros 7 tai enemmän.",
+                    "data": {
+                        "fixed": "<b>0</b> kierrosta | <b>1</b> kierros | <b>{count}</b> kierrosta"
+                    }
                 },
                 "pickingTime": {
-                    "title": null
+                    "title": "Vihjeiden kirjoittamisen aika"
+                },
+                "revealTime": {
+                    "title": "Tulosten näyttöaika",
+                    "help": "Kuinka kauan tulokset näkyy jokaisen vihjeen paljastamisen jälkeen?"
                 },
                 "promptSelection": {
-                    "title": null,
-                    "help": null
+                    "title": "Valintapromptti",
+                    "help": "Kun tää on päällä, pelaajat valitsee joka kierroksella 3 eri spektriä sen sijaan, että niille annettais yks."
+                },
+                "stepScoring": {
+                    "title": "Askelpisteet",
+                    "help": "Kun tämä on päällä, pisteitä jaetaan kiinteissä ryhmissä (75/50/25) sen mukaan, kuinka kaukana kohteesta ollaan, sen sijaan että ne kasvaisi tasaisesti."
                 },
                 "visibility": {
-                    "title": null,
-                    "help": null,
+                    "title": "Elävät sijainnit",
+                    "help": "Säätää, kuka näkee, mihin muut liikkuu spektrissä reaaliajassa.",
                     "data": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "Kaikki",
+                        "TEAM": "Vain tiimi",
+                        "PRIVATE": "Piilotettu"
                     },
                     "description": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "Kaikki pelaajat näkee toistensa live-sijainnit spektrissä.",
+                        "TEAM": "Pelaajat näkee vaan omien tiimikavereidensa live-sijainnit.",
+                        "PRIVATE": "Kukaan ei voi nähdä, missä muut on spektrissä."
                     }
                 }
             },
             "presets": {
                 "default": {
-                    "title": null,
+                    "title": "Vastaan",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Kaikki kaikkia vastaan",
+                        "Pisteet sen mukaan, kuinka lähellä arvauksesi on"
+                    ]
+                },
+                "teams": {
+                    "title": "Tiimit",
+                    "description": [
+                        "Kilpaile valitsemissasi tiimeissä",
+                        "Arvaus on tiimisi keskiarvo"
                     ]
                 },
                 "coopConsensus": {
-                    "title": null,
+                    "title": "Klassinen co-op",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Tehkää yhteistyötä yhtenä tiiminä",
+                        "Liikutetaan yhtä ja samaa indikaattoria yhdessä",
+                        "Pisteitä saa kiinteissä väleissä"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "Demokratia-kumppanuus",
+                    "description": [
+                        "Tehkää yhdessä tiiminä",
+                        "Arvaus on teidän tiimin keskiarvo"
                     ]
                 }
             },
             "help": {
                 "rules": {
-                    "title": null,
+                    "title": "Miten pelata",
                     "description": [
-                        null,
-                        null,
-                        null,
-                        null
-                    ]
-                },
-                "scoring": {
-                    "title": null,
-                    "description": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null
+                        "Jokaisessa kierroksessa jokaisella pelaajalla on salainen kohde spektrillä (esim. Kuuma ← → Kylmä) ja he kirjoittavat vihjeen, joka viittaa siihen, ilman että käyttävät spektrin omia sanoja.",
+                        "Kaikki pelaajat saavat sitten arvata, mihin vihje osuu toisten vihjeissä. Mitä lähempänä arvaus on, sitä enemmän pisteitä saat."
                     ]
                 },
                 "modes": {
-                    "title": null,
+                    "title": "Pelin Moodit",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Soolo: Kaikki arvaa omillaan ja pisteet tulee erikseen.",
+                        "Yhteistyö: Koko porukka jakaa yhden pisteen yhdessä.",
+                        "Tiimi: Valitse tiimiväri aulassa; jokainen tiimi saa pisteet erikseen."
+                    ]
+                },
+                "customize": {
+                    "title": "Muokkaa sääntöjä",
+                    "description": [
+                        "Säätää pisteytyksiä, indikaattoreita ja muuta aulassa. Asetuksia kuten siirtyminen askelperusteiseen pisteytykseen etäisyysperusteisen sijaan."
                     ]
                 }
             }
@@ -2217,9 +2239,11 @@
             "makeYourMove": "Tee siirto",
             "waitingForOthers": "Odotellaan muita",
             "wager": "Panos",
-            "yourClue": null,
-            "nameClue": null,
-            "writeYourClue": null,
+            "yourClue": "Lähetetään sun vihjettä",
+            "nameClue": "Kuuntele %{name}'n vihjettä",
+            "writeYourClue": "Kirjoita sun vihje",
+            "languageSelect": "Kielen valinta",
+            "languageAgreed": "Kieli sovittu",
             "tieEndedRound": "Kierros päättyi tasapeliin",
             "youEndedRound": "Sä lopetit kierroksen",
             "nameEndedRound": "%{name} lopetti kierroksen",
@@ -2252,7 +2276,8 @@
         }
     },
     "placeholder": {
-        "clue": null,
+        "clue": "Syötä vihjeesi...",
+        "clueInLanguage": "Syötä vihjeesi kielellä {language}...",
         "cardSetId": "Täytä korttipaketin ID...",
         "cardContent": "Täytä kortin sisältö...",
         "cardSetName": "Anna nimi tälle korttipaketille...",
@@ -2493,7 +2518,7 @@
         "restartNotice": "Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi."
     },
     "misc": {
-        "refresh": null,
+        "refresh": "Päivitä",
         "automatic": "Auto",
         "title": "Otsikko",
         "current": "Nykyinen",
@@ -2527,6 +2552,8 @@
         "questions": "Kysymykset",
         "teamAndQuestions": "Tiimi & Kysymykset",
         "questionPacks": "Kysymyspaketit",
+        "packs": "Pakat",
+        "teamAndPacks": "Tiimi & Pakat",
         "rock": "Kivi",
         "paper": "Paperi",
         "scissors": "Sakset",
@@ -2733,6 +2760,8 @@
         "winLossDelta": "V/H-delta",
         "killDeathRatio": "K/D Suhde",
         "quitRatio": "Keskeytysprosentti",
+        "clueSuccessRatio": "Vihjeen onnistumisprosentti",
+        "guessHitRatio": "Arvaus osumaprosentti",
         "lives": "Elämät",
         "points": "Pisteet",
         "wins": "Voitot",
@@ -2991,8 +3020,8 @@
             "count": "%{count} estetty"
         },
         "cluePicking": {
-            "title": null,
-            "description": null
+            "title": "Kirjoita vihjeesi",
+            "description": "Pidä vihjeesi epämääräisenä mutta tarkkana — muut käyttää sitä arvatakseen sun sijaintia."
         },
         "youBlockedUser": "Sä blokkasit tän käyttäjän.",
         "playerProfile": {
@@ -3050,9 +3079,17 @@
         "votePick": "Äänestä %{option}",
         "votePickChange": "Vaihda äänesi kohteeksi %{option}",
         "votePickSelected": "Äänestit kohteen %{option} puolesta",
-        "clueSelf": null,
-        "clueOther": null,
-        "stayQuietHint": null,
+        "clueSelf": "Sun vihje",
+        "clueOther": "%{name}n vihje",
+        "stayQuietHint": "Älä anna mitään ylimääräisiä vinkkejä, kun muut arvailee!",
+        "multipleLanguages": {
+            "title": "Useita kieliä havaittu",
+            "description": "Huomasimme, että pelaajat puhuvat eri kieliä. Jotta kaikki ymmärtäisivät vihjeet, valitse kaikki kielet, joita ymmärrät — kun kaikilla on vähintään yksi yhteinen kieli, peli alkaa.",
+            "leave": "En voi osallistua mihinkään näistä kielistä",
+            "leaveDescription": "Se on ihan ok — kukaan ei saa tilastoja tai voittoja, jos lähdet nyt.",
+            "agreedTitle": "Olet valmis!",
+            "agreedDescription": "Kaikki on samaa mieltä, että käytetään {language} vihjeissä!"
+        },
         "tiedVoteSelf": "Teidän porukalla on tasapeli! Valitaan satunnaisesti...",
         "tiedVoteOther": "Odota hetki, teidän vastustajilla on tasapeli.",
         "waitForOpponent": "Odotetaan vastustajaasi...",

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 2163,
-        "missing": 48
+        "total": 2184,
+        "missing": 0
     },
     "name": "Bloob.io",
     "error": {
@@ -150,6 +150,7 @@
             "blocked": "你已被禁止参加匹配或公开房间。",
             "joinBlocked": "你不能加入这个房间。",
             "empty": "游戏结束了，其他玩家都离开了房间",
+            "noAgreement": "比赛因为无法达成协议而结束。统计数据没有被记录。",
             "rematchTimeout": "你没有接受重赛请求，所以返回主菜单了",
             "rematchCancelled": "抱歉！剩下的玩家数量不足，无法进行重赛",
             "inactive": "你所在的房间因为过久没有行动而被关闭了",
@@ -2036,78 +2037,99 @@
             "name": "Tuned In",
             "title": "Tuned In | 免费在线多人聚会游戏",
             "description": "Tuned In：在线免费聚会游戏，无需注册，支持和好友多人组队对战！",
-            "tooltip": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "共享指示器",
+                    "help": "启用时，团队或合作组共享一个指示器，大家一起移动——最后的位置就是答案。禁用时，每个玩家都有自己的指示器，团队的答案是每个人最终位置的平均值。"
+                },
+                "winAmountRounds": {
+                    "title": "回合数",
+                    "help": "比赛持续多少轮？根据参赛人数自动调整轮数：2名玩家4轮，3-4名玩家3轮，5-6名玩家2轮，7名或更多玩家1轮。",
+                    "data": {
+                        "fixed": "<b>0</b> 圈 | <b>1</b> 圈 | <b>{count}</b> 圈"
+                    }
                 },
                 "pickingTime": {
-                    "title": null
+                    "title": "线索写作时间"
+                },
+                "revealTime": {
+                    "title": "结果显示时间",
+                    "help": "每个线索揭示后，结果会显示多久？"
                 },
                 "promptSelection": {
-                    "title": null,
-                    "help": null
+                    "title": "选择提示",
+                    "help": "启用后，玩家每轮可以从3个不同的光谱中选择，而不是被分配一个。"
+                },
+                "stepScoring": {
+                    "title": "步数评分",
+                    "help": "启用后，得分会根据离目标的距离分成固定的档次（75/50/25），而不是平滑递增。"
                 },
                 "visibility": {
-                    "title": null,
-                    "help": null,
+                    "title": "实时位置",
+                    "help": "控制谁能实时看到其他人在光谱上的移动。",
                     "data": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "大家",
+                        "TEAM": "只有队伍",
+                        "PRIVATE": "隐藏"
                     },
                     "description": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "所有玩家都能看到彼此在光谱上的实时位置。",
+                        "TEAM": "玩家只能看到自己队友的实时位置。",
+                        "PRIVATE": "没有人能看到其他人在光谱上的位置。"
                     }
                 }
             },
             "presets": {
                 "default": {
-                    "title": null,
+                    "title": "对战",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "大家互相对抗",
+                        "根据你猜得有多接近来得分"
+                    ]
+                },
+                "teams": {
+                    "title": "队伍",
+                    "description": [
+                        "选你喜欢的队伍来比赛",
+                        "猜的就是你们队的平均值"
                     ]
                 },
                 "coopConsensus": {
-                    "title": null,
+                    "title": "经典合作",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "一起合作，成为一个团队",
+                        "一起移动一个共享的指示器",
+                        "分数在固定区间内计算"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "民主合作社",
+                    "description": [
+                        "一起当一个团队",
+                        "猜的就是你们团队的平均值"
                     ]
                 }
             },
             "help": {
                 "rules": {
-                    "title": null,
+                    "title": "怎么玩",
                     "description": [
-                        null,
-                        null,
-                        null,
-                        null
-                    ]
-                },
-                "scoring": {
-                    "title": null,
-                    "description": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null
+                        "每轮每个玩家会得到一个秘密目标在一个范围内（比如：热 ← → 冷），然后写一个提示，但不能用范围里的词。",
+                        "所有玩家接着可以猜测每个提示的位置。猜得越接近，得分就越高。"
                     ]
                 },
                 "modes": {
-                    "title": null,
+                    "title": "游戏模式",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "单人：每个人自己猜，单独得分。",
+                        "合作：整个小组共享一个分数。",
+                        "团队：在大厅选择一个队伍颜色；每个队伍单独得分。"
+                    ]
+                },
+                "customize": {
+                    "title": "自定义规则",
+                    "description": [
+                        "在大厅设置中调整得分、指标等。比如可以切换到基于步数的得分，而不是基于距离的。"
                     ]
                 }
             }
@@ -2217,9 +2239,11 @@
             "makeYourMove": "该你行动了",
             "waitingForOthers": "等待其他人",
             "wager": "赌注",
-            "yourClue": null,
-            "nameClue": null,
-            "writeYourClue": null,
+            "yourClue": "发送你的线索",
+            "nameClue": "收听 %{name} 的线索",
+            "writeYourClue": "写下你的线索",
+            "languageSelect": "选择语言",
+            "languageAgreed": "语言已确认",
             "tieEndedRound": "这一局平局了",
             "youEndedRound": "你结束了这一局",
             "nameEndedRound": "%{name} 结束了这一局",
@@ -2252,7 +2276,8 @@
         }
     },
     "placeholder": {
-        "clue": null,
+        "clue": "输入你的线索...",
+        "clueInLanguage": "用{language}输入你的线索...",
         "cardSetId": "填写卡片集ID...",
         "cardContent": "填写卡片内容...",
         "cardSetName": "为这个卡片集起个名字...",
@@ -2493,7 +2518,7 @@
         "restartNotice": "服务器将在 {count} 分钟后重启，请尽快完成你的游戏。 | 服务器将在 {count} 分钟后重启，请尽快你的游戏。 | 服务器将在 {count} 分钟后重启，请尽快完成你的游戏。"
     },
     "misc": {
-        "refresh": null,
+        "refresh": "刷新",
         "automatic": "自动",
         "title": "头衔",
         "current": "当前",
@@ -2527,6 +2552,8 @@
         "questions": "问题",
         "teamAndQuestions": "团队与问题",
         "questionPacks": "问题包",
+        "packs": "套装",
+        "teamAndPacks": "队伍 & 套装",
         "rock": "石头",
         "paper": "剪刀",
         "scissors": "布",
@@ -2733,6 +2760,8 @@
         "winLossDelta": "胜负差",
         "killDeathRatio": "击杀比",
         "quitRatio": "退出率",
+        "clueSuccessRatio": "线索成功率",
+        "guessHitRatio": "猜测命中率",
         "lives": "生命",
         "points": "分数",
         "wins": "胜利次数",
@@ -2991,8 +3020,8 @@
             "count": "已拉黑%{count} 人"
         },
         "cluePicking": {
-            "title": null,
-            "description": null
+            "title": "写下你的线索",
+            "description": "保持你的线索模糊但准确——其他人会用它来猜测你的定位。"
         },
         "youBlockedUser": "你拉黑了这个用户。",
         "playerProfile": {
@@ -3050,9 +3079,17 @@
         "votePick": "投票给 %{option}",
         "votePickChange": "把票改投给 %{option}",
         "votePickSelected": "你投的票是 %{option}",
-        "clueSelf": null,
-        "clueOther": null,
-        "stayQuietHint": null,
+        "clueSelf": "你的线索",
+        "clueOther": "%{name} 的线索",
+        "stayQuietHint": "其他人猜的时候别给额外提示！",
+        "multipleLanguages": {
+            "title": "检测到多种语言",
+            "description": "我们注意到玩家使用了不同的语言。为了确保大家都能理解线索，请选择你能理解的所有语言——一旦每个人都有至少一种共同语言，游戏就会开始。",
+            "leave": "我无法使用这些语言参与",
+            "leaveDescription": "没问题——如果你现在离开，任何人的统计数据或胜利都不会被记录。",
+            "agreedTitle": "一切准备好了！",
+            "agreedDescription": "大家都同意用{language}来给线索！"
+        },
         "tiedVoteSelf": "你们组平票了！随机选一个吧...",
         "tiedVoteOther": "请等一下，你们的对手也平票了。",
         "waitForOpponent": "等待你的对手...",

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Norwegian (Bokmål)",
         "rtl": false,
-        "total": 2163,
-        "missing": 48
+        "total": 2184,
+        "missing": 0
     },
     "name": "Bloob.io",
     "error": {
@@ -150,6 +150,7 @@
             "blocked": "Straffen din tillater ikke at du deltar i matchmaking eller offentlige kamper.",
             "joinBlocked": "Du kan ikke bli med i denne kampen.",
             "empty": "Kampen er avsluttet. Alle andre spillere har forlatt kampen.",
+            "noAgreement": "Kampen ble stengt fordi de ikke klarte å bli enige. Statistikk ble ikke registrert.",
             "rematchTimeout": "Du godtok ikke omkamp forespørselen og ble sendt tilbake til hovedmenyen.",
             "rematchCancelled": "Beklager! Det er ikke nok spillere igjen for en omkamp.",
             "inactive": "Kampen du var i har blitt avsluttet fordi den har vært inaktiv for lenge.",
@@ -2036,78 +2037,99 @@
             "name": "Tuned In",
             "title": "Tuned In | Gratis online bølgelengde partyspill med venner",
             "description": "Spill Tuned In gratis online! Ingen konto nødvendig. Flerspiller med venner eller fremmede, med samarbeidsmodus og lag. Bli med i en bølgelengde partyspill nå!",
-            "tooltip": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "Delt indikator",
+                    "help": "Når det er aktivert, deler laget eller co-op-gruppen en enkelt indikator som alle beveger seg sammen med — uansett hvor den ender opp, er det svaret. Når det er deaktivert, har hver spiller sin egen indikator, og lagets svar er gjennomsnittet av alles endelige posisjon."
+                },
+                "winAmountRounds": {
+                    "title": "Runder",
+                    "help": "Hvor mange runder kampen varer. Justerer automatisk antall runder basert på hvor mange spillere som er med: 4 runder for 2 spillere, 3 for 3-4, 2 for 5-6, og 1 for 7 eller flere.",
+                    "data": {
+                        "fixed": "<b>0</b> runder | <b>1</b> runde | <b>{count}</b> runder"
+                    }
                 },
                 "pickingTime": {
-                    "title": null
+                    "title": "Tid for å skrive ledetråder"
+                },
+                "revealTime": {
+                    "title": "Visningstid for resultater",
+                    "help": "Hvor lenge resultatene vises etter at hver ledetråd er avslørt."
                 },
                 "promptSelection": {
-                    "title": null,
-                    "help": null
+                    "title": "Valg av prompt",
+                    "help": "Når det er aktivert, kan spillerne velge mellom 3 forskjellige spektra hver runde i stedet for å få tildelt ett."
+                },
+                "stepScoring": {
+                    "title": "Stegpoeng",
+                    "help": "Når det er aktivert, får du poeng i faste bånd (75/50/25) basert på avstanden fra målet i stedet for at det skalerer jevnt."
                 },
                 "visibility": {
-                    "title": null,
-                    "help": null,
+                    "title": "Live posisjoner",
+                    "help": "Kontroller hvem som kan se hvor andre beveger seg på spekteret i sanntid.",
                     "data": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "Alle",
+                        "TEAM": "Bare lag",
+                        "PRIVATE": "Skjult"
                     },
                     "description": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "Alle spillere ser hverandres live posisjon på spekteret.",
+                        "TEAM": "Spillere ser bare live posisjonene til lagkameratene sine.",
+                        "PRIVATE": "Ingen kan se hvor andre er på spekteret."
                     }
                 }
             },
             "presets": {
                 "default": {
-                    "title": null,
+                    "title": "Mot",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Alle mot alle",
+                        "Poeng basert på hvor nærme gjetningen din er"
+                    ]
+                },
+                "teams": {
+                    "title": "Lag",
+                    "description": [
+                        "Konkurrer i lag du velger",
+                        "Gjetningen er gjennomsnittet av laget ditt"
                     ]
                 },
                 "coopConsensus": {
-                    "title": null,
+                    "title": "Klassisk Co-op",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Jobbe sammen som ett lag",
+                        "Flytt en felles indikator sammen",
+                        "Poeng blir scoret i faste bånd"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "Demokrati Kooperativ",
+                    "description": [
+                        "Jobb sammen som ett lag",
+                        "Gjetningen er gjennomsnittet til laget ditt"
                     ]
                 }
             },
             "help": {
                 "rules": {
-                    "title": null,
+                    "title": "Hvordan spille",
                     "description": [
-                        null,
-                        null,
-                        null,
-                        null
-                    ]
-                },
-                "scoring": {
-                    "title": null,
-                    "description": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null
+                        "Hver runde får hver spiller et hemmelig mål på et spektrum (f.eks. Hot ← → Cold) og skriver et hint om det, uten å bruke ordene fra skalaen.",
+                        "Alle spillerne får så gjette hvor hintet lander for hverandres hint. Jo nærmere gjetningen er, jo flere poeng får du."
                     ]
                 },
                 "modes": {
-                    "title": null,
+                    "title": "Spillmoduser",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Solo: Alle gjetter på egenhånd og får poeng individuelt.",
+                        "Co-op: Hele gruppa deler ett poeng sammen.",
+                        "Team: Velg en lagfarge i lobbyen; hvert lag får poeng separat."
+                    ]
+                },
+                "customize": {
+                    "title": "Tilpass reglene",
+                    "description": [
+                        "Juster poengsystemet, indikatorene og mer i lobbyinnstillingene. Innstillinger som å bytte til trinnbasert poenggiving i stedet for avstandsbasert."
                     ]
                 }
             }
@@ -2217,9 +2239,11 @@
             "makeYourMove": "Gjør ditt trekk",
             "waitingForOthers": "Venter på andre",
             "wager": "Innsats",
-            "yourClue": null,
-            "nameClue": null,
-            "writeYourClue": null,
+            "yourClue": "Sender ledetråden din",
+            "nameClue": "Hør på %{name}'s ledetråd",
+            "writeYourClue": "Skriv ledetråden din",
+            "languageSelect": "Språkvalg",
+            "languageAgreed": "Språk avtalt",
             "tieEndedRound": "Runden endte uavgjort",
             "youEndedRound": "Du har avsluttet runden",
             "nameEndedRound": "%{name} har avsluttet runden",
@@ -2252,7 +2276,8 @@
         }
     },
     "placeholder": {
-        "clue": null,
+        "clue": "Skriv inn ledetråden din...",
+        "clueInLanguage": "Skriv inn ledetråden din på {language}...",
         "cardSetId": "Fyll inn kortsett-ID...",
         "cardContent": "Fyll inn innholdet på kortet...",
         "cardSetName": "Fyll inn navnet på dette kortsettet...",
@@ -2493,7 +2518,7 @@
         "restartNotice": "Serveren restarter om {count} minutter. Vennligst avslutt spillet ditt. | Serveren restarter om {count} minutt. Vennligst avslutt spillet ditt. | Serveren restarter om {count} minutter. Vennligst avslutt spillet ditt."
     },
     "misc": {
-        "refresh": null,
+        "refresh": "Oppdater",
         "automatic": "Auto",
         "title": "Tittel",
         "current": "Nåværende",
@@ -2527,6 +2552,8 @@
         "questions": "Spørsmål",
         "teamAndQuestions": "Team & Spørsmål",
         "questionPacks": "Spørsmålspakker",
+        "packs": "Pakker",
+        "teamAndPacks": "Lag & Pakker",
         "rock": "Stein",
         "paper": "Papir",
         "scissors": "Saks",
@@ -2733,6 +2760,8 @@
         "winLossDelta": "S/T-delta",
         "killDeathRatio": "K/D-forhold",
         "quitRatio": "Avslutningsrate",
+        "clueSuccessRatio": "Ledetråd Succesforhold",
+        "guessHitRatio": "Gjetning Treffsikkerhet",
         "lives": "Liv",
         "points": "Poeng",
         "wins": "Seire",
@@ -2991,8 +3020,8 @@
             "count": "%{count} blokkert"
         },
         "cluePicking": {
-            "title": null,
-            "description": null
+            "title": "Skriv ledetråden din",
+            "description": "Hold ledetråden vag, men presis — andre vil bruke den til å gjette hvor du er."
         },
         "youBlockedUser": "Du blokkerte denne brukeren.",
         "playerProfile": {
@@ -3050,9 +3079,17 @@
         "votePick": "Stem på %{option}",
         "votePickChange": "Endre stemmen til %{option}",
         "votePickSelected": "Du stemte på %{option}",
-        "clueSelf": null,
-        "clueOther": null,
-        "stayQuietHint": null,
+        "clueSelf": "Ditt hint",
+        "clueOther": "%{name}'s hint",
+        "stayQuietHint": "Ikke gi noen ekstra hint mens andre gjetter!",
+        "multipleLanguages": {
+            "title": "Flere språk oppdaget",
+            "description": "Vi la merke til at spillerne bruker forskjellige språk. For å sikre at alle forstår ledetrådene, velg alle språkene du forstår — når alle har minst ett felles, starter spillet.",
+            "leave": "Jeg kan ikke delta på noe av disse språkene",
+            "leaveDescription": "Det er helt greit — ingen statistikk eller seire vil bli registrert for noen hvis du forlater nå.",
+            "agreedTitle": "Du er klar!",
+            "agreedDescription": "Alle er enige om å bruke {language} for ledetrådene sine!"
+        },
         "tiedVoteSelf": "Gruppen din har uavgjort stemme! Velger en tilfeldig...",
         "tiedVoteOther": "Vent litt, motstanderne dine har uavgjort stemme.",
         "waitForOpponent": "Venter på motstanderen din...",

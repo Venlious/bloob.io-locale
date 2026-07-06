@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 2163,
-        "missing": 48
+        "total": 2184,
+        "missing": 0
     },
     "name": "Bloob.io",
     "error": {
@@ -150,6 +150,7 @@
             "blocked": "Hukumanmu nggak membolehkan kamu ikutan matchmaking atau pertandingan publik.",
             "joinBlocked": "Kamu nggak bisa ikut pertandingan ini.",
             "empty": "Pertandingan ditutup. Semua pemain lain telah meninggalkan pertandingan.",
+            "noAgreement": "Pertandingannya ditutup karena gak ada kesepakatan yang tercapai. Statistiknya juga gak dicatat.",
             "rematchTimeout": "Kamu nggak terima permintaan rematch dan dikirim balik ke menu utama.",
             "rematchCancelled": "Maaf! Nggak cukup pemain untuk rematch.",
             "inactive": "Pertandingan yang kamu ikuti telah ditutup karena sudah terlalu lama nggak aktif.",
@@ -2036,78 +2037,99 @@
             "name": "Tuned In",
             "title": "Tuned In | Gelombang Game Pesta Online | Main Bareng Teman",
             "description": "Mainkan Tuned In, game pesta online gratis tanpa akun. Nikmati multiplayer dan kerjasama tim dengan teman atau lawan dari seluruh dunia!",
-            "tooltip": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "Indikator Bareng",
+                    "help": "Kalau diaktifin, tim atau grup co-op bakal punya satu indikator yang bikin semua orang bergerak bareng — kemana pun itu, itulah jawabannya. Kalau dimatiin, tiap pemain punya indikator sendiri-sendiri, dan jawaban tim adalah rata-rata posisi akhir semua orang."
+                },
+                "winAmountRounds": {
+                    "title": "Putaran",
+                    "help": "Berapa lama pertandingan berlangsung. Jumlah putaran otomatis disesuaikan berdasarkan berapa banyak pemain yang ada di pertandingan: 4 putaran untuk 2 pemain, 3 untuk 3-4, 2 untuk 5-6, dan 1 untuk 7 atau lebih.",
+                    "data": {
+                        "fixed": "<b>0</b> ronde | <b>1</b> ronde | <b>{count}</b> ronde"
+                    }
                 },
                 "pickingTime": {
-                    "title": null
+                    "title": "Waktu Nulis Petunjuk"
+                },
+                "revealTime": {
+                    "title": "Waktu Tampilkan Hasil",
+                    "help": "Berapa lama hasilnya ditampilkan setelah setiap petunjuk dibuka."
                 },
                 "promptSelection": {
-                    "title": null,
-                    "help": null
+                    "title": "Pemilihan Prompt",
+                    "help": "Kalau diaktifin, pemain bisa milih dari 3 spektrum yang berbeda setiap ronde, bukannya dikasih satu."
+                },
+                "stepScoring": {
+                    "title": "Skor Langkah",
+                    "help": "Kalau diaktifin, poin bakal dikasih dalam band tetap (75/50/25) tergantung seberapa jauh dari target, bukan skala yang mulus."
                 },
                 "visibility": {
-                    "title": null,
-                    "help": null,
+                    "title": "Posisi Langsung",
+                    "help": "Mengatur siapa yang bisa lihat kemana orang lain bergerak di spektrum secara langsung.",
                     "data": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "Semua orang",
+                        "TEAM": "Cuma tim",
+                        "PRIVATE": "Tersembunyi"
                     },
                     "description": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "Semua pemain bisa lihat posisi live satu sama lain di spektrum.",
+                        "TEAM": "Pemain cuma bisa lihat posisi live rekan satu timnya.",
+                        "PRIVATE": "Gak ada yang bisa lihat di mana orang lain di spektrum."
                     }
                 }
             },
             "presets": {
                 "default": {
-                    "title": null,
+                    "title": "Lawan",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Semua lawan semua",
+                        "Poin berdasarkan seberapa dekat tebakanmu"
+                    ]
+                },
+                "teams": {
+                    "title": "Tim-tim",
+                    "description": [
+                        "Bertanding sama tim yang kamu pilih",
+                        "Tebakan adalah rata-rata dari tim kamu"
                     ]
                 },
                 "coopConsensus": {
-                    "title": null,
+                    "title": "Ko-op Klasik",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Kerja bareng jadi satu tim",
+                        "Gerakin satu indikator bareng-bareng",
+                        "Poin didapat dalam band yang tetap"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "Koperasi Demokrasi",
+                    "description": [
+                        "Kerja bareng jadi satu tim",
+                        "Tebakan adalah rata-rata dari tim kamu"
                     ]
                 }
             },
             "help": {
                 "rules": {
-                    "title": null,
+                    "title": "Cara Mainnya",
                     "description": [
-                        null,
-                        null,
-                        null,
-                        null
-                    ]
-                },
-                "scoring": {
-                    "title": null,
-                    "description": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null
+                        "Setiap ronde, setiap pemain dapet target rahasia di spektrum (misalnya, Panas ← → Dingin) dan nulis petunjuk yang ngasih hint, tanpa pake kata-kata dari skala itu.",
+                        "Semua pemain kemudian bisa nebak di mana petunjuk itu jatuh untuk petunjuk masing-masing. Semakin dekat tebakannya, semakin banyak poin yang kamu dapet."
                     ]
                 },
                 "modes": {
-                    "title": null,
+                    "title": "Mode Permainan",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Solo: Setiap orang nebak sendiri-sendiri dan dapet skor masing-masing.",
+                        "Co-op: Satu grup bareng-bareng punya satu skor.",
+                        "Team: Pilih warna tim di lobby; tiap tim dapet skor terpisah."
+                    ]
+                },
+                "customize": {
+                    "title": "Kustomisasi Aturan",
+                    "description": [
+                        "Ubah skor, indikator, dan lainnya di pengaturan lobi. Pengaturan kayak ganti ke sistem skor berdasarkan langkah daripada jarak."
                     ]
                 }
             }
@@ -2217,9 +2239,11 @@
             "makeYourMove": "Ayo, gerak!",
             "waitingForOthers": "Nunggu yang lain",
             "wager": "Taruhan",
-            "yourClue": null,
-            "nameClue": null,
-            "writeYourClue": null,
+            "yourClue": "Nyiapin petunjukmu",
+            "nameClue": "Dengerin petunjuknya %{name}",
+            "writeYourClue": "Tulis petunjukmu",
+            "languageSelect": "Pilih bahasa",
+            "languageAgreed": "Bahasa udah diset",
             "tieEndedRound": "Putaran udah selesai, seri nih",
             "youEndedRound": "Kamu udah selesaiin putaran",
             "nameEndedRound": "%{name} udah selesaiin putaran",
@@ -2252,7 +2276,8 @@
         }
     },
     "placeholder": {
-        "clue": null,
+        "clue": "Masukkan petunjukmu...",
+        "clueInLanguage": "Masukkan petunjukmu dalam {language}...",
         "cardSetId": "Isi ID set kartu...",
         "cardContent": "Isi konten kartu...",
         "cardSetName": "Isi nama untuk set kartu ini...",
@@ -2493,7 +2518,7 @@
         "restartNotice": "Server bakal restart dalam {count} menit. Selesaikan gamenya ya. | Server bakal restart dalam {count} menit. Selesaikan gamenya ya. | Server bakal restart dalam {count} menit. Selesaikan gamenya ya."
     },
     "misc": {
-        "refresh": null,
+        "refresh": "Segarkan",
         "automatic": "Otomatis",
         "title": "Judul",
         "current": "Saat ini",
@@ -2527,6 +2552,8 @@
         "questions": "Pertanyaan",
         "teamAndQuestions": "Tim & Pertanyaan",
         "questionPacks": "Paket Pertanyaan",
+        "packs": "Paket",
+        "teamAndPacks": "Tim & Paket",
         "rock": "Batu",
         "paper": "Kertas",
         "scissors": "Gunting",
@@ -2733,6 +2760,8 @@
         "winLossDelta": "Selisih M/K",
         "killDeathRatio": "Rasio K/D",
         "quitRatio": "Rasio keluar",
+        "clueSuccessRatio": "Rasio Keberhasilan Petunjuk",
+        "guessHitRatio": "Rasio Tebakan Tepat",
         "lives": "Nyawa",
         "points": "Poin",
         "wins": "Menang",
@@ -2991,8 +3020,8 @@
             "count": "%{count} diblokir"
         },
         "cluePicking": {
-            "title": null,
-            "description": null
+            "title": "Tulis petunjukmu",
+            "description": "Jaga petunjukmu supaya samar tapi akurat — yang lain bakal pakai itu buat nebak posisimu."
         },
         "youBlockedUser": "Kamu udah ngeblok pengguna ini.",
         "playerProfile": {
@@ -3050,9 +3079,17 @@
         "votePick": "Pilih %{option}",
         "votePickChange": "Ubah pilihan ke %{option}",
         "votePickSelected": "Kamu udah milih %{option}",
-        "clueSelf": null,
-        "clueOther": null,
-        "stayQuietHint": null,
+        "clueSelf": "Petunjukmu",
+        "clueOther": "Petunjuk %{name}",
+        "stayQuietHint": "Jangan kasih petunjuk tambahan pas yang lain lagi nebak!",
+        "multipleLanguages": {
+            "title": "Banyak bahasa terdeteksi",
+            "description": "Kami lihat pemain pakai bahasa yang berbeda-beda. Biar semua ngerti petunjuknya, pilih semua bahasa yang kamu paham — setelah semua orang punya setidaknya satu yang sama, gamenya bakal mulai.",
+            "leave": "Gue nggak bisa ikut di bahasa-bahasa ini",
+            "leaveDescription": "Gak masalah kok — nggak ada statistik atau kemenangan yang bakal dicatat buat siapa pun kalau kamu keluar sekarang.",
+            "agreedTitle": "Kamu udah siap!",
+            "agreedDescription": "Semua setuju pakai {language} buat petunjuk mereka!"
+        },
         "tiedVoteSelf": "Suara grup kamu imbang! Milih secara acak...",
         "tiedVoteOther": "Tunggu sebentar, lawanmu juga imbang suaranya.",
         "waitForOpponent": "Nunggu lawanmu...",

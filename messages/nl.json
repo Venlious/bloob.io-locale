@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Dutch",
         "rtl": false,
-        "total": 2163,
-        "missing": 48
+        "total": 2184,
+        "missing": 0
     },
     "name": "Bloob.io",
     "error": {
@@ -150,6 +150,7 @@
             "blocked": "Je straf laat je niet toe om mee te doen aan matchmaking of openbare wedstrijden.",
             "joinBlocked": "Je kan niet meedoen aan deze wedstrijd.",
             "empty": "Spel gesloten. Alle andere spelers verlieten de wedstrijd.",
+            "noAgreement": "De wedstrijd werd afgelast omdat ze geen overeenstemming konden bereiken. Statistieken werden niet bijgehouden.",
             "rematchTimeout": "Je hebt het rematch verzoek niet geaccepteerd en bent teruggestuurd naar het hoofdmenu.",
             "rematchCancelled": "Sorry! Er zijn niet genoeg spelers over voor een rematch.",
             "inactive": "Het spel waar je in zat is gesloten omdat deze te lang inactief is geweest.",
@@ -2036,78 +2037,99 @@
             "name": "Tuned In",
             "title": "Tuned In: Gratis Online Partyspel | Speel met Vrienden & Teams",
             "description": "Speel Tuned In gratis online partyspel zonder account! Geniet van multiplayer met vrienden, co-op of teams in deze spannende, door Wavelength geïnspireerde uitdaging.",
-            "tooltip": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "Gedeelde Indicator",
+                    "help": "Als het aan staat, deelt het team of de co-op groep één indicator waar iedereen samen naartoe beweegt — waar die ook eindigt, dat is het antwoord. Als het uit staat, heeft elke speler zijn eigen indicator, en is het antwoord van het team het gemiddelde van ieders eindpositie."
+                },
+                "winAmountRounds": {
+                    "title": "Rondes",
+                    "help": "Hoeveel rondes de wedstrijd duurt. Het aantal rondes past zich automatisch aan op basis van het aantal spelers in de wedstrijd: 4 rondes voor 2 spelers, 3 voor 3-4, 2 voor 5-6, en 1 voor 7 of meer.",
+                    "data": {
+                        "fixed": "<b>0</b> rondes | <b>1</b> ronde | <b>{count}</b> rondes"
+                    }
                 },
                 "pickingTime": {
-                    "title": null
+                    "title": "Tijd om aanwijzingen te schrijven"
+                },
+                "revealTime": {
+                    "title": "Resultaat Weergave Tijd",
+                    "help": "Hoe lang de resultaten worden getoond nadat elke aanwijzing is onthuld."
                 },
                 "promptSelection": {
-                    "title": null,
-                    "help": null
+                    "title": "Keuze van de prompt",
+                    "help": "Als het aan staat, kiezen spelers elke ronde uit 3 verschillende spectrums in plaats van dat ze er eentje toegewezen krijgen."
+                },
+                "stepScoring": {
+                    "title": "Stappen Scoren",
+                    "help": "Als het aan staat, krijg je punten in vaste groepen (75/50/25) afhankelijk van de afstand tot het doel in plaats van dat het soepel oploopt."
                 },
                 "visibility": {
-                    "title": null,
-                    "help": null,
+                    "title": "Live Posities",
+                    "help": "Regelt wie kan zien waar anderen in real-time naartoe bewegen op het spectrum.",
                     "data": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "Iedereen",
+                        "TEAM": "Alleen team",
+                        "PRIVATE": "Verborgen"
                     },
                     "description": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "Alle spelers zien elkaars live positie op het spectrum.",
+                        "TEAM": "Spelers zien alleen de live posities van hun teamgenoten.",
+                        "PRIVATE": "Niemand kan zien waar anderen zijn op het spectrum."
                     }
                 }
             },
             "presets": {
                 "default": {
-                    "title": null,
+                    "title": "Tegen",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Iedereen tegen elkaar",
+                        "Punten op basis van hoe dicht je gok is"
+                    ]
+                },
+                "teams": {
+                    "title": "Teams",
+                    "description": [
+                        "Doe mee in teams die je zelf kiest",
+                        "Gok is het gemiddelde van je team"
                     ]
                 },
                 "coopConsensus": {
-                    "title": null,
+                    "title": "Classic Co-op",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Werk samen als één team",
+                        "Beweeg samen één gedeelde indicator",
+                        "Punten worden gescoord in vaste banden"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "Democratische Coöperatie",
+                    "description": [
+                        "Werk samen als één team",
+                        "Gok is het gemiddelde van je team"
                     ]
                 }
             },
             "help": {
                 "rules": {
-                    "title": null,
+                    "title": "Hoe te Spelen",
                     "description": [
-                        null,
-                        null,
-                        null,
-                        null
-                    ]
-                },
-                "scoring": {
-                    "title": null,
-                    "description": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null
+                        "Elke ronde krijgt elke speler een geheime target op een spectrum (bijv. Heet ← → Koud) en schrijft een hint zonder de woorden van de schaal te gebruiken.",
+                        "Alle spelers mogen dan raden waar de hint van de anderen valt. Hoe dichter je bij de juiste plek zit, hoe meer punten je scoort."
                     ]
                 },
                 "modes": {
-                    "title": null,
+                    "title": "Spelmodi",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Solo: Iedereen raadt voor zichzelf en scoort individueel.",
+                        "Co-op: De hele groep deelt één score samen.",
+                        "Team: Kies een teamkleur in de lobby; elk team scoort apart."
+                    ]
+                },
+                "customize": {
+                    "title": "Pas de Regels Aan",
+                    "description": [
+                        "Pas de score, indicatoren en meer aan in de lobby-instellingen. Instellingen zoals overschakelen naar stapgebaseerd scoren in plaats van afstandgebaseerd."
                     ]
                 }
             }
@@ -2217,9 +2239,11 @@
             "makeYourMove": "Doe je zet",
             "waitingForOthers": "Wachten op anderen",
             "wager": "Inzet",
-            "yourClue": null,
-            "nameClue": null,
-            "writeYourClue": null,
+            "yourClue": "Je aanwijzing uitzenden",
+            "nameClue": "Stem in op %{name}'s aanwijzing",
+            "writeYourClue": "Schrijf je aanwijzing",
+            "languageSelect": "Taal kiezen",
+            "languageAgreed": "Taal is afgesproken",
             "tieEndedRound": "Ronde is geëindigd in een gelijkspel",
             "youEndedRound": "Jij hebt de ronde beëindigd",
             "nameEndedRound": "%{name} heeft de ronde beëindigd",
@@ -2252,7 +2276,8 @@
         }
     },
     "placeholder": {
-        "clue": null,
+        "clue": "Voer je aanwijzing in...",
+        "clueInLanguage": "Voer je aanwijzing in {language}...",
         "cardSetId": "Vul kaartenset ID in...",
         "cardContent": "Vul kaartinhoud in...",
         "cardSetName": "Vul een naam in voor deze kaartenset...",
@@ -2493,7 +2518,7 @@
         "restartNotice": "Server gaat over {count} minuten opnieuw opstarten. Maak je game af. | Server gaat over {count} minuut opnieuw opstarten. Maak je game af. | Server gaat over {count} minuten opnieuw opstarten. Maak je game af."
     },
     "misc": {
-        "refresh": null,
+        "refresh": "Vernieuwen",
         "automatic": "Auto",
         "title": "Titel",
         "current": "Huidig",
@@ -2527,6 +2552,8 @@
         "questions": "Vragen",
         "teamAndQuestions": "Team & Vragen",
         "questionPacks": "Vraagpakketten",
+        "packs": "Pakketten",
+        "teamAndPacks": "Team & Pakketten",
         "rock": "Steen",
         "paper": "Papier",
         "scissors": "Schaar",
@@ -2733,6 +2760,8 @@
         "winLossDelta": "W/V-verschil",
         "killDeathRatio": "K/D-ratio",
         "quitRatio": "Stop ratio",
+        "clueSuccessRatio": "Succesratio van aanwijzingen",
+        "guessHitRatio": "Ratio van goede gokken",
         "lives": "Levens",
         "points": "Punten",
         "wins": "Zeges",
@@ -2991,8 +3020,8 @@
             "count": "%{count} geblokkeerd"
         },
         "cluePicking": {
-            "title": null,
-            "description": null
+            "title": "Schrijf je hint",
+            "description": "Houd je hint vaag maar precies — anderen gebruiken het om je positie te raden."
         },
         "youBlockedUser": "Je hebt deze gebruiker geblokkeerd.",
         "playerProfile": {
@@ -3050,9 +3079,17 @@
         "votePick": "Stem op %{option}",
         "votePickChange": "Verander stem naar %{option}",
         "votePickSelected": "Je hebt op %{option} gestemd",
-        "clueSelf": null,
-        "clueOther": null,
-        "stayQuietHint": null,
+        "clueSelf": "Jouw aanwijzing",
+        "clueOther": "%{name}'s aanwijzing",
+        "stayQuietHint": "Geef geen extra hints terwijl anderen aan het raden zijn!",
+        "multipleLanguages": {
+            "title": "Meerdere talen gedetecteerd",
+            "description": "We hebben gezien dat spelers verschillende talen gebruiken. Om ervoor te zorgen dat iedereen de aanwijzingen begrijpt, kies alle talen die je begrijpt — zodra iedereen er minstens één gemeen heeft, begint het spel.",
+            "leave": "Ik kan niet meedoen in een van deze talen",
+            "leaveDescription": "Dat is helemaal prima — er worden geen statistieken of overwinningen voor iemand geregistreerd als je nu weggaat.",
+            "agreedTitle": "Je bent helemaal klaar!",
+            "agreedDescription": "Iedereen is het erover eens om {language} te gebruiken voor hun aanwijzingen!"
+        },
         "tiedVoteSelf": "Jullie groep heeft een gelijke stand! We kiezen iets random...",
         "tiedVoteOther": "Even wachten, je tegenstanders hebben een gelijke stand.",
         "waitForOpponent": "Wachten op je tegenstander...",

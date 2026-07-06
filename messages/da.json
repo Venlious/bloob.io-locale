@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Danish",
         "rtl": false,
-        "total": 2163,
-        "missing": 48
+        "total": 2184,
+        "missing": 0
     },
     "name": "Bloob.io",
     "error": {
@@ -150,6 +150,7 @@
             "blocked": "Din straf tillader ikke, at du deltager i matchmaking eller offentlige kampe.",
             "joinBlocked": "Du kan ikke være med i den her kamp.",
             "empty": "Kampen er lukket. Alle andre spillere har forladt kampen.",
+            "noAgreement": "Kampen blev lukket, fordi der ikke kunne nås en aftale. Statistikker blev ikke registreret.",
             "rematchTimeout": "Du accepterede ikke genkamp forespørgslen og blev sendt tilbage til hovedmenuen.",
             "rematchCancelled": "Beklager! Der er ikke nok spillere tilbage til en genkamp.",
             "inactive": "Kampen du var i, er blevet lukket, da den har været inaktiv for længe.",
@@ -2036,78 +2037,99 @@
             "name": "Tuned In",
             "title": "Tuned In | Spil Bølgelængde Festspil Online med Venner & Teams",
             "description": "Spil Tuned In gratis online! Ingen konto nødvendig. Deltag i multiplayer festspil med venner, fremmede eller solo i samarbejde & holdspil.",
-            "tooltip": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "Fælles indikator",
+                    "help": "Når det er tændt, deler holdet eller co-op gruppen en enkelt indikator, som alle bevæger sig sammen med — hvor end den ender, er svaret. Når det er slukket, har hver spiller sin egen indikator, og holdets svar er gennemsnittet af alles endelige position."
+                },
+                "winAmountRounds": {
+                    "title": "Runder",
+                    "help": "Hvor mange runder kampen varer. Det auto-justerer antallet af runder baseret på, hvor mange spillere der er i kampen: 4 runder for 2 spillere, 3 for 3-4, 2 for 5-6, og 1 for 7 eller flere.",
+                    "data": {
+                        "fixed": "<b>0</b> runder | <b>1</b> runde | <b>{count}</b> runder"
+                    }
                 },
                 "pickingTime": {
-                    "title": null
+                    "title": "Ledetråd Skrivningstid"
+                },
+                "revealTime": {
+                    "title": "Resultatvisningstid",
+                    "help": "Hvor længe resultaterne vises efter hver ledetråd er afsløret."
                 },
                 "promptSelection": {
-                    "title": null,
-                    "help": null
+                    "title": "Valg af prompt",
+                    "help": "Når det er aktiveret, vælger spillerne mellem 3 forskellige spektre hver runde i stedet for at få tildelt ét."
+                },
+                "stepScoring": {
+                    "title": "Trin Scoring",
+                    "help": "Når det er aktiveret, gives der point i faste bånd (75/50/25) baseret på afstand til målet i stedet for at skala glat."
                 },
                 "visibility": {
-                    "title": null,
-                    "help": null,
+                    "title": "Live Positioner",
+                    "help": "Kontrollerer, hvem der kan se, hvor andre bevæger sig på spektret i realtid.",
                     "data": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "Alle",
+                        "TEAM": "Kun hold",
+                        "PRIVATE": "Skjult"
                     },
                     "description": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "Alle spillere kan se hinandens live position på spektret.",
+                        "TEAM": "Spillere kan kun se deres teammates' live positioner.",
+                        "PRIVATE": "Ingen kan se, hvor andre er på spektret."
                     }
                 }
             },
             "presets": {
                 "default": {
-                    "title": null,
+                    "title": "Mod hinanden",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Alle imod hinanden",
+                        "Point baseret på hvor tæt dit gæt er"
+                    ]
+                },
+                "teams": {
+                    "title": "Hold",
+                    "description": [
+                        "Konkurrer i de hold, du vælger",
+                        "Gæt er gennemsnittet af dit hold"
                     ]
                 },
                 "coopConsensus": {
-                    "title": null,
+                    "title": "Klassisk Co-op",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Arbejd sammen som et hold",
+                        "Flyt en fælles indikator sammen",
+                        "Point gives i faste bånd"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "Demokrati Co-op",
+                    "description": [
+                        "Arbejd sammen som et hold",
+                        "Gæt er gennemsnittet af dit hold"
                     ]
                 }
             },
             "help": {
                 "rules": {
-                    "title": null,
+                    "title": "Sådan spiller du",
                     "description": [
-                        null,
-                        null,
-                        null,
-                        null
-                    ]
-                },
-                "scoring": {
-                    "title": null,
-                    "description": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null
+                        "Hver runde får hver spiller et hemmeligt mål på et spektrum (f.eks. Hot ← → Cold) og skriver et hint, der peger på det, uden at bruge ordene fra skalaen.",
+                        "Alle spillere får så lov til at gætte, hvor hintet lander for hinandens hints. Jo tættere gættet er, jo flere point scorer du."
                     ]
                 },
                 "modes": {
-                    "title": null,
+                    "title": "Spiltilstande",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Solo: Alle gætter på egen hånd og scorer individuelt.",
+                        "Co-op: Hele gruppen deler én score sammen.",
+                        "Team: Vælg en holdfarve i lobbyen; hvert hold scorer separat."
+                    ]
+                },
+                "customize": {
+                    "title": "Tilpas reglerne",
+                    "description": [
+                        "Juster scoring, indikatorer og mere i lobbyindstillingerne. Indstillinger som at skifte til skridtbasseret scoring i stedet for distancedrevet."
                     ]
                 }
             }
@@ -2217,9 +2239,11 @@
             "makeYourMove": "Tag dit træk",
             "waitingForOthers": "Venter på andre",
             "wager": "Indsats",
-            "yourClue": null,
-            "nameClue": null,
-            "writeYourClue": null,
+            "yourClue": "Sender dit hint",
+            "nameClue": "Lyt til %{name}'s hint",
+            "writeYourClue": "Skriv dit hint",
+            "languageSelect": "Sprogvalg",
+            "languageAgreed": "Sprog godkendt",
             "tieEndedRound": "Runden er endt uafgjort",
             "youEndedRound": "Du har afsluttet runden",
             "nameEndedRound": "%{name} har afsluttet runden",
@@ -2252,7 +2276,8 @@
         }
     },
     "placeholder": {
-        "clue": null,
+        "clue": "Indtast dit hint...",
+        "clueInLanguage": "Indtast dit hint på {language}...",
         "cardSetId": "Udfyld kort sæt ID...",
         "cardContent": "Udfyld kort indhold...",
         "cardSetName": "Udfyld navn til dette kort sæt...",
@@ -2493,7 +2518,7 @@
         "restartNotice": "Serveren genstarter om {count} minutter. Bliv færdig med dit spil. | Serveren genstarter om {count} minut. Bliv færdig med dit spil. | Serveren genstarter om {count} minutter. Bliv færdig med dit spil."
     },
     "misc": {
-        "refresh": null,
+        "refresh": "Opdater",
         "automatic": "Auto",
         "title": "Titel",
         "current": "Nuværende",
@@ -2527,6 +2552,8 @@
         "questions": "Spørgsmål",
         "teamAndQuestions": "Hold & Spørgsmål",
         "questionPacks": "Spørgsmålspakker",
+        "packs": "Pakker",
+        "teamAndPacks": "Hold & Pakker",
         "rock": "Sten",
         "paper": "Papir",
         "scissors": "Saks",
@@ -2733,6 +2760,8 @@
         "winLossDelta": "S/T-delta",
         "killDeathRatio": "K/D Forhold",
         "quitRatio": "Afbrydelsesrate",
+        "clueSuccessRatio": "Ledetråd Succes Ratio",
+        "guessHitRatio": "Gæt Hit Ratio",
         "lives": "Liv",
         "points": "Point",
         "wins": "Sejre",
@@ -2991,8 +3020,8 @@
             "count": "%{count} blokeret"
         },
         "cluePicking": {
-            "title": null,
-            "description": null
+            "title": "Skriv dit hint",
+            "description": "Hold dit hint vagt men præcist — andre vil bruge det til at gætte din placering."
         },
         "youBlockedUser": "Du har blokeret den her bruger.",
         "playerProfile": {
@@ -3050,9 +3079,17 @@
         "votePick": "Stem på %{option}",
         "votePickChange": "Skift din stemme til %{option}",
         "votePickSelected": "Du stemte på %{option}",
-        "clueSelf": null,
-        "clueOther": null,
-        "stayQuietHint": null,
+        "clueSelf": "Dit hint",
+        "clueOther": "%{name}'s hint",
+        "stayQuietHint": "Giv ikke flere hints, mens de andre gætter!",
+        "multipleLanguages": {
+            "title": "Flere sprog opdaget",
+            "description": "Vi har lagt mærke til, at spillerne bruger forskellige sprog. For at sikre, at alle forstår ledetrådene, vælg alle de sprog, du forstår — når alle har mindst ét fælles, så starter spillet.",
+            "leave": "Jeg kan ikke deltage på nogen af disse sprog",
+            "leaveDescription": "Det er helt i orden — der vil ikke blive registreret nogen statistik eller sejre for nogen, hvis du forlader nu.",
+            "agreedTitle": "Du er klar!",
+            "agreedDescription": "Alle er enige om at bruge {language} til deres ledetråde!"
+        },
         "tiedVoteSelf": "Jeres gruppe har stemt lige! Vi vælger en tilfældig mulighed...",
         "tiedVoteOther": "Vent lige et øjeblik, jeres modstandere har også stemt lige.",
         "waitForOpponent": "Venter på din modstander...",

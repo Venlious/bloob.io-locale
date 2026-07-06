@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Italian",
         "rtl": false,
-        "total": 2163,
-        "missing": 48
+        "total": 2184,
+        "missing": 0
     },
     "name": "Bloob.io",
     "error": {
@@ -150,6 +150,7 @@
             "blocked": "La tua punizione non ti permette di partecipare al matchmaking o alle partite pubbliche.",
             "joinBlocked": "Non puoi unirti a questa partita.",
             "empty": "La partita è chiusa. Tutti gli altri giocatori hanno lasciato la partita.",
+            "noAgreement": "La partita è stata chiusa perché non si è trovato un accordo. Le statistiche non sono state registrate.",
             "rematchTimeout": "Non hai accettato la richiesta di rivincita e sei stato rimandato al menu principale.",
             "rematchCancelled": "Spiacenti! Non ci sono abbastanza giocatori rimasti per una rivincita.",
             "inactive": "La partita in cui ti trovavi è stata chiusa perché inattiva da troppo tempo.",
@@ -2036,78 +2037,99 @@
             "name": "Tuned In",
             "title": "Gioca gratis Tuned In | Online Multiplayer | Party Game",
             "description": "Gioca gratis a Tuned In, il gioco da festa online ispirato a Wavelength. Sfida amici e estranei in partite multiplayer, no account richiesto!",
-            "tooltip": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "Indicatore Condiviso",
+                    "help": "Quando è attivato, il team o il gruppo co-op condivide un solo indicatore che tutti seguono insieme — dove finisce è la risposta. Quando è disattivato, ogni giocatore ha il proprio indicatore, e la risposta del team è la media della posizione finale di tutti."
+                },
+                "winAmountRounds": {
+                    "title": "Giri",
+                    "help": "Quante manche dura la partita. Si adatta automaticamente al numero di giocatori: 4 manche per 2 giocatori, 3 per 3-4, 2 per 5-6 e 1 per 7 o più.",
+                    "data": {
+                        "fixed": "<b>0</b> turni | <b>1</b> turno | <b>{count}</b> turni"
+                    }
                 },
                 "pickingTime": {
-                    "title": null
+                    "title": "Tempo per scrivere indizi"
+                },
+                "revealTime": {
+                    "title": "Tempo di visualizzazione dei risultati",
+                    "help": "Quanto tempo ci vogliono a mostrare i risultati dopo che ogni indizio è stato rivelato?"
                 },
                 "promptSelection": {
-                    "title": null,
-                    "help": null
+                    "title": "Selezione del Prompt",
+                    "help": "Quando è attivato, i giocatori scelgono tra 3 spettri diversi ogni turno invece di riceverne uno assegnato."
+                },
+                "stepScoring": {
+                    "title": "Punteggio Passi",
+                    "help": "Quando è attivato, i punti vengono assegnati in fasce fisse (75/50/25) in base alla distanza dal bersaglio invece di scalare in modo fluido."
                 },
                 "visibility": {
-                    "title": null,
-                    "help": null,
+                    "title": "Posizioni Live",
+                    "help": "Controlla chi può vedere dove si muovono gli altri sullo spettro in tempo reale.",
                     "data": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "Tutti",
+                        "TEAM": "Solo squadra",
+                        "PRIVATE": "Nascosto"
                     },
                     "description": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "Tutti i giocatori vedono la posizione live degli altri sullo spettro.",
+                        "TEAM": "I giocatori vedono solo le posizioni live dei loro compagni di squadra.",
+                        "PRIVATE": "Nessuno può vedere dove sono gli altri sullo spettro."
                     }
                 }
             },
             "presets": {
                 "default": {
-                    "title": null,
+                    "title": "Contro",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Tutti contro tutti",
+                        "Punti in base a quanto sei vicino alla tua risposta"
+                    ]
+                },
+                "teams": {
+                    "title": "Squadre",
+                    "description": [
+                        "Competi con le squadre che scegli",
+                        "La tua ipotesi è la media della tua squadra"
                     ]
                 },
                 "coopConsensus": {
-                    "title": null,
+                    "title": "Co-op classico",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Lavorate insieme come una squadra",
+                        "Muovete un indicatore condiviso insieme",
+                        "I punti si guadagnano in fasce fisse"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "Coop di Democrazia",
+                    "description": [
+                        "Lavorate insieme come una squadra",
+                        "La tua ipotesi è la media della tua squadra"
                     ]
                 }
             },
             "help": {
                 "rules": {
-                    "title": null,
+                    "title": "Come si gioca",
                     "description": [
-                        null,
-                        null,
-                        null,
-                        null
-                    ]
-                },
-                "scoring": {
-                    "title": null,
-                    "description": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null
+                        "Ogni turno, ogni giocatore ha un obiettivo segreto su uno spettro (tipo Caldo ← → Freddo) e scrive un indizio per farlo indovinare, senza usare le parole dello spettro.",
+                        "Poi tutti i giocatori possono indovinare dove si trova l'indizio degli altri. Più sei vicino con il tuo indovinello, più punti prendi."
                     ]
                 },
                 "modes": {
-                    "title": null,
+                    "title": "Modalità di gioco",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Solo: Ognuno indovina per conto suo e segna individualmente.",
+                        "Co-op: Tutto il gruppo condivide un punteggio insieme.",
+                        "Team: Scegli un colore per la tua squadra nella lobby; ogni squadra segna separatamente."
+                    ]
+                },
+                "customize": {
+                    "title": "Personalizza le Regole",
+                    "description": [
+                        "Modifica il punteggio, gli indicatori e altro nelle impostazioni della lobby. Impostazioni come passare a un punteggio basato sui passi invece che sulla distanza."
                     ]
                 }
             }
@@ -2217,9 +2239,11 @@
             "makeYourMove": "Fai la tua mossa",
             "waitingForOthers": "Aspettando gli altri",
             "wager": "Scommetti",
-            "yourClue": null,
-            "nameClue": null,
-            "writeYourClue": null,
+            "yourClue": "Trasmettendo il tuo indizio",
+            "nameClue": "Sintonizzati sull'indizio di %{name}",
+            "writeYourClue": "Scrivi il tuo indizio",
+            "languageSelect": "Selezione della lingua",
+            "languageAgreed": "Lingua scelta",
             "tieEndedRound": "Il turno è finito in pareggio",
             "youEndedRound": "Hai finito il turno",
             "nameEndedRound": "%{name} ha finito il turno",
@@ -2252,7 +2276,8 @@
         }
     },
     "placeholder": {
-        "clue": null,
+        "clue": "Inserisci il tuo indizio...",
+        "clueInLanguage": "Inserisci il tuo indizio in {language}...",
         "cardSetId": "Compila il set ID della scheda...",
         "cardContent": "Compila il contenuto del biglietto...",
         "cardSetName": "Inserisci il nome di questo set di carte...",
@@ -2493,7 +2518,7 @@
         "restartNotice": "Il server si riavvierà tra {count} minuti. Finisci la tua partita. | Il server si riavvierà tra {count} minuto. Finisci la tua partita. | Il server si riavvierà tra {count} minuti. Finisci la tua partita."
     },
     "misc": {
-        "refresh": null,
+        "refresh": "Ricarica",
         "automatic": "Auto",
         "title": "Titolo",
         "current": "Attuale",
@@ -2527,6 +2552,8 @@
         "questions": "Domande",
         "teamAndQuestions": "Squadra & Domande",
         "questionPacks": "Pacchetti di Domande",
+        "packs": "Pacchetti",
+        "teamAndPacks": "Squadra & Pacchetti",
         "rock": "Pietra",
         "paper": "Carta",
         "scissors": "Forbici",
@@ -2733,6 +2760,8 @@
         "winLossDelta": "Delta V/S",
         "killDeathRatio": "Rapporto K/D",
         "quitRatio": "Tasso di abbandono",
+        "clueSuccessRatio": "Rapporto di Successo Indizi",
+        "guessHitRatio": "Rapporto di Colpi Indovinati",
         "lives": "Vite",
         "points": "Punti",
         "wins": "Vittorie",
@@ -2991,8 +3020,8 @@
             "count": "%{count} bloccati"
         },
         "cluePicking": {
-            "title": null,
-            "description": null
+            "title": "Scrivi il tuo indizio",
+            "description": "Tieni il tuo indizio vago ma preciso — gli altri lo useranno per indovinare dove sei."
         },
         "youBlockedUser": "Hai bloccato questo utente.",
         "playerProfile": {
@@ -3050,9 +3079,17 @@
         "votePick": "Vota per %{option}",
         "votePickChange": "Cambia il voto in %{option}",
         "votePickSelected": "Hai votato per %{option}",
-        "clueSelf": null,
-        "clueOther": null,
-        "stayQuietHint": null,
+        "clueSelf": "Il tuo indizio",
+        "clueOther": "L'indizio di %{name}",
+        "stayQuietHint": "Non dare altri suggerimenti mentre gli altri stanno indovinando!",
+        "multipleLanguages": {
+            "title": "Lingue multiple rilevate",
+            "description": "Abbiamo notato che i giocatori usano lingue diverse. Per far sì che tutti capiscano gli indizi, seleziona tutte le lingue che conosci — una volta che tutti hanno almeno una in comune, il gioco partirà.",
+            "leave": "Non posso partecipare in nessuna di queste lingue",
+            "leaveDescription": "Va benissimo — nessuna statistica o vittoria verrà registrata per nessuno se esci adesso.",
+            "agreedTitle": "Sei a posto!",
+            "agreedDescription": "Tutti sono d'accordo a usare {language} per i loro indizi!"
+        },
         "tiedVoteSelf": "Il tuo gruppo ha un voto in pareggio! Stiamo scegliendo una selezione a caso...",
         "tiedVoteOther": "Aspetta un attimo, i tuoi avversari hanno un voto in pareggio.",
         "waitForOpponent": "Aspettando il tuo avversario...",

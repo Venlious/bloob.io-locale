@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Polish",
         "rtl": false,
-        "total": 2163,
-        "missing": 48
+        "total": 2184,
+        "missing": 0
     },
     "name": "Bloob.io",
     "error": {
@@ -150,6 +150,7 @@
             "blocked": "Twoja kara nie pozwala ci dołączyć do gier rankingowych czy publicznych.",
             "joinBlocked": "Nie możesz dołączyć do tej gry.",
             "empty": "Gra zamknięta. Wszyscy inni gracze opuścili grę.",
+            "noAgreement": "Mecz został zamknięty, bo nie udało się dojść do porozumienia. Statystyki nie zostały zapisane.",
             "rematchTimeout": "Nie zaakceptowałeś prośby o powtórkę i zostałeś wysłany z powrotem do głównego menu.",
             "rematchCancelled": "Przykro mi! Nie ma już wystarczająco dużo graczy, aby rozegrać powtórkę.",
             "inactive": "Gra, w której uczestniczyłeś, została zamknięta, ponieważ była nieaktywna zbyt długo.",
@@ -243,7 +244,7 @@
                     "data": {
                         "firstToPoints": "Pierwszy, kto zdobędzie <b>0</b> punktów | Pierwszy, kto zdobędzie <b>1</b> punkt | Pierwszy, kto zdobędzie <b>{count}</b> punktów",
                         "mostPoints": "Najwięcej punktów po <b>0</b> rundach | Najwięcej punktów po <b>1</b> rundzie | Najwięcej punktów po <b>{count}</b> rundach",
-                        "lastStanding": "Ostatni przy życiu (0 żyć) | Ostatni przy życiu (1 życie) | Ostatni przy życiu ({count} żyć)"
+                        "lastStanding": "Ostatni przy życiu (<b>0</b> żyć) | Ostatni przy życiu (<b>1</b> życie) | Ostatni przy życiu (<b>{count}</b> żyć)"
                     }
                 },
                 "winAmount": {
@@ -2036,78 +2037,99 @@
             "name": "Tuned In",
             "title": "Tuned In | Darmowa gra imprezowa online z przyjaciółmi",
             "description": "Zagraj w Tuned In! Darmowa gra imprezowa online inspirowana Spektrum (Wavelength). Bez konta, zagraj z przyjaciółmi lub obcymi w trybie multiplayer.",
-            "tooltip": null,
             "options": {
                 "consensus": {
-                    "title": null,
-                    "help": null
+                    "title": "Wspólny wskaźnik",
+                    "help": "Kiedy to włączone, zespół lub grupa kooperacyjna dzieli się jednym wskaźnikiem, który wszyscy poruszają razem — gdziekolwiek on się skończy, to jest odpowiedź. Kiedy to wyłączone, każdy gracz ma swój własny wskaźnik, a odpowiedź zespołu to średnia z końcowych pozycji wszystkich."
+                },
+                "winAmountRounds": {
+                    "title": "Rundy",
+                    "help": "Ile rund trwa mecz. Liczba rund automatycznie dostosowuje się w zależności od liczby graczy w meczu: 4 rundy dla 2 graczy, 3 dla 3-4, 2 dla 5-6, a 1 dla 7 lub więcej.",
+                    "data": {
+                        "fixed": "<b>0</b> rund | <b>1</b> runda | <b>{count}</b> rundy"
+                    }
                 },
                 "pickingTime": {
-                    "title": null
+                    "title": "Czas na pisanie wskazówek"
+                },
+                "revealTime": {
+                    "title": "Czas wyświetlania wyników",
+                    "help": "Jak długo wyniki są pokazywane po ujawnieniu każdej wskazówki?"
                 },
                 "promptSelection": {
-                    "title": null,
-                    "help": null
+                    "title": "Wybór promptów",
+                    "help": "Gdy to jest włączone, gracze wybierają z 3 różnych spektrów w każdej rundzie, zamiast dostawać jeden na stałe."
+                },
+                "stepScoring": {
+                    "title": "Punkty za kroki",
+                    "help": "Gdy włączone, punkty są przyznawane w stałych przedziałach (75/50/25) w zależności od odległości od celu, zamiast płynnie się skalować."
                 },
                 "visibility": {
-                    "title": null,
-                    "help": null,
+                    "title": "Na żywo pozycje",
+                    "help": "Kontroluje, kto może widzieć, gdzie inni się poruszają na spektrum w czasie rzeczywistym.",
                     "data": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "Wszyscy",
+                        "TEAM": "Tylko drużyna",
+                        "PRIVATE": "Ukryte"
                     },
                     "description": {
-                        "ALL": null,
-                        "TEAM": null,
-                        "PRIVATE": null
+                        "ALL": "Wszyscy gracze widzą na żywo pozycje innych na spektrum.",
+                        "TEAM": "Gracze widzą tylko na żywo pozycje swoich kumpli z drużyny.",
+                        "PRIVATE": "Nikt nie widzi, gdzie są inni na spektrum."
                     }
                 }
             },
             "presets": {
                 "default": {
-                    "title": null,
+                    "title": "Przeciwko",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Wszyscy przeciwko sobie",
+                        "Punkty w zależności od tego, jak blisko jesteś swojego zgadnięcia"
+                    ]
+                },
+                "teams": {
+                    "title": "Drużyny",
+                    "description": [
+                        "Rywalizuj w drużynach, które wybierzesz",
+                        "Zgadywanie to średnia twojej drużyny"
                     ]
                 },
                 "coopConsensus": {
-                    "title": null,
+                    "title": "Klasyczny co-op",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Działajcie razem jak jedna ekipa",
+                        "Przesuwajcie wspólny wskaźnik razem",
+                        "Punkty zdobywa się w ustalonych przedziałach"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "Kooperatywa Demokracji",
+                    "description": [
+                        "Działajcie razem jak jedna ekipa",
+                        "Zgadywanie to średnia waszej drużyny"
                     ]
                 }
             },
             "help": {
                 "rules": {
-                    "title": null,
+                    "title": "Jak grać",
                     "description": [
-                        null,
-                        null,
-                        null,
-                        null
-                    ]
-                },
-                "scoring": {
-                    "title": null,
-                    "description": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null
+                        "W każdej rundzie każdy gracz dostaje tajny cel na skali (np. Gorąco ← → Zimno) i pisze wskazówkę, nie używając słów z tej skali.",
+                        "Potem wszyscy gracze zgadują, gdzie wskazówka ląduje w odniesieniu do wskazówek innych. Im bliżej zgadniesz, tym więcej punktów dostajesz."
                     ]
                 },
                 "modes": {
-                    "title": null,
+                    "title": "Tryby gry",
                     "description": [
-                        null,
-                        null,
-                        null
+                        "Solo: Każdy zgaduje sam i zdobywa punkty indywidualnie.",
+                        "Co-op: Cała ekipa dzieli się jednym wynikiem.",
+                        "Team: Wybierz kolor drużyny w lobby; każda drużyna zdobywa punkty osobno."
+                    ]
+                },
+                "customize": {
+                    "title": "Dostosuj zasady",
+                    "description": [
+                        "Dostosuj punkty, wskaźniki i inne w ustawieniach lobby. Ustawienia takie jak przełączenie na punktację opartą na krokach zamiast na odległości."
                     ]
                 }
             }
@@ -2217,9 +2239,11 @@
             "makeYourMove": "Zrób swój ruch",
             "waitingForOthers": "Czekam na innych",
             "wager": "Zakład",
-            "yourClue": null,
-            "nameClue": null,
-            "writeYourClue": null,
+            "yourClue": "Nadaję twoją wskazówkę",
+            "nameClue": "Słuchaj wskazówki %{name}",
+            "writeYourClue": "Napisz swoją wskazówkę",
+            "languageSelect": "Wybór języka",
+            "languageAgreed": "Język ustalony",
             "tieEndedRound": "Runda skończona remisem",
             "youEndedRound": "Skończyłeś rundę",
             "nameEndedRound": "%{name} skończył rundę",
@@ -2252,7 +2276,8 @@
         }
     },
     "placeholder": {
-        "clue": null,
+        "clue": "Wpisz swoją podpowiedź...",
+        "clueInLanguage": "Wpisz swoją podpowiedź w {language}...",
         "cardSetId": "Wpisz ID zestawu kart...",
         "cardContent": "Wpisz zawartość karty...",
         "cardSetName": "Wpisz nazwę dla tego zestawu kart...",
@@ -2493,7 +2518,7 @@
         "restartNotice": "Serwer zrestartuje się za {count} minut. Skończ swoją grę. | Serwer zrestartuje się za {count} minutę. Skończ swoją grę. | Serwer zrestartuje się za {count} minut. Skończ swoją grę."
     },
     "misc": {
-        "refresh": null,
+        "refresh": "Odśwież",
         "automatic": "Auto",
         "title": "Tytuł",
         "current": "Obecnie",
@@ -2527,6 +2552,8 @@
         "questions": "Pytania",
         "teamAndQuestions": "Zespół i pytania",
         "questionPacks": "Zestawy pytań",
+        "packs": "Paczki",
+        "teamAndPacks": "Drużyna i paczki",
         "rock": "Kamień",
         "paper": "Papier",
         "scissors": "Nożyczki",
@@ -2733,6 +2760,8 @@
         "winLossDelta": "Różnica W/P",
         "killDeathRatio": "Stosunek zabójstw do śmierci",
         "quitRatio": "Współczynnik rezygnacji",
+        "clueSuccessRatio": "Wskaźnik sukcesu wskazówek",
+        "guessHitRatio": "Wskaźnik trafionych zgadnięć",
         "lives": "Życia",
         "points": "Punkty",
         "wins": "Wygrane",
@@ -2991,8 +3020,8 @@
             "count": "%{count} zablokowanych"
         },
         "cluePicking": {
-            "title": null,
-            "description": null
+            "title": "Napisz swoją wskazówkę",
+            "description": "Trzymaj swoją wskazówkę nieco ogólną, ale trafną — inni będą jej używać, żeby zgadnąć, gdzie jesteś na skali."
         },
         "youBlockedUser": "Zablokowałeś tego użytkownika.",
         "playerProfile": {
@@ -3050,9 +3079,17 @@
         "votePick": "Głosuj na %{option}",
         "votePickChange": "Zmień głos na %{option}",
         "votePickSelected": "Głosowałeś na %{option}",
-        "clueSelf": null,
-        "clueOther": null,
-        "stayQuietHint": null,
+        "clueSelf": "Twoja podpowiedź",
+        "clueOther": "Podpowiedź %{name}",
+        "stayQuietHint": "Nie dawaj żadnych dodatkowych wskazówek, gdy inni zgadują!",
+        "multipleLanguages": {
+            "title": "Wykryto wiele języków",
+            "description": "Zauważyliśmy, że gracze używają różnych języków. Żeby wszyscy rozumieli wskazówki, wybierzcie wszystkie języki, które znacie — jak tylko wszyscy będą mieli przynajmniej jeden wspólny, gra się zacznie.",
+            "leave": "Nie mogę brać udziału w żadnym z tych języków",
+            "leaveDescription": "Spoko, nie ma sprawy — żadne statystyki ani wygrane nie będą liczone, jeśli teraz wyjdziesz.",
+            "agreedTitle": "Jesteś gotowy!",
+            "agreedDescription": "Wszyscy się zgadzają, żeby używać {language} do swoich wskazówek!"
+        },
         "tiedVoteSelf": "Wasza ekipa ma remis! Losujemy wybór...",
         "tiedVoteOther": "Poczekaj chwilę, wasi przeciwnicy mają remis.",
         "waitForOpponent": "Czekam na twojego przeciwnika...",
