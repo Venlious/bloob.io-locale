@@ -236,6 +236,14 @@ export default class TranslationClass {
 		)
 
 		/**
+		 * Sharing
+		 */
+		this.generateTranslationTask(
+			[`share`, `tiers`],
+			`These are short accuracy-tier labels (e.g. bullseye, close, barely, miss) shown next to an emoji when a player shares their result from a game, ranked from most to least accurate (KEEP THEM SHORT).`
+		)
+
+		/**
 		 * Misc.
 		 */
 		this.generateTranslationTask(
