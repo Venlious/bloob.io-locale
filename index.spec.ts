@@ -68,6 +68,48 @@ const checkForCommonErrors = translation => {
 	}
 }
 
+const checkBoldTagsBalanced = translation => {
+	// Iterate through keys and values of the translation object
+	for (const [key, value] of Object.entries(translation)) {
+		// Skip keys with null values
+		if (value === null) continue
+
+		// Check if value is an object (indicating another nested layer)
+		if (typeof value === `object`) {
+			// If value is an object, recursively call the function on the nested objects
+			checkBoldTagsBalanced(value)
+		} else if (typeof value === `string`) {
+			// Every opening <b> must be matched by a closing </b>, and vice versa
+			const openCount = (value.match(/<b>/g) || []).length
+			const closeCount = (value.match(/<\/b>/g) || []).length
+			expect(openCount).toBe(closeCount)
+		}
+	}
+}
+
+const checkForMatchingBoldTags = (english, translation) => {
+	// Iterate through keys and values of English object
+	for (const [key, value] of Object.entries(english)) {
+		// Skip keys with null values in translation
+		if (translation[key] === null) continue
+
+		// Check if value is an object (indicating another nested layer)
+		if (typeof value === `object`) {
+			// If value is an object, recursively call the function on the nested objects
+			checkForMatchingBoldTags(value, translation[key])
+		} else if (typeof value === `string`) {
+			// A translation must use the same amount of <b> and </b> tags as English - not more, not less
+			const englishOpenCount = (value.match(/<b>/g) || []).length
+			const englishCloseCount = (value.match(/<\/b>/g) || []).length
+			const translationOpenCount = (translation[key].match(/<b>/g) || []).length
+			const translationCloseCount = (translation[key].match(/<\/b>/g) || []).length
+
+			expect(translationOpenCount).toBe(englishOpenCount)
+			expect(translationCloseCount).toBe(englishCloseCount)
+		}
+	}
+}
+
 const checkForCommonVariableErrors = translation => {
 	// Iterate through keys and values of English object
 	for (const [key, value] of Object.entries(translation)) {
@@ -102,6 +144,12 @@ describe(`correctEntriesCount`, () => {
 	})
 })
 
+describe(`correctBoldTags`, () => {
+	it(`should have balanced <b> and </b> tags in English`, () => {
+		checkBoldTagsBalanced(enMessage)
+	})
+})
+
 for (const folder of [...supportedLocales, `_empty`]) {
 	if (folder === `en`) continue
 	// eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -130,6 +178,15 @@ for (const folder of [...supportedLocales, `_empty`]) {
 	describe(`containCorrectVariables`, () => {
 		it(`should contain all variables from English text for "${folder}"`, () => {
 			checkForVariables(enMessage, messages)
+		})
+	})
+
+	describe(`correctBoldTags`, () => {
+		it(`should have balanced <b> and </b> tags for "${folder}"`, () => {
+			checkBoldTagsBalanced(messages)
+		})
+		it(`should have the same <b> and </b> tags as English for "${folder}"`, () => {
+			checkForMatchingBoldTags(enMessage, messages)
 		})
 	})
 
