@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 2127,
+        "total": 2192,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -150,6 +150,7 @@
             "blocked": "你已被禁止参加匹配或公开房间。",
             "joinBlocked": "你不能加入这个房间。",
             "empty": "游戏结束了，其他玩家都离开了房间",
+            "noAgreement": "比赛因为无法达成协议而结束。统计数据没有被记录。",
             "rematchTimeout": "你没有接受重赛请求，所以返回主菜单了",
             "rematchCancelled": "抱歉！剩下的玩家数量不足，无法进行重赛",
             "inactive": "你所在的房间因为过久没有行动而被关闭了",
@@ -239,7 +240,12 @@
                 },
                 "winCondition": {
                     "title": "胜利条件",
-                    "help": "确定如何对局获得胜利。"
+                    "help": "确定如何对局获得胜利。",
+                    "data": {
+                        "firstToPoints": "第一个到达 {count} 分 | 第一个到达 {count} 分 | 第一个到达 {count} 分",
+                        "mostPoints": "{count} 轮后得分最多 | {count} 轮后得分最多 | {count} 轮后得分最多",
+                        "lastStanding": "最后的存活者（{count}条命）| 最后的存活者（{count}条命）| 最后的存活者（{count}条命）"
+                    }
                 },
                 "winAmount": {
                     "title": "赢取金额"
@@ -579,12 +585,6 @@
             "title": "免费在线玩无需注册的卡牌套组游戏 | 烂苹果规则挑战赛等你来战",
             "description": "免费在线玩高能卡牌套组游戏，无需注册，支持多人在线规则挑战，立即邀请好友或陌生人参与热血对决，最多16人同局，乐趣无限！快来体验精彩纷呈的卡牌对战吧！",
             "options": {
-                "winCondition": {
-                    "data": {
-                        "first": "第一个得到<b>0</b>分 | 第一个得到<b>1</b>分 | 第一个得到<b>{count}</b>分",
-                        "most": "在<b>0</b>轮后得分最多 | 在<b>1</b>轮后得分最多 | 在<b>{count}</b>轮后得分最多"
-                    }
-                },
                 "judgeSystem": {
                     "title": "裁判系统",
                     "help": "裁判或所有人决定每轮谁的表现最好。",
@@ -605,8 +605,7 @@
                     "title": "丢弃回合",
                     "help": "\"倾倒回合\"让每个人都可以选择他们想要丢弃的手牌。回合结束后，会给出新的应对卡作为替换。",
                     "data": {
-                        "disabled": "禁用",
-                        "round": "每<b>0</b>轮 | 每<b>1</b>轮 | 每<b>{count}</b>轮"
+                        "round": "每{count}轮 | 每{count}轮 | 每{count}轮"
                     }
                 },
                 "dumpRoundAmount": {
@@ -751,8 +750,7 @@
                     "data": {
                         "OPPOSITE_SIDE": "到达对面",
                         "TAKE": "选择任意一个",
-                        "ALL": "全部都是“王”",
-                        "NONE": "禁用"
+                        "ALL": "全部都是“王”"
                     }
                 },
                 "backwardsTake": {
@@ -841,9 +839,8 @@
                 },
                 "winCondition": {
                     "data": {
-                        "LAST_STANDING": "最后的存活者（<b>0</b>条命）| 最后的存活者（<b>1</b>条命）| 最后的存活者（<b>{count}</b>条命）",
-                        "KILL_COUNT": "首个达到<b>0</b>杀的人 | 首个达到<b>1</b>杀的人 | 首个达到<b>{count}</b>杀的人",
-                        "TIME": "<b>0</b>分钟后杀人最多的人 | <b>1</b>分钟后杀人最多的人 | <b>{count}</b>分钟后杀人最多的人"
+                        "KILL_COUNT": "首个达到{count}杀的人 | 首个达到{count}杀的人 | 首个达到{count}杀的人",
+                        "TIME": "{count}分钟后杀人最多的人 | {count}分钟后杀人最多的人 | {count}分钟后杀人最多的人"
                     }
                 },
                 "defaultBombCount": {
@@ -1242,7 +1239,6 @@
                     "title": "网格大小",
                     "help": "选择要玩的网格大小。",
                     "data": {
-                        "random": "随机",
                         "7x7": "7x7",
                         "11x11": "11x11",
                         "15x15": "15x15"
@@ -1252,7 +1248,6 @@
                     "title": "地图",
                     "help": "选择你想玩的地图。",
                     "data": {
-                        "random": "随机",
                         "peninsula": "半岛",
                         "archipelago": "群岛",
                         "canal": "运河",
@@ -1270,7 +1265,6 @@
                     "title": "方向",
                     "help": "选择关卡显示的方向。",
                     "data": {
-                        "random": "随机",
                         "NORTH": "北",
                         "EAST": "东",
                         "SOUTH": "南",
@@ -1376,8 +1370,7 @@
                 },
                 "winCondition": {
                     "data": {
-                        "FIRST": "首先达到<b>0</b>分 | 首先达到<b>1</b>分 | 首先达到<b>{count}</b>分",
-                        "HIGHEST_AFTER": "达到<b>0</b>分后得分最多 | 达到<b>1</b>分后得分最多 | 达到<b>{count}</b>分后得分最多"
+                        "HIGHEST_AFTER": "达到{count}分后得分最多 | 达到{count}分后得分最多 | 达到{count}分后得分最多"
                     }
                 }
             },
@@ -1430,14 +1423,14 @@
                     "help": "如果只剩下一个玩家拿着所有的牌，游戏就会提前结束。",
                     "data": {
                         "LAST_STANDING": "当玩家得到所有的牌",
-                        "HIGHEST_AFTER": "<b>0</b>轮后得到最多的牌 | <b>1</b>轮后得到最多的牌 | <b>{count}</b>轮后得到最多的牌"
+                        "HIGHEST_AFTER": "{count}轮后得到最多的牌 | {count}轮后得到最多的牌 | {count}轮后得到最多的牌"
                     }
                 },
                 "warRequirement": {
                     "title": "战争要求",
                     "help": "如果两个或更多的玩家打出相同的卡，应该如何决定战局的走向。",
                     "data": {
-                        "DEFAULT": "放置<b>0</b>张卡 | 放置<b>1</b>张卡 | 放置<b>{count}</b>张卡",
+                        "DEFAULT": "放置{count}张卡 | 放置{count}张卡 | 放置{count}张卡",
                         "CARD_VALUE": "放置与初始卡牌等级相等的卡牌"
                     }
                 },
@@ -1600,13 +1593,6 @@
                         "rock": "石头赢剪刀",
                         "paper": "布赢石头",
                         "scissors": "剪刀赢布"
-                    }
-                },
-                "winCondition": {
-                    "data": {
-                        "LAST_STANDING": "最后一个存活的（<b>0</b> 条命） | 最后一个存活的（<b>1</b> 条命） | 最后一个存活的（<b>{count}</b> 条命）",
-                        "FIRST": "第一个得到 <b>0</b> 分 | 第一个得到 <b>1</b> 分 | 第一个得到 <b>{count}</b> 分",
-                        "HIGHEST_AFTER": "<b>0</b> 轮后得分最多 | <b>1</b> 轮后得分最多 | <b>{count}</b> 轮后得分最多"
                     }
                 }
             },
@@ -1886,12 +1872,6 @@
                         "ELEVEN": "永远是 11"
                     }
                 },
-                "winCondition": {
-                    "data": {
-                        "FIRST": "第一个到达 <b>0</b> 分 | 第一个到达 <b>1</b> 分 | 第一个到达 <b>{count}</b> 分",
-                        "HIGHEST_AFTER": "<b>0</b> 轮后得分最多 | <b>1</b> 轮后得分最多 | <b>{count}</b> 轮后得分最多"
-                    }
-                },
                 "splitSameFaceOnly": {
                     "title": "仅同牌面可分牌",
                     "help": "启用后，只有当两张起始牌是同一牌面时才能分牌（例如 K+K 或 8+8），而不只是点数相同。"
@@ -1994,8 +1974,7 @@
                     "title": "开球摆球布局",
                     "help": "选择开球时的初始摆球是固定还是随机的。",
                     "data": {
-                        "fixed": "固定（默认）",
-                        "random": "随机"
+                        "fixed": "固定（默认）"
                     }
                 },
                 "breakFillers": {
@@ -2007,8 +1986,7 @@
                     "help": "选择哪些犯规会让对手的球返回球台。",
                     "data": {
                         "anyFoul": "任何符合条件的犯规",
-                        "ballInHand": "仅限手中球犯规",
-                        "off": "关闭"
+                        "ballInHand": "仅限手中球犯规"
                     }
                 }
             },
@@ -2054,6 +2032,111 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": "Tuned In",
+            "title": "Tuned In | 免费在线多人聚会游戏",
+            "description": "Tuned In：在线免费聚会游戏，无需注册，支持和好友多人组队对战！",
+            "options": {
+                "consensus": {
+                    "title": "共享指示器",
+                    "help": "启用时，团队或合作组共享一个指示器，大家一起移动——最后的位置就是答案。禁用时，每个玩家都有自己的指示器，团队的答案是每个人最终位置的平均值。"
+                },
+                "winAmountRounds": {
+                    "title": "回合数",
+                    "help": "比赛持续多少轮？根据参赛人数自动调整轮数：2名玩家4轮，3-4名玩家3轮，5-6名玩家2轮，7名或更多玩家1轮。",
+                    "data": {
+                        "fixed": "{count} 圈 | {count} 圈 | {count} 圈"
+                    }
+                },
+                "pickingTime": {
+                    "title": "线索写作时间"
+                },
+                "revealTime": {
+                    "title": "结果显示时间",
+                    "help": "每个线索揭示后，结果会显示多久？"
+                },
+                "promptSelection": {
+                    "title": "选择提示",
+                    "help": "启用后，玩家每轮可以从3个不同的光谱中选择，而不是被分配一个。"
+                },
+                "stepScoring": {
+                    "title": "步数评分",
+                    "help": "启用后，得分会根据离目标的距离分成固定的档次（75/50/25），而不是平滑递增。"
+                },
+                "authorPoints": {
+                    "title": "线索提供者奖励",
+                    "help": "启用后，提示者可以获得猜测者从他们的提示中获得的平均分数的一半，向下取整。仅限单人模式。"
+                },
+                "visibility": {
+                    "title": "实时位置",
+                    "help": "控制谁能实时看到其他人在光谱上的移动。",
+                    "data": {
+                        "ALL": "大家",
+                        "TEAM": "只有队伍",
+                        "PRIVATE": "隐藏"
+                    },
+                    "description": {
+                        "ALL": "所有玩家都能看到彼此在光谱上的实时位置。",
+                        "TEAM": "玩家只能看到自己队友的实时位置。",
+                        "PRIVATE": "没有人能看到其他人在光谱上的位置。"
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "对战",
+                    "description": [
+                        "大家互相对抗",
+                        "根据你猜得有多接近来得分"
+                    ]
+                },
+                "teams": {
+                    "title": "队伍",
+                    "description": [
+                        "选你喜欢的队伍来比赛",
+                        "猜的就是你们队的平均值"
+                    ]
+                },
+                "coopConsensus": {
+                    "title": "经典合作",
+                    "description": [
+                        "一起合作，成为一个团队",
+                        "一起移动一个共享的指示器",
+                        "分数在固定区间内计算"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "民主合作社",
+                    "description": [
+                        "一起当一个团队",
+                        "猜的就是你们团队的平均值"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "怎么玩",
+                    "description": [
+                        "每轮每个玩家会得到一个秘密目标在一个范围内（比如：热 ← → 冷），然后写一个提示，但不能用范围里的词。",
+                        "所有玩家接着可以猜测每个提示的位置。猜得越接近，得分就越高。"
+                    ]
+                },
+                "modes": {
+                    "title": "游戏模式",
+                    "description": [
+                        "单人：每个人自己猜，单独得分。",
+                        "合作：整个小组共享一个分数。",
+                        "团队：在大厅选择一个队伍颜色；每个队伍单独得分。"
+                    ]
+                },
+                "customize": {
+                    "title": "自定义规则",
+                    "description": [
+                        "在大厅设置中调整得分、指标等。比如可以切换到基于步数的得分，而不是基于距离的。"
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2160,6 +2243,11 @@
             "makeYourMove": "该你行动了",
             "waitingForOthers": "等待其他人",
             "wager": "赌注",
+            "yourClue": "发送你的线索",
+            "nameClue": "收听 %{name} 的线索",
+            "writeYourClue": "写下你的线索",
+            "languageSelect": "选择语言",
+            "languageAgreed": "语言已确认",
             "tieEndedRound": "这一局平局了",
             "youEndedRound": "你结束了这一局",
             "nameEndedRound": "%{name} 结束了这一局",
@@ -2192,6 +2280,8 @@
         }
     },
     "placeholder": {
+        "clue": "输入你的线索...",
+        "clueInLanguage": "用{language}输入你的线索...",
         "cardSetId": "填写卡片集ID...",
         "cardContent": "填写卡片内容...",
         "cardSetName": "为这个卡片集起个名字...",
@@ -2232,8 +2322,8 @@
         "exploreAllGames": "探索所有游戏",
         "playingAgainstBots": "对战人机",
         "playingAgainstPlayers": "匹配玩家",
-        "playingGame": "<b>{count}</b> 正在玩这个游戏",
-        "online": "<b>{count}</b> 在线",
+        "playingGame": "{count} 正在玩这个游戏",
+        "online": "{count} 在线",
         "connection": "连接",
         "ping": "延迟",
         "timeOffset": "时间延迟",
@@ -2432,6 +2522,7 @@
         "restartNotice": "服务器将在 {count} 分钟后重启，请尽快完成你的游戏。 | 服务器将在 {count} 分钟后重启，请尽快你的游戏。 | 服务器将在 {count} 分钟后重启，请尽快完成你的游戏。"
     },
     "misc": {
+        "refresh": "刷新",
         "automatic": "自动",
         "title": "头衔",
         "current": "当前",
@@ -2465,6 +2556,8 @@
         "questions": "问题",
         "teamAndQuestions": "团队与问题",
         "questionPacks": "问题包",
+        "packs": "套装",
+        "teamAndPacks": "队伍 & 套装",
         "rock": "石头",
         "paper": "剪刀",
         "scissors": "布",
@@ -2663,6 +2756,7 @@
         "kills": "击杀",
         "assassin": "刺客",
         "target": "目标",
+        "targetReached": "目标达成",
         "assassinations": "刺杀",
         "survivals": "生存",
         "games": "游戏",
@@ -2671,6 +2765,8 @@
         "winLossDelta": "胜负差",
         "killDeathRatio": "击杀比",
         "quitRatio": "退出率",
+        "clueSuccessRatio": "线索成功率",
+        "guessHitRatio": "猜测命中率",
         "lives": "生命",
         "points": "分数",
         "wins": "胜利次数",
@@ -2743,7 +2839,8 @@
         "noChangesDetected": "没有检测到更改",
         "newChanges": "新更新",
         "saveChanges": "保存更改",
-        "previousChanges": "查看之前的更改"
+        "previousChanges": "查看之前的更改",
+        "random": "随机"
     },
     "card": {
         "empty": "没有卡片",
@@ -2927,6 +3024,10 @@
             "empty": "你还没有拉黑任何用户。",
             "count": "已拉黑%{count} 人"
         },
+        "cluePicking": {
+            "title": "写下你的线索",
+            "description": "保持你的线索模糊但准确——其他人会用它来猜测你的定位。"
+        },
         "youBlockedUser": "你拉黑了这个用户。",
         "playerProfile": {
             "unavailable": "无法加载该资料。",
@@ -2983,6 +3084,18 @@
         "votePick": "投票给 %{option}",
         "votePickChange": "把票改投给 %{option}",
         "votePickSelected": "你投的票是 %{option}",
+        "clueSelf": "你的线索",
+        "clueOther": "%{name} 的线索",
+        "stayQuietHint": "其他人猜的时候别给额外提示！",
+        "tunedInWinThreshold": "一起得至少 %{threshold} 分才能赢！",
+        "multipleLanguages": {
+            "title": "检测到多种语言",
+            "description": "我们注意到玩家使用了不同的语言。为了确保大家都能理解线索，请选择你能理解的所有语言——一旦每个人都有至少一种共同语言，游戏就会开始。",
+            "leave": "我无法使用这些语言参与",
+            "leaveDescription": "没问题——如果你现在离开，任何人的统计数据或胜利都不会被记录。",
+            "agreedTitle": "一切准备好了！",
+            "agreedDescription": "大家都同意用{language}来给线索！"
+        },
         "tiedVoteSelf": "你们组平票了！随机选一个吧...",
         "tiedVoteOther": "请等一下，你们的对手也平票了。",
         "waitForOpponent": "等待你的对手...",
@@ -3426,6 +3539,14 @@
             "diceSource": "%{name}的骰子模型 (CC-BY-4.0)",
             "localization": "由志愿者、贡献者提供的本地化",
             "licenses": "其他许可证"
+        }
+    },
+    "share": {
+        "tiers": {
+            "max": "正中",
+            "almost": "接近",
+            "justIn": "勉强",
+            "miss": "没中"
         }
     }
 }

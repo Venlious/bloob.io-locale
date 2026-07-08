@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Swedish",
         "rtl": false,
-        "total": 2127,
+        "total": 2192,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -150,6 +150,7 @@
             "blocked": "Ditt straff tillåter inte att du deltar i matchning eller offentliga matcher.",
             "joinBlocked": "Du kan inte gå med i den här matchen.",
             "empty": "Matchen är avslutad. Alla andra spelare lämnade matchen.",
+            "noAgreement": "Matchen stängdes eftersom ingen överenskommelse kunde nås. Statistiken spelades inte in.",
             "rematchTimeout": "Du accepterade inte omkampsförfrågan och skickades tillbaka till huvudmenyn.",
             "rematchCancelled": "Tyvärr! Det finns inte tillräckligt med spelare kvar för en omkamp.",
             "inactive": "Matchen du var i har stängts eftersom den har varit inaktiv för länge.",
@@ -239,7 +240,12 @@
                 },
                 "winCondition": {
                     "title": "Vinnande Villkor",
-                    "help": "Bestäm när spelet ska ta slut."
+                    "help": "Bestäm när spelet ska ta slut.",
+                    "data": {
+                        "firstToPoints": "Först till {count} poäng | Först till {count} poäng | Först till {count} poäng",
+                        "mostPoints": "Flest poäng efter {count} rundor | Flest poäng efter {count} runda | Flest poäng efter {count} rundor",
+                        "lastStanding": "Sist kvarstående ({count} liv) | Sist kvarstående ({count} liv) | Sist kvarstående ({count} liv)"
+                    }
                 },
                 "winAmount": {
                     "title": "Vinnande Summa"
@@ -579,12 +585,6 @@
             "title": "Ruttna Äpplen | Spela Online Kortlekar som Cards Against Humanity",
             "description": "Spela Ruttna Äpplen online gratis! Utmana kompisar och främlingar i detta roliga spel likt Cards Against Humanity - ingen registrering krävs!",
             "options": {
-                "winCondition": {
-                    "data": {
-                        "first": "Först att få <b>0</b> poäng | Först att få <b>1</b> poäng | Först att få <b>{count}</b> poäng",
-                        "most": "Flest poäng efter <b>0</b> omgångar | Flest poäng efter <b>1</b> omgång | Flest poäng efter <b>{count}</b> omgångar"
-                    }
-                },
                 "judgeSystem": {
                     "title": "Domarsystem",
                     "help": "Antingen en domare eller alla får bestämma vem som hade bäst spel varje runda.",
@@ -605,8 +605,7 @@
                     "title": "Släng Runda",
                     "help": "En dumpomgång låter alla välja kort i sin hand som de vill bli av med. Nya svarskort ges som ersättning efter att omgången är slut.",
                     "data": {
-                        "disabled": "Inaktiverad",
-                        "round": "Varje <b>0</b> rundor | Varje <b>1</b> runda | Varje <b>{count}</b> rundor"
+                        "round": "Varje {count} rundor | Varje {count} runda | Varje {count} rundor"
                     }
                 },
                 "dumpRoundAmount": {
@@ -751,8 +750,7 @@
                     "data": {
                         "OPPOSITE_SIDE": "Nå motsatta sidan",
                         "TAKE": "Ta en pjäs",
-                        "ALL": "Börja med alla kungar",
-                        "NONE": "Inaktiverad"
+                        "ALL": "Börja med alla kungar"
                     }
                 },
                 "backwardsTake": {
@@ -841,9 +839,8 @@
                 },
                 "winCondition": {
                     "data": {
-                        "LAST_STANDING": "Sist kvarstående (<b>0</b> liv) | Sist kvarstående (<b>1</b> liv) | Sist kvarstående (<b>{count}</b> liv)",
-                        "KILL_COUNT": "Först att få <b>0</b> kills | Först att få <b>1</b> kill | Först att få <b>{count}</b> kills",
-                        "TIME": "Flest kills efter <b>0</b> min. | Flest kills efter <b>1</b> min. | Flest kills efter <b>{count}</b> min."
+                        "KILL_COUNT": "Först att få {count} kills | Först att få {count} kill | Först att få {count} kills",
+                        "TIME": "Flest kills efter {count} min. | Flest kills efter {count} min. | Flest kills efter {count} min."
                     }
                 },
                 "defaultBombCount": {
@@ -1242,7 +1239,6 @@
                     "title": "Rutnätsstorlek",
                     "help": "Välj storleken på nivån du vill spela i.",
                     "data": {
-                        "random": "Slumpmässig",
                         "7x7": "7x7",
                         "11x11": "11x11",
                         "15x15": "15x15"
@@ -1252,7 +1248,6 @@
                     "title": "Karta",
                     "help": "Välj kartan du vill spela i.",
                     "data": {
-                        "random": "Slumpmässig",
                         "peninsula": "Halvö",
                         "archipelago": "Skärgård",
                         "canal": "Kanal",
@@ -1270,7 +1265,6 @@
                     "title": "Orientering",
                     "help": "Välj vilken riktning nivån ska visas i.",
                     "data": {
-                        "random": "Slumpmässig",
                         "NORTH": "Norr",
                         "EAST": "Öst",
                         "SOUTH": "Söder",
@@ -1376,8 +1370,7 @@
                 },
                 "winCondition": {
                     "data": {
-                        "FIRST": "Först att nå <b>0</b> poäng | Först att nå <b>1</b> poäng | Först att nå <b>{count}</b> poäng",
-                        "HIGHEST_AFTER": "Flest poäng efter att <b>0</b> poäng har nåtts | Flest poäng efter att <b>1</b> poäng har nåtts | Flest poäng efter att <b>{count}</b> poäng har nåtts"
+                        "HIGHEST_AFTER": "Flest poäng efter att {count} poäng har nåtts | Flest poäng efter att {count} poäng har nåtts | Flest poäng efter att {count} poäng har nåtts"
                     }
                 }
             },
@@ -1430,14 +1423,14 @@
                     "help": "Spelet kommer att sluta tidigt om det bara är en spelare kvar med alla kort.",
                     "data": {
                         "LAST_STANDING": "När en spelare får alla kort",
-                        "HIGHEST_AFTER": "Flest kort efter <b>0</b> rundor | Flest kort efter <b>1</b> runda | Flest kort efter <b>{count}</b> rundor"
+                        "HIGHEST_AFTER": "Flest kort efter {count} rundor | Flest kort efter {count} runda | Flest kort efter {count} rundor"
                     }
                 },
                 "warRequirement": {
                     "title": "Krigskrav",
                     "help": "Bestäm hur kriget ska spelas ut om två eller fler spelare spelar samma kort.",
                     "data": {
-                        "DEFAULT": "Lägg <b>0</b> kort | Lägg <b>1</b> kort | Lägg <b>{count}</b> kort",
+                        "DEFAULT": "Lägg {count} kort | Lägg {count} kort | Lägg {count} kort",
                         "CARD_VALUE": "Lägg kort lika med det ursprungliga kortets rang"
                     }
                 },
@@ -1600,13 +1593,6 @@
                         "rock": "Sten slår sax",
                         "paper": "Papper slår sten",
                         "scissors": "Sax slår papper"
-                    }
-                },
-                "winCondition": {
-                    "data": {
-                        "LAST_STANDING": "Sista kvar (<b>0</b> liv) | Sista kvar (<b>1</b> liv) | Sista kvar (<b>{count}</b> liv)",
-                        "FIRST": "Först att få <b>0</b> poäng | Först att få <b>1</b> poäng | Först att få <b>{count}</b> poäng",
-                        "HIGHEST_AFTER": "Flest poäng efter <b>0</b> rundor | Flest poäng efter <b>1</b> runda | Flest poäng efter <b>{count}</b> rundor"
                     }
                 }
             },
@@ -1886,12 +1872,6 @@
                         "ELEVEN": "Alltid 11"
                     }
                 },
-                "winCondition": {
-                    "data": {
-                        "FIRST": "Först till <b>0</b> poäng | Först till <b>1</b> poäng | Först till <b>{count}</b> poäng",
-                        "HIGHEST_AFTER": "Flest poäng efter <b>0</b> rundor | Flest poäng efter <b>1</b> runda | Flest poäng efter <b>{count}</b> rundor"
-                    }
-                },
                 "splitSameFaceOnly": {
                     "title": "Dela bara med samma kort",
                     "help": "När detta är aktiverat får du bara dela om båda startkorten är samma kort (till exempel K+K eller 8+8), inte bara samma numeriska värde."
@@ -1994,8 +1974,7 @@
                     "title": "Break-layout",
                     "help": "Välj om startlayouten vid break ska vara fast eller slumpmässig.",
                     "data": {
-                        "fixed": "Fast (officiell)",
-                        "random": "Slumpmässig"
+                        "fixed": "Fast (officiell)"
                     }
                 },
                 "breakFillers": {
@@ -2007,8 +1986,7 @@
                     "help": "Välj vilka fouls som kan återföra en motståndarboll till bordet.",
                     "data": {
                         "anyFoul": "Alla giltiga fouls",
-                        "ballInHand": "Endast ball-in-hand-fouls",
-                        "off": "Avstängd"
+                        "ballInHand": "Endast ball-in-hand-fouls"
                     }
                 }
             },
@@ -2054,6 +2032,111 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": "Tuned In",
+            "title": "Tuned In: Gratis partyspel online för vänner | Co-op",
+            "description": "Spela Tuned In gratis online! Ingen konto behövs. Utmana vänner i ett roligt partyspel med våglängd och co-op multiplayer-läge.",
+            "options": {
+                "consensus": {
+                    "title": "Delad indikator",
+                    "help": "När det är aktiverat delar laget eller co-op gruppen en enda indikator som alla rör sig tillsammans med — vart den hamnar är svaret. När det är avaktiverat har varje spelare sin egen indikator, och lagets svar är medelvärdet av allas slutposition."
+                },
+                "winAmountRounds": {
+                    "title": "Omgångar",
+                    "help": "Hur många rundor matchen varar. Auto anpassar antalet rundor beroende på hur många spelare som är med: 4 rundor för 2 spelare, 3 för 3-4, 2 för 5-6, och 1 för 7 eller fler.",
+                    "data": {
+                        "fixed": "{count} rundor | {count} runda | {count} rundor"
+                    }
+                },
+                "pickingTime": {
+                    "title": "Ledtråds skrivtid"
+                },
+                "revealTime": {
+                    "title": "Resultatvisningstid",
+                    "help": "Hur länge resultaten visas efter att varje ledtråd avslöjas."
+                },
+                "promptSelection": {
+                    "title": "Val av promptar",
+                    "help": "När det är aktiverat får spelarna välja mellan 3 olika spektrum varje runda istället för att få ett tilldelat."
+                },
+                "stepScoring": {
+                    "title": "Stegpoäng",
+                    "help": "När det är aktiverat, får man poäng i fasta band (75/50/25) beroende på avståndet till målet istället för att det ska skala jämnt."
+                },
+                "authorPoints": {
+                    "title": "Ledtrådsbonus",
+                    "help": "När det är aktiverat, får den som ger ledtrådar hälften av de genomsnittliga poängen som gissarna får från deras ledtråd, avrundat neråt. Endast i solo-läge."
+                },
+                "visibility": {
+                    "title": "Live-lägen",
+                    "help": "Kontrollerar vem som kan se var andra rör sig på spektrumet i realtid.",
+                    "data": {
+                        "ALL": "Alla",
+                        "TEAM": "Bara laget",
+                        "PRIVATE": "Dold"
+                    },
+                    "description": {
+                        "ALL": "Alla spelare ser varandras live-positioner på spektrumet.",
+                        "TEAM": "Spelare ser bara sina lagkamraters live-positioner.",
+                        "PRIVATE": "Ingen kan se var andra är på spektrumet."
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Mot",
+                    "description": [
+                        "Alla mot alla",
+                        "Poäng baserat på hur nära din gissning är"
+                    ]
+                },
+                "teams": {
+                    "title": "Lag",
+                    "description": [
+                        "Tävla i lag du väljer",
+                        "Gissningen är medelvärdet av ditt lag"
+                    ]
+                },
+                "coopConsensus": {
+                    "title": "Klassisk Co-op",
+                    "description": [
+                        "Jobba tillsammans som ett team",
+                        "Flytta en gemensam indikator tillsammans",
+                        "Poäng delas ut i fasta band"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "Demokratikollektiv",
+                    "description": [
+                        "Jobba tillsammans som ett team",
+                        "Gissningen är snittet av ditt team"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Hur man spelar",
+                    "description": [
+                        "Varje runda får varje spelare ett hemligt mål på en skala (typ. Het ← → Kall) och skriver en ledtråd som hintar om det, utan att använda orden från skalan.",
+                        "Sen får alla spelare gissa var ledtråden hamnar för varandras ledtrådar. Ju närmare gissningen, desto fler poäng får du."
+                    ]
+                },
+                "modes": {
+                    "title": "Spellägen",
+                    "description": [
+                        "Solo: Alla gissar på egen hand och får poäng individuellt.",
+                        "Co-op: Hela gänget delar på en poäng tillsammans.",
+                        "Team: Välj en lagfärg i lobbyn; varje lag får poäng för sig."
+                    ]
+                },
+                "customize": {
+                    "title": "Anpassa Reglerna",
+                    "description": [
+                        "Justera poängsystemet, indikatorer och mer i lobbyns inställningar. Inställningar som att byta till steg-baserad poäng istället för distans-baserad."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2160,6 +2243,11 @@
             "makeYourMove": "Gör ditt drag",
             "waitingForOthers": "Väntar på andra",
             "wager": "Satsa",
+            "yourClue": "Sänder din ledtråd",
+            "nameClue": "Lyssna på %{name}'s ledtråd",
+            "writeYourClue": "Skriv din ledtråd",
+            "languageSelect": "Välj språk",
+            "languageAgreed": "Språk valt",
             "tieEndedRound": "Rundan slutade oavgjort",
             "youEndedRound": "Du har avslutat rundan",
             "nameEndedRound": "%{name} har avslutat rundan",
@@ -2192,6 +2280,8 @@
         }
     },
     "placeholder": {
+        "clue": "Skriv in din ledtråd...",
+        "clueInLanguage": "Skriv in din ledtråd på {language}...",
         "cardSetId": "Fyll i kortleks-ID...",
         "cardContent": "Fyll i kortinnehåll...",
         "cardSetName": "Fyll i namn för denna kortlek...",
@@ -2232,8 +2322,8 @@
         "exploreAllGames": "Utforska alla spel",
         "playingAgainstBots": "Spelar mot Bots",
         "playingAgainstPlayers": "Spelar mot Spelare",
-        "playingGame": "<b>{count}</b> spelar det här spelet",
-        "online": "<b>{count}</b> online",
+        "playingGame": "{count} spelar det här spelet",
+        "online": "{count} online",
         "connection": "Anslutning",
         "ping": "Ping",
         "timeOffset": "Tidsförskjutning",
@@ -2432,6 +2522,7 @@
         "restartNotice": "Servern kommer starta om om {count} minuter. Avsluta ditt spel. | Servern kommer starta om om {count} minut. Avsluta ditt spel. | Servern kommer starta om om {count} minuter. Avsluta ditt spel."
     },
     "misc": {
+        "refresh": "Uppdatera",
         "automatic": "Automatisk",
         "title": "Titel",
         "current": "Nuvarande",
@@ -2465,6 +2556,8 @@
         "questions": "Frågor",
         "teamAndQuestions": "Team & Frågor",
         "questionPacks": "Frågepaket",
+        "packs": "Paket",
+        "teamAndPacks": "Lag & Paket",
         "rock": "Sten",
         "paper": "Papper",
         "scissors": "Sax",
@@ -2663,6 +2756,7 @@
         "kills": "Mord",
         "assassin": "Mördare",
         "target": "Mål",
+        "targetReached": "Mål uppnått",
         "assassinations": "Mord",
         "survivals": "Överlevnader",
         "games": "Spel",
@@ -2671,6 +2765,8 @@
         "winLossDelta": "V/F-delta",
         "killDeathRatio": "K/D Förhållande",
         "quitRatio": "Avhoppskvot",
+        "clueSuccessRatio": "Ledtrådsframgångsratio",
+        "guessHitRatio": "Gissningsträffratio",
         "lives": "Liv",
         "points": "Poäng",
         "wins": "Vinster",
@@ -2743,7 +2839,8 @@
         "noChangesDetected": "Inga Ändringar Upptäckta",
         "newChanges": "Nya Ändringar",
         "saveChanges": "Spara Ändringar",
-        "previousChanges": "Se Tidigare Ändringar"
+        "previousChanges": "Se Tidigare Ändringar",
+        "random": "Slumpmässig"
     },
     "card": {
         "empty": "Inga Kort",
@@ -2927,6 +3024,10 @@
             "empty": "Du har inte blockerat några användare.",
             "count": "%{count} blockerade"
         },
+        "cluePicking": {
+            "title": "Skriv din ledtråd",
+            "description": "Håll din ledtråd vag men träffsäker — andra kommer använda den för att gissa din position."
+        },
         "youBlockedUser": "Du har blockerat den här användaren.",
         "playerProfile": {
             "unavailable": "Kunde inte ladda den här profilen just nu.",
@@ -2983,6 +3084,18 @@
         "votePick": "Rösta på %{option}",
         "votePickChange": "Ändra din röst till %{option}",
         "votePickSelected": "Du röstade på %{option}",
+        "clueSelf": "Din ledtråd",
+        "clueOther": "%{name}'s ledtråd",
+        "stayQuietHint": "Ge inga extra ledtrådar medan andra gissar!",
+        "tunedInWinThreshold": "Skaffa minst %{threshold} poäng tillsammans för att vinna!",
+        "multipleLanguages": {
+            "title": "Flera språk upptäckta",
+            "description": "Vi har märkt att spelare använder olika språk. För att alla ska förstå ledtrådarna, välj alla språk du förstår — när alla har minst ett gemensamt, så börjar spelet.",
+            "leave": "Jag kan inte delta på något av de här språken",
+            "leaveDescription": "Det är helt okej — inga statistik eller vinster kommer att registreras för någon om du lämnar nu.",
+            "agreedTitle": "Du är redo!",
+            "agreedDescription": "Alla är överens om att använda {language} för sina ledtrådar!"
+        },
         "tiedVoteSelf": "Er grupp har oavgjort! Vi drar en slumpmässig vinnare...",
         "tiedVoteOther": "Vänta lite, era motståndare har oavgjort.",
         "waitForOpponent": "Väntar på din motståndare...",
@@ -3426,6 +3539,14 @@
             "diceSource": "Tärningsmodell av %{name} (CC-BY-4.0)",
             "localization": "Lokalisering av frivilliga bidragsgivare",
             "licenses": "Andra licenser"
+        }
+    },
+    "share": {
+        "tiers": {
+            "max": "Mitt i prick",
+            "almost": "Nära",
+            "justIn": "Precis innanför",
+            "miss": "Bom"
         }
     }
 }

@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Polish",
         "rtl": false,
-        "total": 2127,
+        "total": 2192,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -150,6 +150,7 @@
             "blocked": "Twoja kara nie pozwala ci dołączyć do gier rankingowych czy publicznych.",
             "joinBlocked": "Nie możesz dołączyć do tej gry.",
             "empty": "Gra zamknięta. Wszyscy inni gracze opuścili grę.",
+            "noAgreement": "Mecz został zamknięty, bo nie udało się dojść do porozumienia. Statystyki nie zostały zapisane.",
             "rematchTimeout": "Nie zaakceptowałeś prośby o powtórkę i zostałeś wysłany z powrotem do głównego menu.",
             "rematchCancelled": "Przykro mi! Nie ma już wystarczająco dużo graczy, aby rozegrać powtórkę.",
             "inactive": "Gra, w której uczestniczyłeś, została zamknięta, ponieważ była nieaktywna zbyt długo.",
@@ -239,7 +240,12 @@
                 },
                 "winCondition": {
                     "title": "Warunek zwycięstwa",
-                    "help": "Określ, kiedy gra powinna dobiec końca."
+                    "help": "Określ, kiedy gra powinna dobiec końca.",
+                    "data": {
+                        "firstToPoints": "Pierwszy, kto zdobędzie {count} punktów | Pierwszy, kto zdobędzie {count} punkt | Pierwszy, kto zdobędzie {count} punktów",
+                        "mostPoints": "Najwięcej punktów po {count} rundach | Najwięcej punktów po {count} rundzie | Najwięcej punktów po {count} rundach",
+                        "lastStanding": "Ostatni przy życiu ({count} żyć) | Ostatni przy życiu ({count} życie) | Ostatni przy życiu ({count} żyć)"
+                    }
                 },
                 "winAmount": {
                     "title": "Kwota wygranej"
@@ -364,8 +370,8 @@
                 "globalLanguage": {
                     "title": "Nauczanie języków globalnych",
                     "help": {
-                        "enabled": "Włączone: Każdy znajduje słowa w języku, który ustawiłeś.",
-                        "disabled": "Wyłączone: Każdy gracz wybiera język według własnego wyboru."
+                        "enabled": "<b>Włączone</b>: Każdy znajduje słowa w języku, który ustawiłeś.",
+                        "disabled": "<b>Wyłączone</b>: Każdy gracz wybiera język według własnego wyboru."
                     }
                 },
                 "language": {
@@ -579,12 +585,6 @@
             "title": "Zgniłe Jabłka | Karty Przeciwko Ludzkości Online z Przyjaciółmi",
             "description": "Graj w Zgniłe Jabłka bez konta, darmowo i online! Zbieraj przyjaciół albo graj z obcymi. Karty przeciwko ludzkości w wersji internetowej!",
             "options": {
-                "winCondition": {
-                    "data": {
-                        "first": "Pierwszy, który zdobędzie <b>0</b> punktów | Pierwszy, który zdobędzie <b>1</b> punkt | Pierwszy, który zdobędzie <b>{count}</b> punktów",
-                        "most": "Najwięcej punktów po <b>0</b> rundach | Najwięcej punktów po <b>1</b> rundzie | Najwięcej punktów po <b>{count}</b> rundach"
-                    }
-                },
                 "judgeSystem": {
                     "title": "System Sędziowania",
                     "help": "Albo sędzia, albo wszyscy decydują, kto miał najlepszą grę w każdej rundzie.",
@@ -605,8 +605,7 @@
                     "title": "Runda Wyśmiewania",
                     "help": "Runda wymiany pozwala każdemu wybrać karty z ręki, które chce usunąć. Nowe karty odpowiedzi są dawane jako zastępstwo po zakończeniu rundy.",
                     "data": {
-                        "disabled": "Niepełnosprawni",
-                        "round": "Co <b>0</b> rund | Co <b>1</b> runda | Co <b>{count}</b> rund"
+                        "round": "Co {count} rund | Co {count} runda | Co {count} rund"
                     }
                 },
                 "dumpRoundAmount": {
@@ -724,8 +723,8 @@
                 "forceTake": {
                     "title": "Przejęcie siłą",
                     "help": {
-                        "enabled": "W miarę możliwości gracz będzie zmuszony do zabrania pionka przeciwnika.",
-                        "disabled": "Gracz może wybrać, jaką ruch wykona, nawet jeśli może zabrać pionek przeciwnika."
+                        "enabled": "<b>Włączone</b>: W miarę możliwości gracz będzie zmuszony do zabrania pionka przeciwnika.",
+                        "disabled": "<b>Wyłączone</b>: Gracz może wybrać, jaką ruch wykona, nawet jeśli może zabrać pionek przeciwnika."
                     }
                 },
                 "field": {
@@ -751,8 +750,7 @@
                     "data": {
                         "OPPOSITE_SIDE": "Dotrzeć na przeciwległą stronę",
                         "TAKE": "Weźmij kawałek",
-                        "ALL": "Zacznij od wszystkich królów",
-                        "NONE": "Niepełnosprawny"
+                        "ALL": "Zacznij od wszystkich królów"
                     }
                 },
                 "backwardsTake": {
@@ -841,7 +839,6 @@
                 },
                 "winCondition": {
                     "data": {
-                        "LAST_STANDING": "Ostatni przy życiu (0 żyć) | Ostatni przy życiu (1 życie) | Ostatni przy życiu ({count} żyć)",
                         "KILL_COUNT": "Pierwszy zdobywca 0 zabójstw | Pierwszy zdobywca 1 zabójstwa | Pierwszy zdobywca ({count}) zabójstw",
                         "TIME": "Najwięcej zabójstw po 0 min. | Najwięcej zabójstw po 1 min. | Najwięcej zabójstw po ({count}) min."
                     }
@@ -1242,7 +1239,6 @@
                     "title": "Rozmiar siatki",
                     "help": "Wybierz rozmiar poziomu, na którym chcesz grać.",
                     "data": {
-                        "random": "Losowy",
                         "7x7": "7x7",
                         "11x11": "11x11",
                         "15x15": "15x15"
@@ -1252,7 +1248,6 @@
                     "title": "Mapa",
                     "help": "Wybierz mapę, na której chciałbyś zagrać.",
                     "data": {
-                        "random": "Losowy",
                         "peninsula": "Półwysep",
                         "archipelago": "Archipelag",
                         "canal": "Kanał",
@@ -1270,7 +1265,6 @@
                     "title": "Orientacja",
                     "help": "Wybierz orientację, w której będzie wyświetlany poziom.",
                     "data": {
-                        "random": "Losowy",
                         "NORTH": "Północ",
                         "EAST": "Wschód",
                         "SOUTH": "Południe",
@@ -1376,8 +1370,7 @@
                 },
                 "winCondition": {
                     "data": {
-                        "FIRST": "Pierwszy, który zdobędzie <b>0</b> punktów | Pierwszy, który zdobędzie <b>1</b> punkt | Pierwszy, który zdobędzie <b>{count}</b> punktów",
-                        "HIGHEST_AFTER": "Najwięcej punktów po zdobyciu <b>0</b> punktów | Najwięcej punktów po zdobyciu <b>1</b> punktu | Najwięcej punktów po zdobyciu <b>{count}</b> punktów"
+                        "HIGHEST_AFTER": "Najwięcej punktów po zdobyciu {count} punktów | Najwięcej punktów po zdobyciu {count} punktu | Najwięcej punktów po zdobyciu {count} punktów"
                     }
                 }
             },
@@ -1430,14 +1423,14 @@
                     "help": "Gra skończy się wcześniej, jeśli zostanie tylko jeden gracz ze wszystkimi kartami.",
                     "data": {
                         "LAST_STANDING": "Kiedy gracz zdobędzie wszystkie karty",
-                        "HIGHEST_AFTER": "Najwięcej kart po <b>0</b> rundach | Najwięcej kart po <b>1</b> rundzie | Najwięcej kart po <b>{count}</b> rundach"
+                        "HIGHEST_AFTER": "Najwięcej kart po {count} rundach | Najwięcej kart po {count} rundzie | Najwięcej kart po {count} rundach"
                     }
                 },
                 "warRequirement": {
                     "title": "Wymóg Wojny",
                     "help": "Określ, jak powinna się rozegrać wojna, jeśli dwóch lub więcej graczy zagra tą samą kartę.",
                     "data": {
-                        "DEFAULT": "Połóż <b>0</b> kart | Połóż <b>1</b> kartę | Połóż <b>{count}</b> kart",
+                        "DEFAULT": "Połóż {count} kart | Połóż {count} kartę | Połóż {count} kart",
                         "CARD_VALUE": "Połóż tyle kart, ile wynosi ranga początkowej karty"
                     }
                 },
@@ -1600,13 +1593,6 @@
                         "rock": "Kamień bije nożyczki",
                         "paper": "Papier bije kamień",
                         "scissors": "Nożyczki biją papier"
-                    }
-                },
-                "winCondition": {
-                    "data": {
-                        "LAST_STANDING": "Ostatni na placu boju (<b>0</b> żyć) | Ostatni na placu boju (<b>1</b> życie) | Ostatni na placu boju (<b>{count}</b> żyć)",
-                        "FIRST": "Pierwszy, kto zdobędzie <b>0</b> punktów | Pierwszy, kto zdobędzie <b>1</b> punkt | Pierwszy, kto zdobędzie <b>{count}</b> punktów",
-                        "HIGHEST_AFTER": "Najwięcej punktów po <b>0</b> rundach | Najwięcej punktów po <b>1</b> rundzie | Najwięcej punktów po <b>{count}</b> rundach"
                     }
                 }
             },
@@ -1886,12 +1872,6 @@
                         "ELEVEN": "Zawsze 11"
                     }
                 },
-                "winCondition": {
-                    "data": {
-                        "FIRST": "Pierwszy, kto zdobędzie <b>0</b> punktów | Pierwszy, kto zdobędzie <b>1</b> punkt | Pierwszy, kto zdobędzie <b>{count}</b> punktów",
-                        "HIGHEST_AFTER": "Najwięcej punktów po <b>0</b> rundach | Najwięcej punktów po <b>1</b> rundzie | Najwięcej punktów po <b>{count}</b> rundach"
-                    }
-                },
                 "splitSameFaceOnly": {
                     "title": "Podział tylko przy tej samej karcie",
                     "help": "Po włączeniu podział jest dozwolony tylko wtedy, gdy obie karty startowe są tą samą kartą (np. K+K lub 8+8), a nie tylko mają tę samą wartość liczbową."
@@ -1994,8 +1974,7 @@
                     "title": "Układ rozbicia",
                     "help": "Wybierz, czy początkowy układ do rozbicia ma być stały czy losowy.",
                     "data": {
-                        "fixed": "Stały (oficjalny)",
-                        "random": "Losowy"
+                        "fixed": "Stały (oficjalny)"
                     }
                 },
                 "breakFillers": {
@@ -2007,8 +1986,7 @@
                     "help": "Wybierz, które faule mogą zwracać kulę przeciwnika na stół.",
                     "data": {
                         "anyFoul": "Każdy kwalifikujący się faul",
-                        "ballInHand": "Tylko faule z bilą w ręku",
-                        "off": "Wyłączone"
+                        "ballInHand": "Tylko faule z bilą w ręku"
                     }
                 }
             },
@@ -2054,6 +2032,111 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": "Tuned In",
+            "title": "Tuned In | Darmowa gra imprezowa online z przyjaciółmi",
+            "description": "Zagraj w Tuned In! Darmowa gra imprezowa online inspirowana Spektrum (Wavelength). Bez konta, zagraj z przyjaciółmi lub obcymi w trybie multiplayer.",
+            "options": {
+                "consensus": {
+                    "title": "Wspólny wskaźnik",
+                    "help": "Kiedy to włączone, zespół lub grupa kooperacyjna dzieli się jednym wskaźnikiem, który wszyscy poruszają razem — gdziekolwiek on się skończy, to jest odpowiedź. Kiedy to wyłączone, każdy gracz ma swój własny wskaźnik, a odpowiedź zespołu to średnia z końcowych pozycji wszystkich."
+                },
+                "winAmountRounds": {
+                    "title": "Rundy",
+                    "help": "Ile rund trwa mecz. Liczba rund automatycznie dostosowuje się w zależności od liczby graczy w meczu: 4 rundy dla 2 graczy, 3 dla 3-4, 2 dla 5-6, a 1 dla 7 lub więcej.",
+                    "data": {
+                        "fixed": "{count} rund | {count} runda | {count} rundy"
+                    }
+                },
+                "pickingTime": {
+                    "title": "Czas na pisanie wskazówek"
+                },
+                "revealTime": {
+                    "title": "Czas wyświetlania wyników",
+                    "help": "Jak długo wyniki są pokazywane po ujawnieniu każdej wskazówki?"
+                },
+                "promptSelection": {
+                    "title": "Wybór promptów",
+                    "help": "Gdy to jest włączone, gracze wybierają z 3 różnych spektrów w każdej rundzie, zamiast dostawać jeden na stałe."
+                },
+                "stepScoring": {
+                    "title": "Punkty za kroki",
+                    "help": "Gdy włączone, punkty są przyznawane w stałych przedziałach (75/50/25) w zależności od odległości od celu, zamiast płynnie się skalować."
+                },
+                "authorPoints": {
+                    "title": "Bonus za Podpowiedzi",
+                    "help": "Kiedy włączone, osoba dająca wskazówki dostaje połowę średnich punktów, które zdobywają zgadujący na podstawie jej wskazówki, zaokrąglone w dół. Tylko w trybie solo."
+                },
+                "visibility": {
+                    "title": "Na żywo pozycje",
+                    "help": "Kontroluje, kto może widzieć, gdzie inni się poruszają na spektrum w czasie rzeczywistym.",
+                    "data": {
+                        "ALL": "Wszyscy",
+                        "TEAM": "Tylko drużyna",
+                        "PRIVATE": "Ukryte"
+                    },
+                    "description": {
+                        "ALL": "Wszyscy gracze widzą na żywo pozycje innych na spektrum.",
+                        "TEAM": "Gracze widzą tylko na żywo pozycje swoich kumpli z drużyny.",
+                        "PRIVATE": "Nikt nie widzi, gdzie są inni na spektrum."
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Przeciwko",
+                    "description": [
+                        "Wszyscy przeciwko sobie",
+                        "Punkty w zależności od tego, jak blisko jesteś swojego zgadnięcia"
+                    ]
+                },
+                "teams": {
+                    "title": "Drużyny",
+                    "description": [
+                        "Rywalizuj w drużynach, które wybierzesz",
+                        "Zgadywanie to średnia twojej drużyny"
+                    ]
+                },
+                "coopConsensus": {
+                    "title": "Klasyczny co-op",
+                    "description": [
+                        "Działajcie razem jak jedna ekipa",
+                        "Przesuwajcie wspólny wskaźnik razem",
+                        "Punkty zdobywa się w ustalonych przedziałach"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "Kooperatywa Demokracji",
+                    "description": [
+                        "Działajcie razem jak jedna ekipa",
+                        "Zgadywanie to średnia waszej drużyny"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Jak grać",
+                    "description": [
+                        "W każdej rundzie każdy gracz dostaje tajny cel na skali (np. Gorąco ← → Zimno) i pisze wskazówkę, nie używając słów z tej skali.",
+                        "Potem wszyscy gracze zgadują, gdzie wskazówka ląduje w odniesieniu do wskazówek innych. Im bliżej zgadniesz, tym więcej punktów dostajesz."
+                    ]
+                },
+                "modes": {
+                    "title": "Tryby gry",
+                    "description": [
+                        "Solo: Każdy zgaduje sam i zdobywa punkty indywidualnie.",
+                        "Co-op: Cała ekipa dzieli się jednym wynikiem.",
+                        "Team: Wybierz kolor drużyny w lobby; każda drużyna zdobywa punkty osobno."
+                    ]
+                },
+                "customize": {
+                    "title": "Dostosuj zasady",
+                    "description": [
+                        "Dostosuj punkty, wskaźniki i inne w ustawieniach lobby. Ustawienia takie jak przełączenie na punktację opartą na krokach zamiast na odległości."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2160,6 +2243,11 @@
             "makeYourMove": "Zrób swój ruch",
             "waitingForOthers": "Czekam na innych",
             "wager": "Zakład",
+            "yourClue": "Nadaję twoją wskazówkę",
+            "nameClue": "Słuchaj wskazówki %{name}",
+            "writeYourClue": "Napisz swoją wskazówkę",
+            "languageSelect": "Wybór języka",
+            "languageAgreed": "Język ustalony",
             "tieEndedRound": "Runda skończona remisem",
             "youEndedRound": "Skończyłeś rundę",
             "nameEndedRound": "%{name} skończył rundę",
@@ -2192,6 +2280,8 @@
         }
     },
     "placeholder": {
+        "clue": "Wpisz swoją podpowiedź...",
+        "clueInLanguage": "Wpisz swoją podpowiedź w {language}...",
         "cardSetId": "Wpisz ID zestawu kart...",
         "cardContent": "Wpisz zawartość karty...",
         "cardSetName": "Wpisz nazwę dla tego zestawu kart...",
@@ -2232,8 +2322,8 @@
         "exploreAllGames": "Zbadaj wszystkie gry",
         "playingAgainstBots": "Gra z Botami",
         "playingAgainstPlayers": "Gra z Graczami",
-        "playingGame": "<b>{count}</b> gra w tę grę",
-        "online": "<b>{count}</b> online",
+        "playingGame": "{count} gra w tę grę",
+        "online": "{count} online",
         "connection": "Połączenie",
         "ping": "Ping",
         "timeOffset": "Przesunięcie czasu",
@@ -2432,6 +2522,7 @@
         "restartNotice": "Serwer zrestartuje się za {count} minut. Skończ swoją grę. | Serwer zrestartuje się za {count} minutę. Skończ swoją grę. | Serwer zrestartuje się za {count} minut. Skończ swoją grę."
     },
     "misc": {
+        "refresh": "Odśwież",
         "automatic": "Auto",
         "title": "Tytuł",
         "current": "Obecnie",
@@ -2465,6 +2556,8 @@
         "questions": "Pytania",
         "teamAndQuestions": "Zespół i pytania",
         "questionPacks": "Zestawy pytań",
+        "packs": "Paczki",
+        "teamAndPacks": "Drużyna i paczki",
         "rock": "Kamień",
         "paper": "Papier",
         "scissors": "Nożyczki",
@@ -2663,6 +2756,7 @@
         "kills": "Zabójstwa",
         "assassin": "Zabójca",
         "target": "Cel",
+        "targetReached": "Cel osiągnięty",
         "assassinations": "Zabójstwa",
         "survivals": "Przetrwania",
         "games": "Gry",
@@ -2671,6 +2765,8 @@
         "winLossDelta": "Różnica W/P",
         "killDeathRatio": "Stosunek zabójstw do śmierci",
         "quitRatio": "Współczynnik rezygnacji",
+        "clueSuccessRatio": "Wskaźnik sukcesu wskazówek",
+        "guessHitRatio": "Wskaźnik trafionych zgadnięć",
         "lives": "Życia",
         "points": "Punkty",
         "wins": "Wygrane",
@@ -2743,7 +2839,8 @@
         "noChangesDetected": "Nie wykryto żadnych zmian",
         "newChanges": "Nowe zmiany",
         "saveChanges": "Zapisz zmiany",
-        "previousChanges": "Przejrzyj poprzednie zmiany"
+        "previousChanges": "Przejrzyj poprzednie zmiany",
+        "random": "Losowy"
     },
     "card": {
         "empty": "Brak kart",
@@ -2927,6 +3024,10 @@
             "empty": "Nie zablokowałeś żadnych użytkowników.",
             "count": "%{count} zablokowanych"
         },
+        "cluePicking": {
+            "title": "Napisz swoją wskazówkę",
+            "description": "Trzymaj swoją wskazówkę nieco ogólną, ale trafną — inni będą jej używać, żeby zgadnąć, gdzie jesteś na skali."
+        },
         "youBlockedUser": "Zablokowałeś tego użytkownika.",
         "playerProfile": {
             "unavailable": "Nie udało się teraz załadować tego profilu.",
@@ -2983,6 +3084,18 @@
         "votePick": "Głosuj na %{option}",
         "votePickChange": "Zmień głos na %{option}",
         "votePickSelected": "Głosowałeś na %{option}",
+        "clueSelf": "Twoja podpowiedź",
+        "clueOther": "Podpowiedź %{name}",
+        "stayQuietHint": "Nie dawaj żadnych dodatkowych wskazówek, gdy inni zgadują!",
+        "tunedInWinThreshold": "Zdobądźcie razem przynajmniej %{threshold} punktów, żeby wygrać!",
+        "multipleLanguages": {
+            "title": "Wykryto wiele języków",
+            "description": "Zauważyliśmy, że gracze używają różnych języków. Żeby wszyscy rozumieli wskazówki, wybierzcie wszystkie języki, które znacie — jak tylko wszyscy będą mieli przynajmniej jeden wspólny, gra się zacznie.",
+            "leave": "Nie mogę brać udziału w żadnym z tych języków",
+            "leaveDescription": "Spoko, nie ma sprawy — żadne statystyki ani wygrane nie będą liczone, jeśli teraz wyjdziesz.",
+            "agreedTitle": "Jesteś gotowy!",
+            "agreedDescription": "Wszyscy się zgadzają, żeby używać {language} do swoich wskazówek!"
+        },
         "tiedVoteSelf": "Wasza ekipa ma remis! Losujemy wybór...",
         "tiedVoteOther": "Poczekaj chwilę, wasi przeciwnicy mają remis.",
         "waitForOpponent": "Czekam na twojego przeciwnika...",
@@ -3426,6 +3539,14 @@
             "diceSource": "Model kostki stworzony przez %{name} (CC-BY-4.0)",
             "localization": "Lokalizacja przez wolontariuszy",
             "licenses": "Inne licencje"
+        }
+    },
+    "share": {
+        "tiers": {
+            "max": "W dziesiątkę",
+            "almost": "Blisko",
+            "justIn": "Ledwo weszło",
+            "miss": "Pudło"
         }
     }
 }

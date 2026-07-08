@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 2127,
+        "total": 2192,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -150,6 +150,7 @@
             "blocked": "Cezan dolayısıyla eşleştirme oyunlarına ya da genel maçlara katılmana izin verilmiyor.",
             "joinBlocked": "Bu maça katılamazsın.",
             "empty": "Maç kapandı. Diğer tüm oyuncular maçı terk etti.",
+            "noAgreement": "Maç kapandı çünkü anlaşma sağlanamadı. İstatistikler kaydedilmedi.",
             "rematchTimeout": "Yeniden maç teklifini kabul etmedin ve ana menüye geri gönderildin.",
             "rematchCancelled": "Üzgünüm! Yeniden maç için yeterli oyuncu kalmadı.",
             "inactive": "İçinde bulunduğun maç, çok uzun süre aktif olmadığı için kapatıldı.",
@@ -239,7 +240,12 @@
                 },
                 "winCondition": {
                     "title": "Kazanma Koşulu",
-                    "help": "Oyunun ne zaman sona ermesi gerektiğine karar ver."
+                    "help": "Oyunun ne zaman sona ermesi gerektiğine karar ver.",
+                    "data": {
+                        "firstToPoints": "İlk {count} puana ulaşan | İlk {count} puana ulaşan | İlk {count} puana ulaşan",
+                        "mostPoints": "{count} turdan sonra en çok puan | {count} turdan sonra en çok puan | {count} turdan sonra en çok puan",
+                        "lastStanding": "Son kalan ({count} can) | Son kalan ({count} can) | Son kalan ({count} can)"
+                    }
                 },
                 "winAmount": {
                     "title": "Kazanılan Miktar"
@@ -579,12 +585,6 @@
             "title": "Çürük Elmalar | Online Cards Against Humanity Oyna Ücretsiz",
             "description": "Ücretsiz Çürük Elmalar'la online Cards Against Humanity oyna! Hesap gerekmez. Kart setleri ve kurallarla 3-16 oyuncu arasında eğlencenin tadını çıkar!",
             "options": {
-                "winCondition": {
-                    "data": {
-                        "first": "İlk <b>0</b> puanı alan | İlk <b>1</b> puanı alan | İlk <b>{count}</b> puanı alan",
-                        "most": "<b>0</b> tur sonunda en çok puanı olan | <b>1</b> tur sonunda en çok puanı olan | <b>{count}</b> tur sonunda en çok puanı olan"
-                    }
-                },
                 "judgeSystem": {
                     "title": "Hakem Sistemi",
                     "help": "Ya bir hakem ya da herkes her turda kimin en iyi oyunu oynadığını belirler.",
@@ -605,8 +605,7 @@
                     "title": "Tur At",
                     "help": "Bir atma turu, herkesin elindeki kartları seçip çıkarmasına izin verir. Tur sona erdikten sonra yerine yeni yanıt kartları verilir.",
                     "data": {
-                        "disabled": "Devre Dışı",
-                        "round": "Her <b>0</b> turda | Her <b>1</b> turda | Her <b>{count}</b> turda"
+                        "round": "Her {count} turda | Her {count} turda | Her {count} turda"
                     }
                 },
                 "dumpRoundAmount": {
@@ -751,8 +750,7 @@
                     "data": {
                         "OPPOSITE_SIDE": "Karşı tarafa ulaş",
                         "TAKE": "Bir parça al",
-                        "ALL": "Tüm krallarla başla",
-                        "NONE": "Devre dışı"
+                        "ALL": "Tüm krallarla başla"
                     }
                 },
                 "backwardsTake": {
@@ -841,9 +839,8 @@
                 },
                 "winCondition": {
                     "data": {
-                        "LAST_STANDING": "Son kalan (<b>0</b> can) | Son kalan (<b>1</b> can) | Son kalan (<b>{count}</b> can)",
-                        "KILL_COUNT": "İlk <b>0</b> öldürme yapan | İlk <b>1</b> öldürme yapan | İlk <b>{count}</b> öldürme yapan",
-                        "TIME": "En çok öldürme yapan <b>0</b> dak. sonra | En çok öldürme yapan <b>1</b> dak. sonra | En çok öldürme yapan <b>{count}</b> dak. sonra"
+                        "KILL_COUNT": "İlk {count} öldürme yapan | İlk {count} öldürme yapan | İlk {count} öldürme yapan",
+                        "TIME": "En çok öldürme yapan {count} dak. sonra | En çok öldürme yapan {count} dak. sonra | En çok öldürme yapan {count} dak. sonra"
                     }
                 },
                 "defaultBombCount": {
@@ -1242,7 +1239,6 @@
                     "title": "Kılavuz Boyutu",
                     "help": "Oynayacağın seviye boyutunu seç.",
                     "data": {
-                        "random": "Rastgele",
                         "7x7": "7x7",
                         "11x11": "11x11",
                         "15x15": "15x15"
@@ -1252,7 +1248,6 @@
                     "title": "Harita",
                     "help": "Oynamak istediğin haritayı seç.",
                     "data": {
-                        "random": "Rastgele",
                         "peninsula": "Yarımada",
                         "archipelago": "Takımada",
                         "canal": "Kanal",
@@ -1270,7 +1265,6 @@
                     "title": "Yönlendirme",
                     "help": "Seviyenin hangi yönde gösterileceğini seç.",
                     "data": {
-                        "random": "Rastgele",
                         "NORTH": "Kuzey",
                         "EAST": "Doğu",
                         "SOUTH": "Güney",
@@ -1376,8 +1370,7 @@
                 },
                 "winCondition": {
                     "data": {
-                        "FIRST": "İlk <b>0</b> puana ulaşan | İlk <b>1</b> puana ulaşan | İlk <b>{count}</b> puana ulaşan",
-                        "HIGHEST_AFTER": "<b>0</b> puan ulaşıldıktan sonra en çok puanı olan | <b>1</b> puan ulaşıldıktan sonra en çok puanı olan | <b>{count}</b> puan ulaşıldıktan sonra en çok puanı olan"
+                        "HIGHEST_AFTER": "{count} puan ulaşıldıktan sonra en çok puanı olan | {count} puan ulaşıldıktan sonra en çok puanı olan | {count} puan ulaşıldıktan sonra en çok puanı olan"
                     }
                 }
             },
@@ -1430,14 +1423,14 @@
                     "help": "Eğer tüm kartlara sahip olan sadece bir oyuncu kalırsa, oyun erken bitecek.",
                     "data": {
                         "LAST_STANDING": "Bir oyuncu tüm kartları aldığında",
-                        "HIGHEST_AFTER": "<b>0</b> turdan sonra en çok kart | <b>1</b> turdan sonra en çok kart | <b>{count}</b> turdan sonra en çok kart"
+                        "HIGHEST_AFTER": "{count} turdan sonra en çok kart | {count} turdan sonra en çok kart | {count} turdan sonra en çok kart"
                     }
                 },
                 "warRequirement": {
                     "title": "Savaş Gereksinimi",
                     "help": "Eğer iki veya daha fazla oyuncu aynı kartı oynarsa savaşın nasıl ilerlemesi gerektiğine karar ver.",
                     "data": {
-                        "DEFAULT": "<b>0</b> kart yerleştir | <b>1</b> kart yerleştir | <b>{count}</b> kart yerleştir",
+                        "DEFAULT": "{count} kart yerleştir | {count} kart yerleştir | {count} kart yerleştir",
                         "CARD_VALUE": "İlk kartın rütbesine eşit kartlar yerleştir"
                     }
                 },
@@ -1600,13 +1593,6 @@
                         "rock": "Taş makası yener",
                         "paper": "Kağıt taşı yener",
                         "scissors": "Makas kağıdı yener"
-                    }
-                },
-                "winCondition": {
-                    "data": {
-                        "LAST_STANDING": "Son kalan (<b>0</b> can) | Son kalan (<b>1</b> can) | Son kalan (<b>{count}</b> can",
-                        "FIRST": "İlk <b>0</b> puanı alan | İlk <b>1</b> puanı alan | İlk <b>{count}</b> puanı alan",
-                        "HIGHEST_AFTER": "<b>0</b> turdan sonra en çok puan | <b>1</b> turdan sonra en çok puan | <b>{count}</b> turdan sonra en çok puan"
                     }
                 }
             },
@@ -1886,12 +1872,6 @@
                         "ELEVEN": "Her zaman 11"
                     }
                 },
-                "winCondition": {
-                    "data": {
-                        "FIRST": "İlk <b>0</b> puana ulaşan | İlk <b>1</b> puana ulaşan | İlk <b>{count}</b> puana ulaşan",
-                        "HIGHEST_AFTER": "<b>0</b> turdan sonra en çok puan | <b>1</b> turdan sonra en çok puan | <b>{count}</b> turdan sonra en çok puan"
-                    }
-                },
                 "splitSameFaceOnly": {
                     "title": "Split sadece aynı kartla",
                     "help": "Açıkken split yalnızca iki başlangıç kartı aynı kartsa yapılabilir (örneğin K+K veya 8+8), sadece sayısal değerlerinin aynı olması yetmez."
@@ -1994,8 +1974,7 @@
                     "title": "Açılış dizilimi",
                     "help": "Açılış diziliminin sabit mi yoksa rastgele mi olacağını seçin.",
                     "data": {
-                        "fixed": "Sabit (resmî)",
-                        "random": "Rastgele"
+                        "fixed": "Sabit (resmî)"
                     }
                 },
                 "breakFillers": {
@@ -2007,8 +1986,7 @@
                     "help": "Hangi faullerde rakibin topunun masaya geri dönebileceğini seçin.",
                     "data": {
                         "anyFoul": "Her uygun faul",
-                        "ballInHand": "Sadece top elde faulleri",
-                        "off": "Kapalı"
+                        "ballInHand": "Sadece top elde faulleri"
                     }
                 }
             },
@@ -2054,6 +2032,111 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": "Tuned In",
+            "title": "Tuned In | Ücretsiz Çevrimiçi Parti Oyunu | Çok Oyunculu",
+            "description": "Oynaması ücretsiz Tuned In, hesap gerektirmeyen çevrimiçi parti oyunu. Arkadaşlarla, yabancılarla ve takımlar halinde çok oyunculu oynayın!",
+            "options": {
+                "consensus": {
+                    "title": "Paylaşılan Göstergeler",
+                    "help": "Açık olduğunda, takım ya da kooperatif grup tek bir göstergeyi paylaşır ve herkes birlikte hareket eder — nereye giderse gitsin, orası cevap. Kapalı olduğunda, her oyuncunun kendi göstergesi olur ve takımın cevabı herkesin son pozisyonunun ortalamasıdır."
+                },
+                "winAmountRounds": {
+                    "title": "Turlar",
+                    "help": "Maç kaç tur sürüyor? Oyuncu sayısına göre tur sayısını otomatik ayarlıyor: 2 oyuncu için 4 tur, 3-4 oyuncu için 3 tur, 5-6 oyuncu için 2 tur, 7 veya daha fazla oyuncu için 1 tur.",
+                    "data": {
+                        "fixed": "{count} tur | {count} tur | {count} tur"
+                    }
+                },
+                "pickingTime": {
+                    "title": "İpucu Yazma Süresi"
+                },
+                "revealTime": {
+                    "title": "Sonuç Gösterim Süresi",
+                    "help": "Her ipucu açıldıktan sonra sonuçlar ne kadar süre gösteriliyor?"
+                },
+                "promptSelection": {
+                    "title": "Seçenek Belirleme",
+                    "help": "Açık olduğunda, oyuncular her turda birine atanmak yerine 3 farklı spektrumdan birini seçiyor."
+                },
+                "stepScoring": {
+                    "title": "Adım Puanlama",
+                    "help": "Açık olduğunda, hedefe olan mesafeye göre sabit bantlarda (75/50/25) puan verilir, yani pürüzsüz bir şekilde artmaz."
+                },
+                "authorPoints": {
+                    "title": "İpucu Verici Bonus",
+                    "help": "Açık olduğunda, ipucu veren kişi, ipucundan tahmin edenlerin ortalama puanlarının yarısını kazanır, aşağıya yuvarlanır. Sadece solo modda."
+                },
+                "visibility": {
+                    "title": "Canlı Pozisyonlar",
+                    "help": "Kontrol eder, kimin diğerlerinin spektrumda nerede hareket ettiğini gerçek zamanlı olarak görebileceğini.",
+                    "data": {
+                        "ALL": "Herkes",
+                        "TEAM": "Sadece takım",
+                        "PRIVATE": "Gizli"
+                    },
+                    "description": {
+                        "ALL": "Tüm oyuncular, diğerlerinin spektrum üzerindeki canlı konumunu görebiliyor.",
+                        "TEAM": "Oyuncular sadece takım arkadaşlarının canlı konumlarını görebiliyor.",
+                        "PRIVATE": "Hiç kimse diğerlerinin spektrumda nerede olduğunu göremez."
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Karşısında",
+                    "description": [
+                        "Herkes birbirine karşı",
+                        "Tahmininin ne kadar yakın olduğuna göre puanlar"
+                    ]
+                },
+                "teams": {
+                    "title": "Takımlar",
+                    "description": [
+                        "Seçtiğin takımlarla yarış",
+                        "Tahmin, takımının ortalamasıdır"
+                    ]
+                },
+                "coopConsensus": {
+                    "title": "Klasik Kooperatif",
+                    "description": [
+                        "Bir takım gibi birlikte çalışın",
+                        "Tek bir ortak göstergeyi birlikte hareket ettirin",
+                        "Puanlar sabit aralıklarda kazanılır"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "Demokrasi Kooperatifi",
+                    "description": [
+                        "Bir takım gibi birlikte çalışın",
+                        "Tahmin, takımınızın ortalamasıdır"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Nasıl Oynanır",
+                    "description": [
+                        "Her turda, her oyuncu bir spektrumda gizli bir hedef alıyor (mesela Sıcak ← → Soğuk) ve bunu işaret eden bir ipucu yazıyor, ama ölçeğin kendi kelimelerini kullanmadan.",
+                        "Sonra tüm oyuncular, birbirlerinin ipuçlarının nerede olduğunu tahmin etme şansına sahip. Tahmin ne kadar yakınsa, o kadar çok puan kazanıyorsun."
+                    ]
+                },
+                "modes": {
+                    "title": "Oyun Modları",
+                    "description": [
+                        "Solo: Herkes kendi başına tahmin yapar ve bireysel puan alır.",
+                        "Co-op: Tüm grup tek bir puanı paylaşır.",
+                        "Team: Lobiye bir takım rengi seç; her takım ayrı puan alır."
+                    ]
+                },
+                "customize": {
+                    "title": "Kuralları Özelleştir",
+                    "description": [
+                        "Lobi ayarlarında puanlama, göstergeler ve daha fazlasını ayarla. Mesafeye dayalı puanlamadan adım bazlı puanlamaya geçmek gibi ayarlar."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2160,6 +2243,11 @@
             "makeYourMove": "Hamleni yap",
             "waitingForOthers": "Diğerlerini bekliyoruz",
             "wager": "Bahis",
+            "yourClue": "İpucunu yayımlıyorsun",
+            "nameClue": "%{name}'in ipucuna kulak ver",
+            "writeYourClue": "İpucunu yaz",
+            "languageSelect": "Dil seçimi",
+            "languageAgreed": "Dil kabul edildi",
             "tieEndedRound": "Tur bitti, berabere kaldı",
             "youEndedRound": "Turu sen bitirdin",
             "nameEndedRound": "%{name} turu bitirdi",
@@ -2192,6 +2280,8 @@
         }
     },
     "placeholder": {
+        "clue": "İpucunu gir...",
+        "clueInLanguage": "İpucunu {language} dilinde gir...",
         "cardSetId": "Kart seti ID'sini doldur...",
         "cardContent": "Kart içeriğini doldur...",
         "cardSetName": "Bu kart seti için bir isim belirle...",
@@ -2232,8 +2322,8 @@
         "exploreAllGames": "Tüm oyunları keşfet!",
         "playingAgainstBots": "Botlara Karşı Oynama",
         "playingAgainstPlayers": "Oyunculara Karşı Oynama",
-        "playingGame": "<b>{count}</b> kişi bu oyunu oynuyor",
-        "online": "<b>{count}</b> çevrimiçi",
+        "playingGame": "{count} kişi bu oyunu oynuyor",
+        "online": "{count} çevrimiçi",
         "connection": "Bağlantı",
         "ping": "Ping",
         "timeOffset": "Zaman Farkı",
@@ -2432,6 +2522,7 @@
         "restartNotice": "Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir."
     },
     "misc": {
+        "refresh": "Yenile",
         "automatic": "Otomatik",
         "title": "Başlık",
         "current": "Güncel",
@@ -2465,6 +2556,8 @@
         "questions": "Sorular",
         "teamAndQuestions": "Takım & Sorular",
         "questionPacks": "Soru Paketleri",
+        "packs": "Paketler",
+        "teamAndPacks": "Takım & Paketler",
         "rock": "Taş",
         "paper": "Kağıt",
         "scissors": "Makas",
@@ -2663,6 +2756,7 @@
         "kills": "Öldürmeler",
         "assassin": "Suikastçı",
         "target": "Hedef",
+        "targetReached": "Hedefe Ulaşıldı",
         "assassinations": "Suikastlar",
         "survivals": "Hayatta Kalma",
         "games": "Oyunlar",
@@ -2671,6 +2765,8 @@
         "winLossDelta": "G/M farkı",
         "killDeathRatio": "K/D Oranı",
         "quitRatio": "Oyundan çıkma oranı",
+        "clueSuccessRatio": "İpucu Başarı Oranı",
+        "guessHitRatio": "Tahmin Isabet Oranı",
         "lives": "Hayatlar",
         "points": "Puanlar",
         "wins": "Kazanmalar",
@@ -2743,7 +2839,8 @@
         "noChangesDetected": "Değişiklik Tespit Edilmedi",
         "newChanges": "Yeni Değişiklikler",
         "saveChanges": "Değişiklikleri Kaydet",
-        "previousChanges": "Önceki Değişikliklere Bak"
+        "previousChanges": "Önceki Değişikliklere Bak",
+        "random": "Rastgele"
     },
     "card": {
         "empty": "Kart Yok",
@@ -2927,6 +3024,10 @@
             "empty": "Hiçbir kullanıcıyı engellemedin.",
             "count": "%{count} engellendi"
         },
+        "cluePicking": {
+            "title": "İpucunu yaz",
+            "description": "İpucunu belirsiz ama doğru tut — diğerleri senin pozisyonunu tahmin etmek için bunu kullanacak."
+        },
         "youBlockedUser": "Bu kullanıcıyı engelledin.",
         "playerProfile": {
             "unavailable": "Bu profil şu anda yüklenemedi.",
@@ -2983,6 +3084,18 @@
         "votePick": "%{option} için oy ver",
         "votePickChange": "Oyunu %{option} olarak değiştir",
         "votePickSelected": "Oyun %{option} için kullanıldı",
+        "clueSelf": "İpucun",
+        "clueOther": "%{name}'in ipucu",
+        "stayQuietHint": "Diğerleri tahmin yaparken ekstra ipucu verme!",
+        "tunedInWinThreshold": "Birlikte en az %{threshold} puan alarak kazan!",
+        "multipleLanguages": {
+            "title": "Birden fazla dil tespit edildi",
+            "description": "Farklı diller kullanan oyuncular olduğunu fark ettik. Herkesin ipuçlarını anlaması için, anladığınız tüm dilleri seçin — herkesin en az bir ortak dili olduğunda oyun başlayacak.",
+            "leave": "Bu dillerden hiçbirinde katılamıyorum",
+            "leaveDescription": "Bu tamamen sorun değil — şimdi çıkarsanız kimse için istatistik veya kazanımlar kaydedilmeyecek.",
+            "agreedTitle": "Hazırsınız!",
+            "agreedDescription": "Herkes ipuçları için {language} kullanmayı kabul etti!"
+        },
         "tiedVoteSelf": "Grubunuzda oylar eşit! Rastgele bir seçim yapılıyor...",
         "tiedVoteOther": "Bir saniye bekle, rakiplerinizin oyları da eşit.",
         "waitForOpponent": "Rakibini bekliyor...",
@@ -3426,6 +3539,14 @@
             "diceSource": "Zar modeli, %{name} tarafından (CC-BY-4.0)",
             "localization": "Gönüllü katılımcılar tarafından yerelleştirme",
             "licenses": "Diğer lisanslar"
+        }
+    },
+    "share": {
+        "tiers": {
+            "max": "Tam isabet",
+            "almost": "Yakın",
+            "justIn": "Ucu ucuna",
+            "miss": "Iska"
         }
     }
 }

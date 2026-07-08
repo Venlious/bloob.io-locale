@@ -68,6 +68,114 @@ const checkForCommonErrors = translation => {
 	}
 }
 
+const checkBoldTagsBalanced = translation => {
+	// Iterate through keys and values of the translation object
+	for (const [key, value] of Object.entries(translation)) {
+		// Skip keys with null values
+		if (value === null) continue
+
+		// Check if value is an object (indicating another nested layer)
+		if (typeof value === `object`) {
+			// If value is an object, recursively call the function on the nested objects
+			checkBoldTagsBalanced(value)
+		} else if (typeof value === `string`) {
+			// Every opening <b> must be matched by a closing </b>, and vice versa
+			const openCount = (value.match(/<b>/g) || []).length
+			const closeCount = (value.match(/<\/b>/g) || []).length
+			expect(openCount).toBe(closeCount)
+		}
+	}
+}
+
+const checkForMatchingBoldTags = (english, translation) => {
+	// Iterate through keys and values of English object
+	for (const [key, value] of Object.entries(english)) {
+		// Skip keys with null values in translation
+		if (translation[key] === null) continue
+
+		// Check if value is an object (indicating another nested layer)
+		if (typeof value === `object`) {
+			// If value is an object, recursively call the function on the nested objects
+			checkForMatchingBoldTags(value, translation[key])
+		} else if (typeof value === `string`) {
+			// A translation must use the same amount of <b> and </b> tags as English - not more, not less
+			const englishOpenCount = (value.match(/<b>/g) || []).length
+			const englishCloseCount = (value.match(/<\/b>/g) || []).length
+			const translationOpenCount = (translation[key].match(/<b>/g) || []).length
+			const translationCloseCount = (translation[key].match(/<\/b>/g) || []).length
+
+			expect(translationOpenCount).toBe(englishOpenCount)
+			expect(translationCloseCount).toBe(englishCloseCount)
+		}
+	}
+}
+
+// Keys where "|" is used as a literal separator rather than vue-i18n plural forms,
+// e.g. SEO titles ("Bloob.io | Free Online...") and "Min. %{min} | Max. %{max}"
+const nonPluralPipeKeys = new Set([`title`, `minMax`])
+
+const checkPluralFormCount = (english, translation) => {
+	// Iterate through keys and values of English object
+	for (const [key, value] of Object.entries(english)) {
+		// Skip keys with null values in translation
+		if (translation[key] === null) continue
+
+		// Check if value is an object (indicating another nested layer)
+		if (typeof value === `object`) {
+			// If value is an object, recursively call the function on the nested objects
+			checkPluralFormCount(value, translation[key])
+		} else if (
+			typeof value === `string` &&
+			value.includes(`|`) &&
+			!nonPluralPipeKeys.has(key)
+		) {
+			// A pluralized string must have the same amount of "|"-delimited forms as English,
+			// otherwise $tc picks the wrong form (or falls back to the raw string) at runtime
+			const englishFormCount = value.split(`|`).length
+			const translationFormCount = translation[key].split(`|`).length
+			expect(translationFormCount).toBe(englishFormCount)
+		}
+	}
+}
+
+const checkForUnexpectedTags = translation => {
+	// Iterate through keys and values of the translation object
+	for (const [key, value] of Object.entries(translation)) {
+		// Skip keys with null values
+		if (value === null) continue
+
+		// Check if value is an object (indicating another nested layer)
+		if (typeof value === `object`) {
+			// If value is an object, recursively call the function on the nested objects
+			checkForUnexpectedTags(value)
+		} else if (typeof value === `string`) {
+			// Only <b> and </b> are supported by the frontend - anything else is either a typo
+			// or formatting that has no renderer for it
+			const tags = value.match(/<\/?[a-zA-Z][^>]*>/g) || []
+			const unexpectedTags = tags.filter(tag => tag !== `<b>` && tag !== `</b>`)
+			expect(unexpectedTags).toHaveLength(0)
+		}
+	}
+}
+
+const checkForWhitespaceIssues = translation => {
+	// Iterate through keys and values of the translation object
+	for (const [key, value] of Object.entries(translation)) {
+		// Skip keys with null values
+		if (value === null) continue
+
+		// Check if value is an object (indicating another nested layer)
+		if (typeof value === `object`) {
+			// If value is an object, recursively call the function on the nested objects
+			checkForWhitespaceIssues(value)
+		} else if (typeof value === `string`) {
+			// Catch copy-paste artifacts: doubled spaces and leading/trailing whitespace
+			expect(value).not.toMatch(/ {2}/)
+			expect(value).toBe(value.trim())
+		}
+	}
+}
+
 const checkForCommonVariableErrors = translation => {
 	// Iterate through keys and values of English object
 	for (const [key, value] of Object.entries(translation)) {
@@ -102,6 +210,21 @@ describe(`correctEntriesCount`, () => {
 	})
 })
 
+describe(`correctBoldTags`, () => {
+	it(`should have balanced <b> and </b> tags in English`, () => {
+		checkBoldTagsBalanced(enMessage)
+	})
+	it(`should not have any tags other than <b> and </b> in English`, () => {
+		checkForUnexpectedTags(enMessage)
+	})
+})
+
+describe(`correctWhitespace`, () => {
+	it(`should not have whitespace issues in English`, () => {
+		checkForWhitespaceIssues(enMessage)
+	})
+})
+
 for (const folder of [...supportedLocales, `_empty`]) {
 	if (folder === `en`) continue
 	// eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -130,6 +253,30 @@ for (const folder of [...supportedLocales, `_empty`]) {
 	describe(`containCorrectVariables`, () => {
 		it(`should contain all variables from English text for "${folder}"`, () => {
 			checkForVariables(enMessage, messages)
+		})
+	})
+
+	describe(`correctBoldTags`, () => {
+		it(`should have balanced <b> and </b> tags for "${folder}"`, () => {
+			checkBoldTagsBalanced(messages)
+		})
+		it(`should have the same <b> and </b> tags as English for "${folder}"`, () => {
+			checkForMatchingBoldTags(enMessage, messages)
+		})
+		it(`should not have any tags other than <b> and </b> for "${folder}"`, () => {
+			checkForUnexpectedTags(messages)
+		})
+	})
+
+	describe(`correctPluralForms`, () => {
+		it(`should have the same amount of plural forms as English for "${folder}"`, () => {
+			checkPluralFormCount(enMessage, messages)
+		})
+	})
+
+	describe(`correctWhitespace`, () => {
+		it(`should not have whitespace issues for "${folder}"`, () => {
+			checkForWhitespaceIssues(messages)
 		})
 	})
 

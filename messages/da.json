@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Danish",
         "rtl": false,
-        "total": 2127,
+        "total": 2192,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -150,6 +150,7 @@
             "blocked": "Din straf tillader ikke, at du deltager i matchmaking eller offentlige kampe.",
             "joinBlocked": "Du kan ikke være med i den her kamp.",
             "empty": "Kampen er lukket. Alle andre spillere har forladt kampen.",
+            "noAgreement": "Kampen blev lukket, fordi der ikke kunne nås en aftale. Statistikker blev ikke registreret.",
             "rematchTimeout": "Du accepterede ikke genkamp forespørgslen og blev sendt tilbage til hovedmenuen.",
             "rematchCancelled": "Beklager! Der er ikke nok spillere tilbage til en genkamp.",
             "inactive": "Kampen du var i, er blevet lukket, da den har været inaktiv for længe.",
@@ -239,7 +240,12 @@
                 },
                 "winCondition": {
                     "title": "Sejrskondition",
-                    "help": "Find ud af hvornår spillet skal slutte."
+                    "help": "Find ud af hvornår spillet skal slutte.",
+                    "data": {
+                        "firstToPoints": "Først til at nå {count} point | Først til at nå {count} point | Først til at nå {count} point",
+                        "mostPoints": "Flest point efter {count} runder | Flest point efter {count} runde | Flest point efter {count} runder",
+                        "lastStanding": "Sidste mand stående ({count} liv) | Sidste mand stående ({count} liv) | Sidste mand stående ({count} liv)"
+                    }
                 },
                 "winAmount": {
                     "title": "Vindende Beløb"
@@ -579,12 +585,6 @@
             "title": "Rådne Æbler online | Spil kortsæt med venner | Ingen konto krævet",
             "description": "Spil Rådne Æbler gratis online med venner eller fremmede! Ingen konto krævet. Nyd kortsættet og sjove regler i multiplayer-matches.",
             "options": {
-                "winCondition": {
-                    "data": {
-                        "first": "Første til at få <b>0</b> point | Første til at få <b>1</b> point | Første til at få <b>{count}</b> point",
-                        "most": "Flest point efter <b>0</b> runder | Flest point efter <b>1</b> runde | Flest point efter <b>{count}</b> runder"
-                    }
-                },
                 "judgeSystem": {
                     "title": "Dommer System",
                     "help": "Enten en dommer eller alle får lov til at bestemme, hvem der havde det bedste spil hver runde.",
@@ -605,8 +605,7 @@
                     "title": "Smid Runde",
                     "help": "En dump runde giver alle mulighed for at vælge kort i deres hånd, som de gerne vil fjerne. Nye svar kort gives som erstatning efter runden slutter.",
                     "data": {
-                        "disabled": "Deaktiveret",
-                        "round": "Hver <b>0</b> runde | Hver <b>1</b> runde | Hver <b>{count}</b> runde"
+                        "round": "Hver {count} runde | Hver {count} runde | Hver {count} runde"
                     }
                 },
                 "dumpRoundAmount": {
@@ -751,8 +750,7 @@
                     "data": {
                         "OPPOSITE_SIDE": "Nå den modsatte side",
                         "TAKE": "Tag en brik",
-                        "ALL": "Start med alle kongerne",
-                        "NONE": "Deaktiveret"
+                        "ALL": "Start med alle kongerne"
                     }
                 },
                 "backwardsTake": {
@@ -841,9 +839,8 @@
                 },
                 "winCondition": {
                     "data": {
-                        "LAST_STANDING": "Sidste mand stående (<b>0</b> liv) | Sidste mand stående (<b>1</b> liv) | Sidste mand stående (<b>{count}</b> liv)",
-                        "KILL_COUNT": "Først til at få <b>0</b> drab | Først til at få <b>1</b> drab | Først til at få <b>{count}</b> drab",
-                        "TIME": "Flest drab efter <b>0</b> min. | Flest drab efter <b>1</b> min. | Flest drab efter <b>{count}</b> min."
+                        "KILL_COUNT": "Først til at få {count} drab | Først til at få {count} drab | Først til at få {count} drab",
+                        "TIME": "Flest drab efter {count} min. | Flest drab efter {count} min. | Flest drab efter {count} min."
                     }
                 },
                 "defaultBombCount": {
@@ -1242,7 +1239,6 @@
                     "title": "Gitter Størrelse",
                     "help": "Vælg størrelsen på niveauet du vil spille i.",
                     "data": {
-                        "random": "Tilfældig",
                         "7x7": "7x7",
                         "11x11": "11x11",
                         "15x15": "15x15"
@@ -1252,7 +1248,6 @@
                     "title": "Kort",
                     "help": "Vælg det kort du gerne vil spille på.",
                     "data": {
-                        "random": "Tilfældig",
                         "peninsula": "Halvø",
                         "archipelago": "Øgruppe",
                         "canal": "Kanal",
@@ -1270,7 +1265,6 @@
                     "title": "Orientering",
                     "help": "Vælg den orientering, som niveauet skal vises i.",
                     "data": {
-                        "random": "Tilfældig",
                         "NORTH": "Nord",
                         "EAST": "Øst",
                         "SOUTH": "Syd",
@@ -1376,8 +1370,7 @@
                 },
                 "winCondition": {
                     "data": {
-                        "FIRST": "Først til at nå <b>0</b> point | Først til at nå <b>1</b> point | Først til at nå <b>{count}</b> point",
-                        "HIGHEST_AFTER": "Flest point efter <b>0</b> point er nået | Flest point efter <b>1</b> point er nået | Flest point efter <b>{count}</b> point er nået"
+                        "HIGHEST_AFTER": "Flest point efter {count} point er nået | Flest point efter {count} point er nået | Flest point efter {count} point er nået"
                     }
                 }
             },
@@ -1430,14 +1423,14 @@
                     "help": "Spillet slutter tidligt, hvis der kun er en spiller tilbage med alle kortene.",
                     "data": {
                         "LAST_STANDING": "Når en spiller får alle kortene",
-                        "HIGHEST_AFTER": "Flest kort efter <b>0</b> runder | Flest kort efter <b>1</b> runde | Flest kort efter <b>{count}</b> runder"
+                        "HIGHEST_AFTER": "Flest kort efter {count} runder | Flest kort efter {count} runde | Flest kort efter {count} runder"
                     }
                 },
                 "warRequirement": {
                     "title": "Krigskrav",
                     "help": "Bestem hvordan krigen skal spilles ud, hvis to eller flere spillere spiller det samme kort.",
                     "data": {
-                        "DEFAULT": "Placer <b>0</b> kort | Placer <b>1</b> kort | Placer <b>{count}</b> kort",
+                        "DEFAULT": "Placer {count} kort | Placer {count} kort | Placer {count} kort",
                         "CARD_VALUE": "Placer kort svarende til den oprindelige korts rang"
                     }
                 },
@@ -1601,13 +1594,6 @@
                         "paper": "Papir slår sten",
                         "scissors": "Saks slår papir"
                     }
-                },
-                "winCondition": {
-                    "data": {
-                        "LAST_STANDING": "Sidste mand stående (<b>0</b> liv) | Sidste mand stående (<b>1</b> liv) | Sidste mand stående (<b>{count}</b> liv)",
-                        "FIRST": "Første til at få <b>0</b> point | Første til at få <b>1</b> point | Første til at få <b>{count}</b> point",
-                        "HIGHEST_AFTER": "Flest point efter <b>0</b> runder | Flest point efter <b>1</b> runde | Flest point efter <b>{count}</b> runder"
-                    }
                 }
             },
             "presets": {
@@ -1657,7 +1643,7 @@
         },
         "TRIVIA": {
             "name": "Trivia",
-            "title": "Gratis Trivia Quiz Online | Multiplayer & Venner Sammen ",
+            "title": "Gratis Trivia Quiz Online | Multiplayer & Venner Sammen",
             "description": "Spil gratis online trivia quiz! Ingen konto - spil i realtid med venner eller modstandere. Vælg kategorier, multiplayer eller co-op mod 1-16 spillere.",
             "options": {
                 "consensus": {
@@ -1850,15 +1836,15 @@
                     "help": "Når det er tændt, kan spillerne satse point i starten af deres tur. Hvis de vinder runden, bliver deres indsats fordoblet; hvis de taber, beholder de deres oprindelige point. Spillere kan ikke satse flere point, end de har."
                 },
                 "startPointAmount": {
-                    "title": "Startpoint ",
+                    "title": "Startpoint",
                     "help": "Antallet af point, som hver spiller starter med."
                 },
                 "basePointAmount": {
-                    "title": "Basispoint ",
+                    "title": "Basispoint",
                     "help": "De point, en spiller er sikker på at få, når de vinder en runde mod dealeren."
                 },
                 "blackjackBonusPointAmount": {
-                    "title": "Bonus Blackjack Point ",
+                    "title": "Bonus Blackjack Point",
                     "help": "Ekstra point (oven i \"Basis Point\") givet når en spiller vinder en runde med en blackjack."
                 },
                 "doubleDown": {
@@ -1884,12 +1870,6 @@
                         "ONE_OR_ELEVEN": "Dynamisk (1 eller 11)",
                         "ONE": "Altid 1",
                         "ELEVEN": "Altid 11"
-                    }
-                },
-                "winCondition": {
-                    "data": {
-                        "FIRST": "Først til at nå <b>0</b> point | Først til at nå <b>1</b> point | Først til at nå <b>{count}</b> point",
-                        "HIGHEST_AFTER": "Flest point efter <b>0</b> runder | Flest point efter <b>1</b> runde | Flest point efter <b>{count}</b> runder"
                     }
                 },
                 "splitSameFaceOnly": {
@@ -1994,8 +1974,7 @@
                     "title": "Break-opstilling",
                     "help": "Vælg om startopstillingen ved break skal være fast eller tilfældig.",
                     "data": {
-                        "fixed": "Fast (officiel)",
-                        "random": "Tilfældig"
+                        "fixed": "Fast (officiel)"
                     }
                 },
                 "breakFillers": {
@@ -2007,8 +1986,7 @@
                     "help": "Vælg hvilke fouls der kan få en modstanders kugle tilbage på bordet.",
                     "data": {
                         "anyFoul": "Enhver kvalificeret foul",
-                        "ballInHand": "Kun ball-in-hand fouls",
-                        "off": "Deaktiveret"
+                        "ballInHand": "Kun ball-in-hand fouls"
                     }
                 }
             },
@@ -2054,6 +2032,111 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": "Tuned In",
+            "title": "Tuned In | Spil Bølgelængde Festspil Online med Venner & Teams",
+            "description": "Spil Tuned In gratis online! Ingen konto nødvendig. Deltag i multiplayer festspil med venner, fremmede eller solo i samarbejde & holdspil.",
+            "options": {
+                "consensus": {
+                    "title": "Fælles indikator",
+                    "help": "Når det er tændt, deler holdet eller co-op gruppen en enkelt indikator, som alle bevæger sig sammen med — hvor end den ender, er svaret. Når det er slukket, har hver spiller sin egen indikator, og holdets svar er gennemsnittet af alles endelige position."
+                },
+                "winAmountRounds": {
+                    "title": "Runder",
+                    "help": "Hvor mange runder kampen varer. Det auto-justerer antallet af runder baseret på, hvor mange spillere der er i kampen: 4 runder for 2 spillere, 3 for 3-4, 2 for 5-6, og 1 for 7 eller flere.",
+                    "data": {
+                        "fixed": "{count} runder | {count} runde | {count} runder"
+                    }
+                },
+                "pickingTime": {
+                    "title": "Ledetråd Skrivningstid"
+                },
+                "revealTime": {
+                    "title": "Resultatvisningstid",
+                    "help": "Hvor længe resultaterne vises efter hver ledetråd er afsløret."
+                },
+                "promptSelection": {
+                    "title": "Valg af prompt",
+                    "help": "Når det er aktiveret, vælger spillerne mellem 3 forskellige spektre hver runde i stedet for at få tildelt ét."
+                },
+                "stepScoring": {
+                    "title": "Trin Scoring",
+                    "help": "Når det er aktiveret, gives der point i faste bånd (75/50/25) baseret på afstand til målet i stedet for at skala glat."
+                },
+                "authorPoints": {
+                    "title": "Ledetråd Giver Bonus",
+                    "help": "Når det er aktiveret, tjener den, der giver ledetråden, halvdelen af de gennemsnitlige point, som gætterne får fra deres ledetråd, afrundet nedad. Kun i solo-tilstand."
+                },
+                "visibility": {
+                    "title": "Live Positioner",
+                    "help": "Kontrollerer, hvem der kan se, hvor andre bevæger sig på spektret i realtid.",
+                    "data": {
+                        "ALL": "Alle",
+                        "TEAM": "Kun hold",
+                        "PRIVATE": "Skjult"
+                    },
+                    "description": {
+                        "ALL": "Alle spillere kan se hinandens live position på spektret.",
+                        "TEAM": "Spillere kan kun se deres teammates' live positioner.",
+                        "PRIVATE": "Ingen kan se, hvor andre er på spektret."
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Mod hinanden",
+                    "description": [
+                        "Alle imod hinanden",
+                        "Point baseret på hvor tæt dit gæt er"
+                    ]
+                },
+                "teams": {
+                    "title": "Hold",
+                    "description": [
+                        "Konkurrer i de hold, du vælger",
+                        "Gæt er gennemsnittet af dit hold"
+                    ]
+                },
+                "coopConsensus": {
+                    "title": "Klassisk Co-op",
+                    "description": [
+                        "Arbejd sammen som et hold",
+                        "Flyt en fælles indikator sammen",
+                        "Point gives i faste bånd"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "Demokrati Co-op",
+                    "description": [
+                        "Arbejd sammen som et hold",
+                        "Gæt er gennemsnittet af dit hold"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Sådan spiller du",
+                    "description": [
+                        "Hver runde får hver spiller et hemmeligt mål på et spektrum (f.eks. Hot ← → Cold) og skriver et hint, der peger på det, uden at bruge ordene fra skalaen.",
+                        "Alle spillere får så lov til at gætte, hvor hintet lander for hinandens hints. Jo tættere gættet er, jo flere point scorer du."
+                    ]
+                },
+                "modes": {
+                    "title": "Spiltilstande",
+                    "description": [
+                        "Solo: Alle gætter på egen hånd og scorer individuelt.",
+                        "Co-op: Hele gruppen deler én score sammen.",
+                        "Team: Vælg en holdfarve i lobbyen; hvert hold scorer separat."
+                    ]
+                },
+                "customize": {
+                    "title": "Tilpas reglerne",
+                    "description": [
+                        "Juster scoring, indikatorer og mere i lobbyindstillingerne. Indstillinger som at skifte til skridtbasseret scoring i stedet for distancedrevet."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2160,6 +2243,11 @@
             "makeYourMove": "Tag dit træk",
             "waitingForOthers": "Venter på andre",
             "wager": "Indsats",
+            "yourClue": "Sender dit hint",
+            "nameClue": "Lyt til %{name}'s hint",
+            "writeYourClue": "Skriv dit hint",
+            "languageSelect": "Sprogvalg",
+            "languageAgreed": "Sprog godkendt",
             "tieEndedRound": "Runden er endt uafgjort",
             "youEndedRound": "Du har afsluttet runden",
             "nameEndedRound": "%{name} har afsluttet runden",
@@ -2192,6 +2280,8 @@
         }
     },
     "placeholder": {
+        "clue": "Indtast dit hint...",
+        "clueInLanguage": "Indtast dit hint på {language}...",
         "cardSetId": "Udfyld kort sæt ID...",
         "cardContent": "Udfyld kort indhold...",
         "cardSetName": "Udfyld navn til dette kort sæt...",
@@ -2232,8 +2322,8 @@
         "exploreAllGames": "Udforsk alle spil",
         "playingAgainstBots": "Spiller mod bots",
         "playingAgainstPlayers": "Spiller mod spillere",
-        "playingGame": "<b>{count}</b> spiller dette spil",
-        "online": "<b>{count}</b> online",
+        "playingGame": "{count} spiller dette spil",
+        "online": "{count} online",
         "connection": "Forbindelse",
         "ping": "Ping",
         "timeOffset": "Tidsforskydning",
@@ -2432,6 +2522,7 @@
         "restartNotice": "Serveren genstarter om {count} minutter. Bliv færdig med dit spil. | Serveren genstarter om {count} minut. Bliv færdig med dit spil. | Serveren genstarter om {count} minutter. Bliv færdig med dit spil."
     },
     "misc": {
+        "refresh": "Opdater",
         "automatic": "Auto",
         "title": "Titel",
         "current": "Nuværende",
@@ -2465,6 +2556,8 @@
         "questions": "Spørgsmål",
         "teamAndQuestions": "Hold & Spørgsmål",
         "questionPacks": "Spørgsmålspakker",
+        "packs": "Pakker",
+        "teamAndPacks": "Hold & Pakker",
         "rock": "Sten",
         "paper": "Papir",
         "scissors": "Saks",
@@ -2663,6 +2756,7 @@
         "kills": "Drab",
         "assassin": "Snigmorder",
         "target": "Mål",
+        "targetReached": "Mål nået",
         "assassinations": "Mord",
         "survivals": "Overlevelser",
         "games": "Spil",
@@ -2671,6 +2765,8 @@
         "winLossDelta": "S/T-delta",
         "killDeathRatio": "K/D Forhold",
         "quitRatio": "Afbrydelsesrate",
+        "clueSuccessRatio": "Ledetråd Succes Ratio",
+        "guessHitRatio": "Gæt Hit Ratio",
         "lives": "Liv",
         "points": "Point",
         "wins": "Sejre",
@@ -2743,7 +2839,8 @@
         "noChangesDetected": "Ingen Ændringer Fundet",
         "newChanges": "Nye Ændringer",
         "saveChanges": "Gem Ændringer",
-        "previousChanges": "Se Tidligere Ændringer"
+        "previousChanges": "Se Tidligere Ændringer",
+        "random": "Tilfældig"
     },
     "card": {
         "empty": "Ingen Kort",
@@ -2927,6 +3024,10 @@
             "empty": "Du har ikke blokeret nogen brugere.",
             "count": "%{count} blokeret"
         },
+        "cluePicking": {
+            "title": "Skriv dit hint",
+            "description": "Hold dit hint vagt men præcist — andre vil bruge det til at gætte din placering."
+        },
         "youBlockedUser": "Du har blokeret den her bruger.",
         "playerProfile": {
             "unavailable": "Kunne ikke indlæse denne profil lige nu.",
@@ -2983,6 +3084,18 @@
         "votePick": "Stem på %{option}",
         "votePickChange": "Skift din stemme til %{option}",
         "votePickSelected": "Du stemte på %{option}",
+        "clueSelf": "Dit hint",
+        "clueOther": "%{name}'s hint",
+        "stayQuietHint": "Giv ikke flere hints, mens de andre gætter!",
+        "tunedInWinThreshold": "Score mindst %{threshold} point sammen for at vinde!",
+        "multipleLanguages": {
+            "title": "Flere sprog opdaget",
+            "description": "Vi har lagt mærke til, at spillerne bruger forskellige sprog. For at sikre, at alle forstår ledetrådene, vælg alle de sprog, du forstår — når alle har mindst ét fælles, så starter spillet.",
+            "leave": "Jeg kan ikke deltage på nogen af disse sprog",
+            "leaveDescription": "Det er helt i orden — der vil ikke blive registreret nogen statistik eller sejre for nogen, hvis du forlader nu.",
+            "agreedTitle": "Du er klar!",
+            "agreedDescription": "Alle er enige om at bruge {language} til deres ledetråde!"
+        },
         "tiedVoteSelf": "Jeres gruppe har stemt lige! Vi vælger en tilfældig mulighed...",
         "tiedVoteOther": "Vent lige et øjeblik, jeres modstandere har også stemt lige.",
         "waitForOpponent": "Venter på din modstander...",
@@ -3426,6 +3539,14 @@
             "diceSource": "Terning model af %{name} (CC-BY-4.0)",
             "localization": "Lokalisering af frivillige bidragydere",
             "licenses": "Andre licenser"
+        }
+    },
+    "share": {
+        "tiers": {
+            "max": "Lige i plet",
+            "almost": "Tæt på",
+            "justIn": "Lige akkurat",
+            "miss": "Forbi"
         }
     }
 }

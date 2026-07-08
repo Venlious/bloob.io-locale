@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 2127,
+        "total": 2192,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -150,6 +150,7 @@
             "blocked": "Rangaistuksesi estää sinua liittymästä matchmakingiin tai julkisiin otteluihin.",
             "joinBlocked": "Et voi liittyä tähän matsiin.",
             "empty": "Ottelu suljettu. Kaikki muut pelaajat lähtivät matsista.",
+            "noAgreement": "Ottelu suljettiin, koska sopimukseen ei päästy. Tilastoja ei kirjattu.",
             "rematchTimeout": "Et hyväksynyt uusintaottelupyyntöä ja sinut lähetettiin takaisin päävalikkoon.",
             "rematchCancelled": "Harmi! Pelaajia ei ole jäljellä tarpeeksi uusintaotteluun.",
             "inactive": "Ottelu, jossa olit, on suljettu, koska se on ollut liian kauan toimettomana.",
@@ -239,7 +240,12 @@
                 },
                 "winCondition": {
                     "title": "Voittoehto",
-                    "help": "Päätä, milloin pelin pitäisi päättyä."
+                    "help": "Päätä, milloin pelin pitäisi päättyä.",
+                    "data": {
+                        "firstToPoints": "Ensimmäinen, joka saa {count} pistettä | Ensimmäinen, joka saa {count} pisteen | Ensimmäinen, joka saa {count} pistettä",
+                        "mostPoints": "Eniten pisteitä {count} kierroksen jälkeen | Eniten pisteitä {count} kierroksen jälkeen | Eniten pisteitä {count} kierroksen jälkeen",
+                        "lastStanding": "Viimeinen jäljellä ({count} elämää) | Viimeinen jäljellä ({count} elämä) | Viimeinen jäljellä ({count} elämää)"
+                    }
                 },
                 "winAmount": {
                     "title": "Voittosumma"
@@ -579,12 +585,6 @@
             "title": "Pelaa Mädäntyneet Omenat | Korttipeli netissä | Ei tilejä",
             "description": "Pelaa Mädäntyneet Omenat netissä ilmaiseksi! Ei vaadi tiliä, pelaa 3-16 pelaajalla. Naura yhdessä ystävien tai uusien tuttavuuksien kanssa!",
             "options": {
-                "winCondition": {
-                    "data": {
-                        "first": "Ensimmäinen, joka saa <b>0</b> pistettä | Ensimmäinen, joka saa <b>1</b> pisteen | Ensimmäinen, joka saa <b>{count}</b> pistettä",
-                        "most": "Eniten pisteitä <b>0</b> kierroksen jälkeen | Eniten pisteitä <b>1</b> kierroksen jälkeen | Eniten pisteitä <b>{count}</b> kierroksen jälkeen"
-                    }
-                },
                 "judgeSystem": {
                     "title": "Tuomarijärjestelmä",
                     "help": "Joko tuomari tai kaikki saavat päättää, kuka teki parhaan siirron joka kierroksella.",
@@ -605,8 +605,7 @@
                     "title": "Hylkäyskierros",
                     "help": "Dump-kierros antaa kaikille mahdollisuuden valita käsistään kortteja, jotka he haluaisivat poistaa. Uudet vastauskortit annetaan korvikkeena kierroksen päätyttyä.",
                     "data": {
-                        "disabled": "Pois käytöstä",
-                        "round": "Joka <b>0</b>. kierros | Joka <b>1</b>. kierros | Joka <b>{count}</b>. kierros"
+                        "round": "Joka {count}. kierros | Joka {count}. kierros | Joka {count}. kierros"
                     }
                 },
                 "dumpRoundAmount": {
@@ -751,8 +750,7 @@
                     "data": {
                         "OPPOSITE_SIDE": "Pääse vastakkaiselle puolelle",
                         "TAKE": "Ota pala",
-                        "ALL": "Aloita kaikilla kuninkailla",
-                        "NONE": "Pois käytöstä"
+                        "ALL": "Aloita kaikilla kuninkailla"
                     }
                 },
                 "backwardsTake": {
@@ -841,9 +839,8 @@
                 },
                 "winCondition": {
                     "data": {
-                        "LAST_STANDING": "Viimeinen jäljellä (<b>0</b> elämää) | Viimeinen jäljellä (<b>1</b> elämä) | Viimeinen jäljellä (<b>{count}</b> elämää)",
-                        "KILL_COUNT": "Ensimmäinen, joka saa <b>0</b> tappoa | Ensimmäinen, joka saa <b>1</b> tappon | Ensimmäinen, joka saa <b>{count}</b> tappoa",
-                        "TIME": "Eniten tappoja <b>0</b> min. jälkeen | Eniten tappoja <b>1</b> min. jälkeen | Eniten tappoja <b>{count}</b> min. jälkeen"
+                        "KILL_COUNT": "Ensimmäinen, joka saa {count} tappoa | Ensimmäinen, joka saa {count} tappon | Ensimmäinen, joka saa {count} tappoa",
+                        "TIME": "Eniten tappoja {count} min. jälkeen | Eniten tappoja {count} min. jälkeen | Eniten tappoja {count} min. jälkeen"
                     }
                 },
                 "defaultBombCount": {
@@ -1242,7 +1239,6 @@
                     "title": "Ruudukon Koko",
                     "help": "Valitse pelattavan tason koko.",
                     "data": {
-                        "random": "Satunnainen",
                         "7x7": "7x7",
                         "11x11": "11x11",
                         "15x15": "15x15"
@@ -1252,7 +1248,6 @@
                     "title": "Kartta",
                     "help": "Valitse kartta, jossa haluaisit pelata.",
                     "data": {
-                        "random": "Satunnainen",
                         "peninsula": "Niemimaa",
                         "archipelago": "Saaristo",
                         "canal": "Kanava",
@@ -1270,7 +1265,6 @@
                     "title": "Suunta",
                     "help": "Valitse suunta, jossa taso näytetään.",
                     "data": {
-                        "random": "Satunnainen",
                         "NORTH": "Pohjoinen",
                         "EAST": "Itä",
                         "SOUTH": "Etelä",
@@ -1376,8 +1370,7 @@
                 },
                 "winCondition": {
                     "data": {
-                        "FIRST": "Ensimmäinen, joka saa <b>0</b> pistettä | Ensimmäinen, joka saa <b>1</b> pisteen | Ensimmäinen, joka saa <b>{count}</b> pistettä",
-                        "HIGHEST_AFTER": "Eniten pisteitä, kun <b>0</b> pistettä on saavutettu | Eniten pisteitä, kun <b>1</b> piste on saavutettu | Eniten pisteitä, kun <b>{count}</b> pistettä on saavutettu"
+                        "HIGHEST_AFTER": "Eniten pisteitä, kun {count} pistettä on saavutettu | Eniten pisteitä, kun {count} piste on saavutettu | Eniten pisteitä, kun {count} pistettä on saavutettu"
                     }
                 }
             },
@@ -1430,14 +1423,14 @@
                     "help": "Peli loppuu aikaisin, jos vain yksi pelaaja on jäljellä kaikkien korttien kanssa.",
                     "data": {
                         "LAST_STANDING": "Kun pelaaja saa kaikki kortit",
-                        "HIGHEST_AFTER": "Eniten kortteja <b>0</b> kierroksen jälkeen | Eniten kortteja <b>1</b> kierroksen jälkeen | Eniten kortteja <b>{count}</b> kierroksen jälkeen"
+                        "HIGHEST_AFTER": "Eniten kortteja {count} kierroksen jälkeen | Eniten kortteja {count} kierroksen jälkeen | Eniten kortteja {count} kierroksen jälkeen"
                     }
                 },
                 "warRequirement": {
                     "title": "Sotavaatimus",
                     "help": "Päätä, miten sota pitäisi pelata, jos kaksi tai useampi pelaaja pelaa saman kortin.",
                     "data": {
-                        "DEFAULT": "Laita <b>0</b> korttia | Laita <b>1</b> kortti | Laita <b>{count}</b> korttia",
+                        "DEFAULT": "Laita {count} korttia | Laita {count} kortti | Laita {count} korttia",
                         "CARD_VALUE": "Laita kortteja alkuperäisen kortin arvon verran"
                     }
                 },
@@ -1600,13 +1593,6 @@
                         "rock": "Kivi voittaa sakset",
                         "paper": "Paperi voittaa kiven",
                         "scissors": "Sakset voittaa paperin"
-                    }
-                },
-                "winCondition": {
-                    "data": {
-                        "LAST_STANDING": "Viimeinen pystyssä (<b>0</b> elämää) | Viimeinen pystyssä (<b>1</b> elämä) | Viimeinen pystyssä (<b>{count}</b> elämää)",
-                        "FIRST": "Ensimmäinen, joka saa <b>0</b> pistettä | Ensimmäinen, joka saa <b>1</b> pisteen | Ensimmäinen, joka saa <b>{count}</b> pistettä",
-                        "HIGHEST_AFTER": "Eniten pisteitä jälkeen <b>0</b> kierrosta | Eniten pisteitä jälkeen <b>1</b> kierroksen | Eniten pisteitä jälkeen <b>{count}</b> kierrosta"
                     }
                 }
             },
@@ -1886,12 +1872,6 @@
                         "ELEVEN": "Aina 11"
                     }
                 },
-                "winCondition": {
-                    "data": {
-                        "FIRST": "Ensimmäinen, joka saa <b>0</b> pistettä | Ensimmäinen, joka saa <b>1</b> pisteen | Ensimmäinen, joka saa <b>{count}</b> pistettä",
-                        "HIGHEST_AFTER": "Eniten pisteitä <b>0</b> kierroksen jälkeen | Eniten pisteitä <b>1</b> kierroksen jälkeen | Eniten pisteitä <b>{count}</b> kierroksen jälkeen"
-                    }
-                },
                 "splitSameFaceOnly": {
                     "title": "Jako vain samalla kortilla",
                     "help": "Kun tämä on päällä, jakaminen on sallittu vain jos molemmat aloituskortit ovat sama kortti (esim. K+K tai 8+8), eivät vain samanarvoisia numeroina."
@@ -1994,8 +1974,7 @@
                     "title": "Aloitusasettelu",
                     "help": "Valitse onko avausasetelma kiinteä vai satunnainen.",
                     "data": {
-                        "fixed": "Kiinteä (virallinen)",
-                        "random": "Satunnainen"
+                        "fixed": "Kiinteä (virallinen)"
                     }
                 },
                 "breakFillers": {
@@ -2007,8 +1986,7 @@
                     "help": "Valitse mitkä virheet voivat palauttaa vastustajan pallon pöydälle.",
                     "data": {
                         "anyFoul": "Mikä tahansa kelvollinen virhe",
-                        "ballInHand": "Vain pallo kädessä -virheet",
-                        "off": "Pois käytöstä"
+                        "ballInHand": "Vain pallo kädessä -virheet"
                     }
                 }
             },
@@ -2054,6 +2032,111 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": "Tuned In",
+            "title": "Tuned In | Ilmainen nettipeli | Pelaa kavereiden kanssa yhdessä",
+            "description": "Pelaa Tuned In - huikea ilmainen nettipeli ilman tiliä! Innokkaana, synkassa kavereiden kanssa moninpelissä; bilepeli täynnä yhteistyötä!",
+            "options": {
+                "consensus": {
+                    "title": "Jaettu Indikaattori",
+                    "help": "Kun tämä on päällä, tiimillä tai co-op-ryhmällä on yksi yhteinen merkki, jota kaikki liikkuu yhdessä — minne se päätyy, se on vastaus. Kun se on pois päältä, jokaisella pelaajalla on oma merkki, ja tiimin vastaus on kaikkien lopullisten sijaintien keskiarvo."
+                },
+                "winAmountRounds": {
+                    "title": "Kierrokset",
+                    "help": "Kuinka monta kierrosta matsissa on. Kierrosten määrä säätyy automaattisesti pelaajien mukaan: 4 kierrosta 2 pelaajalle, 3 kierrosta 3-4 pelaajalle, 2 kierrosta 5-6 pelaajalle ja 1 kierros 7 tai enemmän.",
+                    "data": {
+                        "fixed": "{count} kierrosta | {count} kierros | {count} kierrosta"
+                    }
+                },
+                "pickingTime": {
+                    "title": "Vihjeiden kirjoittamisen aika"
+                },
+                "revealTime": {
+                    "title": "Tulosten näyttöaika",
+                    "help": "Kuinka kauan tulokset näkyy jokaisen vihjeen paljastamisen jälkeen?"
+                },
+                "promptSelection": {
+                    "title": "Valintapromptti",
+                    "help": "Kun tää on päällä, pelaajat valitsee joka kierroksella 3 eri spektriä sen sijaan, että niille annettais yks."
+                },
+                "stepScoring": {
+                    "title": "Askelpisteet",
+                    "help": "Kun tämä on päällä, pisteitä jaetaan kiinteissä ryhmissä (75/50/25) sen mukaan, kuinka kaukana kohteesta ollaan, sen sijaan että ne kasvaisi tasaisesti."
+                },
+                "authorPoints": {
+                    "title": "Vihjeantajan bonus",
+                    "help": "Kun tämä on päällä, vihjeen antaja saa puolet keskimääräisistä pisteistä, jotka arvaajat saavat vihjeestään, pyöristettynä alaspäin. Vain soolotilassa."
+                },
+                "visibility": {
+                    "title": "Elävät sijainnit",
+                    "help": "Säätää, kuka näkee, mihin muut liikkuu spektrissä reaaliajassa.",
+                    "data": {
+                        "ALL": "Kaikki",
+                        "TEAM": "Vain tiimi",
+                        "PRIVATE": "Piilotettu"
+                    },
+                    "description": {
+                        "ALL": "Kaikki pelaajat näkee toistensa live-sijainnit spektrissä.",
+                        "TEAM": "Pelaajat näkee vaan omien tiimikavereidensa live-sijainnit.",
+                        "PRIVATE": "Kukaan ei voi nähdä, missä muut on spektrissä."
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Vastaan",
+                    "description": [
+                        "Kaikki kaikkia vastaan",
+                        "Pisteet sen mukaan, kuinka lähellä arvauksesi on"
+                    ]
+                },
+                "teams": {
+                    "title": "Tiimit",
+                    "description": [
+                        "Kilpaile valitsemissasi tiimeissä",
+                        "Arvaus on tiimisi keskiarvo"
+                    ]
+                },
+                "coopConsensus": {
+                    "title": "Klassinen co-op",
+                    "description": [
+                        "Tehkää yhteistyötä yhtenä tiiminä",
+                        "Liikutetaan yhtä ja samaa indikaattoria yhdessä",
+                        "Pisteitä saa kiinteissä väleissä"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "Demokratia-kumppanuus",
+                    "description": [
+                        "Tehkää yhdessä tiiminä",
+                        "Arvaus on teidän tiimin keskiarvo"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Miten pelata",
+                    "description": [
+                        "Jokaisessa kierroksessa jokaisella pelaajalla on salainen kohde spektrillä (esim. Kuuma ← → Kylmä) ja he kirjoittavat vihjeen, joka viittaa siihen, ilman että käyttävät spektrin omia sanoja.",
+                        "Kaikki pelaajat saavat sitten arvata, mihin vihje osuu toisten vihjeissä. Mitä lähempänä arvaus on, sitä enemmän pisteitä saat."
+                    ]
+                },
+                "modes": {
+                    "title": "Pelin Moodit",
+                    "description": [
+                        "Soolo: Kaikki arvaa omillaan ja pisteet tulee erikseen.",
+                        "Yhteistyö: Koko porukka jakaa yhden pisteen yhdessä.",
+                        "Tiimi: Valitse tiimiväri aulassa; jokainen tiimi saa pisteet erikseen."
+                    ]
+                },
+                "customize": {
+                    "title": "Muokkaa sääntöjä",
+                    "description": [
+                        "Säätää pisteytyksiä, indikaattoreita ja muuta aulassa. Asetuksia kuten siirtyminen askelperusteiseen pisteytykseen etäisyysperusteisen sijaan."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2160,6 +2243,11 @@
             "makeYourMove": "Tee siirto",
             "waitingForOthers": "Odotellaan muita",
             "wager": "Panos",
+            "yourClue": "Lähetetään sun vihjettä",
+            "nameClue": "Kuuntele %{name}'n vihjettä",
+            "writeYourClue": "Kirjoita sun vihje",
+            "languageSelect": "Kielen valinta",
+            "languageAgreed": "Kieli sovittu",
             "tieEndedRound": "Kierros päättyi tasapeliin",
             "youEndedRound": "Sä lopetit kierroksen",
             "nameEndedRound": "%{name} lopetti kierroksen",
@@ -2192,6 +2280,8 @@
         }
     },
     "placeholder": {
+        "clue": "Syötä vihjeesi...",
+        "clueInLanguage": "Syötä vihjeesi kielellä {language}...",
         "cardSetId": "Täytä korttipaketin ID...",
         "cardContent": "Täytä kortin sisältö...",
         "cardSetName": "Anna nimi tälle korttipaketille...",
@@ -2232,8 +2322,8 @@
         "exploreAllGames": "Tutki kaikkia pelejä",
         "playingAgainstBots": "Pelaaminen bottien vastaan",
         "playingAgainstPlayers": "Pelaaminen pelaajien vastaan",
-        "playingGame": "<b>{count}</b> pelaa tätä peliä",
-        "online": "<b>{count}</b> verkossa",
+        "playingGame": "{count} pelaa tätä peliä",
+        "online": "{count} verkossa",
         "connection": "Yhteys",
         "ping": "Ping",
         "timeOffset": "Aikaviive",
@@ -2432,6 +2522,7 @@
         "restartNotice": "Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {count} minuutin päästä. Lopeta pelisi."
     },
     "misc": {
+        "refresh": "Päivitä",
         "automatic": "Auto",
         "title": "Otsikko",
         "current": "Nykyinen",
@@ -2465,6 +2556,8 @@
         "questions": "Kysymykset",
         "teamAndQuestions": "Tiimi & Kysymykset",
         "questionPacks": "Kysymyspaketit",
+        "packs": "Pakat",
+        "teamAndPacks": "Tiimi & Pakat",
         "rock": "Kivi",
         "paper": "Paperi",
         "scissors": "Sakset",
@@ -2663,6 +2756,7 @@
         "kills": "Tappot",
         "assassin": "Salamurhaaja",
         "target": "Kohde",
+        "targetReached": "Tavoite saavutettu",
         "assassinations": "Murhat",
         "survivals": "Selviytymiset",
         "games": "Pelit",
@@ -2671,6 +2765,8 @@
         "winLossDelta": "V/H-delta",
         "killDeathRatio": "K/D Suhde",
         "quitRatio": "Keskeytysprosentti",
+        "clueSuccessRatio": "Vihjeen onnistumisprosentti",
+        "guessHitRatio": "Arvaus osumaprosentti",
         "lives": "Elämät",
         "points": "Pisteet",
         "wins": "Voitot",
@@ -2743,7 +2839,8 @@
         "noChangesDetected": "Ei Muutoksia Havaittu",
         "newChanges": "Uudet Muutokset",
         "saveChanges": "Tallenna Muutokset",
-        "previousChanges": "Katso Aikaisemmat Muutokset"
+        "previousChanges": "Katso Aikaisemmat Muutokset",
+        "random": "Satunnainen"
     },
     "card": {
         "empty": "Ei kortteja",
@@ -2927,6 +3024,10 @@
             "empty": "Et ole estänyt yhtään käyttäjää.",
             "count": "%{count} estetty"
         },
+        "cluePicking": {
+            "title": "Kirjoita vihjeesi",
+            "description": "Pidä vihjeesi epämääräisenä mutta tarkkana — muut käyttää sitä arvatakseen sun sijaintia."
+        },
         "youBlockedUser": "Sä blokkasit tän käyttäjän.",
         "playerProfile": {
             "unavailable": "Profiilia ei voitu ladata juuri nyt.",
@@ -2983,6 +3084,18 @@
         "votePick": "Äänestä %{option}",
         "votePickChange": "Vaihda äänesi kohteeksi %{option}",
         "votePickSelected": "Äänestit kohteen %{option} puolesta",
+        "clueSelf": "Sun vihje",
+        "clueOther": "%{name}n vihje",
+        "stayQuietHint": "Älä anna mitään ylimääräisiä vinkkejä, kun muut arvailee!",
+        "tunedInWinThreshold": "Saakaa vähintään %{threshold} pistettä yhdessä voittaaksenne!",
+        "multipleLanguages": {
+            "title": "Useita kieliä havaittu",
+            "description": "Huomasimme, että pelaajat puhuvat eri kieliä. Jotta kaikki ymmärtäisivät vihjeet, valitse kaikki kielet, joita ymmärrät — kun kaikilla on vähintään yksi yhteinen kieli, peli alkaa.",
+            "leave": "En voi osallistua mihinkään näistä kielistä",
+            "leaveDescription": "Se on ihan ok — kukaan ei saa tilastoja tai voittoja, jos lähdet nyt.",
+            "agreedTitle": "Olet valmis!",
+            "agreedDescription": "Kaikki on samaa mieltä, että käytetään {language} vihjeissä!"
+        },
         "tiedVoteSelf": "Teidän porukalla on tasapeli! Valitaan satunnaisesti...",
         "tiedVoteOther": "Odota hetki, teidän vastustajilla on tasapeli.",
         "waitForOpponent": "Odotetaan vastustajaasi...",
@@ -3426,6 +3539,14 @@
             "diceSource": "Noppamalli tekijältä %{name} (CC-BY-4.0)",
             "localization": "Paikallistaminen vapaaehtoisten avustajien toimesta",
             "licenses": "Muut lisenssit"
+        }
+    },
+    "share": {
+        "tiers": {
+            "max": "Napakymppi",
+            "almost": "Lähellä",
+            "justIn": "Juuri sisällä",
+            "miss": "Ohi"
         }
     }
 }

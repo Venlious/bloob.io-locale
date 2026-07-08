@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 2127,
+        "total": 2192,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -150,6 +150,7 @@
             "blocked": "Hukumanmu nggak membolehkan kamu ikutan matchmaking atau pertandingan publik.",
             "joinBlocked": "Kamu nggak bisa ikut pertandingan ini.",
             "empty": "Pertandingan ditutup. Semua pemain lain telah meninggalkan pertandingan.",
+            "noAgreement": "Pertandingannya ditutup karena gak ada kesepakatan yang tercapai. Statistiknya juga gak dicatat.",
             "rematchTimeout": "Kamu nggak terima permintaan rematch dan dikirim balik ke menu utama.",
             "rematchCancelled": "Maaf! Nggak cukup pemain untuk rematch.",
             "inactive": "Pertandingan yang kamu ikuti telah ditutup karena sudah terlalu lama nggak aktif.",
@@ -239,7 +240,12 @@
                 },
                 "winCondition": {
                     "title": "Kondisi Menang",
-                    "help": "Tentukan kapan game harus diakhiri."
+                    "help": "Tentukan kapan game harus diakhiri.",
+                    "data": {
+                        "firstToPoints": "Pertama yang nyampe {count} poin | Pertama yang nyampe {count} poin | Pertama yang nyampe {count} poin",
+                        "mostPoints": "Poin terbanyak setelah {count} ronde | Poin terbanyak setelah {count} ronde | Poin terbanyak setelah {count} ronde",
+                        "lastStanding": "Terakhir bertahan ({count} nyawa) | Terakhir bertahan ({count} nyawa) | Terakhir bertahan ({count} nyawa)"
+                    }
                 },
                 "winAmount": {
                     "title": "Jumlah Kemenangan"
@@ -579,12 +585,6 @@
             "title": "Main Kartu Online | Seperti Cards Against Humanity Gratis",
             "description": "Main Apel Busuk online, seperti Cards Against Humanity! Gratis, tanpa akun, main kartu bareng teman asing. Banyak aturan seru!",
             "options": {
-                "winCondition": {
-                    "data": {
-                        "first": "Pertama dapat <b>0</b> poin | Pertama dapat <b>1</b> poin | Pertama dapat <b>{count}</b> poin",
-                        "most": "Poin terbanyak setelah <b>0</b> ronde | Poin terbanyak setelah <b>1</b> ronde | Poin terbanyak setelah <b>{count}</b> ronde"
-                    }
-                },
                 "judgeSystem": {
                     "title": "Sistem Penilaian",
                     "help": "Entah hakim atau semua orang yang menentukan siapa yang punya permainan terbaik di setiap ronde.",
@@ -605,8 +605,7 @@
                     "title": "Putar Sampah",
                     "help": "Putaran buang memungkinkan semua orang untuk memilih kartu di tangan mereka yang ingin mereka buang. Kartu respons baru diberikan sebagai pengganti setelah putaran berakhir.",
                     "data": {
-                        "disabled": "Nonaktif",
-                        "round": "Setiap <b>0</b> ronde | Setiap <b>1</b> ronde | Setiap <b>{count}</b> ronde"
+                        "round": "Setiap {count} ronde | Setiap {count} ronde | Setiap {count} ronde"
                     }
                 },
                 "dumpRoundAmount": {
@@ -751,8 +750,7 @@
                     "data": {
                         "OPPOSITE_SIDE": "Sampai ke sisi seberang",
                         "TAKE": "Ambil sepotong",
-                        "ALL": "Mulai dengan semua raja",
-                        "NONE": "Nonaktif"
+                        "ALL": "Mulai dengan semua raja"
                     }
                 },
                 "backwardsTake": {
@@ -841,9 +839,8 @@
                 },
                 "winCondition": {
                     "data": {
-                        "LAST_STANDING": "Terakhir bertahan (<b>0</b> nyawa) | Terakhir bertahan (<b>1</b> nyawa) | Terakhir bertahan (<b>{count}</b> nyawa)",
-                        "KILL_COUNT": "Pertama dapat <b>0</b> bunuh | Pertama dapat <b>1</b> bunuh | Pertama dapat <b>{count}</b> bunuh",
-                        "TIME": "Paling banyak bunuh setelah <b>0</b> menit. | Paling banyak bunuh setelah <b>1</b> menit. | Paling banyak bunuh setelah <b>{count}</b> menit."
+                        "KILL_COUNT": "Pertama dapat {count} bunuh | Pertama dapat {count} bunuh | Pertama dapat {count} bunuh",
+                        "TIME": "Paling banyak bunuh setelah {count} menit. | Paling banyak bunuh setelah {count} menit. | Paling banyak bunuh setelah {count} menit."
                     }
                 },
                 "defaultBombCount": {
@@ -1242,7 +1239,6 @@
                     "title": "Ukuran Kotak",
                     "help": "Pilih ukuran level untuk bermain.",
                     "data": {
-                        "random": "Acak",
                         "7x7": "7x7",
                         "11x11": "11x11",
                         "15x15": "15x15"
@@ -1252,7 +1248,6 @@
                     "title": "Peta",
                     "help": "Pilih peta yang mau kamu mainkan.",
                     "data": {
-                        "random": "Acak",
                         "peninsula": "Semenanjung",
                         "archipelago": "Kepulauan",
                         "canal": "Kanal",
@@ -1270,7 +1265,6 @@
                     "title": "Orientasi",
                     "help": "Pilih orientasi tampilan levelnya.",
                     "data": {
-                        "random": "Acak",
                         "NORTH": "Utara",
                         "EAST": "Timur",
                         "SOUTH": "Selatan",
@@ -1376,8 +1370,7 @@
                 },
                 "winCondition": {
                     "data": {
-                        "FIRST": "Pertama kali mencapai <b>0</b> poin | Pertama kali mencapai <b>1</b> poin | Pertama kali mencapai <b>{count}</b> poin",
-                        "HIGHEST_AFTER": "Poin terbanyak setelah mencapai <b>0</b> poin | Poin terbanyak setelah mencapai <b>1</b> poin | Poin terbanyak setelah mencapai <b>{count}</b> poin"
+                        "HIGHEST_AFTER": "Poin terbanyak setelah mencapai {count} poin | Poin terbanyak setelah mencapai {count} poin | Poin terbanyak setelah mencapai {count} poin"
                     }
                 }
             },
@@ -1430,14 +1423,14 @@
                     "help": "Game bakal berakhir lebih cepat kalau cuma ada satu pemain yang masih punya semua kartu.",
                     "data": {
                         "LAST_STANDING": "Ketika pemain mendapatkan semua kartu",
-                        "HIGHEST_AFTER": "Kartu terbanyak setelah <b>0</b> ronde | Kartu terbanyak setelah <b>1</b> ronde | Kartu terbanyak setelah <b>{count}</b> ronde"
+                        "HIGHEST_AFTER": "Kartu terbanyak setelah {count} ronde | Kartu terbanyak setelah {count} ronde | Kartu terbanyak setelah {count} ronde"
                     }
                 },
                 "warRequirement": {
                     "title": "Kebutuhan Perang",
                     "help": "Tentukan bagaimana perang harus berlangsung jika dua pemain atau lebih memainkan kartu yang sama.",
                     "data": {
-                        "DEFAULT": "Taruh <b>0</b> kartu | Taruh <b>1</b> kartu | Taruh <b>{count}</b> kartu",
+                        "DEFAULT": "Taruh {count} kartu | Taruh {count} kartu | Taruh {count} kartu",
                         "CARD_VALUE": "Taruh kartu sebanyak peringkat kartu awal"
                     }
                 },
@@ -1600,13 +1593,6 @@
                         "rock": "Batu ngalahin gunting",
                         "paper": "Kertas ngalahin batu",
                         "scissors": "Gunting ngalahin kertas"
-                    }
-                },
-                "winCondition": {
-                    "data": {
-                        "LAST_STANDING": "Bertahan terakhir (<b>0</b> nyawa) | Bertahan terakhir (<b>1</b> nyawa) | Bertahan terakhir (<b>{count}</b> nyawa)",
-                        "FIRST": "Pertama yang dapet <b>0</b> poin | Pertama yang dapet <b>1</b> poin | Pertama yang dapet <b>{count}</b> poin",
-                        "HIGHEST_AFTER": "Poin terbanyak setelah <b>0</b> ronde | Poin terbanyak setelah <b>1</b> ronde | Poin terbanyak setelah <b>{count}</b> ronde"
                     }
                 }
             },
@@ -1886,12 +1872,6 @@
                         "ELEVEN": "Selalu 11"
                     }
                 },
-                "winCondition": {
-                    "data": {
-                        "FIRST": "Pertama yang nyampe <b>0</b> poin | Pertama yang nyampe <b>1</b> poin | Pertama yang nyampe <b>{count}</b> poin",
-                        "HIGHEST_AFTER": "Poin terbanyak setelah <b>0</b> ronde | Poin terbanyak setelah <b>1</b> ronde | Poin terbanyak setelah <b>{count}</b> ronde"
-                    }
-                },
                 "splitSameFaceOnly": {
                     "title": "Split hanya dengan kartu yang sama",
                     "help": "Saat diaktifkan, split hanya boleh jika kedua kartu awal adalah kartu yang sama (misalnya K+K atau 8+8), bukan hanya nilai angka yang sama."
@@ -1994,8 +1974,7 @@
                     "title": "Formasi break",
                     "help": "Pilih apakah formasi awal saat break tetap atau acak.",
                     "data": {
-                        "fixed": "Tetap (resmi)",
-                        "random": "Acak"
+                        "fixed": "Tetap (resmi)"
                     }
                 },
                 "breakFillers": {
@@ -2007,8 +1986,7 @@
                     "help": "Pilih foul mana yang bisa mengembalikan bola lawan ke meja.",
                     "data": {
                         "anyFoul": "Semua foul yang memenuhi syarat",
-                        "ballInHand": "Hanya foul ball-in-hand",
-                        "off": "Nonaktif"
+                        "ballInHand": "Hanya foul ball-in-hand"
                     }
                 }
             },
@@ -2054,6 +2032,111 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": "Tuned In",
+            "title": "Tuned In | Gelombang Game Pesta Online | Main Bareng Teman",
+            "description": "Mainkan Tuned In, game pesta online gratis tanpa akun. Nikmati multiplayer dan kerjasama tim dengan teman atau lawan dari seluruh dunia!",
+            "options": {
+                "consensus": {
+                    "title": "Indikator Bareng",
+                    "help": "Kalau diaktifin, tim atau grup co-op bakal punya satu indikator yang bikin semua orang bergerak bareng — kemana pun itu, itulah jawabannya. Kalau dimatiin, tiap pemain punya indikator sendiri-sendiri, dan jawaban tim adalah rata-rata posisi akhir semua orang."
+                },
+                "winAmountRounds": {
+                    "title": "Putaran",
+                    "help": "Berapa lama pertandingan berlangsung. Jumlah putaran otomatis disesuaikan berdasarkan berapa banyak pemain yang ada di pertandingan: 4 putaran untuk 2 pemain, 3 untuk 3-4, 2 untuk 5-6, dan 1 untuk 7 atau lebih.",
+                    "data": {
+                        "fixed": "{count} ronde | {count} ronde | {count} ronde"
+                    }
+                },
+                "pickingTime": {
+                    "title": "Waktu Nulis Petunjuk"
+                },
+                "revealTime": {
+                    "title": "Waktu Tampilkan Hasil",
+                    "help": "Berapa lama hasilnya ditampilkan setelah setiap petunjuk dibuka."
+                },
+                "promptSelection": {
+                    "title": "Pemilihan Prompt",
+                    "help": "Kalau diaktifin, pemain bisa milih dari 3 spektrum yang berbeda setiap ronde, bukannya dikasih satu."
+                },
+                "stepScoring": {
+                    "title": "Skor Langkah",
+                    "help": "Kalau diaktifin, poin bakal dikasih dalam band tetap (75/50/25) tergantung seberapa jauh dari target, bukan skala yang mulus."
+                },
+                "authorPoints": {
+                    "title": "Bonus Pemberi Petunjuk",
+                    "help": "Kalau diaktifin, si pemberi petunjuk dapet setengah dari rata-rata poin yang didapat tebak-tebakan dari petunjuknya, dibuletin ke bawah. Cuma di mode solo."
+                },
+                "visibility": {
+                    "title": "Posisi Langsung",
+                    "help": "Mengatur siapa yang bisa lihat kemana orang lain bergerak di spektrum secara langsung.",
+                    "data": {
+                        "ALL": "Semua orang",
+                        "TEAM": "Cuma tim",
+                        "PRIVATE": "Tersembunyi"
+                    },
+                    "description": {
+                        "ALL": "Semua pemain bisa lihat posisi live satu sama lain di spektrum.",
+                        "TEAM": "Pemain cuma bisa lihat posisi live rekan satu timnya.",
+                        "PRIVATE": "Gak ada yang bisa lihat di mana orang lain di spektrum."
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Lawan",
+                    "description": [
+                        "Semua lawan semua",
+                        "Poin berdasarkan seberapa dekat tebakanmu"
+                    ]
+                },
+                "teams": {
+                    "title": "Tim-tim",
+                    "description": [
+                        "Bertanding sama tim yang kamu pilih",
+                        "Tebakan adalah rata-rata dari tim kamu"
+                    ]
+                },
+                "coopConsensus": {
+                    "title": "Ko-op Klasik",
+                    "description": [
+                        "Kerja bareng jadi satu tim",
+                        "Gerakin satu indikator bareng-bareng",
+                        "Poin didapat dalam band yang tetap"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "Koperasi Demokrasi",
+                    "description": [
+                        "Kerja bareng jadi satu tim",
+                        "Tebakan adalah rata-rata dari tim kamu"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Cara Mainnya",
+                    "description": [
+                        "Setiap ronde, setiap pemain dapet target rahasia di spektrum (misalnya, Panas ← → Dingin) dan nulis petunjuk yang ngasih hint, tanpa pake kata-kata dari skala itu.",
+                        "Semua pemain kemudian bisa nebak di mana petunjuk itu jatuh untuk petunjuk masing-masing. Semakin dekat tebakannya, semakin banyak poin yang kamu dapet."
+                    ]
+                },
+                "modes": {
+                    "title": "Mode Permainan",
+                    "description": [
+                        "Solo: Setiap orang nebak sendiri-sendiri dan dapet skor masing-masing.",
+                        "Co-op: Satu grup bareng-bareng punya satu skor.",
+                        "Team: Pilih warna tim di lobby; tiap tim dapet skor terpisah."
+                    ]
+                },
+                "customize": {
+                    "title": "Kustomisasi Aturan",
+                    "description": [
+                        "Ubah skor, indikator, dan lainnya di pengaturan lobi. Pengaturan kayak ganti ke sistem skor berdasarkan langkah daripada jarak."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2160,6 +2243,11 @@
             "makeYourMove": "Ayo, gerak!",
             "waitingForOthers": "Nunggu yang lain",
             "wager": "Taruhan",
+            "yourClue": "Nyiapin petunjukmu",
+            "nameClue": "Dengerin petunjuknya %{name}",
+            "writeYourClue": "Tulis petunjukmu",
+            "languageSelect": "Pilih bahasa",
+            "languageAgreed": "Bahasa udah diset",
             "tieEndedRound": "Putaran udah selesai, seri nih",
             "youEndedRound": "Kamu udah selesaiin putaran",
             "nameEndedRound": "%{name} udah selesaiin putaran",
@@ -2192,6 +2280,8 @@
         }
     },
     "placeholder": {
+        "clue": "Masukkan petunjukmu...",
+        "clueInLanguage": "Masukkan petunjukmu dalam {language}...",
         "cardSetId": "Isi ID set kartu...",
         "cardContent": "Isi konten kartu...",
         "cardSetName": "Isi nama untuk set kartu ini...",
@@ -2232,8 +2322,8 @@
         "exploreAllGames": "Jelajahi semua game",
         "playingAgainstBots": "Bermain Melawan Bot",
         "playingAgainstPlayers": "Bermain Melawan Pemain",
-        "playingGame": "<b>{count}</b> lagi main game ini",
-        "online": "<b>{count}</b> lagi online",
+        "playingGame": "{count} lagi main game ini",
+        "online": "{count} lagi online",
         "connection": "Koneksi",
         "ping": "Ping",
         "timeOffset": "Selisih Waktu",
@@ -2432,6 +2522,7 @@
         "restartNotice": "Server bakal restart dalam {count} menit. Selesaikan gamenya ya. | Server bakal restart dalam {count} menit. Selesaikan gamenya ya. | Server bakal restart dalam {count} menit. Selesaikan gamenya ya."
     },
     "misc": {
+        "refresh": "Segarkan",
         "automatic": "Otomatis",
         "title": "Judul",
         "current": "Saat ini",
@@ -2465,6 +2556,8 @@
         "questions": "Pertanyaan",
         "teamAndQuestions": "Tim & Pertanyaan",
         "questionPacks": "Paket Pertanyaan",
+        "packs": "Paket",
+        "teamAndPacks": "Tim & Paket",
         "rock": "Batu",
         "paper": "Kertas",
         "scissors": "Gunting",
@@ -2663,6 +2756,7 @@
         "kills": "Bunuh",
         "assassin": "Pembunuh bayaran",
         "target": "Sasaran",
+        "targetReached": "Target Tercapai",
         "assassinations": "Pembunuhan",
         "survivals": "Bertahan hidup",
         "games": "Game",
@@ -2671,6 +2765,8 @@
         "winLossDelta": "Selisih M/K",
         "killDeathRatio": "Rasio K/D",
         "quitRatio": "Rasio keluar",
+        "clueSuccessRatio": "Rasio Keberhasilan Petunjuk",
+        "guessHitRatio": "Rasio Tebakan Tepat",
         "lives": "Nyawa",
         "points": "Poin",
         "wins": "Menang",
@@ -2743,7 +2839,8 @@
         "noChangesDetected": "Tidak Ada Perubahan yang Terdeteksi",
         "newChanges": "Perubahan Baru",
         "saveChanges": "Simpan Perubahan",
-        "previousChanges": "Lihat Perubahan Sebelumnya"
+        "previousChanges": "Lihat Perubahan Sebelumnya",
+        "random": "Acak"
     },
     "card": {
         "empty": "Tanpa Kartu",
@@ -2927,6 +3024,10 @@
             "empty": "Kamu belum memblokir pengguna mana pun.",
             "count": "%{count} diblokir"
         },
+        "cluePicking": {
+            "title": "Tulis petunjukmu",
+            "description": "Jaga petunjukmu supaya samar tapi akurat — yang lain bakal pakai itu buat nebak posisimu."
+        },
         "youBlockedUser": "Kamu udah ngeblok pengguna ini.",
         "playerProfile": {
             "unavailable": "Profil ini tidak bisa dimuat sekarang.",
@@ -2983,6 +3084,18 @@
         "votePick": "Pilih %{option}",
         "votePickChange": "Ubah pilihan ke %{option}",
         "votePickSelected": "Kamu udah milih %{option}",
+        "clueSelf": "Petunjukmu",
+        "clueOther": "Petunjuk %{name}",
+        "stayQuietHint": "Jangan kasih petunjuk tambahan pas yang lain lagi nebak!",
+        "tunedInWinThreshold": "Dapatkan setidaknya %{threshold} poin bareng-bareng buat menang!",
+        "multipleLanguages": {
+            "title": "Banyak bahasa terdeteksi",
+            "description": "Kami lihat pemain pakai bahasa yang berbeda-beda. Biar semua ngerti petunjuknya, pilih semua bahasa yang kamu paham — setelah semua orang punya setidaknya satu yang sama, gamenya bakal mulai.",
+            "leave": "Gue nggak bisa ikut di bahasa-bahasa ini",
+            "leaveDescription": "Gak masalah kok — nggak ada statistik atau kemenangan yang bakal dicatat buat siapa pun kalau kamu keluar sekarang.",
+            "agreedTitle": "Kamu udah siap!",
+            "agreedDescription": "Semua setuju pakai {language} buat petunjuk mereka!"
+        },
         "tiedVoteSelf": "Suara grup kamu imbang! Milih secara acak...",
         "tiedVoteOther": "Tunggu sebentar, lawanmu juga imbang suaranya.",
         "waitForOpponent": "Nunggu lawanmu...",
@@ -3426,6 +3539,14 @@
             "diceSource": "Model Dadu oleh %{name} (CC-BY-4.0)",
             "localization": "Lokalisasi oleh kontributor sukarela",
             "licenses": "Lisensi lain"
+        }
+    },
+    "share": {
+        "tiers": {
+            "max": "Tepat sasaran",
+            "almost": "Dekat",
+            "justIn": "Nyaris masuk",
+            "miss": "Meleset"
         }
     }
 }

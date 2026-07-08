@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Dutch",
         "rtl": false,
-        "total": 2127,
+        "total": 2192,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -150,6 +150,7 @@
             "blocked": "Je straf laat je niet toe om mee te doen aan matchmaking of openbare wedstrijden.",
             "joinBlocked": "Je kan niet meedoen aan deze wedstrijd.",
             "empty": "Spel gesloten. Alle andere spelers verlieten de wedstrijd.",
+            "noAgreement": "De wedstrijd werd afgelast omdat ze geen overeenstemming konden bereiken. Statistieken werden niet bijgehouden.",
             "rematchTimeout": "Je hebt het rematch verzoek niet geaccepteerd en bent teruggestuurd naar het hoofdmenu.",
             "rematchCancelled": "Sorry! Er zijn niet genoeg spelers over voor een rematch.",
             "inactive": "Het spel waar je in zat is gesloten omdat deze te lang inactief is geweest.",
@@ -239,7 +240,12 @@
                 },
                 "winCondition": {
                     "title": "Win Voorwaarde",
-                    "help": "Bepaal wanneer het spel tot een einde moet komen."
+                    "help": "Bepaal wanneer het spel tot een einde moet komen.",
+                    "data": {
+                        "firstToPoints": "Als eerste {count} punten haalt | Als eerste {count} punt haalt | Als eerste {count} punten haalt",
+                        "mostPoints": "Meeste punten na {count} rondes | Meeste punten na {count} ronde | Meeste punten na {count} rondes",
+                        "lastStanding": "Laatste overlevende ({count} levens) | Laatste overlevende ({count} leven) | Laatste overlevende ({count} levens)"
+                    }
                 },
                 "winAmount": {
                     "title": "Winnende Aantal"
@@ -579,12 +585,6 @@
             "title": "Rotten Apples Online | Speel Kaarten Als Cards Against Humanity",
             "description": "Speel Rotten Apples online gratis, zonder account! Geniet van multiplayer matches met vrienden of vreemden. Probeer kaarten sets met nieuwe regels!",
             "options": {
-                "winCondition": {
-                    "data": {
-                        "first": "Eerste met <b>0</b> punten | Eerste met <b>1</b> punt | Eerste met <b>{count}</b> punten",
-                        "most": "Meeste punten na <b>0</b> rondes | Meeste punten na <b>1</b> ronde | Meeste punten na <b>{count}</b> rondes"
-                    }
-                },
                 "judgeSystem": {
                     "title": "Stem Systeem",
                     "help": "Of er een enkele beslisser is of iedereen mag bepalen wie elke ronde de beste kaarten heeft gespeeld.",
@@ -605,8 +605,7 @@
                     "title": "Dumpronde",
                     "help": "Tijdens een dump-ronde mag iedereen kaarten in hun hand kiezen welke zij willen verwijderen. Na afloop van de ronde ontvangt iedereen nieuwe antwoordkaarten ter vervanging.",
                     "data": {
-                        "disabled": "Uitgeschakeld",
-                        "round": "Elke <b>0</b> rondes | Elke <b>1</b> ronde | Every <b>{count}</b> rondes"
+                        "round": "Elke {count} rondes | Elke {count} ronde | Every {count} rondes"
                     }
                 },
                 "dumpRoundAmount": {
@@ -751,8 +750,7 @@
                     "data": {
                         "OPPOSITE_SIDE": "Bereik de overkant",
                         "TAKE": "Na stuk overname",
-                        "ALL": "Elk stuk is gekroond",
-                        "NONE": "Uitgeschakeld"
+                        "ALL": "Elk stuk is gekroond"
                     }
                 },
                 "backwardsTake": {
@@ -841,9 +839,8 @@
                 },
                 "winCondition": {
                     "data": {
-                        "LAST_STANDING": "Laatste overlevende (<b>0</b> levens) | Laatste overlevende (<b>1</b> leven) | Laatste overlevende (<b>{count}</b> levens)",
-                        "KILL_COUNT": "Eerste met <b>0</b> kills | Eerste met <b>1</b> kill | Eerste met <b>{count}</b> kills",
-                        "TIME": "Meeste kills na <b>0</b> min. | Meeste kills na <b>1</b> min. | Meeste kills na <b>{count}</b> min."
+                        "KILL_COUNT": "Eerste met {count} kills | Eerste met {count} kill | Eerste met {count} kills",
+                        "TIME": "Meeste kills na {count} min. | Meeste kills na {count} min. | Meeste kills na {count} min."
                     }
                 },
                 "defaultBombCount": {
@@ -1242,7 +1239,6 @@
                     "title": "Rastergrootte",
                     "help": "Selecteer de grootte van het speelveld waarin je wilt spelen.",
                     "data": {
-                        "random": "Willekeurig",
                         "7x7": "7x7",
                         "11x11": "11x11",
                         "15x15": "15x15"
@@ -1252,7 +1248,6 @@
                     "title": "Kaart",
                     "help": "Selecteer de kaart waarin je wilt spelen.",
                     "data": {
-                        "random": "Willekeurig",
                         "peninsula": "Schiereiland",
                         "archipelago": "Eilandengroep",
                         "canal": "Kanaal",
@@ -1270,7 +1265,6 @@
                     "title": "Oriëntatie",
                     "help": "Selecteer de oriëntatie waarin het level wordt weergegeven.",
                     "data": {
-                        "random": "Willekeurig",
                         "NORTH": "Noord",
                         "EAST": "Oost",
                         "SOUTH": "Zuid",
@@ -1376,8 +1370,7 @@
                 },
                 "winCondition": {
                     "data": {
-                        "FIRST": "Eerste die <b>0</b> punten bereikt | Eerste die <b>1</b> punt bereikt | Eerste die <b>{count}</b> punten bereikt",
-                        "HIGHEST_AFTER": "Meeste punten nadat <b>0</b> punten zijn bereikt | Meeste punten nadat <b>1</b> punt is bereikt | Meeste punten nadat <b>{count}</b> punten zijn bereikt"
+                        "HIGHEST_AFTER": "Meeste punten nadat {count} punten zijn bereikt | Meeste punten nadat {count} punt is bereikt | Meeste punten nadat {count} punten zijn bereikt"
                     }
                 }
             },
@@ -1430,14 +1423,14 @@
                     "help": "Het spel eindigt vroeg als er nog maar één speler over is met alle kaarten.",
                     "data": {
                         "LAST_STANDING": "Wanneer een speler alle kaarten krijgt",
-                        "HIGHEST_AFTER": "Meeste kaarten na <b>0</b> rondes | Meeste kaarten na <b>1</b> ronde | Meeste kaarten na <b>{count}</b> rondes"
+                        "HIGHEST_AFTER": "Meeste kaarten na {count} rondes | Meeste kaarten na {count} ronde | Meeste kaarten na {count} rondes"
                     }
                 },
                 "warRequirement": {
                     "title": "Oorlogsvereiste",
                     "help": "Bepaal hoe de oorlog gespeeld moet worden als twee of meer spelers dezelfde kaart spelen.",
                     "data": {
-                        "DEFAULT": "Leg <b>0</b> kaarten neer | Leg <b>1</b> kaart neer | Leg <b>{count}</b> kaarten neer",
+                        "DEFAULT": "Leg {count} kaarten neer | Leg {count} kaart neer | Leg {count} kaarten neer",
                         "CARD_VALUE": "Leg kaarten neer gelijk aan de rang van de eerste kaart"
                     }
                 },
@@ -1600,13 +1593,6 @@
                         "rock": "Steen wint van schaar",
                         "paper": "Papier wint van steen",
                         "scissors": "Schaar wint van papier"
-                    }
-                },
-                "winCondition": {
-                    "data": {
-                        "LAST_STANDING": "Laatste overlevende (<b>0</b> levens) | Laatste overlevende (<b>1</b> leven) | Laatste overlevende (<b>{count}</b> levens)",
-                        "FIRST": "Eerste die <b>0</b> punten haalt | Eerste die <b>1</b> punt haalt | Eerste die <b>{count}</b> punten haalt",
-                        "HIGHEST_AFTER": "Meeste punten na <b>0</b> rondes | Meeste punten na <b>1</b> ronde | Meeste punten na <b>{count}</b> rondes"
                     }
                 }
             },
@@ -1886,12 +1872,6 @@
                         "ELEVEN": "Altijd 11"
                     }
                 },
-                "winCondition": {
-                    "data": {
-                        "FIRST": "Als eerste <b>0</b> punten haalt | Als eerste <b>1</b> punt haalt | Als eerste <b>{count}</b> punten haalt",
-                        "HIGHEST_AFTER": "Meeste punten na <b>0</b> rondes | Meeste punten na <b>1</b> ronde | Meeste punten na <b>{count}</b> rondes"
-                    }
-                },
                 "splitSameFaceOnly": {
                     "title": "Split alleen met dezelfde kaart",
                     "help": "Als dit aan staat, mag je alleen splitten als beide startkaarten dezelfde kaart hebben (bijvoorbeeld K+K of 8+8), niet alleen dezelfde numerieke waarde."
@@ -1994,8 +1974,7 @@
                     "title": "Break-opstelling",
                     "help": "Kies of de beginopstelling bij de break vast of willekeurig is.",
                     "data": {
-                        "fixed": "Vast (officieel)",
-                        "random": "Willekeurig"
+                        "fixed": "Vast (officieel)"
                     }
                 },
                 "breakFillers": {
@@ -2007,8 +1986,7 @@
                     "help": "Kies bij welke fouls een bal van de tegenstander terug op tafel komt.",
                     "data": {
                         "anyFoul": "Elke geldige foul",
-                        "ballInHand": "Alleen ball-in-hand fouls",
-                        "off": "Uitgeschakeld"
+                        "ballInHand": "Alleen ball-in-hand fouls"
                     }
                 }
             },
@@ -2054,6 +2032,111 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": "Tuned In",
+            "title": "Tuned In: Gratis Online Partyspel | Speel met Vrienden & Teams",
+            "description": "Speel Tuned In gratis online partyspel zonder account! Geniet van multiplayer met vrienden, co-op of teams in deze spannende, door Wavelength geïnspireerde uitdaging.",
+            "options": {
+                "consensus": {
+                    "title": "Gedeelde Indicator",
+                    "help": "Als het aan staat, deelt het team of de co-op groep één indicator waar iedereen samen naartoe beweegt — waar die ook eindigt, dat is het antwoord. Als het uit staat, heeft elke speler zijn eigen indicator, en is het antwoord van het team het gemiddelde van ieders eindpositie."
+                },
+                "winAmountRounds": {
+                    "title": "Rondes",
+                    "help": "Hoeveel rondes de wedstrijd duurt. Het aantal rondes past zich automatisch aan op basis van het aantal spelers in de wedstrijd: 4 rondes voor 2 spelers, 3 voor 3-4, 2 voor 5-6, en 1 voor 7 of meer.",
+                    "data": {
+                        "fixed": "{count} rondes | {count} ronde | {count} rondes"
+                    }
+                },
+                "pickingTime": {
+                    "title": "Tijd om aanwijzingen te schrijven"
+                },
+                "revealTime": {
+                    "title": "Resultaat Weergave Tijd",
+                    "help": "Hoe lang de resultaten worden getoond nadat elke aanwijzing is onthuld."
+                },
+                "promptSelection": {
+                    "title": "Keuze van de prompt",
+                    "help": "Als het aan staat, kiezen spelers elke ronde uit 3 verschillende spectrums in plaats van dat ze er eentje toegewezen krijgen."
+                },
+                "stepScoring": {
+                    "title": "Stappen Scoren",
+                    "help": "Als het aan staat, krijg je punten in vaste groepen (75/50/25) afhankelijk van de afstand tot het doel in plaats van dat het soepel oploopt."
+                },
+                "authorPoints": {
+                    "title": "Hintgever Bonus",
+                    "help": "Als het aanstaat, krijgt de aanwijzinggever de helft van de gemiddelde punten die de gokkers scoren met hun aanwijzing, naar beneden afgerond. Alleen in solo-modus."
+                },
+                "visibility": {
+                    "title": "Live Posities",
+                    "help": "Regelt wie kan zien waar anderen in real-time naartoe bewegen op het spectrum.",
+                    "data": {
+                        "ALL": "Iedereen",
+                        "TEAM": "Alleen team",
+                        "PRIVATE": "Verborgen"
+                    },
+                    "description": {
+                        "ALL": "Alle spelers zien elkaars live positie op het spectrum.",
+                        "TEAM": "Spelers zien alleen de live posities van hun teamgenoten.",
+                        "PRIVATE": "Niemand kan zien waar anderen zijn op het spectrum."
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Tegen",
+                    "description": [
+                        "Iedereen tegen elkaar",
+                        "Punten op basis van hoe dicht je gok is"
+                    ]
+                },
+                "teams": {
+                    "title": "Teams",
+                    "description": [
+                        "Doe mee in teams die je zelf kiest",
+                        "Gok is het gemiddelde van je team"
+                    ]
+                },
+                "coopConsensus": {
+                    "title": "Classic Co-op",
+                    "description": [
+                        "Werk samen als één team",
+                        "Beweeg samen één gedeelde indicator",
+                        "Punten worden gescoord in vaste banden"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "Democratische Coöperatie",
+                    "description": [
+                        "Werk samen als één team",
+                        "Gok is het gemiddelde van je team"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Hoe te Spelen",
+                    "description": [
+                        "Elke ronde krijgt elke speler een geheime target op een spectrum (bijv. Heet ← → Koud) en schrijft een hint zonder de woorden van de schaal te gebruiken.",
+                        "Alle spelers mogen dan raden waar de hint van de anderen valt. Hoe dichter je bij de juiste plek zit, hoe meer punten je scoort."
+                    ]
+                },
+                "modes": {
+                    "title": "Spelmodi",
+                    "description": [
+                        "Solo: Iedereen raadt voor zichzelf en scoort individueel.",
+                        "Co-op: De hele groep deelt één score samen.",
+                        "Team: Kies een teamkleur in de lobby; elk team scoort apart."
+                    ]
+                },
+                "customize": {
+                    "title": "Pas de Regels Aan",
+                    "description": [
+                        "Pas de score, indicatoren en meer aan in de lobby-instellingen. Instellingen zoals overschakelen naar stapgebaseerd scoren in plaats van afstandgebaseerd."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2160,6 +2243,11 @@
             "makeYourMove": "Doe je zet",
             "waitingForOthers": "Wachten op anderen",
             "wager": "Inzet",
+            "yourClue": "Je aanwijzing uitzenden",
+            "nameClue": "Stem in op %{name}'s aanwijzing",
+            "writeYourClue": "Schrijf je aanwijzing",
+            "languageSelect": "Taal kiezen",
+            "languageAgreed": "Taal is afgesproken",
             "tieEndedRound": "Ronde is geëindigd in een gelijkspel",
             "youEndedRound": "Jij hebt de ronde beëindigd",
             "nameEndedRound": "%{name} heeft de ronde beëindigd",
@@ -2192,6 +2280,8 @@
         }
     },
     "placeholder": {
+        "clue": "Voer je aanwijzing in...",
+        "clueInLanguage": "Voer je aanwijzing in {language}...",
         "cardSetId": "Vul kaartenset ID in...",
         "cardContent": "Vul kaartinhoud in...",
         "cardSetName": "Vul een naam in voor deze kaartenset...",
@@ -2232,8 +2322,8 @@
         "exploreAllGames": "Bekijk alle spellen",
         "playingAgainstBots": "Spelen Tegen Bots",
         "playingAgainstPlayers": "Spelen Tegen Spelers",
-        "playingGame": "<b>0</b> spelen dit spel | <b>1</b> speelt dit spel | <b>{count}</b> spelen dit spel",
-        "online": "<b>{count}</b> online",
+        "playingGame": "{count} spelen dit spel | {count} speelt dit spel | {count} spelen dit spel",
+        "online": "{count} online",
         "connection": "Connectie",
         "ping": "Ping",
         "timeOffset": "Tijdsverschil",
@@ -2432,6 +2522,7 @@
         "restartNotice": "Server gaat over {count} minuten opnieuw opstarten. Maak je game af. | Server gaat over {count} minuut opnieuw opstarten. Maak je game af. | Server gaat over {count} minuten opnieuw opstarten. Maak je game af."
     },
     "misc": {
+        "refresh": "Vernieuwen",
         "automatic": "Auto",
         "title": "Titel",
         "current": "Huidig",
@@ -2465,6 +2556,8 @@
         "questions": "Vragen",
         "teamAndQuestions": "Team & Vragen",
         "questionPacks": "Vraagpakketten",
+        "packs": "Pakketten",
+        "teamAndPacks": "Team & Pakketten",
         "rock": "Steen",
         "paper": "Papier",
         "scissors": "Schaar",
@@ -2663,6 +2756,7 @@
         "kills": "Kills",
         "assassin": "Moordenaar",
         "target": "Doelwit",
+        "targetReached": "Doel Bereikt",
         "assassinations": "Moorden",
         "survivals": "Overlevingen",
         "games": "Spellen",
@@ -2671,6 +2765,8 @@
         "winLossDelta": "W/V-verschil",
         "killDeathRatio": "K/D-ratio",
         "quitRatio": "Stop ratio",
+        "clueSuccessRatio": "Succesratio van aanwijzingen",
+        "guessHitRatio": "Ratio van goede gokken",
         "lives": "Levens",
         "points": "Punten",
         "wins": "Zeges",
@@ -2743,7 +2839,8 @@
         "noChangesDetected": "Geen Wijzigingen Gevonden",
         "newChanges": "Nieuw",
         "saveChanges": "Wijzigingen Opslaan",
-        "previousChanges": "Zie eerdere wijzigingen"
+        "previousChanges": "Zie eerdere wijzigingen",
+        "random": "Willekeurig"
     },
     "card": {
         "empty": "Geen Kaarten",
@@ -2821,7 +2918,7 @@
         "leave": "Verlaat Spel",
         "join": "Join Spel",
         "joinById": "Join Spel met ID",
-        "joinFriend": "Join Spel met Vriend",
+        "joinFriend": "Join Vriend",
         "full": "Vol Spel",
         "rematch": "Rematch",
         "lobby": {
@@ -2927,6 +3024,10 @@
             "empty": "Je hebt nog geen gebruikers geblokkeerd.",
             "count": "%{count} geblokkeerd"
         },
+        "cluePicking": {
+            "title": "Schrijf je hint",
+            "description": "Houd je hint vaag maar precies — anderen gebruiken het om je positie te raden."
+        },
         "youBlockedUser": "Je hebt deze gebruiker geblokkeerd.",
         "playerProfile": {
             "unavailable": "Dit profiel kan nu niet worden geladen.",
@@ -2983,6 +3084,18 @@
         "votePick": "Stem op %{option}",
         "votePickChange": "Verander stem naar %{option}",
         "votePickSelected": "Je hebt op %{option} gestemd",
+        "clueSelf": "Jouw aanwijzing",
+        "clueOther": "%{name}'s aanwijzing",
+        "stayQuietHint": "Geef geen extra hints terwijl anderen aan het raden zijn!",
+        "tunedInWinThreshold": "Scoor samen minstens %{threshold} punten om te winnen!",
+        "multipleLanguages": {
+            "title": "Meerdere talen gedetecteerd",
+            "description": "We hebben gezien dat spelers verschillende talen gebruiken. Om ervoor te zorgen dat iedereen de aanwijzingen begrijpt, kies alle talen die je begrijpt — zodra iedereen er minstens één gemeen heeft, begint het spel.",
+            "leave": "Ik kan niet meedoen in een van deze talen",
+            "leaveDescription": "Dat is helemaal prima — er worden geen statistieken of overwinningen voor iemand geregistreerd als je nu weggaat.",
+            "agreedTitle": "Je bent helemaal klaar!",
+            "agreedDescription": "Iedereen is het erover eens om {language} te gebruiken voor hun aanwijzingen!"
+        },
         "tiedVoteSelf": "Jullie groep heeft een gelijke stand! We kiezen iets random...",
         "tiedVoteOther": "Even wachten, je tegenstanders hebben een gelijke stand.",
         "waitForOpponent": "Wachten op je tegenstander...",
@@ -3426,6 +3539,14 @@
             "diceSource": "Dice model van %{name} (CC-BY-4.0)",
             "localization": "Lokalisatie door vrijwillige bijdragers",
             "licenses": "Andere licenties"
+        }
+    },
+    "share": {
+        "tiers": {
+            "max": "Voltreffer",
+            "almost": "Dichtbij",
+            "justIn": "Net binnen",
+            "miss": "Mis"
         }
     }
 }

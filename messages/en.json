@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal American English",
         "rtl": false,
-        "total": 2127,
+        "total": 2192,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -150,6 +150,7 @@
             "blocked": "Your punishment does not allow you to join matchmaking or public matches.",
             "joinBlocked": "You cannot join this match.",
             "empty": "Match closed. All other players left the match.",
+            "noAgreement": "The match was closed because no agreement could be reached. Statistics were not recorded.",
             "rematchTimeout": "You didn't accept the rematch request and were sent back to the main menu.",
             "rematchCancelled": "Sorry! There aren't enough players left for a rematch.",
             "inactive": "The match you were in has been closed as it has been inactive for too long.",
@@ -239,7 +240,12 @@
                 },
                 "winCondition": {
                     "title": "Winning Condition",
-                    "help": "Determine when the game should come to a conclusion."
+                    "help": "Determine when the game should come to a conclusion.",
+                    "data": {
+                        "firstToPoints": "First to reach {count} points | First to reach {count} point | First to reach {count} points",
+                        "mostPoints": "Most points after {count} rounds | Most points after {count} round | Most points after {count} rounds",
+                        "lastStanding": "Last standing ({count} lives) | Last standing ({count} live) | Last standing ({count} lives)"
+                    }
                 },
                 "winAmount": {
                     "title": "Winning Amount"
@@ -579,12 +585,6 @@
             "title": "Play Rotten Apples | Free Cards Against Humanity Online Game",
             "description": "Enjoy Rotten Apples, the free online Cards Against Humanity game. No account needed, play with 3-16 friends or strangers in exciting multiplayer sessions.",
             "options": {
-                "winCondition": {
-                    "data": {
-                        "first": "First to get <b>0</b> points | First to get <b>1</b> point | First to get <b>{count}</b> points",
-                        "most": "Most points after <b>0</b> rounds | Most points after <b>1</b> round | Most points after <b>{count}</b> rounds"
-                    }
-                },
                 "judgeSystem": {
                     "title": "Judge System",
                     "help": "Either a judge or everyone gets to determine who had the best play each round.",
@@ -605,8 +605,7 @@
                     "title": "Dump Round",
                     "help": "A dump round allows everyone to select cards in their hand they would like to remove. New response cards are given as replacement after the round ends.",
                     "data": {
-                        "disabled": "Disabled",
-                        "round": "Every <b>0</b> rounds | Every <b>1</b> round | Every <b>{count}</b> rounds"
+                        "round": "Every {count} rounds | Every {count} round | Every {count} rounds"
                     }
                 },
                 "dumpRoundAmount": {
@@ -751,8 +750,7 @@
                     "data": {
                         "OPPOSITE_SIDE": "Reach opposite side",
                         "TAKE": "Taking a piece",
-                        "ALL": "Start with all kings",
-                        "NONE": "Disabled"
+                        "ALL": "Start with all kings"
                     }
                 },
                 "backwardsTake": {
@@ -841,9 +839,8 @@
                 },
                 "winCondition": {
                     "data": {
-                        "LAST_STANDING": "Last standing (<b>0</b> lives) | Last standing (<b>1</b> live) | Last standing (<b>{count}</b> lives)",
-                        "KILL_COUNT": "First to get <b>0</b> kills | First to get <b>1</b> kill | First to get <b>{count}</b> kills",
-                        "TIME": "Most kills after <b>0</b> min. | Most kills after <b>1</b> min. | Most kills after <b>{count}</b> min."
+                        "KILL_COUNT": "First to get {count} kills | First to get {count} kill | First to get {count} kills",
+                        "TIME": "Most kills after {count} min."
                     }
                 },
                 "defaultBombCount": {
@@ -1242,7 +1239,6 @@
                     "title": "Grid Size",
                     "help": "Select the size of the level size to play in.",
                     "data": {
-                        "random": "Random",
                         "7x7": "7x7",
                         "11x11": "11x11",
                         "15x15": "15x15"
@@ -1252,7 +1248,6 @@
                     "title": "Map",
                     "help": "Select the map you would like to play in.",
                     "data": {
-                        "random": "Random",
                         "peninsula": "Peninsula",
                         "archipelago": "Archipelago",
                         "canal": "Canal",
@@ -1270,7 +1265,6 @@
                     "title": "Orientation",
                     "help": "Select the orientation the level will be displayed in.",
                     "data": {
-                        "random": "Random",
                         "NORTH": "North",
                         "EAST": "East",
                         "SOUTH": "South",
@@ -1376,8 +1370,7 @@
                 },
                 "winCondition": {
                     "data": {
-                        "FIRST": "First to reach <b>0</b> points | First to reach <b>1</b> point | First to reach <b>{count}</b> points",
-                        "HIGHEST_AFTER": "Most points after <b>0</b> points are reached | Most points after <b>1</b> point are reached | Most points after <b>{count}</b> points are reached"
+                        "HIGHEST_AFTER": "Most points after {count} points are reached | Most points after {count} point are reached | Most points after {count} points are reached"
                     }
                 }
             },
@@ -1430,14 +1423,14 @@
                     "help": "The game will end early if there is only one player remaining with all cards.",
                     "data": {
                         "LAST_STANDING": "When a player gets all cards",
-                        "HIGHEST_AFTER": "Most cards after <b>0</b> rounds | Most cards after <b>1</b> round | Most cards after <b>{count}</b> rounds"
+                        "HIGHEST_AFTER": "Most cards after {count} rounds | Most cards after {count} round | Most cards after {count} rounds"
                     }
                 },
                 "warRequirement": {
                     "title": "War Requirement",
                     "help": "Determine how the war should be played out if two or more players play the same card.",
                     "data": {
-                        "DEFAULT": "Place <b>0</b> cards | Place <b>1</b> card | Place <b>{count}</b> cards",
+                        "DEFAULT": "Place {count} cards | Place {count} card | Place {count} cards",
                         "CARD_VALUE": "Place cards equal to the initial card rank"
                     }
                 },
@@ -1600,13 +1593,6 @@
                         "rock": "Rock beats scissors",
                         "paper": "Paper beats rock",
                         "scissors": "Scissors beats paper"
-                    }
-                },
-                "winCondition": {
-                    "data": {
-                        "LAST_STANDING": "Last standing (<b>0</b> lives) | Last standing (<b>1</b> live) | Last standing (<b>{count}</b> lives)",
-                        "FIRST": "First to get <b>0</b> points | First to get <b>1</b> point | First to get <b>{count}</b> points",
-                        "HIGHEST_AFTER": "Most points after <b>0</b> rounds | Most points after <b>1</b> round | Most points after <b>{count}</b> rounds"
                     }
                 }
             },
@@ -1886,12 +1872,6 @@
                         "ELEVEN": "Always 11"
                     }
                 },
-                "winCondition": {
-                    "data": {
-                        "FIRST": "First to reach <b>0</b> points | First to reach <b>1</b> point | First to reach <b>{count}</b> points",
-                        "HIGHEST_AFTER": "Most points after <b>0</b> rounds | Most points after <b>1</b> round | Most points after <b>{count}</b> rounds"
-                    }
-                },
                 "splitSameFaceOnly": {
                     "title": "Split Requires Same Face",
                     "help": "When enabled, splitting is only allowed if both starting cards are the same face (for example K+K or 8+8), not just the same numeric value."
@@ -1994,8 +1974,7 @@
                     "title": "Break Layout",
                     "help": "Choose whether the opening rack layout is fixed or randomized.",
                     "data": {
-                        "fixed": "Fixed (Official)",
-                        "random": "Random"
+                        "fixed": "Fixed (Official)"
                     }
                 },
                 "breakFillers": {
@@ -2007,8 +1986,7 @@
                     "help": "Choose which fouls can return an opponent's ball to the table.",
                     "data": {
                         "anyFoul": "Any Eligible Foul",
-                        "ballInHand": "Ball in Hand Fouls Only",
-                        "off": "Disabled"
+                        "ballInHand": "Ball in Hand Fouls Only"
                     }
                 }
             },
@@ -2054,6 +2032,111 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": "Tuned In",
+            "title": "Tuned In: Free Wavelength Party Game | Online Multiplayer Fun",
+            "description": "Play Tuned In, a free web-based party game inspired by Wavelength. Enjoy multiplayer fun online with friends—no account needed, join now!",
+            "options": {
+                "consensus": {
+                    "title": "Shared Indicator",
+                    "help": "When enabled, the team or co-op group shares a single indicator that everyone moves together — wherever it ends up is the answer. When disabled, each player has their own indicator, and the team's answer is the average of everyone's final position."
+                },
+                "winAmountRounds": {
+                    "title": "Rounds",
+                    "help": "How many rounds the match lasts. Auto scales the round count based on how many players are in the match: 4 rounds for 2 players, 3 for 3-4, 2 for 5-6, and 1 for 7 or more.",
+                    "data": {
+                        "fixed": "{count} rounds | {count} round | {count} rounds"
+                    }
+                },
+                "pickingTime": {
+                    "title": "Clue Writing Time"
+                },
+                "revealTime": {
+                    "title": "Result Display Time",
+                    "help": "How long the results are shown after each clue is revealed."
+                },
+                "promptSelection": {
+                    "title": "Prompt Selection",
+                    "help": "When enabled, players choose from 3 different spectrums each round instead of being assigned one."
+                },
+                "stepScoring": {
+                    "title": "Step Scoring",
+                    "help": "When enabled, points are awarded in fixed bands (75/50/25) based on distance from the target instead of scaling smoothly."
+                },
+                "authorPoints": {
+                    "title": "Clue Giver Bonus",
+                    "help": "When enabled, the clue giver earns half of the average points guessers score from their clue, rounded down. Solo mode only."
+                },
+                "visibility": {
+                    "title": "Live Positions",
+                    "help": "Controls who can see where others are moving on the spectrum in real-time.",
+                    "data": {
+                        "ALL": "Everyone",
+                        "TEAM": "Team only",
+                        "PRIVATE": "Hidden"
+                    },
+                    "description": {
+                        "ALL": "All players see each other's live position on the spectrum.",
+                        "TEAM": "Players only see their teammates' live positions.",
+                        "PRIVATE": "No one can see where others are on the spectrum."
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Versus",
+                    "description": [
+                        "Everyone against each other",
+                        "Points based on how close your guess is"
+                    ]
+                },
+                "teams": {
+                    "title": "Teams",
+                    "description": [
+                        "Compete in teams you pick",
+                        "Guess is the average of your team"
+                    ]
+                },
+                "coopConsensus": {
+                    "title": "Classic Co-op",
+                    "description": [
+                        "Work together as one team",
+                        "Move a single shared indicator together",
+                        "Points are scored in fixed bands"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "Democracy Co-op",
+                    "description": [
+                        "Work together as one team",
+                        "Guess is the average of your team"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "How to Play",
+                    "description": [
+                        "Each round, every player gets a secret target on a spectrum (e.g. Hot ← → Cold) and writes a clue hinting at it, without using the scale's own words.",
+                        "All players then get to guess where the clue lands for each other's clues. The closer the guess, the more points you score."
+                    ]
+                },
+                "modes": {
+                    "title": "Game Modes",
+                    "description": [
+                        "Solo: Everyone guesses on their own and scores individually.",
+                        "Co-op: The whole group shares one score together.",
+                        "Team: Pick a team color in the lobby; each team scores separately."
+                    ]
+                },
+                "customize": {
+                    "title": "Customize the Rules",
+                    "description": [
+                        "Tweak scoring, indicators, and more in the lobby settings. Settings such as switching to step-based scoring instead of distance-based."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2160,6 +2243,11 @@
             "makeYourMove": "Make your move",
             "waitingForOthers": "Waiting for others",
             "wager": "Wager",
+            "yourClue": "Broadcasting your clue",
+            "nameClue": "Tune into %{name}'s clue",
+            "writeYourClue": "Write your clue",
+            "languageSelect": "Language selection",
+            "languageAgreed": "Language agreed",
             "tieEndedRound": "Round has ended in a tie",
             "youEndedRound": "You have ended the round",
             "nameEndedRound": "%{name} has ended the round",
@@ -2192,6 +2280,8 @@
         }
     },
     "placeholder": {
+        "clue": "Enter your clue...",
+        "clueInLanguage": "Enter your clue in {language}...",
         "cardSetId": "Fill in card set ID...",
         "cardContent": "Fill in card content...",
         "cardSetName": "Fill in name for this card set...",
@@ -2232,8 +2322,8 @@
         "exploreAllGames": "Explore all games",
         "playingAgainstBots": "Playing Against Bots",
         "playingAgainstPlayers": "Playing Against Players",
-        "playingGame": "<b>{count}</b> playing this game",
-        "online": "<b>{count}</b> online",
+        "playingGame": "{count} playing this game",
+        "online": "{count} online",
         "connection": "Connection",
         "ping": "Ping",
         "timeOffset": "Time Offset",
@@ -2432,6 +2522,7 @@
         "restartNotice": "Server will restart in {count} minutes. Please finish your game. | Server will restart in {count} minute. Please finish your game. | Server will restart in {count} minutes. Please finish your game."
     },
     "misc": {
+        "refresh": "Refresh",
         "automatic": "Auto",
         "title": "Title",
         "current": "Current",
@@ -2465,6 +2556,8 @@
         "questions": "Questions",
         "teamAndQuestions": "Team & Questions",
         "questionPacks": "Question Packs",
+        "packs": "Packs",
+        "teamAndPacks": "Team & Packs",
         "rock": "Rock",
         "paper": "Paper",
         "scissors": "Scissors",
@@ -2663,6 +2756,7 @@
         "kills": "Kills",
         "assassin": "Assassin",
         "target": "Target",
+        "targetReached": "Target Reached",
         "assassinations": "Assassinations",
         "survivals": "Survivals",
         "games": "Games",
@@ -2671,6 +2765,8 @@
         "winLossDelta": "W/L Delta",
         "killDeathRatio": "K/D Ratio",
         "quitRatio": "Quit Ratio",
+        "clueSuccessRatio": "Clue Success Ratio",
+        "guessHitRatio": "Guess Hit Ratio",
         "lives": "Lives",
         "points": "Points",
         "wins": "Wins",
@@ -2743,7 +2839,8 @@
         "noChangesDetected": "No Changes Detected",
         "newChanges": "New Changes",
         "saveChanges": "Save Changes",
-        "previousChanges": "See Previous Changes"
+        "previousChanges": "See Previous Changes",
+        "random": "Random"
     },
     "card": {
         "empty": "No Cards",
@@ -2927,6 +3024,10 @@
             "empty": "You have not blocked any users.",
             "count": "%{count} blocked"
         },
+        "cluePicking": {
+            "title": "Write your clue",
+            "description": "Keep your clue vague but accurate — others will use it to guess your position."
+        },
         "youBlockedUser": "You blocked this user.",
         "playerProfile": {
             "unavailable": "Could not load this profile right now.",
@@ -2983,6 +3084,18 @@
         "votePick": "Vote for %{option}",
         "votePickChange": "Change vote to %{option}",
         "votePickSelected": "You voted for %{option}",
+        "clueSelf": "Your clue",
+        "clueOther": "%{name}'s clue",
+        "stayQuietHint": "Don't give any extra hints while others are guessing!",
+        "tunedInWinThreshold": "Score at least %{threshold} points together to win!",
+        "multipleLanguages": {
+            "title": "Multiple languages detected",
+            "description": "We noticed players using different languages. To ensure everyone understands the clues, select all the languages you understand — once everyone has at least one in common, the game will start.",
+            "leave": "I can't participate in any of these languages",
+            "leaveDescription": "That's completely fine — no statistics or wins will be recorded for anyone if you leave now.",
+            "agreedTitle": "You're all set!",
+            "agreedDescription": "Everyone agrees to use {language} for their clues!"
+        },
         "tiedVoteSelf": "Your group has a tied vote! Picking a selection at random...",
         "tiedVoteOther": "Please wait a second, your opponents have a tied vote.",
         "waitForOpponent": "Waiting for your opponent...",
@@ -3426,6 +3539,14 @@
             "diceSource": "Dice model by %{name} (CC-BY-4.0)",
             "localization": "Localization by volunteer contributors",
             "licenses": "Other licenses"
+        }
+    },
+    "share": {
+        "tiers": {
+            "max": "Spot on",
+            "almost": "Close",
+            "justIn": "Just in",
+            "miss": "Miss"
         }
     }
 }

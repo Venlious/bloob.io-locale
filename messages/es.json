@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Mexican Spanish",
         "rtl": false,
-        "total": 2127,
+        "total": 2192,
         "missing": 0
     },
     "name": "Bloob.io",
@@ -150,6 +150,7 @@
             "blocked": "Tu castigo no te permite unirte a partidas públicas o de emparejamiento.",
             "joinBlocked": "No puedes unirte a esta partida.",
             "empty": "Partida cerrada. Todos los demás jugadores abandonaron la partida.",
+            "noAgreement": "El partido se cerró porque no se llegó a un acuerdo. No se registraron estadísticas.",
             "rematchTimeout": "No aceptaste la solicitud de revancha y fuiste enviado de vuelta al menú principal.",
             "rematchCancelled": "¡Lo siento! No quedan suficientes jugadores para la revancha.",
             "inactive": "La partida en la que estabas ha sido cerrada por estar inactiva durante demasiado tiempo.",
@@ -239,7 +240,12 @@
                 },
                 "winCondition": {
                     "title": "Condición para ganar",
-                    "help": "Determina cuándo debe concluir el juego"
+                    "help": "Determina cuándo debe concluir el juego",
+                    "data": {
+                        "firstToPoints": "El primero en llegar a {count} puntos | El primero en llegar a {count} punto | El primero en llegar a {count} puntos",
+                        "mostPoints": "El que tenga más puntos después de {count} rondas | El que tenga más puntos después de {count} ronda | El que tenga más puntos después de {count} rondas",
+                        "lastStanding": "El último en quedar vivo ({count} vidas) | El último en quedar vivo ({count} vidas) | El último en quedar vivo ({count} vidas)"
+                    }
                 },
                 "winAmount": {
                     "title": "Cantidad para ganar"
@@ -579,12 +585,6 @@
             "title": "Juega a Manzanas Podridas | Juego gratis de Cartas contra la humanidad en línea",
             "description": "Diviértete con Manzanas Podridas, el juego en línea gratuito de Cartas contra la humanidad. No necesitas cuenta, juega con entre 3 y 16 amigos o desconocidos en emocionantes partidas multijugador.",
             "options": {
-                "winCondition": {
-                    "data": {
-                        "first": "El primero en conseguir <b>0</b> puntos | El primero en conseguir <b>1</b> punto | El primero en conseguir <b>{count}</b> puntos",
-                        "most": "El mayor número de puntos después de <b>0</b> rondas | El mayor número de puntos después de <b>1</b> ronda | El mayor número de puntos después de <b>{count}</b> rondas"
-                    }
-                },
                 "judgeSystem": {
                     "title": "Sistema de jueces",
                     "help": "Un juez o todos determinan quién hizo la mejor jugada en cada ronda.",
@@ -605,8 +605,7 @@
                     "title": "Ronda de descarte",
                     "help": "Una ronda de descarte permite a cada jugador seleccionar las cartas de su mano que le gustaría eliminar. Se dan nuevas cartas de respuesta como reemplazo después de que termina la ronda.",
                     "data": {
-                        "disabled": "Desactivado",
-                        "round": "Cada <b>0</b> rondas | Cada <b>1</b> ronda | Cada <b>{count}</b> rondas"
+                        "round": "Cada {count} rondas | Cada {count} ronda | Cada {count} rondas"
                     }
                 },
                 "dumpRoundAmount": {
@@ -751,8 +750,7 @@
                     "data": {
                         "OPPOSITE_SIDE": "Llegar al lado opuesto",
                         "TAKE": "Tomar una pieza",
-                        "ALL": "Empezar con solo Damas",
-                        "NONE": "Desactivado"
+                        "ALL": "Empezar con solo Damas"
                     }
                 },
                 "backwardsTake": {
@@ -841,9 +839,8 @@
                 },
                 "winCondition": {
                     "data": {
-                        "LAST_STANDING": "El último en quedar vivo (<b>0</b> vidas) | El último en quedar vivo (<b>1</b> vidas) | El último en quedar vivo (<b>{count}</b> vidas)",
-                        "KILL_COUNT": "El primero en conseguir <b>0</b> eliminaciones | El primero en conseguir <b>1</b> eliminaciones | El primero en conseguir <b>{count}</b> eliminaciones",
-                        "TIME": "El mayor número de eliminaciones tras <b>0</b> min. | El mayor número de eliminaciones tras <b>1</b> min. | El mayor número de eliminaciones tras <b>{count}</b> min."
+                        "KILL_COUNT": "El primero en conseguir {count} eliminaciones | El primero en conseguir {count} eliminaciones | El primero en conseguir {count} eliminaciones",
+                        "TIME": "El mayor número de eliminaciones tras {count} min. | El mayor número de eliminaciones tras {count} min. | El mayor número de eliminaciones tras {count} min."
                     }
                 },
                 "defaultBombCount": {
@@ -1242,7 +1239,6 @@
                     "title": "Tamaño de la cuadrícula",
                     "help": "Selecciona el tamaño del nivel en el que quieres jugar.",
                     "data": {
-                        "random": "Aleatorio",
                         "7x7": "7x7",
                         "11x11": "11x11",
                         "15x15": "15x15"
@@ -1252,7 +1248,6 @@
                     "title": "Mapa",
                     "help": "Selecciona el mapa en el que te gustaría jugar.",
                     "data": {
-                        "random": "Aleatorio",
                         "peninsula": "Península",
                         "archipelago": "Archipiélago",
                         "canal": "Canal",
@@ -1270,7 +1265,6 @@
                     "title": "Orientación",
                     "help": "Selecciona la orientación en la que se mostrará el nivel.",
                     "data": {
-                        "random": "Aleatorio",
                         "NORTH": "Norte",
                         "EAST": "Este",
                         "SOUTH": "Sur",
@@ -1376,8 +1370,7 @@
                 },
                 "winCondition": {
                     "data": {
-                        "FIRST": "El primero en llegar a <b>0</b> puntos | El primero en llegar a <b>1</b> punto | El primero en llegar a <b>{count}</b> puntos",
-                        "HIGHEST_AFTER": "Más puntos después de llegar a <b>0</b> puntos | Más puntos después de llegar a <b>1</b> punto | Más puntos después de llegar a <b>{count}</b> puntos"
+                        "HIGHEST_AFTER": "Más puntos después de llegar a {count} puntos | Más puntos después de llegar a {count} punto | Más puntos después de llegar a {count} puntos"
                     }
                 }
             },
@@ -1430,14 +1423,14 @@
                     "help": "El juego terminará si solo queda un jugador con todas las cartas.",
                     "data": {
                         "LAST_STANDING": "Cuando un jugador consigue todas las cartas",
-                        "HIGHEST_AFTER": "Más cartas después de <b>0</b> rondas | Más cartas después de <b>1</b> ronda | Más cartas después de <b>{count}</b> rondas"
+                        "HIGHEST_AFTER": "Más cartas después de {count} rondas | Más cartas después de {count} ronda | Más cartas después de {count} rondas"
                     }
                 },
                 "warRequirement": {
                     "title": "Requisito de Guerra",
                     "help": "Determina cómo se debe jugar la guerra si dos o más jugadores juegan la misma carta.",
                     "data": {
-                        "DEFAULT": "Coloca <b>0</b> cartas | Coloca <b>1</b> carta | Coloca <b>{count}</b> cartas",
+                        "DEFAULT": "Coloca {count} cartas | Coloca {count} carta | Coloca {count} cartas",
                         "CARD_VALUE": "Coloca cartas igual al rango de la carta inicial"
                     }
                 },
@@ -1600,13 +1593,6 @@
                         "rock": "Piedra le gana a tijera",
                         "paper": "Papel le gana a piedra",
                         "scissors": "Tijera le gana a papel"
-                    }
-                },
-                "winCondition": {
-                    "data": {
-                        "LAST_STANDING": "Último en pie (<b>0</b> vidas) | Último en pie (<b>1</b> vida) | Último en pie (<b>{count}</b> vidas)",
-                        "FIRST": "El primero en conseguir <b>0</b> puntos | El primero en conseguir <b>1</b> punto | El primero en conseguir <b>{count}</b> puntos",
-                        "HIGHEST_AFTER": "Más puntos después de <b>0</b> rondas | Más puntos después de <b>1</b> ronda | Más puntos después de <b>{count}</b> rondas"
                     }
                 }
             },
@@ -1886,12 +1872,6 @@
                         "ELEVEN": "Siempre 11"
                     }
                 },
-                "winCondition": {
-                    "data": {
-                        "FIRST": "El primero en llegar a <b>0</b> puntos | El primero en llegar a <b>1</b> punto | El primero en llegar a <b>{count}</b> puntos",
-                        "HIGHEST_AFTER": "El que tenga más puntos después de <b>0</b> rondas | El que tenga más puntos después de <b>1</b> ronda | El que tenga más puntos después de <b>{count}</b> rondas"
-                    }
-                },
                 "splitSameFaceOnly": {
                     "title": "Dividir solo con la misma carta",
                     "help": "Cuando está activado, solo puedes dividir si ambas cartas iniciales son la misma carta (por ejemplo K+K u 8+8), no solo el mismo valor numérico."
@@ -1994,8 +1974,7 @@
                     "title": "Formación de salida",
                     "help": "Elige si la formación inicial del break es fija o aleatoria.",
                     "data": {
-                        "fixed": "Fija (oficial)",
-                        "random": "Aleatoria"
+                        "fixed": "Fija (oficial)"
                     }
                 },
                 "breakFillers": {
@@ -2007,8 +1986,7 @@
                     "help": "Elige qué faltas pueden devolver una bola del rival a la mesa.",
                     "data": {
                         "anyFoul": "Cualquier falta válida",
-                        "ballInHand": "Solo faltas de bola en mano",
-                        "off": "Desactivado"
+                        "ballInHand": "Solo faltas de bola en mano"
                     }
                 }
             },
@@ -2054,6 +2032,111 @@
         },
         "CASH_CLASH_FINANCIAL_TRIVIA": {
             "name": "Cash Clash"
+        },
+        "TUNED_IN": {
+            "name": "Tuned In",
+            "title": "Juega Tuned In Gratis | Multijugador y Cooperativo en Línea",
+            "description": "Disfruta de Tuned In, un juego de fiesta en línea gratis y sin cuenta, perfecto para jugar con amigos. Prueba sus modos multijugador y cooperativos.",
+            "options": {
+                "consensus": {
+                    "title": "Indicador Compartido",
+                    "help": "Cuando está activado, el equipo o grupo de co-op comparte un solo indicador que todos siguen juntos — donde termine es la respuesta. Cuando está desactivado, cada jugador tiene su propio indicador, y la respuesta del equipo es el promedio de la posición final de todos."
+                },
+                "winAmountRounds": {
+                    "title": "Rondas",
+                    "help": "Cuántas rondas dura el partido. Se ajusta automáticamente el número de rondas según cuántos jugadores haya en el partido: 4 rondas para 2 jugadores, 3 para 3-4, 2 para 5-6, y 1 para 7 o más.",
+                    "data": {
+                        "fixed": "{count} rondas | {count} ronda | {count} rondas"
+                    }
+                },
+                "pickingTime": {
+                    "title": "Tiempo para escribir pistas"
+                },
+                "revealTime": {
+                    "title": "Tiempo de Mostrar Resultados",
+                    "help": "Cuánto tiempo se muestran los resultados después de que se revela cada pista."
+                },
+                "promptSelection": {
+                    "title": "Selección de Prompt",
+                    "help": "Cuando está activado, los jugadores eligen entre 3 espectros diferentes cada ronda en lugar de que se les asigne uno."
+                },
+                "stepScoring": {
+                    "title": "Puntuación de Pasos",
+                    "help": "Cuando está activado, se otorgan puntos en bandas fijas (75/50/25) según la distancia del objetivo en lugar de escalar de manera suave."
+                },
+                "authorPoints": {
+                    "title": "Bono de Dador de Pistas",
+                    "help": "Cuando está activado, el que da pistas gana la mitad de los puntos promedio que los adivinadores obtienen de su pista, redondeado hacia abajo. Solo en modo solitario."
+                },
+                "visibility": {
+                    "title": "Posiciones en Vivo",
+                    "help": "Controles quién puede ver a dónde se mueve la gente en el espectro en tiempo real.",
+                    "data": {
+                        "ALL": "Todos",
+                        "TEAM": "Solo equipo",
+                        "PRIVATE": "Oculto"
+                    },
+                    "description": {
+                        "ALL": "Todos los jugadores ven la posición en vivo de los demás en el espectro.",
+                        "TEAM": "Los jugadores solo ven las posiciones en vivo de sus compañeros.",
+                        "PRIVATE": "Nadie puede ver dónde están los demás en el espectro."
+                    }
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Versus",
+                    "description": [
+                        "Todos contra todos",
+                        "Puntos según qué tan cerca estés de tu respuesta"
+                    ]
+                },
+                "teams": {
+                    "title": "Equipos",
+                    "description": [
+                        "Compite en los equipos que elijas",
+                        "La adivinanza es el promedio de tu equipo"
+                    ]
+                },
+                "coopConsensus": {
+                    "title": "Co-op Clásico",
+                    "description": [
+                        "Trabajen juntos como un solo equipo",
+                        "Muevan un solo indicador compartido juntos",
+                        "Se ganan puntos en bandas fijas"
+                    ]
+                },
+                "coopDemocracy": {
+                    "title": "Cooperativa Democrática",
+                    "description": [
+                        "Trabajen juntos como un solo equipo",
+                        "La adivinanza es el promedio de tu equipo"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Cómo Jugar",
+                    "description": [
+                        "En cada ronda, cada jugador tiene un objetivo secreto en un espectro (por ejemplo, Caliente ← → Frío) y escribe una pista que lo sugiera, sin usar las palabras de la escala.",
+                        "Luego, todos los jugadores pueden adivinar dónde cae la pista de los demás. Cuanto más cerca esté la adivinanza, más puntos ganas."
+                    ]
+                },
+                "modes": {
+                    "title": "Modos de juego",
+                    "description": [
+                        "Solo: Cada quien adivina por su cuenta y saca su propia puntuación.",
+                        "Co-op: Todo el grupo comparte una sola puntuación.",
+                        "Team: Escoge un color de equipo en el lobby; cada equipo saca su puntuación por separado."
+                    ]
+                },
+                "customize": {
+                    "title": "Personaliza las Reglas",
+                    "description": [
+                        "Ajusta la puntuación, los indicadores y más en la configuración del lobby. Configuraciones como cambiar a puntuación por pasos en lugar de por distancia."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2160,6 +2243,11 @@
             "makeYourMove": "Haz tu jugada",
             "waitingForOthers": "Esperando a los demás",
             "wager": "Apuesta",
+            "yourClue": "Transmitiendo tu pista",
+            "nameClue": "Sintoniza la pista de %{name}",
+            "writeYourClue": "Escribe tu pista",
+            "languageSelect": "Selección de idioma",
+            "languageAgreed": "Idioma acordado",
             "tieEndedRound": "La ronda terminó en empate",
             "youEndedRound": "Has terminado la ronda",
             "nameEndedRound": "%{name} ha terminado la ronda",
@@ -2192,6 +2280,8 @@
         }
     },
     "placeholder": {
+        "clue": "Ingresa tu pista...",
+        "clueInLanguage": "Ingresa tu pista en {language}...",
         "cardSetId": "Escribe el ID del conjunto de cartas...",
         "cardContent": "Escribe el contenido de la carta...",
         "cardSetName": "Escribe el nombre de este conjunto de cartas...",
@@ -2232,8 +2322,8 @@
         "exploreAllGames": "Explora todos los juegos",
         "playingAgainstBots": "Jugando contra bots",
         "playingAgainstPlayers": "Jugando contra otros jugadores",
-        "playingGame": "<b>{count}</b> jugando esta partida",
-        "online": "<b>{count}</b> en línea",
+        "playingGame": "{count} jugando esta partida",
+        "online": "{count} en línea",
         "connection": "Conexión",
         "ping": "Ping",
         "timeOffset": "Compensación de tiempo",
@@ -2423,15 +2513,16 @@
         "matchesWaiting": "0 partidas en espera | 1 partida en espera | {count} partidas en espera",
         "needMorePlayers": "Necesitas 0 jugadores más | Necesitas 1 jugador más | Necesitas {count} jugadores más",
         "playAgainstBots": "Jugar contra bots | Jugar contra un bot | Jugar contra bots",
-        "playRandomOpponents": "Jugar con oponentes aleatorios",
+        "playRandomOpponents": "Jugar con oponentes aleatorios | Jugar con un oponente aleatorio | Jugar con oponentes aleatorios",
         "turnsToFlip": "Turnos para girar | Turno para girar | Turnos para girar",
-        "increment": "Incrementos de %{count}",
+        "increment": "Incrementos de 0 | Incremento de 1 | Incrementos de {count}",
         "remaining": "No queda ninguno | Queda 1 | Quedan {count}",
         "shipsRemaining": "0 barcos restantes | 1 barco restante | {count} barcos restantes",
         "includesItems": "Incluye {count} artículos | Incluye {count} artículo | Incluye {count} artículos",
         "restartNotice": "El servidor se reiniciará en {count} minutos. Termina tu juego. | El servidor se reiniciará en {count} minuto. Termina tu juego. | El servidor se reiniciará en {count} minutos. Termina tu juego."
     },
     "misc": {
+        "refresh": "Refrescar",
         "automatic": "Auto",
         "title": "Título",
         "current": "Actual",
@@ -2465,6 +2556,8 @@
         "questions": "Preguntas",
         "teamAndQuestions": "Equipo y preguntas",
         "questionPacks": "Paquetes de preguntas",
+        "packs": "Paquetes",
+        "teamAndPacks": "Equipo y Paquetes",
         "rock": "Piedra",
         "paper": "Papel",
         "scissors": "Tijera",
@@ -2663,6 +2756,7 @@
         "kills": "Eliminaciones",
         "assassin": "Asesino",
         "target": "Objetivo",
+        "targetReached": "Objetivo Alcanzado",
         "assassinations": "Asesinatos",
         "survivals": "Supervivencias",
         "games": "Juegos",
@@ -2671,6 +2765,8 @@
         "winLossDelta": "Diferencial V/D",
         "killDeathRatio": "Relación de eliminaciones/muertes",
         "quitRatio": "Tasa de abandono",
+        "clueSuccessRatio": "Ratio de Éxito de Pistas",
+        "guessHitRatio": "Ratio de Aciertos en Adivinanzas",
         "lives": "Vidas",
         "points": "Puntos",
         "wins": "Victorias",
@@ -2743,7 +2839,8 @@
         "noChangesDetected": "No se detectaron cambios",
         "newChanges": "Nuevos cambios",
         "saveChanges": "Guardar cambios",
-        "previousChanges": "Ver los cambios anteriores"
+        "previousChanges": "Ver los cambios anteriores",
+        "random": "Aleatorio"
     },
     "card": {
         "empty": "Sin cartas",
@@ -2927,6 +3024,10 @@
             "empty": "No has bloqueado a ningún usuario.",
             "count": "%{count} bloqueados"
         },
+        "cluePicking": {
+            "title": "Escribe tu pista",
+            "description": "Mantén tu pista vaga pero precisa — los demás la usarán para adivinar tu posición."
+        },
         "youBlockedUser": "Has bloqueado a este usuario.",
         "playerProfile": {
             "unavailable": "No se pudo cargar este perfil en este momento.",
@@ -2983,6 +3084,18 @@
         "votePick": "Vota por %{option}",
         "votePickChange": "Cambiar el voto a %{option}",
         "votePickSelected": "Has votado por %{option}",
+        "clueSelf": "Tu pista",
+        "clueOther": "La pista de %{name}",
+        "stayQuietHint": "¡No des pistas extra mientras los demás están adivinando!",
+        "tunedInWinThreshold": "¡Consigan al menos %{threshold} puntos juntos para ganar!",
+        "multipleLanguages": {
+            "title": "Se detectaron varios idiomas",
+            "description": "Notamos que los jugadores están usando diferentes idiomas. Para que todos entiendan las pistas, selecciona todos los idiomas que entiendas — una vez que todos tengan al menos uno en común, el juego comenzará.",
+            "leave": "No puedo participar en ninguno de estos idiomas",
+            "leaveDescription": "Está bien — no se registrarán estadísticas ni victorias para nadie si te vas ahora.",
+            "agreedTitle": "¡Todo listo!",
+            "agreedDescription": "¡Todos están de acuerdo en usar {language} para sus pistas!"
+        },
         "tiedVoteSelf": "¡Tu grupo tiene un empate en la votación! Se elegirá una opción al azar...",
         "tiedVoteOther": "Espera un segundo, tus oponentes tienen un empate en la votación.",
         "waitForOpponent": "Esperando a tu oponente...",
@@ -3426,6 +3539,14 @@
             "diceSource": "Modelo de dados por %{name} (CC-BY-4.0)",
             "localization": "Localización por colaboradores voluntarios",
             "licenses": "Otras licencias"
+        }
+    },
+    "share": {
+        "tiers": {
+            "max": "En el blanco",
+            "almost": "Cerca",
+            "justIn": "Apenas",
+            "miss": "Fallaste"
         }
     }
 }

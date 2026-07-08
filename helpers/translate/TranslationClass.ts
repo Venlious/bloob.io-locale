@@ -236,6 +236,14 @@ export default class TranslationClass {
 		)
 
 		/**
+		 * Sharing
+		 */
+		this.generateTranslationTask(
+			[`share`, `tiers`],
+			`These are short accuracy-tier labels (e.g. bullseye, close, barely, miss) shown next to an emoji when a player shares their result from a game, ranked from most to least accurate (KEEP THEM SHORT).`
+		)
+
+		/**
 		 * Misc.
 		 */
 		this.generateTranslationTask(
@@ -370,6 +378,10 @@ export default class TranslationClass {
 			[`info`, `blockedUsers`],
 			`These are used in the blocked users management dialog.`
 		)
+		this.generateTranslationTask(
+			[`info`, `cluePicking`],
+			`These are related to informing the user they can now write a clue for a game.`
+		)
 		this.generateTranslationTask([`info`, `settings`, `redeemCode`])
 		this.generateTranslationTask([`info`, `settings`, `experience`])
 		this.generateTranslationTask([`info`, `settings`, `statistics`])
@@ -400,6 +412,14 @@ export default class TranslationClass {
 		this.generateTranslationTask([`info`, `friend`])
 		this.generateTranslationTask([`info`, `yacht`])
 		this.generateTranslationTask([`info`, `playerProfile`])
+		this.generateTranslationTask(
+			[`info`, `multipleLanguages`],
+			`These are related to messages that are shown when there's a conflict with multiple languages and the players must first settle on a language to use.`
+		)
+		this.generateTranslationTask(
+			[`info`, `cluePicking`],
+			`These are related to clues for the game 'Tuned In', which is inspired by the Wavelength game. It refers to the clue the player must write for the other players to guess where their position is on the scale.`
+		)
 		this.generateTranslationTask(
 			[`info`, `yacht`, `title`],
 			`These are Yacht/Yahtzee gaming terminologies.`
@@ -643,6 +663,15 @@ export default class TranslationClass {
 					}
 					if (target.options[title].data) {
 						this.generateTranslationTask([`game`, value, `options`, title, `data`])
+					}
+					if (target.options[title].description) {
+						this.generateTranslationTask([
+							`game`,
+							value,
+							`options`,
+							title,
+							`description`
+						])
 					}
 				}
 			}
