@@ -51,18 +51,23 @@ const checkForCommonErrors = translation => {
 			// If value is an object, recursively call the function on the nested objects
 			checkForCommonErrors(value)
 		} else if (typeof value === `string`) {
-			// If value is not an object, check if it contains any variables
+			// If value is not an object, check if it contains any variables.
+			// `{0}`/`{1}` are deliberately not checked here (unlike the bracket/
+			// paren list-marker shapes below) - they're real positional
+			// interpolation placeholders (see the Cribbage `{0}`/`{1}` keys,
+			// %{0}/%{1} before the 2026-07-20 %{x} -> {x} migration), and some
+			// languages' natural word order legitimately puts one at the very
+			// start of a sentence (confirmed in the "tr"/"ko"/"ja" Cribbage
+			// translations).
 			const lowerCasedValue = value.toLowerCase()
 			expect(lowerCasedValue).not.toStartWith(`[0]`)
 			expect(lowerCasedValue).not.toStartWith(`0.`)
 			expect(lowerCasedValue).not.toStartWith(`0)`)
 			expect(lowerCasedValue).not.toStartWith(`(0)`)
-			expect(lowerCasedValue).not.toStartWith(`{0}`)
 			expect(lowerCasedValue).not.toStartWith(`[1]`)
 			expect(lowerCasedValue).not.toStartWith(`1.`)
 			expect(lowerCasedValue).not.toStartWith(`1)`)
 			expect(lowerCasedValue).not.toStartWith(`(1)`)
-			expect(lowerCasedValue).not.toStartWith(`{1}`)
 			expect(lowerCasedValue).not.toStartWith(`sure `)
 		}
 	}
@@ -189,9 +194,16 @@ const checkForCommonVariableErrors = translation => {
 			// If value is an object, recursively call the function on the nested objects
 			checkForCommonVariableErrors(value)
 		} else if (typeof value === `string`) {
-			// Catch malformed interpolation placeholders like ${x}; valid forms are {x} and %{x}
+			// Catch malformed interpolation placeholders like ${x}; the only valid form is {x}
 			const invalidVariables = value.match(/\$\{[^{}]*}/g) || []
 			expect(invalidVariables).toHaveLength(0)
+
+			// The old Rails-style %{x} syntax silently fails to interpolate under
+			// vue-i18n v9+ (renders a stray "%" instead) - every message must use
+			// plain {x} instead. Regression guard for the 2026-07-20 %{x} -> {x}
+			// migration across all locales.
+			const railsStyleVariables = value.match(/%\{[^{}]*}/g) || []
+			expect(railsStyleVariables).toHaveLength(0)
 		}
 	}
 }
@@ -216,6 +228,12 @@ describe(`correctBoldTags`, () => {
 	})
 	it(`should not have any tags other than <b> and </b> in English`, () => {
 		checkForUnexpectedTags(enMessage)
+	})
+})
+
+describe(`correctVariableFormatting`, () => {
+	it(`English should format variables correctly`, () => {
+		checkForCommonVariableErrors(enMessage)
 	})
 })
 
