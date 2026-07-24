@@ -93,9 +93,9 @@
             "readyClearedBySettings": "Tu estado de listo se reinició por una actualización de configuración del juego",
             "fieldRows": "El campo seleccionado no admite más de {rows} filas",
             "fieldCannotFitUsers": "El campo seleccionado no puede admitir más de {users} jugadores",
-            "questionThreshold": "El juego necesita al menos {count} preguntas.",
-            "whiteCardThreshold": "El juego requiere al menos {count} cartas de respuesta (blancas)",
-            "blackCardThreshold": "El juego requiere al menos {count} cartas de acción (negras)",
+            "questionThreshold": "El juego necesita al menos {n} preguntas.",
+            "whiteCardThreshold": "El juego requiere al menos {n} cartas de respuesta (blancas)",
+            "blackCardThreshold": "El juego requiere al menos {n} cartas de acción (negras)",
             "insufficientPlayers": "Se necesitan al menos {min} jugadores para empezar la partida."
         },
         "game": {
@@ -242,9 +242,9 @@
                     "title": "Condición para ganar",
                     "help": "Determina cuándo debe concluir el juego",
                     "data": {
-                        "firstToPoints": "El primero en llegar a {count} puntos | El primero en llegar a {count} punto | El primero en llegar a {count} puntos",
-                        "mostPoints": "El que tenga más puntos después de {count} rondas | El que tenga más puntos después de {count} ronda | El que tenga más puntos después de {count} rondas",
-                        "lastStanding": "El último en quedar vivo ({count} vidas) | El último en quedar vivo ({count} vidas) | El último en quedar vivo ({count} vidas)"
+                        "firstToPoints": "El primero en llegar a {n} puntos | El primero en llegar a {n} punto | El primero en llegar a {n} puntos",
+                        "mostPoints": "El que tenga más puntos después de {n} rondas | El que tenga más puntos después de {n} ronda | El que tenga más puntos después de {n} rondas",
+                        "lastStanding": "El último en quedar vivo ({n} vidas) | El último en quedar vivo ({n} vidas) | El último en quedar vivo ({n} vidas)"
                     }
                 },
                 "winAmount": {
@@ -528,7 +528,7 @@
                     "help": "Para animar las cosas, voltea el campo; las fichas de la parte inferior se convertirán en las fichas de la parte superior. Un contador mostrará cuántos turnos quedan hasta que se produzca un giro.",
                     "data": {
                         "everyTurn": "Después de cada turno",
-                        "countTurns": "Después de cada {count} turnos"
+                        "countTurns": "Después de cada {n} turnos"
                     }
                 },
                 "turnsUntilFlip": {
@@ -605,7 +605,7 @@
                     "title": "Ronda de descarte",
                     "help": "Una ronda de descarte permite a cada jugador seleccionar las cartas de su mano que le gustaría eliminar. Se dan nuevas cartas de respuesta como reemplazo después de que termina la ronda.",
                     "data": {
-                        "round": "Cada {count} rondas | Cada {count} ronda | Cada {count} rondas"
+                        "round": "Cada {n} rondas | Cada {n} ronda | Cada {n} rondas"
                     }
                 },
                 "dumpRoundAmount": {
@@ -839,8 +839,8 @@
                 },
                 "winCondition": {
                     "data": {
-                        "KILL_COUNT": "El primero en conseguir {count} eliminaciones | El primero en conseguir {count} eliminaciones | El primero en conseguir {count} eliminaciones",
-                        "TIME": "El mayor número de eliminaciones tras {count} min. | El mayor número de eliminaciones tras {count} min. | El mayor número de eliminaciones tras {count} min."
+                        "KILL_COUNT": "El primero en conseguir {n} eliminaciones | El primero en conseguir {n} eliminaciones | El primero en conseguir {n} eliminaciones",
+                        "TIME": "El mayor número de eliminaciones tras {n} min. | El mayor número de eliminaciones tras {n} min. | El mayor número de eliminaciones tras {n} min."
                     }
                 },
                 "defaultBombCount": {
@@ -1370,7 +1370,7 @@
                 },
                 "winCondition": {
                     "data": {
-                        "HIGHEST_AFTER": "Más puntos después de llegar a {count} puntos | Más puntos después de llegar a {count} punto | Más puntos después de llegar a {count} puntos"
+                        "HIGHEST_AFTER": "Más puntos después de llegar a {n} puntos | Más puntos después de llegar a {n} punto | Más puntos después de llegar a {n} puntos"
                     }
                 }
             },
@@ -1423,14 +1423,14 @@
                     "help": "El juego terminará si solo queda un jugador con todas las cartas.",
                     "data": {
                         "LAST_STANDING": "Cuando un jugador consigue todas las cartas",
-                        "HIGHEST_AFTER": "Más cartas después de {count} rondas | Más cartas después de {count} ronda | Más cartas después de {count} rondas"
+                        "HIGHEST_AFTER": "Más cartas después de {n} rondas | Más cartas después de {n} ronda | Más cartas después de {n} rondas"
                     }
                 },
                 "warRequirement": {
                     "title": "Requisito de Guerra",
                     "help": "Determina cómo se debe jugar la guerra si dos o más jugadores juegan la misma carta.",
                     "data": {
-                        "DEFAULT": "Coloca {count} cartas | Coloca {count} carta | Coloca {count} cartas",
+                        "DEFAULT": "Coloca {n} cartas | Coloca {n} carta | Coloca {n} cartas",
                         "CARD_VALUE": "Coloca cartas igual al rango de la carta inicial"
                     }
                 },
@@ -2046,7 +2046,7 @@
                     "title": "Rondas",
                     "help": "Cuántas rondas dura el partido. Se ajusta automáticamente el número de rondas según cuántos jugadores haya en el partido: 4 rondas para 2 jugadores, 3 para 3-4, 2 para 5-6, y 1 para 7 o más.",
                     "data": {
-                        "fixed": "{count} rondas | {count} ronda | {count} rondas"
+                        "fixed": "{n} rondas | {n} ronda | {n} rondas"
                     }
                 },
                 "pickingTime": {
@@ -2322,8 +2322,8 @@
         "exploreAllGames": "Explora todos los juegos",
         "playingAgainstBots": "Jugando contra bots",
         "playingAgainstPlayers": "Jugando contra otros jugadores",
-        "playingGame": "{count} jugando esta partida",
-        "online": "{count} en línea",
+        "playingGame": "{n} jugando esta partida",
+        "online": "{n} en línea",
         "connection": "Conexión",
         "ping": "Ping",
         "timeOffset": "Compensación de tiempo",
@@ -2383,15 +2383,15 @@
         }
     },
     "time": {
-        "daysShort": "{count}d",
-        "hoursShort": "{count}h",
-        "minutesShort": "{count}m",
-        "years": "0 años | 1 año | {count} años",
-        "months": "0 meses | 1 mes | {count} meses",
-        "days": "0 días | 1 día | {count} días",
-        "hours": "0 horas | 1 hora | {count} horas",
-        "minutes": "0 minutos | 1 minuto | {count} minutos",
-        "seconds": "0 segundos | 1 segundo | {count} segundos"
+        "daysShort": "{n}d",
+        "hoursShort": "{n}h",
+        "minutesShort": "{n}m",
+        "years": "0 años | 1 año | {n} años",
+        "months": "0 meses | 1 mes | {n} meses",
+        "days": "0 días | 1 día | {n} días",
+        "hours": "0 horas | 1 hora | {n} horas",
+        "minutes": "0 minutos | 1 minuto | {n} minutos",
+        "seconds": "0 segundos | 1 segundo | {n} segundos"
     },
     "perk": {
         "gradientPack": {
@@ -2490,36 +2490,36 @@
         "certifiedBloober": "Bloober Certificado"
     },
     "count": {
-        "levelShort": "NIV {count}",
-        "experienceShort": "{count} XP",
-        "winStreak": "¡Racha de {count} victorias!",
-        "rolls": "{count} tiradas | {count} tirada | {count} tiradas",
-        "balls": "0 pelotas | 1 pelota | {count} pelotas",
-        "kills": "0 eliminaciones | 1 eliminación | {count} eliminaciones",
-        "deaths": "0 muertes | 1 muerte | {count} muertes",
-        "lives": "0 vidas | 1 vida | {count} vidas",
-        "files": "0 archivos | 1 archivo | {count} archivos",
-        "points": "{count} puntos | {count} punto | {count} puntos",
-        "pieces": "0 piezas | 1 pieza | {count} piezas",
-        "wins": "0 victorias | 1 victoria | {count} victorias",
-        "cards": "0 cartas | 1 carta | {count} cartas",
-        "moves": "0 movimientos | 1 movimiento | {count} movimientos",
-        "tiles": "0 espacios | 1 espacio | {count} espacios",
-        "playing": "0 jugando | 1 jugando | {count} jugando",
-        "players": "0 jugadores | 1 jugador | {count} jugadores",
-        "selectedCards": "Ninguna carta seleccionada | 1 carta seleccionada | {count} cartas seleccionadas",
-        "matches": "0 coincidencias encontradas | 1 coincidencia encontrada | {count} coincidencias encontradas",
-        "matchesFound": "0 partidas encontradas | 1 partida encontrada | {count} partidas encontradas",
-        "matchesWaiting": "0 partidas en espera | 1 partida en espera | {count} partidas en espera",
-        "needMorePlayers": "Necesitas 0 jugadores más | Necesitas 1 jugador más | Necesitas {count} jugadores más",
+        "levelShort": "NIV {n}",
+        "experienceShort": "{n} XP",
+        "winStreak": "¡Racha de {n} victorias!",
+        "rolls": "{n} tiradas | {n} tirada | {n} tiradas",
+        "balls": "0 pelotas | 1 pelota | {n} pelotas",
+        "kills": "0 eliminaciones | 1 eliminación | {n} eliminaciones",
+        "deaths": "0 muertes | 1 muerte | {n} muertes",
+        "lives": "0 vidas | 1 vida | {n} vidas",
+        "files": "0 archivos | 1 archivo | {n} archivos",
+        "points": "{n} puntos | {n} punto | {n} puntos",
+        "pieces": "0 piezas | 1 pieza | {n} piezas",
+        "wins": "0 victorias | 1 victoria | {n} victorias",
+        "cards": "0 cartas | 1 carta | {n} cartas",
+        "moves": "0 movimientos | 1 movimiento | {n} movimientos",
+        "tiles": "0 espacios | 1 espacio | {n} espacios",
+        "playing": "0 jugando | 1 jugando | {n} jugando",
+        "players": "0 jugadores | 1 jugador | {n} jugadores",
+        "selectedCards": "Ninguna carta seleccionada | 1 carta seleccionada | {n} cartas seleccionadas",
+        "matches": "0 coincidencias encontradas | 1 coincidencia encontrada | {n} coincidencias encontradas",
+        "matchesFound": "0 partidas encontradas | 1 partida encontrada | {n} partidas encontradas",
+        "matchesWaiting": "0 partidas en espera | 1 partida en espera | {n} partidas en espera",
+        "needMorePlayers": "Necesitas 0 jugadores más | Necesitas 1 jugador más | Necesitas {n} jugadores más",
         "playAgainstBots": "Jugar contra bots | Jugar contra un bot | Jugar contra bots",
         "playRandomOpponents": "Jugar con oponentes aleatorios | Jugar con un oponente aleatorio | Jugar con oponentes aleatorios",
         "turnsToFlip": "Turnos para girar | Turno para girar | Turnos para girar",
-        "increment": "Incrementos de 0 | Incremento de 1 | Incrementos de {count}",
-        "remaining": "No queda ninguno | Queda 1 | Quedan {count}",
-        "shipsRemaining": "0 barcos restantes | 1 barco restante | {count} barcos restantes",
-        "includesItems": "Incluye {count} artículos | Incluye {count} artículo | Incluye {count} artículos",
-        "restartNotice": "El servidor se reiniciará en {count} minutos. Termina tu juego. | El servidor se reiniciará en {count} minuto. Termina tu juego. | El servidor se reiniciará en {count} minutos. Termina tu juego."
+        "increment": "Incrementos de 0 | Incremento de 1 | Incrementos de {n}",
+        "remaining": "No queda ninguno | Queda 1 | Quedan {n}",
+        "shipsRemaining": "0 barcos restantes | 1 barco restante | {n} barcos restantes",
+        "includesItems": "Incluye {n} artículos | Incluye {n} artículo | Incluye {n} artículos",
+        "restartNotice": "El servidor se reiniciará en {n} minutos. Termina tu juego. | El servidor se reiniciará en {n} minuto. Termina tu juego. | El servidor se reiniciará en {n} minutos. Termina tu juego."
     },
     "misc": {
         "refresh": "Refrescar",
@@ -2819,9 +2819,9 @@
         "minMax": "Min. {min} | Max. {max}",
         "madeBy": "Hecho por {name}",
         "selectedOfLimit": "Seleccionado {current} del límite de {total}",
-        "selectedAndCountMore": "{selected} y {count} más",
+        "selectedAndCountMore": "{selected} y {n} más",
         "selectAGame": "Seleccionar un juego",
-        "featuringCountGames": "Con {count} juegos",
+        "featuringCountGames": "Con {n} juegos",
         "clearGames": "Borrar juegos",
         "helpLocalize": "Ayuda a mejorar la localización",
         "goAdFree": "Jugar sin anuncios",
@@ -3022,7 +3022,7 @@
             "title": "Usuarios bloqueados",
             "description": "Ve y maneja a todos los que has bloqueado.",
             "empty": "No has bloqueado a ningún usuario.",
-            "count": "{count} bloqueados"
+            "count": "{n} bloqueados"
         },
         "cluePicking": {
             "title": "Escribe tu pista",

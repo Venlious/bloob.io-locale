@@ -93,9 +93,9 @@
             "readyClearedBySettings": "Oyun ayarları güncellendiği için hazır durumun sıfırlandı",
             "fieldRows": "Seçili alan {rows} satırdan fazlasını destekleyemez",
             "fieldCannotFitUsers": "Seçili alan {users} oyuncudan fazlasını destekleyemez",
-            "questionThreshold": "Oyun en az {count} soru istiyor.",
-            "whiteCardThreshold": "Oyun en az {count} yanıt kartı (beyaz) gerektirir",
-            "blackCardThreshold": "Oyun en az {count} eylem kartı (siyah) gerektirir",
+            "questionThreshold": "Oyun en az {n} soru istiyor.",
+            "whiteCardThreshold": "Oyun en az {n} yanıt kartı (beyaz) gerektirir",
+            "blackCardThreshold": "Oyun en az {n} eylem kartı (siyah) gerektirir",
             "insufficientPlayers": "Maçı başlatmak için en az {min} oyuncuya ihtiyaç var."
         },
         "game": {
@@ -242,9 +242,9 @@
                     "title": "Kazanma Koşulu",
                     "help": "Oyunun ne zaman sona ermesi gerektiğine karar ver.",
                     "data": {
-                        "firstToPoints": "İlk {count} puana ulaşan | İlk {count} puana ulaşan | İlk {count} puana ulaşan",
-                        "mostPoints": "{count} turdan sonra en çok puan | {count} turdan sonra en çok puan | {count} turdan sonra en çok puan",
-                        "lastStanding": "Son kalan ({count} can) | Son kalan ({count} can) | Son kalan ({count} can)"
+                        "firstToPoints": "İlk {n} puana ulaşan | İlk {n} puana ulaşan | İlk {n} puana ulaşan",
+                        "mostPoints": "{n} turdan sonra en çok puan | {n} turdan sonra en çok puan | {n} turdan sonra en çok puan",
+                        "lastStanding": "Son kalan ({n} can) | Son kalan ({n} can) | Son kalan ({n} can)"
                     }
                 },
                 "winAmount": {
@@ -528,7 +528,7 @@
                     "help": "Alanı çevirerek işleri karıştır, alttaki döşemeler üstteki döşemeler olacak. Bir sayaç, bir çevirme gerçekleşene kadar kaç tur kaldığını gösterecek.",
                     "data": {
                         "everyTurn": "Her turdan sonra",
-                        "countTurns": "Her {count} turdan sonra"
+                        "countTurns": "Her {n} turdan sonra"
                     }
                 },
                 "turnsUntilFlip": {
@@ -605,7 +605,7 @@
                     "title": "Tur At",
                     "help": "Bir atma turu, herkesin elindeki kartları seçip çıkarmasına izin verir. Tur sona erdikten sonra yerine yeni yanıt kartları verilir.",
                     "data": {
-                        "round": "Her {count} turda | Her {count} turda | Her {count} turda"
+                        "round": "Her {n} turda | Her {n} turda | Her {n} turda"
                     }
                 },
                 "dumpRoundAmount": {
@@ -839,8 +839,8 @@
                 },
                 "winCondition": {
                     "data": {
-                        "KILL_COUNT": "İlk {count} öldürme yapan | İlk {count} öldürme yapan | İlk {count} öldürme yapan",
-                        "TIME": "En çok öldürme yapan {count} dak. sonra | En çok öldürme yapan {count} dak. sonra | En çok öldürme yapan {count} dak. sonra"
+                        "KILL_COUNT": "İlk {n} öldürme yapan | İlk {n} öldürme yapan | İlk {n} öldürme yapan",
+                        "TIME": "En çok öldürme yapan {n} dak. sonra | En çok öldürme yapan {n} dak. sonra | En çok öldürme yapan {n} dak. sonra"
                     }
                 },
                 "defaultBombCount": {
@@ -1370,7 +1370,7 @@
                 },
                 "winCondition": {
                     "data": {
-                        "HIGHEST_AFTER": "{count} puan ulaşıldıktan sonra en çok puanı olan | {count} puan ulaşıldıktan sonra en çok puanı olan | {count} puan ulaşıldıktan sonra en çok puanı olan"
+                        "HIGHEST_AFTER": "{n} puan ulaşıldıktan sonra en çok puanı olan | {n} puan ulaşıldıktan sonra en çok puanı olan | {n} puan ulaşıldıktan sonra en çok puanı olan"
                     }
                 }
             },
@@ -1423,14 +1423,14 @@
                     "help": "Eğer tüm kartlara sahip olan sadece bir oyuncu kalırsa, oyun erken bitecek.",
                     "data": {
                         "LAST_STANDING": "Bir oyuncu tüm kartları aldığında",
-                        "HIGHEST_AFTER": "{count} turdan sonra en çok kart | {count} turdan sonra en çok kart | {count} turdan sonra en çok kart"
+                        "HIGHEST_AFTER": "{n} turdan sonra en çok kart | {n} turdan sonra en çok kart | {n} turdan sonra en çok kart"
                     }
                 },
                 "warRequirement": {
                     "title": "Savaş Gereksinimi",
                     "help": "Eğer iki veya daha fazla oyuncu aynı kartı oynarsa savaşın nasıl ilerlemesi gerektiğine karar ver.",
                     "data": {
-                        "DEFAULT": "{count} kart yerleştir | {count} kart yerleştir | {count} kart yerleştir",
+                        "DEFAULT": "{n} kart yerleştir | {n} kart yerleştir | {n} kart yerleştir",
                         "CARD_VALUE": "İlk kartın rütbesine eşit kartlar yerleştir"
                     }
                 },
@@ -2046,7 +2046,7 @@
                     "title": "Turlar",
                     "help": "Maç kaç tur sürüyor? Oyuncu sayısına göre tur sayısını otomatik ayarlıyor: 2 oyuncu için 4 tur, 3-4 oyuncu için 3 tur, 5-6 oyuncu için 2 tur, 7 veya daha fazla oyuncu için 1 tur.",
                     "data": {
-                        "fixed": "{count} tur | {count} tur | {count} tur"
+                        "fixed": "{n} tur | {n} tur | {n} tur"
                     }
                 },
                 "pickingTime": {
@@ -2322,8 +2322,8 @@
         "exploreAllGames": "Tüm oyunları keşfet!",
         "playingAgainstBots": "Botlara Karşı Oynama",
         "playingAgainstPlayers": "Oyunculara Karşı Oynama",
-        "playingGame": "{count} kişi bu oyunu oynuyor",
-        "online": "{count} çevrimiçi",
+        "playingGame": "{n} kişi bu oyunu oynuyor",
+        "online": "{n} çevrimiçi",
         "connection": "Bağlantı",
         "ping": "Ping",
         "timeOffset": "Zaman Farkı",
@@ -2383,15 +2383,15 @@
         }
     },
     "time": {
-        "daysShort": "{count}g",
-        "hoursShort": "{count}s",
-        "minutesShort": "{count}d",
-        "years": "0 yıl | 1 yıl | {count} yıl",
-        "months": "0 ay | 1 ay | {count} ay",
-        "days": "0 gün | 1 gün | {count} gün",
-        "hours": "0 saat | 1 saat | {count} saat",
-        "minutes": "0 dakika | 1 dakika | {count} dakika",
-        "seconds": "0 saniye | 1 saniye | {count} saniye"
+        "daysShort": "{n}g",
+        "hoursShort": "{n}s",
+        "minutesShort": "{n}d",
+        "years": "0 yıl | 1 yıl | {n} yıl",
+        "months": "0 ay | 1 ay | {n} ay",
+        "days": "0 gün | 1 gün | {n} gün",
+        "hours": "0 saat | 1 saat | {n} saat",
+        "minutes": "0 dakika | 1 dakika | {n} dakika",
+        "seconds": "0 saniye | 1 saniye | {n} saniye"
     },
     "perk": {
         "gradientPack": {
@@ -2490,36 +2490,36 @@
         "certifiedBloober": "Sertifikalı Bloober"
     },
     "count": {
-        "levelShort": "{count} SEV",
-        "experienceShort": "{count} XP",
-        "winStreak": "{count} kazanma serisi!",
-        "rolls": "{count} atış | {count} atış | {count} atış",
-        "balls": "0 top | 1 top | {count} top",
-        "kills": "0 öldürme | 1 öldürme | {count} öldürme",
-        "deaths": "0 ölüm | 1 ölüm | {count} ölüm",
-        "lives": "0 can | 1 can | {count} can",
-        "files": "0 dosya | 1 dosya | {count} dosya",
-        "points": "{count} puan | {count} puan | {count} puan",
-        "pieces": "0 parça | 1 parça | {count} parça",
-        "wins": "0 galibiyet | 1 galibiyet | {count} galibiyet",
-        "cards": "0 kart | 1 kart | {count} kart",
-        "moves": "0 hamle | 1 hamle | {count} hamle",
-        "tiles": "0 karolar | 1 karo | {count} karo",
-        "playing": "0 oynuyor | 1 oynuyor | {count} oynuyor",
-        "players": "0 oyuncu | 1 oyuncu | {count} oyuncu",
-        "selectedCards": "Kart seçilmedi | 1 kart seçildi | {count} kart seçildi",
-        "matches": "0 maç | 1 maç | {count} maç",
-        "matchesFound": "0 eşleşme bulundu | 1 eşleşme bulundu | {count} eşleşme bulundu",
-        "matchesWaiting": "0 eşleşme bekliyor | 1 eşleşme bekliyor | {count} eşleşme bekliyor",
-        "needMorePlayers": "0 oyuncuya daha ihtiyacımız var | 1 oyuncuya daha ihtiyacımız var | {count} oyuncuya daha ihtiyacımız var",
+        "levelShort": "{n} SEV",
+        "experienceShort": "{n} XP",
+        "winStreak": "{n} kazanma serisi!",
+        "rolls": "{n} atış | {n} atış | {n} atış",
+        "balls": "0 top | 1 top | {n} top",
+        "kills": "0 öldürme | 1 öldürme | {n} öldürme",
+        "deaths": "0 ölüm | 1 ölüm | {n} ölüm",
+        "lives": "0 can | 1 can | {n} can",
+        "files": "0 dosya | 1 dosya | {n} dosya",
+        "points": "{n} puan | {n} puan | {n} puan",
+        "pieces": "0 parça | 1 parça | {n} parça",
+        "wins": "0 galibiyet | 1 galibiyet | {n} galibiyet",
+        "cards": "0 kart | 1 kart | {n} kart",
+        "moves": "0 hamle | 1 hamle | {n} hamle",
+        "tiles": "0 karolar | 1 karo | {n} karo",
+        "playing": "0 oynuyor | 1 oynuyor | {n} oynuyor",
+        "players": "0 oyuncu | 1 oyuncu | {n} oyuncu",
+        "selectedCards": "Kart seçilmedi | 1 kart seçildi | {n} kart seçildi",
+        "matches": "0 maç | 1 maç | {n} maç",
+        "matchesFound": "0 eşleşme bulundu | 1 eşleşme bulundu | {n} eşleşme bulundu",
+        "matchesWaiting": "0 eşleşme bekliyor | 1 eşleşme bekliyor | {n} eşleşme bekliyor",
+        "needMorePlayers": "0 oyuncuya daha ihtiyacımız var | 1 oyuncuya daha ihtiyacımız var | {n} oyuncuya daha ihtiyacımız var",
         "playAgainstBots": "Botlara Karşı Oyna | Bir Bota Karşı Oyna | Botlara Karşı Oyna",
         "playRandomOpponents": "Rastgele Rakiplerle Oyna | Rastgele Bir Rakiple Oyna | Rastgele Rakiplerle Oyna",
         "turnsToFlip": "Dönüşler çevir | Dönüş çevir | Dönüşler çevir",
-        "increment": "0'lık artışlar | 1'lik artış | {count}'luk artışlar",
-        "remaining": "Hiç kalmadı | 1 kaldı | {count} kaldı",
-        "shipsRemaining": "0 gemi kaldı | 1 gemi kaldı | {count} gemi kaldı",
-        "includesItems": "{count} öğe içerir | {count} öğe içerir | {count} öğe içerir",
-        "restartNotice": "Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {count} dakikada yeniden başlayacak. Oyununu bitir."
+        "increment": "0'lık artışlar | 1'lik artış | {n}'luk artışlar",
+        "remaining": "Hiç kalmadı | 1 kaldı | {n} kaldı",
+        "shipsRemaining": "0 gemi kaldı | 1 gemi kaldı | {n} gemi kaldı",
+        "includesItems": "{n} öğe içerir | {n} öğe içerir | {n} öğe içerir",
+        "restartNotice": "Sunucu {n} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {n} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {n} dakikada yeniden başlayacak. Oyununu bitir."
     },
     "misc": {
         "refresh": "Yenile",
@@ -2819,9 +2819,9 @@
         "minMax": "Min. {min} | Maks. {max}",
         "madeBy": "{name} tarafından yapıldı",
         "selectedOfLimit": "Seçilen {current}, {total} limitinden",
-        "selectedAndCountMore": "{selected} ve {count} tane daha",
+        "selectedAndCountMore": "{selected} ve {n} tane daha",
         "selectAGame": "Bir oyun seç",
-        "featuringCountGames": "{count} oyun var",
+        "featuringCountGames": "{n} oyun var",
         "clearGames": "Oyunları temizle",
         "helpLocalize": "Yerelleştirmeyi geliştirmeye yardımcı ol",
         "goAdFree": "Reklamsız devam et",
@@ -3022,7 +3022,7 @@
             "title": "Engellenen Kullanıcılar",
             "description": "Engellediğin herkesi gör ve yönet.",
             "empty": "Hiçbir kullanıcıyı engellemedin.",
-            "count": "{count} engellendi"
+            "count": "{n} engellendi"
         },
         "cluePicking": {
             "title": "İpucunu yaz",

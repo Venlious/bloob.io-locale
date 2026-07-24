@@ -93,9 +93,9 @@
             "readyClearedBySettings": "게임 설정 업데이트로 인해 준비 상태가 초기화되었어요",
             "fieldRows": "선택한 필드는 {rows}행까지만 지원해요",
             "fieldCannotFitUsers": "선택한 필드는 {users}명까지만 플레이할 수 있어요",
-            "questionThreshold": "게임은 최소 {count}개의 질문이 필요해요",
-            "whiteCardThreshold": "게임은 최소 {count}개의 응답 카드(하얀색)가 필요해요",
-            "blackCardThreshold": "게임은 최소 {count}개의 액션 카드(검은색)가 필요해요",
+            "questionThreshold": "게임은 최소 {n}개의 질문이 필요해요",
+            "whiteCardThreshold": "게임은 최소 {n}개의 응답 카드(하얀색)가 필요해요",
+            "blackCardThreshold": "게임은 최소 {n}개의 액션 카드(검은색)가 필요해요",
             "insufficientPlayers": "시작하려면 최소 {min}명의 플레이어가 필요해요"
         },
         "game": {
@@ -242,9 +242,9 @@
                     "title": "승리 조건",
                     "help": "게임이 언제 끝날지 결정해요.",
                     "data": {
-                        "firstToPoints": "가장 먼저 {count}점에 도달할 때까지 | 가장 먼저 {count}점에 도달할 때까지 | 가장 먼저 {count}점에 도달할 때까지",
-                        "mostPoints": "{count}라운드 후 최다 득점 시 | {count}라운드 후 최다 득점 시 | {count}라운드 후 최다 득점 시",
-                        "lastStanding": "최후의 생존자 (목숨 {count}개) | 최후의 생존자 (목숨 {count}개) | 최후의 생존자 (목숨 {count}개)"
+                        "firstToPoints": "가장 먼저 {n}점에 도달할 때까지 | 가장 먼저 {n}점에 도달할 때까지 | 가장 먼저 {n}점에 도달할 때까지",
+                        "mostPoints": "{n}라운드 후 최다 득점 시 | {n}라운드 후 최다 득점 시 | {n}라운드 후 최다 득점 시",
+                        "lastStanding": "최후의 생존자 (목숨 {n}개) | 최후의 생존자 (목숨 {n}개) | 최후의 생존자 (목숨 {n}개)"
                     }
                 },
                 "winAmount": {
@@ -528,7 +528,7 @@
                     "help": "필드를 뒤집어 게임에 재미를 더해보세요. 맨 아래에 있던 말들이 맨 위로 올라가요. 카운터를 통해 뒤집기까지 남은 턴을 확인할 수 있어요.",
                     "data": {
                         "everyTurn": "매 턴마다",
-                        "countTurns": "{count}턴마다"
+                        "countTurns": "{n}턴마다"
                     }
                 },
                 "turnsUntilFlip": {
@@ -605,7 +605,7 @@
                     "title": "패 버리기 라운드",
                     "help": "패 버리기 라운드에서는 손에 든 카드 중 버리고 싶은 카드를 선택할 수 있어요. 라운드가 끝나면 새 응답 카드로 교체돼요.",
                     "data": {
-                        "round": "{count}라운드마다 | {count}라운드마다 | {count}라운드마다"
+                        "round": "{n}라운드마다 | {n}라운드마다 | {n}라운드마다"
                     }
                 },
                 "dumpRoundAmount": {
@@ -839,8 +839,8 @@
                 },
                 "winCondition": {
                     "data": {
-                        "KILL_COUNT": "가장 먼저 {count}킬 달성 | 가장 먼저 {count}킬 달성 | 가장 먼저 {count}킬 달성",
-                        "TIME": "{count}분 후 최다 킬 | {count}분 후 최다 킬 | {count}분 후 최다 킬"
+                        "KILL_COUNT": "가장 먼저 {n}킬 달성 | 가장 먼저 {n}킬 달성 | 가장 먼저 {n}킬 달성",
+                        "TIME": "{n}분 후 최다 킬 | {n}분 후 최다 킬 | {n}분 후 최다 킬"
                     }
                 },
                 "defaultBombCount": {
@@ -1370,7 +1370,7 @@
                 },
                 "winCondition": {
                     "data": {
-                        "HIGHEST_AFTER": "{count}점에 도달한 후 최다 득점 | {count}점에 도달한 후 최다 득점 | {count}점에 도달한 후 최다 득점"
+                        "HIGHEST_AFTER": "{n}점에 도달한 후 최다 득점 | {n}점에 도달한 후 최다 득점 | {n}점에 도달한 후 최다 득점"
                     }
                 }
             },
@@ -1423,14 +1423,14 @@
                     "help": "모든 카드를 가진 플레이어가 한 명만 남으면 게임이 조기에 종료돼요.",
                     "data": {
                         "LAST_STANDING": "한 플레이어가 모든 카드를 가졌을 때",
-                        "HIGHEST_AFTER": "{count}라운드 후 최다 카드 보유 | {count}라운드 후 최다 카드 보유 | {count}라운드 후 최다 카드 보유"
+                        "HIGHEST_AFTER": "{n}라운드 후 최다 카드 보유 | {n}라운드 후 최다 카드 보유 | {n}라운드 후 최다 카드 보유"
                     }
                 },
                 "warRequirement": {
                     "title": "전쟁 규칙",
                     "help": "두 명 이상의 플레이어가 같은 카드를 냈을 때 전쟁(War)을 어떻게 진행할지 결정해요.",
                     "data": {
-                        "DEFAULT": "카드 {count}장 내려놓기 | 카드 {count}장 내려놓기 | 카드 {count}장 내려놓기",
+                        "DEFAULT": "카드 {n}장 내려놓기 | 카드 {n}장 내려놓기 | 카드 {n}장 내려놓기",
                         "CARD_VALUE": "처음 낸 카드의 숫자만큼 카드 내려놓기"
                     }
                 },
@@ -2046,7 +2046,7 @@
                     "title": "라운드",
                     "help": "경기가 얼마나 오래 지속되는지 알려줘요. 플레이어 수에 따라 라운드 수가 자동으로 조정돼요: 2명일 때는 4라운드, 3-4명일 때는 3라운드, 5-6명일 때는 2라운드, 7명 이상일 때는 1라운드예요.",
                     "data": {
-                        "fixed": "{count} 라운드 | {count} 라운드 | {count} 라운드"
+                        "fixed": "{n} 라운드 | {n} 라운드 | {n} 라운드"
                     }
                 },
                 "pickingTime": {
@@ -2322,8 +2322,8 @@
         "exploreAllGames": "모든 게임 둘러보기",
         "playingAgainstBots": "봇과 대결 중",
         "playingAgainstPlayers": "다른 유저와 대결 중",
-        "playingGame": "{count}명이 플레이 중",
-        "online": "{count}명 온라인",
+        "playingGame": "{n}명이 플레이 중",
+        "online": "{n}명 온라인",
         "connection": "연결 상태",
         "ping": "핑(Ping)",
         "timeOffset": "시간 오프셋",
@@ -2383,15 +2383,15 @@
         }
     },
     "time": {
-        "daysShort": "{count}일",
-        "hoursShort": "{count}시간",
-        "minutesShort": "{count}분",
-        "years": "0년 | 1년 | {count}년",
-        "months": "0개월 | 1개월 | {count}개월",
-        "days": "0일 | 1일 | {count}일",
-        "hours": "0시간 | 1시간 | {count}시간",
-        "minutes": "0분 | 1분 | {count}분",
-        "seconds": "0초 | 1초 | {count}초"
+        "daysShort": "{n}일",
+        "hoursShort": "{n}시간",
+        "minutesShort": "{n}분",
+        "years": "0년 | 1년 | {n}년",
+        "months": "0개월 | 1개월 | {n}개월",
+        "days": "0일 | 1일 | {n}일",
+        "hours": "0시간 | 1시간 | {n}시간",
+        "minutes": "0분 | 1분 | {n}분",
+        "seconds": "0초 | 1초 | {n}초"
     },
     "perk": {
         "gradientPack": {
@@ -2490,36 +2490,36 @@
         "certifiedBloober": "인증된 블루버"
     },
     "count": {
-        "levelShort": "LVL {count}",
-        "experienceShort": "{count} XP",
-        "winStreak": "{count}연승 달성!",
-        "rolls": "{count}개의 주사위 | {count}개의 주사위 | {count}개의 주사위",
-        "balls": "0 공 | 1 공 | {count} 공",
-        "kills": "0킬 | 1킬 | {count}킬",
-        "deaths": "0데스 | 1데스 | {count}데스",
-        "lives": "목숨 0개 | 목숨 1개 | 목숨 {count}개",
-        "files": "파일 0개 | 파일 1개 | 파일 {count}개",
-        "points": "{count}점 | {count}점 | {count}점",
-        "pieces": "말 0개 | 말 1개 | 말 {count}개",
-        "wins": "0승 | 1승 | {count}승",
-        "cards": "카드 0장 | 카드 1장 | 카드 {count}장",
-        "moves": "0수 | 1수 | {count}수",
-        "tiles": "타일 0개 | 타일 1개 | 타일 {count}개",
-        "playing": "0명 플레이 중 | 1명 플레이 중 | {count}명 플레이 중",
-        "players": "플레이어 0명 | 플레이어 1명 | 플레이어 {count}명",
-        "selectedCards": "선택된 카드 없음 | 카드 1장 선택됨 | 카드 {count}장 선택됨",
-        "matches": "매치 0개 | 매치 1개 | 매치 {count}개",
-        "matchesFound": "매치 0개 발견됨 | 매치 1개 발견됨 | 매치 {count}개 발견됨",
-        "matchesWaiting": "대기 중인 매치 0개 | 대기 중인 매치 1개 | 대기 중인 매치 {count}개",
-        "needMorePlayers": "플레이어 0명 더 필요 | 플레이어 1명 더 필요 | 플레이어 {count}명 더 필요",
+        "levelShort": "LVL {n}",
+        "experienceShort": "{n} XP",
+        "winStreak": "{n}연승 달성!",
+        "rolls": "{n}개의 주사위 | {n}개의 주사위 | {n}개의 주사위",
+        "balls": "0 공 | 1 공 | {n} 공",
+        "kills": "0킬 | 1킬 | {n}킬",
+        "deaths": "0데스 | 1데스 | {n}데스",
+        "lives": "목숨 0개 | 목숨 1개 | 목숨 {n}개",
+        "files": "파일 0개 | 파일 1개 | 파일 {n}개",
+        "points": "{n}점 | {n}점 | {n}점",
+        "pieces": "말 0개 | 말 1개 | 말 {n}개",
+        "wins": "0승 | 1승 | {n}승",
+        "cards": "카드 0장 | 카드 1장 | 카드 {n}장",
+        "moves": "0수 | 1수 | {n}수",
+        "tiles": "타일 0개 | 타일 1개 | 타일 {n}개",
+        "playing": "0명 플레이 중 | 1명 플레이 중 | {n}명 플레이 중",
+        "players": "플레이어 0명 | 플레이어 1명 | 플레이어 {n}명",
+        "selectedCards": "선택된 카드 없음 | 카드 1장 선택됨 | 카드 {n}장 선택됨",
+        "matches": "매치 0개 | 매치 1개 | 매치 {n}개",
+        "matchesFound": "매치 0개 발견됨 | 매치 1개 발견됨 | 매치 {n}개 발견됨",
+        "matchesWaiting": "대기 중인 매치 0개 | 대기 중인 매치 1개 | 대기 중인 매치 {n}개",
+        "needMorePlayers": "플레이어 0명 더 필요 | 플레이어 1명 더 필요 | 플레이어 {n}명 더 필요",
         "playAgainstBots": "봇과 대결 | 봇과 대결 | 봇과 대결",
         "playRandomOpponents": "무작위 상대와 대결 | 무작위 상대와 대결 | 무작위 상대와 대결",
         "turnsToFlip": "뒤집기까지 남은 턴 | 뒤집기까지 남은 턴 | 뒤집기까지 남은 턴",
-        "increment": "0씩 증가 | 1씩 증가 | {count}씩 증가",
-        "remaining": "남은 항목 없음 | 1개 남음 | {count}개 남음",
-        "shipsRemaining": "남은 함선 0척 | 남은 함선 1척 | 남은 함선 {count}척",
-        "includesItems": "아이템 {count}개 포함 | 아이템 {count}개 포함 | 아이템 {count}개 포함",
-        "restartNotice": "{count}분 후에 서버가 재시작됩니다. 게임을 마무리해 주세요. | {count}분 후에 서버가 재시작됩니다. 게임을 마무리해 주세요. | {count}분 후에 서버가 재시작됩니다. 게임을 마무리해 주세요."
+        "increment": "0씩 증가 | 1씩 증가 | {n}씩 증가",
+        "remaining": "남은 항목 없음 | 1개 남음 | {n}개 남음",
+        "shipsRemaining": "남은 함선 0척 | 남은 함선 1척 | 남은 함선 {n}척",
+        "includesItems": "아이템 {n}개 포함 | 아이템 {n}개 포함 | 아이템 {n}개 포함",
+        "restartNotice": "{n}분 후에 서버가 재시작됩니다. 게임을 마무리해 주세요. | {n}분 후에 서버가 재시작됩니다. 게임을 마무리해 주세요. | {n}분 후에 서버가 재시작됩니다. 게임을 마무리해 주세요."
     },
     "misc": {
         "refresh": "새로 고침",
@@ -2819,9 +2819,9 @@
         "minMax": "최소 {min} | 최대 {max}",
         "madeBy": "제작: {name}",
         "selectedOfLimit": "제한 {total}개 중 {current}개 선택됨",
-        "selectedAndCountMore": "{selected} 외 {count}개 더",
+        "selectedAndCountMore": "{selected} 외 {n}개 더",
         "selectAGame": "게임 선택",
-        "featuringCountGames": "{count}개의 게임 포함",
+        "featuringCountGames": "{n}개의 게임 포함",
         "clearGames": "게임 목록 비우기",
         "helpLocalize": "번역 개선 도와주기",
         "goAdFree": "광고 제거하기",
@@ -3022,7 +3022,7 @@
             "title": "차단된 사용자",
             "description": "차단한 모든 사용자를 보고 관리해요.",
             "empty": "차단한 사용자가 없어요.",
-            "count": "{count}명이 차단되었어요."
+            "count": "{n}명이 차단되었어요."
         },
         "cluePicking": {
             "title": "너의 단서를 써봐요",
