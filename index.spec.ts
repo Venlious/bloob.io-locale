@@ -231,6 +231,32 @@ describe(`correctBoldTags`, () => {
 	})
 })
 
+// Keys the frontend renders as plain text rather than through an HTML tooltip.
+// Markup in one of these is either escaped and shown literally or announced
+// verbatim by a screen reader, and vue-i18n warns about it besides ("Detected
+// HTML in message... Recommend not using HTML messages to avoid XSS"): the
+// message compiler renders the tags, so anything interpolated into the message
+// rides along into innerHTML.
+//
+// Only English needs the assertion - `checkForMatchingBoldTags` already requires
+// every translation to carry the same <b> count as its English source, so a tag
+// added here is what would spread the problem to all 20 locales.
+const plainTextKeys = [`match.info.public`, `match.info.private`]
+
+const resolveKey = (source, path) => path.split(`.`).reduce((value, part) => value?.[part], source)
+
+describe(`plainTextMessages`, () => {
+	for (const path of plainTextKeys) {
+		it(`should have no markup in "${path}"`, () => {
+			const value = resolveKey(enMessage, path)
+			// Asserted first so the markup check below can't pass vacuously against a
+			// key that was renamed or removed - `undefined` contains no markup either
+			expect(typeof value).toBe(`string`)
+			expect(value).not.toMatch(/<[a-zA-Z/]/)
+		})
+	}
+})
+
 describe(`correctVariableFormatting`, () => {
 	it(`English should format variables correctly`, () => {
 		checkForCommonVariableErrors(enMessage)
