@@ -311,6 +311,86 @@
                         "HALFWAY": "半场",
                         "WHEN_NEEDED": "没牌时"
                     }
+                },
+                "aimingLine": {
+                    "title": "瞄准线",
+                    "help": "瞄准线会显示击球后白球会去哪里。"
+                },
+                "speed": {
+                    "title": "速度",
+                    "help": "击球和球滚动的速度有多快。"
+                },
+                "illegalBallPocket": {
+                    "title": "犯规进球"
+                },
+                "ruleContactRailOnBreak": {
+                    "title": "击球时触碰边带",
+                    "help": "在击球时，确定有多少个球必须触碰过边带。如果你进球了，这条规则将不适用。",
+                    "data": {
+                        "one": "一个球",
+                        "two": "两个球",
+                        "three": "三个球",
+                        "four": "四个球"
+                    }
+                },
+                "assignedGroup": {
+                    "title": "指定的球组",
+                    "help": "确定每个玩家会被分配到哪个组（实色或条纹）。",
+                    "data": {
+                        "pocket": "进球的球",
+                        "random": "开始时随机"
+                    }
+                },
+                "ruleTurnCanHitBall": {
+                    "title": "可以击打的球",
+                    "help": "当玩家击打了他们不允许击打的球组时就会发生这种情况。但是在开球时，这条规则不适用。",
+                    "data": {
+                        "assignedGroup": "自己的球组",
+                        "assignedGroupPlus": "自己的球组 + 8号球",
+                        "eitherGroup": "任一组",
+                        "anyBall": "任意球"
+                    }
+                },
+                "ruleTurnMustHitBall": {
+                    "title": "必须击球",
+                    "help": "玩家在自己回合没打到球时发生。"
+                },
+                "ruleTurnContactRail": {
+                    "title": "必须接触边带",
+                    "help": "当没有球打到边带（垫子）时会发生。如果玩家进球，这条规则将不适用。"
+                },
+                "ruleConsecutiveFouls": {
+                    "title": "连续犯规",
+                    "help": "确定玩家连续犯规时应该发生什么。这条规则是为了防止恶意犯规或挂机的行为。",
+                    "data": {
+                        "off": "关闭",
+                        "loseOnTwo": "犯规两次后",
+                        "loseOnThree": "犯规三次后",
+                        "loseOnFour": "犯规四次后"
+                    }
+                },
+                "foul": {
+                    "help": {
+                        "disabled": "当前设置下禁用了犯规。"
+                    },
+                    "data": {
+                        "nothing": "无事发生",
+                        "keepTurn": "继续轮到你",
+                        "endTurn": "结束回合",
+                        "endTurnHand": "结束回合 + 自由球",
+                        "reset": "结束回合 + 恢复场地",
+                        "resetHand": "结束回合 + 恢复场地 + 自由球",
+                        "instantWin": "立即赢",
+                        "instantLoss": "立即输"
+                    }
+                },
+                "foulPocketCueBall": {
+                    "title": "口袋击球",
+                    "help": "当玩家将母球打进口袋时发生。"
+                },
+                "foulPocketOpponentBall": {
+                    "title": "对方球入袋",
+                    "help": "当玩家将对手的球打进口袋时会发生这种情况。其他犯规行为优先于此（例如，先击打错误的球）。"
                 }
             },
             "help": {},
@@ -916,35 +996,6 @@
             "title": "八球台球 | 考验击球准度与策略的经典台球游戏",
             "description": "在线游玩八球台球，无需注册账号，支持匹配真人、邀请1名好友或人机对战，体验台球的魅力~",
             "options": {
-                "aimingLine": {
-                    "title": "瞄准线",
-                    "help": "瞄准线会显示击球后白球会去哪里。"
-                },
-                "speed": {
-                    "title": "速度",
-                    "help": "击球和球滚动的速度有多快。"
-                },
-                "illegalBallPocket": {
-                    "title": "犯规进球"
-                },
-                "ruleContactRailOnBreak": {
-                    "title": "击球时触碰边带",
-                    "help": "在击球时，确定有多少个球必须触碰过边带。如果你进球了，这条规则将不适用。",
-                    "data": {
-                        "one": "一个球",
-                        "two": "两个球",
-                        "three": "三个球",
-                        "four": "四个球"
-                    }
-                },
-                "assignedGroup": {
-                    "title": "指定的球组",
-                    "help": "确定每个玩家会被分配到哪个组（实色或条纹）。",
-                    "data": {
-                        "pocket": "进球的球",
-                        "random": "开始时随机"
-                    }
-                },
                 "teamKeepTurn": {
                     "title": "保持回合（队伍）",
                     "help": "在团队游戏中，当一个玩家可以继续他们的回合时（例如，进了一个球），会发生什么。",
@@ -952,57 +1003,6 @@
                         "samePlayer": "同一个玩家继续",
                         "rotatePlayers": "转到下一个队友"
                     }
-                },
-                "ruleTurnCanHitBall": {
-                    "title": "可以击打的球",
-                    "help": "当玩家击打了他们不允许击打的球组时就会发生这种情况。但是在开球时，这条规则不适用。",
-                    "data": {
-                        "assignedGroup": "自己的球组",
-                        "assignedGroupPlus": "自己的球组 + 8号球",
-                        "eitherGroup": "任一组",
-                        "anyBall": "任意球"
-                    }
-                },
-                "ruleTurnMustHitBall": {
-                    "title": "必须击球",
-                    "help": "玩家在自己回合没打到球时发生。"
-                },
-                "ruleTurnContactRail": {
-                    "title": "必须接触边带",
-                    "help": "当没有球打到边带（垫子）时会发生。如果玩家进球，这条规则将不适用。"
-                },
-                "ruleConsecutiveFouls": {
-                    "title": "连续犯规",
-                    "help": "确定玩家连续犯规时应该发生什么。这条规则是为了防止恶意犯规或挂机的行为。",
-                    "data": {
-                        "off": "关闭",
-                        "loseOnTwo": "犯规两次后",
-                        "loseOnThree": "犯规三次后",
-                        "loseOnFour": "犯规四次后"
-                    }
-                },
-                "foul": {
-                    "help": {
-                        "disabled": "当前设置下禁用了犯规。"
-                    },
-                    "data": {
-                        "nothing": "无事发生",
-                        "keepTurn": "继续轮到你",
-                        "endTurn": "结束回合",
-                        "endTurnHand": "结束回合 + 自由球",
-                        "reset": "结束回合 + 恢复场地",
-                        "resetHand": "结束回合 + 恢复场地 + 自由球",
-                        "instantWin": "立即赢",
-                        "instantLoss": "立即输"
-                    }
-                },
-                "foulPocketCueBall": {
-                    "title": "口袋击球",
-                    "help": "当玩家将母球打进口袋时发生。"
-                },
-                "foulPocketOpponentBall": {
-                    "title": "对方球入袋",
-                    "help": "当玩家将对手的球打进口袋时会发生这种情况。其他犯规行为优先于此（例如，先击打错误的球）。"
                 },
                 "foulPocketOwnAndOpponentBall": {
                     "title": "同时进自己和对手的球",

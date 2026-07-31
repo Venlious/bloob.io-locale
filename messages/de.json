@@ -311,6 +311,86 @@
                         "HALFWAY": "Halbzeit im Schuh",
                         "WHEN_NEEDED": "Wenn die Karten alle sind"
                     }
+                },
+                "aimingLine": {
+                    "title": "Ziel-Linie",
+                    "help": "Die Ziel-Linie zeigt an, wohin sich die Weiße nach dem Stoß bewegt."
+                },
+                "speed": {
+                    "title": "Geschwindigkeit",
+                    "help": "Wie schnell die Pool-Animation abgespielt wird."
+                },
+                "illegalBallPocket": {
+                    "title": "Illegales Loch"
+                },
+                "ruleContactRailOnBreak": {
+                    "title": "Bande beim Anstoß",
+                    "help": "Lege fest, wie viele Kugeln beim Anstoß mindestens eine Bande berühren müssen. Diese Regel gilt nicht, wenn eine Kugel versenkt wird.",
+                    "data": {
+                        "one": "Eine Kugel",
+                        "two": "Zwei Kugeln",
+                        "three": "Drei Kugeln",
+                        "four": "Vier Kugeln"
+                    }
+                },
+                "assignedGroup": {
+                    "title": "Zugewiesene Gruppe",
+                    "help": "Legt fest, wie jeder Spieler seine Gruppe (Volle oder Halbe) erhält.",
+                    "data": {
+                        "pocket": "Beim Versenken",
+                        "random": "Zufällig zu Beginn"
+                    }
+                },
+                "ruleTurnCanHitBall": {
+                    "title": "Erlaubte Kugel",
+                    "help": "Tritt ein, wenn der Spieler eine Kugel trifft, die er nicht treffen darf. Diese Regel gilt nicht beim Anstoß.",
+                    "data": {
+                        "assignedGroup": "Eigene Gruppe",
+                        "assignedGroupPlus": "Eigene Gruppe + 8-Ball",
+                        "eitherGroup": "Beliebige Gruppe",
+                        "anyBall": "Beliebige Kugel"
+                    }
+                },
+                "ruleTurnMustHitBall": {
+                    "title": "Muss Kugel treffen",
+                    "help": "Passiert, wenn der Spieler den falschen Ball nicht trifft, während er am Zug ist."
+                },
+                "ruleTurnContactRail": {
+                    "title": "Muss Bande berühren",
+                    "help": "Tritt ein, wenn keine Kugel eine Bande berührt. Diese Regel gilt nicht, wenn der Spieler eine Kugel versenkt."
+                },
+                "ruleConsecutiveFouls": {
+                    "title": "Aufeinanderfolgende Fouls",
+                    "help": "Legt fest, was passiert, wenn ein Spieler mehrere Fouls hintereinander begeht. Diese Regel soll unsportliches Verhalten unterbinden.",
+                    "data": {
+                        "off": "Aus",
+                        "loseOnTwo": "Niederlage nach zwei",
+                        "loseOnThree": "Niederlage nach drei",
+                        "loseOnFour": "Niederlage nach vier"
+                    }
+                },
+                "foul": {
+                    "help": {
+                        "disabled": "Foul ist mit den aktuellen Einstellungen deaktiviert."
+                    },
+                    "data": {
+                        "nothing": "Keine Strafe",
+                        "keepTurn": "Zug behalten",
+                        "endTurn": "Zug beenden",
+                        "endTurnHand": "Zug beenden + Kugel in der Hand",
+                        "reset": "Zug beenden + Feld zurücksetzen",
+                        "resetHand": "Zug beenden + Feld zurücksetzen + Kugel in der Hand",
+                        "instantWin": "Sofortiger Sieg",
+                        "instantLoss": "Sofortige Niederlage"
+                    }
+                },
+                "foulPocketCueBall": {
+                    "title": "Weiße Kugel versenkt",
+                    "help": "Tritt ein, wenn ein Spieler die Weiße versenkt."
+                },
+                "foulPocketOpponentBall": {
+                    "title": "Gegnerische Kugel versenkt",
+                    "help": "Tritt ein, wenn ein Spieler eine gegnerische Kugel versenkt. Andere Fouls haben Vorrang (z. B. zuerst die falsche Kugel treffen)."
                 }
             },
             "help": {},
@@ -916,35 +996,6 @@
             "title": "Online 8 Ball Pool | Kostenlos mit Freunden Mehrspieler spielen",
             "description": "Spiele kostenlos Online 8 Ball Pool ohne Konto. Fordere Freunde oder Fremde zu Mehrspieler-Matches heraus oder spiele gegen clevere Bots.",
             "options": {
-                "aimingLine": {
-                    "title": "Ziel-Linie",
-                    "help": "Die Ziel-Linie zeigt an, wohin sich die Weiße nach dem Stoß bewegt."
-                },
-                "speed": {
-                    "title": "Geschwindigkeit",
-                    "help": "Wie schnell die Pool-Animation abgespielt wird."
-                },
-                "illegalBallPocket": {
-                    "title": "Illegales Loch"
-                },
-                "ruleContactRailOnBreak": {
-                    "title": "Bande beim Anstoß",
-                    "help": "Lege fest, wie viele Kugeln beim Anstoß mindestens eine Bande berühren müssen. Diese Regel gilt nicht, wenn eine Kugel versenkt wird.",
-                    "data": {
-                        "one": "Eine Kugel",
-                        "two": "Zwei Kugeln",
-                        "three": "Drei Kugeln",
-                        "four": "Vier Kugeln"
-                    }
-                },
-                "assignedGroup": {
-                    "title": "Zugewiesene Gruppe",
-                    "help": "Legt fest, wie jeder Spieler seine Gruppe (Volle oder Halbe) erhält.",
-                    "data": {
-                        "pocket": "Beim Versenken",
-                        "random": "Zufällig zu Beginn"
-                    }
-                },
                 "teamKeepTurn": {
                     "title": "Zug behalten (Teams)",
                     "help": "In Teamspielen, wenn ein Spieler seinen Zug behalten darf (z.B. indem er einen Ball versenkt), passiert Folgendes: Der Spieler darf weiter spielen und hat die Chance, noch mehr Punkte zu sammeln oder das Spiel zu beeinflussen.",
@@ -952,57 +1003,6 @@
                         "samePlayer": "Gleicher Spieler bleibt dran",
                         "rotatePlayers": "Dreh zu nächstem Teamkollegen"
                     }
-                },
-                "ruleTurnCanHitBall": {
-                    "title": "Erlaubte Kugel",
-                    "help": "Tritt ein, wenn der Spieler eine Kugel trifft, die er nicht treffen darf. Diese Regel gilt nicht beim Anstoß.",
-                    "data": {
-                        "assignedGroup": "Eigene Gruppe",
-                        "assignedGroupPlus": "Eigene Gruppe + 8-Ball",
-                        "eitherGroup": "Beliebige Gruppe",
-                        "anyBall": "Beliebige Kugel"
-                    }
-                },
-                "ruleTurnMustHitBall": {
-                    "title": "Muss Kugel treffen",
-                    "help": "Passiert, wenn der Spieler den falschen Ball nicht trifft, während er am Zug ist."
-                },
-                "ruleTurnContactRail": {
-                    "title": "Muss Bande berühren",
-                    "help": "Tritt ein, wenn keine Kugel eine Bande berührt. Diese Regel gilt nicht, wenn der Spieler eine Kugel versenkt."
-                },
-                "ruleConsecutiveFouls": {
-                    "title": "Aufeinanderfolgende Fouls",
-                    "help": "Legt fest, was passiert, wenn ein Spieler mehrere Fouls hintereinander begeht. Diese Regel soll unsportliches Verhalten unterbinden.",
-                    "data": {
-                        "off": "Aus",
-                        "loseOnTwo": "Niederlage nach zwei",
-                        "loseOnThree": "Niederlage nach drei",
-                        "loseOnFour": "Niederlage nach vier"
-                    }
-                },
-                "foul": {
-                    "help": {
-                        "disabled": "Foul ist mit den aktuellen Einstellungen deaktiviert."
-                    },
-                    "data": {
-                        "nothing": "Keine Strafe",
-                        "keepTurn": "Zug behalten",
-                        "endTurn": "Zug beenden",
-                        "endTurnHand": "Zug beenden + Kugel in der Hand",
-                        "reset": "Zug beenden + Feld zurücksetzen",
-                        "resetHand": "Zug beenden + Feld zurücksetzen + Kugel in der Hand",
-                        "instantWin": "Sofortiger Sieg",
-                        "instantLoss": "Sofortige Niederlage"
-                    }
-                },
-                "foulPocketCueBall": {
-                    "title": "Weiße Kugel versenkt",
-                    "help": "Tritt ein, wenn ein Spieler die Weiße versenkt."
-                },
-                "foulPocketOpponentBall": {
-                    "title": "Gegnerische Kugel versenkt",
-                    "help": "Tritt ein, wenn ein Spieler eine gegnerische Kugel versenkt. Andere Fouls haben Vorrang (z. B. zuerst die falsche Kugel treffen)."
                 },
                 "foulPocketOwnAndOpponentBall": {
                     "title": "Eigene + gegnerische Kugel versenkt",

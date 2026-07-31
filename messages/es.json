@@ -311,6 +311,86 @@
                         "HALFWAY": "A la mitad del zapato",
                         "WHEN_NEEDED": "Cuando ya no hay cartas"
                     }
+                },
+                "aimingLine": {
+                    "title": "Línea de apuntado",
+                    "help": "La línea de tiro muestra hacia dónde va a ir la bola blanca después de ser golpeada."
+                },
+                "speed": {
+                    "title": "Velocidad",
+                    "help": "Qué tan rápido se reproduce la animación del juego."
+                },
+                "illegalBallPocket": {
+                    "title": "Bola ilegal en bolsillo"
+                },
+                "ruleContactRailOnBreak": {
+                    "title": "Toques del borde al romper",
+                    "help": "Al romper, determina cuántas bolas deben entrar en contacto con el borde. Esta regla no se aplica si metes una bola.",
+                    "data": {
+                        "one": "Una bola",
+                        "two": "Dos bolas",
+                        "three": "Tres bolas",
+                        "four": "Cuatro bolas"
+                    }
+                },
+                "assignedGroup": {
+                    "title": "Grupo asignado",
+                    "help": "Determina cómo se asigna a cada jugador su grupo (sólidos o rayas)",
+                    "data": {
+                        "pocket": "En bolsillo",
+                        "random": "Aleatorio al inicio"
+                    }
+                },
+                "ruleTurnCanHitBall": {
+                    "title": "Puedes golpear la bola",
+                    "help": "Sucede cuando el jugador golpea una bola que no le está permitido. La regla no se aplica al romper.",
+                    "data": {
+                        "assignedGroup": "Grupo asignado",
+                        "assignedGroupPlus": "Grupo asignado + bola 8",
+                        "eitherGroup": "Cualquier grupo",
+                        "anyBall": "Cualquier bola"
+                    }
+                },
+                "ruleTurnMustHitBall": {
+                    "title": "Debes golpear la bola",
+                    "help": "Ocurre cuando el jugador no le pega a la bola equivocada durante su turno."
+                },
+                "ruleTurnContactRail": {
+                    "title": "Debes tocar el borde",
+                    "help": "Ocurre cuando ninguna bola toca el borde (cojín). Esta regla no se aplica si el jugador mete una bola."
+                },
+                "ruleConsecutiveFouls": {
+                    "title": "Faltas consecutivas",
+                    "help": "Determina lo que debe ocurrir cuando un jugador comete varias faltas consecutivas. Esta regla desalienta el comportamiento antideportivo.",
+                    "data": {
+                        "off": "Apagado",
+                        "loseOnTwo": "Perder después de dos",
+                        "loseOnThree": "Perder después de tres",
+                        "loseOnFour": "Perder después de cuatro"
+                    }
+                },
+                "foul": {
+                    "help": {
+                        "disabled": "Las faltas están desactivadas con la configuración actual."
+                    },
+                    "data": {
+                        "nothing": "Nada",
+                        "keepTurn": "Mantener turno",
+                        "endTurn": "Fin de turno",
+                        "endTurnHand": "Fin de turno + Bola en mano",
+                        "reset": "Fin de turno + Restaurar campo",
+                        "resetHand": "Fin de turno + Restaurar campo + Bola en mano",
+                        "instantWin": "Victoria instantánea",
+                        "instantLoss": "Pérdida instantánea"
+                    }
+                },
+                "foulPocketCueBall": {
+                    "title": "Meter la bola blanca",
+                    "help": "Sucede cuando un jugador mete la bola blanca"
+                },
+                "foulPocketOpponentBall": {
+                    "title": "Meter la bola contraria",
+                    "help": "Sucede cuando un jugador mete la bola del adversario. Otras faltas tienen prioridad sobre esta (por ejemplo, golpear primero la bola incorrecta)."
                 }
             },
             "help": {},
@@ -916,35 +996,6 @@
             "title": "Juega al Billar bola 8 en línea | Billar multijugador gratis con amigos",
             "description": "¡Juega al Billa bola 8 en línea gratis! No necesitas una cuenta. Disfruta del billar multijugador con amigos, desconocidos o bots. ¡Sumérgete en la experiencia definitiva de billar!",
             "options": {
-                "aimingLine": {
-                    "title": "Línea de apuntado",
-                    "help": "La línea de tiro muestra hacia dónde va a ir la bola blanca después de ser golpeada."
-                },
-                "speed": {
-                    "title": "Velocidad",
-                    "help": "Qué tan rápido se reproduce la animación del juego."
-                },
-                "illegalBallPocket": {
-                    "title": "Bola ilegal en bolsillo"
-                },
-                "ruleContactRailOnBreak": {
-                    "title": "Toques del borde al romper",
-                    "help": "Al romper, determina cuántas bolas deben entrar en contacto con el borde. Esta regla no se aplica si metes una bola.",
-                    "data": {
-                        "one": "Una bola",
-                        "two": "Dos bolas",
-                        "three": "Tres bolas",
-                        "four": "Cuatro bolas"
-                    }
-                },
-                "assignedGroup": {
-                    "title": "Grupo asignado",
-                    "help": "Determina cómo se asigna a cada jugador su grupo (sólidos o rayas)",
-                    "data": {
-                        "pocket": "En bolsillo",
-                        "random": "Aleatorio al inicio"
-                    }
-                },
                 "teamKeepTurn": {
                     "title": "Mantener Turno (Equipos)",
                     "help": "En los juegos de equipo, cuando un jugador puede seguir jugando (por ejemplo, al meter una bola), se le permite continuar su turno.",
@@ -952,57 +1003,6 @@
                         "samePlayer": "Mismo jugador sigue",
                         "rotatePlayers": "Rueda al siguiente compañero"
                     }
-                },
-                "ruleTurnCanHitBall": {
-                    "title": "Puedes golpear la bola",
-                    "help": "Sucede cuando el jugador golpea una bola que no le está permitido. La regla no se aplica al romper.",
-                    "data": {
-                        "assignedGroup": "Grupo asignado",
-                        "assignedGroupPlus": "Grupo asignado + bola 8",
-                        "eitherGroup": "Cualquier grupo",
-                        "anyBall": "Cualquier bola"
-                    }
-                },
-                "ruleTurnMustHitBall": {
-                    "title": "Debes golpear la bola",
-                    "help": "Ocurre cuando el jugador no le pega a la bola equivocada durante su turno."
-                },
-                "ruleTurnContactRail": {
-                    "title": "Debes tocar el borde",
-                    "help": "Ocurre cuando ninguna bola toca el borde (cojín). Esta regla no se aplica si el jugador mete una bola."
-                },
-                "ruleConsecutiveFouls": {
-                    "title": "Faltas consecutivas",
-                    "help": "Determina lo que debe ocurrir cuando un jugador comete varias faltas consecutivas. Esta regla desalienta el comportamiento antideportivo.",
-                    "data": {
-                        "off": "Apagado",
-                        "loseOnTwo": "Perder después de dos",
-                        "loseOnThree": "Perder después de tres",
-                        "loseOnFour": "Perder después de cuatro"
-                    }
-                },
-                "foul": {
-                    "help": {
-                        "disabled": "Las faltas están desactivadas con la configuración actual."
-                    },
-                    "data": {
-                        "nothing": "Nada",
-                        "keepTurn": "Mantener turno",
-                        "endTurn": "Fin de turno",
-                        "endTurnHand": "Fin de turno + Bola en mano",
-                        "reset": "Fin de turno + Restaurar campo",
-                        "resetHand": "Fin de turno + Restaurar campo + Bola en mano",
-                        "instantWin": "Victoria instantánea",
-                        "instantLoss": "Pérdida instantánea"
-                    }
-                },
-                "foulPocketCueBall": {
-                    "title": "Meter la bola blanca",
-                    "help": "Sucede cuando un jugador mete la bola blanca"
-                },
-                "foulPocketOpponentBall": {
-                    "title": "Meter la bola contraria",
-                    "help": "Sucede cuando un jugador mete la bola del adversario. Otras faltas tienen prioridad sobre esta (por ejemplo, golpear primero la bola incorrecta)."
                 },
                 "foulPocketOwnAndOpponentBall": {
                     "title": "Meter la bola propia + la del adversario",

@@ -311,6 +311,86 @@
                         "HALFWAY": "À mi-chemin de la chaussure",
                         "WHEN_NEEDED": "Quand t'as plus de cartes"
                     }
+                },
+                "aimingLine": {
+                    "title": "Ligne de visée",
+                    "help": "La ligne de visée montre où la boule blanche va aller après avoir été frappée."
+                },
+                "speed": {
+                    "title": "Vitesse",
+                    "help": "La vitesse à laquelle l'animation de la piscine se joue."
+                },
+                "illegalBallPocket": {
+                    "title": "Mise de Boule Illégale"
+                },
+                "ruleContactRailOnBreak": {
+                    "title": "Faire des rails en pause",
+                    "help": "Tout en cassant, déterminez combien de boules doivent entrer en contact avec la bande. Cette règle ne s'applique pas si vous faites tomber une boule.",
+                    "data": {
+                        "one": "Un ballon",
+                        "two": "Deux ballons",
+                        "three": "Trois ballons",
+                        "four": "Quatre ballons"
+                    }
+                },
+                "assignedGroup": {
+                    "title": "Groupe assigné",
+                    "help": "Déterminer comment chaque joueur est assigné à son groupe (solides ou rayures).",
+                    "data": {
+                        "pocket": "On a la poche",
+                        "random": "Au hasard au début"
+                    }
+                },
+                "ruleTurnCanHitBall": {
+                    "title": "Peut Frapper la Balle",
+                    "help": "Se produit lorsque le joueur frappe une balle qu'il n'est pas autorisé à frapper. La règle ne s'applique pas lorsqu'on casse.",
+                    "data": {
+                        "assignedGroup": "Groupe assigné",
+                        "assignedGroupPlus": "Groupe assigné + 8 Ball",
+                        "eitherGroup": "N'importe quel groupe",
+                        "anyBall": "N'importe quelle bille"
+                    }
+                },
+                "ruleTurnMustHitBall": {
+                    "title": "Frapper la balle",
+                    "help": "Ça arrive quand le joueur ne touche pas la mauvaise balle pendant son tour."
+                },
+                "ruleTurnContactRail": {
+                    "title": "Contacter les Chemins de Fer",
+                    "help": "Ça arrive quand aucune boule ne touche le rail (coussin). Cette règle ne s'applique pas si le joueur met une boule dans un trou."
+                },
+                "ruleConsecutiveFouls": {
+                    "title": "Fautes Consécutives",
+                    "help": "Déterminer ce qui devrait se passer quand un joueur fait plusieurs fautes d'affilée. Cette règle décourage un comportement non sportif.",
+                    "data": {
+                        "off": "Fini",
+                        "loseOnTwo": "Perte après deux",
+                        "loseOnThree": "Perte après trois",
+                        "loseOnFour": "Perte après quatre"
+                    }
+                },
+                "foul": {
+                    "help": {
+                        "disabled": "Foul est désactivé avec les paramètres actuels."
+                    },
+                    "data": {
+                        "nothing": "Rien",
+                        "keepTurn": "Tour suivant",
+                        "endTurn": "Fin de tour",
+                        "endTurnHand": "Fin de tour + Balle en main",
+                        "reset": "Fin de tour + Remettre le terrain en état",
+                        "resetHand": "Fin de tour + Remettre le terrain en état + Balle en main",
+                        "instantWin": "Victoire instantanée",
+                        "instantLoss": "Défaite instantanée"
+                    }
+                },
+                "foulPocketCueBall": {
+                    "title": "Mettre la Balle de Butée dans la Poche",
+                    "help": "Se produit quand un joueur met la boule de queue dans un trou."
+                },
+                "foulPocketOpponentBall": {
+                    "title": "Mettre la Balle de l'Adversaire dans la Poche",
+                    "help": "Ça arrive quand un joueur met la bille de l'adversaire dans un trou. D'autres fautes sont prioritaires par rapport à ça (par exemple frapper la mauvaise bille en premier)."
                 }
             },
             "help": {},
@@ -916,35 +996,6 @@
             "title": "8 Ball Billard Américain | Multijoueur En Ligne Gratuit",
             "description": "Jouez à Billard Américain en ligne gratuitement! Pas besoin de compte. Affrontez amis, inconnus, ou bots en multijoueur et amusez-vous sans limite!",
             "options": {
-                "aimingLine": {
-                    "title": "Ligne de visée",
-                    "help": "La ligne de visée montre où la boule blanche va aller après avoir été frappée."
-                },
-                "speed": {
-                    "title": "Vitesse",
-                    "help": "La vitesse à laquelle l'animation de la piscine se joue."
-                },
-                "illegalBallPocket": {
-                    "title": "Mise de Boule Illégale"
-                },
-                "ruleContactRailOnBreak": {
-                    "title": "Faire des rails en pause",
-                    "help": "Tout en cassant, déterminez combien de boules doivent entrer en contact avec la bande. Cette règle ne s'applique pas si vous faites tomber une boule.",
-                    "data": {
-                        "one": "Un ballon",
-                        "two": "Deux ballons",
-                        "three": "Trois ballons",
-                        "four": "Quatre ballons"
-                    }
-                },
-                "assignedGroup": {
-                    "title": "Groupe assigné",
-                    "help": "Déterminer comment chaque joueur est assigné à son groupe (solides ou rayures).",
-                    "data": {
-                        "pocket": "On a la poche",
-                        "random": "Au hasard au début"
-                    }
-                },
                 "teamKeepTurn": {
                     "title": "Garder le Tour (Équipes)",
                     "help": "Dans les jeux d'équipe, quand un joueur réussit à garder son tour (par exemple, en mettant une boule dans le trou), ça veut dire qu'il peut continuer à jouer.",
@@ -952,57 +1003,6 @@
                         "samePlayer": "Même joueur continue",
                         "rotatePlayers": "Passe au prochain coéquipier"
                     }
-                },
-                "ruleTurnCanHitBall": {
-                    "title": "Peut Frapper la Balle",
-                    "help": "Se produit lorsque le joueur frappe une balle qu'il n'est pas autorisé à frapper. La règle ne s'applique pas lorsqu'on casse.",
-                    "data": {
-                        "assignedGroup": "Groupe assigné",
-                        "assignedGroupPlus": "Groupe assigné + 8 Ball",
-                        "eitherGroup": "N'importe quel groupe",
-                        "anyBall": "N'importe quelle bille"
-                    }
-                },
-                "ruleTurnMustHitBall": {
-                    "title": "Frapper la balle",
-                    "help": "Ça arrive quand le joueur ne touche pas la mauvaise balle pendant son tour."
-                },
-                "ruleTurnContactRail": {
-                    "title": "Contacter les Chemins de Fer",
-                    "help": "Ça arrive quand aucune boule ne touche le rail (coussin). Cette règle ne s'applique pas si le joueur met une boule dans un trou."
-                },
-                "ruleConsecutiveFouls": {
-                    "title": "Fautes Consécutives",
-                    "help": "Déterminer ce qui devrait se passer quand un joueur fait plusieurs fautes d'affilée. Cette règle décourage un comportement non sportif.",
-                    "data": {
-                        "off": "Fini",
-                        "loseOnTwo": "Perte après deux",
-                        "loseOnThree": "Perte après trois",
-                        "loseOnFour": "Perte après quatre"
-                    }
-                },
-                "foul": {
-                    "help": {
-                        "disabled": "Foul est désactivé avec les paramètres actuels."
-                    },
-                    "data": {
-                        "nothing": "Rien",
-                        "keepTurn": "Tour suivant",
-                        "endTurn": "Fin de tour",
-                        "endTurnHand": "Fin de tour + Balle en main",
-                        "reset": "Fin de tour + Remettre le terrain en état",
-                        "resetHand": "Fin de tour + Remettre le terrain en état + Balle en main",
-                        "instantWin": "Victoire instantanée",
-                        "instantLoss": "Défaite instantanée"
-                    }
-                },
-                "foulPocketCueBall": {
-                    "title": "Mettre la Balle de Butée dans la Poche",
-                    "help": "Se produit quand un joueur met la boule de queue dans un trou."
-                },
-                "foulPocketOpponentBall": {
-                    "title": "Mettre la Balle de l'Adversaire dans la Poche",
-                    "help": "Ça arrive quand un joueur met la bille de l'adversaire dans un trou. D'autres fautes sont prioritaires par rapport à ça (par exemple frapper la mauvaise bille en premier)."
                 },
                 "foulPocketOwnAndOpponentBall": {
                     "title": "Mettre sa propre et l'adversaire's Boule dans la poche",

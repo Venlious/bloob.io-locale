@@ -311,6 +311,86 @@
                         "HALFWAY": "Setengah jalan di sepatu",
                         "WHEN_NEEDED": "Pas udah habis kartu"
                     }
+                },
+                "aimingLine": {
+                    "title": "Garis Bidik",
+                    "help": "Garis bidik nunjukkin ke mana bola cue bakal meluncur setelah dipukul."
+                },
+                "speed": {
+                    "title": "Kecepatan",
+                    "help": "Seberapa cepat animasi kolam renangnya diputar."
+                },
+                "illegalBallPocket": {
+                    "title": "Bola Masuk Lubang yang Salah"
+                },
+                "ruleContactRailOnBreak": {
+                    "title": "Rel Ketika Istirahat",
+                    "help": "Saat memecahkan, tentukan berapa banyak bola yang harus bersentuhan dengan rel. Aturan ini tidak berlaku jika kamu memasukkan bola ke dalam kantong.",
+                    "data": {
+                        "one": "Satu bola",
+                        "two": "Dua bola",
+                        "three": "Tiga bola",
+                        "four": "Empat bola"
+                    }
+                },
+                "assignedGroup": {
+                    "title": "Grup yang Ditugaskan",
+                    "help": "Tentukan bagaimana setiap pemain ditugaskan grup mereka (solid atau garis-garis).",
+                    "data": {
+                        "pocket": "Di kantong",
+                        "random": "Acak saat mulai"
+                    }
+                },
+                "ruleTurnCanHitBall": {
+                    "title": "Bisa Pukul Bola",
+                    "help": "Terjadi ketika pemain memukul bola yang seharusnya tidak boleh mereka pukul. Aturan ini tidak berlaku saat memulai permainan.",
+                    "data": {
+                        "assignedGroup": "Grup yang ditugaskan",
+                        "assignedGroupPlus": "Grup yang ditugaskan + Bola 8",
+                        "eitherGroup": "Grup mana saja",
+                        "anyBall": "Bola apa saja"
+                    }
+                },
+                "ruleTurnMustHitBall": {
+                    "title": "Harus Pukul Bola",
+                    "help": "Terjadi ketika pemain nggak kena bola yang salah selama gilirannya."
+                },
+                "ruleTurnContactRail": {
+                    "title": "Harus Kontak Rel",
+                    "help": "Terjadi ketika bola sama sekali nggak kena rel (bantalan). Aturan ini nggak berlaku kalau pemain berhasil masukin bola."
+                },
+                "ruleConsecutiveFouls": {
+                    "title": "Pelanggaran Beruntun",
+                    "help": "Tentukan apa yang harus terjadi ketika seorang pemain melakukan pelanggaran beruntun. Aturan ini bertujuan untuk mencegah perilaku yang tidak sportif.",
+                    "data": {
+                        "off": "Mati",
+                        "loseOnTwo": "Kalah setelah dua",
+                        "loseOnThree": "Kalah setelah tiga",
+                        "loseOnFour": "Kalah setelah empat"
+                    }
+                },
+                "foul": {
+                    "help": {
+                        "disabled": "Pelanggaran dinonaktifkan dengan pengaturan saat ini."
+                    },
+                    "data": {
+                        "nothing": "Nihil",
+                        "keepTurn": "Terus giliran",
+                        "endTurn": "Akhiri giliran",
+                        "endTurnHand": "Akhiri giliran + Bola di tangan",
+                        "reset": "Akhiri giliran + Pulihkan lapangan",
+                        "resetHand": "Akhiri giliran + Pulihkan lapangan + Bola di tangan",
+                        "instantWin": "Menang langsung",
+                        "instantLoss": "Kalah langsung"
+                    }
+                },
+                "foulPocketCueBall": {
+                    "title": "Memasukkan Bola Tepi",
+                    "help": "Terjadi ketika pemain memasukkan Bola Tac ke dalam lubang."
+                },
+                "foulPocketOpponentBall": {
+                    "title": "Memasukkan Bola Lawan",
+                    "help": "Terjadi ketika pemain memasukkan bola lawan. Pelanggaran lain lebih diutamakan daripada ini (misalnya, memukul bola yang salah terlebih dahulu)."
                 }
             },
             "help": {},
@@ -916,35 +996,6 @@
             "title": "Main Biliar Online Gratis | 8 Bola Multiplayer Dengan Teman",
             "description": "Main 8 Bola online gratis tanpa akun! Nikmati biliar multiplayer bareng teman, orang asing, atau lawan bot. Seru dan mudah diakses langsung lewat browser!",
             "options": {
-                "aimingLine": {
-                    "title": "Garis Bidik",
-                    "help": "Garis bidik nunjukkin ke mana bola cue bakal meluncur setelah dipukul."
-                },
-                "speed": {
-                    "title": "Kecepatan",
-                    "help": "Seberapa cepat animasi kolam renangnya diputar."
-                },
-                "illegalBallPocket": {
-                    "title": "Bola Masuk Lubang yang Salah"
-                },
-                "ruleContactRailOnBreak": {
-                    "title": "Rel Ketika Istirahat",
-                    "help": "Saat memecahkan, tentukan berapa banyak bola yang harus bersentuhan dengan rel. Aturan ini tidak berlaku jika kamu memasukkan bola ke dalam kantong.",
-                    "data": {
-                        "one": "Satu bola",
-                        "two": "Dua bola",
-                        "three": "Tiga bola",
-                        "four": "Empat bola"
-                    }
-                },
-                "assignedGroup": {
-                    "title": "Grup yang Ditugaskan",
-                    "help": "Tentukan bagaimana setiap pemain ditugaskan grup mereka (solid atau garis-garis).",
-                    "data": {
-                        "pocket": "Di kantong",
-                        "random": "Acak saat mulai"
-                    }
-                },
                 "teamKeepTurn": {
                     "title": "Ganti Giliran (Tim)",
                     "help": "Dalam permainan tim, kalau ada pemain yang bisa terus main (misalnya, dengan memasukkan bola), itu berarti dia dapat kesempatan buat terus bermain sampai dia gagal atau selesai.",
@@ -952,57 +1003,6 @@
                         "samePlayer": "Pemain yang sama terus",
                         "rotatePlayers": "Putar ke teman satu tim berikutnya"
                     }
-                },
-                "ruleTurnCanHitBall": {
-                    "title": "Bisa Pukul Bola",
-                    "help": "Terjadi ketika pemain memukul bola yang seharusnya tidak boleh mereka pukul. Aturan ini tidak berlaku saat memulai permainan.",
-                    "data": {
-                        "assignedGroup": "Grup yang ditugaskan",
-                        "assignedGroupPlus": "Grup yang ditugaskan + Bola 8",
-                        "eitherGroup": "Grup mana saja",
-                        "anyBall": "Bola apa saja"
-                    }
-                },
-                "ruleTurnMustHitBall": {
-                    "title": "Harus Pukul Bola",
-                    "help": "Terjadi ketika pemain nggak kena bola yang salah selama gilirannya."
-                },
-                "ruleTurnContactRail": {
-                    "title": "Harus Kontak Rel",
-                    "help": "Terjadi ketika bola sama sekali nggak kena rel (bantalan). Aturan ini nggak berlaku kalau pemain berhasil masukin bola."
-                },
-                "ruleConsecutiveFouls": {
-                    "title": "Pelanggaran Beruntun",
-                    "help": "Tentukan apa yang harus terjadi ketika seorang pemain melakukan pelanggaran beruntun. Aturan ini bertujuan untuk mencegah perilaku yang tidak sportif.",
-                    "data": {
-                        "off": "Mati",
-                        "loseOnTwo": "Kalah setelah dua",
-                        "loseOnThree": "Kalah setelah tiga",
-                        "loseOnFour": "Kalah setelah empat"
-                    }
-                },
-                "foul": {
-                    "help": {
-                        "disabled": "Pelanggaran dinonaktifkan dengan pengaturan saat ini."
-                    },
-                    "data": {
-                        "nothing": "Nihil",
-                        "keepTurn": "Terus giliran",
-                        "endTurn": "Akhiri giliran",
-                        "endTurnHand": "Akhiri giliran + Bola di tangan",
-                        "reset": "Akhiri giliran + Pulihkan lapangan",
-                        "resetHand": "Akhiri giliran + Pulihkan lapangan + Bola di tangan",
-                        "instantWin": "Menang langsung",
-                        "instantLoss": "Kalah langsung"
-                    }
-                },
-                "foulPocketCueBall": {
-                    "title": "Memasukkan Bola Tepi",
-                    "help": "Terjadi ketika pemain memasukkan Bola Tac ke dalam lubang."
-                },
-                "foulPocketOpponentBall": {
-                    "title": "Memasukkan Bola Lawan",
-                    "help": "Terjadi ketika pemain memasukkan bola lawan. Pelanggaran lain lebih diutamakan daripada ini (misalnya, memukul bola yang salah terlebih dahulu)."
                 },
                 "foulPocketOwnAndOpponentBall": {
                     "title": "Memasukkan Bola Sendiri + Bola Lawan",
