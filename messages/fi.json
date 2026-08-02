@@ -2,10 +2,9 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 2164,
+        "total": 2142,
         "missing": 0
     },
-    "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Annettua koodia ei ole olemassa.",
@@ -55,7 +54,6 @@
             "desync": "Hups, näyttää siltä että yhteys katkesi. Yritä uudelleen.",
             "title": "Tapahtui virhe.",
             "invalid": "Toimintoa ei voitu suorittaa. Päivitä sivu, jos tämä jatkuu.",
-            "texture": "Tekstuuri \"{id}\" lataaminen epäonnistui.",
             "invalidEmail": "Annettu sähköpostiosoite on virheellinen.",
             "invalidAction": "Annettiin virheellinen toimintotyyppi \"{type}\".",
             "maintenance": "Et voi suorittaa tätä toimintoa, kun huoltotila on käytössä.",
@@ -64,7 +62,7 @@
             "cannotSelf": "Et voi suorittaa tätä toimintoa itsellesi.",
             "actionAgainstBot": "Et voi tehdä tätä toimintoa bottiin.",
             "actionAgainstInactiveUser": "Et voi tehdä tätä toimintoa passiiviselle käyttäjälle.",
-            "invalidUser": "Antamallasi ID:llä olevaa käyttäjää ei ole tässä matsissa.",
+            "invalidUser": "Annettua käyttäjää ei löytynyt.",
             "invalidTime": "Et voi tehdä tätä toimintoa tällä hetkellä.",
             "versionMismatch": "Sä käytät versiota \"{client}\", kun taas palvelin pyörittää versiota \"{server}\". Tää voi tapahtua, kun päivitystä on tulossa. Päivitä tää sivu muutaman minuutin päästä, niin saat uusimman version.",
             "clipboard": "Kopioiminen leikepöydälle epäonnistui."
@@ -108,7 +106,6 @@
         },
         "card": {
             "loadingSets": "Korttipakkojen lataus ei onnistu.",
-            "invalid": "Annettu korttitieto on virheellinen.",
             "loadError": "Korttisettien latauksessa tapahtui virhe.",
             "underscore": "Jokainen alaviiva tarkoittaa yhtä vastauskortin valintaa — älä laita niitä vierekkäin!",
             "empty": "Varmista, ettei kortti ole tyhjä.",
@@ -222,18 +219,6 @@
                 "turnTime": {
                     "title": "Vuoron Kesto",
                     "help": "Aika, jonka pelaajalla on ennen kuin vuoro siirtyy seuraavalle pelaajalle."
-                },
-                "inputTime": {
-                    "title": "Syötä Aika",
-                    "help": "Pelaajalla on tietty määrä aikaa syöttää tietoja. Peli jatkuu joka tapauksessa, ovatko he valmiita kun aika loppuu."
-                },
-                "continueAutomatically": {
-                    "title": "Jatka Automaattisesti",
-                    "help": "Vaihda pelin jatkumisen automaattisuutta tai odota, että kaikki vahvistavat olevansa valmiita."
-                },
-                "continueTime": {
-                    "title": "Jatkoaika",
-                    "help": "Kun jatka-nappi ilmestyy, päätä kuinka kauan pitäisi odottaa ennen kuin peli jatkuu joka tapauksessa."
                 },
                 "timeFreedomMode": {
                     "title": "Aikaraja",
@@ -370,9 +355,6 @@
                     }
                 },
                 "foul": {
-                    "help": {
-                        "disabled": "Nykyisillä asetuksilla rike on pois käytöstä."
-                    },
                     "data": {
                         "nothing": "Ei mitään",
                         "keepTurn": "Pidä vuoro",
@@ -396,8 +378,7 @@
             "help": {},
             "presets": {
                 "custom": {
-                    "title": "Mukautettu",
-                    "description": "Sinun tekemät muutokset — Viimeksi päivitetty {timestamp}"
+                    "title": "Mukautettu"
                 },
                 "default": {
                     "title": "Oletus"
@@ -1203,15 +1184,6 @@
                 "placementTime": {
                     "title": "Sijoitusajan",
                     "help": "Kuinka kauan kullakin pelaajalla on aikaa siirtää laivansa paikoilleen."
-                },
-                "gridSize": {
-                    "title": "Ruudukon Koko",
-                    "help": "Valitse pelattavan tason koko.",
-                    "data": {
-                        "7x7": "7x7",
-                        "11x11": "11x11",
-                        "15x15": "15x15"
-                    }
                 },
                 "level": {
                     "title": "Kartta",
@@ -2355,12 +2327,12 @@
         "daysShort": "{n}p",
         "hoursShort": "{n}t",
         "minutesShort": "{n}min",
-        "years": "0 vuotta | 1 vuosi | {n} vuotta",
-        "months": "0 kuukautta | 1 kuukausi | {n} kuukautta",
-        "days": "0 päivää | 1 päivä | {n} päivää",
-        "hours": "0 tuntia | 1 tunti | {n} tuntia",
-        "minutes": "0 minuuttia | 1 minuutti | {n} minuuttia",
-        "seconds": "0 sekuntia | 1 sekunti | {n} sekuntia"
+        "years": "{n} vuotta | {n} vuosi | {n} vuotta",
+        "months": "{n} kuukautta | {n} kuukausi | {n} kuukautta",
+        "days": "{n} päivää | {n} päivä | {n} päivää",
+        "hours": "{n} tuntia | {n} tunti | {n} tuntia",
+        "minutes": "{n} minuuttia | {n} minuutti | {n} minuuttia",
+        "seconds": "{n} sekuntia | {n} sekunti | {n} sekuntia"
     },
     "perk": {
         "gradientPack": {
@@ -2463,30 +2435,26 @@
         "experienceShort": "{n} XP",
         "winStreak": "{n}-voiton putki!",
         "rolls": "{n} heittoa | {n} heitto | {n} heittoa",
-        "balls": "0 palloa | 1 pallo | {n} palloa",
-        "kills": "0 tappoa | 1 tappo | {n} tappoa",
-        "deaths": "0 kuolemaa | 1 kuolema | {n} kuolemaa",
-        "lives": "0 elämää | 1 elämä | {n} elämää",
-        "files": "0 tiedostoa | 1 tiedosto | {n} tiedostoa",
+        "balls": "{n} palloa | {n} pallo | {n} palloa",
+        "kills": "{n} tappoa | {n} tappo | {n} tappoa",
+        "lives": "{n} elämää | {n} elämä | {n} elämää",
+        "files": "{n} tiedostoa | {n} tiedosto | {n} tiedostoa",
         "points": "{n} pistettä | {n} piste | {n} pistettä",
-        "pieces": "0 kappaletta | 1 kappale | {n} kappaletta",
-        "wins": "0 voittoa | 1 voitto | {n} voittoa",
-        "cards": "0 korttia | 1 kortti | {n} korttia",
-        "moves": "0 siirtoa | 1 siirto | {n} siirtoa",
-        "tiles": "0 laattaa | 1 laatta | {n} laattaa",
-        "playing": "0 pelaa | 1 pelaa | {n} pelaa",
-        "players": "0 pelaajaa | 1 pelaaja | {n} pelaajaa",
-        "selectedCards": "Ei valittuja kortteja | 1 valittu kortti | {n} valittua korttia",
-        "matches": "0 ottelua | 1 ottelu | {n} ottelua",
-        "matchesFound": "0 ottelua löytyi | 1 ottelu löytyi | {n} ottelua löytyi",
-        "matchesWaiting": "0 ottelua odottaa | 1 ottelu odottaa | {n} ottelua odottaa",
-        "needMorePlayers": "Tarvitaan 0 lisäpelaajaa | Tarvitaan 1 lisäpelaaja | Tarvitaan {n} lisäpelaajaa",
+        "pieces": "{n} kappaletta | {n} kappale | {n} kappaletta",
+        "wins": "{n} voittoa | {n} voitto | {n} voittoa",
+        "cards": "{n} korttia | {n} kortti | {n} korttia",
+        "playing": "{n} pelaa | {n} pelaa | {n} pelaa",
+        "players": "{n} pelaajaa | {n} pelaaja | {n} pelaajaa",
+        "selectedCards": "Ei valittuja kortteja | {n} valittu kortti | {n} valittua korttia",
+        "matchesFound": "{n} ottelua löytyi | {n} ottelu löytyi | {n} ottelua löytyi",
+        "matchesWaiting": "{n} ottelua odottaa | {n} ottelu odottaa | {n} ottelua odottaa",
+        "needMorePlayers": "Tarvitaan {n} lisäpelaajaa | Tarvitaan {n} lisäpelaaja | Tarvitaan {n} lisäpelaajaa",
         "playAgainstBots": "Pelaa botteja vastaan | Pelaa bottia vastaan | Pelaa botteja vastaan",
         "playRandomOpponents": "Pelaa satunnaisia vastustajia vastaan | Pelaa satunnaista vastustajaa vastaan | Pelaa satunnaisia vastustajia vastaan",
         "turnsToFlip": "Käännösvuoroja | Käännösvuoro | Käännösvuoroja",
-        "increment": "0 lisäystä | 1 lisäys | {n} lisäystä",
-        "remaining": "Ei jäljellä | 1 jäljellä | {n} jäljellä",
-        "shipsRemaining": "0 laivaa jäljellä | 1 laiva jäljellä | {n} laivaa jäljellä",
+        "increment": "{n} lisäystä | {n} lisäys | {n} lisäystä",
+        "remaining": "Ei jäljellä | {n} jäljellä | {n} jäljellä",
+        "shipsRemaining": "{n} laivaa jäljellä | {n} laiva jäljellä | {n} laivaa jäljellä",
         "includesItems": "Sisältää {n} esinettä | Sisältää {n} esineen | Sisältää {n} esinettä",
         "restartNotice": "Serveri käynnistyy uudestaan {n} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {n} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {n} minuutin päästä. Lopeta pelisi."
     },
@@ -3023,8 +2991,6 @@
         "accountLinked": "Tämä tili on yhdistetty seuraavaan sähköpostiosoitteeseen: {email}.",
         "accountSocialLinked": "Tää tili on linkattu {social}n.",
         "accountNameSocialLinked": "Et voi vaihtaa tän tilin nimee, koska se on linkattu sun {social} profiiliin. Sä voit hallita sun nimee suoraan siel alustalla.",
-        "betaNotice": "Tätä peliä kehitetään vielä. Jaa palautetta ja ilmoita bugeista {social} -sivullamme.",
-        "clickForDetails": "Klikkaa saadaksesi lisätietoja",
         "howToPlay": "Opettele pelaamaan tätä peliä",
         "howToPlayShort": "Kuinka pelata",
         "chatPlaceholder": "Mitä sä haluut sanoo?",

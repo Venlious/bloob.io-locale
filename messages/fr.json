@@ -2,10 +2,9 @@
     "_meta": {
         "language": "informal French",
         "rtl": false,
-        "total": 2164,
+        "total": 2142,
         "missing": 0
     },
-    "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Le code donné n'existe pas.",
@@ -55,7 +54,6 @@
             "desync": "Désolé, on dirait que tu as été désynchronisé. Essaie à nouveau.",
             "title": "Une erreur s'est produite.",
             "invalid": "Cette action n'a pas pu être effectuée. Actualise la page si cela persiste.",
-            "texture": "Le téléchargement de la texture \"{id}\" a échoué.",
             "invalidEmail": "Une adresse e-mail invalide a été donnée.",
             "invalidAction": "Un action invalide de type \"{type}\" a été donnée.",
             "maintenance": "Vous ne pouvez pas effectuer cette action pendant que le mode maintenance est actif.",
@@ -64,7 +62,7 @@
             "cannotSelf": "Tu ne peux pas réaliser cette action sur toi-même.",
             "actionAgainstBot": "Tu ne peux pas réaliser cette action sur un bot.",
             "actionAgainstInactiveUser": "Cette action ne peut être réalisée sur un utilisateur inactif.",
-            "invalidUser": "L'utilisateur avec l'ID donné n'est pas dans cette partie.",
+            "invalidUser": "L'utilisateur indiqué est introuvable.",
             "invalidTime": "Tu ne peux pas réaliser cette action en ce moment.",
             "versionMismatch": "Tu utilises la version \"{client}\" alors que le serveur tourne sur la version \"{server}\". Ça peut arriver quand une mise à jour est en cours. Rafraîchis cette page dans quelques minutes pour passer à la dernière version.",
             "clipboard": "Impossible de copier dans le presse-papiers!"
@@ -108,7 +106,6 @@
         },
         "card": {
             "loadingSets": "Impossible de télécharger les ensembles de cartes.",
-            "invalid": "Données de carte non valides données.",
             "loadError": "Une erreur s'est produite lors de la tentative de téléchargement des données des ensembles de cartes.",
             "underscore": "Chaque soulignement entraîne le choix d'une carte de réponse - ne les mettez pas côte à côte!",
             "empty": "Veuillez vous assurer que la carte n'est pas vide.",
@@ -222,18 +219,6 @@
                 "turnTime": {
                     "title": "Temps de Tour",
                     "help": "Le temps qu'un joueur a avant que son tour soit donné au prochain joueur."
-                },
-                "inputTime": {
-                    "title": "Temps d'Entrée",
-                    "help": "Le temps qu'un joueur a pour entrer une réponse. Le jeu continue que tu sois prêt ou non quand le temps est écoulé."
-                },
-                "continueAutomatically": {
-                    "title": "Continuer Automatiquement",
-                    "help": "Choisis si le jeu doit continuer automatiquement ou attendre que tout le monde confirme qu'il est prêt."
-                },
-                "continueTime": {
-                    "title": "Temps de Continuation",
-                    "help": "Quand un bouton continuer apparaît, décide combien de temps il devrait prendre avant que le jeu continue de toute façon."
                 },
                 "timeFreedomMode": {
                     "title": "Limite de temps",
@@ -370,9 +355,6 @@
                     }
                 },
                 "foul": {
-                    "help": {
-                        "disabled": "Foul est désactivé avec les paramètres actuels."
-                    },
                     "data": {
                         "nothing": "Rien",
                         "keepTurn": "Tour suivant",
@@ -396,8 +378,7 @@
             "help": {},
             "presets": {
                 "custom": {
-                    "title": "Personnalisé",
-                    "description": "Changements réalisés par toi — Plus récente mise à jour {timestamp}"
+                    "title": "Personnalisé"
                 },
                 "default": {
                     "title": "Par défaut"
@@ -1203,15 +1184,6 @@
                 "placementTime": {
                     "title": "Temps de Placement",
                     "help": "Combien de temps chaque joueur a pour positionner ses navires."
-                },
-                "gridSize": {
-                    "title": "Taille de la Grille",
-                    "help": "Choisis la taille du niveau dans lequel jouer.",
-                    "data": {
-                        "7x7": "7x7",
-                        "11x11": "11x11",
-                        "15x15": "15x15"
-                    }
                 },
                 "level": {
                     "title": "Carte",
@@ -2355,12 +2327,12 @@
         "daysShort": "{n}j",
         "hoursShort": "{n}h",
         "minutesShort": "{n}m",
-        "years": "0 an | 1 an | {n} ans",
-        "months": "0 mois | 1 mois | {n} mois",
-        "days": "0 jour | 1 jour | {n} jours",
-        "hours": "0 heures | 1 heure | {n} heures",
-        "minutes": "0 minutes | 1 minute | {n} minutes",
-        "seconds": "0 secondes | 1 seconde | {n} secondes"
+        "years": "{n} an | {n} an | {n} ans",
+        "months": "{n} mois | {n} mois | {n} mois",
+        "days": "{n} jour | {n} jour | {n} jours",
+        "hours": "{n} heures | {n} heure | {n} heures",
+        "minutes": "{n} minutes | {n} minute | {n} minutes",
+        "seconds": "{n} secondes | {n} seconde | {n} secondes"
     },
     "perk": {
         "gradientPack": {
@@ -2463,30 +2435,26 @@
         "experienceShort": "{n} XP",
         "winStreak": "{n} victoires d'affilée!",
         "rolls": "{n} dés | {n} dé | {n} dés",
-        "balls": "0 balles | 1 balle | {n} balles",
-        "kills": "0 tués | 1 tué | {n} tués",
-        "deaths": "0 morts | 1 mort | {n} morts",
-        "lives": "0 vies | 1 vie | {n} vies",
-        "files": "0 fichiers | 1 fichier | {n} fichiers",
+        "balls": "{n} balles | {n} balle | {n} balles",
+        "kills": "{n} tués | {n} tué | {n} tués",
+        "lives": "{n} vies | {n} vie | {n} vies",
+        "files": "{n} fichiers | {n} fichier | {n} fichiers",
         "points": "{n} points | {n} point | {n} points",
-        "pieces": "0 pièces | 1 pièce | {n} pièces",
-        "wins": "0 victoires | 1 victoire | {n} victoires",
-        "cards": "0 cartes | 1 carte | {n} cartes",
-        "moves": "0 mouvements | 1 mouvement | {n} mouvements",
-        "tiles": "0 carreaux | 1 carreau | {n} carreaux",
-        "playing": "0 jeu | 1 jeu | {n} jeu",
-        "players": "0 joueurs | 1 joueur | {n} joueurs",
-        "selectedCards": "Aucune carte sélectionnée | 1 carte sélectionnée | {n} cartes sélectionnées",
-        "matches": "0 matchs | 1 match | {n} matchs",
-        "matchesFound": "0 parties trouvées | 1 partie trouvée | {n} parties trouvées",
-        "matchesWaiting": "0 parties en attente | 1 partie en attente | {n} parties en attentes",
-        "needMorePlayers": "0 joueurs de plus requis | 1 joueur de plus requis | {n} joueurs de plus requis",
+        "pieces": "{n} pièces | {n} pièce | {n} pièces",
+        "wins": "{n} victoires | {n} victoire | {n} victoires",
+        "cards": "{n} cartes | {n} carte | {n} cartes",
+        "playing": "{n} jeu | {n} jeu | {n} jeu",
+        "players": "{n} joueurs | {n} joueur | {n} joueurs",
+        "selectedCards": "Aucune carte sélectionnée | {n} carte sélectionnée | {n} cartes sélectionnées",
+        "matchesFound": "{n} parties trouvées | {n} partie trouvée | {n} parties trouvées",
+        "matchesWaiting": "{n} parties en attente | {n} partie en attente | {n} parties en attentes",
+        "needMorePlayers": "{n} joueurs de plus requis | {n} joueur de plus requis | {n} joueurs de plus requis",
         "playAgainstBots": "Jouer contre des bots | Jouer contre un bot | Jouer contre des bots",
         "playRandomOpponents": "Jouer contre des adversaires aléatoires | Jouer contre un adversaire aléatoire | Jouer contre des adversaires aléatoires",
         "turnsToFlip": "Tours avant le revirement du champ | Tour avant le revirement du champ | Tours avant le revirement du champ",
-        "increment": "Incréments de 0 | Incrément de 1 | Incréments de {n}",
-        "remaining": "Aucun restant | 1 restant | {n} restants",
-        "shipsRemaining": "0 bateau restant | 1 bateau restant | {n} bateaux restants",
+        "increment": "Incréments de {n} | Incrément de {n} | Incréments de {n}",
+        "remaining": "Aucun restant | {n} restant | {n} restants",
+        "shipsRemaining": "{n} bateau restant | {n} bateau restant | {n} bateaux restants",
         "includesItems": "Inclut {n} articles | Inclut {n} article | Inclut {n} articles",
         "restartNotice": "Le serveur va redémarrer dans {n} minutes. Finissez votre partie. | Le serveur va redémarrer dans {n} minute. Finissez votre partie. | Le serveur va redémarrer dans {n} minutes. Finissez votre partie."
     },
@@ -3023,8 +2991,6 @@
         "accountLinked": "Ce compte est lié à l'adresse email suivante: {email}.",
         "accountSocialLinked": "Ce compte est lié à {social}.",
         "accountNameSocialLinked": "Tu peux pas changer le nom de ce compte parce qu'il est lié à ton profil {social}. Tu peux gérer ton nom directement sur cette plateforme.",
-        "betaNotice": "Ce jeu est toujours en développement. Veuillez partager vos commentaires et bugs sur notre {social}.",
-        "clickForDetails": "Cliquez pour plus de détails.",
         "howToPlay": "Apprendre à jouer à ce jeu",
         "howToPlayShort": "Comment jouer",
         "chatPlaceholder": "Qu'est-ce que tu veux dire ?",

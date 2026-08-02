@@ -2,10 +2,9 @@
     "_meta": {
         "language": "informal American English",
         "rtl": false,
-        "total": 2164,
+        "total": 2142,
         "missing": 0
     },
-    "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Given code does not exist.",
@@ -55,7 +54,6 @@
             "desync": "Sorry, it looks like you were desynchronized. Please try again.",
             "title": "An error has occurred.",
             "invalid": "That action could not be completed. Please refresh the page if this keeps happening.",
-            "texture": "Failed to load a texture \"{id}\".",
             "invalidEmail": "An invalid email address was given.",
             "invalidAction": "An invalid action type \"{type}\" was given.",
             "maintenance": "You cannot perform this action while maintenance mode is active.",
@@ -64,7 +62,7 @@
             "cannotSelf": "You cannot perform this action to yourself.",
             "actionAgainstBot": "Cannot perform this action to a bot.",
             "actionAgainstInactiveUser": "Cannot perform this action on an inactive user.",
-            "invalidUser": "User with given ID is not in this match.",
+            "invalidUser": "The given user could not be found.",
             "invalidTime": "You cannot perform this action at this time.",
             "versionMismatch": "You are running version \"{client}\" while the server is running version \"{server}\". This can happen when an update is being rolled out. Please refresh this page in a few minutes to update to the latest version.",
             "clipboard": "Failed to copy to clipboard."
@@ -108,7 +106,6 @@
         },
         "card": {
             "loadingSets": "Unable to download the card sets.",
-            "invalid": "Invalid card data given.",
             "loadError": "An error occurred trying to download the card sets data.",
             "underscore": "Each underscore results in one response card pick — don't put them next to each other!",
             "empty": "Please make sure the card isn't empty.",
@@ -222,18 +219,6 @@
                 "turnTime": {
                     "title": "Turn Time",
                     "help": "The amount of time a player has before their turn is given to the next player."
-                },
-                "inputTime": {
-                    "title": "Input Time",
-                    "help": "The amount of time a player has to fill in an input. The game will continue regardless on if they are ready when time runs out."
-                },
-                "continueAutomatically": {
-                    "title": "Continue Automatically",
-                    "help": "Toggle whether the game should continue automatically or wait for everyone to confirm they are ready."
-                },
-                "continueTime": {
-                    "title": "Continue Time",
-                    "help": "When a continue button appears, decide how long it should take before the game continues anyway."
                 },
                 "timeFreedomMode": {
                     "title": "Time Limit",
@@ -370,9 +355,6 @@
                     }
                 },
                 "foul": {
-                    "help": {
-                        "disabled": "Foul is disabled with current settings."
-                    },
                     "data": {
                         "nothing": "Nothing",
                         "keepTurn": "Keep turn",
@@ -396,8 +378,7 @@
             "help": {},
             "presets": {
                 "custom": {
-                    "title": "Custom",
-                    "description": "Changes made by you — Last updated {timestamp}"
+                    "title": "Custom"
                 },
                 "default": {
                     "title": "Default"
@@ -1203,15 +1184,6 @@
                 "placementTime": {
                     "title": "Placement Time",
                     "help": "How long each player has to move their ships into position."
-                },
-                "gridSize": {
-                    "title": "Grid Size",
-                    "help": "Select the size of the level size to play in.",
-                    "data": {
-                        "7x7": "7x7",
-                        "11x11": "11x11",
-                        "15x15": "15x15"
-                    }
                 },
                 "level": {
                     "title": "Map",
@@ -2355,12 +2327,12 @@
         "daysShort": "{n}d",
         "hoursShort": "{n}h",
         "minutesShort": "{n}m",
-        "years": "0 years | 1 year | {n} years",
-        "months": "0 months | 1 month | {n} months",
-        "days": "0 days | 1 day | {n} days",
-        "hours": "0 hours | 1 hour | {n} hours",
-        "minutes": "0 minutes | 1 minute | {n} minutes",
-        "seconds": "0 seconds | 1 second | {n} seconds"
+        "years": "{n} years | {n} year | {n} years",
+        "months": "{n} months | {n} month | {n} months",
+        "days": "{n} days | {n} day | {n} days",
+        "hours": "{n} hours | {n} hour | {n} hours",
+        "minutes": "{n} minutes | {n} minute | {n} minutes",
+        "seconds": "{n} seconds | {n} second | {n} seconds"
     },
     "perk": {
         "gradientPack": {
@@ -2463,30 +2435,26 @@
         "experienceShort": "{n} XP",
         "winStreak": "{n}-win streak!",
         "rolls": "{n} rolls | {n} roll | {n} rolls",
-        "balls": "0 balls | 1 ball | {n} balls",
-        "kills": "0 kills | 1 kill | {n} kills",
-        "deaths": "0 deaths | 1 death | {n} deaths",
-        "lives": "0 lives | 1 life | {n} lives",
-        "files": "0 files | 1 file | {n} files",
+        "balls": "{n} balls | {n} ball | {n} balls",
+        "kills": "{n} kills | {n} kill | {n} kills",
+        "lives": "{n} lives | {n} life | {n} lives",
+        "files": "{n} files | {n} file | {n} files",
         "points": "{n} points | {n} point | {n} points",
-        "pieces": "0 pieces | 1 piece | {n} pieces",
-        "wins": "0 wins | 1 win | {n} wins",
-        "cards": "0 cards | 1 card | {n} cards",
-        "moves": "0 moves | 1 move | {n} moves",
-        "tiles": "0 tiles | 1 tile | {n} tiles",
-        "playing": "0 playing | 1 playing | {n} playing",
-        "players": "0 players | 1 player | {n} players",
-        "selectedCards": "No cards selected | 1 card selected | {n} cards selected",
-        "matches": "0 matches | 1 match | {n} matches",
-        "matchesFound": "0 matches found | 1 match found | {n} matches found",
-        "matchesWaiting": "0 matches waiting | 1 match waiting | {n} matches waiting",
-        "needMorePlayers": "Need 0 more players | Need 1 more player | Need {n} more players",
+        "pieces": "{n} pieces | {n} piece | {n} pieces",
+        "wins": "{n} wins | {n} win | {n} wins",
+        "cards": "{n} cards | {n} card | {n} cards",
+        "playing": "{n} playing | {n} playing | {n} playing",
+        "players": "{n} players | {n} player | {n} players",
+        "selectedCards": "No cards selected | {n} card selected | {n} cards selected",
+        "matchesFound": "{n} matches found | {n} match found | {n} matches found",
+        "matchesWaiting": "{n} matches waiting | {n} match waiting | {n} matches waiting",
+        "needMorePlayers": "Need {n} more players | Need {n} more player | Need {n} more players",
         "playAgainstBots": "Play Against Bots | Play Against a Bot | Play Against Bots",
         "playRandomOpponents": "Play Random Opponents | Play Random Opponent | Play Random Opponents",
         "turnsToFlip": "Turns to flip | Turn to flip | Turns to flip",
-        "increment": "Increments of 0 | Increment of 1 | Increments of {n}",
-        "remaining": "None remaining | 1 remaining | {n} remaining",
-        "shipsRemaining": "0 ships remaining | 1 ship remaining | {n} ships remaining",
+        "increment": "Increments of {n} | Increment of {n} | Increments of {n}",
+        "remaining": "None remaining | {n} remaining | {n} remaining",
+        "shipsRemaining": "{n} ships remaining | {n} ship remaining | {n} ships remaining",
         "includesItems": "Includes {n} items | Includes {n} item | Includes {n} items",
         "restartNotice": "Server will restart in {n} minutes. Please finish your game. | Server will restart in {n} minute. Please finish your game. | Server will restart in {n} minutes. Please finish your game."
     },
@@ -3023,8 +2991,6 @@
         "accountLinked": "This account is linked to the following email address: {email}.",
         "accountSocialLinked": "This account is linked to {social}.",
         "accountNameSocialLinked": "You cannot change this account name because it is linked to your {social} profile. You have control over your name directly on that platform.",
-        "betaNotice": "This game is still being developed. Please share feedback & bugs on our {social}",
-        "clickForDetails": "Click for details",
         "howToPlay": "Learn how to play this game",
         "howToPlayShort": "How to play",
         "chatPlaceholder": "What do you want to say?",

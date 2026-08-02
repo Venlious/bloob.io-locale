@@ -2,10 +2,9 @@
     "_meta": {
         "language": "informal German",
         "rtl": false,
-        "total": 2164,
+        "total": 2142,
         "missing": 0
     },
-    "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Der angegebene Code existiert nicht.",
@@ -55,7 +54,6 @@
             "desync": "Tut mir leid, es sieht so aus, als wärst du desynchronisiert. Bitte versuche es nochmal.",
             "title": "Ein Fehler ist aufgetreten.",
             "invalid": "Diese Aktion konnte nicht ausgeführt werden. Lade die Seite neu, wenn das öfter passiert.",
-            "texture": "Laden der Textur \"{id}\" fehlgeschlagen.",
             "invalidEmail": "Es wurde eine ungültige E-Mail-Adresse angegeben.",
             "invalidAction": "Es wurde ein ungültiger Aktionstyp \"{type}\" angegeben.",
             "maintenance": "Du kannst diese Aktion während einer Wartung nicht durchführen.",
@@ -64,7 +62,7 @@
             "cannotSelf": "Du kannst diese Aktion nicht an dir selbst ausführen.",
             "actionAgainstBot": "Du kannst diese Aktion nicht an einem Bot ausführen.",
             "actionAgainstInactiveUser": "Du kannst diese Aktion nicht an einem inaktiven Benutzer ausführen.",
-            "invalidUser": "Der Benutzer mit der angegebenen ID ist nicht in diesem Spiel.",
+            "invalidUser": "Der angegebene Benutzer wurde nicht gefunden.",
             "invalidTime": "Du kannst diese Aktion gerade nicht ausführen.",
             "versionMismatch": "Du benutzt die Version \"{client}\", während der Server die Version \"{server}\" am Laufen hat. Das kann passieren, wenn ein Update ausgerollt wird. Aktualisiere die Seite einfach in ein paar Minuten, um die neueste Version zu bekommen.",
             "clipboard": "Kopieren in die Zwischenablage nicht möglich."
@@ -108,7 +106,6 @@
         },
         "card": {
             "loadingSets": "Die Kartensets konnten nicht heruntergeladen werden.",
-            "invalid": "Ungültige Kartendaten.",
             "loadError": "Beim Herunterladen der Kartensätze ist ein Fehler aufgetreten.",
             "underscore": "Jeder Unterstrich ergibt eine Antwortkarte — nicht mehrere hintereinander schreiben!",
             "empty": "Die Karte darf nicht leer sein.",
@@ -222,18 +219,6 @@
                 "turnTime": {
                     "title": "Zugzeit",
                     "help": "Die Zeit, die ein Spieler hat, bevor sein Zug an den nächsten Spieler weitergegeben wird."
-                },
-                "inputTime": {
-                    "title": "Eingabezeit",
-                    "help": "Die Zeit, die ein Spieler hat, um eine Eingabe zu machen. Das Spiel geht weiter, egal ob sie bereit sind, wenn die Zeit abläuft."
-                },
-                "continueAutomatically": {
-                    "title": "Automatisch Fortfahren",
-                    "help": "Wechsle, ob das Spiel automatisch weitergehen soll oder warten soll, bis alle bestätigt haben, dass sie bereit sind."
-                },
-                "continueTime": {
-                    "title": "Weiterführungszeit",
-                    "help": "Wenn ein \"Weiter\"-Button erscheint, entscheide, wie lange es dauern sollte, bevor das Spiel sowieso weitergeht."
                 },
                 "timeFreedomMode": {
                     "title": "Zeitlimit",
@@ -370,9 +355,6 @@
                     }
                 },
                 "foul": {
-                    "help": {
-                        "disabled": "Foul ist mit den aktuellen Einstellungen deaktiviert."
-                    },
                     "data": {
                         "nothing": "Keine Strafe",
                         "keepTurn": "Zug behalten",
@@ -396,8 +378,7 @@
             "help": {},
             "presets": {
                 "custom": {
-                    "title": "Benutzerdefiniert",
-                    "description": "Von dir angepasste Einstellungen — Letzte Aktualisierung {timestamp}"
+                    "title": "Benutzerdefiniert"
                 },
                 "default": {
                     "title": "Standard"
@@ -1203,15 +1184,6 @@
                 "placementTime": {
                     "title": "Platzierungszeit",
                     "help": "Wie lange jeder Spieler Zeit hat, seine Schiffe in Position zu bringen."
-                },
-                "gridSize": {
-                    "title": "Rastergröße",
-                    "help": "Wähle die Größe des Levels, in dem du spielen möchtest.",
-                    "data": {
-                        "7x7": "7x7",
-                        "11x11": "11x11",
-                        "15x15": "15x15"
-                    }
                 },
                 "level": {
                     "title": "Karte",
@@ -2355,12 +2327,12 @@
         "daysShort": "{n}T",
         "hoursShort": "{n}Std",
         "minutesShort": "{n}Min",
-        "years": "0 Jahre | 1 Jahr | {n} Jahre",
-        "months": "0 Monate | 1 Monat | {n} Monate",
-        "days": "0 Tage | 1 Tag | {n} Tage",
-        "hours": "0 Stunden | 1 Stunde | {n} Stunden",
-        "minutes": "0 Minuten | 1 Minute | {n} Minuten",
-        "seconds": "0 Sekunden | 1 Sekunde | {n} Sekunden"
+        "years": "{n} Jahre | {n} Jahr | {n} Jahre",
+        "months": "{n} Monate | {n} Monat | {n} Monate",
+        "days": "{n} Tage | {n} Tag | {n} Tage",
+        "hours": "{n} Stunden | {n} Stunde | {n} Stunden",
+        "minutes": "{n} Minuten | {n} Minute | {n} Minuten",
+        "seconds": "{n} Sekunden | {n} Sekunde | {n} Sekunden"
     },
     "perk": {
         "gradientPack": {
@@ -2463,30 +2435,26 @@
         "experienceShort": "{n} XP",
         "winStreak": "{n}-Siegeserie!",
         "rolls": "{n} Würfe | {n} Wurf | {n} Würfe",
-        "balls": "0 Bälle | 1 Ball | {n} Bälle",
-        "kills": "0 Kills | 1 Kill | {n} Kills",
-        "deaths": "0 Tode | 1 Tod | {n} Tode",
-        "lives": "0 Leben | 1 Leben | {n} Leben",
-        "files": "0 Dateien | 1 Datei | {n} Dateien",
+        "balls": "{n} Bälle | {n} Ball | {n} Bälle",
+        "kills": "{n} Kills | {n} Kill | {n} Kills",
+        "lives": "{n} Leben | {n} Leben | {n} Leben",
+        "files": "{n} Dateien | {n} Datei | {n} Dateien",
         "points": "{n} Punkte | {n} Punkt | {n} Punkte",
-        "pieces": "0 Spielsteine | 1 Spielstein | {n} Spielsteine",
-        "wins": "0 Siege | 1 Sieg | {n} Siege",
-        "cards": "0 Karten | 1 Karte | {n} Karten",
-        "moves": "0 Züge | 1 Zug | {n} Züge",
-        "tiles": "0 Felder | 1 Feld | {n} Felder",
-        "playing": "0 spielen | 1 spielt | {n} spielen",
-        "players": "0 Spieler | 1 Spieler | {n} Spieler",
-        "selectedCards": "Keine Karten ausgewählt | 1 Karte ausgewählt | {n} Karten ausgewählt",
-        "matches": "0 Spiele | 1 Spiel | {n} Spiele",
-        "matchesFound": "0 Spiele gefunden | 1 Spiel gefunden | {n} Spiele gefunden",
-        "matchesWaiting": "0 Spiele warten | 1 Spiel wartet | {n} Spiele warten",
-        "needMorePlayers": "Benötigt noch 0 Spieler | Benötigt noch 1 Spieler | Benötigt noch {n} Spieler",
+        "pieces": "{n} Spielsteine | {n} Spielstein | {n} Spielsteine",
+        "wins": "{n} Siege | {n} Sieg | {n} Siege",
+        "cards": "{n} Karten | {n} Karte | {n} Karten",
+        "playing": "{n} spielen | {n} spielt | {n} spielen",
+        "players": "{n} Spieler | {n} Spieler | {n} Spieler",
+        "selectedCards": "Keine Karten ausgewählt | {n} Karte ausgewählt | {n} Karten ausgewählt",
+        "matchesFound": "{n} Spiele gefunden | {n} Spiel gefunden | {n} Spiele gefunden",
+        "matchesWaiting": "{n} Spiele warten | {n} Spiel wartet | {n} Spiele warten",
+        "needMorePlayers": "Benötigt noch {n} Spieler | Benötigt noch {n} Spieler | Benötigt noch {n} Spieler",
         "playAgainstBots": "Spiele gegen Bots | Spiele gegen einen Bot | Spiele gegen Bots",
         "playRandomOpponents": "Spiele gegen zufällige Gegner | Spiele gegen einen zufälligen Gegner | Spiele gegen zufällige Gegner",
         "turnsToFlip": "Züge bis zum Umdrehen | Zug bis zum Umdrehen | Züge bis zum Umdrehen",
-        "increment": "0er Erhöhungen | 1er Erhöhungen | {n}er Erhöhungen",
-        "remaining": "Keine mehr übrig | 1 übrig | {n} übrig",
-        "shipsRemaining": "0 Schiffe übrig | 1 Schiff übrig | {n} Schiffe übrig",
+        "increment": "{n}er Erhöhungen | {n}er Erhöhungen | {n}er Erhöhungen",
+        "remaining": "Keine mehr übrig | {n} übrig | {n} übrig",
+        "shipsRemaining": "{n} Schiffe übrig | {n} Schiff übrig | {n} Schiffe übrig",
         "includesItems": "Beinhaltet {n} Artikel | Beinhaltet {n} Artikel | Beinhaltet {n} Artikel",
         "restartNotice": "Der Server startet in {n} Minuten neu. Beende bitte dein Spiel. | Der Server startet in {n} Minute neu. Beende bitte dein Spiel. | Der Server startet in {n} Minuten neu. Beende bitte dein Spiel."
     },
@@ -3023,8 +2991,6 @@
         "accountLinked": "Dieses Konto ist mit folgender E-Mail-Adresse verknüpft: {email}.",
         "accountSocialLinked": "Dieses Konto ist mit {social} verknüpft.",
         "accountNameSocialLinked": "Du kannst den Kontonamen nicht ändern, weil er mit deinem {social} Profil verknüpft ist. Deinen Namen kannst du direkt auf der Plattform ändern.",
-        "betaNotice": "Dieses Spiel wird immer noch entwickelt. Bitte teile dein Feedback und Bugs auf unserem {social}.",
-        "clickForDetails": "Klicke für Details.",
         "howToPlay": "Lerne das Spiel zu spielen",
         "howToPlayShort": "Wie man spielt",
         "chatPlaceholder": "Was willst du sagen?",

@@ -2,10 +2,9 @@
     "_meta": {
         "language": "informal Dutch",
         "rtl": false,
-        "total": 2164,
+        "total": 2142,
         "missing": 0
     },
-    "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "De opgegeven code bestaat niet.",
@@ -55,7 +54,6 @@
             "desync": "Sorry, het lijkt erop dat je gedesynchroniseerd bent. Probeer het opnieuw.",
             "title": "Er is een fout opgetreden.",
             "invalid": "Deze actie kon niet worden uitgevoerd. Ververs de pagina als dit vaker gebeurt.",
-            "texture": "Kan texture met ID \"{id}\" niet laden.",
             "invalidEmail": "Er is een ongeldig e-mailadres opgegeven.",
             "invalidAction": "Er is een ongeldig actietype \"{type}\" opgegeven.",
             "maintenance": "Je kunt deze actie niet uitvoeren terwijl er onderhoud wordt gedaan.",
@@ -64,7 +62,7 @@
             "cannotSelf": "Je kunt deze actie niet op jezelf uitvoeren.",
             "actionAgainstBot": "Je kunt deze actie niet uitvoeren op een bot.",
             "actionAgainstInactiveUser": "Je kunt deze actie niet uitvoeren op een inactieve gebruiker.",
-            "invalidUser": "Gebruiker met opgegeven ID zit niet in dit spel.",
+            "invalidUser": "De opgegeven gebruiker is niet gevonden.",
             "invalidTime": "Je kunt deze actie op dit moment niet uitvoeren.",
             "versionMismatch": "Je draait versie \"{client}\" terwijl de server versie \"{server}\" draait. Dit kan gebeuren als er een update wordt uitgerold. Vernieuw deze pagina over een paar minuten om de nieuwste versie te krijgen.",
             "clipboard": "Kopiëren naar klembord mislukt."
@@ -108,7 +106,6 @@
         },
         "card": {
             "loadingSets": "Er ging iets mis tijdens het laden van de kaartensets.",
-            "invalid": "Ongeldige kaartgegevens gegeven.",
             "loadError": "Er is een fout opgetreden bij het downloaden van de kaartensets.",
             "underscore": "Elke underscore resulteert in één antwoordkaart — zet ze niet naast elkaar!",
             "empty": "De kaart mag niet leeg zijn.",
@@ -222,18 +219,6 @@
                 "turnTime": {
                     "title": "Beurt Tijd",
                     "help": "De tijd die een speler heeft voordat zijn beurt naar de volgende speler gaat."
-                },
-                "inputTime": {
-                    "title": "Invoertijd",
-                    "help": "De hoeveelheid tijd die een speler heeft om een invoer in te vullen. Het spel gaat gewoon door, of ze nou klaar zijn of niet als de tijd op is."
-                },
-                "continueAutomatically": {
-                    "title": "Automatisch Doorgaan",
-                    "help": "Schakel tussen of het spel automatisch moet doorgaan of wachten tot iedereen bevestigt dat ze klaar zijn."
-                },
-                "continueTime": {
-                    "title": "Doorgaan Tijd",
-                    "help": "Wanneer een doorgaan-knop verschijnt, beslis hoe lang het zou moeten duren voordat het spel sowieso doorgaat."
                 },
                 "timeFreedomMode": {
                     "title": "Tijdslimiet",
@@ -370,9 +355,6 @@
                     }
                 },
                 "foul": {
-                    "help": {
-                        "disabled": "Foul is uitgeschakeld met de huidige instellingen."
-                    },
                     "data": {
                         "nothing": "Niets",
                         "keepTurn": "Behoudt beurt",
@@ -396,8 +378,7 @@
             "help": {},
             "presets": {
                 "custom": {
-                    "title": "Custom",
-                    "description": "Instellingen aangepast door jou — Laatste update {timestamp}"
+                    "title": "Custom"
                 },
                 "default": {
                     "title": "Standaard"
@@ -1203,15 +1184,6 @@
                 "placementTime": {
                     "title": "Plaatsingstijd",
                     "help": "Hoe lang elke speler heeft om hun schepen in positie te brengen."
-                },
-                "gridSize": {
-                    "title": "Rastergrootte",
-                    "help": "Selecteer de grootte van het speelveld waarin je wilt spelen.",
-                    "data": {
-                        "7x7": "7x7",
-                        "11x11": "11x11",
-                        "15x15": "15x15"
-                    }
                 },
                 "level": {
                     "title": "Kaart",
@@ -2355,12 +2327,12 @@
         "daysShort": "{n}d",
         "hoursShort": "{n}u",
         "minutesShort": "{n}m",
-        "years": "0 jaar | 1 jaar | {n} jaar",
-        "months": "0 maanden | 1 maand | {n} maanden",
-        "days": "0 dagen | 1 dag | {n} dagen",
-        "hours": "0 uren | 1 uur | {n} uren",
-        "minutes": "0 minuten | 1 minuut | {n} minuten",
-        "seconds": "0 seconden | 1 seconde | {n} seconden"
+        "years": "{n} jaar | {n} jaar | {n} jaar",
+        "months": "{n} maanden | {n} maand | {n} maanden",
+        "days": "{n} dagen | {n} dag | {n} dagen",
+        "hours": "{n} uren | {n} uur | {n} uren",
+        "minutes": "{n} minuten | {n} minuut | {n} minuten",
+        "seconds": "{n} seconden | {n} seconde | {n} seconden"
     },
     "perk": {
         "gradientPack": {
@@ -2463,30 +2435,26 @@
         "experienceShort": "{n} XP",
         "winStreak": "{n}-overwinning streak!",
         "rolls": "{n} worpen | {n} worp | {n} worpen",
-        "balls": "0 ballen | 1 bal | {n} ballen",
-        "kills": "0 kills | 1 kill | {n} kills",
-        "deaths": "0 overlijden | 1 overlijden | {n} overlijden",
-        "lives": "0 levens | 1 leven | {n} levens",
-        "files": "0 bestanden | 1 bestand | {n} bestanden",
-        "points": "0 punten | 1 punt | {n} punten",
-        "pieces": "0 schijven | 1 schijf | {n} schijven",
-        "wins": "0 zeges | 1 zege | {n} zeges",
-        "cards": "0 kaarten | 1 kaart | {n} kaarten",
-        "moves": "0 zetten | 1 zet | {n} zetten",
-        "tiles": "0 tegels | 1 tegel | {n} tegels",
-        "playing": "0 spelen nu | 1 speelt nu | {n} spelen nu",
-        "players": "0 spelers | 1 speler | {n} spelers",
-        "selectedCards": "Geen kaarten geselecteerd | 1 kaart geselecteerd | {n} kaarten geselecteerd",
-        "matches": "0 spellen | 1 spel | {n} spellen",
-        "matchesFound": "0 spellen gevonden | 1 spel gevonden | {n} spellen gevonden",
-        "matchesWaiting": "0 spellen wachten | 1 spel wacht | {n} spellen wachten",
-        "needMorePlayers": "Nog 0 spelers nodig | Nog 1 speler nodig | Nog {n} spelers nodig",
+        "balls": "{n} ballen | {n} bal | {n} ballen",
+        "kills": "{n} kills | {n} kill | {n} kills",
+        "lives": "{n} levens | {n} leven | {n} levens",
+        "files": "{n} bestanden | {n} bestand | {n} bestanden",
+        "points": "{n} punten | {n} punt | {n} punten",
+        "pieces": "{n} schijven | {n} schijf | {n} schijven",
+        "wins": "{n} zeges | {n} zege | {n} zeges",
+        "cards": "{n} kaarten | {n} kaart | {n} kaarten",
+        "playing": "{n} spelen nu | {n} speelt nu | {n} spelen nu",
+        "players": "{n} spelers | {n} speler | {n} spelers",
+        "selectedCards": "Geen kaarten geselecteerd | {n} kaart geselecteerd | {n} kaarten geselecteerd",
+        "matchesFound": "{n} spellen gevonden | {n} spel gevonden | {n} spellen gevonden",
+        "matchesWaiting": "{n} spellen wachten | {n} spel wacht | {n} spellen wachten",
+        "needMorePlayers": "Nog {n} spelers nodig | Nog {n} speler nodig | Nog {n} spelers nodig",
         "playAgainstBots": "Speel Tegen Bots | Speel Tegen een Bot | Speel Tegen Bots",
         "playRandomOpponents": "Play Random Opponents | Play Random Opponent | Play Random Opponents",
         "turnsToFlip": "Beurten tot flip | Beurt tot flip | Beurten tot flip",
-        "increment": "Stappen van 0 | Stap van 1 | Stappen van {n}",
-        "remaining": "Geen over | 1 over | {n} over",
-        "shipsRemaining": "0 schepen over | 1 schip over | {n} schepen over",
+        "increment": "Stappen van {n} | Stap van {n} | Stappen van {n}",
+        "remaining": "Geen over | {n} over | {n} over",
+        "shipsRemaining": "{n} schepen over | {n} schip over | {n} schepen over",
         "includesItems": "Bevat {n} items | Bevat {n} item | Bevat {n} items",
         "restartNotice": "Server gaat over {n} minuten opnieuw opstarten. Maak je game af. | Server gaat over {n} minuut opnieuw opstarten. Maak je game af. | Server gaat over {n} minuten opnieuw opstarten. Maak je game af."
     },
@@ -3023,8 +2991,6 @@
         "accountLinked": "Dit account is gekoppeld aan het volgende e-mailadres: {email}.",
         "accountSocialLinked": "Dit account is gekoppeld aan {social}.",
         "accountNameSocialLinked": "Je kunt deze accountnaam niet veranderen omdat het aan je {social} profiel is gekoppeld. Je hebt controle over je naam op dat platform zelf.",
-        "betaNotice": "Dit spel is nog in ontwikkeling. Deel feedback en bugs op onze {social}",
-        "clickForDetails": "Klik voor details",
         "howToPlay": "Bekijk hoe je dit spel speelt",
         "howToPlayShort": "Hoe te spelen",
         "chatPlaceholder": "Wat wil je zeggen?",

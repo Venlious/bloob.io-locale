@@ -2,10 +2,9 @@
     "_meta": {
         "language": "informal Polish",
         "rtl": false,
-        "total": 2164,
+        "total": 2142,
         "missing": 0
     },
-    "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Podany kod nie istnieje.",
@@ -55,7 +54,6 @@
             "desync": "Przepraszam, wygląda na to, że zostałeś odsynchronizowany. Spróbuj ponownie.",
             "title": "Wystąpił błąd.",
             "invalid": "Nie udało się wykonać tej akcji. Odśwież stronę, jeśli to się powtarza.",
-            "texture": "Nie udało się załadować tekstury \"{id}\".",
             "invalidEmail": "Podano nieprawidłowy adres e-mail.",
             "invalidAction": "Podano nieprawidłowy typ działania \"{type}\".",
             "maintenance": "Nie możesz wykonać tej akcji, gdy tryb konserwacji jest aktywny.",
@@ -64,7 +62,7 @@
             "cannotSelf": "Nie możesz wykonać tej akcji na sobie.",
             "actionAgainstBot": "Nie można wykonać tej akcji na bota.",
             "actionAgainstInactiveUser": "Nie można wykonać tej akcji na nieaktywnym użytkowniku.",
-            "invalidUser": "Użytkownik o podanym ID nie jest w tej grze.",
+            "invalidUser": "Nie znaleziono podanego użytkownika.",
             "invalidTime": "Nie możesz wykonać tej akcji w tym momencie.",
             "versionMismatch": "Masz wersję \"{client}\", a serwer działa na wersji \"{server}\". To może się zdarzyć, gdy aktualizacja jest w trakcie wprowadzania. Odśwież tę stronę za kilka minut, żeby zaktualizować do najnowszej wersji.",
             "clipboard": "Nie udało się skopiować do schowka."
@@ -108,7 +106,6 @@
         },
         "card": {
             "loadingSets": "Nie można pobrać zestawów kart.",
-            "invalid": "Podano nieprawidłowe dane karty.",
             "loadError": "Wystąpił błąd podczas próby pobrania danych zestawów kart.",
             "underscore": "Każdy podkreślnik powoduje wybór jednej karty odpowiedzi - nie umieszczaj ich obok siebie!",
             "empty": "Upewnij się, że karta nie jest pusta.",
@@ -222,18 +219,6 @@
                 "turnTime": {
                     "title": "Czas na ruch",
                     "help": "Ilość czasu, którą gracz ma zanim jego tura przejdzie na następnego gracza."
-                },
-                "inputTime": {
-                    "title": "Czas wejścia",
-                    "help": "Ilość czasu, którą gracz ma na wprowadzenie danych. Gra będzie kontynuowana, niezależnie od tego, czy są gotowi, gdy czas się skończy."
-                },
-                "continueAutomatically": {
-                    "title": "Kontynuuj Automatycznie",
-                    "help": "Przełącz, czy gra powinna kontynuować automatycznie, czy czekać, aż wszyscy potwierdzą, że są gotowi."
-                },
-                "continueTime": {
-                    "title": "Czas kontynuacji",
-                    "help": "Kiedy pojawi się przycisk kontynuuj, zdecyduj, ile czasu powinno minąć, zanim gra i tak pójdzie dalej."
                 },
                 "timeFreedomMode": {
                     "title": "Limit Czasu",
@@ -370,9 +355,6 @@
                     }
                 },
                 "foul": {
-                    "help": {
-                        "disabled": "Nieprzyzwoite jest wyłączone z obecnymi ustawieniami."
-                    },
                     "data": {
                         "nothing": "Nic",
                         "keepTurn": "Kontynuuj ruch",
@@ -396,8 +378,7 @@
             "help": {},
             "presets": {
                 "custom": {
-                    "title": "Niestandardowe",
-                    "description": "Zmiany wprowadzone przez Ciebie — Ostatnia aktualizacja {timestamp}"
+                    "title": "Niestandardowe"
                 },
                 "default": {
                     "title": "Domyślne"
@@ -1203,15 +1184,6 @@
                 "placementTime": {
                     "title": "Czas Umieszczenia",
                     "help": "Jak długo każdy gracz ma na przesunięcie swoich statków na pozycję."
-                },
-                "gridSize": {
-                    "title": "Rozmiar siatki",
-                    "help": "Wybierz rozmiar poziomu, na którym chcesz grać.",
-                    "data": {
-                        "7x7": "7x7",
-                        "11x11": "11x11",
-                        "15x15": "15x15"
-                    }
                 },
                 "level": {
                     "title": "Mapa",
@@ -2355,12 +2327,12 @@
         "daysShort": "{n}d",
         "hoursShort": "{n}godz",
         "minutesShort": "{n}min",
-        "years": "0 lat | 1 rok | {n} lat",
-        "months": "0 miesięcy | 1 miesiąc | {n} miesięcy",
-        "days": "0 dni | 1 dzień | {n} dni",
-        "hours": "0 godzin | 1 godzina | {n} godzin",
-        "minutes": "0 minut | 1 minuta | {n} minut",
-        "seconds": "0 sekund | 1 sekunda | {n} sekund"
+        "years": "{n} lat | {n} rok | {n} lat",
+        "months": "{n} miesięcy | {n} miesiąc | {n} miesięcy",
+        "days": "{n} dni | {n} dzień | {n} dni",
+        "hours": "{n} godzin | {n} godzina | {n} godzin",
+        "minutes": "{n} minut | {n} minuta | {n} minut",
+        "seconds": "{n} sekund | {n} sekunda | {n} sekund"
     },
     "perk": {
         "gradientPack": {
@@ -2463,30 +2435,26 @@
         "experienceShort": "{n} DO",
         "winStreak": "{n}-wygranych z rzędu!",
         "rolls": "{n} rzutów | {n} rzut | {n} rzuty",
-        "balls": "0 piłek | 1 piłka | {n} piłek",
-        "kills": "0 zabójstw | 1 zabójstwo | {n} zabójstw",
-        "deaths": "0 śmierci | 1 śmierć | {n} śmierci",
-        "lives": "0 żyć | 1 życie | {n} żyć",
-        "files": "0 plików | 1 plik | {n} plików",
+        "balls": "{n} piłek | {n} piłka | {n} piłek",
+        "kills": "{n} zabójstw | {n} zabójstwo | {n} zabójstw",
+        "lives": "{n} żyć | {n} życie | {n} żyć",
+        "files": "{n} plików | {n} plik | {n} plików",
         "points": "{n} punkty | {n} punkt | {n} punkty",
-        "pieces": "0 kawałków | 1 kawałek | {n} kawałków",
-        "wins": "0 zwycięstw | 1 zwycięstwo | {n} zwycięstw",
-        "cards": "0 kart | 1 karta | {n} kart",
-        "moves": "0 ruchów | 1 ruch | {n} ruchów",
-        "tiles": "0 kafli | 1 kafel | {n} kafli",
-        "playing": "0 grających | 1 grający | {n} grających",
-        "players": "0 graczy | 1 gracz | {n} graczy",
-        "selectedCards": "Nie wybrano kart | 1 wybrana karta | {n} wybranych kart",
-        "matches": "0 meczów | 1 mecz | {n} meczów",
-        "matchesFound": "0 znalezionych meczów | 1 znaleziony mecz | {n} znalezionych meczów",
-        "matchesWaiting": "0 oczekujących meczów | 1 oczekujący mecz | {n} oczekujących meczów",
-        "needMorePlayers": "Potrzeba 0 graczy | Potrzeba 1 gracza | Potrzeba {n} graczy",
+        "pieces": "{n} kawałków | {n} kawałek | {n} kawałków",
+        "wins": "{n} zwycięstw | {n} zwycięstwo | {n} zwycięstw",
+        "cards": "{n} kart | {n} karta | {n} kart",
+        "playing": "{n} grających | {n} grający | {n} grających",
+        "players": "{n} graczy | {n} gracz | {n} graczy",
+        "selectedCards": "Nie wybrano kart | {n} wybrana karta | {n} wybranych kart",
+        "matchesFound": "{n} znalezionych meczów | {n} znaleziony mecz | {n} znalezionych meczów",
+        "matchesWaiting": "{n} oczekujących meczów | {n} oczekujący mecz | {n} oczekujących meczów",
+        "needMorePlayers": "Potrzeba {n} graczy | Potrzeba {n} gracza | Potrzeba {n} graczy",
         "playAgainstBots": "Graj przeciwko botom | Graj przeciwko botowi | Graj przeciwko botom",
         "playRandomOpponents": "Graj z losowymi przeciwnikami | Graj z losowym przeciwnikiem | Graj z losowymi przeciwnikami",
         "turnsToFlip": "Tur do odwrócenia | Tura do odwrócenia | Tur do odwrócenia",
-        "increment": "Przyrosty o 0 | Przyrost o 1 | Przyrosty o {n}",
-        "remaining": "Brak pozostałych | 1 pozostały | {n} pozostałe",
-        "shipsRemaining": "0 statków pozostało | 1 statek pozostał | {n} statków pozostało",
+        "increment": "Przyrosty o {n} | Przyrost o {n} | Przyrosty o {n}",
+        "remaining": "Brak pozostałych | {n} pozostały | {n} pozostałe",
+        "shipsRemaining": "{n} statków pozostało | {n} statek pozostał | {n} statków pozostało",
         "includesItems": "Zawiera {n} przedmioty | Zawiera {n} przedmiot | Zawiera {n} przedmiotów",
         "restartNotice": "Serwer zrestartuje się za {n} minut. Skończ swoją grę. | Serwer zrestartuje się za {n} minutę. Skończ swoją grę. | Serwer zrestartuje się za {n} minut. Skończ swoją grę."
     },
@@ -3023,8 +2991,6 @@
         "accountLinked": "To konto jest połączone z następującym adresem e-mail: {email}.",
         "accountSocialLinked": "To konto jest powiązane z {social}.",
         "accountNameSocialLinked": "Nie możesz zmienić nazwy tego konta, bo jest powiązane z twoim profilem na {social}. Nazwę możesz ogarnąć bezpośrednio na tej platformie.",
-        "betaNotice": "Ta gra jest wciąż rozwijana. Prosimy o podzielenie się opiniami i błędami na naszym {social}.",
-        "clickForDetails": "Kliknij, aby uzyskać szczegóły.",
         "howToPlay": "Dowiedz się, jak grać w tę grę.",
         "howToPlayShort": "Jak grać",
         "chatPlaceholder": "Co chcesz powiedzieć?",

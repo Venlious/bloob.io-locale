@@ -2,10 +2,9 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 2164,
+        "total": 2142,
         "missing": 0
     },
-    "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Verilen kod mevcut değil.",
@@ -55,7 +54,6 @@
             "desync": "Üzgünüm, senkronizasyonun bozulmuş gibi görünüyor. Lütfen tekrar dene.",
             "title": "Bir hata oluştu.",
             "invalid": "Bu işlem tamamlanamadı. Bu sürekli oluyorsa sayfayı yenile.",
-            "texture": "\"{id}\" isimli bir doku yüklenemedi.",
             "invalidEmail": "Geçersiz bir e-posta adresi verildi.",
             "invalidAction": "Geçersiz bir eylem türü \"{type}\" verildi.",
             "maintenance": "Bakım modu aktifken bu işlemi gerçekleştiremezsin.",
@@ -64,7 +62,7 @@
             "cannotSelf": "Bu işlemi kendine yapamazsın.",
             "actionAgainstBot": "Bu işlemi bir bota karşı gerçekleştiremezsin.",
             "actionAgainstInactiveUser": "Pasif bir kullanıcı üzerinde bu işlemi gerçekleştiremezsin.",
-            "invalidUser": "Belirtilen ID'ye sahip kullanıcı bu maçta değil.",
+            "invalidUser": "Belirtilen kullanıcı bulunamadı.",
             "invalidTime": "Şu anda bu işlemi gerçekleştiremezsin.",
             "versionMismatch": "Sunucu \"{server}\" versiyonundayken sen \"{client}\" versiyonunu kullanıyorsun. Bu, bir güncelleme dağıtılırken olabilir. Lütfen birkaç dakika içinde bu sayfayı yenile, en son versiyona geçmek için.",
             "clipboard": "Panoya kopyalama başarısız oldu."
@@ -108,7 +106,6 @@
         },
         "card": {
             "loadingSets": "Kart setlerini indiremiyorum.",
-            "invalid": "Geçersiz kart bilgisi verildi.",
             "loadError": "Kart seti verilerini indirmeye çalışırken bir hata oluştu.",
             "underscore": "Her alt çizgi bir yanıt kartı seçimi sonucunu doğurur - onları yan yana koyma!",
             "empty": "Lütfen kartın boş olmadığından emin ol.",
@@ -222,18 +219,6 @@
                 "turnTime": {
                     "title": "Sıra Süresi",
                     "help": "Bir oyuncunun sırası bir sonraki oyuncuya geçmeden önce sahip olduğu süre."
-                },
-                "inputTime": {
-                    "title": "Giriş Zamanı",
-                    "help": "Oyuncunun bir girişi doldurması için ne kadar zamanı olduğu. Zaman bitse bile oyuncu hazır olmasa da oyun devam eder."
-                },
-                "continueAutomatically": {
-                    "title": "Otomatik Devam Et",
-                    "help": "Oyunun otomatik olarak devam edip etmemesi ya da herkesin hazır olduğunu onaylamasını beklemesi seçeneğini değiştir."
-                },
-                "continueTime": {
-                    "title": "Devam Etme Süresi",
-                    "help": "Devam et butonu belirdiğinde, oyunun ne kadar süre sonra kendiliğinden devam etmesi gerektiğine karar ver."
                 },
                 "timeFreedomMode": {
                     "title": "Zaman Sınırı",
@@ -370,9 +355,6 @@
                     }
                 },
                 "foul": {
-                    "help": {
-                        "disabled": "Mevcut ayarlarla faul devre dışı."
-                    },
                     "data": {
                         "nothing": "Hiçbir şey",
                         "keepTurn": "Sıranı koru",
@@ -396,8 +378,7 @@
             "help": {},
             "presets": {
                 "custom": {
-                    "title": "Özelleştirilmiş",
-                    "description": "Senin tarafından yapılan değişiklikler — Son güncelleme {timestamp}"
+                    "title": "Özelleştirilmiş"
                 },
                 "default": {
                     "title": "Varsayılan"
@@ -1203,15 +1184,6 @@
                 "placementTime": {
                     "title": "Yerleştirme Süresi",
                     "help": "Her oyuncunun gemilerini pozisyona getirmek için ne kadar süresi olduğu."
-                },
-                "gridSize": {
-                    "title": "Kılavuz Boyutu",
-                    "help": "Oynayacağın seviye boyutunu seç.",
-                    "data": {
-                        "7x7": "7x7",
-                        "11x11": "11x11",
-                        "15x15": "15x15"
-                    }
                 },
                 "level": {
                     "title": "Harita",
@@ -2355,12 +2327,12 @@
         "daysShort": "{n}g",
         "hoursShort": "{n}s",
         "minutesShort": "{n}d",
-        "years": "0 yıl | 1 yıl | {n} yıl",
-        "months": "0 ay | 1 ay | {n} ay",
-        "days": "0 gün | 1 gün | {n} gün",
-        "hours": "0 saat | 1 saat | {n} saat",
-        "minutes": "0 dakika | 1 dakika | {n} dakika",
-        "seconds": "0 saniye | 1 saniye | {n} saniye"
+        "years": "{n} yıl | {n} yıl | {n} yıl",
+        "months": "{n} ay | {n} ay | {n} ay",
+        "days": "{n} gün | {n} gün | {n} gün",
+        "hours": "{n} saat | {n} saat | {n} saat",
+        "minutes": "{n} dakika | {n} dakika | {n} dakika",
+        "seconds": "{n} saniye | {n} saniye | {n} saniye"
     },
     "perk": {
         "gradientPack": {
@@ -2463,30 +2435,26 @@
         "experienceShort": "{n} XP",
         "winStreak": "{n} kazanma serisi!",
         "rolls": "{n} atış | {n} atış | {n} atış",
-        "balls": "0 top | 1 top | {n} top",
-        "kills": "0 öldürme | 1 öldürme | {n} öldürme",
-        "deaths": "0 ölüm | 1 ölüm | {n} ölüm",
-        "lives": "0 can | 1 can | {n} can",
-        "files": "0 dosya | 1 dosya | {n} dosya",
+        "balls": "{n} top | {n} top | {n} top",
+        "kills": "{n} öldürme | {n} öldürme | {n} öldürme",
+        "lives": "{n} can | {n} can | {n} can",
+        "files": "{n} dosya | {n} dosya | {n} dosya",
         "points": "{n} puan | {n} puan | {n} puan",
-        "pieces": "0 parça | 1 parça | {n} parça",
-        "wins": "0 galibiyet | 1 galibiyet | {n} galibiyet",
-        "cards": "0 kart | 1 kart | {n} kart",
-        "moves": "0 hamle | 1 hamle | {n} hamle",
-        "tiles": "0 karolar | 1 karo | {n} karo",
-        "playing": "0 oynuyor | 1 oynuyor | {n} oynuyor",
-        "players": "0 oyuncu | 1 oyuncu | {n} oyuncu",
-        "selectedCards": "Kart seçilmedi | 1 kart seçildi | {n} kart seçildi",
-        "matches": "0 maç | 1 maç | {n} maç",
-        "matchesFound": "0 eşleşme bulundu | 1 eşleşme bulundu | {n} eşleşme bulundu",
-        "matchesWaiting": "0 eşleşme bekliyor | 1 eşleşme bekliyor | {n} eşleşme bekliyor",
-        "needMorePlayers": "0 oyuncuya daha ihtiyacımız var | 1 oyuncuya daha ihtiyacımız var | {n} oyuncuya daha ihtiyacımız var",
+        "pieces": "{n} parça | {n} parça | {n} parça",
+        "wins": "{n} galibiyet | {n} galibiyet | {n} galibiyet",
+        "cards": "{n} kart | {n} kart | {n} kart",
+        "playing": "{n} oynuyor | {n} oynuyor | {n} oynuyor",
+        "players": "{n} oyuncu | {n} oyuncu | {n} oyuncu",
+        "selectedCards": "Kart seçilmedi | {n} kart seçildi | {n} kart seçildi",
+        "matchesFound": "{n} eşleşme bulundu | {n} eşleşme bulundu | {n} eşleşme bulundu",
+        "matchesWaiting": "{n} eşleşme bekliyor | {n} eşleşme bekliyor | {n} eşleşme bekliyor",
+        "needMorePlayers": "{n} oyuncuya daha ihtiyacımız var | {n} oyuncuya daha ihtiyacımız var | {n} oyuncuya daha ihtiyacımız var",
         "playAgainstBots": "Botlara Karşı Oyna | Bir Bota Karşı Oyna | Botlara Karşı Oyna",
         "playRandomOpponents": "Rastgele Rakiplerle Oyna | Rastgele Bir Rakiple Oyna | Rastgele Rakiplerle Oyna",
         "turnsToFlip": "Dönüşler çevir | Dönüş çevir | Dönüşler çevir",
-        "increment": "0'lık artışlar | 1'lik artış | {n}'luk artışlar",
-        "remaining": "Hiç kalmadı | 1 kaldı | {n} kaldı",
-        "shipsRemaining": "0 gemi kaldı | 1 gemi kaldı | {n} gemi kaldı",
+        "increment": "{n}'lık artışlar | {n}'lik artış | {n}'luk artışlar",
+        "remaining": "Hiç kalmadı | {n} kaldı | {n} kaldı",
+        "shipsRemaining": "{n} gemi kaldı | {n} gemi kaldı | {n} gemi kaldı",
         "includesItems": "{n} öğe içerir | {n} öğe içerir | {n} öğe içerir",
         "restartNotice": "Sunucu {n} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {n} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {n} dakikada yeniden başlayacak. Oyununu bitir."
     },
@@ -3023,8 +2991,6 @@
         "accountLinked": "Bu hesap şu e-posta adresine bağlı: {email}.",
         "accountSocialLinked": "Bu hesap {social} ile bağlı.",
         "accountNameSocialLinked": "Bu hesap adını değiştiremezsin çünkü {social} profilinle bağlı. O platformda adını direkt olarak kontrol edebilirsin.",
-        "betaNotice": "Bu oyun hala geliştiriliyor. Lütfen geri bildirimlerini ve hataları {social} üzerinden paylaş.",
-        "clickForDetails": "Detaylar için tıkla.",
         "howToPlay": "Bu oyunu nasıl oynayacağını öğren",
         "howToPlayShort": "Nasıl oynanır",
         "chatPlaceholder": "Ne demek istiyorsun?",

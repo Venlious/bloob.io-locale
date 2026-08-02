@@ -2,10 +2,9 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 2164,
+        "total": 2142,
         "missing": 0
     },
-    "name": "Bloob.io",
     "error": {
         "redeemCode": {
             "invalid": "Kode yang diberikan tidak ada.",
@@ -55,7 +54,6 @@
             "desync": "Maaf, kayaknya kamu keputus. Coba lagi ya.",
             "title": "Ada kesalahan yang terjadi.",
             "invalid": "Tindakan itu tidak bisa diselesaikan. Muat ulang halaman kalau ini terus terjadi.",
-            "texture": "Gagal memuat tekstur \"{id}\".",
             "invalidEmail": "Alamat email yang diberikan tidak valid.",
             "invalidAction": "Tipe aksi \"{type}\" yang diberikan tidak valid.",
             "maintenance": "Kamu nggak bisa melakukan aksi ini pas mode perawatan lagi aktif.",
@@ -64,7 +62,7 @@
             "cannotSelf": "Kamu nggak bisa melakukan aksi ini ke diri sendiri.",
             "actionAgainstBot": "Nggak bisa melakukan aksi ini ke bot.",
             "actionAgainstInactiveUser": "Ga bisa ngelakuin aksi ini ke pengguna yang ga aktif.",
-            "invalidUser": "Pengguna dengan ID ini ga ada di pertandingan ini.",
+            "invalidUser": "Pengguna yang dimaksud ga ketemu.",
             "invalidTime": "Kamu ga bisa ngelakuin aksi ini sekarang.",
             "versionMismatch": "Kamu lagi pakai versi \"{client}\" sementara servernya pakai versi \"{server}\". Ini bisa terjadi pas ada update yang lagi diluncurin. Coba refresh halaman ini dalam beberapa menit buat dapetin versi terbaru.",
             "clipboard": "Gagal nyalin ke clipboard."
@@ -108,7 +106,6 @@
         },
         "card": {
             "loadingSets": "Gak bisa unduh set kartu.",
-            "invalid": "Data kartu yang diberikan salah.",
             "loadError": "Ada kesalahan saat mencoba mengunduh data set kartu.",
             "underscore": "Setiap garis bawah menghasilkan satu pilihan kartu respons — jangan letakkan mereka berdampingan!",
             "empty": "Tolong pastikan kartunya nggak kosong.",
@@ -222,18 +219,6 @@
                 "turnTime": {
                     "title": "Waktu Giliran",
                     "help": "Waktu yang dimiliki seorang pemain sebelum gilirannya diberikan ke pemain selanjutnya."
-                },
-                "inputTime": {
-                    "title": "Waktu Masukan",
-                    "help": "Waktu yang dimiliki pemain untuk mengisi input. Game akan tetap berlanjut, siap atau tidak siap, saat waktu habis."
-                },
-                "continueAutomatically": {
-                    "title": "Lanjutkan Secara Otomatis",
-                    "help": "Ubah apakah game harus melanjutkan secara otomatis atau menunggu semua orang mengkonfirmasi bahwa mereka siap."
-                },
-                "continueTime": {
-                    "title": "Waktu Lanjut",
-                    "help": "Ketika tombol lanjut muncul, tentukan berapa lama sebelum game berlanjut dengan sendirinya."
                 },
                 "timeFreedomMode": {
                     "title": "Batas Waktu",
@@ -370,9 +355,6 @@
                     }
                 },
                 "foul": {
-                    "help": {
-                        "disabled": "Pelanggaran dinonaktifkan dengan pengaturan saat ini."
-                    },
                     "data": {
                         "nothing": "Nihil",
                         "keepTurn": "Terus giliran",
@@ -396,8 +378,7 @@
             "help": {},
             "presets": {
                 "custom": {
-                    "title": "Kustom",
-                    "description": "Perubahan yang kamu buat — Terakhir diperbarui {timestamp}"
+                    "title": "Kustom"
                 },
                 "default": {
                     "title": "Bawaan"
@@ -1203,15 +1184,6 @@
                 "placementTime": {
                     "title": "Waktu Penempatan",
                     "help": "Berapa lama setiap pemain harus memindahkan kapal mereka ke posisi."
-                },
-                "gridSize": {
-                    "title": "Ukuran Kotak",
-                    "help": "Pilih ukuran level untuk bermain.",
-                    "data": {
-                        "7x7": "7x7",
-                        "11x11": "11x11",
-                        "15x15": "15x15"
-                    }
                 },
                 "level": {
                     "title": "Peta",
@@ -2355,12 +2327,12 @@
         "daysShort": "{n} hari",
         "hoursShort": "{n} jam",
         "minutesShort": "{n} menit",
-        "years": "0 tahun | 1 tahun | {n} tahun",
-        "months": "0 bulan | 1 bulan | {n} bulan",
-        "days": "0 hari | 1 hari | {n} hari",
-        "hours": "0 jam | 1 jam | {n} jam",
-        "minutes": "0 menit | 1 menit | {n} menit",
-        "seconds": "0 detik | 1 detik | {n} detik"
+        "years": "{n} tahun | {n} tahun | {n} tahun",
+        "months": "{n} bulan | {n} bulan | {n} bulan",
+        "days": "{n} hari | {n} hari | {n} hari",
+        "hours": "{n} jam | {n} jam | {n} jam",
+        "minutes": "{n} menit | {n} menit | {n} menit",
+        "seconds": "{n} detik | {n} detik | {n} detik"
     },
     "perk": {
         "gradientPack": {
@@ -2463,30 +2435,26 @@
         "experienceShort": "{n} XP",
         "winStreak": "Kemenangan beruntun {n}!",
         "rolls": "{n} gulungan | {n} gulungan | {n} gulungan",
-        "balls": "0 bola | 1 bola | {n} bola",
-        "kills": "0 bunuh | 1 bunuh | {n} bunuh",
-        "deaths": "0 mati | 1 mati | {n} mati",
-        "lives": "0 nyawa | 1 nyawa | {n} nyawa",
-        "files": "0 file | 1 file | {n} file",
+        "balls": "{n} bola | {n} bola | {n} bola",
+        "kills": "{n} bunuh | {n} bunuh | {n} bunuh",
+        "lives": "{n} nyawa | {n} nyawa | {n} nyawa",
+        "files": "{n} file | {n} file | {n} file",
         "points": "{n} poin | {n} poin | {n} poin",
-        "pieces": "0 potong | 1 potong | {n} potong",
-        "wins": "0 menang | 1 menang | {n} menang",
-        "cards": "0 kartu | 1 kartu | {n} kartu",
-        "moves": "0 gerakan | 1 gerakan | {n} gerakan",
-        "tiles": "0 ubin | 1 ubin | {n} ubin",
-        "playing": "0 main | 1 main | {n} main",
-        "players": "0 pemain | 1 pemain | {n} pemain",
-        "selectedCards": "Tidak ada kartu yang dipilih | 1 kartu dipilih | {n} kartu dipilih",
-        "matches": "0 pertandingan | 1 pertandingan | {n} pertandingan",
-        "matchesFound": "0 pertandingan ditemukan | 1 pertandingan ditemukan | {n} pertandingan ditemukan",
-        "matchesWaiting": "0 pertandingan menunggu | 1 pertandingan menunggu | {n} pertandingan menunggu",
-        "needMorePlayers": "Butuh 0 pemain lagi | Butuh 1 pemain lagi | Butuh {n} pemain lagi",
+        "pieces": "{n} potong | {n} potong | {n} potong",
+        "wins": "{n} menang | {n} menang | {n} menang",
+        "cards": "{n} kartu | {n} kartu | {n} kartu",
+        "playing": "{n} main | {n} main | {n} main",
+        "players": "{n} pemain | {n} pemain | {n} pemain",
+        "selectedCards": "Tidak ada kartu yang dipilih | {n} kartu dipilih | {n} kartu dipilih",
+        "matchesFound": "{n} pertandingan ditemukan | {n} pertandingan ditemukan | {n} pertandingan ditemukan",
+        "matchesWaiting": "{n} pertandingan menunggu | {n} pertandingan menunggu | {n} pertandingan menunggu",
+        "needMorePlayers": "Butuh {n} pemain lagi | Butuh {n} pemain lagi | Butuh {n} pemain lagi",
         "playAgainstBots": "Main Lawan Bot | Main Lawan Bot | Main Lawan Bot",
         "playRandomOpponents": "Main Lawan Lawan Acak | Main Lawan Acak | Main Lawan Lawan Acak",
         "turnsToFlip": "Giliran buat balik | Giliran buat balik | Giliran-giliran buat balik",
-        "increment": "Bertambah 0 | Bertambah 1 | Bertambah {n}",
-        "remaining": "Gak ada yang tersisa | 1 masih tersisa | {n} masih tersisa",
-        "shipsRemaining": "0 kapal tersisa | 1 kapal tersisa | {n} kapal tersisa",
+        "increment": "Bertambah {n} | Bertambah {n} | Bertambah {n}",
+        "remaining": "Gak ada yang tersisa | {n} masih tersisa | {n} masih tersisa",
+        "shipsRemaining": "{n} kapal tersisa | {n} kapal tersisa | {n} kapal tersisa",
         "includesItems": "Termasuk {n} item | Termasuk {n} item | Termasuk {n} item",
         "restartNotice": "Server bakal restart dalam {n} menit. Selesaikan gamenya ya. | Server bakal restart dalam {n} menit. Selesaikan gamenya ya. | Server bakal restart dalam {n} menit. Selesaikan gamenya ya."
     },
@@ -3023,8 +2991,6 @@
         "accountLinked": "Akun ini terhubung dengan alamat email: {email}.",
         "accountSocialLinked": "Akun ini terhubung ke {social}.",
         "accountNameSocialLinked": "Kamu nggak bisa ganti nama akun ini karena terhubung ke profil {social} kamu. Nama kamu bisa diubah langsung di platform itu.",
-        "betaNotice": "Game ini masih dalam pengembangan. Tolong beri masukan & laporin bug di {social} kita.",
-        "clickForDetails": "Klik untuk detail",
         "howToPlay": "Belajar cara main game ini",
         "howToPlayShort": "Cara mainnya",
         "chatPlaceholder": "Mau bilang apa?",
