@@ -73,7 +73,19 @@ const checkForCommonErrors = translation => {
 	}
 }
 
-const checkBoldTagsBalanced = translation => {
+// A word a translator marked to stand out, written the markdown way: **word**.
+// It replaced <b> in every locale on 2026-08-08 - the tags only ever rendered on
+// the screens that happened to use v-html, and the frontend now renders the
+// marked run as a real element instead (see utility/highlightedText.ts there).
+// Deliberately two asterisks and non-greedy: the Rotten Apples time formulas
+// read "**RESPONSE CARDS * THIS TIME**", so a single-asterisk syntax would cut
+// them in half in all twenty locales.
+const boldPattern = /\*\*([\s\S]+?)\*\*/g
+
+const countBoldMarkers = value => (value.match(/\*\*/g) || []).length
+const countBoldRuns = value => (value.match(boldPattern) || []).length
+
+const checkBoldMarkersBalanced = translation => {
 	// Iterate through keys and values of the translation object
 	for (const [key, value] of Object.entries(translation)) {
 		// Skip keys with null values
@@ -82,17 +94,17 @@ const checkBoldTagsBalanced = translation => {
 		// Check if value is an object (indicating another nested layer)
 		if (typeof value === `object`) {
 			// If value is an object, recursively call the function on the nested objects
-			checkBoldTagsBalanced(value)
+			checkBoldMarkersBalanced(value)
 		} else if (typeof value === `string`) {
-			// Every opening <b> must be matched by a closing </b>, and vice versa
-			const openCount = (value.match(/<b>/g) || []).length
-			const closeCount = (value.match(/<\/b>/g) || []).length
-			expect(openCount).toBe(closeCount)
+			// Every opening ** must be matched by a closing one. Counting the runs the
+			// frontend's own pattern finds, rather than just the markers, is what
+			// catches a stray third ** that would leave part of the sentence unmarked
+			expect(countBoldRuns(value) * 2).toBe(countBoldMarkers(value))
 		}
 	}
 }
 
-const checkForMatchingBoldTags = (english, translation) => {
+const checkForMatchingBoldMarkers = (english, translation) => {
 	// Iterate through keys and values of English object
 	for (const [key, value] of Object.entries(english)) {
 		// Skip keys with null values in translation
@@ -101,16 +113,10 @@ const checkForMatchingBoldTags = (english, translation) => {
 		// Check if value is an object (indicating another nested layer)
 		if (typeof value === `object`) {
 			// If value is an object, recursively call the function on the nested objects
-			checkForMatchingBoldTags(value, translation[key])
+			checkForMatchingBoldMarkers(value, translation[key])
 		} else if (typeof value === `string`) {
-			// A translation must use the same amount of <b> and </b> tags as English - not more, not less
-			const englishOpenCount = (value.match(/<b>/g) || []).length
-			const englishCloseCount = (value.match(/<\/b>/g) || []).length
-			const translationOpenCount = (translation[key].match(/<b>/g) || []).length
-			const translationCloseCount = (translation[key].match(/<\/b>/g) || []).length
-
-			expect(translationOpenCount).toBe(englishOpenCount)
-			expect(translationCloseCount).toBe(englishCloseCount)
+			// A translation must mark the same amount of words as English - not more, not less
+			expect(countBoldRuns(translation[key])).toBe(countBoldRuns(value))
 		}
 	}
 }
@@ -154,11 +160,15 @@ const checkForUnexpectedTags = translation => {
 			// If value is an object, recursively call the function on the nested objects
 			checkForUnexpectedTags(value)
 		} else if (typeof value === `string`) {
-			// Only <b> and </b> are supported by the frontend - anything else is either a typo
-			// or formatting that has no renderer for it
+			// No message carries markup of any kind. A tag renders only where the
+			// frontend happens to use v-html: elsewhere it is escaped and shown
+			// literally, or announced verbatim by a screen reader, and vue-i18n warns
+			// about it besides ("Detected HTML in message... Recommend not using HTML
+			// messages to avoid XSS") - the message compiler renders the tags, so
+			// anything interpolated into the message rides along into innerHTML.
+			// Stressing a word is what ** is for
 			const tags = value.match(/<\/?[a-zA-Z][^>]*>/g) || []
-			const unexpectedTags = tags.filter(tag => tag !== `<b>` && tag !== `</b>`)
-			expect(unexpectedTags).toHaveLength(0)
+			expect(tags).toHaveLength(0)
 		}
 	}
 }
@@ -222,39 +232,22 @@ describe(`correctEntriesCount`, () => {
 	})
 })
 
-describe(`correctBoldTags`, () => {
-	it(`should have balanced <b> and </b> tags in English`, () => {
-		checkBoldTagsBalanced(enMessage)
-	})
-	it(`should not have any tags other than <b> and </b> in English`, () => {
-		checkForUnexpectedTags(enMessage)
-	})
-})
-
-// Keys the frontend renders as plain text rather than through an HTML tooltip.
-// Markup in one of these is either escaped and shown literally or announced
-// verbatim by a screen reader, and vue-i18n warns about it besides ("Detected
-// HTML in message... Recommend not using HTML messages to avoid XSS"): the
-// message compiler renders the tags, so anything interpolated into the message
-// rides along into innerHTML.
-//
-// Only English needs the assertion - `checkForMatchingBoldTags` already requires
-// every translation to carry the same <b> count as its English source, so a tag
-// added here is what would spread the problem to all 20 locales.
-const plainTextKeys = [`match.info.public`, `match.info.private`]
-
 const resolveKey = (source, path) => path.split(`.`).reduce((value, part) => value?.[part], source)
 
-describe(`plainTextMessages`, () => {
-	for (const path of plainTextKeys) {
-		it(`should have no markup in "${path}"`, () => {
-			const value = resolveKey(enMessage, path)
-			// Asserted first so the markup check below can't pass vacuously against a
-			// key that was renamed or removed - `undefined` contains no markup either
-			expect(typeof value).toBe(`string`)
-			expect(value).not.toMatch(/<[a-zA-Z/]/)
-		})
-	}
+describe(`correctBoldMarkers`, () => {
+	it(`should have balanced ** markers in English`, () => {
+		checkBoldMarkersBalanced(enMessage)
+	})
+	it(`should not have any tags in English`, () => {
+		checkForUnexpectedTags(enMessage)
+	})
+	// The sibling for the two checks above, which a catalogue with no marked words
+	// at all would pass. It is also what says which spelling is the supported one
+	it(`should mark stressed words with ** rather than markup`, () => {
+		expect(resolveKey(enMessage, `card.info.waitForSelections`)).toBe(
+			`You are the **judge** this round — wait for everyone to make their picks`
+		)
+	})
 })
 
 describe(`correctVariableFormatting`, () => {
@@ -300,14 +293,14 @@ for (const folder of [...supportedLocales, `_empty`]) {
 		})
 	})
 
-	describe(`correctBoldTags`, () => {
-		it(`should have balanced <b> and </b> tags for "${folder}"`, () => {
-			checkBoldTagsBalanced(messages)
+	describe(`correctBoldMarkers`, () => {
+		it(`should have balanced ** markers for "${folder}"`, () => {
+			checkBoldMarkersBalanced(messages)
 		})
-		it(`should have the same <b> and </b> tags as English for "${folder}"`, () => {
-			checkForMatchingBoldTags(enMessage, messages)
+		it(`should mark the same amount of words as English for "${folder}"`, () => {
+			checkForMatchingBoldMarkers(enMessage, messages)
 		})
-		it(`should not have any tags other than <b> and </b> for "${folder}"`, () => {
+		it(`should not have any tags for "${folder}"`, () => {
 			checkForUnexpectedTags(messages)
 		})
 	})

@@ -14,6 +14,8 @@ While the project itself is not open source, the localization is. Feel free to c
     -   Please [make a new issue](https://github.com/Venlious/bloob.io-locale/issues/new) requesting the language you would like to see. If approved, the language will be generated and can then be verified by a person.
 -   **I found a grammatically error or spelling mistake. What do I do?**
     -   Great! You can make a pull request with the edit to the file directly or you can [make a new issue](https://github.com/Venlious/bloob.io-locale/issues/new) with an explanation of the error you found.
+-   **How do I make a word bold?**
+    -   Write it as `**word**`, the way markdown does. The word inside the asterisks is the one that stands out, so put them around whatever carries the emphasis in your language rather than around the same word English uses. Every other kind of formatting — HTML tags included — is shown to the player exactly as you typed it.
 -   **I have another question!**
     -   Feel free to [make a new issue](https://github.com/Venlious/bloob.io-locale/issues/new) with your question.
 
