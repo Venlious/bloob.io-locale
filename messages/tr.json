@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 2144,
+        "total": 2184,
         "missing": 0
     },
     "error": {
@@ -961,6 +961,89 @@
                         "Hızlı yeniden doğuş",
                         "6 can",
                         "Maks. 8 oyuncu"
+                    ]
+                }
+            }
+        },
+        "BOMB_SHOWDOWN": {
+            "name": "Bomba Hesaplaşması",
+            "title": "Bomba Hesaplaşması Oyna | Ücretsiz Çok Oyunculu Hafıza Oyunu",
+            "description": "Herkes aynı tahtaya bomba saklar, sonra sırayla üstüne basılır. Kendi bombalarını nereye sakladığını hatırla ve güvenli kareleri bulmak için diğerlerinin nerede tereddüt ettiğine dikkat et.",
+            "options": {
+                "boardSize": {
+                    "title": "Tahta boyutu",
+                    "help": "Tahtanın kaç kareden oluştuğu. Herkes aynı düzeni görür. **Otomatik** seçilirse tahta, yaklaşık üçte biri mayınlı olacak şekilde ayarlanır.",
+                    "data": {
+                        "size": "{count} kare ({columns}x{rows})"
+                    }
+                },
+                "bombCount": {
+                    "title": "Oyuncu başına bomba",
+                    "help": "Her oyuncunun başlangıçta kaç bomba sakladığı. Kimse başkasınınkini göremez. **Otomatik** seçilirse masa küçüldükçe herkes daha fazla saklar."
+                },
+                "lifeCount": {
+                    "title": "Oyuncu başına can",
+                    "help": "Bir oyuncunun elenmeden önce kaç bombaya basabileceği. **Otomatik** seçilirse kalabalık bir masa daha az canla başlar, çünkü sıralar daha çok kişiye bölünür."
+                },
+                "stackedBombs": {
+                    "title": "Üst üste bombalar",
+                    "help": "İki oyuncu farkında olmadan aynı kareye bomba saklayabilir. Bu açıkken oraya basmak ikisine de birer cana mal olur.",
+                    "helpWarning": "Bunu açmak, iyi tahmin edilmiş bir kareyi çok daha acımasız yapar."
+                },
+                "hideTime": {
+                    "title": "Saklama süresi",
+                    "help": "Herkesin bombalarını saklamak için ne kadar süresi olduğu. Süre dolduğunda yerleştirilmemiş olan her şey senin yerine rastgele saklanır."
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Hesaplaşma",
+                    "description": [
+                        "Tahta, bombalar ve canlar masaya göre ölçeklenir"
+                    ]
+                },
+                "minefield": {
+                    "title": "Mayın tarlası",
+                    "description": [
+                        "Oyuncu başına 5 bomba",
+                        "Üst üste bombalar birer cana mal olur",
+                        "3 can"
+                    ]
+                },
+                "suddenDeath": {
+                    "title": "Ani ölüm",
+                    "description": [
+                        "Tek can",
+                        "Bir yanlış kare ve elendin"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Kurallar",
+                    "description": [
+                        "Herkes ortak bir tahtaya aynı sayıda bomba saklar. Kimse başkasınınkini göremez ve kendininkileri de oyun başlamadan önce sadece bir an görürsün.",
+                        "Sonra oyuncular sırayla bir kareye basar. Altında bomba varsa, orada duran bir can kaybeder. Her hâlükârda basılan her kare oyundan çıkar."
+                    ]
+                },
+                "memory": {
+                    "title": "Hafıza",
+                    "description": [
+                        "Kendi bombaların senin için de patlar, o yüzden nereye koyduğunu hatırlamak oyunun yarısıdır.",
+                        "Diğer yarısı ise herkesi izlemek: birinin tereddüt ettiği yer ve gitmeyi reddettiği yer, göremediğin kareler hakkında elde edeceğin en iyi ipucudur."
+                    ]
+                },
+                "winning": {
+                    "title": "Kazanma",
+                    "description": [
+                        "Canı kalan son oyuncu kazanır.",
+                        "Tahtadaki kareler önce biterse, en çok canı kalan kazanır."
+                    ]
+                },
+                "bots": {
+                    "title": "Botlar",
+                    "description": [
+                        "Botlar bombalarını rastgele saklar ve rastgele basar. Zor olanlar kendi bombalarının etrafından dolaşmayı hatırlar; en kolay olanlar nereye koyduklarını unutur, tıpkı herkes gibi."
                     ]
                 }
             }
@@ -2153,6 +2236,10 @@
             "tied": "Maç berabere",
             "finishedRematch": "Yeniden maç yakında başlıyor",
             "placingShips": "Gemileri yerleştirme",
+            "hideYourBombs": "Bombalarını sakla",
+            "rememberPlacement": "Nerede olduklarını hatırla",
+            "decidingTurnOrder": "Kimin başlayacağı belirleniyor",
+            "holdYourBreath": "Nefesini tut...",
             "firing": "{name} ateş ediyor",
             "firingSelf": "Sen ateş ediyorsun",
             "inProgress": "Maç devam ediyor",
@@ -2450,7 +2537,8 @@
         "remaining": "Hiç kalmadı | {n} kaldı | {n} kaldı",
         "shipsRemaining": "{n} gemi kaldı | {n} gemi kaldı | {n} gemi kaldı",
         "includesItems": "{n} öğe içerir | {n} öğe içerir | {n} öğe içerir",
-        "restartNotice": "Sunucu {n} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {n} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {n} dakikada yeniden başlayacak. Oyununu bitir."
+        "restartNotice": "Sunucu {n} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {n} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {n} dakikada yeniden başlayacak. Oyununu bitir.",
+        "bombs": "{n} bomba | {n} bomba | {n} bomba"
     },
     "misc": {
         "refresh": "Yenile",

@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Brazilian Portuguese",
         "rtl": false,
-        "total": 2144,
+        "total": 2184,
         "missing": 0
     },
     "error": {
@@ -961,6 +961,89 @@
                         "Ressurgimento rápido",
                         "6 vidas",
                         "Máx. 8 jogadores"
+                    ]
+                }
+            }
+        },
+        "BOMB_SHOWDOWN": {
+            "name": "Duelo de Bombas",
+            "title": "Jogue Duelo de Bombas online | Jogo de memória multijogador grátis",
+            "description": "Todo mundo esconde bombas no mesmo tabuleiro e depois cada um pisa nele na sua vez. Lembre onde você escondeu as suas e repare onde os outros hesitam para achar os ladrilhos seguros.",
+            "options": {
+                "boardSize": {
+                    "title": "Tamanho do tabuleiro",
+                    "help": "De quantos ladrilhos o tabuleiro é feito. Todo mundo vê a mesma disposição. No **Auto** o tabuleiro é dimensionado para que mais ou menos um terço dele fique minado.",
+                    "data": {
+                        "size": "{count} ladrilhos ({columns}x{rows})"
+                    }
+                },
+                "bombCount": {
+                    "title": "Bombas por jogador",
+                    "help": "Quantas bombas cada jogador esconde no começo. Ninguém vê as dos outros. No **Auto**, quanto menor a mesa, mais cada um esconde."
+                },
+                "lifeCount": {
+                    "title": "Vidas por jogador",
+                    "help": "Em quantas bombas um jogador pode pisar antes de ser eliminado. No **Auto** uma mesa maior começa com menos, já que os turnos são divididos entre mais gente."
+                },
+                "stackedBombs": {
+                    "title": "Bombas empilhadas",
+                    "help": "Dois jogadores podem esconder uma bomba no mesmo ladrilho sem saber. Com isto ligado, pisar ali custa uma vida a cada um deles.",
+                    "helpWarning": "Ligar isto torna um ladrilho bem adivinhado muito mais implacável."
+                },
+                "hideTime": {
+                    "title": "Tempo para esconder",
+                    "help": "Quanto tempo cada um tem para esconder suas bombas. O que ainda não estiver colocado quando o tempo acabar é escondido por você, ao acaso."
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Duelo",
+                    "description": [
+                        "Tabuleiro, bombas e vidas se ajustam à mesa"
+                    ]
+                },
+                "minefield": {
+                    "title": "Campo minado",
+                    "description": [
+                        "5 bombas por jogador",
+                        "Bombas empilhadas custam uma vida cada",
+                        "3 vidas"
+                    ]
+                },
+                "suddenDeath": {
+                    "title": "Morte súbita",
+                    "description": [
+                        "Uma única vida",
+                        "Um ladrilho errado e você está fora"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Regras",
+                    "description": [
+                        "Todo mundo esconde a mesma quantidade de bombas em um tabuleiro compartilhado. Ninguém vê as dos outros, e você só vê as suas por um instante antes do jogo começar.",
+                        "Depois, cada um pisa em um ladrilho na sua vez. Se havia uma bomba embaixo, quem estava ali perde uma vida. De qualquer forma, todo ladrilho pisado sai do jogo."
+                    ]
+                },
+                "memory": {
+                    "title": "Memória",
+                    "description": [
+                        "Suas próprias bombas também valem para você, então lembrar onde as colocou é metade do jogo.",
+                        "A outra metade é observar todo mundo: onde alguém hesita, e aonde se recusa a ir, é a melhor pista que você vai ter sobre os ladrilhos que não consegue ver."
+                    ]
+                },
+                "winning": {
+                    "title": "Vencendo",
+                    "description": [
+                        "Vence o último jogador com vidas restantes.",
+                        "Se os ladrilhos do tabuleiro acabarem antes, vence quem tiver mais vidas sobrando."
+                    ]
+                },
+                "bots": {
+                    "title": "Bots",
+                    "description": [
+                        "Os bots escondem suas bombas ao acaso e pisam ao acaso. Os mais difíceis lembram de contornar as próprias; os mais fáceis esquecem onde as colocaram, exatamente como todo mundo."
                     ]
                 }
             }
@@ -2153,6 +2236,10 @@
             "tied": "Jogo empatado",
             "finishedRematch": "A revanche irá começar em breve",
             "placingShips": "Colocando os navios",
+            "hideYourBombs": "Esconda suas bombas",
+            "rememberPlacement": "Lembre onde elas estão",
+            "decidingTurnOrder": "Decidindo quem começa",
+            "holdYourBreath": "Prenda a respiração...",
             "firing": "{name} está atirando",
             "firingSelf": "Você está atirando",
             "inProgress": "Partida em andamento",
@@ -2450,7 +2537,8 @@
         "remaining": "Nenhum restante | {n} restante | {n} restantes",
         "shipsRemaining": "{n} navios restantes | {n} navio restante | {n} navios restantes",
         "includesItems": "Inclui {n} itens | Inclui {n} item | Inclui {n} itens",
-        "restartNotice": "O servidor vai reiniciar em {n} minutos. Termina seu jogo. | O servidor vai reiniciar em {n} minuto. Termina seu jogo. | O servidor vai reiniciar em {n} minutos. Termina seu jogo."
+        "restartNotice": "O servidor vai reiniciar em {n} minutos. Termina seu jogo. | O servidor vai reiniciar em {n} minuto. Termina seu jogo. | O servidor vai reiniciar em {n} minutos. Termina seu jogo.",
+        "bombs": "{n} bombas | {n} bomba | {n} bombas"
     },
     "misc": {
         "refresh": "Atualizar",

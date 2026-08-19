@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal American English",
         "rtl": false,
-        "total": 2144,
+        "total": 2184,
         "missing": 0
     },
     "error": {
@@ -961,6 +961,89 @@
                         "Quick respawn",
                         "6 lives",
                         "Max. 8 players"
+                    ]
+                }
+            }
+        },
+        "BOMB_SHOWDOWN": {
+            "name": "Bomb Showdown",
+            "title": "Play Bomb Showdown Online | Free Multiplayer Memory Game",
+            "description": "Everyone hides bombs on one shared board, then takes turns stepping on it. Remember where you hide your bombs, and watch where others hesitate to find the safe tiles.",
+            "options": {
+                "boardSize": {
+                    "title": "Board size",
+                    "help": "How many tiles the board is built from. Everyone sees the same layout. On **Auto** the board is sized so roughly a third of it ends up mined.",
+                    "data": {
+                        "size": "{count} tiles ({columns}x{rows})"
+                    }
+                },
+                "bombCount": {
+                    "title": "Bombs each",
+                    "help": "How many bombs every player hides at the start. Nobody sees anybody else's. On **Auto** a smaller table hides more of them each."
+                },
+                "lifeCount": {
+                    "title": "Lives each",
+                    "help": "How many bombs a player can step on before they are out. On **Auto** a bigger table starts with fewer, since turns are shared out further."
+                },
+                "stackedBombs": {
+                    "title": "Stacked bombs",
+                    "help": "Two players can hide a bomb on the same tile without knowing it. With this on, standing there costs a life for each of them.",
+                    "helpWarning": "Turning this on makes a well-guessed tile far more punishing."
+                },
+                "hideTime": {
+                    "title": "Hiding time",
+                    "help": "How long everyone gets to hide their bombs. Anything still unplaced when it runs out is hidden for you, at random."
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Showdown",
+                    "description": [
+                        "Board, bombs and lives scale to the table"
+                    ]
+                },
+                "minefield": {
+                    "title": "Minefield",
+                    "description": [
+                        "5 bombs each",
+                        "Stacked bombs cost a life apiece",
+                        "3 lives"
+                    ]
+                },
+                "suddenDeath": {
+                    "title": "Sudden Death",
+                    "description": [
+                        "One life",
+                        "One wrong tile and you are out"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Rules",
+                    "description": [
+                        "Everyone hides the same number of bombs on one shared board. Nobody sees anybody else's, and you only see your own for a moment before play starts.",
+                        "Players then take turns stepping on a tile. If a bomb was under it, whoever stood there loses a life. Every tile stepped on is out of the game either way."
+                    ]
+                },
+                "memory": {
+                    "title": "Memory",
+                    "description": [
+                        "Your own bombs are live for you too, so remembering where you put them is half the game.",
+                        "The other half is watching everybody else: where somebody hesitates, and where they refuse to go, is the best clue you will get about the tiles you cannot see."
+                    ]
+                },
+                "winning": {
+                    "title": "Winning",
+                    "description": [
+                        "The last player with lives left wins.",
+                        "If the board runs out of tiles first, whoever has the most lives left wins instead."
+                    ]
+                },
+                "bots": {
+                    "title": "Bots",
+                    "description": [
+                        "Bots hide their bombs at random and step at random. The harder ones remember to walk around their own; the easiest ones forget where they put them, exactly like everybody else."
                     ]
                 }
             }
@@ -2153,6 +2236,10 @@
             "tied": "Match tied",
             "finishedRematch": "Rematch starting soon",
             "placingShips": "Placing ships",
+            "hideYourBombs": "Hide your bombs",
+            "rememberPlacement": "Remember where they are",
+            "decidingTurnOrder": "Deciding who goes first",
+            "holdYourBreath": "Hold your breath...",
             "firing": "{name} is firing",
             "firingSelf": "You are firing",
             "inProgress": "Match in progress",
@@ -2450,7 +2537,8 @@
         "remaining": "None remaining | {n} remaining | {n} remaining",
         "shipsRemaining": "{n} ships remaining | {n} ship remaining | {n} ships remaining",
         "includesItems": "Includes {n} items | Includes {n} item | Includes {n} items",
-        "restartNotice": "Server will restart in {n} minutes. Please finish your game. | Server will restart in {n} minute. Please finish your game. | Server will restart in {n} minutes. Please finish your game."
+        "restartNotice": "Server will restart in {n} minutes. Please finish your game. | Server will restart in {n} minute. Please finish your game. | Server will restart in {n} minutes. Please finish your game.",
+        "bombs": "{n} bombs | {n} bomb | {n} bombs"
     },
     "misc": {
         "refresh": "Refresh",

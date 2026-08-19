@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal French",
         "rtl": false,
-        "total": 2144,
+        "total": 2184,
         "missing": 0
     },
     "error": {
@@ -961,6 +961,89 @@
                         "Réapparition rapide",
                         "6 vies",
                         "Max. 8 joueurs"
+                    ]
+                }
+            }
+        },
+        "BOMB_SHOWDOWN": {
+            "name": "Bombes cachées",
+            "title": "Bombes cachées en ligne | Jeu de mémoire multijoueur gratuit",
+            "description": "Tout le monde cache des bombes sur le même plateau, puis chacun marche dessus à son tour. Retiens où tu as caché les tiennes et observe où les autres hésitent pour repérer les carreaux sûrs.",
+            "options": {
+                "boardSize": {
+                    "title": "Taille du plateau",
+                    "help": "Le nombre de carreaux qui composent le plateau. Tout le monde voit la même disposition. En **Auto**, le plateau est dimensionné pour qu'environ un tiers soit miné.",
+                    "data": {
+                        "size": "{count} carreaux ({columns}x{rows})"
+                    }
+                },
+                "bombCount": {
+                    "title": "Bombes par joueur",
+                    "help": "Le nombre de bombes que chaque joueur cache au départ. Personne ne voit celles des autres. En **Auto**, plus la table est petite, plus chacun en cache."
+                },
+                "lifeCount": {
+                    "title": "Vies par joueur",
+                    "help": "Le nombre de bombes sur lesquelles un joueur peut marcher avant d'être éliminé. En **Auto**, une grande table commence avec moins, car les tours sont plus partagés."
+                },
+                "stackedBombs": {
+                    "title": "Bombes superposées",
+                    "help": "Deux joueurs peuvent cacher une bombe sur le même carreau sans le savoir. Avec cette option, s'y arrêter coûte une vie à chacun d'eux.",
+                    "helpWarning": "Activer ceci rend un carreau bien deviné beaucoup plus punitif."
+                },
+                "hideTime": {
+                    "title": "Temps pour cacher",
+                    "help": "Le temps dont chacun dispose pour cacher ses bombes. Tout ce qui n'est pas placé à la fin est caché pour toi, au hasard."
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Confrontation",
+                    "description": [
+                        "Plateau, bombes et vies s'adaptent à la table"
+                    ]
+                },
+                "minefield": {
+                    "title": "Champ de mines",
+                    "description": [
+                        "5 bombes par joueur",
+                        "Les bombes superposées coûtent une vie chacune",
+                        "3 vies"
+                    ]
+                },
+                "suddenDeath": {
+                    "title": "Mort subite",
+                    "description": [
+                        "Une seule vie",
+                        "Un mauvais carreau et c'est fini"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Règles",
+                    "description": [
+                        "Tout le monde cache le même nombre de bombes sur un plateau commun. Personne ne voit celles des autres, et tu ne vois les tiennes qu'un instant avant le début de la partie.",
+                        "Ensuite, chacun marche à son tour sur un carreau. S'il y avait une bombe dessous, celui qui s'y trouvait perd une vie. Dans tous les cas, un carreau foulé est hors jeu."
+                    ]
+                },
+                "memory": {
+                    "title": "Mémoire",
+                    "description": [
+                        "Tes propres bombes sont actives pour toi aussi, alors retenir où tu les as posées, c'est la moitié du jeu.",
+                        "L'autre moitié consiste à observer les autres : là où quelqu'un hésite et là où il refuse d'aller, c'est le meilleur indice que tu auras sur les carreaux que tu ne peux pas voir."
+                    ]
+                },
+                "winning": {
+                    "title": "Gagner",
+                    "description": [
+                        "Le dernier joueur à qui il reste des vies l'emporte.",
+                        "Si le plateau n'a plus de carreaux avant cela, c'est celui à qui il reste le plus de vies qui gagne."
+                    ]
+                },
+                "bots": {
+                    "title": "Bots",
+                    "description": [
+                        "Les bots cachent leurs bombes au hasard et marchent au hasard. Les plus forts pensent à contourner les leurs ; les plus faibles oublient où ils les ont mises, exactement comme tout le monde."
                     ]
                 }
             }
@@ -2153,6 +2236,10 @@
             "tied": "Partie nulle",
             "finishedRematch": "La revanche commencera bientôt",
             "placingShips": "Placement des navires",
+            "hideYourBombs": "Cache tes bombes",
+            "rememberPlacement": "Retiens où elles sont",
+            "decidingTurnOrder": "On décide qui commence",
+            "holdYourBreath": "Retiens ton souffle...",
             "firing": "{name} tire",
             "firingSelf": "Tu tires",
             "inProgress": "Match en cours",
@@ -2450,7 +2537,8 @@
         "remaining": "Aucun restant | {n} restant | {n} restants",
         "shipsRemaining": "{n} bateau restant | {n} bateau restant | {n} bateaux restants",
         "includesItems": "Inclut {n} articles | Inclut {n} article | Inclut {n} articles",
-        "restartNotice": "Le serveur va redémarrer dans {n} minutes. Finissez votre partie. | Le serveur va redémarrer dans {n} minute. Finissez votre partie. | Le serveur va redémarrer dans {n} minutes. Finissez votre partie."
+        "restartNotice": "Le serveur va redémarrer dans {n} minutes. Finissez votre partie. | Le serveur va redémarrer dans {n} minute. Finissez votre partie. | Le serveur va redémarrer dans {n} minutes. Finissez votre partie.",
+        "bombs": "{n} bombes | {n} bombe | {n} bombes"
     },
     "misc": {
         "refresh": "Actualiser",

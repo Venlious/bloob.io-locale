@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 2144,
+        "total": 2184,
         "missing": 0
     },
     "error": {
@@ -961,6 +961,89 @@
                         "Nopea uudelleensyntyminen",
                         "6 elämää",
                         "Maks. 8 pelaajaa"
+                    ]
+                }
+            }
+        },
+        "BOMB_SHOWDOWN": {
+            "name": "Pommikaksintaistelu",
+            "title": "Pelaa Pommikaksintaistelua netissä | Ilmainen moninpelin muistipeli",
+            "description": "Kaikki piilottavat pommeja samalle laudalle, ja sitten sen päälle astutaan vuorotellen. Muista mihin piilotit omasi ja seuraa missä muut epäröivät, niin löydät turvalliset laatat.",
+            "options": {
+                "boardSize": {
+                    "title": "Laudan koko",
+                    "help": "Kuinka monesta laatasta lauta koostuu. Kaikki näkevät saman asettelun. **Auto**-asetuksella lauta mitoitetaan niin, että noin kolmasosa siitä on miinoitettu.",
+                    "data": {
+                        "size": "{count} laattaa ({columns}x{rows})"
+                    }
+                },
+                "bombCount": {
+                    "title": "Pommeja per pelaaja",
+                    "help": "Kuinka monta pommia jokainen pelaaja piilottaa alussa. Kukaan ei näe muiden pommeja. **Auto**-asetuksella jokainen piilottaa niitä enemmän mitä pienempi pöytä on."
+                },
+                "lifeCount": {
+                    "title": "Elämiä per pelaaja",
+                    "help": "Kuinka monen pommin päälle pelaaja voi astua ennen kuin tippuu pelistä. **Auto**-asetuksella isompi pöytä aloittaa vähemmällä, koska vuorot jakautuvat useammalle."
+                },
+                "stackedBombs": {
+                    "title": "Päällekkäiset pommit",
+                    "help": "Kaksi pelaajaa voi piilottaa pommin samalle laatalle tietämättään. Tämä päällä siinä seisominen maksaa heille molemmille elämän.",
+                    "helpWarning": "Tämän päälle laittaminen tekee hyvin arvatusta laatasta paljon armottomamman."
+                },
+                "hideTime": {
+                    "title": "Piilotusaika",
+                    "help": "Kuinka kauan kaikilla on aikaa piilottaa pomminsa. Kaikki sijoittamatta jäänyt piilotetaan puolestasi satunnaisesti."
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Kaksintaistelu",
+                    "description": [
+                        "Lauta, pommit ja elämät skaalautuvat pöydän mukaan"
+                    ]
+                },
+                "minefield": {
+                    "title": "Miinakenttä",
+                    "description": [
+                        "5 pommia per pelaaja",
+                        "Päällekkäiset pommit maksavat elämän kumpikin",
+                        "3 elämää"
+                    ]
+                },
+                "suddenDeath": {
+                    "title": "Äkkikuolema",
+                    "description": [
+                        "Yksi elämä",
+                        "Yksi väärä laatta ja olet ulkona"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Säännöt",
+                    "description": [
+                        "Kaikki piilottavat saman verran pommeja yhteiselle laudalle. Kukaan ei näe muiden pommeja, ja omasi näet vain hetken ennen pelin alkua.",
+                        "Sitten jokainen astuu vuorollaan laatalle. Jos sen alla oli pommi, siinä seissyt menettää elämän. Astuttu laatta on joka tapauksessa poissa pelistä."
+                    ]
+                },
+                "memory": {
+                    "title": "Muisti",
+                    "description": [
+                        "Omat pommisi ovat teräviä myös sinulle, joten sen muistaminen mihin ne laitoit on puolet pelistä.",
+                        "Toinen puoli on kaikkien muiden tarkkailu: se missä joku epäröi ja minne joku ei suostu menemään on paras vihje jonka saat laatoista joita et näe."
+                    ]
+                },
+                "winning": {
+                    "title": "Voittaminen",
+                    "description": [
+                        "Viimeinen pelaaja jolla on elämiä jäljellä voittaa.",
+                        "Jos laatat loppuvat ensin, voittaa se jolla on eniten elämiä jäljellä."
+                    ]
+                },
+                "bots": {
+                    "title": "Botit",
+                    "description": [
+                        "Botit piilottavat pomminsa satunnaisesti ja astuvat satunnaisesti. Vaikeammat muistavat kiertää omansa; helpoimmat unohtavat mihin ne laittoivat, aivan kuten kaikki muutkin."
                     ]
                 }
             }
@@ -2153,6 +2236,10 @@
             "tied": "Ottelu päättyi tasapeliin",
             "finishedRematch": "Uusintaottelu alkaa pian",
             "placingShips": "Asetetaan laivoja",
+            "hideYourBombs": "Piilota pommisi",
+            "rememberPlacement": "Muista missä ne ovat",
+            "decidingTurnOrder": "Ratkaistaan kuka aloittaa",
+            "holdYourBreath": "Pidätä hengitystäsi...",
             "firing": "{name} ampuu",
             "firingSelf": "Sä ammut",
             "inProgress": "Ottelu käynnissä",
@@ -2450,7 +2537,8 @@
         "remaining": "Ei jäljellä | {n} jäljellä | {n} jäljellä",
         "shipsRemaining": "{n} laivaa jäljellä | {n} laiva jäljellä | {n} laivaa jäljellä",
         "includesItems": "Sisältää {n} esinettä | Sisältää {n} esineen | Sisältää {n} esinettä",
-        "restartNotice": "Serveri käynnistyy uudestaan {n} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {n} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {n} minuutin päästä. Lopeta pelisi."
+        "restartNotice": "Serveri käynnistyy uudestaan {n} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {n} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {n} minuutin päästä. Lopeta pelisi.",
+        "bombs": "{n} pommia | {n} pommi | {n} pommia"
     },
     "misc": {
         "refresh": "Päivitä",

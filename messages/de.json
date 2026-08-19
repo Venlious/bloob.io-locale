@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal German",
         "rtl": false,
-        "total": 2144,
+        "total": 2184,
         "missing": 0
     },
     "error": {
@@ -961,6 +961,89 @@
                         "Schnelle Wiederbelebung",
                         "6 Leben",
                         "Max. 8 Spieler"
+                    ]
+                }
+            }
+        },
+        "BOMB_SHOWDOWN": {
+            "name": "Bomben-Showdown",
+            "title": "Bomben-Showdown online spielen | Gratis Multiplayer-Merkspiel",
+            "description": "Alle verstecken Bomben auf demselben Brett, dann tritt reihum jemand darauf. Merk dir, wo du deine versteckt hast, und achte darauf, wo die anderen zögern, um die sicheren Kacheln zu finden.",
+            "options": {
+                "boardSize": {
+                    "title": "Brettgröße",
+                    "help": "Aus wie vielen Kacheln das Brett besteht. Alle sehen dieselbe Anordnung. Auf **Auto** wird das Brett so gewählt, dass unter etwa einem Drittel davon eine Bombe liegt.",
+                    "data": {
+                        "size": "{count} Kacheln ({columns}x{rows})"
+                    }
+                },
+                "bombCount": {
+                    "title": "Bomben pro Spieler",
+                    "help": "Wie viele Bomben jeder Spieler zu Beginn versteckt. Niemand sieht die der anderen. Auf **Auto** versteckt jeder mehr davon, je kleiner die Runde ist."
+                },
+                "lifeCount": {
+                    "title": "Leben pro Spieler",
+                    "help": "Auf wie viele Bomben ein Spieler treten darf, bevor er ausscheidet. Auf **Auto** startet eine größere Runde mit weniger, weil die Züge weiter verteilt sind."
+                },
+                "stackedBombs": {
+                    "title": "Gestapelte Bomben",
+                    "help": "Zwei Spieler können ohne es zu wissen eine Bombe auf dieselbe Kachel legen. Ist das an, kostet ein Schritt darauf beide je ein Leben.",
+                    "helpWarning": "Damit wird eine gut erratene Kachel deutlich gnadenloser."
+                },
+                "hideTime": {
+                    "title": "Versteckzeit",
+                    "help": "Wie lange alle Zeit haben, ihre Bomben zu verstecken. Was danach noch übrig ist, wird zufällig für dich versteckt."
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Showdown",
+                    "description": [
+                        "Brett, Bomben und Leben passen sich der Runde an"
+                    ]
+                },
+                "minefield": {
+                    "title": "Minenfeld",
+                    "description": [
+                        "5 Bomben pro Spieler",
+                        "Gestapelte Bomben kosten je ein Leben",
+                        "3 Leben"
+                    ]
+                },
+                "suddenDeath": {
+                    "title": "Sudden Death",
+                    "description": [
+                        "Ein Leben",
+                        "Eine falsche Kachel und du bist raus"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Regeln",
+                    "description": [
+                        "Alle verstecken gleich viele Bomben auf einem gemeinsamen Brett. Niemand sieht die der anderen, und deine eigenen siehst du nur einen Moment lang, bevor es losgeht.",
+                        "Danach tritt reihum jeder auf eine Kachel. Lag eine Bombe darunter, verliert derjenige, der dort stand, ein Leben. Jede betretene Kachel ist so oder so aus dem Spiel."
+                    ]
+                },
+                "memory": {
+                    "title": "Gedächtnis",
+                    "description": [
+                        "Deine eigenen Bomben sind auch für dich scharf, deshalb ist es die halbe Miete, sich zu merken, wohin du sie gelegt hast.",
+                        "Die andere Hälfte ist, die anderen zu beobachten: wo jemand zögert und wohin jemand nicht will, ist der beste Hinweis auf die Kacheln, die du nicht sehen kannst."
+                    ]
+                },
+                "winning": {
+                    "title": "Gewinnen",
+                    "description": [
+                        "Der letzte Spieler, der noch Leben hat, gewinnt.",
+                        "Gehen vorher die Kacheln aus, gewinnt stattdessen, wer die meisten Leben übrig hat."
+                    ]
+                },
+                "bots": {
+                    "title": "Bots",
+                    "description": [
+                        "Bots verstecken ihre Bomben zufällig und treten zufällig. Die schwereren denken daran, um ihre eigenen herumzulaufen; die leichtesten vergessen, wohin sie sie gelegt haben, genau wie alle anderen."
                     ]
                 }
             }
@@ -2153,6 +2236,10 @@
             "tied": "Spiel unentschieden",
             "finishedRematch": "Revanche beginnt bald",
             "placingShips": "Schiffe platzieren",
+            "hideYourBombs": "Versteck deine Bomben",
+            "rememberPlacement": "Merk dir, wo sie liegen",
+            "decidingTurnOrder": "Es wird ausgelost, wer anfängt",
+            "holdYourBreath": "Luft anhalten...",
             "firing": "{name} feuert",
             "firingSelf": "Du feuerst",
             "inProgress": "Spiel im Gange",
@@ -2450,7 +2537,8 @@
         "remaining": "Keine mehr übrig | {n} übrig | {n} übrig",
         "shipsRemaining": "{n} Schiffe übrig | {n} Schiff übrig | {n} Schiffe übrig",
         "includesItems": "Beinhaltet {n} Artikel | Beinhaltet {n} Artikel | Beinhaltet {n} Artikel",
-        "restartNotice": "Der Server startet in {n} Minuten neu. Beende bitte dein Spiel. | Der Server startet in {n} Minute neu. Beende bitte dein Spiel. | Der Server startet in {n} Minuten neu. Beende bitte dein Spiel."
+        "restartNotice": "Der Server startet in {n} Minuten neu. Beende bitte dein Spiel. | Der Server startet in {n} Minute neu. Beende bitte dein Spiel. | Der Server startet in {n} Minuten neu. Beende bitte dein Spiel.",
+        "bombs": "{n} Bomben | {n} Bombe | {n} Bomben"
     },
     "misc": {
         "refresh": "Aktualisieren",

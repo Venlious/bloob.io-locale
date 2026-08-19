@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Polish",
         "rtl": false,
-        "total": 2144,
+        "total": 2184,
         "missing": 0
     },
     "error": {
@@ -961,6 +961,89 @@
                         "Szybkie odrodzenie",
                         "6 żyć",
                         "Maks. 8 graczy"
+                    ]
+                }
+            }
+        },
+        "BOMB_SHOWDOWN": {
+            "name": "Bombowa Rozgrywka",
+            "title": "Zagraj w Bombową Rozgrywkę online | Darmowa gra pamięciowa dla wielu graczy",
+            "description": "Wszyscy chowają bomby na tej samej planszy, a potem na zmianę na nią wchodzą. Zapamiętaj, gdzie schowałeś swoje, i patrz, gdzie inni się wahają, żeby znaleźć bezpieczne płytki.",
+            "options": {
+                "boardSize": {
+                    "title": "Rozmiar planszy",
+                    "help": "Z ilu płytek składa się plansza. Wszyscy widzą ten sam układ. Na **Auto** plansza jest dobierana tak, żeby mniej więcej jedna trzecia z niej była zaminowana.",
+                    "data": {
+                        "size": "{count} płytek ({columns}x{rows})"
+                    }
+                },
+                "bombCount": {
+                    "title": "Bomby na gracza",
+                    "help": "Ile bomb chowa każdy gracz na początku. Nikt nie widzi cudzych. Na **Auto** im mniejszy stół, tym więcej chowa każdy."
+                },
+                "lifeCount": {
+                    "title": "Życia na gracza",
+                    "help": "Na ile bomb gracz może wejść, zanim odpadnie. Na **Auto** większy stół zaczyna z mniejszą liczbą, bo tury rozkładają się na więcej osób."
+                },
+                "stackedBombs": {
+                    "title": "Nałożone bomby",
+                    "help": "Dwóch graczy może schować bombę na tej samej płytce, nic o tym nie wiedząc. Przy tej opcji stanięcie tam kosztuje każdego z nich jedno życie.",
+                    "helpWarning": "Włączenie tego sprawia, że dobrze odgadnięta płytka karze o wiele mocniej."
+                },
+                "hideTime": {
+                    "title": "Czas na chowanie",
+                    "help": "Ile czasu każdy ma na schowanie swoich bomb. Wszystko, co nie zostanie rozstawione do końca, zostanie schowane za ciebie, losowo."
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Rozgrywka",
+                    "description": [
+                        "Plansza, bomby i życia dopasowują się do stołu"
+                    ]
+                },
+                "minefield": {
+                    "title": "Pole minowe",
+                    "description": [
+                        "5 bomb na gracza",
+                        "Nałożone bomby kosztują po jednym życiu",
+                        "3 życia"
+                    ]
+                },
+                "suddenDeath": {
+                    "title": "Nagła śmierć",
+                    "description": [
+                        "Jedno życie",
+                        "Jedna zła płytka i odpadasz"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Zasady",
+                    "description": [
+                        "Wszyscy chowają tyle samo bomb na wspólnej planszy. Nikt nie widzi cudzych, a swoje własne widzisz tylko przez chwilę, zanim gra się zacznie.",
+                        "Potem gracze na zmianę wchodzą na płytkę. Jeśli pod spodem była bomba, ten kto tam stanął traci życie. Tak czy inaczej każda płytka, na którą ktoś wszedł, wypada z gry."
+                    ]
+                },
+                "memory": {
+                    "title": "Pamięć",
+                    "description": [
+                        "Twoje własne bomby są groźne również dla ciebie, więc pamiętanie, gdzie je położyłeś, to połowa gry.",
+                        "Druga połowa to obserwowanie wszystkich innych: to, gdzie ktoś się waha i dokąd nie chce pójść, jest najlepszą wskazówką, jaką dostaniesz o płytkach, których nie widzisz."
+                    ]
+                },
+                "winning": {
+                    "title": "Wygrywanie",
+                    "description": [
+                        "Wygrywa ostatni gracz, któremu zostały życia.",
+                        "Jeśli wcześniej skończą się płytki, wygrywa ten, komu zostało najwięcej żyć."
+                    ]
+                },
+                "bots": {
+                    "title": "Boty",
+                    "description": [
+                        "Boty chowają swoje bomby losowo i wchodzą losowo. Te trudniejsze pamiętają, żeby omijać własne; te najłatwiejsze zapominają, gdzie je położyły, dokładnie tak jak wszyscy inni."
                     ]
                 }
             }
@@ -2153,6 +2236,10 @@
             "tied": "Mecz zremisowany",
             "finishedRematch": "Remis rozpocznie się wkrótce",
             "placingShips": "Rozstawianie statków",
+            "hideYourBombs": "Schowaj swoje bomby",
+            "rememberPlacement": "Zapamiętaj, gdzie są",
+            "decidingTurnOrder": "Ustalanie, kto zaczyna",
+            "holdYourBreath": "Wstrzymaj oddech...",
             "firing": "{name} strzela",
             "firingSelf": "Strzelasz",
             "inProgress": "Mecz w toku",
@@ -2450,7 +2537,8 @@
         "remaining": "Brak pozostałych | {n} pozostały | {n} pozostałe",
         "shipsRemaining": "{n} statków pozostało | {n} statek pozostał | {n} statków pozostało",
         "includesItems": "Zawiera {n} przedmioty | Zawiera {n} przedmiot | Zawiera {n} przedmiotów",
-        "restartNotice": "Serwer zrestartuje się za {n} minut. Skończ swoją grę. | Serwer zrestartuje się za {n} minutę. Skończ swoją grę. | Serwer zrestartuje się za {n} minut. Skończ swoją grę."
+        "restartNotice": "Serwer zrestartuje się za {n} minut. Skończ swoją grę. | Serwer zrestartuje się za {n} minutę. Skończ swoją grę. | Serwer zrestartuje się za {n} minut. Skończ swoją grę.",
+        "bombs": "{n} bomb | {n} bomba | {n} bomb"
     },
     "misc": {
         "refresh": "Odśwież",

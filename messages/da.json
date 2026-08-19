@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Danish",
         "rtl": false,
-        "total": 2144,
+        "total": 2184,
         "missing": 0
     },
     "error": {
@@ -961,6 +961,89 @@
                         "Hurtig genoplivning",
                         "6 liv",
                         "Max. 8 spillere"
+                    ]
+                }
+            }
+        },
+        "BOMB_SHOWDOWN": {
+            "name": "Bombeopgør",
+            "title": "Spil Bombeopgør online | Gratis multiplayer hukommelsesspil",
+            "description": "Alle gemmer bomber på det samme bræt, og så træder man på det på skift. Husk hvor du gemte dine, og hold øje med hvor de andre tøver for at finde de sikre fliser.",
+            "options": {
+                "boardSize": {
+                    "title": "Brætstørrelse",
+                    "help": "Hvor mange fliser brættet består af. Alle ser den samme opstilling. På **Auto** vælges brættet, så cirka en tredjedel af det ender med at være mineret.",
+                    "data": {
+                        "size": "{count} fliser ({columns}x{rows})"
+                    }
+                },
+                "bombCount": {
+                    "title": "Bomber pr. spiller",
+                    "help": "Hvor mange bomber hver spiller gemmer til at starte med. Ingen ser de andres. På **Auto** gemmer hver spiller flere, jo mindre bordet er."
+                },
+                "lifeCount": {
+                    "title": "Liv pr. spiller",
+                    "help": "Hvor mange bomber en spiller må træde på, før de er ude. På **Auto** starter et større bord med færre, fordi turene deles ud mellem flere."
+                },
+                "stackedBombs": {
+                    "title": "Stablede bomber",
+                    "help": "To spillere kan gemme en bombe på den samme flise uden at vide det. Med denne slået til koster det dem hver et liv at stå der.",
+                    "helpWarning": "Slår du det til, bliver en velgættet flise langt mere ubarmhjertig."
+                },
+                "hideTime": {
+                    "title": "Gemmetid",
+                    "help": "Hvor lang tid alle får til at gemme deres bomber. Det, der stadig ikke er placeret, når tiden løber ud, bliver gemt for dig, tilfældigt."
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Opgør",
+                    "description": [
+                        "Bræt, bomber og liv skalerer efter bordet"
+                    ]
+                },
+                "minefield": {
+                    "title": "Minefelt",
+                    "description": [
+                        "5 bomber pr. spiller",
+                        "Stablede bomber koster et liv hver",
+                        "3 liv"
+                    ]
+                },
+                "suddenDeath": {
+                    "title": "Sudden death",
+                    "description": [
+                        "Ét liv",
+                        "Én forkert flise og du er ude"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Regler",
+                    "description": [
+                        "Alle gemmer det samme antal bomber på et fælles bræt. Ingen ser de andres, og dine egne ser du kun et øjeblik, før spillet går i gang.",
+                        "Derefter træder spillerne på skift på en flise. Lå der en bombe under, mister den, der stod der, et liv. Uanset hvad er en flise, der er trådt på, ude af spillet."
+                    ]
+                },
+                "memory": {
+                    "title": "Hukommelse",
+                    "description": [
+                        "Dine egne bomber er også skarpe for dig, så at huske hvor du lagde dem er det halve af spillet.",
+                        "Den anden halvdel er at holde øje med alle andre: hvor nogen tøver, og hvor de nægter at gå hen, er det bedste fingerpeg du får om de fliser, du ikke kan se."
+                    ]
+                },
+                "winning": {
+                    "title": "At vinde",
+                    "description": [
+                        "Den sidste spiller med liv tilbage vinder.",
+                        "Løber brættet tør for fliser først, vinder den, der har flest liv tilbage, i stedet."
+                    ]
+                },
+                "bots": {
+                    "title": "Bots",
+                    "description": [
+                        "Bots gemmer deres bomber tilfældigt og træder tilfældigt. De sværere husker at gå uden om deres egne; de nemmeste glemmer, hvor de lagde dem, præcis som alle andre."
                     ]
                 }
             }
@@ -2153,6 +2236,10 @@
             "tied": "Kampen er uafgjort",
             "finishedRematch": "Omkamp starter snart",
             "placingShips": "Placerer skibe",
+            "hideYourBombs": "Gem dine bomber",
+            "rememberPlacement": "Husk hvor de ligger",
+            "decidingTurnOrder": "Vi finder ud af hvem der starter",
+            "holdYourBreath": "Hold vejret...",
             "firing": "{name} skyder",
             "firingSelf": "Du skyder",
             "inProgress": "Kampen er i gang",
@@ -2450,7 +2537,8 @@
         "remaining": "Ingen tilbage | {n} tilbage | {n} tilbage",
         "shipsRemaining": "{n} skibe tilbage | {n} skib tilbage | {n} skibe tilbage",
         "includesItems": "Inkluderer {n} ting | Inkluderer {n} ting | Inkluderer {n} ting",
-        "restartNotice": "Serveren genstarter om {n} minutter. Bliv færdig med dit spil. | Serveren genstarter om {n} minut. Bliv færdig med dit spil. | Serveren genstarter om {n} minutter. Bliv færdig med dit spil."
+        "restartNotice": "Serveren genstarter om {n} minutter. Bliv færdig med dit spil. | Serveren genstarter om {n} minut. Bliv færdig med dit spil. | Serveren genstarter om {n} minutter. Bliv færdig med dit spil.",
+        "bombs": "{n} bomber | {n} bombe | {n} bomber"
     },
     "misc": {
         "refresh": "Opdater",

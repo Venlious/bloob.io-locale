@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Italian",
         "rtl": false,
-        "total": 2144,
+        "total": 2184,
         "missing": 0
     },
     "error": {
@@ -961,6 +961,89 @@
                         "Respawn veloce",
                         "6 vite",
                         "Max. 8 giocatori"
+                    ]
+                }
+            }
+        },
+        "BOMB_SHOWDOWN": {
+            "name": "Sfida a Bombe",
+            "title": "Gioca a Sfida a Bombe online | Gioco di memoria multigiocatore gratis",
+            "description": "Tutti nascondono delle bombe sullo stesso tabellone, poi a turno ci si cammina sopra. Ricorda dove hai nascosto le tue e guarda dove esitano gli altri per trovare le tessere sicure.",
+            "options": {
+                "boardSize": {
+                    "title": "Dimensione del tabellone",
+                    "help": "Di quante tessere è fatto il tabellone. Tutti vedono la stessa disposizione. Su **Auto** il tabellone viene dimensionato in modo che circa un terzo risulti minato.",
+                    "data": {
+                        "size": "{count} tessere ({columns}x{rows})"
+                    }
+                },
+                "bombCount": {
+                    "title": "Bombe a testa",
+                    "help": "Quante bombe nasconde ogni giocatore all'inizio. Nessuno vede quelle degli altri. Su **Auto** più il tavolo è piccolo, più ognuno ne nasconde."
+                },
+                "lifeCount": {
+                    "title": "Vite a testa",
+                    "help": "Su quante bombe può camminare un giocatore prima di essere eliminato. Su **Auto** un tavolo più grande parte con meno vite, perché i turni sono più distribuiti."
+                },
+                "stackedBombs": {
+                    "title": "Bombe sovrapposte",
+                    "help": "Due giocatori possono nascondere una bomba sulla stessa tessera senza saperlo. Con questa opzione attiva, finirci sopra costa una vita a ciascuno di loro.",
+                    "helpWarning": "Attivarlo rende una tessera indovinata bene molto più punitiva."
+                },
+                "hideTime": {
+                    "title": "Tempo per nascondere",
+                    "help": "Quanto tempo ha ognuno per nascondere le proprie bombe. Quello che resta da piazzare allo scadere viene nascosto per te, a caso."
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Sfida",
+                    "description": [
+                        "Tabellone, bombe e vite si adattano al tavolo"
+                    ]
+                },
+                "minefield": {
+                    "title": "Campo minato",
+                    "description": [
+                        "5 bombe a testa",
+                        "Le bombe sovrapposte costano una vita ciascuna",
+                        "3 vite"
+                    ]
+                },
+                "suddenDeath": {
+                    "title": "Morte improvvisa",
+                    "description": [
+                        "Una sola vita",
+                        "Una tessera sbagliata e sei fuori"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Regole",
+                    "description": [
+                        "Tutti nascondono lo stesso numero di bombe su un tabellone condiviso. Nessuno vede quelle degli altri, e le tue le vedi solo per un attimo prima che si cominci.",
+                        "Poi, a turno, ognuno cammina su una tessera. Se sotto c'era una bomba, chi ci stava sopra perde una vita. In ogni caso, ogni tessera calpestata esce dal gioco."
+                    ]
+                },
+                "memory": {
+                    "title": "Memoria",
+                    "description": [
+                        "Anche le tue bombe sono attive per te, quindi ricordare dove le hai messe è metà del gioco.",
+                        "L'altra metà è guardare tutti gli altri: dove qualcuno esita, e dove si rifiuta di andare, è l'indizio migliore che avrai sulle tessere che non puoi vedere."
+                    ]
+                },
+                "winning": {
+                    "title": "Vincere",
+                    "description": [
+                        "Vince l'ultimo giocatore a cui restano delle vite.",
+                        "Se prima finiscono le tessere del tabellone, vince invece chi ha più vite rimaste."
+                    ]
+                },
+                "bots": {
+                    "title": "Bot",
+                    "description": [
+                        "I bot nascondono le loro bombe a caso e camminano a caso. Quelli più difficili si ricordano di girare intorno alle proprie; quelli più facili dimenticano dove le hanno messe, esattamente come tutti gli altri."
                     ]
                 }
             }
@@ -2153,6 +2236,10 @@
             "tied": "Partita pareggiata",
             "finishedRematch": "La rivincita inizierà presto",
             "placingShips": "Posizionamento navi",
+            "hideYourBombs": "Nascondi le tue bombe",
+            "rememberPlacement": "Ricorda dove sono",
+            "decidingTurnOrder": "Si decide chi inizia",
+            "holdYourBreath": "Trattieni il fiato...",
             "firing": "{name} sta sparando",
             "firingSelf": "Stai sparando",
             "inProgress": "Partita in corso",
@@ -2450,7 +2537,8 @@
         "remaining": "Nessuno rimasto | {n} rimasto | {n} rimasti",
         "shipsRemaining": "{n} navi rimaste | {n} nave rimasta | {n} navi rimaste",
         "includesItems": "Include {n} articoli | Include {n} articolo | Include {n} articoli",
-        "restartNotice": "Il server si riavvierà tra {n} minuti. Finisci la tua partita. | Il server si riavvierà tra {n} minuto. Finisci la tua partita. | Il server si riavvierà tra {n} minuti. Finisci la tua partita."
+        "restartNotice": "Il server si riavvierà tra {n} minuti. Finisci la tua partita. | Il server si riavvierà tra {n} minuto. Finisci la tua partita. | Il server si riavvierà tra {n} minuti. Finisci la tua partita.",
+        "bombs": "{n} bombe | {n} bomba | {n} bombe"
     },
     "misc": {
         "refresh": "Ricarica",

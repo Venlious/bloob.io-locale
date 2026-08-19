@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Swedish",
         "rtl": false,
-        "total": 2144,
+        "total": 2184,
         "missing": 0
     },
     "error": {
@@ -961,6 +961,89 @@
                         "Snabb återuppståndelse",
                         "6 liv",
                         "Max. 8 spelare"
+                    ]
+                }
+            }
+        },
+        "BOMB_SHOWDOWN": {
+            "name": "Bombuppgörelse",
+            "title": "Spela Bombuppgörelse online | Gratis multiplayer minnesspel",
+            "description": "Alla gömmer bomber på samma bräde, sedan trampar man på det i tur och ordning. Kom ihåg var du gömde dina, och håll koll på var de andra tvekar för att hitta de säkra rutorna.",
+            "options": {
+                "boardSize": {
+                    "title": "Brädstorlek",
+                    "help": "Hur många rutor brädet består av. Alla ser samma uppställning. På **Automatisk** väljs brädet så att ungefär en tredjedel av det blir minerat.",
+                    "data": {
+                        "size": "{count} rutor ({columns}x{rows})"
+                    }
+                },
+                "bombCount": {
+                    "title": "Bomber per spelare",
+                    "help": "Hur många bomber varje spelare gömmer i början. Ingen ser någon annans. På **Automatisk** gömmer var och en fler ju mindre bordet är."
+                },
+                "lifeCount": {
+                    "title": "Liv per spelare",
+                    "help": "Hur många bomber en spelare får trampa på innan de är ute. På **Automatisk** börjar ett större bord med färre, eftersom turerna delas ut på fler."
+                },
+                "stackedBombs": {
+                    "title": "Staplade bomber",
+                    "help": "Två spelare kan gömma en bomb på samma ruta utan att veta om det. Med det här på kostar det dem ett liv var att stå där.",
+                    "helpWarning": "Slår du på det blir en välgissad ruta betydligt mer obarmhärtig."
+                },
+                "hideTime": {
+                    "title": "Gömtid",
+                    "help": "Hur lång tid alla får på sig att gömma sina bomber. Det som fortfarande inte är utplacerat när tiden går ut göms åt dig, slumpmässigt."
+                }
+            },
+            "presets": {
+                "default": {
+                    "title": "Uppgörelse",
+                    "description": [
+                        "Bräde, bomber och liv skalar efter bordet"
+                    ]
+                },
+                "minefield": {
+                    "title": "Minfält",
+                    "description": [
+                        "5 bomber per spelare",
+                        "Staplade bomber kostar ett liv var",
+                        "3 liv"
+                    ]
+                },
+                "suddenDeath": {
+                    "title": "Sudden death",
+                    "description": [
+                        "Ett liv",
+                        "En felaktig ruta och du är ute"
+                    ]
+                }
+            },
+            "help": {
+                "rules": {
+                    "title": "Regler",
+                    "description": [
+                        "Alla gömmer lika många bomber på ett gemensamt bräde. Ingen ser någon annans, och dina egna ser du bara ett ögonblick innan spelet börjar.",
+                        "Sedan trampar spelarna i tur och ordning på en ruta. Låg det en bomb under förlorar den som stod där ett liv. Hur som helst är en ruta som trampats på ute ur spelet."
+                    ]
+                },
+                "memory": {
+                    "title": "Minne",
+                    "description": [
+                        "Dina egna bomber är skarpa för dig också, så att komma ihåg var du lade dem är halva spelet.",
+                        "Den andra halvan är att hålla koll på alla andra: där någon tvekar, och dit de vägrar gå, är den bästa ledtråden du får om rutorna du inte kan se."
+                    ]
+                },
+                "winning": {
+                    "title": "Att Vinna",
+                    "description": [
+                        "Den sista spelaren med liv kvar vinner.",
+                        "Tar rutorna på brädet slut först vinner i stället den som har flest liv kvar."
+                    ]
+                },
+                "bots": {
+                    "title": "Bots",
+                    "description": [
+                        "Bots gömmer sina bomber slumpmässigt och trampar slumpmässigt. De svårare kommer ihåg att gå runt sina egna; de lättaste glömmer var de lade dem, precis som alla andra."
                     ]
                 }
             }
@@ -2153,6 +2236,10 @@
             "tied": "Matchen är oavgjord",
             "finishedRematch": "Returmatch börjar snart",
             "placingShips": "Placerar skepp",
+            "hideYourBombs": "Göm dina bomber",
+            "rememberPlacement": "Kom ihåg var de ligger",
+            "decidingTurnOrder": "Bestämmer vem som börjar",
+            "holdYourBreath": "Håll andan...",
             "firing": "{name} skjuter",
             "firingSelf": "Du skjuter",
             "inProgress": "Matchen pågår",
@@ -2450,7 +2537,8 @@
         "remaining": "Ingen kvar | {n} kvar | {n} kvar",
         "shipsRemaining": "{n} skepp kvar | {n} skepp kvar | {n} skepp kvar",
         "includesItems": "Inkluderar {n} saker | Inkluderar {n} sak | Inkluderar {n} saker",
-        "restartNotice": "Servern kommer starta om om {n} minuter. Avsluta ditt spel. | Servern kommer starta om om {n} minut. Avsluta ditt spel. | Servern kommer starta om om {n} minuter. Avsluta ditt spel."
+        "restartNotice": "Servern kommer starta om om {n} minuter. Avsluta ditt spel. | Servern kommer starta om om {n} minut. Avsluta ditt spel. | Servern kommer starta om om {n} minuter. Avsluta ditt spel.",
+        "bombs": "{n} bomber | {n} bomb | {n} bomber"
     },
     "misc": {
         "refresh": "Uppdatera",
