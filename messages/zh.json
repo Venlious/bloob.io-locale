@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 2184,
+        "total": 2264,
         "missing": 0
     },
     "error": {
@@ -99,7 +99,8 @@
             "alreadyVoted": "你已经投过票了。",
             "cellClaimed": "你选择的一个或多个格子已经被占了。",
             "colorClaimed": "这个颜色已经被别的用户抢先一步用了。",
-            "loading": "抱歉——这个游戏似乎在你的浏览器里加载失败了，请尝试重启你的设备或浏览器或更新你的显卡驱动。"
+            "loading": "抱歉——这个游戏似乎在你的浏览器里加载失败了，请尝试重启你的设备或浏览器或更新你的显卡驱动。",
+            "mustFollowSuit": "你必须跟出首攻的花色。"
         },
         "card": {
             "loadingSets": "无法下载卡组。",
@@ -2155,6 +2156,164 @@
                     ]
                 }
             }
+        },
+        "HOKM": {
+            "name": "霍克姆",
+            "title": "在线玩霍克姆 | 免费波斯纸牌游戏",
+            "description": "两人一队，二对二对抗；由哈克姆定下王牌花色，和搭档一起抢下七墩，玩转这款波斯经典纸牌。",
+            "options": {
+                "winAmount": {
+                    "help": "一队需要赢下多少局才能拿下整场比赛。一次**科特**算不止一局，所以比赛可能在少于这个数字的局数内结束。"
+                },
+                "trickTarget": {
+                    "title": "赢下一局所需墩数",
+                    "help": "一队要拿下十三墩中的多少墩才算赢下这一局。七墩是经典的过半线；数字更小则每局更快结束。"
+                },
+                "trumpTime": {
+                    "title": "定王牌时间",
+                    "help": "哈克姆有多长时间来指定王牌花色。时间用完时，会自动替他选定手上最长的花色。"
+                },
+                "kot": {
+                    "title": "科特计分",
+                    "help": {
+                        "double": "「科特」让 7-0 的一局值两分，而不是一分。",
+                        "hakemKot": "「科特与哈克姆科特」还让剃光哈克姆自己那一队值三分。",
+                        "off": "「关闭」时，无论比分多么悬殊，每赢一局都只算一分。"
+                    },
+                    "data": {
+                        "double": "科特",
+                        "hakemKot": "科特与哈克姆科特"
+                    }
+                },
+                "hakemSelection": {
+                    "title": "首位哈克姆的产生",
+                    "help": "第一位定王牌的人如何产生。之后每一局都按下面的规则来。",
+                    "data": {
+                        "firstAce": "第一张发出的 A",
+                        "random": "随机"
+                    },
+                    "description": {
+                        "firstAce": "沿桌翻开明牌，直到翻出一张 A",
+                        "random": "立刻抽出一个座位，不搞仪式"
+                    }
+                },
+                "hakemRetention": {
+                    "title": "哈克姆的保留",
+                    "help": "第一局之后，每一局由谁来定王牌。",
+                    "data": {
+                        "keepUntilLoss": "直到输掉",
+                        "rotate": "每局轮换"
+                    },
+                    "description": {
+                        "keepUntilLoss": "只要本队一直赢，哈克姆就一直定王牌",
+                        "rotate": "定王牌的权利每局传给下一位玩家"
+                    }
+                },
+                "hakemCardCount": {
+                    "title": "定王牌前的牌数",
+                    "help": "哈克姆在定王牌前能看到自己多少张牌。五张是经典做法；十三张则让这个决定完全有据可依。",
+                    "description": {
+                        "five": "经典做法，只凭三分之一的手牌",
+                        "thirteen": "哈克姆看完全部再做决定"
+                    }
+                }
+            },
+            "presets": {
+                "quickHokm": {
+                    "title": "快速霍克姆",
+                    "description": [
+                        "先赢 3 局",
+                        "更快的回合"
+                    ]
+                },
+                "kotRules": {
+                    "title": "科特规则",
+                    "description": [
+                        "通吃值 2 分",
+                        "剃光哈克姆值 3 分"
+                    ]
+                },
+                "openHand": {
+                    "title": "明牌定王",
+                    "description": [
+                        "哈克姆能看到全部 13 张牌",
+                        "首位哈克姆随机产生"
+                    ]
+                }
+            },
+            "hakem": {
+                "title": "哈克姆"
+            },
+            "tricks": {
+                "title": "墩数"
+            },
+            "trump": {
+                "yourCall": "请指定王牌花色",
+                "waiting": "{name}正在定王牌…",
+                "called": "王牌",
+                "announcement": "王牌是{suit}"
+            },
+            "header": {
+                "findingHakem": "正在寻找第一张 A…",
+                "yourCall": "请说出王牌花色",
+                "nameCall": "{name}正在定王牌",
+                "youTookTrick": "你赢下了这一墩",
+                "nameTookTrick": "{name}赢下了这一墩",
+                "youWonRound": "你们队赢下了这一局！",
+                "themWonRound": "对方队伍赢下了这一局"
+            },
+            "result": {
+                "normal": "{name}赢了 {tricks}",
+                "kot": "{name}通吃，{tricks}",
+                "hakemKot": "{name}剃光了哈克姆，{tricks}"
+            },
+            "rounds": {
+                "title": "回合记录"
+            },
+            "scoreboard": {
+                "target": "先到 {amount} 分，每局 {tricks} 墩"
+            },
+            "statistics": {
+                "sweeps": "科特",
+                "tricksPerMatch": "每场墩数"
+            },
+            "help": {
+                "rules": {
+                    "title": "规则",
+                    "description": [
+                        "霍克姆由四人分成两队各两人来玩，搭档面对面而坐。52 张牌全部发完，因此每人手上有十三张。",
+                        "其中一人是**哈克姆**。他比所有人先看到自己的头几张牌，并指定在本局中压过其他所有花色的**王牌**花色。"
+                    ]
+                },
+                "trump": {
+                    "title": "王牌与跟花色",
+                    "description": [
+                        "第一墩由哈克姆先出。其他人只要手上有，就必须**跟出同花色**；只有手上已经没有该花色的人才能打别的牌。",
+                        "打出的最大王牌赢下这一墩。若无人出王牌，则由首攻花色中最大的牌获胜。A 最大。"
+                    ]
+                },
+                "tricks": {
+                    "title": "赢下墩数",
+                    "description": [
+                        "赢下一墩的人先出下一墩，所以赢牌同时也意味着决定所有人接下来必须跟的花色。",
+                        "先赢下**七**墩的队伍拿下这一局——剩下的牌不再打出。"
+                    ]
+                },
+                "scoring": {
+                    "title": "计分",
+                    "description": [
+                        "每赢一局得一分，先到七分的队伍赢下整场比赛。七墩全拿即为**科特**，算作两分。",
+                        "只要本队一直赢，哈克姆就一直是哈克姆；一旦输掉一局，定王牌的权利就传给他右手边的玩家。"
+                    ]
+                },
+                "bots": {
+                    "title": "机器人",
+                    "description": [
+                        "简单机器人会打出任何规则允许的牌。普通机器人会读眼前这一墩：搭档已经赢下的墩它不会去抢，其余的则用最小的代价拿下。",
+                        "困难机器人会记牌。它们记得你已经没有哪些花色、哪些大牌已经出过，以及你都先出什么花色——在搭档面前同一花色出两次，它们是会回应的。"
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2538,7 +2697,8 @@
         "shipsRemaining": "剩下{n}艘船 | 剩下{n}艘船 | 剩下 {n} 艘船",
         "includesItems": "包含 {n} 个物品 | 包含 {n} 个物品 | 包含 {n} 个物品",
         "restartNotice": "服务器将在 {n} 分钟后重启，请尽快完成你的游戏。 | 服务器将在 {n} 分钟后重启，请尽快你的游戏。 | 服务器将在 {n} 分钟后重启，请尽快完成你的游戏。",
-        "bombs": "{n} 个炸弹 | {n} 个炸弹 | {n} 个炸弹"
+        "bombs": "{n} 个炸弹 | {n} 个炸弹 | {n} 个炸弹",
+        "tricks": "{n}墩 | {n}墩 | {n}墩"
     },
     "misc": {
         "refresh": "刷新",
@@ -2929,6 +3089,12 @@
             "winningOption": "{name}用选择{selection}赢得了这一轮",
             "navigateSelf": "自己导航",
             "navigateFollowJudge": "看裁判看到的东西"
+        },
+        "suit": {
+            "club": "梅花",
+            "diamond": "方块",
+            "heart": "红桃",
+            "spade": "黑桃"
         }
     },
     "match": {

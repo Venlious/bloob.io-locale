@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 2184,
+        "total": 2264,
         "missing": 0
     },
     "error": {
@@ -99,7 +99,8 @@
             "alreadyVoted": "Oot jo äänestänyt.",
             "cellClaimed": "Yksi tai useampi valitsemistasi ruuduista on jo varattu.",
             "colorClaimed": "Joku muu käyttäjä on jo varannut tämän värin.",
-            "loading": "Anteeksi — näyttää siltä, että tää peli ei ladannu sun selaimessa. Tää voi joskus ratketa, kun käynnistät sun laitteen tai selaimen uudestaan. Myös graafisten korttien ajureiden päivittäminen voi auttaa."
+            "loading": "Anteeksi — näyttää siltä, että tää peli ei ladannu sun selaimessa. Tää voi joskus ratketa, kun käynnistät sun laitteen tai selaimen uudestaan. Myös graafisten korttien ajureiden päivittäminen voi auttaa.",
+            "mustFollowSuit": "Sinun on tunnustettava avausmaata."
         },
         "card": {
             "loadingSets": "Korttipakkojen lataus ei onnistu.",
@@ -2155,6 +2156,164 @@
                     ]
                 }
             }
+        },
+        "HOKM": {
+            "name": "Hokm",
+            "title": "Pelaa Hokmia Verkossa | Ilmainen Persialainen Korttipeli",
+            "description": "Pelatkaa kaksi kahta vastaan, antakaa Hakemin valita valtti ja kilpailkaa parisi kanssa seitsemään tikkiin tässä persialaisessa klassikossa.",
+            "options": {
+                "winAmount": {
+                    "help": "Kuinka monta erää joukkueen on voitettava ottaakseen ottelun. **Kot** on arvoltaan enemmän kuin yksi, joten ottelu voi ratketa harvemmalla kierroksella kuin tämä luku."
+                },
+                "trickTarget": {
+                    "title": "Tikkejä erän voittoon",
+                    "help": "Kuinka monta kolmestatoista tikistä joukkueen on vietävä voittaakseen erän. Seitsemän on perinteinen enemmistö; pienempi luku lyhentää jokaista erää."
+                },
+                "trumpTime": {
+                    "title": "Aika valtin valintaan",
+                    "help": "Kuinka kauan Hakemilla on aikaa nimetä valttimaa. Jos aika loppuu, hänen pisin maansa valitaan hänen puolestaan."
+                },
+                "kot": {
+                    "title": "Kot-pisteytys",
+                    "help": {
+                        "double": "'Kot' tekee 7-0 voitetusta erästä kahden pisteen arvoisen yhden sijaan.",
+                        "hakemKot": "'Kot ja Hakem Kot' tekee lisäksi Hakemin oman joukkueen nollaamisesta kolmen pisteen arvoisen.",
+                        "off": "'Pois päältä' laskee jokaisen voitetun erän yhdeksi pisteeksi, olipa se kuinka yksipuolinen tahansa."
+                    },
+                    "data": {
+                        "double": "Kot",
+                        "hakemKot": "Kot ja Hakem Kot"
+                    }
+                },
+                "hakemSelection": {
+                    "title": "Ensimmäisen Hakemin valinta",
+                    "help": "Miten aivan ensimmäinen valtin valitsija löydetään. Jokainen erä sen jälkeen noudattaa alla olevaa sääntöä.",
+                    "data": {
+                        "firstAce": "Ensimmäinen jaettu ässä",
+                        "random": "Satunnaisesti"
+                    },
+                    "description": {
+                        "firstAce": "Kortteja käännetään kuvapuoli ylös, kunnes ässä osuu kohdalle",
+                        "random": "Paikka arvotaan heti, ilman seremoniaa"
+                    }
+                },
+                "hakemRetention": {
+                    "title": "Hakemin säilyminen",
+                    "help": "Kuka valitsee valtin jokaisessa erässä ensimmäisen jälkeen.",
+                    "data": {
+                        "keepUntilLoss": "Kunnes häviää",
+                        "rotate": "Siirtyy joka erä"
+                    },
+                    "description": {
+                        "keepUntilLoss": "Hakem valitsee edelleen niin kauan kuin hänen joukkueensa voittaa",
+                        "rotate": "Valintaoikeus siirtyy joka erä seuraavalle pelaajalle"
+                    }
+                },
+                "hakemCardCount": {
+                    "title": "Kortit ennen valintaa",
+                    "help": "Kuinka paljon kädestään Hakem näkee ennen valtin nimeämistä. Viisi on perinteinen; kolmetoista tekee valinnasta täysin tietoisen.",
+                    "description": {
+                        "five": "Perinteinen valinta, kolmanneksella kädestä",
+                        "thirteen": "Hakem näkee kaiken ennen päätöstään"
+                    }
+                }
+            },
+            "presets": {
+                "quickHokm": {
+                    "title": "Nopea Hokm",
+                    "description": [
+                        "Ensimmäinen 3 erään",
+                        "Nopeammat vuorot"
+                    ]
+                },
+                "kotRules": {
+                    "title": "Kot-säännöt",
+                    "description": [
+                        "Kaiken vieminen on 2 arvoinen",
+                        "Hakemin nollaaminen on 3 arvoinen"
+                    ]
+                },
+                "openHand": {
+                    "title": "Avoin valinta",
+                    "description": [
+                        "Hakem näkee kaikki 13 korttia",
+                        "Satunnainen ensimmäinen Hakem"
+                    ]
+                }
+            },
+            "hakem": {
+                "title": "Hakem"
+            },
+            "tricks": {
+                "title": "Tikit"
+            },
+            "trump": {
+                "yourCall": "Nimeä valttimaa",
+                "waiting": "{name} valitsee valttia...",
+                "called": "Valtti",
+                "announcement": "Valtti on {suit}"
+            },
+            "header": {
+                "findingHakem": "Etsitään ensimmäistä ässää...",
+                "yourCall": "Nimeä valttimaa",
+                "nameCall": "{name} nimeää valttia",
+                "youTookTrick": "Veit tikin",
+                "nameTookTrick": "{name} vei tikin",
+                "youWonRound": "Joukkueesi voitti erän!",
+                "themWonRound": "Toinen joukkue voitti erän"
+            },
+            "result": {
+                "normal": "{name} voitti {tricks}",
+                "kot": "{name} vei kaiken, {tricks}",
+                "hakemKot": "{name} nollasi Hakemin, {tricks}"
+            },
+            "rounds": {
+                "title": "Kierroshistoria"
+            },
+            "scoreboard": {
+                "target": "Ensimmäinen {amount} pisteeseen, {tricks} tikkiä erässä"
+            },
+            "statistics": {
+                "sweeps": "Kotit",
+                "tricksPerMatch": "Tikkejä / ottelu"
+            },
+            "help": {
+                "rules": {
+                    "title": "Säännöt",
+                    "description": [
+                        "Hokmia pelaa neljä henkeä kahdessa kahden hengen joukkueessa, ja parit istuvat vastakkain. Koko 52 kortin pakka jaetaan, joten jokaisella on kolmetoista korttia.",
+                        "Yksi pelaajista on **Hakem**. Hän näkee ensimmäiset korttinsa ennen muita ja nimeää **valttimaan**, joka voittaa kaikki muut maat loppuerän ajan."
+                    ]
+                },
+                "trump": {
+                    "title": "Valtti ja maan tunnustaminen",
+                    "description": [
+                        "Hakem avaa ensimmäisen tikin. Kaikkien muiden on **tunnustettava maata**, jos voivat; vain se, jolta avausmaa on loppunut, saa pelata jotain muuta.",
+                        "Korkein pelattu valtti vie tikin. Jos kukaan ei valtannut, voittaa avausmaan korkein kortti. Ässät ovat korkeimpia."
+                    ]
+                },
+                "tricks": {
+                    "title": "Tikkien vieminen",
+                    "description": [
+                        "Tikin vienyt avaa seuraavan, joten voittaminen tarkoittaa myös sen maan valitsemista, jota kaikkien on tunnustettava.",
+                        "Ensimmäinen joukkue, joka vie **seitsemän** tikkiä, voittaa erän — loppuja kortteja ei pelata."
+                    ]
+                },
+                "scoring": {
+                    "title": "Pisteytys",
+                    "description": [
+                        "Jokainen voitettu erä on pisteen arvoinen, ja ensimmäisenä seitsemään pisteeseen yltävä joukkue voittaa ottelun. Kaikkien seitsemän tikin vieminen on **Kot** ja se on kahden arvoinen.",
+                        "Hakem pysyy Hakemina niin kauan kuin hänen joukkueensa voittaa; heti kun se häviää erän, valintaoikeus siirtyy hänen oikealla puolellaan olevalle pelaajalle."
+                    ]
+                },
+                "bots": {
+                    "title": "Botit",
+                    "description": [
+                        "Helpot botit pelaavat mitä tahansa sääntöjen sallimaa korttia. Tavalliset botit lukevat edessään olevan tikin: ne pysyvät poissa parinsa jo voittamasta tikistä ja vievät loput mahdollisimman halvalla.",
+                        "Vaikeat botit laskevat kortteja. Ne muistavat, mitkä maat sinulta ovat loppuneet, mitkä korkeat kortit ovat menneet ja mitä maita sinä avaat — saman maan avaaminen kahdesti parisi edessä on jotain, mihin ne vastaavat."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2538,7 +2697,8 @@
         "shipsRemaining": "{n} laivaa jäljellä | {n} laiva jäljellä | {n} laivaa jäljellä",
         "includesItems": "Sisältää {n} esinettä | Sisältää {n} esineen | Sisältää {n} esinettä",
         "restartNotice": "Serveri käynnistyy uudestaan {n} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {n} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {n} minuutin päästä. Lopeta pelisi.",
-        "bombs": "{n} pommia | {n} pommi | {n} pommia"
+        "bombs": "{n} pommia | {n} pommi | {n} pommia",
+        "tricks": "{n} tikkiä | {n} tikki | {n} tikkiä"
     },
     "misc": {
         "refresh": "Päivitä",
@@ -2929,6 +3089,12 @@
             "winningOption": "{name} voitti tämän kierroksen valinnalla {selection}",
             "navigateSelf": "Navigoi itse",
             "navigateFollowJudge": "Näe mitä tuomari näkee"
+        },
+        "suit": {
+            "club": "Risti",
+            "diamond": "Ruutu",
+            "heart": "Hertta",
+            "spade": "Pata"
         }
     },
     "match": {

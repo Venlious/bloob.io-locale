@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Norwegian (Bokmål)",
         "rtl": false,
-        "total": 2184,
+        "total": 2264,
         "missing": 0
     },
     "error": {
@@ -99,7 +99,8 @@
             "alreadyVoted": "Du har allerede stemt.",
             "cellClaimed": "En eller flere celler i utvalget ditt er allerede tatt.",
             "colorClaimed": "Denne fargen er allerede tatt av en annen bruker.",
-            "loading": "Vi beklager — det ser ut som dette spillet ikke klarte å laste i nettleseren din. Dette kan noen ganger løses ved å starte enheten eller nettleseren på nytt. Å oppdatere grafikkdriverne dine kan også hjelpe."
+            "loading": "Vi beklager — det ser ut som dette spillet ikke klarte å laste i nettleseren din. Dette kan noen ganger løses ved å starte enheten eller nettleseren på nytt. Å oppdatere grafikkdriverne dine kan også hjelpe.",
+            "mustFollowSuit": "Du må følge fargen som ble spilt ut."
         },
         "card": {
             "loadingSets": "Klarer ikke å laste ned kortstokkene.",
@@ -2155,6 +2156,164 @@
                     ]
                 }
             }
+        },
+        "HOKM": {
+            "name": "Hokm",
+            "title": "Spill Hokm Online | Gratis Persisk Kortspill for Fire",
+            "description": "Spill to mot to, la Hakem melde trumf, og kapp med makkeren din til sju stikk i denne persiske kortklassikeren.",
+            "options": {
+                "winAmount": {
+                    "help": "Hvor mange spill et lag må vinne for å ta kampen. En **Kot** teller mer enn ett, så en kamp kan avgjøres på færre runder enn dette tallet."
+                },
+                "trickTarget": {
+                    "title": "Stikk for å vinne et spill",
+                    "help": "Hvor mange av de tretten stikkene et lag må ta for å vinne spillet. Sju er det klassiske flertallet; et lavere tall gjør hvert spill kortere."
+                },
+                "trumpTime": {
+                    "title": "Tid til å melde trumf",
+                    "help": "Hvor lang tid Hakem har på å melde trumffargen. Går klokka ut, meldes den lengste fargen på hånda for ham."
+                },
+                "kot": {
+                    "title": "Kot-poeng",
+                    "help": {
+                        "double": "«Kot» gjør et spill vunnet 7-0 verdt to poeng i stedet for ett.",
+                        "hakemKot": "«Kot og Hakem Kot» gjør det i tillegg verdt tre poeng å sette Hakems eget lag til null.",
+                        "off": "«Av» teller hvert vunnet spill som ett poeng, uansett hvor ensidig det var."
+                    },
+                    "data": {
+                        "double": "Kot",
+                        "hakemKot": "Kot og Hakem Kot"
+                    }
+                },
+                "hakemSelection": {
+                    "title": "Valg av første Hakem",
+                    "help": "Hvordan den aller første trumfmelderen finnes. Hvert spill etter det følger regelen under.",
+                    "data": {
+                        "firstAce": "Første delte ess",
+                        "random": "Tilfeldig"
+                    },
+                    "description": {
+                        "firstAce": "Kort snus med billedsiden opp til et ess dukker opp",
+                        "random": "En plass trekkes med én gang, uten seremoni"
+                    }
+                },
+                "hakemRetention": {
+                    "title": "Beholde Hakem",
+                    "help": "Hvem som melder trumf i hvert spill etter det første.",
+                    "data": {
+                        "keepUntilLoss": "Til de taper",
+                        "rotate": "Gi videre hvert spill"
+                    },
+                    "description": {
+                        "keepUntilLoss": "Hakem melder videre så lenge laget hans vinner",
+                        "rotate": "Meldingen går videre til neste spiller hvert spill"
+                    }
+                },
+                "hakemCardCount": {
+                    "title": "Kort før meldingen",
+                    "help": "Hvor mye av hånda si Hakem ser før han melder trumf. Fem er det klassiske; tretten gjør meldingen helt velinformert.",
+                    "description": {
+                        "five": "Den klassiske meldingen, på en tredjedel av hånda",
+                        "thirteen": "Hakem ser alt før han bestemmer seg"
+                    }
+                }
+            },
+            "presets": {
+                "quickHokm": {
+                    "title": "Rask Hokm",
+                    "description": [
+                        "Først til 3 spill",
+                        "Raskere turer"
+                    ]
+                },
+                "kotRules": {
+                    "title": "Kot-regler",
+                    "description": [
+                        "Å ta alt er verdt 2",
+                        "Å nulle Hakem er verdt 3"
+                    ]
+                },
+                "openHand": {
+                    "title": "Åpen melding",
+                    "description": [
+                        "Hakem ser alle 13 kortene",
+                        "Tilfeldig første Hakem"
+                    ]
+                }
+            },
+            "hakem": {
+                "title": "Hakem"
+            },
+            "tricks": {
+                "title": "Stikk"
+            },
+            "trump": {
+                "yourCall": "Meld trumffargen",
+                "waiting": "{name} melder trumf...",
+                "called": "Trumf",
+                "announcement": "Trumf er {suit}"
+            },
+            "header": {
+                "findingHakem": "Leter etter det første esset...",
+                "yourCall": "Meld trumffargen",
+                "nameCall": "{name} melder trumf",
+                "youTookTrick": "Du tok stikket",
+                "nameTookTrick": "{name} tok stikket",
+                "youWonRound": "Laget ditt vant spillet!",
+                "themWonRound": "Det andre laget vant spillet"
+            },
+            "result": {
+                "normal": "{name} vant {tricks}",
+                "kot": "{name} tok alt, {tricks}",
+                "hakemKot": "{name} nullet Hakem, {tricks}"
+            },
+            "rounds": {
+                "title": "Rundehistorikk"
+            },
+            "scoreboard": {
+                "target": "Først til {amount}, {tricks} stikk per spill"
+            },
+            "statistics": {
+                "sweeps": "Kot",
+                "tricksPerMatch": "Stikk / kamp"
+            },
+            "help": {
+                "rules": {
+                    "title": "Regler",
+                    "description": [
+                        "Hokm spilles av fire personer på to lag med to på hvert, og makkerne sitter rett overfor hverandre. Hele kortstokken på 52 kort deles ut, så alle har tretten kort.",
+                        "Én spiller er **Hakem**. Han ser sine første kort før alle andre og melder **trumffargen** som slår alle andre farger resten av spillet."
+                    ]
+                },
+                "trump": {
+                    "title": "Trumf og å følge farge",
+                    "description": [
+                        "Hakem spiller ut det første stikket. Alle andre må **følge farge** hvis de kan; bare den som er tom for fargen som ble spilt ut, kan legge noe annet.",
+                        "Den høyeste trumfen som legges, tar stikket. Er det ikke trumfet, vinner det høyeste kortet i utspillsfargen. Ess er høyest."
+                    ]
+                },
+                "tricks": {
+                    "title": "Å ta stikk",
+                    "description": [
+                        "Den som tar et stikk, spiller ut det neste — å vinne betyr altså også å velge fargen alle andre må følge.",
+                        "Det første laget som tar **sju** stikk, vinner spillet — resten av kortene spilles ikke ut."
+                    ]
+                },
+                "scoring": {
+                    "title": "Poeng",
+                    "description": [
+                        "Hvert vunnet spill er verdt ett poeng, og det første laget til sju poeng vinner kampen. Å ta alle sju stikkene er en **Kot** og teller for to.",
+                        "Hakem forblir Hakem så lenge laget vinner; i det øyeblikket de taper et spill, går meldingen til spilleren til høyre for ham."
+                    ]
+                },
+                "bots": {
+                    "title": "Boter",
+                    "description": [
+                        "Lette boter legger et hvilket som helst lovlig kort. Vanlige boter leser stikket foran seg: de holder seg unna stikket makkeren allerede vinner, og tar resten så billig som mulig.",
+                        "Vanskelige boter teller kort. De husker hvilke farger du er tom for, hvilke høye kort som er gått, og hvilke farger du spiller ut — å spille ut samme farge to ganger hos makkeren din er noe de svarer på."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2538,7 +2697,8 @@
         "shipsRemaining": "{n} skip igjen | {n} skip igjen | {n} skip igjen",
         "includesItems": "Inkluderer {n} ting | Inkluderer {n} ting | Inkluderer {n} ting",
         "restartNotice": "Serveren restarter om {n} minutter. Vennligst avslutt spillet ditt. | Serveren restarter om {n} minutt. Vennligst avslutt spillet ditt. | Serveren restarter om {n} minutter. Vennligst avslutt spillet ditt.",
-        "bombs": "{n} bomber | {n} bombe | {n} bomber"
+        "bombs": "{n} bomber | {n} bombe | {n} bomber",
+        "tricks": "{n} stikk | {n} stikk | {n} stikk"
     },
     "misc": {
         "refresh": "Oppdater",
@@ -2929,6 +3089,12 @@
             "winningOption": "{name} vant denne runden med valget {selection}",
             "navigateSelf": "Naviger deg selv",
             "navigateFollowJudge": "Se hva dommeren ser"
+        },
+        "suit": {
+            "club": "Kløver",
+            "diamond": "Ruter",
+            "heart": "Hjerter",
+            "spade": "Spar"
         }
     },
     "match": {

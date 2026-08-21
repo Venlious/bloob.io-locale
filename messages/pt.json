@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Brazilian Portuguese",
         "rtl": false,
-        "total": 2184,
+        "total": 2264,
         "missing": 0
     },
     "error": {
@@ -99,7 +99,8 @@
             "alreadyVoted": "Você já votou.",
             "cellClaimed": "Uma ou mais células em sua seleção já foram reivindicadas.",
             "colorClaimed": "Esta cor já foi reivindicada por outro usuário.",
-            "loading": "Desculpe, mas parece que esse jogo não conseguiu carregar no seu navegador. Às vezes, isso pode ser resolvido reiniciando seu dispositivo ou navegador. Atualizar os drivers da sua placa de vídeo também pode ajudar."
+            "loading": "Desculpe, mas parece que esse jogo não conseguiu carregar no seu navegador. Às vezes, isso pode ser resolvido reiniciando seu dispositivo ou navegador. Atualizar os drivers da sua placa de vídeo também pode ajudar.",
+            "mustFollowSuit": "Tens de assistir ao naipe de saída."
         },
         "card": {
             "loadingSets": "Não foi possível baixar os conjuntos de cartas.",
@@ -2155,6 +2156,164 @@
                     ]
                 }
             }
+        },
+        "HOKM": {
+            "name": "Hokm",
+            "title": "Jogue Hokm Online | Jogo de Cartas Persa Gratuito",
+            "description": "Joguem dois contra dois, deixem o Hakem escolher o trunfo e corram com o parceiro até sete vazas neste clássico persa.",
+            "options": {
+                "winAmount": {
+                    "help": "Quantas partidas uma equipa tem de ganhar para levar o encontro. Um **Kot** vale mais do que uma, por isso um encontro pode decidir-se em menos rondas do que este número."
+                },
+                "trickTarget": {
+                    "title": "Vazas para ganhar uma partida",
+                    "help": "Quantas das treze vazas uma equipa tem de fazer para ganhar a partida. Sete é a maioria clássica; um número menor encurta cada partida."
+                },
+                "trumpTime": {
+                    "title": "Tempo para escolher trunfo",
+                    "help": "Quanto tempo o Hakem tem para nomear o naipe de trunfo. Se o tempo acabar, é escolhido por ele o seu naipe mais longo."
+                },
+                "kot": {
+                    "title": "Pontuação do Kot",
+                    "help": {
+                        "double": "'Kot' faz uma partida de 7-0 valer dois pontos em vez de um.",
+                        "hakemKot": "'Kot e Hakem Kot' faz ainda com que deixar a equipa do Hakem a zero valha três pontos.",
+                        "off": "'Desativado' conta cada partida ganha como um ponto, por mais desequilibrada que tenha sido."
+                    },
+                    "data": {
+                        "double": "Kot",
+                        "hakemKot": "Kot e Hakem Kot"
+                    }
+                },
+                "hakemSelection": {
+                    "title": "Escolher o primeiro Hakem",
+                    "help": "Como se encontra o primeiro a escolher trunfo. Cada partida seguinte segue a regra abaixo.",
+                    "data": {
+                        "firstAce": "Primeiro ás distribuído",
+                        "random": "Ao acaso"
+                    },
+                    "description": {
+                        "firstAce": "Viram-se cartas até sair um ás",
+                        "random": "Um lugar é sorteado de imediato, sem cerimónia"
+                    }
+                },
+                "hakemRetention": {
+                    "title": "Manter o Hakem",
+                    "help": "Quem escolhe o trunfo em cada partida depois da primeira.",
+                    "data": {
+                        "keepUntilLoss": "Até perder",
+                        "rotate": "Passar todas as partidas"
+                    },
+                    "description": {
+                        "keepUntilLoss": "O Hakem continua a escolher enquanto a sua equipa ganhar",
+                        "rotate": "A escolha passa ao jogador seguinte em cada partida"
+                    }
+                },
+                "hakemCardCount": {
+                    "title": "Cartas antes de escolher",
+                    "help": "Quanto da mão o Hakem vê antes de nomear o trunfo. Cinco é o clássico; treze torna a escolha totalmente informada.",
+                    "description": {
+                        "five": "A escolha clássica, sobre um terço da mão",
+                        "thirteen": "O Hakem vê tudo antes de decidir"
+                    }
+                }
+            },
+            "presets": {
+                "quickHokm": {
+                    "title": "Hokm rápido",
+                    "description": [
+                        "Primeiro a 3 partidas",
+                        "Turnos mais rápidos"
+                    ]
+                },
+                "kotRules": {
+                    "title": "Regras do Kot",
+                    "description": [
+                        "Levar tudo vale 2",
+                        "Deixar o Hakem a zero vale 3"
+                    ]
+                },
+                "openHand": {
+                    "title": "Escolha aberta",
+                    "description": [
+                        "O Hakem vê as 13 cartas",
+                        "Primeiro Hakem ao acaso"
+                    ]
+                }
+            },
+            "hakem": {
+                "title": "Hakem"
+            },
+            "tricks": {
+                "title": "Vazas"
+            },
+            "trump": {
+                "yourCall": "Escolhe o naipe de trunfo",
+                "waiting": "{name} está a escolher o trunfo...",
+                "called": "Trunfo",
+                "announcement": "O trunfo é {suit}"
+            },
+            "header": {
+                "findingHakem": "À procura do primeiro ás...",
+                "yourCall": "Nomeia o naipe de trunfo",
+                "nameCall": "{name} está a nomear o trunfo",
+                "youTookTrick": "Fizeste a vaza",
+                "nameTookTrick": "{name} fez a vaza",
+                "youWonRound": "A tua equipa ganhou a partida!",
+                "themWonRound": "A outra equipa ganhou a partida"
+            },
+            "result": {
+                "normal": "{name} ganhou {tricks}",
+                "kot": "{name} levou tudo, {tricks}",
+                "hakemKot": "{name} deixou o Hakem a zero, {tricks}"
+            },
+            "rounds": {
+                "title": "Histórico de rodadas"
+            },
+            "scoreboard": {
+                "target": "Primeiro a {amount}, {tricks} vazas por partida"
+            },
+            "statistics": {
+                "sweeps": "Kots",
+                "tricksPerMatch": "Vazas / encontro"
+            },
+            "help": {
+                "rules": {
+                    "title": "Regras",
+                    "description": [
+                        "O Hokm joga-se a quatro, em duas equipas de dois, com os parceiros sentados frente a frente. Todo o baralho de 52 cartas é distribuído, por isso cada um tem treze.",
+                        "Um jogador é o **Hakem**. Vê as suas primeiras cartas antes de todos e nomeia o naipe de **trunfo**, que bate qualquer outro naipe durante o resto da partida."
+                    ]
+                },
+                "trump": {
+                    "title": "Trunfo e assistir ao naipe",
+                    "description": [
+                        "O Hakem sai na primeira vaza. Todos os outros têm de **assistir ao naipe** se puderem; só quem não tiver o naipe de saída pode jogar outra coisa.",
+                        "O trunfo mais alto jogado faz a vaza. Se ninguém cortou, ganha a carta mais alta do naipe de saída. Os ases são altos."
+                    ]
+                },
+                "tricks": {
+                    "title": "Fazer vazas",
+                    "description": [
+                        "Quem faz uma vaza sai na seguinte, por isso ganhar também significa escolher o naipe a que todos terão de assistir.",
+                        "A primeira equipa a fazer **sete** vazas ganha a partida — o resto das cartas não chega a ser jogado."
+                    ]
+                },
+                "scoring": {
+                    "title": "Pontuação",
+                    "description": [
+                        "Cada partida ganha vale um ponto, e a primeira equipa a chegar a sete ganha o encontro. Fazer as sete vazas é um **Kot** e vale dois.",
+                        "O Hakem continua Hakem enquanto a sua equipa ganhar; assim que perde uma partida, a escolha passa ao jogador à sua direita."
+                    ]
+                },
+                "bots": {
+                    "title": "Bots",
+                    "description": [
+                        "Os bots fáceis jogam qualquer carta permitida. Os normais leem a vaza à sua frente: ficam de fora da vaza que o parceiro já ganha e fazem o resto o mais barato possível.",
+                        "Os bots difíceis contam as cartas. Lembram-se dos naipes de que ficaste sem, das figuras que já saíram e dos naipes de que sais — sair duas vezes no mesmo naipe à frente do teu parceiro é algo a que respondem."
+                    ]
+                }
+            }
         }
     },
     "chat": {
@@ -2538,7 +2697,8 @@
         "shipsRemaining": "{n} navios restantes | {n} navio restante | {n} navios restantes",
         "includesItems": "Inclui {n} itens | Inclui {n} item | Inclui {n} itens",
         "restartNotice": "O servidor vai reiniciar em {n} minutos. Termina seu jogo. | O servidor vai reiniciar em {n} minuto. Termina seu jogo. | O servidor vai reiniciar em {n} minutos. Termina seu jogo.",
-        "bombs": "{n} bombas | {n} bomba | {n} bombas"
+        "bombs": "{n} bombas | {n} bomba | {n} bombas",
+        "tricks": "{n} vazas | {n} vaza | {n} vazas"
     },
     "misc": {
         "refresh": "Atualizar",
@@ -2929,6 +3089,12 @@
             "winningOption": "{name} venceu esta rodada com a seleção {selection}",
             "navigateSelf": "Navegue você mesmo",
             "navigateFollowJudge": "Veja o que o juiz vê"
+        },
+        "suit": {
+            "club": "Paus",
+            "diamond": "Ouros",
+            "heart": "Copas",
+            "spade": "Espadas"
         }
     },
     "match": {
