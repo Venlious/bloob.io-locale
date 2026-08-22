@@ -1,0 +1,197 @@
+{
+    "options": {
+        "judgeSystem": {
+            "title": "裁判系统",
+            "help": "裁判或所有人决定每轮谁的表现最好。",
+            "data": {
+                "single": "每轮抽取新裁判",
+                "everyone": "投票决定"
+            }
+        },
+        "pickBlackCard": {
+            "title": "选择行动卡",
+            "help": "开启后，裁判会随机看到三张动作卡片供其选择。"
+        },
+        "handPreview": {
+            "title": "手牌预览",
+            "help": "当游戏开始时，每一轮结束后都会加一个点。在这个时间里，每个人都可以看看他们手里的（新）牌。"
+        },
+        "dumpRound": {
+            "title": "丢弃回合",
+            "help": "\"倾倒回合\"让每个人都可以选择他们想要丢弃的手牌。回合结束后，会给出新的应对卡作为替换。",
+            "data": {
+                "round": "每{n}轮 | 每{n}轮 | 每{n}轮"
+            }
+        },
+        "dumpRoundAmount": {
+            "title": "丢弃轮次数量"
+        },
+        "_filter": {
+            "title": "过滤器",
+            "help": "符合以下条件的卡片将被排除在外："
+        },
+        "timePicking": {
+            "title": "动作卡选择时间",
+            "help": "确定每个人选择行动卡的时间长度。"
+        },
+        "responseCardLimit": {
+            "title": "回应卡限制",
+            "help": "默认情况下，动作卡可以让你抽取3张响应卡。改变这个限制后，要求超过这个限制的动作卡将被从游戏中过滤掉。"
+        },
+        "timeDeciding": {
+            "title": "每张卡片决策时间",
+            "help": {
+                "intro": "规定大家选择回应卡的时间。",
+                "calc": "总时间是以 **回应卡数量 * 这个时间** 来计算的。"
+            }
+        },
+        "timeVoting": {
+            "title": "每张卡的投票时间",
+            "help": {
+                "intro": "规定每个人投票选出胜利卡片的时间。",
+                "calc": "总时间是这样计算的：**回应卡片 * 玩家 * 这个时间**"
+            }
+        },
+        "timeReveal": {
+            "title": "每张卡的投票揭示时间",
+            "help": {
+                "intro": "规定大家可以看到获胜选项的时间。",
+                "calc": "总时间是按照**回应卡片 * 这个时间**来计算的。"
+            }
+        },
+        "timeHandPreview": {
+            "title": "手牌预览时间（每张牌）",
+            "help": {
+                "intro": "定义在游戏开始或者在一轮清牌后，每个人有多长时间来查看他们的（新）牌。",
+                "calc": "总时间是按照 **3秒 + 手牌数量 * 这个时间** 来计算的。"
+            }
+        },
+        "timeDumpRound": {
+            "title": "每张卡的弃牌时间",
+            "help": {
+                "intro": "规定大家选择要丢弃哪些牌的时间。",
+                "calc": "总时间是计算为**3秒 + 手牌数量 * 这个时间**"
+            }
+        }
+    },
+    "presets": {
+        "default": {
+            "title": "裁判",
+            "description": "一个人投票"
+        },
+        "democracy": {
+            "title": "民主",
+            "description": "每个人都可以投票"
+        },
+        "blitz": {
+            "title": "闪电战",
+            "description": [
+                "牌数较少",
+                "只能回应一张卡"
+            ]
+        }
+    },
+    "help": {
+        "action": {
+            "title": "动作卡片",
+            "description": [
+                "每一轮都会出现新的黑色动作卡，上面有空白（___）需要玩家填写。",
+                "使用你手中的白色回应卡来填写空白。所有玩家准备好后，裁判会挑选他们最喜欢的回应。"
+            ]
+        },
+        "move": {
+            "title": "反应卡",
+            "description": [
+                "你的手会显示你的响应卡。你可以把这些卡拖到可用的插槽，或者点击选择它们。",
+                "每轮结束后，你选择的卡会被新的卡替换。"
+            ]
+        },
+        "vote": {
+            "title": "投票",
+            "description": [
+                "投票可以由一个裁判来决定，也可以由所有人来决定。这取决于房主如何设置游戏。",
+                "每轮结束时，裁判们可以为他们最喜欢的回答投票。获胜者将获得一分。"
+            ]
+        },
+        "sets": {
+            "title": "卡牌组合",
+            "description": [
+                "游戏开始前，主持人可以从许多可用的卡堆中选择，或者导入自定义的卡堆。",
+                "可以导入自定义的卡堆，并保存到你的账户中，方便你以后再次使用。"
+            ]
+        }
+    },
+    "info": {
+        "votePick": "投票给 {option}",
+        "votePickChange": "把票改投给 {option}",
+        "votePickSelected": "你投的票是 {option}",
+        "voteSelf": "不能投给自己哦",
+        "voteReduceTime": "当所有人都投票时，剩余时间会自动减少。",
+        "skipStepAll": "如果所有用户都投票，这一步将可以跳过。"
+    },
+    "cards": {
+        "sets": {
+            "title": "卡牌套装",
+            "contribute": "为这个列表做贡献",
+            "create": "创建套装",
+            "browser": "浏览并导入自定义套装",
+            "import": "导入套装",
+            "importer": "导入卡组",
+            "namedTitle": "卡组 \"{title}\"",
+            "custom": "自定义卡组",
+            "noneFound": "没找到卡组",
+            "importById": "通过ID导入卡片套装（来自第三方）",
+            "notInOwnLibrary": "缺少套装",
+            "addToLibrary": "添加到你的库",
+            "entrySave": "保存卡片套装",
+            "entrySaved": "已保存",
+            "entryProcessing": "处理中",
+            "info": {
+                "importFinished": "已处理所有{total}副卡组",
+                "importProgress": "正在处理第{current}副卡组，总共{total}副",
+                "importFailed": "处理卡组\"{name}\"失败",
+                "emptyFolder": "这里还没有分享过卡组。",
+                "emptyList": "你的自定义卡组会显示在这里。",
+                "emptyListNotHost": "主持人还没有选择任何自定义卡牌套装。",
+                "notInOwnLibrary": "这个自定义卡牌套装是由另一个用户添加的。你可以把它加到你的库里，以便将来再次使用。",
+                "csv": "请注意，CSV文件的支持有限，生成的卡牌套装可能不完美。为了获得最好的结果，请使用原生的.json文件（和导出的一样）。",
+                "delete": "删除名为\"{name}\"的自定义卡牌套装是无法撤销的。如果你希望以后能恢复它，先下载到本地。",
+                "storage": "卡牌组被存储在你的浏览器里。通过下载并保存到你的设备上来保护它们。",
+                "notHost": "你导入的卡牌被隐藏了，因为你不是主持人。",
+                "sizeLimit": "每个自定义卡牌组都会占用一定的可用存储空间。出于性能考虑，单个游戏一次不能使用超过 **{size}** 的自定义卡牌组。",
+                "filterDisclaimer": "请注意，这个过滤器只能保证官方卡牌组的使用。自定义组可能无法与此过滤器一起使用。"
+            }
+        },
+        "info": {
+            "pickAction": "这轮选一张动作卡",
+            "judgePickingActionCard": "裁判 {name} 正在选动作卡",
+            "waitForSelections": "这轮你是**裁判** — 等待大家都选好卡",
+            "preview": "看一下你的（新）卡片",
+            "dump": "选择你想丢掉的卡片",
+            "noType": "没有{type}卡片",
+            "delete": "你即将删除卡片\"{info}\"。",
+            "winningOptionSelf": "你这轮赢了！",
+            "winningOption": "{name}用选择{selection}赢得了这一轮",
+            "navigateSelf": "自己导航",
+            "navigateFollowJudge": "看裁判看到的东西"
+        },
+        "editor": {
+            "title": "卡片编辑器",
+            "name": "卡组名称",
+            "type": "卡片类型",
+            "content": "卡片内容",
+            "contentUnderscore": "用 _ 标记回应卡的空位",
+            "pick": "选卡片",
+            "create": "创造卡片",
+            "deleted": "成功删除卡片！",
+            "edited": "成功修改卡片！",
+            "created": "成功添加新卡片！"
+        },
+        "type": {
+            "black": "动作",
+            "white": "响应"
+        },
+        "total": "总卡片",
+        "view": "查看卡片"
+    }
+}

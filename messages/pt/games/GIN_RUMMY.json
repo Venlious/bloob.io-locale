@@ -1,0 +1,123 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "O jogo acaba assim que um jogador chega nessa quantidade de pontos. Mas isso não garante a vitória, já que pontos bônus são dados no final do jogo."
+        },
+        "knock": {
+            "title": "Bater",
+            "help": {
+                "enabled": "'Ativado' permite bater com base no limite de batida configurado.",
+                "firstDiscardCard": "'Baseado na primeira carta descartada' usa a primeira carta que você descarta pra definir o limite; se sair um Ás, você tem que ir de Gin.",
+                "disabled": "'Desativado' só permite terminar uma rodada com um Gin."
+            },
+            "data": {
+                "firstDiscardCard": "Baseado na primeira carta descartada"
+            }
+        },
+        "knockBasedOnFirstCard": {
+            "title": "Knock Baseado no Primeiro Descarte",
+            "help": "Quando ativado, a primeira carta na pilha de descarte define o limite de batida. Os jogadores só podem bater se a soma das cartas que eles têm sem combinar (deadwood) for menor ou igual ao valor dessa carta."
+        },
+        "knockThreshold": {
+            "title": "Limite de Batida",
+            "help": "Um jogador pode dar knock quando for a vez dele e a quantidade de deadwood dele estiver abaixo ou igual ao limite configurado."
+        },
+        "ginPointAmount": {
+            "title": "Gin",
+            "help": "A quantidade de pontos que um jogador ganha por chamar Gin, que é quando todas as cartas na mão estão em uma combinação."
+        },
+        "bigGinPointAmount": {
+            "title": "Ginzão",
+            "help": "A quantidade de pontos que um jogador ganha por chamar Big Gin, que rola quando todas as cartas na mão mais a carta comprada estão em uma combinação, sem nenhuma carta sobrando."
+        },
+        "undercutPointAmount": {
+            "title": "Desconectado",
+            "help": "Um undercut rola quando um jogador bate, mas o oponente tem a mesma quantidade ou menos de pontos mortos. Nesse caso, o oponente ganha pontos extras."
+        },
+        "firstBonusPointAmount": {
+            "title": "Bônus: Primeiro a ganhar",
+            "help": "Premiado no final do jogo. Dá um bônus pro jogador que foi o primeiro a chegar no 'Valor de Vitória'."
+        },
+        "roundBonusPointAmount": {
+            "title": "Bônus: Rodada",
+            "help": "Premiado no final do jogo. Dá pra cada jogador essa quantidade de pontos por cada rodada que eles ganharam, excluindo os empates."
+        },
+        "shutoutBonusPointAmount": {
+            "title": "Bônus: Sem Gols",
+            "help": "Premiado no final do jogo. Dá pro vencedor um bônus a mais de tantos pontos se ele ganhou todas as rodadas."
+        }
+    },
+    "presets": {
+        "straightGin": {
+            "title": "Gin puro",
+            "description": [
+                "Sem Batidas",
+                "Sem Bônus"
+            ]
+        },
+        "oklahomaGin": {
+            "title": "Gin Oklahoma",
+            "description": [
+                "Valor do knock baseado no primeiro descarte"
+            ]
+        }
+    },
+    "help": {
+        "rounds": {
+            "title": "Rodadas",
+            "description": [
+                "O jogo tem várias rodadas. A cada rodada, os jogadores recebem 10 cartas, e uma carta fica virada na pilha. Os jogadores podem escolher passar ou pegar a carta do topo da pilha.",
+                "As vezes de jogar se alternam, e na sua vez, você pode pegar uma carta da pilha ou do baralho. Depois, você tem que devolver uma carta pra pilha."
+            ]
+        },
+        "deadwood": {
+            "title": "Madeira Morta",
+            "description": [
+                "Deadwood se refere às cartas que não fazem parte de nenhuma combinação. O valor do deadwood é calculado somando os valores dessas cartas (por exemplo, dois Reis e um cinco totalizam 25).",
+                "Tente manter seu deadwood o mais baixo possível formando combinações e descartando cartas de alto valor que não estão nas combinações."
+            ]
+        },
+        "melds": {
+            "title": "Melds - Combinações",
+            "description": [
+                "Melds podem ser formados com uma sequência de três ou mais cartas do mesmo naipe (tipo, 3 de copas, 4 de copas, 5 de copas) ou três ou mais cartas do mesmo valor (tipo, 3 de paus, 3 de copas, 3 de espadas).",
+                "Os melds são destacados automaticamente na sua mão e na interface, então fica de olho na pilha—seu oponente pode jogar a carta que você precisa!"
+            ]
+        },
+        "knock": {
+            "title": "Bate aí!",
+            "description": [
+                "Você pode bater se sua pontuação de cartas mortas for menos que 10. Quando você bate, todas as cartas são reveladas e você vai ver as cartas mortas do seu oponente. Se suas cartas mortas forem mais altas, seu oponente ganha a rodada com um bônus.",
+                "A pontuação para uma batida é simples: subtraia suas cartas mortas das do seu oponente. Por exemplo, se suas cartas mortas forem 5 e as do seu oponente forem 25, você marca 20 pontos."
+            ]
+        },
+        "gin": {
+            "title": "Gin e Big Gin",
+            "description": [
+                "Se seu deadwood for 0 ou puder ser 0 depois de descartar sua última carta de deadwood, você tem um Gin. Isso garante a vitória e te dá um bônus mais a diferença de deadwood.",
+                "Um Big Gin é ainda melhor: se toda a sua mão, mais a carta que você acabou de comprar, formar melds, você ganha um bônus maior. Sempre chame um Big Gin assim que você tiver!"
+            ]
+        },
+        "goal": {
+            "title": "Objetivo",
+            "description": [
+                "O objetivo é ganhar o maior número de rodadas possível e ser o primeiro a chegar a 100 pontos. Isso encerra o jogo e mostra os pontos finais, incluindo os pontos de bônus.",
+                "Por padrão, você ganha 25 pontos extras pra cada rodada que ganha e mais 100 pontos por ser o primeiro a chegar a 100 pontos."
+            ]
+        }
+    },
+    "info": {
+        "title": {
+            "tie": "Empate",
+            "undercut": "Cortada",
+            "gin": "Gin",
+            "bigGin": "Gin Grande",
+            "knock": "Batida",
+            "knockSuccessRate": "Knock com sucesso"
+        },
+        "tieDescription": "Não tem cartas suficientes pra continuar jogando. Deu empate!",
+        "scoreDescription": "A pontuação é feita calculando a diferença entre os valores totais das cartas mortas na mão de cada jogador.",
+        "yourMeldAfterKnock": "Ah não... Algumas cartas mortas do {name} podem ser movidas pros seus conjuntos!",
+        "nameMeldAfterKnock": "Massa! Algumas das suas cartas mortas podem ser movidas pros conjuntos do {name}!"
+    }
+}

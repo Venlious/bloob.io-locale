@@ -1,0 +1,197 @@
+{
+    "options": {
+        "judgeSystem": {
+            "title": "Tuomarijärjestelmä",
+            "help": "Joko tuomari tai kaikki saavat päättää, kuka teki parhaan siirron joka kierroksella.",
+            "data": {
+                "single": "Uusi tuomari joka kierroksella",
+                "everyone": "Kaikki äänestävät"
+            }
+        },
+        "pickBlackCard": {
+            "title": "Valitse Toimintakortti",
+            "help": "Kun peli käynnistetään, tuomarille näytetään kolme satunnaista toimintakorttia, joista valita."
+        },
+        "handPreview": {
+            "title": "Käden esikatselu",
+            "help": "Kun peli käynnistetään, piste lisätään pelin alkuun ja jokaisen dumpauskierroksen jälkeen. Tänä aikana kaikki voivat vilkaista omia (uusia) korttejaan kädessään."
+        },
+        "dumpRound": {
+            "title": "Hylkäyskierros",
+            "help": "Dump-kierros antaa kaikille mahdollisuuden valita käsistään kortteja, jotka he haluaisivat poistaa. Uudet vastauskortit annetaan korvikkeena kierroksen päätyttyä.",
+            "data": {
+                "round": "Joka {n}. kierros | Joka {n}. kierros | Joka {n}. kierros"
+            }
+        },
+        "dumpRoundAmount": {
+            "title": "Heittokierrosten Määrä"
+        },
+        "_filter": {
+            "title": "Suodatin",
+            "help": "Aktiiviset suodattimet jättävät pois kortit, jotka täyttävät seuraavat kriteerit:"
+        },
+        "timePicking": {
+            "title": "Toimintakortin Valinta-aika",
+            "help": "Määritä kuinka kauan kaikilla on aikaa valita pelattava toimintakortti."
+        },
+        "responseCardLimit": {
+            "title": "Vastauskorttien Raja",
+            "help": "Oletuksena toimintakortit voivat pyytää sinua nostamaan jopa 3 vastauskorttia. Muuttamalla tätä rajaa, pelistä suodatetaan pois ne toimintakortit, jotka pyytävät nostamaan enemmän kuin tämän rajan mukaisen määrän kortteja."
+        },
+        "timeDeciding": {
+            "title": "Päätösaika (korttia kohden)",
+            "help": {
+                "intro": "Päätä, kuinka kauan kaikilla on aikaa valita vastauskorttinsa.",
+                "calc": "Kokonaisaika lasketaan näin: **VASTAUSKORTIT * TÄMÄ AIKA**"
+            }
+        },
+        "timeVoting": {
+            "title": "Äänestysaika (per kortti)",
+            "help": {
+                "intro": "Määritä kuinka kauan kaikilla on aikaa äänestää voittavasta korttivalinnasta.",
+                "calc": "Kokonaisaika lasketaan näin: **VASTAUSKORTIT * PELAAJAT * TÄMÄ AIKA**"
+            }
+        },
+        "timeReveal": {
+            "title": "Äänestyksen paljastusaika (korttia kohden)",
+            "help": {
+                "intro": "Määritä kuinka kauan kaikilla on aikaa katsoa voittajavalinta.",
+                "calc": "Kokonaisaika lasketaan näin: **VASTAUSKORTIT * TÄMÄ AIKA**"
+            }
+        },
+        "timeHandPreview": {
+            "title": "Kortin esikatselu aika",
+            "help": {
+                "intro": "Määritä, kuinka kauan pelin alussa tai jakokierroksen jälkeen kaikilla on aikaa katsoa heidän (uusia) korttejaan.",
+                "calc": "Kokonaisaika lasketaan näin: **3 SEKUNTIA + KÄDESSÄ OLEVAT KORTIT * TÄMÄ AIKA**"
+            }
+        },
+        "timeDumpRound": {
+            "title": "Heitä Kierrosaika (Per Kortti)",
+            "help": {
+                "intro": "Määritä kuinka kauan kaikilla on aikaa valita, mitkä kortit he haluavat hylätä.",
+                "calc": "Kokonaisaika lasketaan näin: **3 SEKUNTIA + KÄDESSÄ OLEVAT KORTIT * TÄMÄ AIKA**"
+            }
+        }
+    },
+    "presets": {
+        "default": {
+            "title": "Tuomari",
+            "description": "Yksi henkilö äänestää"
+        },
+        "democracy": {
+            "title": "Demokratia",
+            "description": "Kaikki pääsevät äänestämään"
+        },
+        "blitz": {
+            "title": "Blitzi",
+            "description": [
+                "Pieni käden koko",
+                "Vain 1 kortin vastaus"
+            ]
+        }
+    },
+    "help": {
+        "action": {
+            "title": "Toimintakortti",
+            "description": [
+                "Joka kierroksella esitellään uusi musta toimintakortti, jossa on tyhjiä kohtia (___), jotka pelaajien pitää täyttää.",
+                "Tyhjät kohdat täytetään kädestäsi löytyvillä valkoisilla vastauskorteilla. Kun kaikki pelaajat ovat valmiita, tuomari valitsee suosikkivastauksensa."
+            ]
+        },
+        "move": {
+            "title": "Vastauskortit",
+            "description": [
+                "Kätesi näyttää sinulle vastauskorttisi. Voit vetää näitä saatavilla oleviin paikkoihin tai klikata valitaksesi ne.",
+                "Jokaisen kierroksen jälkeen valitsemasi kortit vaihdetaan uusiin."
+            ]
+        },
+        "vote": {
+            "title": "Äänestäminen",
+            "description": [
+                "Äänestäminen tapahtuu joko yhden tuomarin toimesta tai kaikkien. Tämä riippuu siitä, miten pelin isäntä on pelin asetukset määrittänyt.",
+                "Jokaisen kierroksen lopussa tuomari(t) saavat äänestää suosikkivastaustaan. Piste annetaan voittajalle."
+            ]
+        },
+        "sets": {
+            "title": "Korttisarjat",
+            "description": [
+                "Ennen kuin peli alkaa, isäntä voi valita monista saatavilla olevista seteistä tai tuoda omia.",
+                "Voit tuoda omia korttisettejä, jotka tallennetaan tilillesi, jolloin voit käyttää niitä helposti uudelleen myöhemmin."
+            ]
+        }
+    },
+    "info": {
+        "votePick": "Äänestä {option}",
+        "votePickChange": "Vaihda äänesi kohteeksi {option}",
+        "votePickSelected": "Äänestit kohteen {option} puolesta",
+        "voteSelf": "Et voi äänestää itseäsi",
+        "voteReduceTime": "Aika vähenee automaattisesti, kun kaikki ovat äänestäneet.",
+        "skipStepAll": "Tämän vaiheen voi myös jättää väliin, jos kaikki käyttäjät äänestävät niin."
+    },
+    "cards": {
+        "sets": {
+            "title": "Korttipakat",
+            "contribute": "Lisää tähän listaan",
+            "create": "Luo pakka",
+            "browser": "Selaa & tuo omia pakkoja",
+            "import": "Tuo pakka",
+            "importer": "Korttipakkojen Tuonti",
+            "namedTitle": "Korttipakka \"{title}\"",
+            "custom": "Mukautetut Korttipakat",
+            "noneFound": "Pakkoja Ei Löytynyt",
+            "importById": "Tuo korttisettejä ID:n avulla (kolmansilta osapuolilta)",
+            "notInOwnLibrary": "Puuttuva setti",
+            "addToLibrary": "Lisää kirjastoosi",
+            "entrySave": "Tallenna korttisetti",
+            "entrySaved": "Tallennettu",
+            "entryProcessing": "Käsitellään",
+            "info": {
+                "importFinished": "Käsitelty kaikki {total} korttipakkaa",
+                "importProgress": "Käsitellään korttipakkaa {current} / {total}",
+                "importFailed": "Korttipakan \"{name}\" käsittely epäonnistui",
+                "emptyFolder": "Täällä ei ole vielä jaettu korttipakkoja.",
+                "emptyList": "Sinun omat korttipakkasi ilmestyvät tänne.",
+                "emptyListNotHost": "Isäntä ei ole valinnut yhtään mukautettua korttipakkaa.",
+                "notInOwnLibrary": "Tämän mukautetun korttipakan lisäsi toinen käyttäjä. Voit lisätä sen kirjastoosi, jos haluat käyttää sitä uudelleen tulevaisuudessa.",
+                "csv": "Huomaa, että CSV-tiedostojen tuki on rajoitettu ja lopputuloksena oleva korttipakka ei välttämättä ole virheetön. Parhaan tuloksen saavuttamiseksi käytä alkuperäisiä .json-tiedostoja (sama kuin vienti).",
+                "delete": "Mukautetun korttipakan nimeltä \"{name}\" poistaminen ei ole peruutettavissa. Lataa pakka ensin paikallisesti, jos haluat pystyä palauttamaan sen myöhemmin.",
+                "storage": "Korttipakat tallennetaan selaimeesi. Pidä ne turvassa lataamalla kopio ja tallentamalla se laitteellesi.",
+                "notHost": "Tuodut korttisi ovat piilotettuina, koska et ole isäntä.",
+                "sizeLimit": "Jokainen mukautettu korttipakka vie tietyn määrän käytettävissä olevaa tallennustilaa. Suorituskyvyn vuoksi yksi peli ei voi käyttää enempää kuin **{size}** mukautettuja korttipakkoja kerrallaan.",
+                "filterDisclaimer": "Huomaa, että tätä suodatinta voidaan taata vain virallisille korttipakoille. Mukautetut pakat eivät välttämättä toimi tämän suodattimen kanssa."
+            }
+        },
+        "info": {
+            "pickAction": "Valitse toimintakortti tälle kierrokselle",
+            "judgePickingActionCard": "Tuomari {name} valitsee toimintakortin",
+            "waitForSelections": "Olet tämän kierroksen **tuomari** — odota, että kaikki tekevät valintansa",
+            "preview": "Katso hetki (uusia) korttejasi",
+            "dump": "Valitse kortit, jotka haluat hylätä",
+            "noType": "{type} kortteja ei ole",
+            "delete": "Olet poistamassa korttia \"{info}\".",
+            "winningOptionSelf": "Voitit tämän kierroksen!",
+            "winningOption": "{name} voitti tämän kierroksen valinnalla {selection}",
+            "navigateSelf": "Navigoi itse",
+            "navigateFollowJudge": "Näe mitä tuomari näkee"
+        },
+        "editor": {
+            "title": "Kortin Muokkaaja",
+            "name": "Korttipakan Nimi",
+            "type": "Kortin Tyyppi",
+            "content": "Kortin Sisältö",
+            "contentUnderscore": "Käytä _ merkitäksesi paikan vastauskorteille",
+            "pick": "Valitse Kortit",
+            "create": "Luo Kortti",
+            "deleted": "Kortti poistettu onnistuneesti!",
+            "edited": "Kortti muokattu onnistuneesti!",
+            "created": "Uusi kortti lisätty onnistuneesti!"
+        },
+        "type": {
+            "black": "Toiminta",
+            "white": "Vastaus"
+        },
+        "total": "Korttien määrä",
+        "view": "Katso kortit"
+    }
+}

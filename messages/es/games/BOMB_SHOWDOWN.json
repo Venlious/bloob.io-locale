@@ -1,0 +1,80 @@
+{
+    "options": {
+        "boardSize": {
+            "title": "Tamaño del tablero",
+            "help": "De cuántas baldosas se compone el tablero. Todos ven la misma disposición. En **Auto** el tablero se ajusta para que aproximadamente un tercio quede minado.",
+            "data": {
+                "size": "{count} baldosas ({columns}x{rows})"
+            }
+        },
+        "bombCount": {
+            "title": "Bombas por jugador",
+            "help": "Cuántas bombas esconde cada jugador al empezar. Nadie ve las de los demás. En **Auto**, cuanto más pequeña es la mesa, más esconde cada uno."
+        },
+        "lifeCount": {
+            "title": "Vidas por jugador",
+            "help": "Cuántas bombas puede pisar un jugador antes de quedar eliminado. En **Auto** una mesa más grande empieza con menos, porque los turnos se reparten más."
+        },
+        "stackedBombs": {
+            "title": "Bombas apiladas",
+            "help": "Dos jugadores pueden esconder una bomba en la misma baldosa sin saberlo. Con esto activado, pisarla les cuesta una vida a cada uno.",
+            "helpWarning": "Activarlo hace que una baldosa bien adivinada castigue mucho más."
+        },
+        "hideTime": {
+            "title": "Tiempo para esconder",
+            "help": "Cuánto tiempo tiene cada uno para esconder sus bombas. Lo que quede sin colocar al acabarse se esconde por ti, al azar."
+        }
+    },
+    "presets": {
+        "default": {
+            "title": "Duelo",
+            "description": [
+                "Tablero, bombas y vidas se ajustan a la mesa"
+            ]
+        },
+        "minefield": {
+            "title": "Campo de minas",
+            "description": [
+                "5 bombas por jugador",
+                "Las bombas apiladas cuestan una vida cada una",
+                "3 vidas"
+            ]
+        },
+        "suddenDeath": {
+            "title": "Muerte súbita",
+            "description": [
+                "Una sola vida",
+                "Una baldosa equivocada y estás fuera"
+            ]
+        }
+    },
+    "help": {
+        "rules": {
+            "title": "Reglas",
+            "description": [
+                "Todos esconden la misma cantidad de bombas en un tablero compartido. Nadie ve las de los demás, y las tuyas solo las ves un momento antes de empezar.",
+                "Después, por turnos, cada uno pisa una baldosa. Si había una bomba debajo, quien estuviera ahí pierde una vida. En cualquier caso, toda baldosa pisada queda fuera del juego."
+            ]
+        },
+        "memory": {
+            "title": "Memoria",
+            "description": [
+                "Tus propias bombas también están activas para ti, así que recordar dónde las pusiste es la mitad del juego.",
+                "La otra mitad es observar a los demás: dónde duda alguien, y a dónde se niega a ir, es la mejor pista que vas a tener sobre las baldosas que no puedes ver."
+            ]
+        },
+        "winning": {
+            "title": "Para ganar",
+            "description": [
+                "Gana el último jugador al que le queden vidas.",
+                "Si el tablero se queda sin baldosas antes, gana quien tenga más vidas restantes."
+            ]
+        },
+        "bots": {
+            "title": "Bots",
+            "description": [
+                "Los bots esconden sus bombas al azar y pisan al azar. Los más difíciles se acuerdan de rodear las suyas; los más fáciles olvidan dónde las pusieron, igual que todo el mundo."
+            ]
+        }
+    }
+}

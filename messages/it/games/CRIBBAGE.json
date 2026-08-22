@@ -1,0 +1,166 @@
+{
+    "options": {
+        "summaryEnabled": {
+            "title": "Riepilogo del Round",
+            "help": "Mostra un riassunto dei punteggi per tutti i giocatori con un dettaglio di tutti i punti."
+        },
+        "summaryTime": {
+            "title": "Tempo di Sommario",
+            "help": "Quanto tempo dovrebbe essere mostrato il riepilogo del punteggio prima di passare avanti. I giocatori possono anche votare per saltare il riepilogo del round prima."
+        },
+        "playTime": {
+            "title": "Tempo di Gioco",
+            "help": "Quanto tempo ha ogni giocatore per scegliere una carta dalla loro mano da aggiungere al gioco in corso."
+        },
+        "cribTime": {
+            "title": "Tempo della Culla",
+            "help": "Quanto tempo ha ogni giocatore per decidere quali carte mandare alla culla."
+        },
+        "starterCardTime": {
+            "title": "Tempo Carta Iniziale",
+            "help": "Quanto tempo ha il giocatore selezionato per pescare la carta iniziale dal mazzo. La carta iniziale viene usata come quinta carta quando si tratta di calcolare i punteggi per tutte le mani e il crib."
+        },
+        "revealSpeed": {
+            "title": "Velocità di Rivelazione",
+            "help": "Quanto velocemente viene rivelato il punteggio alla fine di un turno."
+        },
+        "dealerExtraCard": {
+            "title": "Carta Extra del Mazziere",
+            "help": "Quando attivato nei giochi a 3 giocatori, il mazziere riceve una carta extra per la culla. Quando disattivato, la quarta carta va automaticamente alla culla."
+        },
+        "winCondition": {
+            "data": {
+                "HIGHEST_AFTER": "Più punti dopo aver raggiunto {n} punti | Più punti dopo aver raggiunto {n} punto | Più punti dopo aver raggiunto {n} punti"
+            }
+        }
+    },
+    "presets": {
+        "blitz": {
+            "title": "Blitz",
+            "description": [
+                "Primo a 31 punti",
+                "Tempi ridotti"
+            ]
+        }
+    },
+    "help": {
+        "objective": {
+            "title": "Capire l'Obiettivo",
+            "description": [
+                "L'obiettivo del Cribbage è essere il primo giocatore a raggiungere il punteggio target, tipicamente 121 punti.",
+                "Il gioco consiste in tre parti distinte che continueranno a succedere fino a quando non ci sarà un vincitore."
+            ]
+        },
+        "deal": {
+            "title": "L'Affare",
+            "description": [
+                "Ogni giocatore riceve 5 o 6 carte, a seconda del numero di giocatori. Ogni giocatore deve scegliere 4 carte che vuole tenere e scartare le altre nel \"lettino\", che appartiene al mazziere.",
+                "Il lettino può essere visto come una seconda mano, che darà al mazziere punti extra quando si tratta di contare i punteggi."
+            ]
+        },
+        "play": {
+            "title": "Il Gioco",
+            "description": [
+                "I giocatori si alternano giocando una carta alla volta dalla loro mano sul tavolo. Durante il turno, si tiene traccia della somma delle carte giocate che deve rimanere inferiore a 31.",
+                "I giocatori possono guadagnare punti con sequenze, coppie e portando la somma a 15. Clicca sul pulsante \"Sistema di Punteggio\" mentre sei in gioco per una panoramica completa."
+            ]
+        },
+        "show": {
+            "title": "Lo Spettacolo",
+            "description": [
+                "Dopo che tutti i giocatori hanno svuotato le loro mani durante il gioco, si contano i punti. Il mazziere viene sempre contato per ultimo e riceverà anche punti per la sua culla.",
+                "I giocatori possono guadagnare punti per varie combinazioni. Clicca sul pulsante \"Sistema di Punteggio\" mentre sei in gioco per una panoramica completa."
+            ]
+        }
+    },
+    "info": {
+        "type": {
+            "jackHeels": {
+                "title": "Due per i suoi tacchi"
+            },
+            "oneForHisNob": {
+                "title": "Uno per il suo nob",
+                "description": "Assegna {points} per avere lo stesso seme del jack come la carta iniziale."
+            },
+            "fifteen": {
+                "title": "Quindici",
+                "description": "Assegna {points} per qualsiasi combinazione di carte che sommano 15. Le stesse carte possono essere riutilizzate per più combinazioni.",
+                "playTitle": "colpendo {target}",
+                "playDescription": "Assegna {points} per aver aggiunto una carta che fa il totale 15."
+            },
+            "pair": {
+                "title": "Coppia",
+                "description": "Assegna {points} per avere due carte dello stesso valore.",
+                "playTitle": "mettendo un {title}",
+                "playDescription": "Assegna {points} per aver aggiunto una carta dello stesso valore appena giocata."
+            },
+            "pairRoyal": {
+                "title": "Tris Reale",
+                "description": "Assegna {points} per avere tre carte dello stesso valore.",
+                "playTitle": "mettendo un {title}",
+                "playDescription": "Assegna {points} per aver aggiunto una carta dello stesso valore delle ultime due carte."
+            },
+            "doublePairRoyal": {
+                "title": "Doppio Coppia Reale",
+                "description": "Assegna {points} per avere quattro carte dello stesso valore.",
+                "playTitle": "mettendo un {title}",
+                "playDescription": "Assegna {points} per aver aggiunto una carta dello stesso valore delle ultime tre carte."
+            },
+            "run": {
+                "title": "Corsa",
+                "description": "Assegna {points} punti per ogni carta nella sequenza.",
+                "playTitle": "facendo una sequenza di {cards}",
+                "playDescription": "Assegna {points} per ogni carta nella sequenza. Le carte non devono essere in ordine, ma devono essere raggruppate. Ad esempio, se prendi le ultime carte e le riordini, dovrebbero contare senza interruzioni."
+            },
+            "flush": {
+                "title": "Colore (4 carte)",
+                "description": "Ti premia con {points} se tutte le carte nella tua mano sono dello stesso seme. Questo vale solo per le carte nella tua mano, escludendo la culla e la carta iniziale."
+            },
+            "flushStarter": {
+                "title": "Colore (5 carte)",
+                "description": "Ti premia con {points} se tutte le carte nella tua mano + la carta iniziale sono dello stesso seme. Questo vale solo per le carte nella tua mano, escludendo il crib."
+            },
+            "thirtyOneForTwo": {
+                "title": "31 per due",
+                "playTitle": "colpendo esattamente {target}",
+                "playDescription": "Assegna {points} al giocatore che ha giocato l'ultima carta portando la somma a 31."
+            },
+            "oneForGo": {
+                "title": "Uno per andare",
+                "playTitle": "giocando l'ultima carta",
+                "playDescription": "Assegna {points} al giocatore che ha giocato l'ultima carta quando nessun altro può fare una mossa valida."
+            }
+        },
+        "title": {
+            "hand": "Mano",
+            "show": "Mostra",
+            "play": "Gioca",
+            "crib": "Culla",
+            "skunkedSelf": "Skunkato Me",
+            "skunkedOther": "Skunkato Gli Altri"
+        },
+        "yourCribSelection": "Seleziona {cards} per il tuo crib",
+        "nameCribSelection": "Seleziona {cards} per il crib di {name}",
+        "yourCribSelectionSubmit": "Invia le carte evidenziate al tuo crib!",
+        "nameCribSelectionSubmit": "Invia le carte evidenziate al crib di {name}!",
+        "singleSkunk": "Fregato! Questo giocatore aveva meno di {points}.",
+        "doubleSkunk": "Doppio skunk! Questo giocatore aveva meno di {points}.",
+        "selfJackHeelsPoints": "{turn} ha pescato un fante! Prendi {points} per i suoi tacchi.",
+        "nameJackHeelsPoints": "{turn} ha pescato un fante! {name} prende {points} per i suoi tacchi.",
+        "nameSelfJackHeelsPoints": "Hai pescato un fante! {name} prende {points} per i suoi tacchi.",
+        "selfPlayOfOne": "Prendi {points} per {0}.",
+        "selfPlayOfTwo": "Prendi {points} per {0} e {1}.",
+        "namePlayOfOne": "{name} prende {points} per {0}.",
+        "namePlayOfTwo": "{name} prende {points} per {0} e {1}.",
+        "selfCannotPlay": "Nessuna delle tue carte può essere usata nel gioco.",
+        "nameCannotPlay": "{name} non ha carte che possono essere usate nel gioco.",
+        "cardPlayBoardLimit": "Questa carta non può essere giocata. Il valore della tavola non può superare {limit}.",
+        "sendCardsToCrib": "Invia le Carte alla Culla",
+        "pointsDisclaimer": "Questi punteggi non sono contati perché il gioco è finito presto.",
+        "cardInteractHint": "Clicca su una carta per fare la tua scelta.",
+        "waitForOpponent": "Aspettando il tuo avversario...",
+        "waitForOpponents": "Aspettando i tuoi avversari....",
+        "nameNoPoints": "{name} non ha ricevuto punti.",
+        "selfNoPoints": "Non hai ricevuto punti."
+    }
+}

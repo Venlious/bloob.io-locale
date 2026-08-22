@@ -1,0 +1,155 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Quante partite deve vincere una squadra per aggiudicarsi l'incontro. Un **Kot** vale più di una, quindi un incontro può chiudersi in meno round di questo numero."
+        },
+        "trickTarget": {
+            "title": "Prese per vincere una partita",
+            "help": "Quante delle tredici prese deve fare una squadra per vincere la partita. Sette è la maggioranza classica; un numero più basso accorcia ogni partita."
+        },
+        "trumpTime": {
+            "title": "Tempo per chiamare la briscola",
+            "help": "Quanto tempo ha l'Hakem per nominare il seme di briscola. Se il tempo scade, viene chiamato per lui il suo seme più lungo."
+        },
+        "kot": {
+            "title": "Punteggio del Kot",
+            "help": {
+                "double": "'Kot' fa valere due punti invece di uno una partita vinta 7-0.",
+                "hakemKot": "'Kot e Hakem Kot' fa valere inoltre tre punti lasciare a zero la squadra dell'Hakem.",
+                "off": "'Disattivato' conta ogni partita vinta come un punto, per quanto a senso unico sia stata."
+            },
+            "data": {
+                "double": "Kot",
+                "hakemKot": "Kot e Hakem Kot"
+            }
+        },
+        "hakemSelection": {
+            "title": "Scelta del primo Hakem",
+            "help": "Come si trova il primissimo chiamante. Ogni partita successiva segue la regola qui sotto.",
+            "data": {
+                "firstAce": "Primo asso distribuito",
+                "random": "A caso"
+            },
+            "description": {
+                "firstAce": "Si scoprono carte finché non esce un asso",
+                "random": "Un posto viene sorteggiato subito, senza cerimonie"
+            }
+        },
+        "hakemRetention": {
+            "title": "Mantenere l'Hakem",
+            "help": "Chi chiama la briscola in ogni partita dopo la prima.",
+            "data": {
+                "keepUntilLoss": "Finché non perde",
+                "rotate": "Passa a ogni partita"
+            },
+            "description": {
+                "keepUntilLoss": "L'Hakem continua a chiamare finché la sua squadra vince",
+                "rotate": "La chiamata passa al giocatore successivo a ogni partita"
+            }
+        },
+        "hakemCardCount": {
+            "title": "Carte prima della chiamata",
+            "help": "Quanta parte della mano vede l'Hakem prima di nominare la briscola. Cinque è il classico; tredici rende la chiamata del tutto informata.",
+            "description": {
+                "five": "La chiamata classica, su un terzo della mano",
+                "thirteen": "L'Hakem vede tutto prima di decidere"
+            }
+        }
+    },
+    "presets": {
+        "quickHokm": {
+            "title": "Hokm veloce",
+            "description": [
+                "Primo a 3 partite",
+                "Turni più rapidi"
+            ]
+        },
+        "kotRules": {
+            "title": "Regole del Kot",
+            "description": [
+                "Fare cappotto vale 2",
+                "Lasciare a zero l'Hakem vale 3"
+            ]
+        },
+        "openHand": {
+            "title": "Chiamata aperta",
+            "description": [
+                "L'Hakem vede tutte e 13 le carte",
+                "Primo Hakem a caso"
+            ]
+        }
+    },
+    "hakem": {
+        "title": "Hakem"
+    },
+    "tricks": {
+        "title": "Prese"
+    },
+    "trump": {
+        "yourCall": "Chiama il seme di briscola",
+        "waiting": "{name} sta chiamando la briscola...",
+        "called": "Briscola",
+        "announcement": "La briscola è {suit}"
+    },
+    "header": {
+        "findingHakem": "In cerca del primo asso...",
+        "yourCall": "Nomina il seme di briscola",
+        "nameCall": "{name} sta nominando la briscola",
+        "youTookTrick": "Hai fatto la presa",
+        "nameTookTrick": "{name} ha fatto la presa",
+        "youWonRound": "La tua squadra ha vinto la partita!",
+        "themWonRound": "L'altra squadra ha vinto la partita"
+    },
+    "result": {
+        "normal": "{name} ha vinto {tricks}",
+        "kot": "{name} ha fatto cappotto, {tricks}",
+        "hakemKot": "{name} ha lasciato a zero l'Hakem, {tricks}"
+    },
+    "rounds": {
+        "title": "Cronologia dei giri"
+    },
+    "scoreboard": {
+        "target": "Primo a {amount}, {tricks} prese a partita"
+    },
+    "statistics": {
+        "sweeps": "Kot",
+        "tricksPerMatch": "Prese / incontro"
+    },
+    "help": {
+        "rules": {
+            "title": "Regole",
+            "description": [
+                "L'Hokm si gioca in quattro, in due squadre da due, con i compagni seduti uno di fronte all'altro. Viene distribuito tutto il mazzo da 52 carte, quindi ognuno ne tiene tredici.",
+                "Un giocatore è l'**Hakem**. Vede le sue prime carte prima di tutti e nomina il seme di **briscola**, che batte ogni altro seme per il resto della partita."
+            ]
+        },
+        "trump": {
+            "title": "Briscola e obbligo di seme",
+            "description": [
+                "L'Hakem apre la prima presa. Tutti gli altri devono **rispondere a seme** se possono; solo chi non ha il seme di uscita può giocare altro.",
+                "La briscola più alta giocata fa la presa. Se nessuno ha tagliato, vince la carta più alta del seme di uscita. Gli assi sono alti."
+            ]
+        },
+        "tricks": {
+            "title": "Fare prese",
+            "description": [
+                "Chi fa una presa apre la successiva, quindi vincere significa anche scegliere il seme a cui tutti dovranno rispondere.",
+                "La prima squadra a fare **sette** prese vince la partita — il resto delle carte non viene giocato."
+            ]
+        },
+        "scoring": {
+            "title": "Punteggio",
+            "description": [
+                "Ogni partita vinta vale un punto, e la prima squadra a sette punti vince l'incontro. Fare tutte e sette le prese è un **Kot** e vale due.",
+                "L'Hakem resta Hakem finché la sua squadra vince; nel momento in cui perde una partita, la chiamata passa al giocatore alla sua destra."
+            ]
+        },
+        "bots": {
+            "title": "Bot",
+            "description": [
+                "I bot facili giocano qualsiasi carta consentita. Quelli normali leggono la presa davanti a loro: si tengono fuori dalla presa già vinta dal compagno e prendono il resto al costo minore.",
+                "I bot difficili contano le carte. Ricordano di quali semi sei rimasto senza, quali carte alte sono uscite e quali semi apri tu — aprire due volte lo stesso seme davanti al compagno è qualcosa a cui rispondono."
+            ]
+        }
+    }
+}

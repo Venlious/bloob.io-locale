@@ -1,0 +1,155 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Hvor mange spil et hold skal vinde for at tage kampen. En **Kot** tæller for mere end ét, så en kamp kan afgøres på færre runder end dette tal."
+        },
+        "trickTarget": {
+            "title": "Stik for at vinde et spil",
+            "help": "Hvor mange af de tretten stik et hold skal tage for at vinde spillet. Syv er det klassiske flertal; et lavere tal gør hvert spil kortere."
+        },
+        "trumpTime": {
+            "title": "Tid til at melde trumf",
+            "help": "Hvor lang tid Hakem har til at melde trumffarven. Løber tiden ud, meldes den længste farve på hånden for ham."
+        },
+        "kot": {
+            "title": "Kot-point",
+            "help": {
+                "double": "'Kot' gør et spil vundet 7-0 to point værd i stedet for ét.",
+                "hakemKot": "'Kot og Hakem Kot' gør det desuden tre point værd at sætte Hakems eget hold til nul.",
+                "off": "'Slået fra' tæller hvert vundet spil som ét point, uanset hvor ensidigt det var."
+            },
+            "data": {
+                "double": "Kot",
+                "hakemKot": "Kot og Hakem Kot"
+            }
+        },
+        "hakemSelection": {
+            "title": "Valg af første Hakem",
+            "help": "Hvordan den allerførste trumfmelder findes. Hvert spil derefter følger reglen nedenfor.",
+            "data": {
+                "firstAce": "Første delte es",
+                "random": "Tilfældigt"
+            },
+            "description": {
+                "firstAce": "Der vendes kort med billedsiden op, indtil et es dukker op",
+                "random": "En plads trækkes med det samme, uden ceremoni"
+            }
+        },
+        "hakemRetention": {
+            "title": "At beholde Hakem",
+            "help": "Hvem der melder trumf i hvert spil efter det første.",
+            "data": {
+                "keepUntilLoss": "Indtil de taber",
+                "rotate": "Gives videre hvert spil"
+            },
+            "description": {
+                "keepUntilLoss": "Hakem melder videre, så længe hans hold bliver ved med at vinde",
+                "rotate": "Meldingen går videre til næste spiller hvert spil"
+            }
+        },
+        "hakemCardCount": {
+            "title": "Kort før meldingen",
+            "help": "Hvor meget af sin hånd Hakem ser, før han melder trumf. Fem er det klassiske; tretten gør meldingen fuldt oplyst.",
+            "description": {
+                "five": "Den klassiske melding, på en tredjedel af hånden",
+                "thirteen": "Hakem ser det hele, før han beslutter sig"
+            }
+        }
+    },
+    "presets": {
+        "quickHokm": {
+            "title": "Hurtig Hokm",
+            "description": [
+                "Først til 3 spil",
+                "Hurtigere ture"
+            ]
+        },
+        "kotRules": {
+            "title": "Kot-regler",
+            "description": [
+                "At tage det hele er 2 værd",
+                "At nulle Hakem er 3 værd"
+            ]
+        },
+        "openHand": {
+            "title": "Åben melding",
+            "description": [
+                "Hakem ser alle 13 kort",
+                "Tilfældig første Hakem"
+            ]
+        }
+    },
+    "hakem": {
+        "title": "Hakem"
+    },
+    "tricks": {
+        "title": "Stik"
+    },
+    "trump": {
+        "yourCall": "Meld trumffarven",
+        "waiting": "{name} melder trumf...",
+        "called": "Trumf",
+        "announcement": "Trumf er {suit}"
+    },
+    "header": {
+        "findingHakem": "Leder efter det første es...",
+        "yourCall": "Meld trumffarven",
+        "nameCall": "{name} melder trumf",
+        "youTookTrick": "Du tog stikket",
+        "nameTookTrick": "{name} tog stikket",
+        "youWonRound": "Dit hold vandt spillet!",
+        "themWonRound": "Det andet hold vandt spillet"
+    },
+    "result": {
+        "normal": "{name} vandt {tricks}",
+        "kot": "{name} tog det hele, {tricks}",
+        "hakemKot": "{name} nullede Hakem, {tricks}"
+    },
+    "rounds": {
+        "title": "Rundehistorik"
+    },
+    "scoreboard": {
+        "target": "Først til {amount}, {tricks} stik pr. spil"
+    },
+    "statistics": {
+        "sweeps": "Kot",
+        "tricksPerMatch": "Stik / kamp"
+    },
+    "help": {
+        "rules": {
+            "title": "Regler",
+            "description": [
+                "Hokm spilles af fire personer på to hold med to på hvert, og makkerne sidder over for hinanden. Hele bunken på 52 kort deles ud, så alle har tretten kort.",
+                "Én spiller er **Hakem**. Han ser sine første kort før alle andre og melder den **trumffarve**, der slår alle andre farver resten af spillet."
+            ]
+        },
+        "trump": {
+            "title": "Trumf og at bekende kulør",
+            "description": [
+                "Hakem spiller ud til det første stik. Alle andre skal **bekende kulør**, hvis de kan; kun den, der er løbet tør for den udspillede farve, må lægge noget andet.",
+                "Den højeste trumf, der lægges, tager stikket. Er der ikke trumfet, vinder det højeste kort i den udspillede farve. Esser er højest."
+            ]
+        },
+        "tricks": {
+            "title": "At tage stik",
+            "description": [
+                "Den, der tager et stik, spiller ud til det næste — at vinde betyder altså også at vælge den farve, alle skal bekende.",
+                "Det første hold, der tager **syv** stik, vinder spillet — resten af kortene bliver ikke spillet."
+            ]
+        },
+        "scoring": {
+            "title": "Point",
+            "description": [
+                "Hvert vundet spil er ét point værd, og det første hold til syv point vinder kampen. At tage alle syv stik er en **Kot** og tæller for to.",
+                "Hakem forbliver Hakem, så længe hans hold vinder; i det øjeblik de taber et spil, går meldingen til spilleren til højre for ham."
+            ]
+        },
+        "bots": {
+            "title": "Bots",
+            "description": [
+                "Lette bots lægger et hvilket som helst lovligt kort. Almindelige bots læser stikket foran sig: de holder sig fra det stik, makkeren allerede vinder, og tager resten så billigt som muligt.",
+                "Svære bots tæller kort. De husker, hvilke farver du er løbet tør for, hvilke høje kort der er gået, og hvilke farver du spiller ud — at spille den samme farve ud to gange hos din makker er noget, de svarer på."
+            ]
+        }
+    }
+}

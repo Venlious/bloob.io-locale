@@ -1,0 +1,155 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Wie viele Runden ein Team gewinnen muss, um das Match zu holen. Ein **Kot** zählt mehr als eine, also kann ein Match in weniger Runden als dieser Zahl entschieden sein."
+        },
+        "trickTarget": {
+            "title": "Stiche für eine Runde",
+            "help": "Wie viele der dreizehn Stiche ein Team holen muss, um die Runde zu gewinnen. Sieben ist die klassische Mehrheit; eine kleinere Zahl macht jede Runde kürzer."
+        },
+        "trumpTime": {
+            "title": "Bedenkzeit für Trumpf",
+            "help": "Wie lange der Hakem Zeit hat, die Trumpffarbe anzusagen. Läuft die Uhr ab, wird seine längste Farbe für ihn angesagt."
+        },
+        "kot": {
+            "title": "Kot-Wertung",
+            "help": {
+                "double": "'Kot' macht eine Runde mit 7:0 zwei Punkte wert statt einem.",
+                "hakemKot": "'Kot & Hakem Kot' macht es zusätzlich drei Punkte wert, das Team des Hakems zu Null zu spielen.",
+                "off": "'Deaktiviert' wertet jede gewonnene Runde als einen Punkt, so einseitig sie auch war."
+            },
+            "data": {
+                "double": "Kot",
+                "hakemKot": "Kot & Hakem Kot"
+            }
+        },
+        "hakemSelection": {
+            "title": "Den ersten Hakem bestimmen",
+            "help": "Wie der allererste Trumpfansager gefunden wird. Jede Runde danach folgt der Regel darunter.",
+            "data": {
+                "firstAce": "Erstes ausgeteiltes Ass",
+                "random": "Zufällig"
+            },
+            "description": {
+                "firstAce": "Es werden Karten aufgedeckt, bis ein Ass fällt",
+                "random": "Ein Platz wird sofort gelost, ganz ohne Zeremonie"
+            }
+        },
+        "hakemRetention": {
+            "title": "Hakem behalten",
+            "help": "Wer für jede Runde nach der ersten Trumpf ansagt.",
+            "data": {
+                "keepUntilLoss": "Bis sie verlieren",
+                "rotate": "Jede Runde weitergeben"
+            },
+            "description": {
+                "keepUntilLoss": "Der Hakem sagt weiter an, solange sein Team gewinnt",
+                "rotate": "Die Ansage wandert jede Runde zum nächsten Spieler"
+            }
+        },
+        "hakemCardCount": {
+            "title": "Karten vor der Ansage",
+            "help": "Wie viel von seinem Blatt der Hakem vor der Trumpfansage sieht. Fünf ist klassisch; dreizehn macht die Ansage zu einer informierten.",
+            "description": {
+                "five": "Die klassische Ansage auf einem Drittel des Blatts",
+                "thirteen": "Der Hakem sieht alles, bevor er entscheidet"
+            }
+        }
+    },
+    "presets": {
+        "quickHokm": {
+            "title": "Schnelles Hokm",
+            "description": [
+                "Erster auf 3 Runden",
+                "Schnellere Züge"
+            ]
+        },
+        "kotRules": {
+            "title": "Kot-Regeln",
+            "description": [
+                "Alles zu holen zählt 2",
+                "Den Hakem zu Null zu spielen zählt 3"
+            ]
+        },
+        "openHand": {
+            "title": "Offene Ansage",
+            "description": [
+                "Der Hakem sieht alle 13 Karten",
+                "Zufälliger erster Hakem"
+            ]
+        }
+    },
+    "hakem": {
+        "title": "Hakem"
+    },
+    "tricks": {
+        "title": "Stiche"
+    },
+    "trump": {
+        "yourCall": "Sag die Trumpffarbe an",
+        "waiting": "{name} sagt Trumpf an...",
+        "called": "Trumpf",
+        "announcement": "Trumpf ist {suit}"
+    },
+    "header": {
+        "findingHakem": "Suche nach dem ersten Ass...",
+        "yourCall": "Nenne die Trumpffarbe",
+        "nameCall": "{name} sagt Trumpf an",
+        "youTookTrick": "Du hast den Stich geholt",
+        "nameTookTrick": "{name} hat den Stich geholt",
+        "youWonRound": "Dein Team hat die Runde gewonnen!",
+        "themWonRound": "Das andere Team hat die Runde gewonnen"
+    },
+    "result": {
+        "normal": "{name} gewann {tricks}",
+        "kot": "{name} holte alles, {tricks}",
+        "hakemKot": "{name} spielte den Hakem zu Null, {tricks}"
+    },
+    "rounds": {
+        "title": "Rundenverlauf"
+    },
+    "scoreboard": {
+        "target": "Erster auf {amount}, {tricks} Stiche pro Runde"
+    },
+    "statistics": {
+        "sweeps": "Kots",
+        "tricksPerMatch": "Stiche / Match"
+    },
+    "help": {
+        "rules": {
+            "title": "Regeln",
+            "description": [
+                "Hokm wird von vier Personen in zwei Zweierteams gespielt, Partner sitzen sich gegenüber. Das ganze Deck aus 52 Karten wird verteilt, jeder hält also dreizehn.",
+                "Ein Spieler ist der **Hakem**. Er sieht seine ersten Karten vor allen anderen und nennt die **Trumpffarbe**, die für den Rest der Runde jede andere Farbe schlägt."
+            ]
+        },
+        "trump": {
+            "title": "Trumpf und Farbe bedienen",
+            "description": [
+                "Der Hakem spielt den ersten Stich aus. Alle anderen müssen **Farbe bedienen**, wenn sie können; nur wer die angespielte Farbe nicht hat, darf etwas anderes spielen.",
+                "Der höchste gespielte Trumpf holt den Stich. Wurde nicht getrumpft, gewinnt die höchste Karte der angespielten Farbe. Asse sind hoch."
+            ]
+        },
+        "tricks": {
+            "title": "Stiche holen",
+            "description": [
+                "Wer einen Stich holt, spielt den nächsten an — gewinnen heißt also auch bestimmen, welche Farbe alle bedienen müssen.",
+                "Das erste Team mit **sieben** Stichen gewinnt die Runde — der Rest der Karten wird nicht mehr ausgespielt."
+            ]
+        },
+        "scoring": {
+            "title": "Wertung",
+            "description": [
+                "Jede gewonnene Runde ist einen Punkt wert, und das erste Team auf sieben Punkten gewinnt das Match. Alle sieben Stiche zu holen ist ein **Kot** und zählt zwei.",
+                "Der Hakem bleibt Hakem, solange sein Team gewinnt; verliert es eine Runde, geht die Ansage an den Spieler zu seiner Rechten."
+            ]
+        },
+        "bots": {
+            "title": "Bots",
+            "description": [
+                "Leichte Bots spielen jede erlaubte Karte. Normale Bots lesen den Stich vor sich: Sie halten sich aus dem gewonnenen Stich ihres Partners heraus und holen den Rest so günstig wie möglich.",
+                "Schwere Bots zählen die Karten. Sie merken sich, welche Farben dir ausgegangen sind, welche hohen Karten weg sind und welche Farben du anspielst — eine Farbe zweimal beim Partner anzuspielen ist etwas, worauf sie antworten."
+            ]
+        }
+    }
+}

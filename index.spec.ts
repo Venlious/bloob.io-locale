@@ -1,6 +1,6 @@
 // Utils
 import { symmetricDifference } from 'ramda'
-import { objectDeepKeys, getMissingCount } from './helpers/utils'
+import { loadCatalogue, objectDeepKeys, getMissingCount } from './helpers/utils'
 
 // Data
 import { supportedLocales } from './index'
@@ -218,8 +218,7 @@ const checkForCommonVariableErrors = translation => {
 	}
 }
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const enMessage = require(`./messages/en.json`)
+const enMessage = loadCatalogue(`en`)
 const enMessageKeys = objectDeepKeys(enMessage)
 
 const enCount = getMissingCount(enMessage)
@@ -244,7 +243,7 @@ describe(`correctBoldMarkers`, () => {
 	// The sibling for the two checks above, which a catalogue with no marked words
 	// at all would pass. It is also what says which spelling is the supported one
 	it(`should mark stressed words with ** rather than markup`, () => {
-		expect(resolveKey(enMessage, `card.info.waitForSelections`)).toBe(
+		expect(resolveKey(enMessage, `game.ROTTEN_APPLES.cards.info.waitForSelections`)).toBe(
 			`You are the **judge** this round — wait for everyone to make their picks`
 		)
 	})
@@ -264,8 +263,7 @@ describe(`correctWhitespace`, () => {
 
 for (const folder of [...supportedLocales, `_empty`]) {
 	if (folder === `en`) continue
-	// eslint-disable-next-line @typescript-eslint/no-var-requires
-	const messages = require(`./messages/${folder}.json`)
+	const messages = loadCatalogue(folder)
 
 	describe(`translatedMessages`, () => {
 		it(`should have all English translations keys in "${folder}"`, () => {

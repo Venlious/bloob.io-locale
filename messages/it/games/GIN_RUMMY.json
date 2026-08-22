@@ -1,0 +1,123 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Il gioco finisce appena un giocatore arriva a questo punteggio. Però, questo non garantisce una vittoria, perché ci sono punti bonus che vengono dati alla fine del gioco."
+        },
+        "knock": {
+            "title": "Batti!",
+            "help": {
+                "enabled": "'Abilitato' permette di bussare in base alla soglia di bussata impostata.",
+                "firstDiscardCard": "'Basato sulla prima carta scartata' usa la prima carta scartata per impostare la soglia; se esce un Asso, devi andare in Gin.",
+                "disabled": "'Disabilitato' permette di chiudere un turno solo con un Gin."
+            },
+            "data": {
+                "firstDiscardCard": "Basato sulla prima carta scartata"
+            }
+        },
+        "knockBasedOnFirstCard": {
+            "title": "Batti in base al primo scarto",
+            "help": "Quando è attivato, la prima carta nel mazzo degli scarti determina la soglia per bussare. I giocatori possono bussare solo se il loro \"deadwood\" è uguale o inferiore al valore di questa carta."
+        },
+        "knockThreshold": {
+            "title": "Soglia di Colpo",
+            "help": "Un giocatore può \"bussare\" quando è il suo turno e il suo \"deadwood\" è uguale o inferiore alla soglia impostata."
+        },
+        "ginPointAmount": {
+            "title": "Gin",
+            "help": "Il numero di punti che si danno a un giocatore per aver chiamato Gin, che succede quando tutte le carte in mano sono in un meld."
+        },
+        "bigGinPointAmount": {
+            "title": "Gin Gigante",
+            "help": "Il numero di punti che si danno a un giocatore per aver chiamato Big Gin, che succede quando tutte le carte in mano più quella pescata sono in un meld, senza carte morte."
+        },
+        "undercutPointAmount": {
+            "title": "Sottosquadro",
+            "help": "Un undercut succede quando un giocatore fa knock, ma il suo avversario ha lo stesso numero di punti morti o meno. In questo caso, l'avversario guadagna punti extra."
+        },
+        "firstBonusPointAmount": {
+            "title": "Bonus: Primo a vincere",
+            "help": "Assegnato alla fine del gioco. Dà al giocatore che è arrivato per primo al 'Importo Vincente' un bonus."
+        },
+        "roundBonusPointAmount": {
+            "title": "Bonus: Giro",
+            "help": "Assegnato alla fine del gioco. Dà a ogni giocatore questo numero di punti per ogni round che hanno vinto, escluse le pareggiate."
+        },
+        "shutoutBonusPointAmount": {
+            "title": "Bonus: Porta chiusa",
+            "help": "Alla fine del gioco, chi vince riceve un bonus extra di questo numero di punti se ha vinto tutti i turni."
+        }
+    },
+    "presets": {
+        "straightGin": {
+            "title": "Gin liscio",
+            "description": [
+                "Niente colpi",
+                "Niente bonus"
+            ]
+        },
+        "oklahomaGin": {
+            "title": "Oklahoma Gin",
+            "description": [
+                "Valore del knock basato sulla prima scartata"
+            ]
+        }
+    },
+    "help": {
+        "rounds": {
+            "title": "Giri",
+            "description": [
+                "Il gioco è fatto di più turni. In ogni turno, ai giocatori vengono date 10 carte e una carta viene mostrata nel mazzo. I giocatori possono scegliere di passare o prendere la carta in cima al mazzo.",
+                "I turni si alternano, e quando è il tuo turno, puoi prendere una carta dal mazzo o dal mazzo. Dopo, devi restituire una carta al mazzo."
+            ]
+        },
+        "deadwood": {
+            "title": "Legno Morto",
+            "description": [
+                "Il deadwood si riferisce alle carte che non fanno parte di nessun meld. Il valore del deadwood si calcola sommando i valori di queste carte (per esempio, due Re e un cinque fanno 25 in totale).",
+                "Cerca di tenere il tuo deadwood il più basso possibile formando meld e scartando le carte di alto valore che non sono nei meld."
+            ]
+        },
+        "melds": {
+            "title": "Combinazioni",
+            "description": [
+                "I meld si formano con una sequenza di tre o più carte dello stesso seme (tipo, 3D, 4D, 5D) oppure tre o più carte dello stesso valore (tipo, 3H, 3D, 3S).",
+                "I meld vengono evidenziati automaticamente nella tua mano e nell'interfaccia, quindi fai attenzione al mazzo—il tuo avversario potrebbe lasciare la carta che ti serve!"
+            ]
+        },
+        "knock": {
+            "title": "Batti!",
+            "description": [
+                "Puoi bussare se il tuo deadwood è meno di 10. Quando bussi, tutte le carte vengono rivelate e vedrai il deadwood del tuo avversario. Se il tuo deadwood è più alto, il tuo avversario vince il turno con un bonus.",
+                "Il punteggio per un knock è semplice: sottrai il tuo deadwood da quello del tuo avversario. Per esempio, se il tuo deadwood è 5 e quello del tuo avversario è 25, fai 20 punti."
+            ]
+        },
+        "gin": {
+            "title": "Gin e Big Gin",
+            "description": [
+                "Se il tuo deadwood è 0 o può diventarlo dopo aver scartato l'ultima carta deadwood, hai fatto un Gin. Questo ti garantisce la vittoria e ti dà un bonus più la differenza di deadwood.",
+                "Un Big Gin è ancora meglio: se tutta la tua mano, più la carta che hai appena pescato, forma dei meld, ricevi un bonus più grande. Chiama sempre un Big Gin appena ce l'hai!"
+            ]
+        },
+        "goal": {
+            "title": "Obiettivo",
+            "description": [
+                "L'obiettivo è vincere il maggior numero di round possibile e essere il primo a raggiungere 100 punti. Così finisce il gioco e si vedono i punteggi finali, compresi i punti bonus.",
+                "Di base, guadagni 25 punti extra per ogni round che vinci e altri 100 punti se sei il primo a toccare i 100 punti."
+            ]
+        }
+    },
+    "info": {
+        "title": {
+            "tie": "Pareggio",
+            "undercut": "Sottocut",
+            "gin": "Gin",
+            "bigGin": "Grande Gin",
+            "knock": "Knock",
+            "knockSuccessRate": "Knock riuscito"
+        },
+        "tieDescription": "Non ci sono abbastanza carte per continuare a giocare. È un pareggio!",
+        "scoreDescription": "Il punteggio si calcola facendo la differenza tra i valori totali delle carte morte in mano a ciascun giocatore.",
+        "yourMeldAfterKnock": "Oh no... Alcune delle carte morte di {name} possono essere spostate nei tuoi meld!",
+        "nameMeldAfterKnock": "Bello! Alcune delle tue carte morte possono essere spostate nei meld di {name}!"
+    }
+}

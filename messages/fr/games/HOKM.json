@@ -1,0 +1,155 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Combien de manches une équipe doit gagner pour remporter le match. Un **Kot** vaut plus qu'une, donc un match peut se décider en moins de manches que ce nombre."
+        },
+        "trickTarget": {
+            "title": "Plis pour gagner une manche",
+            "help": "Combien des treize plis une équipe doit remporter pour gagner la manche. Sept est la majorité classique ; un nombre plus bas raccourcit chaque manche."
+        },
+        "trumpTime": {
+            "title": "Temps pour annoncer l'atout",
+            "help": "Combien de temps le Hakem a pour nommer la couleur d'atout. Si le temps s'écoule, sa couleur la plus longue est annoncée à sa place."
+        },
+        "kot": {
+            "title": "Décompte du Kot",
+            "help": {
+                "double": "'Kot' fait valoir deux points au lieu d'un une manche gagnée 7-0.",
+                "hakemKot": "'Kot & Hakem Kot' fait en plus valoir trois points le fait de blanchir l'équipe du Hakem.",
+                "off": "'Désactivé' compte chaque manche gagnée pour un point, aussi déséquilibrée soit-elle."
+            },
+            "data": {
+                "double": "Kot",
+                "hakemKot": "Kot & Hakem Kot"
+            }
+        },
+        "hakemSelection": {
+            "title": "Choix du premier Hakem",
+            "help": "Comment le tout premier annonceur d'atout est trouvé. Chaque manche suivante suit la règle ci-dessous.",
+            "data": {
+                "firstAce": "Premier as distribué",
+                "random": "Au hasard"
+            },
+            "description": {
+                "firstAce": "Des cartes sont retournées jusqu'à ce qu'un as tombe",
+                "random": "Une place est tirée aussitôt, sans cérémonie"
+            }
+        },
+        "hakemRetention": {
+            "title": "Conserver le Hakem",
+            "help": "Qui annonce l'atout pour chaque manche après la première.",
+            "data": {
+                "keepUntilLoss": "Jusqu'à la défaite",
+                "rotate": "Passer chaque manche"
+            },
+            "description": {
+                "keepUntilLoss": "Le Hakem continue d'annoncer tant que son équipe gagne",
+                "rotate": "L'annonce passe au joueur suivant à chaque manche"
+            }
+        },
+        "hakemCardCount": {
+            "title": "Cartes avant l'annonce",
+            "help": "Quelle part de sa main le Hakem voit avant de nommer l'atout. Cinq est classique ; treize rend l'annonce parfaitement informée.",
+            "description": {
+                "five": "L'annonce classique, sur un tiers de la main",
+                "thirteen": "Le Hakem voit tout avant de décider"
+            }
+        }
+    },
+    "presets": {
+        "quickHokm": {
+            "title": "Hokm rapide",
+            "description": [
+                "Premier à 3 manches",
+                "Tours plus rapides"
+            ]
+        },
+        "kotRules": {
+            "title": "Règles du Kot",
+            "description": [
+                "Tout rafler vaut 2",
+                "Blanchir le Hakem vaut 3"
+            ]
+        },
+        "openHand": {
+            "title": "Annonce ouverte",
+            "description": [
+                "Le Hakem voit ses 13 cartes",
+                "Premier Hakem au hasard"
+            ]
+        }
+    },
+    "hakem": {
+        "title": "Hakem"
+    },
+    "tricks": {
+        "title": "Plis"
+    },
+    "trump": {
+        "yourCall": "Annoncez la couleur d'atout",
+        "waiting": "{name} annonce l'atout...",
+        "called": "Atout",
+        "announcement": "L'atout est {suit}"
+    },
+    "header": {
+        "findingHakem": "À la recherche du premier as...",
+        "yourCall": "Nommez la couleur d'atout",
+        "nameCall": "{name} nomme l'atout",
+        "youTookTrick": "Vous avez pris le pli",
+        "nameTookTrick": "{name} a pris le pli",
+        "youWonRound": "Votre équipe a gagné la manche !",
+        "themWonRound": "L'autre équipe a gagné la manche"
+    },
+    "result": {
+        "normal": "{name} a gagné {tricks}",
+        "kot": "{name} a tout raflé, {tricks}",
+        "hakemKot": "{name} a blanchi le Hakem, {tricks}"
+    },
+    "rounds": {
+        "title": "Historique des manches"
+    },
+    "scoreboard": {
+        "target": "Premier à {amount}, {tricks} plis par manche"
+    },
+    "statistics": {
+        "sweeps": "Kots",
+        "tricksPerMatch": "Plis / match"
+    },
+    "help": {
+        "rules": {
+            "title": "Règles",
+            "description": [
+                "Le Hokm se joue à quatre, en deux équipes de deux, les partenaires assis face à face. Tout le jeu de 52 cartes est distribué, donc chacun tient treize cartes.",
+                "Un joueur est le **Hakem**. Il voit ses premières cartes avant tout le monde et nomme la couleur d'**atout** qui bat toutes les autres pour le reste de la manche."
+            ]
+        },
+        "trump": {
+            "title": "Atout et fourniture",
+            "description": [
+                "Le Hakem entame le premier pli. Tous les autres doivent **fournir la couleur** demandée s'ils le peuvent ; seul un joueur qui n'en a plus peut jouer autre chose.",
+                "Le plus haut atout joué remporte le pli. Si personne n'a coupé, la plus haute carte de la couleur entamée l'emporte. Les as sont hauts."
+            ]
+        },
+        "tricks": {
+            "title": "Remporter des plis",
+            "description": [
+                "Celui qui remporte un pli entame le suivant : gagner, c'est donc aussi choisir la couleur que tout le monde devra fournir.",
+                "La première équipe à prendre **sept** plis gagne la manche — le reste des cartes n'est pas joué."
+            ]
+        },
+        "scoring": {
+            "title": "Points",
+            "description": [
+                "Chaque manche gagnée vaut un point, et la première équipe à sept points gagne le match. Prendre les sept plis est un **Kot**, et vaut deux.",
+                "Le Hakem reste Hakem tant que son équipe gagne ; dès qu'elle perd une manche, l'annonce passe au joueur à sa droite."
+            ]
+        },
+        "bots": {
+            "title": "Bots",
+            "description": [
+                "Les bots faciles jouent n'importe quelle carte autorisée. Les bots normaux lisent le pli devant eux : ils laissent le pli gagné par leur partenaire et prennent le reste au moindre coût.",
+                "Les bots difficiles comptent les cartes. Ils retiennent les couleurs dont vous êtes défaussé, les hautes cartes déjà tombées et les couleurs que vous entamez — entamer deux fois la même couleur devant votre partenaire, c'est quelque chose auquel ils répondent."
+            ]
+        }
+    }
+}

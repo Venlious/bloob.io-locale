@@ -1,0 +1,148 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "How many points a team needs to win the match. 31 is standard; 41 and 61 make for a longer game."
+        },
+        "minimumBid": {
+            "title": "Lowest bid allowed",
+            "help": "The smallest contract the auction will accept. Seven is a majority of the thirteen tricks; lowering it makes contracts easier to win and harder to make."
+        },
+        "bidTime": {
+            "title": "Bidding Time",
+            "help": "How long each player gets to bid. If the clock runs out, they pass."
+        },
+        "kaboot": {
+            "title": "Kaboot bonuses",
+            "help": {
+                "on": "Taking all thirteen tricks pays a bonus, and a bid of thirteen is worth 26 — or costs 16 if it fails.",
+                "off": "'Disabled' scores every contract the same way, however big it was."
+            }
+        }
+    },
+    "presets": {
+        "default": {
+            "title": "Tarneeb 31",
+            "description": [
+                "First to 31 points",
+                "The classic target"
+            ]
+        },
+        "tarneeb41": {
+            "title": "Tarneeb 41",
+            "description": [
+                "First to 41 points",
+                "A longer match"
+            ]
+        },
+        "tarneeb61": {
+            "title": "Tarneeb 61",
+            "description": [
+                "First to 61 points",
+                "The long game"
+            ]
+        },
+        "quickTarneeb": {
+            "title": "Quick Tarneeb",
+            "description": [
+                "First to 21 points",
+                "Faster turns"
+            ]
+        },
+        "plainScoring": {
+            "title": "Plain Scoring",
+            "description": [
+                "No Kaboot bonuses",
+                "Every contract scores the same way"
+            ]
+        }
+    },
+    "declarer": {
+        "title": "Declarer"
+    },
+    "tricks": {
+        "title": "Tricks"
+    },
+    "contract": {
+        "value": "Bid {amount}"
+    },
+    "bid": {
+        "title": "Bid",
+        "yourBid": "Bid for the contract",
+        "waiting": "{name} is bidding...",
+        "pass": "Pass"
+    },
+    "trump": {
+        "yourCall": "Call the trump suit",
+        "waiting": "{name} is calling trump...",
+        "called": "Trump",
+        "announcement": "Trump is {suit}"
+    },
+    "header": {
+        "yourBid": "Make your bid",
+        "nameBid": "{name} is bidding",
+        "yourCall": "Name the trump suit",
+        "nameCall": "{name} is naming trump",
+        "youTookTrick": "You took the trick",
+        "nameTookTrick": "{name} took the trick",
+        "youWonRound": "Your team scored!",
+        "themWonRound": "The other team scored"
+    },
+    "result": {
+        "made": "{name} bid {bid} and took {tricks}",
+        "failed": "{name} bid {bid} but took only {tricks}",
+        "kaboot": "{name} bid {bid} and swept all {tricks}",
+        "slam": "{name} bid every trick and took all {tricks}",
+        "slamFailed": "{name} bid every trick and took only {tricks}",
+        "contractMade": "Contract made",
+        "contractFailed": "Contract failed"
+    },
+    "rounds": {
+        "title": "Round history",
+        "outcome": "Result"
+    },
+    "scoreboard": {
+        "target": "First to {amount} points"
+    },
+    "statistics": {
+        "contracts": "Contracts won",
+        "contractsMade": "Contracts made",
+        "tricksPerMatch": "Tricks / match"
+    },
+    "help": {
+        "rules": {
+            "title": "Rules",
+            "description": [
+                "Tarneeb is played by four people in two teams of two, with partners sitting opposite each other. Every card of a standard 52-card deck is dealt, so everybody holds thirteen.",
+                "Before a card is played the table **bids**: each player in turn says how many of the thirteen tricks their team will take, or passes. Once you pass you are out of the bidding for that round."
+            ]
+        },
+        "bidding": {
+            "title": "Bidding",
+            "description": [
+                "Every bid has to beat the one before it, and the lowest bid allowed is seven — a majority of the tricks. Being outbid does not put you out: you get another turn, and you can take the contract back.",
+                "The last player still in wins the auction, names the **trump** suit and leads the first trick. If all four pass, the hand is thrown in and dealt again."
+            ]
+        },
+        "trump": {
+            "title": "Trump and following suit",
+            "description": [
+                "Everybody has to **follow suit** if they can; only a player holding none of the suit that was led may play something else. You are never forced to trump.",
+                "The highest trump played takes the trick. If nobody trumped it, the highest card of the suit that was led wins. Aces are high."
+            ]
+        },
+        "scoring": {
+            "title": "Scoring",
+            "description": [
+                "If the bidding team takes at least as many tricks as it bid, it scores a point for every trick it took and the other team scores nothing. If it falls short, it **loses** the amount it bid and the other team scores a point for each of their own tricks.",
+                "Taking all thirteen on a smaller bid is a **Kaboot** and pays three extra. Bidding all thirteen and making it is worth 26; failing it costs 16 and pays the opponents double."
+            ]
+        },
+        "bots": {
+            "title": "Bots",
+            "description": [
+                "Easy bots talk themselves into contracts they cannot make, and play any card the rules allow. Normal bots bid what their hand is worth and read the trick in front of them: they stay out of a partner's winning trick and take the rest as cheaply as they can.",
+                "Hard bots count the cards. They remember which suits you have run out of, which high cards are gone, and which suits you have chosen to lead — so leading a suit at your partner twice is something they will answer."
+            ]
+        }
+    }
+}

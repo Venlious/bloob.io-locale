@@ -1,0 +1,123 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "The game ends as soon as a player reaches this amount of points. However, this does not guarantee a win, as bonus points are awarded at the end of the game."
+        },
+        "knock": {
+            "title": "Knock",
+            "help": {
+                "enabled": "'Enabled' allows knocking based on the configured knock threshold.",
+                "firstDiscardCard": "'Based on first discard card' uses the first discard to set the threshold; if an Ace is drawn, you must go Gin.",
+                "disabled": "'Disabled' allows ending a round only with a Gin."
+            },
+            "data": {
+                "firstDiscardCard": "Based on first discard card"
+            }
+        },
+        "knockBasedOnFirstCard": {
+            "title": "Knock Based on First Discard",
+            "help": "When enabled, the first card in the discard pile determines the knock threshold. Players can only knock if their deadwood is below or equal to the value of this card."
+        },
+        "knockThreshold": {
+            "title": "Knock Threshold",
+            "help": "A player can knock when it is their turn and their deadwood is below or equal to the configured threshold."
+        },
+        "ginPointAmount": {
+            "title": "Gin",
+            "help": "The amount of points awarded to a player for calling Gin, which is when all cards in a hand are in a meld."
+        },
+        "bigGinPointAmount": {
+            "title": "Big Gin",
+            "help": "The amount of points awarded to a player for calling Big Gin, which occurs when all cards in a hand plus the drawn card are in a meld, leaving no deadwood."
+        },
+        "undercutPointAmount": {
+            "title": "Undercut",
+            "help": "An undercut happens when a player knocks, but their opponent has the same or fewer deadwood points. In this case, the opponent gets extra points."
+        },
+        "firstBonusPointAmount": {
+            "title": "Bonus: First to win",
+            "help": "Awarded at the end of the game. Gives the player who was first to reach the 'Win Amount' a bonus."
+        },
+        "roundBonusPointAmount": {
+            "title": "Bonus: Round",
+            "help": "Awarded at the end of the game. Gives each player this amount of points for every round they have won, excluding ties."
+        },
+        "shutoutBonusPointAmount": {
+            "title": "Bonus: Shutout",
+            "help": "Awarded at the end of the game. Gives the winner an additional bonus of this amount of points if they have won every round."
+        }
+    },
+    "presets": {
+        "straightGin": {
+            "title": "Straight Gin",
+            "description": [
+                "No Knocking",
+                "No Bonus"
+            ]
+        },
+        "oklahomaGin": {
+            "title": "Oklahoma Gin",
+            "description": [
+                "Knock value based on first discard"
+            ]
+        }
+    },
+    "help": {
+        "rounds": {
+            "title": "Rounds",
+            "description": [
+                "The game consists of multiple rounds. Each round, players are dealt 10 cards, and one card is shown in the pile. Players can choose to pass or take the top card from the pile.",
+                "Turns alternate, and on your turn, you can take a card from the pile or the deck. Afterward, you must return one card to the pile."
+            ]
+        },
+        "deadwood": {
+            "title": "Deadwood",
+            "description": [
+                "Deadwood refers to cards that are not part of any melds. The value of deadwood is calculated by summing the values of these cards (e.g., two Kings and a five total 25).",
+                "Aim to keep your deadwood as low as possible by forming melds and discarding high-value cards that are not in melds."
+            ]
+        },
+        "melds": {
+            "title": "Melds",
+            "description": [
+                "Melds can be formed by having a sequence of three or more cards of the same suit (e.g., 3D, 4D, 5D) or three or more of the same rank (e.g., 3H, 3D, 3S).",
+                "Melds are automatically highlighted in your hand and the interface, so keep an eye on the pile—your opponent may drop the card you need!"
+            ]
+        },
+        "knock": {
+            "title": "Knock",
+            "description": [
+                "You can knock if your deadwood is less than 10. When you knock, all cards are revealed, and you will see your opponent's deadwood. If your deadwood is higher, your opponent wins the round with a bonus.",
+                "Scoring for a knock is simple: subtract your deadwood from your opponent's. For example, if your deadwood is 5 and your opponent's is 25, you score 20 points."
+            ]
+        },
+        "gin": {
+            "title": "Gin and Big Gin",
+            "description": [
+                "If your deadwood is 0 or can be 0 after discarding your last deadwood card, you have a Gin. This guarantees a win and awards you a bonus plus the deadwood difference.",
+                "A Big Gin is even better: if your entire hand, plus the card you just drew, forms melds, you receive a larger bonus. Always call a Big Gin as soon as you have it!"
+            ]
+        },
+        "goal": {
+            "title": "Goal",
+            "description": [
+                "The goal is to win as many rounds as possible and be the first to reach 100 points. This ends the game and reveals the final scores, including bonus points.",
+                "By default, you earn an extra 25 points for each round you win and an additional 100 points for being the first to reach 100 points."
+            ]
+        }
+    },
+    "info": {
+        "title": {
+            "tie": "Tie",
+            "undercut": "Undercut",
+            "gin": "Gin",
+            "bigGin": "Big Gin",
+            "knock": "Knock",
+            "knockSuccessRate": "Knock Success"
+        },
+        "tieDescription": "There aren't enough cards left to keep playing. It's a tie!",
+        "scoreDescription": "The score is determined by calculating the difference between the total values of deadwood cards in each player's hand.",
+        "yourMeldAfterKnock": "Oh no... Some of {name}'s deadwood can be moved to your melds!",
+        "nameMeldAfterKnock": "Nice! Some of your deadwood can be moved to {name}'s melds!"
+    }
+}

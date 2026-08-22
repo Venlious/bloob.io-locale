@@ -1,0 +1,123 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Spelet slutar så fort en spelare når den här poängen. Men det betyder inte att man vinner, för man får bonuspoäng i slutet av spelet."
+        },
+        "knock": {
+            "title": "Knacka",
+            "help": {
+                "enabled": "'Aktiverad' låter dig knacka baserat på den inställda knacktröskeln.",
+                "firstDiscardCard": "'Baserat på första kassakortet' använder det första kassakortet för att sätta tröskeln; om en ess dras måste du gå Gin.",
+                "disabled": "'Avaktiverad' låter dig avsluta en runda bara med en Gin."
+            },
+            "data": {
+                "firstDiscardCard": "Baserat på första slängkortet"
+            }
+        },
+        "knockBasedOnFirstCard": {
+            "title": "Knock baserat på första kasten",
+            "help": "När det är påslaget, så bestämmer det första kortet i slänghögen hur mycket man får knacka. Spelarna kan bara knacka om deras dödved är lika med eller lägre än värdet på det kortet."
+        },
+        "knockThreshold": {
+            "title": "Knacka Tröskel",
+            "help": "En spelare kan knacka när det är deras tur och deras dödved är lika med eller under den inställda gränsen."
+        },
+        "ginPointAmount": {
+            "title": "Gin",
+            "help": "Poängen som en spelare får för att kalla Gin, vilket är när alla kort i handen är i en kombination."
+        },
+        "bigGinPointAmount": {
+            "title": "Stort Gin",
+            "help": "Antalet poäng som en spelare får för att kalla Big Gin, vilket händer när alla kort i en hand plus det dragna kortet är i en kombination, utan några döda kort."
+        },
+        "undercutPointAmount": {
+            "title": "Undercut",
+            "help": "En undercut händer när en spelare knackar, men motståndaren har samma eller färre döda poäng. I det här fallet får motståndaren extra poäng."
+        },
+        "firstBonusPointAmount": {
+            "title": "Bonus: Först att vinna",
+            "help": "Utdelas i slutet av spelet. Ger spelaren som först når 'Vinstbeloppet' en bonus."
+        },
+        "roundBonusPointAmount": {
+            "title": "Bonus: Runda",
+            "help": "Utdelas i slutet av spelet. Ger varje spelare den här mängden poäng för varje runda de har vunnit, utan att räkna med oavgjorda matcher."
+        },
+        "shutoutBonusPointAmount": {
+            "title": "Bonus: Nollställning",
+            "help": "Utdelas i slutet av spelet. Ger vinnaren en extra bonus av den här poängen om de har vunnit varje runda."
+        }
+    },
+    "presets": {
+        "straightGin": {
+            "title": "Rakt gin",
+            "description": [
+                "Ingen knackning",
+                "Ingen bonus"
+            ]
+        },
+        "oklahomaGin": {
+            "title": "Oklahoma Gin",
+            "description": [
+                "Knock-värde baserat på första kassen"
+            ]
+        }
+    },
+    "help": {
+        "rounds": {
+            "title": "Rundor",
+            "description": [
+                "Spelet består av flera rundor. Varje runda får spelarna 10 kort, och ett kort visas i högen. Spelarna kan välja att passa eller ta det översta kortet från högen.",
+                "Turerna växlar, och när det är din tur kan du ta ett kort från högen eller kortleken. Efteråt måste du lägga tillbaka ett kort till högen."
+            ]
+        },
+        "deadwood": {
+            "title": "Döda trädet",
+            "description": [
+                "Deadwood syftar på kort som inte ingår i några kombinationer. Värdet av deadwood räknas genom att addera värdena på dessa kort (t.ex. två kungar och en femma blir totalt 25).",
+                "Försök att hålla ditt deadwood så lågt som möjligt genom att bilda kombinationer och slänga kort med högt värde som inte är med i några kombinationer."
+            ]
+        },
+        "melds": {
+            "title": "Meldningar",
+            "description": [
+                "Melds kan göras genom att ha en sekvens av tre eller fler kort av samma färg (typ, 3R, 4R, 5R) eller tre eller fler av samma valör (typ, 3H, 3R, 3S).",
+                "Melds blir automatiskt markerade i din hand och i gränssnittet, så håll koll på högen—din motståndare kanske släpper kortet du behöver!"
+            ]
+        },
+        "knock": {
+            "title": "Knacka på",
+            "description": [
+                "Du kan knacka om din deadwood är mindre än 10. När du knackar, så avslöjas alla kort, och du får se din motståndares deadwood. Om din deadwood är högre, så vinner din motståndare rundan med en bonus.",
+                "Poängräkningen för en knackning är enkel: dra din deadwood från din motståndares. Till exempel, om din deadwood är 5 och din motståndares är 25, så får du 20 poäng."
+            ]
+        },
+        "gin": {
+            "title": "Gin och Stora Gin",
+            "description": [
+                "Om din dödviktskort är 0 eller kan bli 0 efter att du slängt ditt sista dödviktskort, så har du en Gin. Det garanterar en vinst och ger dig en bonus plus skillnaden i dödvikter.",
+                "En Big Gin är ännu bättre: om hela din hand, plus kortet du just dragit, bildar kombinationer, får du en större bonus. Ring alltid in en Big Gin så fort du har den!"
+            ]
+        },
+        "goal": {
+            "title": "Mål",
+            "description": [
+                "Målet är att vinna så många rundor som möjligt och vara den första som når 100 poäng. Då är spelet slut och de slutgiltiga poängen, inklusive bonuspoäng, visas.",
+                "Som standard får du 25 extra poäng för varje runda du vinner och 100 extra poäng för att vara den första som når 100 poäng."
+            ]
+        }
+    },
+    "info": {
+        "title": {
+            "tie": "Oavgjort",
+            "undercut": "Undercut",
+            "gin": "Gin",
+            "bigGin": "Stort Gin",
+            "knock": "Knacka",
+            "knockSuccessRate": "Knocka lyckat"
+        },
+        "tieDescription": "Det finns inte tillräckligt med kort kvar för att fortsätta spela. Det blev oavgjort!",
+        "scoreDescription": "Poängen räknas genom att kolla skillnaden mellan värdet på döda kort i varje spelares hand.",
+        "yourMeldAfterKnock": "Åh nej... Några av {name}'s döda kort kan flyttas till dina melds!",
+        "nameMeldAfterKnock": "Nice! Några av dina döda kort kan flyttas till {name}'s melds!"
+    }
+}

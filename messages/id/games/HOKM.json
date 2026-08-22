@@ -1,0 +1,155 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Berapa ronde yang harus dimenangkan satu tim untuk merebut pertandingan. Sebuah **Kot** bernilai lebih dari satu, jadi pertandingan bisa selesai dalam ronde yang lebih sedikit dari angka ini."
+        },
+        "trickTarget": {
+            "title": "Trik untuk menang satu ronde",
+            "help": "Berapa dari tiga belas trik yang harus diraih satu tim untuk memenangkan ronde. Tujuh adalah mayoritas klasik; angka lebih kecil membuat tiap ronde lebih singkat."
+        },
+        "trumpTime": {
+            "title": "Waktu menyebut truf",
+            "help": "Berapa lama Hakem boleh memikirkan jenis truf. Jika waktu habis, jenis terpanjang di tangannya dipilihkan untuknya."
+        },
+        "kot": {
+            "title": "Penilaian Kot",
+            "help": {
+                "double": "'Kot' membuat ronde 7-0 bernilai dua poin, bukan satu.",
+                "hakemKot": "'Kot & Hakem Kot' juga membuat menghabisi tim Hakem sendiri bernilai tiga poin.",
+                "off": "'Nonaktif' menghitung tiap ronde yang dimenangkan sebagai satu poin, sepincang apa pun jalannya."
+            },
+            "data": {
+                "double": "Kot",
+                "hakemKot": "Kot & Hakem Kot"
+            }
+        },
+        "hakemSelection": {
+            "title": "Memilih Hakem pertama",
+            "help": "Bagaimana penyebut truf pertama ditentukan. Setiap ronde sesudahnya mengikuti aturan di bawah.",
+            "data": {
+                "firstAce": "As pertama yang dibagi",
+                "random": "Acak"
+            },
+            "description": {
+                "firstAce": "Kartu dibuka mengelilingi meja sampai muncul As",
+                "random": "Satu kursi langsung diundi, tanpa upacara"
+            }
+        },
+        "hakemRetention": {
+            "title": "Mempertahankan Hakem",
+            "help": "Siapa yang menyebut truf di setiap ronde setelah yang pertama.",
+            "data": {
+                "keepUntilLoss": "Sampai kalah",
+                "rotate": "Berpindah tiap ronde"
+            },
+            "description": {
+                "keepUntilLoss": "Hakem terus menyebut selama timnya terus menang",
+                "rotate": "Hak menyebut berpindah ke pemain berikutnya tiap ronde"
+            }
+        },
+        "hakemCardCount": {
+            "title": "Kartu sebelum menyebut",
+            "help": "Seberapa banyak kartunya yang dilihat Hakem sebelum menyebut truf. Lima adalah cara klasik; tiga belas membuat pilihannya benar-benar matang.",
+            "description": {
+                "five": "Pilihan klasik, atas sepertiga kartu di tangan",
+                "thirteen": "Hakem melihat semuanya sebelum memutuskan"
+            }
+        }
+    },
+    "presets": {
+        "quickHokm": {
+            "title": "Hokm cepat",
+            "description": [
+                "Pertama ke 3 ronde",
+                "Giliran lebih cepat"
+            ]
+        },
+        "kotRules": {
+            "title": "Aturan Kot",
+            "description": [
+                "Menyapu bersih bernilai 2",
+                "Menghabisi Hakem bernilai 3"
+            ]
+        },
+        "openHand": {
+            "title": "Sebut terbuka",
+            "description": [
+                "Hakem melihat semua 13 kartu",
+                "Hakem pertama acak"
+            ]
+        }
+    },
+    "hakem": {
+        "title": "Hakem"
+    },
+    "tricks": {
+        "title": "Trik"
+    },
+    "trump": {
+        "yourCall": "Sebutkan jenis truf",
+        "waiting": "{name} sedang menyebut truf...",
+        "called": "Truf",
+        "announcement": "Trufnya {suit}"
+    },
+    "header": {
+        "findingHakem": "Mencari As pertama...",
+        "yourCall": "Sebutkan jenis truf",
+        "nameCall": "{name} sedang menyebut truf",
+        "youTookTrick": "Kamu meraih trik itu",
+        "nameTookTrick": "{name} meraih trik itu",
+        "youWonRound": "Timmu memenangkan ronde ini!",
+        "themWonRound": "Tim lawan memenangkan ronde ini"
+    },
+    "result": {
+        "normal": "{name} menang {tricks}",
+        "kot": "{name} menyapu bersih, {tricks}",
+        "hakemKot": "{name} menghabisi Hakem, {tricks}"
+    },
+    "rounds": {
+        "title": "Riwayat Putaran"
+    },
+    "scoreboard": {
+        "target": "Pertama ke {amount}, {tricks} trik per ronde"
+    },
+    "statistics": {
+        "sweeps": "Kot",
+        "tricksPerMatch": "Trik / pertandingan"
+    },
+    "help": {
+        "rules": {
+            "title": "Aturan",
+            "description": [
+                "Hokm dimainkan empat orang dalam dua tim berisi dua, dengan pasangan duduk berhadapan. Seluruh 52 kartu dibagikan, jadi setiap orang memegang tiga belas.",
+                "Satu pemain menjadi **Hakem**. Ia melihat kartu pertamanya sebelum orang lain dan menyebut jenis **truf** yang mengalahkan jenis lain sepanjang ronde."
+            ]
+        },
+        "trump": {
+            "title": "Truf dan mengikuti jenis",
+            "description": [
+                "Hakem membuka trik pertama. Semua yang lain harus **mengikuti jenis** kalau bisa; hanya pemain yang kehabisan jenis itu boleh mengeluarkan kartu lain.",
+                "Truf tertinggi yang dimainkan meraih trik. Kalau tak ada yang menruf, kartu tertinggi dari jenis pembuka yang menang. As bernilai paling tinggi."
+            ]
+        },
+        "tricks": {
+            "title": "Meraih trik",
+            "description": [
+                "Siapa pun yang meraih trik membuka trik berikutnya, jadi menang berarti juga memilih jenis yang harus diikuti semua orang.",
+                "Tim pertama yang meraih **tujuh** trik memenangkan ronde — sisa kartunya tidak dimainkan."
+            ]
+        },
+        "scoring": {
+            "title": "Penilaian",
+            "description": [
+                "Setiap ronde yang dimenangkan bernilai satu poin, dan tim pertama yang mencapai tujuh poin memenangkan pertandingan. Meraih ketujuh trik disebut **Kot** dan bernilai dua.",
+                "Hakem tetap menjadi Hakem selama timnya menang; begitu mereka kalah satu ronde, hak menyebut berpindah ke pemain di sebelah kanannya."
+            ]
+        },
+        "bots": {
+            "title": "Bot",
+            "description": [
+                "Bot mudah memainkan kartu apa pun yang diizinkan. Bot normal membaca trik di depannya: mereka menjauh dari trik yang sudah dimenangkan pasangannya dan meraih sisanya semurah mungkin.",
+                "Bot sulit menghitung kartu. Mereka mengingat jenis apa yang sudah habis di tanganmu, kartu tinggi mana yang sudah keluar, dan jenis apa yang kamu buka — membuka jenis yang sama dua kali di depan pasanganmu adalah sesuatu yang akan mereka jawab."
+            ]
+        }
+    }
+}

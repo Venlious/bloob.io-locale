@@ -1,0 +1,148 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "How many points a team needs to win the match. A made contract is worth eighty or more, so 301 is about four good rounds."
+        },
+        "minimumBid": {
+            "title": "Lowest bid allowed",
+            "help": "The smallest contract the auction will accept. Eight is the partnership standard, because a bid here is backed by two hands rather than one."
+        },
+        "defenderMinimum": {
+            "title": "Tricks the defenders owe",
+            "help": {
+                "on": "A defending side that takes fewer than this against a contract that comes off is charged the contract as well.",
+                "off": "'0' lets the defenders lose a round without owing anything for it."
+            }
+        },
+        "bidTime": {
+            "title": "Bidding Time",
+            "help": "How long each player gets to bid. If the clock runs out, they pass."
+        }
+    },
+    "presets": {
+        "default": {
+            "title": "Eşli İhaleli Batak",
+            "description": [
+                "Partners, and an auction for trump",
+                "The Batak most tables play"
+            ]
+        },
+        "quickBatak": {
+            "title": "Quick Batak",
+            "description": [
+                "First to 151 points",
+                "Faster turns"
+            ]
+        },
+        "marathon": {
+            "title": "Marathon",
+            "description": [
+                "First to 501 points",
+                "The long game"
+            ]
+        },
+        "openAuction": {
+            "title": "Open Auction",
+            "description": [
+                "Bidding opens at six",
+                "More hands worth taking on"
+            ]
+        },
+        "noObligation": {
+            "title": "No Obligation",
+            "description": [
+                "The defenders owe nothing",
+                "Losing a round costs them no points"
+            ]
+        }
+    },
+    "declarer": {
+        "title": "Declarer"
+    },
+    "tricks": {
+        "title": "Tricks"
+    },
+    "contract": {
+        "value": "Bid {amount}"
+    },
+    "bid": {
+        "title": "Bid",
+        "yourBid": "Bid for the contract",
+        "waiting": "{name} is bidding...",
+        "pass": "Pass"
+    },
+    "trump": {
+        "yourCall": "Call the trump suit",
+        "waiting": "{name} is calling trump...",
+        "called": "Trump",
+        "announcement": "Trump is {suit}"
+    },
+    "header": {
+        "yourBid": "Make your bid",
+        "nameBid": "{name} is bidding",
+        "yourCall": "Name the trump suit",
+        "nameCall": "{name} is naming trump",
+        "youTookTrick": "You took the trick",
+        "nameTookTrick": "{name} took the trick",
+        "youWonRound": "Your team scored!",
+        "themWonRound": "The other team scored",
+        "youBrokeContract": "You broke their contract!",
+        "yourContractFailed": "Your contract went down"
+    },
+    "result": {
+        "made": "{name} bid {bid} and took {tricks}",
+        "failed": "{name} bid {bid} but took only {tricks}",
+        "swept": "{name} bid {bid}, took {tricks}, and left nothing for the defence",
+        "contractMade": "Contract made",
+        "contractFailed": "Contract failed"
+    },
+    "rounds": {
+        "title": "Round history",
+        "outcome": "Result"
+    },
+    "scoreboard": {
+        "target": "First to {amount} points"
+    },
+    "statistics": {
+        "contracts": "Contracts won",
+        "contractsMade": "Contracts made",
+        "tricksPerMatch": "Tricks / match"
+    },
+    "help": {
+        "rules": {
+            "title": "Rules",
+            "description": [
+                "Batak is played by four people in two teams of two, with partners sitting opposite each other. Every card of a standard 52-card deck is dealt, so everybody holds thirteen.",
+                "Before a card is played the table **bids**: each player in turn says how many of the thirteen tricks their team will take, or passes. Once you pass you are out of the bidding for that round."
+            ]
+        },
+        "bidding": {
+            "title": "Bidding",
+            "description": [
+                "Every bid has to beat the one before it, and the lowest bid allowed is eight. Being outbid does not put you out: you get another turn, and you can take the contract back.",
+                "The last player still in wins the auction, names the **trump** suit and leads the first trick. If all four pass, the hand is thrown in and dealt again."
+            ]
+        },
+        "trump": {
+            "title": "Trump and following suit",
+            "description": [
+                "Everybody has to **follow suit** if they can. If you cannot, you **must trump** — this is the rule that gives Batak its shape, and the one that catches out players coming from other trick games. Only a hand with neither the suit nor a trump may play anything it likes.",
+                "A trump played on top of a trump has to **beat** it, if you hold one that can. The highest trump takes the trick; if nobody trumped it, the highest card of the suit that was led wins. Aces are high."
+            ]
+        },
+        "scoring": {
+            "title": "Scoring",
+            "description": [
+                "A contract that comes off is worth **ten points a trick** — a bid of eight is eighty — plus a single point for each trick over it. A contract that fails costs the whole of it. The defending side is never paid for its tricks, so the auction is where the match is won.",
+                "The defenders do owe **two tricks** of their own. Take fewer than that against a contract that comes off and your side is charged the contract as well, so the round moves the scoreboard twice."
+            ]
+        },
+        "bots": {
+            "title": "Bots",
+            "description": [
+                "Easy bots talk themselves into contracts they cannot make, and play any card the rules allow. Normal bots bid what their hand is worth and read the trick in front of them: they stay out of a partner's winning trick and take the rest as cheaply as they can.",
+                "Hard bots count the cards. They remember which suits you have run out of, which high cards are gone, and which suits you have chosen to lead — so leading a suit at your partner twice is something they will answer."
+            ]
+        }
+    }
+}

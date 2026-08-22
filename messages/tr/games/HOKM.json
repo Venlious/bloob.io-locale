@@ -1,0 +1,155 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Bir takımın maçı alması için kaç el kazanması gerektiği. Bir **Kot** birden fazla sayılır, yani maç bu sayıdan daha az turda bitebilir."
+        },
+        "trickTarget": {
+            "title": "El kazanmak için gereken",
+            "help": "Bir takımın eli kazanmak için on üç elden kaçını alması gerektiği. Yedi klasik çoğunluktur; daha düşük bir sayı her eli kısaltır."
+        },
+        "trumpTime": {
+            "title": "Koz belirleme süresi",
+            "help": "Hakem'in koz rengini söylemek için ne kadar süresi olduğu. Süre biterse elindeki en uzun renk onun adına seçilir."
+        },
+        "kot": {
+            "title": "Kot puanlaması",
+            "help": {
+                "double": "'Kot', 7-0 biten bir eli bir yerine iki puan değerinde yapar.",
+                "hakemKot": "'Kot ve Hakem Kot' ayrıca Hakem'in kendi takımını sıfıra düşürmeyi üç puan değerinde yapar.",
+                "off": "'Kapalı', kazanılan her eli ne kadar tek taraflı olursa olsun tek puan sayar."
+            },
+            "data": {
+                "double": "Kot",
+                "hakemKot": "Kot ve Hakem Kot"
+            }
+        },
+        "hakemSelection": {
+            "title": "İlk Hakem'in seçimi",
+            "help": "İlk kozu belirleyecek kişinin nasıl bulunacağı. Sonraki her el aşağıdaki kurala uyar.",
+            "data": {
+                "firstAce": "Dağıtılan ilk As",
+                "random": "Rastgele"
+            },
+            "description": {
+                "firstAce": "Bir As çıkana kadar masaya açık kart dağıtılır",
+                "random": "Bir koltuk hemen çekilir, tören yok"
+            }
+        },
+        "hakemRetention": {
+            "title": "Hakem'i koruma",
+            "help": "İlkinden sonraki her elde kozu kimin belirleyeceği.",
+            "data": {
+                "keepUntilLoss": "Kaybedene kadar",
+                "rotate": "Her el devret"
+            },
+            "description": {
+                "keepUntilLoss": "Takımı kazandığı sürece Hakem belirlemeye devam eder",
+                "rotate": "Belirleme hakkı her el sıradaki oyuncuya geçer"
+            }
+        },
+        "hakemCardCount": {
+            "title": "Belirlemeden önceki kartlar",
+            "help": "Hakem'in kozu söylemeden önce elinin ne kadarını gördüğü. Beş klasiktir; on üç kararı tamamen bilinçli kılar.",
+            "description": {
+                "five": "Elin üçte biriyle yapılan klasik seçim",
+                "thirteen": "Hakem karar vermeden önce her şeyi görür"
+            }
+        }
+    },
+    "presets": {
+        "quickHokm": {
+            "title": "Hızlı Hokm",
+            "description": [
+                "3 ele ilk ulaşan",
+                "Daha hızlı sıralar"
+            ]
+        },
+        "kotRules": {
+            "title": "Kot kuralları",
+            "description": [
+                "Hepsini almak 2 değerinde",
+                "Hakem'i sıfırlamak 3 değerinde"
+            ]
+        },
+        "openHand": {
+            "title": "Açık belirleme",
+            "description": [
+                "Hakem 13 kartın hepsini görür",
+                "Rastgele ilk Hakem"
+            ]
+        }
+    },
+    "hakem": {
+        "title": "Hakem"
+    },
+    "tricks": {
+        "title": "Eller"
+    },
+    "trump": {
+        "yourCall": "Koz rengini söyle",
+        "waiting": "{name} kozu belirliyor...",
+        "called": "Koz",
+        "announcement": "Koz {suit}"
+    },
+    "header": {
+        "findingHakem": "İlk As aranıyor...",
+        "yourCall": "Koz rengini söyle",
+        "nameCall": "{name} kozu söylüyor",
+        "youTookTrick": "Eli sen aldın",
+        "nameTookTrick": "Eli {name} aldı",
+        "youWonRound": "Takımın eli kazandı!",
+        "themWonRound": "Diğer takım eli kazandı"
+    },
+    "result": {
+        "normal": "{name} kazandı {tricks}",
+        "kot": "{name} hepsini aldı, {tricks}",
+        "hakemKot": "{name} Hakem'i sıfırladı, {tricks}"
+    },
+    "rounds": {
+        "title": "Tur geçmişi"
+    },
+    "scoreboard": {
+        "target": "{amount} puana ilk ulaşan, el başına {tricks}"
+    },
+    "statistics": {
+        "sweeps": "Kot",
+        "tricksPerMatch": "El / maç"
+    },
+    "help": {
+        "rules": {
+            "title": "Kurallar",
+            "description": [
+                "Hokm, ikişer kişilik iki takımla dört kişi arasında oynanır ve eşler karşılıklı oturur. 52 kartlık destenin tamamı dağıtılır, yani herkesin elinde on üç kart olur.",
+                "Oyunculardan biri **Hakem**'dir. İlk kartlarını herkesten önce görür ve elin geri kalanında diğer bütün renkleri yenen **koz** rengini söyler."
+            ]
+        },
+        "trump": {
+            "title": "Koz ve renge uyma",
+            "description": [
+                "İlk eli Hakem açar. Diğer herkes elinde varsa **renge uymak** zorundadır; yalnızca açılan renkten kartı kalmayan başka bir şey oynayabilir.",
+                "Oynanan en yüksek koz eli alır. Kimse koz oynamadıysa açılan rengin en yüksek kartı kazanır. Aslar en yüksektir."
+            ]
+        },
+        "tricks": {
+            "title": "El almak",
+            "description": [
+                "Eli alan bir sonrakini açar, yani kazanmak aynı zamanda herkesin uymak zorunda kalacağı rengi seçmek demektir.",
+                "**Yedi** eli ilk alan takım oyunu kazanır — kalan kartlar oynanmaz."
+            ]
+        },
+        "scoring": {
+            "title": "Puanlama",
+            "description": [
+                "Kazanılan her el bir puan değerindedir ve yedi puana ilk ulaşan takım maçı kazanır. Yedi elin hepsini almak **Kot**'tur ve iki sayılır.",
+                "Takımı kazandığı sürece Hakem, Hakem kalır; bir eli kaybettikleri anda belirleme hakkı sağındaki oyuncuya geçer."
+            ]
+        },
+        "bots": {
+            "title": "Botlar",
+            "description": [
+                "Kolay botlar kuralların izin verdiği herhangi bir kartı oynar. Normal botlar önlerindeki eli okur: eşlerinin kazandığı elden uzak durur, geri kalanını da mümkün olan en ucuz kartla alır.",
+                "Zor botlar kart sayar. Hangi renkleri bitirdiğini, hangi yüksek kartların çıktığını ve hangi renkleri açtığını hatırlarlar — eşinin önünde aynı rengi iki kez açmak, karşılık verecekleri bir şeydir."
+            ]
+        }
+    }
+}

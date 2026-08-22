@@ -1,0 +1,123 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Peli loppuu heti, kun joku pelaaja saa tämän verran pisteitä. Mutta se ei takaa voittoa, koska pelin lopussa jaetaan vielä bonuspisteitä."
+        },
+        "knock": {
+            "title": "Koputus",
+            "help": {
+                "enabled": "'Päällä' mahdollistaa kolkuttamisen asetetun kolkutusrajan mukaan.",
+                "firstDiscardCard": "'Ensimmäisen hylätyn kortin mukaan' käyttää ensimmäistä hylättyä korttia rajan asettamiseen; jos ässä vedetään, sun on pakko mennä Gin.",
+                "disabled": "'Pois päältä' sallii kierroksen päättämisen vain Ginillä."
+            },
+            "data": {
+                "firstDiscardCard": "Perustuu ekaan hylättyyn korttiin"
+            }
+        },
+        "knockBasedOnFirstCard": {
+            "title": "Knock Ensimmäisen Hylkäyksen Mukaan",
+            "help": "Kun tää on päällä, niin ensimmäinen kortti hylkäyskasaassa määrittää, kuinka paljon voi koputtaa. Pelaajat voi koputtaa vaan, jos niiden \"deadwood\" on tämän kortin arvon alapuolella tai yhtä suuri."
+        },
+        "knockThreshold": {
+            "title": "Koputusraja",
+            "help": "Pelaaja voi lyödä, kun on hänen vuoronsa ja hänen roskansa on alle tai yhtä suuri kuin asetettu raja."
+        },
+        "ginPointAmount": {
+            "title": "Gini",
+            "help": "Pisteet, jotka pelaaja saa, kun huutaa Gin, eli kun kaikki kortit kädessä on yhdistelmässä."
+        },
+        "bigGinPointAmount": {
+            "title": "Iso Gin",
+            "help": "Pisteet, jotka pelaaja saa, kun kutsuu Big Giniä, eli silloin kun kaikki kortit kädessä plus nostettu kortti on yhdistelmässä, eikä jää mitään turhaa korttia."
+        },
+        "undercutPointAmount": {
+            "title": "Alaleikkaus",
+            "help": "Alaleikkaus tapahtuu, kun pelaaja lyö, mutta vastustajalla on sama tai vähemmän kuollutta puuta. Tässä tapauksessa vastustaja saa ekstra pisteitä."
+        },
+        "firstBonusPointAmount": {
+            "title": "Bonus: Ensimmäinen voittaja",
+            "help": "Palkitaan pelin lopussa. Antaa ensimmäisenä 'Voitto Summaan' päässeen pelaajan bonuksen."
+        },
+        "roundBonusPointAmount": {
+            "title": "Bonus: Kierros",
+            "help": "Palkitaan pelin lopussa. Antaa jokaiselle pelaajalle tämän verran pisteitä jokaisesta voitetusta kierroksesta, ilman tasapelejä."
+        },
+        "shutoutBonusPointAmount": {
+            "title": "Bonus: Nollaus",
+            "help": "Palkitaan pelin lopussa. Antaa voittajalle lisäpisteitä, jos on voittanut jokaisen kierroksen."
+        }
+    },
+    "presets": {
+        "straightGin": {
+            "title": "Suora gini",
+            "description": [
+                "Ei koputusta",
+                "Ei bonusta"
+            ]
+        },
+        "oklahomaGin": {
+            "title": "Oklahoma Gin",
+            "description": [
+                "Knock-arvo ensimmäisen hylkäyksen mukaan"
+            ]
+        }
+    },
+    "help": {
+        "rounds": {
+            "title": "Kierrokset",
+            "description": [
+                "Peli koostuu useista kierroksista. Jokaisella kierroksella pelaajille jaetaan 10 korttia, ja yksi kortti näytetään pinoon. Pelaajat voivat päättää, ottavatko he kortin vai passaaako.",
+                "Vuorot vaihtelee, ja omalla vuorollasi voit ottaa kortin pinosta tai pakasta. Sen jälkeen sun pitää palauttaa yksi kortti pinoon."
+            ]
+        },
+        "deadwood": {
+            "title": "Kuollut puu",
+            "description": [
+                "Deadwood tarkoittaa kortteja, jotka ei oo osa mitään yhdistelmää. Deadwoodin arvo lasketaan lisäämällä näiden korttien arvot yhteen (esim. kaksi Kuningasta ja viitonen yhteensä 25).",
+                "Yritä pitää sun deadwood mahdollisimman alhaalla tekemällä yhdistelmiä ja heittämällä pois korkeita kortteja, jotka ei oo yhdistelmissä."
+            ]
+        },
+        "melds": {
+            "title": "Meldit",
+            "description": [
+                "Meldit voi tehdä, kun sulla on kolme tai enemmän korttia samaa maata peräkkäin (esim. 3D, 4D, 5D) tai kolme tai enemmän samaa arvoa (esim. 3H, 3D, 3S).",
+                "Meldit korostuu automaattisesti sun kädessä ja käyttöliittymässä, joten pidä silmällä pinoa—vastustaja saattaa tiputtaa kortin, jota tarvitset!"
+            ]
+        },
+        "knock": {
+            "title": "Koputus",
+            "description": [
+                "Voit koputtaa, jos sun \"deadwood\" on alle 10. Kun koputat, kaikki kortit paljastuu, ja näet sun vastustajan \"deadwoodin\". Jos sun \"deadwood\" on korkeampi, vastustaja voittaa kierroksen bonuksella.",
+                "Koputuksen pisteytys on helppoa: vähennä sun \"deadwood\" vastustajan \"deadwoodista\". Esimerkiksi, jos sun \"deadwood\" on 5 ja vastustajan 25, saat 20 pistettä."
+            ]
+        },
+        "gin": {
+            "title": "Gin ja Iso Gin",
+            "description": [
+                "Jos sun kuollut puu on 0 tai voi olla 0, kun heität viimeisen kuolleen kortin, niin sulla on Gin. Tää takaa voiton ja saat bonuksen plus kuolleiden korttien eron.",
+                "Iso Gin on vielä parempi: jos sun koko käsi ja se kortti, jonka just nostit, muodostaa yhdistelmiä, saat isomman bonuksen. Muista huutaa Iso Gin heti, kun saat sen!"
+            ]
+        },
+        "goal": {
+            "title": "Tavoite",
+            "description": [
+                "Tavoitteena on voittaa mahdollisimman monta kierrosta ja olla eka, joka saavuttaa 100 pistettä. Tää päättää pelin ja paljastaa lopulliset pisteet, mukaan lukien bonuspisteet.",
+                "Oletuksena saat 25 ekstra pistettä jokaisesta voitetusta kierroksesta ja vielä 100 pistettä, jos oot eka, joka saavuttaa 100 pistettä."
+            ]
+        }
+    },
+    "info": {
+        "title": {
+            "tie": "Tasapeli",
+            "undercut": "Alikuristus",
+            "gin": "Gin",
+            "bigGin": "Iso Gin",
+            "knock": "Koputus",
+            "knockSuccessRate": "Koputus onnistui!"
+        },
+        "tieDescription": "Kortteja ei oo tarpeeks jäljellä pelaamiseen. Tasapeli!",
+        "scoreDescription": "Pisteet lasketaan siten, että katsotaan, kuinka paljon kuollut puu on kummankin pelaajan käsissä.",
+        "yourMeldAfterKnock": "Voi ei... Osaa {name}n kuolleista korteista voi siirtää sun meldiin!",
+        "nameMeldAfterKnock": "Siistiä! Osaa sun kuolleista korteista voi siirtää {name}n meldiin!"
+    }
+}

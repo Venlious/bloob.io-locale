@@ -1,0 +1,151 @@
+{
+    "options": {
+        "wagerTime": {
+            "title": "Bahis Zamanı",
+            "help": "Her oyuncunun tur için bahisini yapması gereken süre. Bu sadece bahisler açıldığında kullanılır."
+        },
+        "dealerSecondCard": {
+            "title": "Krupiyenin İkinci Kartı",
+            "help": "İkinci kartın açık mı (görünür) yoksa kapalı mı (gizli) olduğunu belirler. İkinci kart görünür olduğunda, oyuncuların krupiyeye karşı büyük bir avantajı olur."
+        },
+        "wager": {
+            "title": "Bahis",
+            "help": "Oyuncular, sıralarının başında puanlarını bahse yatırdıklarında bu özellik açılır. Eğer turu kazanırlarsa, yatırdıkları puan iki katına çıkar; kaybederlerse, orijinal puanlarını korurlar. Oyuncular, sahip olduklarından daha fazla puan bahse yatıramazlar."
+        },
+        "startPointAmount": {
+            "title": "Başlangıç Noktaları",
+            "help": "Her oyuncunun başladığı puan sayısı."
+        },
+        "basePointAmount": {
+            "title": "Temel Puanlar",
+            "help": "Bir oyuncunun krupiyeye karşı bir turu kazandığında kesin olarak kazanacağı puanlar."
+        },
+        "blackjackBonusPointAmount": {
+            "title": "Bonus Blackjack Puanları",
+            "help": "Blackjack ile bir el kazandığında verilen \"Temel Puanlar\"ın üstüne ek puanlar."
+        },
+        "doubleDown": {
+            "title": "İki Katına Çıkart",
+            "help": "Açık olduğunda, oyuncular ilk hamlelerinde bahislerini iki katına çıkarabilir, tam olarak bir ek kart alabilir ve sonra otomatik olarak bekleyebilirler."
+        },
+        "split": {
+            "title": "Bölme",
+            "help": "Açık olduğunda, oyuncular ilk iki kartlarını aynı değere sahipse iki ayrı elde ayırabilirler."
+        },
+        "insurance": {
+            "title": "Sigorta",
+            "help": "Açık olduğunda ve krupiye As gösterdiğinde, oyuncular krupiyenin blackjack yapması durumunda kayıplarını azaltmak için bir sigorta yan bahsi koyabilirler."
+        },
+        "naturalBlackjack": {
+            "title": "Doğal Blackjack",
+            "help": "Açık olduğunda, iki kartla 21 (As + 10 değerinde kart) elde etmek hemen oyunu kazanır."
+        },
+        "aceHandling": {
+            "title": "Asa Kullanımı",
+            "help": "Bir As'ın nasıl puanlandığını seç. Dinamik seçenek, As'ı 11 olarak saymanın elin 21'i geçmesine neden olacağı durumlarda otomatik olarak 1 olarak sayar.",
+            "data": {
+                "ONE_OR_ELEVEN": "Dinamik (1 ya da 11)",
+                "ONE": "Her zaman 1",
+                "ELEVEN": "Her zaman 11"
+            }
+        },
+        "splitSameFaceOnly": {
+            "title": "Split sadece aynı kartla",
+            "help": "Açıkken split yalnızca iki başlangıç kartı aynı kartsa yapılabilir (örneğin K+K veya 8+8), sadece sayısal değerlerinin aynı olması yetmez."
+        },
+        "fiveCardCharlie": {
+            "title": "Five Card Charlie",
+            "help": "Açıkken toplamı 21 veya daha az olan beş kartlı herhangi bir oyuncu eli otomatik kazanır. Bu kural krupiye uygulanmaz."
+        }
+    },
+    "presets": {
+        "pointBased": {
+            "title": "Puan Bazlı",
+            "description": [
+                "Kazanarak puan kazan",
+                "10 tur"
+            ]
+        },
+        "wagerOnly": {
+            "title": "Sadece Bahis Yap",
+            "description": [
+                "25 puanla başla",
+                "Bahis yaparak puan kazan",
+                "10 tur"
+            ]
+        }
+    },
+    "help": {
+        "gameplay": {
+            "title": "Oynanış",
+            "description": [
+                "İki kartla başlıyorsun. 'Hit' (bir kart daha çek) ya da 'stand' (mevcut toplamını koru) seçebilirsin.",
+                "Amaç, 21'e mümkün olduğunca yaklaşmak ama geçmemek. Bir As özel, çünkü ya 1 ya da 11 puan sayılabiliyor."
+            ]
+        },
+        "dealer": {
+            "title": "Krupiye Kuralları",
+            "description": [
+                "Krupiye toplamda 16 veya daha azsa kart çekmeli, 17 veya daha fazlasında durmalı.",
+                "Krupiyenin bu kurallara uyması, oyuncu için önemli bir stratejik unsur katıyor."
+            ]
+        },
+        "objective": {
+            "title": "Amaç",
+            "description": [
+                "Amaç, el değerinin 21'e daha yakın olması ama 21'i geçmemek. Eğer toplamın, krupiyenin toplamıyla aynı olursa buna 'push' denir, yani ne kazanırsın ne kaybedersin.",
+                "İki kartla 21'e ulaşmak 'blackjack' denir, bu genelde özel bir kazanma durumu getirir."
+            ]
+        },
+        "wagering": {
+            "title": "Bahis Yapma",
+            "description": [
+                "Bizim blackjack versiyonumuzda, fiş ya da gerçek para ile bahis yapamazsın. Bunun yerine, oyundaki puanlarını bahis yaparak rakiplerini geçebilirsin.",
+                "Eğer 10 puan bahis yapıp, krupiyeye karşı kazanırsan ve iflas etmezsen, ekstra 10 puan alırsın. Ama kaybedersen, bahis yaptığın 10 puanı kaybedersin."
+            ]
+        },
+        "doubleDown": {
+            "title": "İki Katına Çıkart",
+            "description": [
+                "Double down, mevcut bahsini iki katına çıkarmanı sağlar ama tam olarak bir kart daha almayı taahhüt etmen gerekiyor.",
+                "O kartı aldıktan sonra, elin otomatik olarak durur, bu da yüksek risk, yüksek ödül anlamına geliyor."
+            ]
+        },
+        "split": {
+            "title": "Bölüş",
+            "description": [
+                "Eğer ilk iki kartın aynı değerdeyse, onları iki ayrı elde ayırabilirsin.",
+                "Yeni elde eşit bir bahis yapılıyor ve her iki el de krupiyeye karşı bağımsız olarak oynanıyor."
+            ]
+        },
+        "insurance": {
+            "title": "Sigorta",
+            "description": [
+                "Krupiye bir As gösterdiğinde, sigorta denilen isteğe bağlı bir yan bahsi koyabilirsin.",
+                "Sigorta, krupiyenin blackjack'i varsa ödeniyor, ama krupiye yoksa kaybediyorsun."
+            ]
+        },
+        "winCondition": {
+            "title": "Kazanma Şartı",
+            "description": [
+                "Oyun varsayılan olarak 10 turdan sonra bitiyor ve en çok puanı olan kazanıyor.",
+                "Lobby ayarlarında kendi oyununun kurallarını ve kazanma koşulunu ayarlayabilirsin. Ya da bir oyuncu X kadar puana ulaştığında oyunu bitirebilirsin."
+            ]
+        }
+    },
+    "info": {
+        "blackjackResult": {
+            "BUST": "Bu elde kaybettin",
+            "LOSS": "Bu elde kaybettin",
+            "WIN": "Bu elde kazandın!",
+            "WIN_BLACKJACK": "Blackjack! Bu elde kazandın!",
+            "PUSH": "Bu el berabere gitti",
+            "FIVE_CARD_CHARLIE": "Five Card Charlie! Ellerinden biri beş kartla otomatik kazandı."
+        },
+        "dealerRules": "Krupiye {hitValue} veya daha az alır, {standValue} ve üstünde durur.",
+        "waitingForWagerFromOthers": "Herkesin bahsini yapmasını bekliyoruz...",
+        "selfReceivedPoints": "{points} puan aldın.",
+        "selfLostPoints": "{points} puan kaybettin.",
+        "selfRanOutOfPoints": "Puanların bitti."
+    }
+}

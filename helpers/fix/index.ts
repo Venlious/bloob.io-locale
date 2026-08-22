@@ -3,23 +3,26 @@ import {
 	ensureSameOrder,
 	loadMessages,
 	addMissingEntriesToObject,
-	writeFile,
+	writeCatalogue,
 	getMissingCount
 } from '../utils'
-import * as osPath from 'path'
 
 // Data
 import { supportedLocales } from '../../index'
-const LOCALE_FOLDER = `../../messages`
 
 /**
- * Ensures the locale file is consistent with the source.
+ * Ensures the locale catalogue is consistent with the source.
  *
- * @param source Source file to compare against
- * @param target Target file to modify to match
+ * Works on the whole merged tree (`core.json` plus every `games/<GAME>.json`)
+ * and writes it back out split, so key order, additions and removals are
+ * decided against English once rather than file by file. A key that moves
+ * between core and a game file follows automatically.
+ *
+ * @param source Source locale to compare against
+ * @param target Target locale to modify to match
  */
-const checkAndFixLocale = async (source: string, target: string) => {
-	const { LOCALE_SOURCE, LOCALE_TARGET } = await loadMessages(source, target)
+const checkAndFixLocale = (source: string, target: string) => {
+	const { LOCALE_SOURCE, LOCALE_TARGET } = loadMessages(source, target)
 
 	try {
 		// Add missing entries to the object
@@ -28,32 +31,31 @@ const checkAndFixLocale = async (source: string, target: string) => {
 		// Ensure order is consistent with source
 		data = ensureSameOrder(LOCALE_SOURCE, data)
 
-		// Update total and missing key counts
 		const { total, missing } = getMissingCount(data)
 		data._meta.total = total
 		data._meta.missing = missing
 
-		// Write file
-		writeFile(osPath.join(__dirname, `${LOCALE_FOLDER}/${target}.json`), data)
-		console.info(`Validated and fixed "${target}.json"...`)
+		writeCatalogue(target, data)
+		console.info(`Validated and fixed "${target}"...`)
 	} catch (error) {
 		console.error(error)
-		throw `Failed to validate or write output file for "${target}.json".`
+		throw `Failed to validate or write output files for "${target}".`
 	}
 }
 
-const process = async () => {
+const process = () => {
 	/**
 	 * Loops through all supported locales and fixes the following:
 	 * - Makes sure key order is consistent with source
 	 * - Adds missing entries present in source
 	 * - Removes entries that are not in source
 	 * - Makes sure the _meta.total and _meta.missing counts are updated
+	 * - Puts every key in the file it belongs in (core vs. per-game)
 	 */
-	supportedLocales.forEach(async locale => {
-		await checkAndFixLocale(`en`, locale)
+	supportedLocales.forEach(locale => {
+		checkAndFixLocale(`en`, locale)
 	})
-	await checkAndFixLocale(`en`, `_empty`)
+	checkAndFixLocale(`en`, `_empty`)
 }
 
 process()

@@ -1,0 +1,123 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Le jeu se termine dès qu'un joueur atteint ce nombre de points. Mais ça garantit pas la victoire, parce que des points bonus sont donnés à la fin du jeu."
+        },
+        "knock": {
+            "title": "Frappe",
+            "help": {
+                "enabled": "'Activé' permet de frapper selon le seuil de frappe configuré.",
+                "firstDiscardCard": "'Basé sur la première carte défaussée' utilise la première carte défaussée pour fixer le seuil ; si un As est tiré, tu dois aller Gin.",
+                "disabled": "'Désactivé' permet de finir un tour seulement avec un Gin."
+            },
+            "data": {
+                "firstDiscardCard": "Basé sur la première carte défaussée"
+            }
+        },
+        "knockBasedOnFirstCard": {
+            "title": "Frapper sur le premier déchet",
+            "help": "Quand c'est activé, la première carte dans la pile de défausse détermine le seuil de knock. Les joueurs peuvent frapper seulement si leur deadwood est en dessous ou égal à la valeur de cette carte."
+        },
+        "knockThreshold": {
+            "title": "Seuil de frappe",
+            "help": "Un joueur peut frapper quand c'est son tour et que son deadwood est en dessous ou égal au seuil configuré."
+        },
+        "ginPointAmount": {
+            "title": "Gin",
+            "help": "Le nombre de points qu'un joueur gagne en disant \"Gin\", c'est quand toutes les cartes dans sa main sont en combinaison."
+        },
+        "bigGinPointAmount": {
+            "title": "Gros Gin",
+            "help": "Le nombre de points qu'un joueur gagne en appelant Big Gin, c'est quand toutes les cartes d'une main plus la carte piochée sont dans un meld, sans aucune carte morte."
+        },
+        "undercutPointAmount": {
+            "title": "Coupe en dessous",
+            "help": "Un undercut, c'est quand un joueur fait un knock, mais son adversaire a le même nombre de points de deadwood ou moins. Dans ce cas, l'adversaire gagne des points en plus."
+        },
+        "firstBonusPointAmount": {
+            "title": "Bonus : Premier à gagner",
+            "help": "Récompensé à la fin du jeu. Donne au joueur qui a été le premier à atteindre le 'Montant de Victoire' un bonus."
+        },
+        "roundBonusPointAmount": {
+            "title": "Bonus : Rond",
+            "help": "À la fin du jeu, on te file ça. Ça donne à chaque joueur ce nombre de points pour chaque manche qu'ils ont gagnée, sans compter les égalités."
+        },
+        "shutoutBonusPointAmount": {
+            "title": "Bonus : Pas de pitié",
+            "help": "À la fin du jeu, le gagnant reçoit un bonus de ce nombre de points s'il a gagné tous les tours."
+        }
+    },
+    "presets": {
+        "straightGin": {
+            "title": "Gin pur",
+            "description": [
+                "Pas de frapper",
+                "Pas de bonus"
+            ]
+        },
+        "oklahomaGin": {
+            "title": "Oklahoma Gin",
+            "description": [
+                "Valeur de knock basée sur le premier déchet"
+            ]
+        }
+    },
+    "help": {
+        "rounds": {
+            "title": "Tours",
+            "description": [
+                "Le jeu se joue en plusieurs manches. À chaque manche, les joueurs reçoivent 10 cartes, et une carte est montrée dans la pile. Les joueurs peuvent choisir de passer ou de prendre la carte du dessus de la pile.",
+                "Les tours alternent, et à ton tour, tu peux prendre une carte de la pile ou du paquet. Ensuite, tu dois rendre une carte à la pile."
+            ]
+        },
+        "deadwood": {
+            "title": "Deadwood - Bois Mort",
+            "description": [
+                "Les deadwood, c'est les cartes qui font pas partie de n'importe quel meld. La valeur des deadwood, c'est la somme des valeurs de ces cartes (par exemple, deux Rois et un cinq, ça fait 25 au total).",
+                "Essaie de garder ton deadwood au plus bas en formant des melds et en te débarrassant des cartes de valeur élevée qui sont pas dans les melds."
+            ]
+        },
+        "melds": {
+            "title": "Mélanges",
+            "description": [
+                "Les combinaisons peuvent se faire avec une suite de trois cartes ou plus de la même couleur (par exemple, 3 de carreau, 4 de carreau, 5 de carreau) ou trois cartes ou plus de la même valeur (par exemple, 3 de cœur, 3 de carreau, 3 de pique).",
+                "Les combinaisons sont automatiquement mises en avant dans ta main et l'interface, donc fais gaffe à la pile—ton adversaire pourrait balancer la carte qu'il te faut!"
+            ]
+        },
+        "knock": {
+            "title": "Frappe!",
+            "description": [
+                "Tu peux frapper si ton deadwood est en dessous de 10. Quand tu frappes, toutes les cartes sont révélées, et tu vois le deadwood de ton adversaire. Si ton deadwood est plus élevé, ton adversaire gagne le round avec un bonus.",
+                "Le scoring pour un knock, c'est simple : tu soustrais ton deadwood de celui de ton adversaire. Par exemple, si ton deadwood est à 5 et celui de ton adversaire à 25, tu marques 20 points."
+            ]
+        },
+        "gin": {
+            "title": "Gin et Big Gin",
+            "description": [
+                "Si t'as plus de deadwood ou que tu peux le rendre à 0 après avoir défaussé ta dernière carte deadwood, t'as un Gin. Ça te garantit la victoire et tu gagnes un bonus plus la différence de deadwood.",
+                "Un Big Gin, c'est encore mieux : si toute ta main, plus la carte que t'as piochée, forme des combinaisons, tu reçois un bonus plus gros. Appelle toujours un Big Gin dès que t'en as un!"
+            ]
+        },
+        "goal": {
+            "title": "Objectif",
+            "description": [
+                "Le but, c'est de gagner un max de rounds et d'être le premier à atteindre 100 points. Ça met fin au jeu et ça montre les scores finaux, avec les points bonus.",
+                "Par défaut, tu gagnes 25 points en plus pour chaque round que tu gagnes et 100 points de plus si tu es le premier à atteindre 100 points."
+            ]
+        }
+    },
+    "info": {
+        "title": {
+            "tie": "Égalité",
+            "undercut": "Couper",
+            "gin": "Gin",
+            "bigGin": "Gros Gin",
+            "knock": "Frapper",
+            "knockSuccessRate": "Knock réussi"
+        },
+        "tieDescription": "Y'a pas assez de cartes pour continuer à jouer. C'est une égalité!",
+        "scoreDescription": "Le score se calcule en regardant la différence entre la valeur totale des cartes mortes dans chaque main.",
+        "yourMeldAfterKnock": "Oh non... Une partie des cartes mortes de {name} peut être ajoutée à tes combinaisons!",
+        "nameMeldAfterKnock": "Génial! Une partie de tes cartes mortes peut aller dans les combinaisons de {name}!"
+    }
+}

@@ -1,0 +1,166 @@
+{
+    "options": {
+        "summaryEnabled": {
+            "title": "回合总结",
+            "help": "显示所有玩家的得分总结，包括所有点数的细分。"
+        },
+        "summaryTime": {
+            "title": "总结时间",
+            "help": "得分总结应显示多长时间才能继续。玩家也可以投票提前跳过回合总结。"
+        },
+        "playTime": {
+            "title": "游戏时间",
+            "help": "每个玩家需要多长时间从他们的手牌中选一张牌来继续游戏。"
+        },
+        "cribTime": {
+            "title": "婴儿床时间",
+            "help": "每个玩家需要多长时间来决定他们要送到垫子上的牌。"
+        },
+        "starterCardTime": {
+            "title": "初始卡片时间",
+            "help": "选定的玩家从牌堆中选取起始牌的时间有多长。起始牌在计算所有手牌和垫牌的分数时用作第五张牌。"
+        },
+        "revealSpeed": {
+            "title": "显示速度",
+            "help": "一轮结束后，得分揭晓的速度有多快。"
+        },
+        "dealerExtraCard": {
+            "title": "庄家额外牌",
+            "help": "当在3人游戏中启用时，发牌者会多得到一张垫牌。当禁用时，第四张牌会自动进入垫牌。"
+        },
+        "winCondition": {
+            "data": {
+                "HIGHEST_AFTER": "达到{n}分后得分最多 | 达到{n}分后得分最多 | 达到{n}分后得分最多"
+            }
+        }
+    },
+    "presets": {
+        "blitz": {
+            "title": "闪电战",
+            "description": [
+                "最先到31分",
+                "减少次数"
+            ]
+        }
+    },
+    "help": {
+        "objective": {
+            "title": "理解游戏目标",
+            "description": [
+                "抓鱼的目标是成为第一个达到目标分数的玩家，通常是121分。",
+                "游戏包括三个不同的部分，这些部分会一直进行直到有人赢。"
+            ]
+        },
+        "deal": {
+            "title": "交易",
+            "description": [
+                "根据玩家的数量，每个玩家会发到5或6张牌。每个玩家必须选择他们想要保留的4张牌，然后把其他的牌丢到“婴儿床”里，这个“婴儿床”是属于庄家的。",
+                "“婴儿床”可以被看作是第二手牌，当计算分数的时候，它会给庄家带来额外的分数。"
+            ]
+        },
+        "play": {
+            "title": "游戏玩法",
+            "description": [
+                "玩家轮流从手中打出一张牌到桌子上。在一轮游戏中，要记住已经打出的牌的总和，这个总和不能超过31。",
+                "玩家可以通过顺子、对子，以及使总和达到15来获得分数。在游戏中点击\"计分系统\"按钮，可以查看完整的规则。"
+            ]
+        },
+        "show": {
+            "title": "表演",
+            "description": [
+                "所有玩家在游戏中都已经打完手中的牌后，就会开始计算分数。庄家总是最后一个被计算，而且他们的庄家牌也会得分。",
+                "玩家可以通过各种组合赚取分数。在游戏中点击\"计分系统\"按钮，可以查看完整的规则。"
+            ]
+        }
+    },
+    "info": {
+        "type": {
+            "jackHeels": {
+                "title": "他的脚后跟得两分"
+            },
+            "oneForHisNob": {
+                "title": "他的贵族得一分",
+                "description": "如果你的杰克牌和起始牌是同一花色，就能得到 {points} 分。"
+            },
+            "fifteen": {
+                "title": "十五分",
+                "description": "为任何卡牌组合的总和为15的情况奖励{points}分。同一张卡可以被重复用于多个组合。",
+                "playTitle": "击中 {target}",
+                "playDescription": "为了加一张让总数达到15的牌，奖励{points}分。"
+            },
+            "pair": {
+                "title": "一对",
+                "description": "因为有两张相同等级的牌，奖励你 {points} 分。",
+                "playTitle": "放置一个 {title}",
+                "playDescription": "为刚刚打出的同等级卡片加分 {points}。"
+            },
+            "pairRoyal": {
+                "title": "三张一样的牌",
+                "description": "因为有三张相同等级的牌，奖励你 {points} 分。",
+                "playTitle": "放置一个{title}",
+                "playDescription": "为添加一张与最后两张牌同等级的牌奖励 {points} 分。"
+            },
+            "doublePairRoyal": {
+                "title": "双对皇家",
+                "description": "因为有四张相同等级的牌，奖励你 {points} 分。",
+                "playTitle": "放置一个{title}",
+                "playDescription": "奖励{points}分，因为你添加了一张和最后三张牌同等级的牌。"
+            },
+            "run": {
+                "title": "顺子",
+                "description": "为序列中的每张卡片奖励 {points} 分。",
+                "playTitle": "组成了{cards}张牌的顺子",
+                "playDescription": "为序列中的每张卡片奖励{points}分。卡片不需要按顺序，但需要放在一起。举个例子，如果你拿最后几张卡重新排列，它们应该连续不断地计数。"
+            },
+            "flush": {
+                "title": "四张同花牌",
+                "description": "如果你手里的所有牌都是同一花色，就能得到 {points} 分。这只适用于你手里的牌，不包括底牌和起始牌。"
+            },
+            "flushStarter": {
+                "title": "同花（5张牌）",
+                "description": "如果你手中的所有牌+底牌都是同一花色，就能得到{points}分。这只适用于你手中的牌，不包括底牌。"
+            },
+            "thirtyOneForTwo": {
+                "title": "两个得31分",
+                "playTitle": "恰好打到 {target}",
+                "playDescription": "给出了最后一张牌，使总数达到31的玩家奖励{points}分。"
+            },
+            "oneForGo": {
+                "title": "过一分",
+                "playTitle": "打出最后一张牌",
+                "playDescription": "给最后出牌且其他人无法进行有效出牌的玩家奖励{points}分。"
+            }
+        },
+        "title": {
+            "hand": "手牌",
+            "show": "展示",
+            "play": "玩",
+            "crib": "储牌区",
+            "skunkedSelf": "自己被打败",
+            "skunkedOther": "别人被打败"
+        },
+        "yourCribSelection": "为你的摇篮选择{cards}",
+        "nameCribSelection": "为{name}的摇篮选择{cards}",
+        "yourCribSelectionSubmit": "把高亮的牌送到你的摇篮里！",
+        "nameCribSelectionSubmit": "把高亮的牌送到{name}的摇篮里！",
+        "singleSkunk": "被淘汰了！这个玩家得分不到{points}。",
+        "doubleSkunk": "双杠！这个玩家得分不到 {points}。",
+        "selfJackHeelsPoints": "{turn} 抽到了一个杰克！他的脚跟给你带来了 {points} 分。",
+        "nameJackHeelsPoints": "{turn} 抽到了一个杰克！他的脚跟给 {name} 带来了 {points} 分。",
+        "nameSelfJackHeelsPoints": "你抽到了一个杰克！你的脚跟给 {name} 带来了 {points} 分。",
+        "selfPlayOfOne": "你因为{0}得到{points}分。",
+        "selfPlayOfTwo": "你因为{0}和{1}得到{points}分。",
+        "namePlayOfOne": "{name}因为{0}得到{points}分。",
+        "namePlayOfTwo": "{name}因为{0}和{1}得到{points}分。",
+        "selfCannotPlay": "你的牌都不能用在游戏中。",
+        "nameCannotPlay": "{name}的牌都不能用在游戏中。",
+        "cardPlayBoardLimit": "这张牌不能出。棋盘的值不能超过{limit}。",
+        "sendCardsToCrib": "把牌送到摇篮里",
+        "pointsDisclaimer": "这些分数没计入，因为游戏提前结束了。",
+        "cardInteractHint": "点击一张卡片来选择。",
+        "waitForOpponent": "等待你的对手...",
+        "waitForOpponents": "等待你的对手们....",
+        "nameNoPoints": "{name}没有得到任何分数。",
+        "selfNoPoints": "你没有得到任何分数。"
+    }
+}

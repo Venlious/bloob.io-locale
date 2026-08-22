@@ -1,12 +1,18 @@
 // Types
-import type { NestedObject, GenericMessage, GenericMessageResult } from './types'
+import type { NestedObject } from './types'
 
 // Utils
-import { promises as fs, writeFileSync } from 'fs'
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'fs'
 import * as osPath from 'path'
 
 // Data
-const LOCALE_FOLDER = `../messages`
+const MESSAGES_PATH = osPath.join(__dirname, `../messages`)
+
+/** The `game.<ID>` keys that stay in `core.json`. */
+export const EAGER_GAME_KEYS = [`name`, `title`, `description`]
+
+/** The one entry under `game` that is not a game. */
+const GENERIC_GAME_KEY = `generic`
 
 /**
  * Checks whether a value is a plain object.
@@ -16,21 +22,6 @@ const LOCALE_FOLDER = `../messages`
  */
 const isPlainObject = (value: any): boolean => {
 	return typeof value === `object` && value !== null && value.constructor === Object
-}
-
-/**
- * Checks whether a file exists on a given location
- *
- * @param filePath Path to file
- * @returns boolean
- */
-export const fileExists = async (filePath: string): Promise<boolean> => {
-	try {
-		const stats = await fs.stat(osPath.join(__dirname, filePath))
-		return stats.isFile()
-	} catch (err) {
-		return false
-	}
 }
 
 /**
@@ -46,6 +37,92 @@ export const writeFile = (filePath: string, data: any) => {
 	} catch (err) {
 		console.error(err)
 	}
+}
+
+/**
+ * Checks whether a locale has a catalogue on disk.
+ *
+ * @param locale Locale code (or `_empty`)
+ * @returns boolean
+ */
+export const catalogueExists = (locale: string): boolean => {
+	return existsSync(osPath.join(MESSAGES_PATH, locale, `core.json`))
+}
+
+/**
+ * Reads a locale's files back into the single tree the rest of this tooling
+ * expects — `core.json` with every `games/<GAME>.json` merged into its
+ * `game.<GAME>` entry.
+ *
+ * @param locale Locale code (or `_empty`)
+ * @returns The whole catalogue
+ */
+export const loadCatalogue = (locale: string): NestedObject => {
+	const root = osPath.join(MESSAGES_PATH, locale)
+	const catalogue = JSON.parse(
+		readFileSync(osPath.join(root, `core.json`), `utf8`)
+	) as NestedObject
+
+	const gamesPath = osPath.join(root, `games`)
+	if (!existsSync(gamesPath)) {
+		return catalogue
+	}
+
+	for (const file of readdirSync(gamesPath).sort()) {
+		if (!file.endsWith(`.json`)) continue
+
+		const id = file.slice(0, -`.json`.length)
+		const block = JSON.parse(readFileSync(osPath.join(gamesPath, file), `utf8`)) as NestedObject
+		catalogue.game[id] = { ...(catalogue.game[id] ?? {}), ...block }
+	}
+
+	return catalogue
+}
+
+/**
+ * Splits a whole catalogue back across its files.
+ *
+ * Game files for games no longer in the tree are deleted rather than left
+ * behind: `loadCatalogue` merges whatever it finds, so a stale file would keep
+ * resurrecting a game that `fix` had just pruned.
+ *
+ * @param locale Locale code (or `_empty`)
+ * @param data The whole catalogue
+ */
+export const writeCatalogue = (locale: string, data: NestedObject) => {
+	const root = osPath.join(MESSAGES_PATH, locale)
+	const gamesPath = osPath.join(root, `games`)
+	mkdirSync(gamesPath, { recursive: true })
+
+	// `game` keeps its position in the key order: it already exists in `data`,
+	// and re-assigning a key does not move it.
+	const core: NestedObject = { ...data, game: {} }
+	const written = new Set<string>()
+
+	for (const [id, block] of Object.entries(data.game as NestedObject)) {
+		if (id === GENERIC_GAME_KEY) {
+			core.game[id] = block
+			continue
+		}
+
+		const eager: NestedObject = {}
+		const lazy: NestedObject = {}
+		for (const [key, value] of Object.entries(block as NestedObject)) {
+			;(EAGER_GAME_KEYS.includes(key) ? eager : lazy)[key] = value
+		}
+
+		core.game[id] = eager
+		writeFile(osPath.join(gamesPath, `${id}.json`), lazy)
+		written.add(`${id}.json`)
+	}
+
+	for (const file of readdirSync(gamesPath)) {
+		if (file.endsWith(`.json`) && !written.has(file)) {
+			rmSync(osPath.join(gamesPath, file))
+		}
+	}
+
+	writeFile(osPath.join(root, `core.json`), core)
 }
 
 /**
@@ -103,66 +180,16 @@ export const ensureSameOrder = (source: NestedObject, target: NestedObject): Nes
 }
 
 /**
- * Retrieve a value from a given object using a path.
+ * Load both source and target catalogues.
  *
- * @param path Array of strings to location
- * @param target Object to traverse
- * @param addMissing If an entry is missing along the path, should it be added?
- * @returns The value on the given path in the target
+ * @param source The source locale to compare against
+ * @param target The target locale - if it does not (yet) exist `_empty` is used
  */
-export const getContentToPath = (
-	path: string[],
-	target: GenericMessage,
-	addMissing = false
-): GenericMessageResult => {
-	const entry = path.splice(0, 1)[0]
-	const _target = target[entry]
-
-	// We have hit the end point; run checks!
-	if (path.length === 0) {
-		return _target
-	} else if (_target === undefined) {
-		if (addMissing) {
-			target[entry] = {}
-		} else {
-			const brokenPath = path.join(`, `)
-			throw `Cannot find entry "${entry}" using path "${brokenPath}" in target translation file.`
-		}
+export const loadMessages = (source: string, target: string) => {
+	return {
+		LOCALE_SOURCE: loadCatalogue(source),
+		LOCALE_TARGET: catalogueExists(target) ? loadCatalogue(target) : loadCatalogue(`_empty`)
 	}
-
-	return getContentToPath(path, _target as GenericMessage, addMissing)
-}
-
-/**
- * Introduce an artifical delay.
- *
- * @param ms Delay in milliseconds.
- */
-export const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
-
-/**
- * Load a message single file.
- *
- * @param target The target file to be loaded.
- */
-export const getMessageFile = async (target: string) => {
-	return await require(`${LOCALE_FOLDER}/${target}.json`)
-}
-
-/**
- * Load both source and target message "XX.json" files.
- *
- * @param source The source file to use for the translation
- * @param target The target file to export as - if it does not (yet) exist the _empty.json is used
- */
-export const loadMessages = async (source: string, target: string) => {
-	const LOCALE_SOURCE = require(`${LOCALE_FOLDER}/${source}.json`)
-	const LOCALE_TARGET_PATH = `${LOCALE_FOLDER}/${target}.json`
-	const LOCALE_TARGET = (await fileExists(LOCALE_TARGET_PATH))
-		? require(LOCALE_TARGET_PATH)
-		: require(`${LOCALE_FOLDER}/_empty.json`)
-
-	return { LOCALE_SOURCE, LOCALE_TARGET }
 }
 
 /**
@@ -203,12 +230,11 @@ export const getMissingCount = (obj: NestedObject): { total: number; missing: nu
 }
 
 export default {
-	fileExists,
+	catalogueExists,
+	loadCatalogue,
+	writeCatalogue,
 	addMissingEntriesToObject,
-	getContentToPath,
-	delay,
 	ensureSameOrder,
-	getMessageFile,
 	loadMessages,
 	writeFile,
 	objectDeepKeys,

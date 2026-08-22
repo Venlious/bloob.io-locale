@@ -1,0 +1,105 @@
+{
+    "options": {
+        "forceTake": {
+            "title": "Captura obligatoria",
+            "help": {
+                "enabled": "**Activado**: Cuando sea posible, se obligará al jugador a tomar una pieza del adversario.",
+                "disabled": "**Desactivado**: El jugador puede elegir el movimiento que realiza, incluso si pudiera tomar una pieza del adversario."
+            }
+        },
+        "field": {
+            "title": "Campo",
+            "help": "El campo de juego utilizado. Dependiendo del tamaño del campo y de la cantidad de filas, tendrás más o menos piezas iniciales. Algunos campos pueden admitir hasta cuatro jugadores.",
+            "data": {
+                "8x8": "Inglés (8x8)",
+                "10x10": "Internacional (10x10)",
+                "12x12": "Canadiense (12x12)",
+                "plus": "Forma Plus (12x12)"
+            }
+        },
+        "winCondition": {
+            "help": "Cómo se determinará el ganador.",
+            "data": {
+                "MORE_PIECES": "Más piezas",
+                "OPPOSITE_SIDE": "Llegar al lado opuesto"
+            }
+        },
+        "kingCondition": {
+            "title": "Condición de Dama",
+            "help": "Bajo qué condición una pieza se convierte en Dama. Una pieza Dama puede moverse en todas direcciones.",
+            "data": {
+                "OPPOSITE_SIDE": "Llegar al lado opuesto",
+                "TAKE": "Tomar una pieza",
+                "ALL": "Empezar con solo Damas"
+            }
+        },
+        "backwardsTake": {
+            "title": "Tomar hacia atrás",
+            "help": "Establece si se permite que las piezas tomen hacia atrás a las piezas contrarias. Si se desactiva, sólo podrán hacerlo las piezas que son Dama."
+        },
+        "chainTake": {
+            "title": "Tomar en cadena",
+            "help": "Cuando está activado, una pieza puede tomar varias piezas en un movimiento, si están espaciadas adecuadamente. Alternativamente, cuando está desactivado, solo se puede tomar una pieza a la vez."
+        },
+        "staleCount": {
+            "title": "Juego estancado",
+            "help": "Después de cuántos turnos sin ninguna toma de piezas la partida debe considerarse en tablas y finalizada."
+        },
+        "stuckThreshold": {
+            "title": "Umbral de atasco",
+            "help": "Si un jugador está atascado durante esta cantidad de turnos seguidos perderá automáticamente."
+        },
+        "rows": {
+            "title": "Filas",
+            "help": "Con cuántas filas de piezas empieza cada jugador. Dependiendo del tamaño del campo se determinará la cantidad de filas."
+        }
+    },
+    "presets": {
+        "default": {
+            "title": "Damas clásicas (estándar)",
+            "description": "campo de 8x8 — 24 piezas"
+        },
+        "international": {
+            "title": "Damas internacionales",
+            "description": "campo de 10x10 — 40 piezas — Toma hacia atrás"
+        },
+        "canadian": {
+            "title": "Damas canadienses",
+            "description": "Campo de 12x12 — 60 piezas — Toma hacia atrás"
+        },
+        "party": {
+            "title": "Fiesta de damas",
+            "description": "Campo Plus — 36 piezas — 4 jugadores"
+        }
+    },
+    "help": {
+        "movement": {
+            "title": "Movimiento de las piezas",
+            "description": [
+                "Las piezas se pueden mover en diagonal. Cuando es tu turno, todas las piezas que puedes mover aparecen resaltadas",
+                "Puedes hacer clic en una pieza resaltada para ver todos los movimientos posibles disponibles para esa pieza."
+            ]
+        },
+        "take": {
+            "title": "Toma",
+            "description": [
+                "Si una pieza del adversario está en diagonal junto a tu pieza con un hueco libre detrás, puedes tomarla.",
+                "Dependiendo de la configuración, estás obligado a tomar piezas cuando sea posible o incluso puedes tomar hacia atrás."
+            ]
+        },
+        "king": {
+            "title": "Piezas Dama",
+            "description": [
+                "Con la configuración por defecto, cuando alcanzas el lado opuesto con una pieza, esta se convierte en Dama",
+                "Las piezas Dama pueden moverse en todas las direcciones diagonales sin verse obligadas a avanzar."
+            ]
+        },
+        "goal": {
+            "title": "Objetivo",
+            "description": [
+                "Típicamente, el objetivo es eliminar todas las demás piezas del adversario o hasta que no se puedan hacer movimientos válidos.",
+                "El objetivo de la partida, también llamado condición para ganar, se puede cambiar en los ajustes."
+            ]
+        }
+    }
+}
