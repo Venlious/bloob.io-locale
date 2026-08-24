@@ -1,0 +1,146 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Le nombre de points à atteindre pour gagner le match. Une manche distribue les points selon l'ordre de sortie, donc une plus grande table en rapporte davantage par manche."
+        },
+        "exchange": {
+            "title": "Échange de cartes",
+            "help": {
+                "standard": "'Standard' fait céder au Trouduc ses deux meilleures cartes et au Président deux cartes au choix en retour, plus une carte entre les deux adjoints.",
+                "single": "'Une carte' réduit ça de moitié : une seule carte dans chaque sens, donc la dernière place te coûte encore quelque chose, mais pas tout le début de la manche.",
+                "none": "'Désactivé' redistribue à neuf chaque manche, et la dernière place ne coûte que les points."
+            },
+            "data": {
+                "standard": "Standard",
+                "single": "Une carte"
+            }
+        },
+        "firstLead": {
+            "title": "Ouverture du premier pli",
+            "help": {
+                "lowestCard": "'Carte la plus basse' donne l'ouverture à celui qui a reçu le trois de trèfle, comme le jeu commence traditionnellement.",
+                "previousScum": "'Trouduc précédent' fait ouvrir le perdant de la manche précédente, ce qui compense un peu les cartes qu'il vient de céder.",
+                "random": "'Aléatoire' tire une place au sort, et chaque manche commence ailleurs."
+            },
+            "data": {
+                "lowestCard": "Carte la plus basse",
+                "previousScum": "Trouduc précédent"
+            }
+        },
+        "revolution": {
+            "title": "Révolution",
+            "help": "Un carré renverse la hiérarchie pour le reste de la manche : le trois devient la meilleure carte et le deux la pire. Un second carré la remet à l'endroit."
+        },
+        "eightStop": {
+            "title": "Le huit arrête",
+            "help": "Jouer un huit termine le pli sur-le-champ. La table est balayée et celui qui l'a joué ouvre le suivant, sans attendre que quiconque passe."
+        },
+        "twoClears": {
+            "title": "Le deux balaie",
+            "help": "Jouer un deux termine le pli sur-le-champ, exactement comme le huit. La meilleure carte du jeu devient aussi un moyen de s'emparer de l'ouverture."
+        },
+        "sameRankSkip": {
+            "title": "Égalité pour sauter",
+            "help": "Poser exactement la même hauteur que le tas devient une réponse valable, et celui qui le fait saute le tour du joueur suivant."
+        }
+    },
+    "presets": {
+        "default": {
+            "description": [
+                "Les règles simples, premier à 10 points"
+            ]
+        },
+        "daifugo": {
+            "title": "Daifugo",
+            "description": [
+                "Révolution sur un carré",
+                "Les huit terminent le pli"
+            ]
+        },
+        "partyRules": {
+            "title": "Règles de Soirée",
+            "description": [
+                "Les deux balaient la table",
+                "Égalité pour sauter",
+                "Tours plus rapides"
+            ]
+        },
+        "equalFooting": {
+            "title": "À Armes Égales",
+            "description": [
+                "Pas d'échange de cartes entre les manches",
+                "Le trois de trèfle ouvre toujours"
+            ]
+        }
+    },
+    "role": {
+        "title": "Rôle",
+        "PRESIDENT": "Président",
+        "VICE_PRESIDENT": "Vice-président",
+        "CITIZEN": "Citoyen",
+        "VICE_SCUM": "Vice-trouduc",
+        "SCUM": "Trouduc"
+    },
+    "header": {
+        "yourExchange": "Choisis les cartes que tu donnes",
+        "waitingExchange": "En attente de l'échange de cartes..."
+    },
+    "trickEnd": {
+        "EIGHT_STOP": "Un huit a terminé le pli",
+        "TWO_CLEARS": "Un deux a balayé la table"
+    },
+    "standings": "Classement",
+    "wentOut": "Sorti en {place}",
+    "selfWentOut": "Tu n'as plus de cartes — place {place} cette manche",
+    "giveCards": "Choisis-en {count} à donner",
+    "giveAction": "Donner",
+    "playAction": "Jouer",
+    "pass": "Passer",
+    "passed": "A passé",
+    "autoPass": {
+        "title": "Passe auto",
+        "help": "Passe ton tour à ta place dès que rien dans ta main ne peut battre le tas."
+    },
+    "noPlayable": "Aucune de tes cartes n'est jouable",
+    "statistics": {
+        "flawless": "Gagné sans passer",
+        "presidentShare": "Part de Président"
+    },
+    "help": {
+        "rules": {
+            "title": "Règles",
+            "description": [
+                "Tout le paquet est distribué entre trois et huit joueurs, et le jeu est une course pour se débarrasser de toutes ses cartes.",
+                "Un pli s'ouvre avec autant de cartes qu'on veut d'une même hauteur. Tous ceux qui suivent doivent répondre avec le **même nombre** de cartes d'une hauteur supérieure, ou passer."
+            ]
+        },
+        "beating": {
+            "title": "Battre le tas",
+            "description": [
+                "Les cartes vont du trois jusqu'au deux, donc le **deux** est la meilleure carte du jeu et le trois la pire. L'as se place entre le roi et le deux.",
+                "Passer te sort du pli en cours, pas de la manche. Une fois que tout le monde a passé, la table est balayée et celui qui a joué en dernier ouvre le pli suivant."
+            ]
+        },
+        "roles": {
+            "title": "Les rôles et l'échange",
+            "description": [
+                "Le premier joueur à sortir est le **Président** et le dernier à avoir des cartes est le **Trouduc**. Les points se marquent selon l'ordre de sortie.",
+                "Ce classement se reporte sur la manche suivante : le Trouduc cède ses meilleures cartes vers le haut et le Président en rend n'importe lesquelles, ce qui est exactement aussi injuste que ça en a l'air."
+            ]
+        },
+        "variations": {
+            "title": "Règles de la maison",
+            "description": [
+                "Presque chaque règle de cette table est un réglage. Une **révolution** sur un carré renverse la hiérarchie ; un huit ou un deux peut terminer un pli sur-le-champ.",
+                "Poser la même hauteur que le tas peut être autorisé, ce qui saute le joueur suivant, et l'échange entre les manches peut être réduit à une seule carte ou coupé complètement."
+            ]
+        },
+        "bots": {
+            "title": "Bots",
+            "description": [
+                "Les bots faciles jouent n'importe quel coup autorisé et passent sans raison de temps en temps. Les bots normaux répondent au meilleur marché possible et se débarrassent des basses cartes en paquet quand ils ouvrent.",
+                "Les bots difficiles gardent leurs deux tant qu'il reste une table sur laquelle les dépenser, et n'en lâchent un qu'une fois le pli réduit à eux et un seul autre joueur."
+            ]
+        }
+    }
+}

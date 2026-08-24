@@ -1,0 +1,146 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "How many points a player has to reach to win the match. A round hands out points by finishing place, so a bigger table pays out more of them per round."
+        },
+        "exchange": {
+            "title": "Card trade",
+            "help": {
+                "standard": "'Standard' has the Scum hand up their two best cards and the President hand any two back, with one card between the two deputies.",
+                "single": "'One card' halves that: a single card each way, so last place still costs you but not the whole start of the round.",
+                "none": "'Disabled' deals every round fresh, and last place costs nothing but the points."
+            },
+            "data": {
+                "standard": "Standard",
+                "single": "One card"
+            }
+        },
+        "firstLead": {
+            "title": "Opening the first trick",
+            "help": {
+                "lowestCard": "'Lowest card' gives the lead to whoever was dealt the three of clubs, the way the game is traditionally opened.",
+                "previousScum": "'Previous Scum' has last round's loser open, which is some compensation for the cards they just handed over.",
+                "random": "'Random' draws a seat, and every round starts from somewhere new."
+            },
+            "data": {
+                "lowestCard": "Lowest card",
+                "previousScum": "Previous Scum"
+            }
+        },
+        "revolution": {
+            "title": "Revolution",
+            "help": "Four of a kind turns the ranking upside down for the rest of the round, so the three becomes the best card and the two the worst. A second four of a kind turns it back."
+        },
+        "eightStop": {
+            "title": "Eight stop",
+            "help": "Playing an eight ends the trick on the spot. The table is swept and whoever played it opens the next one, without waiting for anybody to pass."
+        },
+        "twoClears": {
+            "title": "Two clears",
+            "help": "Playing a two ends the trick on the spot, the same way the eight stop does. The best card in the game becomes a way to seize the lead as well as to win a trick."
+        },
+        "sameRankSkip": {
+            "title": "Match to skip",
+            "help": "Matching the rank on the pile exactly becomes a legal answer, and doing it skips the next player's turn."
+        }
+    },
+    "presets": {
+        "default": {
+            "description": [
+                "The plain rules, first to 10 points"
+            ]
+        },
+        "daifugo": {
+            "title": "Daifugo",
+            "description": [
+                "Revolution on four of a kind",
+                "Eights end the trick"
+            ]
+        },
+        "partyRules": {
+            "title": "Party Rules",
+            "description": [
+                "Twos clear the table",
+                "Match a rank to skip",
+                "Faster turns"
+            ]
+        },
+        "equalFooting": {
+            "title": "Equal Footing",
+            "description": [
+                "No card trade between rounds",
+                "The three of clubs always opens"
+            ]
+        }
+    },
+    "role": {
+        "title": "Role",
+        "PRESIDENT": "President",
+        "VICE_PRESIDENT": "Vice-President",
+        "CITIZEN": "Citizen",
+        "VICE_SCUM": "Vice-Scum",
+        "SCUM": "Scum"
+    },
+    "header": {
+        "yourExchange": "Choose the cards you are giving away",
+        "waitingExchange": "Waiting for the card trade..."
+    },
+    "trickEnd": {
+        "EIGHT_STOP": "An eight ended the trick",
+        "TWO_CLEARS": "A two cleared the table"
+    },
+    "standings": "Standings",
+    "wentOut": "Out in {place}",
+    "selfWentOut": "You are out of cards — place {place} this round",
+    "giveCards": "Choose {count} to give",
+    "giveAction": "Give",
+    "playAction": "Play",
+    "pass": "Pass",
+    "passed": "Passed",
+    "autoPass": {
+        "title": "Auto pass",
+        "help": "Passes your turn for you whenever nothing in your hand can beat the pile."
+    },
+    "noPlayable": "None of your cards can be used",
+    "statistics": {
+        "flawless": "Won without passing",
+        "presidentShare": "President share"
+    },
+    "help": {
+        "rules": {
+            "title": "Rules",
+            "description": [
+                "The whole deck is dealt out between three and eight players, and the game is a race to get rid of every card you hold.",
+                "A trick is opened with any number of cards of one rank. Everybody after that has to answer with the **same number** of cards of a higher rank, or pass."
+            ]
+        },
+        "beating": {
+            "title": "Beating the pile",
+            "description": [
+                "Cards run from the three up to the two, so the **two** is the best card in the game and the three is the worst. The ace sits between the king and the two.",
+                "Passing takes you out of the current trick, not out of the round. Once everybody else has passed, the table is swept and whoever played last opens the next trick."
+            ]
+        },
+        "roles": {
+            "title": "Roles and the trade",
+            "description": [
+                "The first player to go out is the **President** and the last one still holding cards is the **Scum**. Points are scored by finishing place.",
+                "That standing carries into the next round: the Scum hands their best cards up and the President hands any cards back down, which is exactly as unfair as it sounds."
+            ]
+        },
+        "variations": {
+            "title": "House rules",
+            "description": [
+                "Almost every rule at this table is a setting. A **revolution** on four of a kind turns the ranking upside down; an eight or a two can end a trick on the spot.",
+                "Matching the rank on the pile can be made legal, which skips the next player, and the trade between rounds can be shortened to a single card or switched off entirely."
+            ]
+        },
+        "bots": {
+            "title": "Bots",
+            "description": [
+                "Easy bots play any move the rules allow and pass for no reason now and then. Normal bots answer as cheaply as they can and get rid of low cards in bulk when they lead.",
+                "Hard bots hold their twos back while there is still a table to spend them on, and only spend one once the trick is down to them and one other player."
+            ]
+        }
+    }
+}

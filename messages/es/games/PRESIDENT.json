@@ -1,0 +1,146 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Cuántos puntos tiene que alcanzar un jugador para ganar la partida. Cada ronda reparte puntos según el orden en que sales, así que una mesa más grande reparte más por ronda."
+        },
+        "exchange": {
+            "title": "Intercambio de cartas",
+            "help": {
+                "standard": "'Estándar' hace que la Escoria entregue sus dos mejores cartas y el Presidente devuelva dos cualesquiera, más una carta entre los dos vices.",
+                "single": "'Una carta' reduce eso a la mitad: una sola carta en cada sentido, así que el último lugar te sigue costando algo, pero no el arranque entero de la ronda.",
+                "none": "'Desactivado' reparte de cero cada ronda, y el último lugar no cuesta nada más que los puntos."
+            },
+            "data": {
+                "standard": "Estándar",
+                "single": "Una carta"
+            }
+        },
+        "firstLead": {
+            "title": "Quién abre la primera baza",
+            "help": {
+                "lowestCard": "'Carta más baja' le da la apertura a quien recibió el tres de tréboles, como se abre el juego tradicionalmente.",
+                "previousScum": "'Escoria anterior' hace que abra el perdedor de la ronda pasada, lo que compensa un poco las cartas que acaba de entregar.",
+                "random": "'Aleatorio' sortea un lugar, y cada ronda empieza en otro lado."
+            },
+            "data": {
+                "lowestCard": "Carta más baja",
+                "previousScum": "Escoria anterior"
+            }
+        },
+        "revolution": {
+            "title": "Revolución",
+            "help": "Un póker le da la vuelta al orden por lo que queda de ronda: el tres pasa a ser la mejor carta y el dos la peor. Un segundo póker lo regresa a la normalidad."
+        },
+        "eightStop": {
+            "title": "El ocho corta",
+            "help": "Jugar un ocho termina la baza al instante. La mesa se limpia y quien lo jugó abre la siguiente, sin esperar a que nadie pase."
+        },
+        "twoClears": {
+            "title": "El dos limpia",
+            "help": "Jugar un dos termina la baza al instante, igual que el ocho. La mejor carta del juego se vuelve también una forma de quedarte con la apertura."
+        },
+        "sameRankSkip": {
+            "title": "Igualar para saltar",
+            "help": "Igualar exactamente el valor del montón se vuelve una respuesta válida, y hacerlo salta el turno del siguiente jugador."
+        }
+    },
+    "presets": {
+        "default": {
+            "description": [
+                "Las reglas simples, el primero a 10 puntos"
+            ]
+        },
+        "daifugo": {
+            "title": "Daifugo",
+            "description": [
+                "Revolución con un póker",
+                "Los ochos terminan la baza"
+            ]
+        },
+        "partyRules": {
+            "title": "Reglas de Fiesta",
+            "description": [
+                "Los doses limpian la mesa",
+                "Igualar para saltar",
+                "Turnos más rápidos"
+            ]
+        },
+        "equalFooting": {
+            "title": "Igualdad de Condiciones",
+            "description": [
+                "Sin intercambio de cartas entre rondas",
+                "El tres de tréboles siempre abre"
+            ]
+        }
+    },
+    "role": {
+        "title": "Rol",
+        "PRESIDENT": "Presidente",
+        "VICE_PRESIDENT": "Vicepresidente",
+        "CITIZEN": "Ciudadano",
+        "VICE_SCUM": "Vice-escoria",
+        "SCUM": "Escoria"
+    },
+    "header": {
+        "yourExchange": "Elige las cartas que vas a entregar",
+        "waitingExchange": "Esperando el intercambio de cartas..."
+    },
+    "trickEnd": {
+        "EIGHT_STOP": "Un ocho terminó la baza",
+        "TWO_CLEARS": "Un dos limpió la mesa"
+    },
+    "standings": "Clasificación",
+    "wentOut": "Fuera en {place}",
+    "selfWentOut": "Te quedaste sin cartas — lugar {place} esta ronda",
+    "giveCards": "Elige {count} para entregar",
+    "giveAction": "Entregar",
+    "playAction": "Jugar",
+    "pass": "Pasar",
+    "passed": "Pasó",
+    "autoPass": {
+        "title": "Pase automático",
+        "help": "Pasa tu turno por ti en cuanto nada de tu mano pueda ganarle al montón."
+    },
+    "noPlayable": "Ninguna de tus cartas se puede usar",
+    "statistics": {
+        "flawless": "Ganó sin pasar",
+        "presidentShare": "Veces como Presidente"
+    },
+    "help": {
+        "rules": {
+            "title": "Reglas",
+            "description": [
+                "La baraja entera se reparte entre tres y ocho jugadores, y el juego es una carrera por soltar todas tus cartas.",
+                "Una baza se abre con la cantidad de cartas que quieras de un mismo valor. Todos los que siguen tienen que responder con la **misma cantidad** de cartas de un valor más alto, o pasar."
+            ]
+        },
+        "beating": {
+            "title": "Ganarle al montón",
+            "description": [
+                "Las cartas van del tres hasta el dos, así que el **dos** es la mejor carta del juego y el tres la peor. El as queda entre el rey y el dos.",
+                "Pasar te saca de la baza actual, no de la ronda. Cuando todos los demás pasan, la mesa se limpia y quien jugó al último abre la siguiente baza."
+            ]
+        },
+        "roles": {
+            "title": "Los roles y el intercambio",
+            "description": [
+                "El primero en salir es el **Presidente** y el último que sigue con cartas es la **Escoria**. Los puntos se dan según el orden de salida.",
+                "Esa clasificación se lleva a la siguiente ronda: la Escoria entrega sus mejores cartas hacia arriba y el Presidente devuelve las que quiera, lo cual es exactamente tan injusto como suena."
+            ]
+        },
+        "variations": {
+            "title": "Reglas de la casa",
+            "description": [
+                "Casi cada regla de esta mesa es un ajuste. Una **revolución** con un póker le da la vuelta al orden; un ocho o un dos pueden terminar una baza al instante.",
+                "Igualar el valor del montón se puede permitir, lo que salta al siguiente jugador, y el intercambio entre rondas se puede recortar a una sola carta o apagar por completo."
+            ]
+        },
+        "bots": {
+            "title": "Bots",
+            "description": [
+                "Los bots fáciles juegan cualquier jugada permitida y pasan sin motivo de vez en cuando. Los bots normales responden lo más barato que pueden y sueltan cartas bajas en bloque cuando abren.",
+                "Los bots difíciles se guardan sus doses mientras quede mesa donde gastarlos, y solo sueltan uno cuando la baza ya está entre ellos y un solo jugador más."
+            ]
+        }
+    }
+}
