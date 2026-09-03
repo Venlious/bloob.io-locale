@@ -19,9 +19,9 @@
         "multiples": {
             "title": "Four Of A Kind And Up",
             "help": "How four, five and six of a kind score against the three of a kind they are built on.",
-            "fixed": "1000 / 2000 / 3000",
-            "multiplier": "Double, triple, quadruple",
-            "doubling": "Double per extra die"
+            "fixed": "+{points} each",
+            "multiplier": "×2 ×3 ×4",
+            "doubling": "×2 each"
         },
         "straightScore": {
             "help": "What one of every face, rolled in a single throw of six dice, is worth. Set to zero to take it out of the game."
@@ -85,7 +85,7 @@
     "info": {
         "holdHint": "Click a die to take it out of the bowl",
         "farkle": "Farkle!",
-        "farkleLost": "Farkle. Every point you set aside this turn is gone.",
+        "farkleLost": "Farkle. You have lost all points kept and set aside this turn.",
         "hotDice": "Hot dice!",
         "hotDiceHint": "Every die scored, so all six come back.",
         "selection": "Set aside",
@@ -113,6 +113,7 @@
     },
     "error": {
         "selection": "Every die you set aside has to be part of a scoring combination.",
+        "locked": "That die is already set aside and cannot be moved.",
         "empty": "You have to set at least one scoring die aside before rolling again.",
         "entry": "Your first banked turn has to be worth at least {points}."
     },
@@ -126,7 +127,7 @@
             "title": "The goal",
             "description": [
                 "The first player to **bank** the target score wins. It is usually 10,000 points.",
-                "Points are only yours once you bank them. Until then, one bad roll takes them all."
+                "Points are only yours once you bank them. Until then, one bad roll takes them all. This is called a **farkle**."
             ]
         },
         "turn": {
@@ -146,22 +147,16 @@
         "farkle": {
             "title": "Farkling",
             "description": [
-                "Roll no scoring dice at all and you **farkle**. The turn ends and everything you set aside is gone.",
+                "Roll no scoring dice at all and you **farkle**. The turn ends, and every point you kept or set aside during it is gone.",
                 "Knowing when to stop is the whole game. Some tables also take points off a player who farkles several turns in a row."
             ]
         },
         "variations": {
             "title": "House rules",
             "description": [
-                "**Hot dice**: set every die aside and you get all six back, keeping the points so far.",
-                "**Entry score**: your first bank has to reach it, or none of it counts. **Final round**: once somebody passes the target, everybody else gets one last turn."
-            ]
-        },
-        "bots": {
-            "title": "Playing against bots",
-            "description": [
-                "Bots see nothing you cannot. Easy bots bank early. Normal bots play the odds of the dice they have left.",
-                "Hard bots watch the score as well, pushing when they are behind and banking when they are ahead."
+                "**Hot dice**: set every die aside and you get all six back, keeping the points.",
+                "**Entry score**: your first bank has to reach it, or none of it counts.",
+                "**Final round**: once somebody passes the target, everybody else gets one last turn."
             ]
         }
     }
