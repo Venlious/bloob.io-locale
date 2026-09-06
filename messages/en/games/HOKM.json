@@ -1,0 +1,155 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "How many rounds a team has to win to take the match. A **Kot** is worth more than one, so a match can be won in fewer rounds than this number."
+        },
+        "trickTarget": {
+            "title": "Tricks to win a round",
+            "help": "How many of the thirteen tricks a team has to take to win the round. Seven is the classic majority; a lower number ends each round sooner."
+        },
+        "trumpTime": {
+            "title": "Trump Call Time",
+            "help": "How long the Hakem gets to name the trump suit. If the clock runs out, their longest suit is called for them."
+        },
+        "kot": {
+            "title": "Kot scoring",
+            "help": {
+                "double": "'Kot' makes a 7-0 round worth two points instead of one.",
+                "hakemKot": "'Kot & Hakem Kot' also makes sweeping the Hakem's own team worth three points.",
+                "off": "'Disabled' scores every round won as a single point, however one-sided it was."
+            },
+            "data": {
+                "double": "Kot",
+                "hakemKot": "Kot & Hakem Kot"
+            }
+        },
+        "hakemSelection": {
+            "title": "Picking the first Hakem",
+            "help": "How the very first trump caller is found. Every round after that follows the retention rule below.",
+            "data": {
+                "firstAce": "First Ace dealt",
+                "random": "At random"
+            },
+            "description": {
+                "firstAce": "Cards are turned face up around the table until an Ace lands",
+                "random": "A seat is drawn straight away, with no ceremony"
+            }
+        },
+        "hakemRetention": {
+            "title": "Keeping the Hakem",
+            "help": "Who calls trump for every round after the first.",
+            "data": {
+                "keepUntilLoss": "Until they lose",
+                "rotate": "Pass every round"
+            },
+            "description": {
+                "keepUntilLoss": "The Hakem keeps calling while their team keeps winning",
+                "rotate": "The call moves on to the next player every round"
+            }
+        },
+        "hakemCardCount": {
+            "title": "Cards before calling",
+            "help": "How much of their hand the Hakem sees before naming trump. Five is the classic; thirteen makes the call an informed one.",
+            "description": {
+                "five": "The classic call, made on a third of a hand",
+                "thirteen": "The Hakem sees everything before deciding"
+            }
+        }
+    },
+    "presets": {
+        "quickHokm": {
+            "title": "Quick Hokm",
+            "description": [
+                "First to 3 rounds",
+                "Faster turns"
+            ]
+        },
+        "kotRules": {
+            "title": "Kot Rules",
+            "description": [
+                "A sweep is worth 2",
+                "Sweeping the Hakem is worth 3"
+            ]
+        },
+        "openHand": {
+            "title": "Open Call",
+            "description": [
+                "The Hakem sees all 13 cards",
+                "Random first Hakem"
+            ]
+        }
+    },
+    "hakem": {
+        "title": "Hakem"
+    },
+    "tricks": {
+        "title": "Tricks"
+    },
+    "trump": {
+        "yourCall": "Call the trump suit",
+        "waiting": "{name} is calling trump...",
+        "called": "Trump",
+        "announcement": "Trump is {suit}"
+    },
+    "header": {
+        "findingHakem": "Looking for the first Ace...",
+        "yourCall": "Name the trump suit",
+        "nameCall": "{name} is naming trump",
+        "youTookTrick": "You took the trick",
+        "nameTookTrick": "{name} took the trick",
+        "youWonRound": "Your team won the round!",
+        "themWonRound": "The other team won the round"
+    },
+    "result": {
+        "normal": "{name} won {tricks}",
+        "kot": "{name} swept it, {tricks}",
+        "hakemKot": "{name} swept the Hakem, {tricks}"
+    },
+    "rounds": {
+        "title": "Round history"
+    },
+    "scoreboard": {
+        "target": "First to {amount}, {tricks} tricks a round"
+    },
+    "statistics": {
+        "sweeps": "Sweeps",
+        "tricksPerMatch": "Tricks / match"
+    },
+    "help": {
+        "rules": {
+            "title": "Rules",
+            "description": [
+                "Hokm is played by four people in two teams of two, with partners sitting opposite each other. Every card of a standard 52-card deck is dealt, so everybody holds thirteen.",
+                "One player is the **Hakem**. They see their first cards before anybody else and name the **trump** suit that beats every other suit for the rest of the round."
+            ]
+        },
+        "trump": {
+            "title": "Trump and following suit",
+            "description": [
+                "The Hakem leads the first trick. Everybody else has to **follow suit** if they can; only a player holding none of the suit that was led may play something else.",
+                "The highest trump played takes the trick. If nobody trumped it, the highest card of the suit that was led wins. Aces are high."
+            ]
+        },
+        "tricks": {
+            "title": "Taking tricks",
+            "description": [
+                "Whoever takes a trick leads the next one, so winning it also means choosing what everybody has to follow next.",
+                "The first team to take **seven** tricks wins the round — the rest of the cards are not played out."
+            ]
+        },
+        "scoring": {
+            "title": "Scoring",
+            "description": [
+                "Each round won is worth a point, and the first team to seven points wins the match. Taking all seven tricks is a **Kot**, and is worth two.",
+                "The Hakem stays Hakem while their team keeps winning; the moment they lose a round, the call passes to the player on their right."
+            ]
+        },
+        "bots": {
+            "title": "Bots",
+            "description": [
+                "Easy bots play any card the rules allow. Normal bots read the trick in front of them: they stay out of a partner's winning trick and take the rest as cheaply as they can.",
+                "Hard bots count the cards. They remember which suits you have run out of, which high cards are gone, and which suits you have chosen to lead — so leading a suit at your partner twice is something they will answer."
+            ]
+        }
+    }
+}

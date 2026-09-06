@@ -1,0 +1,166 @@
+{
+    "options": {
+        "summaryEnabled": {
+            "title": "ラウンドのまとめ",
+            "help": "各ラウンドが終わったあとに、全員の得点の内訳（どの役で何点取ったか）をくわしく表示するよ。"
+        },
+        "summaryTime": {
+            "title": "まとめ表示時間",
+            "help": "スコアの結果が次に進む前にどのくらいの時間表示するか決めるよ。プレイヤーはまた、ラウンドのサマリーを早くスキップするために投票もできるよ。"
+        },
+        "playTime": {
+            "title": "プレイの制限時間",
+            "help": "自分の番が来たときに、手札からカードを出すまでの制限時間だよ。"
+        },
+        "cribTime": {
+            "title": "クリブ選びの制限時間",
+            "help": "プレイヤーがクリブに送るカードを決めるまでの制限時間だよ。"
+        },
+        "starterCardTime": {
+            "title": "スターター決定の制限時間",
+            "help": "選ばれたプレイヤーが、山札から「スターターカード」を引くまでの制限時間だよ。スターターカードは、全員の手札やクリブの得点を計算するときに「5枚目のカード」として使われるよ。"
+        },
+        "revealSpeed": {
+            "title": "表示速度",
+            "help": "ラウンド終了時にスコアが表示される速さを選べるよ。"
+        },
+        "dealerExtraCard": {
+            "title": "ディーラーの追加カード",
+            "help": "3人プレイのゲームで有効にすると、ディーラーは1枚多くクリブ用のカードをもらえるよ。無効にすると、4枚目のカードが自動的にクリブへ送られるよ。"
+        },
+        "winCondition": {
+            "data": {
+                "HIGHEST_AFTER": "{n}点に到達した後で最も点数が多い | {n}点に到達した後で最も点数が多い | {n}点に到達した後で最も点数が多い"
+            }
+        }
+    },
+    "presets": {
+        "blitz": {
+            "title": "ブリッツ",
+            "description": [
+                "最初の31ポイント",
+                "時間短縮"
+            ]
+        }
+    },
+    "help": {
+        "objective": {
+            "title": "目標",
+            "description": [
+                "クリベッジのゴールは、誰よりも早く目標スコア（通常は121点）に到達することだよ。",
+                "勝者が決まるまで、「ディール」「プレイ」「ショー」という3つのパートを繰り返してゲームを進めていくんだ。"
+            ]
+        },
+        "deal": {
+            "title": "ディール（手札の配布）",
+            "description": [
+                "人数に合わせて、各プレイヤーに5枚または6枚のカードが配られるよ。その中から手元に残したい4枚を選んで、残りのカードはディーラーの「クリブ」に捨てよう。",
+                "クリブは「第二の手札」のようなもので、後で得点を数えるときにディーラーの追加ポイントになるんだ。"
+            ]
+        },
+        "play": {
+            "title": "プレイ（出し合い）",
+            "description": [
+                "手札から1枚ずつ順番にカードを場に出していくよ。出されたカードの合計値は常にカウントされていくけど、31を超えてはいけないというルールがあるんだ。",
+                "数字を連続させたり（ラン）、同じ数字を出したり（ペア）、合計を15にしたりするとポイントがもらえるよ。詳しい一覧は、ゲーム中の「得点システム」ボタンをクリックして確認してみてね。"
+            ]
+        },
+        "show": {
+            "title": "ショー（得点計算）",
+            "description": [
+                "全員が手札を出し切ったら、得点を数える「ショー」の時間だよ。ディーラーは最後に点数を数えるんだけど、自分の手札に加えて「クリブ」のポイントももらうことができるんだ。",
+                "カードの組み合わせ次第で、いろんなボーナスポイントが手に入るよ。詳しいルールは、ゲーム中の「得点システム」ボタンからいつでも見れるよ。"
+            ]
+        }
+    },
+    "info": {
+        "type": {
+            "jackHeels": {
+                "title": "ヒズ・ヒール（2点）"
+            },
+            "oneForHisNob": {
+                "title": "ヒズ・ノブ（1点）",
+                "description": "スターターと同じマークのジャックを持っていると、{points}獲得だよ。"
+            },
+            "fifteen": {
+                "title": "フィフティーン",
+                "description": "合計が 15 になる組み合わせ1組につき{points}獲得だよ。同じカードを別の組み合わせに再利用できるよ！",
+                "playTitle": "{target}を当てる",
+                "playDescription": "カードを追加して合計が15になったら{points}獲得だよ。"
+            },
+            "pair": {
+                "title": "ペア",
+                "description": "同じランクのカードが2枚あると{points}獲得だよ。",
+                "playTitle": "{title}を出す",
+                "playDescription": "同じランクのカードを出した時に{points}を獲得するよ。"
+            },
+            "pairRoyal": {
+                "title": "ペア・ロイヤル",
+                "description": "同じランクのカードが3枚あると{points}獲得だよ。",
+                "playTitle": "{title}を出す",
+                "playDescription": "最後の2枚のカードと同じランクのカードを追加すると{points}獲得だよ。"
+            },
+            "doublePairRoyal": {
+                "title": "ダブル・ペア・ロイヤル",
+                "description": "同じランクのカードが4枚あると{points}獲得だよ。",
+                "playTitle": "{title}を出す",
+                "playDescription": "最後の3枚のカードと同じランクのカードを追加すると{points}獲得だよ。"
+            },
+            "run": {
+                "title": "ラン",
+                "description": "3枚以上の連続する数字の組み合わせがある場合、1枚につき{points}獲得だよ。",
+                "playTitle": "{cards}の連続するカードを作った",
+                "playDescription": "連続する各カードに{points}与えられるよ。カードは順番通りじゃなくてもいいけど、まとめてね。たとえば、直前に出された数枚のカードを並べ替えたときに、数字がひとつも飛ばずに並んでいればOKなんだ。"
+            },
+            "flush": {
+                "title": "フラッシュ（4枚）",
+                "description": "手札4枚のマークがすべて同じなら{points}獲得するよ。ただし、スターターやクリブは含まないよ。"
+            },
+            "flushStarter": {
+                "title": "フラッシュ（5枚）",
+                "description": "手札4枚とスターターの、計5枚のマークがすべて同じなら{points}獲得だよ。ただし、クリブは含まないよ。"
+            },
+            "thirtyOneForTwo": {
+                "title": "サーティーワン（2点）",
+                "playTitle": "ちょうど{target}をつくった",
+                "playDescription": "合計が31になる最後のカードを出したプレイヤーは{points}獲得するよ。"
+            },
+            "oneForGo": {
+                "title": "ラストカード（1点）",
+                "playTitle": "最後のカードを出した",
+                "playDescription": "誰もゲームを進めることができなくなった時、最後のカードを出したプレイヤーは{points}獲得するよ。"
+            }
+        },
+        "title": {
+            "hand": "ハンド",
+            "show": "ショー",
+            "play": "プレイ",
+            "crib": "クリブ",
+            "skunkedSelf": "スカンク負け（惨敗）",
+            "skunkedOther": "スカンク勝ち（圧勝）"
+        },
+        "yourCribSelection": "クリブに捨てる{cards}を選んでね",
+        "nameCribSelection": "{name}のクリブ用に{cards}を選んでね",
+        "yourCribSelectionSubmit": "選んだカードを君のクリブに送ってね！",
+        "nameCribSelectionSubmit": "ハイライトされたカードを{name}のクリブに送ってね！",
+        "singleSkunk": "スカンク！このプレイヤーは{points}以下だったよ。",
+        "doubleSkunk": "ダブルスカンク！このプレイヤーは{points}以下だったよ。",
+        "selfJackHeelsPoints": "{turn}がジャックを引いた！ヒズ・ヒールで{points}獲得したよ。",
+        "nameJackHeelsPoints": "{turn}がジャックを引いた！{name}がヒズ・ヒールで{points}獲得したよ。",
+        "nameSelfJackHeelsPoints": "ジャックを引いた！{name}がヒズ・ヒールで{points}獲得したよ。",
+        "selfPlayOfOne": "{0}ことで{points}獲得したよ。",
+        "selfPlayOfTwo": "{0}と{1}ことで{points}獲得したよ。",
+        "namePlayOfOne": "{name}は{0}ことで{points}獲得したよ。",
+        "namePlayOfTwo": "{name}は{0}と{1}ことで{points}獲得したよ。",
+        "selfCannotPlay": "出せるカードが一枚もないよ。",
+        "nameCannotPlay": "{name}は出せるカードが一枚もないよ。",
+        "cardPlayBoardLimit": "このカードは使えないよ。合計が{limit}を超えることはできないよ。",
+        "sendCardsToCrib": "カードをクリブに送る",
+        "pointsDisclaimer": "ゲームが早く終わったからこの得点はカウントされなかったよ。",
+        "cardInteractHint": "カードをクリックして選んでね。",
+        "waitForOpponent": "相手を待ってるよ．．．",
+        "waitForOpponents": "みんなを待ってるよ．．．",
+        "nameNoPoints": "{name}はポイントをもらえなかったよ。",
+        "selfNoPoints": "ポイントをもらえなかったよ。"
+    }
+}

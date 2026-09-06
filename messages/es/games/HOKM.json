@@ -1,0 +1,155 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Cuántas partidas debe ganar un equipo para llevarse el encuentro. Un **Kot** vale más de una, así que un encuentro puede decidirse en menos rondas que este número."
+        },
+        "trickTarget": {
+            "title": "Bazas para ganar una partida",
+            "help": "Cuántas de las trece bazas debe llevarse un equipo para ganar la partida. Siete es la mayoría clásica; un número menor acorta cada partida."
+        },
+        "trumpTime": {
+            "title": "Tiempo para cantar triunfo",
+            "help": "Cuánto tiempo tiene el Hakem para nombrar el palo de triunfo. Si se agota, se canta por él su palo más largo."
+        },
+        "kot": {
+            "title": "Puntuación del Kot",
+            "help": {
+                "double": "'Kot' hace que una partida de 7-0 valga dos puntos en lugar de uno.",
+                "hakemKot": "'Kot y Hakem Kot' hace además que dejar a cero al equipo del Hakem valga tres puntos.",
+                "off": "'Desactivado' cuenta cada partida ganada como un punto, por desigual que haya sido."
+            },
+            "data": {
+                "double": "Kot",
+                "hakemKot": "Kot y Hakem Kot"
+            }
+        },
+        "hakemSelection": {
+            "title": "Elegir al primer Hakem",
+            "help": "Cómo se encuentra al primer cantador de triunfo. Cada partida posterior sigue la regla de abajo.",
+            "data": {
+                "firstAce": "Primer as repartido",
+                "random": "Al azar"
+            },
+            "description": {
+                "firstAce": "Se dan cartas boca arriba hasta que sale un as",
+                "random": "Se sortea un asiento al momento, sin ceremonia"
+            }
+        },
+        "hakemRetention": {
+            "title": "Mantener al Hakem",
+            "help": "Quién canta triunfo en cada partida después de la primera.",
+            "data": {
+                "keepUntilLoss": "Hasta que pierda",
+                "rotate": "Pasar cada partida"
+            },
+            "description": {
+                "keepUntilLoss": "El Hakem sigue cantando mientras su equipo gane",
+                "rotate": "El canto pasa al siguiente jugador cada partida"
+            }
+        },
+        "hakemCardCount": {
+            "title": "Cartas antes de cantar",
+            "help": "Cuánto de su mano ve el Hakem antes de nombrar triunfo. Cinco es lo clásico; trece convierte el canto en una decisión informada.",
+            "description": {
+                "five": "El canto clásico, sobre un tercio de la mano",
+                "thirteen": "El Hakem lo ve todo antes de decidir"
+            }
+        }
+    },
+    "presets": {
+        "quickHokm": {
+            "title": "Hokm rápido",
+            "description": [
+                "Primero a 3 partidas",
+                "Turnos más rápidos"
+            ]
+        },
+        "kotRules": {
+            "title": "Reglas del Kot",
+            "description": [
+                "Llevárselo todo vale 2",
+                "Dejar a cero al Hakem vale 3"
+            ]
+        },
+        "openHand": {
+            "title": "Canto abierto",
+            "description": [
+                "El Hakem ve las 13 cartas",
+                "Primer Hakem al azar"
+            ]
+        }
+    },
+    "hakem": {
+        "title": "Hakem"
+    },
+    "tricks": {
+        "title": "Bazas"
+    },
+    "trump": {
+        "yourCall": "Canta el palo de triunfo",
+        "waiting": "{name} está cantando triunfo...",
+        "called": "Triunfo",
+        "announcement": "El triunfo es {suit}"
+    },
+    "header": {
+        "findingHakem": "Buscando el primer as...",
+        "yourCall": "Nombra el palo de triunfo",
+        "nameCall": "{name} está nombrando triunfo",
+        "youTookTrick": "Te llevaste la baza",
+        "nameTookTrick": "{name} se llevó la baza",
+        "youWonRound": "¡Tu equipo ganó la partida!",
+        "themWonRound": "El otro equipo ganó la partida"
+    },
+    "result": {
+        "normal": "{name} ganó {tricks}",
+        "kot": "{name} se lo llevó todo, {tricks}",
+        "hakemKot": "{name} dejó a cero al Hakem, {tricks}"
+    },
+    "rounds": {
+        "title": "Historial de rondas"
+    },
+    "scoreboard": {
+        "target": "Primero a {amount}, {tricks} bazas por partida"
+    },
+    "statistics": {
+        "sweeps": "Kots",
+        "tricksPerMatch": "Bazas / encuentro"
+    },
+    "help": {
+        "rules": {
+            "title": "Reglas",
+            "description": [
+                "El Hokm lo juegan cuatro personas en dos equipos de dos, con las parejas sentadas una frente a otra. Se reparte toda la baraja de 52 cartas, así que cada uno tiene trece.",
+                "Un jugador es el **Hakem**. Ve sus primeras cartas antes que nadie y nombra el palo de **triunfo**, que gana a cualquier otro palo durante el resto de la partida."
+            ]
+        },
+        "trump": {
+            "title": "Triunfo y asistir al palo",
+            "description": [
+                "El Hakem sale en la primera baza. Todos los demás deben **asistir al palo** si pueden; solo quien no tenga el palo de salida puede jugar otra cosa.",
+                "El triunfo más alto jugado se lleva la baza. Si nadie ha fallado, gana la carta más alta del palo de salida. Los ases son altos."
+            ]
+        },
+        "tricks": {
+            "title": "Llevarse bazas",
+            "description": [
+                "Quien se lleva una baza sale en la siguiente, así que ganar también significa elegir a qué palo tendrán que asistir los demás.",
+                "El primer equipo en llevarse **siete** bazas gana la partida — el resto de las cartas no se juega."
+            ]
+        },
+        "scoring": {
+            "title": "Puntuación",
+            "description": [
+                "Cada partida ganada vale un punto, y el primer equipo en llegar a siete gana el encuentro. Llevarse las siete bazas es un **Kot** y vale dos.",
+                "El Hakem sigue siendo Hakem mientras su equipo gane; en cuanto pierde una partida, el canto pasa al jugador de su derecha."
+            ]
+        },
+        "bots": {
+            "title": "Bots",
+            "description": [
+                "Los bots fáciles juegan cualquier carta permitida. Los normales leen la baza que tienen delante: se apartan de la baza que ya gana su pareja y se llevan el resto lo más barato posible.",
+                "Los bots difíciles cuentan las cartas. Recuerdan de qué palos te has quedado sin cartas, qué figuras han caído y qué palos sacas tú — sacar dos veces el mismo palo delante de tu pareja es algo a lo que responden."
+            ]
+        }
+    }
+}

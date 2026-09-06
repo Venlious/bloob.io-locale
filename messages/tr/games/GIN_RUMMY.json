@@ -1,0 +1,123 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Oyun, bir oyuncu bu kadar puana ulaştığında bitiyor. Ama bu, kazanacağı anlamına gelmiyor çünkü oyunun sonunda bonus puanlar veriliyor."
+        },
+        "knock": {
+            "title": "Kapı Çal",
+            "help": {
+                "enabled": "'Açık' ayarlanan vurma eşiğine göre vurmayı sağlar.",
+                "firstDiscardCard": "'İlk atılan karta göre' ilk atılan kartı eşiği belirlemek için kullanır; eğer bir As çekersen, Gin yapman lazım.",
+                "disabled": "'Kapalı' bir turu sadece Gin ile bitirmeye izin verir."
+            },
+            "data": {
+                "firstDiscardCard": "İlk atılan karta göre"
+            }
+        },
+        "knockBasedOnFirstCard": {
+            "title": "İlk Atışa Göre Vurma",
+            "help": "Açık olduğunda, elden çıkarma yığınındaki ilk kart, vurma eşiğini belirliyor. Oyuncular sadece ölü ağaçları bu kartın değerine eşit veya daha düşükse vurabiliyor."
+        },
+        "knockThreshold": {
+            "title": "Kapı Çalma Eşiği",
+            "help": "Bir oyuncu, sırası geldiğinde ve elindeki ölü taş sayısı belirlenen sınırın altında veya eşit olduğunda \"knock\" yapabilir."
+        },
+        "ginPointAmount": {
+            "title": "Cin",
+            "help": "Gin çağıran bir oyuncuya verilen puan miktarı, yani elindeki tüm kartların birleştirilmiş olması durumu."
+        },
+        "bigGinPointAmount": {
+            "title": "Büyük Cin",
+            "help": "Bütün kartlar birleştirildiğinde ve çekilen kartla birlikte el tamamen birleştiğinde, yani hiç kullanılmayan kart kalmadığında \"Büyük Gin\" çağıran bir oyuncuya verilen puan miktarı."
+        },
+        "undercutPointAmount": {
+            "title": "Kısa Saç",
+            "help": "Bir \"undercut\" durumu, bir oyuncu knock yaptığında ama rakibinin aynı ya da daha az deadwood puanı olduğunda olur. Bu durumda rakip ekstra puan alır."
+        },
+        "firstBonusPointAmount": {
+            "title": "Bonus: İlk kazanan",
+            "help": "Oyun sonunda verilen bir ödül. 'Kazanma Miktarı'na ilk ulaşan oyuncuya bir bonus veriyor."
+        },
+        "roundBonusPointAmount": {
+            "title": "Bonus: Tur",
+            "help": "Oyun sonunda veriliyor. Her oyuncuya kazandığı her tur için bu kadar puan veriyor, berabere kalanlar hariç."
+        },
+        "shutoutBonusPointAmount": {
+            "title": "Bonus: Kapatma",
+            "help": "Oyun sonunda veriliyor. Eğer her turu kazanmışlarsa, kazanana bu kadar ekstra puan veriyor."
+        }
+    },
+    "presets": {
+        "straightGin": {
+            "title": "Düz Cin",
+            "description": [
+                "Kapı Çalmayın",
+                "Ekstra Yok"
+            ]
+        },
+        "oklahomaGin": {
+            "title": "Oklahoma Cin",
+            "description": [
+                "İlk atılan karta göre knock değeri"
+            ]
+        }
+    },
+    "help": {
+        "rounds": {
+            "title": "Turlar",
+            "description": [
+                "Oyun bir sürü turdan oluşuyor. Her turda, oyunculara 10 kart dağıtılıyor ve yığın içinde bir kart açılıyor. Oyuncular ya geçmeyi ya da yığından en üstteki kartı almayı seçebilir.",
+                "Sıralar sırayla geçiyor, senin sırası geldiğinde yığından ya da desteden bir kart alabilirsin. Sonrasında bir kartı yığına geri vermen gerekiyor."
+            ]
+        },
+        "deadwood": {
+            "title": "Ölü Ağaç",
+            "description": [
+                "Deadwood, herhangi bir meldin parçası olmayan kartlara denir. Deadwood'un değeri bu kartların değerlerinin toplamıyla hesaplanır (mesela, iki Kral ve bir beş toplamda 25 eder).",
+                "Deadwood'unu mümkün olduğunca düşük tutmaya çalış, meldler yaparak ve meldlerde olmayan yüksek değerli kartları atarak."
+            ]
+        },
+        "melds": {
+            "title": "Meldler",
+            "description": [
+                "Meldler, aynı türden üç ya da daha fazla kartın sıralanmasıyla (mesela, 3K, 4K, 5K) ya da aynı değerden üç ya da daha fazla kartın bir araya gelmesiyle (mesela, 3S, 3K, 3M) oluşabilir.",
+                "Meldler, elinde ve arayüzde otomatik olarak vurgulanıyor, bu yüzden yığınına dikkat et—rakibin ihtiyacın olan kartı bırakabilir!"
+            ]
+        },
+        "knock": {
+            "title": "Kapıyı Çal",
+            "description": [
+                "Eğer elindeki ölü kart sayısı 10'dan azsa kapıyı çalabilirsin. Kapıyı çaldığında, tüm kartlar açığa çıkıyor ve rakibinin ölü kartlarını görebiliyorsun. Eğer senin ölü kart sayın daha fazlaysa, rakip bu turu bonusla kazanıyor.",
+                "Kapı çalma puanlama sistemi basit: senin ölü kart sayını rakibinin ölü kart sayısından çıkar. Mesela, senin ölü kart sayın 5, rakibininki 25 ise, 20 puan kazanıyorsun."
+            ]
+        },
+        "gin": {
+            "title": "Gin ve Büyük Gin",
+            "description": [
+                "Eğer elindeki ölü kart sayısı 0 ise ya da son ölü kartını attıktan sonra 0 olabiliyorsa, Gin yapmışsın demektir. Bu, kazanmanı garanti eder ve sana bir bonus ile ölü kart farkını kazandırır.",
+                "Büyük Gin daha da iyi: eğer elindeki tüm kartlar ve yeni çektiğin kart kombinasyon oluşturuyorsa, daha büyük bir bonus alırsın. Büyük Gin yaptığında hemen söyle!"
+            ]
+        },
+        "goal": {
+            "title": "Hedef",
+            "description": [
+                "Amaç, mümkün olduğunca çok tur kazanmak ve 100 puana ilk ulaşan olmak. Bu, oyunu bitirir ve bonus puanlar da dahil olmak üzere son puanları gösterir.",
+                "Varsayılan olarak, kazandığın her tur için ekstra 25 puan alıyorsun ve 100 puana ilk ulaşan olduğunda da ekstra 100 puan kapıyorsun."
+            ]
+        }
+    },
+    "info": {
+        "title": {
+            "tie": "Beraberlik",
+            "undercut": "Altına almak",
+            "gin": "Gin",
+            "bigGin": "Büyük Gin",
+            "knock": "Vurmak",
+            "knockSuccessRate": "Knock Başarılı"
+        },
+        "tieDescription": "Oyun oynamaya yetecek kadar kart kalmadı. Beraberlik!",
+        "scoreDescription": "Skor, her oyuncunun elindeki ölü kartların toplam değerleri arasındaki farkla belirleniyor.",
+        "yourMeldAfterKnock": "Ah hayır... {name}'in bazı ölü kartları senin meldlerine taşınabilir!",
+        "nameMeldAfterKnock": "Harika! Senin bazı ölü kartların {name}'in meldlerine taşınabilir!"
+    }
+}

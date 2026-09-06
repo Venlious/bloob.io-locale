@@ -1,0 +1,163 @@
+{
+    "options": {
+        "targetScore": {
+            "title": "Målscore",
+            "help": "Scoren en spiller må nå for å vinne spillet."
+        },
+        "entryScore": {
+            "title": "Inngangsscore",
+            "help": "Hvor mye en spillers første sikrede tur må være verdt før poengene teller. Sett til null for å la spillere sikre fra aller første tur."
+        },
+        "hotDice": {
+            "title": "Varme Terninger",
+            "help": "Når hver terning på bordet er lagt til side, får spilleren alle seks tilbake og beholder poengene i turen."
+        },
+        "finalRound": {
+            "title": "Siste Runde",
+            "help": "Å passere målscoren åpner en siste runde i stedet for å avslutte spillet med en gang, slik at alle får like mange turer."
+        },
+        "multiples": {
+            "title": "Fire Like Og Opp",
+            "help": "Hva fire, fem og seks like er verdt sammenlignet med de tre like de bygger på.",
+            "fixed": "+{points} per terning",
+            "multiplier": "×2 ×3 ×4",
+            "doubling": "×2 per terning"
+        },
+        "straightScore": {
+            "help": "Hva én av hver side, kastet i ett kast med seks terninger, er verdt. Sett til null for å ta den ut av spillet."
+        },
+        "threePairsScore": {
+            "help": "Hva tre par, kastet i ett kast med seks terninger, er verdt. Sett til null for å ta dem ut av spillet."
+        },
+        "twoTripletsScore": {
+            "help": "Hva to sett med tre like, kastet i ett kast med seks terninger, er verdt. Sett til null for å ta dem ut av spillet."
+        },
+        "fourAndPairScore": {
+            "help": "Hva fire like sammen med et par, kastet i ett kast med seks terninger, er verdt. Sett til null for å ta det ut av spillet."
+        },
+        "farklePenalty": {
+            "title": "Farkle-straff",
+            "help": "Poeng som trekkes fra en spiller som farkler flere turer på rad. Sett til null for ingen straff."
+        },
+        "farklePenaltyStreak": {
+            "title": "Farkles På Rad",
+            "help": "Hvor mange turer på rad som må ende i en farkle før straffen kommer."
+        },
+        "speed": {
+            "title": "Fart",
+            "help": "Hvor fort terningkast-animasjonen spilles av."
+        },
+        "addedRollTime": {
+            "title": "Lagt til Tid",
+            "help": "Hvor mye tid legges til etter hver rull. Vil aldri overstige turtiden."
+        }
+    },
+    "presets": {
+        "sprint": {
+            "title": "Sprint",
+            "description": [
+                "Et kort spill til 4000, og ingen inngangsscore som holder deg igjen"
+            ]
+        },
+        "greed": {
+            "title": "Grådighet",
+            "description": [
+                "Hver ekstra terning dobler, og å farkle tre ganger på rad koster deg"
+            ]
+        }
+    },
+    "combination": {
+        "straight": "Straight",
+        "threePairs": "Tre par",
+        "twoTriplets": "To sett tre like",
+        "fourAndPair": "Fire like og et par",
+        "ofAKind": "{count} like",
+        "single": "Enkelt {face}"
+    },
+    "scorecard": {
+        "entry": "Min. inngang",
+        "entryHelp": "Du trenger minst {points} i én tur før den første sikringen din teller. Etter det kan du sikre så mye du vil.",
+        "off": "Spilles ikke",
+        "threeOnes": "Tre 1-ere",
+        "tripleValue": "{points} x øyne",
+        "fourOrMore": "Fire eller flere"
+    },
+    "info": {
+        "holdHint": "Klikk på en terning for å ta den opp av bollen",
+        "farkle": "Farkle!",
+        "farkleLost": "Farkle. Du har mistet alle poeng du har beholdt og lagt til side denne turen.",
+        "hotDice": "Varme terninger!",
+        "hotDiceHint": "Alle terningene ga poeng, så alle seks kommer tilbake.",
+        "selection": "Lagt til side",
+        "kept": "Beholdt",
+        "taking": "Tar",
+        "bank": "Sikre",
+        "bankPoints": "Sikre {points}",
+        "banked": "Sikret",
+        "finalRound": "Siste runde",
+        "description": {
+            "single1": "En enkel 1-er gir poeng helt alene, i tillegg til alt annet du legger til side.",
+            "single5": "En enkel 5-er gir poeng helt alene, i tillegg til alt annet du legger til side.",
+            "threeOnes": "Tre 1-ere er det ene settet med tre like som gir et fast beløp i stedet for hundre ganger øynene.",
+            "threeOfAKind": "Tre terninger med samme side, i ett kast.",
+            "fourOrMore": "Fire, fem eller seks terninger med samme side. Hva hver ekstra terning gir, bestemmer bordet.",
+            "straight": "Én av hver side, i ett kast med alle seks terningene.",
+            "threePairs": "Tre par, i ett kast med alle seks terningene.",
+            "twoTriplets": "To sett med tre like, i ett kast med alle seks terningene.",
+            "fourAndPair": "Fire like sammen med et par, i ett kast med alle seks terningene."
+        }
+    },
+    "status": {
+        "throw": "Rull alle seks terningene for å starte turen din",
+        "choose": "Rull igjen for å få mer, eller sikre turen"
+    },
+    "error": {
+        "selection": "Hver terning du legger til side må være del av en kombinasjon som gir poeng.",
+        "locked": "Den terningen er allerede lagt til side og kan ikke flyttes.",
+        "empty": "Du må legge minst én terning med poeng til side før du ruller igjen.",
+        "entry": "Den første sikrede turen din må være verdt minst {points}."
+    },
+    "statistics": {
+        "farkles": "Farkles",
+        "bestTurn": "Beste tur",
+        "hotDice": "Varme terninger"
+    },
+    "help": {
+        "objective": {
+            "title": "Målet",
+            "description": [
+                "Den første spilleren som **sikrer** målscoren vinner. Det er vanligvis 10 000 poeng.",
+                "Poeng er ikke dine før du sikrer dem. Fram til da tar ett dårlig kast alt sammen. Det kalles en **farkle**."
+            ]
+        },
+        "turn": {
+            "title": "Å spille en tur",
+            "description": [
+                "Rull alle seks terningene, og klikk så på dem du vil beholde for å ta dem opp av bollen. Klikk på en terning igjen for å legge den tilbake. Hver terning du beholder må gi poeng.",
+                "Rull så resten for å få mer, eller sikre det du har og send turen videre. Jo færre terninger som er igjen, jo større er sjansen for at neste rull ikke gir noe."
+            ]
+        },
+        "scoring": {
+            "title": "Hva som gir poeng",
+            "description": [
+                "En enkel 1-er er verdt 100 og en enkel 5-er er verdt 50. Ingen andre terninger gir poeng alene.",
+                "Tre like er verdt 100 ganger øynene, men tre 1-ere er verdt 1000. Fire eller flere like er verdt enda mer. Straight, tre par, to sett tre like og fire like med et par krever alle seks terningene i ett kast."
+            ]
+        },
+        "farkle": {
+            "title": "Å farkle",
+            "description": [
+                "Kaster du ingen terninger som gir poeng, har du **farklet**. Turen er over, og hvert poeng du har beholdt eller lagt til side underveis er borte.",
+                "Å vite når man skal stoppe er hele spillet. Noen bord trekker også poeng fra en spiller som farkler flere turer på rad."
+            ]
+        },
+        "variations": {
+            "title": "Husregler",
+            "description": [
+                "**Varme terninger**: legg hver terning til side, og du får alle seks tilbake og beholder poengene.",
+                "**Inngangsscore**: den første sikringen din må nå den, ellers teller ingenting av den.",
+                "**Siste runde**: så snart noen passerer målet, får alle andre én siste tur."
+            ]
+        }
+    }
+}

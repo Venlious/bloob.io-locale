@@ -1,0 +1,150 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Bir oyuncunun maçı kazanmak için ulaşması gereken puan. Her tur bitirme sırasına göre puan dağıtır, yani daha kalabalık bir masa tur başına daha çok puan verir."
+        },
+        "exchange": {
+            "title": "Kart takası",
+            "help": {
+                "standard": "'Standart', Çöp'ün en iyi iki kartını yukarı vermesini ve Başkan'ın karşılığında istediği iki kartı geri vermesini sağlar, artı iki yardımcı arasında bir kart.",
+                "single": "'Tek kart' bunu yarıya indirir: her yöne tek kart, yani son sıra sana hâlâ bir şeye mal olur ama turun tamamına değil.",
+                "none": "'Devre Dışı' her turu sıfırdan dağıtır ve son sıranın puandan başka bir bedeli olmaz."
+            },
+            "data": {
+                "standard": "Standart",
+                "single": "Tek kart"
+            }
+        },
+        "firstLead": {
+            "title": "İlk eli kim açar",
+            "help": {
+                "lowestCard": "'En düşük kart', açılışı sinek üçlüsü dağıtılan oyuncuya verir; oyun geleneksel olarak böyle başlar.",
+                "previousScum": "'Önceki Çöp', geçen turun kaybedenine açtırır; bu da az önce verdiği kartlar için küçük bir teselli olur.",
+                "random": "'Rastgele' bir koltuk çeker ve her tur başka bir yerden başlar."
+            },
+            "data": {
+                "lowestCard": "En düşük kart",
+                "previousScum": "Önceki Çöp"
+            }
+        },
+        "revolution": {
+            "title": "Devrim",
+            "help": "Dört aynı kart, turun geri kalanında sıralamayı tersine çevirir: üçlü en iyi kart, ikili en kötüsü olur. İkinci bir dörtlü her şeyi geri çevirir."
+        },
+        "eightStop": {
+            "title": "Sekizli durdurur",
+            "help": "Sekizli oynamak eli anında bitirir. Masa toplanır ve onu oynayan kişi kimsenin pas geçmesini beklemeden yeni eli açar."
+        },
+        "twoClears": {
+            "title": "İkili temizler",
+            "help": "İkili oynamak da eli anında bitirir, tıpkı sekizli gibi. Oyunun en iyi kartı böylece açılışı kapmanın da bir yolu olur."
+        },
+        "sameRankSkip": {
+            "title": "Eşitle ve atla",
+            "help": "Yığındakiyle tam olarak aynı değeri koymak geçerli bir cevap hâline gelir ve bunu yapan, sıradaki oyuncunun sırasını atlatır."
+        }
+    },
+    "presets": {
+        "default": {
+            "description": [
+                "Sade kurallar, 10 puana ilk ulaşan kazanır"
+            ]
+        },
+        "daifugo": {
+            "title": "Daifugo",
+            "description": [
+                "Dört aynı kartta devrim",
+                "Sekizliler eli bitirir"
+            ]
+        },
+        "partyRules": {
+            "title": "Parti Kuralları",
+            "description": [
+                "İkililer masayı temizler",
+                "Eşitle ve atla",
+                "Daha hızlı sıralar"
+            ]
+        },
+        "equalFooting": {
+            "title": "Eşit Şartlar",
+            "description": [
+                "Turlar arasında kart takası yok",
+                "Her zaman sinek üçlüsü açar"
+            ]
+        }
+    },
+    "role": {
+        "title": "Rol",
+        "PRESIDENT": "Başkan",
+        "VICE_PRESIDENT": "Başkan Yardımcısı",
+        "CITIZEN": "Vatandaş",
+        "VICE_SCUM": "Çöp Yardımcısı",
+        "SCUM": "Çöp"
+    },
+    "header": {
+        "yourExchange": "Vereceğin kartları seç",
+        "waitingExchange": "Kart takası bekleniyor..."
+    },
+    "trickEnd": {
+        "EIGHT_STOP": "Bir sekizli eli bitirdi",
+        "TWO_CLEARS": "Bir ikili masayı temizledi"
+    },
+    "standings": "Sıralama",
+    "wentOut": "{place}. bitirdi",
+    "selfWentOut": "Kartların bitti — bu turda {place}. sıradasın",
+    "giveCards": "Vermek için {count} kart seç",
+    "giveAction": "Ver",
+    "playAction": "Oyna",
+    "pass": "Pas",
+    "passed": "Pas geçti",
+    "selfPassed": "Bu elde pas geçtin",
+    "autoPass": {
+        "title": "Otomatik pas",
+        "help": "Elindeki hiçbir kart yığını geçemediği anda sıranı senin yerine pas geçer."
+    },
+    "selectHigher": "Daha yüksek bir kart seç",
+    "selectLower": "Daha düşük bir kart seç",
+    "selectCount": "Aynı değerden {count} kart seç",
+    "noPlayable": "Kartlarının hiçbiri kullanılamaz",
+    "statistics": {
+        "flawless": "Hiç pas geçmeden kazandı",
+        "presidentShare": "Başkanlık oranı"
+    },
+    "help": {
+        "rules": {
+            "title": "Kurallar",
+            "description": [
+                "Deste tamamen üç ila sekiz oyuncuya dağıtılır ve oyun, elindeki bütün kartlardan kurtulma yarışıdır.",
+                "Bir el, aynı değerden istediğin kadar kartla açılır. Sonraki herkes **aynı sayıda** ama daha yüksek değerde kartla cevap vermek ya da pas geçmek zorundadır."
+            ]
+        },
+        "beating": {
+            "title": "Yığını geçmek",
+            "description": [
+                "Kartlar üçlüden ikiliye doğru yükselir, yani oyunun en iyi kartı **ikili**, en kötüsü de üçlüdür. As, papazla ikilinin arasındadır.",
+                "Pas geçmek seni turdan değil, o anki elden çıkarır. Herkes pas geçtiğinde masa toplanır ve son oynayan kişi yeni eli açar."
+            ]
+        },
+        "roles": {
+            "title": "Roller ve takas",
+            "description": [
+                "Kartlarını ilk bitiren **Başkan**, elinde kart kalan son oyuncu ise **Çöp** olur. Puanlar bitirme sırasına göre verilir.",
+                "Bu sıralama sonraki tura taşınır: Çöp en iyi kartlarını yukarı verir, Başkan da karşılığında istediği kartları geri verir; kulağa geldiği kadar adaletsiz."
+            ]
+        },
+        "variations": {
+            "title": "Ev kuralları",
+            "description": [
+                "Bu masadaki neredeyse her kural bir ayar. Dört aynı karttaki bir **devrim** sıralamayı ters çevirir; bir sekizli ya da ikili eli anında bitirebilir.",
+                "Yığındakiyle aynı değeri koymak serbest bırakılabilir, bu da sıradaki oyuncuyu atlatır; turlar arasındaki takas ise tek karta indirilebilir ya da tamamen kapatılabilir."
+            ]
+        },
+        "bots": {
+            "title": "Botlar",
+            "description": [
+                "Kolay botlar kuralların izin verdiği her hamleyi oynar ve arada bir sebepsizce pas geçer. Normal botlar mümkün olan en ucuz cevabı verir ve açarken düşük kartlarını toplu hâlde atar.",
+                "Zor botlar masada harcanacak rakip kaldığı sürece ikililerini saklar ve ancak el kendileriyle tek bir oyuncu arasına kaldığında birini oynar."
+            ]
+        }
+    }
+}

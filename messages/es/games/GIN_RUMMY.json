@@ -1,0 +1,123 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "El juego termina en cuanto un jugador llega a esta cantidad de puntos. Pero eso no garantiza que gane, ya que se otorgan puntos extra al final del juego."
+        },
+        "knock": {
+            "title": "Cerrar",
+            "help": {
+                "enabled": "Al estar 'Activado' permite cerrar según el umbral de cierre configurado.",
+                "firstDiscardCard": "'Según la primera carta descartada' usa la primera carta que descartas para establecer el umbral; si sale un As, tienes que hacer un Gin.",
+                "disabled": "'Desactivado' solo permite terminar una ronda con un Gin."
+            },
+            "data": {
+                "firstDiscardCard": "Según la primera carta que descartes"
+            }
+        },
+        "knockBasedOnFirstCard": {
+            "title": "Cierre basado en el primer descarte",
+            "help": "Cuando está activado, la primera carta en la pila de descarte determina el límite para cerrar. Los jugadores solo pueden cerrar si la cantidad de sus cartas muertas es igual o menor al valor de esta carta."
+        },
+        "knockThreshold": {
+            "title": "Umbral de cierre",
+            "help": "Un jugador puede \"cerrar\" cuando es su turno y la cantidad de sus \"cartas muertas\" está por debajo o es igual al límite que se configuró."
+        },
+        "ginPointAmount": {
+            "title": "Gin",
+            "help": "La cantidad de puntos que se le dan a un jugador por hacer Gin, que es cuando todas las cartas en la mano están en una combinación."
+        },
+        "bigGinPointAmount": {
+            "title": "Gran Gin",
+            "help": "La cantidad de puntos que se le dan a un jugador por hacer Gran Gin, que es cuando todas las cartas en la mano más la carta que tomó están en una combinación, sin cartas muertas."
+        },
+        "undercutPointAmount": {
+            "title": "Cierre superado",
+            "help": "Un cierre superado pasa cuando un jugador se queda sin cartas, pero su oponente tiene la misma cantidad de puntos por cartas muertas o menos. En este caso, el oponente gana puntos extra."
+        },
+        "firstBonusPointAmount": {
+            "title": "Bono: Primero en ganar",
+            "help": "Premio que se da al final del juego. Le da un bono al jugador que fue el primero en llegar a la 'Cantidad ganadora'."
+        },
+        "roundBonusPointAmount": {
+            "title": "Bono: Rondas",
+            "help": "Premio que se da al final del juego. Le da a cada jugador esta cantidad de puntos por cada ronda que ha ganado, sin contar los empates."
+        },
+        "shutoutBonusPointAmount": {
+            "title": "Bono: Victoria total",
+            "help": "Premio que se da al final del juego. Le da al ganador un bono extra de esta cantidad de puntos si ha ganado todas las rondas."
+        }
+    },
+    "presets": {
+        "straightGin": {
+            "title": "Gin limpio",
+            "description": [
+                "Sin cierres",
+                "Sin bono"
+            ]
+        },
+        "oklahomaGin": {
+            "title": "Gin Oklahoma",
+            "description": [
+                "Valor de cierre basado en el primer descarte."
+            ]
+        }
+    },
+    "help": {
+        "rounds": {
+            "title": "Rondas",
+            "description": [
+                "El juego se compone de varias rondas. En cada ronda, a los jugadores se les reparten 10 cartas y se muestra una carta en la pila. Los jugadores pueden decidir pasar o agarrar la carta de arriba de la pila.",
+                "Los turnos se alternan, y en tu turno, puedes tomar una carta de la pila o del mazo. Después, tienes que devolver una carta a la pila."
+            ]
+        },
+        "deadwood": {
+            "title": "Cartas muertas",
+            "description": [
+                "Cartas muertas se refiere a las cartas que no forman parte de ninguna combinación. El valor se calcula sumando los valores de estas cartas (por ejemplo, dos Reyes y un cinco suman 25).",
+                "Trata de mantener tu cantidad de cartas muertas lo más bajo posible formando combinaciones y desechando cartas de alto valor que no estén en combinaciones."
+            ]
+        },
+        "melds": {
+            "title": "Combinaciones",
+            "description": [
+                "Las combinaciones se forman con una secuencia de tres o más cartas del mismo palo (por ejemplo, 3 de diamantes, 4 de diamantes, 5 de diamantes) o tres o más cartas del mismo número (por ejemplo, 3 de corazones, 3 de diamantes, 3 de tréboles).",
+                "Las combinaciones se resaltan automáticamente en tu mano y en la interfaz, así que pon atención a la pila; ¡tu oponente puede tirar la carta que necesitas!"
+            ]
+        },
+        "knock": {
+            "title": "Cierre",
+            "description": [
+                "Puedes cerrar si el valor de tus cartas muertas es menos de 10. Cuando cierras, se revelan todas las cartas y verás las cartas muertas de tu oponente. Si tu valor es más alto, tu oponente gana la ronda con un bono.",
+                "La puntuación por un cierre es fácil: resta tu suma de la de tu oponente. Por ejemplo, si tu suma es 5 y la de tu oponente es 25, ganas 20 puntos."
+            ]
+        },
+        "gin": {
+            "title": "Gin y Gran Gin",
+            "description": [
+                "Si tu valor por cartas muertas es 0 o puede ser 0 después de descartar tu última carta de las cartas muertas, tienes un Gin. Esto garantiza una victoria y te da un bono más la diferencia de valor de las cartas muertas.",
+                "Un Gran Gin es aún mejor: si toda tu mano, más la carta que acabas de tomar, forman combinaciones, recibes un bono más grande. ¡Grita Gran Gin en cuanto lo tengas!"
+            ]
+        },
+        "goal": {
+            "title": "Objetivo",
+            "description": [
+                "El objetivo es ganar la mayor cantidad de rondas posible y ser el primero en llegar a 100 puntos. Eso termina el juego y muestra los puntajes finales, incluyendo los puntos extra.",
+                "Por default, ganas 25 puntos extra por cada ronda que ganas y 100 puntos más por ser el primero en llegar a 100 puntos."
+            ]
+        }
+    },
+    "info": {
+        "title": {
+            "tie": "Empate",
+            "undercut": "Cierre superado",
+            "gin": "Gin",
+            "bigGin": "Gran Gin",
+            "knock": "Cierre",
+            "knockSuccessRate": "¡Cierre exitoso!"
+        },
+        "tieDescription": "No quedan suficientes cartas para seguir jugando. ¡Es un empate!",
+        "scoreDescription": "La puntuación se saca calculando la diferencia entre los valores totales de las cartas muertas en la mano de cada jugador.",
+        "yourMeldAfterKnock": "Oh no... ¡Algunas de las cartas muertas de {name} se pueden mover a tus combinaciones!",
+        "nameMeldAfterKnock": "¡Chido! Algunas de tus cartas muertas se pueden mover a las combinaciones de {name}!"
+    }
+}

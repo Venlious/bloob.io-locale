@@ -1,0 +1,163 @@
+{
+    "options": {
+        "targetScore": {
+            "title": "Score Cible",
+            "help": "Le score qu'un joueur doit atteindre pour gagner la partie."
+        },
+        "entryScore": {
+            "title": "Score d'Entrée",
+            "help": "Ce que doit valoir le premier tour mis en banque par un joueur avant que ses points comptent. Mets zéro pour laisser les joueurs banquer dès le premier tour."
+        },
+        "hotDice": {
+            "title": "Dés Chauds",
+            "help": "Quand chaque dé sur la table a été mis de côté, le joueur récupère les six et garde les points du tour."
+        },
+        "finalRound": {
+            "title": "Dernier Tour",
+            "help": "Dépasser le score cible ouvre un dernier tour au lieu de terminer la partie tout de suite, pour que tout le monde joue le même nombre de tours."
+        },
+        "multiples": {
+            "title": "Carré Et Plus",
+            "help": "Ce que valent quatre, cinq et six dés identiques par rapport au brelan sur lequel ils sont construits.",
+            "fixed": "+{points} par dé",
+            "multiplier": "×2 ×3 ×4",
+            "doubling": "×2 par dé"
+        },
+        "straightScore": {
+            "help": "Ce que vaut une suite, en un seul lancer de six dés. Mets zéro pour la retirer du jeu."
+        },
+        "threePairsScore": {
+            "help": "Ce que valent trois paires, en un seul lancer de six dés. Mets zéro pour les retirer du jeu."
+        },
+        "twoTripletsScore": {
+            "help": "Ce que valent deux brelans, en un seul lancer de six dés. Mets zéro pour les retirer du jeu."
+        },
+        "fourAndPairScore": {
+            "help": "Ce que vaut un carré accompagné d'une paire, en un seul lancer de six dés. Mets zéro pour le retirer du jeu."
+        },
+        "farklePenalty": {
+            "title": "Pénalité Farkle",
+            "help": "Points retirés à un joueur qui farkle plusieurs tours d'affilée. Mets zéro pour aucune pénalité."
+        },
+        "farklePenaltyStreak": {
+            "title": "Farkles d'Affilée",
+            "help": "Combien de tours d'affilée doivent finir en farkle avant que la pénalité tombe."
+        },
+        "speed": {
+            "title": "Vitesse",
+            "help": "La vitesse à laquelle l'animation du lancer de dés est jouée."
+        },
+        "addedRollTime": {
+            "title": "Temps Ajouté",
+            "help": "Combien de temps est ajouté après chaque lancer. Ça ne dépassera jamais le temps du tour."
+        }
+    },
+    "presets": {
+        "sprint": {
+            "title": "Sprint",
+            "description": [
+                "Une partie courte jusqu'à 4000, sans score d'entrée pour te retenir"
+            ]
+        },
+        "greed": {
+            "title": "Avidité",
+            "description": [
+                "Chaque dé en plus double la mise, et farkler trois fois de suite te coûte cher"
+            ]
+        }
+    },
+    "combination": {
+        "straight": "Suite",
+        "threePairs": "Trois paires",
+        "twoTriplets": "Deux brelans",
+        "fourAndPair": "Carré et paire",
+        "ofAKind": "{count} identiques",
+        "single": "{face} seul"
+    },
+    "scorecard": {
+        "entry": "Entrée min.",
+        "entryHelp": "Il te faut au moins {points} en un tour pour que ta première mise en banque compte. Ensuite tu peux banquer ce que tu veux.",
+        "off": "Non joué",
+        "threeOnes": "Trois 1",
+        "tripleValue": "{points} x la face",
+        "fourOrMore": "Quatre ou plus"
+    },
+    "info": {
+        "holdHint": "Clique un dé pour le sortir du bol",
+        "farkle": "Farkle !",
+        "farkleLost": "Farkle. Tu perds tous les points gardés et mis de côté ce tour-ci.",
+        "hotDice": "Dés chauds !",
+        "hotDiceHint": "Tous les dés ont marqué, donc les six reviennent.",
+        "selection": "Mis de côté",
+        "kept": "Gardés",
+        "taking": "En cours",
+        "bank": "Banquer",
+        "bankPoints": "Banquer {points}",
+        "banked": "Banqué",
+        "finalRound": "Dernier tour",
+        "description": {
+            "single1": "Un 1 seul marque à lui tout seul, en plus de ce que tu mets de côté.",
+            "single5": "Un 5 seul marque à lui tout seul, en plus de ce que tu mets de côté.",
+            "threeOnes": "Trois 1 sont le seul brelan qui vaut un montant fixe plutôt que cent fois la face.",
+            "threeOfAKind": "Trois dés montrant la même face, en un lancer.",
+            "fourOrMore": "Quatre, cinq ou six dés montrant la même face. Ce que rapporte chaque dé en plus dépend de la table.",
+            "straight": "Une fois chaque face, en un seul lancer des six dés.",
+            "threePairs": "Trois paires, en un seul lancer des six dés.",
+            "twoTriplets": "Deux brelans, en un seul lancer des six dés.",
+            "fourAndPair": "Un carré accompagné d'une paire, en un seul lancer des six dés."
+        }
+    },
+    "status": {
+        "throw": "Roule les six dés pour commencer ton tour",
+        "choose": "Roule encore pour marquer plus, ou banque le tour"
+    },
+    "error": {
+        "selection": "Chaque dé que tu mets de côté doit faire partie d'une combinaison qui marque.",
+        "locked": "Ce dé est déjà mis de côté et ne peut plus bouger.",
+        "empty": "Tu dois mettre au moins un dé qui marque de côté avant de rouler encore.",
+        "entry": "Ton premier tour banqué doit valoir au moins {points}."
+    },
+    "statistics": {
+        "farkles": "Farkles",
+        "bestTurn": "Meilleur tour",
+        "hotDice": "Dés chauds"
+    },
+    "help": {
+        "objective": {
+            "title": "Le but",
+            "description": [
+                "Le premier joueur à **banquer** le score cible gagne. C'est en général 10 000 points.",
+                "Les points ne sont à toi qu'une fois banqués. Avant ça, un mauvais lancer te les prend tous. On appelle ça un **farkle**."
+            ]
+        },
+        "turn": {
+            "title": "Jouer un tour",
+            "description": [
+                "Roule les six dés, puis clique ceux que tu veux garder pour les sortir du bol. Reclique un dé pour le remettre. Chaque dé gardé doit marquer.",
+                "Roule ensuite ce qui reste pour marquer plus, ou banque ce que tu as et passe le tour. Moins il reste de dés, plus le prochain coup risque de ne rien marquer."
+            ]
+        },
+        "scoring": {
+            "title": "Ce qui marque",
+            "description": [
+                "Un 1 seul vaut 100 et un 5 seul vaut 50. Aucun autre dé ne marque tout seul.",
+                "Un brelan vaut 100 fois sa face, mais trois 1 valent 1000. Quatre dés identiques ou plus valent encore davantage. Une suite, trois paires, deux brelans et un carré avec une paire demandent les six dés en un seul lancer."
+            ]
+        },
+        "farkle": {
+            "title": "Farkler",
+            "description": [
+                "Si aucun dé lancé ne marque, tu **farkles**. Le tour s'arrête, et chaque point gardé ou mis de côté pendant celui-ci disparaît.",
+                "Savoir quand s'arrêter, c'est tout le jeu. Certaines tables retirent aussi des points à un joueur qui farkle plusieurs tours d'affilée."
+            ]
+        },
+        "variations": {
+            "title": "Règles de la maison",
+            "description": [
+                "**Dés chauds** : mets chaque dé de côté et tu récupères les six en gardant les points.",
+                "**Score d'entrée** : ta première mise en banque doit l'atteindre, sinon rien ne compte.",
+                "**Dernier tour** : dès que quelqu'un dépasse la cible, tous les autres ont droit à un dernier tour."
+            ]
+        }
+    }
+}

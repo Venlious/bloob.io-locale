@@ -1,0 +1,123 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Het spel eindigt zodra een speler dit aantal punten bereikt. Maar dat betekent niet dat je automatisch wint, want er worden aan het eind van het spel nog bonuspunten uitgedeeld."
+        },
+        "knock": {
+            "title": "Klop",
+            "help": {
+                "enabled": "'Ingeschakeld' laat je kloppen op basis van de ingestelde klopdrempel.",
+                "firstDiscardCard": "'Gebaseerd op de eerste afgeworpen kaart' gebruikt de eerste afgeworpen kaart om de drempel in te stellen; als er een Aas getrokken wordt, moet je Gin gaan.",
+                "disabled": "'Uitgeschakeld' laat je een ronde alleen eindigen met een Gin."
+            },
+            "data": {
+                "firstDiscardCard": "Gebaseerd op de eerste aflegkaart"
+            }
+        },
+        "knockBasedOnFirstCard": {
+            "title": "Klopt op Eerste Afval",
+            "help": "Als het aan staat, bepaalt de eerste kaart in de aflegstapel de klop-drempel. Spelers kunnen alleen knokken als hun deadwood gelijk aan of lager is dan de waarde van deze kaart."
+        },
+        "knockThreshold": {
+            "title": "Klopdrempel",
+            "help": "Een speler kan kloppen als het hun beurt is en hun deadwood gelijk aan of lager is dan de ingestelde drempel."
+        },
+        "ginPointAmount": {
+            "title": "Gin",
+            "help": "Het aantal punten dat een speler krijgt voor het roepen van Gin, wat betekent dat alle kaarten in een hand in een meld zitten."
+        },
+        "bigGinPointAmount": {
+            "title": "Grote Gin",
+            "help": "Het aantal punten dat een speler krijgt voor het roepen van Big Gin, wat gebeurt als alle kaarten in een hand plus de getrokken kaart in een meld zitten, zonder dode kaarten."
+        },
+        "undercutPointAmount": {
+            "title": "Undercut",
+            "help": "Een undercut gebeurt als een speler klopt, maar hun tegenstander heeft hetzelfde aantal of minder deadwood punten. In dat geval krijgt de tegenstander extra punten."
+        },
+        "firstBonusPointAmount": {
+            "title": "Bonus: Eerste die wint",
+            "help": "Aan het eind van het spel uitgedeeld. Geeft de speler die als eerste de 'Winst Bedrag' bereikt een bonus."
+        },
+        "roundBonusPointAmount": {
+            "title": "Bonus: Ronde",
+            "help": "Aan het eind van het spel krijg je dit. Geeft elke speler dit aantal punten voor elke ronde die ze hebben gewonnen, behalve de gelijke spelen."
+        },
+        "shutoutBonusPointAmount": {
+            "title": "Bonus: Geen punten voor jou",
+            "help": "Aan het eind van het spel krijg je dit. Geeft de winnaar een extra bonus van dit aantal punten als ze elke ronde hebben gewonnen."
+        }
+    },
+    "presets": {
+        "straightGin": {
+            "title": "Rechtoe rechtaan gin",
+            "description": [
+                "Niet Kloppen",
+                "Geen Bonus"
+            ]
+        },
+        "oklahomaGin": {
+            "title": "Oklahoma Gin",
+            "description": [
+                "Klop waarde op basis van de eerste afleg"
+            ]
+        }
+    },
+    "help": {
+        "rounds": {
+            "title": "Rondes",
+            "description": [
+                "Het spel bestaat uit meerdere rondes. Elke ronde krijgen de spelers 10 kaarten, en er ligt één kaart open in de stapel. Spelers kunnen ervoor kiezen om te passen of de bovenste kaart van de stapel te nemen.",
+                "Beurten wisselen elkaar af, en als jij aan de beurt bent, kun je een kaart van de stapel of de stapel pakken. Daarna moet je wel weer één kaart terugleggen in de stapel."
+            ]
+        },
+        "deadwood": {
+            "title": "Doodhout",
+            "description": [
+                "Deadwood zijn kaarten die niet in een meld zitten. De waarde van deadwood wordt berekend door de waarden van deze kaarten bij elkaar op te tellen (bijvoorbeeld, twee Koningen en een vijf is in totaal 25).",
+                "Probeer je deadwood zo laag mogelijk te houden door melds te maken en hoge kaarten die niet in melds zitten weg te gooien."
+            ]
+        },
+        "melds": {
+            "title": "Meldingen",
+            "description": [
+                "Melds kun je maken door een reeks van drie of meer kaarten van dezelfde soort te hebben (bijv. 3R, 4R, 5R) of drie of meer van dezelfde rang (bijv. 3H, 3R, 3S).",
+                "Melds worden automatisch gemarkeerd in je hand en de interface, dus houd de stapel in de gaten—je tegenstander kan de kaart laten vallen die je nodig hebt!"
+            ]
+        },
+        "knock": {
+            "title": "Klop maar aan",
+            "description": [
+                "Je kunt kloppen als je minder dan 10 deadwood hebt. Als je klopt, worden alle kaarten onthuld en zie je de deadwood van je tegenstander. Als jouw deadwood hoger is, wint je tegenstander de ronde met een bonus.",
+                "Scoren voor een klop is simpel: trek jouw deadwood af van die van je tegenstander. Bijvoorbeeld, als jouw deadwood 5 is en die van je tegenstander 25, dan scoor je 20 punten."
+            ]
+        },
+        "gin": {
+            "title": "Gin en Big Gin",
+            "description": [
+                "Als je doodhout 0 is of 0 kan worden nadat je je laatste doodhoutkaart hebt weggegooid, heb je een Gin. Dit garandeert een overwinning en geeft je een bonus plus het verschil in doodhout.",
+                "Een Big Gin is nog beter: als je hele hand, plus de kaart die je net hebt getrokken, meldingen vormt, krijg je een grotere bonus. Roep altijd een Big Gin zodra je het hebt!"
+            ]
+        },
+        "goal": {
+            "title": "Doel",
+            "description": [
+                "Het doel is om zoveel mogelijk rondes te winnen en als eerste 100 punten te halen. Dan is het spel afgelopen en zie je de eindscore, inclusief bonuspunten.",
+                "Standaard krijg je 25 extra punten voor elke ronde die je wint en nog eens 100 punten als je als eerste 100 punten haalt."
+            ]
+        }
+    },
+    "info": {
+        "title": {
+            "tie": "Gelijkspel",
+            "undercut": "Onderbreken",
+            "gin": "Gin",
+            "bigGin": "Grote Gin",
+            "knock": "Kloppen",
+            "knockSuccessRate": "Knock Gelukt"
+        },
+        "tieDescription": "Er zijn niet genoeg kaarten over om door te spelen. Het is gelijkspel!",
+        "scoreDescription": "De score wordt bepaald door het verschil te berekenen tussen de totale waarden van de dode kaarten in elke speler's hand.",
+        "yourMeldAfterKnock": "Oh nee... Een deel van {name}'s dode kaarten kan naar jouw melds verplaatst worden!",
+        "nameMeldAfterKnock": "Nice! Een deel van jouw dode kaarten kan naar {name}'s melds verplaatst worden!"
+    }
+}

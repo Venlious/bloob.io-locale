@@ -1,0 +1,151 @@
+{
+    "options": {
+        "wagerTime": {
+            "title": "Satsa Tid",
+            "help": "Tiden varje spelare har för att lägga sitt spel för rundan. Det här används bara om spel är aktiverat."
+        },
+        "dealerSecondCard": {
+            "title": "Dealerns Andra Kort",
+            "help": "Avgör om dealerns andra kort visas upp (synligt) eller ner (dolt). När det andra kortet är synligt får spelarna en stor fördel över dealern."
+        },
+        "wager": {
+            "title": "Satsning",
+            "help": "När det är på, kan spelarna satsa poäng i början av sin tur. Om de vinner rundan dubblas deras insats; om de förlorar behåller de sina ursprungliga poäng. Spelarna kan inte satsa mer poäng än de har."
+        },
+        "startPointAmount": {
+            "title": "Startpoäng",
+            "help": "Antalet poäng varje spelare börjar med."
+        },
+        "basePointAmount": {
+            "title": "Baspoäng",
+            "help": "Poängen en spelare garanterat får när de vinner en runda mot dealern."
+        },
+        "blackjackBonusPointAmount": {
+            "title": "Bonus Blackjack Poäng",
+            "help": "Extra poäng (utöver \"Baspoängen\") som ges när en spelare vinner en runda med blackjack."
+        },
+        "doubleDown": {
+            "title": "Dubbel insats",
+            "help": "När det är aktiverat kan spelare dubbla sin insats på sitt första drag för en hand, få exakt ett extra kort och sen stå automatiskt."
+        },
+        "split": {
+            "title": "Dela",
+            "help": "När det är aktiverat kan spelarna dela sina första två kort i två separata händer om båda korten har samma värde."
+        },
+        "insurance": {
+            "title": "Försäkring",
+            "help": "När det är aktiverat och dealern visar ett ess, kan spelarna lägga en försäkringsinsats för att minska förlusterna om dealern har blackjack."
+        },
+        "naturalBlackjack": {
+            "title": "Naturlig Blackjack",
+            "help": "När det är aktiverat vinner en två-korts 21 (Ess + 10-värdeskort) handen direkt."
+        },
+        "aceHandling": {
+            "title": "Bästa Hantering",
+            "help": "Välj hur en ess ska räknas. Det dynamiska alternativet räknar automatiskt esset som 1 om det skulle göra att handen går över 21 om det räknas som 11.",
+            "data": {
+                "ONE_OR_ELEVEN": "Dynamisk (1 eller 11)",
+                "ONE": "Alltid 1",
+                "ELEVEN": "Alltid 11"
+            }
+        },
+        "splitSameFaceOnly": {
+            "title": "Dela bara med samma kort",
+            "help": "När detta är aktiverat får du bara dela om båda startkorten är samma kort (till exempel K+K eller 8+8), inte bara samma numeriska värde."
+        },
+        "fiveCardCharlie": {
+            "title": "Five Card Charlie",
+            "help": "När detta är aktiverat vinner varje spelarhand med fem kort och totalt 21 eller lägre automatiskt. Denna regel gäller inte dealern."
+        }
+    },
+    "presets": {
+        "pointBased": {
+            "title": "Poängbaserat",
+            "description": [
+                "Tjäna poäng för att vinna",
+                "10 rundor"
+            ]
+        },
+        "wagerOnly": {
+            "title": "Satsa bara",
+            "description": [
+                "Börja med 25 poäng",
+                "Tjäna poäng genom att satsa",
+                "10 rundor"
+            ]
+        }
+    },
+    "help": {
+        "gameplay": {
+            "title": "Spelmekanik",
+            "description": [
+                "Du börjar med två kort. Du kan välja att \"ta ett kort\" (dra ett till kort) eller \"stanna\" (behålla din nuvarande summa).",
+                "Målet är att komma så nära 21 som möjligt utan att gå över. Ett ess är speciellt, för det kan räknas som antingen 1 eller 11 poäng."
+            ]
+        },
+        "dealer": {
+            "title": "Dealarregler",
+            "description": [
+                "Dealern måste ta kort på 16 eller mindre och stanna på 17 eller mer.",
+                "Dealerns följa av de här reglerna lägger till en viktig strategisk grej för spelaren."
+            ]
+        },
+        "objective": {
+            "title": "Mål",
+            "description": [
+                "Målet är att ha ett handvärde som är närmare 21 än dealern utan att gå över (busta). Om du hamnar på samma total som dealern kallas det för en 'push', vilket betyder att du varken vinner eller förlorar poäng.",
+                "Att få en total på 21 med två kort kallas för 'blackjack', och det brukar ge en speciell vinst."
+            ]
+        },
+        "wagering": {
+            "title": "Satsa",
+            "description": [
+                "I vår version av blackjack kan du inte satsa med chips eller riktiga pengar. Istället kan du satsa dina poäng i spelet, så att du kan slå dina motståndare.",
+                "Om du satsar 10 poäng och vinner mot dealern utan att gå bust, får du 10 poäng till. Men om du förlorar, tappar du de 10 poängen du satsade."
+            ]
+        },
+        "doubleDown": {
+            "title": "Dubbel insats",
+            "description": [
+                "Dubbelinsats låter dig dubbla din nuvarande insats mot att du lovar att ta exakt ett kort till.",
+                "Efter att du fått det kortet står din hand automatiskt, vilket gör det här till ett hög-risk, hög-belöning drag."
+            ]
+        },
+        "split": {
+            "title": "Dela",
+            "description": [
+                "Om dina första två kort har samma värde kan du splitta dem till två separata händer.",
+                "En matchande insats läggs på den nya handen, och båda händerna spelas oberoende mot dealern."
+            ]
+        },
+        "insurance": {
+            "title": "Försäkring",
+            "description": [
+                "När dealern visar ett ess kan du lägga en valfri sidobett som kallas försäkring.",
+                "Försäkringen ger utbetalning om dealern har blackjack, men förloras om dealern inte har det."
+            ]
+        },
+        "winCondition": {
+            "title": "Vinstvillkor",
+            "description": [
+                "Som standard slutar spelet efter 10 rundor, och en vinnare utses baserat på vem som har flest poäng.",
+                "Du kan anpassa reglerna och vinstvillkoren för ditt egna spel i lobbyns inställningar. Alternativt kan du avsluta spelet när en spelare når X antal poäng."
+            ]
+        }
+    },
+    "info": {
+        "blackjackResult": {
+            "BUST": "Du spräckte den här rundan",
+            "LOSS": "Du förlorade den här rundan",
+            "WIN": "Du vann den här rundan!",
+            "WIN_BLACKJACK": "Blackjack! Du vinner den här rundan!",
+            "PUSH": "Den här rundan är oavgjord",
+            "FIVE_CARD_CHARLIE": "Five Card Charlie! En av dina händer vann automatiskt med fem kort."
+        },
+        "dealerRules": "Dealern drar kort om {hitValue} eller mindre, står på {standValue}+",
+        "waitingForWagerFromOthers": "Väntar på att alla ska lägga sina insatser...",
+        "selfReceivedPoints": "Du fick {points}.",
+        "selfLostPoints": "Du förlorade {points}.",
+        "selfRanOutOfPoints": "Du har slut på poäng."
+    }
+}

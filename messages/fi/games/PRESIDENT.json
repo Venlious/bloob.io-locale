@@ -1,0 +1,150 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Kuinka monta pistettä pelaajan on saatava voittaakseen ottelun. Kierros jakaa pisteet ulostulojärjestyksen mukaan, joten isompi pöytä jakaa niitä kierrosta kohden enemmän."
+        },
+        "exchange": {
+            "title": "Korttien vaihto",
+            "help": {
+                "standard": "'Vakio' laittaa Paskiaisen luovuttamaan kaksi parasta korttiaan ja Presidentin antamaan kaksi mitä tahansa takaisin, plus yhden kortin varapelaajien välillä.",
+                "single": "'Yksi kortti' puolittaa sen: yksi kortti kumpaankin suuntaan, joten viimeinen sija maksaa yhä jotain mutta ei koko kierroksen alkua.",
+                "none": "'Pois käytöstä' jakaa joka kierroksen puhtaalta pöydältä, eikä viimeinen sija maksa muuta kuin pisteet."
+            },
+            "data": {
+                "standard": "Vakio",
+                "single": "Yksi kortti"
+            }
+        },
+        "firstLead": {
+            "title": "Ensimmäisen tikin avaus",
+            "help": {
+                "lowestCard": "'Matalin kortti' antaa avauksen sille, joka sai ristikolmosen, kuten peli perinteisesti aloitetaan.",
+                "previousScum": "'Edellinen Paskiainen' antaa viime kierroksen häviäjän avata, mikä on pieni korvaus juuri luovutetuista korteista.",
+                "random": "'Satunnainen' arpoo paikan, ja joka kierros alkaa uudesta kohdasta."
+            },
+            "data": {
+                "lowestCard": "Matalin kortti",
+                "previousScum": "Edellinen Paskiainen"
+            }
+        },
+        "revolution": {
+            "title": "Vallankumous",
+            "help": "Neloset kääntävät arvojärjestyksen ylösalaisin loppukierrokseksi, joten kolmosesta tulee paras kortti ja kakkosesta huonoin. Toiset neloset kääntävät sen takaisin."
+        },
+        "eightStop": {
+            "title": "Kasi pysäyttää",
+            "help": "Kasin pelaaminen päättää tikin saman tien. Pöytä pyyhitään ja sen pelannut avaa seuraavan odottamatta kenenkään passaavan."
+        },
+        "twoClears": {
+            "title": "Kakkonen tyhjentää",
+            "help": "Kakkosen pelaaminen päättää tikin saman tien, aivan kuten kasi. Pelin parhaasta kortista tulee näin myös keino napata avaus."
+        },
+        "sameRankSkip": {
+            "title": "Sama arvo ohittaa",
+            "help": "Täsmälleen sama arvo kuin pinossa muuttuu lailliseksi vastaukseksi, ja sen tekijä ohittaa seuraavan pelaajan vuoron."
+        }
+    },
+    "presets": {
+        "default": {
+            "description": [
+                "Tavalliset säännöt, ensimmäisenä 10 pisteeseen"
+            ]
+        },
+        "daifugo": {
+            "title": "Daifugo",
+            "description": [
+                "Vallankumous nelosista",
+                "Kasit päättävät tikin"
+            ]
+        },
+        "partyRules": {
+            "title": "Bilesäännöt",
+            "description": [
+                "Kakkoset tyhjentävät pöydän",
+                "Sama arvo ohittaa",
+                "Nopeammat vuorot"
+            ]
+        },
+        "equalFooting": {
+            "title": "Tasaväkiset",
+            "description": [
+                "Ei korttien vaihtoa kierrosten välillä",
+                "Ristikolmonen avaa aina"
+            ]
+        }
+    },
+    "role": {
+        "title": "Rooli",
+        "PRESIDENT": "Presidentti",
+        "VICE_PRESIDENT": "Varapresidentti",
+        "CITIZEN": "Kansalainen",
+        "VICE_SCUM": "Varapaskiainen",
+        "SCUM": "Paskiainen"
+    },
+    "header": {
+        "yourExchange": "Valitse kortit, jotka annat pois",
+        "waitingExchange": "Odotetaan korttien vaihtoa..."
+    },
+    "trickEnd": {
+        "EIGHT_STOP": "Kasi päätti tikin",
+        "TWO_CLEARS": "Kakkonen tyhjensi pöydän"
+    },
+    "standings": "Tilanne",
+    "wentOut": "Ulkona sijalla {place}",
+    "selfWentOut": "Korttisi loppuivat — sija {place} tällä kierroksella",
+    "giveCards": "Valitse {count} annettavaksi",
+    "giveAction": "Anna",
+    "playAction": "Pelaa",
+    "pass": "Passaa",
+    "passed": "Passasi",
+    "selfPassed": "Passasit tässä tikissä",
+    "autoPass": {
+        "title": "Automaattipassi",
+        "help": "Passaa vuorosi puolestasi heti, kun mikään kädessäsi ei voita pinoa."
+    },
+    "selectHigher": "Valitse korkeampi kortti",
+    "selectLower": "Valitse matalampi kortti",
+    "selectCount": "Valitse {count} samaa korttia",
+    "noPlayable": "Yhtäkään korttiasi ei voi pelata",
+    "statistics": {
+        "flawless": "Voitto ilman passeja",
+        "presidentShare": "Osuus Presidenttinä"
+    },
+    "help": {
+        "rules": {
+            "title": "Säännöt",
+            "description": [
+                "Koko pakka jaetaan kolmen ja kahdeksan pelaajan kesken, ja peli on kilpajuoksu siitä, kuka pääsee ensimmäisenä eroon kaikista korteistaan.",
+                "Tikki avataan millä tahansa määrällä saman arvoisia kortteja. Kaikkien sen jälkeen on vastattava **yhtä monella** korkeamman arvoisella kortilla tai passattava."
+            ]
+        },
+        "beating": {
+            "title": "Pinon voittaminen",
+            "description": [
+                "Kortit kulkevat kolmosesta kakkoseen, joten **kakkonen** on pelin paras kortti ja kolmonen huonoin. Ässä on kuninkaan ja kakkosen välissä.",
+                "Passaaminen vie sinut pois nykyisestä tikistä, ei kierrokselta. Kun kaikki muut ovat passanneet, pöytä pyyhitään ja viimeksi pelannut avaa seuraavan tikin."
+            ]
+        },
+        "roles": {
+            "title": "Roolit ja vaihto",
+            "description": [
+                "Ensimmäisenä ulos pääsevä on **Presidentti** ja viimeisenä kortteja pitelevä on **Paskiainen**. Pisteet jaetaan ulostulojärjestyksen mukaan.",
+                "Tuo asema kulkeutuu seuraavalle kierrokselle: Paskiainen luovuttaa parhaat korttinsa ylöspäin ja Presidentti antaa mitä tahansa takaisin, mikä on juuri niin epäreilua kuin miltä kuulostaa."
+            ]
+        },
+        "variations": {
+            "title": "Talon säännöt",
+            "description": [
+                "Melkein jokainen sääntö tässä pöydässä on asetus. **Vallankumous** nelosista kääntää arvojärjestyksen ylösalaisin; kasi tai kakkonen voi päättää tikin saman tien.",
+                "Pinon kanssa saman arvon voi tehdä lailliseksi, jolloin se ohittaa seuraavan pelaajan, ja kierrosten välisen vaihdon voi lyhentää yhteen korttiin tai kytkeä kokonaan pois."
+            ]
+        },
+        "bots": {
+            "title": "Botit",
+            "description": [
+                "Helpot botit pelaavat minkä tahansa sallitun siirron ja passaavat välillä ilman syytä. Normaalit botit vastaavat mahdollisimman halvalla ja hankkiutuvat eroon matalista korteista nipuissa avatessaan.",
+                "Vaikeat botit pitävät kakkosensa tallessa niin kauan kuin pöytä on niiden arvoinen, ja pelaavat sellaisen vasta, kun tikki on enää heidän ja yhden toisen pelaajan välinen."
+            ]
+        }
+    }
+}

@@ -1,0 +1,1626 @@
+{
+    "_meta": {
+        "language": "informal Finnish",
+        "rtl": false,
+        "total": 2588,
+        "missing": 140
+    },
+    "error": {
+        "redeemCode": {
+            "invalid": "Annettua koodia ei ole olemassa.",
+            "alreadyOwned": "Sulla on jo tämä esine. Koodi on edelleen voimassa.",
+            "alreadyUsed": "Annettu koodi on jo aktivoitu."
+        },
+        "authentication": {
+            "expired": "Autentikointipyynnön voimassaoloaika on saattanut päättyä. Yritä uudelleen.",
+            "alreadyLinkedUser": "Tiliisi on jo liitetty sähköpostiosoite.",
+            "alreadyLinkedEmail": "Tämä sähköpostiosoite on jo liitetty tiliin.",
+            "alreadyUsedEmail": "Tiliisi on jo liitetty tämä sähköpostiosoite.",
+            "invalidUserEmail": "Tämä sähköpostiosoite ei ole liitetty tähän käyttäjään.",
+            "invalidDevice": "Sinun täytyy todentaa itsesi samalla laitteella, jolla pyysit koodin.",
+            "invalidUser": "Käyttäjätilisi ei vaadi todentamista.",
+            "invalidCode": "Tämä varmistuskoodi on virheellinen.",
+            "invalidSessionName": "Istunnon nimen täytyy olla 2-24 merkkiä pitkä ja se saa sisältää vain aakkosnumeerisia merkkejä ja välilyöntejä.",
+            "alreadyUsedSessionName": "Tällä nimellä oleva istunto on jo olemassa."
+        },
+        "rateLimit": {
+            "malicious": "Havaittiin ilkeää toimintaa. Aikakatkaisu {seconds} sekunnin ajaksi.",
+            "secure": "Osuit turvakanavan nopeusrajoitukseen. Odota {seconds} sekuntia.",
+            "generic": "Hidasta vähän! Odota {seconds} sekuntia."
+        },
+        "generic": {
+            "friendAccountRequired": "Et voi tehdä uusia kavereita ilman, että kirjaudut sisään tai luot tilin.",
+            "friendLimitSelf": "Olet saavuttanut kaverirajasi, joka on {amount}.",
+            "blockLimitSelf": "Oot saavuttanu sun estorajan {amount} käyttäjälle.",
+            "pendingFriendLimitSelf": "Et voi olla enemmän kuin {amount} odottavaa kaveruutta.",
+            "pendingFriendLimitOther": "Anteeksi, tälle käyttäjälle on jo liikaa odottavaa kaveruutta.",
+            "userOffline": "Anteeks, tää käyttäjä on offline.",
+            "notFriends": "Ette ole kavereita, eikä teillä ole odottavaa kaveripyyntöä.",
+            "notBlocked": "Tää käyttäjä ei oo sun estolistalla.",
+            "blockedUser": "Et voi tehdä tätä toimintoa, koska oot estänyt tän käyttäjän.",
+            "alreadyFriends": "Olette jo kavereita tämän käyttäjän kanssa.",
+            "pendingFriends": "Tällä käyttäjällä on jo odottava kaveripyyntö.",
+            "socialLink": "Ei saatu tehtyä \"{name}\" sosiaalista linkkiä. Jos tää ongelma jatkuu, ota yhteyttä.",
+            "startingUp": "Palvelin on vielä käynnistymässä. Kokeile päivittää tätä sivua myöhemmin.",
+            "incorrectProductPrice": "Ostos peruttu hinnan epäjohdonmukaisuuden vuoksi. Odotettu: {expectedAmount}. Saatu: {receivedAmount}.",
+            "insufficientBalance": "Sinulla ei ole tarpeeksi kolikoita tähän ostokseen.",
+            "invalidPurchaseWindow": "Valitettavasti tätä tuotetta ei voi ostaa tällä hetkellä.",
+            "alreadyOwnedProduct": "Sinulla on jo tämä tuote.",
+            "levelTooLow": "Sun taso ei ole tarpeeksi korkea tämän toiminnon suorittamiseen.",
+            "differentSessionConnected": "Kirjauduit sisään {session} ja sinut on katkaistu täällä.",
+            "sameSessionConnected": "Sinut katkaistiin täällä, koska avasit tämän sivuston toisessa selaimen välilehdessä.",
+            "blockedFrame": "Tätä peliä ei saa pelata tällä verkkosivustolla. Voit pelata sitä ilmaiseksi alla olevalla verkkosivustolla.",
+            "unableToConnectToServer": "Peliin ei saada yhteyttä. Voit yrittää päivittää tämän sivun myöhemmin. Ota yhteyttä, jos ongelma jatkuu.",
+            "desync": "Hups, näyttää siltä että yhteys katkesi. Yritä uudelleen.",
+            "title": "Tapahtui virhe.",
+            "invalid": "Toimintoa ei voitu suorittaa. Päivitä sivu, jos tämä jatkuu.",
+            "invalidEmail": "Annettu sähköpostiosoite on virheellinen.",
+            "invalidAction": "Annettiin virheellinen toimintotyyppi \"{type}\".",
+            "maintenance": "Et voi suorittaa tätä toimintoa, kun huoltotila on käytössä.",
+            "missingArguments": "Tälle toiminnolle tarvittavat argumentit puuttuvat.",
+            "missingAction": "Toimintotyyppi vaaditaan.",
+            "cannotSelf": "Et voi suorittaa tätä toimintoa itsellesi.",
+            "actionAgainstBot": "Et voi tehdä tätä toimintoa bottiin.",
+            "actionAgainstInactiveUser": "Et voi tehdä tätä toimintoa passiiviselle käyttäjälle.",
+            "invalidUser": "Annettua käyttäjää ei löytynyt.",
+            "invalidTime": "Et voi tehdä tätä toimintoa tällä hetkellä.",
+            "versionMismatch": "Sä käytät versiota \"{client}\", kun taas palvelin pyörittää versiota \"{server}\". Tää voi tapahtua, kun päivitystä on tulossa. Päivitä tää sivu muutaman minuutin päästä, niin saat uusimman version.",
+            "clipboard": "Kopioiminen leikepöydälle epäonnistui."
+        },
+        "config": {
+            "minExceedMaxLength": "Minimipituus ei voi olla suurempi kuin maksimipituus.",
+            "maxSubceedMinLength": "Maksimipituus ei voi olla pienempi kuin minimipituus."
+        },
+        "start": {
+            "needPlayerInTeam": "Molemmat joukkueet tarvitsee vähintään 1 pelaajan.",
+            "pointProgression": "Edistyminen ei oo mahdollista, säädä pisteasetuksia.",
+            "lowerStartPointAmount": "Alkupisteiden määrä pitää olla pienempi kuin voittosumma.",
+            "configCancel": "Peruttu laskenta pelin asetusten päivityksen takia",
+            "otherReadyCancel": "{name} perui laskennan",
+            "selfReadyCancel": "Sä peruit laskennan",
+            "readyClearedBySettings": "Sun valmis-tila nollattiin pelin asetusten päivityksen takia",
+            "fieldRows": "Valittu kenttä ei voi tukea enempää kuin {rows} riviä",
+            "fieldCannotFitUsers": "Valittu kenttä ei voi tukea enempää kuin {users} pelaajaa",
+            "questionThreshold": "Peli vaatii vähintään {n} kysymystä.",
+            "whiteCardThreshold": "Peli vaatii vähintään {n} vastauskorttia (valkoista)",
+            "blackCardThreshold": "Peli vaatii vähintään {n} toimintakorttia (mustaa)",
+            "insufficientPlayers": "Tarvitaan vähintään {min} pelaajaa aloittamaan matsi.",
+            "tooManyPlayers": "Liikaa pelaajia nykyiselle rajalle ({current}/{max})."
+        },
+        "game": {
+            "missedTurnWarning": "Olit liian myöhässä ja vuoro annettiin vastustajallesi. Jos näin käy liian monta kertaa peräkkäin, sinut potkitaan ulos. ({current}/{threshold})",
+            "missedTurnKick": "Sinut potkaistiin ulos, koska missasit {current} vuoro(a) peräkkäin.",
+            "stallCallWarning": "Vastustaja odottaa sua. Tee siirto {seconds} sekunnin sisällä, tai se tehdään sun puolesta.",
+            "stuckSkip": "Vuorosi ohitettiin, koska et voi tehdä yhtään siirtoa.",
+            "stuckThreshold": "Sinut poistettiin pelistä, koska olit jumissa {moves} siirtoa peräkkäin.",
+            "allStuck": "Kukaan ei voi enää tehdä siirtoa. Ottelu on päättynyt.",
+            "invalidMove": "Antamasi siirto on virheellinen.",
+            "noLives": "Sulla ei oo enää elämää jäljellä.",
+            "alreadyVoted": "Oot jo äänestänyt.",
+            "cellClaimed": "Yksi tai useampi valitsemistasi ruuduista on jo varattu.",
+            "colorClaimed": "Joku muu käyttäjä on jo varannut tämän värin.",
+            "loading": "Anteeksi — näyttää siltä, että tää peli ei ladannu sun selaimessa. Tää voi joskus ratketa, kun käynnistät sun laitteen tai selaimen uudestaan. Myös graafisten korttien ajureiden päivittäminen voi auttaa.",
+            "mustFollowSuit": "Sinun on tunnustettava avausmaata.",
+            "bidTooLow": "Tämän tarjouksen pitää ylittää edellinen."
+        },
+        "card": {
+            "loadingSets": "Korttipakkojen lataus ei onnistu.",
+            "loadError": "Korttisettien latauksessa tapahtui virhe.",
+            "underscore": "Jokainen alaviiva tarkoittaa yhtä vastauskortin valintaa — älä laita niitä vierekkäin!",
+            "empty": "Varmista, ettei kortti ole tyhjä.",
+            "pickLimit": "Et voi pyytää valitsemaan enempää kuin 3 vastauskorttia. (Liikaa alaviivoja?)",
+            "setSizeLimit": "Mukautettujen korttisettien kokonaiskoko ei saa ylittää {limit}",
+            "setName": "Nimen pitää olla 3-32 merkkiä pitkä."
+        },
+        "match": {
+            "blocked": "Rangaistuksesi estää sinua liittymästä matchmakingiin tai julkisiin otteluihin.",
+            "joinBlocked": "Et voi liittyä tähän matsiin.",
+            "empty": "Ottelu suljettu. Kaikki muut pelaajat lähtivät matsista.",
+            "noAgreement": "Ottelu suljettiin, koska sopimukseen ei päästy. Tilastoja ei kirjattu.",
+            "rematchTimeout": "Et hyväksynyt uusintaottelupyyntöä ja sinut lähetettiin takaisin päävalikkoon.",
+            "rematchCancelled": "Harmi! Pelaajia ei ole jäljellä tarpeeksi uusintaotteluun.",
+            "inactive": "Ottelu, jossa olit, on suljettu, koska se on ollut liian kauan toimettomana.",
+            "inactiveWarning": "Ottelu suljetaan pian toimettomuuden vuoksi, ellei toimia tehdä.",
+            "replacedByBot": "Sut korvattiin botilla, etkä voi liittyä takaisin peliin.",
+            "kicked": "Sut potkittiin pois matsista, jossa olit.",
+            "deleted": "Matsi, jossa olit, on poistettu.",
+            "invalid": "Matsia ID:llä \"{id}\" ei ole olemassa.",
+            "computer": "Tämä on matsi tietokonetta vastaan, et voi liittyä.",
+            "private": "Tämä on yksityinen matsi. Sun pitää syöttää ID päästäksesi mukaan.",
+            "inProgress": "Matsi on jo käynnissä. Et voi liittyä.",
+            "full": "Tämä matsi on jo täynnä ({current}/{max})."
+        },
+        "profile": {
+            "usernameBlocked": "Rangaistuksesi ei salli sinun vaihtaa käyttäjänimeäsi.",
+            "missingData": "Käyttäjänimi ja/tai kuva puuttuvat.",
+            "invalidNickname": "Käyttäjänimi on väärin muotoiltu.",
+            "invalidPicture": "Kuva on väärin muotoiltu.",
+            "lockedPicture": "Kuvassa on lukittuja esineitä, joita et saa käyttää.",
+            "nicknameMaxLength": "Nimimerkki on liian pitkä ({current}/{max})",
+            "nicknameMinLength": "Nimimerkki on liian lyhyt ({current}/{min})",
+            "nicknameAllowedCharacters": "Nimimerkki saa sisältää vain aakkosnumeerisia merkkejä ja nämä erikoismerkit _-",
+            "nicknameBanned": "Lempinimi sisältää haukkumasanan, kirosanan tai muuta sopimatonta kieltä",
+            "inGame": "Et voi muokata profiiliasi pelin ollessa käynnissä"
+        },
+        "requirement": {
+            "acknowledgeWarning": "Sinun täytyy hyväksyä varoituksesi, jotta voit tehdä tämän toiminnon.",
+            "authentication": "Sun pitää olla kirjautuneena sisään tilillesi, että voit tehdä tämän toiminnon.",
+            "credentials": "Olet antanut virheelliset tunnistetiedot.",
+            "validAccount": "Tiliäsi ei ole vielä vahvistettu. Tallenna profiilisi muutokset.",
+            "inLobby": "Et voi tehdä tätä toimintoa, koska ottelu on jo alkanut.",
+            "notJudge": "Et voi tehdä tätä toimintoa tuomarina.",
+            "judge": "Et voi tehdä tätä toimintoa, koska et ole tuomari.",
+            "turn": "Et voi tehdä tätä toimintoa, koska ei ole vuorosi.",
+            "duringGame": "Voit tehdä tämän toiminnon vain, kun ottelu on käynnissä.",
+            "finishedGame": "Voit tehdä tämän toiminnon vain pelin päätyttyä.",
+            "inGame": "Sinun täytyy olla pelissä tehdäksesi tämän toiminnon.",
+            "notInGame": "Et voi tehdä tätä toimintoa pelin aikana.",
+            "notMatchmaking": "Et voi tehdä tätä toimintoa kun olet pelinvalinnassa.",
+            "matchHost": "Et ole isäntä, joten et voi tehdä tätä toimintoa.",
+            "admin": "Vain ylläpitäjät voivat tehdä tämän toiminnon."
+        }
+    },
+    "game": {
+        "generic": {
+            "name": "Koti",
+            "title": "Bloob.io | Pelaa ilmaiseksi kaverien kanssa tai bottien",
+            "options": {
+                "public": {
+                    "title": "Ottelun yksityisyys"
+                },
+                "handSize": {
+                    "title": "Käsi koko",
+                    "help": "Korttien määrä, mitä kaikilla on kädessä."
+                },
+                "maxUsers": {
+                    "title": "Maks. pelaajat",
+                    "help": "Kuinka monta pelaajaa on sallittu matsissa."
+                },
+                "botCount": {
+                    "help": "Tuo bottisi peliin muiden pelaajien kanssa."
+                },
+                "pointer": {
+                    "title": "Kohdistin",
+                    "help": "Salli muille pelaajille nähdä, mihin osoitat hiirelläsi. Joissain tapauksissa voit valita, että se pysyy vain sun porukan/timmin tiedossa.",
+                    "data": {
+                        "OFF": "Pois",
+                        "PRIVATE": "Vain ryhmälle",
+                        "EVERYONE": "Kaikki"
+                    }
+                },
+                "botDifficulty": {
+                    "title": "Botin Vaikeustaso",
+                    "data": {
+                        "easy": "Helppo",
+                        "normal": "Normaali",
+                        "hard": "Vaikea"
+                    }
+                },
+                "generic": {
+                    "data": {
+                        "required": "Vaadittu",
+                        "notRequired": "Valinnainen"
+                    }
+                },
+                "winCondition": {
+                    "title": "Voittoehto",
+                    "help": "Päätä, milloin pelin pitäisi päättyä.",
+                    "data": {
+                        "firstToPoints": "Ensimmäinen, joka saa {n} pistettä | Ensimmäinen, joka saa {n} pisteen | Ensimmäinen, joka saa {n} pistettä",
+                        "mostPoints": "Eniten pisteitä {n} kierroksen jälkeen | Eniten pisteitä {n} kierroksen jälkeen | Eniten pisteitä {n} kierroksen jälkeen",
+                        "lastStanding": "Viimeinen jäljellä ({n} elämää) | Viimeinen jäljellä ({n} elämä) | Viimeinen jäljellä ({n} elämää)"
+                    }
+                },
+                "winAmount": {
+                    "title": "Voittosumma"
+                },
+                "turnTime": {
+                    "title": "Vuoron Kesto",
+                    "help": "Aika, jonka pelaajalla on ennen kuin vuoro siirtyy seuraavalle pelaajalle."
+                },
+                "timeFreedomMode": {
+                    "title": "Aikaraja",
+                    "help": "Pelaa ilman aikarajoituksia. Poista kaikki vuorokellot käytöstä ja nauti rennosta pelikokemuksesta, jossa voit pelata omaan tahtiisi. Ei suositella satunnaisia vastustajia vastaan.",
+                    "data": {
+                        "off": "Ei rajoituksia"
+                    }
+                },
+                "scoringSystem": {
+                    "title": "Pisteytys",
+                    "help": {
+                        "default": "Päättää, miten pisteitä jaetaan, kun kysymykseen vastataan oikein.",
+                        "SPEED": "Pisteet riippuu siitä, kuinka nopeasti kysymykseen vastataan.",
+                        "ORDER": "Pisteet määräytyy sen mukaan, kuka pelaajista oli nopein.",
+                        "FIXED": "Jokaisesta kysymyksestä saa saman verran pisteitä.",
+                        "PROGRESSIVE": "Ansaitut pisteet kasvaa jokaisen kysymyksen jälkeen.",
+                        "STREAK": "Saa lisäpisteitä peräkkäisistä oikeista vastauksista; nollautuu, jos vastaat väärin."
+                    },
+                    "data": {
+                        "SPEED": "Nopeus",
+                        "ORDER": "Järjestys",
+                        "FIXED": "Kiinteä",
+                        "PROGRESSIVE": "Progressiivinen",
+                        "STREAK": "Putki"
+                    }
+                },
+                "order": {
+                    "title": "Järjestys",
+                    "help": {
+                        "default": "Päättäkää, missä järjestyksessä kaikki pääsee pelaamaan.",
+                        "ALTERNATE": "Vaihtelee, kuka menee ekana joka kierroksella.",
+                        "FIXED": "Järjestys on sama joka kierroksella.",
+                        "SIMULTANEOUS": "Kaikki pääsee pelaamaan samaan aikaan."
+                    },
+                    "data": {
+                        "ALTERNATE": "Vaihtoehtoinen",
+                        "FIXED": "Kiinteä",
+                        "SIMULTANEOUS": "Samanaikainen"
+                    }
+                },
+                "mode": {
+                    "title": "Tila",
+                    "help": {
+                        "default": "Valitse, miten pelaajat kilpailee: yksin, tiiminä tai yhteistyössä.",
+                        "SOLO": "Jokainen pelaaja kilpailee yksin.",
+                        "CO_OP": "Kaikki pelaajat tekee yhteistyötä tiiminä.",
+                        "TEAM": "Pelaajat jaetaan tiimeihin, ja ne voi valita oman porukan, jonka kanssa tehdä duunia."
+                    },
+                    "data": {
+                        "SOLO": "Soolo",
+                        "CO_OP": "Co-op",
+                        "TEAM": "Tiimit"
+                    }
+                },
+                "deckSize": {
+                    "title": "Pakan Koko",
+                    "help": "Valitse sun suosikkikoko pelille.",
+                    "data": {
+                        "half": "Puolikas pakka",
+                        "full": "Täysi pakka",
+                        "double": "Tuplapakka",
+                        "triple": "Kolmonen pakka",
+                        "four": "Nelonen pakka",
+                        "five": "Viitonen pakka",
+                        "six": "Kuutonen pakka",
+                        "seven": "Seiska pakka",
+                        "eight": "Kahdeksan pakkaa"
+                    }
+                },
+                "shuffle": {
+                    "title": "Sekoita",
+                    "help": "Valitse, milloin sekoitus tapahtuu. Kenkä tarkoittaa kaikkia kortteja, joita pelissä käytetään.",
+                    "data": {
+                        "EVERY_ROUND": "Joka kierroksella",
+                        "HALFWAY": "Puolivälissä kenkää",
+                        "WHEN_NEEDED": "Kun kortit loppuu"
+                    }
+                },
+                "aimingLine": {
+                    "title": "Tähtäysviiva",
+                    "help": "Aiming-viiva näyttää, mihin kuula menee, kun sitä on lyöty."
+                },
+                "speed": {
+                    "title": "Nopeus",
+                    "help": "Kuinka nopeesti uima-altaan animaatio pyörii."
+                },
+                "illegalBallPocket": {
+                    "title": "Laiton Pallo Taskussa"
+                },
+                "ruleContactRailOnBreak": {
+                    "title": "Kisko Katkolla",
+                    "help": "Kun lyöt aloituslyönnin, päätä kuinka monta palloa pitää osua kaiteeseen. Tätä sääntöä ei tarvitse noudattaa, jos onnistut pussittamaan pallon.",
+                    "data": {
+                        "one": "Yksi pallo",
+                        "two": "Kaksi palloa",
+                        "three": "Kolme palloa",
+                        "four": "Neljä palloa"
+                    }
+                },
+                "assignedGroup": {
+                    "title": "Määritetty Ryhmä",
+                    "help": "Päätä, miten jokainen pelaaja saa ryhmänsä (täytetyt tai raidalliset).",
+                    "data": {
+                        "pocket": "Taskussa",
+                        "random": "Satunnainen alussa"
+                    }
+                },
+                "ruleTurnCanHitBall": {
+                    "title": "Voi Lyödä Palloa",
+                    "help": "Tapahtuu, kun pelaaja lyö palloa, jota heidän ei ole sallittu lyödä. Sääntö ei päde aloituslyönnissä.",
+                    "data": {
+                        "assignedGroup": "Määrätty ryhmä",
+                        "assignedGroupPlus": "Määrätty ryhmä + 8-pallo",
+                        "eitherGroup": "Kumpi tahansa ryhmä",
+                        "anyBall": "Mikä tahansa pallo"
+                    }
+                },
+                "ruleTurnMustHitBall": {
+                    "title": "Pallon on Osuttava",
+                    "help": "Tapahtuu, kun pelaaja ei lyö väärää palloa vuorollaan."
+                },
+                "ruleTurnContactRail": {
+                    "title": "Ota Yhteys Kiskoon",
+                    "help": "Tapahtuu, kun yksikään pallo ei osu kaiteeseen (tyynyyn). Tätä sääntöä ei sovelleta, jos pelaaja pussittaa pallon."
+                },
+                "ruleConsecutiveFouls": {
+                    "title": "Peräkkäiset rikkeet",
+                    "help": "Selvitä, mitä pitäisi tapahtua, kun pelaaja tekee useita rikkeitä peräkkäin. Tämä sääntö rohkaisee välttämään epäurheilijamaista käytöstä.",
+                    "data": {
+                        "off": "Pois",
+                        "loseOnTwo": "Häviö kahden jälkeen",
+                        "loseOnThree": "Häviö kolmen jälkeen",
+                        "loseOnFour": "Häviö neljän jälkeen"
+                    }
+                },
+                "foul": {
+                    "data": {
+                        "nothing": "Ei mitään",
+                        "keepTurn": "Pidä vuoro",
+                        "endTurn": "Lopeta vuoro",
+                        "endTurnHand": "Lopeta vuoro + Pallo kädessä",
+                        "reset": "Lopeta vuoro + Palauta kenttä",
+                        "resetHand": "Lopeta vuoro + Palauta kenttä + Pallo kädessä",
+                        "instantWin": "Välitön voitto",
+                        "instantLoss": "Välitön tappio"
+                    }
+                },
+                "foulPocketCueBall": {
+                    "title": "Taskupallon Taskuun Laittaminen",
+                    "help": "Tapahtuu, kun pelaaja lyö lyöntipallon pussiin."
+                },
+                "foulPocketOpponentBall": {
+                    "title": "Vastustajan Pallon Taskuun Laittaminen",
+                    "help": "Tapahtuu, kun pelaaja lyö vastustajan pallon reikään. Muut rikkeet menevät tämän edelle (esim. väärän pallon lyöminen ensin)."
+                }
+            },
+            "help": {},
+            "presets": {
+                "default": {
+                    "title": "Oletus"
+                },
+                "timeFreedom": {
+                    "title": "Aikavapaus",
+                    "description": [
+                        "Ei ajastimia",
+                        "Odota, kunnes kaikki ovat valmiita"
+                    ]
+                }
+            }
+        },
+        "pool": {},
+        "card": {},
+        "WORDRACE": {
+            "name": "Sanakilpailu",
+            "title": "Sanakilpailu | Sana Haku Netissä | Pelaa Kaverit & Pelaajat",
+            "description": "Loyda sanoja yhdistamalla kirjaimia ruudukossa ennen ajan loppumista. Pidemmat sanat ja kertoimet kasvattavat pisteitasi joka kierroksella."
+        },
+        "FOUR_IN_A_ROW": {
+            "name": "Neljä Peräkkäin",
+            "title": "Neljä Peräkkäin | Ilmainen nettipeli ystäviä ja botteja vastaan",
+            "description": "Pudota nappuloita sarakkeisiin ja tee suora ennen vastustajiasi. Muokkaa laudan kokoa, voittopituutta ja erikoissaantoja, kuten kaannoksia tai rivien poistamista."
+        },
+        "ROTTEN_APPLES": {
+            "name": "Mädäntyneet Omenat",
+            "title": "Pelaa Mädäntyneet Omenat | Korttipeli netissä | Ei tilejä",
+            "description": "Bilekorttipeli Cards Against Humanityn hengessa: pelaa vastauskortteja promptiin ja aanesta hauskin yhdistelma."
+        },
+        "CHECKERS": {
+            "name": "Tammi",
+            "title": "Tammi Lautapeli Netissä | Pelaa Ilmaiseksi Ystävien Kanssa",
+            "description": "Klassinen tammi useilla saantoseteilla ja lautavaihtoehdoilla, mukana isompia versioita ja valinnainen neljan pelaajan asettelu."
+        },
+        "BLOMBER": {
+            "name": "Blomberi",
+            "title": "Super Bomberman Netissä! Pelaa Ilmainen Blomberi Nyt!",
+            "description": "Bomberman-henkista areenatoimintaa: aseta pommeja, riko laatikoita, nouki power-upit ja selviydy pisimpaan."
+        },
+        "BOMB_SHOWDOWN": {
+            "name": "Pommikaksintaistelu",
+            "title": "Pommikaksintaistelu | Ilmainen moninpeli ilman tiliä verkossa",
+            "description": "Kaikki piilottavat pommeja samalle laudalle, ja sitten sen päälle astutaan vuorotellen. Muista mihin piilotit omasi ja seuraa missä muut epäröivät, niin löydät turvalliset laatat."
+        },
+        "EIGHT_BALL_POOL": {
+            "name": "8 Pallo Biljardi",
+            "title": "Pelaa 8 Pallo Biljardia netissä | Moninpeli kaverit mukaan",
+            "description": "Biljardipeli, jossa tyhjennat oman ryhmasi ja upotat 8-pallon voittaaksesi. Pelaa eri virhesaannoilla, nopeuksilla ja joukkueasetuksilla."
+        },
+        "YACHT": {
+            "name": "Jahti",
+            "title": "Pelaa Yatzy Netissä Kavereiden Kanssa | Ilmainen Noppapeli",
+            "description": "Yahtzee-tyylinen noppapeli: heita enintaan kolme kertaa, lukitse nopat ja valitse pistekategoriat parhaaseen kokonaispisteeseen."
+        },
+        "BATTLESHIP": {
+            "name": "Taistelulaiva",
+            "title": "Pelaa Laivanupotus Netissä Ilmaiseksi | Kutsu Kaverit Mukaan",
+            "description": "Piilotettu laivastostrategia: sijoita alukset, ammu ruutuihin ja upota vastustajan laivat ennen kuin han upottaa omasi."
+        },
+        "SUPER_TIC_TAC_TOE": {
+            "name": "Super Risti-Nolla",
+            "title": "Super Risti-Nolla netissä | Pelaa ilmaiseksi moninpeliä!",
+            "description": "Ultimate tic-tac-toe: jokainen siirto ohjaa vastustajan tietylle minilaudalle, joten ennakointi ratkaisee."
+        },
+        "CRIBBAGE": {
+            "name": "Cribbage",
+            "title": "Pelaa Cribbage | Ilmainen Lautapeli | Klassinen Cribbage säännöt",
+            "description": "Klassinen cribbage korttipelilla ja kasi pisteytyksella. Rakenna 15-yhdistelmia, suoria ja pareja kohti tavoitepistemaaraa."
+        },
+        "WAR": {
+            "name": "Sota",
+            "title": "Sota Korttipeli Verkossa | Pelaa Sotapeli Ystävien Kanssa",
+            "description": "Yksinkertainen korkein kortti -taistelu: paljasta kortit, voita pinot ja ratkaise tasatilanteet sotakierroksilla valituilla saannoilla."
+        },
+        "GIN_RUMMY": {
+            "name": "Gin Rummy",
+            "title": "Pelaa Gin Rummy netissä ilmaiseksi | Korttipeli ystävien kanssa",
+            "description": "Nosta ja heita pois muodostaaksesi yhdistelmia, vahenna deadwoodia ja ajoita knock tai gin maksimoidaksesi pisteet."
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "Kivi Paperi Sakset",
+            "title": "Kivi Paperi Sakset | Pelaa RPS:n moninpeliä netissä ilmaiseksi",
+            "description": "Nopea klassikko 2-4 pelaajalle, useilla pisteytystavoilla nopeista kilpailuista eliminointiselviytymiseen."
+        },
+        "TRIVIA": {
+            "name": "Tietovisa",
+            "title": "Tietovisa: Ilmainen Trivia netissä | Moninpeli kavereiden kanssa",
+            "description": "Reaaliaikaisia tietovisakamppailuja eri aiheista. Vastaa nopeasti ja tarkasti, mukana valinnainen tiimipeli ja erikoispisteytys."
+        },
+        "SNOOKER": {
+            "name": "Snooker",
+            "title": "Pelaa Snookeria Netissä | Moninpeli Kaverit & Botit Mukana",
+            "description": "Tarkkuuslaji, jossa korostuvat punaisten ja varipallojen jarjestys, taktinen puolustuspeli ja pistebriikkien rakentaminen."
+        },
+        "NINE_BALL_POOL": {
+            "name": "9 Palloa Biljardissa",
+            "title": "9 Pallo Biljardi Netissä | Pelaa Ilmaiseksi Kaverien Kanssa",
+            "description": "Poolin versio, jossa osut ensin pienimpaan numeroon ja voitat upottamalla 9-pallon laillisesti."
+        },
+        "BLACKJACK": {
+            "name": "Betsibingo",
+            "title": "Ilmainen Blackjack Netissä Ilman Rahaa | Pelaa Kaverin Kanssa",
+            "description": "Voita jakaja paastemalla lahemmas 21:ta ilman ylittymista, valinnaisilla saannoilla kuten split, double down ja insurance."
+        },
+        "CUTTHROAT_POOL": {
+            "name": "Kovakourainen biljardi",
+            "title": "Pelaa Cutthroat Poolia ilmaiseksi verkossa ystävien kera!",
+            "description": "Moninpelipooli kaikki vastaan kaikki: jokainen suojaa omaa ryhmaansa ja yrittää upottaa muiden pallot."
+        },
+        "CASH_CLASH_FINANCIAL_TRIVIA": {
+            "name": "Cash Clash",
+            "description": "-"
+        },
+        "TUNED_IN": {
+            "name": "Tuned In",
+            "title": "Tuned In | Ilmainen nettipeli | Pelaa kavereiden kanssa yhdessä",
+            "description": "Wavelengthista inspiroitunut bilepeli: kirjoita vihje piilotetusta kohdasta asteikolla ja katso, kuinka lahelle muut arvaavat."
+        },
+        "HOKM": {
+            "name": "Hokm",
+            "title": "Pelaa Hokmia Verkossa | Ilmainen Persialainen Korttipeli",
+            "description": "Pelatkaa kaksi kahta vastaan, antakaa Hakemin valita valtti ja kilpailkaa parisi kanssa seitsemään tikkiin tässä persialaisessa klassikossa."
+        },
+        "TARNEEB": {
+            "name": "Tarneeb",
+            "title": "Pelaa Tarneebia Verkossa | Ilmainen Arabialainen Korttipeli",
+            "description": "Tarjoa sopimusta, nimeä valttimaa ja hoida lupaamasi tikit tässä Lähi-idän paripelien klassikossa."
+        },
+        "BATAK": {
+            "name": "Batak",
+            "title": "Pelaa Batakia Verkossa | Ilmainen Turkkilainen Korttipeli",
+            "description": "Tarjoa sopimusta, nimeä valttimaa ja hoida lupaamasi tikit Turkin suosituimmassa paripelissä."
+        },
+        "PRESIDENT": {
+            "name": "Presidentti",
+            "title": "Pelaa Presidenttiä verkossa | Ilmainen korttipeli",
+            "description": "Tyhjennä kätesi ensimmäisenä, nouse Paskiaisesta Presidentiksi ja vie viimeiseksi jääneen parhaat kortit."
+        },
+        "FARKLE": {
+            "name": "Farkle",
+            "title": "Pelaa Farkle 10000 | Ilmainen Moninpeli Netissä Noppapeli",
+            "description": "Koita onneasi kuudella nopalla, laita sivuun ne, jotka tuovat pisteitä, ja pankita ennen kuin heitto tyhjentää vuoron."
+        }
+    },
+    "chat": {
+        "affirmative": "Okei.",
+        "thanks": "Kiitos!",
+        "sorry": "Anteeksi!",
+        "goodLuck": "Onnea matkaan!",
+        "brb": "Palataan hetken päästä!",
+        "go": "Mun pitää mennä.",
+        "glhf": "Pidä hauskaa",
+        "gg": "Hyvä peli",
+        "readyCheck": "Kaikki valmiina?",
+        "changeSettings": "Vaihda asetuksia!",
+        "ready": "Valmis!",
+        "wait": "Odota hetki!",
+        "letsGo": "Mennään!",
+        "greeting": "Hei!",
+        "how": "Miten!?",
+        "closeOne": "Läheltä piti!",
+        "niceOne": "Hyvä veto!",
+        "checkThisOut": "Kato tätä!",
+        "remindMove": "Sinun vuorosi!",
+        "wow": "Vau!",
+        "oops": "Hups!",
+        "no": "Eiiii!",
+        "ohNo": "Voi ei!",
+        "wellPlayed": "Hyvin pelattu!",
+        "rematch": "Uusintaottelu!",
+        "fun": "Oli hauskaa!",
+        "bye": "Moi moi!",
+        "shortYes": "Joo.",
+        "shortNo": "Ei.",
+        "please": "Kiitos.",
+        "hereYouGo": "Tässä tulee!",
+        "lastOne": "Viimeinen!",
+        "myConnectionBad": "Mun netti on huono.",
+        "discord": "Puhutaan Discordissa!"
+    },
+    "chatSearchKeywords": {
+        "affirmative": "joo,kyllä,ok,okkkk",
+        "thanks": "kiitti,kiitos",
+        "sorry": "anteeksi,mun vika,ootan anteeksi,so sorry",
+        "goodLuck": "onnea",
+        "brb": "tulen heti takas,tulen kohta",
+        "go": "pakko mennä,gtg,g2g,lähen,lähtemässä,mä joudun menemään,mä täytyy mennä,mä oon pakko mennä,tarviin mennä",
+        "glhf": "onnea ja hauskaa,gl hf",
+        "gg": "hyviä pelejä,g g",
+        "readyCheck": "valmis tsekki,oletko valmis,valmis,done,hyvä mennä",
+        "changeSettings": "muokkaa,päivitä asetuksia,muuta sääntöjä,säännöt,custom säännöt,custom asetukset",
+        "ready": "kaikki kunnossa,oon valmis",
+        "wait": "odota hetki,odota,hold on",
+        "letsGo": "mennään,lähetään,pelataan,aloitetaan,go go go,goooo,gooo,aloitetaan,nyt mennään",
+        "greeting": "moi,terve,hei,yo,moikka,miten menee",
+        "how": "mitä,mitä ihmettä,ei voi olla,toi on vitsi,odota mitä,odota wut,mikä frikki,mikä helvetti,mikä hullu,mikä juttu,onks tää totta,reilusti,wtf,wth",
+        "closeOne": "oli lähellä",
+        "niceOne": "hyvä veto,mahtava,hyvin tehty,hyvä duuni,loistavaa,hyvä homma,jes,hitto,päivä,holy shit,holy cow,kuuma hitto,toi oli hyvä",
+        "checkThisOut": "katso tätä,katso tätä, pidä mun olut",
+        "remindMove": "sun vuoro,odotan sua,tee siirto",
+        "wow": "mahtavaa,uskomatonta,hurjaa,vaikuttavaa,epätodellista,woooooow",
+        "oops": "oops,oli virhe,oli moka",
+        "no": "aah,ei hyvä",
+        "ohNo": "voi ei,ihan harmi",
+        "wellPlayed": "hyvä peli,nice game",
+        "rematch": "taas,uudestaan, vielä kerran, toinen matsi, pelaa taas, pelaa toinen",
+        "fun": "nautin siitä,rakastan sua,rakastan u,luv u,voitto,mä voitin,sä hävisit,sä hävisit,mä oon voittaja,sä oot häviäjä,sä hävisit,sä hävisit",
+        "bye": "moikka,näkemisiin,näkemisiin,heippa,hoida ittes,puhutaan myöhemmin,ttyl,syl,cya",
+        "shortYes": "joo,yea,jeps,ok,okei,ihan jees,kaikki hyvin,hoidan",
+        "shortNo": "ei",
+        "please": "ole hyvä,jos voit,voisitko,voitko",
+        "hereYouGo": "siinä se,onhan se,tehty sulle",
+        "lastOne": "yksi vielä,yksi viimeinen",
+        "myConnectionBad": "teknisiä ongelmia,tekninen ongelma,internetongelma,katkeaa,yhteys katosi,lagaa,lagaa,bugaa,bugaamassa,eikä toimi,hidas yhteys,hidas netti,mä katkesin,mulla katkes yhteys",
+        "discord": "discord-server,liitetään yhteen,puhutaan,community,lisää mut discordissa,ystävöi mut discordissa,yhdistetään discordissa"
+    },
+    "header": {
+        "message": {
+            "lobby": "Ottelun aula",
+            "finished": "Ottelu päättyi",
+            "tied": "Ottelu päättyi tasapeliin",
+            "finishedRematch": "Uusintaottelu alkaa pian",
+            "placingShips": "Asetetaan laivoja",
+            "hideYourBombs": "Piilota pommisi",
+            "rememberPlacement": "Muista missä ne ovat",
+            "decidingTurnOrder": "Ratkaistaan kuka aloittaa",
+            "holdYourBreath": "Pidätä hengitystäsi...",
+            "firing": "{name} ampuu",
+            "firingSelf": "Sä ammut",
+            "inProgress": "Ottelu käynnissä",
+            "staleMoves": "Ottelu jumissa — {staleCount} siirtoa ilman valtausta",
+            "forfeit": "Ottelu päättyi — Vastustaja valitsi luovuttaa",
+            "outOfPoints": "Peli loppu — Vastustajalta loppu pisteet",
+            "inactive": "Ottelu päättyi toimettomuuden vuoksi",
+            "pickActionCard": "Valitaan toimintakortti",
+            "pickCardSelection": "Tehdään korttivalinta",
+            "handDump": "Roskakierros",
+            "handPreview": "Käden esikatselu",
+            "countingScores": "Lasketaan pisteitä...",
+            "voting": "Äänestys",
+            "voteResults": "Äänestyksen tulokset",
+            "flippingField": "Kentän kääntäminen",
+            "removingRow": "Poistetaan rivi",
+            "yourPick": "Valitse sun juttu {extra}",
+            "namePick": "{name} valitsee nyt juttunsa",
+            "yourTurn": "Sinun vuorosi {extra}",
+            "nameTurn": "{name}:n vuoro",
+            "dealerTurn": "Jakajan vuoro",
+            "tiedVote": "Tasapeli",
+            "makeYourMove": "Tee siirto",
+            "waitingForOthers": "Odotellaan muita",
+            "wager": "Panos",
+            "yourClue": "Lähetetään sun vihjettä",
+            "nameClue": "Kuuntele {name}'n vihjettä",
+            "writeYourClue": "Kirjoita sun vihje",
+            "languageSelect": "Kielen valinta",
+            "languageAgreed": "Kieli sovittu",
+            "tieEndedRound": "Kierros päättyi tasapeliin",
+            "youEndedRound": "Sä lopetit kierroksen",
+            "nameEndedRound": "{name} lopetti kierroksen",
+            "youWonRound": "Sä voitit kierroksen",
+            "nameWonRound": "{name} voitti kierroksen",
+            "yourTurnBreaking": "Rikot {extra}",
+            "nameTurnBreaking": "{name} rikkoo",
+            "roundSummary": "Kierroksen yhteenveto",
+            "roundCount": "Kierros {current} / {total}",
+            "roundCurrent": "Kierros {current}",
+            "questionCount": "Kysymys {current} yhteensä {total}",
+            "questionCurrent": "Kysymys {current}",
+            "war": "Sota!",
+            "outcome": "Lopputulos",
+            "dealingCards": "Jaetaan kortteja...",
+            "youPickStarterCard": "Sun pitää valita aloituskortti",
+            "namePickStarterCard": "{name}n pitää valita aloituskortti",
+            "yourCrib": "Sun pihapiiri",
+            "nameCrib": "{name}n pihapiiri"
+        },
+        "description": {
+            "pleaseWait": "Odota hetki...",
+            "waitingForPlayers": "Odotetaan pelaajia",
+            "startCountdown": "Ottelu alkaa {text}...",
+            "rematchStartCountdown": "Uusintaottelu alkaa {text}...",
+            "remainingTimeCountdown": "{clock} jäljellä...",
+            "nextRoundCountdown": "Seuraava kierros {text}...",
+            "youWon": "Voitit",
+            "nameWon": "{name} voitti"
+        }
+    },
+    "placeholder": {
+        "clue": "Syötä vihjeesi...",
+        "clueInLanguage": "Syötä vihjeesi kielellä {language}...",
+        "cardSetId": "Täytä korttipaketin ID...",
+        "cardContent": "Täytä kortin sisältö...",
+        "cardSetName": "Anna nimi tälle korttipaketille...",
+        "matchId": "Ottelun ID tai URL...",
+        "message": "Viesti...",
+        "username": "Käyttäjänimi",
+        "password": "Salasana"
+    },
+    "language": {
+        "nl-NL": "Hollanti",
+        "en-US": "Amerikanenglanti",
+        "en-GB": "Brittienglanti",
+        "fr-FR": "Ranska",
+        "de-DE": "Saksa",
+        "it-IT": "Italialainen",
+        "pl-PL": "Puolalainen",
+        "pt-BR": "Brasilialainen portugali",
+        "es-ES": "Eurooppalainen espanja",
+        "es-MX": "Meksikolainen espanja",
+        "sv-SE": "Ruotsi",
+        "da-DK": "Tanskalainen",
+        "fi-FI": "Suomalainen",
+        "nb-NO": "Norjalainen",
+        "yi-YI": "Jiddiš",
+        "ar-SA": "Arabia",
+        "hi-IN": "Hindi",
+        "id-ID": "Indonesiaani",
+        "uk-UA": "Ukrainalainen",
+        "ru-RU": "Venäläinen",
+        "zh-CN": "Kiina (Yksinkertaistettu)",
+        "zh-TW": "Kiina (Perinteinen)",
+        "ja-JP": "Japanilainen",
+        "ko-KR": "Korealainen",
+        "tr-TR": "Turkulainen"
+    },
+    "status": {
+        "reconnecting": "Yritetään yhdistää uudelleen...",
+        "exploreAllGames": "Tutki kaikkia pelejä",
+        "playingAgainstBots": "Pelaaminen bottien vastaan",
+        "playingAgainstPlayers": "Pelaaminen pelaajien vastaan",
+        "playingGame": "{n} pelaa tätä peliä",
+        "online": "{n} verkossa",
+        "connection": "Yhteys",
+        "ping": "Ping",
+        "timeOffset": "Aikaviive",
+        "version": "Versio",
+        "userId": "Käyttäjä-ID",
+        "notice": "Huomautus"
+    },
+    "category": {
+        "misc": "Sekalaista",
+        "yacht": "Jahti",
+        "bonus": "Bonus",
+        "field": "Kenttä",
+        "dump": "Kaatopaikka",
+        "bomb": "Pommi",
+        "filter": "Suodatin",
+        "times": "Ajat",
+        "round": "Kierros",
+        "flip": "Käännä",
+        "default": "Oletus",
+        "fallback": "Varatoiminnot",
+        "take": "Ota Ohjat",
+        "tetris": "Tetris",
+        "basic": "Perus",
+        "language": "Kieli",
+        "rules": "Säännöt",
+        "points": "Pisteet",
+        "fouls": "Rikkeeseen Vastaus",
+        "sciences": "Tieteet",
+        "artsAndEntertainment": "Taide & Viihde",
+        "geography": "Maantieto",
+        "gaming": "Pelit",
+        "technology": "Tekniikka",
+        "popCulture": "Pop-kulttuuri",
+        "sports": "Urheilu",
+        "history": "Historia",
+        "cueSports": "Keilailu",
+        "classic": "Klassikko",
+        "party": "Juhlat",
+        "cards": "Kortit",
+        "board": "Lautapelit",
+        "action": "Toiminta"
+    },
+    "month": {
+        "short": {
+            "0": "Tam",
+            "1": "Hel",
+            "2": "Maa",
+            "3": "Huh",
+            "4": "Tou",
+            "5": "Kes",
+            "6": "Hei",
+            "7": "Elo",
+            "8": "Syy",
+            "9": "Lok",
+            "10": "Marras",
+            "11": "Joulu"
+        }
+    },
+    "time": {
+        "daysShort": "{n}p",
+        "hoursShort": "{n}t",
+        "minutesShort": "{n}min",
+        "years": "{n} vuotta | {n} vuosi | {n} vuotta",
+        "months": "{n} kuukautta | {n} kuukausi | {n} kuukautta",
+        "days": "{n} päivää | {n} päivä | {n} päivää",
+        "hours": "{n} tuntia | {n} tunti | {n} tuntia",
+        "minutes": "{n} minuuttia | {n} minuutti | {n} minuuttia",
+        "seconds": "{n} sekuntia | {n} sekunti | {n} sekuntia"
+    },
+    "perk": {
+        "gradientPack": {
+            "title": "Värijyrkkäpaketti",
+            "description": "Kohota pelikokemuksesi! Erotu joukosta kauniilla värien kirjolla."
+        },
+        "maskedPack": {
+            "title": "Naamioitu Lauma",
+            "description": "Naamioi henkilöllisyytesi erilaisilla esineillä."
+        },
+        "dapperPack": {
+            "title": "Tyylikäs Paketti",
+            "description": "Ota etsivän elämäntyyli omaksesi! Varusta hahmosi etsivän hatulla, silinterihatulla, tyylikkäällä viiksillä ja jopa monoklilla."
+        },
+        "militaryPack": {
+            "title": "Sotilaspakkaus",
+            "description": "Valmistaudu toimintaan! Laita kova kypärä ja baskeri päähän, ja sulaudu ympäristöön useiden maastokuvioiden avulla."
+        },
+        "piratePack": {
+            "title": "Merirosvopaketti",
+            "description": "Hei kaveri! Muuta hahmosi merirosvoksi silmälappuineen, vinohampaineen ja viimeistele se merirosvohatulla."
+        },
+        "holidaysPack": {
+            "title": "Lomapaketti",
+            "description": "Tartu juhlamielen mukaan valikoimalla juhlahattuja!"
+        },
+        "animalPack": {
+            "title": "Eläinpakkaus",
+            "description": "Ole söpö ja leikkisä! Anna hahmollesi pupunkorvat, kissankorvat ja suloiset suut. Korvat mukautuvat valitsemaasi taustaväriin."
+        },
+        "halloweenPack": {
+            "title": "Halloween Paketti",
+            "description": "Sukella karmivaan kauteen! Valitse pelottavista luuranko- ja zombisilmistä sekä kauhistuttavista suista, jotta voit luoda pelottavan ja hauskan tunnelman pelissä."
+        },
+        "americanFootballPack": {
+            "title": "Amerikkalaisen jalkapallon paketti",
+            "description": "Valmistaudu isoon peliin! Varusta hahmosi tyylikkäillä jalkapallokypärillä eri väreissä."
+        },
+        "celebrationPack": {
+            "title": "Juhlapaketti",
+            "description": "Juhla-aika! Tuo iloa hahmollesi kokoelmalla värikkäitä juhlahattuja eri väreissä."
+        },
+        "developer": {
+            "title": "Kehittäjä"
+        },
+        "coinSmall": {
+            "title": "Kolikkopussi"
+        },
+        "coinMedium": {
+            "title": "Kolikkopino"
+        },
+        "coinLarge": {
+            "title": "Kolikkoholvi"
+        }
+    },
+    "title": {
+        "rookie": "Aloittelija",
+        "beginner": "Alottelija",
+        "novice": "Uusi tulokas",
+        "apprentice": "Harjoittelija",
+        "competitor": "Kilpailija",
+        "challenger": "Haastaja",
+        "strategist": "Strategi",
+        "tactician": "Taktikko",
+        "skilledPlayer": "Taitava Pelaaja",
+        "risingStar": "Nouseva Tähti",
+        "contender": "Kilpailija",
+        "crazyLarry": "Hullu Larry",
+        "acePlayer": "Ässäpelaaja",
+        "mastermind": "Neropatti",
+        "eliteCompetitor": "Eliittikilpailija",
+        "grandStrategist": "Suuri Strateegi",
+        "prodigy": "Ihmelapsi",
+        "veteran": "Konkari",
+        "allStar": "Tähtipelaaja",
+        "legendaryPlayer": "Legendaarinen Pelaaja",
+        "supremeTactician": "Ylivertainen Taktikko",
+        "whizkid": "Neropatti",
+        "maestro": "Maestro",
+        "tacticalGenius": "Taktinen Nero",
+        "grandmaster": "Suurmestari",
+        "champion": "Mestari",
+        "virtuoso": "Virtuoosi",
+        "superstar": "Supertähti",
+        "luminary": "Valovoima",
+        "grandDynamo": "Suuri Dynamo",
+        "strategicMastermind": "Strategianero",
+        "tacticalVirtuoso": "Taktiikan Taituri",
+        "supremeChampion": "Ylivoimainen Mestari",
+        "legendaryStrategist": "Legendaarinen Strategisti",
+        "masterOfGames": "Pelien Mestari",
+        "tournamentWinner": "Turnauksen voittaja {game} {event}",
+        "developer": "Kehittäjä",
+        "communityManager": "Yhteisömanageri",
+        "verifiedUser": "Vahvistettu {user}",
+        "certifiedBloober": "Sertifioitu Bloober"
+    },
+    "count": {
+        "levelShort": "LVL {n}",
+        "experienceShort": "{n} XP",
+        "winStreak": "{n}-voiton putki!",
+        "rolls": "{n} heittoa | {n} heitto | {n} heittoa",
+        "balls": "{n} palloa | {n} pallo | {n} palloa",
+        "kills": "{n} tappoa | {n} tappo | {n} tappoa",
+        "lives": "{n} elämää | {n} elämä | {n} elämää",
+        "files": "{n} tiedostoa | {n} tiedosto | {n} tiedostoa",
+        "points": "{n} pistettä | {n} piste | {n} pistettä",
+        "pieces": "{n} kappaletta | {n} kappale | {n} kappaletta",
+        "wins": "{n} voittoa | {n} voitto | {n} voittoa",
+        "cards": "{n} korttia | {n} kortti | {n} korttia",
+        "playing": "{n} pelaa | {n} pelaa | {n} pelaa",
+        "players": "{n} pelaajaa | {n} pelaaja | {n} pelaajaa",
+        "selectedCards": "Ei valittuja kortteja | {n} valittu kortti | {n} valittua korttia",
+        "matchesFound": "{n} ottelua löytyi | {n} ottelu löytyi | {n} ottelua löytyi",
+        "matchesWaiting": "{n} ottelua odottaa | {n} ottelu odottaa | {n} ottelua odottaa",
+        "needMorePlayers": "Tarvitaan {n} lisäpelaajaa | Tarvitaan {n} lisäpelaaja | Tarvitaan {n} lisäpelaajaa",
+        "playAgainstBots": "Pelaa botteja vastaan | Pelaa bottia vastaan | Pelaa botteja vastaan",
+        "playRandomOpponents": "Pelaa satunnaisia vastustajia vastaan | Pelaa satunnaista vastustajaa vastaan | Pelaa satunnaisia vastustajia vastaan",
+        "turnsToFlip": "Käännösvuoroja | Käännösvuoro | Käännösvuoroja",
+        "increment": "{n} lisäystä | {n} lisäys | {n} lisäystä",
+        "remaining": "Ei jäljellä | {n} jäljellä | {n} jäljellä",
+        "shipsRemaining": "{n} laivaa jäljellä | {n} laiva jäljellä | {n} laivaa jäljellä",
+        "includesItems": "Sisältää {n} esinettä | Sisältää {n} esineen | Sisältää {n} esinettä",
+        "restartNotice": "Serveri käynnistyy uudestaan {n} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {n} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {n} minuutin päästä. Lopeta pelisi.",
+        "bombs": "{n} pommia | {n} pommi | {n} pommia",
+        "tricks": "{n} tikkiä | {n} tikki | {n} tikkiä"
+    },
+    "misc": {
+        "refresh": "Päivitä",
+        "automatic": "Auto",
+        "title": "Otsikko",
+        "current": "Nykyinen",
+        "allTimeHigh": "Kaikkien aikojen korkein",
+        "noWinStreak": "Ei voittoputkea",
+        "gameOverview": "Pelin yleiskuva",
+        "notAvailable": "Ei saatavilla",
+        "bestGame": "Paras peli",
+        "worstGame": "Huonoin peli",
+        "hideMatchId": "Piilota ottelun ID",
+        "highestCurrentWinStreak": "Korkein nykyinen voittoputki",
+        "highestAllTimeWinStreak": "Korkein kaikkien aikojen voittoputki",
+        "mostPlayedGame": "Pelatuin peli",
+        "mostWinsInGame": "Eniten voittoja yhdessä pelissä",
+        "team": "Tiimi",
+        "wagerPoints": "Panostuspisteet",
+        "hit": "Ota",
+        "stand": "Jää",
+        "doubleDown": "Tuplaa veto",
+        "split": "Jaa",
+        "insurance": "Vakuutus",
+        "bust": "Busti",
+        "push": "Tasapeli",
+        "hidden": "Piilotettu",
+        "visible": "Näkyvissä",
+        "socialLinks": "Sosiaalilinkit",
+        "skipTurn": "Ohita vuoro",
+        "doublePointsQuestion": "Kaksinkertaiset pisteet kysymys",
+        "example": "Esimerkki",
+        "learnMore": "Opettele lisää",
+        "questions": "Kysymykset",
+        "teamAndQuestions": "Tiimi & Kysymykset",
+        "questionPacks": "Kysymyspaketit",
+        "packs": "Pakat",
+        "teamAndPacks": "Tiimi & Pakat",
+        "rock": "Kivi",
+        "paper": "Paperi",
+        "scissors": "Sakset",
+        "lobby": "Aulassa",
+        "inGame": "Pelissä",
+        "matchmakingSearch": "Etsitään peliä",
+        "matchmakingFound": "Liitytään peliin...",
+        "finished": "Valmis",
+        "inSameLobby": "Samassa lobbissa",
+        "friends": "Kaverit",
+        "pending": "Odottaa",
+        "friend": "Kaveri",
+        "addFriend": "Lisää kaveri",
+        "removeFriend": "Poista kaveri",
+        "rescindRequest": "Peru pyyntö",
+        "blockedUser": "Estetty käyttäjä",
+        "block": "Estä",
+        "unblock": "Poista esto",
+        "safety": "Turvallisuus",
+        "accept": "Hyväksy",
+        "reject": "Hylkää",
+        "openFullProfile": "Avaa koko profiili",
+        "outgoingFriendRequest": "Lähetetyt kaveripyynnöt",
+        "incomingFriendRequest": "Saapuneet kaveripyynnöt",
+        "newFriendRequest": "Uusi kaveripyyntö",
+        "roundWinner": "Kierroksen voittaja",
+        "more": "Lisää",
+        "moreOptions": "Lisää vaihtoehtoja",
+        "sort": "Lajittele",
+        "alphabetical": "A:sta Ö:hön",
+        "mostUsed": "Eniten käytetyt",
+        "pass": "Ohita",
+        "permanent": "Pysyvä",
+        "total": "Yhteensä",
+        "judge": "Tuomari",
+        "dealer": "Jakaja",
+        "slow": "Hidas",
+        "normal": "Normaali",
+        "fast": "Nopea",
+        "fastest": "Nopein",
+        "starter": "Aloittelija",
+        "cards": "Kortit",
+        "type": "Tyyppi",
+        "iUnderstand": "Ymmärrän",
+        "scoringSystem": "Pisteytysjärjestelmä",
+        "notEnoughData": "Ei tarpeeksi tietoa",
+        "averageWaitTime": "Keskimääräinen odotusaika",
+        "unknown": "Tuntematon",
+        "none": "Ei mitään",
+        "seasonal": "Kausiluonteinen",
+        "items": "Tavarat",
+        "purchaseCoins": "Osta kolikoita",
+        "store": "Kauppa",
+        "buyNow": "Osta nyt",
+        "expired": "Vanhentunut",
+        "yourCoins": "Sun Kolikot",
+        "getCoins": "Hanki Kolikoita",
+        "transactions": "Siirrot",
+        "userData": "Käyttäjätiedot",
+        "price": "Hinta",
+        "roll": "Heitä",
+        "rollAgain": "Heitä Uudestaan",
+        "rolling": "Heittää",
+        "finalRoll": "Viimeinen Heitto",
+        "remaining": "Jäljellä",
+        "noRollsRemaining": "Ei Heittoja Jäljellä",
+        "congratulations": "Onnittelut!",
+        "privacy": "Yksityisyys",
+        "termsOfUse": "Käyttöehdot",
+        "summary": "Yhteenveto",
+        "versusPlayers": "Vastaan Pelaajat",
+        "versusBots": "Vastaan Roboteja",
+        "never": "Ei Koskaan",
+        "perks": "Edut",
+        "beta": "Beta",
+        "about": "Tietoa Bloob.iosta",
+        "public": "Julkinen",
+        "private": "Yksityinen",
+        "friendsOnly": "Vain kavereille",
+        "add": "Lisää",
+        "remove": "Poista",
+        "feature": "Ominaisuus",
+        "visibility": "Näkyvyys",
+        "tracking": "Seuranta",
+        "change": "Muuta",
+        "countOnly": "Laske vaan",
+        "yes": "Kyllä",
+        "no": "Ei",
+        "disabled": "Pois käytöstä",
+        "enabled": "Käytössä",
+        "excluded": "Poissuljettu",
+        "included": "Mukana",
+        "new": "Uusi",
+        "fixed": "Korjattu",
+        "changed": "Muutettu",
+        "guest": "Vieras",
+        "submit": "Lähetä",
+        "settings": "Asetukset",
+        "options": "Asetukset",
+        "localPlayers": "Paikalliset",
+        "preset": "Esiasetettu",
+        "custom": "Mukautettu",
+        "default": "Oletus",
+        "you": "Sinä",
+        "home": "Koti",
+        "bot": "Botti",
+        "bots": "Botit",
+        "vibration": "Värinä",
+        "locked": "Lukittu",
+        "available": "Saatavilla",
+        "owned": "Omistuksessa",
+        "unavailable": "Ei saatavilla",
+        "changeLog": "Muutosloki",
+        "status": "Tila",
+        "information": "Tietoa",
+        "language": "Kieli",
+        "toggle": "Vaihda",
+        "login": "Kirjaudu sisään",
+        "loginToExistingAccount": "Kirjaudu sisään olemassaolevaan tiliin",
+        "createMyAccount": "Luo mun tili",
+        "logout": "Kirjaudu ulos",
+        "hats": "Hatut",
+        "eyes": "Silmät",
+        "mouths": "Suut",
+        "backgrounds": "Taustat",
+        "emailAddress": "Sähköpostiosoite",
+        "emailAddressConfirmation": "Toista sähköpostiosoite",
+        "createAccount": "Luo tili",
+        "logoutGlobally": "Kirjaudu ulos kaikista laitteista",
+        "unlinkMyAccount": "Irrota tili",
+        "deleteMyAccount": "Poista tili",
+        "maintenance": "Huolto",
+        "admin": "Ylläpito",
+        "nsfw": "K18",
+        "specificCards": "Tiettyjä Kortteja",
+        "matchId": "Ottelun ID",
+        "chat": "Chatti",
+        "sendMessage": "Lähetä viesti",
+        "host": "Isäntä",
+        "player": "Pelaaja",
+        "players": "Pelaajat",
+        "loading": "Ladataan...",
+        "percentage": "{percentage}%",
+        "percentageDisabled": "{percentage}% (Ei käytössä)",
+        "scrollBackDown": "Vieritä takaisin alas",
+        "yourInput": "Sinun syötteesi",
+        "pickYourself": "Valitse itse",
+        "highPing": "Pingisi on korkea ({ping}ms)",
+        "currentRoundCount": "Kierros ({current}/{total})",
+        "currentContinueCount": "Jatka ({current}/{total})",
+        "currentSkipCount": "Ohita ({current}/{total})",
+        "currentReadyCount": "Valmis ({current}/{total})",
+        "assignedTypeSelf": "Olet {type}",
+        "assignedTypeSelfLocal": "Pelaaja ({index}) on {type}",
+        "broadcast": "Lähetä",
+        "confirm": "Vahvista",
+        "notMeOption": "Tämä ei ollut minä",
+        "close": "Sulje",
+        "edit": "Muokkaa",
+        "delete": "Poista",
+        "cancel": "Peruuta",
+        "reset": "Nollaa",
+        "start": "Aloita",
+        "download": "Lataa",
+        "share": "Jaa",
+        "copy": "Kopioi",
+        "view": "Katso",
+        "forfeit": "Luovuta Peli",
+        "processFiles": "Käsittele Tiedostoja",
+        "checkAgain": "Tsekkaa taas",
+        "refreshWindow": "Päivitä ikkuna",
+        "makeHost": "Tee isännäksi",
+        "kickUser": "Potki käyttäjä",
+        "changeEmail": "Vaihda sähköposti",
+        "returnToMenu": "Palaa valikkoon",
+        "returnToLobby": "Palaa aulaan",
+        "playAsGuest": "Pelaa vieraana",
+        "largestTake": "Suurin saalis",
+        "takes": "Saaliit",
+        "pieces": "Palaset",
+        "words": "Sanat",
+        "longestWord": "Pisin Sana",
+        "length": "Pituus",
+        "bonus": "Bonus",
+        "round": "Kierros",
+        "score": "Pisteet",
+        "highestScore": "Korkein pistemäärä",
+        "totalScore": "Yhteispisteet",
+        "finalScore": "Lopputulos",
+        "flawlessGame": "Virheetön peli",
+        "flawlessGames": "Virheettömät pelit",
+        "hits": "Osumat",
+        "hitRate": "Osuma-aste",
+        "bustRate": "Rikkoutumisprosentti",
+        "successRate": "Onnistumisprosentti",
+        "pushRate": "Työntöprosentti",
+        "blackjackRate": "Blackjack-kurssi",
+        "rank": "Sijoitus",
+        "kills": "Tappot",
+        "assassin": "Salamurhaaja",
+        "target": "Kohde",
+        "targetReached": "Tavoite saavutettu",
+        "assassinations": "Murhat",
+        "survivals": "Selviytymiset",
+        "games": "Pelit",
+        "correctRatio": "Oikea suhde",
+        "winRatio": "Voittojen suhde",
+        "winLossDelta": "V/H-delta",
+        "killDeathRatio": "K/D Suhde",
+        "quitRatio": "Keskeytysprosentti",
+        "clueSuccessRatio": "Vihjeen onnistumisprosentti",
+        "guessHitRatio": "Arvaus osumaprosentti",
+        "lives": "Elämät",
+        "points": "Pisteet",
+        "wins": "Voitot",
+        "grids": "Ruudukot",
+        "pocketed": "Taskuun laitettu",
+        "largestPocket": "Suurin Tasku",
+        "shots": "Laukaukset",
+        "deaths": "Kuolemat",
+        "fouls": "Rikkeet",
+        "and": "ja",
+        "vs": "vs",
+        "dismiss": "Sulje",
+        "rename": "Nimeä uudelleen",
+        "created": "Luotu",
+        "lastSeen": "Viimeksi nähty",
+        "thisDevice": "Tämä laite",
+        "otherDevices": "Muut laitteet",
+        "myAccount": "Mun tili",
+        "myDevices": "Mun laitteet",
+        "myData": "Mun data",
+        "redeemCode": "Lunasta koodi",
+        "contact": "Ota yhteyttä",
+        "leaderboard": "Tulostaulukko",
+        "elapsedTime": "{time} kulunut",
+        "startingInTime": "Alkaa {time} päästä",
+        "averageWaitTimeBlank": "Keskim. odotusaika {value}",
+        "averageBlank": "Keskim. {value}",
+        "highestBlank": "Korkea. {value}",
+        "showBlank": "Näytä {value}",
+        "hideBlank": "Piilota {value}",
+        "orBlank": "Tai {value}",
+        "saveBlank": "Tallenna {value}",
+        "coinsBlank": "{value} kolikkoa",
+        "receivedBlank": "Saatu {value}",
+        "lessThanBlank": "Vähemmän kuin {value}",
+        "lastSeenBlankAgo": "Viimeksi nähty {value} sitten",
+        "lastSeenJustNow": "Viimeksi nähty just nyt",
+        "blank": "{value}",
+        "byBlank": "Tekijä {value}",
+        "sendVerification": "Lähetä vahvistus",
+        "noThanks": "Ei kiitos",
+        "ready": "Valmis",
+        "imReady": "Mä oon valmis",
+        "imNotReady": "Mä en oo valmis",
+        "selectAll": "Valitse kaikki",
+        "deselectAll": "Poista kaikkien valinta",
+        "customize": "Muokkaa",
+        "inviteFriends": "Kutsu Kavereita",
+        "activeFilters": "Aktiiviset Suodattimet",
+        "minMax": "Min. {min} | Max. {max}",
+        "madeBy": "Tehnyt {name}",
+        "selectedOfLimit": "Valittu {current} {total} rajasta",
+        "selectedAndCountMore": "{selected} & {count} lisää",
+        "selectAGame": "Valitse peli",
+        "featuringCountGames": "Mukana {n} peliä",
+        "clearGames": "Tyhjennä pelit",
+        "goAdFree": "Mene ilman mainoksia",
+        "discord": "Liity Discordiimme",
+        "volume": "Äänenvoimakkuus",
+        "volumeInterface": "Käyttöliittymän äänenvoimakkuus",
+        "volumeEffects": "Efektien Äänenvoimakkuus",
+        "volumeMusic": "Musiikin äänenvoimakkuus",
+        "selectYourLanguage": "Valitse Kieli",
+        "selectYourColor": "Valitse Värisi",
+        "selectYourTeam": "Valitse tiimisi",
+        "teamRed": "Punainen tiimi",
+        "teamBlue": "Sininen tiimi",
+        "latestChanges": "Viimeisimmät Muutokset",
+        "noChangesDetected": "Ei Muutoksia Havaittu",
+        "newChanges": "Uudet Muutokset",
+        "saveChanges": "Tallenna Muutokset",
+        "previousChanges": "Katso Aikaisemmat Muutokset",
+        "random": "Satunnainen",
+        "skipLink": "Siirry pääsisältöön",
+        "opensInNewTab": "{name} (avautuu uuteen välilehteen)"
+    },
+    "match": {
+        "quick": "Nopea ottelu",
+        "create": "Luo ottelu",
+        "createPublic": "Luo julkinen ottelu",
+        "leave": "Poistu ottelusta",
+        "join": "Liity otteluun",
+        "joinById": "Liity otteluun ID:n avulla",
+        "joinFriend": "Liity kaverille",
+        "full": "Koko ottelu",
+        "rematch": "Uusintaottelu",
+        "lobby": {
+            "start": "Aloita Ottelu",
+            "ready": "Valmis",
+            "cancelReady": "Peru valmius",
+            "cancelCountdown": "Peruuta Laskenta",
+            "starting": "Ottelu Alkaa",
+            "waiting": "Odotetaan isännän aloittavan ottelun"
+        },
+        "browser": {
+            "list": "Selaa otteluita",
+            "available": "Saatavilla olevat ottelut",
+            "noneAvailable": "Ei saatavilla olevia otteluita"
+        },
+        "opponentFilter": {
+            "any": "Mikä tahansa taso",
+            "higherThanLvl5": "Taso 5 tai korkeampi",
+            "higherThanLvl25": "Taso 25 tai korkeampi",
+            "aroundMyLevel": "Mun tason ympärillä"
+        },
+        "publicMatchesFilter": {
+            "excluded": "Poissuljettu",
+            "defaultOnly": "Vain oletusasetukset",
+            "any": "Mitkä tahansa asetukset"
+        },
+        "matchmaking": {
+            "searching": "Etsitään matsia...",
+            "settings": {
+                "publicMatches": {
+                    "title": "Julkiset ottelut",
+                    "description": "Vähennä odotusaikaa.",
+                    "tooltip": [
+                        "Julkiset ottelut luodaan muiden pelaajien toimesta. Näissä otteluissa saattaa olla mukautettuja asetuksia.",
+                        "Palaat automaattisesti ottelunhakuun, jos sinut potkitaan ulos tai jos isäntä jättää ottelun."
+                    ]
+                },
+                "games": {
+                    "title": "Pelit",
+                    "description": "Pelaa ekaa saatavilla olevaa peliä.",
+                    "tooltip": [
+                        "Sisällyttämällä useita pelejä voit vähentää odotusaikaa."
+                    ]
+                },
+                "opponentFilter": {
+                    "title": "Vastustajasuodatin",
+                    "description": "Ottelu sun kriteerien mukaan.",
+                    "tooltip": [
+                        "Tiukkojen suodattimien käyttäminen voi pidentää odotusaikaa, mutta se tarjoaa paremmin just sulle sopivia matchoja."
+                    ]
+                }
+            }
+        },
+        "info": {
+            "hostLeftWhileMatchmaking": "Isäntä lähti matsista, jossa olit.",
+            "kickedWhileMatchmaking": "Matsin isäntä potki sut pihalle.",
+            "privateWhileMatchmaking": "Isäntä on tehnyt matsistaan yksityisen.",
+            "makeHost": "Olet tekemässä \"{name}\" uudeksi isännäksi.",
+            "kickUser": "Olet potkimassa \"{name}\" pois tästä matsista.",
+            "noMatches": "Uudet matsit ilmestyvät tänne",
+            "rematch": "Haluatko pelata uudestaan?",
+            "rematchWaiting": "Odotetaan, että toinen pelaaja hyväksyy uusintaottelun...",
+            "rematchRequest": "{name} haluaisi uusintaottelun",
+            "joinById": "Voit liittyä (yksityiseen) matsiin syöttämällä nelinumeroisen ID:n.",
+            "public": "Kuka tahansa voi liittyä selaamalla saatavilla olevia otteluita.",
+            "private": "Pelaajat voivat liittyä vain käyttämällä URL-osoitetta tai 4-numeroista ID:tä.",
+            "leave": "Et ehkä pysty liittymään takaisin, jos päätät lähteä.",
+            "leaveLast": "Koska olet pelin ainoa henkilö, ottelu suljetaan, kun lähdet.",
+            "leaveAsHost": "Kun lähdet, joku muu ottaa isännän roolin."
+        }
+    },
+    "info": {
+        "blockUser": {
+            "title": "Estä pelaaja",
+            "description": "Estä {name} näkymästä tulevissa otteluissa, jos mahdollista, ja piilota heidän viestinsä. Voit muuttaa tämän myöhemmin.",
+            "reasonTitle": "Syytä",
+            "reason": {
+                "toxic": {
+                    "title": "Myrkyllinen käytös",
+                    "description": "Syrjintää, kiusaamista tai toistuvaa vihamielistä käytöstä."
+                },
+                "cheating": {
+                    "title": "Huijaaminen",
+                    "description": "Käyttämällä hyväksikäyttöjä, automaatiota tai epäreiluja etuja."
+                },
+                "spamming": {
+                    "title": "Spämmäys",
+                    "description": "Toistuvat ei-toivotut kutsut, viestit tai häiritsevät teot."
+                },
+                "harassment": {
+                    "title": "Häirintä",
+                    "description": "Kohdennettua kiusaamista, uhkailua tai jatkuvaa ei-toivottua yhteydenottoa."
+                },
+                "other": {
+                    "title": "Muut",
+                    "description": "Mikään muu, mikä tekee pelaamisesta tämän käyttäjän kanssa epämukavaa."
+                }
+            }
+        },
+        "blockedUsers": {
+            "title": "Estetyt käyttäjät",
+            "description": "Katso ja hallitse kaikkia, jotka olet estänyt.",
+            "empty": "Et ole estänyt yhtään käyttäjää.",
+            "count": "{n} estetty"
+        },
+        "youBlockedUser": "Sä blokkasit tän käyttäjän.",
+        "playerProfile": {
+            "unavailable": "Profiilia ei voitu ladata juuri nyt.",
+            "statisticsHidden": "Tämä käyttäjä on piilottanut tilastonsa.",
+            "noStatistics": "Tilastoja ei ole saatavilla.",
+            "noBotsData": "Tässä pelissä ei ole pelattu bottipelejä.",
+            "minGamesRule": "Osa tilastoista näkyy vasta, kun olet pelannut vähintään 50 peliä."
+        },
+        "youAreOutOfLives": "Elämäsi on loppu",
+        "playerIsEliminated": "Pelaaja on tippunut",
+        "waitForWinner": "Pysy rauhassa ja odota, että voittaja nousee!",
+        "serverRestart": "Serveri käynnistetään nyt uudelleen. Käy tsekkaamassa muutaman minuutin päästä.",
+        "clearOldListings": "Poista kaikki 'Ei saatavilla' -ottelut.",
+        "accountLinkSuggestion": "Olet nyt {level}! Harkitse tilin luomista edistymisesi suojaamiseksi.",
+        "accountLinked": "Tämä tili on yhdistetty seuraavaan sähköpostiosoitteeseen: {email}.",
+        "accountSocialLinked": "Tää tili on linkattu {social}n.",
+        "accountNameSocialLinked": "Et voi vaihtaa tän tilin nimee, koska se on linkattu sun {social} profiiliin. Sä voit hallita sun nimee suoraan siel alustalla.",
+        "howToPlay": "Opettele pelaamaan tätä peliä",
+        "chatPlaceholder": "Mitä sä haluut sanoo?",
+        "searchEmpty": "Anteeks, ei löytynyt tuloksia.",
+        "localPlay": "Jaa sama laite useiden ihmisten kanssa lisäämällä paikallisia pelaajia.",
+        "highPing": "Ping on aika, jonka viestisi kulkee sinulta palvelimelle. Näet kaiken myöhemmin kuin muut pelaajat ja saatat kokea pätkimistä ja viiveitä.",
+        "readyUpWarning": {
+            "title": "Vahvista valmius",
+            "description": "Isäntä muutti asetuksia/presettiä, mikä saattaa vaikuttaa peliin negatiivisesti. Käy läpi korostetut asetukset ja vahvista, haluatko silti olla valmis."
+        },
+        "opponentLeftDecision": {
+            "title": "Vihollinen lähti",
+            "description": "Sun vihollinen lähti pelistä. Saat silti voiton, oli miten oli. Lopeta peli nyt tai jatka pelaamista yksin, jos haluut parantaa sun pistettä ja tilastoja.",
+            "continue": "Jatka pelaamista",
+            "endNow": "Lopeta peli nyt"
+        },
+        "discordInvite": {
+            "title": "Jutellaan Discordissa",
+            "from": "{name} haluaa jatkaa juttelua Discordissa.",
+            "fromSelf": "Pyysit aulaa jatkamaan juttelua Discordissa.",
+            "fromAnyone": "Joku pelaaja haluaa jatkaa juttelua Discordissa.",
+            "typing": "Ottelussa voit lähettää vain valmiita fraaseja. Discordissa kirjoitat mitä haluat.",
+            "community": "Palvelimellamme Bloob.ion pelaajat tapaavat, etsivät peliseuraa ja juttelevat peleistä.",
+            "free": "Liittyminen on ilmaista ja voit lähteä milloin vain. Discord-tili on eri asia kuin Bloob.io-tilisi.",
+            "open": "Avaa Discordin uuteen välilehteen."
+        },
+        "stallCall": {
+            "title": "Odotatko vielä?",
+            "description": "{name} ei oo tehnyt siirtoa vähään aikaan. Jos pyydät siirtämään, sillä on {seconds} sekuntia aikaa, tai siirto tehdään sen puolesta.",
+            "ask": "Pyydä siirtämään",
+            "keepWaiting": "Jatka odottamista",
+            "sent": "Pyysit siirtämään. Sillä on {seconds} sekuntia ennen kuin siirto tehdään sen puolesta."
+        },
+        "hasBots": "Tätä peliä voi pelata bottien vastaan.",
+        "inactiveUser": "Käyttäjä ei ole yhdistetty tähän otteluun.",
+        "copiedToClipboard": "Kopioitu sisältö leikepöydälle!",
+        "noMessages": "Ei viestejä",
+        "sendFirstMessage": "Lähetä viesti ensimmäisenä!",
+        "nameJoinedTheGame": "{name} liittyi peliin",
+        "nameLeftTheGame": "{name} lähti pelistä",
+        "gameMenu": "Tekisikö mieli pelata jotain muuta?",
+        "forfeit": "Pelistä luopuminen johtaa sinulle tappioon.",
+        "nameForfeited": "{name} luovutti ja hävisi automaattisesti.",
+        "selfForfeited": "Sinä luovutit ja hävisit automaattisesti.",
+        "unsavedChanges": "Sinulla on tallentamattomia muutoksia, jotka poistuvat, jos jatkat.",
+        "accountDeletion": "Tilisi poistaminen on peruuttamatonta ja se tyhjentää profiilisi, edistymisesi ja tilastosi.",
+        "notMeWarning": "Jatkamalla kirjaudut ulos ja sinut ohjataan sivulle, joka mahdollistaa uloskirjautumisen kaikilla laitteilla. Tämän jälkeen voit kirjautua sisään normaalisti.",
+        "matchesDisabled": "Et voi luoda tai liittyä otteluun juuri nyt",
+        "fileUpload": "Klikkaa selataksesi tai vedä tiedosto(t) tänne",
+        "fileUploadMore": "Lisää tiedostoja vetämällä tai klikkaamalla tässä",
+        "gameJoin": "Liity {title} otteluun",
+        "gameHelp": "{title} Apua",
+        "areYouSure": "Oletko varma?",
+        "automaticTitle": "Sovita otsikko sun tasoon",
+        "customizePreset": "Muokkaa tätä esiasetusta mieltymystesi mukaan.",
+        "loginToPurchase": "Ostoksen tekemiseksi sinun on ensin kirjauduttava sisään tai luotava tili.",
+        "seasonalItem": "Tämän paikan esine on saatavilla vain muutamana päivänä vuodessa.",
+        "gameInvite": "Kutsu peliin",
+        "goAdFree": "Mainokset on pysyvästi pois päältä sun tililtä, jos tuet kehitystä ostamalla mitä tahansa kolikoita.",
+        "chatEmojiAlt": "Chat-emoji tyypillä {type}",
+        "zoomOutHint": "Sä oot liikaa lähellä! Purista sormilla, niin saat zoomattua ulos ja peliohjaus paranee.",
+        "noGameSelected": "Ei oo valittuna mitään pelejä.",
+        "hideMatchId": "Piilottaa ottelun ID:n URL:sta ja näytöltä. Tää voi auttaa estämään stream snipereitä ja vahingossa tapahtuvaa ottelulinkin jakamista.",
+        "recentlyPlayedWith": {
+            "title": "Viimeksi pelatut kaverit",
+            "description": "Katso pelaajia, joiden kanssa olet pelannut tällä laitteella ja lisää heidät kavereiksi. Pelaajatiedot (avatarit, nimet, tasot) saattavat olla vanhentuneita, koska ne ei päivity reaaliajassa.",
+            "empty": "Et ole vielä pelannut kenenkään kanssa tällä laitteella. Ala pelaamaan, niin näet viimeisimmät vastustajasi täällä!"
+        },
+        "awaitingPurchaseConfirmation": {
+            "title": "Odotetaan ostovahvistusta",
+            "description": "Tämä kestää yleensä vain muutaman sekunnin. Maksutavasta riippuen tämä saattaa kestää kauemmin. Voit huoletta sulkea tämän näytön."
+        },
+        "friend": {
+            "noFriends": "Ei kavereita",
+            "noAccount": "Kirjaudu sisään tai luo tili, niin voit alkaa tehdä kavereita!",
+            "description": "Pysy yhteydessä! Näet kaverisi netissä, heidän pelinsä ja voit liittyä heidän yksityisiin lobbyihinsa!",
+            "removeDescription": "Olet juuri lopettamassa ystävyyttä \"{name}\" kanssa.",
+            "inviteReceived": "{name} kutsui sut pelaamaan {game}",
+            "inviteSent": "Pelikutsu on lähetetty!",
+            "friends": "Olet kaveri tämän käyttäjän kanssa."
+        },
+        "contact": "Älä epäröi ottaa yhteyttä, jos tulee ongelmia, on ehdotuksia tai kysymyksiä! Voit laittaa meilillä tai liittyä Bloob.io Discordiin.",
+        "settings": {
+            "redeemCode": {
+                "title": "Lunasta Koodi",
+                "description": "Syötä uniikki koodi alle avataksesi erikoisesineitä vielä enemmän mukauttamista varten. Jokaista koodia voi käyttää vain kerran.",
+                "unlinked": "Koodin lunastamiseksi sun pitää ensin kirjautua sisään tai luoda tili.",
+                "success": "Olet onnistuneesti lunastanut {item}!"
+            },
+            "experience": {
+                "title": "Kokemus",
+                "description": "Kokemuspisteitä (XP) saa matsin lopussa. Kun saavutat tiettyjä XP-rajoja, nouset tasolta toiselle ja saat uusia arvonimiä."
+            },
+            "statistics": {
+                "title": "Tilastot",
+                "description": "Tilastoja seurataan peli- ja ottelukohtaisesti. Ne voivat antaa sinulle tai muille oivalluksia siitä, kuinka hyvin suoriudut."
+            },
+            "analytics": {
+                "title": "Analytiikka",
+                "description": "Bloob.io seuraa anonyymisti analytiikkaa yksityisyyttä kunnioittavalla, itse isännöidyllä analytiikkapalvelimella. Tietojasi ei jaeta koskaan muiden kanssa. Voit halutessasi kieltäytyä tästä.",
+                "blocked": "Analytiikka ei ole aktiivinen. Selaimesi tai laajennuksesi saattaa olla estänyt sen.",
+                "dnt": "Selaimesi on asetettu \"Älä seuraa\" (DNT) -tilaan. Kunnioitamme pyyntöäsi emmekä seuraa sinua."
+            },
+            "ads": {
+                "title": "Mainokset",
+                "description": "Me näytetään mainoksia {provider}ltä. Mainonta Bloob.io:ssa, olipa se sitten kokonaan tai osittain, hoitaa {provider}. Jos et halua nähdä mainoksia Bloob.io:ssa, voit ostaa kolikoita kaupasta ja päästä mainoksista eroon. Tämä poistaa automaattisesti kaikki mainokset sun tililtä.",
+                "complaint": "Bloob.io:lle on tärkeää, että näkemäsi mainokset on eettisiä eikä ne häiritse peliäsi. Jos huomaat mainoksia, jotka sotkevat sun pelailua, ota yhteyttä tarkistamalla \"Tietoa\" osio.",
+                "consent": "Klikkaa tästä päivittääksesi mainosasetuksesi",
+                "exempt": "Mainokset ei ole aktiivisia. Sun tili on ilman mainoksia. Kiitos tuestasi!",
+                "blocked": "Mainokset ei oo päällä. Sun selain tai laajennus on ehkä estänyt ne."
+            },
+            "serverData": {
+                "title": "Palvelimen tiedot",
+                "description": "Voit nähdä kaikki tallennetut tietosi alla olevasta Bloob.io:sta. Herkät tiedot, kuten sähköpostiosoite ja salaiset avaimet, saattavat olla piilotettuina turvallisuutesi vuoksi."
+            },
+            "controlYourData": {
+                "title": "Hallitse Tietojasi",
+                "description": "Olet aina täysin hallinnassa omista tiedoistasi Bloob.io:ssa. Bloob.io:ta voi pelata anonyymisti. Jos haluat poistaa tietosi, voit tehdä sen täällä. Jos sinulla on tili, sinun on ensin irrotettava sähköpostisi ja palattava tänne.",
+                "descriptionSocialLink": "Sun tili on linkitetty toiseen palveluun ({social}), ja sun tietoja voi hallita siellä."
+            },
+            "localStorage": {
+                "title": "Paikallinen tallennustila",
+                "description": "Selaimen tiedot (esim. kieli, äänenvoimakkuuden asetukset) tallennetaan selaimesi 'paikalliseen tallennustilaan', ei meidän palvelimellemme."
+            },
+            "myDevices": {
+                "description": "Katso ja hallitse, millä laitteilla olet kirjautuneena sisään. Voit myös nimetä nykyisen laitteesi uudelleen omaksi mukavuudeksesi.",
+                "noOtherDevices": "Mitään muita laitteita ei ole kirjautuneena sisään. Tiesitkö, että voit vaihtaa laitteiden välillä kesken pelin?",
+                "unlinked": "Et ole vielä luonut tiliä tai kirjautunut sisään, ja käyttäjääsi voidaan käyttää vain tällä laitteella."
+            }
+        },
+        "authentication": {
+            "login": {
+                "title": "Kirjaudu sisään",
+                "description": "Hei! Tällä hetkellä käytössäsi oleva käyttäjä, {name}, joka on {level}, ei oo vielä liitetty mihinkään tiliin. Kirjautuminen olemassa olevaan tiliin poistaa tämän käyttäjän pysyvästi. Ehkä halusitkin luoda oman tilin?"
+            },
+            "setupThreshold": {
+                "title": "Olet aikaisin {name}!",
+                "description": "Sinun täytyy olla vähintään {level} tasolla, jotta voit luoda tilin. Olet jo {percentage} matkalla sinne!"
+            },
+            "setup": {
+                "title": "Hei, {name}!",
+                "description": "Luo tili vain sähköpostiosoitteellasi, niin edistymisesi pysyy turvassa ja synkronoituna kaikilla laitteillasi. Salasanaa ei tarvita!",
+                "disclaimer": "Käytämme sähköpostiosoitettasi vain tilisi vahvistamiseen ja sisäänkirjautumiseen. Voit poistaa sähköpostiosoitteesi milloin tahansa."
+            },
+            "unlink": {
+                "title": "Poista sähköpostiosoite",
+                "description": "Olet poistamassa sähköpostiosoitettasi {name} tililtäsi. Edistymisesi ei enää synkronoidu ja voit käyttää käyttäjääsi vain tällä laitteella."
+            },
+            "unlinkSuccess": {
+                "title": "Sähköpostiosoite poistettu",
+                "description": "Sähköpostiosoitteesi on poistettu tililtäsi. Tätä käyttäjää voi nyt käyttää vain tällä laitteella."
+            },
+            "transferStart": {
+                "title": "Päivitä sähköpostiosoitteesi",
+                "description": "Vaihtaaksesi sähköpostiosoitteen, joka on linkitetty {name}, vahvista alla oleva nykyinen sähköpostiosoite. Kun osoite on vahvistettu, voit syöttää uuden sähköpostiosoitteen."
+            },
+            "transferConfirm": {
+                "title": "Uusi sähköpostiosoite",
+                "description": "Mahtavaa {name}! Nykyinen sähköpostiosoitteesi on vahvistettu onnistuneesti. Saadaksesi prosessin valmiiksi, anna uusi sähköpostiosoitteesi alla."
+            },
+            "transferSuccess": {
+                "title": "Sähköpostiosoite vaihdettu",
+                "description": "Tiliisi liitetty sähköpostiosoite on vaihdettu. Turvallisuutesi vuoksi olet kirjattu ulos kaikista muista laitteista ja sinun täytyy kirjautua uudelleen sisään uudella sähköpostiosoitteellasi."
+            },
+            "logout": {
+                "title": "Kirjaudu ulos",
+                "description": "Koska sinulla on tili, edistymisesi tallennetaan ja voit hakea sen takaisin kirjautumalla sisään sähköpostiosoitteellasi."
+            },
+            "logoutGlobally": {
+                "title": "Kirjaudu ulos kaikkialta",
+                "description": "Tämä kirjaa tilisi ulos kaikista laitteista, mukaan lukien tämä."
+            },
+            "logoutSuccess": {
+                "title": "Uloskirjautunut",
+                "description": "Tiliäsi on kirjauduttu ulos tällä laitteella. Voit kirjautua takaisin sisään sähköpostiosoitteellasi."
+            },
+            "relogin": {
+                "title": "Tervetuloa takaisin, {name}!",
+                "description": "Sinut kirjattiin ulos. Käytä sähköpostiosoitettasi päästäksesi takaisin sisään."
+            },
+            "loginCode": {
+                "title": "Syötä vahvistuskoodi"
+            },
+            "ready": {
+                "title": "Kaikki valmista, {name}!",
+                "description": "Edistymisesi on nyt tallennettu ja synkronoitu!"
+            },
+            "loginNoAccount": "Kirjaudu sisään sähköpostiosoitteellasi alla päästäksesi käsiksi tilillesi tällä laitteella.",
+            "logoutGloballyCompleted": "Tilisi on kirjattu ulos kaikista laitteista.",
+            "verificationEmail": "Sähköposti vahvistuskoodilla on lähetetty.",
+            "noEmail": "Eikö sähköpostia? Tarkista roskapostikansiosi ja varmista, että tämä sähköpostiosoite on linkitetty tilillesi."
+        },
+        "characterDownload": {
+            "title": "Hahmon kuvan lataus",
+            "description": "Lataa korkean resoluution kuva sun Bloob.io hahmosta. Käytä sitä profiilikuvana Discordissa tai missä vaan muussa paikassa."
+        },
+        "connection": {
+            "title": "Et pysty yhdistämään pelipalvelimeen.",
+            "header": {
+                "processing": "Yhdistetään...",
+                "clientOffline": "Tarkista sun yhteys",
+                "serverOffline": "Palvelin on offline",
+                "serverMaintenance": "Palvelimen huolto",
+                "unknown": "Ei löytynyt ongelmia"
+            },
+            "content": {
+                "clientOffline": "Näyttää siltä, että oot offline. Tarkista sun nettiyhteys.",
+                "serverMaintenance": "Peliserveri on nyt huollossa, jotta sun kokemus paranisi. Tule takas pian!",
+                "serverOffline": "Näyttää siltä, että peliserveri on yllättäen offline. Tarkista statussivulta päivitykset. Me yritetään saada hommat taas toimimaan!",
+                "serverUnavailable": "Emme pystyneet tarkistamaan serverin tilaa. Voit yrittää tarkistaa sen manuaalisesti.",
+                "clientRestrictedNetwork": "Näyttää siltä, että oot rajoitetulla verkolla (kuten koulussa tai töissä), mikä voi vaikuttaa sun yhteyteen. Kokeile VPN:ää tai vaihda mobiilidataan.",
+                "clientChangingNetwork": "Näyttää siltä, että vaihdoit verkkoa. Huomasimme ainakin {networkCount} verkon vaihtoa. Tää voi tapahtua, jos kytket mobiilidataa päälle/pois, vaihdat VPN-sijaintia tai siirryt Wi-Fi-verkkojen välillä. Jotta yhteys pysyisi vakaana, pysy yhdessä verkossa.",
+                "clientFrequentlyOffline": "Yhteytesi näyttää olevan epävakaa. Huomasimme, että verkko on ollut offline ainakin {offlineCount} kertaa. Kokeile kytkeä mobiilidata päälle/pois, vaihtaa VPN:ää tai siirtyä toiseen verkkoon.",
+                "clientFrequentlyReconnected": "Yhteytesi palvelimelle vaikuttaa olevan epävakaa. Pingisi on {ping}ms ja olet yrittänyt yhdistää uudelleen {reconnectedCount} kertaa. Jos mahdollista, kokeile vaihtaa verkkoa kytkemällä mobiilidata päälle/pois tai vaihtamalla VPN:ää.",
+                "unknown": "Kaikki näyttää olevan kunnossa, kokeile päivittää sivua. Näetkö edelleen tämän sivun? Ota yhteyttä!"
+            }
+        },
+        "statLimit": {
+            "SOLO": "Joitain tilastoja ei seurata soolopelissä, kuten voittoja, tappioita ja voittoputkia.",
+            "LOCAL_PLAY": "Joitain tilastoja ei seurata paikallisessa moninpelissä, kuten voittoja, tappioita ja voittoputkia.",
+            "SETTINGS": "Joitain tilastoja ei seurata, kun pelataan muokatuilla asetuksilla, kuten voittoja, tappioita, voittoputkia ja huipputuloksia."
+        },
+        "graphicsAcceleration": {
+            "notice": "Grafiikkakiihdytys on pois päältä. Tää voi vaikuttaa pelin sujuvuuteen.",
+            "search": "Miten saa grafiikkakiihdytyksen päälle?"
+        },
+        "accountWarning": {
+            "title": "Tilin Varoitus",
+            "description": "Olet saanut virallisen varoituksen tilillesi. Useat varoitukset johtavat vakavampiin rangaistuksiin.",
+            "reasonTitle": "Syy",
+            "punishmentTitle": "Rangaistus",
+            "reason": {
+                "BAD_NAME": "Aiempi käyttäjänimesi \"{content}\" sisältää loukkaavaa, rivoa tai muuten sopimatonta kieltä.",
+                "GAME_QUIT": "Olet osoittanut epäurheilijamaista käytöstä aiemmissa peleissä lähtemällä ennen ottelun päättymistä.",
+                "TOXIC_CHAT": "Olet osoittanut myrkyllistä käytöstä käyttämällä chattia aiemmissa peleissä."
+            },
+            "punishment": {
+                "NAME_CHANGED": "Käyttäjänimesi on vaihdettu",
+                "NAME_BLOCKED": "Et voi enää vaihtaa käyttäjänimeäsi",
+                "CHAT_BLOCKED": "Et voi enää käyttää pelin sisäistä chattiä",
+                "MATCHMAKING_BLOCKED": "Et voi enää osallistua pelinparitukseen tai julkisiin lobbiihin"
+            }
+        },
+        "about": {
+            "description": "Bloob.io on intohimo projekti, joka koostuu moninpeli-selainpeleistä. Ehdotukset on aina tervetulleita!",
+            "licensing": "Joitakin pelejä voidaan lisensoida käytettäväksi omalla sivustollasi tai alustallasi (mukautetuilla säädöillä). Ota yhteyttä, jos olet kiinnostunut.",
+            "developedBy": "Kehittänyt {name}",
+            "iconsSource": "Ikoni-kiitokset {name}:lle (Lisensioitu)",
+            "soundsSource": "Äänet tarjoaa {name} (Lisensioitu)",
+            "emojiSource": "Emojit on tuottanut {name} (CC-BY 4.0)",
+            "rottenApplesSource": "Mädäntyneet omenat perustuen {name} (BY-NC-SA 2.0)",
+            "diceSource": "Noppamalli tekijältä {name} (CC-BY-4.0)",
+            "localization": "Paikallistaminen vapaaehtoisten avustajien toimesta",
+            "licenses": "Muut lisenssit"
+        },
+        "howToPlayShort": "Kuinka pelata",
+        "skipStepOverHalf": "Tämän vaiheen voi myös jättää väliin, jos yli puolet käyttäjistä äänestää niin."
+    },
+    "share": {
+        "tiers": {
+            "max": "Napakymppi",
+            "almost": "Lähellä",
+            "justIn": "Juuri sisällä",
+            "miss": "Ohi"
+        }
+    }
+}

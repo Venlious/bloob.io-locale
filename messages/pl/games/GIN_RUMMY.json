@@ -1,0 +1,123 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Gra kończy się, jak tylko któryś z graczy zdobędzie tę ilość punktów. Ale to nie znaczy, że od razu wygrywa, bo na koniec gry przyznawane są jeszcze punkty bonusowe."
+        },
+        "knock": {
+            "title": "Puk!",
+            "help": {
+                "enabled": "'Włączone' pozwala na pukanie w oparciu o ustawiony próg pukanie.",
+                "firstDiscardCard": "'Na podstawie pierwszej odrzuconej karty' używa pierwszej odrzuconej karty do ustawienia progu; jeśli wylosujesz Asa, musisz iść w Gin.",
+                "disabled": "'Wyłączone' pozwala zakończyć rundę tylko z Ginem."
+            },
+            "data": {
+                "firstDiscardCard": "Na podstawie pierwszej odrzuconej karty"
+            }
+        },
+        "knockBasedOnFirstCard": {
+            "title": "Knock na podstawie pierwszego odrzutu",
+            "help": "Kiedy to jest włączone, pierwsza karta w stosie odrzuconych ustala próg do \"knock\". Gracze mogą \"knock\" tylko wtedy, gdy ich martwe drewno jest równe lub mniejsze od wartości tej karty."
+        },
+        "knockThreshold": {
+            "title": "Próg pukanie",
+            "help": "Gracz może zbić, gdy jest jego tura i jego martwe karty są równe lub mniejsze od ustalonego progu."
+        },
+        "ginPointAmount": {
+            "title": "Gin",
+            "help": "Liczba punktów przyznawanych graczowi za zawołanie Ginu, czyli kiedy wszystkie karty w ręce są w meldzie."
+        },
+        "bigGinPointAmount": {
+            "title": "Duży Gin",
+            "help": "Liczba punktów przyznawana graczowi za zwołanie Big Gin, co się zdarza, gdy wszystkie karty w ręce plus dobierana karta są w meldzie, nie zostawiając żadnych martwych kart."
+        },
+        "undercutPointAmount": {
+            "title": "Zarost na boku",
+            "help": "Undercut to sytuacja, kiedy gracz zbija, ale jego przeciwnik ma tyle samo lub mniej punktów w deadwood. W takim przypadku przeciwnik dostaje dodatkowe punkty."
+        },
+        "firstBonusPointAmount": {
+            "title": "Bonus: Pierwszy do wygrania",
+            "help": "Przyznawane na koniec gry. Daje graczowi, który pierwszy osiągnie 'Kwotę Zwycięstwa', bonus."
+        },
+        "roundBonusPointAmount": {
+            "title": "Bonus: Runda",
+            "help": "Przyznawane na koniec gry. Daje każdemu graczowi tyle punktów za każdą wygraną rundę, nie licząc remisów."
+        },
+        "shutoutBonusPointAmount": {
+            "title": "Bonus: Zasłona",
+            "help": "Przyznawane na koniec gry. Daje zwycięzcy dodatkowy bonus w tej wysokości punktów, jeśli wygrał każdą rundę."
+        }
+    },
+    "presets": {
+        "straightGin": {
+            "title": "Czysty gin",
+            "description": [
+                "Nie pukać",
+                "Bez bonusu"
+            ]
+        },
+        "oklahomaGin": {
+            "title": "Oklahoma Gin",
+            "description": [
+                "Wartość knocka oparta na pierwszym odrzucie"
+            ]
+        }
+    },
+    "help": {
+        "rounds": {
+            "title": "Rundy",
+            "description": [
+                "Gra składa się z kilku rund. W każdej rundzie gracze dostają 10 kart, a jedna karta leży na stosie. Gracze mogą zdecydować, czy odpuścić, czy wziąć górną kartę ze stosu.",
+                "Tury się zmieniają, a w swojej turze możesz wziąć kartę ze stosu lub z talii. Potem musisz oddać jedną kartę z powrotem na stos."
+            ]
+        },
+        "deadwood": {
+            "title": "Martwe drewno",
+            "description": [
+                "Deadwood to karty, które nie są częścią żadnych meldów. Wartość deadwooda oblicza się, sumując wartości tych kart (np. dwa Króle i piątka dają razem 25).",
+                "Staraj się trzymać swój deadwood jak najniżej, tworząc meldy i pozbywając się kart o wysokiej wartości, które nie są w meldach."
+            ]
+        },
+        "melds": {
+            "title": "Zestawy kart",
+            "description": [
+                "Meldy można tworzyć, mając sekwencję trzech lub więcej kart w tym samym kolorze (np. 3 karo, 4 karo, 5 karo) albo trzy lub więcej kart o tej samej wartości (np. 3 kier, 3 karo, 3 pik).",
+                "Meldy są automatycznie podświetlane w twojej ręce i w interfejsie, więc miej oko na stos – twój przeciwnik może rzucić kartę, której potrzebujesz!"
+            ]
+        },
+        "knock": {
+            "title": "Puk!",
+            "description": [
+                "Możesz zapukać, jeśli masz mniej niż 10 punktów martwych kart. Jak zapukasz, wszystkie karty są odkryte i zobaczysz martwe karty swojego przeciwnika. Jeśli masz więcej martwych kart, to twój przeciwnik wygrywa rundę z bonusem.",
+                "Liczenie punktów za zapukanie jest proste: odejmujesz swoje martwe karty od martwych kart przeciwnika. Na przykład, jeśli masz 5 martwych kart, a twój przeciwnik 25, to zdobywasz 20 punktów."
+            ]
+        },
+        "gin": {
+            "title": "Gin i Big Gin",
+            "description": [
+                "Jak masz 0 deadwood albo możesz mieć 0 po odrzuceniu ostatniej karty deadwood, to masz Gina. To gwarantuje wygraną i dostajesz bonus plus różnicę deadwood.",
+                "Big Gin jest jeszcze lepszy: jeśli cała twoja ręka, plus karta, którą właśnie dobrałeś, tworzy meldy, dostajesz większy bonus. Zawsze wołaj Big Gin, jak tylko go masz!"
+            ]
+        },
+        "goal": {
+            "title": "Cel",
+            "description": [
+                "Celem jest wygranie jak największej liczby rund i bycie pierwszym, który zdobędzie 100 punktów. To kończy grę i pokazuje ostateczne wyniki, w tym punkty bonusowe.",
+                "Z defaultu dostajesz dodatkowe 25 punktów za każdą wygraną rundę i jeszcze 100 punktów za bycie pierwszym, który osiągnie 100 punktów."
+            ]
+        }
+    },
+    "info": {
+        "title": {
+            "tie": "Remis",
+            "undercut": "Zasłonięcie",
+            "gin": "Gin",
+            "bigGin": "Duży Gin",
+            "knock": "Puknięcie",
+            "knockSuccessRate": "Sukces w knocku"
+        },
+        "tieDescription": "Nie ma już wystarczająco kart, żeby grać dalej. Remis!",
+        "scoreDescription": "Wynik ustala się, obliczając różnicę między całkowitymi wartościami kart w rękach graczy, które nie są w meldach.",
+        "yourMeldAfterKnock": "O nie... Część deadwoodu {name} można przenieść do twoich meldów!",
+        "nameMeldAfterKnock": "Super! Część twojego deadwoodu można przenieść do meldów {name}!"
+    }
+}

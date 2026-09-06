@@ -1,0 +1,166 @@
+{
+    "options": {
+        "summaryEnabled": {
+            "title": "Resumen de la ronda",
+            "help": "Muestra un resumen de la puntuación de todos los jugadores con un desglose de todos los puntos."
+        },
+        "summaryTime": {
+            "title": "Tiempo de resumen",
+            "help": "Cuánto tiempo debería mostrarse el resumen de la puntuación antes de continuar. Los jugadores también pueden votar para saltarse el resumen de la ronda más pronto."
+        },
+        "playTime": {
+            "title": "Tiempo de juego",
+            "help": "Cuánto tiempo tiene cada jugador para escoger una carta de su mano y añadirla a la jugada en curso."
+        },
+        "cribTime": {
+            "title": "Tiempo para mandar al montón",
+            "help": "Cuánto tiempo tiene cada jugador para decidir qué cartas va a mandar al montón."
+        },
+        "starterCardTime": {
+            "title": "Tiempo de carta inicial",
+            "help": "Cuánto tiempo tiene el jugador seleccionado para escoger la carta inicial del mazo. La carta inicial se usa como una quinta carta cuando se trata de calcular los puntajes para todas las manos y el montón."
+        },
+        "revealSpeed": {
+            "title": "Velocidad de revelación",
+            "help": "Qué tan rápido se muestra la puntuación al final de una ronda."
+        },
+        "dealerExtraCard": {
+            "title": "Carta extra del dealer",
+            "help": "Cuando se activa en juegos de 3 jugadores, el dealer recibe una carta extra para el montón. Cuando se desactiva, la cuarta carta va automáticamente al montón."
+        },
+        "winCondition": {
+            "data": {
+                "HIGHEST_AFTER": "Más puntos después de llegar a {n} puntos | Más puntos después de llegar a {n} punto | Más puntos después de llegar a {n} puntos"
+            }
+        }
+    },
+    "presets": {
+        "blitz": {
+            "title": "Relámpago",
+            "description": [
+                "El primero en llegar a 31 puntos",
+                "Tiempos reducidos"
+            ]
+        }
+    },
+    "help": {
+        "objective": {
+            "title": "Entendiendo el Objetivo",
+            "description": [
+                "El objetivo del Cribbage es ser el primer jugador en alcanzar la puntuación objetivo, que normalmente es de 121 puntos.",
+                "El juego consta de tres partes distintas que seguirán ocurriendo hasta que haya un ganador."
+            ]
+        },
+        "deal": {
+            "title": "El trato",
+            "description": [
+                "A cada jugador se le reparten 5 o 6 cartas, dependiendo de cuántos jugadores haya. Cada jugador debe elegir 4 cartas que quiera conservar y descartar las demás al \"montón\", que pertenece al dealer.",
+                "El montón se puede ver como una segunda mano, que le dará al dealer puntos adicionales cuando llegue el momento de contar los puntos."
+            ]
+        },
+        "play": {
+            "title": "El juego",
+            "description": [
+                "Los jugadores se turnan para jugar una carta a la vez de su mano sobre la mesa. Se lleva la cuenta de la suma de las cartas jugadas durante la ronda y debe mantenerse por debajo de 31.",
+                "Los jugadores pueden ganar puntos con secuencias, pares y al conseguir que la suma llegue a 15. Haz clic en el botón \"Sistema de puntuación\" mientras estás en el juego para obtener una explicación completa."
+            ]
+        },
+        "show": {
+            "title": "El Show",
+            "description": [
+                "Después de que todos los jugadores hayan vaciado sus manos durante el juego, se cuentan los puntos. El dealer siempre se cuenta al último y también recibirá puntos por el montón.",
+                "Los jugadores pueden ganar puntos por varias combinaciones. Haz clic en el botón \"Sistema de puntuación\" mientras estás en el juego para ver un resumen completo."
+            ]
+        }
+    },
+    "info": {
+        "type": {
+            "jackHeels": {
+                "title": "Dos por la Jota"
+            },
+            "oneForHisNob": {
+                "title": "Uno por la Jota",
+                "description": "Otorga {points} por tener una Jota del mismo palo que la carta inicial."
+            },
+            "fifteen": {
+                "title": "Quince",
+                "description": "Otorga {points} por cualquier combinación de cartas cuya suma sea 15. Las mismas cartas pueden reutilizarse para múltiples combinaciones.",
+                "playTitle": "al dar en {target}",
+                "playDescription": "Otorga {points} por agregar una carta que hace un total de 15."
+            },
+            "pair": {
+                "title": "Par",
+                "description": "Otorga {points} por tener dos cartas del mismo número.",
+                "playTitle": "poniendo un {title}",
+                "playDescription": "Otorga {points} por agregar una carta del mismo número que se acaba de jugar."
+            },
+            "pairRoyal": {
+                "title": "Trío Real",
+                "description": "Otorga {points} por tener tres cartas del mismo número.",
+                "playTitle": "poniendo un {title}",
+                "playDescription": "Otorga {points} por agregar una carta del mismo número que las dos últimas cartas."
+            },
+            "doublePairRoyal": {
+                "title": "Doble Par Real",
+                "description": "Otorga {points} por tener cuatro cartas del mismo número.",
+                "playTitle": "poniendo un {title}",
+                "playDescription": "Otorga {points} por agregar una carta del mismo rango que las últimas tres cartas."
+            },
+            "run": {
+                "title": "Corrida",
+                "description": "Otorga {points} por cada carta en la secuencia.",
+                "playTitle": "haciendo una corrida de {cards}",
+                "playDescription": "Otorga {points} por cada carta en la secuencia. Las cartas no necesitan estar en orden, pero sí necesitan estar agrupadas. Por ejemplo, si tomas las últimas cartas y las reorganizas en orden, deberían estar en secuencia sin interrupciones."
+            },
+            "flush": {
+                "title": "Color (4 cartas)",
+                "description": "Te da {points} si todas las cartas en tu mano son del mismo palo. Esto solo aplica a las cartas en tu mano, excluyendo el montón y la carta de inicio."
+            },
+            "flushStarter": {
+                "title": "Color (5 cartas)",
+                "description": "Te da {points} si todas las cartas en tu mano + la carta inicial son del mismo palo. Esto solo aplica a las cartas en tu mano, excluyendo el montón."
+            },
+            "thirtyOneForTwo": {
+                "title": "31 para dos",
+                "playTitle": "al dar justo en {target}",
+                "playDescription": "Otorga {points} al jugador que jugó la última carta que sumó 31."
+            },
+            "oneForGo": {
+                "title": "Uno por completar",
+                "playTitle": "jugando la última carta",
+                "playDescription": "Otorga {points} al jugador que jugó la última carta cuando nadie más puede hacer una jugada válida."
+            }
+        },
+        "title": {
+            "hand": "Mano",
+            "show": "Mostrar",
+            "play": "Jugar",
+            "crib": "Montón",
+            "skunkedSelf": "Perdí por paliza",
+            "skunkedOther": "Gané por paliza"
+        },
+        "yourCribSelection": "Selecciona {cards} para tu montón",
+        "nameCribSelection": "Selecciona {cards} para el montón de {name}",
+        "yourCribSelectionSubmit": "¡Envía las cartas resaltadas a tu montón!",
+        "nameCribSelectionSubmit": "¡Envía las cartas resaltadas al montón de {name}!",
+        "singleSkunk": "¡Paliza! Este jugador tenía menos de {points}.",
+        "doubleSkunk": "¡Doble paliza! Este jugador tenía menos de {points}.",
+        "selfJackHeelsPoints": "¡{turn} sacó una Jota! Obtienes {points} por la Jota.",
+        "nameJackHeelsPoints": "¡{turn} sacó una Jota! {name} obtiene {points} por la Jota.",
+        "nameSelfJackHeelsPoints": "¡Sacaste una Jota! {name} obtiene {points} por la Jota.",
+        "selfPlayOfOne": "Obtienes {points} por {0}.",
+        "selfPlayOfTwo": "Obtienes {points} por {0} y {1}.",
+        "namePlayOfOne": "{name} obtiene {points} por {0}.",
+        "namePlayOfTwo": "{name} obtiene {points} por {0} y {1}.",
+        "selfCannotPlay": "Ninguna de tus cartas puede ser usada en la jugada.",
+        "nameCannotPlay": "{name} no tiene cartas que puedan ser usadas en la jugada.",
+        "cardPlayBoardLimit": "No puedes jugar esta carta. El valor del tablero no puede exceder {limit}.",
+        "sendCardsToCrib": "Envía las cartas al montón",
+        "pointsDisclaimer": "Estas puntuaciones no contaron porque el juego terminó pronto.",
+        "cardInteractHint": "Haz clic en una carta para hacer tu selección.",
+        "waitForOpponent": "Esperando a tu oponente...",
+        "waitForOpponents": "Esperando a tus oponentes...",
+        "nameNoPoints": "{name} no recibió puntos.",
+        "selfNoPoints": "No recibiste puntos."
+    }
+}

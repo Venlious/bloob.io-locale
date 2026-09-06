@@ -1,0 +1,166 @@
+{
+    "options": {
+        "summaryEnabled": {
+            "title": "Résumé de la Manche",
+            "help": "Affiche un résumé des scores pour tous les joueurs avec un détail de tous les points."
+        },
+        "summaryTime": {
+            "title": "Temps de Résumé",
+            "help": "Combien de temps le résumé du score devrait s'afficher avant de passer à la suite. Les joueurs peuvent aussi voter pour passer le résumé du tour plus tôt."
+        },
+        "playTime": {
+            "title": "Temps de Jeu",
+            "help": "Combien de temps chaque joueur a pour choisir une carte de sa main à ajouter au jeu en cours."
+        },
+        "cribTime": {
+            "title": "Temps de Berceau",
+            "help": "Combien de temps chaque joueur a pour décider quelles cartes ils vont envoyer au berceau."
+        },
+        "starterCardTime": {
+            "title": "Temps de Carte de Départ",
+            "help": "Combien de temps le joueur sélectionné a pour choisir la carte de départ du paquet. La carte de départ est utilisée comme une cinquième carte lorsqu'il s'agit de calculer les scores pour toutes les mains et le berceau."
+        },
+        "revealSpeed": {
+            "title": "Vitesse de Révélation",
+            "help": "La rapidité avec laquelle le score est révélé à la fin d'un tour."
+        },
+        "dealerExtraCard": {
+            "title": "Carte Supplémentaire du Croupier",
+            "help": "Quand activé dans les jeux à 3 joueurs, le donneur reçoit une carte de berceau supplémentaire. Quand désactivé, la quatrième carte va automatiquement au berceau."
+        },
+        "winCondition": {
+            "data": {
+                "HIGHEST_AFTER": "Le plus de points après avoir atteint {n} point | Le plus de points après avoir atteint {n} point | Le plus de points après avoir atteint {n} points"
+            }
+        }
+    },
+    "presets": {
+        "blitz": {
+            "title": "Blitz",
+            "description": [
+                "Premier à 31 points",
+                "Temps réduits"
+            ]
+        }
+    },
+    "help": {
+        "objective": {
+            "title": "Comprendre l'Objectif",
+            "description": [
+                "Le but du Cribbage est d'être le premier joueur à atteindre le score cible, généralement 121 points.",
+                "Le jeu se compose de trois parties distinctes qui continueront jusqu'à ce qu'il y ait un gagnant."
+            ]
+        },
+        "deal": {
+            "title": "Le Deal",
+            "description": [
+                "Chaque joueur reçoit 5 ou 6 cartes, selon le nombre de joueurs. Chaque joueur doit choisir 4 cartes qu'il souhaite garder et jeter les autres dans le \"berceau\", qui appartient au donneur.",
+                "Le berceau peut être vu comme une seconde main, qui donnera des points supplémentaires au donneur lors du comptage des scores."
+            ]
+        },
+        "play": {
+            "title": "Le Jeu",
+            "description": [
+                "Les joueurs jouent à tour de rôle une carte à la fois de leur main sur la table. On garde une trace de la somme des cartes jouées pendant le tour et elle doit rester en dessous de 31.",
+                "Les joueurs peuvent gagner des points avec des séquences, des paires, et en atteignant la somme de 15. Clique sur le bouton \"Système de Score\" pendant le jeu pour avoir un aperçu complet."
+            ]
+        },
+        "show": {
+            "title": "Le Spectacle",
+            "description": [
+                "Après que tous les joueurs ont vidé leurs mains pendant le jeu, les scores sont comptés. Le donneur est toujours compté en dernier et recevra aussi des points pour son berceau.",
+                "Les joueurs peuvent gagner des points pour diverses combinaisons. Clique sur le bouton \"Système de notation\" pendant le jeu pour un aperçu complet."
+            ]
+        }
+    },
+    "info": {
+        "type": {
+            "jackHeels": {
+                "title": "Deux pour ses talons"
+            },
+            "oneForHisNob": {
+                "title": "Un pour son nob",
+                "description": "Donne {points} pour avoir le même valet de la même couleur que la carte de départ."
+            },
+            "fifteen": {
+                "title": "Quinze",
+                "description": "Attribue {points} pour toute combinaison de cartes dont la somme est 15. Les mêmes cartes peuvent être réutilisées pour plusieurs combinaisons.",
+                "playTitle": "en touchant {target}",
+                "playDescription": "Attribue {points} pour avoir ajouté une carte qui fait un total de 15."
+            },
+            "pair": {
+                "title": "Paire",
+                "description": "Donne {points} pour avoir deux cartes de la même valeur.",
+                "playTitle": "en plaçant un {title}",
+                "playDescription": "Attribue {points} pour avoir ajouté une carte du même rang que celle qui vient d'être jouée."
+            },
+            "pairRoyal": {
+                "title": "Triple Paire",
+                "description": "Donne {points} pour avoir trois cartes de la même valeur.",
+                "playTitle": "en plaçant un {title}",
+                "playDescription": "Attribue {points} pour avoir ajouté une carte de la même valeur que les deux dernières cartes."
+            },
+            "doublePairRoyal": {
+                "title": "Double Paire Royale",
+                "description": "Donne {points} pour avoir quatre cartes de la même valeur.",
+                "playTitle": "en plaçant un {title}",
+                "playDescription": "Attribue {points} pour avoir ajouté une carte de la même valeur que les trois dernières cartes."
+            },
+            "run": {
+                "title": "Série",
+                "description": "Donne {points} pour chaque carte dans la séquence.",
+                "playTitle": "faire une suite de {cards}",
+                "playDescription": "Attribue {points} pour chaque carte dans la séquence. Les cartes n'ont pas besoin d'être dans l'ordre, mais doivent être regroupées. Par exemple, si tu prends les dernières cartes et les réorganises dans l'ordre, elles devraient compter sans interruption."
+            },
+            "flush": {
+                "title": "Quinte (4 cartes)",
+                "description": "Te donne {points} si toutes les cartes dans ta main sont de la même couleur. Ça s'applique seulement aux cartes dans ta main, sans compter le crib et la carte de départ."
+            },
+            "flushStarter": {
+                "title": "Quinte (5 cartes)",
+                "description": "Te donne {points} si toutes les cartes dans ta main + la carte de départ sont de la même couleur. Ça s'applique seulement aux cartes dans ta main, sans compter le crib."
+            },
+            "thirtyOneForTwo": {
+                "title": "31 pour deux",
+                "playTitle": "atteindre exactement {target}",
+                "playDescription": "Attribue {points} au joueur qui a joué la dernière carte menant à une somme de 31."
+            },
+            "oneForGo": {
+                "title": "Un pour y aller",
+                "playTitle": "jouer la dernière carte",
+                "playDescription": "Attribue {points} au joueur qui a joué la dernière carte quand personne d'autre ne peut faire un jeu valide."
+            }
+        },
+        "title": {
+            "hand": "Main",
+            "show": "Montrer",
+            "play": "Jouer",
+            "crib": "Berceau",
+            "skunkedSelf": "Se faire skunker soi-même",
+            "skunkedOther": "Se faire skunker les autres"
+        },
+        "yourCribSelection": "Choisis {cards} pour ton berceau",
+        "nameCribSelection": "Choisis {cards} pour le berceau de {name}",
+        "yourCribSelectionSubmit": "Envoie les cartes en surbrillance à ton berceau!",
+        "nameCribSelectionSubmit": "Envoie les cartes en surbrillance au berceau de {name}!",
+        "singleSkunk": "Putoisé! Ce joueur avait moins de {points}.",
+        "doubleSkunk": "Double mouffeté! Ce joueur avait moins de {points}.",
+        "selfJackHeelsPoints": "{turn} a tiré un valet! Tu gagnes {points} pour ses talons.",
+        "nameJackHeelsPoints": "{turn} a tiré un valet! {name} gagne {points} pour ses talons.",
+        "nameSelfJackHeelsPoints": "Tu as tiré un valet! {name} gagne {points} pour ses talons.",
+        "selfPlayOfOne": "Tu gagnes {points} pour {0}.",
+        "selfPlayOfTwo": "Tu gagnes {points} pour {0} et {1}.",
+        "namePlayOfOne": "{name} gagne {points} pour {0}.",
+        "namePlayOfTwo": "{name} gagne {points} pour {0} et {1}.",
+        "selfCannotPlay": "Aucune de tes cartes ne peut être utilisée dans la partie.",
+        "nameCannotPlay": "{name} n'a aucune carte qui peut être utilisée dans la partie.",
+        "cardPlayBoardLimit": "Cette carte ne peut pas être jouée. La valeur du plateau ne peut pas dépasser {limit}.",
+        "sendCardsToCrib": "Envoyez des cartes au Berceau",
+        "pointsDisclaimer": "Ces scores n'ont pas compté car le jeu a fini tôt.",
+        "cardInteractHint": "Clique sur une carte pour faire ton choix.",
+        "waitForOpponent": "En attente de ton adversaire...",
+        "waitForOpponents": "En attente de tes adversaires...",
+        "nameNoPoints": "{name} n'a reçu aucun point.",
+        "selfNoPoints": "Tu n'as reçu aucun point."
+    }
+}

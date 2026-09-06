@@ -1,0 +1,105 @@
+{
+    "options": {
+        "forceTake": {
+            "title": "Prise de Force",
+            "help": {
+                "enabled": "**Activé** : Lorsque possible, le joueur sera forcé de prendre une pièce de l'adversaire.",
+                "disabled": "**Désactivé** : Le joueur peut choisir le mouvement qu'il fait, même s'il peut prendre une pièce de l'adversaire."
+            }
+        },
+        "field": {
+            "title": "Champ des Rêves",
+            "help": "Le terrain utilisé. Selon la taille du terrain et le nombre de rangées, vous obtiendrez plus ou moins de pièces de départ. Certains terrains peuvent accueillir jusqu'à quatre joueurs.",
+            "data": {
+                "8x8": "Français (8x8)",
+                "10x10": "International (10x10)",
+                "12x12": "Canadien (12x12)",
+                "plus": "Forme Plus (12x12)"
+            }
+        },
+        "winCondition": {
+            "help": "Comment le gagnant sera-t-il déterminé ?",
+            "data": {
+                "MORE_PIECES": "Du plateau",
+                "OPPOSITE_SIDE": "Atteindre le côté opposé"
+            }
+        },
+        "kingCondition": {
+            "title": "Roi Condition",
+            "help": "Sous quelles conditions une pièce devient un roi ? Une pièce roi peut se déplacer dans toutes les directions.",
+            "data": {
+                "OPPOSITE_SIDE": "Atteindre le côté opposé",
+                "TAKE": "Prendre une pièce",
+                "ALL": "Commencer avec tous les rois"
+            }
+        },
+        "backwardsTake": {
+            "title": "Reprendre en Arrière",
+            "help": "Définissez si les pièces peuvent prendre les pièces adverses en arrière. Si c'est désactivé, cela ne peut être fait que par les pièces couronnées."
+        },
+        "chainTake": {
+            "title": "Prise de chaîne",
+            "help": "Quand activé, une pièce peut prendre plusieurs autres pièces en un seul mouvement, si elles sont espacées correctement. Sinon, quand désactivé, seulement une pièce peut être prise à la fois."
+        },
+        "staleCount": {
+            "title": "Jeu ennuyeux",
+            "help": "Après combien de tours sans aucune prise de contrôle le jeu devrait être considéré comme figé et terminé."
+        },
+        "stuckThreshold": {
+            "title": "Seuil Bloqué",
+            "help": "Si un joueur est coincé pendant ce nombre de tours d'affilée, il perdra automatiquement."
+        },
+        "rows": {
+            "title": "Rangées d'Arbres",
+            "help": "Combien de rangées de pièces chaque joueur commence-t-il avec ? En fonction de la taille du terrain, le nombre de rangées sera déterminé."
+        }
+    },
+    "presets": {
+        "default": {
+            "title": "Jeu de Dames (Standard)",
+            "description": "terrain de 8x8 — 24 pièces"
+        },
+        "international": {
+            "title": "Échecs internationaux",
+            "description": "Terrain de 10x10 — 40 pièces — Prends à l'envers"
+        },
+        "canadian": {
+            "title": "Échecs canadiens",
+            "description": "Terrain de 12x12 — 60 pièces — Prends à l'envers"
+        },
+        "party": {
+            "title": "Vérificateurs de fête",
+            "description": "Terrain Plus — 36 pièces — 4 joueurs"
+        }
+    },
+    "help": {
+        "movement": {
+            "title": "Mouvement des pièces",
+            "description": [
+                "On peut déplacer les pièces en diagonale. Quand c'est ton tour, toutes les pièces que tu peux déplacer sont mises en évidence.",
+                "Tu peux cliquer sur une pièce mise en évidence pour voir tous les mouvements possibles pour cette pièce."
+            ]
+        },
+        "take": {
+            "title": "Prendre des captures d'écran",
+            "description": [
+                "Si une pièce de l'adversaire est diagonalement à côté de votre pièce avec un espace libre derrière elle, vous pouvez la prendre.",
+                "Selon les paramètres, vous êtes soit obligé de prendre des pièces lorsque c'est possible, soit même de prendre en arrière."
+            ]
+        },
+        "king": {
+            "title": "Pièces couronnées",
+            "description": [
+                "Sous les paramètres par défaut, quand vous atteignez le côté opposé avec une pièce, elle devient un roi.",
+                "Les pièces royales peuvent se déplacer dans toutes les directions diagonales sans être forcées de se déplacer vers l'avant."
+            ]
+        },
+        "goal": {
+            "title": "Goal",
+            "description": [
+                "En général, l'objectif est d'éliminer toutes les autres pièces de l'adversaire ou jusqu'à ce qu'aucun mouvement valide ne puisse être effectué.",
+                "L'objectif du jeu, également appelé condition de victoire, peut être modifié dans les paramètres."
+            ]
+        }
+    }
+}

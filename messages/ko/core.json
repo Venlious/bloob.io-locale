@@ -1,0 +1,1626 @@
+{
+    "_meta": {
+        "language": "Korean (Haeyo-che, ~해요체 style)",
+        "rtl": false,
+        "total": 2588,
+        "missing": 140
+    },
+    "error": {
+        "redeemCode": {
+            "invalid": "입력하신 코드가 존재하지 않아요.",
+            "alreadyOwned": "이미 가지고 있는 아이템이에요. 코드는 나중에 다시 사용할 수 있어요.",
+            "alreadyUsed": "이미 사용된 코드예요."
+        },
+        "authentication": {
+            "expired": "인증 요청이 만료되었어요. 다시 시도해 주세요.",
+            "alreadyLinkedUser": "이미 이메일 주소와 연결된 계정이에요.",
+            "alreadyLinkedEmail": "이 이메일 주소는 이미 다른 계정에 연결되어 있어요.",
+            "alreadyUsedEmail": "이미 현재 계정과 연결된 이메일 주소예요.",
+            "invalidUserEmail": "이 이메일 주소는 현재 유저와 연결되어 있지 않아요.",
+            "invalidDevice": "코드를 요청했던 기기에서 인증을 완료해 주세요.",
+            "invalidUser": "현재 계정은 인증이 필요하지 않아요.",
+            "invalidCode": "인증 코드가 올바르지 않아요.",
+            "invalidSessionName": "세션 이름은 2~24자 사이여야 하며, 영문·숫자·공백만 사용할 수 있어요.",
+            "alreadyUsedSessionName": "이미 사용 중인 세션 이름이에요."
+        },
+        "rateLimit": {
+            "malicious": "수상한 활동이 감지되었어요. {seconds}초 동안 접속이 제한돼요.",
+            "secure": "보안 채널 제한 횟수를 초과했어요. {seconds}초만 기다려 주세요.",
+            "generic": "조금만 천천히 해주세요! {seconds}초 후에 다시 시도할 수 있어요."
+        },
+        "generic": {
+            "friendAccountRequired": "친구를 추가하려면 먼저 로그인하거나 계정을 만들어야 해요.",
+            "friendLimitSelf": "친구 한도 {amount}명에 도달했어요.",
+            "blockLimitSelf": "당신은 {amount}명의 사용자 차단 한도에 도달했어요.",
+            "pendingFriendLimitSelf": "대기 중인 친구 요청은 {amount}개를 초과할 수 없어요.",
+            "pendingFriendLimitOther": "죄송해요, 이 유저에게는 대기 중인 친구 요청이 너무 많아요.",
+            "userOffline": "죄송해요, 현재 오프라인 상태인 유저예요.",
+            "notFriends": "친구 관계가 아니며, 보류 중인 친구 요청도 없어요.",
+            "notBlocked": "이 사용자는 당신의 차단 목록에 없습니다.",
+            "blockedUser": "이 사용자를 차단했기 때문에 이 작업을 수행할 수 없습니다.",
+            "alreadyFriends": "이미 친구인 유저예요.",
+            "pendingFriends": "이 유저에게 이미 보낸 친구 요청이 있어요.",
+            "socialLink": "\"{name}\" 소셜 링크 생성에 실패했어요. 문제가 계속되면 문의해 주세요.",
+            "startingUp": "서버를 시작하는 중이에요. 잠시 후 페이지를 새로고침해 주세요.",
+            "incorrectProductPrice": "가격 불일치로 구매가 취소되었어요. (예상: {expectedAmount}, 확인: {receivedAmount})",
+            "insufficientBalance": "코인이 부족해서 구매할 수 없어요.",
+            "invalidPurchaseWindow": "죄송해요, 지금은 이 상품을 구매할 수 없어요.",
+            "alreadyOwnedProduct": "이미 소유하고 있는 상품이에요.",
+            "levelTooLow": "현재 레벨에서는 이 액션을 할 수 없어요.",
+            "differentSessionConnected": "{session}에서 로그인되어 현재 연결이 해제되었어요.",
+            "sameSessionConnected": "다른 탭에서 사이트를 열어 연결이 해제되었어요.",
+            "blockedFrame": "이 웹사이트에서는 게임 이용이 불가능해요. 아래 사이트에서 무료로 플레이해 보세요.",
+            "unableToConnectToServer": "서버에 연결할 수 없어요. 잠시 후 새로고침을 해주시고, 문제가 계속되면 문의해 주세요.",
+            "desync": "죄송해요, 연결 동기화가 끊어졌어요. 다시 시도해 주세요.",
+            "title": "오류가 발생했어요.",
+            "invalid": "그 작업을 완료하지 못했어요. 계속 이러면 페이지를 새로고침해 주세요.",
+            "invalidEmail": "유효하지 않은 이메일 주소예요.",
+            "invalidAction": "유효하지 않은 액션 타입 \"{type}\"이에요.",
+            "maintenance": "점검 중에는 이 작업을 할 수 없어요.",
+            "missingArguments": "이 작업을 수행하기 위한 필수 인자가 누락되었어요.",
+            "missingAction": "액션 유형이 필요해요.",
+            "cannotSelf": "자기 자신에게는 이 액션을 할 수 없어요.",
+            "actionAgainstBot": "봇에게는 할 수 없는 액션이에요.",
+            "actionAgainstInactiveUser": "비활성 유저에게는 이 액션을 할 수 없어요.",
+            "invalidUser": "해당 유저를 찾을 수 없어요.",
+            "invalidTime": "지금은 이 액션을 할 수 없어요.",
+            "versionMismatch": "현재 \"{client}\" 버전을 사용 중이신데, 서버는 \"{server}\" 버전을 실행하고 있어요. 업데이트가 배포 중일 때 발생할 수 있는 현상이에요. 잠시 후 페이지를 새로고침해서 최신 버전으로 업데이트해 주세요.",
+            "clipboard": "클립보드 복사하지 못했어요."
+        },
+        "config": {
+            "minExceedMaxLength": "최소 길이는 최대 길이보다 길 수 없어요.",
+            "maxSubceedMinLength": "최대 길이는 최소 길이보다 짧을 수 없어요."
+        },
+        "start": {
+            "needPlayerInTeam": "두 팀 모두 최소 1명의 선수가 필요해요.",
+            "pointProgression": "진행할 수 없어요. 포인트 설정을 조정해 보세요.",
+            "lowerStartPointAmount": "시작 포인트는 승리 포인트보다 적어야 해요.",
+            "configCancel": "설정이 바뀌어서 카운트다운이 취소됐어요",
+            "otherReadyCancel": "{name}가 카운트다운을 취소했어요",
+            "selfReadyCancel": "당신이 카운트다운을 취소했어요",
+            "readyClearedBySettings": "게임 설정 업데이트로 인해 준비 상태가 초기화되었어요",
+            "fieldRows": "선택한 필드는 {rows}행까지만 지원해요",
+            "fieldCannotFitUsers": "선택한 필드는 {users}명까지만 플레이할 수 있어요",
+            "questionThreshold": "게임은 최소 {n}개의 질문이 필요해요",
+            "whiteCardThreshold": "게임은 최소 {n}개의 응답 카드(하얀색)가 필요해요",
+            "blackCardThreshold": "게임은 최소 {n}개의 액션 카드(검은색)가 필요해요",
+            "insufficientPlayers": "시작하려면 최소 {min}명의 플레이어가 필요해요",
+            "tooManyPlayers": "현재 인원 제한보다 플레이어가 많아요 ({current}/{max})."
+        },
+        "game": {
+            "missedTurnWarning": "시간이 너무 지체되어 상대방에게 차례가 넘어갔어요. 계속 지연되면 매치에서 퇴장될 수 있어요. ({current}/{threshold})",
+            "missedTurnKick": "{current}번 연속으로 차례를 놓치셔서 매치에서 퇴장되었어요.",
+            "stallCallWarning": "상대가 기다리고 있어요. {seconds}초 안에 차례를 진행하지 않으면 대신 진행돼요.",
+            "stuckSkip": "움직일 수 있는 칸이 없어 차례를 건너뛰었어요.",
+            "stuckThreshold": "{moves}번 연속으로 움직이지 못해 탈락했어요.",
+            "allStuck": "더 이상 움직일 수 있는 플레이어가 없어 매치가 종료되었어요.",
+            "invalidMove": "유효하지 않은 움직임이에요.",
+            "noLives": "남은 생명이 없어요.",
+            "alreadyVoted": "이미 투표했어요.",
+            "cellClaimed": "선택하신 칸 중 이미 차지된 칸이 있어요.",
+            "colorClaimed": "이 색상은 이미 다른 유저가 사용 중이에요.",
+            "loading": "죄송해요 — 브라우저에서 게임을 불러오지 못했어요. 기기나 브라우저를 재시작하면 해결될 수 있어요. 그래픽 카드 드라이버를 업데이트하는 것도 도움이 될 수 있어요.",
+            "mustFollowSuit": "시작한 무늬를 따라야 합니다.",
+            "bidTooLow": "이 입찰은 직전 입찰보다 높아야 해요."
+        },
+        "card": {
+            "loadingSets": "카드 세트를 다운로드할 수 없어요.",
+            "loadError": "카드 세트 데이터를 다운로드하는 중에 오류가 발생했어요.",
+            "underscore": "밑줄 하나당 응답 카드 한 장을 뽑게 돼요 — 밑줄을 붙여 쓰지 마세요!",
+            "empty": "카드가 비어 있지 않은지 확인해 주세요.",
+            "pickLimit": "응답 카드를 3장 넘게 요청할 수 없어요. (밑줄이 너무 많은가요?)",
+            "setSizeLimit": "커스텀 카드 세트의 총 크기는 {limit}을(를) 초과할 수 없어요.",
+            "setName": "이름은 3자에서 32자 사이여야 해요."
+        },
+        "match": {
+            "blocked": "제재로 인해 매치메이킹이나 공개 매치에 참여할 수 없어요.",
+            "joinBlocked": "이 매치에 참여할 수 없어요.",
+            "empty": "매치가 종료되었어요. 다른 플레이어들이 모두 매치를 떠났어요.",
+            "noAgreement": "경기가 종료됐어요, 합의에 도달할 수 없어서요. 통계는 기록되지 않았어요.",
+            "rematchTimeout": "재경기 요청을 수락하지 않아 메인 메뉴로 돌아갔어요.",
+            "rematchCancelled": "죄송해요! 재경기를 위한 인원이 부족해요.",
+            "inactive": "오랫동안 활동이 없어 참여 중이던 매치가 종료되었어요.",
+            "inactiveWarning": "아무런 활동이 없으면 곧 매치가 종료될 예정이에요.",
+            "replacedByBot": "봇으로 대체되어 이 게임에 다시 참여할 수 없어요.",
+            "kicked": "참여 중이던 매치에서 퇴장되었어요.",
+            "deleted": "참여 중이던 매치가 삭제되었어요.",
+            "invalid": "ID가 \"{id}\"인 매치는 존재하지 않아요.",
+            "computer": "컴퓨터와의 매치라 참여할 수 없어요.",
+            "private": "비공개 매치예요. 참여하려면 ID를 입력해야 해요.",
+            "inProgress": "매치가 이미 진행 중이라 참여할 수 없어요.",
+            "full": "매치가 이미 가득 찼어요 ({current}/{max})."
+        },
+        "profile": {
+            "usernameBlocked": "제재로 인해 유저네임을 변경할 수 없어요.",
+            "missingData": "유저네임 또는 사진 인자가 누락되었어요.",
+            "invalidNickname": "별명 형식이 잘못되었어요.",
+            "invalidPicture": "사진 형식이 잘못되었어요.",
+            "lockedPicture": "사진에 사용할 수 없는 잠긴 아이템이 포함되어 있어요.",
+            "nicknameMaxLength": "별명이 너무 길어요 ({current}/{max})",
+            "nicknameMinLength": "별명이 너무 짧아요 ({current}/{min})",
+            "nicknameAllowedCharacters": "별명은 영문, 숫자, 특수문자(_-)만 사용할 수 있어요",
+            "nicknameBanned": "별명에 비속어나 부적절한 언어가 포함되어 있어요",
+            "inGame": "게임 진행 중에는 프로필을 수정할 수 없어요"
+        },
+        "requirement": {
+            "acknowledgeWarning": "이 작업을 수행하려면 경고를 확인해야 해요.",
+            "authentication": "이 작업을 수행하려면 계정에 로그인해야 해요.",
+            "credentials": "잘못된 인증 정보를 입력했어요.",
+            "validAccount": "아직 계정이 인증되지 않았어요. 프로필 변경 사항을 저장해 주세요.",
+            "inLobby": "매치가 이미 시작되어 이 작업을 수행할 수 없어요.",
+            "notJudge": "심판은 이 작업을 수행할 수 없어요.",
+            "judge": "심판이 아니라서 이 작업을 수행할 수 없어요.",
+            "turn": "아직 차례가 아니라서 이 작업을 수행할 수 없어요.",
+            "duringGame": "매치가 진행 중일 때만 이 작업을 수행할 수 있어요.",
+            "finishedGame": "게임이 끝난 후에만 이 작업을 수행할 수 있어요.",
+            "inGame": "이 작업을 수행하려면 게임에 참여 중이어야 해요.",
+            "notInGame": "게임 중에는 이 작업을 수행할 수 없어요.",
+            "notMatchmaking": "매치메이킹 중에는 이 작업을 수행할 수 없어요.",
+            "matchHost": "호스트가 아니라서 이 작업을 수행할 수 없어요.",
+            "admin": "관리자만 수행할 수 있는 작업이에요."
+        }
+    },
+    "game": {
+        "generic": {
+            "name": "홈",
+            "title": "Bloob.io | 친구&봇과 즐기는 무료 온라인 게임",
+            "options": {
+                "public": {
+                    "title": "매치 공개 설정"
+                },
+                "handSize": {
+                    "title": "패 크기",
+                    "help": "각 플레이어가 손에 들고 있는 카드 수예요."
+                },
+                "maxUsers": {
+                    "title": "최대 플레이어 수",
+                    "help": "매치에 참여할 수 있는 최대 인원이에요."
+                },
+                "botCount": {
+                    "help": "다른 플레이어들과 함께 게임에 참여할 봇의 수예요."
+                },
+                "pointer": {
+                    "title": "포인터",
+                    "help": "다른 플레이어가 내 커서 위치를 볼 수 있게 해요. 필요에 따라 그룹이나 팀원에게만 보이도록 설정할 수 있어요.",
+                    "data": {
+                        "OFF": "꺼짐",
+                        "PRIVATE": "그룹만",
+                        "EVERYONE": "모두"
+                    }
+                },
+                "botDifficulty": {
+                    "title": "봇 난이도",
+                    "data": {
+                        "easy": "쉬움",
+                        "normal": "보통",
+                        "hard": "어려움"
+                    }
+                },
+                "generic": {
+                    "data": {
+                        "required": "필수",
+                        "notRequired": "선택적인"
+                    }
+                },
+                "winCondition": {
+                    "title": "승리 조건",
+                    "help": "게임이 언제 끝날지 결정해요.",
+                    "data": {
+                        "firstToPoints": "가장 먼저 {n}점에 도달할 때까지 | 가장 먼저 {n}점에 도달할 때까지 | 가장 먼저 {n}점에 도달할 때까지",
+                        "mostPoints": "{n}라운드 후 최다 득점 시 | {n}라운드 후 최다 득점 시 | {n}라운드 후 최다 득점 시",
+                        "lastStanding": "최후의 생존자 (목숨 {n}개) | 최후의 생존자 (목숨 {n}개) | 최후의 생존자 (목숨 {n}개)"
+                    }
+                },
+                "winAmount": {
+                    "title": "승리 목표치"
+                },
+                "turnTime": {
+                    "title": "턴 시간",
+                    "help": "차례가 다음 플레이어에게 넘어가기 전까지 주어지는 시간이에요."
+                },
+                "timeFreedomMode": {
+                    "title": "시간 제한",
+                    "help": "시간 제한 없이 플레이해요. 모든 턴 타이머를 끄고 나만의 속도로 여유롭게 게임을 즐길 수 있어요. 모르는 사람과 플레이할 때는 추천하지 않아요.",
+                    "data": {
+                        "off": "제한 없음"
+                    }
+                },
+                "scoringSystem": {
+                    "title": "점수 시스템",
+                    "help": {
+                        "default": "정답을 맞혔을 때 점수를 주는 방식을 결정해요.",
+                        "SPEED": "답변을 얼마나 빨리했는지에 따라 점수가 정해져요.",
+                        "ORDER": "플레이어들 중 누가 더 빨리 답했는지에 따라 점수가 정해져요.",
+                        "FIXED": "모든 질문에 동일한 점수를 줘요.",
+                        "PROGRESSIVE": "질문이 끝날 때마다 얻는 점수가 늘어나.",
+                        "STREAK": "질문을 거듭할수록 얻는 점수가 늘어나요."
+                    },
+                    "data": {
+                        "SPEED": "속도",
+                        "ORDER": "순서",
+                        "FIXED": "고정",
+                        "PROGRESSIVE": "점진적",
+                        "STREAK": "연속"
+                    }
+                },
+                "order": {
+                    "title": "순서",
+                    "help": {
+                        "default": "플레이 순서를 결정해요.",
+                        "ALTERNATE": "매 라운드마다 선공을 바꿔요.",
+                        "FIXED": "매 라운드 동일한 순서로 진행해요.",
+                        "SIMULTANEOUS": "모두가 동시에 플레이해요."
+                    },
+                    "data": {
+                        "ALTERNATE": "교대",
+                        "FIXED": "고정",
+                        "SIMULTANEOUS": "동시"
+                    }
+                },
+                "mode": {
+                    "title": "모드",
+                    "help": {
+                        "default": "경쟁 방식을 선택해요: 개인전, 팀전, 혹은 협동전.",
+                        "SOLO": "각 플레이어가 개별적으로 경쟁해요.",
+                        "CO_OP": "모든 플레이어가 한 팀이 되어 협력해요.",
+                        "TEAM": "플레이어들이 팀으로 나뉘며, 협력할 그룹을 직접 선택할 수 있어요."
+                    },
+                    "data": {
+                        "SOLO": "솔로",
+                        "CO_OP": "협동",
+                        "TEAM": "팀"
+                    }
+                },
+                "deckSize": {
+                    "title": "덱 크기",
+                    "help": "게임에서 사용할 덱 크기를 선택해요.",
+                    "data": {
+                        "half": "하프 덱",
+                        "full": "풀 덱",
+                        "double": "더블 덱",
+                        "triple": "트리플 덱",
+                        "four": "4개 덱",
+                        "five": "5개 덱",
+                        "six": "6개 덱",
+                        "seven": "7개 덱",
+                        "eight": "8개 덱"
+                    }
+                },
+                "shuffle": {
+                    "title": "셔플",
+                    "help": "셔플 시점을 선택해요. 슈는 게임에 사용되는 전체 카드 수를 의미해요.",
+                    "data": {
+                        "EVERY_ROUND": "매 라운드마다",
+                        "HALFWAY": "슈의 절반을 사용했을 때",
+                        "WHEN_NEEDED": "카드가 소진되었을 때"
+                    }
+                },
+                "aimingLine": {
+                    "title": "조준선",
+                    "help": "조준선은 수구(흰 공)를 쳤을 때 공이 어디로 갈지 보여줘요."
+                },
+                "speed": {
+                    "title": "속도",
+                    "help": "당구 애니메이션이 재생되는 속도예요."
+                },
+                "illegalBallPocket": {
+                    "title": "잘못된 공 포켓"
+                },
+                "ruleContactRailOnBreak": {
+                    "title": "브레이크 샷 쿠션",
+                    "help": "브레이크 샷을 할 때, 최소 몇 개의 공이 쿠션(레일)에 부딪혀야 하는지 결정해요. 공을 포켓에 넣었을 경우에는 이 규칙이 적용되지 않아요.",
+                    "data": {
+                        "one": "공 1개",
+                        "two": "공 2개",
+                        "three": "공 3개",
+                        "four": "공 4개"
+                    }
+                },
+                "assignedGroup": {
+                    "title": "그룹 할당",
+                    "help": "각 플레이어에게 어떤 그룹(솔리드 또는 스트라이프)을 할당할지 결정해요.",
+                    "data": {
+                        "pocket": "포켓 시 결정",
+                        "random": "시작 시 무작위"
+                    }
+                },
+                "ruleTurnCanHitBall": {
+                    "title": "타격 가능 공",
+                    "help": "플레이어가 타격하면 안 되는 공을 맞혔을 때 적용되는 규칙이에요. 브레이크 샷에는 적용되지 않아요.",
+                    "data": {
+                        "assignedGroup": "할당된 그룹",
+                        "assignedGroupPlus": "할당된 그룹 + 8번 공",
+                        "eitherGroup": "두 그룹 모두",
+                        "anyBall": "모든 공"
+                    }
+                },
+                "ruleTurnMustHitBall": {
+                    "title": "타격 필수 공",
+                    "help": "플레이어가 자신의 차례에 엉뚱한 공을 맞혔을 때 적용되는 규칙이에요."
+                },
+                "ruleTurnContactRail": {
+                    "title": "쿠션 접촉 필수",
+                    "help": "어떤 공도 쿠션(레일)에 닿지 않았을 때 적용되는 규칙이에요. 공을 포켓에 넣었을 경우에는 이 규칙이 적용되지 않아요."
+                },
+                "ruleConsecutiveFouls": {
+                    "title": "연속 파울",
+                    "help": "플레이어가 연속으로 여러 번 파울을 범했을 때의 처리를 결정해요. 비신사적인 행동을 방지하기 위한 규칙이에요.",
+                    "data": {
+                        "off": "꺼짐",
+                        "loseOnTwo": "2회 연속 시 패배",
+                        "loseOnThree": "3회 연속 시 패배",
+                        "loseOnFour": "4회 연속 시 패배"
+                    }
+                },
+                "foul": {
+                    "data": {
+                        "nothing": "처리 없음",
+                        "keepTurn": "턴 유지",
+                        "endTurn": "턴 종료",
+                        "endTurnHand": "턴 종료 + 프리볼",
+                        "reset": "턴 종료 + 필드 복구",
+                        "resetHand": "턴 종료 + 필드 복구 + 프리볼",
+                        "instantWin": "즉시 승리",
+                        "instantLoss": "즉시 패배"
+                    }
+                },
+                "foulPocketCueBall": {
+                    "title": "수구(흰 공) 포켓",
+                    "help": "플레이어가 수구(흰 공)를 포켓에 넣었을 때 발생해요."
+                },
+                "foulPocketOpponentBall": {
+                    "title": "상대방 공 포켓",
+                    "help": "플레이어가 상대방의 공을 포켓에 넣었을 때 발생해요. 다른 파울(예: 잘못된 공을 먼저 맞춤)이 이 파울보다 우선순위가 높아요."
+                }
+            },
+            "help": {},
+            "presets": {
+                "default": {
+                    "title": "기본"
+                },
+                "timeFreedom": {
+                    "title": "시간 자유",
+                    "description": [
+                        "타이머 없음",
+                        "모두가 준비될 때까지 대기"
+                    ]
+                }
+            }
+        },
+        "pool": {},
+        "card": {},
+        "WORDRACE": {
+            "name": "워드레이스",
+            "title": "워드레이스: 무료 온라인 단어 찾기 게임 | 친구와 함께 플레이하세요",
+            "description": "시간이 끝나기 전에 격자에서 글자를 연결하여 단어를 찾으세요. 긴 단어와 배수판이 매 라운드 점수를 올립니다."
+        },
+        "FOUR_IN_A_ROW": {
+            "name": "사목",
+            "title": "사목 온라인 플레이 | 무료 멀티플레이어 커넥트 포 게임",
+            "description": "열에 조각을 떨어뜨려 상대보다 먼저 4개를 연결하세요. 보드 크기, 승리 길이, 뒤집기나 행 제거 같은 파티 트릭을 커스터마이즈할 수 있습니다."
+        },
+        "ROTTEN_APPLES": {
+            "name": "로튼 애플",
+            "title": "로튼 애플 플레이 | 무료 온라인 카드 어게인스트 휴머니티 게임",
+            "description": "Cards Against Humanity 같은 파티 카드 게임. 프롬프트에 맞게 답 카드를 내고, 가장 재밌는 조합에 투표합니다."
+        },
+        "CHECKERS": {
+            "name": "체커",
+            "title": "무료 온라인 체커 게임 | 멀티플레이어 보드 게임 플레이",
+            "description": "여러 규칙 세트와 보드 타입을 가진 클래식 체커스. 더 큰 변종과 선택적 4인 레이아웃도 포함됩니다."
+        },
+        "BLOMBER": {
+            "name": "블롬버",
+            "title": "블롬버: 최고의 온라인 봄버맨 게임 | 무료 멀티플레이어",
+            "description": "봄버맨 스타일 경기장 액션. 폭탄을 배치하고, 상자를 부수고, 파워업을 집어 다른 모두보다 오래 생존합니다."
+        },
+        "BOMB_SHOWDOWN": {
+            "name": "폭탄 대결",
+            "title": "폭탄 대결 | 계정 필요 없는 무료 멀티플레이",
+            "description": "모두가 같은 보드에 폭탄을 숨기고, 번갈아 가며 그 위를 밟아요. 자기 폭탄을 어디에 숨겼는지 기억하고, 다른 사람들이 어디서 망설이는지 살펴서 안전한 칸을 찾아보세요."
+        },
+        "EIGHT_BALL_POOL": {
+            "name": "8볼 풀",
+            "title": "8볼 풀 온라인 플레이 | 친구와 함께 즐기는 무료 멀티플레이어 당구 게임",
+            "description": "자신의 공을 전부 넣고 8번 공을 주머니에 넣어 이기는 큐 스포츠. 다양한 파울 규칙, 속도, 팀 옵션으로 플레이하세요."
+        },
+        "YACHT": {
+            "name": "요트",
+            "title": "무료 온라인 야찌 게임 | 친구와 함께 주사위 게임 즐기기",
+            "description": "야찌 같은 주사위 게임. 최대 3번 굴려서 주사위를 고정하고, 점수 카테고리를 선택해 최고 점수를 만드세요."
+        },
+        "BATTLESHIP": {
+            "name": "배틀쉽",
+            "title": "배틀쉽 온라인 무료 플레이 | 클래식 해전 게임",
+            "description": "숨겨진 함대 전략 게임. 배를 배치하고, 사격하고, 적 배를 모두 침몰시키기 전에 당신 배가 침몰되지 않도록 하세요."
+        },
+        "SUPER_TIC_TAC_TOE": {
+            "name": "슈퍼 틱택토",
+            "title": "슈퍼 틱택토 온라인 플레이 | 무료 멀티플레이어 틱택토 게임",
+            "description": "궁극의 틱택토. 각 수마다 상대를 특정 미니 보드로 보내므로 사전 계획이 중요합니다."
+        },
+        "CRIBBAGE": {
+            "name": "크리비지",
+            "title": "무료 온라인 크리비지 플레이 | 친구와 함께 즐기는 클래식 보드 게임",
+            "description": "카드 플레이와 패 점수를 가진 클래식 크리베이지. 15를 만들고, 순열과 쌍을 구축하면서 목표 점수를 향해 달립니다."
+        },
+        "WAR": {
+            "name": "워",
+            "title": "워 카드 게임 온라인 | 친구 및 봇과 함께 즐기는 무료 플레이",
+            "description": "간단한 높은 카드 대전. 카드를 공개하고, 뭉치를 이기고, 당신이 선택한 규칙에 따라 전쟁 라운드로 동점을 풉니다."
+        },
+        "GIN_RUMMY": {
+            "name": "진 러미",
+            "title": "온라인 진 러미 플레이 | 무료 멀티플레이어 카드 게임 및 규칙",
+            "description": "뽑고 버려서 멜드를 만들고, 죽은 패를 줄이고, 노크나 진을 정확히 터뜨려 최고 점수를 노립니다."
+        },
+        "ROCK_PAPER_SCISSORS": {
+            "name": "가위바위보",
+            "title": "온라인 가위바위보 플레이 | 무료 멀티플레이어 가위바위보 게임",
+            "description": "2~4명용 빠른 마인드 게임 클래식. 빠른 경주부터 탈락식 생존까지 여러 점수 모드가 있습니다."
+        },
+        "TRIVIA": {
+            "name": "트리비아",
+            "title": "무료 온라인 트리비아 퀴즈 게임 | 멀티플레이어 | 실시간 플레이",
+            "description": "혼합 카테고리의 실시간 퀴즈 대전. 빠르고 정확하게 답하세요. 선택적 팀 플레이와 특수 점수 트릭이 있습니다."
+        },
+        "SNOOKER": {
+            "name": "스누커",
+            "title": "무료 온라인 스누커 게임 | 친구와 함께 즐기는 멀티플레이어 재미",
+            "description": "빨간 공과 색 공의 순서, 전술적 안전 플레이, 포인트 구축에 중점을 두는 큐 스포츠."
+        },
+        "NINE_BALL_POOL": {
+            "name": "9볼 풀",
+            "title": "온라인 9볼 풀 플레이 | 친구와 함께 즐기는 무료 멀티플레이어 게임",
+            "description": "가장 낮은 번호 공을 먼저 칠하고 9번 공을 합법적으로 주머니에 넣어 이기는 당구 변종."
+        },
+        "BLACKJACK": {
+            "name": "블랙잭",
+            "title": "무료 온라인 블랙잭 플레이 | 지금 친구들과 21에 도전해보세요!",
+            "description": "21을 넘지 않으면서 딜러에게 더 가깝게 다가가 딜러를 이기세요. 스플릿, 더블 다운, 보험, 사이드 베팅 같은 선택 규칙이 있습니다."
+        },
+        "CUTTHROAT_POOL": {
+            "name": "커트스로트 풀 해요.",
+            "title": "멀티플레이어 컷스로트 당구 | 친구들과 무료로 즐겨요!",
+            "description": "멀티플레이어 당구 프리포올. 각 플레이어가 자신의 지정된 공을 지키면서 다른 모두의 공을 주머니에 넣으려고 합니다."
+        },
+        "CASH_CLASH_FINANCIAL_TRIVIA": {
+            "name": "Cash Clash",
+            "description": "-"
+        },
+        "TUNED_IN": {
+            "name": "Tuned In",
+            "title": "Tuned In | 내 마음의 주파수(Wavelength) 파티 게임 | 온라인 멀티플레이",
+            "description": "Wavelength에서 영감을 받은 파티 게임. 스펙트럼의 숨겨진 위치에 대한 힌트를 쓰고, 다른 사람들이 얼마나 정확하게 맞힐 수 있는지 봅니다."
+        },
+        "HOKM": {
+            "name": "호크므",
+            "title": "호크므 온라인 | 무료 페르시아 카드 게임",
+            "description": "2대 2로 팀을 이루고, 하켐이 으뜸패를 정하면 파트너와 함께 일곱 트릭을 향해 달려가는 페르시아 카드 게임입니다."
+        },
+        "TARNEEB": {
+            "name": "타르닙",
+            "title": "타르닙 온라인 | 무료 아랍 카드 게임",
+            "description": "계약에 입찰하고 으뜸패를 정한 후, 약속한 트릭을 만들어가는 중동의 파트너십 클래식 카드 게임이에요."
+        },
+        "BATAK": {
+            "name": "바탁",
+            "title": "바탁 온라인 | 무료 튀르키예 카드 게임",
+            "description": "계약에 입찰하고 으뜸패를 정한 후, 약속한 트릭을 가져가는 터키의 인기 있는 파트너십 카드 게임이에요."
+        },
+        "PRESIDENT": {
+            "name": "대부호",
+            "title": "대부호 온라인 | 무료 멀티플레이 카드 게임",
+            "description": "손패를 가장 먼저 비우고 대빈민에서 대부호로 올라서세요. 꼴찌는 최고의 카드를 넘겨야 합니다."
+        },
+        "FARKLE": {
+            "name": "파클레",
+            "title": "파클레 | 친구와 즐기는 무료 멀티플레이 주사위 게임",
+            "description": "여섯 개의 주사위로 운을 시험해 보세요. 점수가 되는 것을 따로 두고, 던질 때 턴이 사라지기 전에 은행에 맡기세요."
+        }
+    },
+    "chat": {
+        "affirmative": "알았어요.",
+        "thanks": "고마워요!",
+        "sorry": "미안해요!",
+        "goodLuck": "행운을 빌어요!",
+        "brb": "금방 올게요!",
+        "go": "이제 가야 해요.",
+        "glhf": "즐겁게 게임해요!",
+        "gg": "좋은 경기였어요!",
+        "readyCheck": "다들 준비됐나요?",
+        "changeSettings": "설정을 바꿔주세요!",
+        "ready": "준비됐어요!",
+        "wait": "잠시만 기다려 주세요!",
+        "letsGo": "시작해요!",
+        "greeting": "안녕하세요!",
+        "how": "어떻게 이럴 수가!?",
+        "closeOne": "아까웠어요!",
+        "niceOne": "나이스!",
+        "checkThisOut": "이것 좀 보세요!",
+        "remindMove": "차례예요!",
+        "wow": "우와!",
+        "oops": "앗!",
+        "no": "안 돼!!!",
+        "ohNo": "이런!",
+        "wellPlayed": "멋진 경기였어요!",
+        "rematch": "다시 한 번 더 해요!",
+        "fun": "정말 재미있었어요!",
+        "bye": "안녕히 가세요!",
+        "shortYes": "네.",
+        "shortNo": "아니요.",
+        "please": "제발요.",
+        "hereYouGo": "여기요!",
+        "lastOne": "마지막이에요!",
+        "myConnectionBad": "연결 상태가 안 좋아요.",
+        "discord": "디스코드에서 얘기해요!"
+    },
+    "chatSearchKeywords": {
+        "affirmative": "긍정,물론이지,알았어,그래,알겠어,오키",
+        "thanks": "ㄱㅅ,ㄳ,감사",
+        "sorry": "사과,미안,내 잘못,ㅈㅅ,미안해,정말 미안,진짜 미안해",
+        "goodLuck": "ㅎㅇㅌ",
+        "brb": "곧 올게,금방 올게,나중에 봐,이따 올게",
+        "go": "가야 돼,가야 함,ㄱㄱ,가봐야겠어,나감,나가는 중,가야 해,가야만 해,가야겠네,가야 된다",
+        "glhf": "행운을 빌어 즐겜해,즐겜 ㅎㅇㅌ",
+        "gg": "ㅈㅈ,gg",
+        "readyCheck": "레디,ㄹㄷ,준비,다 됨,준비 완료",
+        "changeSettings": "커스터마이징,설정 업데이트,규칙 변경,규칙,커스텀 규칙,커스텀 설정",
+        "ready": "준비 끝,ㄹㄷ",
+        "wait": "기다려 줘,잠시만,잠깐만",
+        "letsGo": "가자,시작하자,게임 시작,매치 시작,ㄱㄱㄱ,고고씽,고고,시작해,자 가자",
+        "greeting": "안녕,ㅎㅇ,하이,안녕하세요,반가워,반갑,뭐해,헬로",
+        "how": "허,뭐야,머임,헐퀴,말도 안 돼,장난,에이 설마,잠깐 뭐야,잠깐 머임,대박,헐랭,ㄴㅇㄱ,헐,진짜,ㅁㅊ,뭐임 대체",
+        "closeOne": "까비",
+        "niceOne": "나이스,최고,잘했어,나샷,굿잡,대단해,잘한다,대박,우와,세상에,오마이갓,오우야,좋았어",
+        "checkThisOut": "이것좀봐,봐봐,이거 봐",
+        "remindMove": "네 차례,기다리는 중,하세요,턴",
+        "wow": "와,우와,대박,대단해,쩔어,세상에",
+        "oops": "앗,어이쿠,실수,웁스",
+        "no": "아니,ㄴㄴ",
+        "ohNo": "이런,안돼,망했다",
+        "wellPlayed": "수고,잘했어,ㅅㄱ",
+        "rematch": "다시,한판더,리매치,재경기,리겜,다시해요",
+        "fun": "재밌었어,사랑해,ㅅㄹㅎ,알라뷰,승리,내가 이김,너 짐,너 졌어,승자는 나,루저,너 짐,너 졌음",
+        "bye": "잘가,안녕,안녕히가세요,잘 있어,빠이,바이바이,ㅃㅃ,ㅂㅇㅂㅇ,ㅂㅇ",
+        "shortYes": "응,어,ㅇㅇ,ㅇㅋ,오케이,알았어,그래,좋아,네",
+        "shortNo": "아니,아냐,노,ㄴㄴ",
+        "please": "제발,할 수 있으면,부탁해요,할 수 있어요?",
+        "hereYouGo": "여기 있어요,됐어요,해드렸어요",
+        "lastOne": "마지막 하나,하나 더",
+        "myConnectionBad": "기술적 문제,서버 문제,인터넷 문제,끊김,연결 끊김,렉 걸림,렉 오지네,오류남,버그남,작동 안 됨,느린 연결,인터넷 느림,튕겼어,연결 끊겼음",
+        "discord": "디스코드 서버,디코 추가,디코,커뮤니티,디코 추가해줘,디코 친구,디코로"
+    },
+    "header": {
+        "message": {
+            "lobby": "매치 대기실",
+            "finished": "매치 종료",
+            "tied": "무승부",
+            "finishedRematch": "곧 재경기가 시작돼요",
+            "placingShips": "함선 배치 중",
+            "hideYourBombs": "폭탄을 숨기세요",
+            "rememberPlacement": "어디에 뒀는지 기억하세요",
+            "decidingTurnOrder": "누가 먼저 할지 정하는 중",
+            "holdYourBreath": "숨을 참으세요...",
+            "firing": "{name} 사격 중",
+            "firingSelf": "내가 사격 중",
+            "inProgress": "매치 진행 중",
+            "staleMoves": "교착 상태 — {staleCount}턴 동안 변화 없음",
+            "forfeit": "매치 종료 — 상대방이 기권했어요",
+            "outOfPoints": "매치 종료 — 상대방의 점수가 다 떨어졌어요",
+            "inactive": "활동이 없어서 매치가 종료되었어요",
+            "pickActionCard": "액션 카드 선택 중",
+            "pickCardSelection": "카드 선택 중",
+            "handDump": "패 버리기 라운드",
+            "handPreview": "패 미리보기",
+            "countingScores": "점수 계산 중...",
+            "voting": "투표 중",
+            "voteResults": "투표 결과",
+            "flippingField": "필드 뒤집는 중",
+            "removingRow": "줄 제거 중",
+            "yourPick": "선택해요 {extra}",
+            "namePick": "{name}이 선택하고 있어요",
+            "yourTurn": "내 차례예요 {extra}",
+            "nameTurn": "{name}님의 차례예요",
+            "dealerTurn": "딜러의 차례예요",
+            "tiedVote": "동점 투표",
+            "makeYourMove": "수를 두세요",
+            "waitingForOthers": "다른 플레이어들을 기다리는 중이에요",
+            "wager": "베팅 중",
+            "yourClue": "당신의 단서를 방송해요",
+            "nameClue": "{name}의 단서를 들어봐요",
+            "writeYourClue": "당신의 단서를 작성해요",
+            "languageSelect": "언어 선택",
+            "languageAgreed": "언어가 합의되었어요",
+            "tieEndedRound": "무승부로 라운드가 종료되었어요",
+            "youEndedRound": "라운드를 종료했어요",
+            "nameEndedRound": "{name}님이 라운드를 종료했어요",
+            "youWonRound": "라운드에서 승리했어요",
+            "nameWonRound": "{name}님이 라운드에서 승리했어요",
+            "yourTurnBreaking": "브레이크 샷 차례예요 {extra}",
+            "nameTurnBreaking": "{name}님의 브레이크 샷 차례예요",
+            "roundSummary": "라운드 요약",
+            "roundCount": "라운드 {current} / {total}",
+            "roundCurrent": "라운드 {current}",
+            "questionCount": "문제 {current} / {total}",
+            "questionCurrent": "문제 {current}",
+            "war": "전쟁!",
+            "outcome": "결과",
+            "dealingCards": "카드를 나누는 중...",
+            "youPickStarterCard": "스타터 카드를 골라야 해요",
+            "namePickStarterCard": "{name}님이 스타터 카드를 골라야 해요",
+            "yourCrib": "내 크립",
+            "nameCrib": "{name}님의 크립"
+        },
+        "description": {
+            "pleaseWait": "잠시만 기다려 주세요...",
+            "waitingForPlayers": "플레이어를 기다리는 중이에요",
+            "startCountdown": "{text} 후 매치가 시작돼요...",
+            "rematchStartCountdown": "{text} 후 재경기가 시작돼요...",
+            "remainingTimeCountdown": "{clock} 남았어요...",
+            "nextRoundCountdown": "{text} 후 다음 라운드가 시작돼요...",
+            "youWon": "승리했어요",
+            "nameWon": "{name}님이 승리했어요"
+        }
+    },
+    "placeholder": {
+        "clue": "당신의 단서를 입력해요...",
+        "clueInLanguage": "{language}로 당신의 단서를 입력해요...",
+        "cardSetId": "카드 세트 ID를 입력하세요...",
+        "cardContent": "카드 내용을 입력하세요...",
+        "cardSetName": "카드 세트 이름을 입력하세요...",
+        "matchId": "매치 ID 또는 URL...",
+        "message": "메시지...",
+        "username": "유저네임",
+        "password": "비밀번호"
+    },
+    "language": {
+        "nl-NL": "네덜란드어",
+        "en-US": "영어 (미국)",
+        "en-GB": "영어 (영국)",
+        "fr-FR": "프랑스어",
+        "de-DE": "독일어",
+        "it-IT": "이탈리아어",
+        "pl-PL": "폴란드어",
+        "pt-BR": "포르투갈어 (브라질)",
+        "es-ES": "스페인어 (유럽)",
+        "es-MX": "스페인어 (멕시코)",
+        "sv-SE": "스웨덴어",
+        "da-DK": "덴마크어",
+        "fi-FI": "핀란드어",
+        "nb-NO": "노르웨이어",
+        "yi-YI": "이디시어",
+        "ar-SA": "아랍어",
+        "hi-IN": "힌디어",
+        "id-ID": "인도네시아어",
+        "uk-UA": "우크라이나어",
+        "ru-RU": "러시아어",
+        "zh-CN": "중국어 (간체)",
+        "zh-TW": "중국어 (번체)",
+        "ja-JP": "일본어",
+        "ko-KR": "한국어",
+        "tr-TR": "튀르키예어"
+    },
+    "status": {
+        "reconnecting": "다시 연결을 시도 중이에요...",
+        "exploreAllGames": "모든 게임 둘러보기",
+        "playingAgainstBots": "봇과 대결 중",
+        "playingAgainstPlayers": "다른 유저와 대결 중",
+        "playingGame": "{n}명이 플레이 중",
+        "online": "{n}명 온라인",
+        "connection": "연결 상태",
+        "ping": "핑(Ping)",
+        "timeOffset": "시간 오프셋",
+        "version": "버전",
+        "userId": "유저 ID",
+        "notice": "공지사항"
+    },
+    "category": {
+        "misc": "기타",
+        "yacht": "요트",
+        "bonus": "보너스",
+        "field": "필드",
+        "dump": "패 버리기",
+        "bomb": "폭탄",
+        "filter": "필터",
+        "times": "시간 설정",
+        "round": "라운드",
+        "flip": "뒤집기",
+        "default": "기본 설정",
+        "fallback": "예외 상황 조건",
+        "take": "말 잡기",
+        "tetris": "테트리스",
+        "basic": "기본",
+        "language": "언어",
+        "rules": "규칙",
+        "points": "점수",
+        "fouls": "파울 시 처리",
+        "sciences": "과학",
+        "artsAndEntertainment": "예술 및 엔터테인먼트",
+        "geography": "지리",
+        "gaming": "게임",
+        "technology": "기술",
+        "popCulture": "대중문화",
+        "sports": "스포츠",
+        "history": "역사",
+        "cueSports": "큐 스포츠",
+        "classic": "클래식",
+        "party": "파티",
+        "cards": "카드 게임",
+        "board": "보드 게임",
+        "action": "액션"
+    },
+    "month": {
+        "short": {
+            "0": "1월",
+            "1": "2월",
+            "2": "3월",
+            "3": "4월",
+            "4": "5월",
+            "5": "6월",
+            "6": "7월",
+            "7": "8월",
+            "8": "9월",
+            "9": "10월",
+            "10": "11월",
+            "11": "12월"
+        }
+    },
+    "time": {
+        "daysShort": "{n}일",
+        "hoursShort": "{n}시간",
+        "minutesShort": "{n}분",
+        "years": "{n}년 | {n}년 | {n}년",
+        "months": "{n}개월 | {n}개월 | {n}개월",
+        "days": "{n}일 | {n}일 | {n}일",
+        "hours": "{n}시간 | {n}시간 | {n}시간",
+        "minutes": "{n}분 | {n}분 | {n}분",
+        "seconds": "{n}초 | {n}초 | {n}초"
+    },
+    "perk": {
+        "gradientPack": {
+            "title": "그라데이션 팩",
+            "description": "경험을 업그레이드하세요! 아름다운 컬러 조합으로 나만의 개성을 뽐낼 수 있어요."
+        },
+        "maskedPack": {
+            "title": "마스크 팩",
+            "description": "다양한 아이템으로 정체를 숨겨보세요."
+        },
+        "dapperPack": {
+            "title": "대퍼 팩",
+            "description": "탐정의 삶을 경험해 보세요! 탐정 모자, 실크 햇, 멋진 콧수염, 그리고 외눈 안경까지 캐릭터를 꾸밀 수 있어요."
+        },
+        "militaryPack": {
+            "title": "밀리터리 팩",
+            "description": "작전 준비 완료! 헬멧과 베레모를 쓰고 다양한 위장 배경으로 주변 환경에 녹아들어 보세요."
+        },
+        "piratePack": {
+            "title": "해적 팩",
+            "description": "어이, 선원들! 안대와 덧니, 그리고 해적 모자로 캐릭터를 해적으로 변신시켜 보세요."
+        },
+        "holidaysPack": {
+            "title": "홀리데이 팩",
+            "description": "다양한 축제 모자로 홀리데이 분위기를 만끽해 보세요!"
+        },
+        "animalPack": {
+            "title": "동물 팩",
+            "description": "귀엽고 깜직하게 변신해 보세요! 토끼 귀, 고양이 귀, 그리고 사랑스러운 입 모양을 꾸밀 수 있어요. 귀 색상은 선택한 배경색에 맞춰 자동으로 변경돼요."
+        },
+        "halloweenPack": {
+            "title": "할로윈 팩",
+            "description": "으스스한 시즌 속으로 빠져보세요! 해골이나 좀비 눈, 오싹한 입 모양을 골라 게임 안에 재미있고 기괴한 분위기를 연출할 수 있어요."
+        },
+        "americanFootballPack": {
+            "title": "미식축구 팩",
+            "description": "큰 경기를 준비하세요! 다양한 색상의 멋진 미식축구 헬멧을 캐릭터에 씌울 수 있어요."
+        },
+        "celebrationPack": {
+            "title": "축하 팩",
+            "description": "파티 시간이에요! 다양한 색상의 화려한 파티 모자로 캐릭터에게 즐거움을 선사하세요."
+        },
+        "developer": {
+            "title": "개발자"
+        },
+        "coinSmall": {
+            "title": "코인 주머니"
+        },
+        "coinMedium": {
+            "title": "코인 더미"
+        },
+        "coinLarge": {
+            "title": "코인 금고"
+        }
+    },
+    "title": {
+        "rookie": "루키",
+        "beginner": "비기너",
+        "novice": "노비스",
+        "apprentice": "어프렌티스",
+        "competitor": "경쟁자",
+        "challenger": "챌린저",
+        "strategist": "전략가",
+        "tactician": "전술가",
+        "skilledPlayer": "숙련된 플레이어",
+        "risingStar": "라이징 스타",
+        "contender": "도전자",
+        "crazyLarry": "크레이지 래리",
+        "acePlayer": "에이스 플레이어",
+        "mastermind": "마스터마인드",
+        "eliteCompetitor": "엘리트 경쟁자",
+        "grandStrategist": "대전략가",
+        "prodigy": "천재",
+        "veteran": "베테랑",
+        "allStar": "올스타",
+        "legendaryPlayer": "전설적인 플레이어",
+        "supremeTactician": "지고의 전술가",
+        "whizkid": "위즈키드",
+        "maestro": "마에스트로",
+        "tacticalGenius": "전술의 천재",
+        "grandmaster": "그랜드마스터",
+        "champion": "챔피언",
+        "virtuoso": "비르투오소",
+        "superstar": "슈퍼스타",
+        "luminary": "루미너리",
+        "grandDynamo": "그랜드 다이너모",
+        "strategicMastermind": "전략적 마스터마인드",
+        "tacticalVirtuoso": "전술의 비르투오소",
+        "supremeChampion": "슈프림 챔피언",
+        "legendaryStrategist": "전설적인 전략가",
+        "masterOfGames": "게임의 마스터",
+        "tournamentWinner": "토너먼트 우승자 {game} {event}",
+        "developer": "개발자",
+        "communityManager": "커뮤니티 매니저",
+        "verifiedUser": "인증된 {user}",
+        "certifiedBloober": "인증된 블루버"
+    },
+    "count": {
+        "levelShort": "LVL {n}",
+        "experienceShort": "{n} XP",
+        "winStreak": "{n}연승 달성!",
+        "rolls": "{n}개의 주사위 | {n}개의 주사위 | {n}개의 주사위",
+        "balls": "{n} 공 | {n} 공 | {n} 공",
+        "kills": "{n}킬 | {n}킬 | {n}킬",
+        "lives": "목숨 {n}개 | 목숨 {n}개 | 목숨 {n}개",
+        "files": "파일 {n}개 | 파일 {n}개 | 파일 {n}개",
+        "points": "{n}점 | {n}점 | {n}점",
+        "pieces": "말 {n}개 | 말 {n}개 | 말 {n}개",
+        "wins": "{n}승 | {n}승 | {n}승",
+        "cards": "카드 {n}장 | 카드 {n}장 | 카드 {n}장",
+        "playing": "{n}명 플레이 중 | {n}명 플레이 중 | {n}명 플레이 중",
+        "players": "플레이어 {n}명 | 플레이어 {n}명 | 플레이어 {n}명",
+        "selectedCards": "선택된 카드 없음 | 카드 {n}장 선택됨 | 카드 {n}장 선택됨",
+        "matchesFound": "매치 {n}개 발견됨 | 매치 {n}개 발견됨 | 매치 {n}개 발견됨",
+        "matchesWaiting": "대기 중인 매치 {n}개 | 대기 중인 매치 {n}개 | 대기 중인 매치 {n}개",
+        "needMorePlayers": "플레이어 {n}명 더 필요 | 플레이어 {n}명 더 필요 | 플레이어 {n}명 더 필요",
+        "playAgainstBots": "봇과 대결 | 봇과 대결 | 봇과 대결",
+        "playRandomOpponents": "무작위 상대와 대결 | 무작위 상대와 대결 | 무작위 상대와 대결",
+        "turnsToFlip": "뒤집기까지 남은 턴 | 뒤집기까지 남은 턴 | 뒤집기까지 남은 턴",
+        "increment": "{n}씩 증가 | {n}씩 증가 | {n}씩 증가",
+        "remaining": "남은 항목 없음 | {n}개 남음 | {n}개 남음",
+        "shipsRemaining": "남은 함선 {n}척 | 남은 함선 {n}척 | 남은 함선 {n}척",
+        "includesItems": "아이템 {n}개 포함 | 아이템 {n}개 포함 | 아이템 {n}개 포함",
+        "restartNotice": "{n}분 후에 서버가 재시작됩니다. 게임을 마무리해 주세요. | {n}분 후에 서버가 재시작됩니다. 게임을 마무리해 주세요. | {n}분 후에 서버가 재시작됩니다. 게임을 마무리해 주세요.",
+        "bombs": "폭탄 {n}개 | 폭탄 {n}개 | 폭탄 {n}개",
+        "tricks": "{n}트릭 | {n}트릭 | {n}트릭"
+    },
+    "misc": {
+        "refresh": "새로 고침",
+        "automatic": "자동",
+        "title": "제목",
+        "current": "현재",
+        "allTimeHigh": "역대 최고",
+        "noWinStreak": "연승 없음",
+        "gameOverview": "게임 개요",
+        "notAvailable": "해당 없음",
+        "bestGame": "최고의 게임",
+        "worstGame": "최악의 게임",
+        "hideMatchId": "매치 ID 숨기기",
+        "highestCurrentWinStreak": "현재 최고 연승",
+        "highestAllTimeWinStreak": "역대 최고 연승",
+        "mostPlayedGame": "가장 많이 플레이한 게임",
+        "mostWinsInGame": "한 게임 최다 승리",
+        "team": "팀",
+        "wagerPoints": "점수 베팅",
+        "hit": "히트",
+        "stand": "스탠드",
+        "doubleDown": "더블 다운 해요",
+        "split": "스플릿",
+        "insurance": "보험",
+        "bust": "버스트",
+        "push": "푸시",
+        "hidden": "숨김",
+        "visible": "공개",
+        "socialLinks": "소셜 링크",
+        "skipTurn": "턴 건너뛰기",
+        "doublePointsQuestion": "점수 2배 문제",
+        "example": "예시",
+        "learnMore": "더 알아보기",
+        "questions": "문제",
+        "teamAndQuestions": "팀 및 문제",
+        "questionPacks": "문제 팩",
+        "packs": "팩",
+        "teamAndPacks": "팀 & 팩",
+        "rock": "바위",
+        "paper": "보",
+        "scissors": "가위",
+        "lobby": "대기실",
+        "inGame": "게임 중",
+        "matchmakingSearch": "게임 찾는 중",
+        "matchmakingFound": "게임에 참여하는 중...",
+        "finished": "종료됨",
+        "inSameLobby": "같은 대기실에 있음",
+        "friends": "친구",
+        "pending": "대기 중",
+        "friend": "친구",
+        "addFriend": "친구 추가",
+        "removeFriend": "친구 삭제",
+        "rescindRequest": "요청 취소",
+        "blockedUser": "차단된 사용자",
+        "block": "차단",
+        "unblock": "차단 해제",
+        "safety": "안전",
+        "accept": "수락",
+        "reject": "거절",
+        "openFullProfile": "전체 프로필 열기",
+        "outgoingFriendRequest": "보낸 친구 요청",
+        "incomingFriendRequest": "받은 친구 요청",
+        "newFriendRequest": "새로운 친구 요청",
+        "roundWinner": "라운드 우승자",
+        "more": "더 보기",
+        "moreOptions": "추가 옵션",
+        "sort": "정렬",
+        "alphabetical": "가나다순",
+        "mostUsed": "자주 쓴 순",
+        "pass": "패스",
+        "permanent": "영구적",
+        "total": "합계",
+        "judge": "심판",
+        "dealer": "딜러",
+        "slow": "느림",
+        "normal": "보통",
+        "fast": "빠름",
+        "fastest": "매우 빠름",
+        "starter": "스타터",
+        "cards": "카드",
+        "type": "유형",
+        "iUnderstand": "확인했어요",
+        "scoringSystem": "점수 시스템",
+        "notEnoughData": "데이터 부족",
+        "averageWaitTime": "평균 대기 시간",
+        "unknown": "알 수 없음",
+        "none": "없음",
+        "seasonal": "시즌 한정",
+        "items": "아이템",
+        "purchaseCoins": "코인 구매",
+        "store": "상점",
+        "buyNow": "바로 구매",
+        "expired": "만료됨",
+        "yourCoins": "내 코인",
+        "getCoins": "코인 획득",
+        "transactions": "거래 내역",
+        "userData": "유저 데이터",
+        "price": "가격",
+        "roll": "굴리기",
+        "rollAgain": "다시 굴리기",
+        "rolling": "굴리는 중",
+        "finalRoll": "마지막 굴리기",
+        "remaining": "남음",
+        "noRollsRemaining": "남은 횟수 없음",
+        "congratulations": "축하해요!",
+        "privacy": "개인정보 보호",
+        "termsOfUse": "이용약관",
+        "summary": "요약",
+        "versusPlayers": "유저 대전",
+        "versusBots": "봇 대전",
+        "never": "안 함",
+        "perks": "혜택",
+        "beta": "베타",
+        "about": "Bloob.io 정보",
+        "public": "공개",
+        "private": "비공개",
+        "friendsOnly": "친구만",
+        "add": "추가",
+        "remove": "삭제",
+        "feature": "기능",
+        "visibility": "공개 여부",
+        "tracking": "추적",
+        "change": "변경",
+        "countOnly": "개수만 표시",
+        "yes": "예",
+        "no": "아니요",
+        "disabled": "비활성화됨",
+        "enabled": "활성화됨",
+        "excluded": "제외됨",
+        "included": "포함됨",
+        "new": "신규",
+        "fixed": "수정됨",
+        "changed": "변경됨",
+        "guest": "게스트",
+        "submit": "제출",
+        "settings": "설정",
+        "options": "옵션",
+        "localPlayers": "로컬 플레이어",
+        "preset": "프리셋",
+        "custom": "커스텀",
+        "default": "기본",
+        "you": "나",
+        "home": "홈",
+        "bot": "봇",
+        "bots": "봇",
+        "vibration": "진동",
+        "locked": "잠김",
+        "available": "이용 가능",
+        "owned": "보유 중",
+        "unavailable": "이용 불가",
+        "changeLog": "변경 이력",
+        "status": "상태",
+        "information": "정보",
+        "language": "언어",
+        "toggle": "토글",
+        "login": "로그인",
+        "loginToExistingAccount": "기존 계정으로 로그인",
+        "createMyAccount": "내 계정 만들기",
+        "logout": "로그아웃",
+        "hats": "모자",
+        "eyes": "눈",
+        "mouths": "입",
+        "backgrounds": "배경",
+        "emailAddress": "이메일 주소",
+        "emailAddressConfirmation": "이메일 주소 재입력",
+        "createAccount": "계정 만들기",
+        "logoutGlobally": "모든 기기에서 로그아웃",
+        "unlinkMyAccount": "내 계정 연결 해제",
+        "deleteMyAccount": "내 계정 삭제",
+        "maintenance": "점검 중",
+        "admin": "관리자",
+        "nsfw": "성인용 콘텐츠",
+        "specificCards": "특정 카드",
+        "matchId": "매치 ID",
+        "chat": "채팅",
+        "sendMessage": "메시지 보내기",
+        "host": "호스트",
+        "player": "플레이어",
+        "players": "플레이어",
+        "loading": "로딩 중...",
+        "percentage": "{percentage}%",
+        "percentageDisabled": "{percentage}% (비활성화됨)",
+        "scrollBackDown": "아래로 스크롤",
+        "yourInput": "내 입력",
+        "pickYourself": "직접 선택하기",
+        "highPing": "핑이 높아요 ({ping}ms)",
+        "currentRoundCount": "라운드 ({current}/{total})",
+        "currentContinueCount": "계속 ({current}/{total})",
+        "currentSkipCount": "건너뛰기 ({current}/{total})",
+        "currentReadyCount": "준비 ({current}/{total})",
+        "assignedTypeSelf": "자신은 {type}이에요",
+        "assignedTypeSelfLocal": "플레이어({index})는 {type}이에요",
+        "broadcast": "브로드캐스트",
+        "confirm": "확인",
+        "notMeOption": "제가 아니에요",
+        "close": "닫기",
+        "edit": "수정",
+        "delete": "삭제",
+        "cancel": "취소",
+        "reset": "초기화",
+        "start": "시작",
+        "download": "다운로드",
+        "share": "공유",
+        "copy": "복사",
+        "view": "보기",
+        "forfeit": "게임 기권",
+        "processFiles": "파일 처리",
+        "checkAgain": "다시 확인",
+        "refreshWindow": "창 새로고침",
+        "makeHost": "호스트로 만들기",
+        "kickUser": "유저 강퇴",
+        "changeEmail": "이메일 변경",
+        "returnToMenu": "메뉴로 돌아가기",
+        "returnToLobby": "대기실로 돌아가기",
+        "playAsGuest": "게스트로 플레이",
+        "largestTake": "최대 잡기",
+        "takes": "잡은 수",
+        "pieces": "말",
+        "words": "단어",
+        "longestWord": "가장 긴 단어",
+        "length": "길이",
+        "bonus": "보너스",
+        "round": "라운드",
+        "score": "점수",
+        "highestScore": "최고 점수",
+        "totalScore": "총점",
+        "finalScore": "최종 점수",
+        "flawlessGame": "퍼펙트 게임",
+        "flawlessGames": "퍼펙트 게임 횟수",
+        "hits": "히트 횟수",
+        "hitRate": "히트율",
+        "bustRate": "버스트율",
+        "successRate": "성공률",
+        "pushRate": "푸시율",
+        "blackjackRate": "블랙잭율",
+        "rank": "순위",
+        "kills": "킬",
+        "assassin": "어쌔신",
+        "target": "타겟",
+        "targetReached": "목표 도달했어요",
+        "assassinations": "암살 횟수",
+        "survivals": "생존 횟수",
+        "games": "게임 수",
+        "correctRatio": "정답률",
+        "winRatio": "승률",
+        "winLossDelta": "승/패 차이",
+        "killDeathRatio": "K/D 비율",
+        "quitRatio": "중도 이탈 비율",
+        "clueSuccessRatio": "단서 성공 비율",
+        "guessHitRatio": "추측 적중 비율",
+        "lives": "목숨",
+        "points": "점수",
+        "wins": "승리",
+        "grids": "그리드",
+        "pocketed": "포켓인",
+        "largestPocket": "최대 포켓",
+        "shots": "샷 횟수",
+        "deaths": "데스",
+        "fouls": "파울",
+        "and": "및",
+        "vs": "vs",
+        "dismiss": "닫기",
+        "rename": "이름 바꾸기",
+        "created": "생성됨",
+        "lastSeen": "마지막 접속",
+        "thisDevice": "이 기기",
+        "otherDevices": "다른 기기",
+        "myAccount": "내 계정",
+        "myDevices": "내 기기",
+        "myData": "내 데이터",
+        "redeemCode": "코드 사용",
+        "contact": "문의하기",
+        "leaderboard": "리더보드",
+        "elapsedTime": "{time} 경과",
+        "startingInTime": "{time} 후 시작",
+        "averageWaitTimeBlank": "평균 대기 시간 {value}",
+        "averageBlank": "평균 {value}",
+        "highestBlank": "최고 {value}",
+        "showBlank": "{value} 표시",
+        "hideBlank": "{value} 숨기기",
+        "orBlank": "또는 {value}",
+        "saveBlank": "{value} 저장",
+        "coinsBlank": "{value} 코인",
+        "receivedBlank": "{value} 받음",
+        "lessThanBlank": "{value} 미만",
+        "lastSeenBlankAgo": "{value} 전 접속",
+        "lastSeenJustNow": "방금 접속",
+        "blank": "{value}",
+        "byBlank": "제작: {value}",
+        "sendVerification": "인증 메일 보내기",
+        "noThanks": "아니요, 괜찮아요",
+        "ready": "준비",
+        "imReady": "준비됐어요",
+        "imNotReady": "아직이에요",
+        "selectAll": "전체 선택",
+        "deselectAll": "전체 해제",
+        "customize": "커스텀 설정",
+        "inviteFriends": "친구 초대",
+        "activeFilters": "활성 필터",
+        "minMax": "최소 {min} | 최대 {max}",
+        "madeBy": "제작: {name}",
+        "selectedOfLimit": "제한 {total}개 중 {current}개 선택됨",
+        "selectedAndCountMore": "{selected} 외 {count}개 더",
+        "selectAGame": "게임 선택",
+        "featuringCountGames": "{n}개의 게임 포함",
+        "clearGames": "게임 목록 비우기",
+        "goAdFree": "광고 제거하기",
+        "discord": "디스코드 참여하기",
+        "volume": "음량",
+        "volumeInterface": "인터페이스 음량",
+        "volumeEffects": "효과음 음량",
+        "volumeMusic": "배경음 음량",
+        "selectYourLanguage": "언어 선택",
+        "selectYourColor": "색상 선택",
+        "selectYourTeam": "팀 선택",
+        "teamRed": "레드 팀",
+        "teamBlue": "블루 팀",
+        "latestChanges": "최근 변경 사항",
+        "noChangesDetected": "변경 사항 없음",
+        "newChanges": "새로운 변경 사항",
+        "saveChanges": "변경 사항 저장",
+        "previousChanges": "이전 변경 사항 보기",
+        "random": "랜덤",
+        "skipLink": "본문 바로가기",
+        "opensInNewTab": "{name} (새 탭에서 열려요)"
+    },
+    "match": {
+        "quick": "빠른 매치",
+        "create": "매치 만들기",
+        "createPublic": "공개 매치 만들기",
+        "leave": "매치 나가기",
+        "join": "매치 참여하기",
+        "joinById": "ID로 매치 참여하기",
+        "joinFriend": "친구 매치 참여",
+        "full": "꽉 찬 매치",
+        "rematch": "재경기",
+        "lobby": {
+            "start": "매치 시작",
+            "ready": "준비 완료해요",
+            "cancelReady": "준비 취소해요",
+            "cancelCountdown": "카운트다운 취소",
+            "starting": "매치 시작 중",
+            "waiting": "호스트가 매치를 시작하기를 기다리는 중이에요"
+        },
+        "browser": {
+            "list": "매치 목록",
+            "available": "참여 가능한 매치",
+            "noneAvailable": "참여 가능한 매치 없음"
+        },
+        "opponentFilter": {
+            "any": "모든 레벨",
+            "higherThanLvl5": "5레벨 이상",
+            "higherThanLvl25": "25레벨 이상",
+            "aroundMyLevel": "내 레벨 근처"
+        },
+        "publicMatchesFilter": {
+            "excluded": "제외됨",
+            "defaultOnly": "기본 설정만",
+            "any": "모든 설정"
+        },
+        "matchmaking": {
+            "searching": "매치를 찾는 중...",
+            "settings": {
+                "publicMatches": {
+                    "title": "공개 매치",
+                    "description": "대기 시간을 단축해요.",
+                    "tooltip": [
+                        "공개 매치는 다른 플레이어가 만든 매치예요. 설정이 커스텀되어 있을 수 있어요.",
+                        "강퇴당하거나 호스트가 매치를 종료하면 자동으로 매치메이킹 화면으로 돌아와요."
+                    ]
+                },
+                "games": {
+                    "title": "게임",
+                    "description": "참여 가능한 게임 바로 플레이하기",
+                    "tooltip": [
+                        "여러 게임을 선택하면 대기 시간을 줄일 수 있어요."
+                    ]
+                },
+                "opponentFilter": {
+                    "title": "상대 필터",
+                    "description": "원하는 조건에 따라 매칭해요.",
+                    "tooltip": [
+                        "필터를 엄격하게 적용하면 대기 시간이 길어질 수 있지만, 더 적합한 상대를 만날 수 있어요."
+                    ]
+                }
+            }
+        },
+        "info": {
+            "hostLeftWhileMatchmaking": "참여 중이던 매치에서 호스트가 나갔어요.",
+            "kickedWhileMatchmaking": "매치 호스트가 당신을 강퇴했어요.",
+            "privateWhileMatchmaking": "호스트가 매치를 비공개로 전환했어요.",
+            "makeHost": "\"{name}\"님을 새로운 호스트로 지정하려고 해요.",
+            "kickUser": "이 매치에서 \"{name}\"님을 강퇴하려고 해요.",
+            "noMatches": "새로운 매치가 여기에 표시돼요",
+            "rematch": "다시 한 번 플레이할까요?",
+            "rematchWaiting": "상대방이 재경기를 수락하기를 기다리는 중이에요...",
+            "rematchRequest": "{name}님이 재경기를 요청했어요",
+            "joinById": "4자리 ID를 입력하여 (비공개) 매치에 참여할 수 있어요.",
+            "public": "누구나 목록을 보고 참여할 수 있어요.",
+            "private": "URL이나 4자리 ID를 통해서만 참여할 수 있어요.",
+            "leave": "지금 나가면 다시 참여하지 못할 수도 있어요.",
+            "leaveLast": "혼자 남은 상태라 게임을 나가면 매치가 종료돼요.",
+            "leaveAsHost": "방을 나가면 다른 사람이 새로운 호스트가 돼요."
+        }
+    },
+    "info": {
+        "blockUser": {
+            "title": "플레이어 차단",
+            "description": "{name}이 가능한 한 앞으로의 매치에 나타나지 않도록 차단하고 그들의 메시지를 숨길 수 있어요. 나중에 변경할 수 있어요.",
+            "reasonTitle": "이유",
+            "reason": {
+                "toxic": {
+                    "title": "유독한 행동",
+                    "description": "모욕, 괴롭힘, 또는 반복적인 적대적 행동이에요."
+                },
+                "cheating": {
+                    "title": "부정행위 해요",
+                    "description": "악용, 자동화 또는 불공정한 이점을 사용해요."
+                },
+                "spamming": {
+                    "title": "스팸하기",
+                    "description": "반복적인 원치 않는 초대, 메시지 또는 방해되는 행동이에요."
+                },
+                "harassment": {
+                    "title": "괴롭힘이에요",
+                    "description": "목표가 된 괴롭힘, 위협, 또는 지속적인 원치 않는 연락이에요."
+                },
+                "other": {
+                    "title": "기타",
+                    "description": "이 사용자와 함께 플레이하는 데 불편한 다른 것이 있나요?"
+                }
+            }
+        },
+        "blockedUsers": {
+            "title": "차단된 사용자",
+            "description": "차단한 모든 사용자를 보고 관리해요.",
+            "empty": "차단한 사용자가 없어요.",
+            "count": "{n}명이 차단되었어요."
+        },
+        "youBlockedUser": "이 사용자를 차단했어요.",
+        "playerProfile": {
+            "unavailable": "지금은 이 프로필을 불러올 수 없어요.",
+            "statisticsHidden": "이 사용자는 통계를 숨겼어요.",
+            "noStatistics": "표시할 통계가 없어요.",
+            "noBotsData": "이 게임의 봇 경기 데이터가 없어요.",
+            "minGamesRule": "일부 통계는 최소 50판 이상 플레이해야 볼 수 있어요."
+        },
+        "youAreOutOfLives": "남은 목숨이 없어요",
+        "playerIsEliminated": "플레이어가 탈락했어요",
+        "waitForWinner": "우승자가 결정될 때까지 잠시 기다려 주세요!",
+        "serverRestart": "서버를 재시작하는 중이에요. 몇 분 후에 다시 확인해 주세요.",
+        "clearOldListings": "'참여 불가' 매치를 모두 삭제해요.",
+        "accountLinkSuggestion": "벌써 {level} 레벨이 되었네요! 소중한 기록을 보호하기 위해 계정을 만들어보는 건 어떨까요?",
+        "accountLinked": "이 계정은 다음 이메일 주소와 연결되어 있어요: {email}.",
+        "accountSocialLinked": "이 계정은 {social} 계정과 연결되어 있어요.",
+        "accountNameSocialLinked": "이 계정은 {social} 프로필과 연결되어 있어 이름을 변경할 수 없어요. 이름은 해당 플랫폼에서 직접 수정할 수 있어요.",
+        "howToPlay": "게임 방법 알아보기",
+        "chatPlaceholder": "무슨 말을 하고 싶나요?",
+        "searchEmpty": "죄송해요, 검색 결과가 없어요.",
+        "localPlay": "로컬 플레이어를 추가하여 한 기기로 여러 명이 함께 즐겨보세요.",
+        "highPing": "핑은 서버와의 통신 속도를 나타내요. 현재 다른 플레이어보다 화면이 늦게 표시되거나 끊김 현상이 발생할 수 있어요.",
+        "readyUpWarning": {
+            "title": "준비 완료 확인해요",
+            "description": "호스트가 게임 플레이에 부정적인 영향을 줄 수 있는 설정/프리셋을 변경했어요. 강조된 설정을 검토하고 계속 준비 완료할지 확인해 주세요."
+        },
+        "opponentLeftDecision": {
+            "title": "상대가 나갔어요",
+            "description": "상대가 경기를 나갔어요. 어쨌든 승리를 받을 거예요. 지금 경기를 끝내거나 혼자서 계속 플레이해서 점수와 스탯을 올릴 수 있어요.",
+            "continue": "계속 플레이하기",
+            "endNow": "지금 경기 끝내기"
+        },
+        "discordInvite": {
+            "title": "디스코드에서 대화하기",
+            "from": "{name}님이 디스코드에서 계속 얘기하고 싶어 해요.",
+            "fromSelf": "대기실에 디스코드에서 계속 얘기하자고 제안했어요.",
+            "fromAnyone": "한 플레이어가 디스코드에서 계속 얘기하고 싶어 해요.",
+            "typing": "게임 중에는 정해진 문구만 보낼 수 있어요. 디스코드에서는 원하는 대로 쓸 수 있어요.",
+            "community": "우리 서버에서는 Bloob.io 플레이어들이 모여서 같이 할 사람을 찾고 게임 얘기를 나눠요.",
+            "free": "가입은 무료고 언제든 나갈 수 있어요. 디스코드 계정은 Bloob.io 계정과 별개예요.",
+            "open": "새 탭에서 디스코드를 열어요."
+        },
+        "stallCall": {
+            "title": "계속 기다릴까요?",
+            "description": "{name}님이 한동안 차례를 진행하지 않고 있어요. 진행해 달라고 요청하면 {seconds}초 안에 진행해야 하고, 그 시간이 지나면 대신 진행돼요.",
+            "ask": "차례 진행 요청하기",
+            "keepWaiting": "계속 기다리기",
+            "sent": "차례를 진행해 달라고 요청했어요. 대신 진행되기까지 {seconds}초 남았어요."
+        },
+        "hasBots": "이 게임은 봇과 대결할 수 있어요.",
+        "inactiveUser": "유저가 이 매치에 연결되어 있지 않아요.",
+        "copiedToClipboard": "클립보드에 복사되었어요!",
+        "noMessages": "메시지 없음",
+        "sendFirstMessage": "첫 메시지를 보내보세요!",
+        "nameJoinedTheGame": "{name}님이 게임에 들어왔어요",
+        "nameLeftTheGame": "{name}님이 게임을 나갔어요",
+        "gameMenu": "다른 게임을 해보고 싶나요?",
+        "forfeit": "기권하면 패배 처리돼요.",
+        "nameForfeited": "{name}님이 기권하여 자동으로 패배했어요.",
+        "selfForfeited": "기권하여 자동으로 패배했어요.",
+        "unsavedChanges": "저장하지 않은 변경 사항이 사라져요. 계속할까요?",
+        "accountDeletion": "계정 삭제는 되돌릴 수 없으며 프로필, 진행 상황, 통계가 모두 삭제돼요.",
+        "notMeWarning": "계속하면 로그아웃되며 모든 기기에서 로그아웃할 수 있는 페이지로 이동해요. 그 후 평소처럼 다시 로그인할 수 있어요.",
+        "matchesDisabled": "지금은 매치를 만들거나 참여할 수 없어요",
+        "fileUpload": "클릭하여 파일을 찾거나 여기로 드래그하세요",
+        "fileUploadMore": "드래그하거나 클릭하여 파일을 더 추가하세요",
+        "gameJoin": "{title} 매치 참여",
+        "gameHelp": "{title} 도움말",
+        "areYouSure": "정말인가요?",
+        "automaticTitle": "자신의 레벨에 맞는 제목을 선택해요.",
+        "customizePreset": "이 프리셋을 취향에 맞게 꾸며보세요.",
+        "loginToPurchase": "구매하려면 먼저 로그인하거나 계정을 만들어야 해요.",
+        "seasonalItem": "이 슬롯의 아이템은 일 년 중 며칠 동안만 제공되는 한정 아이템이에요.",
+        "gameInvite": "게임 초대",
+        "goAdFree": "코인을 구매하여 개발을 지원해 주시면 계정의 광고가 영구적으로 제거돼요.",
+        "chatEmojiAlt": "{type} 타입 채팅 이모지",
+        "zoomOutHint": "화면이 확대되었어요! 손가락을 모아 줌아웃하면 게임을 더 편하게 조작할 수 있어요.",
+        "noGameSelected": "선택된 게임이 없어요.",
+        "hideMatchId": "URL와 화면에서 매치 ID를 숨겨요. 이렇게 하면 스트림 스나이퍼와 매치 링크의 우연한 공유를 방지할 수 있어요.",
+        "recentlyPlayedWith": {
+            "title": "최근 함께 플레이한 유저",
+            "description": "이 기기에서 최근 함께 플레이한 유저를 확인하고 친구로 추가할 수 있어요. 아바타, 이름, 레벨 등의 정보는 실시간으로 업데이트되지 않아 실제와 다를 수 있어요.",
+            "empty": "아직 이 기기에서 함께 플레이한 유저가 없어요. 게임을 시작하면 최근 상대방이 여기에 표시돼요!"
+        },
+        "awaitingPurchaseConfirmation": {
+            "title": "구매 확인 대기 중",
+            "description": "보통 몇 초 정도 걸리지만, 결제 수단에 따라 더 오래 걸릴 수도 있어요. 이 화면은 닫으셔도 괜찮아요."
+        },
+        "friend": {
+            "noFriends": "친구 없음",
+            "noAccount": "친구를 만들려면 로그인하거나 계정을 생성해 주세요!",
+            "description": "친구들의 온라인 상태와 플레이 중인 게임을 확인하고, 비공개 대기실에도 바로 참여해 보세요!",
+            "removeDescription": "\"{name}\"님과 친구 관계를 해제하려고 해요.",
+            "inviteReceived": "{name}님이 {game} 게임에 초대했어요.",
+            "inviteSent": "게임 초대를 보냈어요!",
+            "friends": "이 유저와 친구 사이예요."
+        },
+        "contact": "문제 발생 시나 제안, 궁금한 점이 있다면 언제든 알려주세요! 이메일을 보내거나 Bloob.io 디스코드에 참여하여 문의하실 수 있어요.",
+        "settings": {
+            "redeemCode": {
+                "title": "코드 사용",
+                "description": "아래에 고유 코드를 입력하여 특별한 커스텀 아이템을 획득해 보세요. 각 코드는 한 번만 사용할 수 있어요.",
+                "unlinked": "코드를 사용하려면 먼저 로그인하거나 계정을 만들어야 해요.",
+                "success": "{item} 아이템을 성공적으로 획득했어요!"
+            },
+            "experience": {
+                "title": "경험치",
+                "description": "경험치(XP)는 매치가 끝날 때 지급돼요. 일정 경험치를 쌓으면 레벨이 오르고 새로운 칭호를 얻을 수 있어요."
+            },
+            "statistics": {
+                "title": "통계",
+                "description": "통계는 게임 및 매치별로 기록돼요. 본인이나 다른 플레이어가 실력을 파악하는 데 도움이 된답니다."
+            },
+            "analytics": {
+                "title": "분석 데이터",
+                "description": "Bloob.io는 개인정보를 보호하는 자체 분석 서버를 통해 익명으로 분석 데이터를 수집해요. 데이터는 절대 타인과 공유되지 않으며, 원치 않으시면 거부할 수 있어요.",
+                "blocked": "데이터 수집이 활성화되지 않았어요. 브라우저나 확장 프로그램에 의해 차단되었을 수 있어요.",
+                "dnt": "브라우저의 \"추적 방지(DNT)\" 설정이 켜져 있어요. 요청에 따라 데이터를 추적하지 않아요."
+            },
+            "ads": {
+                "title": "광고",
+                "description": "{provider}를 통한 광고가 표시돼요. Bloob.io의 광고 관리는 {provider}에서 담당하고 있어요. 광고 없이 게임을 즐기고 싶다면 상점에서 코인을 구매해 보세요. 광고가 자동으로 제거돼요.",
+                "complaint": "Bloob.io는 유저분들께 윤리적이고 방해가 되지 않는 광고를 보여드리는 것을 중요하게 생각해요. 만약 게임 플레이를 방해하는 광고를 발견하시면 \"정보(About)\" 섹션을 통해 알려주세요.",
+                "consent": "여기를 클릭하여 광고 동의 설정을 변경하세요",
+                "exempt": "광고가 활성화되지 않았어요. 광고 없는 계정을 이용 중이에요. 지원해 주셔서 감사해요!",
+                "blocked": "광고가 활성화되지 않았어요. 브라우저나 확장 프로그램에 의해 차단되었을 수 있어요."
+            },
+            "serverData": {
+                "title": "서버 데이터",
+                "description": "Bloob.io에 저장된 모든 본인 데이터를 아래에서 확인할 수 있어요. 이메일 주소나 보안 키 같은 민감한 정보는 보안을 위해 숨겨져 있을 수 있어요."
+            },
+            "controlYourData": {
+                "title": "데이터 관리",
+                "description": "Bloob.io에 저장된 데이터는 언제든 직접 관리할 수 있어요. 익명으로 플레이할 수도 있고, 데이터를 삭제하고 싶다면 여기서 가능해요. 계정이 있는 경우 먼저 이메일 연결을 해제한 후 진행해 주세요.",
+                "descriptionSocialLink": "계정이 외부 플랫폼({social})과 연결되어 있어, 해당 플랫폼에서 데이터를 관리할 수 있어요."
+            },
+            "localStorage": {
+                "title": "로컬 스토리지",
+                "description": "언어나 음량 설정 같은 브라우저 데이터는 서버가 아닌 브라우저의 'localStorage'에 저장돼요."
+            },
+            "myDevices": {
+                "description": "로그인된 기기 목록을 확인하고 관리할 수 있어요. 현재 기기의 이름을 알아보기 쉽게 바꿀 수도 있답니다.",
+                "noOtherDevices": "다른 기기에서 로그인된 내역이 없어요. 게임 중간에도 다른 기기로 전환할 수 있다는 사실, 알고 계셨나요?",
+                "unlinked": "아직 계정을 만들거나 로그인하지 않았어요. 이 유저 정보는 현재 기기에서만 접근할 수 있어요."
+            }
+        },
+        "authentication": {
+            "login": {
+                "title": "로그인",
+                "description": "잠깐만요! 현재 사용 중인 유저({name}, 레벨 {level})는 아직 계정에 연결되지 않았어요. 기존 계정으로 로그인하면 현재 유저 정보가 영구적으로 삭제돼요. 혹시 로그인이 아니라 계정 생성을 하려던 것 아니신가요?"
+            },
+            "setupThreshold": {
+                "title": "아직 조금 이르네요, {name}님!",
+                "description": "계정을 만들려면 {level} 레벨 이상이어야 해요. 현재 목표까지 {percentage}만큼 왔어요!"
+            },
+            "setup": {
+                "title": "안녕하세요, {name}님!",
+                "description": "이메일 주소만으로 계정을 만들어 보세요. 모든 기기에서 진행 상황을 안전하게 동기화할 수 있어요. 비밀번호는 따로 필요 없답니다!",
+                "disclaimer": "이메일 주소는 계정 인증 및 로그인용으로만 사용해요. 언제든지 이메일 주소를 삭제할 수 있어요."
+            },
+            "unlink": {
+                "title": "이메일 주소 삭제",
+                "description": "{name} 계정에서 이메일 주소를 삭제하려고 해요. 진행 상황이 더 이상 동기화되지 않으며, 현재 기기에서만 유저 정보에 접근할 수 있게 돼요."
+            },
+            "unlinkSuccess": {
+                "title": "이메일 주소가 삭제되었어요",
+                "description": "계정에서 이메일 주소가 삭제되었어요. 이제 이 유저는 현재 기기에서만 사용할 수 있어요."
+            },
+            "transferStart": {
+                "title": "이메일 주소 변경",
+                "description": "{name} 계정에 연결된 이메일 주소를 변경하려면, 먼저 아래에서 현재 이메일 주소를 인증해 주세요. 인증이 완료되면 새 이메일을 입력할 수 있어요."
+            },
+            "transferConfirm": {
+                "title": "새로운 이메일 주소",
+                "description": "좋아요, {name}님! 현재 이메일 주소가 성공적으로 인증되었어요. 아래에 새로운 이메일 주소를 입력하여 변경을 완료해 주세요."
+            },
+            "transferSuccess": {
+                "title": "이메일 주소가 변경되었어요",
+                "description": "계정에 연결된 이메일 주소가 변경되었어요. 보안을 위해 다른 모든 기기에서 로그아웃되었으니, 새로운 이메일 주소로 다시 로그인해 주세요."
+            },
+            "logout": {
+                "title": "로그아웃",
+                "description": "계정이 있으므로 진행 상황은 안전하게 저장돼요. 나중에 이메일로 다시 로그인하면 기록을 불러올 수 있어요."
+            },
+            "logoutGlobally": {
+                "title": "모든 기기에서 로그아웃",
+                "description": "현재 기기를 포함한 모든 기기에서 로그아웃해요."
+            },
+            "logoutSuccess": {
+                "title": "로그아웃되었어요",
+                "description": "현재 기기에서 로그아웃되었어요. 이메일 주소를 사용해 언제든지 다시 로그인할 수 있어요."
+            },
+            "relogin": {
+                "title": "다시 만나서 반가워요, {name}님!",
+                "description": "로그아웃된 상태예요. 이메일 주소를 사용하여 다시 접속해 주세요."
+            },
+            "loginCode": {
+                "title": "인증 코드 입력"
+            },
+            "ready": {
+                "title": "모든 준비가 끝났어요, {name}님!",
+                "description": "이제 진행 상황이 저장되고 동기화돼요!"
+            },
+            "loginNoAccount": "아래에 이메일 주소를 입력하여 이 기기에서 계정에 접속해 보세요.",
+            "logoutGloballyCompleted": "모든 기기에서 로그아웃되었어요.",
+            "verificationEmail": "인증 코드가 포함된 이메일을 보냈어요.",
+            "noEmail": "메일을 받지 못하셨나요? 스팸 메일함을 확인하거나, 입력한 이메일이 계정에 연결된 주소가 맞는지 확인해 주세요."
+        },
+        "characterDownload": {
+            "title": "캐릭터 이미지 다운로드",
+            "description": "Bloob.io 캐릭터를 고해상도 이미지로 다운로드해 보세요. 디스코드나 다른 플랫폼의 프로필 사진으로 사용할 수 있어요."
+        },
+        "connection": {
+            "title": "게임 서버에 연결할 수 없어요.",
+            "header": {
+                "processing": "연결 상태를 확인 중이에요...",
+                "clientOffline": "연결 상태를 확인해 주세요",
+                "serverOffline": "서버 오프라인",
+                "serverMaintenance": "서버 점검 중",
+                "unknown": "문제를 발견하지 못했어요"
+            },
+            "content": {
+                "clientOffline": "오프라인 상태인 것 같아요. 인터넷 연결을 확인해 주세요.",
+                "serverMaintenance": "더 나은 경험을 위해 현재 게임 서버를 점검하고 있어요. 곧 다시 확인해 주세요!",
+                "serverOffline": "게임 서버가 예기치 않게 오프라인 상태가 되었어요. 상태 페이지에서 소식을 확인해 주세요. 최대한 빨리 복구하도록 노력할게요!",
+                "serverUnavailable": "서버 상태를 확인할 수 없어요. 대신 직접 상태 페이지를 확인해 보세요.",
+                "clientRestrictedNetwork": "학교나 직장처럼 제한된 네트워크를 사용 중인 것 같아요. 연결에 영향을 줄 수 있으니 VPN을 사용하거나 모바일 데이터로 바꿔보세요.",
+                "clientChangingNetwork": "네트워크가 바뀐 것 같아요. 최소 {networkCount}번의 네트워크 변경을 감지했어요. 모바일 데이터 전환, VPN 위치 변경, Wi-Fi 이동 시 발생할 수 있어요. 안정적인 연결을 위해 하나의 네트워크만 사용해 주세요.",
+                "clientFrequentlyOffline": "연결이 불안정해요. 네트워크가 최소 {offlineCount}번의 끊김을 감지했어요. 모바일 데이터나 VPN을 껐다 켜보거나 다른 네트워크를 사용해 보세요.",
+                "clientFrequentlyReconnected": "서버 연결이 불안정해요. 핑은 {ping}ms이며, {reconnectedCount}번의 재연결 시도가 있었어요. 가능하다면 모바일 데이터나 VPN 설정을 변경해 보세요.",
+                "unknown": "모든 것이 정상인 것 같아요. 창을 새로고침해 보세요. 그래도 이 페이지가 보인다면 저희에게 알려주세요!"
+            }
+        },
+        "statLimit": {
+            "SOLO": "솔로 플레이에서는 승리, 패배, 연승 같은 통계가 추적되지 않아요.",
+            "LOCAL_PLAY": "로컬 멀티플레이에서는 승리, 패배, 연승 같은 통계가 추적되지 않아요.",
+            "SETTINGS": "수정된 설정으로 플레이할 때는 승리, 패배, 연승, 최고 점수 같은 통계가 추적되지 않아요."
+        },
+        "graphicsAcceleration": {
+            "notice": "그래픽 가속이 비활성화되어 있어요. 게임 성능에 영향을 줄 수 있어요.",
+            "search": "그래픽 가속을 활성화하는 방법은 무엇인가요?"
+        },
+        "accountWarning": {
+            "title": "계정 경고",
+            "description": "공식 계정 경고를 받았어요. 경고가 누적되면 더 엄중한 처벌을 받을 수 있어요.",
+            "reasonTitle": "사유",
+            "punishmentTitle": "처분",
+            "reason": {
+                "BAD_NAME": "(이전) 유저네임 \"{content}\"에 비속어, 욕설 또는 기타 부적절한 표현이 포함되어 있어요.",
+                "GAME_QUIT": "매치가 끝나기 전에 퇴장하는 비신사적인 행동을 보였어요.",
+                "TOXIC_CHAT": "이전 게임에서 부적절한 채팅으로 공격적인 태도를 보였어요."
+            },
+            "punishment": {
+                "NAME_CHANGED": "유저네임이 변경되었어요",
+                "NAME_BLOCKED": "유저네임 변경이 제한되었어요",
+                "CHAT_BLOCKED": "게임 내 채팅 사용이 제한되었어요",
+                "MATCHMAKING_BLOCKED": "매치메이킹 및 공개 대기실 참여가 제한되었어요"
+            }
+        },
+        "about": {
+            "description": "Bloob.io는 멀티플레이어 브라우저 게임을 향한 열정으로 만든 프로젝트예요. 제안은 언제나 환영해요!",
+            "licensing": "일부 게임은 사용자의 사이트나 플랫폼에 맞게 라이선스를 제공할 수 있어요(커스텀 조정 가능). 관심이 있으시면 연락해 주세요.",
+            "developedBy": "개발: {name}",
+            "iconsSource": "아이콘 제공: {name} (라이선스 보유)",
+            "soundsSource": "사운드 제공: {name} (라이선스 보유)",
+            "emojiSource": "이모지 제공: {name} (CC-BY 4.0)",
+            "rottenApplesSource": "로튼 애플 기반: {name} (BY-NC-SA 2.0)",
+            "diceSource": "주사위 모델: {name} (CC-BY-4.0)",
+            "localization": "번역: 자원봉사 기여자",
+            "licenses": "기타 라이선스"
+        },
+        "howToPlayShort": "게임 방법",
+        "skipStepOverHalf": "유저 절반 이상이 투표하면 이 단계를 건너뛸 수 있어요."
+    },
+    "share": {
+        "tiers": {
+            "max": "명중이에요",
+            "almost": "가까워요",
+            "justIn": "아슬아슬해요",
+            "miss": "빗나갔어요"
+        }
+    }
+}

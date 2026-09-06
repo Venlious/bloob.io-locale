@@ -8,10 +8,31 @@ https://bloob.io
 
 While the project itself is not open source, the localization is. Feel free to create pull requests with improvements, grammar fixes, or support for new languages.
 
+# Where the strings live
+
+Each language is a folder under `messages/`, split so that a player only downloads the games they actually open:
+
+```
+messages/
+    en/
+        core.json           everything shared, plus every game's name and description
+        games/HOKM.json     Hokm's options, presets, help and gameplay strings
+        games/YACHT.json
+        games/pool.json     shared by the four pool games
+        games/card.json     shared by the games dealing a deck of cards
+        ...
+```
+
+`pool.json` and `card.json` are not games — they are the strings more than one game says the same way, so a suit is named once rather than four times. Anything shared more widely than that lives in `core.json` under `game.generic`.
+
+`messages/_empty/` is the same tree with every value `null`; the template a brand new language starts from.
+
+Running `bun fix` puts every key in the file it belongs in, so you never have to decide: translate the string where you find it, and let `fix` sort the rest.
+
 # FAQ
 
 -   **How do I add a new language?**
-    -   Please [make a new issue](https://github.com/Venlious/bloob.io-locale/issues/new) requesting the language you would like to see. If approved, the language will be generated and can then be verified by a person.
+    -   Please [make a new issue](https://github.com/Venlious/bloob.io-locale/issues/new) requesting the language you would like to see. If approved, it will be added to `index.ts` and seeded from `messages/_empty/`, ready to be filled in.
 -   **I found a grammatically error or spelling mistake. What do I do?**
     -   Great! You can make a pull request with the edit to the file directly or you can [make a new issue](https://github.com/Venlious/bloob.io-locale/issues/new) with an explanation of the error you found.
 -   **How do I make a word bold?**
@@ -25,12 +46,8 @@ Running the project locally is easy. Please make sure to use [Bun](https://bun.s
 
 -   Install all files
     `bun install`
--   Translate (new) language (Note: must configure .env)
-    `bun translate --source "en" --target "nl" --language "informal Dutch"`
 -   Automatically fix any fixable and common issues
     `bun fix`
--   Automatically fix and fill any translations that are missing (Note: must configure .env)
-    `bun fill`
 -   Verify if test passes
     `bun test`
 -   Verify if lint passes

@@ -1,0 +1,105 @@
+{
+    "options": {
+        "forceTake": {
+            "title": "Force Take",
+            "help": {
+                "enabled": "**Enabled**: When possible, the player will be forced to take an opponent's piece.",
+                "disabled": "**Disabled**: The player can choose what move they make, even if they can take out an opponent's piece."
+            }
+        },
+        "field": {
+            "title": "Field",
+            "help": "The playing field used. Depending on the size of the field and the amount of rows, you will get more or less starting pieces. Some fields may support up to four players.",
+            "data": {
+                "8x8": "English (8x8)",
+                "10x10": "International (10x10)",
+                "12x12": "Canadian (12x12)",
+                "plus": "Plus Shape (12x12)"
+            }
+        },
+        "winCondition": {
+            "help": "How the winner will be determined.",
+            "data": {
+                "MORE_PIECES": "Most pieces",
+                "OPPOSITE_SIDE": "Reach opposite side"
+            }
+        },
+        "kingCondition": {
+            "title": "King Condition",
+            "help": "Under what condition a piece becomes kinged. A kinged piece is allowed to move in all directions.",
+            "data": {
+                "OPPOSITE_SIDE": "Reach opposite side",
+                "TAKE": "Taking a piece",
+                "ALL": "Start with all kings"
+            }
+        },
+        "backwardsTake": {
+            "title": "Take Backwards",
+            "help": "Set whether pieces are allowed to take over opponent pieces backwards. If disabled, this can only be done by kinged pieces."
+        },
+        "chainTake": {
+            "title": "Chain Take",
+            "help": "When enabled a piece can take over several other pieces in one move, if they are spaced properly. Alternatively when disabled only one piece can be taken at a time."
+        },
+        "staleCount": {
+            "title": "Stale Game",
+            "help": "After how many turns without any take overs the game should be considered stale and ended."
+        },
+        "stuckThreshold": {
+            "title": "Stuck Threshold",
+            "help": "If a player is stuck for this amount of turns in a row they will lose automatically."
+        },
+        "rows": {
+            "title": "Rows",
+            "help": "How many rows of pieces each player starts with. Depending on the field size the amount of rows will be determined."
+        }
+    },
+    "presets": {
+        "default": {
+            "title": "Straight Checkers (Standard)",
+            "description": "8x8 field — 24 pieces"
+        },
+        "international": {
+            "title": "International Checkers",
+            "description": "10x10 field — 40 pieces — Take backwards"
+        },
+        "canadian": {
+            "title": "Canadian Checkers",
+            "description": "12x12 field — 60 pieces — Take backwards"
+        },
+        "party": {
+            "title": "Party Checkers",
+            "description": "Plus field — 36 pieces — 4 players"
+        }
+    },
+    "help": {
+        "movement": {
+            "title": "Piece Movement",
+            "description": [
+                "Pieces can be moved diagonally. When it is your turn, all pieces that you can move are highlighted.",
+                "You can click on a highlighted piece to see all possible moves available for that piece."
+            ]
+        },
+        "take": {
+            "title": "Takes",
+            "description": [
+                "If an opponent's piece is diagonally next to your piece with an open spot behind it, you can take it.",
+                "Depending on the settings, you are either forced to take pieces when possible or can even take backwards."
+            ]
+        },
+        "king": {
+            "title": "Kinged Pieces",
+            "description": [
+                "Under the default settings, when you reach the opposite side with a piece it becomes kinged.",
+                "Kinged pieces are able to move in all diagonal directions without being forced to move forward."
+            ]
+        },
+        "goal": {
+            "title": "Goal",
+            "description": [
+                "Typically the goal is to take out all other pieces from the opponent or until no valid moves can be made.",
+                "The goal of the game, also referred to as the win condition, can be changed in the settings."
+            ]
+        }
+    }
+}

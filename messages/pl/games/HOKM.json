@@ -1,0 +1,155 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Ile rozdań drużyna musi wygrać, aby zdobyć mecz. **Kot** liczy się za więcej niż jedno, więc mecz może zakończyć się w mniejszej liczbie rund niż ta liczba."
+        },
+        "trickTarget": {
+            "title": "Lewy do wygrania rozdania",
+            "help": "Ile z trzynastu lew drużyna musi wziąć, aby wygrać rozdanie. Siedem to klasyczna większość; mniejsza liczba skraca każde rozdanie."
+        },
+        "trumpTime": {
+            "title": "Czas na wybór atutu",
+            "help": "Ile czasu Hakem ma na wskazanie koloru atutowego. Jeśli czas minie, wybierany jest za niego jego najdłuższy kolor."
+        },
+        "kot": {
+            "title": "Punktacja Kot",
+            "help": {
+                "double": "'Kot' sprawia, że rozdanie wygrane 7-0 jest warte dwa punkty zamiast jednego.",
+                "hakemKot": "'Kot i Hakem Kot' sprawia dodatkowo, że ogranie drużyny Hakema do zera jest warte trzy punkty.",
+                "off": "'Wyłączone' liczy każde wygrane rozdanie jako jeden punkt, choćby było jednostronne."
+            },
+            "data": {
+                "double": "Kot",
+                "hakemKot": "Kot i Hakem Kot"
+            }
+        },
+        "hakemSelection": {
+            "title": "Wybór pierwszego Hakema",
+            "help": "Jak znajdowany jest pierwszy wybierający atut. Każde kolejne rozdanie kieruje się regułą poniżej.",
+            "data": {
+                "firstAce": "Pierwszy rozdany as",
+                "random": "Losowo"
+            },
+            "description": {
+                "firstAce": "Karty odkrywane są, dopóki nie wypadnie as",
+                "random": "Miejsce losowane jest od razu, bez ceremonii"
+            }
+        },
+        "hakemRetention": {
+            "title": "Zachowanie Hakema",
+            "help": "Kto wybiera atut w każdym rozdaniu po pierwszym.",
+            "data": {
+                "keepUntilLoss": "Do przegranej",
+                "rotate": "Co rozdanie dalej"
+            },
+            "description": {
+                "keepUntilLoss": "Hakem wybiera dalej, dopóki jego drużyna wygrywa",
+                "rotate": "Wybór przechodzi co rozdanie na następnego gracza"
+            }
+        },
+        "hakemCardCount": {
+            "title": "Karty przed wyborem",
+            "help": "Ile ze swojej ręki Hakem widzi przed wskazaniem atutu. Pięć to klasyka; trzynaście czyni wybór w pełni świadomym.",
+            "description": {
+                "five": "Klasyczny wybór, na jednej trzeciej ręki",
+                "thirteen": "Hakem widzi wszystko, zanim zdecyduje"
+            }
+        }
+    },
+    "presets": {
+        "quickHokm": {
+            "title": "Szybki Hokm",
+            "description": [
+                "Pierwszy do 3 rozdań",
+                "Szybsze tury"
+            ]
+        },
+        "kotRules": {
+            "title": "Zasady Kot",
+            "description": [
+                "Zabranie wszystkiego warte 2",
+                "Ogranie Hakema warte 3"
+            ]
+        },
+        "openHand": {
+            "title": "Otwarty wybór",
+            "description": [
+                "Hakem widzi wszystkie 13 kart",
+                "Losowy pierwszy Hakem"
+            ]
+        }
+    },
+    "hakem": {
+        "title": "Hakem"
+    },
+    "tricks": {
+        "title": "Lewy"
+    },
+    "trump": {
+        "yourCall": "Wskaż kolor atutowy",
+        "waiting": "{name} wybiera atut...",
+        "called": "Atut",
+        "announcement": "Atutem jest {suit}"
+    },
+    "header": {
+        "findingHakem": "Szukanie pierwszego asa...",
+        "yourCall": "Wskaż kolor atutowy",
+        "nameCall": "{name} wskazuje atut",
+        "youTookTrick": "Wziąłeś lewę",
+        "nameTookTrick": "{name} wziął lewę",
+        "youWonRound": "Twoja drużyna wygrała rozdanie!",
+        "themWonRound": "Druga drużyna wygrała rozdanie"
+    },
+    "result": {
+        "normal": "{name} wygrała {tricks}",
+        "kot": "{name} zabrała wszystko, {tricks}",
+        "hakemKot": "{name} ograła Hakema, {tricks}"
+    },
+    "rounds": {
+        "title": "Historia rund"
+    },
+    "scoreboard": {
+        "target": "Pierwszy do {amount}, {tricks} lew na rozdanie"
+    },
+    "statistics": {
+        "sweeps": "Koty",
+        "tricksPerMatch": "Lewy / mecz"
+    },
+    "help": {
+        "rules": {
+            "title": "Zasady",
+            "description": [
+                "W Hokm grają cztery osoby w dwóch dwuosobowych drużynach, partnerzy siedzą naprzeciw siebie. Rozdawana jest cała talia 52 kart, więc każdy trzyma trzynaście.",
+                "Jeden gracz jest **Hakemem**. Widzi swoje pierwsze karty przed wszystkimi i wskazuje kolor **atutowy**, który przez resztę rozdania bije każdy inny kolor."
+            ]
+        },
+        "trump": {
+            "title": "Atut i dokładanie do koloru",
+            "description": [
+                "Hakem wychodzi w pierwszej lewie. Wszyscy pozostali muszą **dołożyć do koloru**, jeśli mogą; tylko ten, kto nie ma wyjściowego koloru, może zagrać coś innego.",
+                "Najwyższy zagrany atut bierze lewę. Jeśli nikt nie przebił, wygrywa najwyższa karta wyjściowego koloru. Asy są wysokie."
+            ]
+        },
+        "tricks": {
+            "title": "Branie lew",
+            "description": [
+                "Kto bierze lewę, wychodzi w następnej, więc wygrana to także wybór koloru, do którego wszyscy będą musieli dołożyć.",
+                "Pierwsza drużyna, która weźmie **siedem** lew, wygrywa rozdanie — reszty kart się nie rozgrywa."
+            ]
+        },
+        "scoring": {
+            "title": "Punktacja",
+            "description": [
+                "Każde wygrane rozdanie jest warte punkt, a pierwsza drużyna z siedmioma punktami wygrywa mecz. Wzięcie wszystkich siedmiu lew to **Kot** i liczy się za dwa.",
+                "Hakem pozostaje Hakemem, dopóki jego drużyna wygrywa; gdy przegra rozdanie, wybór przechodzi na gracza po jego prawej."
+            ]
+        },
+        "bots": {
+            "title": "Boty",
+            "description": [
+                "Łatwe boty zagrywają dowolną dozwoloną kartę. Zwykłe czytają lewę przed sobą: trzymają się z dala od lewy, którą bierze już partner, i biorą resztę możliwie najtaniej.",
+                "Trudne boty liczą karty. Pamiętają, których kolorów ci zabrakło, które wysokie karty już wyszły i w których kolorach wychodzisz — dwukrotne wyjście w tym samym kolorze przy partnerze to coś, na co odpowiedzą."
+            ]
+        }
+    }
+}

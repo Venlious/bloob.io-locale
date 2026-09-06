@@ -1,0 +1,151 @@
+{
+    "options": {
+        "wagerTime": {
+            "title": "Temps de pari",
+            "help": "Le temps que chaque joueur a pour faire son pari pour le tour. Ça s'applique que si les paris sont activés."
+        },
+        "dealerSecondCard": {
+            "title": "Deuxième carte du croupier",
+            "help": "Détermine si la deuxième carte du croupier est visible (face visible) ou cachée (face cachée). Quand la deuxième carte est visible, les joueurs ont un gros avantage sur le croupier."
+        },
+        "wager": {
+            "title": "Miser",
+            "help": "Quand c'est activé, les joueurs peuvent parier des points au début de leur tour. S'ils gagnent le round, leur mise est doublée ; s'ils perdent, ils gardent leurs points d'origine. Les joueurs ne peuvent pas parier plus de points qu'ils en ont."
+        },
+        "startPointAmount": {
+            "title": "Points de départ",
+            "help": "Le nombre de points avec lequel chaque joueur commence."
+        },
+        "basePointAmount": {
+            "title": "Points de base",
+            "help": "Les points qu'un joueur est sûr de gagner quand il bat le croupier."
+        },
+        "blackjackBonusPointAmount": {
+            "title": "Points de bonus au Blackjack",
+            "help": "Des points en plus (en plus des \"Points de Base\") donnés quand un joueur gagne un tour avec un blackjack."
+        },
+        "doubleDown": {
+            "title": "Double ou rien",
+            "help": "Quand c'est activé, les joueurs peuvent doubler leur mise sur leur premier coup pour une main, recevoir exactement une carte en plus, puis se tenir automatiquement."
+        },
+        "split": {
+            "title": "Séparer",
+            "help": "Quand c'est activé, les joueurs peuvent séparer leurs deux premières cartes en deux mains différentes si les deux cartes ont la même valeur."
+        },
+        "insurance": {
+            "title": "Assurance",
+            "help": "Quand c'est activé et que le croupier montre un As, les joueurs peuvent placer un pari d'assurance pour réduire les pertes si le croupier a un blackjack."
+        },
+        "naturalBlackjack": {
+            "title": "Blackjack Naturel",
+            "help": "Quand c'est activé, un 21 avec deux cartes (As + carte de 10) gagne direct la main."
+        },
+        "aceHandling": {
+            "title": "Maniement de pro",
+            "help": "Choisis comment un As est compté. L'option dynamique compte automatiquement l'As comme 1 si le compter comme 11 ferait dépasser 21.",
+            "data": {
+                "ONE_OR_ELEVEN": "Dynamique (1 ou 11)",
+                "ONE": "Toujours 1",
+                "ELEVEN": "Toujours 11"
+            }
+        },
+        "splitSameFaceOnly": {
+            "title": "Split uniquement avec la même carte",
+            "help": "Quand c’est activé, le split est autorisé uniquement si les deux cartes de départ sont la même carte (par exemple K+K ou 8+8), pas seulement la même valeur numérique."
+        },
+        "fiveCardCharlie": {
+            "title": "Five Card Charlie",
+            "help": "Quand c’est activé, toute main du joueur avec cinq cartes et un total de 21 ou moins gagne automatiquement. Cette règle ne s’applique pas au croupier."
+        }
+    },
+    "presets": {
+        "pointBased": {
+            "title": "Système de points",
+            "description": [
+                "Gagne des points en gagnant",
+                "10 manches"
+            ]
+        },
+        "wagerOnly": {
+            "title": "Mise seulement",
+            "description": [
+                "Commence avec 25 points",
+                "Gagne des points en pariant",
+                "10 manches"
+            ]
+        }
+    },
+    "help": {
+        "gameplay": {
+            "title": "Gameplay - Comment jouer",
+            "description": [
+                "Tu commences avec deux cartes de départ. Tu peux choisir de 'tirer' (prendre une autre carte) ou de 'rester' (garder ton total actuel).",
+                "Le but, c'est d'être le plus près possible de 21 sans dépasser. Un As, c'est spécial, parce qu'il peut compter pour 1 ou 11 points."
+            ]
+        },
+        "dealer": {
+            "title": "Règles du dealer",
+            "description": [
+                "Le croupier doit tirer sur un total de 16 ou moins et rester sur 17 ou plus.",
+                "Le fait que le croupier suive ces règles ajoute un côté stratégique super important pour le joueur."
+            ]
+        },
+        "objective": {
+            "title": "Objectif",
+            "description": [
+                "Le but, c'est d'avoir une valeur de main plus proche de 21 que le croupier sans dépasser (aller au-delà de 21 points). Si tu finis avec le même total que le croupier, on appelle ça un 'push', ce qui veut dire que tu gagnes ni ne perds de points.",
+                "Avoir un total de 21 dès le départ avec deux cartes, ça s'appelle un 'blackjack', et ça te donne souvent une condition de victoire spéciale."
+            ]
+        },
+        "wagering": {
+            "title": "Miser des sous",
+            "description": [
+                "Dans notre version du blackjack, tu peux pas parier avec des jetons ou de l'argent réel. À la place, tu peux parier tes points dans le jeu, ce qui te permet de battre tes adversaires.",
+                "Si tu paries 10 points et que tu gagnes contre le croupier sans faire faillite, tu recevras 10 points en plus. Par contre, si tu perds, tu perds les 10 points que t'as misé."
+            ]
+        },
+        "doubleDown": {
+            "title": "Double ou rien",
+            "description": [
+                "Doubler, ça te permet de doubler ta mise actuelle en échange de prendre juste une carte de plus.",
+                "Après avoir reçu cette carte, ta main reste automatiquement, ce qui en fait un coup à haut risque et à haute récompense."
+            ]
+        },
+        "split": {
+            "title": "Séparer",
+            "description": [
+                "Si tes deux premières cartes ont la même valeur, tu peux les séparer en deux mains différentes.",
+                "Un pari égal est mis sur la nouvelle main, et les deux mains sont jouées indépendamment contre le croupier."
+            ]
+        },
+        "insurance": {
+            "title": "Assurance",
+            "description": [
+                "Quand le croupier montre un As, tu peux faire un pari optionnel appelé assurance.",
+                "L'assurance te rapporte si le croupier a un blackjack, mais tu perds si le croupier n'en a pas."
+            ]
+        },
+        "winCondition": {
+            "title": "Condition de victoire",
+            "description": [
+                "Par défaut, le jeu se termine après 10 manches, et on choisit un gagnant selon celui qui a le plus de points.",
+                "Tu peux personnaliser les règles et les conditions de victoire pour ton jeu perso dans les paramètres du lobby. Sinon, tu peux finir la partie quand un joueur atteint X points."
+            ]
+        }
+    },
+    "info": {
+        "blackjackResult": {
+            "BUST": "T'as fait bust cette manche",
+            "LOSS": "T'as perdu cette manche",
+            "WIN": "T'as gagné cette manche!",
+            "WIN_BLACKJACK": "Blackjack! T'as gagné cette manche!",
+            "PUSH": "Cette manche est un push",
+            "FIVE_CARD_CHARLIE": "Five Card Charlie! Une de tes mains a gagné automatiquement avec cinq cartes."
+        },
+        "dealerRules": "Le croupier tire si c'est {hitValue} ou moins, il reste sur {standValue}+.",
+        "waitingForWagerFromOthers": "En attendant que tout le monde mise...",
+        "selfReceivedPoints": "T'as reçu {points}.",
+        "selfLostPoints": "T'as perdu {points}.",
+        "selfRanOutOfPoints": "T'as plus de points."
+    }
+}

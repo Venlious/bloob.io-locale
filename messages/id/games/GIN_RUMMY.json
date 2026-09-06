@@ -1,0 +1,123 @@
+{
+    "options": {
+        "winAmount": {
+            "help": "Game bakal selesai begitu ada pemain yang dapet jumlah poin ini. Tapi, ini nggak jaminan menang, soalnya poin bonus bakal dikasih di akhir game."
+        },
+        "knock": {
+            "title": "Ketok",
+            "help": {
+                "enabled": "'Diaktifkan' bikin kamu bisa ketok berdasarkan ambang ketok yang udah diatur.",
+                "firstDiscardCard": "'Berdasarkan kartu buang pertama' pakai kartu buang pertama buat nentuin ambang; kalo ada Ace yang keluar, kamu harus langsung Gin.",
+                "disabled": "'Dinonaktifkan' bikin kamu cuma bisa selesaiin ronde kalo udah Gin."
+            },
+            "data": {
+                "firstDiscardCard": "Berdasarkan kartu buang pertama"
+            }
+        },
+        "knockBasedOnFirstCard": {
+            "title": "Knock Berdasarkan Buang Pertama",
+            "help": "Kalau diaktifin, kartu pertama di tumpukan buang yang jadi patokan buat knock. Pemain cuma bisa knock kalau deadwood mereka di bawah atau sama dengan nilai kartu ini."
+        },
+        "knockThreshold": {
+            "title": "Ambang Ketukan",
+            "help": "Pemain bisa knock pas giliran mereka dan deadwood mereka di bawah atau sama dengan batas yang udah ditentukan."
+        },
+        "ginPointAmount": {
+            "title": "Gin",
+            "help": "Jumlah poin yang diberikan ke pemain yang bilang Gin, yaitu saat semua kartu di tangan udah jadi satu set."
+        },
+        "bigGinPointAmount": {
+            "title": "Gin Besar",
+            "help": "Jumlah poin yang diberikan ke pemain yang manggil Big Gin, yang terjadi saat semua kartu di tangan ditambah kartu yang diambil udah jadi satu set, tanpa ada kartu yang nganggur."
+        },
+        "undercutPointAmount": {
+            "title": "Potongan Rambut Pendek",
+            "help": "Undercut itu terjadi pas pemain knock, tapi lawannya punya poin deadwood yang sama atau lebih sedikit. Nah, di situ lawannya dapet poin tambahan."
+        },
+        "firstBonusPointAmount": {
+            "title": "Bonus: Pertama yang menang",
+            "help": "Diberikan di akhir permainan. Ngasih bonus buat pemain yang pertama kali nyampe 'Jumlah Menang'."
+        },
+        "roundBonusPointAmount": {
+            "title": "Bonus: Putaran",
+            "help": "Diberikan di akhir permainan. Ngasih setiap pemain jumlah poin ini untuk setiap ronde yang mereka menangkan, kecuali seri."
+        },
+        "shutoutBonusPointAmount": {
+            "title": "Bonus: Kemenangan Telak",
+            "help": "Diberikan di akhir permainan. Ngasih pemenang bonus tambahan sebanyak poin ini kalo mereka menang di setiap ronde."
+        }
+    },
+    "presets": {
+        "straightGin": {
+            "title": "Gin murni",
+            "description": [
+                "Jangan Ketok",
+                "Gak Ada Bonus"
+            ]
+        },
+        "oklahomaGin": {
+            "title": "Oklahoma Gin",
+            "description": [
+                "Nilai knock berdasarkan buangan pertama"
+            ]
+        }
+    },
+    "help": {
+        "rounds": {
+            "title": "Putaran",
+            "description": [
+                "Permainan ini terdiri dari beberapa ronde. Setiap ronde, pemain dapet 10 kartu, dan satu kartu ditunjukin di tumpukan. Pemain bisa milih buat lewat atau ambil kartu teratas dari tumpukan.",
+                "Giliran bergantian, dan pas giliranmu, kamu bisa ambil kartu dari tumpukan atau dari dek. Abis itu, kamu harus balikin satu kartu ke tumpukan."
+            ]
+        },
+        "deadwood": {
+            "title": "Deadwood - Tempat Seram di Hutan",
+            "description": [
+                "Deadwood itu kartu yang nggak masuk ke dalam meld. Nilai deadwood dihitung dengan jumlahin nilai kartu-kartu ini (misalnya, dua King sama satu lima totalnya 25).",
+                "Usahain supaya deadwood kamu serendah mungkin dengan bikin meld dan buang kartu-kartu yang nilainya tinggi yang nggak ada di meld."
+            ]
+        },
+        "melds": {
+            "title": "Melds: Gabungan Kartu",
+            "description": [
+                "Melds itu bisa dibentuk dengan punya urutan tiga kartu atau lebih yang sama jenisnya (misalnya, 3D, 4D, 5D) atau tiga kartu atau lebih yang sama angkanya (misalnya, 3H, 3D, 3S).",
+                "Melds bakal otomatis disorot di tangan kamu dan di antarmuka, jadi perhatiin tumpukan kartu—musuh kamu bisa aja buang kartu yang kamu butuhin!"
+            ]
+        },
+        "knock": {
+            "title": "Ketok",
+            "description": [
+                "Lo bisa ketok kalo deadwood lo kurang dari 10. Pas lo ketok, semua kartu bakal kebuka, dan lo bisa liat deadwood lawan. Kalo deadwood lo lebih tinggi, lawan lo yang menang ronde ini dengan bonus.",
+                "Skor untuk ketok itu gampang: tinggal kurangin deadwood lo dari deadwood lawan. Misalnya, kalo deadwood lo 5 dan deadwood lawan 25, lo dapet 20 poin."
+            ]
+        },
+        "gin": {
+            "title": "Gin dan Big Gin",
+            "description": [
+                "Kalo deadwood kamu 0 atau bisa jadi 0 setelah buang kartu deadwood terakhir, berarti kamu dapet Gin. Ini jaminan menang dan kasih bonus plus selisih deadwood.",
+                "Big Gin itu lebih mantap: kalo seluruh kartu di tangan kamu, ditambah kartu yang baru kamu ambil, jadi meld, kamu dapet bonus yang lebih gede. Selalu panggil Big Gin begitu kamu udah punya!"
+            ]
+        },
+        "goal": {
+            "title": "Tujuan",
+            "description": [
+                "Tujuannya adalah buat menang sebanyak mungkin ronde dan jadi yang pertama capai 100 poin. Ini bakal mengakhiri permainan dan nunjukin skor akhir, termasuk poin bonus.",
+                "Secara default, kamu dapet tambahan 25 poin buat setiap ronde yang kamu menangkan dan tambahan 100 poin buat jadi yang pertama capai 100 poin."
+            ]
+        }
+    },
+    "info": {
+        "title": {
+            "tie": "Seri",
+            "undercut": "Potong",
+            "gin": "Gin",
+            "bigGin": "Big Gin",
+            "knock": "Ketok",
+            "knockSuccessRate": "Knock Berhasil"
+        },
+        "tieDescription": "Gak ada kartu sisa buat main lagi. Seri nih!",
+        "scoreDescription": "Skornya ditentukan dari selisih total nilai kartu deadwood di tangan masing-masing pemain.",
+        "yourMeldAfterKnock": "Waduh... Beberapa deadwood {name} bisa dipindahin ke meld kamu!",
+        "nameMeldAfterKnock": "Keren! Beberapa deadwood kamu bisa dipindahin ke meld {name}!"
+    }
+}

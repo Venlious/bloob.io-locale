@@ -1,0 +1,163 @@
+{
+    "options": {
+        "targetScore": {
+            "title": "Pontuação Alvo",
+            "help": "A pontuação que um jogador tem de alcançar para ganhar o jogo."
+        },
+        "entryScore": {
+            "title": "Pontuação de Entrada",
+            "help": "Quanto tem de valer o primeiro turno guardado de um jogador antes de os pontos contarem. Põe a zero para deixar guardar logo no primeiro turno."
+        },
+        "hotDice": {
+            "title": "Dados Quentes",
+            "help": "Quando todos os dados da mesa foram postos de lado, o jogador recupera os seis e fica com os pontos do turno."
+        },
+        "finalRound": {
+            "title": "Ronda Final",
+            "help": "Passar a pontuação alvo abre uma última ronda em vez de acabar o jogo logo, para que todos joguem o mesmo número de turnos."
+        },
+        "multiples": {
+            "title": "Quadra E Acima",
+            "help": "Quanto valem quatro, cinco e seis dados iguais em relação ao trio em que assentam.",
+            "fixed": "+{points} por dado",
+            "multiplier": "×2 ×3 ×4",
+            "doubling": "×2 por dado"
+        },
+        "straightScore": {
+            "help": "Quanto vale uma sequência, num único lançamento de seis dados. Põe a zero para a tirar do jogo."
+        },
+        "threePairsScore": {
+            "help": "Quanto valem três pares, num único lançamento de seis dados. Põe a zero para os tirar do jogo."
+        },
+        "twoTripletsScore": {
+            "help": "Quanto valem dois trios, num único lançamento de seis dados. Põe a zero para os tirar do jogo."
+        },
+        "fourAndPairScore": {
+            "help": "Quanto vale uma quadra ao lado de um par, num único lançamento de seis dados. Põe a zero para a tirar do jogo."
+        },
+        "farklePenalty": {
+            "title": "Penalização Farkle",
+            "help": "Pontos tirados a um jogador que faz farkle vários turnos seguidos. Põe a zero para não haver penalização."
+        },
+        "farklePenaltyStreak": {
+            "title": "Farkles Seguidos",
+            "help": "Quantos turnos seguidos têm de acabar em farkle antes de a penalização ser aplicada."
+        },
+        "speed": {
+            "title": "Velocidade",
+            "help": "Quão rápido a animação de rolagem do dado é reproduzida."
+        },
+        "addedRollTime": {
+            "title": "Tempo Adicionado",
+            "help": "Quanto tempo é adicionado após cada jogada. Nunca vai ultrapassar o tempo de turno."
+        }
+    },
+    "presets": {
+        "sprint": {
+            "title": "Sprint",
+            "description": [
+                "Um jogo curto até 4000, e sem pontuação de entrada a travar-te"
+            ]
+        },
+        "greed": {
+            "title": "Ganância",
+            "description": [
+                "Cada dado extra duplica, e fazer farkle três vezes seguidas custa-te caro"
+            ]
+        }
+    },
+    "combination": {
+        "straight": "Sequência",
+        "threePairs": "Três pares",
+        "twoTriplets": "Dois trios",
+        "fourAndPair": "Quadra e par",
+        "ofAKind": "{count} iguais",
+        "single": "{face} sozinho"
+    },
+    "scorecard": {
+        "entry": "Entrada mín.",
+        "entryHelp": "Precisas de pelo menos {points} num turno para a tua primeira vez a guardar contar. Depois disso podes guardar o valor que quiseres.",
+        "off": "Não jogado",
+        "threeOnes": "Três 1",
+        "tripleValue": "{points} x a face",
+        "fourOrMore": "Quatro ou mais"
+    },
+    "info": {
+        "holdHint": "Clica num dado para o tirar da taça",
+        "farkle": "Farkle!",
+        "farkleLost": "Farkle. Perdeste todos os pontos guardados e postos de lado neste turno.",
+        "hotDice": "Dados quentes!",
+        "hotDiceHint": "Todos os dados pontuaram, por isso voltam os seis.",
+        "selection": "Posto de lado",
+        "kept": "Guardados",
+        "taking": "A tirar",
+        "bank": "Guardar",
+        "bankPoints": "Guardar {points}",
+        "banked": "Guardado",
+        "finalRound": "Ronda final",
+        "description": {
+            "single1": "Um 1 sozinho pontua por si só, além de tudo o resto que puseres de lado.",
+            "single5": "Um 5 sozinho pontua por si só, além de tudo o resto que puseres de lado.",
+            "threeOnes": "Três 1 são o único trio que vale um valor fixo em vez de cem vezes a face.",
+            "threeOfAKind": "Três dados com a mesma face, num lançamento.",
+            "fourOrMore": "Quatro, cinco ou seis dados com a mesma face. O que cada dado extra acrescenta é decidido pela mesa.",
+            "straight": "Uma de cada face, num único lançamento dos seis dados.",
+            "threePairs": "Três pares, num único lançamento dos seis dados.",
+            "twoTriplets": "Dois trios, num único lançamento dos seis dados.",
+            "fourAndPair": "Uma quadra ao lado de um par, num único lançamento dos seis dados."
+        }
+    },
+    "status": {
+        "throw": "Rola os seis dados para começar o teu turno",
+        "choose": "Rola de novo para somar mais, ou guarda o turno"
+    },
+    "error": {
+        "selection": "Cada dado que puseres de lado tem de fazer parte de uma combinação que pontue.",
+        "locked": "Esse dado já está de lado e não pode ser movido.",
+        "empty": "Tens de pôr de lado pelo menos um dado que pontue antes de rolares outra vez.",
+        "entry": "O teu primeiro turno guardado tem de valer pelo menos {points}."
+    },
+    "statistics": {
+        "farkles": "Farkles",
+        "bestTurn": "Melhor turno",
+        "hotDice": "Dados quentes"
+    },
+    "help": {
+        "objective": {
+            "title": "O objetivo",
+            "description": [
+                "Ganha o primeiro jogador a **guardar** a pontuação alvo. Normalmente são 10.000 pontos.",
+                "Os pontos só são teus depois de os guardares. Até lá, um mau lançamento leva-os todos. A isso chama-se um **farkle**."
+            ]
+        },
+        "turn": {
+            "title": "Jogar um turno",
+            "description": [
+                "Rola os seis dados e depois clica nos que queres ficar para os tirar da taça. Clica outra vez num dado para o devolver. Cada dado que guardas tem de pontuar.",
+                "Depois rola o que resta para somar mais, ou guarda o que tens e passa o turno. Quantos menos dados restam, maior a hipótese de a próxima jogada não pontuar nada."
+            ]
+        },
+        "scoring": {
+            "title": "O que pontua",
+            "description": [
+                "Um 1 sozinho vale 100 e um 5 sozinho vale 50. Nenhum outro dado pontua por si só.",
+                "Um trio vale 100 vezes a sua face, mas três 1 valem 1000. Quatro ou mais dados iguais valem ainda mais. Sequência, três pares, dois trios e quadra com par precisam dos seis dados num só lançamento."
+            ]
+        },
+        "farkle": {
+            "title": "Fazer farkle",
+            "description": [
+                "Se não sair nenhum dado que pontue, fazes **farkle**. O turno acaba e todos os pontos que guardaste ou puseste de lado nele desaparecem.",
+                "Saber quando parar é o jogo todo. Algumas mesas também tiram pontos a quem faz farkle vários turnos seguidos."
+            ]
+        },
+        "variations": {
+            "title": "Regras da casa",
+            "description": [
+                "**Dados quentes**: põe todos os dados de lado e recuperas os seis, ficando com os pontos.",
+                "**Pontuação de entrada**: a tua primeira vez a guardar tem de a alcançar, senão não conta nada.",
+                "**Ronda final**: assim que alguém passa o alvo, todos os outros têm um último turno."
+            ]
+        }
+    }
+}
