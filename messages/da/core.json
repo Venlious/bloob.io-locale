@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Danish",
         "rtl": false,
-        "total": 2628,
-        "missing": 150
+        "total": 2633,
+        "missing": 140
     },
     "error": {
         "redeemCode": {
@@ -91,7 +91,7 @@
             "missedTurnWarning": "Du var for sent på den, og din modstander fik deres tur. Hvis dette sker for mange gange i træk, vil du blive smidt ud. ({current}/{threshold})",
             "missedTurnKick": "Du blev smidt ud, fordi du missede {current} tur(er) i træk.",
             "stallCallWarning": "En modstander venter på dig. Lav et træk inden for {seconds} sekunder, ellers bliver der lavet et for dig.",
-            "loadGateDropped": null,
+            "loadGateDropped": "Spillet ville ikke indlæses på din enhed, så du er ikke længere med i kampen.",
             "stuckSkip": "Din tur blev sprunget over, fordi du ikke kunne lave nogen træk.",
             "stuckThreshold": "Du blev elimineret, fordi du sad fast i {moves} træk i træk.",
             "allStuck": "Ingen kan lave et træk mere. Kampen er slut.",
@@ -1267,15 +1267,19 @@
             "any": "Alle indstillinger"
         },
         "loadGate": {
-            "waitingTitle": null,
-            "waitingFor": null,
-            "stateFailed": null,
-            "cancelledTitle": null,
-            "cancelledFailed": null,
-            "cancelledTimeout": null,
-            "noResult": null,
-            "webglBlocked": null,
-            "webglUnsupported": null
+            "waitingTitle": "Kampen går i gang",
+            "waitingIntro": "Første tur begynder, så snart spillet er indlæst hos alle.",
+            "waitingFor": "Venter på {names}.",
+            "waitingDone": "Alle er klar.",
+            "stateFailed": "Kunne ikke indlæses",
+            "cancelledTitle": "Kampen blev aflyst",
+            "cancelledFailed": "{names} kunne ikke indlæse spillet.",
+            "cancelledTimeout": "{names} blev ikke færdig med at indlæse spillet.",
+            "noResult": "Der blev ikke talt noget med i nogens statistik.",
+            "webglBlocked": "Din browser kunne ikke vise 3D-grafik, så det her spil kan ikke spilles lige nu. Genindlæs siden for at prøve igen.",
+            "gameBlocked": "Det her spil ville ikke indlæses på din enhed, så det kan ikke spilles lige nu. Genindlæs siden for at prøve igen.",
+            "webglUnsupported": "Din browser kan ikke vise 3D",
+            "gameUnsupported": "Spillet kunne ikke indlæses"
         },
         "matchmaking": {
             "searching": "Leder efter en kamp...",
@@ -1412,6 +1416,7 @@
         "sendFirstMessage": "Vær den første til at sende en besked!",
         "nameJoinedTheGame": "{name} kom ind i spillet",
         "nameLeftTheGame": "{name} forlod spillet",
+        "nameCouldNotLoad": "{name} kunne ikke indlæse spillet og forlod kampen",
         "gameMenu": "Har du lyst til at spille noget andet?",
         "forfeit": "Hvis du opgiver spillet, vil det resultere i et nederlag for dig.",
         "nameForfeited": "{name} har givet op og har automatisk tabt.",

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal French",
         "rtl": false,
-        "total": 2628,
-        "missing": 150
+        "total": 2633,
+        "missing": 140
     },
     "error": {
         "redeemCode": {
@@ -91,7 +91,7 @@
             "missedTurnWarning": "Tu as pris trop de temps et le tour a été donné à ton adversaire. Si ceci se produit trop de fois une à la suite de l'autre, tu seras éliminé. ({current}/{threshold})",
             "missedTurnKick": "Tu as été élminé pour avoir manqué {current} tour(s) de suite.",
             "stallCallWarning": "Un adversaire t'attend. Joue dans les {seconds} secondes, sinon un coup sera joué à ta place.",
-            "loadGateDropped": null,
+            "loadGateDropped": "Le jeu n'a pas voulu se charger sur ton appareil, donc tu n'es plus dans la partie.",
             "stuckSkip": "Ton tour a été passé puisque tu ne peux faire de mouvement.",
             "stuckThreshold": "Tu as été éliminé parce que tu n'a pas pu faire de mouvement {moves} fois de suite.",
             "allStuck": "Personne ne peut plus faire de mouvement. La partie est terminée.",
@@ -1267,15 +1267,19 @@
             "any": "Tous les paramètres"
         },
         "loadGate": {
-            "waitingTitle": null,
-            "waitingFor": null,
-            "stateFailed": null,
-            "cancelledTitle": null,
-            "cancelledFailed": null,
-            "cancelledTimeout": null,
-            "noResult": null,
-            "webglBlocked": null,
-            "webglUnsupported": null
+            "waitingTitle": "La partie commence",
+            "waitingIntro": "Le premier tour démarre dès que le jeu est chargé chez tout le monde.",
+            "waitingFor": "En attente de {names}.",
+            "waitingDone": "Tout le monde est prêt.",
+            "stateFailed": "N'a pas pu charger",
+            "cancelledTitle": "Partie annulée",
+            "cancelledFailed": "{names} n'a pas pu charger le jeu.",
+            "cancelledTimeout": "{names} n'a pas fini de charger le jeu.",
+            "noResult": "Rien n'a été compté dans les statistiques de personne.",
+            "webglBlocked": "Ton navigateur n'a pas pu afficher la 3D, donc ce jeu ne peut pas être joué pour l'instant. Recharge la page pour réessayer.",
+            "gameBlocked": "Ce jeu n'a pas voulu se charger sur ton appareil, donc il ne peut pas être joué pour l'instant. Recharge la page pour réessayer.",
+            "webglUnsupported": "Ton navigateur ne peut pas afficher la 3D",
+            "gameUnsupported": "Ce jeu ne se charge pas"
         },
         "matchmaking": {
             "searching": "En train de chercher une partie...",
@@ -1412,6 +1416,7 @@
         "sendFirstMessage": "Soyez le premier à envoyer un message!",
         "nameJoinedTheGame": "{name} a rejoint le jeu",
         "nameLeftTheGame": "{name} a quitté le jeu",
+        "nameCouldNotLoad": "{name} n'a pas pu charger le jeu et a quitté la partie",
         "gameMenu": "Vous avez envie de jouer à autre chose ?",
         "forfeit": "Déclarer forfait entraînera la perte du jeu.",
         "nameForfeited": "{name} a abandonné et a perdu automatiquement.",

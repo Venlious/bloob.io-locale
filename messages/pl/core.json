@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Polish",
         "rtl": false,
-        "total": 2628,
-        "missing": 150
+        "total": 2633,
+        "missing": 140
     },
     "error": {
         "redeemCode": {
@@ -91,7 +91,7 @@
             "missedTurnWarning": "Spóźniłeś się i twojemu przeciwnikowi przydzielono jego ruch. Jeśli to się powtórzy za wiele razy z rzędu, zostaniesz wyrzucony. ({current}/{threshold})",
             "missedTurnKick": "Zostałeś wyrzucony, ponieważ spóźniłeś się na {current} ruch(y) z rzędu.",
             "stallCallWarning": "Przeciwnik na ciebie czeka. Wykonaj ruch w ciągu {seconds} sekund, bo inaczej zostanie wykonany za ciebie.",
-            "loadGateDropped": null,
+            "loadGateDropped": "Gra nie chciała się wczytać na twoim urządzeniu, więc nie ma cię już w meczu.",
             "stuckSkip": "Twój ruch został pominięty, ponieważ nie możesz wykonać żadnego ruchu.",
             "stuckThreshold": "Zostałeś wyeliminowany, ponieważ byłeś zablokowany przez {moves} ruch(y) z rzędu.",
             "allStuck": "Nikt już nie może wykonać ruchu. Mecz został zakończony.",
@@ -1267,15 +1267,19 @@
             "any": "Dowolne ustawienia"
         },
         "loadGate": {
-            "waitingTitle": null,
-            "waitingFor": null,
-            "stateFailed": null,
-            "cancelledTitle": null,
-            "cancelledFailed": null,
-            "cancelledTimeout": null,
-            "noResult": null,
-            "webglBlocked": null,
-            "webglUnsupported": null
+            "waitingTitle": "Mecz się zaczyna",
+            "waitingIntro": "Pierwsza tura ruszy, gdy gra wczyta się u wszystkich.",
+            "waitingFor": "Czekamy na {names}.",
+            "waitingDone": "Wszyscy są gotowi.",
+            "stateFailed": "Nie wczytało się",
+            "cancelledTitle": "Mecz odwołany",
+            "cancelledFailed": "{names} nie mógł wczytać gry.",
+            "cancelledTimeout": "{names} nie skończył wczytywać gry.",
+            "noResult": "Nic nie zostało zaliczone do niczyich statystyk.",
+            "webglBlocked": "Twoja przeglądarka nie wyświetliła grafiki 3D, więc w tę grę nie da się teraz zagrać. Odśwież stronę, żeby spróbować jeszcze raz.",
+            "gameBlocked": "Ta gra nie chciała się wczytać na twoim urządzeniu, więc nie da się w nią teraz zagrać. Odśwież stronę, żeby spróbować jeszcze raz.",
+            "webglUnsupported": "Twoja przeglądarka nie pokazuje 3D",
+            "gameUnsupported": "Ta gra się nie wczytała"
         },
         "matchmaking": {
             "searching": "Szukam meczu...",
@@ -1412,6 +1416,7 @@
         "sendFirstMessage": "Bądź pierwszy, aby wysłać wiadomość!",
         "nameJoinedTheGame": "{name} dołączył do gry",
         "nameLeftTheGame": "{name} opuścił grę",
+        "nameCouldNotLoad": "{name} nie mógł wczytać gry i opuścił mecz",
         "gameMenu": "Masz ochotę zagrać w coś innego?",
         "forfeit": "Porzucenie gry skutkować będzie porażką dla ciebie.",
         "nameForfeited": "{name} poddał się i automatycznie przegrał.",

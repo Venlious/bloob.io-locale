@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Russian",
         "rtl": false,
-        "total": 2628,
-        "missing": 150
+        "total": 2633,
+        "missing": 140
     },
     "error": {
         "redeemCode": {
@@ -91,7 +91,7 @@
             "missedTurnWarning": "Ты опоздал и ход перешел к сопернику. Если это произойдет слишком много раз подряд, тебя выкинут. ({current}/{threshold})",
             "missedTurnKick": "Тебя выкинули, так как ты пропустил {current} ход(а) подряд.",
             "stallCallWarning": "Соперник тебя ждёт. Сделай ход за {seconds} секунд, иначе ход сделают за тебя.",
-            "loadGateDropped": null,
+            "loadGateDropped": "Игра не загрузилась на твоём устройстве, так что тебя больше нет в матче.",
             "stuckSkip": "Твой ход пропущен, так как ты не можешь сделать ни одного хода.",
             "stuckThreshold": "Ты был выбит из игры, так как застрял на {moves} ходах подряд.",
             "allStuck": "Никто больше не может сделать ход. Матч завершен.",
@@ -1267,15 +1267,19 @@
             "any": "Любые настройки"
         },
         "loadGate": {
-            "waitingTitle": null,
-            "waitingFor": null,
-            "stateFailed": null,
-            "cancelledTitle": null,
-            "cancelledFailed": null,
-            "cancelledTimeout": null,
-            "noResult": null,
-            "webglBlocked": null,
-            "webglUnsupported": null
+            "waitingTitle": "Матч начинается",
+            "waitingIntro": "Первый ход начнётся, как только игра загрузится у всех.",
+            "waitingFor": "Ждём {names}.",
+            "waitingDone": "Все готовы.",
+            "stateFailed": "Не загрузилось",
+            "cancelledTitle": "Матч отменён",
+            "cancelledFailed": "{names} не смог загрузить игру.",
+            "cancelledTimeout": "{names} не закончил загрузку игры.",
+            "noResult": "В статистику никому ничего не засчитано.",
+            "webglBlocked": "Твой браузер не смог показать 3D-графику, поэтому в эту игру сейчас не сыграть. Перезагрузи страницу, чтобы попробовать ещё раз.",
+            "gameBlocked": "Эта игра не загрузилась на твоём устройстве, так что сейчас в неё не сыграть. Перезагрузи страницу, чтобы попробовать ещё раз.",
+            "webglUnsupported": "Твой браузер не показывает 3D",
+            "gameUnsupported": "Игра не загрузилась"
         },
         "matchmaking": {
             "searching": "Ищу матч...",
@@ -1412,6 +1416,7 @@
         "sendFirstMessage": "Будь первым, кто отправит сообщение!",
         "nameJoinedTheGame": "{name} присоединился к игре",
         "nameLeftTheGame": "{name} вышел из игры",
+        "nameCouldNotLoad": "{name} не смог загрузить игру и вышел из матча",
         "gameMenu": "Хочешь поиграть во что-нибудь другое?",
         "forfeit": "Если ты сдашься, то проиграешь.",
         "nameForfeited": "{name} сдался и автоматически проиграл.",

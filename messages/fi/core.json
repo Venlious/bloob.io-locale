@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 2628,
-        "missing": 150
+        "total": 2633,
+        "missing": 140
     },
     "error": {
         "redeemCode": {
@@ -91,7 +91,7 @@
             "missedTurnWarning": "Olit liian myöhässä ja vuoro annettiin vastustajallesi. Jos näin käy liian monta kertaa peräkkäin, sinut potkitaan ulos. ({current}/{threshold})",
             "missedTurnKick": "Sinut potkaistiin ulos, koska missasit {current} vuoro(a) peräkkäin.",
             "stallCallWarning": "Vastustaja odottaa sua. Tee siirto {seconds} sekunnin sisällä, tai se tehdään sun puolesta.",
-            "loadGateDropped": null,
+            "loadGateDropped": "Peli ei suostunut latautumaan laitteellasi, joten et ole enää ottelussa.",
             "stuckSkip": "Vuorosi ohitettiin, koska et voi tehdä yhtään siirtoa.",
             "stuckThreshold": "Sinut poistettiin pelistä, koska olit jumissa {moves} siirtoa peräkkäin.",
             "allStuck": "Kukaan ei voi enää tehdä siirtoa. Ottelu on päättynyt.",
@@ -1267,15 +1267,19 @@
             "any": "Mitkä tahansa asetukset"
         },
         "loadGate": {
-            "waitingTitle": null,
-            "waitingFor": null,
-            "stateFailed": null,
-            "cancelledTitle": null,
-            "cancelledFailed": null,
-            "cancelledTimeout": null,
-            "noResult": null,
-            "webglBlocked": null,
-            "webglUnsupported": null
+            "waitingTitle": "Ottelu alkaa",
+            "waitingIntro": "Ensimmäinen vuoro alkaa heti kun peli on latautunut kaikille.",
+            "waitingFor": "Odotetaan pelaajaa {names}.",
+            "waitingDone": "Kaikki ovat valmiina.",
+            "stateFailed": "Ei latautunut",
+            "cancelledTitle": "Ottelu peruttiin",
+            "cancelledFailed": "{names} ei saanut peliä latautumaan.",
+            "cancelledTimeout": "{names} ei saanut peliä latautumaan loppuun.",
+            "noResult": "Mitään ei laskettu kenenkään tilastoihin.",
+            "webglBlocked": "Selaimesi ei pystynyt näyttämään 3D-grafiikkaa, joten tätä peliä ei voi nyt pelata. Lataa sivu uudelleen ja yritä uudestaan.",
+            "gameBlocked": "Tämä peli ei suostunut latautumaan laitteellasi, joten sitä ei voi nyt pelata. Lataa sivu uudelleen ja yritä uudestaan.",
+            "webglUnsupported": "Selaimesi ei näytä 3D:tä",
+            "gameUnsupported": "Tämä peli ei latautunut"
         },
         "matchmaking": {
             "searching": "Etsitään matsia...",
@@ -1412,6 +1416,7 @@
         "sendFirstMessage": "Lähetä viesti ensimmäisenä!",
         "nameJoinedTheGame": "{name} liittyi peliin",
         "nameLeftTheGame": "{name} lähti pelistä",
+        "nameCouldNotLoad": "{name} ei saanut peliä latautumaan ja poistui ottelusta",
         "gameMenu": "Tekisikö mieli pelata jotain muuta?",
         "forfeit": "Pelistä luopuminen johtaa sinulle tappioon.",
         "nameForfeited": "{name} luovutti ja hävisi automaattisesti.",
