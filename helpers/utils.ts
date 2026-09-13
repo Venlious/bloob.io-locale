@@ -15,6 +15,20 @@ export const EAGER_GAME_KEYS = [`name`, `title`, `description`]
 const GENERIC_GAME_KEY = `generic`
 
 /**
+ * The second family split out of core, on the same bargain the games are:
+ * everything under `articles` belongs to two pages most visitors never open, so
+ * it is fetched by those pages instead of by everybody.
+ *
+ * `title` is the exception, and the same one `EAGER_GAME_KEYS` makes — it is
+ * the section's *name*, which the app puts in front of people who are nowhere
+ * near an article (the settings screen links to it, and the connection bar
+ * titles the page with it).
+ */
+const ARTICLES_KEY = `articles`
+const ARTICLES_FILE = `articles.json`
+export const EAGER_ARTICLE_KEYS = [`title`]
+
+/**
  * Checks whether a value is a plain object.
  *
  * @param value Value to check
@@ -52,7 +66,7 @@ export const catalogueExists = (locale: string): boolean => {
 /**
  * Reads a locale's files back into the single tree the rest of this tooling
  * expects — `core.json` with every `games/<GAME>.json` merged into its
- * `game.<GAME>` entry.
+ * `game.<GAME>` entry, and `articles.json` merged into `articles`.
  *
  * @param locale Locale code (or `_empty`)
  * @returns The whole catalogue
@@ -62,6 +76,12 @@ export const loadCatalogue = (locale: string): NestedObject => {
 	const catalogue = JSON.parse(
 		readFileSync(osPath.join(root, `core.json`), `utf8`)
 	) as NestedObject
+
+	const articlesPath = osPath.join(root, ARTICLES_FILE)
+	if (existsSync(articlesPath)) {
+		const block = JSON.parse(readFileSync(articlesPath, `utf8`)) as NestedObject
+		catalogue[ARTICLES_KEY] = { ...(catalogue[ARTICLES_KEY] ?? {}), ...block }
+	}
 
 	const gamesPath = osPath.join(root, `games`)
 	if (!existsSync(gamesPath)) {
@@ -121,6 +141,18 @@ export const writeCatalogue = (locale: string, data: NestedObject) => {
 			rmSync(osPath.join(gamesPath, file))
 		}
 	}
+
+	// Same split, one level up: `articles` keeps its position, its eager keys
+	// stay in core and the rest becomes the file the article pages fetch.
+	const articles = (data[ARTICLES_KEY] ?? {}) as NestedObject
+	const eagerArticles: NestedObject = {}
+	const lazyArticles: NestedObject = {}
+	for (const [key, value] of Object.entries(articles)) {
+		;(EAGER_ARTICLE_KEYS.includes(key) ? eagerArticles : lazyArticles)[key] = value
+	}
+
+	core[ARTICLES_KEY] = eagerArticles
+	writeFile(osPath.join(root, ARTICLES_FILE), lazyArticles)
 
 	writeFile(osPath.join(root, `core.json`), core)
 }
