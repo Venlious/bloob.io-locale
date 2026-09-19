@@ -29,6 +29,21 @@ const ARTICLES_FILE = `articles.json`
 export const EAGER_ARTICLE_KEYS = [`title`]
 
 /**
+ * The third, on the same bargain again: most of `tournament` belongs to the
+ * tournament pages, and is fetched by them.
+ *
+ * More of it stays in core than for articles, because a tournament follows a
+ * player around the app: its name on the button that opens the pages (`title`),
+ * the card in the sidebar (`sidebar`), the bar over a match's players
+ * (`playing`), what a finished match says instead of offering a rematch
+ * (`outcome`), the screen before a player's next match (`call`), and the
+ * refusals the server can send from anywhere (`error`).
+ */
+const TOURNAMENT_KEY = `tournament`
+const TOURNAMENT_FILE = `tournament.json`
+export const EAGER_TOURNAMENT_KEYS = [`title`, `sidebar`, `playing`, `outcome`, `call`, `error`]
+
+/**
  * Checks whether a value is a plain object.
  *
  * @param value Value to check
@@ -66,7 +81,8 @@ export const catalogueExists = (locale: string): boolean => {
 /**
  * Reads a locale's files back into the single tree the rest of this tooling
  * expects — `core.json` with every `games/<GAME>.json` merged into its
- * `game.<GAME>` entry, and `articles.json` merged into `articles`.
+ * `game.<GAME>` entry, `articles.json` merged into `articles`, and
+ * `tournament.json` merged into `tournament`.
  *
  * @param locale Locale code (or `_empty`)
  * @returns The whole catalogue
@@ -81,6 +97,12 @@ export const loadCatalogue = (locale: string): NestedObject => {
 	if (existsSync(articlesPath)) {
 		const block = JSON.parse(readFileSync(articlesPath, `utf8`)) as NestedObject
 		catalogue[ARTICLES_KEY] = { ...(catalogue[ARTICLES_KEY] ?? {}), ...block }
+	}
+
+	const tournamentPath = osPath.join(root, TOURNAMENT_FILE)
+	if (existsSync(tournamentPath)) {
+		const block = JSON.parse(readFileSync(tournamentPath, `utf8`)) as NestedObject
+		catalogue[TOURNAMENT_KEY] = { ...(catalogue[TOURNAMENT_KEY] ?? {}), ...block }
 	}
 
 	const gamesPath = osPath.join(root, `games`)
@@ -153,6 +175,17 @@ export const writeCatalogue = (locale: string, data: NestedObject) => {
 
 	core[ARTICLES_KEY] = eagerArticles
 	writeFile(osPath.join(root, ARTICLES_FILE), lazyArticles)
+
+	// And `tournament`, the same way.
+	const tournament = (data[TOURNAMENT_KEY] ?? {}) as NestedObject
+	const eagerTournament: NestedObject = {}
+	const lazyTournament: NestedObject = {}
+	for (const [key, value] of Object.entries(tournament)) {
+		;(EAGER_TOURNAMENT_KEYS.includes(key) ? eagerTournament : lazyTournament)[key] = value
+	}
+
+	core[TOURNAMENT_KEY] = eagerTournament
+	writeFile(osPath.join(root, TOURNAMENT_FILE), lazyTournament)
 
 	writeFile(osPath.join(root, `core.json`), core)
 }

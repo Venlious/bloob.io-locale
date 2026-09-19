@@ -17,6 +17,7 @@ messages/
     en/
         core.json           everything shared, plus every game's name and description
         articles.json       the help and guide pages
+        tournament.json     the tournament pages
         games/<GAME_NAME>.json     	gameplay strings
         games/pool.json     shared by the four pool games
         games/card.json     shared by the games dealing a deck of cards
@@ -26,6 +27,8 @@ messages/
 `pool.json` and `card.json` are not games — they are the strings more than one game says the same way, so a suit is named once rather than four times. Anything shared more widely than that lives in `core.json` under `game.generic`.
 
 `articles.json` is the same idea for the pages at `/articles`: everything under `articles` except its `title`, which stays in `core.json` because the app names the section in places that are nowhere near an article.
+
+`tournament.json` is the same again for the tournament pages. More of `tournament` stays in `core.json` than of `articles`, because a tournament follows a player around the app: `title`, `sidebar`, `playing`, `outcome`, `call` and `error` are all shown away from the tournament pages.
 
 `messages/_empty/` is the same tree with every value `null`; the template a brand new language starts from.
 
