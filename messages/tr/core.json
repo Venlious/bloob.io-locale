@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 2827,
-        "missing": 147
+        "total": 2912,
+        "missing": 141
     },
     "error": {
         "redeemCode": {
@@ -102,7 +102,8 @@
             "colorClaimed": "Bu renk zaten başka bir kullanıcı tarafından alınmış.",
             "loading": "Üzgünüz — bu oyun tarayıcınızda yüklenemedi gibi görünüyor. Bazen bu, cihazınızı veya tarayıcınızı yeniden başlatarak çözülebilir. Ekran kartı sürücülerinizi güncellemek de işe yarayabilir.",
             "mustFollowSuit": "Açılan renge uymak zorundasın.",
-            "bidTooLow": "Bu teklif bir öncekini geçmeli."
+            "bidTooLow": "Bu teklif bir öncekini geçmeli.",
+            "drawDeclined": "Beraberlik teklifin reddedildi."
         },
         "card": {
             "loadingSets": "Kart setlerini indiremiyorum.",
@@ -518,6 +519,11 @@
             "name": "Farkle",
             "title": "Ücretsiz Farkle | Çok Oyunculu 10.000 Zar Oyunu Oyna Online",
             "description": "Altı zarla şansını dene, puan getirenleri kenara ayır ve zar atışın turu silmeden önce banka koy."
+        },
+        "SPOT_THE_DIFFERENCE": {
+            "name": "Farkı Bul",
+            "title": "Farkı Bulma Oyunu | Çevrimiçi Çok Oyunculu | Bedava Puzzle",
+            "description": "İki resim, birkaç fark ve herkes aynı anda arıyor. Tek başına oyna, arkadaşlarınla yarış ya da ko-op ve takım modlarında birlikte ara."
         }
     },
     "chat": {
@@ -606,7 +612,7 @@
             "firing": "{name} ateş ediyor",
             "firingSelf": "Sen ateş ediyorsun",
             "inProgress": "Maç devam ediyor",
-            "staleMoves": "Maç durdu — {staleCount} hamle boyunca hiç alım olmadı",
+            "drawn": "Berabere",
             "forfeit": "Maç bitti — Rakip pes etmeyi seçti",
             "outOfPoints": "Oyun bitti — Rakip puanları tükendi",
             "inactive": "Maç, hareketsizlik nedeniyle sona erdi",
@@ -661,7 +667,9 @@
             "remainingTimeCountdown": "{clock} kaldı...",
             "nextRoundCountdown": "Sonraki tur {text} içinde...",
             "youWon": "Kazandın",
-            "nameWon": "{name} kazandı"
+            "nameWon": "{name} kazandı",
+            "staleMoves": "{staleCount} hamle boyunca taş alınmadı, yalnızca damalar oynadı",
+            "drawAgreed": "İki oyuncu da beraberlikte anlaştı"
         }
     },
     "placeholder": {
@@ -736,6 +744,7 @@
         "language": "Dil",
         "rules": "Kurallar",
         "points": "Puanlar",
+        "penalty": "Ceza",
         "fouls": "Faula Tepki",
         "sciences": "Bilimler",
         "artsAndEntertainment": "Sanat & Eğlence",
@@ -892,6 +901,7 @@
         "players": "{n} oyuncu | {n} oyuncu | {n} oyuncu",
         "selectedCards": "Kart seçilmedi | {n} kart seçildi | {n} kart seçildi",
         "matchesFound": "{n} eşleşme bulundu | {n} eşleşme bulundu | {n} eşleşme bulundu",
+        "matchesHiddenFromBlocked": "{users} ait {n} maç gizlendi | {users} ait {n} maç gizlendi | {users} ait {n} maç gizlendi",
         "matchesWaiting": "{n} eşleşme bekliyor | {n} eşleşme bekliyor | {n} eşleşme bekliyor",
         "needMorePlayers": "{n} oyuncuya daha ihtiyacımız var | {n} oyuncuya daha ihtiyacımız var | {n} oyuncuya daha ihtiyacımız var",
         "playAgainstBots": "Botlara Karşı Oyna | Bir Bota Karşı Oyna | Botlara Karşı Oyna",
@@ -1112,7 +1122,7 @@
         "share": "Paylaş",
         "copy": "Kopyala",
         "view": "Görüntüle",
-        "forfeit": "Oyunu Bırak",
+        "forfeit": "Pes Et",
         "processFiles": "Dosyaları İşle",
         "checkAgain": "Tekrar Kontrol Et",
         "refreshWindow": "Pencereyi Yenile",
@@ -1143,7 +1153,7 @@
         "pushRate": "İtme Oranı",
         "blackjackRate": "Blackjack Oranı",
         "rank": "Sıralama",
-        "kills": "Öldürmeler",
+        "kills": "Leş",
         "assassin": "Suikastçı",
         "target": "Hedef",
         "targetReached": "Hedefe Ulaşıldı",
@@ -1159,7 +1169,7 @@
         "guessHitRatio": "Tahmin Isabet Oranı",
         "lives": "Hayatlar",
         "points": "Puanlar",
-        "wins": "Kazanmalar",
+        "wins": "Zafer",
         "grids": "Izgaralar",
         "pocketed": "Cebine Attı",
         "largestPocket": "En Büyük Cep",
@@ -1231,13 +1241,28 @@
         "previousChanges": "Önceki Değişikliklere Bak",
         "random": "Rastgele",
         "skipLink": "Ana içeriğe geç",
-        "opensInNewTab": "{name} (yeni sekmede açılır)"
+        "opensInNewTab": "{name} (yeni sekmede açılır)",
+        "contracts": "Kazanılan Kontratlar",
+        "contractsMade": "Tutturulan Kontratlar",
+        "tricksPerMatch": "El / maç",
+        "sweeps": "Kot",
+        "flawless": "Hiç pas geçmeden kazandı",
+        "presidentShare": "Başkanlık oranı",
+        "bestTurn": "En iyi tur",
+        "accuracy": "İsabet Oranı",
+        "completionRate": "Tamamlama Oranı",
+        "farkleRate": "Farkle Oranı",
+        "hotDiceRate": "Sıcak Zar Oranı",
+        "offerDraw": "Beraberlik Teklif Et",
+        "drawOffered": "Beraberlik Teklif Edildi",
+        "forfeited": "Pes Etti"
     },
     "match": {
         "quick": "Hızlı Eşleşme",
         "create": "Maç Oluştur",
         "createPublic": "Genel Maç Oluştur",
         "leave": "Maçı Terk Et",
+        "forfeitAndLeave": "Pes Et ve Çık",
         "join": "Maça Katıl",
         "joinById": "ID ile Maça Katıl",
         "joinFriend": "Arkadaşına Katıl",
@@ -1254,7 +1279,8 @@
         "browser": {
             "list": "Maçlara Göz At",
             "available": "Mevcut Maçlar",
-            "noneAvailable": "Mevcut Maç Yok"
+            "noneAvailable": "Mevcut Maç Yok",
+            "blockedUsers": "Engellenen kullanıcılara"
         },
         "opponentFilter": {
             "any": "Her seviye",
@@ -1324,7 +1350,8 @@
             "private": "Oyuncular sadece URL veya 4 haneli ID kullanarak katılabilir.",
             "leave": "Eğer çıkmayı seçersen, geri dönemeyebilirsin.",
             "leaveLast": "Oyunda tek kişi olduğun için, çıkınca maç kapanacak.",
-            "leaveAsHost": "Çıkınca başka biri yeni ev sahibi olacak."
+            "leaveAsHost": "Çıkınca başka biri yeni ev sahibi olacak.",
+            "leaveOrForfeit": "Pes etmek yenilgi sayılır ama maçı terk etmek sayılmaz."
         }
     },
     "info": {
@@ -1634,7 +1661,14 @@
             "licenses": "Diğer lisanslar"
         },
         "howToPlayShort": "Nasıl oynanır",
-        "skipStepOverHalf": "Eğer kullanıcıların yarısından fazlası oylarsa bu adımı da atlayabilirsin."
+        "skipStepOverHalf": "Eğer kullanıcıların yarısından fazlası oylarsa bu adımı da atlayabilirsin.",
+        "drawOffer": {
+            "title": "Beraberlik Teklif Edildi",
+            "description": "{name} maçı berabere bitirmeyi teklif ediyor. Beraberlik ne galibiyet ne de mağlubiyet sayılır.",
+            "accept": "Beraberliği Kabul Et",
+            "decline": "Oynamaya Devam Et"
+        },
+        "offerDraw": "Rakibine maçı berabere bitirmek isteyip istemediği sorulacak. Kabul ederse ne galibiyet ne de mağlubiyet sayılır."
     },
     "share": {
         "tiers": {

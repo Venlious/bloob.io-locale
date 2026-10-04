@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal German",
         "rtl": false,
-        "total": 2827,
-        "missing": 147
+        "total": 2912,
+        "missing": 141
     },
     "error": {
         "redeemCode": {
@@ -102,7 +102,8 @@
             "colorClaimed": "Diese Farbe ist bereits vergeben.",
             "loading": "Tut uns leid — scheint so, als ob das Spiel in deinem Browser nicht geladen werden konnte. Manchmal hilft es, dein Gerät oder den Browser neu zu starten. Auch ein Update deiner Grafikkartentreiber könnte helfen.",
             "mustFollowSuit": "Du musst die angespielte Farbe bedienen.",
-            "bidTooLow": "Dieses Gebot muss höher sein als das vorherige."
+            "bidTooLow": "Dieses Gebot muss höher sein als das vorherige.",
+            "drawDeclined": "Dein Angebot für ein Unentschieden wurde abgelehnt."
         },
         "card": {
             "loadingSets": "Die Kartensets konnten nicht heruntergeladen werden.",
@@ -518,6 +519,11 @@
             "name": "Farkle",
             "title": "Farkle Würfelspiel Online | Kostenlos spielen mit Freunden",
             "description": "Versuch dein Glück mit sechs Würfeln, leg die gewürfelten Punkte beiseite und sichere sie, bevor ein Wurf deine Runde zunichte macht."
+        },
+        "SPOT_THE_DIFFERENCE": {
+            "name": "Finde den Unterschied",
+            "title": "Finde den Unterschied online | Kostenloses Mehrspieler Puzzle",
+            "description": "Zwei Bilder, eine Handvoll Unterschiede und alle suchen gleichzeitig. Spiel allein, tritt gegen Freunde an oder sucht gemeinsam im Co-op oder in Teams."
         }
     },
     "chat": {
@@ -606,7 +612,7 @@
             "firing": "{name} feuert",
             "firingSelf": "Du feuerst",
             "inProgress": "Spiel im Gange",
-            "staleMoves": "Spiel vorbei — {staleCount} Züge ohne Schlagen",
+            "drawn": "Unentschieden",
             "forfeit": "Spiel vorbei — Gegner hat aufgegeben",
             "outOfPoints": "Spiel vorbei — Gegner hat keine Punkte mehr",
             "inactive": "Spiel beendet wegen Inaktivität",
@@ -661,7 +667,9 @@
             "remainingTimeCountdown": "{clock} verbleibend...",
             "nextRoundCountdown": "Nächste Runde in {text}...",
             "youWon": "Du hast gewonnen",
-            "nameWon": "{name} hat gewonnen"
+            "nameWon": "{name} hat gewonnen",
+            "staleMoves": "{staleCount} Züge ohne Schlagen, nur gekrönte Steine wurden gezogen",
+            "drawAgreed": "Beide Spieler haben sich auf ein Unentschieden geeinigt"
         }
     },
     "placeholder": {
@@ -736,6 +744,7 @@
         "language": "Sprache",
         "rules": "Regeln",
         "points": "Punkte",
+        "penalty": "Strafe",
         "fouls": "Antwort auf Foul",
         "sciences": "Wissenschaften",
         "artsAndEntertainment": "Kunst & Unterhaltung",
@@ -892,6 +901,7 @@
         "players": "{n} Spieler | {n} Spieler | {n} Spieler",
         "selectedCards": "Keine Karten ausgewählt | {n} Karte ausgewählt | {n} Karten ausgewählt",
         "matchesFound": "{n} Spiele gefunden | {n} Spiel gefunden | {n} Spiele gefunden",
+        "matchesHiddenFromBlocked": "{n} Spiele von {users} sind ausgeblendet | {n} Spiel von {users} ist ausgeblendet | {n} Spiele von {users} sind ausgeblendet",
         "matchesWaiting": "{n} Spiele warten | {n} Spiel wartet | {n} Spiele warten",
         "needMorePlayers": "Benötigt noch {n} Spieler | Benötigt noch {n} Spieler | Benötigt noch {n} Spieler",
         "playAgainstBots": "Spiele gegen Bots | Spiele gegen einen Bot | Spiele gegen Bots",
@@ -1148,18 +1158,18 @@
         "target": "Ziel",
         "targetReached": "Ziel erreicht",
         "assassinations": "Attentate",
-        "survivals": "Überlebenskämpfe",
+        "survivals": "Überlebt",
         "games": "Spiele",
         "correctRatio": "Richtiges Verhältnis",
         "winRatio": "Winrate",
         "winLossDelta": "S/N-Differenz",
-        "killDeathRatio": "K/D-Verhältnis",
+        "killDeathRatio": "K/D",
         "quitRatio": "Ausstiegsquote",
         "clueSuccessRatio": "Hinweis Erfolgsquote",
         "guessHitRatio": "Rate Trefferquote",
         "lives": "Leben",
         "points": "Punkte",
-        "wins": "Gewonnen",
+        "wins": "Siege",
         "grids": "Gitter",
         "pocketed": "Versenkt",
         "largestPocket": "Größte Tasche",
@@ -1231,13 +1241,28 @@
         "previousChanges": "Frühere Änderungen ansehen",
         "random": "Zufällig",
         "skipLink": "Zum Hauptinhalt springen",
-        "opensInNewTab": "{name} (wird in einem neuen Tab geöffnet)"
+        "opensInNewTab": "{name} (wird in einem neuen Tab geöffnet)",
+        "contracts": "Gewonnene Kontrakte",
+        "contractsMade": "Erfüllte Kontrakte",
+        "tricksPerMatch": "Stiche / Match",
+        "sweeps": "Kots",
+        "flawless": "Ohne Passen gewonnen",
+        "presidentShare": "Präsidenten-Anteil",
+        "bestTurn": "Bester Zug",
+        "accuracy": "Genauigkeit",
+        "completionRate": "Abschlussrate",
+        "farkleRate": "Farkle-Rate",
+        "hotDiceRate": "Heiße-Würfel-Rate",
+        "offerDraw": "Unentschieden anbieten",
+        "drawOffered": "Unentschieden angeboten",
+        "forfeited": "Aufgegeben"
     },
     "match": {
         "quick": "Schnelles Spiel",
         "create": "Spiel erstellen",
         "createPublic": "Öffentliches Spiel erstellen",
         "leave": "Spiel verlassen",
+        "forfeitAndLeave": "Aufgeben & verlassen",
         "join": "Spiel beitreten",
         "joinById": "Match mit ID beitreten",
         "joinFriend": "Freund beitreten",
@@ -1254,7 +1279,8 @@
         "browser": {
             "list": "Spiele durchsuchen",
             "available": "Verfügbare Spiele",
-            "noneAvailable": "Keine Spiele verfügbar"
+            "noneAvailable": "Keine Spiele verfügbar",
+            "blockedUsers": "blockierten Nutzern"
         },
         "opponentFilter": {
             "any": "Irgendein Level",
@@ -1324,7 +1350,8 @@
             "private": "Nur Spieler mit der URL oder der vierstelligen ID können beitreten.",
             "leave": "Es kann sein, dass du nicht wieder einsteigen kannst, wenn du dich dafür entscheidest, zu gehen.",
             "leaveLast": "Da du die einzige Person im Spiel bist, wird das Spiel beendet, wenn du es verlässt.",
-            "leaveAsHost": "Jemand anderes wird der neue Gastgeber, wenn du gehst."
+            "leaveAsHost": "Jemand anderes wird der neue Gastgeber, wenn du gehst.",
+            "leaveOrForfeit": "Aufgeben zählt als Niederlage, aber nicht als Spielabbruch."
         }
     },
     "info": {
@@ -1634,7 +1661,14 @@
             "licenses": "Andere Lizenzen"
         },
         "howToPlayShort": "Wie man spielt",
-        "skipStepOverHalf": "Dieser Schritt kann auch übersprungen werden, wenn mehr als die Hälfte der Spieler dafür stimmt."
+        "skipStepOverHalf": "Dieser Schritt kann auch übersprungen werden, wenn mehr als die Hälfte der Spieler dafür stimmt.",
+        "drawOffer": {
+            "title": "Unentschieden angeboten",
+            "description": "{name} bietet an, das Spiel unentschieden zu beenden. Ein Unentschieden zählt weder als Sieg noch als Niederlage.",
+            "accept": "Unentschieden annehmen",
+            "decline": "Weiter spielen"
+        },
+        "offerDraw": "Dein Gegner wird gefragt, ob das Spiel unentschieden enden soll. Nimmt er an, zählt es weder als Sieg noch als Niederlage."
     },
     "share": {
         "tiers": {

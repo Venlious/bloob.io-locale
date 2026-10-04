@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Brazilian Portuguese",
         "rtl": false,
-        "total": 2827,
-        "missing": 147
+        "total": 2912,
+        "missing": 141
     },
     "error": {
         "redeemCode": {
@@ -102,7 +102,8 @@
             "colorClaimed": "Esta cor já foi reivindicada por outro usuário.",
             "loading": "Desculpe, mas parece que esse jogo não conseguiu carregar no seu navegador. Às vezes, isso pode ser resolvido reiniciando seu dispositivo ou navegador. Atualizar os drivers da sua placa de vídeo também pode ajudar.",
             "mustFollowSuit": "Tens de assistir ao naipe de saída.",
-            "bidTooLow": "Esse lance tem que ser maior que o anterior."
+            "bidTooLow": "Esse lance tem que ser maior que o anterior.",
+            "drawDeclined": "Sua proposta de empate foi recusada."
         },
         "card": {
             "loadingSets": "Não foi possível baixar os conjuntos de cartas.",
@@ -518,6 +519,11 @@
             "name": "Farkle",
             "title": "Farkle | Jogo de Dados Multiplayer | Grátis para Jogar Online",
             "description": "Arrisque sua sorte com seis dados, separe o que pontua e banque antes que uma jogada acabe com a sua vez."
+        },
+        "SPOT_THE_DIFFERENCE": {
+            "name": "Encontre as Diferenças",
+            "title": "Jogue Encontre a Diferença Online | Grátis e Multijogador Co-op",
+            "description": "Duas imagens, algumas diferenças e todo mundo procurando ao mesmo tempo. Jogue sozinho, dispute com seus amigos ou procurem juntos no co-op e em times."
         }
     },
     "chat": {
@@ -606,7 +612,7 @@
             "firing": "{name} está atirando",
             "firingSelf": "Você está atirando",
             "inProgress": "Partida em andamento",
-            "staleMoves": "Partida estagnada — {staleCount} movimentos sem capturas",
+            "drawn": "Empate",
             "forfeit": "Jogo concluído — O oponente optou por desistir",
             "outOfPoints": "Jogo acabou — O adversário ficou sem pontos",
             "inactive": "Fim de jogo devido à inatividade",
@@ -661,7 +667,9 @@
             "remainingTimeCountdown": "{clock} restante...",
             "nextRoundCountdown": "A próxima rodada em {text}...",
             "youWon": "Você ganhou",
-            "nameWon": "{name} ganhou"
+            "nameWon": "{name} ganhou",
+            "staleMoves": "{staleCount} movimentos sem capturas, só damas se moveram",
+            "drawAgreed": "Os dois jogadores concordaram com o empate"
         }
     },
     "placeholder": {
@@ -736,6 +744,7 @@
         "language": "Idioma",
         "rules": "Regras",
         "points": "Pontos",
+        "penalty": "Penalidade",
         "fouls": "Resposta à Falta",
         "sciences": "Ciências",
         "artsAndEntertainment": "Artes & Entretenimento",
@@ -892,6 +901,7 @@
         "players": "{n} jogadores | {n} jogador | {n} jogadores",
         "selectedCards": "Nenhuma carta selecionada | {n} carta selecionada | {n} cartas selecionadas",
         "matchesFound": "{n} partidas encontradas | {n} partida encontrada | {n} partidas encontradas",
+        "matchesHiddenFromBlocked": "Há {n} partidas ocultas de {users} | Há {n} partida oculta de {users} | Há {n} partidas ocultas de {users}",
         "matchesWaiting": "{n} partidas em espera | {n} partida em espera | {n} partidas em espera",
         "needMorePlayers": "Precisa de mais {n} jogadores | Precisa de mais {n} jogador | Precisa de mais {n} jogadores",
         "playAgainstBots": "Jogue contra bots | Jogue contra um bot | Jogue contra bots",
@@ -1112,7 +1122,7 @@
         "share": "Compartilhar",
         "copy": "Cópia",
         "view": "Vista",
-        "forfeit": "Jogo perdido",
+        "forfeit": "Desistir",
         "processFiles": "Processar Arquivos",
         "checkAgain": "Ver de novo",
         "refreshWindow": "Atualizar janela",
@@ -1143,7 +1153,7 @@
         "pushRate": "Taxa de Empurrão",
         "blackjackRate": "Taxa de Blackjack",
         "rank": "Classificação",
-        "kills": "Mortes realizadas",
+        "kills": "Abates",
         "assassin": "Assassino",
         "target": "Alvo",
         "targetReached": "Meta Alcançada",
@@ -1231,13 +1241,28 @@
         "previousChanges": "Veja mudanças anteriores",
         "random": "Aleatório",
         "skipLink": "Ir para o conteúdo principal",
-        "opensInNewTab": "{name} (abre em uma nova aba)"
+        "opensInNewTab": "{name} (abre em uma nova aba)",
+        "contracts": "Contratos Ganhos",
+        "contractsMade": "Contratos Cumpridos",
+        "tricksPerMatch": "Vazas / encontro",
+        "sweeps": "Kots",
+        "flawless": "Venceu sem passar",
+        "presidentShare": "Vezes como Presidente",
+        "bestTurn": "Melhor turno",
+        "accuracy": "Precisão",
+        "completionRate": "Taxa de Conclusão",
+        "farkleRate": "Taxa de Farkle",
+        "hotDiceRate": "Taxa de Dados Quentes",
+        "offerDraw": "Oferecer Empate",
+        "drawOffered": "Empate Oferecido",
+        "forfeited": "Desistiu"
     },
     "match": {
         "quick": "Partida Rápida",
         "create": "Crie uma partida",
         "createPublic": "Criar Partida Pública",
         "leave": "Deixar partida",
+        "forfeitAndLeave": "Desistir e sair",
         "join": "Junte-se a partida",
         "joinById": "Entrar na partida por ID",
         "joinFriend": "Juntar-se ao Amigo",
@@ -1254,7 +1279,8 @@
         "browser": {
             "list": "Procurar partidas",
             "available": "Partidas disponíveis",
-            "noneAvailable": "Não há partidas disponíveis"
+            "noneAvailable": "Não há partidas disponíveis",
+            "blockedUsers": "usuários bloqueados"
         },
         "opponentFilter": {
             "any": "Qualquer nível",
@@ -1324,7 +1350,8 @@
             "private": "Os jogadores só podem participar usando a URL ou ID de 4 dígitos.",
             "leave": "É possível que você não consiga voltar, se optar por sair.",
             "leaveLast": "Como você é a única pessoa no jogo, a partida será encerrada quando você sair.",
-            "leaveAsHost": "Alguém se tornará o novo anfitrião quando você sair."
+            "leaveAsHost": "Alguém se tornará o novo anfitrião quando você sair.",
+            "leaveOrForfeit": "Desistir conta como derrota, mas não como abandono."
         }
     },
     "info": {
@@ -1634,7 +1661,14 @@
             "licenses": "Outras licenças"
         },
         "howToPlayShort": "Como jogar",
-        "skipStepOverHalf": "Esta etapa também pode ser ignorada se mais da metade dos usuários votarem nela."
+        "skipStepOverHalf": "Esta etapa também pode ser ignorada se mais da metade dos usuários votarem nela.",
+        "drawOffer": {
+            "title": "Empate Oferecido",
+            "description": "{name} propõe terminar a partida empatada. Um empate não conta como vitória nem como derrota.",
+            "accept": "Aceitar Empate",
+            "decline": "Continuar Jogando"
+        },
+        "offerDraw": "Seu adversário será perguntado se quer terminar a partida empatada. Se ele aceitar, não conta como vitória nem como derrota."
     },
     "share": {
         "tiers": {

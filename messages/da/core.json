@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Danish",
         "rtl": false,
-        "total": 2827,
-        "missing": 147
+        "total": 2912,
+        "missing": 141
     },
     "error": {
         "redeemCode": {
@@ -102,7 +102,8 @@
             "colorClaimed": "Denne farve er allerede taget af en anden bruger.",
             "loading": "Vi er kede af det — det ser ud til, at det her spil ikke kunne loade i din browser. Nogle gange kan det løses ved at genstarte din enhed eller browser. At opdatere dine grafikkortdrivere kan også hjælpe.",
             "mustFollowSuit": "Du skal bekende den udspillede farve.",
-            "bidTooLow": "Denne melding skal være højere end den forrige."
+            "bidTooLow": "Denne melding skal være højere end den forrige.",
+            "drawDeclined": "Dit tilbud om uafgjort blev afvist."
         },
         "card": {
             "loadingSets": "Kan ikke downloade kort sættene.",
@@ -518,6 +519,11 @@
             "name": "Farkle",
             "title": "Farkle online | Gratis terningespil | Multiplayer med venner",
             "description": "Prøv lykken med seks terninger, læg det til side der giver point, og bank ind, før et kast sletter runden."
+        },
+        "SPOT_THE_DIFFERENCE": {
+            "name": "Find Forskellene",
+            "title": "Find fem fejl | Online multiplayer gratis puslespil med venner",
+            "description": "To billeder, en håndfuld forskelle og alle leder på én gang. Spil alene, kæmp mod dine venner, eller søg sammen i co-op og hold."
         }
     },
     "chat": {
@@ -606,7 +612,7 @@
             "firing": "{name} skyder",
             "firingSelf": "Du skyder",
             "inProgress": "Kampen er i gang",
-            "staleMoves": "Kampen er gået i stå — {staleCount} træk uden overtagelse",
+            "drawn": "Uafgjort",
             "forfeit": "Kampen er slut — Modstanderen valgte at give op",
             "outOfPoints": "Kampen er slut — Modstanderen løb tør for point",
             "inactive": "Kampen sluttede på grund af inaktivitet",
@@ -661,7 +667,9 @@
             "remainingTimeCountdown": "{clock} tilbage...",
             "nextRoundCountdown": "Næste runde om {text}...",
             "youWon": "Du vandt",
-            "nameWon": "{name} har vundet"
+            "nameWon": "{name} har vundet",
+            "staleMoves": "{staleCount} træk uden slag, hvor kun konger flyttede",
+            "drawAgreed": "Begge spillere blev enige om uafgjort"
         }
     },
     "placeholder": {
@@ -736,6 +744,7 @@
         "language": "Sprog",
         "rules": "Regler",
         "points": "Point",
+        "penalty": "Straf",
         "fouls": "Reaktion på Overtrædelse",
         "sciences": "Naturvidenskab",
         "artsAndEntertainment": "Kunst & Underholdning",
@@ -892,6 +901,7 @@
         "players": "{n} spillere | {n} spiller | {n} spillere",
         "selectedCards": "Ingen kort valgt | {n} kort valgt | {n} kort valgt",
         "matchesFound": "{n} kampe fundet | {n} kamp fundet | {n} kampe fundet",
+        "matchesHiddenFromBlocked": "{n} kampe fra {users} er skjult | {n} kamp fra {users} er skjult | {n} kampe fra {users} er skjult",
         "matchesWaiting": "{n} kampe venter | {n} kamp venter | {n} kampe venter",
         "needMorePlayers": "Behøver {n} flere spillere | Behøver {n} mere spiller | Behøver {n} flere spillere",
         "playAgainstBots": "Spil Mod Bots | Spil Mod en Bot | Spil Mod Bots",
@@ -1112,7 +1122,7 @@
         "share": "Del",
         "copy": "Kopier",
         "view": "Se",
-        "forfeit": "Giv op i spillet",
+        "forfeit": "Giv op",
         "processFiles": "Behandl filer",
         "checkAgain": "Tjek igen",
         "refreshWindow": "Opdater Vindue",
@@ -1151,7 +1161,7 @@
         "survivals": "Overlevelser",
         "games": "Spil",
         "correctRatio": "Korrekt forhold",
-        "winRatio": "Sejrsforhold",
+        "winRatio": "Sejr %",
         "winLossDelta": "S/T-delta",
         "killDeathRatio": "K/D Forhold",
         "quitRatio": "Afbrydelsesrate",
@@ -1231,13 +1241,28 @@
         "previousChanges": "Se Tidligere Ændringer",
         "random": "Tilfældig",
         "skipLink": "Gå til hovedindhold",
-        "opensInNewTab": "{name} (åbnes i en ny fane)"
+        "opensInNewTab": "{name} (åbnes i en ny fane)",
+        "contracts": "Vundne kontrakter",
+        "contractsMade": "Opfyldte kontrakter",
+        "tricksPerMatch": "Stik / kamp",
+        "sweeps": "Kot",
+        "flawless": "Vundet uden at melde pas",
+        "presidentShare": "Andel som Præsident",
+        "bestTurn": "Bedste tur",
+        "accuracy": "Præcision",
+        "completionRate": "Gennemført",
+        "farkleRate": "Farkle-rate",
+        "hotDiceRate": "Rate for varme terninger",
+        "offerDraw": "Tilbyd uafgjort",
+        "drawOffered": "Uafgjort tilbudt",
+        "forfeited": "Gav op"
     },
     "match": {
         "quick": "Hurtig Kamp",
         "create": "Opret kamp",
         "createPublic": "Opret offentlig kamp",
         "leave": "Forlad kamp",
+        "forfeitAndLeave": "Giv op og forlad",
         "join": "Deltag i kamp",
         "joinById": "Deltag i kamp via ID",
         "joinFriend": "Join ven",
@@ -1254,7 +1279,8 @@
         "browser": {
             "list": "Gennemse kampe",
             "available": "Tilgængelige kampe",
-            "noneAvailable": "Ingen tilgængelige kampe"
+            "noneAvailable": "Ingen tilgængelige kampe",
+            "blockedUsers": "blokerede brugere"
         },
         "opponentFilter": {
             "any": "Alle niveauer",
@@ -1324,7 +1350,8 @@
             "private": "Spillere kan kun deltage ved hjælp af URL'en eller 4-cifret ID.",
             "leave": "Du kan måske ikke komme tilbage, hvis du vælger at forlade.",
             "leaveLast": "Da du er den eneste person i spillet, vil kampen blive lukket, når du forlader.",
-            "leaveAsHost": "Nogen anden bliver den nye vært, når du smutter."
+            "leaveAsHost": "Nogen anden bliver den nye vært, når du smutter.",
+            "leaveOrForfeit": "At give op tæller som et nederlag, men ikke som at forlade kampen."
         }
     },
     "info": {
@@ -1634,7 +1661,14 @@
             "licenses": "Andre licenser"
         },
         "howToPlayShort": "Hvordan man spiller",
-        "skipStepOverHalf": "Dette trin kan også springes over, hvis over halvdelen af brugerne stemmer for det."
+        "skipStepOverHalf": "Dette trin kan også springes over, hvis over halvdelen af brugerne stemmer for det.",
+        "drawOffer": {
+            "title": "Uafgjort tilbudt",
+            "description": "{name} tilbyder at afslutte kampen uafgjort. Uafgjort tæller hverken som en sejr eller et nederlag.",
+            "accept": "Accepter uafgjort",
+            "decline": "Fortsæt med at spille"
+        },
+        "offerDraw": "Din modstander bliver spurgt, om kampen skal ende uafgjort. Hvis de accepterer, tæller det hverken som en sejr eller et nederlag."
     },
     "share": {
         "tiers": {

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Norwegian (Bokmål)",
         "rtl": false,
-        "total": 2827,
-        "missing": 147
+        "total": 2912,
+        "missing": 141
     },
     "error": {
         "redeemCode": {
@@ -102,7 +102,8 @@
             "colorClaimed": "Denne fargen er allerede tatt av en annen bruker.",
             "loading": "Vi beklager — det ser ut som dette spillet ikke klarte å laste i nettleseren din. Dette kan noen ganger løses ved å starte enheten eller nettleseren på nytt. Å oppdatere grafikkdriverne dine kan også hjelpe.",
             "mustFollowSuit": "Du må følge fargen som ble spilt ut.",
-            "bidTooLow": "Denne meldingen må være høyere enn den forrige."
+            "bidTooLow": "Denne meldingen må være høyere enn den forrige.",
+            "drawDeclined": "Tilbudet ditt om uavgjort ble avslått."
         },
         "card": {
             "loadingSets": "Klarer ikke å laste ned kortstokkene.",
@@ -518,6 +519,11 @@
             "name": "Farkle",
             "title": "Spill Farkle Online | Gratis Terningspill med Flerspiller støtte",
             "description": "Sats alt med seks terninger, legg til side det som gir poeng, og sikre poengene før et kast fjerner hele turen."
+        },
+        "SPOT_THE_DIFFERENCE": {
+            "name": "Finn Forskjellene",
+            "title": "Finn Forskjellene på nett | Gratis Flerspiller Puslespill",
+            "description": "To bilder, en håndfull forskjeller og alle leter samtidig. Spill alene, kjemp mot vennene dine, eller let sammen i co-op og lag."
         }
     },
     "chat": {
@@ -606,7 +612,7 @@
             "firing": "{name} skyter",
             "firingSelf": "Du skyter",
             "inProgress": "Kampen pågår",
-            "staleMoves": "Kampen har stått stille — {staleCount} trekk uten overtakelse",
+            "drawn": "Uavgjort",
             "forfeit": "Kampen er ferdig — Motstanderen valgte å gi opp",
             "outOfPoints": "Kampen er over — Motstanderen gikk tom for poeng",
             "inactive": "Kampen ble avsluttet på grunn av inaktivitet",
@@ -661,7 +667,9 @@
             "remainingTimeCountdown": "{clock} igjen...",
             "nextRoundCountdown": "Neste runde om {text}...",
             "youWon": "Du vant",
-            "nameWon": "{name} har vunnet"
+            "nameWon": "{name} har vunnet",
+            "staleMoves": "{staleCount} trekk uten slag der bare konger flyttet",
+            "drawAgreed": "Begge spillerne ble enige om uavgjort"
         }
     },
     "placeholder": {
@@ -736,6 +744,7 @@
         "language": "Språk",
         "rules": "Regler",
         "points": "Poeng",
+        "penalty": "Straff",
         "fouls": "Reaksjon på Regelbrudd",
         "sciences": "Vitenskap",
         "artsAndEntertainment": "Kunst & Underholdning",
@@ -892,6 +901,7 @@
         "players": "{n} spillere | {n} spiller | {n} spillere",
         "selectedCards": "Ingen kort valgt | {n} kort valgt | {n} kort valgt",
         "matchesFound": "{n} treff funnet | {n} treff funnet | {n} treff funnet",
+        "matchesHiddenFromBlocked": "{n} kamper fra {users} er skjult | {n} kamp fra {users} er skjult | {n} kamper fra {users} er skjult",
         "matchesWaiting": "{n} matcher venter | {n} match venter | {n} matcher venter",
         "needMorePlayers": "Trenger {n} flere spillere | Trenger {n} mer spiller | Trenger {n} flere spillere",
         "playAgainstBots": "Spill mot roboter | Spill mot en robot | Spill mot roboter",
@@ -1112,7 +1122,7 @@
         "share": "Del",
         "copy": "Kopier",
         "view": "Se",
-        "forfeit": "Gi opp spillet",
+        "forfeit": "Gi opp",
         "processFiles": "Behandle filer",
         "checkAgain": "Sjekk igjen",
         "refreshWindow": "Oppdater Vindu",
@@ -1151,7 +1161,7 @@
         "survivals": "Overlevelser",
         "games": "Spill",
         "correctRatio": "Riktig forhold",
-        "winRatio": "Seiersforhold",
+        "winRatio": "Seier %",
         "winLossDelta": "S/T-delta",
         "killDeathRatio": "K/D-forhold",
         "quitRatio": "Avslutningsrate",
@@ -1231,13 +1241,28 @@
         "previousChanges": "Se Tidligere Endringer",
         "random": "Tilfeldig",
         "skipLink": "Gå til hovedinnhold",
-        "opensInNewTab": "{name} (åpnes i en ny fane)"
+        "opensInNewTab": "{name} (åpnes i en ny fane)",
+        "contracts": "Vunne kontrakter",
+        "contractsMade": "Oppfylte kontrakter",
+        "tricksPerMatch": "Stikk / kamp",
+        "sweeps": "Kot",
+        "flawless": "Vant uten å melde pass",
+        "presidentShare": "Andel som President",
+        "bestTurn": "Beste tur",
+        "accuracy": "Presisjon",
+        "completionRate": "Fullføringsgrad",
+        "farkleRate": "Farkle-rate",
+        "hotDiceRate": "Rate for varme terninger",
+        "offerDraw": "Tilby uavgjort",
+        "drawOffered": "Uavgjort tilbudt",
+        "forfeited": "Ga opp"
     },
     "match": {
         "quick": "Rask kamp",
         "create": "Opprett kamp",
         "createPublic": "Opprett offentlig kamp",
         "leave": "Forlat kamp",
+        "forfeitAndLeave": "Gi opp og forlat",
         "join": "Bli med i kamp",
         "joinById": "Bli med i kamp via ID",
         "joinFriend": "Bli med venn",
@@ -1254,7 +1279,8 @@
         "browser": {
             "list": "Bla gjennom kamper",
             "available": "Tilgjengelige kamper",
-            "noneAvailable": "Ingen tilgjengelige kamper"
+            "noneAvailable": "Ingen tilgjengelige kamper",
+            "blockedUsers": "blokkerte brukere"
         },
         "opponentFilter": {
             "any": "Alle nivåer",
@@ -1324,7 +1350,8 @@
             "private": "Spillere kan bare bli med ved å bruke URL-en eller 4-sifret ID.",
             "leave": "Du kan kanskje ikke komme tilbake hvis du velger å forlate.",
             "leaveLast": "Siden du er den eneste personen i spillet, vil kampen bli stengt når du forlater.",
-            "leaveAsHost": "Noen andre vil bli den nye verten når du drar."
+            "leaveAsHost": "Noen andre vil bli den nye verten når du drar.",
+            "leaveOrForfeit": "Å gi opp teller som et tap, men ikke som å forlate kampen."
         }
     },
     "info": {
@@ -1634,7 +1661,14 @@
             "licenses": "Andre lisenser"
         },
         "howToPlayShort": "Hvordan spille",
-        "skipStepOverHalf": "Dette steget kan også hoppes over hvis over halvparten av brukerne stemmer for det."
+        "skipStepOverHalf": "Dette steget kan også hoppes over hvis over halvparten av brukerne stemmer for det.",
+        "drawOffer": {
+            "title": "Uavgjort tilbudt",
+            "description": "{name} tilbyr å avslutte kampen uavgjort. Uavgjort teller verken som seier eller tap.",
+            "accept": "Godta uavgjort",
+            "decline": "Fortsett å spille"
+        },
+        "offerDraw": "Motstanderen din blir spurt om kampen skal ende uavgjort. Hvis de godtar, teller det verken som seier eller tap."
     },
     "share": {
         "tiers": {

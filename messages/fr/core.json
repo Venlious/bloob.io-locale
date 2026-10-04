@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal French",
         "rtl": false,
-        "total": 2827,
-        "missing": 147
+        "total": 2912,
+        "missing": 141
     },
     "error": {
         "redeemCode": {
@@ -102,7 +102,8 @@
             "colorClaimed": "Cette couleur a déjà été réclamée par un autre utilisateur.",
             "loading": "Désolé, on dirait que le jeu a pas réussi à se charger dans ton navigateur. Parfois, redémarrer ton appareil ou ton navigateur peut régler le souci. Mettre à jour les pilotes de ta carte graphique peut aussi aider.",
             "mustFollowSuit": "Vous devez fournir la couleur entamée.",
-            "bidTooLow": "Cette enchère doit dépasser la précédente."
+            "bidTooLow": "Cette enchère doit dépasser la précédente.",
+            "drawDeclined": "Votre proposition de match nul a été refusée."
         },
         "card": {
             "loadingSets": "Impossible de télécharger les ensembles de cartes.",
@@ -518,6 +519,11 @@
             "name": "Farkle",
             "title": "Jouez à Farkle en ligne | Multijoueur gratuit sans inscription",
             "description": "Tente ta chance avec six dés, mets de côté ce qui rapporte des points et encaisse avant qu'un lancé ne fasse tout perdre."
+        },
+        "SPOT_THE_DIFFERENCE": {
+            "name": "Trouve les différences",
+            "title": "Trouve les Différences en Ligne | Multijoueur Gratuit en Coop",
+            "description": "Deux images, quelques différences et tout le monde cherche en même temps. Joue seul, affronte tes amis ou cherchez ensemble en coop et en équipes."
         }
     },
     "chat": {
@@ -606,7 +612,7 @@
             "firing": "{name} tire",
             "firingSelf": "Tu tires",
             "inProgress": "Match en cours",
-            "staleMoves": "Match bloqué — {staleCount} mouvements sans prise de contrôle",
+            "drawn": "Match nul",
             "forfeit": "Partie terminée - L'adversaire a abandonné la partie",
             "outOfPoints": "Match terminé — L'adversaire a plus de points",
             "inactive": "Partie terminée pour cause d'inactivité",
@@ -661,7 +667,9 @@
             "remainingTimeCountdown": "{clock} restantes...",
             "nextRoundCountdown": "Prochaine ronde dans {text}...",
             "youWon": "Tu as gagné",
-            "nameWon": "{name} a gagné"
+            "nameWon": "{name} a gagné",
+            "staleMoves": "{staleCount} coups sans prise, seuls les rois ont bougé",
+            "drawAgreed": "Les deux joueurs ont accepté le match nul"
         }
     },
     "placeholder": {
@@ -736,6 +744,7 @@
         "language": "Langue",
         "rules": "Règles",
         "points": "Points",
+        "penalty": "Pénalité",
         "fouls": "Réponse à la mauvaise conduite",
         "sciences": "Sciences",
         "artsAndEntertainment": "Arts & Divertissement",
@@ -892,6 +901,7 @@
         "players": "{n} joueurs | {n} joueur | {n} joueurs",
         "selectedCards": "Aucune carte sélectionnée | {n} carte sélectionnée | {n} cartes sélectionnées",
         "matchesFound": "{n} parties trouvées | {n} partie trouvée | {n} parties trouvées",
+        "matchesHiddenFromBlocked": "{n} parties créées par des {users} sont masquées | {n} partie créée par des {users} est masquée | {n} parties créées par des {users} sont masquées",
         "matchesWaiting": "{n} parties en attente | {n} partie en attente | {n} parties en attentes",
         "needMorePlayers": "{n} joueurs de plus requis | {n} joueur de plus requis | {n} joueurs de plus requis",
         "playAgainstBots": "Jouer contre des bots | Jouer contre un bot | Jouer contre des bots",
@@ -1112,7 +1122,7 @@
         "share": "Partager",
         "copy": "Copier",
         "view": "Voir",
-        "forfeit": "Déclarer forfait",
+        "forfeit": "Abandonner",
         "processFiles": "Traiter les fichiers",
         "checkAgain": "Vérifie encore",
         "refreshWindow": "Réactualiser la fenêtre",
@@ -1231,13 +1241,28 @@
         "previousChanges": "Voir les changements précédents",
         "random": "Aléatoire",
         "skipLink": "Aller au contenu principal",
-        "opensInNewTab": "{name} (s'ouvre dans un nouvel onglet)"
+        "opensInNewTab": "{name} (s'ouvre dans un nouvel onglet)",
+        "contracts": "Contrats remportés",
+        "contractsMade": "Contrats réalisés",
+        "tricksPerMatch": "Plis / match",
+        "sweeps": "Kots",
+        "flawless": "Gagné sans passer",
+        "presidentShare": "Part de Président",
+        "bestTurn": "Meilleur tour",
+        "accuracy": "Précision",
+        "completionRate": "Taux de réussite",
+        "farkleRate": "Taux de Farkle",
+        "hotDiceRate": "Taux de dés chauds",
+        "offerDraw": "Proposer le match nul",
+        "drawOffered": "Match nul proposé",
+        "forfeited": "A abandonné"
     },
     "match": {
         "quick": "Match Rapide",
         "create": "Créer une partie",
         "createPublic": "Créer un Match Public",
         "leave": "Quitter la partie",
+        "forfeitAndLeave": "Abandonner et quitter",
         "join": "Se joindre à une partie",
         "joinById": "Rejoindre le match par ID",
         "joinFriend": "Rejoindre un pote",
@@ -1254,7 +1279,8 @@
         "browser": {
             "list": "Parcourir les parties",
             "available": "Parties disponibles",
-            "noneAvailable": "Aucune partie disponible"
+            "noneAvailable": "Aucune partie disponible",
+            "blockedUsers": "utilisateurs bloqués"
         },
         "opponentFilter": {
             "any": "Tous niveaux",
@@ -1324,7 +1350,8 @@
             "private": "Les joueurs peuvent seulement se joindre en utilisant l'URL ou l'ID à 4 chiffres.",
             "leave": "Tu pourrais ne pas pouvoir rejoindre la partie si tu décides de quitter maintenant.",
             "leaveLast": "Puisque tu es la seule personne dans le jeu, la partie sera terminée lorsque tu auras quitté le jeu.",
-            "leaveAsHost": "Quelqu'un d'autre deviendra l'hôte lorsque tu quitteras."
+            "leaveAsHost": "Quelqu'un d'autre deviendra l'hôte lorsque tu quitteras.",
+            "leaveOrForfeit": "Abandonner compte comme une défaite, mais pas comme si tu avais quitté la partie."
         }
     },
     "info": {
@@ -1634,7 +1661,14 @@
             "licenses": "Autres licences"
         },
         "howToPlayShort": "Comment jouer",
-        "skipStepOverHalf": "Cette étape peut également être sautée si plus de la moitié des utilisateurs votent pour."
+        "skipStepOverHalf": "Cette étape peut également être sautée si plus de la moitié des utilisateurs votent pour.",
+        "drawOffer": {
+            "title": "Match nul proposé",
+            "description": "{name} propose de terminer la partie sur un match nul. Un match nul ne compte ni comme une victoire ni comme une défaite.",
+            "accept": "Accepter le match nul",
+            "decline": "Continuer à jouer"
+        },
+        "offerDraw": "Votre adversaire se verra proposer de terminer la partie sur un match nul. S'il accepte, cela ne compte ni comme une victoire ni comme une défaite."
     },
     "share": {
         "tiers": {

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Polish",
         "rtl": false,
-        "total": 2827,
-        "missing": 147
+        "total": 2912,
+        "missing": 141
     },
     "error": {
         "redeemCode": {
@@ -102,7 +102,8 @@
             "colorClaimed": "Ten kolor został już zajęty przez innego użytkownika.",
             "loading": "Przykro nam — wygląda na to, że ta gra nie załadowała się w twojej przeglądarce. Czasem można to naprawić, restartując urządzenie lub przeglądarkę. Zaktualizowanie sterowników karty graficznej też może pomóc.",
             "mustFollowSuit": "Musisz dołożyć do wyjściowego koloru.",
-            "bidTooLow": "Ta odzywka musi przebić poprzednią."
+            "bidTooLow": "Ta odzywka musi przebić poprzednią.",
+            "drawDeclined": "Twoja propozycja remisu została odrzucona."
         },
         "card": {
             "loadingSets": "Nie można pobrać zestawów kart.",
@@ -518,6 +519,11 @@
             "name": "Farkle",
             "title": "Zagraj w Farkle | Gra w Kości 10000 | Darmowy Multiplayer Online",
             "description": "Pokusz szczęście z sześcioma kośćmi, odłóż na bok te, które punktują, i zaksięguj, zanim rzut wyczyści turę."
+        },
+        "SPOT_THE_DIFFERENCE": {
+            "name": "Znajdź Różnice",
+            "title": "Znajdź Różnice Online | Graj Za Darmo z Przyjaciółmi i Drużyną",
+            "description": "Dwa obrazki, garść różnic i wszyscy szukają naraz. Graj sam, ścigaj się ze znajomymi albo szukajcie razem w kooperacji i w drużynach."
         }
     },
     "chat": {
@@ -606,7 +612,7 @@
             "firing": "{name} strzela",
             "firingSelf": "Strzelasz",
             "inProgress": "Mecz w toku",
-            "staleMoves": "Mecz zatrzymany — {staleCount} ruchów bez przejęcia",
+            "drawn": "Remis",
             "forfeit": "Mecz zakończony — Przeciwnik wybrał rezygnację",
             "outOfPoints": "Mecz skończony — Przeciwnik nie ma już punktów",
             "inactive": "Mecz zakończony z powodu braku aktywności",
@@ -661,7 +667,9 @@
             "remainingTimeCountdown": "Pozostało {clock}...",
             "nextRoundCountdown": "Następna runda za {text}...",
             "youWon": "Wygrałeś",
-            "nameWon": "{name} wygrał"
+            "nameWon": "{name} wygrał",
+            "staleMoves": "{staleCount} ruchów bez bicia, ruszały się tylko króle",
+            "drawAgreed": "Obaj gracze zgodzili się na remis"
         }
     },
     "placeholder": {
@@ -736,6 +744,7 @@
         "language": "Język",
         "rules": "Zasady",
         "points": "Punkty",
+        "penalty": "Kara",
         "fouls": "Reakcja na nieuczciwą grę",
         "sciences": "Nauki",
         "artsAndEntertainment": "Sztuka i Rozrywka",
@@ -892,6 +901,7 @@
         "players": "{n} graczy | {n} gracz | {n} graczy",
         "selectedCards": "Nie wybrano kart | {n} wybrana karta | {n} wybranych kart",
         "matchesFound": "{n} znalezionych meczów | {n} znaleziony mecz | {n} znalezionych meczów",
+        "matchesHiddenFromBlocked": "Ukryto {n} meczów od {users} | Ukryto {n} mecz od {users} | Ukryto {n} meczów od {users}",
         "matchesWaiting": "{n} oczekujących meczów | {n} oczekujący mecz | {n} oczekujących meczów",
         "needMorePlayers": "Potrzeba {n} graczy | Potrzeba {n} gracza | Potrzeba {n} graczy",
         "playAgainstBots": "Graj przeciwko botom | Graj przeciwko botowi | Graj przeciwko botom",
@@ -1112,7 +1122,7 @@
         "share": "Udostępnij",
         "copy": "Skopiuj",
         "view": "Zobacz",
-        "forfeit": "Porzuć grę",
+        "forfeit": "Poddaj się",
         "processFiles": "Przetwarzaj pliki",
         "checkAgain": "Sprawdź jeszcze raz",
         "refreshWindow": "Odśwież okno",
@@ -1143,7 +1153,7 @@
         "pushRate": "Szansa na pchnięcie",
         "blackjackRate": "Stawka Blackjacka",
         "rank": "Ranga",
-        "kills": "Zabójstwa",
+        "kills": "Zabicia",
         "assassin": "Zabójca",
         "target": "Cel",
         "targetReached": "Cel osiągnięty",
@@ -1151,12 +1161,12 @@
         "survivals": "Przetrwania",
         "games": "Gry",
         "correctRatio": "Poprawny stosunek",
-        "winRatio": "Stosunek wygranych",
+        "winRatio": "Wygrane %",
         "winLossDelta": "Różnica W/P",
-        "killDeathRatio": "Stosunek zabójstw do śmierci",
+        "killDeathRatio": "K/D",
         "quitRatio": "Współczynnik rezygnacji",
-        "clueSuccessRatio": "Wskaźnik sukcesu wskazówek",
-        "guessHitRatio": "Wskaźnik trafionych zgadnięć",
+        "clueSuccessRatio": "Udane wskazówki",
+        "guessHitRatio": "Trafione typy",
         "lives": "Życia",
         "points": "Punkty",
         "wins": "Wygrane",
@@ -1231,13 +1241,28 @@
         "previousChanges": "Przejrzyj poprzednie zmiany",
         "random": "Losowy",
         "skipLink": "Przejdź do treści głównej",
-        "opensInNewTab": "{name} (otwiera się w nowej karcie)"
+        "opensInNewTab": "{name} (otwiera się w nowej karcie)",
+        "contracts": "Wygrane kontrakty",
+        "contractsMade": "Zrealizowane kontrakty",
+        "tricksPerMatch": "Lewy / mecz",
+        "sweeps": "Koty",
+        "flawless": "Wygrana bez pasowania",
+        "presidentShare": "Udział Prezydenta",
+        "bestTurn": "Najlepsza tura",
+        "accuracy": "Celność",
+        "completionRate": "Wskaźnik ukończenia",
+        "farkleRate": "Odsetek Farkle",
+        "hotDiceRate": "Odsetek gorących kości",
+        "offerDraw": "Zaproponuj remis",
+        "drawOffered": "Remis zaproponowany",
+        "forfeited": "Poddał się"
     },
     "match": {
         "quick": "Szybki Mecz",
         "create": "Stwórz mecz",
         "createPublic": "Stwórz Publiczny Mecz",
         "leave": "Opuść mecz",
+        "forfeitAndLeave": "Poddaj się i wyjdź",
         "join": "Dołącz do meczu",
         "joinById": "Dołącz do meczu po ID",
         "joinFriend": "Dołącz do kumpla",
@@ -1254,7 +1279,8 @@
         "browser": {
             "list": "Przeglądaj mecze",
             "available": "Dostępne mecze",
-            "noneAvailable": "Brak dostępnych meczy"
+            "noneAvailable": "Brak dostępnych meczy",
+            "blockedUsers": "zablokowanych użytkowników"
         },
         "opponentFilter": {
             "any": "Dowolny poziom",
@@ -1324,7 +1350,8 @@
             "private": "Gracze mogą dołączyć tylko za pomocą adresu URL lub czterocyfrowego kodu.",
             "leave": "Nie możesz dołączyć z powrotem, jeśli zdecydujesz się odejść.",
             "leaveLast": "Ponieważ jesteś jedyną osobą w grze, mecz zostanie zamknięty, gdy odejdziesz.",
-            "leaveAsHost": "Ktoś inny stanie się nowym gospodarzem, gdy odejdziesz."
+            "leaveAsHost": "Ktoś inny stanie się nowym gospodarzem, gdy odejdziesz.",
+            "leaveOrForfeit": "Poddanie się liczy się jako porażka, ale nie jako opuszczenie meczu."
         }
     },
     "info": {
@@ -1634,7 +1661,14 @@
             "licenses": "Inne licencje"
         },
         "howToPlayShort": "Jak grać",
-        "skipStepOverHalf": "Ten krok można pominąć, jeśli więcej niż połowa użytkowników na to zagłosuje."
+        "skipStepOverHalf": "Ten krok można pominąć, jeśli więcej niż połowa użytkowników na to zagłosuje.",
+        "drawOffer": {
+            "title": "Remis zaproponowany",
+            "description": "{name} proponuje zakończenie meczu remisem. Remis nie liczy się ani jako wygrana, ani jako przegrana.",
+            "accept": "Przyjmij remis",
+            "decline": "Graj dalej"
+        },
+        "offerDraw": "Twój przeciwnik zostanie zapytany, czy zakończyć mecz remisem. Jeśli się zgodzi, nie liczy się to ani jako wygrana, ani jako przegrana."
     },
     "share": {
         "tiers": {

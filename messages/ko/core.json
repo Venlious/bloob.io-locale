@@ -2,8 +2,8 @@
     "_meta": {
         "language": "Korean (Haeyo-che, ~해요체 style)",
         "rtl": false,
-        "total": 2827,
-        "missing": 147
+        "total": 2912,
+        "missing": 141
     },
     "error": {
         "redeemCode": {
@@ -102,7 +102,8 @@
             "colorClaimed": "이 색상은 이미 다른 유저가 사용 중이에요.",
             "loading": "죄송해요 — 브라우저에서 게임을 불러오지 못했어요. 기기나 브라우저를 재시작하면 해결될 수 있어요. 그래픽 카드 드라이버를 업데이트하는 것도 도움이 될 수 있어요.",
             "mustFollowSuit": "시작한 무늬를 따라야 합니다.",
-            "bidTooLow": "이 입찰은 직전 입찰보다 높아야 해요."
+            "bidTooLow": "이 입찰은 직전 입찰보다 높아야 해요.",
+            "drawDeclined": "무승부 제안이 거절되었어요."
         },
         "card": {
             "loadingSets": "카드 세트를 다운로드할 수 없어요.",
@@ -518,6 +519,11 @@
             "name": "파클레",
             "title": "파클레 | 친구와 즐기는 무료 멀티플레이 주사위 게임",
             "description": "여섯 개의 주사위로 운을 시험해 보세요. 점수가 되는 것을 따로 두고, 던질 때 턴이 사라지기 전에 은행에 맡기세요."
+        },
+        "SPOT_THE_DIFFERENCE": {
+            "name": "틀린 그림 찾기",
+            "title": "틀린 그림 찾기 | 온라인 무료 멀티플레이어",
+            "description": "두 장의 그림, 몇 군데의 차이, 모두가 동시에 찾아요. 혼자 즐기거나, 친구와 대결하거나, 협동과 팀전으로 함께 찾아보세요."
         }
     },
     "chat": {
@@ -606,7 +612,7 @@
             "firing": "{name} 사격 중",
             "firingSelf": "내가 사격 중",
             "inProgress": "매치 진행 중",
-            "staleMoves": "교착 상태 — {staleCount}턴 동안 변화 없음",
+            "drawn": "무승부",
             "forfeit": "매치 종료 — 상대방이 기권했어요",
             "outOfPoints": "매치 종료 — 상대방의 점수가 다 떨어졌어요",
             "inactive": "활동이 없어서 매치가 종료되었어요",
@@ -661,7 +667,9 @@
             "remainingTimeCountdown": "{clock} 남았어요...",
             "nextRoundCountdown": "{text} 후 다음 라운드가 시작돼요...",
             "youWon": "승리했어요",
-            "nameWon": "{name}님이 승리했어요"
+            "nameWon": "{name}님이 승리했어요",
+            "staleMoves": "{staleCount}수 동안 잡은 말 없이 왕만 움직였어요",
+            "drawAgreed": "두 플레이어가 무승부에 합의했어요"
         }
     },
     "placeholder": {
@@ -736,6 +744,7 @@
         "language": "언어",
         "rules": "규칙",
         "points": "점수",
+        "penalty": "페널티",
         "fouls": "파울 시 처리",
         "sciences": "과학",
         "artsAndEntertainment": "예술 및 엔터테인먼트",
@@ -892,6 +901,7 @@
         "players": "플레이어 {n}명 | 플레이어 {n}명 | 플레이어 {n}명",
         "selectedCards": "선택된 카드 없음 | 카드 {n}장 선택됨 | 카드 {n}장 선택됨",
         "matchesFound": "매치 {n}개 발견됨 | 매치 {n}개 발견됨 | 매치 {n}개 발견됨",
+        "matchesHiddenFromBlocked": "{users}의 매치 {n}개가 숨겨져 있어요 | {users}의 매치 {n}개가 숨겨져 있어요 | {users}의 매치 {n}개가 숨겨져 있어요",
         "matchesWaiting": "대기 중인 매치 {n}개 | 대기 중인 매치 {n}개 | 대기 중인 매치 {n}개",
         "needMorePlayers": "플레이어 {n}명 더 필요 | 플레이어 {n}명 더 필요 | 플레이어 {n}명 더 필요",
         "playAgainstBots": "봇과 대결 | 봇과 대결 | 봇과 대결",
@@ -1112,7 +1122,7 @@
         "share": "공유",
         "copy": "복사",
         "view": "보기",
-        "forfeit": "게임 기권",
+        "forfeit": "기권",
         "processFiles": "파일 처리",
         "checkAgain": "다시 확인",
         "refreshWindow": "창 새로고침",
@@ -1231,13 +1241,28 @@
         "previousChanges": "이전 변경 사항 보기",
         "random": "랜덤",
         "skipLink": "본문 바로가기",
-        "opensInNewTab": "{name} (새 탭에서 열려요)"
+        "opensInNewTab": "{name} (새 탭에서 열려요)",
+        "contracts": "따낸 계약",
+        "contractsMade": "달성한 계약",
+        "tricksPerMatch": "매치당 트릭",
+        "sweeps": "코트",
+        "flawless": "한 번도 패스하지 않고 승리",
+        "presidentShare": "대부호가 된 비율",
+        "bestTurn": "최고의 턴",
+        "accuracy": "정확도",
+        "completionRate": "완료율",
+        "farkleRate": "파클 비율",
+        "hotDiceRate": "핫 다이스 비율",
+        "offerDraw": "무승부 제안",
+        "drawOffered": "무승부 제안함",
+        "forfeited": "기권함"
     },
     "match": {
         "quick": "빠른 매치",
         "create": "매치 만들기",
         "createPublic": "공개 매치 만들기",
         "leave": "매치 나가기",
+        "forfeitAndLeave": "기권하고 나가기",
         "join": "매치 참여하기",
         "joinById": "ID로 매치 참여하기",
         "joinFriend": "친구 매치 참여",
@@ -1254,7 +1279,8 @@
         "browser": {
             "list": "매치 목록",
             "available": "참여 가능한 매치",
-            "noneAvailable": "참여 가능한 매치 없음"
+            "noneAvailable": "참여 가능한 매치 없음",
+            "blockedUsers": "차단된 사용자"
         },
         "opponentFilter": {
             "any": "모든 레벨",
@@ -1324,7 +1350,8 @@
             "private": "URL이나 4자리 ID를 통해서만 참여할 수 있어요.",
             "leave": "지금 나가면 다시 참여하지 못할 수도 있어요.",
             "leaveLast": "혼자 남은 상태라 게임을 나가면 매치가 종료돼요.",
-            "leaveAsHost": "방을 나가면 다른 사람이 새로운 호스트가 돼요."
+            "leaveAsHost": "방을 나가면 다른 사람이 새로운 호스트가 돼요.",
+            "leaveOrForfeit": "기권은 패배로 처리되지만, 중도 이탈로는 처리되지 않아요."
         }
     },
     "info": {
@@ -1634,7 +1661,14 @@
             "licenses": "기타 라이선스"
         },
         "howToPlayShort": "게임 방법",
-        "skipStepOverHalf": "유저 절반 이상이 투표하면 이 단계를 건너뛸 수 있어요."
+        "skipStepOverHalf": "유저 절반 이상이 투표하면 이 단계를 건너뛸 수 있어요.",
+        "drawOffer": {
+            "title": "무승부 제안",
+            "description": "{name}님이 무승부로 경기를 끝내자고 제안했어요. 무승부는 승리도 패배도 아니에요.",
+            "accept": "무승부 수락",
+            "decline": "계속 플레이하기"
+        },
+        "offerDraw": "상대에게 무승부로 경기를 끝낼지 물어봐요. 수락하면 승리도 패배도 아니에요."
     },
     "share": {
         "tiers": {

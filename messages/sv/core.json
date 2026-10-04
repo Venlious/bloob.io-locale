@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Swedish",
         "rtl": false,
-        "total": 2827,
-        "missing": 147
+        "total": 2912,
+        "missing": 141
     },
     "error": {
         "redeemCode": {
@@ -102,7 +102,8 @@
             "colorClaimed": "Nån annan har redan tagit den här färgen.",
             "loading": "Vi är ledsna — det verkar som att spelet inte kunde laddas i din webbläsare. Ibland kan det lösas genom att starta om din enhet eller webbläsare. Att uppdatera drivrutinerna för ditt grafikkort kan också hjälpa.",
             "mustFollowSuit": "Du måste följa den utspelade färgen.",
-            "bidTooLow": "Det här budet måste vara högre än det förra."
+            "bidTooLow": "Det här budet måste vara högre än det förra.",
+            "drawDeclined": "Ditt erbjudande om oavgjort avböjdes."
         },
         "card": {
             "loadingSets": "Kan inte ladda ner kortleken.",
@@ -518,6 +519,11 @@
             "name": "Farkle",
             "title": "Spela Farkle | Gratis Tärningsspel Online | Flerspelarläge 10000",
             "description": "Satsa allt med sex tärningar, lägg undan det som ger poäng, och banka innan ett kast raderar omgången."
+        },
+        "SPOT_THE_DIFFERENCE": {
+            "name": "Hitta Skillnaderna",
+            "title": "Hitta Skillnaderna gratis online | Multiplayer pusselspel",
+            "description": "Två bilder, en handfull skillnader och alla letar samtidigt. Spela ensam, tävla mot dina vänner eller leta tillsammans i co-op och lag."
         }
     },
     "chat": {
@@ -606,7 +612,7 @@
             "firing": "{name} skjuter",
             "firingSelf": "Du skjuter",
             "inProgress": "Matchen pågår",
-            "staleMoves": "Matchen har stannat — {staleCount} drag utan övertag",
+            "drawn": "Oavgjort",
             "forfeit": "Matchen är slut — Motståndaren valde att ge upp",
             "outOfPoints": "Matchen är slut — Motståndaren fick slut på poäng",
             "inactive": "Matchen avslutades på grund av inaktivitet",
@@ -661,7 +667,9 @@
             "remainingTimeCountdown": "{clock} kvar...",
             "nextRoundCountdown": "Nästa runda om {text}...",
             "youWon": "Du vann",
-            "nameWon": "{name} har vunnit"
+            "nameWon": "{name} har vunnit",
+            "staleMoves": "{staleCount} drag utan slag där bara kungar flyttade",
+            "drawAgreed": "Båda spelarna kom överens om oavgjort"
         }
     },
     "placeholder": {
@@ -736,6 +744,7 @@
         "language": "Språk",
         "rules": "Regler",
         "points": "Poäng",
+        "penalty": "Straff",
         "fouls": "Svar på Fusk",
         "sciences": "Vetenskap",
         "artsAndEntertainment": "Konst & Underhållning",
@@ -892,6 +901,7 @@
         "players": "{n} spelare | {n} spelare | {n} spelare",
         "selectedCards": "Inga kort valda | {n} kort valt | {n} kort valda",
         "matchesFound": "{n} träffar hittade | {n} träff hittad | {n} träffar hittade",
+        "matchesHiddenFromBlocked": "{n} matcher från {users} är dolda | {n} match från {users} är dold | {n} matcher från {users} är dolda",
         "matchesWaiting": "{n} matcher väntar | {n} match väntar | {n} matcher väntar",
         "needMorePlayers": "Behöver {n} fler spelare | Behöver {n} mer spelare | Behöver {n} fler spelare",
         "playAgainstBots": "Spela mot robotar | Spela mot en robot | Spela mot robotar",
@@ -1112,7 +1122,7 @@
         "share": "Dela",
         "copy": "Kopiera",
         "view": "Visa",
-        "forfeit": "Ge upp spelet",
+        "forfeit": "Ge upp",
         "processFiles": "Bearbeta filer",
         "checkAgain": "Kolla igen",
         "refreshWindow": "Uppdatera Fönster",
@@ -1151,12 +1161,12 @@
         "survivals": "Överlevnader",
         "games": "Spel",
         "correctRatio": "Rätt förhållande",
-        "winRatio": "Segerprocent",
+        "winRatio": "Vinst %",
         "winLossDelta": "V/F-delta",
-        "killDeathRatio": "K/D Förhållande",
+        "killDeathRatio": "K/D",
         "quitRatio": "Avhoppskvot",
-        "clueSuccessRatio": "Ledtrådsframgångsratio",
-        "guessHitRatio": "Gissningsträffratio",
+        "clueSuccessRatio": "Lyckade ledtrådar",
+        "guessHitRatio": "Rätta gissningar",
         "lives": "Liv",
         "points": "Poäng",
         "wins": "Vinster",
@@ -1231,13 +1241,28 @@
         "previousChanges": "Se Tidigare Ändringar",
         "random": "Slumpmässig",
         "skipLink": "Hoppa till huvudinnehåll",
-        "opensInNewTab": "{name} (öppnas i en ny flik)"
+        "opensInNewTab": "{name} (öppnas i en ny flik)",
+        "contracts": "Vunna kontrakt",
+        "contractsMade": "Uppfyllda kontrakt",
+        "tricksPerMatch": "Stick / match",
+        "sweeps": "Kot",
+        "flawless": "Vann utan att passa",
+        "presidentShare": "Andel som President",
+        "bestTurn": "Bästa tur",
+        "accuracy": "Precision",
+        "completionRate": "Slutförda",
+        "farkleRate": "Farkle-andel",
+        "hotDiceRate": "Andel heta tärningar",
+        "offerDraw": "Erbjud oavgjort",
+        "drawOffered": "Oavgjort erbjudet",
+        "forfeited": "Gav upp"
     },
     "match": {
         "quick": "Snabbmatch",
         "create": "Skapa Match",
         "createPublic": "Skapa Offentlig Match",
         "leave": "Lämna Matchen",
+        "forfeitAndLeave": "Ge upp och lämna",
         "join": "Gå med i Matchen",
         "joinById": "Gå med i Matchen via ID",
         "joinFriend": "Gå med i kompisens spel",
@@ -1254,7 +1279,8 @@
         "browser": {
             "list": "Bläddra bland matcher",
             "available": "Tillgängliga matcher",
-            "noneAvailable": "Inga tillgängliga matcher"
+            "noneAvailable": "Inga tillgängliga matcher",
+            "blockedUsers": "blockerade användare"
         },
         "opponentFilter": {
             "any": "Vilken nivå som helst",
@@ -1324,7 +1350,8 @@
             "private": "Spelare kan bara gå med genom att använda URL:en eller 4-siffriga ID.",
             "leave": "Du kanske inte kan komma tillbaka om du väljer att lämna.",
             "leaveLast": "Eftersom du är den enda personen i spelet, kommer matchen att stängas när du lämnar.",
-            "leaveAsHost": "Nån annan blir den nya värden när du sticker."
+            "leaveAsHost": "Nån annan blir den nya värden när du sticker.",
+            "leaveOrForfeit": "Att ge upp räknas som en förlust, men inte som att lämna matchen."
         }
     },
     "info": {
@@ -1634,7 +1661,14 @@
             "licenses": "Andra licenser"
         },
         "howToPlayShort": "Hur man spelar",
-        "skipStepOverHalf": "Det här steget kan också hoppas över om mer än hälften av användarna röstar för det."
+        "skipStepOverHalf": "Det här steget kan också hoppas över om mer än hälften av användarna röstar för det.",
+        "drawOffer": {
+            "title": "Oavgjort erbjudet",
+            "description": "{name} erbjuder att avsluta matchen oavgjort. Oavgjort räknas varken som vinst eller förlust.",
+            "accept": "Acceptera oavgjort",
+            "decline": "Fortsätt spela"
+        },
+        "offerDraw": "Din motståndare får frågan om matchen ska sluta oavgjort. Om de accepterar räknas det varken som vinst eller förlust."
     },
     "share": {
         "tiers": {

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 2827,
-        "missing": 147
+        "total": 2912,
+        "missing": 141
     },
     "error": {
         "redeemCode": {
@@ -102,7 +102,8 @@
             "colorClaimed": "这个颜色已经被别的用户抢先一步用了。",
             "loading": "抱歉——这个游戏似乎在你的浏览器里加载失败了，请尝试重启你的设备或浏览器或更新你的显卡驱动。",
             "mustFollowSuit": "你必须跟出首攻的花色。",
-            "bidTooLow": "这次叫牌必须高过上一次。"
+            "bidTooLow": "这次叫牌必须高过上一次。",
+            "drawDeclined": "你的和棋提议被拒绝了。"
         },
         "card": {
             "loadingSets": "无法下载卡组。",
@@ -518,6 +519,11 @@
             "name": "法克尔",
             "title": "法克尔色子游戏 | 联机10000免费玩",
             "description": "用六个骰子测试你的运气，把得分的骰子放到一边，在一次投掷清空回合前存住分数。"
+        },
+        "SPOT_THE_DIFFERENCE": {
+            "name": "找不同",
+            "title": "找茬游戏 | 在线多人合作对战 | 免费益智乐趣",
+            "description": "两张图，几处不同，大家同时开找。可以独自挑战，和好友比拼，也能在合作和队伍模式中一起寻找。"
         }
     },
     "chat": {
@@ -606,7 +612,7 @@
             "firing": "{name}正在开火",
             "firingSelf": "你正在开火",
             "inProgress": "游戏进行中",
-            "staleMoves": "游戏陷入僵局 — {staleCount}步棋没有翻盘",
+            "drawn": "和棋",
             "forfeit": "游戏结束 — 对手选择了认输",
             "outOfPoints": "游戏结束 — 对手没分了",
             "inactive": "游戏因无活动而结束",
@@ -661,7 +667,9 @@
             "remainingTimeCountdown": "剩余{clock}...",
             "nextRoundCountdown": "下一轮将在{text}后开始...",
             "youWon": "你赢了",
-            "nameWon": "{name} 赢了"
+            "nameWon": "{name} 赢了",
+            "staleMoves": "连续{staleCount}步没有吃子，只有王在移动",
+            "drawAgreed": "双方同意和棋"
         }
     },
     "placeholder": {
@@ -736,6 +744,7 @@
         "language": "语言",
         "rules": "规则",
         "points": "积分",
+        "penalty": "惩罚",
         "fouls": "对犯规的回应",
         "sciences": "科学",
         "artsAndEntertainment": "艺术与娱乐",
@@ -892,6 +901,7 @@
         "players": "{n}玩家 | {n}玩家 | {n}玩家",
         "selectedCards": "未选卡 | 已选{n}张卡 | 已选{n}张卡",
         "matchesFound": "找不到房间 | 找到{n}个房间 | 找到{n}个房间",
+        "matchesHiddenFromBlocked": "已隐藏{n}个来自{users}的房间 | 已隐藏{n}个来自{users}的房间 | 已隐藏{n}个来自{users}的房间",
         "matchesWaiting": "没有房间 | {n}个房间等待中 | {n}个房间等待中",
         "needMorePlayers": "不需要更多玩家 | 还需要{n}个玩家 | 还需要{n}个玩家",
         "playAgainstBots": "对战人机 | 对战一个人机 | 对战人机",
@@ -1231,13 +1241,28 @@
         "previousChanges": "查看之前的更改",
         "random": "随机",
         "skipLink": "跳到主要内容",
-        "opensInNewTab": "{name}（在新标签页中打开）"
+        "opensInNewTab": "{name}（在新标签页中打开）",
+        "contracts": "赢得的定约",
+        "contractsMade": "完成的定约",
+        "tricksPerMatch": "每场墩数",
+        "sweeps": "科特",
+        "flawless": "全程没过牌就赢了",
+        "presidentShare": "当大富豪的比例",
+        "bestTurn": "最佳回合",
+        "accuracy": "准确率",
+        "completionRate": "完成率",
+        "farkleRate": "法克尔率",
+        "hotDiceRate": "热骰率",
+        "offerDraw": "提议和棋",
+        "drawOffered": "已提议和棋",
+        "forfeited": "已认输"
     },
     "match": {
         "quick": "快速匹配",
         "create": "创建房间",
         "createPublic": "创建公开房间",
         "leave": "离开房间",
+        "forfeitAndLeave": "认输并离开",
         "join": "加入房间",
         "joinById": "通过ID加入房间",
         "joinFriend": "加入好友",
@@ -1254,7 +1279,8 @@
         "browser": {
             "list": "浏览房间",
             "available": "可用的房间",
-            "noneAvailable": "没有可用的房间"
+            "noneAvailable": "没有可用的房间",
+            "blockedUsers": "被拉黑的用户"
         },
         "opponentFilter": {
             "any": "任何等级",
@@ -1324,7 +1350,8 @@
             "private": "玩家只能通过URL或4位数ID来加入。",
             "leave": "如果你选择离开，可能就再也回不来了。",
             "leaveLast": "你是游戏里唯一的人，你一离开房间就会解散。",
-            "leaveAsHost": "你离开后，会有别人成为新的房主。"
+            "leaveAsHost": "你离开后，会有别人成为新的房主。",
+            "leaveOrForfeit": "认输算作失败，但不算中途退出。"
         }
     },
     "info": {
@@ -1634,7 +1661,14 @@
             "licenses": "其他许可证"
         },
         "howToPlayShort": "如何游玩",
-        "skipStepOverHalf": "如果超过一半的用户投票，这一步将可以跳过。"
+        "skipStepOverHalf": "如果超过一半的用户投票，这一步将可以跳过。",
+        "drawOffer": {
+            "title": "对方提议和棋",
+            "description": "{name}提议以和棋结束对局。和棋既不算胜也不算负。",
+            "accept": "接受和棋",
+            "decline": "继续游戏"
+        },
+        "offerDraw": "将询问对手是否以和棋结束对局。如果对方接受，既不算胜也不算负。"
     },
     "share": {
         "tiers": {

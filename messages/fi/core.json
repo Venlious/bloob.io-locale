@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 2827,
-        "missing": 147
+        "total": 2912,
+        "missing": 141
     },
     "error": {
         "redeemCode": {
@@ -102,7 +102,8 @@
             "colorClaimed": "Joku muu käyttäjä on jo varannut tämän värin.",
             "loading": "Anteeksi — näyttää siltä, että tää peli ei ladannu sun selaimessa. Tää voi joskus ratketa, kun käynnistät sun laitteen tai selaimen uudestaan. Myös graafisten korttien ajureiden päivittäminen voi auttaa.",
             "mustFollowSuit": "Sinun on tunnustettava avausmaata.",
-            "bidTooLow": "Tämän tarjouksen pitää ylittää edellinen."
+            "bidTooLow": "Tämän tarjouksen pitää ylittää edellinen.",
+            "drawDeclined": "Tasapelitarjouksesi hylättiin."
         },
         "card": {
             "loadingSets": "Korttipakkojen lataus ei onnistu.",
@@ -518,6 +519,11 @@
             "name": "Farkle",
             "title": "Pelaa Farkle 10000 | Ilmainen Moninpeli Netissä Noppapeli",
             "description": "Koita onneasi kuudella nopalla, laita sivuun ne, jotka tuovat pisteitä, ja pankita ennen kuin heitto tyhjentää vuoron."
+        },
+        "SPOT_THE_DIFFERENCE": {
+            "name": "Etsi Erot",
+            "title": "Etsi Eroavaisuudet | Löydä Erot Online | Ilmainen Moninpeli",
+            "description": "Kaksi kuvaa, kourallinen eroja ja kaikki etsivät yhtä aikaa. Pelaa yksin, kilpaile kavereita vastaan tai etsikää yhdessä yhteistyö- ja tiimitilassa."
         }
     },
     "chat": {
@@ -606,7 +612,7 @@
             "firing": "{name} ampuu",
             "firingSelf": "Sä ammut",
             "inProgress": "Ottelu käynnissä",
-            "staleMoves": "Ottelu jumissa — {staleCount} siirtoa ilman valtausta",
+            "drawn": "Tasapeli",
             "forfeit": "Ottelu päättyi — Vastustaja valitsi luovuttaa",
             "outOfPoints": "Peli loppu — Vastustajalta loppu pisteet",
             "inactive": "Ottelu päättyi toimettomuuden vuoksi",
@@ -661,7 +667,9 @@
             "remainingTimeCountdown": "{clock} jäljellä...",
             "nextRoundCountdown": "Seuraava kierros {text}...",
             "youWon": "Voitit",
-            "nameWon": "{name} voitti"
+            "nameWon": "{name} voitti",
+            "staleMoves": "{staleCount} siirtoa ilman lyöntejä, vain kuninkaat liikkuivat",
+            "drawAgreed": "Molemmat pelaajat sopivat tasapelistä"
         }
     },
     "placeholder": {
@@ -736,6 +744,7 @@
         "language": "Kieli",
         "rules": "Säännöt",
         "points": "Pisteet",
+        "penalty": "Rangaistus",
         "fouls": "Rikkeeseen Vastaus",
         "sciences": "Tieteet",
         "artsAndEntertainment": "Taide & Viihde",
@@ -892,6 +901,7 @@
         "players": "{n} pelaajaa | {n} pelaaja | {n} pelaajaa",
         "selectedCards": "Ei valittuja kortteja | {n} valittu kortti | {n} valittua korttia",
         "matchesFound": "{n} ottelua löytyi | {n} ottelu löytyi | {n} ottelua löytyi",
+        "matchesHiddenFromBlocked": "{n} ottelua on piilotettu {users} vuoksi | {n} ottelu on piilotettu {users} vuoksi | {n} ottelua on piilotettu {users} vuoksi",
         "matchesWaiting": "{n} ottelua odottaa | {n} ottelu odottaa | {n} ottelua odottaa",
         "needMorePlayers": "Tarvitaan {n} lisäpelaajaa | Tarvitaan {n} lisäpelaaja | Tarvitaan {n} lisäpelaajaa",
         "playAgainstBots": "Pelaa botteja vastaan | Pelaa bottia vastaan | Pelaa botteja vastaan",
@@ -1112,7 +1122,7 @@
         "share": "Jaa",
         "copy": "Kopioi",
         "view": "Katso",
-        "forfeit": "Luovuta Peli",
+        "forfeit": "Luovuta",
         "processFiles": "Käsittele Tiedostoja",
         "checkAgain": "Tsekkaa taas",
         "refreshWindow": "Päivitä ikkuna",
@@ -1138,8 +1148,8 @@
         "flawlessGames": "Virheettömät pelit",
         "hits": "Osumat",
         "hitRate": "Osuma-aste",
-        "bustRate": "Rikkoutumisprosentti",
-        "successRate": "Onnistumisprosentti",
+        "bustRate": "Yli menneet",
+        "successRate": "Onnistumiset",
         "pushRate": "Työntöprosentti",
         "blackjackRate": "Blackjack-kurssi",
         "rank": "Sijoitus",
@@ -1155,7 +1165,7 @@
         "winLossDelta": "V/H-delta",
         "killDeathRatio": "K/D Suhde",
         "quitRatio": "Keskeytysprosentti",
-        "clueSuccessRatio": "Vihjeen onnistumisprosentti",
+        "clueSuccessRatio": "Vihjeiden osumat",
         "guessHitRatio": "Arvaus osumaprosentti",
         "lives": "Elämät",
         "points": "Pisteet",
@@ -1231,13 +1241,28 @@
         "previousChanges": "Katso Aikaisemmat Muutokset",
         "random": "Satunnainen",
         "skipLink": "Siirry pääsisältöön",
-        "opensInNewTab": "{name} (avautuu uuteen välilehteen)"
+        "opensInNewTab": "{name} (avautuu uuteen välilehteen)",
+        "contracts": "Voitetut sopimukset",
+        "contractsMade": "Täytetyt sopimukset",
+        "tricksPerMatch": "Tikkejä / ottelu",
+        "sweeps": "Kotit",
+        "flawless": "Voitto ilman passeja",
+        "presidentShare": "Osuus Presidenttinä",
+        "bestTurn": "Paras vuoro",
+        "accuracy": "Tarkkuus",
+        "completionRate": "Läpäisty",
+        "farkleRate": "Farkle-prosentti",
+        "hotDiceRate": "Kuumien noppien prosentti",
+        "offerDraw": "Tarjoa Tasapeliä",
+        "drawOffered": "Tasapeliä Tarjottu",
+        "forfeited": "Luovutti"
     },
     "match": {
         "quick": "Nopea ottelu",
         "create": "Luo ottelu",
         "createPublic": "Luo julkinen ottelu",
         "leave": "Poistu ottelusta",
+        "forfeitAndLeave": "Luovuta ja poistu",
         "join": "Liity otteluun",
         "joinById": "Liity otteluun ID:n avulla",
         "joinFriend": "Liity kaverille",
@@ -1254,7 +1279,8 @@
         "browser": {
             "list": "Selaa otteluita",
             "available": "Saatavilla olevat ottelut",
-            "noneAvailable": "Ei saatavilla olevia otteluita"
+            "noneAvailable": "Ei saatavilla olevia otteluita",
+            "blockedUsers": "estettyjen käyttäjien"
         },
         "opponentFilter": {
             "any": "Mikä tahansa taso",
@@ -1324,7 +1350,8 @@
             "private": "Pelaajat voivat liittyä vain käyttämällä URL-osoitetta tai 4-numeroista ID:tä.",
             "leave": "Et ehkä pysty liittymään takaisin, jos päätät lähteä.",
             "leaveLast": "Koska olet pelin ainoa henkilö, ottelu suljetaan, kun lähdet.",
-            "leaveAsHost": "Kun lähdet, joku muu ottaa isännän roolin."
+            "leaveAsHost": "Kun lähdet, joku muu ottaa isännän roolin.",
+            "leaveOrForfeit": "Luovutus lasketaan tappioksi, mutta ei keskeyttämiseksi."
         }
     },
     "info": {
@@ -1634,7 +1661,14 @@
             "licenses": "Muut lisenssit"
         },
         "howToPlayShort": "Kuinka pelata",
-        "skipStepOverHalf": "Tämän vaiheen voi myös jättää väliin, jos yli puolet käyttäjistä äänestää niin."
+        "skipStepOverHalf": "Tämän vaiheen voi myös jättää väliin, jos yli puolet käyttäjistä äänestää niin.",
+        "drawOffer": {
+            "title": "Tasapeliä Tarjottu",
+            "description": "{name} tarjoaa ottelun päättämistä tasapeliin. Tasapeli ei ole voitto eikä tappio.",
+            "accept": "Hyväksy Tasapeli",
+            "decline": "Jatka pelaamista"
+        },
+        "offerDraw": "Vastustajaltasi kysytään, päätetäänkö ottelu tasapeliin. Jos hän hyväksyy, se ei ole voitto eikä tappio."
     },
     "share": {
         "tiers": {
