@@ -2,8 +2,8 @@
     "_meta": {
         "language": "Casual Gaming Japanese (カジュアルゲーム向け日本語)",
         "rtl": false,
-        "total": 2646,
-        "missing": 140
+        "total": 2731,
+        "missing": 134
     },
     "error": {
         "redeemCode": {
@@ -102,7 +102,8 @@
             "colorClaimed": "この色はもう他のユーザーが使っているんだ。",
             "loading": "ごめんなさい、ゲームを読み込めなかったみたい。デバイスやブラウザを再起動したり、グラフィックドライバーを更新したりすると解決するかもしれないよ。",
             "mustFollowSuit": "リードされたスートに従って出す必要があります。",
-            "bidTooLow": "そのビッドは前のビッドより高くしてね。"
+            "bidTooLow": "そのビッドは前のビッドより高くしてね。",
+            "drawDeclined": "引き分けの提案は断られたよ。"
         },
         "card": {
             "loadingSets": "このカードセットはダウンロードできないよ。",
@@ -518,6 +519,11 @@
             "name": "ファークル",
             "title": "ファークル|無料で遊べる10,000点マルチプレイ",
             "description": "6つのサイコロを使って運試しをし、得点となるものを選び、ダイスを振ってターンが消える前に得点を貯めよう。"
+        },
+        "SPOT_THE_DIFFERENCE": {
+            "name": "間違い探し",
+            "title": "間違い探しをオンラインで無料プレイ | 協力・チーム戦も楽しめる",
+            "description": "2枚の絵に隠れたいくつかの違いを、みんなで同時に探そう。一人で遊んだり、友達と競ったり、協力プレイやチーム戦で力を合わせたりできます。"
         }
     },
     "chat": {
@@ -606,7 +612,7 @@
             "firing": "{name}が撃ってるよ",
             "firingSelf": "君が撃ってるよ",
             "inProgress": "対戦進行中",
-            "staleMoves": "対戦が停滞 — {staleCount}手番経過で取り込みなし",
+            "drawn": "引き分け",
             "forfeit": "対戦終了 — 相手が降参を選んだよ",
             "outOfPoints": "対戦終了 — 相手がポイント切れだよ",
             "inactive": "操作がなかったから対戦は終了したよ",
@@ -661,7 +667,9 @@
             "remainingTimeCountdown": "残り時間は{clock}だよ．．．",
             "nextRoundCountdown": "次のラウンドは{text}後だよ．．．",
             "youWon": "勝った！",
-            "nameWon": "{name}が勝ったよ"
+            "nameWon": "{name}が勝ったよ",
+            "staleMoves": "{staleCount}手のあいだ駒が取られず、キングだけが動いた",
+            "drawAgreed": "両プレイヤーが引き分けに合意した"
         }
     },
     "placeholder": {
@@ -735,6 +743,7 @@
         "language": "言語",
         "rules": "ルール",
         "points": "ポイント",
+        "penalty": "ペナルティ",
         "fouls": "ファウルへの反応",
         "sciences": "サイエンス",
         "artsAndEntertainment": "アート＆エンタメ",
@@ -891,6 +900,7 @@
         "players": "{n}人のプレイヤー | {n}人のプレイヤー | {n}人のプレイヤー",
         "selectedCards": "カード選択なし | {n}枚のカード選択 | {n}枚のカード選択",
         "matchesFound": "対戦が{n}件見つかったよ | 対戦が{n}件見つかったよ | 対戦が{n}件見つかったよ",
+        "matchesHiddenFromBlocked": "{users}の対戦が{n}件非表示になっているよ | {users}の対戦が{n}件非表示になっているよ | {users}の対戦が{n}件非表示になっているよ",
         "matchesWaiting": "待機中の対戦が{n}件 | 待機中の対戦が{n}件 | 待機中の対戦が{n}件",
         "needMorePlayers": "あと{n}人必要 | あと{n}人必要 | あと{n}人必要",
         "playAgainstBots": "ボットと遊ぶ | ボットと遊ぶ | ボットと遊ぶ",
@@ -1111,7 +1121,7 @@
         "share": "シェアする",
         "copy": "コピー",
         "view": "見る",
-        "forfeit": "ゲームを投げる",
+        "forfeit": "投了",
         "processFiles": "ファイルを処理する",
         "checkAgain": "接続を再確認する",
         "refreshWindow": "画面を更新する",
@@ -1230,13 +1240,28 @@
         "previousChanges": "前の変更を見る",
         "random": "おまかせ",
         "skipLink": "メインコンテンツへスキップ",
-        "opensInNewTab": "{name}（新しいタブで開きます）"
+        "opensInNewTab": "{name}（新しいタブで開きます）",
+        "contracts": "獲得したコントラクト",
+        "contractsMade": "達成したコントラクト",
+        "tricksPerMatch": "トリック / マッチ",
+        "sweeps": "コト",
+        "flawless": "一度もパスせずに勝利",
+        "presidentShare": "大富豪になった割合",
+        "bestTurn": "ベストターン",
+        "accuracy": "正確さ",
+        "completionRate": "クリア率",
+        "farkleRate": "ファークル率",
+        "hotDiceRate": "ホットダイス率",
+        "offerDraw": "引き分けを提案",
+        "drawOffered": "引き分けを提案中",
+        "forfeited": "投了"
     },
     "match": {
         "quick": "クイック対戦",
         "create": "対戦を作成する",
         "createPublic": "だれでも対戦を作成する",
         "leave": "対戦を退出する",
+        "forfeitAndLeave": "投了して退出",
         "join": "対戦に参加する",
         "joinById": "IDで対戦に参加する",
         "joinFriend": "フレンドに参加",
@@ -1253,7 +1278,8 @@
         "browser": {
             "list": "対戦を見る",
             "available": "利用可能な対戦",
-            "noneAvailable": "利用可能な対戦なし"
+            "noneAvailable": "利用可能な対戦なし",
+            "blockedUsers": "ブロックしたユーザー"
         },
         "opponentFilter": {
             "any": "全レベル",
@@ -1323,7 +1349,8 @@
             "private": "プレイヤーはURLまたは4桁のIDを使用してのみ参加できるよ。",
             "leave": "退出すると、もしかしたら戻れないかもしれないよ。",
             "leaveLast": "このゲームは君ひとりだから、退出すると対戦は閉じるよ。",
-            "leaveAsHost": "君が退出すると、誰か他の人が新しいホストになるよ。"
+            "leaveAsHost": "君が退出すると、誰か他の人が新しいホストになるよ。",
+            "leaveOrForfeit": "投了は負けになるけど、途中退出にはならないよ。"
         }
     },
     "info": {
@@ -1633,7 +1660,14 @@
             "licenses": "その他のライセンス"
         },
         "howToPlayShort": "遊び方",
-        "skipStepOverHalf": "半数以上のプレイヤーが賛成すれば、このステップをスキップできるよ。"
+        "skipStepOverHalf": "半数以上のプレイヤーが賛成すれば、このステップをスキップできるよ。",
+        "drawOffer": {
+            "title": "引き分けの提案",
+            "description": "{name}が引き分けで対戦を終えることを提案しているよ。引き分けは勝ちにも負けにもならないよ。",
+            "accept": "引き分けを受け入れる",
+            "decline": "プレイを続ける"
+        },
+        "offerDraw": "相手に引き分けで対戦を終えるか聞くよ。受け入れられたら、勝ちにも負けにもならないよ。"
     },
     "share": {
         "tiers": {

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Mexican Spanish",
         "rtl": false,
-        "total": 2646,
-        "missing": 140
+        "total": 2731,
+        "missing": 134
     },
     "error": {
         "redeemCode": {
@@ -102,7 +102,8 @@
             "colorClaimed": "Este color ya ha sido reclamado por otro usuario.",
             "loading": "Lo sentimos, parece que este juego no se pudo cargar en tu navegador. A veces, esto se puede resolver reiniciando tu dispositivo o navegador. Actualizar los controladores de tu tarjeta gráfica también puede ayudar.",
             "mustFollowSuit": "Tienes que asistir al palo de salida.",
-            "bidTooLow": "Esa apuesta tiene que superar la anterior."
+            "bidTooLow": "Esa apuesta tiene que superar la anterior.",
+            "drawDeclined": "Tu oferta de tablas fue rechazada."
         },
         "card": {
             "loadingSets": "No se han podido descargar los juegos de cartas.",
@@ -518,6 +519,11 @@
             "name": "Farkle",
             "title": "Farkle Multiplayer Gratis | Juega a 10000 con Amigos y Bots",
             "description": "Prueba tu suerte con seis dados, aparta lo que puntúe y banca antes de que un tiro arruine el turno."
+        },
+        "SPOT_THE_DIFFERENCE": {
+            "name": "Encuentra las Diferencias",
+            "title": "Encuentra las Diferencias | Juego Gratis en Línea Multijugador",
+            "description": "Dos imágenes, un puñado de diferencias y todos buscando a la vez. Juega solo, compite con tus amigos o busquen juntos en colaboración y por equipos."
         }
     },
     "chat": {
@@ -606,7 +612,7 @@
             "firing": "{name} está disparando",
             "firingSelf": "Estás disparando",
             "inProgress": "Partida en curso",
-            "staleMoves": "Partida estancada - {staleCount} movimientos sin toma de posesión",
+            "drawn": "Tablas",
             "forfeit": "Partida finalizada - El oponente ha abandonado la partida",
             "outOfPoints": "Partida terminada — El oponente se quedó sin puntos",
             "inactive": "Partida finalizada por inactividad",
@@ -661,7 +667,9 @@
             "remainingTimeCountdown": "{clock} restante...",
             "nextRoundCountdown": "Próxima ronda en {text}...",
             "youWon": "Has ganado",
-            "nameWon": "{name} ha ganado"
+            "nameWon": "{name} ha ganado",
+            "staleMoves": "{staleCount} movimientos sin capturas, solo se movieron Damas",
+            "drawAgreed": "Ambos jugadores acordaron tablas"
         }
     },
     "placeholder": {
@@ -735,6 +743,7 @@
         "language": "Idioma",
         "rules": "Reglas",
         "points": "Puntos",
+        "penalty": "Penalización",
         "fouls": "Respuesta a una falta",
         "sciences": "Ciencias",
         "artsAndEntertainment": "Artes y entretenimiento",
@@ -891,6 +900,7 @@
         "players": "{n} jugadores | {n} jugador | {n} jugadores",
         "selectedCards": "Ninguna carta seleccionada | {n} carta seleccionada | {n} cartas seleccionadas",
         "matchesFound": "{n} partidas encontradas | {n} partida encontrada | {n} partidas encontradas",
+        "matchesHiddenFromBlocked": "Hay {n} partidas ocultas de {users} | Hay {n} partida oculta de {users} | Hay {n} partidas ocultas de {users}",
         "matchesWaiting": "{n} partidas en espera | {n} partida en espera | {n} partidas en espera",
         "needMorePlayers": "Necesitas {n} jugadores más | Necesitas {n} jugador más | Necesitas {n} jugadores más",
         "playAgainstBots": "Jugar contra bots | Jugar contra un bot | Jugar contra bots",
@@ -1111,7 +1121,7 @@
         "share": "Compartir",
         "copy": "Copiar",
         "view": "Ver",
-        "forfeit": "Salir del juego",
+        "forfeit": "Rendirse",
         "processFiles": "Procesar archivos",
         "checkAgain": "Revisar de nuevo",
         "refreshWindow": "Actualizar ventana",
@@ -1142,7 +1152,7 @@
         "pushRate": "Tasa de empates",
         "blackjackRate": "Tasa de Blackjack",
         "rank": "Rango",
-        "kills": "Eliminaciones",
+        "kills": "Bajas",
         "assassin": "Asesino",
         "target": "Objetivo",
         "targetReached": "Objetivo Alcanzado",
@@ -1150,9 +1160,9 @@
         "survivals": "Supervivencias",
         "games": "Juegos",
         "correctRatio": "Relación correcta",
-        "winRatio": "Relación de victorias",
+        "winRatio": "% victorias",
         "winLossDelta": "Diferencial V/D",
-        "killDeathRatio": "Relación de eliminaciones/muertes",
+        "killDeathRatio": "K/D",
         "quitRatio": "Tasa de abandono",
         "clueSuccessRatio": "Ratio de Éxito de Pistas",
         "guessHitRatio": "Ratio de Aciertos en Adivinanzas",
@@ -1230,13 +1240,28 @@
         "previousChanges": "Ver los cambios anteriores",
         "random": "Aleatorio",
         "skipLink": "Ir al contenido principal",
-        "opensInNewTab": "{name} (se abre en una pestaña nueva)"
+        "opensInNewTab": "{name} (se abre en una pestaña nueva)",
+        "contracts": "Contratos ganados",
+        "contractsMade": "Contratos cumplidos",
+        "tricksPerMatch": "Bazas / encuentro",
+        "sweeps": "Kots",
+        "flawless": "Ganó sin pasar",
+        "presidentShare": "Veces como Presidente",
+        "bestTurn": "Mejor turno",
+        "accuracy": "Precisión",
+        "completionRate": "Tasa de finalización",
+        "farkleRate": "Tasa de Farkle",
+        "hotDiceRate": "Tasa de dados calientes",
+        "offerDraw": "Ofrecer tablas",
+        "drawOffered": "Tablas ofrecidas",
+        "forfeited": "Se rindió"
     },
     "match": {
         "quick": "Partida rápida",
         "create": "Crear partida",
         "createPublic": "Crear partida pública",
         "leave": "Salir de la partida",
+        "forfeitAndLeave": "Rendirse y salir",
         "join": "Unirse a la partida",
         "joinById": "Unirse a la partida por ID",
         "joinFriend": "Unirte a un amigo",
@@ -1253,7 +1278,8 @@
         "browser": {
             "list": "Buscar partidas",
             "available": "Partidas disponibles",
-            "noneAvailable": "No hay partidas disponibles"
+            "noneAvailable": "No hay partidas disponibles",
+            "blockedUsers": "usuarios bloqueados"
         },
         "opponentFilter": {
             "any": "Cualquier nivel",
@@ -1323,7 +1349,8 @@
             "private": "Los jugadores sólo pueden unirse utilizando la URL o el ID de 4 dígitos.",
             "leave": "Es posible que no puedas volver a unirte si decides salir.",
             "leaveLast": "Como eres la única persona en el juego, la partida se cerrará cuando te salgas.",
-            "leaveAsHost": "Alguien más se convertirá en el nuevo anfitrión cuando te vayas."
+            "leaveAsHost": "Alguien más se convertirá en el nuevo anfitrión cuando te vayas.",
+            "leaveOrForfeit": "Rendirse cuenta como derrota, pero no como abandono."
         }
     },
     "info": {
@@ -1633,7 +1660,14 @@
             "licenses": "Otras licencias"
         },
         "howToPlayShort": "Cómo jugar",
-        "skipStepOverHalf": "Este paso también se puede saltar si más de la mitad de los usuarios votan que sí"
+        "skipStepOverHalf": "Este paso también se puede saltar si más de la mitad de los usuarios votan que sí",
+        "drawOffer": {
+            "title": "Tablas ofrecidas",
+            "description": "{name} ofrece terminar la partida en tablas. Las tablas no cuentan ni como victoria ni como derrota.",
+            "accept": "Aceptar tablas",
+            "decline": "Seguir jugando"
+        },
+        "offerDraw": "Se le preguntará a tu rival si quiere terminar la partida en tablas. Si acepta, no cuenta ni como victoria ni como derrota."
     },
     "share": {
         "tiers": {

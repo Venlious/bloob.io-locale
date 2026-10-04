@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal American English",
         "rtl": false,
-        "total": 2646,
+        "total": 2731,
         "missing": 0
     },
     "error": {
@@ -102,7 +102,8 @@
             "colorClaimed": "This color has been claimed by another user already.",
             "loading": "We're sorry — it seems that this game failed to load in your browser. This can sometimes be resolved by restarting your device or browser. Updating your graphics card drivers may also help.",
             "mustFollowSuit": "You have to follow the suit that was led.",
-            "bidTooLow": "That bid has to beat the one before it."
+            "bidTooLow": "That bid has to beat the one before it.",
+            "drawDeclined": "Your draw offer was declined."
         },
         "card": {
             "loadingSets": "Unable to download the card sets.",
@@ -518,6 +519,11 @@
             "name": "Farkle",
             "title": "Play Farkle Online | Free Multiplayer Dice Game & Rules",
             "description": "Push your luck with six dice, set aside what scores, and bank before a throw wipes the turn out."
+        },
+        "SPOT_THE_DIFFERENCE": {
+            "name": "Spot the Difference",
+            "title": "Spot the Difference Online | Free Multiplayer Co-op Puzzle Game",
+            "description": "Two pictures, a handful of changes, and everyone hunting at once. Play solo, race your friends, or search together in co-op and teams."
         }
     },
     "chat": {
@@ -606,7 +612,7 @@
             "firing": "{name} is firing",
             "firingSelf": "You are firing",
             "inProgress": "Match in progress",
-            "staleMoves": "Match staled — {staleCount} moves with no take over",
+            "drawn": "Match drawn",
             "forfeit": "Match finished — Opponent chose to forfeit",
             "outOfPoints": "Match finished — Opponent ran out of points",
             "inactive": "Match ended due to inactivity",
@@ -661,7 +667,9 @@
             "remainingTimeCountdown": "{clock} remaining...",
             "nextRoundCountdown": "Next round in {text}...",
             "youWon": "You won",
-            "nameWon": "{name} has won"
+            "nameWon": "{name} has won",
+            "staleMoves": "{staleCount} moves with nothing taken and only kings moving",
+            "drawAgreed": "Both players agreed to a draw"
         }
     },
     "placeholder": {
@@ -735,6 +743,7 @@
         "language": "Language",
         "rules": "Rules",
         "points": "Points",
+        "penalty": "Penalty",
         "fouls": "Response to Foul",
         "sciences": "Sciences",
         "artsAndEntertainment": "Arts & Entertainment",
@@ -891,6 +900,7 @@
         "players": "{n} players | {n} player | {n} players",
         "selectedCards": "No cards selected | {n} card selected | {n} cards selected",
         "matchesFound": "{n} matches found | {n} match found | {n} matches found",
+        "matchesHiddenFromBlocked": "There are {n} matches hidden from {users} | There is {n} match hidden from {users} | There are {n} matches hidden from {users}",
         "matchesWaiting": "{n} matches waiting | {n} match waiting | {n} matches waiting",
         "needMorePlayers": "Need {n} more players | Need {n} more player | Need {n} more players",
         "playAgainstBots": "Play Against Bots | Play Against a Bot | Play Against Bots",
@@ -1111,7 +1121,7 @@
         "share": "Share",
         "copy": "Copy",
         "view": "View",
-        "forfeit": "Forfeit Game",
+        "forfeit": "Forfeit",
         "processFiles": "Process Files",
         "checkAgain": "Check Again",
         "refreshWindow": "Refresh Window",
@@ -1230,13 +1240,28 @@
         "previousChanges": "See Previous Changes",
         "random": "Random",
         "skipLink": "Skip to main content",
-        "opensInNewTab": "{name} (opens in a new tab)"
+        "opensInNewTab": "{name} (opens in a new tab)",
+        "contracts": "Contracts won",
+        "contractsMade": "Contracts made",
+        "tricksPerMatch": "Tricks / match",
+        "sweeps": "Sweeps",
+        "flawless": "Won without passing",
+        "presidentShare": "President share",
+        "bestTurn": "Best turn",
+        "accuracy": "Accuracy",
+        "completionRate": "Completion Rate",
+        "farkleRate": "Farkle Rate",
+        "hotDiceRate": "Hot Dice Rate",
+        "offerDraw": "Offer Draw",
+        "drawOffered": "Draw Offered",
+        "forfeited": "Forfeited"
     },
     "match": {
         "quick": "Quick Match",
         "create": "Create Match",
         "createPublic": "Create Public Match",
         "leave": "Leave Match",
+        "forfeitAndLeave": "Forfeit & Leave",
         "join": "Join Match",
         "joinById": "Join Match by ID",
         "joinFriend": "Join Friend",
@@ -1253,7 +1278,8 @@
         "browser": {
             "list": "Browse Matches",
             "available": "Available Matches",
-            "noneAvailable": "No Available Matches"
+            "noneAvailable": "No Available Matches",
+            "blockedUsers": "blocked users"
         },
         "opponentFilter": {
             "any": "Any level",
@@ -1323,7 +1349,8 @@
             "private": "Players can only join using the URL or 4-digit ID.",
             "leave": "You may not be able to join back if you choose to leave.",
             "leaveLast": "Since you are the only person in the game, the match will be closed when you leave.",
-            "leaveAsHost": "Somebody else will become the new host when you leave."
+            "leaveAsHost": "Somebody else will become the new host when you leave.",
+            "leaveOrForfeit": "Forfeiting counts as a loss, but not as quitting."
         }
     },
     "info": {
@@ -1633,7 +1660,14 @@
             "licenses": "Other licenses"
         },
         "howToPlayShort": "How to play",
-        "skipStepOverHalf": "This step can also be skipped if over half the users vote to."
+        "skipStepOverHalf": "This step can also be skipped if over half the users vote to.",
+        "drawOffer": {
+            "title": "Draw Offer",
+            "description": "{name} offers to end the match in a draw. A draw counts as neither a win nor a loss.",
+            "accept": "Accept Draw",
+            "decline": "Keep Playing"
+        },
+        "offerDraw": "Your opponent will be asked to end the match in a draw. If they accept, it counts as neither a win nor a loss."
     },
     "share": {
         "tiers": {

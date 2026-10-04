@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 2646,
-        "missing": 140
+        "total": 2731,
+        "missing": 134
     },
     "error": {
         "redeemCode": {
@@ -102,7 +102,8 @@
             "colorClaimed": "Warna ini udah diambil sama pengguna lain.",
             "loading": "Maaf ya — sepertinya game ini gagal dimuat di browser kamu. Kadang-kadang ini bisa diatasi dengan restart perangkat atau browser kamu. Nge-update driver kartu grafis juga bisa bantu.",
             "mustFollowSuit": "Kamu harus mengikuti jenis kartu yang dibuka.",
-            "bidTooLow": "Tawaran ini harus lebih tinggi dari yang sebelumnya."
+            "bidTooLow": "Tawaran ini harus lebih tinggi dari yang sebelumnya.",
+            "drawDeclined": "Tawaran serimu ditolak."
         },
         "card": {
             "loadingSets": "Gak bisa unduh set kartu.",
@@ -518,6 +519,11 @@
             "name": "Farkle",
             "title": "Main Farkle Online Gratis | Permainan Dadu 10000 dengan Teman",
             "description": "Cobalah keberuntunganmu dengan enam dadu, sisihkan yang bernilai, dan simpan sebelum lemparan menghapus giliranmu."
+        },
+        "SPOT_THE_DIFFERENCE": {
+            "name": "Temukan Perbedaan",
+            "title": "Temukan Perbedaan Online | Main Gratis Bareng Teman Tanpa Akun",
+            "description": "Dua gambar, beberapa perbedaan, dan semua orang mencari bersamaan. Main sendiri, adu cepat dengan teman, atau cari bersama dalam mode ko-op dan tim."
         }
     },
     "chat": {
@@ -606,7 +612,7 @@
             "firing": "{name} lagi nembak",
             "firingSelf": "Kamu lagi nembak",
             "inProgress": "Pertandingan sedang berlangsung",
-            "staleMoves": "Pertandingan mandek — {staleCount} gerakan tanpa ada yang mengambil alih",
+            "drawn": "Seri",
             "forfeit": "Pertandingan selesai — Lawan memilih untuk menyerah",
             "outOfPoints": "Pertandingan selesai — Lawan kehabisan poin",
             "inactive": "Pertandingan berakhir karena tidak ada aktivitas",
@@ -661,7 +667,9 @@
             "remainingTimeCountdown": "{clock} tersisa...",
             "nextRoundCountdown": "Ronde berikutnya dalam {text}...",
             "youWon": "Kamu menang",
-            "nameWon": "{name} udah menang"
+            "nameWon": "{name} udah menang",
+            "staleMoves": "{staleCount} langkah tanpa makan bidak, hanya raja yang bergerak",
+            "drawAgreed": "Kedua pemain sepakat seri"
         }
     },
     "placeholder": {
@@ -735,6 +743,7 @@
         "language": "Bahasa",
         "rules": "Aturan",
         "points": "Poin",
+        "penalty": "Penalti",
         "fouls": "Respon Pelanggaran",
         "sciences": "Sains",
         "artsAndEntertainment": "Seni & Hiburan",
@@ -891,6 +900,7 @@
         "players": "{n} pemain | {n} pemain | {n} pemain",
         "selectedCards": "Tidak ada kartu yang dipilih | {n} kartu dipilih | {n} kartu dipilih",
         "matchesFound": "{n} pertandingan ditemukan | {n} pertandingan ditemukan | {n} pertandingan ditemukan",
+        "matchesHiddenFromBlocked": "Ada {n} pertandingan dari {users} yang disembunyikan | Ada {n} pertandingan dari {users} yang disembunyikan | Ada {n} pertandingan dari {users} yang disembunyikan",
         "matchesWaiting": "{n} pertandingan menunggu | {n} pertandingan menunggu | {n} pertandingan menunggu",
         "needMorePlayers": "Butuh {n} pemain lagi | Butuh {n} pemain lagi | Butuh {n} pemain lagi",
         "playAgainstBots": "Main Lawan Bot | Main Lawan Bot | Main Lawan Bot",
@@ -1111,7 +1121,7 @@
         "share": "Bagikan",
         "copy": "Salin",
         "view": "Lihat",
-        "forfeit": "Menyerah Game",
+        "forfeit": "Menyerah",
         "processFiles": "Proses File",
         "checkAgain": "Cek Lagi",
         "refreshWindow": "Segarkan Jendela",
@@ -1154,7 +1164,7 @@
         "winLossDelta": "Selisih M/K",
         "killDeathRatio": "Rasio K/D",
         "quitRatio": "Rasio keluar",
-        "clueSuccessRatio": "Rasio Keberhasilan Petunjuk",
+        "clueSuccessRatio": "Petunjuk Berhasil",
         "guessHitRatio": "Rasio Tebakan Tepat",
         "lives": "Nyawa",
         "points": "Poin",
@@ -1230,13 +1240,28 @@
         "previousChanges": "Lihat Perubahan Sebelumnya",
         "random": "Acak",
         "skipLink": "Langsung ke konten utama",
-        "opensInNewTab": "{name} (terbuka di tab baru)"
+        "opensInNewTab": "{name} (terbuka di tab baru)",
+        "contracts": "Kontrak Dimenangkan",
+        "contractsMade": "Kontrak Terpenuhi",
+        "tricksPerMatch": "Trik / pertandingan",
+        "sweeps": "Kot",
+        "flawless": "Menang tanpa sekali pun lewat",
+        "presidentShare": "Porsi jadi Presiden",
+        "bestTurn": "Giliran terbaik",
+        "accuracy": "Akurasi",
+        "completionRate": "Tingkat Penyelesaian",
+        "farkleRate": "Tingkat Farkle",
+        "hotDiceRate": "Tingkat Dadu Panas",
+        "offerDraw": "Tawarkan Seri",
+        "drawOffered": "Seri Ditawarkan",
+        "forfeited": "Menyerah"
     },
     "match": {
         "quick": "Match Cepat",
         "create": "Buat Pertandingan",
         "createPublic": "Buat Pertandingan Publik",
         "leave": "Tinggalkan Pertandingan",
+        "forfeitAndLeave": "Menyerah & Keluar",
         "join": "Gabung Pertandingan",
         "joinById": "Gabung Pertandingan dengan ID",
         "joinFriend": "Gabung Teman",
@@ -1253,7 +1278,8 @@
         "browser": {
             "list": "Telusuri Pertandingan",
             "available": "Pertandingan yang Tersedia",
-            "noneAvailable": "Tidak Ada Pertandingan yang Tersedia"
+            "noneAvailable": "Tidak Ada Pertandingan yang Tersedia",
+            "blockedUsers": "pengguna yang diblokir"
         },
         "opponentFilter": {
             "any": "Semua level",
@@ -1323,7 +1349,8 @@
             "private": "Pemain hanya bisa gabung pakai URL atau ID 4 digit.",
             "leave": "Kalau kamu memilih untuk keluar, mungkin kamu nggak bisa gabung lagi lho.",
             "leaveLast": "Karena kamu orang satu-satunya di game ini, pertandingan bakal ditutup kalau kamu keluar.",
-            "leaveAsHost": "Orang lain bakal jadi tuan rumah baru kalau kamu keluar."
+            "leaveAsHost": "Orang lain bakal jadi tuan rumah baru kalau kamu keluar.",
+            "leaveOrForfeit": "Menyerah dihitung kalah, tapi nggak dihitung kabur."
         }
     },
     "info": {
@@ -1633,7 +1660,14 @@
             "licenses": "Lisensi lain"
         },
         "howToPlayShort": "Cara mainnya",
-        "skipStepOverHalf": "Langkah ini juga bisa dilewati kalau lebih dari setengah pengguna memilih untuk."
+        "skipStepOverHalf": "Langkah ini juga bisa dilewati kalau lebih dari setengah pengguna memilih untuk.",
+        "drawOffer": {
+            "title": "Seri Ditawarkan",
+            "description": "{name} menawarkan untuk mengakhiri pertandingan dengan seri. Seri tidak dihitung sebagai menang maupun kalah.",
+            "accept": "Terima Seri",
+            "decline": "Terus Main"
+        },
+        "offerDraw": "Lawanmu akan ditanya apakah mau mengakhiri pertandingan dengan seri. Kalau dia setuju, tidak dihitung sebagai menang maupun kalah."
     },
     "share": {
         "tiers": {
