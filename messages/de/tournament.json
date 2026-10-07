@@ -5,7 +5,6 @@
     "noEntrants": "Noch hat sich niemand angemeldet.",
     "noBracket": "Der Turnierbaum wird ausgelost, wenn der Gastgeber das Turnier startet.",
     "create": "Turnier erstellen",
-    "back": "Alle Turniere",
     "hostedBy": "Gastgeber: {name}",
     "standings": "Endstand",
     "bracket": "Turnierbaum",
@@ -14,11 +13,14 @@
     "zoom": {
         "in": "Vergrößern",
         "out": "Verkleinern",
-        "fit": "Ganzen Turnierbaum zeigen"
+        "fit": "Ganzen Turnierbaum zeigen",
+        "findMe": "Finde mich"
     },
     "rules": {
         "format": "Format",
-        "players": "{count} Spieler"
+        "checkIn": "{before} Min. vorher bis {after} Min. danach",
+        "duration": "Dauer",
+        "about": "Etwa {time}"
     },
     "seats": {
         "bots": "Ein Platz frei, den übernimmt ein Bot | {count} Plätze frei, die übernehmen Bots",
@@ -37,6 +39,7 @@
         "manage": "{name} verwalten",
         "seedUp": "Höher setzen",
         "seedDown": "Niedriger setzen",
+        "reorder": "Ziehen, um {name} anders zu setzen",
         "kick": "Aus dem Turnier entfernen"
     },
     "column": {
@@ -76,6 +79,7 @@
         "registering": "{count} von {size} angemeldet.",
         "checkIn": "{confirmed} von {entered} eingecheckt.",
         "checkInAt": "Check-in öffnet in {time}.",
+        "checkInClosesIn": "Der Check-in schließt in {time}.",
         "startsAt": "Startet in {time}.",
         "running": "Runde {round} von {rounds}.",
         "finished": "{name} hat gewonnen.",
@@ -85,7 +89,9 @@
         "pausedHost": "Der Server war eine Weile offline. Der Gastgeber startet es wieder, wenn alle zurück sind."
     },
     "yours": {
-        "registered": "Du bist angemeldet. Vor dem Start musst du einchecken.",
+        "registered": "Du bist angemeldet. Bleib in der Nähe: {host} kann jederzeit starten.",
+        "registeredScheduled": "Du bist angemeldet. Der Check-in öffnet {minutes} Minuten vor dem Start.",
+        "hosting": "Drück auf Start, wenn deine Spieler da sind.",
         "needsCheckIn": "Check jetzt ein, sonst bist du nicht im Turnierbaum.",
         "confirmed": "Du bist eingecheckt. Bleib auf der Seite, dann öffnet sich dein Spiel von selbst.",
         "missed": "Du hast nicht eingecheckt, deshalb ging das Turnier ohne dich los.",
@@ -96,7 +102,6 @@
     "action": {
         "register": "Anmelden",
         "withdraw": "Abmelden",
-        "openCheckIn": "Check-in öffnen",
         "reopen": "Anmeldung wieder öffnen",
         "start": "Jetzt starten",
         "resume": "Turnier fortsetzen",
@@ -119,21 +124,17 @@
         "botFillOff": "Niemand spielt sie",
         "botFillOn": "Mit Bots aufgefüllt",
         "botFillHint": "Bleiben sie leer, kommt direkt weiter, wer gegen einen gelost wird.",
+        "thirdPlaceOff": "Geteilt",
+        "thirdPlaceOn": "Ausgespielt",
+        "thirdPlaceHint": "Wird er ausgespielt, treffen die beiden Verlierer der Halbfinals um Platz drei und vier aufeinander.",
         "schedule": "Start",
         "scheduleManual": "Wenn ich es sage",
         "scheduleAt": "Zu einer festen Zeit",
+        "scheduleHint": "Mit fester Zeit öffnet der Check-in eine halbe Stunde vorher und das Turnier startet von selbst. Sonst startest du es selbst auf seiner Seite.",
         "startAt": "Startzeit",
-        "checkInWindow": "Check-in öffnet",
-        "autoStart": "Automatisch starten",
-        "autoStartHint": "Aus heißt, dass zur Startzeit nur der Check-in öffnet.",
+        "checkInWindow": "Check-in",
         "preset": "Spieleinstellungen",
-        "minutes": "{count} Min. vorher"
-    },
-    "round": {
-        "final": "Finale",
-        "semiFinal": "Halbfinale",
-        "quarterFinal": "Viertelfinale",
-        "of": "Letzte {count}"
+        "durationHint": "Danach, wie lange diese Spiele meistens dauern, aufgerundet."
     },
     "slot": {
         "bye": "Kein Gegner",
@@ -144,5 +145,50 @@
         "walkover": "Kampflos weiter",
         "simulated": "Bots, entschieden",
         "called": "Beginnt gleich"
+    },
+    "score": {
+        "walkover": "Kampflos",
+        "bye": "Freilos"
+    },
+    "enter": {
+        "title": "An {name} teilnehmen?",
+        "startsOn": "Es geht am {date} los, in {countdown}.",
+        "whenHostSays": "Es gibt keine feste Startzeit. Es startet, wenn {host} es sagt.",
+        "startsAnyTime": "Bleib in der Nähe. {host} öffnet entweder den Check-in, dann bekommst du eine Benachrichtigung, oder startet sofort mit allen, die online sind.",
+        "checkIn": "Der Check-in öffnet {before} Minuten vor dem Start, und du bekommst eine Benachrichtigung. Check bis {after} Minuten nach dem Start ein, sonst bist du nicht im Turnierbaum.",
+        "checkedIn": "Der Check-in läuft schon, mit der Teilnahme bist du also direkt eingecheckt. Sei bereit zu spielen, wenn es losgeht."
+    },
+    "withdraw": {
+        "title": "Von {name} zurückziehen?",
+        "canReturn": "Du kannst wieder teilnehmen, solange die Anmeldung offen ist."
+    },
+    "startDialog": {
+        "title": "{name} starten?",
+        "hereNow": "Gerade da: {count} von {entered}.",
+        "checkedInSoFar": "Bisher eingecheckt: {count} von {entered}.",
+        "checkInTitle": "Allen Zeit zum Einchecken geben",
+        "checkIn": "Alle bekommen eine Benachrichtigung. Es startet von selbst nach {minutes} Minuten oder sobald alle eingecheckt haben.",
+        "startHere": "Wer da ist, spielt jetzt.",
+        "startCheckedIn": "Wer eingecheckt hat, spielt jetzt.",
+        "missing": "Niemand verpasst es. | Ein Spieler verpasst es. | {count} Spieler verpassen es.",
+        "confirmCheckIn": "Check-in für {minutes} Min. öffnen",
+        "confirmStart": "Mit einem Spieler starten | Mit {count} Spielern starten",
+        "minutes": "{count} Min.",
+        "minutesLabel": "Check-in-Zeit",
+        "suggested": "Empfohlen. {reason}",
+        "why": {
+            "everyone": "Alle sind da.",
+            "justOpened": "Es wurde gerade erst eröffnet, und die meisten Spieler sind da.",
+            "openAWhile": "Es ist schon eine Weile offen. Gib allen einen Moment, um zurückzukommen.",
+            "manyAway": "Einige Spieler sind weg. Gib ihnen einen Moment, um zurückzukommen.",
+            "tooFew": "Es sind noch zu wenige Spieler da, um zu starten."
+        }
+    },
+    "overview": {
+        "title": "Alle Turniere",
+        "hint": "Wähle ein Spiel, um seine Turniere zu sehen.",
+        "live": "Keins läuft | Eins läuft | {count} laufen",
+        "pick": "Für welches Spiel?",
+        "pickHint": "Wähle das Spiel, dann öffnet sich das Formular für das Turnier."
     }
 }

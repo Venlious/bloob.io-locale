@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Polish",
         "rtl": false,
-        "total": 2912,
+        "total": 2995,
         "missing": 141
     },
     "error": {
@@ -1690,14 +1690,22 @@
     "tournament": {
         "title": "Turnieje",
         "playing": {
-            "round": "{round}, {name}",
-            "versus": "Ty przeciwko {name}",
-            "versusOther": "{first} przeciwko {second}",
-            "single": "Rozstrzyga jedna partia.",
-            "series": "Gra się do {wins} wygranych, najwyżej w {count} partiach.",
-            "score": "Seria {own}–{other}",
             "bracket": "Otwórz drabinkę",
-            "stay": "Zostań na stronie. Następny mecz otworzy się sam."
+            "players": "Graczy: {count}",
+            "left": "Zostało {left} z {count}",
+            "oneMatch": "Jeden mecz",
+            "gameNext": "Następna: gra {number}",
+            "gameIn": "Gra {number} za {seconds} s",
+            "runnerUp": "Drugie miejsce",
+            "out": "Odpadasz",
+            "thirdPlaceMatch": "Mecz o 3. miejsce",
+            "fourthPlace": "Czwarte miejsce",
+            "through": "Awans",
+            "next": "Dalej: {round}",
+            "topOf": "Top {count} z {field}",
+            "goesThrough": "{name} awansuje",
+            "winsIt": "{name} wygrywa",
+            "finishesThird": "{name} zajmuje trzecie miejsce"
         },
         "outcome": {
             "continues": "Seria jeszcze trwa. Następna partia zacznie się sama.",
@@ -1705,7 +1713,28 @@
             "eliminated": "Odpadasz z turnieju {name}.",
             "champion": "Wygrywasz turniej {name}.",
             "spectating": "Zwycięzca przechodzi do następnej rundy.",
-            "waiting": "Czekamy na resztę rundy."
+            "waiting": "Czekamy na resztę rundy.",
+            "playoffNext": "Teraz grasz o trzecie miejsce.",
+            "third": "Zajmujesz trzecie miejsce w {name}.",
+            "youPlayIn": "Grasz z {name} za {seconds} s",
+            "youPlayNext": "Następnie grasz z {name}",
+            "opensItself": "Zacznie się samo.",
+            "waitingOn": "Czekamy na {first} vs {second}",
+            "playWinner": "Grasz ze zwycięzcą.",
+            "startsIn": "{first} vs {second} zaczyna się za {seconds} s",
+            "watchMatch": "Oglądaj {first} vs {second}",
+            "progress": "Zakończone: {done} z {count}",
+            "live": "Na żywo: {count}",
+            "beat": "{winner} wygrywa z {loser}",
+            "youBeat": "Wygrywasz z {name}",
+            "beatYou": "{name} wygrywa z tobą",
+            "versus": "{first} vs {second}",
+            "upcoming": "Następny",
+            "inSeconds": "Za {seconds} s",
+            "yours": "Twój",
+            "decides": "Wyłania twojego rywala",
+            "more": "Nic więcej w tej rundzie | Jeszcze jeden w tej rundzie | Jeszcze: {count} w tej rundzie",
+            "rest": "Reszta turnieju"
         },
         "call": {
             "title": "Twój następny mecz",
@@ -1714,12 +1743,18 @@
             "series": "Do {count} partii, {own}–{other}",
             "startsIn": "Start za {seconds} s",
             "readyUp": "Jestem gotowy",
-            "ready": "Gotowe. Czekamy na resztę."
+            "ready": "Gotowe. Czekamy na resztę.",
+            "roundOf": "Runda {round} z {count}",
+            "beat": "Wygrana z {name} {score}",
+            "secondsLeft": "Sekundy do startu"
         },
         "sidebar": {
             "registered": "Jesteś na liście",
             "checkInNow": "Potwierdź obecność teraz",
             "checkIn": "Potwierdź obecność",
+            "called": "Mecz za {seconds} s",
+            "toCall": "Idź",
+            "checkInOpen": "Potwierdzanie obecności w {name} jest otwarte. Potwierdź, żeby zachować miejsce.",
             "checkedIn": "Obecność potwierdzona",
             "startsIn": "Start za {time}",
             "checkInIn": "Potwierdzanie za {time}",
@@ -1745,7 +1780,8 @@
             "alreadyCheckedIn": "Twoja obecność jest już potwierdzona.",
             "checkInClosed": "Potwierdzanie obecności nie jest otwarte.",
             "notCheckingIn": "Najpierw otwórz potwierdzanie obecności.",
-            "notEnoughPlayers": "Za mało graczy potwierdziło obecność (wymagane: {min}).",
+            "scheduled": "Ten turniej ma ustaloną godzinę, więc potwierdzanie obecności i start dzieją się same.",
+            "notEnoughPlayers": "Za mało graczy, żeby zacząć (wymagane: {min}).",
             "code": "Ten kod nie pasuje do tego turnieju.",
             "noCode": "Żaden turniej nie ma tego kodu.",
             "busy": "Grasz w turnieju {name}. Opuść go, jeśli chcesz zagrać inny mecz.",
@@ -1754,10 +1790,27 @@
             "notPaused": "Ten turniej nie jest wstrzymany.",
             "tooSmall": "Drabinka nie może być mniejsza niż liczba zapisanych graczy.",
             "name": "Nazwa turnieju musi mieć od 3 do 40 znaków.",
-            "startTooSoon": "Zostaw przed startem dość czasu na potwierdzanie obecności.",
+            "startTooSoon": "Ustaw start co najmniej 5 minut od teraz.",
             "startTooLate": "Turnieju nie można zaplanować dalej niż tydzień naprzód.",
             "hostLimit": "Masz już otwartą maksymalną liczbę turniejów ({max}).",
-            "serverFull": "Serwer prowadzi już tyle turniejów, ile może."
+            "serverFull": "Serwer prowadzi już tyle turniejów, ile może.",
+            "elsewhere": "Bierzesz już udział w {name}. Najpierw go opuść, aby zagrać w tym."
+        },
+        "leaveMatch": {
+            "title": "Opuścić {name}?",
+            "description": "Opuszczenie tego meczu oznacza odpadnięcie z turnieju, a przeciwnik przechodzi dalej. Nie da się wrócić.",
+            "button": "Opuść turniej"
+        },
+        "round": {
+            "final": "Finał",
+            "semiFinal": "Półfinały",
+            "quarterFinal": "Ćwierćfinały",
+            "of": "Runda {count} graczy",
+            "thirdPlace": "Trzecie miejsce",
+            "bestOf": "Do {count} gier"
+        },
+        "chip": {
+            "live": "Na żywo"
         }
     }
 }

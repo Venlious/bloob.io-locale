@@ -5,7 +5,6 @@
     "noEntrants": "Er heeft zich nog niemand ingeschreven.",
     "noBracket": "Het schema wordt geloot zodra de host het toernooi start.",
     "create": "Toernooi aanmaken",
-    "back": "Alle toernooien",
     "hostedBy": "Gehost door {name}",
     "standings": "Eindstand",
     "bracket": "Schema",
@@ -14,11 +13,14 @@
     "zoom": {
         "in": "Inzoomen",
         "out": "Uitzoomen",
-        "fit": "Hele schema tonen"
+        "fit": "Hele schema tonen",
+        "findMe": "Vind mij"
     },
     "rules": {
         "format": "Opzet",
-        "players": "{count} spelers"
+        "checkIn": "{before} min voor tot {after} min na",
+        "duration": "Duur",
+        "about": "Ongeveer {time}"
     },
     "seats": {
         "bots": "Nog één plek vrij, en een bot neemt die in | Nog {count} plekken vrij, en bots nemen die in",
@@ -37,6 +39,7 @@
         "manage": "{name} beheren",
         "seedUp": "Hoger plaatsen",
         "seedDown": "Lager plaatsen",
+        "reorder": "Sleep om {name} anders te plaatsen",
         "kick": "Uit het toernooi verwijderen"
     },
     "column": {
@@ -76,6 +79,7 @@
         "registering": "{count} van {size} ingeschreven.",
         "checkIn": "{confirmed} van {entered} ingecheckt.",
         "checkInAt": "Inchecken opent over {time}.",
+        "checkInClosesIn": "Inchecken sluit over {time}.",
         "startsAt": "Begint over {time}.",
         "running": "Ronde {round} van {rounds}.",
         "finished": "{name} heeft gewonnen.",
@@ -85,7 +89,9 @@
         "pausedHost": "De server was een tijdje offline. De host start het weer als iedereen terug is."
     },
     "yours": {
-        "registered": "Je bent ingeschreven. Je moet inchecken voordat het begint.",
+        "registered": "Je bent ingeschreven. Blijf in de buurt: {host} kan elk moment starten.",
+        "registeredScheduled": "Je bent ingeschreven. Inchecken opent {minutes} minuten voor de start.",
+        "hosting": "Druk op Start als je spelers er zijn.",
         "needsCheckIn": "Check nu in, anders sta je niet in het schema.",
         "confirmed": "Je bent ingecheckt. Blijf op de site, dan opent je spel vanzelf.",
         "missed": "Je hebt niet ingecheckt, dus het toernooi is zonder jou begonnen.",
@@ -96,7 +102,6 @@
     "action": {
         "register": "Inschrijven",
         "withdraw": "Uitschrijven",
-        "openCheckIn": "Inchecken openen",
         "reopen": "Inschrijving heropenen",
         "start": "Nu starten",
         "resume": "Toernooi hervatten",
@@ -119,21 +124,17 @@
         "botFillOff": "Niemand speelt ze",
         "botFillOn": "Gevuld met bots",
         "botFillHint": "Blijven ze leeg, dan gaat wie ertegen wordt geloot direct door.",
+        "thirdPlaceOff": "Gedeeld",
+        "thirdPlaceOn": "Gespeeld",
+        "thirdPlaceHint": "Wordt erom gespeeld, dan spelen de twee verliezers van de halve finales om de derde en vierde plaats.",
         "schedule": "Start",
         "scheduleManual": "Wanneer ik het zeg",
         "scheduleAt": "Op een vast tijdstip",
+        "scheduleHint": "Op een vast tijdstip opent het inchecken een half uur van tevoren en start het vanzelf. Anders start je het zelf vanaf de pagina.",
         "startAt": "Starttijd",
-        "checkInWindow": "Inchecken opent",
-        "autoStart": "Vanzelf starten",
-        "autoStartHint": "Uit betekent dat het tijdstip alleen het inchecken opent.",
+        "checkInWindow": "Inchecken",
         "preset": "Spelinstellingen",
-        "minutes": "{count} min van tevoren"
-    },
-    "round": {
-        "final": "Finale",
-        "semiFinal": "Halve finales",
-        "quarterFinal": "Kwartfinales",
-        "of": "Laatste {count}"
+        "durationHint": "Op basis van hoe lang deze potjes meestal duren, naar boven afgerond."
     },
     "slot": {
         "bye": "Geen tegenstander",
@@ -144,5 +145,50 @@
         "walkover": "Zonder tegenstander door",
         "simulated": "Bots, beslist",
         "called": "Begint zo"
+    },
+    "score": {
+        "walkover": "W.O.",
+        "bye": "Vrij"
+    },
+    "enter": {
+        "title": "Meedoen aan {name}?",
+        "startsOn": "Het begint op {date}, over {countdown}.",
+        "whenHostSays": "Er is geen vaste starttijd. Het begint wanneer {host} dat zegt.",
+        "startsAnyTime": "Blijf in de buurt. {host} opent het inchecken, waarvan je een melding krijgt, of start meteen met wie er online is.",
+        "checkIn": "Inchecken opent {before} minuten voor de start en je krijgt een melding. Check uiterlijk {after} minuten na de start in, anders val je buiten het schema.",
+        "checkedIn": "Het inchecken is al open, dus als je meedoet ben je meteen ingecheckt. Zorg dat je klaar bent om te spelen als het begint."
+    },
+    "withdraw": {
+        "title": "Terugtrekken uit {name}?",
+        "canReturn": "Je kunt opnieuw meedoen zolang de inschrijving nog open is."
+    },
+    "startDialog": {
+        "title": "{name} starten?",
+        "hereNow": "Nu aanwezig: {count} van {entered}.",
+        "checkedInSoFar": "Tot nu toe ingecheckt: {count} van {entered}.",
+        "checkInTitle": "Geef iedereen tijd om in te checken",
+        "checkIn": "Iedereen krijgt een melding. Het start vanzelf na {minutes} minuten, of zodra iedereen is ingecheckt.",
+        "startHere": "Wie er is, speelt nu.",
+        "startCheckedIn": "Wie is ingecheckt, speelt nu.",
+        "missing": "Niemand valt af. | Eén speler valt af. | {count} spelers vallen af.",
+        "confirmCheckIn": "Inchecken openen voor {minutes} min",
+        "confirmStart": "Start met één speler | Start met {count} spelers",
+        "minutes": "{count} min",
+        "minutesLabel": "Inchecktijd",
+        "suggested": "Aanbevolen. {reason}",
+        "why": {
+            "everyone": "Iedereen is er.",
+            "justOpened": "Het is net geopend en de meeste spelers zijn er.",
+            "openAWhile": "Het staat al een tijdje open. Geef iedereen even de tijd om terug te komen.",
+            "manyAway": "Een aantal spelers is weg. Geef ze even de tijd om terug te komen.",
+            "tooFew": "Er zijn nog te weinig spelers om te starten."
+        }
+    },
+    "overview": {
+        "title": "Alle toernooien",
+        "hint": "Kies een spel om de toernooien ervan te zien.",
+        "live": "Geen bezig | Eén bezig | {count} bezig",
+        "pick": "Voor welk spel?",
+        "pickHint": "Kies het spel, dan opent het formulier voor het toernooi."
     }
 }

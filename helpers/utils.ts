@@ -36,12 +36,27 @@ export const EAGER_ARTICLE_KEYS = [`title`]
  * player around the app: its name on the button that opens the pages (`title`),
  * the card in the sidebar (`sidebar`), the bar over a match's players
  * (`playing`), what a finished match says instead of offering a rematch
- * (`outcome`), the screen before a player's next match (`call`), and the
- * refusals the server can send from anywhere (`error`).
+ * (`outcome`), the screen before a player's next match (`call`), what the
+ * leave button asks in one of its matches (`leaveMatch`), the refusals the
+ * server can send from anywhere (`error`), and the names of the rounds
+ * (`round`), which the bar over a match's players says, inside a match that
+ * may have been reached without ever opening a tournament page — and, for the
+ * same reason, the bracket's chips (`chip`), which the end of a match's list of
+ * the round wears too.
  */
 const TOURNAMENT_KEY = `tournament`
 const TOURNAMENT_FILE = `tournament.json`
-export const EAGER_TOURNAMENT_KEYS = [`title`, `sidebar`, `playing`, `outcome`, `call`, `error`]
+export const EAGER_TOURNAMENT_KEYS = [
+	`title`,
+	`sidebar`,
+	`playing`,
+	`outcome`,
+	`call`,
+	`leaveMatch`,
+	`error`,
+	`round`,
+	`chip`
+]
 
 /**
  * Checks whether a value is a plain object.

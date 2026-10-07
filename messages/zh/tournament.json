@@ -5,7 +5,6 @@
     "noEntrants": "还没有人报名。",
     "noBracket": "房主开始后才会生成对阵表。",
     "create": "创建锦标赛",
-    "back": "所有锦标赛",
     "hostedBy": "房主：{name}",
     "standings": "最终排名",
     "bracket": "对阵表",
@@ -14,11 +13,14 @@
     "zoom": {
         "in": "放大",
         "out": "缩小",
-        "fit": "显示完整对阵表"
+        "fit": "显示完整对阵表",
+        "findMe": "找到我"
     },
     "rules": {
         "format": "赛制",
-        "players": "{count}名玩家"
+        "checkIn": "开始前{before}分钟至开始后{after}分钟",
+        "duration": "时长",
+        "about": "约 {time}"
     },
     "seats": {
         "bots": "剩下1个位置，由人机补上 | 剩下{count}个位置，由人机补上",
@@ -37,6 +39,7 @@
         "manage": "管理{name}",
         "seedUp": "提高种子排位",
         "seedDown": "降低种子排位",
+        "reorder": "拖动以更改{name}的种子排位",
         "kick": "移出锦标赛"
     },
     "column": {
@@ -76,6 +79,7 @@
         "registering": "已报名{count}/{size}人。",
         "checkIn": "{entered}人中有{confirmed}人已签到。",
         "checkInAt": "{time}后开始签到。",
+        "checkInClosesIn": "签到将在{time}后截止。",
         "startsAt": "{time}后开始。",
         "running": "第{round}轮，共{rounds}轮。",
         "finished": "{name}夺冠了。",
@@ -85,7 +89,9 @@
         "pausedHost": "服务器停机了一段时间。等大家回来后，房主会重新开始。"
     },
     "yours": {
-        "registered": "你已报名。开始前需要签到。",
+        "registered": "你已报名。请留在附近：{host}随时可能开始。",
+        "registeredScheduled": "你已报名。签到在开始前{minutes}分钟开放。",
+        "hosting": "玩家到齐后，点击“开始”。",
         "needsCheckIn": "现在就签到，不然你会被移出对阵表。",
         "confirmed": "你已签到。留在网站上，你的对局会自动打开。",
         "missed": "你没有签到，对阵表里已经没有你了。",
@@ -96,7 +102,6 @@
     "action": {
         "register": "报名",
         "withdraw": "退出报名",
-        "openCheckIn": "开始签到",
         "reopen": "重新开放报名",
         "start": "立即开始",
         "resume": "继续锦标赛",
@@ -119,21 +124,17 @@
         "botFillOff": "保持空缺",
         "botFillOn": "由人机补上",
         "botFillHint": "保持空缺时，对上空位的玩家直接晋级。",
+        "thirdPlaceOff": "并列",
+        "thirdPlaceOn": "进行季军赛",
+        "thirdPlaceHint": "进行季军赛时，两名半决赛负者将争夺第三和第四名。",
         "schedule": "开始",
         "scheduleManual": "由我决定",
         "scheduleAt": "在指定时间",
+        "scheduleHint": "设定时间后，签到会提前半小时开放，并自动开始。否则由你在页面上手动开始。",
         "startAt": "开始时间",
-        "checkInWindow": "签到开始",
-        "autoStart": "自动开始",
-        "autoStartHint": "关闭时，到点只会开始签到。",
+        "checkInWindow": "签到",
         "preset": "对局设置",
-        "minutes": "提前{count}分钟"
-    },
-    "round": {
-        "final": "决赛",
-        "semiFinal": "半决赛",
-        "quarterFinal": "四分之一决赛",
-        "of": "{count}强赛"
+        "durationHint": "根据这类对局的通常时长估算，向上取整。"
     },
     "slot": {
         "bye": "轮空",
@@ -144,5 +145,50 @@
         "walkover": "轮空晋级",
         "simulated": "人机对局，已决出",
         "called": "即将开始"
+    },
+    "score": {
+        "walkover": "不战而胜",
+        "bye": "轮空"
+    },
+    "enter": {
+        "title": "参加{name}？",
+        "startsOn": "将于{date}开始，还有{countdown}。",
+        "whenHostSays": "没有固定的开始时间，{host}宣布时就会开始。",
+        "startsAnyTime": "请留在附近。{host}可能会开放签到，届时你会收到通知，也可能直接和在线的玩家开始。",
+        "checkIn": "签到在开始前{before}分钟开放，届时你会收到通知。请在开始后{after}分钟内签到，否则你会被移出对阵表。",
+        "checkedIn": "签到已经开放，现在参加就会自动签到。开始时请准备好比赛。"
+    },
+    "withdraw": {
+        "title": "退出{name}？",
+        "canReturn": "报名还开放期间，你可以重新参加。"
+    },
+    "startDialog": {
+        "title": "开始{name}？",
+        "hereNow": "当前在场：{count}/{entered}。",
+        "checkedInSoFar": "已签到：{count}/{entered}。",
+        "checkInTitle": "给大家时间签到",
+        "checkIn": "所有人都会收到通知。{minutes}分钟后或所有人签到后将自动开始。",
+        "startHere": "在场的人立即开始比赛。",
+        "startCheckedIn": "已签到的人立即开始比赛。",
+        "missing": "没有人会错过。 | 有1名玩家会错过。 | 有{count}名玩家会错过。",
+        "confirmCheckIn": "开放签到{minutes}分钟",
+        "confirmStart": "以{count}名玩家开始",
+        "minutes": "{count}分钟",
+        "minutesLabel": "签到时长",
+        "suggested": "推荐。{reason}",
+        "why": {
+            "everyone": "所有人都在。",
+            "justOpened": "刚刚开放，大多数玩家都在。",
+            "openAWhile": "已经开放一段时间了。给大家一点时间回来。",
+            "manyAway": "有几名玩家不在。给他们一点时间回来。",
+            "tooFew": "在场玩家还不够，暂时无法开始。"
+        }
+    },
+    "overview": {
+        "title": "所有锦标赛",
+        "hint": "选择一个游戏，查看它的锦标赛。",
+        "live": "没有进行中的 | 1个进行中 | {count}个进行中",
+        "pick": "是哪个游戏的？",
+        "pickHint": "选择游戏，即可打开它的锦标赛表单。"
     }
 }

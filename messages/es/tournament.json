@@ -5,7 +5,6 @@
     "noEntrants": "Nadie se ha inscrito todavía.",
     "noBracket": "El cuadro se sortea cuando el anfitrión inicia el torneo.",
     "create": "Crear torneo",
-    "back": "Todos los torneos",
     "hostedBy": "Organizado por {name}",
     "standings": "Clasificación final",
     "bracket": "Cuadro",
@@ -14,11 +13,14 @@
     "zoom": {
         "in": "Acercar",
         "out": "Alejar",
-        "fit": "Ver todo el cuadro"
+        "fit": "Ver todo el cuadro",
+        "findMe": "Encuéntrame"
     },
     "rules": {
         "format": "Formato",
-        "players": "{count} jugadores"
+        "checkIn": "De {before} min antes a {after} min después",
+        "duration": "Duración",
+        "about": "Unos {time}"
     },
     "seats": {
         "bots": "Queda un puesto y lo ocupa un bot | Quedan {count} puestos y los ocupan bots",
@@ -37,6 +39,7 @@
         "manage": "Gestionar a {name}",
         "seedUp": "Subir en el orden",
         "seedDown": "Bajar en el orden",
+        "reorder": "Arrastra para cambiar el orden de {name}",
         "kick": "Quitar del torneo"
     },
     "column": {
@@ -76,6 +79,7 @@
         "registering": "{count} de {size} inscritos.",
         "checkIn": "{confirmed} de {entered} confirmados.",
         "checkInAt": "La confirmación abre en {time}.",
+        "checkInClosesIn": "La confirmación cierra en {time}.",
         "startsAt": "Empieza en {time}.",
         "running": "Ronda {round} de {rounds}.",
         "finished": "Ganó {name}.",
@@ -85,7 +89,9 @@
         "pausedHost": "El servidor estuvo caído un rato. El anfitrión lo reanudará cuando todos vuelvan."
     },
     "yours": {
-        "registered": "Estás inscrito. Tendrás que confirmar tu asistencia antes de que empiece.",
+        "registered": "Estás inscrito. Quédate cerca: {host} puede empezar en cualquier momento.",
+        "registeredScheduled": "Estás inscrito. La confirmación abre {minutes} minutos antes del inicio.",
+        "hosting": "Pulsa Empezar cuando tus jugadores estén aquí.",
         "needsCheckIn": "Confirma tu asistencia ahora o te quedarás fuera del cuadro.",
         "confirmed": "Has confirmado. Quédate en el sitio y tu partida se abrirá sola.",
         "missed": "No confirmaste, así que el cuadro siguió sin ti.",
@@ -96,7 +102,6 @@
     "action": {
         "register": "Inscribirse",
         "withdraw": "Retirarse",
-        "openCheckIn": "Abrir confirmación",
         "reopen": "Reabrir inscripciones",
         "start": "Empezar ahora",
         "resume": "Reanudar torneo",
@@ -119,21 +124,17 @@
         "botFillOff": "Nadie los juega",
         "botFillOn": "Ocupados por bots",
         "botFillHint": "Si quedan vacíos, quien se enfrente a uno pasa directamente.",
+        "thirdPlaceOff": "Compartido",
+        "thirdPlaceOn": "Se juega",
+        "thirdPlaceHint": "Si se juega, los dos perdedores de semifinales se enfrentan por el tercer y cuarto lugar.",
         "schedule": "Inicio",
         "scheduleManual": "Cuando yo diga",
         "scheduleAt": "A una hora fija",
+        "scheduleHint": "Con hora fija, la confirmación abre media hora antes y el torneo empieza solo. Si no, lo empiezas tú desde su página.",
         "startAt": "Hora de inicio",
-        "checkInWindow": "La confirmación abre",
-        "autoStart": "Empezar automáticamente",
-        "autoStartHint": "Si está desactivado, la hora solo abre la confirmación.",
+        "checkInWindow": "Confirmación",
         "preset": "Ajustes de partida",
-        "minutes": "{count} min antes"
-    },
-    "round": {
-        "final": "Final",
-        "semiFinal": "Semifinales",
-        "quarterFinal": "Cuartos de final",
-        "of": "Ronda de {count}"
+        "durationHint": "Según lo que suelen durar estas partidas, redondeado hacia arriba."
     },
     "slot": {
         "bye": "Sin oponente",
@@ -144,5 +145,50 @@
         "walkover": "Pasó sin oponente",
         "simulated": "Entre bots, resuelto",
         "called": "Empieza pronto"
+    },
+    "score": {
+        "walkover": "W.O.",
+        "bye": "Libre"
+    },
+    "enter": {
+        "title": "¿Entrar en {name}?",
+        "startsOn": "Empieza el {date}, en {countdown}.",
+        "whenHostSays": "No hay hora de inicio fija. Empieza cuando {host} lo diga.",
+        "startsAnyTime": "Quédate cerca. {host} abre la confirmación, y te llega una notificación, o empieza enseguida con quien esté conectado.",
+        "checkIn": "La confirmación abre {before} minutos antes del inicio y te llegará una notificación. Confirma tu asistencia hasta {after} minutos después del inicio o te quedarás fuera del cuadro.",
+        "checkedIn": "La confirmación ya está abierta, así que al entrar ya confirmas tu asistencia. Prepárate para jugar cuando empiece."
+    },
+    "withdraw": {
+        "title": "¿Salirte de {name}?",
+        "canReturn": "Puedes volver a entrar mientras las inscripciones sigan abiertas."
+    },
+    "startDialog": {
+        "title": "¿Empezar {name}?",
+        "hereNow": "Aquí ahora: {count} de {entered}.",
+        "checkedInSoFar": "Confirmados hasta ahora: {count} de {entered}.",
+        "checkInTitle": "Dar tiempo a todos para confirmar",
+        "checkIn": "Todos reciben una notificación. Empieza solo después de {minutes} minutos, o en cuanto todos hayan confirmado.",
+        "startHere": "Quien esté aquí juega ahora.",
+        "startCheckedIn": "Quien haya confirmado juega ahora.",
+        "missing": "Nadie se queda fuera. | Un jugador se queda fuera. | {count} jugadores se quedan fuera.",
+        "confirmCheckIn": "Abrir confirmación por {minutes} min",
+        "confirmStart": "Empezar con un jugador | Empezar con {count} jugadores",
+        "minutes": "{count} min",
+        "minutesLabel": "Tiempo de confirmación",
+        "suggested": "Recomendado. {reason}",
+        "why": {
+            "everyone": "Están todos.",
+            "justOpened": "Se acaba de abrir y la mayoría de los jugadores está aquí.",
+            "openAWhile": "Lleva un rato abierto. Dales a todos un momento para volver.",
+            "manyAway": "Varios jugadores están ausentes. Dales un momento para volver.",
+            "tooFew": "Todavía no hay suficientes jugadores para empezar."
+        }
+    },
+    "overview": {
+        "title": "Todos los torneos",
+        "hint": "Elige un juego para ver sus torneos.",
+        "live": "Ninguno en curso | Uno en curso | {count} en curso",
+        "pick": "¿Para qué juego?",
+        "pickHint": "Elige el juego y se abre el formulario de su torneo."
     }
 }

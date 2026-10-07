@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal German",
         "rtl": false,
-        "total": 2912,
+        "total": 2995,
         "missing": 141
     },
     "error": {
@@ -1690,14 +1690,22 @@
     "tournament": {
         "title": "Turniere",
         "playing": {
-            "round": "{round} in {name}",
-            "versus": "Du gegen {name}",
-            "versusOther": "{first} gegen {second}",
-            "single": "Ein Spiel entscheidet.",
-            "series": "Best of {count}. Wer zuerst {wins} Siege hat, gewinnt.",
-            "score": "Serie {own}–{other}",
             "bracket": "Turnierbaum öffnen",
-            "stay": "Bleib auf der Seite. Dein nächstes Spiel öffnet sich von selbst."
+            "players": "{count} Spieler",
+            "left": "{left} von {count} übrig",
+            "oneMatch": "Ein Spiel",
+            "gameNext": "Als Nächstes Spiel {number}",
+            "gameIn": "Spiel {number} in {seconds} s",
+            "runnerUp": "Zweiter Platz",
+            "out": "Raus",
+            "thirdPlaceMatch": "Spiel um Platz 3",
+            "fourthPlace": "Vierter Platz",
+            "through": "Weiter",
+            "next": "Als Nächstes: {round}",
+            "topOf": "Top {count} von {field}",
+            "goesThrough": "{name} ist weiter",
+            "winsIt": "{name} gewinnt",
+            "finishesThird": "{name} wird Dritter"
         },
         "outcome": {
             "continues": "Die Serie ist noch nicht vorbei. Das nächste Spiel beginnt von selbst.",
@@ -1705,7 +1713,28 @@
             "eliminated": "Damit bist du bei {name} raus.",
             "champion": "Du hast {name} gewonnen.",
             "spectating": "Der Sieger kommt in die nächste Runde.",
-            "waiting": "Warte auf den Rest der Runde."
+            "waiting": "Warte auf den Rest der Runde.",
+            "playoffNext": "Als Nächstes spielst du um Platz 3.",
+            "third": "Du wirst Dritter bei {name}.",
+            "youPlayIn": "Du spielst in {seconds} s gegen {name}",
+            "youPlayNext": "Als Nächstes spielst du gegen {name}",
+            "opensItself": "Es startet von selbst.",
+            "waitingOn": "Warten auf {first} vs {second}",
+            "playWinner": "Du spielst gegen den Sieger.",
+            "startsIn": "{first} vs {second} startet in {seconds} s",
+            "watchMatch": "{first} vs {second} zuschauen",
+            "progress": "{done} von {count} fertig",
+            "live": "{count} live",
+            "beat": "{winner} hat {loser} besiegt",
+            "youBeat": "Du hast {name} besiegt",
+            "beatYou": "{name} hat dich besiegt",
+            "versus": "{first} vs {second}",
+            "upcoming": "Als Nächstes",
+            "inSeconds": "In {seconds} s",
+            "yours": "Deins",
+            "decides": "Entscheidet deinen Gegner",
+            "more": "Keins mehr in dieser Runde | Noch eins in dieser Runde | Noch {count} in dieser Runde",
+            "rest": "Der Rest des Turniers"
         },
         "call": {
             "title": "Dein nächstes Spiel",
@@ -1714,12 +1743,18 @@
             "series": "Best of {count}, {own}–{other}",
             "startsIn": "Startet in {seconds}s",
             "readyUp": "Ich bin bereit",
-            "ready": "Bereit. Warte auf die anderen."
+            "ready": "Bereit. Warte auf die anderen.",
+            "roundOf": "Runde {round} von {count}",
+            "beat": "Du hast {name} {score} geschlagen",
+            "secondsLeft": "Sekunden bis zum Start"
         },
         "sidebar": {
             "registered": "Du bist angemeldet",
             "checkInNow": "Jetzt einchecken",
             "checkIn": "Einchecken",
+            "called": "Spiel in {seconds}s",
+            "toCall": "Los",
+            "checkInOpen": "Der Check-in für {name} ist offen. Check ein, um deinen Platz zu behalten.",
             "checkedIn": "Eingecheckt",
             "startsIn": "Startet in {time}",
             "checkInIn": "Check-in in {time}",
@@ -1745,7 +1780,8 @@
             "alreadyCheckedIn": "Du hast schon eingecheckt.",
             "checkInClosed": "Der Check-in ist nicht offen.",
             "notCheckingIn": "Öffne zuerst den Check-in.",
-            "notEnoughPlayers": "Es haben noch nicht genug Spieler eingecheckt ({min} nötig).",
+            "scheduled": "Dieses Turnier hat eine Startzeit, Check-in und Start laufen also von selbst.",
+            "notEnoughPlayers": "Nicht genug Spieler zum Starten ({min} nötig).",
             "code": "Dieser Code gehört nicht zu diesem Turnier.",
             "noCode": "Kein Turnier hat diesen Code.",
             "busy": "Du spielst gerade in {name}. Verlass es zuerst, wenn du ein anderes Spiel willst.",
@@ -1754,10 +1790,27 @@
             "notPaused": "Dieses Turnier ist nicht pausiert.",
             "tooSmall": "Der Turnierbaum kann nicht kleiner sein als das Teilnehmerfeld darin.",
             "name": "Ein Turniername muss zwischen 3 und 40 Zeichen lang sein.",
-            "startTooSoon": "Lass vor dem Start genug Zeit für den Check-in.",
+            "startTooSoon": "Leg den Start mindestens 5 Minuten in die Zukunft.",
             "startTooLate": "Ein Turnier kann höchstens eine Woche im Voraus geplant werden.",
             "hostLimit": "Du hast schon {max} offene Turniere.",
-            "serverFull": "Der Server hat schon so viele Turniere am Laufen, wie er kann."
+            "serverFull": "Der Server hat schon so viele Turniere am Laufen, wie er kann.",
+            "elsewhere": "Du bist schon bei {name} dabei. Verlass es zuerst, um hier mitzuspielen."
+        },
+        "leaveMatch": {
+            "title": "{name} verlassen?",
+            "description": "Wenn du dieses Spiel verlässt, scheidest du aus dem Turnier aus und dein Gegner kommt weiter. Du kannst nicht zurück.",
+            "button": "Turnier verlassen"
+        },
+        "round": {
+            "final": "Finale",
+            "semiFinal": "Halbfinale",
+            "quarterFinal": "Viertelfinale",
+            "of": "Letzte {count}",
+            "thirdPlace": "Platz drei",
+            "bestOf": "Best of {count}"
+        },
+        "chip": {
+            "live": "Live"
         }
     }
 }

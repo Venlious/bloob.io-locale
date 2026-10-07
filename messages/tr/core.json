@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 2912,
+        "total": 2995,
         "missing": 141
     },
     "error": {
@@ -1690,14 +1690,22 @@
     "tournament": {
         "title": "Turnuvalar",
         "playing": {
-            "round": "{name}, {round}",
-            "versus": "Rakibin: {name}",
-            "versusOther": "{first} ve {second} karşı karşıya",
-            "single": "Tek maçta belli olur.",
-            "series": "{count} oyunluk seri. {wins} galibiyete ilk ulaşan kazanır.",
-            "score": "Seri {own}–{other}",
             "bracket": "Fikstürü aç",
-            "stay": "Sitede kal. Sonraki maçın kendiliğinden açılır."
+            "players": "{count} oyuncu",
+            "left": "{count} oyuncudan {left} kaldı",
+            "oneMatch": "Tek maç",
+            "gameNext": "Sıradaki: {number}. oyun",
+            "gameIn": "{number}. oyun {seconds} sn sonra",
+            "runnerUp": "İkinci",
+            "out": "Elendin",
+            "thirdPlaceMatch": "Üçüncülük maçı",
+            "fourthPlace": "Dördüncü",
+            "through": "Tur atladın",
+            "next": "Sıradaki: {round}",
+            "topOf": "{field} oyuncu içinde ilk {count}",
+            "goesThrough": "{name} tur atladı",
+            "winsIt": "{name} kazandı",
+            "finishesThird": "{name} üçüncü oldu"
         },
         "outcome": {
             "continues": "Seri henüz bitmedi. Sonraki oyun kendiliğinden başlar.",
@@ -1705,7 +1713,28 @@
             "eliminated": "{name} turnuvasından elendin.",
             "champion": "{name} turnuvasını kazandın.",
             "spectating": "Kazanan bir sonraki tura geçer.",
-            "waiting": "Turun geri kalanı bekleniyor."
+            "waiting": "Turun geri kalanı bekleniyor.",
+            "playoffNext": "Sırada üçüncülük maçı var.",
+            "third": "{name} turnuvasında üçüncü oldun.",
+            "youPlayIn": "{seconds} sn sonra {name} ile oynuyorsun",
+            "youPlayNext": "Sıradaki rakibin {name}",
+            "opensItself": "Kendiliğinden başlar.",
+            "waitingOn": "{first} - {second} bekleniyor",
+            "playWinner": "Kazananla oynayacaksın.",
+            "startsIn": "{first} - {second} {seconds} sn sonra başlıyor",
+            "watchMatch": "{first} - {second} izle",
+            "progress": "{count} maçtan {done} tanesi bitti",
+            "live": "{count} canlı",
+            "beat": "{winner}, {loser} karşısında kazandı",
+            "youBeat": "{name} karşısında kazandın",
+            "beatYou": "{name} seni yendi",
+            "versus": "{first} - {second}",
+            "upcoming": "Sıradaki",
+            "inSeconds": "{seconds} sn sonra",
+            "yours": "Senin",
+            "decides": "Rakibini belirliyor",
+            "more": "Bu turda başka maç yok | Bu turda bir maç daha | Bu turda {count} maç daha",
+            "rest": "Turnuvanın geri kalanı"
         },
         "call": {
             "title": "Sıradaki maçın",
@@ -1714,12 +1743,18 @@
             "series": "{count} oyunluk seri, {own}–{other}",
             "startsIn": "{seconds} sn içinde başlıyor",
             "readyUp": "Hazırım",
-            "ready": "Hazırsın. Diğerleri bekleniyor."
+            "ready": "Hazırsın. Diğerleri bekleniyor.",
+            "roundOf": "Tur {round}/{count}",
+            "beat": "{name} rakibini {score} yendin",
+            "secondsLeft": "Başlamaya kalan saniye"
         },
         "sidebar": {
             "registered": "Kayıtlısın",
             "checkInNow": "Katılımını hemen onayla",
             "checkIn": "Katılımı onayla",
+            "called": "Maç {seconds} sn sonra",
+            "toCall": "Git",
+            "checkInOpen": "{name} için check-in açıldı. Yerini korumak için check-in yap.",
             "checkedIn": "Katılım onaylandı",
             "startsIn": "{time} sonra başlıyor",
             "checkInIn": "Onay {time} sonra açılıyor",
@@ -1745,7 +1780,8 @@
             "alreadyCheckedIn": "Katılımını zaten onayladın.",
             "checkInClosed": "Katılım onayı açık değil.",
             "notCheckingIn": "Önce katılım onayını aç.",
-            "notEnoughPlayers": "Henüz yeterli oyuncu katılımını onaylamadı (en az {min} gerekli).",
+            "scheduled": "Bunun bir başlangıç saati var, katılım onayı ve başlangıç kendiliğinden olur.",
+            "notEnoughPlayers": "Başlatmak için yeterli oyuncu yok (en az {min} gerekli).",
             "code": "Bu kod bu turnuvaya ait değil.",
             "noCode": "Bu koda sahip bir turnuva yok.",
             "busy": "Şu an {name} turnuvasında oynuyorsun. Başka bir maç istiyorsan önce oradan ayrıl.",
@@ -1754,10 +1790,27 @@
             "notPaused": "Bu turnuva duraklatılmamış.",
             "tooSmall": "Fikstür, içindeki oyuncu sayısından küçük olamaz.",
             "name": "Turnuva adı 3 ile 40 karakter arasında olmalı.",
-            "startTooSoon": "Katılım onayı için başlangıçtan önce yeterli süre bırak.",
+            "startTooSoon": "Başlangıcı en az 5 dakika sonraya ayarla.",
             "startTooLate": "Bir turnuva bir haftadan daha ileriye planlanamaz.",
             "hostLimit": "Zaten {max} açık turnuvan var.",
-            "serverFull": "Sunucu şu an kaldırabileceği kadar turnuva yürütüyor."
+            "serverFull": "Sunucu şu an kaldırabileceği kadar turnuva yürütüyor.",
+            "elsewhere": "Zaten {name} turnuvasındasın. Bunda oynamak için önce ondan ayrıl."
+        },
+        "leaveMatch": {
+            "title": "{name} turnuvasından ayrıl?",
+            "description": "Bu maçtan ayrılırsan turnuvadan elenirsin ve rakibin tur atlar. Geri dönemezsin.",
+            "button": "Turnuvadan ayrıl"
+        },
+        "round": {
+            "final": "Final",
+            "semiFinal": "Yarı final",
+            "quarterFinal": "Çeyrek final",
+            "of": "Son {count}",
+            "thirdPlace": "Üçüncülük",
+            "bestOf": "{count} maç üzerinden"
+        },
+        "chip": {
+            "live": "Canlı"
         }
     }
 }

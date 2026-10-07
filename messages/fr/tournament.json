@@ -5,7 +5,6 @@
     "noEntrants": "Personne ne s'est encore inscrit.",
     "noBracket": "Le tableau est tiré quand l'hôte lance le tournoi.",
     "create": "Créer un tournoi",
-    "back": "Tous les tournois",
     "hostedBy": "Organisé par {name}",
     "standings": "Classement final",
     "bracket": "Tableau",
@@ -14,11 +13,14 @@
     "zoom": {
         "in": "Zoom avant",
         "out": "Zoom arrière",
-        "fit": "Afficher tout le tableau"
+        "fit": "Afficher tout le tableau",
+        "findMe": "Me trouver"
     },
     "rules": {
         "format": "Format",
-        "players": "{count} joueurs"
+        "checkIn": "De {before} min avant à {after} min après",
+        "duration": "Durée",
+        "about": "Environ {time}"
     },
     "seats": {
         "bots": "Une place libre, un bot la prend | {count} places libres, des bots les prennent",
@@ -37,6 +39,7 @@
         "manage": "Gérer {name}",
         "seedUp": "Monter dans l'ordre",
         "seedDown": "Descendre dans l'ordre",
+        "reorder": "Glisse pour changer la place de {name} dans l'ordre",
         "kick": "Retirer du tournoi"
     },
     "column": {
@@ -76,6 +79,7 @@
         "registering": "{count} sur {size} inscrits.",
         "checkIn": "{confirmed} sur {entered} ont fait leur check-in.",
         "checkInAt": "Le check-in ouvre dans {time}.",
+        "checkInClosesIn": "Le check-in ferme dans {time}.",
         "startsAt": "Commence dans {time}.",
         "running": "Tour {round} sur {rounds}.",
         "finished": "{name} a gagné.",
@@ -85,7 +89,9 @@
         "pausedHost": "Le serveur a été coupé un moment. L'hôte relancera le tournoi quand tout le monde sera revenu."
     },
     "yours": {
-        "registered": "Tu es inscrit. Tu devras faire ton check-in avant le début.",
+        "registered": "Tu es inscrit. Reste dans le coin : {host} peut lancer à tout moment.",
+        "registeredScheduled": "Tu es inscrit. Le check-in ouvre {minutes} minutes avant le début.",
+        "hosting": "Appuie sur Commencer quand tes joueurs sont là.",
         "needsCheckIn": "Fais ton check-in maintenant, sinon tu ne seras pas dans le tableau.",
         "confirmed": "Ton check-in est fait. Reste sur le site et ta partie s'ouvrira toute seule.",
         "missed": "Tu n'as pas fait ton check-in, donc le tournoi a commencé sans toi.",
@@ -96,7 +102,6 @@
     "action": {
         "register": "S'inscrire",
         "withdraw": "Se désinscrire",
-        "openCheckIn": "Ouvrir le check-in",
         "reopen": "Rouvrir les inscriptions",
         "start": "Lancer maintenant",
         "resume": "Reprendre le tournoi",
@@ -119,21 +124,17 @@
         "botFillOff": "Personne ne les joue",
         "botFillOn": "Remplies par des bots",
         "botFillHint": "Si elles restent vides, celui qui tombe contre l'une d'elles passe directement.",
+        "thirdPlaceOff": "Partagée",
+        "thirdPlaceOn": "Disputée",
+        "thirdPlaceHint": "Si elle est disputée, les deux perdants des demi-finales s'affrontent pour la troisième et la quatrième place.",
         "schedule": "Début",
         "scheduleManual": "Quand je le décide",
         "scheduleAt": "À une heure précise",
+        "scheduleHint": "À une heure fixe, le check-in ouvre une demi-heure avant et le tournoi se lance tout seul. Sinon, tu le lances toi-même depuis sa page.",
         "startAt": "Heure de début",
-        "checkInWindow": "Ouverture du check-in",
-        "autoStart": "Lancer tout seul",
-        "autoStartHint": "Désactivé, l'heure ouvre seulement le check-in.",
+        "checkInWindow": "Check-in",
         "preset": "Paramètres de partie",
-        "minutes": "{count} min avant"
-    },
-    "round": {
-        "final": "Finale",
-        "semiFinal": "Demi-finales",
-        "quarterFinal": "Quarts de finale",
-        "of": "Tour des {count} derniers"
+        "durationHint": "D’après la durée habituelle de ces parties, arrondie au-dessus."
     },
     "slot": {
         "bye": "Pas d'adversaire",
@@ -144,5 +145,50 @@
         "walkover": "Qualifié sans jouer",
         "simulated": "Bots, décidé",
         "called": "Bientôt"
+    },
+    "score": {
+        "walkover": "Forfait",
+        "bye": "Exempt"
+    },
+    "enter": {
+        "title": "Participer à {name} ?",
+        "startsOn": "Ça commence {date}, dans {countdown}.",
+        "whenHostSays": "Il n'y a pas d'heure de début fixe. Ça commence quand {host} le décide.",
+        "startsAnyTime": "Reste dans le coin. {host} ouvre le check-in, et tu reçois une notification, ou lance tout de suite avec les joueurs en ligne.",
+        "checkIn": "Le check-in ouvre {before} minutes avant le début, et tu recevras une notification. Fais ton check-in au plus tard {after} minutes après le début, sinon tu seras retiré du tableau.",
+        "checkedIn": "Le check-in est déjà ouvert : en t'inscrivant, ta présence est confirmée. Sois prêt à jouer quand ça commence."
+    },
+    "withdraw": {
+        "title": "Te retirer de {name} ?",
+        "canReturn": "Tu pourras t'inscrire de nouveau tant que les inscriptions sont ouvertes."
+    },
+    "startDialog": {
+        "title": "Lancer {name} ?",
+        "hereNow": "Présents maintenant : {count} sur {entered}.",
+        "checkedInSoFar": "Check-in faits pour l'instant : {count} sur {entered}.",
+        "checkInTitle": "Laisser à chacun le temps de faire son check-in",
+        "checkIn": "Tout le monde reçoit une notification. Le tournoi se lance tout seul après {minutes} minutes, ou dès que tout le monde a fait son check-in.",
+        "startHere": "Les joueurs présents jouent maintenant.",
+        "startCheckedIn": "Les joueurs qui ont fait leur check-in jouent maintenant.",
+        "missing": "Personne n'est laissé de côté. | Un joueur est laissé de côté. | {count} joueurs sont laissés de côté.",
+        "confirmCheckIn": "Ouvrir le check-in pour {minutes} min",
+        "confirmStart": "Commencer avec un joueur | Commencer avec {count} joueurs",
+        "minutes": "{count} min",
+        "minutesLabel": "Durée du check-in",
+        "suggested": "Conseillé. {reason}",
+        "why": {
+            "everyone": "Tout le monde est là.",
+            "justOpened": "Il vient d'être ouvert, et la plupart des joueurs sont là.",
+            "openAWhile": "Il est ouvert depuis un moment. Laisse à chacun le temps de revenir.",
+            "manyAway": "Plusieurs joueurs sont absents. Laisse-leur le temps de revenir.",
+            "tooFew": "Il n'y a pas encore assez de joueurs pour lancer."
+        }
+    },
+    "overview": {
+        "title": "Tous les tournois",
+        "hint": "Choisis un jeu pour voir ses tournois.",
+        "live": "Aucun en cours | Un en cours | {count} en cours",
+        "pick": "Pour quel jeu ?",
+        "pickHint": "Choisis le jeu, et le formulaire de son tournoi s'ouvre."
     }
 }

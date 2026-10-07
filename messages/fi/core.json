@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 2912,
+        "total": 2995,
         "missing": 141
     },
     "error": {
@@ -1690,14 +1690,22 @@
     "tournament": {
         "title": "Turnaukset",
         "playing": {
-            "round": "{name}: {round}",
-            "versus": "Sinä vastaan {name}",
-            "versusOther": "{first} vastaan {second}",
-            "single": "Yksi ottelu ratkaisee.",
-            "series": "Paras {count}:stä. Ensimmäinen {wins} voittoon voittaa.",
-            "score": "Sarja {own}–{other}",
             "bracket": "Avaa turnauskaavio",
-            "stay": "Pysy sivustolla. Seuraava ottelusi avautuu itsestään."
+            "players": "{count} pelaajaa",
+            "left": "{left}/{count} jäljellä",
+            "oneMatch": "Yksi ottelu",
+            "gameNext": "Seuraavaksi peli {number}",
+            "gameIn": "Peli {number} alkaa {seconds} s",
+            "runnerUp": "Toinen sija",
+            "out": "Pudonnut",
+            "thirdPlaceMatch": "Pronssiottelu",
+            "fourthPlace": "Neljäs sija",
+            "through": "Jatkoon",
+            "next": "Seuraavaksi: {round}",
+            "topOf": "Top {count}/{field}",
+            "goesThrough": "{name} jatkaa",
+            "winsIt": "{name} voittaa",
+            "finishesThird": "{name} on kolmas"
         },
         "outcome": {
             "continues": "Sarja jatkuu. Seuraava peli alkaa itsestään.",
@@ -1705,7 +1713,28 @@
             "eliminated": "Putosit turnauksesta {name}.",
             "champion": "Voitit turnauksen {name}.",
             "spectating": "Voittaja pääsee seuraavalle kierrokselle.",
-            "waiting": "Odotetaan kierroksen muita otteluita."
+            "waiting": "Odotetaan kierroksen muita otteluita.",
+            "playoffNext": "Seuraavaksi pelaat kolmannesta sijasta.",
+            "third": "Olet kolmas turnauksessa {name}.",
+            "youPlayIn": "Vastassa {name} {seconds} s päästä",
+            "youPlayNext": "Seuraavaksi vastassa {name}",
+            "opensItself": "Se alkaa itsestään.",
+            "waitingOn": "Odotetaan: {first} vs {second}",
+            "playWinner": "Pelaat voittajaa vastaan.",
+            "startsIn": "{first} vs {second} alkaa {seconds} s päästä",
+            "watchMatch": "Katso {first} vs {second}",
+            "progress": "{done}/{count} valmiina",
+            "live": "{count} käynnissä",
+            "beat": "{winner} voitti pelaajan {loser}",
+            "youBeat": "Voitit pelaajan {name}",
+            "beatYou": "{name} voitti sinut",
+            "versus": "{first} vs {second}",
+            "upcoming": "Seuraava",
+            "inSeconds": "{seconds} s päästä",
+            "yours": "Sinun",
+            "decides": "Ratkaisee vastustajasi",
+            "more": "Ei enempää tällä kierroksella | Yksi lisää tällä kierroksella | {count} lisää tällä kierroksella",
+            "rest": "Loput turnauksesta"
         },
         "call": {
             "title": "Seuraava ottelusi",
@@ -1714,12 +1743,18 @@
             "series": "Paras {count}:stä, {own}–{other}",
             "startsIn": "Alkaa {seconds} s päästä",
             "readyUp": "Olen valmis",
-            "ready": "Valmis. Odotetaan muita."
+            "ready": "Valmis. Odotetaan muita.",
+            "roundOf": "Kierros {round}/{count}",
+            "beat": "Voitit pelaajan {name} {score}",
+            "secondsLeft": "Sekuntia alkuun"
         },
         "sidebar": {
             "registered": "Olet ilmoittautunut",
             "checkInNow": "Vahvista nyt",
             "checkIn": "Vahvista",
+            "called": "Ottelu {seconds} s päästä",
+            "toCall": "Mene",
+            "checkInOpen": "Turnauksen {name} sisäänkirjautuminen on auki. Kirjaudu sisään pitääksesi paikkasi.",
             "checkedIn": "Vahvistettu",
             "startsIn": "Alkaa {time} päästä",
             "checkInIn": "Vahvistus {time} päästä",
@@ -1745,7 +1780,8 @@
             "alreadyCheckedIn": "Olet jo vahvistanut osallistumisesi.",
             "checkInClosed": "Vahvistus ei ole auki.",
             "notCheckingIn": "Avaa vahvistus ensin.",
-            "notEnoughPlayers": "Osallistumisensa on vahvistanut vielä liian harva ({min} tarvitaan).",
+            "scheduled": "Tällä on alkamisaika, joten vahvistus ja aloitus tapahtuvat itsestään.",
+            "notEnoughPlayers": "Liian vähän pelaajia aloittamiseen ({min} tarvitaan).",
             "code": "Koodi ei avaa tätä turnausta.",
             "noCode": "Millään turnauksella ei ole tätä koodia.",
             "busy": "Pelaat turnauksessa {name}. Poistu siitä ensin, jos haluat toisen ottelun.",
@@ -1754,10 +1790,27 @@
             "notPaused": "Tämä turnaus ei ole tauolla.",
             "tooSmall": "Kaavio ei voi olla pienempi kuin siinä jo olevien pelaajien määrä.",
             "name": "Turnauksen nimen täytyy olla 3-40 merkkiä pitkä.",
-            "startTooSoon": "Jätä ennen alkua tarpeeksi aikaa vahvistukselle.",
+            "startTooSoon": "Aseta alku vähintään 5 minuutin päähän.",
             "startTooLate": "Turnausta ei voi ajoittaa yli viikon päähän.",
             "hostLimit": "Sinulla on jo {max} avointa turnausta.",
-            "serverFull": "Palvelimella on käynnissä niin monta turnausta kuin se pystyy."
+            "serverFull": "Palvelimella on käynnissä niin monta turnausta kuin se pystyy.",
+            "elsewhere": "Olet jo mukana turnauksessa {name}. Poistu siitä ensin pelataksesi tässä."
+        },
+        "leaveMatch": {
+            "title": "Poistutaanko turnauksesta {name}?",
+            "description": "Jos poistut tästä ottelusta, putoat turnauksesta ja vastustajasi jatkaa. Et voi palata.",
+            "button": "Poistu turnauksesta"
+        },
+        "round": {
+            "final": "Finaali",
+            "semiFinal": "Välierät",
+            "quarterFinal": "Puolivälierät",
+            "of": "Viimeiset {count}",
+            "thirdPlace": "Kolmas sija",
+            "bestOf": "Paras {count}:stä"
+        },
+        "chip": {
+            "live": "Live"
         }
     }
 }

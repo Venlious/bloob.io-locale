@@ -2,7 +2,7 @@
     "_meta": {
         "language": "Casual Gaming Japanese (カジュアルゲーム向け日本語)",
         "rtl": false,
-        "total": 2912,
+        "total": 2995,
         "missing": 141
     },
     "error": {
@@ -1690,14 +1690,22 @@
     "tournament": {
         "title": "トーナメント",
         "playing": {
-            "round": "{name}の{round}",
-            "versus": "君 対 {name}",
-            "versusOther": "{first} 対 {second}",
-            "single": "1回の対戦で決まるよ。",
-            "series": "最大{count}ゲーム。先に{wins}勝したほうが勝ちだよ。",
-            "score": "シリーズ {own}–{other}",
             "bracket": "トーナメント表を開く",
-            "stay": "サイトにいてね。次の対戦は自動で開くよ。"
+            "players": "{count}人",
+            "left": "残り{left}人 / {count}人",
+            "oneMatch": "1試合",
+            "gameNext": "次は第{number}ゲーム",
+            "gameIn": "第{number}ゲームまで{seconds}秒",
+            "runnerUp": "準優勝",
+            "out": "敗退",
+            "thirdPlaceMatch": "3位決定戦",
+            "fourthPlace": "4位",
+            "through": "勝ち抜け",
+            "next": "次: {round}",
+            "topOf": "{field}人中ベスト{count}",
+            "goesThrough": "{name}が勝ち抜け",
+            "winsIt": "{name}が優勝",
+            "finishesThird": "{name}が3位"
         },
         "outcome": {
             "continues": "シリーズはまだ続くよ。次のゲームは自動で始まるよ。",
@@ -1705,7 +1713,28 @@
             "eliminated": "{name}で敗退しちゃった。",
             "champion": "{name}で優勝したよ。",
             "spectating": "勝った人が次のラウンドに進むよ。",
-            "waiting": "このラウンドの他の対戦を待ってるよ。"
+            "waiting": "このラウンドの他の対戦を待ってるよ。",
+            "playoffNext": "次は3位決定戦だよ。",
+            "third": "{name}で3位になったよ。",
+            "youPlayIn": "{seconds}秒後に{name}と対戦",
+            "youPlayNext": "次は{name}と対戦",
+            "opensItself": "自動で始まるよ。",
+            "waitingOn": "{first} vs {second}の結果待ち",
+            "playWinner": "勝った方と対戦するよ。",
+            "startsIn": "{first} vs {second}は{seconds}秒後に開始",
+            "watchMatch": "{first} vs {second}を観戦",
+            "progress": "{count}試合中{done}試合終了",
+            "live": "{count}試合ライブ中",
+            "beat": "{winner}が{loser}に勝利",
+            "youBeat": "{name}に勝ったよ",
+            "beatYou": "{name}に負けたよ",
+            "versus": "{first} vs {second}",
+            "upcoming": "次",
+            "inSeconds": "{seconds}秒後",
+            "yours": "あなたの試合",
+            "decides": "対戦相手が決まる試合",
+            "more": "このラウンドに他の試合はなし | このラウンドにあと1試合 | このラウンドにあと{count}試合",
+            "rest": "大会のほかの試合"
         },
         "call": {
             "title": "次の対戦",
@@ -1714,12 +1743,18 @@
             "series": "最大{count}ゲーム、{own}–{other}",
             "startsIn": "{seconds}秒後に開始",
             "readyUp": "準備できた",
-            "ready": "準備OK。他の人を待ってるよ。"
+            "ready": "準備OK。他の人を待ってるよ。",
+            "roundOf": "{count}ラウンド中{round}ラウンド目",
+            "beat": "{name}に{score}で勝ったよ",
+            "secondsLeft": "開始までの秒数"
         },
         "sidebar": {
             "registered": "参加登録済み",
             "checkInNow": "今すぐチェックイン",
             "checkIn": "チェックイン",
+            "called": "あと{seconds}秒で試合",
+            "toCall": "行く",
+            "checkInOpen": "{name}のチェックインが始まったよ。席を確保するにはチェックインしてね。",
             "checkedIn": "チェックイン済み",
             "startsIn": "{time}後に開始",
             "checkInIn": "{time}後にチェックイン",
@@ -1745,7 +1780,8 @@
             "alreadyCheckedIn": "もうチェックインしてるよ。",
             "checkInClosed": "チェックインは受付中じゃないよ。",
             "notCheckingIn": "先にチェックインを開始してね。",
-            "notEnoughPlayers": "チェックインしたプレイヤーがまだ足りないよ（{min}人必要）。",
+            "scheduled": "開始時刻が決まっているから、チェックインも開始も自動で進むよ。",
+            "notEnoughPlayers": "開始するにはプレイヤーが足りないよ（{min}人必要）。",
             "code": "そのコードはこのトーナメントのものじゃないよ。",
             "noCode": "そのコードのトーナメントはないよ。",
             "busy": "{name}に参加中だよ。別の対戦をするなら先に退出してね。",
@@ -1754,10 +1790,27 @@
             "notPaused": "このトーナメントは一時停止していないよ。",
             "tooSmall": "トーナメント表の枠数は、今の参加人数より少なくできないよ。",
             "name": "トーナメント名は3文字から40文字の間で入力してね。",
-            "startTooSoon": "チェックインの時間が取れるように、開始時間に余裕を持たせてね。",
+            "startTooSoon": "開始は今から5分以上あとにしてね。",
             "startTooLate": "1週間より先にはトーナメントを予定できないよ。",
             "hostLimit": "もう{max}件のトーナメントを開いてるよ。",
-            "serverFull": "サーバーで開けるトーナメントの数が上限に達しているよ。"
+            "serverFull": "サーバーで開けるトーナメントの数が上限に達しているよ。",
+            "elsewhere": "すでに{name}に参加中だよ。こっちで遊ぶには、先にそっちを抜けてね。"
+        },
+        "leaveMatch": {
+            "title": "{name}から抜ける？",
+            "description": "この試合を抜けるとトーナメントから脱落して、相手が勝ち上がるよ。戻ることはできないよ。",
+            "button": "トーナメントを抜ける"
+        },
+        "round": {
+            "final": "決勝",
+            "semiFinal": "準決勝",
+            "quarterFinal": "準々決勝",
+            "of": "ベスト{count}",
+            "thirdPlace": "3位",
+            "bestOf": "{count}本勝負"
+        },
+        "chip": {
+            "live": "対戦中"
         }
     }
 }

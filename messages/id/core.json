@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 2912,
+        "total": 2995,
         "missing": 141
     },
     "error": {
@@ -1690,14 +1690,22 @@
     "tournament": {
         "title": "Turnamen",
         "playing": {
-            "round": "{round} {name}",
-            "versus": "Kamu lawan {name}",
-            "versusOther": "{first} lawan {second}",
-            "single": "Satu pertandingan menentukan.",
-            "series": "Best of {count}. Yang duluan menang {wins} kali, dia yang lolos.",
-            "score": "Seri {own}–{other}",
             "bracket": "Buka bagan",
-            "stay": "Tetap di situs ini. Pertandingan berikutnya terbuka sendiri."
+            "players": "{count} pemain",
+            "left": "{left} dari {count} tersisa",
+            "oneMatch": "Satu pertandingan",
+            "gameNext": "Berikutnya: gim {number}",
+            "gameIn": "Gim {number} dalam {seconds} dtk",
+            "runnerUp": "Juara kedua",
+            "out": "Tersingkir",
+            "thirdPlaceMatch": "Perebutan juara 3",
+            "fourthPlace": "Peringkat keempat",
+            "through": "Lolos",
+            "next": "Berikutnya: {round}",
+            "topOf": "{count} besar dari {field}",
+            "goesThrough": "{name} lolos",
+            "winsIt": "{name} menang",
+            "finishesThird": "{name} juara ketiga"
         },
         "outcome": {
             "continues": "Serinya belum selesai. Game berikutnya mulai sendiri.",
@@ -1705,7 +1713,28 @@
             "eliminated": "Kamu tersingkir dari {name}.",
             "champion": "Kamu juara {name}.",
             "spectating": "Pemenangnya lanjut ke ronde berikutnya.",
-            "waiting": "Menunggu sisa ronde ini selesai."
+            "waiting": "Menunggu sisa ronde ini selesai.",
+            "playoffNext": "Berikutnya kamu berebut juara ketiga.",
+            "third": "Kamu juara ketiga di {name}.",
+            "youPlayIn": "Kamu melawan {name} dalam {seconds} dtk",
+            "youPlayNext": "Berikutnya kamu melawan {name}",
+            "opensItself": "Akan dimulai sendiri.",
+            "waitingOn": "Menunggu {first} vs {second}",
+            "playWinner": "Kamu melawan pemenangnya.",
+            "startsIn": "{first} vs {second} dimulai dalam {seconds} dtk",
+            "watchMatch": "Tonton {first} vs {second}",
+            "progress": "{done} dari {count} selesai",
+            "live": "{count} live",
+            "beat": "{winner} mengalahkan {loser}",
+            "youBeat": "Kamu mengalahkan {name}",
+            "beatYou": "{name} mengalahkanmu",
+            "versus": "{first} vs {second}",
+            "upcoming": "Berikutnya",
+            "inSeconds": "Dalam {seconds} dtk",
+            "yours": "Punyamu",
+            "decides": "Menentukan lawanmu",
+            "more": "Tidak ada lagi di babak ini | Satu lagi di babak ini | {count} lagi di babak ini",
+            "rest": "Sisa turnamen"
         },
         "call": {
             "title": "Pertandingan berikutnya",
@@ -1714,12 +1743,18 @@
             "series": "Best of {count}, {own}–{other}",
             "startsIn": "Mulai dalam {seconds} dtk",
             "readyUp": "Aku siap",
-            "ready": "Siap. Menunggu yang lain."
+            "ready": "Siap. Menunggu yang lain.",
+            "roundOf": "Babak {round} dari {count}",
+            "beat": "Kamu mengalahkan {name} {score}",
+            "secondsLeft": "Detik sampai mulai"
         },
         "sidebar": {
             "registered": "Kamu sudah terdaftar",
             "checkInNow": "Check-in sekarang",
             "checkIn": "Check-in",
+            "called": "Main dalam {seconds} dtk",
+            "toCall": "Ayo",
+            "checkInOpen": "Check-in {name} sudah dibuka. Check-in biar tempatmu aman.",
             "checkedIn": "Sudah check-in",
             "startsIn": "Mulai dalam {time}",
             "checkInIn": "Check-in dalam {time}",
@@ -1745,7 +1780,8 @@
             "alreadyCheckedIn": "Kamu sudah check-in.",
             "checkInClosed": "Check-in belum dibuka.",
             "notCheckingIn": "Buka check-in dulu.",
-            "notEnoughPlayers": "Pemain yang sudah check-in belum cukup (butuh {min}).",
+            "scheduled": "Turnamen ini punya waktu mulai, jadi check-in dan mulainya jalan sendiri.",
+            "notEnoughPlayers": "Pemain belum cukup buat mulai (butuh {min}).",
             "code": "Kode itu bukan untuk turnamen ini.",
             "noCode": "Nggak ada turnamen dengan kode itu.",
             "busy": "Kamu sedang main di {name}. Keluar dulu kalau mau pertandingan lain.",
@@ -1754,10 +1790,27 @@
             "notPaused": "Turnamen ini nggak sedang dijeda.",
             "tooSmall": "Bagan nggak bisa lebih kecil dari jumlah peserta yang sudah ada.",
             "name": "Nama turnamen harus 3 sampai 40 karakter.",
-            "startTooSoon": "Sisakan cukup waktu sebelum mulai supaya check-in bisa berjalan.",
+            "startTooSoon": "Atur waktu mulai paling cepat 5 menit dari sekarang.",
             "startTooLate": "Turnamen nggak bisa dijadwalkan lebih dari seminggu ke depan.",
             "hostLimit": "Kamu sudah punya {max} turnamen yang dibuka.",
-            "serverFull": "Server sudah menjalankan turnamen sebanyak yang dia mampu."
+            "serverFull": "Server sudah menjalankan turnamen sebanyak yang dia mampu.",
+            "elsewhere": "Kamu sudah ikut {name}. Keluar dulu dari sana untuk bermain di sini."
+        },
+        "leaveMatch": {
+            "title": "Keluar dari {name}?",
+            "description": "Keluar dari pertandingan ini berarti kamu keluar dari turnamen, dan lawanmu lanjut. Kamu nggak bisa kembali.",
+            "button": "Keluar dari turnamen"
+        },
+        "round": {
+            "final": "Final",
+            "semiFinal": "Semifinal",
+            "quarterFinal": "Perempat final",
+            "of": "Babak {count} besar",
+            "thirdPlace": "Juara ketiga",
+            "bestOf": "Best of {count}"
+        },
+        "chip": {
+            "live": "Live"
         }
     }
 }

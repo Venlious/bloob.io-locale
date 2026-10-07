@@ -5,7 +5,6 @@
     "noEntrants": "Ingen har tilmeldt sig endnu.",
     "noBracket": "Lodtrækningen sker, når værten starter turneringen.",
     "create": "Opret turnering",
-    "back": "Alle turneringer",
     "hostedBy": "Vært: {name}",
     "standings": "Slutstilling",
     "bracket": "Turneringstræ",
@@ -14,11 +13,14 @@
     "zoom": {
         "in": "Zoom ind",
         "out": "Zoom ud",
-        "fit": "Vis hele turneringstræet"
+        "fit": "Vis hele turneringstræet",
+        "findMe": "Find mig"
     },
     "rules": {
         "format": "Format",
-        "players": "{count} spillere"
+        "checkIn": "{before} min før til {after} min efter",
+        "duration": "Varighed",
+        "about": "Cirka {time}"
     },
     "seats": {
         "bots": "Én plads tilbage, og en bot tager den | {count} pladser tilbage, og bots tager dem",
@@ -37,6 +39,7 @@
         "manage": "Administrer {name}",
         "seedUp": "Ryk op i seedningen",
         "seedDown": "Ryk ned i seedningen",
+        "reorder": "Træk for at ændre seedningen for {name}",
         "kick": "Fjern fra turneringen"
     },
     "column": {
@@ -76,6 +79,7 @@
         "registering": "{count} af {size} tilmeldt.",
         "checkIn": "{confirmed} af {entered} tjekket ind.",
         "checkInAt": "Check-in åbner om {time}.",
+        "checkInClosesIn": "Check-in lukker om {time}.",
         "startsAt": "Starter om {time}.",
         "running": "Runde {round} af {rounds}.",
         "finished": "{name} vandt.",
@@ -85,7 +89,9 @@
         "pausedHost": "Serveren var nede et stykke tid. Værten starter igen, når alle er tilbage."
     },
     "yours": {
-        "registered": "Du er tilmeldt. Du skal tjekke ind, før den starter.",
+        "registered": "Du er tilmeldt. Bliv i nærheden: {host} kan starte når som helst.",
+        "registeredScheduled": "Du er tilmeldt. Check-in åbner {minutes} minutter før start.",
+        "hosting": "Tryk på Start, når dine spillere er her.",
         "needsCheckIn": "Tjek ind nu, ellers kommer du ikke med i turneringstræet.",
         "confirmed": "Du er tjekket ind. Bliv på siden, så åbner din kamp af sig selv.",
         "missed": "Du tjekkede ikke ind, så turneringen gik i gang uden dig.",
@@ -96,7 +102,6 @@
     "action": {
         "register": "Tilmeld",
         "withdraw": "Afmeld",
-        "openCheckIn": "Åbn check-in",
         "reopen": "Genåbn tilmelding",
         "start": "Start nu",
         "resume": "Genoptag turnering",
@@ -119,21 +124,17 @@
         "botFillOff": "Forbliver tomme",
         "botFillOn": "Fyldes med bots",
         "botFillHint": "Står de tomme, går den, der trækkes mod en af dem, direkte videre.",
+        "thirdPlaceOff": "Delt",
+        "thirdPlaceOn": "Spilles om",
+        "thirdPlaceHint": "Spilles der om, mødes de to tabende semifinalister om tredje- og fjerdepladsen.",
         "schedule": "Start",
         "scheduleManual": "Når jeg siger til",
         "scheduleAt": "På et fast tidspunkt",
+        "scheduleHint": "Med et fast tidspunkt åbner check-in en halv time før, og turneringen starter af sig selv. Ellers starter du den fra dens side.",
         "startAt": "Starttidspunkt",
-        "checkInWindow": "Check-in åbner",
-        "autoStart": "Start automatisk",
-        "autoStartHint": "Slået fra åbner tidspunktet kun for check-in.",
+        "checkInWindow": "Check-in",
         "preset": "Kampindstillinger",
-        "minutes": "{count} min. før"
-    },
-    "round": {
-        "final": "Finale",
-        "semiFinal": "Semifinaler",
-        "quarterFinal": "Kvartfinaler",
-        "of": "Sidste {count}"
+        "durationHint": "Ud fra hvor lang tid disse kampe plejer at tage, rundet op."
     },
     "slot": {
         "bye": "Ingen modstander",
@@ -144,5 +145,50 @@
         "walkover": "Gik videre uden modstand",
         "simulated": "Bots, afgjort",
         "called": "Starter snart"
+    },
+    "score": {
+        "walkover": "W.O.",
+        "bye": "Fri"
+    },
+    "enter": {
+        "title": "Deltag i {name}?",
+        "startsOn": "Den starter {date}, om {countdown}.",
+        "whenHostSays": "Der er ikke noget fast starttidspunkt. Den starter, når {host} siger til.",
+        "startsAnyTime": "Bliv i nærheden. {host} åbner enten check-in, så du får en notifikation, eller starter med det samme med dem, der er online.",
+        "checkIn": "Check-in åbner {before} minutter før start, og du får en notifikation. Tjek ind senest {after} minutter efter start, ellers bliver du ikke en del af turneringen.",
+        "checkedIn": "Check-in er allerede åben, så når du tilmelder dig, er du checket ind. Vær klar til at spille, når det starter."
+    },
+    "withdraw": {
+        "title": "Træk dig fra {name}?",
+        "canReturn": "Du kan tilmelde dig igen, så længe tilmeldingen er åben."
+    },
+    "startDialog": {
+        "title": "Start {name}?",
+        "hereNow": "Her lige nu: {count} af {entered}.",
+        "checkedInSoFar": "Tjekket ind indtil videre: {count} af {entered}.",
+        "checkInTitle": "Giv alle tid til at tjekke ind",
+        "checkIn": "Alle får en notifikation. Den starter af sig selv efter {minutes} minutter, eller så snart alle har tjekket ind.",
+        "startHere": "Dem, der er her, spiller nu.",
+        "startCheckedIn": "Dem, der har tjekket ind, spiller nu.",
+        "missing": "Ingen går glip af det. | Én spiller går glip af det. | {count} spillere går glip af det.",
+        "confirmCheckIn": "Åbn check-in i {minutes} min",
+        "confirmStart": "Start med én spiller | Start med {count} spillere",
+        "minutes": "{count} min",
+        "minutesLabel": "Check-in-tid",
+        "suggested": "Anbefalet. {reason}",
+        "why": {
+            "everyone": "Alle er her.",
+            "justOpened": "Den er lige blevet åbnet, og de fleste spillere er her.",
+            "openAWhile": "Den har været åben et stykke tid. Giv alle et øjeblik til at komme tilbage.",
+            "manyAway": "Flere spillere er væk. Giv dem et øjeblik til at komme tilbage.",
+            "tooFew": "Der er endnu for få spillere til at starte."
+        }
+    },
+    "overview": {
+        "title": "Alle turneringer",
+        "hint": "Vælg et spil for at se dets turneringer.",
+        "live": "Ingen i gang | Én i gang | {count} i gang",
+        "pick": "Hvilket spil er det til?",
+        "pickHint": "Vælg spillet, så åbner formularen til turneringen."
     }
 }

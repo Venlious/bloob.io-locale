@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 2912,
+        "total": 2995,
         "missing": 141
     },
     "error": {
@@ -1690,14 +1690,22 @@
     "tournament": {
         "title": "锦标赛",
         "playing": {
-            "round": "{name} {round}",
-            "versus": "你对战{name}",
-            "versusOther": "{first}对战{second}",
-            "single": "一局定胜负。",
-            "series": "最多{count}局，先赢{wins}局者胜。",
-            "score": "系列赛 {own}–{other}",
             "bracket": "打开对阵表",
-            "stay": "请留在网站上，下一场对局会自动打开。"
+            "players": "{count}名玩家",
+            "left": "剩余 {left}/{count}",
+            "oneMatch": "一局定胜负",
+            "gameNext": "下一局：第 {number} 局",
+            "gameIn": "第 {number} 局 {seconds} 秒后开始",
+            "runnerUp": "亚军",
+            "out": "淘汰",
+            "thirdPlaceMatch": "季军赛",
+            "fourthPlace": "第四名",
+            "through": "晋级",
+            "next": "下一轮：{round}",
+            "topOf": "{field} 人中的 {count} 强",
+            "goesThrough": "{name} 晋级",
+            "winsIt": "{name} 夺冠",
+            "finishesThird": "{name} 获得季军"
         },
         "outcome": {
             "continues": "系列赛还没结束，下一局会自动开始。",
@@ -1705,7 +1713,28 @@
             "eliminated": "你在{name}中被淘汰了。",
             "champion": "你赢得了{name}。",
             "spectating": "胜者晋级下一轮。",
-            "waiting": "正在等待本轮其他对局结束。"
+            "waiting": "正在等待本轮其他对局结束。",
+            "playoffNext": "接下来你将争夺季军。",
+            "third": "你在 {name} 中获得季军。",
+            "youPlayIn": "{seconds} 秒后对阵 {name}",
+            "youPlayNext": "下一场对阵 {name}",
+            "opensItself": "会自动开始。",
+            "waitingOn": "等待 {first} vs {second}",
+            "playWinner": "你将对阵胜者。",
+            "startsIn": "{first} vs {second} {seconds} 秒后开始",
+            "watchMatch": "观看 {first} vs {second}",
+            "progress": "已完成 {done}/{count}",
+            "live": "{count} 场直播中",
+            "beat": "{winner} 战胜 {loser}",
+            "youBeat": "你战胜了 {name}",
+            "beatYou": "{name} 战胜了你",
+            "versus": "{first} vs {second}",
+            "upcoming": "下一场",
+            "inSeconds": "{seconds} 秒后",
+            "yours": "你的",
+            "decides": "决定你的对手",
+            "more": "本轮没有更多 | 本轮还有 1 场 | 本轮还有 {count} 场",
+            "rest": "锦标赛的其余部分"
         },
         "call": {
             "title": "你的下一场对局",
@@ -1714,12 +1743,18 @@
             "series": "最多{count}局，{own}–{other}",
             "startsIn": "{seconds}秒后开始",
             "readyUp": "我准备好了",
-            "ready": "已准备，正在等其他人。"
+            "ready": "已准备，正在等其他人。",
+            "roundOf": "第{round}轮，共{count}轮",
+            "beat": "你以{score}战胜了{name}",
+            "secondsLeft": "距离开始的秒数"
         },
         "sidebar": {
             "registered": "你已报名",
             "checkInNow": "立即签到",
             "checkIn": "签到",
+            "called": "{seconds}秒后比赛",
+            "toCall": "前往",
+            "checkInOpen": "{name}的签到已开放。签到以保住你的位置。",
             "checkedIn": "已签到",
             "startsIn": "{time}后开始",
             "checkInIn": "{time}后签到",
@@ -1745,7 +1780,8 @@
             "alreadyCheckedIn": "你已经签到了。",
             "checkInClosed": "签到未开放。",
             "notCheckingIn": "请先开始签到。",
-            "notEnoughPlayers": "已签到的玩家还不够（需要{min}人）。",
+            "scheduled": "这个锦标赛设有开始时间，签到和开始都会自动进行。",
+            "notEnoughPlayers": "玩家不足，无法开始（需要{min}人）。",
             "code": "这个参赛码不适用于这个锦标赛。",
             "noCode": "没有锦标赛使用这个参赛码。",
             "busy": "你正在{name}中比赛。想玩别的对局，请先离开。",
@@ -1754,10 +1790,27 @@
             "notPaused": "这个锦标赛没有暂停。",
             "tooSmall": "参赛名额不能少于已报名的人数。",
             "name": "锦标赛名称必须在3到40个字符之间。",
-            "startTooSoon": "开始前请留出足够的签到时间。",
+            "startTooSoon": "开始时间至少要在5分钟之后。",
             "startTooLate": "锦标赛最多只能提前一周安排。",
             "hostLimit": "你已经开了{max}个锦标赛。",
-            "serverFull": "服务器上的锦标赛已经达到上限。"
+            "serverFull": "服务器上的锦标赛已经达到上限。",
+            "elsewhere": "你已经在参加{name}了。先退出那个，才能参加这个。"
+        },
+        "leaveMatch": {
+            "title": "退出{name}？",
+            "description": "离开这场比赛就会退出锦标赛，对手将直接晋级。你将无法再回来。",
+            "button": "退出锦标赛"
+        },
+        "round": {
+            "final": "决赛",
+            "semiFinal": "半决赛",
+            "quarterFinal": "四分之一决赛",
+            "of": "{count}强赛",
+            "thirdPlace": "季军",
+            "bestOf": "{count}局制"
+        },
+        "chip": {
+            "live": "进行中"
         }
     }
 }

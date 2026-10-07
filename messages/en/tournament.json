@@ -5,7 +5,6 @@
     "noEntrants": "Nobody has entered yet.",
     "noBracket": "The bracket is drawn when the host starts it.",
     "create": "Create tournament",
-    "back": "All tournaments",
     "hostedBy": "Hosted by {name}",
     "standings": "Final standings",
     "bracket": "Bracket",
@@ -14,11 +13,14 @@
     "zoom": {
         "in": "Zoom in",
         "out": "Zoom out",
-        "fit": "Fit the whole bracket"
+        "fit": "Fit the whole bracket",
+        "findMe": "Find me"
     },
     "rules": {
         "format": "Format",
-        "players": "{count} players"
+        "checkIn": "{before} min before to {after} min after",
+        "duration": "Duration",
+        "about": "About {time}"
     },
     "seats": {
         "bots": "One seat left, and a bot takes it | {count} seats left, and bots take them",
@@ -37,6 +39,7 @@
         "manage": "Manage {name}",
         "seedUp": "Seed higher",
         "seedDown": "Seed lower",
+        "reorder": "Drag to change {name}'s seed",
         "kick": "Remove from tournament"
     },
     "column": {
@@ -76,6 +79,7 @@
         "registering": "{count} of {size} entered.",
         "checkIn": "{confirmed} of {entered} checked in.",
         "checkInAt": "Check-in opens in {time}.",
+        "checkInClosesIn": "Check-in closes in {time}.",
         "startsAt": "Starts in {time}.",
         "running": "Round {round} of {rounds}.",
         "finished": "{name} won it.",
@@ -85,7 +89,9 @@
         "pausedHost": "The server was down for a while. The host starts it again when everybody is back."
     },
     "yours": {
-        "registered": "You are entered. You will have to check in before it starts.",
+        "registered": "You are entered. Stay nearby: {host} can start it at any moment.",
+        "registeredScheduled": "You are entered. Check-in opens {minutes} minutes before the start.",
+        "hosting": "Press Start when your players are here.",
         "needsCheckIn": "Check in now, or you will be left out of the bracket.",
         "confirmed": "You are checked in. Stay on the site and your match will open by itself.",
         "missed": "You did not check in, so the bracket went ahead without you.",
@@ -96,7 +102,6 @@
     "action": {
         "register": "Enter",
         "withdraw": "Withdraw",
-        "openCheckIn": "Open check-in",
         "reopen": "Reopen entries",
         "start": "Start now",
         "resume": "Resume tournament",
@@ -119,21 +124,17 @@
         "botFillOff": "Nobody plays them",
         "botFillOn": "Filled with bots",
         "botFillHint": "Left empty, whoever is drawn against one goes straight through.",
+        "thirdPlaceOff": "Shared",
+        "thirdPlaceOn": "Played for",
+        "thirdPlaceHint": "Played for, the two semi-final losers meet for third and fourth.",
         "schedule": "Start",
         "scheduleManual": "When I say so",
         "scheduleAt": "At a set time",
+        "scheduleHint": "At a set time, check-in opens half an hour before and it starts by itself. Otherwise you start it from its page.",
         "startAt": "Start time",
-        "checkInWindow": "Check-in opens",
-        "autoStart": "Start automatically",
-        "autoStartHint": "Off means the time only opens check-in.",
+        "checkInWindow": "Check-in",
         "preset": "Match settings",
-        "minutes": "{count} min before"
-    },
-    "round": {
-        "final": "Final",
-        "semiFinal": "Semi-finals",
-        "quarterFinal": "Quarter-finals",
-        "of": "Round of {count}"
+        "durationHint": "From how long these matches usually take, rounded up."
     },
     "slot": {
         "bye": "No opponent",
@@ -144,5 +145,50 @@
         "walkover": "Went through unopposed",
         "simulated": "Bots, decided",
         "called": "Starting soon"
+    },
+    "score": {
+        "walkover": "W/O",
+        "bye": "Bye"
+    },
+    "enter": {
+        "title": "Enter {name}?",
+        "startsOn": "It starts on {date}, in {countdown}.",
+        "whenHostSays": "There is no set start time. It starts whenever {host} says so.",
+        "startsAnyTime": "Stay nearby. {host} either opens check-in, which sends you a notification, or starts straight away with whoever is online.",
+        "checkIn": "Check-in opens {before} minutes before the start, and you will get a notification. Check in by {after} minutes after the start, or you will be left out.",
+        "checkedIn": "Check-in is already open, so entering checks you in. Be ready to play when it starts."
+    },
+    "withdraw": {
+        "title": "Withdraw from {name}?",
+        "canReturn": "You can enter again while entries are still open."
+    },
+    "startDialog": {
+        "title": "Start {name}?",
+        "hereNow": "Here right now: {count} of {entered}.",
+        "checkedInSoFar": "Checked in so far: {count} of {entered}.",
+        "checkInTitle": "Give everyone time to check in",
+        "checkIn": "Everybody gets a notification. It starts by itself after {minutes} minutes, or as soon as everyone has checked in.",
+        "startHere": "Whoever is here plays now.",
+        "startCheckedIn": "Whoever has checked in plays now.",
+        "missing": "Nobody misses out. | One player misses out. | {count} players miss out.",
+        "confirmCheckIn": "Open check-in for {minutes} min",
+        "confirmStart": "Start with one player | Start with {count} players",
+        "minutes": "{count} min",
+        "minutesLabel": "Check-in time",
+        "suggested": "Suggested. {reason}",
+        "why": {
+            "everyone": "Everybody is here.",
+            "justOpened": "It was only just opened, and most players are here.",
+            "openAWhile": "It has been open a while. Give everybody a moment to come back.",
+            "manyAway": "Several players are away. Give them a moment to come back.",
+            "tooFew": "Too few players are here to start yet."
+        }
+    },
+    "overview": {
+        "title": "All tournaments",
+        "hint": "Pick a game to see its tournaments.",
+        "live": "None under way | One under way | {count} under way",
+        "pick": "Which game is it for?",
+        "pickHint": "Pick the game, and the form for its tournament opens."
     }
 }

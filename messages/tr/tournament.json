@@ -5,7 +5,6 @@
     "noEntrants": "Henüz kimse katılmadı.",
     "noBracket": "Fikstür, ev sahibi turnuvayı başlattığında çekilir.",
     "create": "Turnuva oluştur",
-    "back": "Tüm turnuvalar",
     "hostedBy": "Ev sahibi: {name}",
     "standings": "Son sıralama",
     "bracket": "Fikstür",
@@ -14,11 +13,14 @@
     "zoom": {
         "in": "Yakınlaştır",
         "out": "Uzaklaştır",
-        "fit": "Tüm fikstürü sığdır"
+        "fit": "Tüm fikstürü sığdır",
+        "findMe": "Beni bul"
     },
     "rules": {
         "format": "Format",
-        "players": "{count} oyuncu"
+        "checkIn": "{before} dk önce ile {after} dk sonra arası",
+        "duration": "Süre",
+        "about": "Yaklaşık {time}"
     },
     "seats": {
         "bots": "Bir yer boş, onu bir bot alacak | {count} yer boş, onları botlar alacak",
@@ -37,6 +39,7 @@
         "manage": "Yönet: {name}",
         "seedUp": "Sıralamada yükselt",
         "seedDown": "Sıralamada düşür",
+        "reorder": "Sıralamayı değiştirmek için sürükle: {name}",
         "kick": "Turnuvadan çıkar"
     },
     "column": {
@@ -76,6 +79,7 @@
         "registering": "Katılan: {count}/{size}.",
         "checkIn": "Katılımını onaylayan: {confirmed}/{entered}.",
         "checkInAt": "Katılım onayı {time} sonra açılıyor.",
+        "checkInClosesIn": "Katılım onayı {time} sonra kapanıyor.",
         "startsAt": "{time} sonra başlıyor.",
         "running": "Tur {round}/{rounds}.",
         "finished": "{name} kazandı.",
@@ -85,7 +89,9 @@
         "pausedHost": "Sunucu bir süre kapalı kaldı. Herkes döndüğünde ev sahibi turnuvayı yeniden başlatacak."
     },
     "yours": {
-        "registered": "Kayıtlısın. Başlamadan önce katılımını onaylaman gerekecek.",
+        "registered": "Kayıtlısın. Yakınlarda ol: {host} her an başlatabilir.",
+        "registeredScheduled": "Kayıtlısın. Katılım onayı başlangıçtan {minutes} dakika önce açılır.",
+        "hosting": "Oyuncuların gelince Başla'ya bas.",
         "needsCheckIn": "Katılımını şimdi onayla, yoksa fikstüre giremezsin.",
         "confirmed": "Katılımını onayladın. Sitede kal, maçın kendiliğinden açılacak.",
         "missed": "Katılımını onaylamadın, bu yüzden fikstür sensiz devam etti.",
@@ -96,7 +102,6 @@
     "action": {
         "register": "Katıl",
         "withdraw": "Çekil",
-        "openCheckIn": "Katılım onayını aç",
         "reopen": "Kayıtları yeniden aç",
         "start": "Şimdi başlat",
         "resume": "Turnuvaya devam et",
@@ -119,21 +124,17 @@
         "botFillOff": "Kimse oynamaz",
         "botFillOn": "Botlarla doldurulur",
         "botFillHint": "Boş bırakılırsa, boş bir yerle eşleşen doğrudan tur atlar.",
+        "thirdPlaceOff": "Paylaşılır",
+        "thirdPlaceOn": "Oynanır",
+        "thirdPlaceHint": "Oynanırsa yarı finali kaybeden iki oyuncu üçüncülük ve dördüncülük için karşılaşır.",
         "schedule": "Başlangıç",
         "scheduleManual": "Ben söyleyince",
         "scheduleAt": "Belirli bir saatte",
+        "scheduleHint": "Belirli bir saatte katılım onayı yarım saat önce açılır ve turnuva kendiliğinden başlar. Yoksa sayfasından sen başlatırsın.",
         "startAt": "Başlangıç saati",
-        "checkInWindow": "Katılım onayı açılışı",
-        "autoStart": "Otomatik başlat",
-        "autoStartHint": "Kapalıysa bu saat sadece katılım onayını açar.",
+        "checkInWindow": "Katılım onayı",
         "preset": "Maç ayarları",
-        "minutes": "{count} dk önce"
-    },
-    "round": {
-        "final": "Final",
-        "semiFinal": "Yarı final",
-        "quarterFinal": "Çeyrek final",
-        "of": "Son {count}"
+        "durationHint": "Bu maçların genelde ne kadar sürdüğüne göre, yukarı yuvarlanmış."
     },
     "slot": {
         "bye": "Rakip yok",
@@ -144,5 +145,50 @@
         "walkover": "Rakipsiz tur atladı",
         "simulated": "Botlar arasında belirlendi",
         "called": "Birazdan başlıyor"
+    },
+    "score": {
+        "walkover": "Hükmen",
+        "bye": "Bay"
+    },
+    "enter": {
+        "title": "{name} turnuvasına katıl?",
+        "startsOn": "{date} tarihinde başlıyor, {countdown} sonra.",
+        "whenHostSays": "Belirli bir başlangıç saati yok. {host} başlatınca başlayacak.",
+        "startsAnyTime": "Yakınlarda ol. {host} ya katılım onayını açar ve sana bildirim gelir, ya da çevrim içi olanlarla hemen başlatır.",
+        "checkIn": "Katılım onayı başlangıçtan {before} dakika önce açılır ve bildirim alırsın. Başlangıçtan en geç {after} dakika sonrasına kadar onayla, yoksa tablodan çıkarsın.",
+        "checkedIn": "Katılım onayı zaten açık, katıldığında onaylamış olursun. Başladığında oynamaya hazır ol."
+    },
+    "withdraw": {
+        "title": "{name} turnuvasından çekil?",
+        "canReturn": "Kayıtlar açık olduğu sürece yeniden katılabilirsin."
+    },
+    "startDialog": {
+        "title": "{name} turnuvasını başlat?",
+        "hereNow": "Şu an burada: {count}/{entered}.",
+        "checkedInSoFar": "Şimdiye kadar onaylayan: {count}/{entered}.",
+        "checkInTitle": "Herkese katılımını onaylaması için zaman tanı",
+        "checkIn": "Herkese bildirim gider. {minutes} dakika sonra ya da herkes onayladığı anda kendiliğinden başlar.",
+        "startHere": "Burada olanlar şimdi oynar.",
+        "startCheckedIn": "Onaylayanlar şimdi oynar.",
+        "missing": "Kimse dışarıda kalmaz. | Bir oyuncu dışarıda kalır. | {count} oyuncu dışarıda kalır.",
+        "confirmCheckIn": "Katılım onayını {minutes} dk aç",
+        "confirmStart": "{count} oyuncuyla başla",
+        "minutes": "{count} dk",
+        "minutesLabel": "Onay süresi",
+        "suggested": "Önerilen. {reason}",
+        "why": {
+            "everyone": "Herkes burada.",
+            "justOpened": "Yeni açıldı ve oyuncuların çoğu burada.",
+            "openAWhile": "Bir süredir açık. Herkese geri dönmesi için biraz zaman tanı.",
+            "manyAway": "Birkaç oyuncu uzakta. Geri dönmeleri için biraz zaman tanı.",
+            "tooFew": "Başlatmak için henüz yeterli oyuncu yok."
+        }
+    },
+    "overview": {
+        "title": "Tüm turnuvalar",
+        "hint": "Turnuvalarını görmek için bir oyun seç.",
+        "live": "Devam eden yok | Bir tane devam ediyor | {count} devam ediyor",
+        "pick": "Hangi oyun için?",
+        "pickHint": "Oyunu seç, turnuva formu açılsın."
     }
 }

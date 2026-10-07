@@ -5,7 +5,6 @@
     "noEntrants": "Nikt się jeszcze nie zapisał.",
     "noBracket": "Drabinka zostanie rozlosowana, gdy gospodarz rozpocznie turniej.",
     "create": "Utwórz turniej",
-    "back": "Wszystkie turnieje",
     "hostedBy": "Gospodarz: {name}",
     "standings": "Klasyfikacja końcowa",
     "bracket": "Drabinka",
@@ -14,11 +13,14 @@
     "zoom": {
         "in": "Przybliż",
         "out": "Oddal",
-        "fit": "Pokaż całą drabinkę"
+        "fit": "Pokaż całą drabinkę",
+        "findMe": "Znajdź mnie"
     },
     "rules": {
         "format": "Format",
-        "players": "Graczy: {count}"
+        "checkIn": "Od {before} min przed do {after} min po starcie",
+        "duration": "Czas trwania",
+        "about": "Około {time}"
     },
     "seats": {
         "bots": "Zostało jedno miejsce, zajmie je bot | Wolne miejsca: {count}, zajmą je boty",
@@ -37,6 +39,7 @@
         "manage": "Zarządzaj: {name}",
         "seedUp": "Wyżej w rozstawieniu",
         "seedDown": "Niżej w rozstawieniu",
+        "reorder": "Przeciągnij, aby zmienić rozstawienie: {name}",
         "kick": "Usuń z turnieju"
     },
     "column": {
@@ -76,6 +79,7 @@
         "registering": "Zapisani: {count} z {size}.",
         "checkIn": "Potwierdzona obecność: {confirmed} z {entered}.",
         "checkInAt": "Potwierdzanie obecności za {time}.",
+        "checkInClosesIn": "Potwierdzanie obecności kończy się za {time}.",
         "startsAt": "Start za {time}.",
         "running": "Runda {round} z {rounds}.",
         "finished": "Zwycięzca: {name}.",
@@ -85,7 +89,9 @@
         "pausedHost": "Serwer nie działał przez jakiś czas. Gospodarz wznowi turniej, gdy wszyscy wrócą."
     },
     "yours": {
-        "registered": "Masz miejsce na liście. Przed startem musisz potwierdzić obecność.",
+        "registered": "Masz miejsce na liście. Bądź w pobliżu: {host} może zacząć w każdej chwili.",
+        "registeredScheduled": "Masz miejsce na liście. Potwierdzanie obecności rusza {minutes} min przed startem.",
+        "hosting": "Naciśnij Rozpocznij, gdy twoi gracze będą na miejscu.",
         "needsCheckIn": "Potwierdź obecność teraz, inaczej nie trafisz do drabinki.",
         "confirmed": "Obecność potwierdzona. Zostań na stronie, a twój mecz otworzy się sam.",
         "missed": "Nie potwierdzono twojej obecności, więc drabinka ruszyła bez ciebie.",
@@ -96,7 +102,6 @@
     "action": {
         "register": "Zapisz się",
         "withdraw": "Wypisz się",
-        "openCheckIn": "Otwórz potwierdzanie obecności",
         "reopen": "Otwórz ponownie zapisy",
         "start": "Rozpocznij teraz",
         "resume": "Wznów turniej",
@@ -119,21 +124,17 @@
         "botFillOff": "Nikt na nich nie gra",
         "botFillOn": "Zajmują je boty",
         "botFillHint": "Jeśli zostaną puste, kto na nie trafi, przechodzi dalej bez gry.",
+        "thirdPlaceOff": "Ex aequo",
+        "thirdPlaceOn": "Rozgrywane",
+        "thirdPlaceHint": "Gdy jest rozgrywane, przegrani półfinałów grają o trzecie i czwarte miejsce.",
         "schedule": "Start",
         "scheduleManual": "Kiedy zdecyduję",
         "scheduleAt": "O ustalonej godzinie",
+        "scheduleHint": "Przy ustalonej godzinie potwierdzanie obecności rusza pół godziny wcześniej, a turniej startuje sam. W przeciwnym razie uruchamiasz go ze strony turnieju.",
         "startAt": "Godzina startu",
         "checkInWindow": "Potwierdzanie obecności",
-        "autoStart": "Rozpocznij automatycznie",
-        "autoStartHint": "Gdy wyłączone, o tej godzinie otwiera się tylko potwierdzanie obecności.",
         "preset": "Ustawienia meczu",
-        "minutes": "{count} min przed"
-    },
-    "round": {
-        "final": "Finał",
-        "semiFinal": "Półfinały",
-        "quarterFinal": "Ćwierćfinały",
-        "of": "Runda {count} graczy"
+        "durationHint": "Na podstawie tego, ile zwykle trwają te mecze, w zaokrągleniu w górę."
     },
     "slot": {
         "bye": "Wolny los",
@@ -144,5 +145,50 @@
         "walkover": "Awans bez gry",
         "simulated": "Rozstrzygnięty między botami",
         "called": "Wkrótce start"
+    },
+    "score": {
+        "walkover": "Walkower",
+        "bye": "Wolny los"
+    },
+    "enter": {
+        "title": "Dołączyć do {name}?",
+        "startsOn": "Start: {date}, za {countdown}.",
+        "whenHostSays": "Nie ma ustalonej godziny startu. Zacznie się, gdy {host} tak zdecyduje.",
+        "startsAnyTime": "Bądź w pobliżu. {host} albo otworzy potwierdzanie obecności i dostaniesz powiadomienie, albo od razu zacznie z tymi, którzy są online.",
+        "checkIn": "Potwierdzanie obecności rusza {before} min przed startem i dostaniesz powiadomienie. Potwierdź najpóźniej {after} min po starcie, inaczej wypadniesz z drabinki.",
+        "checkedIn": "Potwierdzanie obecności już trwa, więc dołączając, od razu ją potwierdzasz. Bądź gotowy do gry, gdy wszystko ruszy."
+    },
+    "withdraw": {
+        "title": "Wycofać się z {name}?",
+        "canReturn": "Możesz dołączyć ponownie, dopóki zapisy są otwarte."
+    },
+    "startDialog": {
+        "title": "Rozpocząć {name}?",
+        "hereNow": "Teraz obecni: {count} z {entered}.",
+        "checkedInSoFar": "Potwierdzili dotąd: {count} z {entered}.",
+        "checkInTitle": "Daj wszystkim czas na potwierdzenie obecności",
+        "checkIn": "Każdy dostanie powiadomienie. Turniej wystartuje sam po {minutes} min albo gdy wszyscy potwierdzą obecność.",
+        "startHere": "Grają ci, którzy są teraz obecni.",
+        "startCheckedIn": "Grają ci, którzy potwierdzili obecność.",
+        "missing": "Nikt nie wypada. | Wypada jeden gracz. | Wypadający gracze: {count}.",
+        "confirmCheckIn": "Otwórz potwierdzanie na {minutes} min",
+        "confirmStart": "Rozpocznij teraz ({count})",
+        "minutes": "{count} min",
+        "minutesLabel": "Czas na potwierdzenie",
+        "suggested": "Polecane. {reason}",
+        "why": {
+            "everyone": "Wszyscy są na miejscu.",
+            "justOpened": "Turniej dopiero co otwarto, a większość graczy jest na miejscu.",
+            "openAWhile": "Turniej jest otwarty od dłuższego czasu. Daj wszystkim chwilę na powrót.",
+            "manyAway": "Kilku graczy jest nieobecnych. Daj im chwilę na powrót.",
+            "tooFew": "Na razie jest za mało graczy, żeby zacząć."
+        }
+    },
+    "overview": {
+        "title": "Wszystkie turnieje",
+        "hint": "Wybierz grę, żeby zobaczyć jej turnieje.",
+        "live": "Brak w toku | Jeden w toku | W toku: {count}",
+        "pick": "Do jakiej gry?",
+        "pickHint": "Wybierz grę, a otworzy się formularz turnieju."
     }
 }

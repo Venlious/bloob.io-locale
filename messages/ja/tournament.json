@@ -5,7 +5,6 @@
     "noEntrants": "まだ誰も参加していないよ。",
     "noBracket": "ホストが開始するとトーナメント表が決まるよ。",
     "create": "トーナメントを作成する",
-    "back": "トーナメント一覧",
     "hostedBy": "ホスト：{name}",
     "standings": "最終順位",
     "bracket": "トーナメント表",
@@ -14,11 +13,14 @@
     "zoom": {
         "in": "拡大",
         "out": "縮小",
-        "fit": "トーナメント表全体を表示"
+        "fit": "トーナメント表全体を表示",
+        "findMe": "自分を探す"
     },
     "rules": {
         "format": "形式",
-        "players": "{count}人"
+        "checkIn": "開始{before}分前から{after}分後まで",
+        "duration": "所要時間",
+        "about": "約{time}"
     },
     "seats": {
         "bots": "残り1枠はボットが入るよ | 残り{count}枠はボットが入るよ",
@@ -37,6 +39,7 @@
         "manage": "{name}を管理",
         "seedUp": "シードを上げる",
         "seedDown": "シードを下げる",
+        "reorder": "ドラッグして{name}のシードを変更",
         "kick": "トーナメントから外す"
     },
     "column": {
@@ -76,6 +79,7 @@
         "registering": "{size}枠中{count}人が参加したよ。",
         "checkIn": "{entered}人中{confirmed}人がチェックインしたよ。",
         "checkInAt": "{time}後にチェックイン開始だよ。",
+        "checkInClosesIn": "チェックインはあと{time}で締め切りだよ。",
         "startsAt": "{time}後に始まるよ。",
         "running": "{rounds}ラウンド中{round}ラウンド目だよ。",
         "finished": "{name}が優勝したよ。",
@@ -85,7 +89,9 @@
         "pausedHost": "サーバーがしばらく止まっていたよ。みんなが戻ったらホストが再開するよ。"
     },
     "yours": {
-        "registered": "参加登録したよ。開始前にチェックインしてね。",
+        "registered": "参加登録したよ。近くにいてね。{host}がいつでも始められるよ。",
+        "registeredScheduled": "参加登録したよ。チェックインは開始の{minutes}分前に始まるよ。",
+        "hosting": "プレイヤーがそろったら「開始する」を押してね。",
         "needsCheckIn": "今すぐチェックインしてね。しないとトーナメント表から外れちゃうよ。",
         "confirmed": "チェックインしたよ。サイトにいれば対戦は自動で開くよ。",
         "missed": "チェックインしなかったから、君抜きでトーナメント表が決まったよ。",
@@ -96,7 +102,6 @@
     "action": {
         "register": "参加する",
         "withdraw": "参加を取り消す",
-        "openCheckIn": "チェックインを開始",
         "reopen": "参加受付を再開",
         "start": "今すぐ開始",
         "resume": "トーナメントを再開",
@@ -119,21 +124,17 @@
         "botFillOff": "空けておく",
         "botFillOn": "ボットで埋める",
         "botFillHint": "空けておくと、空き枠と当たった人はそのまま勝ち上がるよ。",
+        "thirdPlaceOff": "同率",
+        "thirdPlaceOn": "決定戦あり",
+        "thirdPlaceHint": "決定戦ありにすると、準決勝の敗者同士が3位と4位を争うよ。",
         "schedule": "開始",
         "scheduleManual": "自分で開始",
         "scheduleAt": "時間を指定",
+        "scheduleHint": "時間を決めると、チェックインは30分前に始まって、自動でスタートするよ。決めないなら、ページから自分でスタートしてね。",
         "startAt": "開始時間",
-        "checkInWindow": "チェックイン開始",
-        "autoStart": "自動で開始",
-        "autoStartHint": "オフにすると、指定した時間にチェックインが始まるだけだよ。",
+        "checkInWindow": "チェックイン",
         "preset": "対戦の設定",
-        "minutes": "{count}分前"
-    },
-    "round": {
-        "final": "決勝",
-        "semiFinal": "準決勝",
-        "quarterFinal": "準々決勝",
-        "of": "ベスト{count}"
+        "durationHint": "この試合の普段の長さから、切り上げて算出。"
     },
     "slot": {
         "bye": "相手なし",
@@ -144,5 +145,50 @@
         "walkover": "不戦勝",
         "simulated": "ボット同士で決着",
         "called": "まもなく開始"
+    },
+    "score": {
+        "walkover": "不戦勝",
+        "bye": "シード"
+    },
+    "enter": {
+        "title": "{name}にエントリーする？",
+        "startsOn": "{date}に開始、あと{countdown}。",
+        "whenHostSays": "開始時刻は決まってないよ。{host}が開始したときに始まるよ。",
+        "startsAnyTime": "近くにいてね。{host}がチェックインを始めると通知が届くよ。オンラインの人だけですぐ始めることもあるよ。",
+        "checkIn": "チェックインは開始の{before}分前に始まって、通知が届くよ。開始から{after}分後までにチェックインしないと、トーナメント表から外れちゃうよ。",
+        "checkedIn": "チェックインはもう始まってるから、エントリーするとそのままチェックイン済みになるよ。始まったらすぐ遊べるようにしておいてね。"
+    },
+    "withdraw": {
+        "title": "{name}を辞退する？",
+        "canReturn": "エントリー受付中なら、またエントリーできるよ。"
+    },
+    "startDialog": {
+        "title": "{name}を開始する？",
+        "hereNow": "今いる人：{entered}人中{count}人",
+        "checkedInSoFar": "チェックイン済み：{entered}人中{count}人",
+        "checkInTitle": "みんなにチェックインの時間をあげる",
+        "checkIn": "全員に通知が届くよ。{minutes}分たつか、全員がチェックインしたら自動でスタートするよ。",
+        "startHere": "今いる人ですぐに始めるよ。",
+        "startCheckedIn": "チェックインした人ですぐに始めるよ。",
+        "missing": "外れる人はいないよ。 | 1人が外れるよ。 | {count}人が外れるよ。",
+        "confirmCheckIn": "チェックインを{minutes}分間開始",
+        "confirmStart": "{count}人で開始",
+        "minutes": "{count}分",
+        "minutesLabel": "チェックインの時間",
+        "suggested": "おすすめ。{reason}",
+        "why": {
+            "everyone": "全員そろってるよ。",
+            "justOpened": "作ったばかりで、ほとんどの人がいるよ。",
+            "openAWhile": "しばらく開いていたから、みんなが戻ってくる時間をあげよう。",
+            "manyAway": "席を外している人が何人かいるから、戻ってくる時間をあげよう。",
+            "tooFew": "まだ開始できる人数がそろっていないよ。"
+        }
+    },
+    "overview": {
+        "title": "トーナメント一覧",
+        "hint": "ゲームを選ぶとトーナメントが見られるよ。",
+        "live": "進行中なし | 1件進行中 | {count}件進行中",
+        "pick": "どのゲームの大会？",
+        "pickHint": "ゲームを選ぶと、大会のフォームが開くよ。"
     }
 }
