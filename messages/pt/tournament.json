@@ -31,7 +31,7 @@
         "copied": "Copiado",
         "share": "Compartilhe este código com quem você quer no torneio.",
         "enter": "Inserir um código",
-        "enterHint": "Alguém te mandou seis caracteres. Digite aqui.",
+        "enterHint": "Torneios só para convidados não aparecem na lista. Digite o código de 6 caracteres que você recebeu do anfitrião ou de outro jogador.",
         "join": "Buscar",
         "needed": "Este torneio é só com convite. Insira o código que te mandaram."
     },
@@ -43,7 +43,6 @@
         "kick": "Remover do torneio"
     },
     "column": {
-        "name": "Torneio",
         "yours": "Você está inscrito",
         "seed": "Cabeça de chave",
         "place": "Posição",
@@ -92,6 +91,7 @@
         "registered": "Você está inscrito. Fique por perto: {host} pode começar a qualquer momento.",
         "registeredScheduled": "Você está inscrito. O check-in abre {minutes} minutos antes do início.",
         "hosting": "Toque em Iniciar quando seus jogadores estiverem aqui.",
+        "hostingBy": "Aperte Iniciar quando seus jogadores estiverem aqui. Se não começar até {time}, ele será cancelado.",
         "needsCheckIn": "Faça check-in agora, ou você fica fora da chave.",
         "confirmed": "Check-in feito. Fique no site e sua partida vai abrir sozinha.",
         "missed": "Você não fez check-in, então a chave seguiu sem você.",
@@ -110,31 +110,48 @@
         "save": "Salvar configurações"
     },
     "form": {
+        "official": "Torneio oficial",
+        "officialHint": "Aparece como oficial e na página do jogo. Precisa de um horário de início e é aberto a todos.",
         "name": "Nome",
-        "inviteOnly": "Quem pode entrar",
+        "inviteOnly": "Entrada",
         "inviteOnlyOff": "Qualquer um",
-        "inviteOnlyOn": "Com o código",
-        "inviteOnlyHint": "Só com convite, ele não aparece na lista.",
+        "inviteOnlyOn": "Só convidados",
+        "inviteOnlyHint": "Só convidados: não aparece na lista, e os jogadores precisam do código para entrar.",
         "size": "Tamanho da chave",
         "sizeHint": "Quem for sorteado contra uma vaga vazia passa direto.",
         "wins": "Duração do confronto",
         "winsSingle": "Uma partida",
         "winsFirstTo": "Quem vencer {count} primeiro",
         "botFill": "Vagas vazias",
-        "botFillOff": "Ninguém joga nelas",
-        "botFillOn": "Preenchidas com bots",
-        "botFillHint": "Se ficarem vazias, quem for sorteado contra uma passa direto.",
+        "botFillOff": "Vazios",
+        "botFillHint": "Vazios: quem cair contra uma vaga vazia passa direto. Bots: bots ocupam as vagas quando houver 4 jogadores.",
         "thirdPlaceOff": "Dividido",
         "thirdPlaceOn": "Disputado",
         "thirdPlaceHint": "Se for disputado, os dois perdedores das semifinais jogam pelo terceiro e quarto lugar.",
         "schedule": "Início",
         "scheduleManual": "Quando eu mandar",
         "scheduleAt": "Em um horário marcado",
+        "scheduleManualHint": "Para quem está aqui agora. Comece dentro de uma hora, ou ele será cancelado.",
+        "scheduleAtHint": "Começa sozinho. Os jogadores recebem um lembrete quando o check-in abre.",
+        "recommended": "Recomendado",
         "scheduleHint": "Com horário marcado, o check-in abre meia hora antes e o torneio começa sozinho. Se não, você começa pela página dele.",
         "startAt": "Horário de início",
+        "startsIn": "Isso é {date}, daqui a {time}.",
         "checkInWindow": "Check-in",
         "preset": "Configurações da partida",
-        "durationHint": "Pelo tempo que essas partidas costumam levar, arredondado para cima."
+        "durationHint": "Pelo tempo que essas partidas costumam levar, arredondado para cima.",
+        "estimate": {
+            "label": "Duração estimada",
+            "unknownWhy": "Este jogo ainda não teve partidas terminadas suficientes no último mês para calcular isso.",
+            "average": "As partidas de {game} duraram em média cerca de {time} no último mês. A partir disso:",
+            "rounds": "{players} jogadores dão {rounds}. As partidas de uma rodada são jogadas ao mesmo tempo, e a rodada seguinte espera a última.",
+            "roundCount": "uma rodada | {count} rodadas",
+            "series": "Cada partida conta pelo máximo: quem fizer {wins} primeiro pode levar {games} jogos.",
+            "single": "Cada partida é um jogo.",
+            "padding": "Cada jogo conta um pouco mais que a média, já que uma rodada espera a partida mais lenta, mais a pausa curta antes do próximo jogo.",
+            "rounded": "O total é arredondado para cima, então muitas vezes termina antes.",
+            "byes": "Um jogador passa direto da primeira rodada. | {count} jogadores passam direto da primeira rodada."
+        }
     },
     "slot": {
         "bye": "Sem oponente",
@@ -184,11 +201,28 @@
             "tooFew": "Ainda não há jogadores suficientes para começar."
         }
     },
+    "list": {
+        "open": "Abertos",
+        "yours": "Seus",
+        "noTime": "Sem horário fixo",
+        "noneLive": "Nada está sendo jogado agora.",
+        "noneYours": "Você ainda não entrou em nenhum torneio.",
+        "allGames": "Todos os jogos",
+        "games": "Nenhum jogo | Um jogo | {count} jogos"
+    },
     "overview": {
-        "title": "Todos os torneios",
-        "hint": "Escolha um jogo para ver os torneios dele.",
         "live": "Nenhum em andamento | Um em andamento | {count} em andamento",
-        "pick": "Para qual jogo?",
-        "pickHint": "Escolha o jogo e o formulário do torneio abre."
+        "pick": "Para qual jogo?"
+    },
+    "mine": {
+        "current": "Agora",
+        "past": "Anteriores",
+        "place": "Posição {place} de {count}"
+    },
+    "createDialog": {
+        "back": "Voltar",
+        "next": "Próximo: {step}",
+        "progress": "Passo {step} de {count}",
+        "entry": "Quem pode entrar"
     }
 }

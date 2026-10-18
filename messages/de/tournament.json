@@ -31,7 +31,7 @@
         "copied": "Kopiert",
         "share": "Teile diesen Code mit den Leuten, die dabei sein sollen.",
         "enter": "Code eingeben",
-        "enterHint": "Jemand hat dir sechs Zeichen geschickt. Gib sie hier ein.",
+        "enterHint": "Turniere nur für Eingeladene stehen nicht in der Liste. Gib den 6-stelligen Code ein, den du vom Gastgeber oder einem anderen Spieler bekommen hast.",
         "join": "Suchen",
         "needed": "Dieses Turnier ist nur mit Einladung. Gib den Code ein, den du bekommen hast."
     },
@@ -43,7 +43,6 @@
         "kick": "Aus dem Turnier entfernen"
     },
     "column": {
-        "name": "Turnier",
         "yours": "Du bist dabei",
         "seed": "Setzplatz",
         "place": "Platz",
@@ -92,6 +91,7 @@
         "registered": "Du bist angemeldet. Bleib in der Nähe: {host} kann jederzeit starten.",
         "registeredScheduled": "Du bist angemeldet. Der Check-in öffnet {minutes} Minuten vor dem Start.",
         "hosting": "Drück auf Start, wenn deine Spieler da sind.",
+        "hostingBy": "Drück auf Start, wenn deine Spieler da sind. Hat es bis {time} nicht begonnen, wird es abgesagt.",
         "needsCheckIn": "Check jetzt ein, sonst bist du nicht im Turnierbaum.",
         "confirmed": "Du bist eingecheckt. Bleib auf der Seite, dann öffnet sich dein Spiel von selbst.",
         "missed": "Du hast nicht eingecheckt, deshalb ging das Turnier ohne dich los.",
@@ -110,31 +110,48 @@
         "save": "Einstellungen speichern"
     },
     "form": {
+        "official": "Offizielles Turnier",
+        "officialHint": "Wird als offiziell und auf der Seite des Spiels angezeigt. Es braucht eine Startzeit und ist für alle offen.",
         "name": "Name",
-        "inviteOnly": "Wer teilnehmen kann",
+        "inviteOnly": "Teilnahme",
         "inviteOnlyOff": "Alle",
-        "inviteOnlyOn": "Mit dem Code",
-        "inviteOnlyHint": "Nur mit Einladung taucht es nicht in der Liste auf.",
+        "inviteOnlyOn": "Nur Eingeladene",
+        "inviteOnlyHint": "Nur Eingeladene: Es steht nicht in der Liste, und Spieler brauchen den Code zum Beitreten.",
         "size": "Größe des Turnierbaums",
         "sizeHint": "Wer gegen einen leeren Platz gelost wird, kommt direkt weiter.",
         "wins": "Matchlänge",
         "winsSingle": "Ein Spiel",
         "winsFirstTo": "Zuerst {count} Siege",
         "botFill": "Leere Plätze",
-        "botFillOff": "Niemand spielt sie",
-        "botFillOn": "Mit Bots aufgefüllt",
-        "botFillHint": "Bleiben sie leer, kommt direkt weiter, wer gegen einen gelost wird.",
+        "botFillOff": "Bleiben leer",
+        "botFillHint": "Bleiben leer: Wer gegen einen leeren Platz gelost wird, kommt direkt weiter. Bots: Bots füllen die Plätze, sobald 4 Spieler dabei sind.",
         "thirdPlaceOff": "Geteilt",
         "thirdPlaceOn": "Ausgespielt",
         "thirdPlaceHint": "Wird er ausgespielt, treffen die beiden Verlierer der Halbfinals um Platz drei und vier aufeinander.",
         "schedule": "Start",
         "scheduleManual": "Wenn ich es sage",
         "scheduleAt": "Zu einer festen Zeit",
+        "scheduleManualHint": "Für Leute, die gerade da sind. Starte es innerhalb einer Stunde, sonst wird es abgesagt.",
+        "scheduleAtHint": "Es startet von selbst. Die Spieler werden erinnert, wenn der Check-in öffnet.",
+        "recommended": "Empfohlen",
         "scheduleHint": "Mit fester Zeit öffnet der Check-in eine halbe Stunde vorher und das Turnier startet von selbst. Sonst startest du es selbst auf seiner Seite.",
         "startAt": "Startzeit",
+        "startsIn": "Das ist {date}, in {time}.",
         "checkInWindow": "Check-in",
         "preset": "Spieleinstellungen",
-        "durationHint": "Danach, wie lange diese Spiele meistens dauern, aufgerundet."
+        "durationHint": "Danach, wie lange diese Spiele meistens dauern, aufgerundet.",
+        "estimate": {
+            "label": "Geschätzte Dauer",
+            "unknownWhy": "Dieses Spiel hatte im letzten Monat noch nicht genug beendete Matches, um das auszurechnen.",
+            "average": "{game}-Matches haben im letzten Monat im Schnitt etwa {time} gedauert. Daraus:",
+            "rounds": "{players} Spieler ergeben {rounds}. Die Matches einer Runde laufen gleichzeitig, und die nächste Runde wartet auf das letzte.",
+            "roundCount": "eine Runde | {count} Runden",
+            "series": "Jedes Match zählt mit seiner längsten Dauer: Wer zuerst {wins} gewinnt, kann {games} Spiele brauchen.",
+            "single": "Jedes Match ist ein Spiel.",
+            "padding": "Jedes Spiel zählt etwas länger als der Schnitt, weil eine Runde auf ihr langsamstes Match wartet, plus die kurze Pause vor dem nächsten Spiel.",
+            "rounded": "Die Summe ist aufgerundet, es ist also oft früher vorbei.",
+            "byes": "Ein Spieler kommt direkt in die zweite Runde. | {count} Spieler kommen direkt in die zweite Runde."
+        }
     },
     "slot": {
         "bye": "Kein Gegner",
@@ -184,11 +201,28 @@
             "tooFew": "Es sind noch zu wenige Spieler da, um zu starten."
         }
     },
+    "list": {
+        "open": "Offen",
+        "yours": "Deine",
+        "noTime": "Keine feste Zeit",
+        "noneLive": "Gerade wird nichts gespielt.",
+        "noneYours": "Du hast dich noch für kein Turnier angemeldet.",
+        "allGames": "Alle Spiele",
+        "games": "Keine Spiele | Ein Spiel | {count} Spiele"
+    },
     "overview": {
-        "title": "Alle Turniere",
-        "hint": "Wähle ein Spiel, um seine Turniere zu sehen.",
         "live": "Keins läuft | Eins läuft | {count} laufen",
-        "pick": "Für welches Spiel?",
-        "pickHint": "Wähle das Spiel, dann öffnet sich das Formular für das Turnier."
+        "pick": "Für welches Spiel?"
+    },
+    "mine": {
+        "current": "Aktuell",
+        "past": "Vergangen",
+        "place": "Platz {place} von {count}"
+    },
+    "createDialog": {
+        "back": "Zurück",
+        "next": "Weiter: {step}",
+        "progress": "Schritt {step} von {count}",
+        "entry": "Wer teilnehmen kann"
     }
 }

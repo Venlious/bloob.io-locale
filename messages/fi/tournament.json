@@ -31,7 +31,7 @@
         "copied": "Kopioitu",
         "share": "Jaa tämä koodi niille, jotka haluat mukaan.",
         "enter": "Syötä koodi",
-        "enterHint": "Joku lähetti sinulle kuusi merkkiä. Kirjoita ne tähän.",
+        "enterHint": "Vain kutsutuille tarkoitetut turnaukset eivät näy listalla. Syötä 6 merkin koodi, jonka sait järjestäjältä tai toiselta pelaajalta.",
         "join": "Etsi",
         "needed": "Tähän pääsee vain kutsulla. Syötä saamasi koodi."
     },
@@ -43,7 +43,6 @@
         "kick": "Poista turnauksesta"
     },
     "column": {
-        "name": "Turnaus",
         "yours": "Olet mukana",
         "seed": "Sijoitus",
         "place": "Sija",
@@ -92,6 +91,7 @@
         "registered": "Olet ilmoittautunut. Pysy lähellä: {host} voi aloittaa milloin tahansa.",
         "registeredScheduled": "Olet ilmoittautunut. Vahvistus avautuu {minutes} minuuttia ennen alkua.",
         "hosting": "Paina Aloita, kun pelaajasi ovat paikalla.",
+        "hostingBy": "Paina Aloita, kun pelaajasi ovat paikalla. Jos se ei ole alkanut klo {time} mennessä, se perutaan.",
         "needsCheckIn": "Vahvista osallistumisesi nyt, tai jäät pois kaaviosta.",
         "confirmed": "Osallistumisesi on vahvistettu. Pysy sivustolla, niin ottelusi avautuu itsestään.",
         "missed": "Et vahvistanut osallistumistasi, joten turnaus alkoi ilman sinua.",
@@ -110,31 +110,48 @@
         "save": "Tallenna asetukset"
     },
     "form": {
+        "official": "Virallinen turnaus",
+        "officialHint": "Näytetään virallisena ja pelin sivulla. Se tarvitsee alkamisajan ja on avoin kaikille.",
         "name": "Nimi",
-        "inviteOnly": "Kuka voi ilmoittautua",
-        "inviteOnlyOff": "Kuka tahansa",
-        "inviteOnlyOn": "Koodilla",
-        "inviteOnlyHint": "Vain kutsulla oleva turnaus ei näy listassa.",
+        "inviteOnly": "Osallistuminen",
+        "inviteOnlyOff": "Kaikki",
+        "inviteOnlyOn": "Vain kutsutut",
+        "inviteOnlyHint": "Vain kutsutut: se ei näy listalla, ja pelaajat tarvitsevat sen koodin osallistuakseen.",
         "size": "Kaavion koko",
         "sizeHint": "Tyhjää paikkaa vastaan arvottu pääsee suoraan jatkoon.",
         "wins": "Ottelun pituus",
         "winsSingle": "Yksi peli",
         "winsFirstTo": "Ensimmäinen {count} voittoon",
         "botFill": "Tyhjät paikat",
-        "botFillOff": "Jäävät tyhjiksi",
-        "botFillOn": "Täytetään boteilla",
-        "botFillHint": "Jos paikat jäävät tyhjiksi, niitä vastaan arvottu pääsee suoraan jatkoon.",
+        "botFillOff": "Tyhjiä",
+        "botFillHint": "Tyhjiä: tyhjää paikkaa vastaan arvottu pääsee suoraan jatkoon. Botit: botit täyttävät paikat, kun pelaajia on 4.",
         "thirdPlaceOff": "Jaettu",
         "thirdPlaceOn": "Pelataan",
         "thirdPlaceHint": "Jos se pelataan, välierien häviäjät pelaavat kolmannesta ja neljännestä sijasta.",
         "schedule": "Alku",
         "scheduleManual": "Kun minä sanon",
         "scheduleAt": "Tiettyyn aikaan",
+        "scheduleManualHint": "Niille, jotka ovat paikalla nyt. Aloita se tunnin sisällä, tai se perutaan.",
+        "scheduleAtHint": "Se alkaa itsestään. Pelaajat saavat muistutuksen, kun ilmoittautuminen aukeaa.",
+        "recommended": "Suositeltu",
         "scheduleHint": "Kiinteällä ajalla vahvistus avautuu puoli tuntia ennen ja turnaus alkaa itsestään. Muuten aloitat sen itse sen sivulta.",
         "startAt": "Alkamisaika",
+        "startsIn": "Se on {date}, {time} päästä.",
         "checkInWindow": "Vahvistus",
         "preset": "Ottelun asetukset",
-        "durationHint": "Sen mukaan, kuinka kauan nämä ottelut yleensä kestävät, ylöspäin pyöristettynä."
+        "durationHint": "Sen mukaan, kuinka kauan nämä ottelut yleensä kestävät, ylöspäin pyöristettynä.",
+        "estimate": {
+            "label": "Arvioitu kesto",
+            "unknownWhy": "Tällä pelillä ei ole vielä ollut kuukauden aikana tarpeeksi päättyneitä otteluita arvion laskemiseen.",
+            "average": "{game}-ottelut ovat kestäneet viime kuukauden aikana keskimäärin noin {time}. Siitä:",
+            "rounds": "{players} pelaajaa tekee {rounds}. Kierroksen ottelut pelataan samaan aikaan, ja seuraava kierros odottaa viimeistä.",
+            "roundCount": "yhden kierroksen | {count} kierrosta",
+            "series": "Jokainen ottelu lasketaan pisimmän mukaan: ensin {wins} voittoon voi viedä {games} peliä.",
+            "single": "Jokainen ottelu on yksi peli.",
+            "padding": "Jokainen peli lasketaan vähän keskiarvoa pidemmäksi, koska kierros odottaa hitainta otteluaan, ja lisäksi lyhyt tauko ennen seuraavaa peliä.",
+            "rounded": "Kokonaisaika on pyöristetty ylöspäin, joten se päättyy usein aiemmin.",
+            "byes": "Yksi pelaaja pääsee suoraan ensimmäisen kierroksen läpi. | {count} pelaajaa pääsee suoraan ensimmäisen kierroksen läpi."
+        }
     },
     "slot": {
         "bye": "Ei vastustajaa",
@@ -184,11 +201,28 @@
             "tooFew": "Paikalla on vielä liian vähän pelaajia aloittamiseen."
         }
     },
+    "list": {
+        "open": "Avoimet",
+        "yours": "Omasi",
+        "noTime": "Ei kiinteää aikaa",
+        "noneLive": "Mitään ei pelata juuri nyt.",
+        "noneYours": "Et ole vielä ilmoittautunut yhteenkään turnaukseen.",
+        "allGames": "Kaikki pelit",
+        "games": "Ei pelejä | Yksi peli | {count} peliä"
+    },
     "overview": {
-        "title": "Kaikki turnaukset",
-        "hint": "Valitse peli nähdäksesi sen turnaukset.",
         "live": "Ei käynnissä | Yksi käynnissä | {count} käynnissä",
-        "pick": "Mille pelille?",
-        "pickHint": "Valitse peli, niin sen turnauksen lomake aukeaa."
+        "pick": "Mille pelille?"
+    },
+    "mine": {
+        "current": "Nyt",
+        "past": "Aiemmat",
+        "place": "Sija {place}/{count}"
+    },
+    "createDialog": {
+        "back": "Takaisin",
+        "next": "Seuraava: {step}",
+        "progress": "Vaihe {step}/{count}",
+        "entry": "Kuka voi ilmoittautua"
     }
 }

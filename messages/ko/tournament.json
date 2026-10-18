@@ -31,7 +31,7 @@
         "copied": "복사됨",
         "share": "함께할 사람들에게 이 코드를 공유해 주세요.",
         "enter": "코드 입력",
-        "enterHint": "받은 6자리 코드를 여기에 입력해 주세요.",
+        "enterHint": "초대 전용 토너먼트는 목록에 보이지 않아요. 주최자나 다른 플레이어에게 받은 6자리 코드를 입력하세요.",
         "join": "찾기",
         "needed": "초대 전용 토너먼트예요. 받은 코드를 입력해 주세요."
     },
@@ -43,7 +43,6 @@
         "kick": "토너먼트에서 제외"
     },
     "column": {
-        "name": "토너먼트",
         "yours": "참가 중",
         "seed": "시드",
         "place": "순위",
@@ -92,6 +91,7 @@
         "registered": "참가 신청했어요. 가까이 있어 주세요. {host}님이 언제든 시작할 수 있어요.",
         "registeredScheduled": "참가 신청했어요. 체크인은 시작 {minutes}분 전에 열려요.",
         "hosting": "플레이어들이 모이면 시작을 눌러 주세요.",
+        "hostingBy": "플레이어가 모이면 시작을 누르세요. {time}까지 시작하지 않으면 취소돼요.",
         "needsCheckIn": "지금 체크인하지 않으면 대진표에서 빠져요.",
         "confirmed": "체크인했어요. 사이트에 머물러 있으면 매치가 자동으로 열려요.",
         "missed": "체크인하지 않아서 대진표에서 빠졌어요.",
@@ -110,11 +110,13 @@
         "save": "설정 저장"
     },
     "form": {
+        "official": "공식 토너먼트",
+        "officialHint": "공식으로 표시되고 게임 페이지에도 나와요. 시작 시간이 필요하고 누구나 참가할 수 있어요.",
         "name": "이름",
-        "inviteOnly": "참가 가능 대상",
+        "inviteOnly": "참가",
         "inviteOnlyOff": "누구나",
-        "inviteOnlyOn": "코드가 있는 사람",
-        "inviteOnlyHint": "초대 전용이면 목록에 표시되지 않아요.",
+        "inviteOnlyOn": "초대만",
+        "inviteOnlyHint": "초대만: 목록에 표시되지 않고, 참가하려면 코드가 필요해요.",
         "size": "대진 크기",
         "sizeHint": "빈자리와 대진된 사람은 바로 다음 라운드로 올라가요.",
         "wins": "매치 길이",
@@ -122,19 +124,34 @@
         "winsFirstTo": "{count}승 선취",
         "botFill": "빈자리",
         "botFillOff": "비워 두기",
-        "botFillOn": "봇으로 채우기",
-        "botFillHint": "비워 두면 빈자리와 대진된 사람은 바로 다음 라운드로 올라가요.",
+        "botFillHint": "비워 두기: 빈자리와 맞붙은 사람은 바로 올라가요. 봇: 4명이 모이면 봇이 빈자리를 채워요.",
         "thirdPlaceOff": "공동",
         "thirdPlaceOn": "결정전",
         "thirdPlaceHint": "결정전으로 하면 준결승에서 진 두 사람이 3위와 4위를 겨뤄요.",
         "schedule": "시작",
         "scheduleManual": "직접 시작",
         "scheduleAt": "정해진 시간에",
+        "scheduleManualHint": "지금 있는 사람들을 위한 방식이에요. 1시간 안에 시작하지 않으면 취소돼요.",
+        "scheduleAtHint": "자동으로 시작돼요. 체크인이 열리면 플레이어에게 알림이 가요.",
+        "recommended": "추천",
         "scheduleHint": "시간을 정하면 체크인이 30분 전에 열리고 자동으로 시작돼요. 정하지 않으면 페이지에서 직접 시작해요.",
         "startAt": "시작 시간",
+        "startsIn": "{date}, {time} 후예요.",
         "checkInWindow": "체크인",
         "preset": "매치 설정",
-        "durationHint": "이 경기들이 보통 걸리는 시간을 바탕으로 올림한 값이에요."
+        "durationHint": "이 경기들이 보통 걸리는 시간을 바탕으로 올림한 값이에요.",
+        "estimate": {
+            "label": "예상 시간",
+            "unknownWhy": "이 게임은 지난 한 달 동안 끝난 경기가 아직 충분하지 않아 계산할 수 없어요.",
+            "average": "지난 한 달간 {game} 경기는 평균 약 {time} 걸렸어요. 그래서:",
+            "rounds": "{players}명이면 {rounds}예요. 한 라운드의 경기는 동시에 진행되고, 다음 라운드는 마지막 경기를 기다려요.",
+            "roundCount": "1라운드 | {count}라운드",
+            "series": "각 경기는 가장 길게 계산해요: {wins}승 선취는 {games}게임까지 갈 수 있어요.",
+            "single": "각 경기는 1게임이에요.",
+            "padding": "라운드는 가장 느린 경기를 기다리기 때문에 각 게임을 평균보다 조금 길게, 다음 게임 전 짧은 휴식까지 넣어 계산해요.",
+            "rounded": "합계는 올림한 값이라 더 일찍 끝나는 경우가 많아요.",
+            "byes": "1명은 1라운드를 건너뛰고 올라가요. | {count}명은 1라운드를 건너뛰고 올라가요."
+        }
     },
     "slot": {
         "bye": "상대 없음",
@@ -184,11 +201,28 @@
             "tooFew": "아직 시작할 만큼 플레이어가 없어요."
         }
     },
+    "list": {
+        "open": "참가 가능",
+        "yours": "내 토너먼트",
+        "noTime": "시작 시간 없음",
+        "noneLive": "지금 진행 중인 경기가 없어요.",
+        "noneYours": "아직 참가한 토너먼트가 없어요.",
+        "allGames": "모든 게임",
+        "games": "게임 없음 | 게임 1개 | 게임 {count}개"
+    },
     "overview": {
-        "title": "모든 토너먼트",
-        "hint": "게임을 선택하면 토너먼트를 볼 수 있어요.",
         "live": "진행 중 없음 | 1개 진행 중 | {count}개 진행 중",
-        "pick": "어떤 게임인가요?",
-        "pickHint": "게임을 고르면 토너먼트 양식이 열려요."
+        "pick": "어떤 게임인가요?"
+    },
+    "mine": {
+        "current": "진행 중",
+        "past": "지난 토너먼트",
+        "place": "{count}명 중 {place}위"
+    },
+    "createDialog": {
+        "back": "뒤로",
+        "next": "다음: {step}",
+        "progress": "{count}단계 중 {step}단계",
+        "entry": "참가 가능 대상"
     }
 }

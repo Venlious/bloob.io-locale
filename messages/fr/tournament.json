@@ -31,7 +31,7 @@
         "copied": "Copié",
         "share": "Partage ce code avec les personnes que tu veux inviter.",
         "enter": "Entrer un code",
-        "enterHint": "Quelqu'un t'a envoyé six caractères. Tape-les ici.",
+        "enterHint": "Les tournois sur invitation n’apparaissent pas dans la liste. Saisis le code de 6 caractères que l’hôte ou un autre joueur t’a donné.",
         "join": "Trouver",
         "needed": "Ce tournoi est sur invitation. Entre le code qu'on t'a envoyé."
     },
@@ -43,7 +43,6 @@
         "kick": "Retirer du tournoi"
     },
     "column": {
-        "name": "Tournoi",
         "yours": "Tu participes",
         "seed": "Tête de série",
         "place": "Place",
@@ -92,6 +91,7 @@
         "registered": "Tu es inscrit. Reste dans le coin : {host} peut lancer à tout moment.",
         "registeredScheduled": "Tu es inscrit. Le check-in ouvre {minutes} minutes avant le début.",
         "hosting": "Appuie sur Commencer quand tes joueurs sont là.",
+        "hostingBy": "Appuie sur Démarrer quand tes joueurs sont là. S’il n’a pas commencé à {time}, il est annulé.",
         "needsCheckIn": "Fais ton check-in maintenant, sinon tu ne seras pas dans le tableau.",
         "confirmed": "Ton check-in est fait. Reste sur le site et ta partie s'ouvrira toute seule.",
         "missed": "Tu n'as pas fait ton check-in, donc le tournoi a commencé sans toi.",
@@ -110,31 +110,48 @@
         "save": "Enregistrer les paramètres"
     },
     "form": {
+        "official": "Tournoi officiel",
+        "officialHint": "Affiché comme officiel, et sur la page du jeu. Il lui faut une heure de début et il est ouvert à tous.",
         "name": "Nom",
-        "inviteOnly": "Qui peut s'inscrire",
+        "inviteOnly": "Accès",
         "inviteOnlyOff": "Tout le monde",
-        "inviteOnlyOn": "Avec le code",
-        "inviteOnlyHint": "Sur invitation, il n'apparaît pas dans la liste.",
+        "inviteOnlyOn": "Sur invitation",
+        "inviteOnlyHint": "Sur invitation : il n'apparaît pas dans la liste, et il faut son code pour s'inscrire.",
         "size": "Taille du tableau",
         "sizeHint": "Celui qui tombe contre une place vide passe directement.",
         "wins": "Durée d'un match",
         "winsSingle": "Une partie",
         "winsFirstTo": "Premier à {count} victoires",
         "botFill": "Places vides",
-        "botFillOff": "Personne ne les joue",
-        "botFillOn": "Remplies par des bots",
-        "botFillHint": "Si elles restent vides, celui qui tombe contre l'une d'elles passe directement.",
+        "botFillOff": "Vides",
+        "botFillHint": "Vides : qui tombe contre une place vide passe directement. Bots : des bots remplissent les places dès qu'il y a 4 joueurs.",
         "thirdPlaceOff": "Partagée",
         "thirdPlaceOn": "Disputée",
         "thirdPlaceHint": "Si elle est disputée, les deux perdants des demi-finales s'affrontent pour la troisième et la quatrième place.",
         "schedule": "Début",
         "scheduleManual": "Quand je le décide",
         "scheduleAt": "À une heure précise",
+        "scheduleManualHint": "Pour les gens qui sont là maintenant. Lance-le dans l’heure, sinon il est annulé.",
+        "scheduleAtHint": "Il commence tout seul. Les joueurs reçoivent un rappel à l'ouverture du check-in.",
+        "recommended": "Recommandé",
         "scheduleHint": "À une heure fixe, le check-in ouvre une demi-heure avant et le tournoi se lance tout seul. Sinon, tu le lances toi-même depuis sa page.",
         "startAt": "Heure de début",
+        "startsIn": "C'est le {date}, dans {time}.",
         "checkInWindow": "Check-in",
         "preset": "Paramètres de partie",
-        "durationHint": "D’après la durée habituelle de ces parties, arrondie au-dessus."
+        "durationHint": "D’après la durée habituelle de ces parties, arrondie au-dessus.",
+        "estimate": {
+            "label": "Durée estimée",
+            "unknownWhy": "Ce jeu n’a pas eu assez de parties terminées le mois dernier pour le calculer.",
+            "average": "Les parties de {game} ont duré environ {time} en moyenne le mois dernier. À partir de là :",
+            "rounds": "{players} joueurs, c’est {rounds}. Les parties d’un tour se jouent en même temps, et le tour suivant attend la dernière.",
+            "roundCount": "un tour | {count} tours",
+            "series": "Chaque match est compté à sa durée maximale : premier à {wins} peut prendre {games} manches.",
+            "single": "Chaque match est une seule manche.",
+            "padding": "Chaque manche est comptée un peu plus longue que la moyenne, car un tour attend son match le plus lent, plus la courte pause avant la suivante.",
+            "rounded": "Le total est arrondi au-dessus, donc ça finit souvent plus tôt.",
+            "byes": "Un joueur passe directement le premier tour. | {count} joueurs passent directement le premier tour."
+        }
     },
     "slot": {
         "bye": "Pas d'adversaire",
@@ -184,11 +201,28 @@
             "tooFew": "Il n'y a pas encore assez de joueurs pour lancer."
         }
     },
+    "list": {
+        "open": "Ouverts",
+        "yours": "Les tiens",
+        "noTime": "Pas d’heure fixe",
+        "noneLive": "Rien ne se joue en ce moment.",
+        "noneYours": "Tu n’es encore inscrit à aucun tournoi.",
+        "allGames": "Tous les jeux",
+        "games": "Aucun jeu | Un jeu | {count} jeux"
+    },
     "overview": {
-        "title": "Tous les tournois",
-        "hint": "Choisis un jeu pour voir ses tournois.",
         "live": "Aucun en cours | Un en cours | {count} en cours",
-        "pick": "Pour quel jeu ?",
-        "pickHint": "Choisis le jeu, et le formulaire de son tournoi s'ouvre."
+        "pick": "Pour quel jeu ?"
+    },
+    "mine": {
+        "current": "En cours",
+        "past": "Passés",
+        "place": "Place {place} sur {count}"
+    },
+    "createDialog": {
+        "back": "Retour",
+        "next": "Suivant : {step}",
+        "progress": "Étape {step} sur {count}",
+        "entry": "Qui peut s'inscrire"
     }
 }

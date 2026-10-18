@@ -31,7 +31,7 @@
         "copied": "Gekopieerd",
         "share": "Deel deze code met de mensen die je erbij wilt hebben.",
         "enter": "Code invoeren",
-        "enterHint": "Iemand heeft je zes tekens gestuurd. Typ ze hier.",
+        "enterHint": "Toernooien op uitnodiging staan niet in de lijst. Vul de code van 6 tekens in die je van de host of een andere speler hebt gekregen.",
         "join": "Zoeken",
         "needed": "Dit toernooi is alleen op uitnodiging. Voer de code in die je hebt gekregen."
     },
@@ -43,7 +43,6 @@
         "kick": "Uit het toernooi verwijderen"
     },
     "column": {
-        "name": "Toernooi",
         "yours": "Jij doet mee",
         "seed": "Plaatsing",
         "place": "Plek",
@@ -92,6 +91,7 @@
         "registered": "Je bent ingeschreven. Blijf in de buurt: {host} kan elk moment starten.",
         "registeredScheduled": "Je bent ingeschreven. Inchecken opent {minutes} minuten voor de start.",
         "hosting": "Druk op Start als je spelers er zijn.",
+        "hostingBy": "Druk op Start als je spelers er zijn. Is het om {time} nog niet begonnen, dan wordt het afgelast.",
         "needsCheckIn": "Check nu in, anders sta je niet in het schema.",
         "confirmed": "Je bent ingecheckt. Blijf op de site, dan opent je spel vanzelf.",
         "missed": "Je hebt niet ingecheckt, dus het toernooi is zonder jou begonnen.",
@@ -110,31 +110,48 @@
         "save": "Instellingen opslaan"
     },
     "form": {
+        "official": "Officieel toernooi",
+        "officialHint": "Wordt als officieel getoond, ook op de pagina van het spel. Het heeft een starttijd nodig en staat open voor iedereen.",
         "name": "Naam",
-        "inviteOnly": "Wie mag meedoen",
+        "inviteOnly": "Toegang",
         "inviteOnlyOff": "Iedereen",
-        "inviteOnlyOn": "Met de code",
-        "inviteOnlyHint": "Op uitnodiging staat het niet in de lijst.",
+        "inviteOnlyOn": "Op uitnodiging",
+        "inviteOnlyHint": "Op uitnodiging: hij staat niet in de lijst, en spelers hebben de code nodig om mee te doen.",
         "size": "Grootte van het schema",
         "sizeHint": "Wie tegen een lege plek wordt geloot, gaat direct door.",
         "wins": "Lengte per duel",
         "winsSingle": "Eén spel",
         "winsFirstTo": "Eerste met {count} zeges",
         "botFill": "Lege plekken",
-        "botFillOff": "Niemand speelt ze",
-        "botFillOn": "Gevuld met bots",
-        "botFillHint": "Blijven ze leeg, dan gaat wie ertegen wordt geloot direct door.",
+        "botFillOff": "Leeg laten",
+        "botFillHint": "Leeg laten: wie tegen een lege plek wordt geloot, gaat meteen door. Bots: bots vullen de plekken zodra er 4 spelers zijn.",
         "thirdPlaceOff": "Gedeeld",
         "thirdPlaceOn": "Gespeeld",
         "thirdPlaceHint": "Wordt erom gespeeld, dan spelen de twee verliezers van de halve finales om de derde en vierde plaats.",
         "schedule": "Start",
         "scheduleManual": "Wanneer ik het zeg",
         "scheduleAt": "Op een vast tijdstip",
+        "scheduleManualHint": "Voor mensen die er nu zijn. Start het binnen een uur, anders wordt het afgelast.",
+        "scheduleAtHint": "Hij start vanzelf. Spelers krijgen een herinnering als de check-in opent.",
+        "recommended": "Aanbevolen",
         "scheduleHint": "Op een vast tijdstip opent het inchecken een half uur van tevoren en start het vanzelf. Anders start je het zelf vanaf de pagina.",
         "startAt": "Starttijd",
+        "startsIn": "Dat is {date}, over {time}.",
         "checkInWindow": "Inchecken",
         "preset": "Spelinstellingen",
-        "durationHint": "Op basis van hoe lang deze potjes meestal duren, naar boven afgerond."
+        "durationHint": "Op basis van hoe lang deze potjes meestal duren, naar boven afgerond.",
+        "estimate": {
+            "label": "Geschatte duur",
+            "unknownWhy": "Dit spel heeft de afgelopen maand nog niet genoeg afgeronde potjes gehad om dit uit te rekenen.",
+            "average": "Potjes {game} duurden de afgelopen maand gemiddeld zo’n {time}. Daarmee:",
+            "rounds": "{players} spelers zijn {rounds}. De potjes in een ronde worden tegelijk gespeeld, en de volgende ronde wacht op het laatste.",
+            "roundCount": "één ronde | {count} rondes",
+            "series": "Elke wedstrijd telt op zijn langst: wie het eerst {wins} wint kan {games} potjes duren.",
+            "single": "Elke wedstrijd is één potje.",
+            "padding": "Elk potje telt iets langer dan gemiddeld, omdat een ronde wacht op zijn traagste wedstrijd, plus de korte pauze voor het volgende potje.",
+            "rounded": "Het totaal is naar boven afgerond, dus het is vaak eerder klaar.",
+            "byes": "Eén speler gaat meteen door naar de tweede ronde. | {count} spelers gaan meteen door naar de tweede ronde."
+        }
     },
     "slot": {
         "bye": "Geen tegenstander",
@@ -184,11 +201,28 @@
             "tooFew": "Er zijn nog te weinig spelers om te starten."
         }
     },
+    "list": {
+        "open": "Open",
+        "yours": "Van jou",
+        "noTime": "Geen vaste tijd",
+        "noneLive": "Er wordt nu niets gespeeld.",
+        "noneYours": "Je hebt je nog niet voor een toernooi ingeschreven.",
+        "allGames": "Alle spellen",
+        "games": "Geen spellen | Eén spel | {count} spellen"
+    },
     "overview": {
-        "title": "Alle toernooien",
-        "hint": "Kies een spel om de toernooien ervan te zien.",
         "live": "Geen bezig | Eén bezig | {count} bezig",
-        "pick": "Voor welk spel?",
-        "pickHint": "Kies het spel, dan opent het formulier voor het toernooi."
+        "pick": "Voor welk spel?"
+    },
+    "mine": {
+        "current": "Nu",
+        "past": "Eerder",
+        "place": "Plek {place} van {count}"
+    },
+    "createDialog": {
+        "back": "Terug",
+        "next": "Volgende: {step}",
+        "progress": "Stap {step} van {count}",
+        "entry": "Wie mag meedoen"
     }
 }

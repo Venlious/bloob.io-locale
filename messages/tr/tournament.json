@@ -31,7 +31,7 @@
         "copied": "Kopyalandı",
         "share": "Bu kodu katılmasını istediğin kişilerle paylaş.",
         "enter": "Kod gir",
-        "enterHint": "Biri sana altı karakter gönderdi. Onları buraya yaz.",
+        "enterHint": "Yalnızca davetle girilen turnuvalar listede görünmez. Ev sahibinden veya başka bir oyuncudan aldığın 6 karakterlik kodu gir.",
         "join": "Bul",
         "needed": "Bu turnuva sadece davetle. Sana gönderilen kodu gir."
     },
@@ -43,7 +43,6 @@
         "kick": "Turnuvadan çıkar"
     },
     "column": {
-        "name": "Turnuva",
         "yours": "Katıldın",
         "seed": "Seri başı",
         "place": "Derece",
@@ -92,6 +91,7 @@
         "registered": "Kayıtlısın. Yakınlarda ol: {host} her an başlatabilir.",
         "registeredScheduled": "Kayıtlısın. Katılım onayı başlangıçtan {minutes} dakika önce açılır.",
         "hosting": "Oyuncuların gelince Başla'ya bas.",
+        "hostingBy": "Oyuncuların gelince Başlat’a bas. Saat {time} itibarıyla başlamamışsa iptal edilir.",
         "needsCheckIn": "Katılımını şimdi onayla, yoksa fikstüre giremezsin.",
         "confirmed": "Katılımını onayladın. Sitede kal, maçın kendiliğinden açılacak.",
         "missed": "Katılımını onaylamadın, bu yüzden fikstür sensiz devam etti.",
@@ -110,31 +110,48 @@
         "save": "Ayarları kaydet"
     },
     "form": {
+        "official": "Resmi turnuva",
+        "officialHint": "Resmi olarak ve oyunun sayfasında gösterilir. Başlangıç saati gerekir ve herkese açıktır.",
         "name": "Ad",
-        "inviteOnly": "Kimler katılabilir",
+        "inviteOnly": "Katılım",
         "inviteOnlyOff": "Herkes",
-        "inviteOnlyOn": "Kodu olanlar",
-        "inviteOnlyHint": "Sadece davetle olan turnuvalar listede görünmez.",
+        "inviteOnlyOn": "Sadece davetli",
+        "inviteOnlyHint": "Sadece davetli: listede görünmez, katılmak için kodu gerekir.",
         "size": "Fikstür boyutu",
         "sizeHint": "Boş bir yerle eşleşen doğrudan tur atlar.",
         "wins": "Maç uzunluğu",
         "winsSingle": "Tek oyun",
         "winsFirstTo": "{count} galibiyete ilk ulaşan",
         "botFill": "Boş yerler",
-        "botFillOff": "Kimse oynamaz",
-        "botFillOn": "Botlarla doldurulur",
-        "botFillHint": "Boş bırakılırsa, boş bir yerle eşleşen doğrudan tur atlar.",
+        "botFillOff": "Boş kalsın",
+        "botFillHint": "Boş kalsın: boş yere denk gelen doğrudan tur atlar. Botlar: 4 oyuncu olunca boş yerleri botlar doldurur.",
         "thirdPlaceOff": "Paylaşılır",
         "thirdPlaceOn": "Oynanır",
         "thirdPlaceHint": "Oynanırsa yarı finali kaybeden iki oyuncu üçüncülük ve dördüncülük için karşılaşır.",
         "schedule": "Başlangıç",
         "scheduleManual": "Ben söyleyince",
         "scheduleAt": "Belirli bir saatte",
+        "scheduleManualHint": "Şu an burada olanlar için. Bir saat içinde başlat, yoksa iptal edilir.",
+        "scheduleAtHint": "Kendiliğinden başlar. Check-in açılınca oyunculara hatırlatma gider.",
+        "recommended": "Önerilen",
         "scheduleHint": "Belirli bir saatte katılım onayı yarım saat önce açılır ve turnuva kendiliğinden başlar. Yoksa sayfasından sen başlatırsın.",
         "startAt": "Başlangıç saati",
+        "startsIn": "Bu {date}, {time} sonra.",
         "checkInWindow": "Katılım onayı",
         "preset": "Maç ayarları",
-        "durationHint": "Bu maçların genelde ne kadar sürdüğüne göre, yukarı yuvarlanmış."
+        "durationHint": "Bu maçların genelde ne kadar sürdüğüne göre, yukarı yuvarlanmış.",
+        "estimate": {
+            "label": "Tahmini süre",
+            "unknownWhy": "Bu oyunun son bir ayda bunu hesaplamaya yetecek kadar biten maçı yok.",
+            "average": "{game} maçları son bir ayda ortalama yaklaşık {time} sürdü. Buradan:",
+            "rounds": "{players} oyuncu {rounds} demek. Bir turdaki maçlar aynı anda oynanır ve sonraki tur sonuncusunu bekler.",
+            "roundCount": "bir tur | {count} tur",
+            "series": "Her maç en uzun hâliyle sayılır: ilk {wins} galibiyete kadar {games} oyun sürebilir.",
+            "single": "Her maç tek oyundur.",
+            "padding": "Her oyun ortalamadan biraz uzun sayılır, çünkü bir tur en yavaş maçını bekler, artı sonraki oyundan önceki kısa ara.",
+            "rounded": "Toplam yukarı yuvarlanır, bu yüzden çoğu zaman daha erken biter.",
+            "byes": "Bir oyuncu ilk turu doğrudan geçer. | {count} oyuncu ilk turu doğrudan geçer."
+        }
     },
     "slot": {
         "bye": "Rakip yok",
@@ -184,11 +201,28 @@
             "tooFew": "Başlatmak için henüz yeterli oyuncu yok."
         }
     },
+    "list": {
+        "open": "Açık",
+        "yours": "Seninkiler",
+        "noTime": "Belirli saat yok",
+        "noneLive": "Şu anda oynanan bir şey yok.",
+        "noneYours": "Henüz hiçbir turnuvaya katılmadın.",
+        "allGames": "Tüm oyunlar",
+        "games": "Oyun yok | Bir oyun | {count} oyun"
+    },
     "overview": {
-        "title": "Tüm turnuvalar",
-        "hint": "Turnuvalarını görmek için bir oyun seç.",
         "live": "Devam eden yok | Bir tane devam ediyor | {count} devam ediyor",
-        "pick": "Hangi oyun için?",
-        "pickHint": "Oyunu seç, turnuva formu açılsın."
+        "pick": "Hangi oyun için?"
+    },
+    "mine": {
+        "current": "Şimdi",
+        "past": "Geçmiş",
+        "place": "{count} oyuncu arasında {place}."
+    },
+    "createDialog": {
+        "back": "Geri",
+        "next": "Sonraki: {step}",
+        "progress": "Adım {step}/{count}",
+        "entry": "Kimler katılabilir"
     }
 }

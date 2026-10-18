@@ -31,7 +31,7 @@
         "copied": "Kopierad",
         "share": "Dela koden med dem du vill ha med.",
         "enter": "Ange en kod",
-        "enterHint": "Någon har skickat sex tecken till dig. Skriv in dem här.",
+        "enterHint": "Turneringar bara för inbjudna syns inte i listan. Skriv in koden på 6 tecken som du fick av värden eller en annan spelare.",
         "join": "Hitta den",
         "needed": "Den här kräver inbjudan. Ange koden du fick."
     },
@@ -43,7 +43,6 @@
         "kick": "Ta bort från turneringen"
     },
     "column": {
-        "name": "Turnering",
         "yours": "Du är med",
         "seed": "Seedning",
         "place": "Placering",
@@ -92,6 +91,7 @@
         "registered": "Du är anmäld. Håll dig i närheten: {host} kan starta när som helst.",
         "registeredScheduled": "Du är anmäld. Incheckningen öppnar {minutes} minuter före start.",
         "hosting": "Tryck på Starta när dina spelare är här.",
+        "hostingBy": "Tryck på Starta när dina spelare är här. Har den inte startat senast {time} ställs den in.",
         "needsCheckIn": "Checka in nu, annars hamnar du utanför turneringsträdet.",
         "confirmed": "Du är incheckad. Stanna på sidan så öppnas din match av sig själv.",
         "missed": "Du checkade inte in, så turneringen drog igång utan dig.",
@@ -110,31 +110,48 @@
         "save": "Spara inställningar"
     },
     "form": {
+        "official": "Officiell turnering",
+        "officialHint": "Visas som officiell och på spelets sida. Den behöver en starttid och är öppen för alla.",
         "name": "Namn",
-        "inviteOnly": "Vem kan anmäla sig",
+        "inviteOnly": "Åtkomst",
         "inviteOnlyOff": "Alla",
-        "inviteOnlyOn": "Med koden",
-        "inviteOnlyHint": "Endast inbjudna håller den borta från listan.",
+        "inviteOnlyOn": "Bara inbjudna",
+        "inviteOnlyHint": "Bara inbjudna: den syns inte i listan, och spelarna behöver koden för att gå med.",
         "size": "Antal platser",
         "sizeHint": "Den som lottas mot en tom plats går direkt vidare.",
         "wins": "Matchlängd",
         "winsSingle": "Ett spel",
         "winsFirstTo": "Först till {count} vinster",
         "botFill": "Tomma platser",
-        "botFillOff": "Förblir tomma",
-        "botFillOn": "Fylls med bots",
-        "botFillHint": "Står de tomma går den som lottas mot en av dem direkt vidare.",
+        "botFillOff": "Tomma",
+        "botFillHint": "Tomma: den som lottas mot en tom plats går direkt vidare. Bots: bottar fyller platserna när det är 4 spelare.",
         "thirdPlaceOff": "Delad",
         "thirdPlaceOn": "Spelas om",
         "thirdPlaceHint": "Spelas det om möts de två förlorarna i semifinalerna om tredje- och fjärdeplatsen.",
         "schedule": "Start",
         "scheduleManual": "När jag säger till",
         "scheduleAt": "Vid en bestämd tid",
+        "scheduleManualHint": "För folk som är här nu. Starta den inom en timme, annars ställs den in.",
+        "scheduleAtHint": "Den startar av sig själv. Spelarna får en påminnelse när incheckningen öppnar.",
+        "recommended": "Rekommenderas",
         "scheduleHint": "Med en fast tid öppnar incheckningen en halvtimme innan och turneringen startar av sig själv. Annars startar du den från dess sida.",
         "startAt": "Starttid",
+        "startsIn": "Det är {date}, om {time}.",
         "checkInWindow": "Incheckning",
         "preset": "Matchinställningar",
-        "durationHint": "Utifrån hur lång tid de här matcherna brukar ta, avrundat uppåt."
+        "durationHint": "Utifrån hur lång tid de här matcherna brukar ta, avrundat uppåt.",
+        "estimate": {
+            "label": "Uppskattad längd",
+            "unknownWhy": "Spelet har inte haft tillräckligt många avslutade matcher den senaste månaden för att räkna ut det än.",
+            "average": "Matcher i {game} har i snitt tagit ungefär {time} den senaste månaden. Utifrån det:",
+            "rounds": "{players} spelare ger {rounds}. Matcherna i en omgång spelas samtidigt, och nästa omgång väntar på den sista.",
+            "roundCount": "en omgång | {count} omgångar",
+            "series": "Varje match räknas med sin längsta tid: först till {wins} kan ta {games} spel.",
+            "single": "Varje match är ett spel.",
+            "padding": "Varje spel räknas lite längre än snittet, eftersom en omgång väntar på sin långsammaste match, plus den korta pausen före nästa spel.",
+            "rounded": "Summan är avrundad uppåt, så det blir ofta klart tidigare.",
+            "byes": "En spelare går direkt vidare från första omgången. | {count} spelare går direkt vidare från första omgången."
+        }
     },
     "slot": {
         "bye": "Ingen motståndare",
@@ -184,11 +201,28 @@
             "tooFew": "Det är fortfarande för få spelare för att starta."
         }
     },
+    "list": {
+        "open": "Öppna",
+        "yours": "Dina",
+        "noTime": "Ingen fast tid",
+        "noneLive": "Inget spelas just nu.",
+        "noneYours": "Du har inte anmält dig till någon turnering än.",
+        "allGames": "Alla spel",
+        "games": "Inga spel | Ett spel | {count} spel"
+    },
     "overview": {
-        "title": "Alla turneringar",
-        "hint": "Välj ett spel för att se dess turneringar.",
         "live": "Ingen pågår | En pågår | {count} pågår",
-        "pick": "Vilket spel gäller det?",
-        "pickHint": "Välj spelet, så öppnas formuläret för turneringen."
+        "pick": "Vilket spel gäller det?"
+    },
+    "mine": {
+        "current": "Nu",
+        "past": "Tidigare",
+        "place": "Plats {place} av {count}"
+    },
+    "createDialog": {
+        "back": "Tillbaka",
+        "next": "Nästa: {step}",
+        "progress": "Steg {step} av {count}",
+        "entry": "Vem kan anmäla sig"
     }
 }

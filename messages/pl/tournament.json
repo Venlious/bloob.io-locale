@@ -31,7 +31,7 @@
         "copied": "Skopiowano",
         "share": "Udostępnij ten kod osobom, które chcesz zaprosić.",
         "enter": "Wpisz kod",
-        "enterHint": "Ktoś wysłał ci sześć znaków. Wpisz je tutaj.",
+        "enterHint": "Turnieje tylko na zaproszenie nie są widoczne na liście. Wpisz 6-znakowy kod od gospodarza lub innego gracza.",
         "join": "Znajdź",
         "needed": "Ten turniej jest tylko z zaproszeniem. Wpisz otrzymany kod."
     },
@@ -43,7 +43,6 @@
         "kick": "Usuń z turnieju"
     },
     "column": {
-        "name": "Turniej",
         "yours": "Bierzesz udział",
         "seed": "Rozstawienie",
         "place": "Miejsce",
@@ -92,6 +91,7 @@
         "registered": "Masz miejsce na liście. Bądź w pobliżu: {host} może zacząć w każdej chwili.",
         "registeredScheduled": "Masz miejsce na liście. Potwierdzanie obecności rusza {minutes} min przed startem.",
         "hosting": "Naciśnij Rozpocznij, gdy twoi gracze będą na miejscu.",
+        "hostingBy": "Naciśnij Start, gdy gracze będą na miejscu. Jeśli nie zacznie się do {time}, zostanie odwołany.",
         "needsCheckIn": "Potwierdź obecność teraz, inaczej nie trafisz do drabinki.",
         "confirmed": "Obecność potwierdzona. Zostań na stronie, a twój mecz otworzy się sam.",
         "missed": "Nie potwierdzono twojej obecności, więc drabinka ruszyła bez ciebie.",
@@ -110,31 +110,48 @@
         "save": "Zapisz ustawienia"
     },
     "form": {
+        "official": "Oficjalny turniej",
+        "officialHint": "Wyświetlany jako oficjalny i na stronie gry. Musi mieć godzinę rozpoczęcia i jest otwarty dla wszystkich.",
         "name": "Nazwa",
-        "inviteOnly": "Kto może się zapisać",
+        "inviteOnly": "Dostęp",
         "inviteOnlyOff": "Każdy",
-        "inviteOnlyOn": "Osoby z kodem",
-        "inviteOnlyHint": "Turniej tylko z zaproszeniem nie pojawia się na liście.",
+        "inviteOnlyOn": "Na zaproszenie",
+        "inviteOnlyHint": "Na zaproszenie: nie ma go na liście, a gracze potrzebują kodu, żeby dołączyć.",
         "size": "Rozmiar drabinki",
         "sizeHint": "Kto trafi na puste miejsce, przechodzi dalej bez gry.",
         "wins": "Długość meczu",
         "winsSingle": "Jedna partia",
         "winsFirstTo": "Do {count} wygranych",
         "botFill": "Puste miejsca",
-        "botFillOff": "Nikt na nich nie gra",
-        "botFillOn": "Zajmują je boty",
-        "botFillHint": "Jeśli zostaną puste, kto na nie trafi, przechodzi dalej bez gry.",
+        "botFillOff": "Puste",
+        "botFillHint": "Puste: kto trafi na puste miejsce, przechodzi dalej od razu. Boty: boty zajmują miejsca, gdy jest 4 graczy.",
         "thirdPlaceOff": "Ex aequo",
         "thirdPlaceOn": "Rozgrywane",
         "thirdPlaceHint": "Gdy jest rozgrywane, przegrani półfinałów grają o trzecie i czwarte miejsce.",
         "schedule": "Start",
         "scheduleManual": "Kiedy zdecyduję",
         "scheduleAt": "O ustalonej godzinie",
+        "scheduleManualHint": "Dla osób, które są tu teraz. Rozpocznij go w ciągu godziny, inaczej zostanie odwołany.",
+        "scheduleAtHint": "Startuje sam. Gracze dostają przypomnienie, gdy otworzy się potwierdzanie obecności.",
+        "recommended": "Polecane",
         "scheduleHint": "Przy ustalonej godzinie potwierdzanie obecności rusza pół godziny wcześniej, a turniej startuje sam. W przeciwnym razie uruchamiasz go ze strony turnieju.",
         "startAt": "Godzina startu",
+        "startsIn": "To {date}, za {time}.",
         "checkInWindow": "Potwierdzanie obecności",
         "preset": "Ustawienia meczu",
-        "durationHint": "Na podstawie tego, ile zwykle trwają te mecze, w zaokrągleniu w górę."
+        "durationHint": "Na podstawie tego, ile zwykle trwają te mecze, w zaokrągleniu w górę.",
+        "estimate": {
+            "label": "Szacowany czas",
+            "unknownWhy": "Ta gra nie miała w ostatnim miesiącu dość ukończonych meczów, żeby to obliczyć.",
+            "average": "Mecze w {game} trwały w ostatnim miesiącu średnio około {time}. Z tego:",
+            "rounds": "Graczy: {players}, rund: {rounds}. Mecze w rundzie grane są równocześnie, a następna runda czeka na ostatni.",
+            "roundCount": "{count} | {count}",
+            "series": "Każdy mecz liczy się po najdłuższym czasie: do {wins} zwycięstw może zająć {games} gier.",
+            "single": "Każdy mecz to jedna gra.",
+            "padding": "Każda gra liczy się trochę dłużej niż średnia, bo runda czeka na najwolniejszy mecz, plus krótka przerwa przed następną grą.",
+            "rounded": "Suma jest zaokrąglona w górę, więc często skończy się wcześniej.",
+            "byes": "Jeden gracz przechodzi od razu dalej z pierwszej rundy. | Graczy przechodzących od razu dalej z pierwszej rundy: {count}."
+        }
     },
     "slot": {
         "bye": "Wolny los",
@@ -184,11 +201,28 @@
             "tooFew": "Na razie jest za mało graczy, żeby zacząć."
         }
     },
+    "list": {
+        "open": "Otwarte",
+        "yours": "Twoje",
+        "noTime": "Bez ustalonej godziny",
+        "noneLive": "Teraz nic się nie gra.",
+        "noneYours": "Nie zapisałeś się jeszcze do żadnego turnieju.",
+        "allGames": "Wszystkie gry",
+        "games": "Brak gier | Jedna gra | Gry: {count}"
+    },
     "overview": {
-        "title": "Wszystkie turnieje",
-        "hint": "Wybierz grę, żeby zobaczyć jej turnieje.",
         "live": "Brak w toku | Jeden w toku | W toku: {count}",
-        "pick": "Do jakiej gry?",
-        "pickHint": "Wybierz grę, a otworzy się formularz turnieju."
+        "pick": "Do jakiej gry?"
+    },
+    "mine": {
+        "current": "Teraz",
+        "past": "Wcześniejsze",
+        "place": "Miejsce {place} z {count}"
+    },
+    "createDialog": {
+        "back": "Wstecz",
+        "next": "Dalej: {step}",
+        "progress": "Krok {step} z {count}",
+        "entry": "Kto może się zapisać"
     }
 }

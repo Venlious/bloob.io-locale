@@ -31,7 +31,7 @@
         "copied": "已复制",
         "share": "把这个码分享给你想邀请的人。",
         "enter": "输入参赛码",
-        "enterHint": "别人发给你的六个字符，在这里输入。",
+        "enterHint": "仅限受邀的锦标赛不会出现在列表中。输入你从主办者或其他玩家那里拿到的 6 位代码。",
         "join": "查找",
         "needed": "这个锦标赛仅限邀请。请输入你收到的参赛码。"
     },
@@ -43,7 +43,6 @@
         "kick": "移出锦标赛"
     },
     "column": {
-        "name": "锦标赛",
         "yours": "已参加",
         "seed": "种子",
         "place": "名次",
@@ -92,6 +91,7 @@
         "registered": "你已报名。请留在附近：{host}随时可能开始。",
         "registeredScheduled": "你已报名。签到在开始前{minutes}分钟开放。",
         "hosting": "玩家到齐后，点击“开始”。",
+        "hostingBy": "玩家到齐后点击开始。如果到 {time} 还没开始，就会被取消。",
         "needsCheckIn": "现在就签到，不然你会被移出对阵表。",
         "confirmed": "你已签到。留在网站上，你的对局会自动打开。",
         "missed": "你没有签到，对阵表里已经没有你了。",
@@ -110,31 +110,48 @@
         "save": "保存设置"
     },
     "form": {
+        "official": "官方锦标赛",
+        "officialHint": "会标为官方赛事，并显示在游戏页面上。需要设置开始时间，并且对所有人开放。",
         "name": "名称",
-        "inviteOnly": "谁可以报名",
-        "inviteOnlyOff": "任何人",
-        "inviteOnlyOn": "持有参赛码的人",
-        "inviteOnlyHint": "仅限邀请的锦标赛不会出现在列表里。",
+        "inviteOnly": "参加方式",
+        "inviteOnlyOff": "所有人",
+        "inviteOnlyOn": "仅限受邀",
+        "inviteOnlyHint": "仅限受邀：不会出现在列表中，玩家需要代码才能报名。",
         "size": "参赛名额",
         "sizeHint": "对上空位的玩家直接晋级。",
         "wins": "每场赛制",
         "winsSingle": "一局定胜负",
         "winsFirstTo": "先赢{count}局",
         "botFill": "空位",
-        "botFillOff": "保持空缺",
-        "botFillOn": "由人机补上",
-        "botFillHint": "保持空缺时，对上空位的玩家直接晋级。",
+        "botFillOff": "留空",
+        "botFillHint": "留空：抽到空位的人直接晋级。机器人：满 4 人后由机器人补满空位。",
         "thirdPlaceOff": "并列",
         "thirdPlaceOn": "进行季军赛",
         "thirdPlaceHint": "进行季军赛时，两名半决赛负者将争夺第三和第四名。",
         "schedule": "开始",
         "scheduleManual": "由我决定",
         "scheduleAt": "在指定时间",
+        "scheduleManualHint": "适合现在就在的人。请在一小时内开始，否则会被取消。",
+        "scheduleAtHint": "会自动开始。签到开放时，玩家会收到提醒。",
+        "recommended": "推荐",
         "scheduleHint": "设定时间后，签到会提前半小时开放，并自动开始。否则由你在页面上手动开始。",
         "startAt": "开始时间",
+        "startsIn": "也就是{date}，还有{time}。",
         "checkInWindow": "签到",
         "preset": "对局设置",
-        "durationHint": "根据这类对局的通常时长估算，向上取整。"
+        "durationHint": "根据这类对局的通常时长估算，向上取整。",
+        "estimate": {
+            "label": "预计时长",
+            "unknownWhy": "这款游戏最近一个月完成的比赛还不够多，暂时无法计算。",
+            "average": "最近一个月，{game} 的比赛平均约 {time}。由此：",
+            "rounds": "{players} 名玩家共 {rounds}。同一轮的比赛同时进行，下一轮会等最后一场结束。",
+            "roundCount": "1 轮 | {count} 轮",
+            "series": "每场比赛按最长时间计算：先赢 {wins} 局最多可能打 {games} 局。",
+            "single": "每场比赛只打一局。",
+            "padding": "由于一轮要等最慢的那场比赛，每局按比平均略长的时间计算，并加上下一局前的短暂休息。",
+            "rounded": "总时长向上取整，所以常常会提前结束。",
+            "byes": "1 名玩家直接晋级第二轮。 | {count} 名玩家直接晋级第二轮。"
+        }
     },
     "slot": {
         "bye": "轮空",
@@ -184,11 +201,28 @@
             "tooFew": "在场玩家还不够，暂时无法开始。"
         }
     },
+    "list": {
+        "open": "可报名",
+        "yours": "我的",
+        "noTime": "无固定时间",
+        "noneLive": "现在没有正在进行的比赛。",
+        "noneYours": "你还没有参加任何锦标赛。",
+        "allGames": "所有游戏",
+        "games": "没有游戏 | 1 个游戏 | {count} 个游戏"
+    },
     "overview": {
-        "title": "所有锦标赛",
-        "hint": "选择一个游戏，查看它的锦标赛。",
         "live": "没有进行中的 | 1个进行中 | {count}个进行中",
-        "pick": "是哪个游戏的？",
-        "pickHint": "选择游戏，即可打开它的锦标赛表单。"
+        "pick": "是哪个游戏的？"
+    },
+    "mine": {
+        "current": "进行中",
+        "past": "往期",
+        "place": "第{place}名（共{count}人）"
+    },
+    "createDialog": {
+        "back": "返回",
+        "next": "下一步：{step}",
+        "progress": "第 {step} 步，共 {count} 步",
+        "entry": "谁可以报名"
     }
 }

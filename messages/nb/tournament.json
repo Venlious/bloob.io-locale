@@ -31,7 +31,7 @@
         "copied": "Kopiert",
         "share": "Del denne koden med dem du vil ha med.",
         "enter": "Skriv inn en kode",
-        "enterHint": "Noen sendte deg seks tegn. Skriv dem inn her.",
+        "enterHint": "Turneringer kun for inviterte vises ikke i listen. Skriv inn koden på 6 tegn du fikk av verten eller en annen spiller.",
         "join": "Finn den",
         "needed": "Denne krever invitasjon. Skriv inn koden du fikk."
     },
@@ -43,7 +43,6 @@
         "kick": "Fjern fra turneringen"
     },
     "column": {
-        "name": "Turnering",
         "yours": "Du er med",
         "seed": "Seeding",
         "place": "Plassering",
@@ -92,6 +91,7 @@
         "registered": "Du er påmeldt. Hold deg i nærheten: {host} kan starte når som helst.",
         "registeredScheduled": "Du er påmeldt. Innsjekkingen åpner {minutes} minutter før start.",
         "hosting": "Trykk på Start når spillerne dine er her.",
+        "hostingBy": "Trykk Start når spillerne dine er her. Hvis den ikke har startet innen {time}, blir den avlyst.",
         "needsCheckIn": "Sjekk inn nå, ellers blir du ikke med i turneringstreet.",
         "confirmed": "Du har sjekket inn. Bli på siden, så åpner kampen din seg av seg selv.",
         "missed": "Du sjekket ikke inn, så turneringen startet uten deg.",
@@ -110,31 +110,48 @@
         "save": "Lagre innstillinger"
     },
     "form": {
+        "official": "Offisiell turnering",
+        "officialHint": "Vises som offisiell og på spillets side. Den må ha et starttidspunkt og er åpen for alle.",
         "name": "Navn",
-        "inviteOnly": "Hvem kan melde seg på",
+        "inviteOnly": "Tilgang",
         "inviteOnlyOff": "Alle",
-        "inviteOnlyOn": "De med koden",
-        "inviteOnlyHint": "Med invitasjon vises den ikke i listen.",
+        "inviteOnlyOn": "Kun inviterte",
+        "inviteOnlyHint": "Kun inviterte: den vises ikke i listen, og spillerne trenger koden for å bli med.",
         "size": "Antall plasser",
         "sizeHint": "Den som trekkes mot en tom plass, går rett videre.",
         "wins": "Kamplengde",
         "winsSingle": "Ett spill",
         "winsFirstTo": "Først til {count} seire",
         "botFill": "Tomme plasser",
-        "botFillOff": "Står tomme",
-        "botFillOn": "Fylles med bots",
-        "botFillHint": "Står de tomme, går den som trekkes mot en av dem rett videre.",
+        "botFillOff": "Tomme",
+        "botFillHint": "Tomme: den som trekkes mot en tom plass, går rett videre. Bots: bots fyller plassene når det er 4 spillere.",
         "thirdPlaceOff": "Delt",
         "thirdPlaceOn": "Spilles om",
         "thirdPlaceHint": "Spilles det om, møtes de to tapende semifinalistene om tredje- og fjerdeplass.",
         "schedule": "Start",
         "scheduleManual": "Når jeg sier fra",
         "scheduleAt": "På et fast tidspunkt",
+        "scheduleManualHint": "For folk som er her nå. Start den innen en time, ellers blir den avlyst.",
+        "scheduleAtHint": "Den starter av seg selv. Spillerne får en påminnelse når innsjekkingen åpner.",
+        "recommended": "Anbefalt",
         "scheduleHint": "Med fast tidspunkt åpner innsjekkingen en halvtime før, og turneringen starter av seg selv. Ellers starter du den fra siden.",
         "startAt": "Starttid",
+        "startsIn": "Det er {date}, om {time}.",
         "checkInWindow": "Innsjekking",
         "preset": "Kampinnstillinger",
-        "durationHint": "Ut fra hvor lang tid disse kampene pleier å ta, rundet opp."
+        "durationHint": "Ut fra hvor lang tid disse kampene pleier å ta, rundet opp.",
+        "estimate": {
+            "label": "Forventet lengde",
+            "unknownWhy": "Dette spillet har ikke hatt nok ferdige kamper den siste måneden til å regne det ut ennå.",
+            "average": "Kamper i {game} har i snitt tatt rundt {time} den siste måneden. Ut fra det:",
+            "rounds": "{players} spillere gir {rounds}. Kampene i en runde spilles samtidig, og neste runde venter på den siste.",
+            "roundCount": "én runde | {count} runder",
+            "series": "Hver kamp telles med sin lengste varighet: først til {wins} kan ta {games} spill.",
+            "single": "Hver kamp er ett spill.",
+            "padding": "Hvert spill telles litt lengre enn snittet, fordi en runde venter på sin tregeste kamp, pluss den korte pausen før neste spill.",
+            "rounded": "Totalen er rundet opp, så det blir ofte ferdig før.",
+            "byes": "Én spiller går rett videre fra første runde. | {count} spillere går rett videre fra første runde."
+        }
     },
     "slot": {
         "bye": "Ingen motstander",
@@ -184,11 +201,28 @@
             "tooFew": "Det er fortsatt for få spillere til å starte."
         }
     },
+    "list": {
+        "open": "Åpne",
+        "yours": "Dine",
+        "noTime": "Ingen fast tid",
+        "noneLive": "Det spilles ingenting akkurat nå.",
+        "noneYours": "Du har ikke meldt deg på en turnering ennå.",
+        "allGames": "Alle spill",
+        "games": "Ingen spill | Ett spill | {count} spill"
+    },
     "overview": {
-        "title": "Alle turneringer",
-        "hint": "Velg et spill for å se turneringene.",
         "live": "Ingen pågår | Én pågår | {count} pågår",
-        "pick": "Hvilket spill er det for?",
-        "pickHint": "Velg spillet, så åpnes skjemaet for turneringen."
+        "pick": "Hvilket spill er det for?"
+    },
+    "mine": {
+        "current": "Nå",
+        "past": "Tidligere",
+        "place": "Nr. {place} av {count}"
+    },
+    "createDialog": {
+        "back": "Tilbake",
+        "next": "Neste: {step}",
+        "progress": "Steg {step} av {count}",
+        "entry": "Hvem kan melde seg på"
     }
 }

@@ -31,7 +31,7 @@
         "copied": "Copiato",
         "share": "Condividi questo codice con le persone che vuoi invitare.",
         "enter": "Inserisci un codice",
-        "enterHint": "Qualcuno ti ha mandato sei caratteri. Scrivili qui.",
+        "enterHint": "I tornei solo su invito non compaiono nella lista. Inserisci il codice di 6 caratteri che ti ha dato l’host o un altro giocatore.",
         "join": "Trova",
         "needed": "Questo torneo è solo su invito. Inserisci il codice che ti hanno mandato."
     },
@@ -43,7 +43,6 @@
         "kick": "Rimuovi dal torneo"
     },
     "column": {
-        "name": "Torneo",
         "yours": "Sei iscritto",
         "seed": "Testa di serie",
         "place": "Posizione",
@@ -92,6 +91,7 @@
         "registered": "Sei iscritto. Resta nei paraggi: {host} può iniziare in qualsiasi momento.",
         "registeredScheduled": "Sei iscritto. Il check-in apre {minutes} minuti prima dell'inizio.",
         "hosting": "Premi Iniziare quando i tuoi giocatori sono qui.",
+        "hostingBy": "Premi Avvia quando i tuoi giocatori sono qui. Se non è iniziato entro le {time}, viene annullato.",
         "needsCheckIn": "Fai il check-in ora, o resterai fuori dal tabellone.",
         "confirmed": "Hai fatto il check-in. Resta sul sito e la tua partita si aprirà da sola.",
         "missed": "Non hai fatto il check-in, quindi il tabellone è partito senza di te.",
@@ -110,31 +110,48 @@
         "save": "Salva impostazioni"
     },
     "form": {
+        "official": "Torneo ufficiale",
+        "officialHint": "Mostrato come ufficiale e nella pagina del gioco. Deve avere un orario di inizio ed è aperto a tutti.",
         "name": "Nome",
-        "inviteOnly": "Chi può iscriversi",
-        "inviteOnlyOff": "Chiunque",
-        "inviteOnlyOn": "Con il codice",
-        "inviteOnlyHint": "Su invito, il torneo non compare nell'elenco.",
+        "inviteOnly": "Accesso",
+        "inviteOnlyOff": "Tutti",
+        "inviteOnlyOn": "Solo su invito",
+        "inviteOnlyHint": "Solo su invito: non compare nella lista e i giocatori devono avere il codice per iscriversi.",
         "size": "Dimensione del tabellone",
         "sizeHint": "Chi viene sorteggiato contro un posto vuoto passa direttamente.",
         "wins": "Durata della sfida",
         "winsSingle": "Una partita",
         "winsFirstTo": "Vince chi arriva a {count}",
         "botFill": "Posti vuoti",
-        "botFillOff": "Nessuno li occupa",
-        "botFillOn": "Occupati dai bot",
-        "botFillHint": "Se restano vuoti, chi viene sorteggiato contro uno di essi passa direttamente.",
+        "botFillOff": "Vuoti",
+        "botFillHint": "Vuoti: chi viene abbinato a un posto vuoto passa direttamente. Bot: i bot riempiono i posti quando ci sono 4 giocatori.",
         "thirdPlaceOff": "Condiviso",
         "thirdPlaceOn": "Si gioca",
         "thirdPlaceHint": "Se si gioca, i due sconfitti delle semifinali si sfidano per il terzo e il quarto posto.",
         "schedule": "Inizio",
         "scheduleManual": "Quando lo dico io",
         "scheduleAt": "A un orario stabilito",
+        "scheduleManualHint": "Per chi è qui adesso. Avvialo entro un’ora, altrimenti viene annullato.",
+        "scheduleAtHint": "Inizia da solo. I giocatori ricevono un promemoria quando si apre il check-in.",
+        "recommended": "Consigliato",
         "scheduleHint": "A un orario fisso, il check-in apre mezz'ora prima e il torneo parte da solo. Altrimenti lo avvii tu dalla sua pagina.",
         "startAt": "Orario di inizio",
+        "startsIn": "Cioè {date}, tra {time}.",
         "checkInWindow": "Check-in",
         "preset": "Impostazioni della partita",
-        "durationHint": "In base a quanto durano di solito queste partite, arrotondato per eccesso."
+        "durationHint": "In base a quanto durano di solito queste partite, arrotondato per eccesso.",
+        "estimate": {
+            "label": "Durata stimata",
+            "unknownWhy": "Questo gioco non ha avuto abbastanza partite finite nell’ultimo mese per calcolarla.",
+            "average": "Le partite di {game} sono durate in media circa {time} nell’ultimo mese. Da qui:",
+            "rounds": "{players} giocatori fanno {rounds}. Le partite di un turno si giocano insieme, e il turno dopo aspetta l’ultima.",
+            "roundCount": "un turno | {count} turni",
+            "series": "Ogni partita conta per la sua durata massima: al meglio di {wins} può richiedere {games} giochi.",
+            "single": "Ogni partita è un gioco.",
+            "padding": "Ogni gioco conta un po’ più lungo della media, perché un turno aspetta la sua partita più lenta, più la breve pausa prima del successivo.",
+            "rounded": "Il totale è arrotondato per eccesso, quindi spesso finisce prima.",
+            "byes": "Un giocatore passa direttamente il primo turno. | {count} giocatori passano direttamente il primo turno."
+        }
     },
     "slot": {
         "bye": "Nessun avversario",
@@ -184,11 +201,28 @@
             "tooFew": "Non ci sono ancora abbastanza giocatori per iniziare."
         }
     },
+    "list": {
+        "open": "Aperti",
+        "yours": "I tuoi",
+        "noTime": "Nessun orario fisso",
+        "noneLive": "Al momento non si sta giocando niente.",
+        "noneYours": "Non ti sei ancora iscritto a nessun torneo.",
+        "allGames": "Tutti i giochi",
+        "games": "Nessun gioco | Un gioco | {count} giochi"
+    },
     "overview": {
-        "title": "Tutti i tornei",
-        "hint": "Scegli un gioco per vederne i tornei.",
         "live": "Nessuno in corso | Uno in corso | {count} in corso",
-        "pick": "Per quale gioco?",
-        "pickHint": "Scegli il gioco e si apre il modulo del suo torneo."
+        "pick": "Per quale gioco?"
+    },
+    "mine": {
+        "current": "In corso",
+        "past": "Passati",
+        "place": "Posizione {place} su {count}"
+    },
+    "createDialog": {
+        "back": "Indietro",
+        "next": "Avanti: {step}",
+        "progress": "Passo {step} di {count}",
+        "entry": "Chi può iscriversi"
     }
 }

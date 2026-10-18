@@ -31,7 +31,7 @@
         "copied": "Disalin",
         "share": "Bagikan kode ini ke orang yang mau kamu ajak.",
         "enter": "Masukkan kode",
-        "enterHint": "Ada yang mengirim enam karakter ke kamu. Ketik di sini.",
+        "enterHint": "Turnamen khusus undangan tidak muncul di daftar. Masukkan kode 6 karakter yang kamu dapat dari host atau pemain lain.",
         "join": "Cari",
         "needed": "Turnamen ini khusus undangan. Masukkan kode yang dikirim ke kamu."
     },
@@ -43,7 +43,6 @@
         "kick": "Keluarkan dari turnamen"
     },
     "column": {
-        "name": "Turnamen",
         "yours": "Kamu ikut",
         "seed": "Unggulan",
         "place": "Peringkat",
@@ -92,6 +91,7 @@
         "registered": "Kamu sudah terdaftar. Tetap dekat ya: {host} bisa mulai kapan saja.",
         "registeredScheduled": "Kamu sudah terdaftar. Check-in dibuka {minutes} menit sebelum mulai.",
         "hosting": "Tekan Mulai kalau pemainmu sudah ada.",
+        "hostingBy": "Tekan Mulai saat pemainmu sudah ada. Kalau belum dimulai sebelum {time}, turnamen dibatalkan.",
         "needsCheckIn": "Check-in sekarang, atau kamu nggak masuk bagan.",
         "confirmed": "Kamu sudah check-in. Tetap di situs ini, pertandinganmu akan terbuka sendiri.",
         "missed": "Kamu nggak check-in, jadi bagan jalan tanpa kamu.",
@@ -110,31 +110,48 @@
         "save": "Simpan pengaturan"
     },
     "form": {
+        "official": "Turnamen resmi",
+        "officialHint": "Ditampilkan sebagai resmi dan di halaman game. Butuh waktu mulai dan terbuka untuk siapa saja.",
         "name": "Nama",
-        "inviteOnly": "Siapa yang bisa daftar",
+        "inviteOnly": "Akses",
         "inviteOnlyOff": "Siapa saja",
-        "inviteOnlyOn": "Yang punya kode",
-        "inviteOnlyHint": "Turnamen khusus undangan nggak muncul di daftar.",
+        "inviteOnlyOn": "Khusus undangan",
+        "inviteOnlyHint": "Khusus undangan: tidak muncul di daftar, dan pemain butuh kodenya untuk ikut.",
         "size": "Ukuran bagan",
         "sizeHint": "Siapa pun yang dapat lawan kursi kosong langsung lolos.",
         "wins": "Panjang pertandingan",
         "winsSingle": "Satu game",
         "winsFirstTo": "Duluan menang {count} kali",
         "botFill": "Kursi kosong",
-        "botFillOff": "Nggak ada yang main",
-        "botFillOn": "Diisi bot",
-        "botFillHint": "Kalau dibiarkan kosong, siapa pun yang dapat lawan kursi kosong langsung lolos.",
+        "botFillOff": "Kosong",
+        "botFillHint": "Kosong: yang dapat lawan kursi kosong langsung lolos. Bot: bot mengisi kursi setelah ada 4 pemain.",
         "thirdPlaceOff": "Berbagi",
         "thirdPlaceOn": "Diperebutkan",
         "thirdPlaceHint": "Kalau diperebutkan, dua yang kalah di semifinal tanding untuk juara tiga dan empat.",
         "schedule": "Mulai",
         "scheduleManual": "Saat aku mau",
         "scheduleAt": "Pada waktu tertentu",
+        "scheduleManualHint": "Untuk yang ada di sini sekarang. Mulai dalam satu jam, atau turnamen dibatalkan.",
+        "scheduleAtHint": "Mulai sendiri. Pemain dapat pengingat waktu check-in dibuka.",
+        "recommended": "Disarankan",
         "scheduleHint": "Kalau pakai waktu tetap, check-in dibuka setengah jam sebelumnya dan turnamen mulai sendiri. Kalau nggak, kamu yang mulai dari halamannya.",
         "startAt": "Waktu mulai",
+        "startsIn": "Itu {date}, {time} lagi.",
         "checkInWindow": "Check-in",
         "preset": "Pengaturan pertandingan",
-        "durationHint": "Berdasarkan lama biasanya pertandingan ini, dibulatkan ke atas."
+        "durationHint": "Berdasarkan lama biasanya pertandingan ini, dibulatkan ke atas.",
+        "estimate": {
+            "label": "Perkiraan durasi",
+            "unknownWhy": "Game ini belum punya cukup pertandingan selesai dalam sebulan terakhir untuk menghitungnya.",
+            "average": "Pertandingan {game} rata-rata berlangsung sekitar {time} dalam sebulan terakhir. Dari situ:",
+            "rounds": "{players} pemain berarti {rounds}. Pertandingan dalam satu babak dimainkan bersamaan, dan babak berikutnya menunggu yang terakhir.",
+            "roundCount": "satu babak | {count} babak",
+            "series": "Setiap pertandingan dihitung paling lama: siapa duluan {wins} bisa makan {games} game.",
+            "single": "Setiap pertandingan satu game.",
+            "padding": "Setiap game dihitung sedikit lebih lama dari rata-rata, karena satu babak menunggu pertandingan terlambatnya, ditambah jeda singkat sebelum game berikutnya.",
+            "rounded": "Totalnya dibulatkan ke atas, jadi sering selesai lebih cepat.",
+            "byes": "Satu pemain langsung lolos babak pertama. | {count} pemain langsung lolos babak pertama."
+        }
     },
     "slot": {
         "bye": "Tanpa lawan",
@@ -184,11 +201,28 @@
             "tooFew": "Pemainnya masih terlalu sedikit buat mulai."
         }
     },
+    "list": {
+        "open": "Terbuka",
+        "yours": "Punyamu",
+        "noTime": "Tanpa jam tetap",
+        "noneLive": "Belum ada yang dimainkan sekarang.",
+        "noneYours": "Kamu belum ikut turnamen apa pun.",
+        "allGames": "Semua game",
+        "games": "Tidak ada game | Satu game | {count} game"
+    },
     "overview": {
-        "title": "Semua turnamen",
-        "hint": "Pilih game untuk melihat turnamennya.",
         "live": "Tidak ada yang berjalan | Satu berjalan | {count} berjalan",
-        "pick": "Untuk game apa?",
-        "pickHint": "Pilih game-nya, lalu formulir turnamennya terbuka."
+        "pick": "Untuk game apa?"
+    },
+    "mine": {
+        "current": "Sekarang",
+        "past": "Sebelumnya",
+        "place": "Peringkat {place} dari {count}"
+    },
+    "createDialog": {
+        "back": "Kembali",
+        "next": "Berikutnya: {step}",
+        "progress": "Langkah {step} dari {count}",
+        "entry": "Siapa yang bisa daftar"
     }
 }
