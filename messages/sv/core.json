@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Swedish",
         "rtl": false,
-        "total": 2739,
+        "total": 3072,
         "missing": 134
     },
     "error": {
@@ -21,7 +21,10 @@
             "invalidUser": "Ditt användarkonto behöver inte autentisering.",
             "invalidCode": "Den här verifieringskoden är ogiltig.",
             "invalidSessionName": "Ett sessionsnamn måste vara mellan 2-24 tecken och får bara innehålla alfanumeriska tecken och mellanslag.",
-            "alreadyUsedSessionName": "En session med det här namnet finns redan."
+            "alreadyUsedSessionName": "En session med det här namnet finns redan.",
+            "emailInactive": "Vi kan inte skicka e-post till {email}. Använd en annan adress.",
+            "emailInvalid": "{email} är inte en giltig e-postadress.",
+            "emailUnavailable": "Vi kunde inte skicka e-postmeddelandet. Försök igen senare."
         },
         "rateLimit": {
             "malicious": "Vi har upptäckt något skumt. Du är utloggad i {seconds} sekund(er).",
@@ -680,6 +683,7 @@
         "cardSetName": "Fyll i namn för denna kortlek...",
         "matchId": "Matcha ID eller URL...",
         "message": "Meddelande...",
+        "name": "Fyll i namn...",
         "username": "Användarnamn",
         "password": "Lösenord"
     },
@@ -1254,7 +1258,10 @@
         "hotDiceRate": "Andel heta tärningar",
         "offerDraw": "Erbjud oavgjort",
         "drawOffered": "Oavgjort erbjudet",
-        "forfeited": "Gav upp"
+        "forfeited": "Gav upp",
+        "live": "Live",
+        "official": "Officiell",
+        "stepProgress": "Steg {step} av {count}"
     },
     "match": {
         "quick": "Snabbmatch",
@@ -1507,6 +1514,11 @@
                 "blocked": "Analys är inte aktiva. Din webbläsare eller tillägg kan ha blockerat det.",
                 "dnt": "Din webbläsare har inställningen \"Spåra inte\" (DNT) aktiverad. Vi respekterar din begäran och spårar dig inte."
             },
+            "research": {
+                "title": "Forskning",
+                "description": "Vissa spel kan spelas in anonymt för forskare som studerar hur folk spelar. Inget som kan identifiera dig delas någonsin, och du kan när som helst hålla dina spel utanför.",
+                "label": "Ta med mina spel"
+            },
             "ads": {
                 "title": "Reklam",
                 "description": "Vi visar annonser från {provider}. Reklamen på Bloob.io, oavsett om den är hel eller delvis, sköts av {provider}. Om du inte vill se annonser på Bloob.io kan du gå reklamfri genom att köpa mynt i butiken. Det tar automatiskt bort alla annonser för ditt konto.",
@@ -1521,7 +1533,8 @@
             },
             "controlYourData": {
                 "title": "Kontrollera Din Data",
-                "description": "Du har alltid full kontroll över dina data på Bloob.io. Bloob.io kan spelas anonymt. Om du vill radera dina data kan du göra det här. Om du har ett konto måste du först koppla bort din e-post och komma tillbaka hit.",
+                "description": "Du har alltid full kontroll över dina data på Bloob.io. Bloob.io kan spelas anonymt. Om du vill radera dina data kan du göra det här.",
+                "descriptionUnlink": "Om du har ett konto måste du först koppla bort din e-post och komma tillbaka hit.",
                 "descriptionSocialLink": "Ditt konto är kopplat till en annan plattform ({social}) och din data kan styras där."
             },
             "localStorage": {
@@ -1675,5 +1688,155 @@
             "justIn": "Precis innanför",
             "miss": "Bom"
         }
+    },
+    "spectate": {
+        "ended": "Matchen du tittade på är slut.",
+        "self": "Du tittar",
+        "count": "Ingen tittar | 1 person tittar | {count} personer tittar",
+        "finished": "Matchen är slut.",
+        "leave": "Sluta titta",
+        "backToBracket": "Tillbaka till turneringsträdet",
+        "watch": "Titta"
+    },
+    "tournament": {
+        "title": "Turneringar",
+        "playing": {
+            "bracket": "Öppna turneringsträdet",
+            "players": "{count} spelare",
+            "left": "{left} av {count} kvar",
+            "oneMatch": "En match",
+            "gameNext": "Nästa: match {number}",
+            "gameIn": "Match {number} om {seconds} s",
+            "runnerUp": "Andraplats",
+            "out": "Utslagen",
+            "thirdPlaceMatch": "Bronsmatch",
+            "fourthPlace": "Fjärdeplats",
+            "through": "Vidare",
+            "next": "Nästa: {round}",
+            "topOf": "Topp {count} av {field}",
+            "goesThrough": "{name} går vidare",
+            "winsIt": "{name} vinner",
+            "finishesThird": "{name} kommer trea"
+        },
+        "outcome": {
+            "continues": "Serien är inte slut. Nästa spel startar av sig självt.",
+            "advanced": "Du vinner mötet. Din nästa match öppnas av sig själv.",
+            "eliminated": "Där åkte du ur {name}.",
+            "champion": "Du vann {name}.",
+            "spectating": "Vinnaren går vidare till nästa runda.",
+            "waiting": "Väntar på resten av rundan.",
+            "playoffNext": "Nu spelar du om tredjeplatsen.",
+            "third": "Du kommer trea i {name}.",
+            "youPlayIn": "Du möter {name} om {seconds} s",
+            "youPlayNext": "Du möter {name} härnäst",
+            "opensItself": "Den startar av sig själv.",
+            "waitingOn": "Väntar på {first} vs {second}",
+            "playWinner": "Du möter vinnaren.",
+            "startsIn": "{first} vs {second} börjar om {seconds} s",
+            "watchMatch": "Titta på {first} vs {second}",
+            "progress": "{done} av {count} klara",
+            "live": "{count} live",
+            "beat": "{winner} slog {loser}",
+            "youBeat": "Du slog {name}",
+            "beatYou": "{name} slog dig",
+            "versus": "{first} vs {second}",
+            "upcoming": "Nästa",
+            "inSeconds": "Om {seconds} s",
+            "yours": "Din",
+            "decides": "Avgör din motståndare",
+            "more": "Inga fler i den här rundan | En till i den här rundan | {count} till i den här rundan",
+            "rest": "Resten av turneringen"
+        },
+        "call": {
+            "title": "Din nästa match",
+            "waiting": "Väntar…",
+            "single": "En match avgör",
+            "series": "Bäst av {count}, {own}–{other}",
+            "startsIn": "Startar om {seconds} s",
+            "readyUp": "Jag är redo",
+            "ready": "Redo. Väntar på resten.",
+            "roundOf": "Omgång {round} av {count}",
+            "beat": "Du slog {name} med {score}",
+            "secondsLeft": "Sekunder kvar till start"
+        },
+        "sidebar": {
+            "registered": "Du är anmäld",
+            "checkInNow": "Checka in nu",
+            "checkIn": "Checka in",
+            "called": "Match om {seconds} s",
+            "toCall": "Gå",
+            "checkInOpen": "Incheckningen till {name} är öppen. Checka in för att behålla din plats.",
+            "checkedIn": "Incheckad",
+            "startsIn": "Startar om {time}",
+            "checkInIn": "Incheckning om {time}",
+            "playing": "Din match pågår",
+            "paused": "Pausad, tillbaka om {time}",
+            "pausedHost": "Pausad, väntar på värden",
+            "nextUp": "Väntar på din nästa match",
+            "won": "Du vann",
+            "open": "Öppna"
+        },
+        "error": {
+            "missing": "Den turneringen finns inte längre.",
+            "notHost": "Bara värden kan göra det.",
+            "closed": "Anmälan till den här turneringen är stängd.",
+            "over": "Den här turneringen är slut.",
+            "full": "Den här turneringen är full.",
+            "alreadyEntered": "Du är redan anmäld.",
+            "notEntered": "Du är inte anmäld till den här turneringen.",
+            "notAnEntrant": "Personen är inte anmäld till den här turneringen.",
+            "drawn": "Lottningen är redan gjord.",
+            "seedEdge": "Personen står redan ytterst i ordningen.",
+            "kickHost": "Värden kan inte tas bort från sin egen turnering.",
+            "alreadyCheckedIn": "Du har redan checkat in.",
+            "checkInClosed": "Incheckningen är inte öppen.",
+            "notCheckingIn": "Öppna incheckningen först.",
+            "scheduled": "Den här har en starttid, så incheckning och start sker av sig själv.",
+            "notEnoughPlayers": "För få spelare för att starta ({min} behövs).",
+            "code": "Den koden gäller inte den här turneringen.",
+            "noCode": "Ingen turnering har den koden.",
+            "busy": "Du spelar i {name}. Lämna den först om du vill spela en annan match.",
+            "alreadyOut": "Du är inte längre med i den här turneringen.",
+            "notCalled": "Du har ingen match som väntar på att starta.",
+            "notPaused": "Den här turneringen är inte pausad.",
+            "locked": "Andra har gått med, så inställningarna är låsta. Vill du ändra dem, ställ in turneringen och skapa en ny.",
+            "name": "Turneringens namn måste vara mellan 3 och 40 tecken.",
+            "nameBanned": "Det namnet är inte tillåtet. Välj ett annat.",
+            "startTooSoon": "Sätt starten minst 5 minuter fram.",
+            "startTooLate": "En turnering kan schemaläggas högst två veckor framåt.",
+            "hostLimit": "Du är redan värd för en turnering. Ställ in den eller låt den bli klar innan du skapar en ny.",
+            "serverFull": "Servern kör så många turneringar som den klarar.",
+            "elsewhere": "Du är redan med i {name}. Lämna den först för att spela i den här."
+        },
+        "leaveMatch": {
+            "title": "Lämna {name}?",
+            "description": "Lämnar du den här matchen är du ute ur turneringen, och din motståndare går vidare. Du kan inte komma tillbaka.",
+            "button": "Lämna turneringen"
+        },
+        "round": {
+            "final": "Final",
+            "semiFinal": "Semifinaler",
+            "quarterFinal": "Kvartsfinaler",
+            "of": "Sista {count}",
+            "thirdPlace": "Tredjeplats",
+            "bestOf": "Bäst av {count}",
+            "short": {
+                "final": "Final",
+                "semiFinal": "Semi",
+                "quarterFinal": "Kvart",
+                "of": "Sista {count}"
+            },
+            "abbreviated": {
+                "final": "F",
+                "semiFinal": "SF",
+                "quarterFinal": "KF",
+                "of": "O{count}"
+            }
+        }
+    },
+    "tutorial": {
+        "title": "Guide",
+        "skip": "Hoppa över guiden",
+        "gotIt": "Uppfattat"
     }
 }

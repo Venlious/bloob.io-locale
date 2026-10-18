@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Dutch",
         "rtl": false,
-        "total": 2739,
+        "total": 3072,
         "missing": 134
     },
     "error": {
@@ -21,7 +21,10 @@
             "invalidUser": "Je gebruikersaccount heeft geen verificatie nodig.",
             "invalidCode": "Deze verificatiecode is ongeldig.",
             "invalidSessionName": "Een sessienaam moet tussen 2-24 tekens lang zijn en mag alleen alfanumerieke tekens en spaties bevatten.",
-            "alreadyUsedSessionName": "Er bestaat al een sessie met deze naam."
+            "alreadyUsedSessionName": "Er bestaat al een sessie met deze naam.",
+            "emailInactive": "We kunnen geen e-mails sturen naar {email}. Gebruik een ander adres.",
+            "emailInvalid": "{email} is geen geldig e-mailadres.",
+            "emailUnavailable": "We konden de e-mail niet versturen. Probeer het later opnieuw."
         },
         "rateLimit": {
             "malicious": "Er is kwaadaardige activiteit gedetecteerd. Wacht {seconds} seconde(n).",
@@ -680,6 +683,7 @@
         "cardSetName": "Vul een naam in voor deze kaartenset...",
         "matchId": "Spel ID of URL...",
         "message": "Bericht...",
+        "name": "Vul een naam in...",
         "username": "Gebruikersnaam",
         "password": "Wachtwoord"
     },
@@ -1254,7 +1258,10 @@
         "hotDiceRate": "Hete dobbelstenen",
         "offerDraw": "Gelijkspel Aanbieden",
         "drawOffered": "Gelijkspel Aangeboden",
-        "forfeited": "Opgegeven"
+        "forfeited": "Opgegeven",
+        "live": "Live",
+        "official": "Officieel",
+        "stepProgress": "Stap {step} van {count}"
     },
     "match": {
         "quick": "Snel Spel",
@@ -1507,6 +1514,11 @@
                 "blocked": "Analytics zijn niet actief. Jouw browser of extensie heeft het misschien geblokkeerd.",
                 "dnt": "Jouw browser heeft de \"Do Not Track\" (DNT) instelling ingeschakeld. We respecteren je verzoek en volgen je niet."
             },
+            "research": {
+                "title": "Onderzoek",
+                "description": "Sommige spellen kunnen anoniem worden vastgelegd voor onderzoekers die bestuderen hoe mensen spelen. Niets waarmee je herkend kunt worden wordt ooit gedeeld, en je kunt je spellen op elk moment uitsluiten.",
+                "label": "Mijn spellen meenemen"
+            },
             "ads": {
                 "title": "Advertenties",
                 "description": "We tonen advertenties van {provider}. De advertenties op Bloob.io, of het nou helemaal of gedeeltelijk is, worden geregeld door {provider}. Als je geen advertenties op Bloob.io wilt zien, kun je ad-vrij gaan door munten in de winkel te kopen. Dit verwijdert automatisch alle advertenties voor jouw account.",
@@ -1521,7 +1533,8 @@
             },
             "controlYourData": {
                 "title": "Beheer Je Data",
-                "description": "Je hebt altijd volledige controle over je data op Bloob.io. Bloob.io kan anoniem gespeeld worden. Als je je data wilt verwijderen, kan dat hier. Als je een account hebt, moet je eerst je e-mail ontkoppelen en dan hier terugkomen.",
+                "description": "Je hebt altijd volledige controle over je data op Bloob.io. Bloob.io kan anoniem gespeeld worden. Als je je data wilt verwijderen, kan dat hier.",
+                "descriptionUnlink": "Als je een account hebt, moet je eerst je e-mail ontkoppelen en dan hier terugkomen.",
                 "descriptionSocialLink": "Je account is gekoppeld aan een ander platform ({social}) en je gegevens kunnen daar beheerd worden."
             },
             "localStorage": {
@@ -1675,5 +1688,155 @@
             "justIn": "Net binnen",
             "miss": "Mis"
         }
+    },
+    "spectate": {
+        "ended": "Het spel waar je naar keek is afgelopen.",
+        "self": "Je kijkt mee",
+        "count": "Niemand kijkt mee | 1 persoon kijkt mee | {count} mensen kijken mee",
+        "finished": "Het spel is afgelopen.",
+        "leave": "Stop met kijken",
+        "backToBracket": "Terug naar het schema",
+        "watch": "Kijken"
+    },
+    "tournament": {
+        "title": "Toernooien",
+        "playing": {
+            "bracket": "Schema openen",
+            "players": "{count} spelers",
+            "left": "{left} van {count} over",
+            "oneMatch": "Eén potje",
+            "gameNext": "Hierna potje {number}",
+            "gameIn": "Potje {number} over {seconds} s",
+            "runnerUp": "Tweede",
+            "out": "Uitgeschakeld",
+            "thirdPlaceMatch": "Strijd om plaats 3",
+            "fourthPlace": "Vierde plaats",
+            "through": "Door",
+            "next": "Hierna: {round}",
+            "topOf": "Top {count} van {field}",
+            "goesThrough": "{name} gaat door",
+            "winsIt": "{name} wint",
+            "finishesThird": "{name} wordt derde"
+        },
+        "outcome": {
+            "continues": "De reeks is nog niet voorbij. Het volgende spel begint vanzelf.",
+            "advanced": "Je wint dit duel. Je volgende spel opent vanzelf.",
+            "eliminated": "Daarmee lig je uit {name}.",
+            "champion": "Je hebt {name} gewonnen.",
+            "spectating": "De winnaar gaat door naar de volgende ronde.",
+            "waiting": "Wachten op de rest van de ronde.",
+            "playoffNext": "Hierna speel je om de derde plaats.",
+            "third": "Je wordt derde in {name}.",
+            "youPlayIn": "Je speelt over {seconds} s tegen {name}",
+            "youPlayNext": "Hierna speel je tegen {name}",
+            "opensItself": "Het begint vanzelf.",
+            "waitingOn": "Wachten op {first} vs {second}",
+            "playWinner": "Je speelt tegen de winnaar.",
+            "startsIn": "{first} vs {second} begint over {seconds} s",
+            "watchMatch": "{first} vs {second} kijken",
+            "progress": "{done} van {count} klaar",
+            "live": "{count} live",
+            "beat": "{winner} versloeg {loser}",
+            "youBeat": "Je versloeg {name}",
+            "beatYou": "{name} versloeg jou",
+            "versus": "{first} vs {second}",
+            "upcoming": "Hierna",
+            "inSeconds": "Over {seconds} s",
+            "yours": "Jouw potje",
+            "decides": "Bepaalt je tegenstander",
+            "more": "Niets meer in deze ronde | Nog één in deze ronde | Nog {count} in deze ronde",
+            "rest": "De rest van het toernooi"
+        },
+        "call": {
+            "title": "Je volgende spel",
+            "waiting": "Wachten…",
+            "single": "Eén spel beslist",
+            "series": "Best of {count}, {own}–{other}",
+            "startsIn": "Begint over {seconds}s",
+            "readyUp": "Ik ben klaar",
+            "ready": "Klaar. Wachten op de rest.",
+            "roundOf": "Ronde {round} van {count}",
+            "beat": "Je versloeg {name}, {score}",
+            "secondsLeft": "Seconden tot de start"
+        },
+        "sidebar": {
+            "registered": "Je bent ingeschreven",
+            "checkInNow": "Check nu in",
+            "checkIn": "Inchecken",
+            "called": "Wedstrijd over {seconds}s",
+            "toCall": "Ga",
+            "checkInOpen": "Inchecken voor {name} is open. Check in om je plek te houden.",
+            "checkedIn": "Ingecheckt",
+            "startsIn": "Begint over {time}",
+            "checkInIn": "Inchecken over {time}",
+            "playing": "Je spel is bezig",
+            "paused": "Gepauzeerd, verder over {time}",
+            "pausedHost": "Gepauzeerd, wachten op de host",
+            "nextUp": "Wachten op je volgende spel",
+            "won": "Je hebt gewonnen",
+            "open": "Openen"
+        },
+        "error": {
+            "missing": "Dat toernooi bestaat niet meer.",
+            "notHost": "Alleen de host kan dat doen.",
+            "closed": "De inschrijving voor dit toernooi is gesloten.",
+            "over": "Dit toernooi is voorbij.",
+            "full": "Dit toernooi is vol.",
+            "alreadyEntered": "Je bent al ingeschreven.",
+            "notEntered": "Je bent niet ingeschreven voor dit toernooi.",
+            "notAnEntrant": "Die speler is niet ingeschreven voor dit toernooi.",
+            "drawn": "Het schema is al geloot.",
+            "seedEdge": "Die speler staat al aan het eind van de volgorde.",
+            "kickHost": "De host kan niet uit het eigen toernooi worden verwijderd.",
+            "alreadyCheckedIn": "Je bent al ingecheckt.",
+            "checkInClosed": "Inchecken is niet open.",
+            "notCheckingIn": "Open eerst het inchecken.",
+            "scheduled": "Deze heeft een starttijd, dus inchecken en starten gaan vanzelf.",
+            "notEnoughPlayers": "Niet genoeg spelers om te starten ({min} nodig).",
+            "code": "Die code hoort niet bij dit toernooi.",
+            "noCode": "Geen enkel toernooi heeft die code.",
+            "busy": "Je speelt mee in {name}. Verlaat dat eerst als je een ander spel wilt.",
+            "alreadyOut": "Je doet niet meer mee aan dit toernooi.",
+            "notCalled": "Er staat geen spel voor je klaar.",
+            "notPaused": "Dit toernooi is niet gepauzeerd.",
+            "locked": "Er doen al anderen mee, dus de instellingen staan vast. Wil je ze aanpassen, annuleer dan dit toernooi en maak een nieuw aan.",
+            "name": "Een toernooinaam moet tussen 3 en 40 tekens lang zijn.",
+            "nameBanned": "Die naam is niet toegestaan. Kies een andere.",
+            "startTooSoon": "Kies een start minstens 5 minuten vanaf nu.",
+            "startTooLate": "Een toernooi kan maximaal twee weken vooruit worden gepland.",
+            "hostLimit": "Je organiseert al een toernooi. Annuleer het of laat het eerst afronden voordat je een nieuwe maakt.",
+            "serverFull": "De server draait al zoveel toernooien als hij aankan.",
+            "elsewhere": "Je doet al mee aan {name}. Verlaat dat eerst om in dit toernooi te spelen."
+        },
+        "leaveMatch": {
+            "title": "{name} verlaten?",
+            "description": "Als je deze wedstrijd verlaat, lig je uit het toernooi en gaat je tegenstander door. Je kunt niet meer terugkomen.",
+            "button": "Toernooi verlaten"
+        },
+        "round": {
+            "final": "Finale",
+            "semiFinal": "Halve finales",
+            "quarterFinal": "Kwartfinales",
+            "of": "Laatste {count}",
+            "thirdPlace": "Derde plaats",
+            "bestOf": "Best of {count}",
+            "short": {
+                "final": "Finale",
+                "semiFinal": "Halve",
+                "quarterFinal": "Kwart",
+                "of": "Laatste {count}"
+            },
+            "abbreviated": {
+                "final": "F",
+                "semiFinal": "HF",
+                "quarterFinal": "KF",
+                "of": "L{count}"
+            }
+        }
+    },
+    "tutorial": {
+        "title": "Uitleg",
+        "skip": "Uitleg overslaan",
+        "gotIt": "Begrepen"
     }
 }

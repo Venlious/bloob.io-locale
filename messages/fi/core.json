@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 2739,
+        "total": 3072,
         "missing": 134
     },
     "error": {
@@ -21,7 +21,10 @@
             "invalidUser": "Käyttäjätilisi ei vaadi todentamista.",
             "invalidCode": "Tämä varmistuskoodi on virheellinen.",
             "invalidSessionName": "Istunnon nimen täytyy olla 2-24 merkkiä pitkä ja se saa sisältää vain aakkosnumeerisia merkkejä ja välilyöntejä.",
-            "alreadyUsedSessionName": "Tällä nimellä oleva istunto on jo olemassa."
+            "alreadyUsedSessionName": "Tällä nimellä oleva istunto on jo olemassa.",
+            "emailInactive": "Emme voi lähettää sähköposteja osoitteeseen {email}. Käytä toista osoitetta.",
+            "emailInvalid": "{email} ei ole kelvollinen sähköpostiosoite.",
+            "emailUnavailable": "Sähköpostin lähettäminen epäonnistui. Yritä myöhemmin uudelleen."
         },
         "rateLimit": {
             "malicious": "Havaittiin ilkeää toimintaa. Aikakatkaisu {seconds} sekunnin ajaksi.",
@@ -680,6 +683,7 @@
         "cardSetName": "Anna nimi tälle korttipaketille...",
         "matchId": "Ottelun ID tai URL...",
         "message": "Viesti...",
+        "name": "Kirjoita nimi...",
         "username": "Käyttäjänimi",
         "password": "Salasana"
     },
@@ -1254,7 +1258,10 @@
         "hotDiceRate": "Kuumien noppien prosentti",
         "offerDraw": "Tarjoa Tasapeliä",
         "drawOffered": "Tasapeliä Tarjottu",
-        "forfeited": "Luovutti"
+        "forfeited": "Luovutti",
+        "live": "Live",
+        "official": "Virallinen",
+        "stepProgress": "Vaihe {step}/{count}"
     },
     "match": {
         "quick": "Nopea ottelu",
@@ -1507,6 +1514,11 @@
                 "blocked": "Analytiikka ei ole aktiivinen. Selaimesi tai laajennuksesi saattaa olla estänyt sen.",
                 "dnt": "Selaimesi on asetettu \"Älä seuraa\" (DNT) -tilaan. Kunnioitamme pyyntöäsi emmekä seuraa sinua."
             },
+            "research": {
+                "title": "Tutkimus",
+                "description": "Joitakin pelejä voidaan tallentaa nimettömästi tutkijoille, jotka tutkivat, miten ihmiset pelaavat. Mitään, mistä sinut voisi tunnistaa, ei koskaan jaeta, ja voit jättää pelisi pois milloin tahansa.",
+                "label": "Ota pelini mukaan"
+            },
             "ads": {
                 "title": "Mainokset",
                 "description": "Me näytetään mainoksia {provider}ltä. Mainonta Bloob.io:ssa, olipa se sitten kokonaan tai osittain, hoitaa {provider}. Jos et halua nähdä mainoksia Bloob.io:ssa, voit ostaa kolikoita kaupasta ja päästä mainoksista eroon. Tämä poistaa automaattisesti kaikki mainokset sun tililtä.",
@@ -1521,7 +1533,8 @@
             },
             "controlYourData": {
                 "title": "Hallitse Tietojasi",
-                "description": "Olet aina täysin hallinnassa omista tiedoistasi Bloob.io:ssa. Bloob.io:ta voi pelata anonyymisti. Jos haluat poistaa tietosi, voit tehdä sen täällä. Jos sinulla on tili, sinun on ensin irrotettava sähköpostisi ja palattava tänne.",
+                "description": "Olet aina täysin hallinnassa omista tiedoistasi Bloob.io:ssa. Bloob.io:ta voi pelata anonyymisti. Jos haluat poistaa tietosi, voit tehdä sen täällä.",
+                "descriptionUnlink": "Jos sinulla on tili, sinun on ensin irrotettava sähköpostisi ja palattava tänne.",
                 "descriptionSocialLink": "Sun tili on linkitetty toiseen palveluun ({social}), ja sun tietoja voi hallita siellä."
             },
             "localStorage": {
@@ -1675,5 +1688,155 @@
             "justIn": "Juuri sisällä",
             "miss": "Ohi"
         }
+    },
+    "spectate": {
+        "ended": "Ottelu, jota katsoit, on päättynyt.",
+        "self": "Olet katsojana",
+        "count": "Kukaan ei katso | 1 henkilö katsoo | {count} henkilöä katsoo",
+        "finished": "Ottelu on ohi.",
+        "leave": "Lopeta katsominen",
+        "backToBracket": "Takaisin turnauskaavioon",
+        "watch": "Katso"
+    },
+    "tournament": {
+        "title": "Turnaukset",
+        "playing": {
+            "bracket": "Avaa turnauskaavio",
+            "players": "{count} pelaajaa",
+            "left": "{left}/{count} jäljellä",
+            "oneMatch": "Yksi ottelu",
+            "gameNext": "Seuraavaksi peli {number}",
+            "gameIn": "Peli {number} alkaa {seconds} s",
+            "runnerUp": "Toinen sija",
+            "out": "Pudonnut",
+            "thirdPlaceMatch": "Pronssiottelu",
+            "fourthPlace": "Neljäs sija",
+            "through": "Jatkoon",
+            "next": "Seuraavaksi: {round}",
+            "topOf": "Top {count}/{field}",
+            "goesThrough": "{name} jatkaa",
+            "winsIt": "{name} voittaa",
+            "finishesThird": "{name} on kolmas"
+        },
+        "outcome": {
+            "continues": "Sarja jatkuu. Seuraava peli alkaa itsestään.",
+            "advanced": "Menit jatkoon. Seuraava ottelusi avautuu itsestään.",
+            "eliminated": "Putosit turnauksesta {name}.",
+            "champion": "Voitit turnauksen {name}.",
+            "spectating": "Voittaja pääsee seuraavalle kierrokselle.",
+            "waiting": "Odotetaan kierroksen muita otteluita.",
+            "playoffNext": "Seuraavaksi pelaat kolmannesta sijasta.",
+            "third": "Olet kolmas turnauksessa {name}.",
+            "youPlayIn": "Vastassa {name} {seconds} s päästä",
+            "youPlayNext": "Seuraavaksi vastassa {name}",
+            "opensItself": "Se alkaa itsestään.",
+            "waitingOn": "Odotetaan: {first} vs {second}",
+            "playWinner": "Pelaat voittajaa vastaan.",
+            "startsIn": "{first} vs {second} alkaa {seconds} s päästä",
+            "watchMatch": "Katso {first} vs {second}",
+            "progress": "{done}/{count} valmiina",
+            "live": "{count} käynnissä",
+            "beat": "{winner} voitti pelaajan {loser}",
+            "youBeat": "Voitit pelaajan {name}",
+            "beatYou": "{name} voitti sinut",
+            "versus": "{first} vs {second}",
+            "upcoming": "Seuraava",
+            "inSeconds": "{seconds} s päästä",
+            "yours": "Sinun",
+            "decides": "Ratkaisee vastustajasi",
+            "more": "Ei enempää tällä kierroksella | Yksi lisää tällä kierroksella | {count} lisää tällä kierroksella",
+            "rest": "Loput turnauksesta"
+        },
+        "call": {
+            "title": "Seuraava ottelusi",
+            "waiting": "Odotetaan…",
+            "single": "Yksi ottelu ratkaisee",
+            "series": "Paras {count}:stä, {own}–{other}",
+            "startsIn": "Alkaa {seconds} s päästä",
+            "readyUp": "Olen valmis",
+            "ready": "Valmis. Odotetaan muita.",
+            "roundOf": "Kierros {round}/{count}",
+            "beat": "Voitit pelaajan {name} {score}",
+            "secondsLeft": "Sekuntia alkuun"
+        },
+        "sidebar": {
+            "registered": "Olet ilmoittautunut",
+            "checkInNow": "Vahvista nyt",
+            "checkIn": "Vahvista",
+            "called": "Ottelu {seconds} s päästä",
+            "toCall": "Mene",
+            "checkInOpen": "Turnauksen {name} sisäänkirjautuminen on auki. Kirjaudu sisään pitääksesi paikkasi.",
+            "checkedIn": "Vahvistettu",
+            "startsIn": "Alkaa {time} päästä",
+            "checkInIn": "Vahvistus {time} päästä",
+            "playing": "Ottelusi on käynnissä",
+            "paused": "Tauolla, jatkuu {time} päästä",
+            "pausedHost": "Tauolla, odotetaan isäntää",
+            "nextUp": "Odotetaan seuraavaa otteluasi",
+            "won": "Voitit",
+            "open": "Avaa"
+        },
+        "error": {
+            "missing": "Turnausta ei ole enää olemassa.",
+            "notHost": "Vain isäntä voi tehdä sen.",
+            "closed": "Tämän turnauksen ilmoittautuminen on suljettu.",
+            "over": "Tämä turnaus on ohi.",
+            "full": "Tämä turnaus on täynnä.",
+            "alreadyEntered": "Olet jo ilmoittautunut.",
+            "notEntered": "Et ole ilmoittautunut tähän turnaukseen.",
+            "notAnEntrant": "Pelaaja ei ole ilmoittautunut tähän turnaukseen.",
+            "drawn": "Turnauskaavio on jo arvottu.",
+            "seedEdge": "Pelaaja on jo järjestyksen päässä.",
+            "kickHost": "Isäntää ei voi poistaa omasta turnauksestaan.",
+            "alreadyCheckedIn": "Olet jo vahvistanut osallistumisesi.",
+            "checkInClosed": "Vahvistus ei ole auki.",
+            "notCheckingIn": "Avaa vahvistus ensin.",
+            "scheduled": "Tällä on alkamisaika, joten vahvistus ja aloitus tapahtuvat itsestään.",
+            "notEnoughPlayers": "Liian vähän pelaajia aloittamiseen ({min} tarvitaan).",
+            "code": "Koodi ei avaa tätä turnausta.",
+            "noCode": "Millään turnauksella ei ole tätä koodia.",
+            "busy": "Pelaat turnauksessa {name}. Poistu siitä ensin, jos haluat toisen ottelun.",
+            "alreadyOut": "Et ole enää mukana tässä turnauksessa.",
+            "notCalled": "Sinulla ei ole alkamista odottavaa ottelua.",
+            "notPaused": "Tämä turnaus ei ole tauolla.",
+            "locked": "Muita on liittynyt, joten asetukset on lukittu. Jos haluat muuttaa niitä, peru tämä turnaus ja luo uusi.",
+            "name": "Turnauksen nimen täytyy olla 3-40 merkkiä pitkä.",
+            "nameBanned": "Tuo nimi ei ole sallittu. Valitse toinen.",
+            "startTooSoon": "Aseta alku vähintään 5 minuutin päähän.",
+            "startTooLate": "Turnauksen voi ajoittaa enintään kahden viikon päähän.",
+            "hostLimit": "Järjestät jo turnausta. Peru se tai anna sen päättyä ennen kuin luot uuden.",
+            "serverFull": "Palvelimella on käynnissä niin monta turnausta kuin se pystyy.",
+            "elsewhere": "Olet jo mukana turnauksessa {name}. Poistu siitä ensin pelataksesi tässä."
+        },
+        "leaveMatch": {
+            "title": "Poistutaanko turnauksesta {name}?",
+            "description": "Jos poistut tästä ottelusta, putoat turnauksesta ja vastustajasi jatkaa. Et voi palata.",
+            "button": "Poistu turnauksesta"
+        },
+        "round": {
+            "final": "Finaali",
+            "semiFinal": "Välierät",
+            "quarterFinal": "Puolivälierät",
+            "of": "Viimeiset {count}",
+            "thirdPlace": "Kolmas sija",
+            "bestOf": "Paras {count}:stä",
+            "short": {
+                "final": "Finaali",
+                "semiFinal": "Semit",
+                "quarterFinal": "Puolivälierät",
+                "of": "Viimeiset {count}"
+            },
+            "abbreviated": {
+                "final": "F",
+                "semiFinal": "SF",
+                "quarterFinal": "PV",
+                "of": "K{count}"
+            }
+        }
+    },
+    "tutorial": {
+        "title": "Opastus",
+        "skip": "Ohita opastus",
+        "gotIt": "Selvä"
     }
 }

@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Mexican Spanish",
         "rtl": false,
-        "total": 2739,
+        "total": 3072,
         "missing": 134
     },
     "error": {
@@ -21,7 +21,10 @@
             "invalidUser": "Tu cuenta de usuario no requiere autenticación.",
             "invalidCode": "Este código de verificación no es válido.",
             "invalidSessionName": "El nombre de la sesión debe tener entre 2 y 24 caracteres y solo puede contener caracteres alfanuméricos y espacios.",
-            "alreadyUsedSessionName": "Ya existe una sesión con este nombre."
+            "alreadyUsedSessionName": "Ya existe una sesión con este nombre.",
+            "emailInactive": "No podemos enviar correos a {email}. Usa otra dirección, por favor.",
+            "emailInvalid": "{email} no es un correo electrónico válido.",
+            "emailUnavailable": "No pudimos enviar el correo. Inténtalo de nuevo más tarde."
         },
         "rateLimit": {
             "malicious": "Se ha detectado actividad maliciosa. Suspensión temporal por {seconds} segundo(s).",
@@ -680,6 +683,7 @@
         "cardSetName": "Escribe el nombre de este conjunto de cartas...",
         "matchId": "Coincide el ID o URL...",
         "message": "Mensaje...",
+        "name": "Escribe el nombre...",
         "username": "Nombre de usuario",
         "password": "Contraseña"
     },
@@ -1254,7 +1258,10 @@
         "hotDiceRate": "Tasa de dados calientes",
         "offerDraw": "Ofrecer tablas",
         "drawOffered": "Tablas ofrecidas",
-        "forfeited": "Se rindió"
+        "forfeited": "Se rindió",
+        "live": "En vivo",
+        "official": "Oficial",
+        "stepProgress": "Paso {step} de {count}"
     },
     "match": {
         "quick": "Partida rápida",
@@ -1507,6 +1514,11 @@
                 "blocked": "Las analíticas no están activas. Tu navegador o extensión pueden haberlas bloqueado.",
                 "dnt": "Tu navegador tiene la configuración \"No rastrear\" (DNT) habilitada. Respetamos tu solicitud y no usaremos rastreo."
             },
+            "research": {
+                "title": "Investigación",
+                "description": "Algunas partidas pueden grabarse de forma anónima para investigadores que estudian cómo juega la gente. Nunca se comparte nada que te identifique, y puedes dejar fuera tus partidas en cualquier momento.",
+                "label": "Incluir mis partidas"
+            },
             "ads": {
                 "title": "Anuncios",
                 "description": "Mostramos anuncios de {provider}. La publicidad en Bloob.io, ya sea en su totalidad o en parte, la maneja {provider}. Si no quieres ver anuncios en Bloob.io, puedes quitar los anuncios comprando monedas en la tienda. Esto quitará automáticamente todos los anuncios de tu cuenta.",
@@ -1521,7 +1533,8 @@
             },
             "controlYourData": {
                 "title": "Controla tus datos",
-                "description": "Siempre tienes el control total de tus datos en Bloob.io. Puedes jugar a Bloob.io de forma anónima. En caso de que quieras borrar tus datos, puedes hacerlo aquí. Si tienes una cuenta, primero necesitarás desvincular tu correo electrónico y volver aquí.",
+                "description": "Siempre tienes el control total de tus datos en Bloob.io. Puedes jugar a Bloob.io de forma anónima. En caso de que quieras borrar tus datos, puedes hacerlo aquí.",
+                "descriptionUnlink": "Si tienes una cuenta, primero necesitarás desvincular tu correo electrónico y volver aquí.",
                 "descriptionSocialLink": "Tu cuenta está conectada a una plataforma de ({social}) y ahí pueden controlar tus datos."
             },
             "localStorage": {
@@ -1675,5 +1688,155 @@
             "justIn": "Apenas",
             "miss": "Fallaste"
         }
+    },
+    "spectate": {
+        "ended": "La partida que estabas viendo ha terminado.",
+        "self": "Estás mirando",
+        "count": "Nadie está mirando | 1 persona está mirando | {count} personas están mirando",
+        "finished": "La partida ha terminado.",
+        "leave": "Dejar de mirar",
+        "backToBracket": "Volver al cuadro",
+        "watch": "Ver"
+    },
+    "tournament": {
+        "title": "Torneos",
+        "playing": {
+            "bracket": "Abrir el cuadro",
+            "players": "{count} jugadores",
+            "left": "Quedan {left} de {count}",
+            "oneMatch": "Una partida",
+            "gameNext": "Siguiente: partida {number}",
+            "gameIn": "Partida {number} en {seconds} s",
+            "runnerUp": "Subcampeón",
+            "out": "Eliminado",
+            "thirdPlaceMatch": "Partido por el 3.er puesto",
+            "fourthPlace": "Cuarto puesto",
+            "through": "Clasificado",
+            "next": "Siguiente: {round}",
+            "topOf": "Top {count} de {field}",
+            "goesThrough": "{name} pasa de ronda",
+            "winsIt": "{name} gana",
+            "finishesThird": "{name} queda tercero"
+        },
+        "outcome": {
+            "continues": "La serie no ha terminado. La siguiente partida empieza sola.",
+            "advanced": "Ganas el enfrentamiento. Tu próxima partida se abrirá sola.",
+            "eliminated": "Quedas fuera de {name}.",
+            "champion": "Has ganado {name}.",
+            "spectating": "El ganador pasa a la siguiente ronda.",
+            "waiting": "Esperando al resto de la ronda.",
+            "playoffNext": "Ahora juegas por el tercer puesto.",
+            "third": "Quedas tercero en {name}.",
+            "youPlayIn": "Juegas contra {name} en {seconds} s",
+            "youPlayNext": "Juegas contra {name} a continuación",
+            "opensItself": "Empieza solo.",
+            "waitingOn": "Esperando a {first} vs {second}",
+            "playWinner": "Juegas contra el ganador.",
+            "startsIn": "{first} vs {second} empieza en {seconds} s",
+            "watchMatch": "Ver {first} vs {second}",
+            "progress": "{done} de {count} terminados",
+            "live": "{count} en directo",
+            "beat": "{winner} venció a {loser}",
+            "youBeat": "Venciste a {name}",
+            "beatYou": "{name} te venció",
+            "versus": "{first} vs {second}",
+            "upcoming": "Próximo",
+            "inSeconds": "En {seconds} s",
+            "yours": "El tuyo",
+            "decides": "Decide tu rival",
+            "more": "Nada más en esta ronda | Uno más en esta ronda | {count} más en esta ronda",
+            "rest": "El resto del torneo"
+        },
+        "call": {
+            "title": "Tu próxima partida",
+            "waiting": "Esperando…",
+            "single": "Una sola partida lo decide",
+            "series": "Al mejor de {count}, {own}–{other}",
+            "startsIn": "Empieza en {seconds} s",
+            "readyUp": "Estoy listo",
+            "ready": "Listo. Esperando al resto.",
+            "roundOf": "Ronda {round} de {count}",
+            "beat": "Ganaste a {name} {score}",
+            "secondsLeft": "Segundos para empezar"
+        },
+        "sidebar": {
+            "registered": "Estás inscrito",
+            "checkInNow": "Confirma ahora",
+            "checkIn": "Confirmar",
+            "called": "Partida en {seconds}s",
+            "toCall": "Ir",
+            "checkInOpen": "El check-in de {name} está abierto. Haz check-in para no perder tu lugar.",
+            "checkedIn": "Confirmado",
+            "startsIn": "Empieza en {time}",
+            "checkInIn": "Confirmación en {time}",
+            "playing": "Tu partida está en juego",
+            "paused": "En pausa, vuelve en {time}",
+            "pausedHost": "En pausa, esperando al anfitrión",
+            "nextUp": "Esperando tu próxima partida",
+            "won": "Has ganado",
+            "open": "Abrir"
+        },
+        "error": {
+            "missing": "Ese torneo ya no existe.",
+            "notHost": "Solo el anfitrión puede hacer eso.",
+            "closed": "Las inscripciones de este torneo están cerradas.",
+            "over": "Este torneo ha terminado.",
+            "full": "Este torneo está lleno.",
+            "alreadyEntered": "Ya estás inscrito.",
+            "notEntered": "No estás inscrito en este torneo.",
+            "notAnEntrant": "Esa persona no está inscrita en este torneo.",
+            "drawn": "El cuadro ya se ha sorteado.",
+            "seedEdge": "Ya está en el extremo del orden.",
+            "kickHost": "No se puede quitar al anfitrión de su propio torneo.",
+            "alreadyCheckedIn": "Ya has confirmado tu asistencia.",
+            "checkInClosed": "La confirmación no está abierta.",
+            "notCheckingIn": "Abre primero la confirmación.",
+            "scheduled": "Este tiene hora de inicio, así que la confirmación y el inicio van solos.",
+            "notEnoughPlayers": "No hay suficientes jugadores para empezar (se necesitan {min}).",
+            "code": "Ese código no es de este torneo.",
+            "noCode": "Ningún torneo tiene ese código.",
+            "busy": "Estás jugando en {name}. Sal primero si quieres otra partida.",
+            "alreadyOut": "Ya no estás en este torneo.",
+            "notCalled": "No tienes ninguna partida a punto de empezar.",
+            "notPaused": "Este torneo no está en pausa.",
+            "locked": "Ya se unieron otros jugadores, así que los ajustes están bloqueados. Para cambiarlos, cancela este torneo y crea uno nuevo.",
+            "name": "El nombre del torneo debe tener entre 3 y 40 caracteres.",
+            "nameBanned": "Ese nombre no está permitido. Elige otro.",
+            "startTooSoon": "Pon el inicio al menos 5 minutos a partir de ahora.",
+            "startTooLate": "Un torneo no se puede programar con más de dos semanas de antelación.",
+            "hostLimit": "Ya estás organizando un torneo. Cancélalo o deja que termine antes de crear otro.",
+            "serverFull": "El servidor ya tiene todos los torneos que puede gestionar.",
+            "elsewhere": "Ya estás en {name}. Sal primero de ese para jugar en este."
+        },
+        "leaveMatch": {
+            "title": "¿Salir de {name}?",
+            "description": "Si sales de esta partida, quedas fuera del torneo y tu rival pasa de ronda. No podrás volver.",
+            "button": "Salir del torneo"
+        },
+        "round": {
+            "final": "Final",
+            "semiFinal": "Semifinales",
+            "quarterFinal": "Cuartos de final",
+            "of": "Ronda de {count}",
+            "thirdPlace": "Tercer lugar",
+            "bestOf": "Al mejor de {count}",
+            "short": {
+                "final": "Final",
+                "semiFinal": "Semis",
+                "quarterFinal": "Cuartos",
+                "of": "Últimos {count}"
+            },
+            "abbreviated": {
+                "final": "F",
+                "semiFinal": "SF",
+                "quarterFinal": "CF",
+                "of": "R{count}"
+            }
+        }
+    },
+    "tutorial": {
+        "title": "Tutorial",
+        "skip": "Saltar tutorial",
+        "gotIt": "Entendido"
     }
 }

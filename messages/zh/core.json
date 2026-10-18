@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 2739,
+        "total": 3072,
         "missing": 134
     },
     "error": {
@@ -21,7 +21,10 @@
             "invalidUser": "你的用户账户不需要验证。",
             "invalidCode": "该验证码无效。",
             "invalidSessionName": "会话名称必须在2-24个字符之间，只能包含字母数字和空格。",
-            "alreadyUsedSessionName": "这个会话名称已经存在了。"
+            "alreadyUsedSessionName": "这个会话名称已经存在了。",
+            "emailInactive": "我们无法向 {email} 发送邮件。请换一个地址。",
+            "emailInvalid": "{email} 不是有效的电子邮件地址。",
+            "emailUnavailable": "邮件发送失败。请稍后再试。"
         },
         "rateLimit": {
             "malicious": "检测到恶意行为。被暂停了{seconds}秒。",
@@ -680,6 +683,7 @@
         "cardSetName": "为这个卡片集起个名字...",
         "matchId": "匹配ID或者网址...",
         "message": "消息...",
+        "name": "填写名称...",
         "username": "用户名",
         "password": "密码"
     },
@@ -1254,7 +1258,10 @@
         "hotDiceRate": "热骰率",
         "offerDraw": "提议和棋",
         "drawOffered": "已提议和棋",
-        "forfeited": "已认输"
+        "forfeited": "已认输",
+        "live": "进行中",
+        "official": "官方",
+        "stepProgress": "第 {step} 步，共 {count} 步"
     },
     "match": {
         "quick": "快速匹配",
@@ -1507,6 +1514,11 @@
                 "blocked": "数据分析未激活。你的浏览器或扩展可能阻止了它。",
                 "dnt": "你的浏览器已启用\"Do Not Track\"（DNT）设置。我们尊重你的请求，不会跟踪你。"
             },
+            "research": {
+                "title": "研究",
+                "description": "部分游戏可能会被匿名记录，供研究人们游戏方式的研究人员使用。任何能识别你身份的信息都不会被分享，你也可以随时把你的游戏排除在外。",
+                "label": "纳入我的游戏"
+            },
             "ads": {
                 "title": "广告",
                 "description": "我们在Bloob.io上展示{provider}的广告。Bloob.io上的广告，无论是全部还是部分，都是由{provider}处理的。如果你不想在Bloob.io上看到广告，可以通过购买商店里的金币来去除广告，这会自动为你的账户移除所有广告。",
@@ -1521,7 +1533,8 @@
             },
             "controlYourData": {
                 "title": "控制你的数据",
-                "description": "在Bloob.io上，你始终完全掌控你的数据。你可以匿名玩Bloob.io。如果你想删除你的数据，可以在这里操作。如果你有账户，你首先需要解除你的电子邮件链接，然后再回到这里。",
+                "description": "在Bloob.io上，你始终完全掌控你的数据。你可以匿名玩Bloob.io。如果你想删除你的数据，可以在这里操作。",
+                "descriptionUnlink": "如果你有账户，你首先需要解除你的电子邮件链接，然后再回到这里。",
                 "descriptionSocialLink": "你的账号和另一个平台（{social}）关联了，你的数据可以在那边管理。"
             },
             "localStorage": {
@@ -1675,5 +1688,155 @@
             "justIn": "勉强",
             "miss": "没中"
         }
+    },
+    "spectate": {
+        "ended": "你观看的对局已经结束了。",
+        "self": "你正在观战",
+        "count": "没人在观战 | 1人正在观战 | {count}人正在观战",
+        "finished": "对局结束了。",
+        "leave": "停止观战",
+        "backToBracket": "返回对阵表",
+        "watch": "观战"
+    },
+    "tournament": {
+        "title": "锦标赛",
+        "playing": {
+            "bracket": "打开对阵表",
+            "players": "{count}名玩家",
+            "left": "剩余 {left}/{count}",
+            "oneMatch": "一局定胜负",
+            "gameNext": "下一局：第 {number} 局",
+            "gameIn": "第 {number} 局 {seconds} 秒后开始",
+            "runnerUp": "亚军",
+            "out": "淘汰",
+            "thirdPlaceMatch": "季军赛",
+            "fourthPlace": "第四名",
+            "through": "晋级",
+            "next": "下一轮：{round}",
+            "topOf": "{field} 人中的 {count} 强",
+            "goesThrough": "{name} 晋级",
+            "winsIt": "{name} 夺冠",
+            "finishesThird": "{name} 获得季军"
+        },
+        "outcome": {
+            "continues": "系列赛还没结束，下一局会自动开始。",
+            "advanced": "你赢下了这场对决，下一场对局会自动打开。",
+            "eliminated": "你在{name}中被淘汰了。",
+            "champion": "你赢得了{name}。",
+            "spectating": "胜者晋级下一轮。",
+            "waiting": "正在等待本轮其他对局结束。",
+            "playoffNext": "接下来你将争夺季军。",
+            "third": "你在 {name} 中获得季军。",
+            "youPlayIn": "{seconds} 秒后对阵 {name}",
+            "youPlayNext": "下一场对阵 {name}",
+            "opensItself": "会自动开始。",
+            "waitingOn": "等待 {first} vs {second}",
+            "playWinner": "你将对阵胜者。",
+            "startsIn": "{first} vs {second} {seconds} 秒后开始",
+            "watchMatch": "观看 {first} vs {second}",
+            "progress": "已完成 {done}/{count}",
+            "live": "{count} 场直播中",
+            "beat": "{winner} 战胜 {loser}",
+            "youBeat": "你战胜了 {name}",
+            "beatYou": "{name} 战胜了你",
+            "versus": "{first} vs {second}",
+            "upcoming": "下一场",
+            "inSeconds": "{seconds} 秒后",
+            "yours": "你的",
+            "decides": "决定你的对手",
+            "more": "本轮没有更多 | 本轮还有 1 场 | 本轮还有 {count} 场",
+            "rest": "锦标赛的其余部分"
+        },
+        "call": {
+            "title": "你的下一场对局",
+            "waiting": "等待中…",
+            "single": "一局定胜负",
+            "series": "最多{count}局，{own}–{other}",
+            "startsIn": "{seconds}秒后开始",
+            "readyUp": "我准备好了",
+            "ready": "已准备，正在等其他人。",
+            "roundOf": "第{round}轮，共{count}轮",
+            "beat": "你以{score}战胜了{name}",
+            "secondsLeft": "距离开始的秒数"
+        },
+        "sidebar": {
+            "registered": "你已报名",
+            "checkInNow": "立即签到",
+            "checkIn": "签到",
+            "called": "{seconds}秒后比赛",
+            "toCall": "前往",
+            "checkInOpen": "{name}的签到已开放。签到以保住你的位置。",
+            "checkedIn": "已签到",
+            "startsIn": "{time}后开始",
+            "checkInIn": "{time}后签到",
+            "playing": "你的对局进行中",
+            "paused": "已暂停，{time}后继续",
+            "pausedHost": "已暂停，等待房主",
+            "nextUp": "等待你的下一场对局",
+            "won": "你夺冠了",
+            "open": "打开"
+        },
+        "error": {
+            "missing": "这个锦标赛已经不存在了。",
+            "notHost": "只有房主能这样做。",
+            "closed": "这个锦标赛的报名已截止。",
+            "over": "这个锦标赛已经结束了。",
+            "full": "这个锦标赛已满员。",
+            "alreadyEntered": "你已经报名了。",
+            "notEntered": "你没有报名这个锦标赛。",
+            "notAnEntrant": "对方没有报名这个锦标赛。",
+            "drawn": "对阵表已经生成了。",
+            "seedEdge": "对方已经排在最前或最后了。",
+            "kickHost": "房主不能被移出自己的锦标赛。",
+            "alreadyCheckedIn": "你已经签到了。",
+            "checkInClosed": "签到未开放。",
+            "notCheckingIn": "请先开始签到。",
+            "scheduled": "这个锦标赛设有开始时间，签到和开始都会自动进行。",
+            "notEnoughPlayers": "玩家不足，无法开始（需要{min}人）。",
+            "code": "这个参赛码不适用于这个锦标赛。",
+            "noCode": "没有锦标赛使用这个参赛码。",
+            "busy": "你正在{name}中比赛。想玩别的对局，请先离开。",
+            "alreadyOut": "你已经不在这个锦标赛中了。",
+            "notCalled": "你没有等待开始的对局。",
+            "notPaused": "这个锦标赛没有暂停。",
+            "locked": "已经有其他人加入，所以设置已锁定。如需更改，请取消这个锦标赛并新建一个。",
+            "name": "锦标赛名称必须在3到40个字符之间。",
+            "nameBanned": "这个名称不允许使用。换一个吧。",
+            "startTooSoon": "开始时间至少要在5分钟之后。",
+            "startTooLate": "锦标赛最多只能提前两周安排。",
+            "hostLimit": "你已经在主办一场锦标赛了。先取消它或等它结束，再创建新的。",
+            "serverFull": "服务器上的锦标赛已经达到上限。",
+            "elsewhere": "你已经在参加{name}了。先退出那个，才能参加这个。"
+        },
+        "leaveMatch": {
+            "title": "退出{name}？",
+            "description": "离开这场比赛就会退出锦标赛，对手将直接晋级。你将无法再回来。",
+            "button": "退出锦标赛"
+        },
+        "round": {
+            "final": "决赛",
+            "semiFinal": "半决赛",
+            "quarterFinal": "四分之一决赛",
+            "of": "{count}强赛",
+            "thirdPlace": "季军",
+            "bestOf": "{count}局制",
+            "short": {
+                "final": "决赛",
+                "semiFinal": "半决赛",
+                "quarterFinal": "四分之一决赛",
+                "of": "{count} 强"
+            },
+            "abbreviated": {
+                "final": "决",
+                "semiFinal": "半",
+                "quarterFinal": "1/4",
+                "of": "{count}强"
+            }
+        }
+    },
+    "tutorial": {
+        "title": "教程",
+        "skip": "跳过教程",
+        "gotIt": "知道了"
     }
 }

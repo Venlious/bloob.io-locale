@@ -2,7 +2,7 @@
     "_meta": {
         "language": "Casual Gaming Japanese (カジュアルゲーム向け日本語)",
         "rtl": false,
-        "total": 2739,
+        "total": 3072,
         "missing": 134
     },
     "error": {
@@ -21,7 +21,10 @@
             "invalidUser": "このアカウントは、認証の必要がないよ。",
             "invalidCode": "この認証コードは無効だよ。",
             "invalidSessionName": "セッション名は2〜24文字で、英数字と空白（スペース）だけ使えるんだよ。",
-            "alreadyUsedSessionName": "この名前のセッションはすでに存在しているよ。"
+            "alreadyUsedSessionName": "この名前のセッションはすでに存在しているよ。",
+            "emailInactive": "{email} にはメールを送れないよ。別のアドレスを使ってね。",
+            "emailInvalid": "{email} は有効なメールアドレスじゃないよ。",
+            "emailUnavailable": "メールを送れなかったよ。しばらくしてからもう一度試してね。"
         },
         "rateLimit": {
             "malicious": "不正な操作を検出したよ。{seconds}秒間、操作を制限（タイムアウト）するね。",
@@ -680,6 +683,7 @@
         "cardSetName": "このカードセットの名前を入力してね...",
         "matchId": "IDかURLを対戦させてね...",
         "message": "メッセージを入力してね...",
+        "name": "名前を入力してね...",
         "username": "ユーザーネーム",
         "password": "パスワード"
     },
@@ -1254,7 +1258,10 @@
         "hotDiceRate": "ホットダイス率",
         "offerDraw": "引き分けを提案",
         "drawOffered": "引き分けを提案中",
-        "forfeited": "投了"
+        "forfeited": "投了",
+        "live": "対戦中",
+        "official": "公式",
+        "stepProgress": "ステップ {step}/{count}"
     },
     "match": {
         "quick": "クイック対戦",
@@ -1507,6 +1514,11 @@
                 "blocked": "アクセス解析は動いていないよ。ブラウザや拡張機能でブロックされているみたい。",
                 "dnt": "君のブラウザは\"Do Not Track\"（DNT）のトラッキング拒否設定がオンになっているよ。私たちは君のリクエストを尊重し、解析は行わないよ。"
             },
+            "research": {
+                "title": "研究",
+                "description": "一部のゲームは、人の遊び方を研究している研究者のために匿名で記録されることがあるよ。君を特定できる情報が共有されることは絶対にないし、いつでも自分のゲームを対象外にできるよ。",
+                "label": "自分のゲームを含める"
+            },
             "ads": {
                 "title": "広告について",
                 "description": "Bloob.ioでは{provider}の広告を表示してるよ。Bloob.ioの広告は、全部または一部が{provider}によって管理されてるんだ。もしBloob.ioで広告を見たくないなら、ストアでコインを購入することで自動的に君のアカウントでは全ての広告が表示されないように（非表示）になるよ。",
@@ -1521,7 +1533,8 @@
             },
             "controlYourData": {
                 "title": "データの管理",
-                "description": "データの管理権限は、いつでも君自身にあるよ。Bloob.ioは匿名でも遊べるけど、もしデータを完全に削除したい場合はここから行えるよ。アカウントを持っている場合は、先にメールの連携を解除してからここに戻ってきてね。",
+                "description": "データの管理権限は、いつでも君自身にあるよ。Bloob.ioは匿名でも遊べるけど、もしデータを完全に削除したい場合はここから行えるよ。",
+                "descriptionUnlink": "アカウントを持っている場合は、先にメールの連携を解除してからここに戻ってきてね。",
                 "descriptionSocialLink": "君のアカウントは別のプラットフォーム（{social}）と連携されているから、データの管理はそのプラットフォームで行ってね。。"
             },
             "localStorage": {
@@ -1675,5 +1688,155 @@
             "justIn": "ギリギリ",
             "miss": "ミス"
         }
+    },
+    "spectate": {
+        "ended": "観戦していた対戦が終わったよ。",
+        "self": "観戦中",
+        "count": "観戦している人はいないよ | 1人が観戦中 | {count}人が観戦中",
+        "finished": "対戦は終わったよ。",
+        "leave": "観戦をやめる",
+        "backToBracket": "トーナメント表に戻る",
+        "watch": "観戦する"
+    },
+    "tournament": {
+        "title": "トーナメント",
+        "playing": {
+            "bracket": "トーナメント表を開く",
+            "players": "{count}人",
+            "left": "残り{left}人 / {count}人",
+            "oneMatch": "1試合",
+            "gameNext": "次は第{number}ゲーム",
+            "gameIn": "第{number}ゲームまで{seconds}秒",
+            "runnerUp": "準優勝",
+            "out": "敗退",
+            "thirdPlaceMatch": "3位決定戦",
+            "fourthPlace": "4位",
+            "through": "勝ち抜け",
+            "next": "次: {round}",
+            "topOf": "{field}人中ベスト{count}",
+            "goesThrough": "{name}が勝ち抜け",
+            "winsIt": "{name}が優勝",
+            "finishesThird": "{name}が3位"
+        },
+        "outcome": {
+            "continues": "シリーズはまだ続くよ。次のゲームは自動で始まるよ。",
+            "advanced": "この組み合わせに勝ったよ。次の対戦は自動で開くよ。",
+            "eliminated": "{name}で敗退しちゃった。",
+            "champion": "{name}で優勝したよ。",
+            "spectating": "勝った人が次のラウンドに進むよ。",
+            "waiting": "このラウンドの他の対戦を待ってるよ。",
+            "playoffNext": "次は3位決定戦だよ。",
+            "third": "{name}で3位になったよ。",
+            "youPlayIn": "{seconds}秒後に{name}と対戦",
+            "youPlayNext": "次は{name}と対戦",
+            "opensItself": "自動で始まるよ。",
+            "waitingOn": "{first} vs {second}の結果待ち",
+            "playWinner": "勝った方と対戦するよ。",
+            "startsIn": "{first} vs {second}は{seconds}秒後に開始",
+            "watchMatch": "{first} vs {second}を観戦",
+            "progress": "{count}試合中{done}試合終了",
+            "live": "{count}試合ライブ中",
+            "beat": "{winner}が{loser}に勝利",
+            "youBeat": "{name}に勝ったよ",
+            "beatYou": "{name}に負けたよ",
+            "versus": "{first} vs {second}",
+            "upcoming": "次",
+            "inSeconds": "{seconds}秒後",
+            "yours": "あなたの試合",
+            "decides": "対戦相手が決まる試合",
+            "more": "このラウンドに他の試合はなし | このラウンドにあと1試合 | このラウンドにあと{count}試合",
+            "rest": "大会のほかの試合"
+        },
+        "call": {
+            "title": "次の対戦",
+            "waiting": "待機中…",
+            "single": "1回勝負",
+            "series": "最大{count}ゲーム、{own}–{other}",
+            "startsIn": "{seconds}秒後に開始",
+            "readyUp": "準備できた",
+            "ready": "準備OK。他の人を待ってるよ。",
+            "roundOf": "{count}ラウンド中{round}ラウンド目",
+            "beat": "{name}に{score}で勝ったよ",
+            "secondsLeft": "開始までの秒数"
+        },
+        "sidebar": {
+            "registered": "参加登録済み",
+            "checkInNow": "今すぐチェックイン",
+            "checkIn": "チェックイン",
+            "called": "あと{seconds}秒で試合",
+            "toCall": "行く",
+            "checkInOpen": "{name}のチェックインが始まったよ。席を確保するにはチェックインしてね。",
+            "checkedIn": "チェックイン済み",
+            "startsIn": "{time}後に開始",
+            "checkInIn": "{time}後にチェックイン",
+            "playing": "対戦中",
+            "paused": "一時停止中、{time}後に再開",
+            "pausedHost": "一時停止中、ホスト待ち",
+            "nextUp": "次の対戦を待機中",
+            "won": "優勝したよ",
+            "open": "開く"
+        },
+        "error": {
+            "missing": "そのトーナメントはもう存在しないよ。",
+            "notHost": "ホストしかできないよ。",
+            "closed": "このトーナメントの参加受付は終わったよ。",
+            "over": "このトーナメントは終わったよ。",
+            "full": "このトーナメントは満員だよ。",
+            "alreadyEntered": "もう参加登録してるよ。",
+            "notEntered": "このトーナメントに参加していないよ。",
+            "notAnEntrant": "その人はこのトーナメントに参加していないよ。",
+            "drawn": "トーナメント表はもう決まってるよ。",
+            "seedEdge": "もう順番の端にいるよ。",
+            "kickHost": "ホストは自分のトーナメントから外せないよ。",
+            "alreadyCheckedIn": "もうチェックインしてるよ。",
+            "checkInClosed": "チェックインは受付中じゃないよ。",
+            "notCheckingIn": "先にチェックインを開始してね。",
+            "scheduled": "開始時刻が決まっているから、チェックインも開始も自動で進むよ。",
+            "notEnoughPlayers": "開始するにはプレイヤーが足りないよ（{min}人必要）。",
+            "code": "そのコードはこのトーナメントのものじゃないよ。",
+            "noCode": "そのコードのトーナメントはないよ。",
+            "busy": "{name}に参加中だよ。別の対戦をするなら先に退出してね。",
+            "alreadyOut": "もうこのトーナメントには残っていないよ。",
+            "notCalled": "開始待ちの対戦はないよ。",
+            "notPaused": "このトーナメントは一時停止していないよ。",
+            "locked": "他のプレイヤーが参加したから、設定はロックされているよ。変更したい場合は、このトーナメントをキャンセルして新しく作ってね。",
+            "name": "トーナメント名は3文字から40文字の間で入力してね。",
+            "nameBanned": "その名前は使えないよ。別の名前にしてね。",
+            "startTooSoon": "開始は今から5分以上あとにしてね。",
+            "startTooLate": "トーナメントは2週間先までしか予約できないよ。",
+            "hostLimit": "もうトーナメントを主催してるよ。新しく作る前に、キャンセルするか終わるまで待ってね。",
+            "serverFull": "サーバーで開けるトーナメントの数が上限に達しているよ。",
+            "elsewhere": "すでに{name}に参加中だよ。こっちで遊ぶには、先にそっちを抜けてね。"
+        },
+        "leaveMatch": {
+            "title": "{name}から抜ける？",
+            "description": "この試合を抜けるとトーナメントから脱落して、相手が勝ち上がるよ。戻ることはできないよ。",
+            "button": "トーナメントを抜ける"
+        },
+        "round": {
+            "final": "決勝",
+            "semiFinal": "準決勝",
+            "quarterFinal": "準々決勝",
+            "of": "ベスト{count}",
+            "thirdPlace": "3位",
+            "bestOf": "{count}本勝負",
+            "short": {
+                "final": "決勝",
+                "semiFinal": "準決勝",
+                "quarterFinal": "準々決勝",
+                "of": "ベスト{count}"
+            },
+            "abbreviated": {
+                "final": "決",
+                "semiFinal": "準",
+                "quarterFinal": "準々",
+                "of": "{count}"
+            }
+        }
+    },
+    "tutorial": {
+        "title": "チュートリアル",
+        "skip": "チュートリアルをスキップ",
+        "gotIt": "わかった"
     }
 }

@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 2739,
+        "total": 3072,
         "missing": 134
     },
     "error": {
@@ -21,7 +21,10 @@
             "invalidUser": "Kullanıcı hesabının doğrulamaya ihtiyacı yok.",
             "invalidCode": "Bu doğrulama kodu geçersiz.",
             "invalidSessionName": "Bir oturum adı 2-24 karakter arasında olmalı ve sadece alfanümerik karakterler ve boşluklar içerebilir.",
-            "alreadyUsedSessionName": "Bu isimde bir oturum zaten var."
+            "alreadyUsedSessionName": "Bu isimde bir oturum zaten var.",
+            "emailInactive": "{email} adresine e-posta gönderemiyoruz. Lütfen farklı bir adres kullan.",
+            "emailInvalid": "{email} geçerli bir e-posta adresi değil.",
+            "emailUnavailable": "E-posta gönderilemedi. Lütfen daha sonra tekrar dene."
         },
         "rateLimit": {
             "malicious": "Kötü niyetli bir aktivite tespit edildi. {seconds} saniye boyunca zaman aşımına uğradın.",
@@ -680,6 +683,7 @@
         "cardSetName": "Bu kart seti için bir isim belirle...",
         "matchId": "Eşleşme ID'si veya URL'si...",
         "message": "Mesaj...",
+        "name": "İsim gir...",
         "username": "Kullanıcı Adı",
         "password": "Şifre"
     },
@@ -1254,7 +1258,10 @@
         "hotDiceRate": "Sıcak Zar Oranı",
         "offerDraw": "Beraberlik Teklif Et",
         "drawOffered": "Beraberlik Teklif Edildi",
-        "forfeited": "Pes Etti"
+        "forfeited": "Pes Etti",
+        "live": "Canlı",
+        "official": "Resmi",
+        "stepProgress": "Adım {step}/{count}"
     },
     "match": {
         "quick": "Hızlı Eşleşme",
@@ -1507,6 +1514,11 @@
                 "blocked": "Analitikler aktif değil. Tarayıcınız veya eklentiniz bunu engellemiş olabilir.",
                 "dnt": "Tarayıcınızda \"Takip Etme\" (DNT) ayarı etkin. Talebinizi onaylıyoruz ve sizi takip etmiyoruz."
             },
+            "research": {
+                "title": "Araştırma",
+                "description": "Bazı oyunlar, insanların nasıl oynadığını inceleyen araştırmacılar için anonim olarak kaydedilebilir. Seni tanımlayabilecek hiçbir şey asla paylaşılmaz ve oyunlarını istediğin zaman hariç tutabilirsin.",
+                "label": "Oyunlarımı dahil et"
+            },
             "ads": {
                 "title": "Reklamlar",
                 "description": "Bloob.io'da {provider}'dan reklamlar gösteriyoruz. Bloob.io'daki reklamlar, kısmen ya da tamamen, {provider} tarafından yönetiliyor. Eğer Bloob.io'da reklam görmek istemiyorsan, mağazadan jeton alarak reklamsız bir deneyim yaşayabilirsin. Bu, hesabındaki tüm reklamları otomatik olarak kaldırır.",
@@ -1521,7 +1533,8 @@
             },
             "controlYourData": {
                 "title": "Verilerini Kontrol Et",
-                "description": "Bloob.io'da verilerinin her zaman tam kontrolü senin elinde. Bloob.io anonim olarak oynanabilir. Eğer verilerini silmek istersen, buradan yapabilirsin. Eğer bir hesabın varsa, önce e-postanı kaldırman ve sonra buraya geri gelmen gerekiyor.",
+                "description": "Bloob.io'da verilerinin her zaman tam kontrolü senin elinde. Bloob.io anonim olarak oynanabilir. Eğer verilerini silmek istersen, buradan yapabilirsin.",
+                "descriptionUnlink": "Eğer bir hesabın varsa, önce e-postanı kaldırman ve sonra buraya geri gelmen gerekiyor.",
                 "descriptionSocialLink": "Hesabın başka bir platforma ({social}) bağlı ve verilerin orada kontrol edilebilir."
             },
             "localStorage": {
@@ -1675,5 +1688,155 @@
             "justIn": "Ucu ucuna",
             "miss": "Iska"
         }
+    },
+    "spectate": {
+        "ended": "İzlediğin maç sona erdi.",
+        "self": "İzliyorsun",
+        "count": "Kimse izlemiyor | 1 kişi izliyor | {count} kişi izliyor",
+        "finished": "Maç bitti.",
+        "leave": "İzlemeyi bırak",
+        "backToBracket": "Fikstüre dön",
+        "watch": "İzle"
+    },
+    "tournament": {
+        "title": "Turnuvalar",
+        "playing": {
+            "bracket": "Fikstürü aç",
+            "players": "{count} oyuncu",
+            "left": "{count} oyuncudan {left} kaldı",
+            "oneMatch": "Tek maç",
+            "gameNext": "Sıradaki: {number}. oyun",
+            "gameIn": "{number}. oyun {seconds} sn sonra",
+            "runnerUp": "İkinci",
+            "out": "Elendin",
+            "thirdPlaceMatch": "Üçüncülük maçı",
+            "fourthPlace": "Dördüncü",
+            "through": "Tur atladın",
+            "next": "Sıradaki: {round}",
+            "topOf": "{field} oyuncu içinde ilk {count}",
+            "goesThrough": "{name} tur atladı",
+            "winsIt": "{name} kazandı",
+            "finishesThird": "{name} üçüncü oldu"
+        },
+        "outcome": {
+            "continues": "Seri henüz bitmedi. Sonraki oyun kendiliğinden başlar.",
+            "advanced": "Eşleşmeyi kazandın. Sonraki maçın kendiliğinden açılır.",
+            "eliminated": "{name} turnuvasından elendin.",
+            "champion": "{name} turnuvasını kazandın.",
+            "spectating": "Kazanan bir sonraki tura geçer.",
+            "waiting": "Turun geri kalanı bekleniyor.",
+            "playoffNext": "Sırada üçüncülük maçı var.",
+            "third": "{name} turnuvasında üçüncü oldun.",
+            "youPlayIn": "{seconds} sn sonra {name} ile oynuyorsun",
+            "youPlayNext": "Sıradaki rakibin {name}",
+            "opensItself": "Kendiliğinden başlar.",
+            "waitingOn": "{first} - {second} bekleniyor",
+            "playWinner": "Kazananla oynayacaksın.",
+            "startsIn": "{first} - {second} {seconds} sn sonra başlıyor",
+            "watchMatch": "{first} - {second} izle",
+            "progress": "{count} maçtan {done} tanesi bitti",
+            "live": "{count} canlı",
+            "beat": "{winner}, {loser} karşısında kazandı",
+            "youBeat": "{name} karşısında kazandın",
+            "beatYou": "{name} seni yendi",
+            "versus": "{first} - {second}",
+            "upcoming": "Sıradaki",
+            "inSeconds": "{seconds} sn sonra",
+            "yours": "Senin",
+            "decides": "Rakibini belirliyor",
+            "more": "Bu turda başka maç yok | Bu turda bir maç daha | Bu turda {count} maç daha",
+            "rest": "Turnuvanın geri kalanı"
+        },
+        "call": {
+            "title": "Sıradaki maçın",
+            "waiting": "Bekleniyor…",
+            "single": "Tek maçta belli olur",
+            "series": "{count} oyunluk seri, {own}–{other}",
+            "startsIn": "{seconds} sn içinde başlıyor",
+            "readyUp": "Hazırım",
+            "ready": "Hazırsın. Diğerleri bekleniyor.",
+            "roundOf": "Tur {round}/{count}",
+            "beat": "{name} rakibini {score} yendin",
+            "secondsLeft": "Başlamaya kalan saniye"
+        },
+        "sidebar": {
+            "registered": "Kayıtlısın",
+            "checkInNow": "Katılımını hemen onayla",
+            "checkIn": "Katılımı onayla",
+            "called": "Maç {seconds} sn sonra",
+            "toCall": "Git",
+            "checkInOpen": "{name} için check-in açıldı. Yerini korumak için check-in yap.",
+            "checkedIn": "Katılım onaylandı",
+            "startsIn": "{time} sonra başlıyor",
+            "checkInIn": "Onay {time} sonra açılıyor",
+            "playing": "Maçın başladı",
+            "paused": "Duraklatıldı, {time} sonra devam",
+            "pausedHost": "Duraklatıldı, ev sahibi bekleniyor",
+            "nextUp": "Sıradaki maçın bekleniyor",
+            "won": "Kazandın",
+            "open": "Aç"
+        },
+        "error": {
+            "missing": "Bu turnuva artık yok.",
+            "notHost": "Bunu sadece ev sahibi yapabilir.",
+            "closed": "Bu turnuvanın kayıtları kapandı.",
+            "over": "Bu turnuva bitti.",
+            "full": "Bu turnuva dolu.",
+            "alreadyEntered": "Zaten kayıtlısın.",
+            "notEntered": "Bu turnuvaya kayıtlı değilsin.",
+            "notAnEntrant": "Bu kişi bu turnuvaya kayıtlı değil.",
+            "drawn": "Fikstür zaten çekildi.",
+            "seedEdge": "Bu kişi zaten sıralamanın en ucunda.",
+            "kickHost": "Ev sahibi kendi turnuvasından çıkarılamaz.",
+            "alreadyCheckedIn": "Katılımını zaten onayladın.",
+            "checkInClosed": "Katılım onayı açık değil.",
+            "notCheckingIn": "Önce katılım onayını aç.",
+            "scheduled": "Bunun bir başlangıç saati var, katılım onayı ve başlangıç kendiliğinden olur.",
+            "notEnoughPlayers": "Başlatmak için yeterli oyuncu yok (en az {min} gerekli).",
+            "code": "Bu kod bu turnuvaya ait değil.",
+            "noCode": "Bu koda sahip bir turnuva yok.",
+            "busy": "Şu an {name} turnuvasında oynuyorsun. Başka bir maç istiyorsan önce oradan ayrıl.",
+            "alreadyOut": "Artık bu turnuvada değilsin.",
+            "notCalled": "Başlamayı bekleyen bir maçın yok.",
+            "notPaused": "Bu turnuva duraklatılmamış.",
+            "locked": "Başkaları katıldı, bu yüzden ayarlar kilitlendi. Değiştirmek için bu turnuvayı iptal et ve yeni bir tane oluştur.",
+            "name": "Turnuva adı 3 ile 40 karakter arasında olmalı.",
+            "nameBanned": "Bu isme izin verilmiyor. Başka bir isim seç.",
+            "startTooSoon": "Başlangıcı en az 5 dakika sonraya ayarla.",
+            "startTooLate": "Bir turnuva en fazla iki hafta sonrasına planlanabilir.",
+            "hostLimit": "Zaten bir turnuvaya ev sahipliği yapıyorsun. Yenisini açmadan önce onu iptal et ya da bitmesini bekle.",
+            "serverFull": "Sunucu şu an kaldırabileceği kadar turnuva yürütüyor.",
+            "elsewhere": "Zaten {name} turnuvasındasın. Bunda oynamak için önce ondan ayrıl."
+        },
+        "leaveMatch": {
+            "title": "{name} turnuvasından ayrıl?",
+            "description": "Bu maçtan ayrılırsan turnuvadan elenirsin ve rakibin tur atlar. Geri dönemezsin.",
+            "button": "Turnuvadan ayrıl"
+        },
+        "round": {
+            "final": "Final",
+            "semiFinal": "Yarı final",
+            "quarterFinal": "Çeyrek final",
+            "of": "Son {count}",
+            "thirdPlace": "Üçüncülük",
+            "bestOf": "{count} maç üzerinden",
+            "short": {
+                "final": "Final",
+                "semiFinal": "Yarı final",
+                "quarterFinal": "Çeyrek final",
+                "of": "Son {count}"
+            },
+            "abbreviated": {
+                "final": "F",
+                "semiFinal": "YF",
+                "quarterFinal": "ÇF",
+                "of": "S{count}"
+            }
+        }
+    },
+    "tutorial": {
+        "title": "Öğretici",
+        "skip": "Öğreticiyi atla",
+        "gotIt": "Anladım"
     }
 }

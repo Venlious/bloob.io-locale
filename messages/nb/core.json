@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Norwegian (Bokmål)",
         "rtl": false,
-        "total": 2739,
+        "total": 3072,
         "missing": 134
     },
     "error": {
@@ -21,7 +21,10 @@
             "invalidUser": "Brukerkontoen din trenger ikke autentisering.",
             "invalidCode": "Denne verifiseringskoden er ugyldig.",
             "invalidSessionName": "Et sesjonsnavn må være mellom 2-24 tegn og kan bare inneholde alfanumeriske tegn og mellomrom.",
-            "alreadyUsedSessionName": "En økt med dette navnet finnes allerede."
+            "alreadyUsedSessionName": "En økt med dette navnet finnes allerede.",
+            "emailInactive": "Vi kan ikke sende e-post til {email}. Bruk en annen adresse.",
+            "emailInvalid": "{email} er ikke en gyldig e-postadresse.",
+            "emailUnavailable": "Vi klarte ikke å sende e-posten. Prøv igjen senere."
         },
         "rateLimit": {
             "malicious": "Vi har oppdaget ondsinnet aktivitet. Du er utestengt i {seconds} sekund(er).",
@@ -680,6 +683,7 @@
         "cardSetName": "Fyll inn navnet på dette kortsettet...",
         "matchId": "Match ID eller URL...",
         "message": "Melding...",
+        "name": "Fyll inn navn...",
         "username": "Brukernavn",
         "password": "Passord"
     },
@@ -1254,7 +1258,10 @@
         "hotDiceRate": "Rate for varme terninger",
         "offerDraw": "Tilby uavgjort",
         "drawOffered": "Uavgjort tilbudt",
-        "forfeited": "Ga opp"
+        "forfeited": "Ga opp",
+        "live": "Live",
+        "official": "Offisiell",
+        "stepProgress": "Steg {step} av {count}"
     },
     "match": {
         "quick": "Rask kamp",
@@ -1507,6 +1514,11 @@
                 "blocked": "Analyse er ikke aktiv. Nettleseren din eller utvidelsen kan ha blokkert det.",
                 "dnt": "Nettleseren din har \"Ikke spor\" (DNT) innstillingen aktivert. Vi respekterer forespørselen din og sporer deg ikke."
             },
+            "research": {
+                "title": "Forskning",
+                "description": "Noen spill kan bli registrert anonymt for forskere som studerer hvordan folk spiller. Ingenting som kan identifisere deg blir noen gang delt, og du kan når som helst holde spillene dine utenfor.",
+                "label": "Ta med spillene mine"
+            },
             "ads": {
                 "title": "Annonser",
                 "description": "Vi viser annonser fra {provider}. Annonseringen på Bloob.io, enten helt eller delvis, håndteres av {provider}. Hvis du ikke vil se annonser på Bloob.io, kan du gå annonsfri ved å kjøpe mynter i butikken. Dette fjerner automatisk alle annonser fra kontoen din.",
@@ -1521,7 +1533,8 @@
             },
             "controlYourData": {
                 "title": "Kontroller Dataene Dine",
-                "description": "Du har alltid full kontroll over dataene dine på Bloob.io. Bloob.io kan spilles anonymt. Hvis du ønsker å slette dataene dine kan du gjøre det her. Hvis du har en konto må du først fjerne koblingen til e-posten din og komme tilbake hit.",
+                "description": "Du har alltid full kontroll over dataene dine på Bloob.io. Bloob.io kan spilles anonymt. Hvis du ønsker å slette dataene dine kan du gjøre det her.",
+                "descriptionUnlink": "Hvis du har en konto må du først fjerne koblingen til e-posten din og komme tilbake hit.",
                 "descriptionSocialLink": "Kontoen din er koblet til en annen plattform ({social}), og du kan styre dataene dine der."
             },
             "localStorage": {
@@ -1675,5 +1688,155 @@
             "justIn": "Vidt innenfor",
             "miss": "Bom"
         }
+    },
+    "spectate": {
+        "ended": "Kampen du så på er over.",
+        "self": "Du ser på",
+        "count": "Ingen ser på | 1 person ser på | {count} personer ser på",
+        "finished": "Kampen er over.",
+        "leave": "Slutt å se på",
+        "backToBracket": "Tilbake til turneringstreet",
+        "watch": "Se på"
+    },
+    "tournament": {
+        "title": "Turneringer",
+        "playing": {
+            "bracket": "Åpne turneringstreet",
+            "players": "{count} spillere",
+            "left": "{left} av {count} igjen",
+            "oneMatch": "Én kamp",
+            "gameNext": "Neste: kamp {number}",
+            "gameIn": "Kamp {number} om {seconds} s",
+            "runnerUp": "Andreplass",
+            "out": "Ute",
+            "thirdPlaceMatch": "Bronsefinale",
+            "fourthPlace": "Fjerdeplass",
+            "through": "Videre",
+            "next": "Neste: {round}",
+            "topOf": "Topp {count} av {field}",
+            "goesThrough": "{name} går videre",
+            "winsIt": "{name} vinner",
+            "finishesThird": "{name} blir nummer tre"
+        },
+        "outcome": {
+            "continues": "Serien er ikke over. Neste spill starter av seg selv.",
+            "advanced": "Du vant oppgjøret. Neste kamp åpner seg av seg selv.",
+            "eliminated": "Der røk du ut av {name}.",
+            "champion": "Du vant {name}.",
+            "spectating": "Vinneren går videre til neste runde.",
+            "waiting": "Venter på resten av runden.",
+            "playoffNext": "Nå spiller du om tredjeplassen.",
+            "third": "Du blir nummer tre i {name}.",
+            "youPlayIn": "Du spiller mot {name} om {seconds} s",
+            "youPlayNext": "Du spiller mot {name} som neste",
+            "opensItself": "Den starter av seg selv.",
+            "waitingOn": "Venter på {first} vs {second}",
+            "playWinner": "Du spiller mot vinneren.",
+            "startsIn": "{first} vs {second} starter om {seconds} s",
+            "watchMatch": "Se {first} vs {second}",
+            "progress": "{done} av {count} ferdige",
+            "live": "{count} live",
+            "beat": "{winner} slo {loser}",
+            "youBeat": "Du slo {name}",
+            "beatYou": "{name} slo deg",
+            "versus": "{first} vs {second}",
+            "upcoming": "Neste",
+            "inSeconds": "Om {seconds} s",
+            "yours": "Din",
+            "decides": "Avgjør motstanderen din",
+            "more": "Ingen flere i denne runden | Én til i denne runden | {count} til i denne runden",
+            "rest": "Resten av turneringen"
+        },
+        "call": {
+            "title": "Din neste kamp",
+            "waiting": "Venter…",
+            "single": "Én kamp avgjør",
+            "series": "Best av {count}, {own}–{other}",
+            "startsIn": "Starter om {seconds} s",
+            "readyUp": "Jeg er klar",
+            "ready": "Klar. Venter på de andre.",
+            "roundOf": "Runde {round} av {count}",
+            "beat": "Du slo {name} {score}",
+            "secondsLeft": "Sekunder til start"
+        },
+        "sidebar": {
+            "registered": "Du er påmeldt",
+            "checkInNow": "Sjekk inn nå",
+            "checkIn": "Sjekk inn",
+            "called": "Kamp om {seconds} s",
+            "toCall": "Gå",
+            "checkInOpen": "Innsjekkingen til {name} er åpen. Sjekk inn for å beholde plassen din.",
+            "checkedIn": "Sjekket inn",
+            "startsIn": "Starter om {time}",
+            "checkInIn": "Innsjekking om {time}",
+            "playing": "Kampen din pågår",
+            "paused": "Pauset, tilbake om {time}",
+            "pausedHost": "Pauset, venter på verten",
+            "nextUp": "Venter på neste kamp",
+            "won": "Du vant",
+            "open": "Åpne"
+        },
+        "error": {
+            "missing": "Den turneringen finnes ikke lenger.",
+            "notHost": "Bare verten kan gjøre det.",
+            "closed": "Påmeldingen til denne turneringen er stengt.",
+            "over": "Denne turneringen er over.",
+            "full": "Denne turneringen er full.",
+            "alreadyEntered": "Du er allerede påmeldt.",
+            "notEntered": "Du er ikke påmeldt i denne turneringen.",
+            "notAnEntrant": "De er ikke påmeldt i denne turneringen.",
+            "drawn": "Turneringstreet er allerede trukket.",
+            "seedEdge": "De er allerede ytterst i rekkefølgen.",
+            "kickHost": "Verten kan ikke fjernes fra sin egen turnering.",
+            "alreadyCheckedIn": "Du har allerede sjekket inn.",
+            "checkInClosed": "Innsjekkingen er ikke åpen.",
+            "notCheckingIn": "Åpne innsjekkingen først.",
+            "scheduled": "Denne har et starttidspunkt, så innsjekking og start skjer av seg selv.",
+            "notEnoughPlayers": "For få spillere til å starte ({min} trengs).",
+            "code": "Den koden åpner ikke denne turneringen.",
+            "noCode": "Ingen turnering har den koden.",
+            "busy": "Du spiller i {name}. Forlat den først hvis du vil spille en annen kamp.",
+            "alreadyOut": "Du er ikke lenger med i denne turneringen.",
+            "notCalled": "Du har ingen kamp som venter på å starte.",
+            "notPaused": "Denne turneringen er ikke pauset.",
+            "locked": "Andre har blitt med, så innstillingene er låst. Vil du endre dem, avlys denne turneringen og lag en ny.",
+            "name": "Et turneringsnavn må være mellom 3 og 40 tegn.",
+            "nameBanned": "Det navnet er ikke tillatt. Velg et annet.",
+            "startTooSoon": "Sett starten minst 5 minutter frem i tid.",
+            "startTooLate": "En turnering kan planlegges høyst to uker frem i tid.",
+            "hostLimit": "Du er allerede vert for en turnering. Avlys den eller la den bli ferdig før du oppretter en ny.",
+            "serverFull": "Serveren kjører så mange turneringer som den klarer.",
+            "elsewhere": "Du er allerede med i {name}. Forlat den først for å spille i denne."
+        },
+        "leaveMatch": {
+            "title": "Forlate {name}?",
+            "description": "Forlater du denne kampen, er du ute av turneringen, og motstanderen din går videre. Du kan ikke komme tilbake.",
+            "button": "Forlat turneringen"
+        },
+        "round": {
+            "final": "Finale",
+            "semiFinal": "Semifinaler",
+            "quarterFinal": "Kvartfinaler",
+            "of": "Siste {count}",
+            "thirdPlace": "Tredjeplass",
+            "bestOf": "Best av {count}",
+            "short": {
+                "final": "Finale",
+                "semiFinal": "Semi",
+                "quarterFinal": "Kvart",
+                "of": "Siste {count}"
+            },
+            "abbreviated": {
+                "final": "F",
+                "semiFinal": "SF",
+                "quarterFinal": "KF",
+                "of": "R{count}"
+            }
+        }
+    },
+    "tutorial": {
+        "title": "Veiledning",
+        "skip": "Hopp over veiledningen",
+        "gotIt": "Skjønner"
     }
 }

@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal American English",
         "rtl": false,
-        "total": 2739,
+        "total": 3072,
         "missing": 0
     },
     "error": {
@@ -21,7 +21,10 @@
             "invalidUser": "Your user account does not require authentication.",
             "invalidCode": "This verification code is invalid.",
             "invalidSessionName": "A session name must be between 2-24 characters and may only contain alphanumeric characters and spaces.",
-            "alreadyUsedSessionName": "A session with this name already exists."
+            "alreadyUsedSessionName": "A session with this name already exists.",
+            "emailInactive": "We can't send emails to {email}. Please use a different address.",
+            "emailInvalid": "{email} isn't a valid email address.",
+            "emailUnavailable": "We couldn't send the email. Please try again later."
         },
         "rateLimit": {
             "malicious": "Malicious activity has been detected. Timed out for {seconds} second(s).",
@@ -680,6 +683,7 @@
         "cardSetName": "Fill in name for this card set...",
         "matchId": "Match ID or URL...",
         "message": "Message...",
+        "name": "Fill in name...",
         "username": "Username",
         "password": "Password"
     },
@@ -1254,7 +1258,10 @@
         "hotDiceRate": "Hot Dice Rate",
         "offerDraw": "Offer Draw",
         "drawOffered": "Draw Offered",
-        "forfeited": "Forfeited"
+        "forfeited": "Forfeited",
+        "live": "Live",
+        "official": "Official",
+        "stepProgress": "Step {step} of {count}"
     },
     "match": {
         "quick": "Quick Match",
@@ -1507,6 +1514,11 @@
                 "blocked": "Analytics are not active. Your browser or extension may have blocked it.",
                 "dnt": "Your browser has the \"Do Not Track\" (DNT) setting enabled. We honor your request and are not tracking you."
             },
+            "research": {
+                "title": "Research",
+                "description": "Some games may be recorded anonymously for researchers who study how people play. Nothing that identifies you is ever shared, and you can leave your games out at any time.",
+                "label": "Include my games"
+            },
             "ads": {
                 "title": "Ads",
                 "description": "We display advertisements from {provider}. The advertising on Bloob.io, whether in full or in part, is handled by {provider}. If you do not want to see ads on Bloob.io, you can go ad-free by purchasing coins from the store. This will automatically remove all ads for your account.",
@@ -1521,7 +1533,8 @@
             },
             "controlYourData": {
                 "title": "Control Your Data",
-                "description": "You are always in full control of your data on Bloob.io. Bloob.io can be played anonymously. In the event you do want to delete your data you can do so here. If you have an account you will first need to unlink your email and come back here.",
+                "description": "You are always in full control of your data on Bloob.io. Bloob.io can be played anonymously. In the event you do want to delete your data you can do so here.",
+                "descriptionUnlink": "If you have an account you will first need to unlink your email and come back here.",
                 "descriptionSocialLink": "Your account is linked to another platform ({social}) and your data can be controlled there."
             },
             "localStorage": {
@@ -1675,5 +1688,155 @@
             "justIn": "Just in",
             "miss": "Miss"
         }
+    },
+    "spectate": {
+        "ended": "The match you were watching has ended.",
+        "self": "You are watching",
+        "count": "Nobody is watching | 1 person is watching | {count} people are watching",
+        "finished": "The match is over.",
+        "leave": "Stop watching",
+        "backToBracket": "Back to bracket",
+        "watch": "Watch"
+    },
+    "tournament": {
+        "title": "Tournaments",
+        "playing": {
+            "bracket": "Open the bracket",
+            "players": "{count} players",
+            "left": "{left} of {count} left",
+            "oneMatch": "One match",
+            "gameNext": "Game {number} next",
+            "gameIn": "Game {number} in {seconds}s",
+            "runnerUp": "Runner-up",
+            "out": "Out",
+            "thirdPlaceMatch": "Third place match",
+            "fourthPlace": "Fourth place",
+            "through": "Through",
+            "next": "Next: {round}",
+            "topOf": "Top {count} of {field}",
+            "goesThrough": "{name} goes through",
+            "winsIt": "{name} wins it",
+            "finishesThird": "{name} finishes third"
+        },
+        "outcome": {
+            "continues": "The series is not over. The next game starts by itself.",
+            "advanced": "You take the pairing. Your next match opens by itself.",
+            "eliminated": "That is you out of {name}.",
+            "champion": "You won {name}.",
+            "spectating": "The winner goes through to the next round.",
+            "waiting": "Waiting on the rest of the round.",
+            "playoffNext": "You play for third place next.",
+            "third": "You finish third in {name}.",
+            "youPlayIn": "You play {name} in {seconds}s",
+            "youPlayNext": "You play {name} next",
+            "opensItself": "It opens by itself.",
+            "waitingOn": "Waiting on {first} vs {second}",
+            "playWinner": "You play the winner.",
+            "startsIn": "{first} vs {second} starts in {seconds}s",
+            "watchMatch": "Watch {first} vs {second}",
+            "progress": "{done} of {count} done",
+            "live": "{count} live",
+            "beat": "{winner} beat {loser}",
+            "youBeat": "You beat {name}",
+            "beatYou": "{name} beat you",
+            "versus": "{first} vs {second}",
+            "upcoming": "Next",
+            "inSeconds": "In {seconds}s",
+            "yours": "Yours",
+            "decides": "Decides your opponent",
+            "more": "Nothing more in this round | One more in this round | {count} more in this round",
+            "rest": "The rest of the tournament"
+        },
+        "call": {
+            "title": "Your next match",
+            "waiting": "Waiting…",
+            "single": "One match takes it",
+            "series": "Best of {count}, {own}-{other}",
+            "startsIn": "Starts in {seconds}s",
+            "readyUp": "I'm ready",
+            "ready": "Ready. Waiting for the rest.",
+            "roundOf": "Round {round} of {count}",
+            "beat": "You beat {name} {score}",
+            "secondsLeft": "Seconds until it starts"
+        },
+        "sidebar": {
+            "registered": "You are entered",
+            "checkInNow": "Check in now",
+            "checkIn": "Check in",
+            "called": "Match in {seconds}s",
+            "toCall": "Go",
+            "checkInOpen": "Check-in for {name} is open. Check in to keep your place.",
+            "checkedIn": "Checked in",
+            "startsIn": "Starts in {time}",
+            "checkInIn": "Check-in in {time}",
+            "playing": "Your match is on",
+            "paused": "Paused, back in {time}",
+            "pausedHost": "Paused, waiting for the host",
+            "nextUp": "Waiting for your next match",
+            "won": "You won it",
+            "open": "Open"
+        },
+        "error": {
+            "missing": "That tournament no longer exists.",
+            "notHost": "Only the host can do that.",
+            "closed": "Entries for this tournament are closed.",
+            "over": "This tournament is over.",
+            "full": "This tournament is full.",
+            "alreadyEntered": "You are already entered.",
+            "notEntered": "You are not entered in this tournament.",
+            "notAnEntrant": "They are not entered in this tournament.",
+            "drawn": "The bracket has already been drawn.",
+            "seedEdge": "They are already at the end of the order.",
+            "kickHost": "The host cannot be removed from their own tournament.",
+            "alreadyCheckedIn": "You have already checked in.",
+            "checkInClosed": "Check-in is not open.",
+            "notCheckingIn": "Open check-in first.",
+            "scheduled": "This one has a start time, so check-in and the start happen on their own.",
+            "notEnoughPlayers": "Not enough players to start ({min} needed).",
+            "code": "That code does not open this tournament.",
+            "noCode": "No tournament has that code.",
+            "busy": "You are playing in {name}. Leave it first if you want another match.",
+            "alreadyOut": "You are no longer in this tournament.",
+            "notCalled": "You have no match waiting to start.",
+            "notPaused": "This tournament is not paused.",
+            "locked": "Others have joined, so the settings are locked. To change them, cancel this tournament and create a new one.",
+            "name": "A tournament name has to be between 3 and 40 characters.",
+            "nameBanned": "That name is not allowed. Pick another one.",
+            "startTooSoon": "Set the start at least 5 minutes from now.",
+            "startTooLate": "A tournament cannot be scheduled more than two weeks ahead.",
+            "hostLimit": "You are already hosting a tournament. Cancel it or let it finish before you open another.",
+            "serverFull": "The server is running as many tournaments as it can.",
+            "elsewhere": "You are already in {name}. Leave it first to play in this one."
+        },
+        "leaveMatch": {
+            "title": "Leave {name}?",
+            "description": "Leaving this match takes you out of the tournament, and your opponent goes through. You can't come back in.",
+            "button": "Leave tournament"
+        },
+        "round": {
+            "final": "Final",
+            "semiFinal": "Semi-finals",
+            "quarterFinal": "Quarter-finals",
+            "of": "Round of {count}",
+            "thirdPlace": "Third place",
+            "bestOf": "Best of {count}",
+            "short": {
+                "final": "Final",
+                "semiFinal": "Semis",
+                "quarterFinal": "Quarters",
+                "of": "Last {count}"
+            },
+            "abbreviated": {
+                "final": "F",
+                "semiFinal": "SF",
+                "quarterFinal": "QF",
+                "of": "R{count}"
+            }
+        }
+    },
+    "tutorial": {
+        "title": "Tutorial",
+        "skip": "Skip tutorial",
+        "gotIt": "Got it"
     }
 }
