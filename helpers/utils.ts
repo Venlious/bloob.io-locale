@@ -55,7 +55,8 @@ export const EAGER_TOURNAMENT_KEYS = [
 	`leaveMatch`,
 	`error`,
 	`round`,
-	`chip`
+	`chip`,
+	`loadFailure`
 ]
 
 /**
