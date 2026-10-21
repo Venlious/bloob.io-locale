@@ -84,24 +84,25 @@
         "canceled": "Dit toernooi is afgelast.",
         "pausedFor": "De server was offline voor onderhoud. Over {time} gaat het verder.",
         "pausedRestart": "De server is opnieuw opgestart. Over {time} gaat het verder.",
-        "pausedHost": "De server was een tijdje offline. De host start het weer als iedereen terug is."
+        "pausedHost": "De server was een tijdje offline. De host start het weer als iedereen terug is.",
+        "startsByItselfIn": "Start vanzelf over {time}.",
+        "calledOffIn": "Wordt over {time} afgelast, tenzij er nog één speler bij komt. | Wordt over {time} afgelast, tenzij er nog {count} spelers bij komen."
     },
     "yours": {
-        "registered": "Je bent ingeschreven. Blijf in de buurt: {host} kan elk moment starten.",
         "registeredScheduled": "Je bent ingeschreven. Inchecken opent {minutes} minuten voor de start.",
-        "hosting": "Druk op Start als je spelers er zijn.",
-        "hostingBy": "Druk op Start als je spelers er zijn. Is het om {time} nog niet begonnen, dan wordt het afgelast.",
         "needsCheckIn": "Check nu in, anders sta je niet in het schema.",
         "confirmed": "Je bent ingecheckt. Blijf op de site, dan opent je spel vanzelf.",
         "missed": "Je hebt niet ingecheckt, dus het toernooi is zonder jou begonnen.",
         "playing": "Je doet nog mee.",
         "eliminated": "Je bent uitgeschakeld. Bedankt voor het spelen.",
-        "champion": "Je hebt gewonnen."
+        "champion": "Je hebt gewonnen.",
+        "hostingReady": "Start het als iedereen er is. Om {time} start het vanzelf.",
+        "hostingShort": "Je hebt nog één speler nodig om te starten. Komt er voor {time} niemand bij, dan wordt het afgelast. | Je hebt nog {count} spelers nodig om te starten. Zijn ze er om {time} niet, dan wordt het afgelast.",
+        "waiting": "Je doet mee. Het start uiterlijk om {time}, eerder als {host} het start. Tot dan kun je geen andere potjes starten of meedoen."
     },
     "action": {
         "register": "Inschrijven",
         "withdraw": "Uitschrijven",
-        "reopen": "Inschrijving heropenen",
         "start": "Nu starten",
         "resume": "Toernooi hervatten",
         "manage": "Beheren",
@@ -128,12 +129,12 @@
         "thirdPlaceOn": "Gespeeld",
         "thirdPlaceHint": "Wordt erom gespeeld, dan spelen de twee verliezers van de halve finales om de derde en vierde plaats.",
         "schedule": "Start",
-        "scheduleManual": "Wanneer ik het zeg",
+        "scheduleManual": "Nu meteen",
         "scheduleAt": "Op een vast tijdstip",
-        "scheduleManualHint": "Voor mensen die er nu zijn. Start het binnen een uur, anders wordt het afgelast.",
+        "scheduleManualHint": "Voor jou en je vrienden, zonder wachten. Iedereen die meedoet, is er meteen bij. Start het als je klaar bent: na 15 minuten start het vanzelf, of wordt het afgelast als er te weinig meedoen.",
         "scheduleAtHint": "Hij start vanzelf. Spelers krijgen een herinnering als de check-in opent.",
         "recommended": "Aanbevolen",
-        "scheduleHint": "Op een vast tijdstip opent het inchecken 10 minuten van tevoren en start het vanzelf. Anders start je het zelf vanaf de pagina.",
+        "scheduleHint": "Op een vaste tijd opent de check-in 10 minuten van tevoren en start het vanzelf. Nu meteen is iedereen die meedoet er direct bij, en start het als jij het zegt, of vanzelf na 15 minuten.",
         "startAt": "Starttijd",
         "startsIn": "Dat is {date}, over {time}.",
         "preset": "Spelinstellingen",
@@ -167,23 +168,21 @@
     },
     "enter": {
         "title": "Meedoen aan {name}?",
-        "whenHostSays": "Er is geen vaste starttijd. Het begint wanneer {host} dat zegt.",
         "starts": "Begint",
         "inTime": "Over {time}",
-        "whenHostStarts": "Wanneer {host} het start",
         "startsBy": "Uiterlijk {time}",
-        "soonerIfAllIn": "Eerder als iedereen er is",
         "ifYouReachFinal": "Als je de finale haalt",
         "notKnownYet": "Nog niet bekend",
         "entered": "{count} van {size} aangemeld",
         "checkInBy": "Check in voor {time}.",
         "notifiedAt": "Je krijgt om {time} een melding. Mis je het, dan val je af.",
-        "stayNearby": "Blijf in de buurt.",
-        "hostCanStart": "{host} kan elk moment starten, of eerst het inchecken openen. Hoe dan ook krijg je een melding.",
         "checksYouIn": "Meedoen checkt je meteen in.",
         "beReadyAt": "Zorg dat je om {time} klaar bent om te spelen.",
-        "beReady": "Zorg dat je klaar bent om te spelen als het begint.",
-        "holdsOtherMatches": "Zolang het inchecken open is, kun je geen andere potjes starten of meedoen."
+        "holdsOtherMatches": "Zolang het inchecken open is, kun je geen andere potjes starten of meedoen.",
+        "soonerIfHostStarts": "Eerder als {host} het start",
+        "inAsSoonAsEnter": "Je doet mee zodra je je aanmeldt.",
+        "startsByLatest": "Het start uiterlijk om {time}.",
+        "holdsUntilStart": "Tot het start kun je geen andere potjes starten of meedoen."
     },
     "withdraw": {
         "title": "Terugtrekken uit {name}?",
@@ -191,25 +190,9 @@
     },
     "startDialog": {
         "title": "{name} starten?",
-        "hereNow": "Nu aanwezig: {count} van {entered}.",
-        "checkedInSoFar": "Tot nu toe ingecheckt: {count} van {entered}.",
-        "checkInTitle": "Geef iedereen tijd om in te checken",
-        "checkIn": "Iedereen krijgt een melding. Het start vanzelf na {minutes} minuten, of zodra iedereen is ingecheckt.",
-        "startHere": "Wie er is, speelt nu.",
-        "startCheckedIn": "Wie is ingecheckt, speelt nu.",
-        "missing": "Niemand valt af. | Eén speler valt af. | {count} spelers vallen af.",
-        "confirmCheckIn": "Inchecken openen voor {minutes} min",
-        "confirmStart": "Nu starten ({count})",
-        "minutes": "{count} min",
-        "minutesLabel": "Inchecktijd",
-        "suggested": "Aanbevolen. {reason}",
-        "why": {
-            "everyone": "Iedereen is er.",
-            "justOpened": "Het is net geopend en de meeste spelers zijn er.",
-            "openAWhile": "Het staat al een tijdje open. Geef iedereen even de tijd om terug te komen.",
-            "manyAway": "Een aantal spelers is weg. Geef ze even de tijd om terug te komen.",
-            "tooFew": "Er zijn nog te weinig spelers om te starten."
-        }
+        "playersIn": "Er doet één speler mee. | Er doen {count} spelers mee.",
+        "botsFill": "Een bot neemt de laatste plek. | Bots nemen de andere {count} plekken.",
+        "drawnFor": "Het schema wordt gemaakt voor {count}."
     },
     "list": {
         "open": "Open",
@@ -237,5 +220,6 @@
         "title": "Zet hem in je agenda",
         "hint": "Hij start {date}. Sla hem op in je agenda, dan krijg je een herinnering voordat hij begint.",
         "remind": "Herinner me voor de start"
-    }
+    },
+    "entrantIn": "Doet mee"
 }

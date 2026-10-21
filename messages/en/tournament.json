@@ -84,24 +84,25 @@
         "canceled": "This tournament was called off.",
         "pausedFor": "The server went down for maintenance. Picking up again in {time}.",
         "pausedRestart": "The server restarted. Picking up again in {time}.",
-        "pausedHost": "The server was down for a while. The host starts it again when everybody is back."
+        "pausedHost": "The server was down for a while. The host starts it again when everybody is back.",
+        "startsByItselfIn": "Starts by itself in {time}.",
+        "calledOffIn": "Called off in {time} unless one more player joins. | Called off in {time} unless {count} more players join."
     },
     "yours": {
-        "registered": "You are entered. Stay nearby: {host} can start it at any moment.",
         "registeredScheduled": "You are entered. Check-in opens {minutes} minutes before the start.",
-        "hosting": "Press Start when your players are here.",
-        "hostingBy": "Press Start when your players are here. If it has not started by {time}, it is called off.",
         "needsCheckIn": "Check in now, or you will be left out of the bracket.",
         "confirmed": "You are checked in. Stay on the site and your match will open by itself.",
         "missed": "You did not check in, so the bracket went ahead without you.",
         "playing": "You are still in it.",
         "eliminated": "You are out. Thanks for playing.",
-        "champion": "You won it."
+        "champion": "You won it.",
+        "hostingReady": "Start it when everyone is here. It starts by itself at {time}.",
+        "hostingShort": "You need one more player to start. If nobody joins by {time}, it is called off. | You need {count} more players to start. If they have not joined by {time}, it is called off.",
+        "waiting": "You are in. It starts by {time} at the latest, sooner if {host} starts it. Until then you cannot start or join other games."
     },
     "action": {
         "register": "Enter",
         "withdraw": "Withdraw",
-        "reopen": "Reopen entries",
         "start": "Start now",
         "resume": "Resume tournament",
         "manage": "Manage",
@@ -128,12 +129,12 @@
         "thirdPlaceOn": "Played for",
         "thirdPlaceHint": "Played for, the two semi-final losers meet for third and fourth.",
         "schedule": "Start",
-        "scheduleManual": "When I say so",
+        "scheduleManual": "Right now",
         "scheduleAt": "At a set time",
-        "scheduleManualHint": "For people who are here now. Start it within an hour, or it is called off.",
+        "scheduleManualHint": "For you and your friends, without waiting. Everyone who joins is in straight away. Start it when you are ready: after 15 minutes it starts by itself, or is called off if too few have joined.",
         "scheduleAtHint": "It starts on its own. Players get a reminder when check-in opens.",
         "recommended": "Recommended",
-        "scheduleHint": "At a set time, check-in opens 10 minutes before and it starts by itself. Otherwise you start it from its page.",
+        "scheduleHint": "At a set time, check-in opens 10 minutes before and it starts by itself. Right now, everyone who joins is in straight away, and it starts when you say, or by itself after 15 minutes.",
         "startAt": "Start time",
         "startsIn": "That is {date}, in {time}.",
         "preset": "Match settings",
@@ -167,23 +168,21 @@
     },
     "enter": {
         "title": "Enter {name}?",
-        "whenHostSays": "There is no set start time. It starts whenever {host} says so.",
         "starts": "Starts",
         "inTime": "In {time}",
-        "whenHostStarts": "When {host} starts it",
         "startsBy": "By {time}",
-        "soonerIfAllIn": "Sooner if everyone is in",
         "ifYouReachFinal": "If you reach the final",
         "notKnownYet": "Not known yet",
         "entered": "{count} of {size} entered",
         "checkInBy": "Check in by {time}.",
         "notifiedAt": "We notify you at {time}. If you miss it, you are left out.",
-        "stayNearby": "Stay nearby.",
-        "hostCanStart": "{host} can start any time, or open check-in first. Either way you get a notification.",
         "checksYouIn": "Entering checks you in.",
         "beReadyAt": "Be ready to play at {time}.",
-        "beReady": "Be ready to play when it starts.",
-        "holdsOtherMatches": "While check-in is open you cannot start or join other matches."
+        "holdsOtherMatches": "While check-in is open you cannot start or join other matches.",
+        "soonerIfHostStarts": "Sooner if {host} starts it",
+        "inAsSoonAsEnter": "You are in as soon as you enter.",
+        "startsByLatest": "It starts by {time} at the latest.",
+        "holdsUntilStart": "Until it starts you cannot start or join other games."
     },
     "withdraw": {
         "title": "Withdraw from {name}?",
@@ -191,25 +190,9 @@
     },
     "startDialog": {
         "title": "Start {name}?",
-        "hereNow": "Here right now: {count} of {entered}.",
-        "checkedInSoFar": "Checked in so far: {count} of {entered}.",
-        "checkInTitle": "Give everyone time to check in",
-        "checkIn": "Everybody gets a notification. It starts by itself after {minutes} minutes, or as soon as everyone has checked in.",
-        "startHere": "Whoever is here plays now.",
-        "startCheckedIn": "Whoever has checked in plays now.",
-        "missing": "Nobody misses out. | One player misses out. | {count} players miss out.",
-        "confirmCheckIn": "Open check-in for {minutes} min",
-        "confirmStart": "Start now ({count})",
-        "minutes": "{count} min",
-        "minutesLabel": "Check-in time",
-        "suggested": "Suggested. {reason}",
-        "why": {
-            "everyone": "Everybody is here.",
-            "justOpened": "It was only just opened, and most players are here.",
-            "openAWhile": "It has been open a while. Give everybody a moment to come back.",
-            "manyAway": "Several players are away. Give them a moment to come back.",
-            "tooFew": "Too few players are here to start yet."
-        }
+        "playersIn": "One player is in. | {count} players are in.",
+        "botsFill": "A bot takes the other seat. | Bots take the other {count} seats.",
+        "drawnFor": "The bracket is drawn for {count}."
     },
     "list": {
         "open": "Open",
@@ -237,5 +220,6 @@
         "title": "Add it to your calendar",
         "hint": "It starts {date}. Save it to your calendar to get a reminder before it begins.",
         "remind": "Remind me before it starts"
-    }
+    },
+    "entrantIn": "In"
 }

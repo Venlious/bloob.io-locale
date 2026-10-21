@@ -84,24 +84,25 @@
         "canceled": "Ten turniej został odwołany.",
         "pausedFor": "Serwer wyłączono na czas konserwacji. Wznowienie za {time}.",
         "pausedRestart": "Serwer został zrestartowany. Wznowienie za {time}.",
-        "pausedHost": "Serwer nie działał przez jakiś czas. Gospodarz wznowi turniej, gdy wszyscy wrócą."
+        "pausedHost": "Serwer nie działał przez jakiś czas. Gospodarz wznowi turniej, gdy wszyscy wrócą.",
+        "startsByItselfIn": "Wystartuje sam za {time}.",
+        "calledOffIn": "Zostanie odwołany za {time}, jeśli nie dołączy jeszcze jeden gracz. | Zostanie odwołany za {time}, jeśli nie dołączy więcej graczy (brakuje: {count})."
     },
     "yours": {
-        "registered": "Masz miejsce na liście. Bądź w pobliżu: {host} może zacząć w każdej chwili.",
         "registeredScheduled": "Masz miejsce na liście. Potwierdzanie obecności rusza {minutes} min przed startem.",
-        "hosting": "Naciśnij Rozpocznij, gdy twoi gracze będą na miejscu.",
-        "hostingBy": "Naciśnij Start, gdy gracze będą na miejscu. Jeśli nie zacznie się do {time}, zostanie odwołany.",
         "needsCheckIn": "Potwierdź obecność teraz, inaczej nie trafisz do drabinki.",
         "confirmed": "Obecność potwierdzona. Zostań na stronie, a twój mecz otworzy się sam.",
         "missed": "Nie potwierdzono twojej obecności, więc drabinka ruszyła bez ciebie.",
         "playing": "Nadal jesteś w grze.",
         "eliminated": "Odpadasz. Dzięki za grę.",
-        "champion": "Wygrywasz turniej."
+        "champion": "Wygrywasz turniej.",
+        "hostingReady": "Rozpocznij, gdy wszyscy będą. O {time} wystartuje sam.",
+        "hostingShort": "Do startu brakuje jednego gracza. Jeśli nikt nie dołączy do {time}, turniej zostanie odwołany. | Do startu brakuje graczy: {count}. Jeśli nie dołączą do {time}, turniej zostanie odwołany.",
+        "waiting": "Jesteś w grze. Turniej ruszy najpóźniej o {time}, wcześniej, jeśli {host} go rozpocznie. Do tego czasu nie możesz zaczynać ani dołączać do innych gier."
     },
     "action": {
         "register": "Zapisz się",
         "withdraw": "Wypisz się",
-        "reopen": "Otwórz ponownie zapisy",
         "start": "Rozpocznij teraz",
         "resume": "Wznów turniej",
         "manage": "Zarządzaj",
@@ -128,12 +129,12 @@
         "thirdPlaceOn": "Rozgrywane",
         "thirdPlaceHint": "Gdy jest rozgrywane, przegrani półfinałów grają o trzecie i czwarte miejsce.",
         "schedule": "Start",
-        "scheduleManual": "Kiedy zdecyduję",
+        "scheduleManual": "Od razu",
         "scheduleAt": "O ustalonej godzinie",
-        "scheduleManualHint": "Dla osób, które są tu teraz. Rozpocznij go w ciągu godziny, inaczej zostanie odwołany.",
+        "scheduleManualHint": "Dla ciebie i znajomych, bez czekania. Każdy, kto dołączy, od razu jest w grze. Zacznij, kiedy chcesz: po 15 minutach turniej ruszy sam albo zostanie odwołany, jeśli dołączy za mało osób.",
         "scheduleAtHint": "Startuje sam. Gracze dostają przypomnienie, gdy otworzy się potwierdzanie obecności.",
         "recommended": "Polecane",
-        "scheduleHint": "Przy ustalonej godzinie potwierdzanie obecności rusza 10 minut wcześniej, a turniej startuje sam. W przeciwnym razie uruchamiasz go ze strony turnieju.",
+        "scheduleHint": "O ustalonej godzinie potwierdzanie obecności rusza 10 minut wcześniej, a turniej startuje sam. Od razu: każdy, kto dołączy, jest w grze, a turniej rusza, kiedy zdecydujesz, albo sam po 15 minutach.",
         "startAt": "Godzina startu",
         "startsIn": "To {date}, za {time}.",
         "preset": "Ustawienia meczu",
@@ -167,23 +168,21 @@
     },
     "enter": {
         "title": "Dołączyć do {name}?",
-        "whenHostSays": "Nie ma ustalonej godziny startu. Zacznie się, gdy {host} tak zdecyduje.",
         "starts": "Start",
         "inTime": "Za {time}",
-        "whenHostStarts": "Gdy {host} go rozpocznie",
         "startsBy": "Najpóźniej {time}",
-        "soonerIfAllIn": "Wcześniej, jeśli wszyscy potwierdzą",
         "ifYouReachFinal": "Jeśli dojdziesz do finału",
         "notKnownYet": "Jeszcze nieznany",
         "entered": "Zapisani: {count} z {size}",
         "checkInBy": "Potwierdź obecność do {time}.",
         "notifiedAt": "O {time} dostaniesz powiadomienie. Jeśli je przegapisz, wypadasz.",
-        "stayNearby": "Bądź w pobliżu.",
-        "hostCanStart": "{host} może zacząć w każdej chwili albo najpierw otworzyć potwierdzanie obecności. Tak czy inaczej dostaniesz powiadomienie.",
         "checksYouIn": "Dołączając, od razu potwierdzasz obecność.",
         "beReadyAt": "Bądź gotowy do gry o {time}.",
-        "beReady": "Bądź gotowy do gry, gdy wszystko ruszy.",
-        "holdsOtherMatches": "Dopóki trwa potwierdzanie obecności, nie możesz zaczynać ani dołączać do innych meczów."
+        "holdsOtherMatches": "Dopóki trwa potwierdzanie obecności, nie możesz zaczynać ani dołączać do innych meczów.",
+        "soonerIfHostStarts": "Wcześniej, jeśli {host} go rozpocznie",
+        "inAsSoonAsEnter": "Jesteś w grze, gdy tylko dołączysz.",
+        "startsByLatest": "Ruszy najpóźniej o {time}.",
+        "holdsUntilStart": "Do startu nie możesz zaczynać ani dołączać do innych gier."
     },
     "withdraw": {
         "title": "Wycofać się z {name}?",
@@ -191,25 +190,9 @@
     },
     "startDialog": {
         "title": "Rozpocząć {name}?",
-        "hereNow": "Teraz obecni: {count} z {entered}.",
-        "checkedInSoFar": "Potwierdzili dotąd: {count} z {entered}.",
-        "checkInTitle": "Daj wszystkim czas na potwierdzenie obecności",
-        "checkIn": "Każdy dostanie powiadomienie. Turniej wystartuje sam po {minutes} min albo gdy wszyscy potwierdzą obecność.",
-        "startHere": "Grają ci, którzy są teraz obecni.",
-        "startCheckedIn": "Grają ci, którzy potwierdzili obecność.",
-        "missing": "Nikt nie wypada. | Wypada jeden gracz. | Wypadający gracze: {count}.",
-        "confirmCheckIn": "Otwórz potwierdzanie na {minutes} min",
-        "confirmStart": "Rozpocznij teraz ({count})",
-        "minutes": "{count} min",
-        "minutesLabel": "Czas na potwierdzenie",
-        "suggested": "Polecane. {reason}",
-        "why": {
-            "everyone": "Wszyscy są na miejscu.",
-            "justOpened": "Turniej dopiero co otwarto, a większość graczy jest na miejscu.",
-            "openAWhile": "Turniej jest otwarty od dłuższego czasu. Daj wszystkim chwilę na powrót.",
-            "manyAway": "Kilku graczy jest nieobecnych. Daj im chwilę na powrót.",
-            "tooFew": "Na razie jest za mało graczy, żeby zacząć."
-        }
+        "playersIn": "Jest jeden gracz. | Graczy w turnieju: {count}.",
+        "botsFill": "Bot zajmie ostatnie miejsce. | Boty zajmą pozostałe miejsca: {count}.",
+        "drawnFor": "Drabinka zostanie ułożona dla: {count}."
     },
     "list": {
         "open": "Otwarte",
@@ -237,5 +220,6 @@
         "title": "Dodaj do kalendarza",
         "hint": "Start: {date}. Zapisz go w kalendarzu, a dostaniesz przypomnienie przed startem.",
         "remind": "Przypomnij mi przed startem"
-    }
+    },
+    "entrantIn": "W grze"
 }

@@ -84,24 +84,25 @@
         "canceled": "Tämä turnaus peruttiin.",
         "pausedFor": "Palvelin oli huoltokatkolla. Jatketaan {time} päästä.",
         "pausedRestart": "Palvelin käynnistyi uudelleen. Jatketaan {time} päästä.",
-        "pausedHost": "Palvelin oli jonkin aikaa nurin. Isäntä jatkaa, kun kaikki ovat takaisin."
+        "pausedHost": "Palvelin oli jonkin aikaa nurin. Isäntä jatkaa, kun kaikki ovat takaisin.",
+        "startsByItselfIn": "Alkaa itsestään {time} päästä.",
+        "calledOffIn": "Perutaan {time} päästä, ellei vielä yksi pelaaja liity. | Perutaan {time} päästä, ellei vielä {count} pelaajaa liity."
     },
     "yours": {
-        "registered": "Olet ilmoittautunut. Pysy lähellä: {host} voi aloittaa milloin tahansa.",
         "registeredScheduled": "Olet ilmoittautunut. Vahvistus avautuu {minutes} minuuttia ennen alkua.",
-        "hosting": "Paina Aloita, kun pelaajasi ovat paikalla.",
-        "hostingBy": "Paina Aloita, kun pelaajasi ovat paikalla. Jos se ei ole alkanut klo {time} mennessä, se perutaan.",
         "needsCheckIn": "Vahvista osallistumisesi nyt, tai jäät pois kaaviosta.",
         "confirmed": "Osallistumisesi on vahvistettu. Pysy sivustolla, niin ottelusi avautuu itsestään.",
         "missed": "Et vahvistanut osallistumistasi, joten turnaus alkoi ilman sinua.",
         "playing": "Olet yhä mukana.",
         "eliminated": "Putosit. Kiitos pelaamisesta.",
-        "champion": "Voitit turnauksen."
+        "champion": "Voitit turnauksen.",
+        "hostingReady": "Aloita, kun kaikki ovat paikalla. Se alkaa itsestään klo {time}.",
+        "hostingShort": "Tarvitset vielä yhden pelaajan aloittaaksesi. Jos kukaan ei liity klo {time} mennessä, se perutaan. | Tarvitset vielä {count} pelaajaa aloittaaksesi. Jos he eivät ole liittyneet klo {time} mennessä, se perutaan.",
+        "waiting": "Olet mukana. Se alkaa viimeistään klo {time}, aiemmin jos {host} aloittaa sen. Siihen asti et voi aloittaa muita pelejä tai liittyä niihin."
     },
     "action": {
         "register": "Ilmoittaudu",
         "withdraw": "Peru ilmoittautuminen",
-        "reopen": "Avaa ilmoittautuminen uudelleen",
         "start": "Aloita nyt",
         "resume": "Jatka turnausta",
         "manage": "Hallitse",
@@ -128,12 +129,12 @@
         "thirdPlaceOn": "Pelataan",
         "thirdPlaceHint": "Jos se pelataan, välierien häviäjät pelaavat kolmannesta ja neljännestä sijasta.",
         "schedule": "Alku",
-        "scheduleManual": "Kun minä sanon",
+        "scheduleManual": "Heti",
         "scheduleAt": "Tiettyyn aikaan",
-        "scheduleManualHint": "Niille, jotka ovat paikalla nyt. Aloita se tunnin sisällä, tai se perutaan.",
+        "scheduleManualHint": "Sinulle ja kavereillesi, ilman odottelua. Jokainen liittyjä on heti mukana. Aloita kun olet valmis: 15 minuutin päästä se alkaa itsestään tai perutaan, jos liian harva on liittynyt.",
         "scheduleAtHint": "Se alkaa itsestään. Pelaajat saavat muistutuksen, kun ilmoittautuminen aukeaa.",
         "recommended": "Suositeltu",
-        "scheduleHint": "Kiinteällä ajalla vahvistus avautuu 10 minuuttia ennen ja turnaus alkaa itsestään. Muuten aloitat sen itse sen sivulta.",
+        "scheduleHint": "Tiettyyn aikaan vahvistus aukeaa 10 minuuttia ennen ja se alkaa itsestään. Heti-tilassa jokainen liittyjä on heti mukana, ja se alkaa kun sanot, tai itsestään 15 minuutin päästä.",
         "startAt": "Alkamisaika",
         "startsIn": "Se on {date}, {time} päästä.",
         "preset": "Ottelun asetukset",
@@ -167,23 +168,21 @@
     },
     "enter": {
         "title": "Osallistutko turnaukseen {name}?",
-        "whenHostSays": "Alkamisaikaa ei ole sovittu. Se alkaa, kun {host} niin päättää.",
         "starts": "Alkaa",
         "inTime": "{time} päästä",
-        "whenHostStarts": "Kun {host} aloittaa sen",
         "startsBy": "Viimeistään {time}",
-        "soonerIfAllIn": "Aiemmin, jos kaikki ovat paikalla",
         "ifYouReachFinal": "Jos pääset finaaliin",
         "notKnownYet": "Ei vielä tiedossa",
         "entered": "{count}/{size} ilmoittautunut",
         "checkInBy": "Vahvista viimeistään {time}.",
         "notifiedAt": "Saat ilmoituksen klo {time}. Jos et vahvista, jäät pois.",
-        "stayNearby": "Pysy lähellä.",
-        "hostCanStart": "{host} voi aloittaa milloin vain tai avata ensin vahvistuksen. Saat ilmoituksen kummassakin tapauksessa.",
         "checksYouIn": "Osallistumalla vahvistat samalla.",
         "beReadyAt": "Ole valmiina pelaamaan klo {time}.",
-        "beReady": "Ole valmiina pelaamaan, kun se alkaa.",
-        "holdsOtherMatches": "Kun vahvistus on auki, et voi aloittaa muita otteluita tai liittyä niihin."
+        "holdsOtherMatches": "Kun vahvistus on auki, et voi aloittaa muita otteluita tai liittyä niihin.",
+        "soonerIfHostStarts": "Aiemmin, jos {host} aloittaa sen",
+        "inAsSoonAsEnter": "Olet mukana heti, kun liityt.",
+        "startsByLatest": "Se alkaa viimeistään klo {time}.",
+        "holdsUntilStart": "Ennen alkua et voi aloittaa muita pelejä tai liittyä niihin."
     },
     "withdraw": {
         "title": "Vetäydytkö turnauksesta {name}?",
@@ -191,25 +190,9 @@
     },
     "startDialog": {
         "title": "Aloitetaanko turnaus {name}?",
-        "hereNow": "Paikalla nyt: {count}/{entered}.",
-        "checkedInSoFar": "Vahvistaneet tähän mennessä: {count}/{entered}.",
-        "checkInTitle": "Anna kaikille aikaa vahvistaa",
-        "checkIn": "Kaikki saavat ilmoituksen. Turnaus alkaa itsestään {minutes} minuutin kuluttua tai heti, kun kaikki ovat vahvistaneet.",
-        "startHere": "Paikalla olevat pelaavat nyt.",
-        "startCheckedIn": "Vahvistaneet pelaavat nyt.",
-        "missing": "Kukaan ei jää pois. | Yksi pelaaja jää pois. | {count} pelaajaa jää pois.",
-        "confirmCheckIn": "Avaa vahvistus {minutes} minuutiksi",
-        "confirmStart": "Aloita nyt ({count})",
-        "minutes": "{count} min",
-        "minutesLabel": "Vahvistusaika",
-        "suggested": "Suositeltu. {reason}",
-        "why": {
-            "everyone": "Kaikki ovat paikalla.",
-            "justOpened": "Se avattiin juuri, ja useimmat pelaajat ovat paikalla.",
-            "openAWhile": "Se on ollut auki jo jonkin aikaa. Anna kaikille hetki aikaa palata.",
-            "manyAway": "Useat pelaajat ovat poissa. Anna heille hetki aikaa palata.",
-            "tooFew": "Paikalla on vielä liian vähän pelaajia aloittamiseen."
-        }
+        "playersIn": "Yksi pelaaja on mukana. | {count} pelaajaa on mukana.",
+        "botsFill": "Botti vie viimeisen paikan. | Botit vievät viimeiset {count} paikkaa.",
+        "drawnFor": "Kaavio tehdään {count} pelaajalle."
     },
     "list": {
         "open": "Avoimet",
@@ -237,5 +220,6 @@
         "title": "Lisää se kalenteriisi",
         "hint": "Alkaa: {date}. Tallenna se kalenteriisi, niin saat muistutuksen ennen alkua.",
         "remind": "Muistuta minua ennen alkua"
-    }
+    },
+    "entrantIn": "Mukana"
 }

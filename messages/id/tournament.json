@@ -84,24 +84,25 @@
         "canceled": "Turnamen ini dibatalkan.",
         "pausedFor": "Server mati untuk perawatan. Lanjut lagi dalam {time}.",
         "pausedRestart": "Server baru saja restart. Lanjut lagi dalam {time}.",
-        "pausedHost": "Server sempat mati cukup lama. Tuan rumah akan melanjutkan saat semua sudah kembali."
+        "pausedHost": "Server sempat mati cukup lama. Tuan rumah akan melanjutkan saat semua sudah kembali.",
+        "startsByItselfIn": "Mulai sendiri dalam {time}.",
+        "calledOffIn": "Dibatalkan dalam {time} kalau tidak ada satu pemain lagi yang ikut. | Dibatalkan dalam {time} kalau tidak ada {count} pemain lagi yang ikut."
     },
     "yours": {
-        "registered": "Kamu sudah terdaftar. Tetap dekat ya: {host} bisa mulai kapan saja.",
         "registeredScheduled": "Kamu sudah terdaftar. Check-in dibuka {minutes} menit sebelum mulai.",
-        "hosting": "Tekan Mulai kalau pemainmu sudah ada.",
-        "hostingBy": "Tekan Mulai saat pemainmu sudah ada. Kalau belum dimulai sebelum {time}, turnamen dibatalkan.",
         "needsCheckIn": "Check-in sekarang, atau kamu nggak masuk bagan.",
         "confirmed": "Kamu sudah check-in. Tetap di situs ini, pertandinganmu akan terbuka sendiri.",
         "missed": "Kamu nggak check-in, jadi bagan jalan tanpa kamu.",
         "playing": "Kamu masih bertahan.",
         "eliminated": "Kamu tersingkir. Makasih sudah main.",
-        "champion": "Kamu juaranya."
+        "champion": "Kamu juaranya.",
+        "hostingReady": "Mulai saat semua sudah ada. Turnamen mulai sendiri jam {time}.",
+        "hostingShort": "Kamu butuh satu pemain lagi untuk mulai. Kalau tidak ada yang ikut sebelum {time}, turnamen dibatalkan. | Kamu butuh {count} pemain lagi untuk mulai. Kalau mereka belum ikut sebelum {time}, turnamen dibatalkan.",
+        "waiting": "Kamu sudah masuk. Turnamen mulai paling lambat jam {time}, lebih cepat kalau {host} memulainya. Sampai itu, kamu nggak bisa mulai atau gabung ke permainan lain."
     },
     "action": {
         "register": "Daftar",
         "withdraw": "Mundur",
-        "reopen": "Buka pendaftaran lagi",
         "start": "Mulai sekarang",
         "resume": "Lanjutkan turnamen",
         "manage": "Kelola",
@@ -128,12 +129,12 @@
         "thirdPlaceOn": "Diperebutkan",
         "thirdPlaceHint": "Kalau diperebutkan, dua yang kalah di semifinal tanding untuk juara tiga dan empat.",
         "schedule": "Mulai",
-        "scheduleManual": "Saat aku mau",
+        "scheduleManual": "Sekarang juga",
         "scheduleAt": "Pada waktu tertentu",
-        "scheduleManualHint": "Untuk yang ada di sini sekarang. Mulai dalam satu jam, atau turnamen dibatalkan.",
+        "scheduleManualHint": "Untuk kamu dan teman-temanmu, tanpa menunggu. Semua yang ikut langsung masuk. Mulai saat kamu siap: setelah 15 menit turnamen mulai sendiri, atau dibatalkan kalau yang ikut terlalu sedikit.",
         "scheduleAtHint": "Mulai sendiri. Pemain dapat pengingat waktu check-in dibuka.",
         "recommended": "Disarankan",
-        "scheduleHint": "Kalau pakai waktu tetap, check-in dibuka 10 menit sebelumnya dan turnamen mulai sendiri. Kalau nggak, kamu yang mulai dari halamannya.",
+        "scheduleHint": "Pada waktu tertentu, check-in dibuka 10 menit sebelumnya dan turnamen mulai sendiri. Sekarang juga, semua yang ikut langsung masuk, dan turnamen mulai saat kamu bilang, atau sendiri setelah 15 menit.",
         "startAt": "Waktu mulai",
         "startsIn": "Itu {date}, {time} lagi.",
         "preset": "Pengaturan pertandingan",
@@ -167,23 +168,21 @@
     },
     "enter": {
         "title": "Ikut {name}?",
-        "whenHostSays": "Belum ada jam mulai yang pasti. Mulainya tunggu {host} bilang mulai.",
         "starts": "Mulai",
         "inTime": "Dalam {time}",
-        "whenHostStarts": "Saat {host} memulainya",
         "startsBy": "Paling lambat {time}",
-        "soonerIfAllIn": "Lebih cepat kalau semua sudah check-in",
         "ifYouReachFinal": "Kalau kamu sampai final",
         "notKnownYet": "Belum diketahui",
         "entered": "{count} dari {size} terdaftar",
         "checkInBy": "Check-in paling lambat {time}.",
         "notifiedAt": "Kami kirim notifikasi jam {time}. Kalau terlewat, kamu nggak ikut.",
-        "stayNearby": "Tetap dekat ya.",
-        "hostCanStart": "{host} bisa mulai kapan saja, atau buka check-in dulu. Dua-duanya kamu dapat notifikasi.",
         "checksYouIn": "Begitu ikut, kamu langsung check-in.",
         "beReadyAt": "Siap-siap main jam {time}.",
-        "beReady": "Siap-siap main pas mulai.",
-        "holdsOtherMatches": "Selama check-in dibuka, kamu nggak bisa mulai atau gabung ke pertandingan lain."
+        "holdsOtherMatches": "Selama check-in dibuka, kamu nggak bisa mulai atau gabung ke pertandingan lain.",
+        "soonerIfHostStarts": "Lebih cepat kalau {host} memulainya",
+        "inAsSoonAsEnter": "Kamu langsung masuk begitu ikut.",
+        "startsByLatest": "Turnamen mulai paling lambat jam {time}.",
+        "holdsUntilStart": "Sampai turnamen mulai, kamu nggak bisa mulai atau gabung ke permainan lain."
     },
     "withdraw": {
         "title": "Mundur dari {name}?",
@@ -191,25 +190,9 @@
     },
     "startDialog": {
         "title": "Mulai {name}?",
-        "hereNow": "Ada sekarang: {count} dari {entered}.",
-        "checkedInSoFar": "Sudah check-in: {count} dari {entered}.",
-        "checkInTitle": "Kasih semua waktu buat check-in",
-        "checkIn": "Semua dapat notifikasi. Turnamen mulai sendiri setelah {minutes} menit, atau begitu semua sudah check-in.",
-        "startHere": "Yang ada sekarang langsung main.",
-        "startCheckedIn": "Yang sudah check-in langsung main.",
-        "missing": "Nggak ada yang ketinggalan. | Satu pemain ketinggalan. | {count} pemain ketinggalan.",
-        "confirmCheckIn": "Buka check-in selama {minutes} mnt",
-        "confirmStart": "Mulai sekarang ({count})",
-        "minutes": "{count} mnt",
-        "minutesLabel": "Waktu check-in",
-        "suggested": "Disarankan. {reason}",
-        "why": {
-            "everyone": "Semua sudah ada.",
-            "justOpened": "Baru saja dibuka, dan kebanyakan pemain sudah ada.",
-            "openAWhile": "Sudah dibuka cukup lama. Kasih waktu sebentar biar semua bisa balik.",
-            "manyAway": "Beberapa pemain lagi pergi. Kasih mereka waktu sebentar buat balik.",
-            "tooFew": "Pemainnya masih terlalu sedikit buat mulai."
-        }
+        "playersIn": "Satu pemain sudah masuk. | {count} pemain sudah masuk.",
+        "botsFill": "Bot mengisi tempat terakhir. | Bot mengisi {count} tempat lainnya.",
+        "drawnFor": "Bagan dibuat untuk {count} pemain."
     },
     "list": {
         "open": "Terbuka",
@@ -237,5 +220,6 @@
         "title": "Tambahkan ke kalendermu",
         "hint": "Mulai {date}. Simpan di kalendermu biar dapat pengingat sebelum mulai.",
         "remind": "Ingatkan aku sebelum mulai"
-    }
+    },
+    "entrantIn": "Masuk"
 }

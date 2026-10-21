@@ -84,24 +84,25 @@
         "canceled": "Bu turnuva iptal edildi.",
         "pausedFor": "Sunucu bakım için kapandı. {time} sonra devam edilecek.",
         "pausedRestart": "Sunucu yeniden başladı. {time} sonra devam edilecek.",
-        "pausedHost": "Sunucu bir süre kapalı kaldı. Herkes döndüğünde ev sahibi turnuvayı yeniden başlatacak."
+        "pausedHost": "Sunucu bir süre kapalı kaldı. Herkes döndüğünde ev sahibi turnuvayı yeniden başlatacak.",
+        "startsByItselfIn": "{time} sonra kendiliğinden başlar.",
+        "calledOffIn": "Bir oyuncu daha katılmazsa {time} sonra iptal edilir. | {count} oyuncu daha katılmazsa {time} sonra iptal edilir."
     },
     "yours": {
-        "registered": "Kayıtlısın. Yakınlarda ol: {host} her an başlatabilir.",
         "registeredScheduled": "Kayıtlısın. Katılım onayı başlangıçtan {minutes} dakika önce açılır.",
-        "hosting": "Oyuncuların gelince Başla'ya bas.",
-        "hostingBy": "Oyuncuların gelince Başlat’a bas. Saat {time} itibarıyla başlamamışsa iptal edilir.",
         "needsCheckIn": "Katılımını şimdi onayla, yoksa fikstüre giremezsin.",
         "confirmed": "Katılımını onayladın. Sitede kal, maçın kendiliğinden açılacak.",
         "missed": "Katılımını onaylamadın, bu yüzden fikstür sensiz devam etti.",
         "playing": "Hâlâ oyundasın.",
         "eliminated": "Elendin. Oynadığın için teşekkürler.",
-        "champion": "Kazandın."
+        "champion": "Kazandın.",
+        "hostingReady": "Herkes gelince başlat. Saat {time}'da kendiliğinden başlar.",
+        "hostingShort": "Başlamak için bir oyuncu daha gerek. Saat {time}'a kadar kimse katılmazsa iptal edilir. | Başlamak için {count} oyuncu daha gerek. Saat {time}'a kadar katılmazlarsa iptal edilir.",
+        "waiting": "Turnuvadasın. En geç saat {time}'da başlar, {host} başlatırsa daha erken. O zamana kadar başka oyun başlatamaz ya da katılamazsın."
     },
     "action": {
         "register": "Katıl",
         "withdraw": "Çekil",
-        "reopen": "Kayıtları yeniden aç",
         "start": "Şimdi başlat",
         "resume": "Turnuvaya devam et",
         "manage": "Yönet",
@@ -128,12 +129,12 @@
         "thirdPlaceOn": "Oynanır",
         "thirdPlaceHint": "Oynanırsa yarı finali kaybeden iki oyuncu üçüncülük ve dördüncülük için karşılaşır.",
         "schedule": "Başlangıç",
-        "scheduleManual": "Ben söyleyince",
+        "scheduleManual": "Hemen",
         "scheduleAt": "Belirli bir saatte",
-        "scheduleManualHint": "Şu an burada olanlar için. Bir saat içinde başlat, yoksa iptal edilir.",
+        "scheduleManualHint": "Sen ve arkadaşların için, beklemeden. Katılan herkes anında içeride. Hazır olunca başlat: 15 dakika sonra kendiliğinden başlar, ya da çok az kişi katıldıysa iptal edilir.",
         "scheduleAtHint": "Kendiliğinden başlar. Check-in açılınca oyunculara hatırlatma gider.",
         "recommended": "Önerilen",
-        "scheduleHint": "Belirli bir saatte katılım onayı 10 dakika önce açılır ve turnuva kendiliğinden başlar. Yoksa sayfasından sen başlatırsın.",
+        "scheduleHint": "Belirli bir saatte, katılım onayı 10 dakika önce açılır ve kendiliğinden başlar. Hemen seçeneğinde katılan herkes anında içeride olur, sen söyleyince ya da 15 dakika sonra kendiliğinden başlar.",
         "startAt": "Başlangıç saati",
         "startsIn": "Bu {date}, {time} sonra.",
         "preset": "Maç ayarları",
@@ -167,23 +168,21 @@
     },
     "enter": {
         "title": "{name} turnuvasına katıl?",
-        "whenHostSays": "Belirli bir başlangıç saati yok. {host} başlatınca başlayacak.",
         "starts": "Başlangıç",
         "inTime": "{time} sonra",
-        "whenHostStarts": "{host} başlattığında",
         "startsBy": "En geç {time}",
-        "soonerIfAllIn": "Herkes onaylarsa daha erken",
         "ifYouReachFinal": "Finale kalırsan",
         "notKnownYet": "Henüz belli değil",
         "entered": "{size} kişiden {count} kişi katıldı",
         "checkInBy": "Katılımını en geç {time} onayla.",
         "notifiedAt": "Saat {time} bildirim gelir. Kaçırırsan dışarıda kalırsın.",
-        "stayNearby": "Yakınlarda ol.",
-        "hostCanStart": "{host} her an başlatabilir ya da önce katılım onayını açabilir. Her iki durumda da bildirim alırsın.",
         "checksYouIn": "Katıldığında onaylamış olursun.",
         "beReadyAt": "Saat {time} oynamaya hazır ol.",
-        "beReady": "Başladığında oynamaya hazır ol.",
-        "holdsOtherMatches": "Katılım onayı açıkken başka maç başlatamaz ya da katılamazsın."
+        "holdsOtherMatches": "Katılım onayı açıkken başka maç başlatamaz ya da katılamazsın.",
+        "soonerIfHostStarts": "{host} başlatırsa daha erken",
+        "inAsSoonAsEnter": "Katıldığın anda içeridesin.",
+        "startsByLatest": "En geç saat {time}'da başlar.",
+        "holdsUntilStart": "Başlayana kadar başka oyun başlatamaz ya da katılamazsın."
     },
     "withdraw": {
         "title": "{name} turnuvasından çekil?",
@@ -191,25 +190,9 @@
     },
     "startDialog": {
         "title": "{name} turnuvasını başlat?",
-        "hereNow": "Şu an burada: {count}/{entered}.",
-        "checkedInSoFar": "Şimdiye kadar onaylayan: {count}/{entered}.",
-        "checkInTitle": "Herkese katılımını onaylaması için zaman tanı",
-        "checkIn": "Herkese bildirim gider. {minutes} dakika sonra ya da herkes onayladığı anda kendiliğinden başlar.",
-        "startHere": "Burada olanlar şimdi oynar.",
-        "startCheckedIn": "Onaylayanlar şimdi oynar.",
-        "missing": "Kimse dışarıda kalmaz. | Bir oyuncu dışarıda kalır. | {count} oyuncu dışarıda kalır.",
-        "confirmCheckIn": "Katılım onayını {minutes} dk aç",
-        "confirmStart": "Şimdi başla ({count})",
-        "minutes": "{count} dk",
-        "minutesLabel": "Onay süresi",
-        "suggested": "Önerilen. {reason}",
-        "why": {
-            "everyone": "Herkes burada.",
-            "justOpened": "Yeni açıldı ve oyuncuların çoğu burada.",
-            "openAWhile": "Bir süredir açık. Herkese geri dönmesi için biraz zaman tanı.",
-            "manyAway": "Birkaç oyuncu uzakta. Geri dönmeleri için biraz zaman tanı.",
-            "tooFew": "Başlatmak için henüz yeterli oyuncu yok."
-        }
+        "playersIn": "Bir oyuncu var. | {count} oyuncu var.",
+        "botsFill": "Kalan yeri bir bot alır. | Kalan {count} yeri botlar alır.",
+        "drawnFor": "Tablo {count} kişiye göre çekilir."
     },
     "list": {
         "open": "Açık",
@@ -237,5 +220,6 @@
         "title": "Takvimine ekle",
         "hint": "Başlangıç: {date}. Takvimine kaydet, başlamadan önce hatırlatma gelsin.",
         "remind": "Başlamadan önce hatırlat"
-    }
+    },
+    "entrantIn": "İçeride"
 }

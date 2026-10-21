@@ -84,24 +84,25 @@
         "canceled": "Denne turneringen ble avlyst.",
         "pausedFor": "Serveren gikk ned for vedlikehold. Fortsetter om {time}.",
         "pausedRestart": "Serveren startet på nytt. Fortsetter om {time}.",
-        "pausedHost": "Serveren var nede en stund. Verten starter igjen når alle er tilbake."
+        "pausedHost": "Serveren var nede en stund. Verten starter igjen når alle er tilbake.",
+        "startsByItselfIn": "Starter av seg selv om {time}.",
+        "calledOffIn": "Avlyses om {time} hvis ikke én spiller til melder seg på. | Avlyses om {time} hvis ikke {count} spillere til melder seg på."
     },
     "yours": {
-        "registered": "Du er påmeldt. Hold deg i nærheten: {host} kan starte når som helst.",
         "registeredScheduled": "Du er påmeldt. Innsjekkingen åpner {minutes} minutter før start.",
-        "hosting": "Trykk på Start når spillerne dine er her.",
-        "hostingBy": "Trykk Start når spillerne dine er her. Hvis den ikke har startet innen {time}, blir den avlyst.",
         "needsCheckIn": "Sjekk inn nå, ellers blir du ikke med i turneringstreet.",
         "confirmed": "Du har sjekket inn. Bli på siden, så åpner kampen din seg av seg selv.",
         "missed": "Du sjekket ikke inn, så turneringen startet uten deg.",
         "playing": "Du er fortsatt med.",
         "eliminated": "Du er ute. Takk for at du spilte.",
-        "champion": "Du vant."
+        "champion": "Du vant.",
+        "hostingReady": "Start den når alle er her. Den starter av seg selv kl. {time}.",
+        "hostingShort": "Du trenger én spiller til for å starte. Hvis ingen melder seg på innen kl. {time}, blir den avlyst. | Du trenger {count} spillere til for å starte. Hvis de ikke har meldt seg på innen kl. {time}, blir den avlyst.",
+        "waiting": "Du er med. Den starter senest kl. {time}, før hvis {host} starter den. Til da kan du ikke starte eller bli med i andre spill."
     },
     "action": {
         "register": "Meld på",
         "withdraw": "Meld av",
-        "reopen": "Åpne påmeldingen igjen",
         "start": "Start nå",
         "resume": "Fortsett turneringen",
         "manage": "Administrer",
@@ -128,12 +129,12 @@
         "thirdPlaceOn": "Spilles om",
         "thirdPlaceHint": "Spilles det om, møtes de to tapende semifinalistene om tredje- og fjerdeplass.",
         "schedule": "Start",
-        "scheduleManual": "Når jeg sier fra",
+        "scheduleManual": "Med en gang",
         "scheduleAt": "På et fast tidspunkt",
-        "scheduleManualHint": "For folk som er her nå. Start den innen en time, ellers blir den avlyst.",
+        "scheduleManualHint": "For deg og vennene dine, uten venting. Alle som melder seg på, er med med en gang. Start den når du er klar: etter 15 minutter starter den av seg selv, eller avlyses hvis for få har meldt seg på.",
         "scheduleAtHint": "Den starter av seg selv. Spillerne får en påminnelse når innsjekkingen åpner.",
         "recommended": "Anbefalt",
-        "scheduleHint": "Med fast tidspunkt åpner innsjekkingen 10 minutter før, og turneringen starter av seg selv. Ellers starter du den fra siden.",
+        "scheduleHint": "På et fast tidspunkt åpner innsjekkingen 10 minutter før, og den starter av seg selv. Med en gang er alle som melder seg på med med en gang, og den starter når du sier fra, eller av seg selv etter 15 minutter.",
         "startAt": "Starttid",
         "startsIn": "Det er {date}, om {time}.",
         "preset": "Kampinnstillinger",
@@ -167,23 +168,21 @@
     },
     "enter": {
         "title": "Bli med i {name}?",
-        "whenHostSays": "Det er ikke noe fast starttidspunkt. Den starter når {host} sier fra.",
         "starts": "Starter",
         "inTime": "Om {time}",
-        "whenHostStarts": "Når {host} starter den",
         "startsBy": "Senest {time}",
-        "soonerIfAllIn": "Før, hvis alle er sjekket inn",
         "ifYouReachFinal": "Hvis du når finalen",
         "notKnownYet": "Ikke kjent ennå",
         "entered": "{count} av {size} påmeldt",
         "checkInBy": "Sjekk inn senest {time}.",
         "notifiedAt": "Vi varsler deg kl. {time}. Går du glipp av det, er du ute.",
-        "stayNearby": "Hold deg i nærheten.",
-        "hostCanStart": "{host} kan starte når som helst, eller åpne innsjekkingen først. Uansett får du et varsel.",
         "checksYouIn": "Når du melder deg på, er du sjekket inn.",
         "beReadyAt": "Vær klar til å spille kl. {time}.",
-        "beReady": "Vær klar til å spille når det starter.",
-        "holdsOtherMatches": "Mens innsjekkingen er åpen, kan du ikke starte eller bli med i andre kamper."
+        "holdsOtherMatches": "Mens innsjekkingen er åpen, kan du ikke starte eller bli med i andre kamper.",
+        "soonerIfHostStarts": "Før, hvis {host} starter den",
+        "inAsSoonAsEnter": "Du er med så snart du melder deg på.",
+        "startsByLatest": "Den starter senest kl. {time}.",
+        "holdsUntilStart": "Til den starter, kan du ikke starte eller bli med i andre spill."
     },
     "withdraw": {
         "title": "Trekke deg fra {name}?",
@@ -191,25 +190,9 @@
     },
     "startDialog": {
         "title": "Starte {name}?",
-        "hereNow": "Her nå: {count} av {entered}.",
-        "checkedInSoFar": "Sjekket inn så langt: {count} av {entered}.",
-        "checkInTitle": "Gi alle tid til å sjekke inn",
-        "checkIn": "Alle får et varsel. Den starter av seg selv etter {minutes} minutter, eller så snart alle har sjekket inn.",
-        "startHere": "De som er her, spiller nå.",
-        "startCheckedIn": "De som har sjekket inn, spiller nå.",
-        "missing": "Ingen går glipp av det. | Én spiller går glipp av det. | {count} spillere går glipp av det.",
-        "confirmCheckIn": "Åpne innsjekking i {minutes} min",
-        "confirmStart": "Start nå ({count})",
-        "minutes": "{count} min",
-        "minutesLabel": "Innsjekkingstid",
-        "suggested": "Anbefalt. {reason}",
-        "why": {
-            "everyone": "Alle er her.",
-            "justOpened": "Den ble nettopp åpnet, og de fleste spillerne er her.",
-            "openAWhile": "Den har vært åpen en stund. Gi alle et øyeblikk til å komme tilbake.",
-            "manyAway": "Flere spillere er borte. Gi dem et øyeblikk til å komme tilbake.",
-            "tooFew": "Det er fortsatt for få spillere til å starte."
-        }
+        "playersIn": "Én spiller er med. | {count} spillere er med.",
+        "botsFill": "En bot tar den siste plassen. | Boter tar de siste {count} plassene.",
+        "drawnFor": "Turneringstreet settes opp for {count}."
     },
     "list": {
         "open": "Åpne",
@@ -237,5 +220,6 @@
         "title": "Legg den til i kalenderen din",
         "hint": "Den starter {date}. Lagre den i kalenderen din, så får du en påminnelse før den begynner.",
         "remind": "Minn meg på det før den starter"
-    }
+    },
+    "entrantIn": "Med"
 }
