@@ -1,142 +1,142 @@
 {
     "options": {
         "winAmount": {
-            "help": null
+            "help": "チームがマッチに勝つのに必要な点数だよ。成功した契約は80点以上になるから、301はいいラウンド4回分くらいだよ。"
         },
         "minimumBid": {
-            "title": null,
-            "help": null
+            "title": "最低ビッド",
+            "help": "オークションで受け付ける一番小さい契約だよ。ペア戦では8が標準。ビッドを1人じゃなく2人の手札で支えるからだよ。"
         },
         "defenderMinimum": {
-            "title": null,
+            "title": "守備側の最低トリック",
             "help": {
-                "on": null,
-                "off": null
+                "on": "成功した契約に対して守備側がこれより少ないトリックしか取れなかったら、その契約分の点も守備側から引かれるよ。",
+                "off": "「0」にすると、守備側はラウンドを落としても何も払わなくていいよ。"
             }
         },
         "bidTime": {
-            "title": null,
-            "help": null
+            "title": "ビッド時間",
+            "help": "各プレイヤーがビッドできる時間だよ。時間切れになるとパスになるよ。"
         }
     },
     "presets": {
         "default": {
-            "title": null,
+            "title": "Eşli İhaleli Batak",
             "description": [
-                null,
-                null
+                "ペア戦で、切り札をオークション",
+                "みんなが遊ぶ定番バタク"
             ]
         },
         "quickBatak": {
-            "title": null,
+            "title": "クイックバタク",
             "description": [
-                null,
-                null
+                "151点先取",
+                "手番が短め"
             ]
         },
         "marathon": {
-            "title": null,
+            "title": "マラソン",
             "description": [
-                null,
-                null
+                "501点先取",
+                "じっくり長期戦"
             ]
         },
         "openAuction": {
-            "title": null,
+            "title": "オープンオークション",
             "description": [
-                null,
-                null
+                "ビッドは6から",
+                "勝負できる手札が増える"
             ]
         },
         "noObligation": {
-            "title": null,
+            "title": "義務なし",
             "description": [
-                null,
-                null
+                "守備側に義務なし",
+                "ラウンドを落としても失点なし"
             ]
         }
     },
     "declarer": {
-        "title": null
+        "title": "ディクレアラー"
     },
     "tricks": {
-        "title": null
+        "title": "トリック"
     },
     "contract": {
-        "value": null
+        "value": "ビッド {amount}"
     },
     "bid": {
-        "title": null,
-        "yourBid": null,
-        "waiting": null,
-        "pass": null
+        "title": "ビッド",
+        "yourBid": "契約をビッドしよう",
+        "waiting": "{name}がビッド中…",
+        "pass": "パス"
     },
     "trump": {
-        "yourCall": null,
-        "waiting": null,
-        "called": null,
-        "announcement": null
+        "yourCall": "切り札のスートを決めてね",
+        "waiting": "{name}が切り札を決めてるよ…",
+        "called": "切り札",
+        "announcement": "切り札は{suit}"
     },
     "header": {
-        "yourBid": null,
-        "nameBid": null,
-        "yourCall": null,
-        "nameCall": null,
-        "youTookTrick": null,
-        "nameTookTrick": null,
-        "youWonRound": null,
-        "themWonRound": null,
-        "youBrokeContract": null,
-        "yourContractFailed": null
+        "yourBid": "ビッドしてね",
+        "nameBid": "{name}がビッド中",
+        "yourCall": "切り札のスートを宣言してね",
+        "nameCall": "{name}が切り札を宣言中",
+        "youTookTrick": "トリックを取ったよ",
+        "nameTookTrick": "{name}がトリックを取ったよ",
+        "youWonRound": "君のチームが得点したよ！",
+        "themWonRound": "相手チームが得点したよ",
+        "youBrokeContract": "相手の契約を崩したよ！",
+        "yourContractFailed": "契約が失敗しちゃった"
     },
     "result": {
-        "made": null,
-        "failed": null,
-        "swept": null,
-        "contractMade": null,
-        "contractFailed": null
+        "made": "{name}が{bid}ビッドして{tricks}取ったよ",
+        "failed": "{name}が{bid}ビッドしたけど{tricks}しか取れなかった",
+        "swept": "{name}が{bid}ビッドして{tricks}取り、守備側に何も残さなかった",
+        "contractMade": "契約成功",
+        "contractFailed": "契約失敗"
     },
     "rounds": {
-        "title": null,
-        "outcome": null
+        "title": "ラウンド履歴",
+        "outcome": "結果"
     },
     "scoreboard": {
-        "target": null
+        "target": "{amount}点先取"
     },
     "help": {
         "rules": {
-            "title": null,
+            "title": "ルール",
             "description": [
-                null,
-                null
+                "バタクは2人1組の2チーム、計4人で遊ぶよ。相棒は向かい合って座るんだ。52枚すべてを配るから、全員が13枚ずつ持つよ。",
+                "カードを出す前に、みんなで**ビッド**するよ。順番に、13トリックのうち自分のチームが何トリック取るかを言うか、パスするんだ。一度パスすると、そのラウンドのビッドには戻れないよ。"
             ]
         },
         "bidding": {
-            "title": null,
+            "title": "ビッド",
             "description": [
-                null,
-                null
+                "ビッドは前のビッドより高くないとダメで、最低は8だよ。上をいかれても脱落じゃないよ。また順番が回ってくるから、契約を取り返せるんだ。",
+                "最後まで残ったプレイヤーがオークションに勝って、**切り札**のスートを決め、最初のトリックをリードするよ。4人全員がパスしたら配り直しだよ。"
             ]
         },
         "trump": {
-            "title": null,
+            "title": "切り札とフォロー",
             "description": [
-                null,
-                null
+                "出せるなら必ず**同じスートを出さなきゃ**いけないよ。出せないなら**必ず切り札を出す**こと。これがバタクらしさを決めるルールで、ほかのトリックゲームから来た人がよく引っかかるところだよ。スートも切り札もない手札のときだけ、好きな札を出せるよ。",
+                "切り札の上に切り札を出すときは、勝てる札を持っていれば必ず**上回る**札を出さなきゃいけないよ。一番強い切り札がトリックを取り、誰も切り札を出さなければリードされたスートの一番強い札が勝ち。エースが最強だよ。"
             ]
         },
         "scoring": {
-            "title": null,
+            "title": "得点",
             "description": [
-                null,
-                null
+                "成功した契約は**1トリック10点**、つまり8のビッドなら80点で、超えたトリック1つにつき1点が加わるよ。失敗した契約はその全部を失うよ。守備側は取ったトリックで点をもらえないから、勝負はオークションで決まるんだ。",
+                "ただし守備側は自分たちで**2トリック**取らなきゃいけないよ。成功した契約に対してそれより少なかったら、その契約分の点も引かれるから、そのラウンドはスコアが2回動くんだ。"
             ]
         },
         "bots": {
-            "title": null,
+            "title": "ボット",
             "description": [
-                null,
-                null
+                "簡単なボットは達成できない契約に手を出しがちで、ルール上出せる札を適当に出すよ。普通のボットは手札に見合ったビッドをして、目の前のトリックを読むよ。相棒が取っているトリックには手を出さず、それ以外はできるだけ安い札で取るんだ。",
+                "難しいボットは札を数えるよ。君がどのスートを切らしたか、どの大札が出たか、どのスートからリードしたかを覚えてる。相棒に向けて同じスートを2回リードしたら、ちゃんと応えてくるよ。"
             ]
         }
     }

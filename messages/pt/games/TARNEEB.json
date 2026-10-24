@@ -1,142 +1,142 @@
 {
     "options": {
         "winAmount": {
-            "help": null
+            "help": "Quantos pontos um time precisa para vencer a partida. 31 é o padrão; 41 e 61 deixam o jogo mais longo."
         },
         "minimumBid": {
-            "title": null,
-            "help": null
+            "title": "Lance mínimo",
+            "help": "O menor contrato que o leilão aceita. Sete é a maioria das treze vazas; baixar isso deixa os contratos mais fáceis de ganhar e mais difíceis de cumprir."
         },
         "bidTime": {
-            "title": null,
-            "help": null
+            "title": "Tempo de lance",
+            "help": "Quanto tempo cada jogador tem para dar o lance. Se o tempo acabar, ele passa."
         },
         "kaboot": {
-            "title": null,
+            "title": "Bônus de Kaboot",
             "help": {
-                "on": null,
-                "off": null
+                "on": "Fazer as treze vazas dá um bônus, e um lance de treze vale 26, ou custa 16 se falhar.",
+                "off": "'Desabilitado' pontua todo contrato do mesmo jeito, não importa o tamanho."
             }
         }
     },
     "presets": {
         "default": {
-            "title": null,
+            "title": "Tarneeb 31",
             "description": [
-                null,
-                null
+                "Primeiro a 31 pontos",
+                "A meta clássica"
             ]
         },
         "tarneeb41": {
-            "title": null,
+            "title": "Tarneeb 41",
             "description": [
-                null,
-                null
+                "Primeiro a 41 pontos",
+                "Uma partida mais longa"
             ]
         },
         "tarneeb61": {
-            "title": null,
+            "title": "Tarneeb 61",
             "description": [
-                null,
-                null
+                "Primeiro a 61 pontos",
+                "O jogo longo"
             ]
         },
         "quickTarneeb": {
-            "title": null,
+            "title": "Tarneeb rápido",
             "description": [
-                null,
-                null
+                "Primeiro a 21 pontos",
+                "Turnos mais rápidos"
             ]
         },
         "plainScoring": {
-            "title": null,
+            "title": "Pontuação simples",
             "description": [
-                null,
-                null
+                "Sem bônus de Kaboot",
+                "Todo contrato pontua do mesmo jeito"
             ]
         }
     },
     "declarer": {
-        "title": null
+        "title": "Declarante"
     },
     "tricks": {
-        "title": null
+        "title": "Vazas"
     },
     "contract": {
-        "value": null
+        "value": "Lance {amount}"
     },
     "bid": {
-        "title": null,
-        "yourBid": null,
-        "waiting": null,
-        "pass": null
+        "title": "Lance",
+        "yourBid": "Dê um lance pelo contrato",
+        "waiting": "{name} está dando o lance...",
+        "pass": "Passar"
     },
     "trump": {
-        "yourCall": null,
-        "waiting": null,
-        "called": null,
-        "announcement": null
+        "yourCall": "Escolha o naipe de trunfo",
+        "waiting": "{name} está escolhendo o trunfo...",
+        "called": "Trunfo",
+        "announcement": "O trunfo é {suit}"
     },
     "header": {
-        "yourBid": null,
-        "nameBid": null,
-        "yourCall": null,
-        "nameCall": null,
-        "youTookTrick": null,
-        "nameTookTrick": null,
-        "youWonRound": null,
-        "themWonRound": null
+        "yourBid": "Dê seu lance",
+        "nameBid": "{name} está dando o lance",
+        "yourCall": "Defina o naipe de trunfo",
+        "nameCall": "{name} está definindo o trunfo",
+        "youTookTrick": "Você fez a vaza",
+        "nameTookTrick": "{name} fez a vaza",
+        "youWonRound": "Seu time pontuou!",
+        "themWonRound": "O outro time pontuou"
     },
     "result": {
-        "made": null,
-        "failed": null,
-        "kaboot": null,
-        "slam": null,
-        "slamFailed": null,
-        "contractMade": null,
-        "contractFailed": null
+        "made": "{name} deu lance de {bid} e fez {tricks}",
+        "failed": "{name} deu lance de {bid} mas só fez {tricks}",
+        "kaboot": "{name} deu lance de {bid} e levou todas as {tricks}",
+        "slam": "{name} deu lance em todas as vazas e fez as {tricks}",
+        "slamFailed": "{name} deu lance em todas as vazas e só fez {tricks}",
+        "contractMade": "Contrato cumprido",
+        "contractFailed": "Contrato perdido"
     },
     "rounds": {
-        "title": null,
-        "outcome": null
+        "title": "Histórico de rodadas",
+        "outcome": "Resultado"
     },
     "scoreboard": {
-        "target": null
+        "target": "Primeiro a {amount} pontos"
     },
     "help": {
         "rules": {
-            "title": null,
+            "title": "Regras",
             "description": [
-                null,
-                null
+                "O Tarneeb é jogado por quatro pessoas em dois times de dois, com os parceiros sentados frente a frente. Todo o baralho de 52 cartas é distribuído, então cada um fica com treze.",
+                "Antes de qualquer carta ser jogada, a mesa dá **lances**: cada jogador, na sua vez, diz quantas das treze vazas o time vai fazer, ou passa. Depois que você passa, fica fora do leilão naquela rodada."
             ]
         },
         "bidding": {
-            "title": null,
+            "title": "Leilão",
             "description": [
-                null,
-                null
+                "Cada lance tem que superar o anterior, e o menor lance permitido é sete, a maioria das vazas. Ser superado não te tira do leilão: você tem outra vez e pode retomar o contrato.",
+                "O último jogador que sobrar vence o leilão, escolhe o naipe de **trunfo** e sai na primeira vaza. Se os quatro passarem, a mão é anulada e distribuída de novo."
             ]
         },
         "trump": {
-            "title": null,
+            "title": "Trunfo e seguir o naipe",
             "description": [
-                null,
-                null
+                "Todo mundo tem que **seguir o naipe** se puder; só quem não tem nenhuma carta do naipe de saída pode jogar outra coisa. Você nunca é obrigado a cortar.",
+                "O trunfo mais alto jogado faz a vaza. Se ninguém cortou, ganha a carta mais alta do naipe de saída. Os ases são altos."
             ]
         },
         "scoring": {
-            "title": null,
+            "title": "Pontuação",
             "description": [
-                null,
-                null
+                "Se o time do lance fizer pelo menos tantas vazas quanto apostou, marca um ponto por vaza feita e o outro time não marca nada. Se ficar abaixo, **perde** o valor do lance e o outro time marca um ponto para cada vaza que fez.",
+                "Fazer as treze vazas com um lance menor é um **Kaboot** e paga três a mais. Dar lance de treze e cumprir vale 26; falhar custa 16 e paga o dobro aos adversários."
             ]
         },
         "bots": {
-            "title": null,
+            "title": "Bots",
             "description": [
-                null,
-                null
+                "Os bots fáceis se metem em contratos que não conseguem cumprir e jogam qualquer carta permitida. Os normais dão o lance que a mão vale e leem a vaza à sua frente: ficam de fora da vaza que o parceiro já está ganhando e fazem o resto o mais barato possível.",
+                "Os bots difíceis contam as cartas. Eles lembram de quais naipes você ficou sem, quais cartas altas já saíram e de quais naipes você escolhe sair: sair duas vezes no mesmo naipe para o seu parceiro é algo a que eles vão responder."
             ]
         }
     }

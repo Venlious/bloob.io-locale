@@ -1,142 +1,142 @@
 {
     "options": {
         "winAmount": {
-            "help": null
+            "help": "チームがマッチに勝つのに必要な点数だよ。31が標準で、41や61にすると長めのゲームになるよ。"
         },
         "minimumBid": {
-            "title": null,
-            "help": null
+            "title": "最低ビッド",
+            "help": "オークションで受け付ける一番小さい契約だよ。7は13トリックの過半数。下げると契約は取りやすくなるけど、達成するのは難しくなるよ。"
         },
         "bidTime": {
-            "title": null,
-            "help": null
+            "title": "ビッド時間",
+            "help": "各プレイヤーがビッドできる時間だよ。時間切れになるとパスになるよ。"
         },
         "kaboot": {
-            "title": null,
+            "title": "カブートボーナス",
             "help": {
-                "on": null,
-                "off": null
+                "on": "13トリック全部取るとボーナスが入るよ。13のビッドは成功で26点、失敗すると16点のマイナスだよ。",
+                "off": "「無効」にすると、契約の大きさに関係なく、どれも同じ方法で得点するよ。"
             }
         }
     },
     "presets": {
         "default": {
-            "title": null,
+            "title": "タルニーブ31",
             "description": [
-                null,
-                null
+                "31点先取",
+                "定番の目標"
             ]
         },
         "tarneeb41": {
-            "title": null,
+            "title": "タルニーブ41",
             "description": [
-                null,
-                null
+                "41点先取",
+                "長めのマッチ"
             ]
         },
         "tarneeb61": {
-            "title": null,
+            "title": "タルニーブ61",
             "description": [
-                null,
-                null
+                "61点先取",
+                "じっくり長期戦"
             ]
         },
         "quickTarneeb": {
-            "title": null,
+            "title": "クイックタルニーブ",
             "description": [
-                null,
-                null
+                "21点先取",
+                "手番が短め"
             ]
         },
         "plainScoring": {
-            "title": null,
+            "title": "シンプル得点",
             "description": [
-                null,
-                null
+                "カブートボーナスなし",
+                "どの契約も同じ方法で得点"
             ]
         }
     },
     "declarer": {
-        "title": null
+        "title": "ディクレアラー"
     },
     "tricks": {
-        "title": null
+        "title": "トリック"
     },
     "contract": {
-        "value": null
+        "value": "ビッド {amount}"
     },
     "bid": {
-        "title": null,
-        "yourBid": null,
-        "waiting": null,
-        "pass": null
+        "title": "ビッド",
+        "yourBid": "契約をビッドしよう",
+        "waiting": "{name}がビッド中…",
+        "pass": "パス"
     },
     "trump": {
-        "yourCall": null,
-        "waiting": null,
-        "called": null,
-        "announcement": null
+        "yourCall": "切り札のスートを決めてね",
+        "waiting": "{name}が切り札を決めてるよ…",
+        "called": "切り札",
+        "announcement": "切り札は{suit}"
     },
     "header": {
-        "yourBid": null,
-        "nameBid": null,
-        "yourCall": null,
-        "nameCall": null,
-        "youTookTrick": null,
-        "nameTookTrick": null,
-        "youWonRound": null,
-        "themWonRound": null
+        "yourBid": "ビッドしてね",
+        "nameBid": "{name}がビッド中",
+        "yourCall": "切り札のスートを宣言してね",
+        "nameCall": "{name}が切り札を宣言中",
+        "youTookTrick": "トリックを取ったよ",
+        "nameTookTrick": "{name}がトリックを取ったよ",
+        "youWonRound": "君のチームが得点したよ！",
+        "themWonRound": "相手チームが得点したよ"
     },
     "result": {
-        "made": null,
-        "failed": null,
-        "kaboot": null,
-        "slam": null,
-        "slamFailed": null,
-        "contractMade": null,
-        "contractFailed": null
+        "made": "{name}が{bid}ビッドして{tricks}取ったよ",
+        "failed": "{name}が{bid}ビッドしたけど{tricks}しか取れなかった",
+        "kaboot": "{name}が{bid}ビッドして{tricks}全部取ったよ",
+        "slam": "{name}が全トリックをビッドして{tricks}全部取ったよ",
+        "slamFailed": "{name}が全トリックをビッドしたけど{tricks}しか取れなかった",
+        "contractMade": "契約成功",
+        "contractFailed": "契約失敗"
     },
     "rounds": {
-        "title": null,
-        "outcome": null
+        "title": "ラウンド履歴",
+        "outcome": "結果"
     },
     "scoreboard": {
-        "target": null
+        "target": "{amount}点先取"
     },
     "help": {
         "rules": {
-            "title": null,
+            "title": "ルール",
             "description": [
-                null,
-                null
+                "タルニーブは2人1組の2チーム、計4人で遊ぶよ。相棒は向かい合って座るんだ。52枚すべてを配るから、全員が13枚ずつ持つよ。",
+                "カードを出す前に、みんなで**ビッド**するよ。順番に、13トリックのうち自分のチームが何トリック取るかを言うか、パスするんだ。一度パスすると、そのラウンドのビッドには戻れないよ。"
             ]
         },
         "bidding": {
-            "title": null,
+            "title": "ビッド",
             "description": [
-                null,
-                null
+                "ビッドは前のビッドより高くないとダメで、最低は7、つまりトリックの過半数だよ。上をいかれても脱落じゃないよ。また順番が回ってくるから、契約を取り返せるんだ。",
+                "最後まで残ったプレイヤーがオークションに勝って、**切り札**のスートを決め、最初のトリックをリードするよ。4人全員がパスしたら配り直しだよ。"
             ]
         },
         "trump": {
-            "title": null,
+            "title": "切り札とフォロー",
             "description": [
-                null,
-                null
+                "出せるなら必ず**同じスートを出さなきゃ**いけないよ。リードされたスートを1枚も持っていない人だけが、別の札を出せるんだ。切り札を出すよう強制されることはないよ。",
+                "出された切り札のうち一番強い札がトリックを取るよ。誰も切り札を出さなければ、リードされたスートの一番強い札が勝ち。エースが最強だよ。"
             ]
         },
         "scoring": {
-            "title": null,
+            "title": "得点",
             "description": [
-                null,
-                null
+                "ビッドしたチームがビッド以上のトリックを取れば、取ったトリック1つにつき1点もらえて、相手チームは0点。足りなければビッドした数を**失い**、相手チームは自分たちのトリック1つにつき1点もらえるよ。",
+                "小さいビッドで13トリック全部取ると**カブート**で、3点のボーナス。13をビッドして成功すれば26点、失敗すると16点を失い、相手には倍の点が入るよ。"
             ]
         },
         "bots": {
-            "title": null,
+            "title": "ボット",
             "description": [
-                null,
-                null
+                "簡単なボットは達成できない契約に手を出しがちで、ルール上出せる札を適当に出すよ。普通のボットは手札に見合ったビッドをして、目の前のトリックを読むよ。相棒が取っているトリックには手を出さず、それ以外はできるだけ安い札で取るんだ。",
+                "難しいボットは札を数えるよ。君がどのスートを切らしたか、どの大札が出たか、どのスートからリードしたかを覚えてる。相棒に向けて同じスートを2回リードしたら、ちゃんと応えてくるよ。"
             ]
         }
     }
