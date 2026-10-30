@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Dutch",
         "rtl": false,
-        "total": 3445,
+        "total": 3479,
         "missing": 88
     },
     "error": {
@@ -958,14 +958,8 @@
         "averageWaitTime": "Gemiddelde wachttijd",
         "unknown": "Onbekend",
         "none": "Geen",
-        "seasonal": "Seizoensgebonden",
-        "items": "Items",
-        "purchaseCoins": "Munten Kopen",
         "store": "Winkel",
-        "buyNow": "Koop Nu",
         "expired": "Verlopen",
-        "yourCoins": "Jouw Munten",
-        "getCoins": "Krijg Munten",
         "transactions": "Transacties",
         "userData": "Gebruikersgegevens",
         "price": "Prijs",
@@ -1027,17 +1021,13 @@
         "language": "Taal",
         "toggle": "Toggle",
         "login": "Login",
-        "loginToExistingAccount": "Inloggen op bestaand account",
-        "createMyAccount": "Maak mijn account aan",
         "logout": "Uitloggen",
         "hats": "Hoeden",
         "eyes": "Ogen",
         "mouths": "Monden",
         "backgrounds": "Achtergronden",
         "emailAddress": "E-mailadres",
-        "emailAddressConfirmation": "Herhaal e-mailadres",
         "createAccount": "Maak account aan",
-        "logoutGlobally": "Overal uitloggen",
         "unlinkMyAccount": "Mijn account ontkoppelen",
         "deleteMyAccount": "Mijn account verwijderen",
         "maintenance": "Onderhoud",
@@ -1160,8 +1150,6 @@
         "lastSeenJustNow": "Laatst gezien net nu",
         "blank": "{value}",
         "byBlank": "Door {value}",
-        "sendVerification": "Verificatie verzenden",
-        "noThanks": "Nee bedankt",
         "ready": "Klaar",
         "imReady": "Ik ben klaar",
         "imNotReady": "Ik ben niet klaar",
@@ -1212,7 +1200,8 @@
         "forfeited": "Opgegeven",
         "live": "Live",
         "official": "Officieel",
-        "stepProgress": "Stap {step} van {count}"
+        "stepProgress": "Stap {step} van {count}",
+        "done": "Klaar"
     },
     "match": {
         "quick": "Snel Spel",
@@ -1443,7 +1432,6 @@
             "redeemCode": {
                 "title": "Code inwisselen",
                 "description": "Voer hieronder een unieke code in om speciale items te ontgrendelen voor nog meer aanpassingen. Elke code kan maar één keer gebruikt worden.",
-                "unlinked": "Om een code te verzilveren moet je eerst inloggen of een account aanmaken.",
                 "success": "Je hebt met succes {item} geclaimd!"
             },
             "experience": {
@@ -1489,8 +1477,7 @@
             },
             "myDevices": {
                 "description": "Bekijk en beheer op welke apparaten je bent ingelogd. Je kunt je huidige apparaat ook hernoemen voor je gemak.",
-                "noOtherDevices": "Er zijn geen andere apparaten ingelogd. Wist je dat je tijdens een spel kunt switchen tussen apparaten?",
-                "unlinked": "Je hebt je account nog niet gekoppeld aan een e-mailadres en je kunt alleen op dit apparaat bij je account komen."
+                "noOtherDevices": "Er zijn geen andere apparaten ingelogd. Wist je dat je tijdens een spel kunt switchen tussen apparaten?"
             }
         },
         "authentication": {
@@ -1528,16 +1515,21 @@
                 "description": "Het e-mailadres dat aan je account gekoppeld is, is gewijzigd. Voor je veiligheid ben je uitgelogd op alle andere apparaten en moet je opnieuw inloggen met je nieuwe e-mailadres."
             },
             "logout": {
-                "title": "Uitloggen",
-                "description": "Aangezien je een account hebt wordt je vooruitgang gewoon opgeslagen en kan je op een later moment weer inloggen."
+                "title": "Uitloggen bij {name}?",
+                "description": "Je voortgang is opgeslagen. Log altijd weer in met je e-mail.",
+                "button": "Uitloggen"
             },
             "logoutGlobally": {
-                "title": "Overal Uitloggen",
-                "description": "Dit zal je account uitloggen op alle apparaten, inclusief deze."
+                "title": "Overal uitloggen?",
+                "description": "Elk apparaat met je account wordt uitgelogd, ook dit. We mailen je een code om het te bevestigen.",
+                "done": {
+                    "title": "Overal uitgelogd",
+                    "description": "Elk apparaat met je account is uitgelogd. Log in met je e-mail om weer te spelen."
+                }
             },
             "logoutSuccess": {
                 "title": "Uitgelogd",
-                "description": "Je account is uitgelogd op dit apparaat. Je kunt weer inloggen met je e-mailadres."
+                "description": "Je bent nu een nieuwe gast op dit apparaat. Log in met je e-mail om je account terug te krijgen."
             },
             "relogin": {
                 "title": "Welkom terug, {name}!",
@@ -1548,12 +1540,60 @@
             },
             "ready": {
                 "title": "Je bent klaar, {name}!",
-                "description": "Je vooruitgang is nu opgeslagen en gesynchroniseerd!"
+                "description": "Je voortgang is op elk apparaat opgeslagen."
             },
             "loginNoAccount": "Log in met je e-mailadres hieronder om toegang te krijgen tot je account op dit apparaat.",
-            "logoutGloballyCompleted": "Je account is uitgelogd van alle apparaten.",
             "verificationEmail": "Er is een e-mail met een verificatiecode verzonden.",
-            "noEmail": "Geen e-mail? Controleer je spam-map en bevestig dat dit e-mailadres is gekoppeld aan je account."
+            "noEmail": "Geen e-mail? Controleer je spam-map en bevestig dat dit e-mailadres is gekoppeld aan je account.",
+            "continue": {
+                "title": "Opslaan of inloggen",
+                "description": "Vul je e-mailadres in. Ben je nieuw, dan slaan we {name} op. Ben je hier al eens geweest, dan loggen we je in.",
+                "loginTitle": "Inloggen",
+                "loginDescription": "Geen wachtwoord. We mailen je een code.",
+                "levelNote": "Vanaf {level} kun je {name} opslaan met een e-mailadres.",
+                "note": "Geen wachtwoord. We gebruiken je e-mailadres alleen om je in te loggen.",
+                "send": "Stuur me een code"
+            },
+            "code": {
+                "title": "Check je e-mail",
+                "sentTo": "We hebben een 6-cijferige code naar {email} gestuurd.",
+                "spam": "Nog niks? Kijk in je spam-map."
+            },
+            "choice": {
+                "title": "Welkom terug!",
+                "description": "Dit e-mailadres hoort bij {account}. Log je daarmee in, dan blijft {name} achter.",
+                "notSaved": "niet opgeslagen",
+                "packs": "{n} pakketten | {n} pakket | {n} pakketten",
+                "login": "Inloggen als {account}",
+                "saveInstead": "Gebruik een ander e-mailadres om {name} op te slaan"
+            },
+            "changeEmail": {
+                "current": {
+                    "title": "Je e-mailadres wijzigen",
+                    "description": "Bevestig eerst het e-mailadres van je account. Daar sturen we een code naartoe.",
+                    "label": "Huidig e-mailadres"
+                },
+                "new": {
+                    "title": "Je nieuwe e-mailadres",
+                    "description": "Daar sturen we ook een code naartoe, om te checken dat het van jou is.",
+                    "label": "Nieuw e-mailadres"
+                },
+                "done": {
+                    "title": "E-mailadres gewijzigd",
+                    "description": "Log vanaf nu in met {email}. Je andere apparaten zijn uitgelogd."
+                }
+            },
+            "unlinkEmail": {
+                "title": "Je e-mailadres verwijderen?",
+                "description": "Typ het e-mailadres van je account om te bevestigen.",
+                "warning": "{name} staat dan alleen nog op dit apparaat. Wis je je browser of wissel je van apparaat, dan ben je alles voorgoed kwijt.",
+                "button": "Mijn e-mailadres verwijderen",
+                "done": {
+                    "title": "E-mailadres verwijderd",
+                    "description": "{name} staat nu alleen op dit apparaat. Je kunt altijd weer een e-mailadres toevoegen via Instellingen."
+                }
+            },
+            "yourEmail": "Je e-mailadres"
         },
         "characterDownload": {
             "title": "Afbeelding van je karakter downloaden",
@@ -1625,7 +1665,34 @@
             "accept": "Gelijkspel Accepteren",
             "decline": "Verder Spelen"
         },
-        "offerDraw": "Je tegenstander wordt gevraagd om het spel in gelijkspel te laten eindigen. Als die accepteert, telt het niet als winst of verlies."
+        "offerDraw": "Je tegenstander wordt gevraagd om het spel in gelijkspel te laten eindigen. Als die accepteert, telt het niet als winst of verlies.",
+        "accountStatus": {
+            "unsaved": {
+                "title": "Alleen op dit apparaat",
+                "description": "Sla {name} op met je e-mail om je voortgang te bewaren en op elk apparaat te spelen. Geen wachtwoord.",
+                "level": "Bereik {level} om {name} op te slaan met je e-mail.",
+                "loginOnly": "Log in om je voortgang te bewaren en op elk apparaat te spelen."
+            },
+            "devices": {
+                "title": "{name} staat alleen op dit apparaat",
+                "description": "Sla op met je e-mail om ook op je andere apparaten te spelen en ze hier te zien."
+            },
+            "redeem": {
+                "title": "Sla eerst {name} op",
+                "description": "Wat je inwisselt komt op je account, dus daar is je e-mail voor nodig."
+            },
+            "saved": {
+                "title": "Opgeslagen bij {email}",
+                "description": "Je voortgang gaat mee naar elk apparaat."
+            },
+            "save": "Opslaan met e-mail",
+            "haveAccount": "Ik heb een account",
+            "changeEmail": "E-mail wijzigen",
+            "logout": {
+                "description": "Op dit apparaat, of op elk apparaat via Mijn apparaten."
+            },
+            "logoutEverywhere": "Overal uitloggen"
+        }
     },
     "share": {
         "tiers": {
@@ -1780,11 +1847,12 @@
     },
     "shop": {
         "welcome": {
-            "title": "Welkom bij bloob.io",
+            "title": "Welkom bij Bloob.io",
             "subtitle": "Dit ben jij. Verander wat je wilt, of speel gewoon.",
             "shuffle": "Hussel je look",
-            "moreLooks": "Meer looks in het kluisje",
-            "haveAccount": "Ik heb een account"
+            "moreLooks": "Meer looks",
+            "haveAccount": "Inloggen",
+            "titleShort": "Welkom!"
         }
     }
 }

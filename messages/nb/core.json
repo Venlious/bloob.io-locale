@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Norwegian (Bokmål)",
         "rtl": false,
-        "total": 3445,
+        "total": 3479,
         "missing": 88
     },
     "error": {
@@ -958,14 +958,8 @@
         "averageWaitTime": "Gjennomsnittlig ventetid",
         "unknown": "Ukjent",
         "none": "Ingen",
-        "seasonal": "Sesongbasert",
-        "items": "Varer",
-        "purchaseCoins": "Kjøp Mynter",
         "store": "Butikk",
-        "buyNow": "Kjøp Nå",
         "expired": "Utløpt",
-        "yourCoins": "Dine mynter",
-        "getCoins": "Få mynter",
         "transactions": "Transaksjoner",
         "userData": "Brukerdata",
         "price": "Pris",
@@ -1027,17 +1021,13 @@
         "language": "Språk",
         "toggle": "Veksle",
         "login": "Logg inn",
-        "loginToExistingAccount": "Logg inn på eksisterende konto",
-        "createMyAccount": "Opprett kontoen min",
         "logout": "Logg ut",
         "hats": "Hatter",
         "eyes": "Øyne",
         "mouths": "Munner",
         "backgrounds": "Bakgrunner",
         "emailAddress": "E-postadresse",
-        "emailAddressConfirmation": "Gjenta e-postadresse",
         "createAccount": "Opprett konto",
-        "logoutGlobally": "Logg ut alle enheter",
         "unlinkMyAccount": "Fjern koblingen til kontoen min",
         "deleteMyAccount": "Slett kontoen min",
         "maintenance": "Vedlikehold",
@@ -1160,8 +1150,6 @@
         "lastSeenJustNow": "Sist sett nettopp",
         "blank": "{value}",
         "byBlank": "Av {value}",
-        "sendVerification": "Send verifisering",
-        "noThanks": "Nei takk",
         "ready": "Klar",
         "imReady": "Jeg er klar",
         "imNotReady": "Jeg er ikke klar",
@@ -1212,7 +1200,8 @@
         "forfeited": "Ga opp",
         "live": "Live",
         "official": "Offisiell",
-        "stepProgress": "Steg {step} av {count}"
+        "stepProgress": "Steg {step} av {count}",
+        "done": "Ferdig"
     },
     "match": {
         "quick": "Rask kamp",
@@ -1443,7 +1432,6 @@
             "redeemCode": {
                 "title": "Løs inn kode",
                 "description": "Skriv inn en unik kode under for å låse opp spesielle gjenstander for enda mer tilpasning. Hver kode kan bare brukes en gang.",
-                "unlinked": "For å bruke en kode må du først logge inn eller lage en konto.",
                 "success": "Du har vellykket hentet {item}!"
             },
             "experience": {
@@ -1489,8 +1477,7 @@
             },
             "myDevices": {
                 "description": "Se og styr hvilke enheter du er logget inn på. Du kan også endre navnet på enheten din for å gjøre det mer praktisk.",
-                "noOtherDevices": "Ingen andre enheter er logget inn. Visste du at du kan bytte mellom enheter midt i et hvilket som helst spill?",
-                "unlinked": "Du har ennå ikke opprettet en konto eller logget inn, og brukeren din kan bare nås på denne enheten."
+                "noOtherDevices": "Ingen andre enheter er logget inn. Visste du at du kan bytte mellom enheter midt i et hvilket som helst spill?"
             }
         },
         "authentication": {
@@ -1528,16 +1515,21 @@
                 "description": "E-postadressen knyttet til kontoen din har blitt endret. For sikkerheten din, har du blitt logget ut på alle andre enheter og må logge inn igjen med din nye e-postadresse."
             },
             "logout": {
-                "title": "Logg ut",
-                "description": "Siden du har en konto, vil fremgangen din bli lagret og kan hentes igjen ved å logge inn med e-postadressen din."
+                "title": "Logge ut av {name}?",
+                "description": "Fremgangen din er lagret. Logg inn igjen når som helst med e-posten din.",
+                "button": "Logg ut"
             },
             "logoutGlobally": {
-                "title": "Logg ut overalt",
-                "description": "Dette vil logge deg ut av alle enheter, inkludert denne."
+                "title": "Logge ut overalt?",
+                "description": "Alle enheter på kontoen din blir logget ut, også denne. Vi sender deg en kode på e-post for å bekrefte.",
+                "done": {
+                    "title": "Logget ut overalt",
+                    "description": "Alle enheter på kontoen din er logget ut. Logg inn med e-posten din for å spille igjen."
+                }
             },
             "logoutSuccess": {
-                "title": "Logget Ut",
-                "description": "Kontoen din har blitt logget ut på denne enheten. Du kan logge inn igjen med e-postadressen din."
+                "title": "Logget ut",
+                "description": "Du er nå en ny gjest på denne enheten. Logg inn med e-posten din for å få kontoen tilbake."
             },
             "relogin": {
                 "title": "Velkommen tilbake, {name}!",
@@ -1548,12 +1540,60 @@
             },
             "ready": {
                 "title": "Du er klar til å gå, {name}!",
-                "description": "Fremgangen din er nå lagret og synkronisert!"
+                "description": "Fremgangen din er lagret på alle enheter."
             },
             "loginNoAccount": "Logg inn med e-postadressen din under for å få tilgang til kontoen din på denne enheten.",
-            "logoutGloballyCompleted": "Kontoen din har blitt logget ut fra alle enheter.",
             "verificationEmail": "En e-post med en verifiseringskode er sendt.",
-            "noEmail": "Ingen e-post? Sjekk søppelpostmappen din og bekreft at denne e-postadressen er koblet til kontoen din."
+            "noEmail": "Ingen e-post? Sjekk søppelpostmappen din og bekreft at denne e-postadressen er koblet til kontoen din.",
+            "continue": {
+                "title": "Lagre eller logg inn",
+                "description": "Skriv inn e-postadressen din. Er du ny, lagrer vi {name}. Har du vært her før, logger vi deg inn.",
+                "loginTitle": "Logg inn",
+                "loginDescription": "Ikke noe passord. Vi sender deg en kode på e-post.",
+                "levelNote": "Du kan lagre {name} med en e-postadresse fra {level}.",
+                "note": "Ingen passord. Vi bruker bare e-postadressen din til å logge deg inn.",
+                "send": "Send meg en kode"
+            },
+            "code": {
+                "title": "Sjekk e-posten din",
+                "sentTo": "Vi har sendt en 6-sifret kode til {email}.",
+                "spam": "Ingenting ennå? Sjekk søppelpostmappen din."
+            },
+            "choice": {
+                "title": "Velkommen tilbake!",
+                "description": "Denne e-postadressen tilhører {account}. Logger du inn på den kontoen, blir {name} etterlatt.",
+                "notSaved": "ikke lagret",
+                "packs": "{n} pakker | {n} pakke | {n} pakker",
+                "login": "Logg inn som {account}",
+                "saveInstead": "Bruk en annen e-postadresse for å lagre {name}"
+            },
+            "changeEmail": {
+                "current": {
+                    "title": "Endre e-postadressen din",
+                    "description": "Bekreft først e-postadressen på kontoen din. Vi sender en kode dit.",
+                    "label": "Nåværende e-postadresse"
+                },
+                "new": {
+                    "title": "Din nye e-postadresse",
+                    "description": "Vi sender en kode dit også, for å sjekke at den er din.",
+                    "label": "Ny e-postadresse"
+                },
+                "done": {
+                    "title": "E-postadresse endret",
+                    "description": "Logg inn med {email} fra nå av. De andre enhetene dine er logget ut."
+                }
+            },
+            "unlinkEmail": {
+                "title": "Fjerne e-postadressen din?",
+                "description": "Skriv inn e-postadressen på kontoen din for å bekrefte.",
+                "warning": "{name} finnes da bare på denne enheten. Tømmer du nettleseren eller bytter enhet, er alt borte for godt.",
+                "button": "Fjern e-postadressen min",
+                "done": {
+                    "title": "E-postadresse fjernet",
+                    "description": "{name} finnes nå bare på denne enheten. Du kan legge til en e-postadresse igjen når som helst under Innstillinger."
+                }
+            },
+            "yourEmail": "Din e-postadresse"
         },
         "characterDownload": {
             "title": "Last ned karakterbilde",
@@ -1625,7 +1665,34 @@
             "accept": "Godta uavgjort",
             "decline": "Fortsett å spille"
         },
-        "offerDraw": "Motstanderen din blir spurt om kampen skal ende uavgjort. Hvis de godtar, teller det verken som seier eller tap."
+        "offerDraw": "Motstanderen din blir spurt om kampen skal ende uavgjort. Hvis de godtar, teller det verken som seier eller tap.",
+        "accountStatus": {
+            "unsaved": {
+                "title": "Bare på denne enheten",
+                "description": "Lagre {name} med e-posten din, så fremgangen er trygg og du kan spille på alle enheter. Ikke noe passord.",
+                "level": "Nå {level} for å lagre {name} med e-posten din.",
+                "loginOnly": "Logg inn for å beholde fremgangen og spille på alle enheter."
+            },
+            "devices": {
+                "title": "{name} er bare på denne enheten",
+                "description": "Lagre med e-posten din for å spille på de andre enhetene dine også, og se dem her."
+            },
+            "redeem": {
+                "title": "Lagre {name} først",
+                "description": "Det du løser inn havner på kontoen din, så det trenger e-posten din."
+            },
+            "saved": {
+                "title": "Lagret på {email}",
+                "description": "Fremgangen din følger deg til alle enheter."
+            },
+            "save": "Lagre med e-post",
+            "haveAccount": "Jeg har en konto",
+            "changeEmail": "Endre e-post",
+            "logout": {
+                "description": "På denne enheten, eller på alle fra Mine enheter."
+            },
+            "logoutEverywhere": "Logg ut overalt"
+        }
     },
     "share": {
         "tiers": {
@@ -1780,11 +1847,12 @@
     },
     "shop": {
         "welcome": {
-            "title": "Velkommen til bloob.io",
+            "title": "Velkommen til Bloob.io",
             "subtitle": "Her er du. Endre hva du vil, eller bare spill.",
             "shuffle": "Bland utseendet ditt",
-            "moreLooks": "Flere stiler i garderoben",
-            "haveAccount": "Jeg har en konto"
+            "moreLooks": "Flere stiler",
+            "haveAccount": "Logg inn",
+            "titleShort": "Velkommen!"
         }
     }
 }

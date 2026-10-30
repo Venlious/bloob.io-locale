@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal German",
         "rtl": false,
-        "total": 3445,
+        "total": 3479,
         "missing": 88
     },
     "error": {
@@ -958,14 +958,8 @@
         "averageWaitTime": "Ø Wartezeit",
         "unknown": "Unbekannt",
         "none": "Keine",
-        "seasonal": "Saisonal",
-        "items": "Artikel",
-        "purchaseCoins": "Münzen kaufen",
         "store": "Shop",
-        "buyNow": "Jetzt kaufen",
         "expired": "Abgelaufen",
-        "yourCoins": "Deine Münzen",
-        "getCoins": "Münzen bekommen",
         "transactions": "Transaktionen",
         "userData": "Benutzerdaten",
         "price": "Preis",
@@ -1027,17 +1021,13 @@
         "language": "Sprache",
         "toggle": "Umschalten",
         "login": "Anmelden",
-        "loginToExistingAccount": "In mein Konto einloggen",
-        "createMyAccount": "Mein Konto erstellen",
         "logout": "Abmelden",
         "hats": "Hüte",
         "eyes": "Augen",
         "mouths": "Münder",
         "backgrounds": "Hintergründe",
         "emailAddress": "E-Mail-Adresse",
-        "emailAddressConfirmation": "E-Mail-Adresse wiederholen",
         "createAccount": "Konto erstellen",
-        "logoutGlobally": "Alle Geräte abmelden",
         "unlinkMyAccount": "Mein Konto trennen",
         "deleteMyAccount": "Mein Konto löschen",
         "maintenance": "Wartung",
@@ -1160,8 +1150,6 @@
         "lastSeenJustNow": "Zuletzt gerade eben gesehen",
         "blank": "{value}",
         "byBlank": "Von {value}",
-        "sendVerification": "Bestätigung senden",
-        "noThanks": "Nein danke",
         "ready": "Bereit",
         "imReady": "Ich bin bereit",
         "imNotReady": "Ich bin nicht bereit",
@@ -1212,7 +1200,8 @@
         "forfeited": "Aufgegeben",
         "live": "Live",
         "official": "Offiziell",
-        "stepProgress": "Schritt {step} von {count}"
+        "stepProgress": "Schritt {step} von {count}",
+        "done": "Fertig"
     },
     "match": {
         "quick": "Schnelles Spiel",
@@ -1443,7 +1432,6 @@
             "redeemCode": {
                 "title": "Code einlösen",
                 "description": "Gib unten einen einzigartigen Code ein, um spezielle Gegenstände zu entsperren und dein Erscheinungsbild noch mehr anzupassen. Jeder Code kann nur einmal verwendet werden.",
-                "unlinked": "Um einen Code einzulösen, musst du dich zuerst einloggen oder ein Konto erstellen.",
                 "success": "Du hast erfolgreich {item} beansprucht!"
             },
             "experience": {
@@ -1489,8 +1477,7 @@
             },
             "myDevices": {
                 "description": "Schau dir an und kontrolliere, auf welchen Geräten du angemeldet bist. Du kannst dein aktuelles Gerät auch umbenennen, falls du möchtest.",
-                "noOtherDevices": "Es sind keine anderen Geräte angemeldet. Wusstest du, dass du mitten in einem Spiel zwischen Geräten wechseln kannst?",
-                "unlinked": "Du hast dein Konto noch nicht mit einer E-Mail-Adresse verknüpft und kannst dein Konto nur auf diesem Gerät zugreifen."
+                "noOtherDevices": "Es sind keine anderen Geräte angemeldet. Wusstest du, dass du mitten in einem Spiel zwischen Geräten wechseln kannst?"
             }
         },
         "authentication": {
@@ -1528,16 +1515,21 @@
                 "description": "Die mit deinem Konto verknüpfte E-Mail-Adresse wurde geändert. Aus Sicherheitsgründen wurdest du auf allen anderen Geräten abgemeldet und musst dich mit deiner neuen E-Mail-Adresse erneut anmelden."
             },
             "logout": {
-                "title": "Abmelden",
-                "description": "Da du ein Konto hast, wird dein Fortschritt gespeichert und du kannst dich mit deiner E-Mail-Adresse wieder einloggen, um ihn abzurufen."
+                "title": "Von {name} abmelden?",
+                "description": "Dein Fortschritt ist gespeichert. Melde dich jederzeit mit deiner E-Mail wieder an.",
+                "button": "Abmelden"
             },
             "logoutGlobally": {
-                "title": "Alle abmelden",
-                "description": "Dies wird dein Konto auf allen Geräten einschließlich diesem hier abmelden."
+                "title": "Überall abmelden?",
+                "description": "Jedes Gerät mit deinem Konto wird abgemeldet, auch dieses. Wir schicken dir zur Bestätigung einen Code per E-Mail.",
+                "done": {
+                    "title": "Überall abgemeldet",
+                    "description": "Jedes Gerät mit deinem Konto ist abgemeldet. Melde dich mit deiner E-Mail an, um weiterzuspielen."
+                }
             },
             "logoutSuccess": {
                 "title": "Abgemeldet",
-                "description": "Dein Konto wurde auf diesem Gerät ausgeloggt. Du kannst dich mit deiner E-Mail-Adresse wieder einloggen."
+                "description": "Auf diesem Gerät bist du jetzt ein neuer Gast. Melde dich mit deiner E-Mail an, um dein Konto zurückzubekommen."
             },
             "relogin": {
                 "title": "Willkommen zurück, {name}!",
@@ -1548,12 +1540,60 @@
             },
             "ready": {
                 "title": "Alles klar, {name}!",
-                "description": "Dein Fortschritt ist jetzt gespeichert und synchronisiert!"
+                "description": "Dein Fortschritt ist auf jedem Gerät gespeichert."
             },
             "loginNoAccount": "Melde dich unten mit deiner E-Mail-Adresse an, um auf diesem Gerät auf dein Konto zuzugreifen.",
-            "logoutGloballyCompleted": "Dein Konto wurde von allen Geräten abgemeldet.",
             "verificationEmail": "Eine E-Mail mit einem Bestätigungscode wurde gesendet.",
-            "noEmail": "Keine E-Mail? Überprüfe deinen Spam-Ordner und bestätige, dass diese E-Mail-Adresse mit deinem Konto verknüpft ist."
+            "noEmail": "Keine E-Mail? Überprüfe deinen Spam-Ordner und bestätige, dass diese E-Mail-Adresse mit deinem Konto verknüpft ist.",
+            "continue": {
+                "title": "Speichern oder einloggen",
+                "description": "Gib deine E-Mail ein. Bist du neu, speichern wir {name}. Warst du schon mal hier, loggen wir dich ein.",
+                "loginTitle": "Einloggen",
+                "loginDescription": "Kein Passwort. Wir schicken dir einen Code per E-Mail.",
+                "levelNote": "Ab {level} kannst du {name} mit einer E-Mail speichern.",
+                "note": "Kein Passwort. Wir nutzen deine E-Mail nur, um dich einzuloggen.",
+                "send": "Schick mir einen Code"
+            },
+            "code": {
+                "title": "Schau in deine E-Mails",
+                "sentTo": "Wir haben einen 6-stelligen Code an {email} geschickt.",
+                "spam": "Noch nichts da? Schau in deinen Spam-Ordner."
+            },
+            "choice": {
+                "title": "Willkommen zurück!",
+                "description": "Diese E-Mail gehört zu {account}. Loggst du dich dort ein, bleibt {name} zurück.",
+                "notSaved": "nicht gespeichert",
+                "packs": "{n} Pakete | {n} Paket | {n} Pakete",
+                "login": "Als {account} einloggen",
+                "saveInstead": "Andere E-Mail nutzen, um {name} zu speichern"
+            },
+            "changeEmail": {
+                "current": {
+                    "title": "E-Mail ändern",
+                    "description": "Bestätige zuerst die E-Mail deines Kontos. Wir schicken einen Code dorthin.",
+                    "label": "Aktuelle E-Mail"
+                },
+                "new": {
+                    "title": "Deine neue E-Mail",
+                    "description": "Auch dorthin schicken wir einen Code, um sicherzugehen, dass sie dir gehört.",
+                    "label": "Neue E-Mail"
+                },
+                "done": {
+                    "title": "E-Mail geändert",
+                    "description": "Logg dich ab jetzt mit {email} ein. Deine anderen Geräte wurden ausgeloggt."
+                }
+            },
+            "unlinkEmail": {
+                "title": "E-Mail entfernen?",
+                "description": "Gib zur Bestätigung die E-Mail deines Kontos ein.",
+                "warning": "{name} gibt es dann nur noch auf diesem Gerät. Leerst du deinen Browser oder wechselst das Gerät, ist alles für immer weg.",
+                "button": "Meine E-Mail entfernen",
+                "done": {
+                    "title": "E-Mail entfernt",
+                    "description": "{name} gibt es jetzt nur noch auf diesem Gerät. In den Einstellungen kannst du jederzeit wieder eine E-Mail hinzufügen."
+                }
+            },
+            "yourEmail": "Deine E-Mail"
         },
         "characterDownload": {
             "title": "Charakterbild herunterladen",
@@ -1625,7 +1665,34 @@
             "accept": "Unentschieden annehmen",
             "decline": "Weiter spielen"
         },
-        "offerDraw": "Dein Gegner wird gefragt, ob das Spiel unentschieden enden soll. Nimmt er an, zählt es weder als Sieg noch als Niederlage."
+        "offerDraw": "Dein Gegner wird gefragt, ob das Spiel unentschieden enden soll. Nimmt er an, zählt es weder als Sieg noch als Niederlage.",
+        "accountStatus": {
+            "unsaved": {
+                "title": "Nur auf diesem Gerät",
+                "description": "Speichere {name} mit deiner E-Mail, damit dein Fortschritt sicher ist und du auf jedem Gerät spielen kannst. Kein Passwort.",
+                "level": "Erreiche {level}, um {name} mit deiner E-Mail zu speichern.",
+                "loginOnly": "Melde dich an, damit dein Fortschritt sicher ist und du auf jedem Gerät spielen kannst."
+            },
+            "devices": {
+                "title": "{name} ist nur auf diesem Gerät",
+                "description": "Speichere mit deiner E-Mail, um auch auf deinen anderen Geräten zu spielen und sie hier zu sehen."
+            },
+            "redeem": {
+                "title": "Speichere zuerst {name}",
+                "description": "Was du einlöst, landet in deinem Konto, dafür braucht es deine E-Mail."
+            },
+            "saved": {
+                "title": "Gespeichert unter {email}",
+                "description": "Dein Fortschritt kommt mit auf jedes Gerät."
+            },
+            "save": "Mit E-Mail speichern",
+            "haveAccount": "Ich habe ein Konto",
+            "changeEmail": "E-Mail ändern",
+            "logout": {
+                "description": "Auf diesem Gerät, oder unter Meine Geräte auf allen."
+            },
+            "logoutEverywhere": "Überall abmelden"
+        }
     },
     "share": {
         "tiers": {
@@ -1780,11 +1847,12 @@
     },
     "shop": {
         "welcome": {
-            "title": "Willkommen bei bloob.io",
+            "title": "Willkommen bei Bloob.io",
             "subtitle": "Das bist du. Ändere, was du willst, oder spiel einfach los.",
             "shuffle": "Look mischen",
-            "moreLooks": "Mehr Looks im Spind",
-            "haveAccount": "Ich habe ein Konto"
+            "moreLooks": "Mehr Looks",
+            "haveAccount": "Einloggen",
+            "titleShort": "Willkommen!"
         }
     }
 }

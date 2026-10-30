@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 3445,
+        "total": 3479,
         "missing": 88
     },
     "error": {
@@ -958,14 +958,8 @@
         "averageWaitTime": "Ortalama bekleme süresi",
         "unknown": "Bilinmeyen",
         "none": "Yok",
-        "seasonal": "Mevsimlik",
-        "items": "Ürünler",
-        "purchaseCoins": "Jeton Satın Al",
         "store": "Mağaza",
-        "buyNow": "Hemen Al",
         "expired": "Süresi Dolmuş",
-        "yourCoins": "Senin Paraların",
-        "getCoins": "Para Al",
         "transactions": "İşlemler",
         "userData": "Kullanıcı Verisi",
         "price": "Fiyat",
@@ -1027,17 +1021,13 @@
         "language": "Dil",
         "toggle": "Değiştir",
         "login": "Giriş Yap",
-        "loginToExistingAccount": "Mevcut Hesaba Giriş Yap",
-        "createMyAccount": "Hesabımı Oluştur",
         "logout": "Çıkış Yap",
         "hats": "Şapkalar",
         "eyes": "Gözler",
         "mouths": "Ağızlar",
         "backgrounds": "Arka Planlar",
         "emailAddress": "E-posta Adresi",
-        "emailAddressConfirmation": "E-posta Adresini Tekrarla",
         "createAccount": "Hesap Oluştur",
-        "logoutGlobally": "Tüm Cihazlardan Çıkış Yap",
         "unlinkMyAccount": "Hesabımın Bağlantısını Kaldır",
         "deleteMyAccount": "Hesabımı Sil",
         "maintenance": "Bakım",
@@ -1160,8 +1150,6 @@
         "lastSeenJustNow": "En son az önce görüldü",
         "blank": "{value}",
         "byBlank": "{value} tarafından",
-        "sendVerification": "Doğrulama Gönder",
-        "noThanks": "Teşekkürler, gerek yok",
         "ready": "Hazır",
         "imReady": "Hazırım",
         "imNotReady": "Hazır Değilim",
@@ -1212,7 +1200,8 @@
         "forfeited": "Pes Etti",
         "live": "Canlı",
         "official": "Resmi",
-        "stepProgress": "Adım {step}/{count}"
+        "stepProgress": "Adım {step}/{count}",
+        "done": "Tamam"
     },
     "match": {
         "quick": "Hızlı Eşleşme",
@@ -1443,7 +1432,6 @@
             "redeemCode": {
                 "title": "Kodu Kullan",
                 "description": "Daha fazla özelleştirme için özel eşyaların kilidini açmak üzere aşağıya benzersiz bir kod girin. Her kod yalnızca bir kez kullanılabilir.",
-                "unlinked": "Bir kodu kullanabilmek için önce giriş yapman ya da bir hesap oluşturman lazım.",
                 "success": "Başarıyla {item} kazandın!"
             },
             "experience": {
@@ -1489,8 +1477,7 @@
             },
             "myDevices": {
                 "description": "Hangi cihazlarda oturum açtığını gör ve kontrol et. Ayrıca mevcut cihazını isimlendirebilirsin ki işin kolaylaşsın.",
-                "noOtherDevices": "Başka hiçbir cihazda oturum açılmamış. Herhangi bir oyunun ortasında cihazlar arasında geçiş yapabileceğini biliyor muydun?",
-                "unlinked": "Henüz bir hesap oluşturmadın ya da oturum açmadın ve kullanıcın sadece bu cihazda erişilebilir."
+                "noOtherDevices": "Başka hiçbir cihazda oturum açılmamış. Herhangi bir oyunun ortasında cihazlar arasında geçiş yapabileceğini biliyor muydun?"
             }
         },
         "authentication": {
@@ -1528,16 +1515,21 @@
                 "description": "Hesabınıza bağlı e-posta adresi değiştirildi. Güvenliğiniz için, tüm diğer cihazlardaki oturumunuz kapatıldı ve yeni e-posta adresinizle tekrar giriş yapmanız gerekecek."
             },
             "logout": {
-                "title": "Çıkış Yap",
-                "description": "Bir hesabın olduğu için ilerlemen kaydedilecek ve e-posta adresinle tekrar giriş yaparak geri alınabilecek."
+                "title": "{name} hesabından çıkılsın mı?",
+                "description": "İlerlemen kaydedildi. İstediğin zaman e-postanla tekrar giriş yap.",
+                "button": "Çıkış yap"
             },
             "logoutGlobally": {
-                "title": "Her Yerden Çıkış Yap",
-                "description": "Bu, hesabınızı bu dahil olmak üzere tüm cihazlardan çıkaracak."
+                "title": "Her yerden çıkış yapılsın mı?",
+                "description": "Hesabındaki tüm cihazlardan çıkış yapılacak, bu cihaz da dahil. Onaylaman için e-postana bir kod göndereceğiz.",
+                "done": {
+                    "title": "Her yerden çıkış yapıldı",
+                    "description": "Hesabındaki tüm cihazlardan çıkış yapıldı. Tekrar oynamak için e-postanla giriş yap."
+                }
             },
             "logoutSuccess": {
-                "title": "Çıkış Yapıldı",
-                "description": "Hesabınız bu cihazda oturum kapatıldı. E-posta adresinizi kullanarak tekrar giriş yapabilirsiniz."
+                "title": "Çıkış yapıldı",
+                "description": "Artık bu cihazda yeni bir misafirsin. Hesabını geri almak için e-postanla giriş yap."
             },
             "relogin": {
                 "title": "Tekrar hoş geldin, {name}!",
@@ -1548,12 +1540,60 @@
             },
             "ready": {
                 "title": "Hazırsın, {name}!",
-                "description": "İlerlemen şimdi kaydedildi ve senkronize edildi!"
+                "description": "İlerlemen her cihazda kayıtlı."
             },
             "loginNoAccount": "Hesabına erişmek için aşağıya e-posta adresinle giriş yap.",
-            "logoutGloballyCompleted": "Hesabın tüm cihazlardan çıkış yapıldı.",
             "verificationEmail": "Doğrulama kodu içeren bir e-posta gönderildi.",
-            "noEmail": "E-posta yok mu? Spam klasörünü kontrol et ve bu e-posta adresinin hesabına bağlı olduğunu onayla."
+            "noEmail": "E-posta yok mu? Spam klasörünü kontrol et ve bu e-posta adresinin hesabına bağlı olduğunu onayla.",
+            "continue": {
+                "title": "Kaydet veya giriş yap",
+                "description": "E-posta adresini gir. Yeniysen {name} kaydedilir. Daha önce geldiysen giriş yaparsın.",
+                "loginTitle": "Giriş Yap",
+                "loginDescription": "Şifre yok. E-postana bir kod göndereceğiz.",
+                "levelNote": "{level} itibarıyla {name} kullanıcısını e-postayla kaydedebilirsin.",
+                "note": "Şifre yok. E-postanı sadece giriş yapman için kullanıyoruz.",
+                "send": "Bana kod gönder"
+            },
+            "code": {
+                "title": "E-postanı kontrol et",
+                "sentTo": "{email} adresine 6 haneli bir kod gönderdik.",
+                "spam": "Hâlâ gelmedi mi? Spam klasörünü kontrol et."
+            },
+            "choice": {
+                "title": "Tekrar hoş geldin!",
+                "description": "Bu e-posta {account} hesabına ait. Bu hesapla giriş yaparsan {name} geride kalır.",
+                "notSaved": "kaydedilmedi",
+                "packs": "{n} paket | {n} paket | {n} paket",
+                "login": "{account} olarak giriş yap",
+                "saveInstead": "{name} kullanıcısını başka bir e-postayla kaydet"
+            },
+            "changeEmail": {
+                "current": {
+                    "title": "E-postanı değiştir",
+                    "description": "Önce hesabındaki e-posta adresini onayla. Oraya bir kod göndereceğiz.",
+                    "label": "Mevcut e-posta"
+                },
+                "new": {
+                    "title": "Yeni e-postan",
+                    "description": "Senin olduğundan emin olmak için oraya da bir kod göndereceğiz.",
+                    "label": "Yeni e-posta"
+                },
+                "done": {
+                    "title": "E-posta değiştirildi",
+                    "description": "Bundan sonra {email} ile giriş yap. Diğer cihazlarından çıkış yapıldı."
+                }
+            },
+            "unlinkEmail": {
+                "title": "E-postan kaldırılsın mı?",
+                "description": "Onaylamak için hesabındaki e-posta adresini yaz.",
+                "warning": "{name} sadece bu cihazda kalacak. Tarayıcını temizler ya da cihaz değiştirirsen her şey sonsuza dek kaybolur.",
+                "button": "E-postamı kaldır",
+                "done": {
+                    "title": "E-posta kaldırıldı",
+                    "description": "{name} artık sadece bu cihazda. İstediğin zaman Ayarlar'dan yeniden e-posta ekleyebilirsin."
+                }
+            },
+            "yourEmail": "E-postan"
         },
         "characterDownload": {
             "title": "Karakter Resmi İndir",
@@ -1625,7 +1665,34 @@
             "accept": "Beraberliği Kabul Et",
             "decline": "Oynamaya Devam Et"
         },
-        "offerDraw": "Rakibine maçı berabere bitirmek isteyip istemediği sorulacak. Kabul ederse ne galibiyet ne de mağlubiyet sayılır."
+        "offerDraw": "Rakibine maçı berabere bitirmek isteyip istemediği sorulacak. Kabul ederse ne galibiyet ne de mağlubiyet sayılır.",
+        "accountStatus": {
+            "unsaved": {
+                "title": "Sadece bu cihazda",
+                "description": "İlerlemeni korumak ve her cihazda oynamak için {name} hesabını e-postanla kaydet. Şifre yok.",
+                "level": "{name} hesabını e-postanla kaydetmek için {level} seviyesine ulaş.",
+                "loginOnly": "İlerlemeni korumak ve her cihazda oynamak için giriş yap."
+            },
+            "devices": {
+                "title": "{name} sadece bu cihazda",
+                "description": "Diğer cihazlarında da oynamak ve onları burada görmek için e-postanla kaydet."
+            },
+            "redeem": {
+                "title": "Önce {name} hesabını kaydet",
+                "description": "Kullandığın kodlar hesabına eklenir, bu yüzden e-postan gerekir."
+            },
+            "saved": {
+                "title": "{email} adresine kaydedildi",
+                "description": "İlerlemen her cihazda seninle."
+            },
+            "save": "E-postayla kaydet",
+            "haveAccount": "Hesabım var",
+            "changeEmail": "E-postayı değiştir",
+            "logout": {
+                "description": "Bu cihazda ya da Cihazlarım'dan tüm cihazlarda."
+            },
+            "logoutEverywhere": "Her yerden çıkış yap"
+        }
     },
     "share": {
         "tiers": {
@@ -1780,11 +1847,12 @@
     },
     "shop": {
         "welcome": {
-            "title": "bloob.io'ya hoş geldin",
+            "title": "Bloob.io'ya hoş geldin",
             "subtitle": "İşte sen. İstediğini değiştir ya da direkt oyna.",
             "shuffle": "Görünüşünü karıştır",
-            "moreLooks": "Dolapta daha fazla görünüş",
-            "haveAccount": "Hesabım var"
+            "moreLooks": "Daha fazla görünüş",
+            "haveAccount": "Giriş Yap",
+            "titleShort": "Hoş geldin!"
         }
     }
 }

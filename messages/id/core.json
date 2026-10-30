@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 3445,
+        "total": 3479,
         "missing": 88
     },
     "error": {
@@ -958,14 +958,8 @@
         "averageWaitTime": "Waktu tunggu rata-rata",
         "unknown": "Tidak diketahui",
         "none": "Tidak ada",
-        "seasonal": "Musiman",
-        "items": "Barang",
-        "purchaseCoins": "Beli Koin",
         "store": "Toko",
-        "buyNow": "Beli Sekarang",
         "expired": "Kadaluarsa",
-        "yourCoins": "Koin Kamu",
-        "getCoins": "Dapatkan Koin",
         "transactions": "Transaksi",
         "userData": "Data Pengguna",
         "price": "Harga",
@@ -1027,17 +1021,13 @@
         "language": "Bahasa",
         "toggle": "Beralih",
         "login": "Masuk",
-        "loginToExistingAccount": "Masuk ke Akun yang Ada",
-        "createMyAccount": "Buat Akun Saya",
         "logout": "Keluar",
         "hats": "Topi",
         "eyes": "Mata",
         "mouths": "Mulut",
         "backgrounds": "Latar Belakang",
         "emailAddress": "Alamat Email",
-        "emailAddressConfirmation": "Ulangi Alamat Email",
         "createAccount": "Buat Akun",
-        "logoutGlobally": "Keluar dari Semua Perangkat",
         "unlinkMyAccount": "Lepaskan Tautan Akun Saya",
         "deleteMyAccount": "Hapus Akun Saya",
         "maintenance": "Pemeliharaan",
@@ -1160,8 +1150,6 @@
         "lastSeenJustNow": "Terakhir dilihat baru saja",
         "blank": "{value}",
         "byBlank": "Oleh {value}",
-        "sendVerification": "Kirim Verifikasi",
-        "noThanks": "Nggak, makasih",
         "ready": "Siap",
         "imReady": "Aku Siap",
         "imNotReady": "Aku Belum Siap",
@@ -1212,7 +1200,8 @@
         "forfeited": "Menyerah",
         "live": "Live",
         "official": "Resmi",
-        "stepProgress": "Langkah {step} dari {count}"
+        "stepProgress": "Langkah {step} dari {count}",
+        "done": "Selesai"
     },
     "match": {
         "quick": "Match Cepat",
@@ -1443,7 +1432,6 @@
             "redeemCode": {
                 "title": "Tukar Kode",
                 "description": "Masukkan kode unik di bawah ini untuk membuka item spesial untuk lebih banyak kustomisasi. Setiap kode hanya bisa digunakan sekali.",
-                "unlinked": "Buat nebus kode, kamu harus login atau bikin akun dulu.",
                 "success": "Kamu berhasil mengklaim {item}!"
             },
             "experience": {
@@ -1489,8 +1477,7 @@
             },
             "myDevices": {
                 "description": "Lihat dan kontrol perangkat apa saja yang kamu gunakan untuk login. Kamu juga bisa ganti nama perangkatmu sekarang untuk kenyamananmu.",
-                "noOtherDevices": "Tidak ada perangkat lain yang login. Tau nggak sih, kamu bisa pindah antar perangkat di tengah-tengah permainan?",
-                "unlinked": "Kamu belum buat akun atau login dan pengguna kamu hanya bisa diakses di perangkat ini."
+                "noOtherDevices": "Tidak ada perangkat lain yang login. Tau nggak sih, kamu bisa pindah antar perangkat di tengah-tengah permainan?"
             }
         },
         "authentication": {
@@ -1528,16 +1515,21 @@
                 "description": "Alamat email yang terhubung dengan akunmu telah diganti. Untuk keamananmu, kamu telah di-logout dari semua perangkat lain dan perlu login lagi dengan alamat email baru kamu."
             },
             "logout": {
-                "title": "Keluar",
-                "description": "Karena kamu punya akun, kemajuanmu akan disimpan dan bisa diambil lagi dengan masuk menggunakan alamat emailmu."
+                "title": "Keluar dari {name}?",
+                "description": "Progresmu tersimpan. Masuk lagi kapan saja dengan emailmu.",
+                "button": "Keluar"
             },
             "logoutGlobally": {
-                "title": "Keluar di Semua Tempat",
-                "description": "Ini akan membuat akunmu keluar dari semua perangkat termasuk ini."
+                "title": "Keluar di semua perangkat?",
+                "description": "Semua perangkat di akunmu akan keluar, termasuk yang ini. Kami akan mengirim kode ke emailmu untuk konfirmasi.",
+                "done": {
+                    "title": "Keluar di semua perangkat",
+                    "description": "Semua perangkat di akunmu sudah keluar. Masuk dengan emailmu untuk bermain lagi."
+                }
             },
             "logoutSuccess": {
-                "title": "Keluar",
-                "description": "Akunmu telah keluar di perangkat ini. Kamu bisa masuk lagi dengan menggunakan alamat emailmu."
+                "title": "Sudah keluar",
+                "description": "Sekarang kamu tamu baru di perangkat ini. Masuk dengan emailmu untuk mendapatkan akunmu kembali."
             },
             "relogin": {
                 "title": "Selamat datang kembali, {name}!",
@@ -1548,12 +1540,60 @@
             },
             "ready": {
                 "title": "Kamu sudah siap, {name}!",
-                "description": "Kemajuanmu sekarang sudah disimpan dan disinkronkan!"
+                "description": "Progresmu tersimpan di semua perangkat."
             },
             "loginNoAccount": "Masuk dengan alamat emailmu di bawah ini untuk mengakses akunmu di perangkat ini.",
-            "logoutGloballyCompleted": "Akunmu telah di-logout dari semua perangkat.",
             "verificationEmail": "Email dengan kode verifikasi telah dikirim.",
-            "noEmail": "Tidak ada email? Cek folder spammu dan konfirmasi bahwa alamat email ini terhubung dengan akunmu."
+            "noEmail": "Tidak ada email? Cek folder spammu dan konfirmasi bahwa alamat email ini terhubung dengan akunmu.",
+            "continue": {
+                "title": "Simpan atau masuk",
+                "description": "Masukkan emailmu. Kalau baru di sini, kami simpan {name}. Kalau pernah ke sini, kami masukkan kamu ke akunmu.",
+                "loginTitle": "Masuk",
+                "loginDescription": "Tanpa kata sandi. Kami akan mengirim kode ke emailmu.",
+                "levelNote": "Kamu bisa menyimpan {name} dengan email mulai dari {level}.",
+                "note": "Tanpa kata sandi. Kami hanya pakai emailmu untuk proses masuk.",
+                "send": "Kirim kode ke aku"
+            },
+            "code": {
+                "title": "Cek emailmu",
+                "sentTo": "Kami sudah mengirim kode 6 digit ke {email}.",
+                "spam": "Belum ada? Cek folder spammu."
+            },
+            "choice": {
+                "title": "Selamat datang kembali!",
+                "description": "Email ini milik {account}. Kalau kamu masuk ke akun itu, {name} akan ditinggalkan.",
+                "notSaved": "belum disimpan",
+                "packs": "{n} paket | {n} paket | {n} paket",
+                "login": "Masuk sebagai {account}",
+                "saveInstead": "Pakai email lain untuk menyimpan {name}"
+            },
+            "changeEmail": {
+                "current": {
+                    "title": "Ganti emailmu",
+                    "description": "Pertama, konfirmasi email akunmu. Kami akan kirim kode ke sana.",
+                    "label": "Email saat ini"
+                },
+                "new": {
+                    "title": "Email barumu",
+                    "description": "Kami juga akan kirim kode ke sana, untuk memastikan itu milikmu.",
+                    "label": "Email baru"
+                },
+                "done": {
+                    "title": "Email diganti",
+                    "description": "Mulai sekarang, masuk dengan {email}. Kamu sudah dikeluarkan dari perangkatmu yang lain."
+                }
+            },
+            "unlinkEmail": {
+                "title": "Hapus emailmu?",
+                "description": "Ketik email akunmu untuk konfirmasi.",
+                "warning": "{name} hanya akan ada di perangkat ini. Kalau kamu bersihkan browser atau ganti perangkat, semuanya hilang selamanya.",
+                "button": "Hapus emailku",
+                "done": {
+                    "title": "Email dihapus",
+                    "description": "{name} sekarang hanya ada di perangkat ini. Kamu bisa menambahkan email lagi kapan saja dari Pengaturan."
+                }
+            },
+            "yourEmail": "Emailmu"
         },
         "characterDownload": {
             "title": "Unduh Gambar Karakter",
@@ -1625,7 +1665,34 @@
             "accept": "Terima Seri",
             "decline": "Terus Main"
         },
-        "offerDraw": "Lawanmu akan ditanya apakah mau mengakhiri pertandingan dengan seri. Kalau dia setuju, tidak dihitung sebagai menang maupun kalah."
+        "offerDraw": "Lawanmu akan ditanya apakah mau mengakhiri pertandingan dengan seri. Kalau dia setuju, tidak dihitung sebagai menang maupun kalah.",
+        "accountStatus": {
+            "unsaved": {
+                "title": "Hanya di perangkat ini",
+                "description": "Simpan {name} dengan emailmu agar progresmu aman dan bisa main di perangkat mana pun. Tanpa kata sandi.",
+                "level": "Capai {level} untuk menyimpan {name} dengan emailmu.",
+                "loginOnly": "Masuk agar progresmu aman dan bisa main di perangkat mana pun."
+            },
+            "devices": {
+                "title": "{name} hanya ada di perangkat ini",
+                "description": "Simpan dengan emailmu untuk main juga di perangkat lainmu dan melihatnya di sini."
+            },
+            "redeem": {
+                "title": "Simpan {name} dulu",
+                "description": "Yang kamu tukarkan masuk ke akunmu, jadi perlu emailmu."
+            },
+            "saved": {
+                "title": "Tersimpan di {email}",
+                "description": "Progresmu ikut ke perangkat mana pun."
+            },
+            "save": "Simpan dengan email",
+            "haveAccount": "Aku punya akun",
+            "changeEmail": "Ganti email",
+            "logout": {
+                "description": "Di perangkat ini, atau di semua perangkat dari Perangkatku."
+            },
+            "logoutEverywhere": "Keluar di semua perangkat"
+        }
     },
     "share": {
         "tiers": {
@@ -1780,11 +1847,12 @@
     },
     "shop": {
         "welcome": {
-            "title": "Selamat datang di bloob.io",
+            "title": "Selamat datang di Bloob.io",
             "subtitle": "Ini kamu. Ganti apa aja, atau langsung main.",
             "shuffle": "Acak tampilanmu",
-            "moreLooks": "Tampilan lain di loker",
-            "haveAccount": "Aku udah punya akun"
+            "moreLooks": "Tampilan lain",
+            "haveAccount": "Masuk",
+            "titleShort": "Selamat datang!"
         }
     }
 }

@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Mexican Spanish",
         "rtl": false,
-        "total": 3445,
+        "total": 3479,
         "missing": 88
     },
     "error": {
@@ -958,14 +958,8 @@
         "averageWaitTime": "Tiempo de espera promedio",
         "unknown": "Desconocido",
         "none": "Ninguno",
-        "seasonal": "De temporada",
-        "items": "Artículos",
-        "purchaseCoins": "Comprar monedas",
         "store": "Tienda",
-        "buyNow": "Comprar ahora",
         "expired": "Caducado",
-        "yourCoins": "Tus monedas",
-        "getCoins": "Consigue monedas",
         "transactions": "Transacciones",
         "userData": "Datos del usuario",
         "price": "Precio",
@@ -1027,17 +1021,13 @@
         "language": "Idioma",
         "toggle": "Activar",
         "login": "Iniciar sesión",
-        "loginToExistingAccount": "Iniciar sesión en mi cuenta",
-        "createMyAccount": "Crear mi cuenta",
         "logout": "Cerrar sesión",
         "hats": "Sombreros",
         "eyes": "Ojos",
         "mouths": "Bocas",
         "backgrounds": "Fondos",
         "emailAddress": "Correo electrónico",
-        "emailAddressConfirmation": "Repite tu correo electrónico",
         "createAccount": "Crear cuenta",
-        "logoutGlobally": "Cerrar sesión en todos los dispositivos",
         "unlinkMyAccount": "Desvincular mi cuenta",
         "deleteMyAccount": "Eliminar mi cuenta",
         "maintenance": "Mantenimiento",
@@ -1160,8 +1150,6 @@
         "lastSeenJustNow": "Visto por última vez hace un momento",
         "blank": "{value}",
         "byBlank": "Por {value}",
-        "sendVerification": "Enviar verificación",
-        "noThanks": "No, gracias",
         "ready": "Listo",
         "imReady": "Ya estoy listo",
         "imNotReady": "No estoy listo",
@@ -1212,7 +1200,8 @@
         "forfeited": "Se rindió",
         "live": "En vivo",
         "official": "Oficial",
-        "stepProgress": "Paso {step} de {count}"
+        "stepProgress": "Paso {step} de {count}",
+        "done": "Listo"
     },
     "match": {
         "quick": "Partida rápida",
@@ -1443,7 +1432,6 @@
             "redeemCode": {
                 "title": "Canjear código",
                 "description": "Ingresa un código único a continuación para desbloquear artículos especiales para una mayor personalización. Cada código solo se puede usar una vez.",
-                "unlinked": "Para canjear un código primero tienes que iniciar sesión o crear una cuenta.",
                 "success": "¡Has obtenido exitosamente {item}!"
             },
             "experience": {
@@ -1489,8 +1477,7 @@
             },
             "myDevices": {
                 "description": "Mira y controla en qué dispositivos estás conectado. También puedes renombrar tu dispositivo actual para tu comodidad.",
-                "noOtherDevices": "No hay otros dispositivos conectados. ¿Sabías que puedes cambiar entre dispositivos en medio de cualquier juego?",
-                "unlinked": "Aún no has vinculado tu cuenta a una dirección de correo electrónico y solo puedes acceder a tu cuenta en este dispositivo."
+                "noOtherDevices": "No hay otros dispositivos conectados. ¿Sabías que puedes cambiar entre dispositivos en medio de cualquier juego?"
             }
         },
         "authentication": {
@@ -1528,16 +1515,21 @@
                 "description": "La dirección de correo electrónico vinculada a tu cuenta ha sido cambiada. Por tu seguridad, has sido desconectado en todos los demás dispositivos y tendrás que iniciar sesión de nuevo con tu nueva dirección de correo electrónico."
             },
             "logout": {
-                "title": "Cerrar sesión",
-                "description": "Como tienes una cuenta, tu progreso se guardará y se puede recuperar iniciando sesión con tu dirección de correo electrónico."
+                "title": "¿Cerrar sesión de {name}?",
+                "description": "Tu progreso está guardado. Vuelve a entrar cuando quieras con tu correo.",
+                "button": "Cerrar sesión"
             },
             "logoutGlobally": {
-                "title": "Cerrar sesión en todos lados",
-                "description": "Esto cerrará tu cuenta en todos los dispositivos, incluyendo este."
+                "title": "¿Cerrar sesión en todas partes?",
+                "description": "Se cerrará la sesión en todos los dispositivos de tu cuenta, también en este. Te enviaremos un código por correo para confirmarlo.",
+                "done": {
+                    "title": "Sesión cerrada en todas partes",
+                    "description": "Se cerró la sesión en todos los dispositivos de tu cuenta. Entra con tu correo para volver a jugar."
+                }
             },
             "logoutSuccess": {
-                "title": "Desconectado",
-                "description": "Tu cuenta ha sido cerrada en este dispositivo. Puedes volver a iniciar sesión usando tu dirección de correo electrónico."
+                "title": "Sesión cerrada",
+                "description": "Ahora eres un invitado nuevo en este dispositivo. Entra con tu correo para recuperar tu cuenta."
             },
             "relogin": {
                 "title": "¡Bienvenido otra vez, {name}!",
@@ -1548,12 +1540,60 @@
             },
             "ready": {
                 "title": "¡Todo listo, {name}!",
-                "description": "¡Tu progreso ahora está guardado y sincronizado!"
+                "description": "Tu progreso está guardado en todos tus dispositivos."
             },
             "loginNoAccount": "Inicia sesión con tu dirección de correo electrónico a continuación para acceder a tu cuenta en este dispositivo.",
-            "logoutGloballyCompleted": "Tu cuenta ha sido cerrada en todos los dispositivos.",
             "verificationEmail": "Se ha enviado un correo electrónico con un código de verificación.",
-            "noEmail": "¿No vez el correo electrónico? Revisa tu carpeta de spam y confirma que esta dirección de correo electrónico está vinculada a tu cuenta."
+            "noEmail": "¿No vez el correo electrónico? Revisa tu carpeta de spam y confirma que esta dirección de correo electrónico está vinculada a tu cuenta.",
+            "continue": {
+                "title": "Guardar o iniciar sesión",
+                "description": "Ingresa tu correo electrónico. Si eres nuevo, guardamos a {name}. Si ya has estado aquí, iniciamos tu sesión.",
+                "loginTitle": "Iniciar sesión",
+                "loginDescription": "Sin contraseña. Te enviaremos un código por correo.",
+                "levelNote": "Puedes guardar a {name} con un correo a partir de {level}.",
+                "note": "Sin contraseña. Solo usamos tu correo para iniciar tu sesión.",
+                "send": "Envíame un código"
+            },
+            "code": {
+                "title": "Revisa tu correo",
+                "sentTo": "Enviamos un código de 6 dígitos a {email}.",
+                "spam": "¿Aún nada? Revisa tu carpeta de spam."
+            },
+            "choice": {
+                "title": "¡Bienvenido otra vez!",
+                "description": "Este correo pertenece a {account}. Si inicias sesión con esa cuenta, {name} se queda atrás.",
+                "notSaved": "sin guardar",
+                "packs": "{n} paquetes | {n} paquete | {n} paquetes",
+                "login": "Iniciar sesión como {account}",
+                "saveInstead": "Usar otro correo para guardar a {name}"
+            },
+            "changeEmail": {
+                "current": {
+                    "title": "Cambia tu correo",
+                    "description": "Primero, confirma el correo de tu cuenta. Te enviaremos un código ahí.",
+                    "label": "Correo actual"
+                },
+                "new": {
+                    "title": "Tu nuevo correo",
+                    "description": "También enviaremos un código ahí, para asegurarnos de que es tuyo.",
+                    "label": "Correo nuevo"
+                },
+                "done": {
+                    "title": "Correo cambiado",
+                    "description": "A partir de ahora, inicia sesión con {email}. Se cerró la sesión en tus otros dispositivos."
+                }
+            },
+            "unlinkEmail": {
+                "title": "¿Quitar tu correo?",
+                "description": "Escribe el correo de tu cuenta para confirmar.",
+                "warning": "{name} solo estará en este dispositivo. Si borras los datos del navegador o cambias de dispositivo, lo perderás para siempre.",
+                "button": "Quitar mi correo",
+                "done": {
+                    "title": "Correo quitado",
+                    "description": "{name} ahora solo está en este dispositivo. Puedes volver a añadir un correo cuando quieras desde Ajustes."
+                }
+            },
+            "yourEmail": "Tu correo"
         },
         "characterDownload": {
             "title": "Descarga la imagen de tu personaje",
@@ -1625,7 +1665,34 @@
             "accept": "Aceptar tablas",
             "decline": "Seguir jugando"
         },
-        "offerDraw": "Se le preguntará a tu rival si quiere terminar la partida en tablas. Si acepta, no cuenta ni como victoria ni como derrota."
+        "offerDraw": "Se le preguntará a tu rival si quiere terminar la partida en tablas. Si acepta, no cuenta ni como victoria ni como derrota.",
+        "accountStatus": {
+            "unsaved": {
+                "title": "Solo en este dispositivo",
+                "description": "Guarda a {name} con tu correo para conservar tu progreso y jugar en cualquier dispositivo. Sin contraseña.",
+                "level": "Llega a {level} para guardar a {name} con tu correo.",
+                "loginOnly": "Entra para conservar tu progreso y jugar en cualquier dispositivo."
+            },
+            "devices": {
+                "title": "{name} solo está en este dispositivo",
+                "description": "Guarda con tu correo para jugar también en tus otros dispositivos y verlos aquí."
+            },
+            "redeem": {
+                "title": "Primero guarda a {name}",
+                "description": "Lo que canjeas va a tu cuenta, así que necesita tu correo."
+            },
+            "saved": {
+                "title": "Guardado en {email}",
+                "description": "Tu progreso te sigue a cualquier dispositivo."
+            },
+            "save": "Guardar con correo",
+            "haveAccount": "Ya tengo una cuenta",
+            "changeEmail": "Cambiar correo",
+            "logout": {
+                "description": "En este dispositivo, o en todos desde Mis dispositivos."
+            },
+            "logoutEverywhere": "Cerrar sesión en todas partes"
+        }
     },
     "share": {
         "tiers": {
@@ -1780,11 +1847,12 @@
     },
     "shop": {
         "welcome": {
-            "title": "Bienvenido a bloob.io",
+            "title": "Bienvenido a Bloob.io",
             "subtitle": "Este eres tú. Cambia lo que quieras, o ponte a jugar.",
             "shuffle": "Cambiar tu look al azar",
-            "moreLooks": "Más looks en el casillero",
-            "haveAccount": "Ya tengo cuenta"
+            "moreLooks": "Más looks",
+            "haveAccount": "Iniciar sesión",
+            "titleShort": "¡Bienvenido!"
         }
     }
 }

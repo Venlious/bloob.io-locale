@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 3445,
+        "total": 3479,
         "missing": 88
     },
     "error": {
@@ -958,14 +958,8 @@
         "averageWaitTime": "Keskimääräinen odotusaika",
         "unknown": "Tuntematon",
         "none": "Ei mitään",
-        "seasonal": "Kausiluonteinen",
-        "items": "Tavarat",
-        "purchaseCoins": "Osta kolikoita",
         "store": "Kauppa",
-        "buyNow": "Osta nyt",
         "expired": "Vanhentunut",
-        "yourCoins": "Sun Kolikot",
-        "getCoins": "Hanki Kolikoita",
         "transactions": "Siirrot",
         "userData": "Käyttäjätiedot",
         "price": "Hinta",
@@ -1027,17 +1021,13 @@
         "language": "Kieli",
         "toggle": "Vaihda",
         "login": "Kirjaudu sisään",
-        "loginToExistingAccount": "Kirjaudu sisään olemassaolevaan tiliin",
-        "createMyAccount": "Luo mun tili",
         "logout": "Kirjaudu ulos",
         "hats": "Hatut",
         "eyes": "Silmät",
         "mouths": "Suut",
         "backgrounds": "Taustat",
         "emailAddress": "Sähköpostiosoite",
-        "emailAddressConfirmation": "Toista sähköpostiosoite",
         "createAccount": "Luo tili",
-        "logoutGlobally": "Kirjaudu ulos kaikista laitteista",
         "unlinkMyAccount": "Irrota tili",
         "deleteMyAccount": "Poista tili",
         "maintenance": "Huolto",
@@ -1160,8 +1150,6 @@
         "lastSeenJustNow": "Viimeksi nähty just nyt",
         "blank": "{value}",
         "byBlank": "Tekijä {value}",
-        "sendVerification": "Lähetä vahvistus",
-        "noThanks": "Ei kiitos",
         "ready": "Valmis",
         "imReady": "Mä oon valmis",
         "imNotReady": "Mä en oo valmis",
@@ -1212,7 +1200,8 @@
         "forfeited": "Luovutti",
         "live": "Live",
         "official": "Virallinen",
-        "stepProgress": "Vaihe {step}/{count}"
+        "stepProgress": "Vaihe {step}/{count}",
+        "done": "Valmis"
     },
     "match": {
         "quick": "Nopea ottelu",
@@ -1443,7 +1432,6 @@
             "redeemCode": {
                 "title": "Lunasta Koodi",
                 "description": "Syötä uniikki koodi alle avataksesi erikoisesineitä vielä enemmän mukauttamista varten. Jokaista koodia voi käyttää vain kerran.",
-                "unlinked": "Koodin lunastamiseksi sun pitää ensin kirjautua sisään tai luoda tili.",
                 "success": "Olet onnistuneesti lunastanut {item}!"
             },
             "experience": {
@@ -1489,8 +1477,7 @@
             },
             "myDevices": {
                 "description": "Katso ja hallitse, millä laitteilla olet kirjautuneena sisään. Voit myös nimetä nykyisen laitteesi uudelleen omaksi mukavuudeksesi.",
-                "noOtherDevices": "Mitään muita laitteita ei ole kirjautuneena sisään. Tiesitkö, että voit vaihtaa laitteiden välillä kesken pelin?",
-                "unlinked": "Et ole vielä luonut tiliä tai kirjautunut sisään, ja käyttäjääsi voidaan käyttää vain tällä laitteella."
+                "noOtherDevices": "Mitään muita laitteita ei ole kirjautuneena sisään. Tiesitkö, että voit vaihtaa laitteiden välillä kesken pelin?"
             }
         },
         "authentication": {
@@ -1528,16 +1515,21 @@
                 "description": "Tiliisi liitetty sähköpostiosoite on vaihdettu. Turvallisuutesi vuoksi olet kirjattu ulos kaikista muista laitteista ja sinun täytyy kirjautua uudelleen sisään uudella sähköpostiosoitteellasi."
             },
             "logout": {
-                "title": "Kirjaudu ulos",
-                "description": "Koska sinulla on tili, edistymisesi tallennetaan ja voit hakea sen takaisin kirjautumalla sisään sähköpostiosoitteellasi."
+                "title": "Kirjaudutaanko ulos tililtä {name}?",
+                "description": "Edistymisesi on tallessa. Kirjaudu takaisin milloin vain sähköpostillasi.",
+                "button": "Kirjaudu ulos"
             },
             "logoutGlobally": {
-                "title": "Kirjaudu ulos kaikkialta",
-                "description": "Tämä kirjaa tilisi ulos kaikista laitteista, mukaan lukien tämä."
+                "title": "Kirjaudutaanko ulos kaikkialta?",
+                "description": "Kaikki tilisi laitteet kirjataan ulos, myös tämä. Lähetämme sinulle sähköpostiin koodin vahvistusta varten.",
+                "done": {
+                    "title": "Kirjauduttu ulos kaikkialta",
+                    "description": "Kaikki tilisi laitteet on kirjattu ulos. Kirjaudu sähköpostillasi pelataksesi taas."
+                }
             },
             "logoutSuccess": {
-                "title": "Uloskirjautunut",
-                "description": "Tiliäsi on kirjauduttu ulos tällä laitteella. Voit kirjautua takaisin sisään sähköpostiosoitteellasi."
+                "title": "Kirjauduttu ulos",
+                "description": "Olet nyt uusi vieras tällä laitteella. Kirjaudu sähköpostillasi saadaksesi tilisi takaisin."
             },
             "relogin": {
                 "title": "Tervetuloa takaisin, {name}!",
@@ -1548,12 +1540,60 @@
             },
             "ready": {
                 "title": "Kaikki valmista, {name}!",
-                "description": "Edistymisesi on nyt tallennettu ja synkronoitu!"
+                "description": "Edistymisesi on tallessa kaikilla laitteilla."
             },
             "loginNoAccount": "Kirjaudu sisään sähköpostiosoitteellasi alla päästäksesi käsiksi tilillesi tällä laitteella.",
-            "logoutGloballyCompleted": "Tilisi on kirjattu ulos kaikista laitteista.",
             "verificationEmail": "Sähköposti vahvistuskoodilla on lähetetty.",
-            "noEmail": "Eikö sähköpostia? Tarkista roskapostikansiosi ja varmista, että tämä sähköpostiosoite on linkitetty tilillesi."
+            "noEmail": "Eikö sähköpostia? Tarkista roskapostikansiosi ja varmista, että tämä sähköpostiosoite on linkitetty tilillesi.",
+            "continue": {
+                "title": "Tallenna tai kirjaudu sisään",
+                "description": "Syötä sähköpostiosoitteesi. Jos olet uusi, tallennamme käyttäjän {name}. Jos olet käynyt täällä ennen, kirjaamme sinut sisään.",
+                "loginTitle": "Kirjaudu sisään",
+                "loginDescription": "Ei salasanaa. Lähetämme sinulle koodin sähköpostiin.",
+                "levelNote": "Voit tallentaa käyttäjän {name} sähköpostilla alkaen {level}.",
+                "note": "Ei salasanaa. Käytämme sähköpostiosoitettasi vain sisäänkirjautumiseen.",
+                "send": "Lähetä minulle koodi"
+            },
+            "code": {
+                "title": "Tarkista sähköpostisi",
+                "sentTo": "Lähetimme 6-numeroisen koodin osoitteeseen {email}.",
+                "spam": "Eikö vielä mitään? Tarkista roskapostikansiosi."
+            },
+            "choice": {
+                "title": "Tervetuloa takaisin!",
+                "description": "Tämä sähköpostiosoite kuuluu käyttäjälle {account}. Jos kirjaudut sillä sisään, käyttäjä {name} jää taakse.",
+                "notSaved": "ei tallennettu",
+                "packs": "{n} pakettia | {n} paketti | {n} pakettia",
+                "login": "Kirjaudu käyttäjänä {account}",
+                "saveInstead": "Tallenna käyttäjä {name} toisella sähköpostiosoitteella"
+            },
+            "changeEmail": {
+                "current": {
+                    "title": "Vaihda sähköpostiosoitteesi",
+                    "description": "Vahvista ensin tilisi sähköpostiosoite. Lähetämme siihen koodin.",
+                    "label": "Nykyinen sähköpostiosoite"
+                },
+                "new": {
+                    "title": "Uusi sähköpostiosoitteesi",
+                    "description": "Lähetämme koodin myös sinne, jotta voimme varmistaa, että se on sinun.",
+                    "label": "Uusi sähköpostiosoite"
+                },
+                "done": {
+                    "title": "Sähköpostiosoite vaihdettu",
+                    "description": "Kirjaudu tästä lähtien sisään osoitteella {email}. Muut laitteesi on kirjattu ulos."
+                }
+            },
+            "unlinkEmail": {
+                "title": "Poistetaanko sähköpostiosoitteesi?",
+                "description": "Vahvista kirjoittamalla tilisi sähköpostiosoite.",
+                "warning": "Käyttäjä {name} on silloin vain tällä laitteella. Jos tyhjennät selaimesi tai vaihdat laitetta, se katoaa lopullisesti.",
+                "button": "Poista sähköpostiosoitteeni",
+                "done": {
+                    "title": "Sähköpostiosoite poistettu",
+                    "description": "Käyttäjä {name} on nyt vain tällä laitteella. Voit lisätä sähköpostiosoitteen uudelleen milloin tahansa kohdasta Asetukset."
+                }
+            },
+            "yourEmail": "Sähköpostiosoitteesi"
         },
         "characterDownload": {
             "title": "Hahmon kuvan lataus",
@@ -1625,7 +1665,34 @@
             "accept": "Hyväksy Tasapeli",
             "decline": "Jatka pelaamista"
         },
-        "offerDraw": "Vastustajaltasi kysytään, päätetäänkö ottelu tasapeliin. Jos hän hyväksyy, se ei ole voitto eikä tappio."
+        "offerDraw": "Vastustajaltasi kysytään, päätetäänkö ottelu tasapeliin. Jos hän hyväksyy, se ei ole voitto eikä tappio.",
+        "accountStatus": {
+            "unsaved": {
+                "title": "Vain tällä laitteella",
+                "description": "Tallenna {name} sähköpostillasi, niin edistymisesi säilyy ja voit pelata millä laitteella tahansa. Ei salasanaa.",
+                "level": "Saavuta {level} tallentaaksesi {name} sähköpostillasi.",
+                "loginOnly": "Kirjaudu sisään, niin edistymisesi säilyy ja voit pelata millä laitteella tahansa."
+            },
+            "devices": {
+                "title": "{name} on vain tällä laitteella",
+                "description": "Tallenna sähköpostillasi pelataksesi myös muilla laitteillasi ja nähdäksesi ne täällä."
+            },
+            "redeem": {
+                "title": "Tallenna ensin {name}",
+                "description": "Lunastamasi asiat menevät tilillesi, joten siihen tarvitaan sähköpostisi."
+            },
+            "saved": {
+                "title": "Tallennettu osoitteeseen {email}",
+                "description": "Edistymisesi seuraa sinua jokaiselle laitteelle."
+            },
+            "save": "Tallenna sähköpostilla",
+            "haveAccount": "Minulla on tili",
+            "changeEmail": "Vaihda sähköposti",
+            "logout": {
+                "description": "Tällä laitteella, tai kaikilla kohdasta Omat laitteet."
+            },
+            "logoutEverywhere": "Kirjaudu ulos kaikkialta"
+        }
     },
     "share": {
         "tiers": {
@@ -1780,11 +1847,12 @@
     },
     "shop": {
         "welcome": {
-            "title": "Tervetuloa bloob.io:hon",
+            "title": "Tervetuloa Bloob.io:hon",
             "subtitle": "Tässä sä olet. Muuta mitä vaan, tai pelaa suoraan.",
             "shuffle": "Arvo uusi tyyli",
-            "moreLooks": "Lisää tyylejä kaapissa",
-            "haveAccount": "Mulla on tili"
+            "moreLooks": "Lisää tyylejä",
+            "haveAccount": "Kirjaudu sisään",
+            "titleShort": "Tervetuloa!"
         }
     }
 }

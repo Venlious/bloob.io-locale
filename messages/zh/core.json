@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 3445,
+        "total": 3479,
         "missing": 88
     },
     "error": {
@@ -958,14 +958,8 @@
         "averageWaitTime": "平均等待时间",
         "unknown": "未知",
         "none": "无",
-        "seasonal": "限时",
-        "items": "商品",
-        "purchaseCoins": "购买金币",
         "store": "商店",
-        "buyNow": "立即购买",
         "expired": "已过期",
-        "yourCoins": "你的金币",
-        "getCoins": "获取金币",
         "transactions": "交易",
         "userData": "用户数据",
         "price": "价格",
@@ -1027,17 +1021,13 @@
         "language": "语言",
         "toggle": "切换",
         "login": "登录",
-        "loginToExistingAccount": "登录账号",
-        "createMyAccount": "创建账号",
         "logout": "注销",
         "hats": "帽子",
         "eyes": "眼睛",
         "mouths": "嘴巴",
         "backgrounds": "背景",
         "emailAddress": "电子邮件地址",
-        "emailAddressConfirmation": "再次输入电子邮件地址",
         "createAccount": "创建账户",
-        "logoutGlobally": "在所有设备上退出登录",
         "unlinkMyAccount": "解除我的账户链接",
         "deleteMyAccount": "删除我的账户",
         "maintenance": "维护",
@@ -1160,8 +1150,6 @@
         "lastSeenJustNow": "刚刚在线",
         "blank": "{value}",
         "byBlank": "由 {value} 提供",
-        "sendVerification": "发送验证",
-        "noThanks": "不用了，谢谢",
         "ready": "准备好了",
         "imReady": "我准备好了",
         "imNotReady": "我还没准备好",
@@ -1212,7 +1200,8 @@
         "forfeited": "已认输",
         "live": "进行中",
         "official": "官方",
-        "stepProgress": "第 {step} 步，共 {count} 步"
+        "stepProgress": "第 {step} 步，共 {count} 步",
+        "done": "完成"
     },
     "match": {
         "quick": "快速匹配",
@@ -1443,7 +1432,6 @@
             "redeemCode": {
                 "title": "兑换码",
                 "description": "在下面输入一个独特的代码，解锁更多定制的特殊物品。每个代码只能使用一次。",
-                "unlinked": "要兑换代码，你需要先登录或者注册一个账号。",
                 "success": "你成功领取了{item}！"
             },
             "experience": {
@@ -1489,8 +1477,7 @@
             },
             "myDevices": {
                 "description": "查看和控制你登录的设备。你还可以为了方便，给你现在用的设备改个名字。",
-                "noOtherDevices": "没有其他设备登录。冷知识：你可以在游戏中途切换设备",
-                "unlinked": "你还没有创建或登录账户，你目前的游戏数据只能在该设备上访问。"
+                "noOtherDevices": "没有其他设备登录。冷知识：你可以在游戏中途切换设备"
             }
         },
         "authentication": {
@@ -1528,16 +1515,21 @@
                 "description": "与你的账户关联的邮箱地址已经更改。为了你的安全，你在所有其他设备上都已被登出，需要用你的新邮箱地址重新登录。"
             },
             "logout": {
-                "title": "注销",
-                "description": "你拥有账号，你的进度会被保存，只要用你的电子邮件地址重新登录就能找回。"
+                "title": "要退出 {name} 吗？",
+                "description": "你的进度已保存。随时用你的邮箱重新登录。",
+                "button": "退出登录"
             },
             "logoutGlobally": {
-                "title": "全部登出",
-                "description": "这将会让你的账号从所有设备上登出，包括该设备。"
+                "title": "要在所有设备上退出吗？",
+                "description": "你账号下的所有设备都会退出，包括这台。我们会给你的邮箱发送验证码来确认。",
+                "done": {
+                    "title": "已在所有设备上退出",
+                    "description": "你账号下的所有设备都已退出。用你的邮箱登录即可继续玩。"
+                }
             },
             "logoutSuccess": {
-                "title": "已登出",
-                "description": "你的账号已在此设备上登出，你可以用你的电子邮件重新登录。"
+                "title": "已退出登录",
+                "description": "你现在是这台设备上的新访客。用你的邮箱登录即可找回你的账号。"
             },
             "relogin": {
                 "title": "欢迎回来，{name}！",
@@ -1548,12 +1540,60 @@
             },
             "ready": {
                 "title": "搞定了，{name}！",
-                "description": "你的进度已经保存并同步了！"
+                "description": "你的进度已保存在所有设备上。"
             },
             "loginNoAccount": "在下面用你的邮箱登录，就能在该设备上访问你的账户了。",
-            "logoutGloballyCompleted": "你的账户已经从所有设备上登出了。",
             "verificationEmail": "含有验证码的邮件已经发出去了。",
-            "noEmail": "没收到邮件？检查一下你的垃圾邮件文件夹，确认一下这个邮箱地址是不是跟你的账户绑定的。"
+            "noEmail": "没收到邮件？检查一下你的垃圾邮件文件夹，确认一下这个邮箱地址是不是跟你的账户绑定的。",
+            "continue": {
+                "title": "保存或登录",
+                "description": "输入你的邮箱。新来的话，我们会保存 {name}。来过的话，我们会帮你登录。",
+                "loginTitle": "登录",
+                "loginDescription": "无需密码。我们会把验证码发到你的邮箱。",
+                "levelNote": "达到 {level} 后，你就可以用邮箱保存 {name}。",
+                "note": "无需密码。我们只用你的邮箱来帮你登录。",
+                "send": "发送验证码"
+            },
+            "code": {
+                "title": "查看你的邮箱",
+                "sentTo": "我们已向 {email} 发送了 6 位验证码。",
+                "spam": "还没收到？检查一下垃圾邮件文件夹。"
+            },
+            "choice": {
+                "title": "欢迎回来！",
+                "description": "这个邮箱属于 {account}。用这个账户登录的话，{name} 就会被留下。",
+                "notSaved": "未保存",
+                "packs": "{n} 个包 | {n} 个包 | {n} 个包",
+                "login": "以 {account} 身份登录",
+                "saveInstead": "用其他邮箱保存 {name}"
+            },
+            "changeEmail": {
+                "current": {
+                    "title": "更换邮箱",
+                    "description": "首先，确认你账户的邮箱。我们会向它发送验证码。",
+                    "label": "当前邮箱"
+                },
+                "new": {
+                    "title": "你的新邮箱",
+                    "description": "我们也会向那里发送验证码，确认它是你的。",
+                    "label": "新邮箱"
+                },
+                "done": {
+                    "title": "邮箱已更换",
+                    "description": "今后请用 {email} 登录。你的其他设备已退出登录。"
+                }
+            },
+            "unlinkEmail": {
+                "title": "移除你的邮箱？",
+                "description": "输入你账户的邮箱以确认。",
+                "warning": "{name} 将只保存在这台设备上。清除浏览器数据或更换设备后，它就永远消失了。",
+                "button": "移除我的邮箱",
+                "done": {
+                    "title": "邮箱已移除",
+                    "description": "{name} 现在只保存在这台设备上。你随时可以在设置中重新添加邮箱。"
+                }
+            },
+            "yourEmail": "你的邮箱"
         },
         "characterDownload": {
             "title": "角色图片下载",
@@ -1625,7 +1665,34 @@
             "accept": "接受和棋",
             "decline": "继续游戏"
         },
-        "offerDraw": "将询问对手是否以和棋结束对局。如果对方接受，既不算胜也不算负。"
+        "offerDraw": "将询问对手是否以和棋结束对局。如果对方接受，既不算胜也不算负。",
+        "accountStatus": {
+            "unsaved": {
+                "title": "仅在这台设备上",
+                "description": "用你的邮箱保存 {name}，保住你的进度，在任何设备上都能玩。无需密码。",
+                "level": "达到 {level} 即可用邮箱保存 {name}。",
+                "loginOnly": "登录以保住你的进度，在任何设备上都能玩。"
+            },
+            "devices": {
+                "title": "{name} 仅在这台设备上",
+                "description": "用邮箱保存，就能在你的其他设备上玩，并在这里看到它们。"
+            },
+            "redeem": {
+                "title": "先保存 {name}",
+                "description": "你兑换的内容会进入你的账号，所以需要你的邮箱。"
+            },
+            "saved": {
+                "title": "已保存到 {email}",
+                "description": "你的进度会跟着你到任何设备。"
+            },
+            "save": "用邮箱保存",
+            "haveAccount": "我有账号",
+            "changeEmail": "更换邮箱",
+            "logout": {
+                "description": "在这台设备上，或在“我的设备”中退出所有设备。"
+            },
+            "logoutEverywhere": "在所有设备上退出"
+        }
     },
     "share": {
         "tiers": {
@@ -1780,11 +1847,12 @@
     },
     "shop": {
         "welcome": {
-            "title": "欢迎来到 bloob.io",
+            "title": "欢迎来到 Bloob.io",
             "subtitle": "这就是你。随便改改，或者直接开玩。",
             "shuffle": "随机造型",
-            "moreLooks": "衣柜里有更多造型",
-            "haveAccount": "我有账号"
+            "moreLooks": "更多造型",
+            "haveAccount": "登录",
+            "titleShort": "欢迎！"
         }
     }
 }

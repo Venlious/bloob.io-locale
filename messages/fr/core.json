@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal French",
         "rtl": false,
-        "total": 3445,
+        "total": 3479,
         "missing": 88
     },
     "error": {
@@ -958,14 +958,8 @@
         "averageWaitTime": "Temps d'attente moyen",
         "unknown": "Inconnu",
         "none": "Aucun",
-        "seasonal": "Saisonnier",
-        "items": "Objets",
-        "purchaseCoins": "Acheter des Pièces",
         "store": "Boutique",
-        "buyNow": "Acheter Maintenant",
         "expired": "Expiré",
-        "yourCoins": "Tes Pièces",
-        "getCoins": "Obtenir des Pièces",
         "transactions": "Transactions",
         "userData": "Données d'Utilisateur",
         "price": "Prix",
@@ -1027,17 +1021,13 @@
         "language": "Langue",
         "toggle": "Basculer",
         "login": "Connexion",
-        "loginToExistingAccount": "Se connecter à mon compte",
-        "createMyAccount": "Créer mon compte",
         "logout": "Se déconnecter",
         "hats": "Chapeaux",
         "eyes": "Yeux",
         "mouths": "Bouches",
         "backgrounds": "Arrière-plans",
         "emailAddress": "Adresse Email",
-        "emailAddressConfirmation": "Répéter Adresse Email",
         "createAccount": "Créer un Compte",
-        "logoutGlobally": "Déconnexion partout",
         "unlinkMyAccount": "Délier mon compte",
         "deleteMyAccount": "Supprimer mon compte",
         "maintenance": "Maintenance",
@@ -1160,8 +1150,6 @@
         "lastSeenJustNow": "Vu tout à l'heure",
         "blank": "{value}",
         "byBlank": "Par {value}",
-        "sendVerification": "Envoyer la vérification",
-        "noThanks": "Non merci",
         "ready": "Prêt",
         "imReady": "Je suis Prêt",
         "imNotReady": "Je ne suis pas Prêt",
@@ -1212,7 +1200,8 @@
         "forfeited": "A abandonné",
         "live": "En direct",
         "official": "Officiel",
-        "stepProgress": "Étape {step} sur {count}"
+        "stepProgress": "Étape {step} sur {count}",
+        "done": "Terminé"
     },
     "match": {
         "quick": "Match Rapide",
@@ -1443,7 +1432,6 @@
             "redeemCode": {
                 "title": "Entrez un code",
                 "description": "Entrez un code unique ci-dessous pour débloquer des objets spéciaux pour encore plus de personnalisation. Chaque code ne peut être utilisé qu'une seule fois.",
-                "unlinked": "Pour utiliser un code, tu dois d'abord te connecter ou créer un compte.",
                 "success": "Tu as réussi à obtenir {item}!"
             },
             "experience": {
@@ -1489,8 +1477,7 @@
             },
             "myDevices": {
                 "description": "Voir et contrôler sur quels appareils vous êtes connecté. Vous pouvez également renommer votre appareil actuel pour plus de commodité.",
-                "noOtherDevices": "Aucun autre appareil n'est connecté. Saviez-vous que vous pouvez passer d'un appareil à l'autre en plein milieu d'un jeu ?",
-                "unlinked": "Vous n'avez pas encore lié votre compte à une adresse e-mail et ne pouvez y accéder que sur cet appareil."
+                "noOtherDevices": "Aucun autre appareil n'est connecté. Saviez-vous que vous pouvez passer d'un appareil à l'autre en plein milieu d'un jeu ?"
             }
         },
         "authentication": {
@@ -1528,16 +1515,21 @@
                 "description": "L'adresse e-mail associée à votre compte a été modifiée. Pour des raisons de sécurité, vous avez été déconnecté de tous les autres appareils et devrez vous reconnecter avec votre nouvelle adresse e-mail."
             },
             "logout": {
-                "title": "Déconnexion",
-                "description": "Comme tu as un compte, ton avancée sera sauvegardée et peut être récupérée en te reconnectant avec ton adresse email."
+                "title": "Se déconnecter de {name} ?",
+                "description": "Ta progression est sauvegardée. Reconnecte-toi quand tu veux avec ton e-mail.",
+                "button": "Se déconnecter"
             },
             "logoutGlobally": {
-                "title": "Déconnectez-vous partout",
-                "description": "Cela vous déconnectera de votre compte sur tous les appareils, y compris celui-ci."
+                "title": "Se déconnecter partout ?",
+                "description": "Tous les appareils connectés à ton compte seront déconnectés, celui-ci aussi. On t'envoie un code par e-mail pour confirmer.",
+                "done": {
+                    "title": "Déconnecté partout",
+                    "description": "Tous les appareils de ton compte sont déconnectés. Connecte-toi avec ton e-mail pour rejouer."
+                }
             },
             "logoutSuccess": {
                 "title": "Déconnecté",
-                "description": "Votre compte a été déconnecté sur cet appareil. Vous pouvez vous reconnecter en utilisant votre adresse e-mail."
+                "description": "Tu es maintenant un nouvel invité sur cet appareil. Connecte-toi avec ton e-mail pour retrouver ton compte."
             },
             "relogin": {
                 "title": "Bienvenue de retour, {name}!",
@@ -1548,12 +1540,60 @@
             },
             "ready": {
                 "title": "Tout est prêt, {name}!",
-                "description": "Votre progression est maintenant sauvegardée et synchronisée!"
+                "description": "Ta progression est sauvegardée sur tous tes appareils."
             },
             "loginNoAccount": "Connectez-vous avec votre adresse e-mail ci-dessous pour accéder à votre compte sur cet appareil.",
-            "logoutGloballyCompleted": "Votre compte a été déconnecté de tous les appareils.",
             "verificationEmail": "Un email avec un code de vérification a été envoyé.",
-            "noEmail": "Pas d'e-mail ? Vérifiez votre dossier spam et confirmez que cette adresse e-mail est liée à votre compte."
+            "noEmail": "Pas d'e-mail ? Vérifiez votre dossier spam et confirmez que cette adresse e-mail est liée à votre compte.",
+            "continue": {
+                "title": "Sauvegarder ou se connecter",
+                "description": "Entre ton adresse email. Si tu es nouveau, on sauvegarde {name}. Si tu es déjà venu, on te connecte.",
+                "loginTitle": "Se connecter",
+                "loginDescription": "Pas de mot de passe. On t'envoie un code par e-mail.",
+                "levelNote": "Tu peux sauvegarder {name} avec un email à partir de {level}.",
+                "note": "Pas de mot de passe. On utilise ton email uniquement pour te connecter.",
+                "send": "Envoie-moi un code"
+            },
+            "code": {
+                "title": "Vérifie tes emails",
+                "sentTo": "On a envoyé un code à 6 chiffres à {email}.",
+                "spam": "Toujours rien ? Vérifie ton dossier spam."
+            },
+            "choice": {
+                "title": "Bon retour !",
+                "description": "Cet email appartient à {account}. Si tu te connectes à ce compte, {name} sera laissé de côté.",
+                "notSaved": "non sauvegardé",
+                "packs": "{n} pack | {n} pack | {n} packs",
+                "login": "Se connecter en tant que {account}",
+                "saveInstead": "Utiliser un autre email pour sauvegarder {name}"
+            },
+            "changeEmail": {
+                "current": {
+                    "title": "Changer ton email",
+                    "description": "D'abord, confirme l'email de ton compte. On y enverra un code.",
+                    "label": "Email actuel"
+                },
+                "new": {
+                    "title": "Ton nouvel email",
+                    "description": "On y envoie aussi un code, pour vérifier qu'il est bien à toi.",
+                    "label": "Nouvel email"
+                },
+                "done": {
+                    "title": "Email modifié",
+                    "description": "Connecte-toi désormais avec {email}. Tes autres appareils ont été déconnectés."
+                }
+            },
+            "unlinkEmail": {
+                "title": "Supprimer ton email ?",
+                "description": "Entre l'email de ton compte pour confirmer.",
+                "warning": "{name} ne sera plus que sur cet appareil. Si tu vides ton navigateur ou changes d'appareil, tout sera perdu pour de bon.",
+                "button": "Supprimer mon email",
+                "done": {
+                    "title": "Email supprimé",
+                    "description": "{name} n'est plus que sur cet appareil. Tu peux rajouter un email à tout moment dans les Paramètres."
+                }
+            },
+            "yourEmail": "Ton email"
         },
         "characterDownload": {
             "title": "Téléchargement de la photo du perso",
@@ -1625,7 +1665,34 @@
             "accept": "Accepter le match nul",
             "decline": "Continuer à jouer"
         },
-        "offerDraw": "Votre adversaire se verra proposer de terminer la partie sur un match nul. S'il accepte, cela ne compte ni comme une victoire ni comme une défaite."
+        "offerDraw": "Votre adversaire se verra proposer de terminer la partie sur un match nul. S'il accepte, cela ne compte ni comme une victoire ni comme une défaite.",
+        "accountStatus": {
+            "unsaved": {
+                "title": "Seulement sur cet appareil",
+                "description": "Sauvegarde {name} avec ton e-mail pour garder ta progression et jouer sur tous tes appareils. Sans mot de passe.",
+                "level": "Atteins {level} pour sauvegarder {name} avec ton e-mail.",
+                "loginOnly": "Connecte-toi pour garder ta progression et jouer sur tous tes appareils."
+            },
+            "devices": {
+                "title": "{name} est seulement sur cet appareil",
+                "description": "Sauvegarde avec ton e-mail pour jouer aussi sur tes autres appareils et les voir ici."
+            },
+            "redeem": {
+                "title": "Sauvegarde d'abord {name}",
+                "description": "Ce que tu échanges va sur ton compte, il faut donc ton e-mail."
+            },
+            "saved": {
+                "title": "Sauvegardé sur {email}",
+                "description": "Ta progression te suit sur tous tes appareils."
+            },
+            "save": "Sauvegarder avec un e-mail",
+            "haveAccount": "J'ai un compte",
+            "changeEmail": "Changer d'e-mail",
+            "logout": {
+                "description": "Sur cet appareil, ou sur tous depuis Mes appareils."
+            },
+            "logoutEverywhere": "Se déconnecter partout"
+        }
     },
     "share": {
         "tiers": {
@@ -1780,11 +1847,12 @@
     },
     "shop": {
         "welcome": {
-            "title": "Bienvenue sur bloob.io",
+            "title": "Bienvenue sur Bloob.io",
             "subtitle": "C'est toi. Change ce que tu veux, ou joue direct.",
             "shuffle": "Mélanger ton look",
-            "moreLooks": "Plus de looks dans le casier",
-            "haveAccount": "J'ai un compte"
+            "moreLooks": "Plus de looks",
+            "haveAccount": "Se connecter",
+            "titleShort": "Bienvenue !"
         }
     }
 }
