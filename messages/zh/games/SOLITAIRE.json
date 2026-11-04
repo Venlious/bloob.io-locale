@@ -1,248 +1,248 @@
 {
     "options": {
         "drawCount": {
-            "title": null,
-            "help": null,
+            "title": "翻牌",
+            "help": "每次从牌堆翻开几张牌。翻三张时，只有最上面那张可以打出。",
             "data": {
-                "1": null,
-                "3": null
+                "1": "翻一张",
+                "3": "翻三张"
             }
         },
         "passes": {
-            "title": null,
-            "help": null,
+            "title": "牌堆轮数",
+            "help": "牌堆可以翻几轮。一轮结束后，废牌堆会翻回去变成新的牌堆，直到轮数用完。",
             "data": {
-                "0": null,
-                "1": null,
-                "3": null
+                "0": "不限",
+                "1": "一轮",
+                "3": "三轮"
             }
         },
         "undo": {
-            "title": null,
-            "help": null,
-            "count": null,
+            "title": "撤销",
+            "help": "能否撤回一步。撤回一步也会扣掉那一步得到的分数。",
+            "count": "每局 {count} 次",
             "data": {
-                "UNLIMITED": null,
-                "LIMITED": null,
-                "OFF": null
+                "UNLIMITED": "不限",
+                "LIMITED": "有限",
+                "OFF": "不能撤销"
             },
             "description": {
-                "UNLIMITED": null,
-                "LIMITED": null,
-                "OFF": null
+                "UNLIMITED": "想撤回多少步都行。",
+                "LIMITED": "每个牌面每局可撤销的次数是固定的。",
+                "OFF": "每一步都不能反悔。"
             }
         },
         "undoLimit": {
-            "title": null,
-            "help": null
+            "title": "每局撤销次数",
+            "help": "撤销有限时，每个牌面每局可以撤回几步。共享的牌面共用这些次数。"
         },
         "hint": {
-            "title": null,
-            "help": null,
-            "count": null,
+            "title": "提示",
+            "help": "能否请求提示。提示会闪烁显示一步值得走的操作：一张牌和它该放的位置，或是牌堆。",
+            "count": "每局 {count} 次",
             "data": {
-                "UNLIMITED": null,
-                "LIMITED": null,
-                "OFF": null
+                "UNLIMITED": "不限",
+                "LIMITED": "有限",
+                "OFF": "没有提示"
             },
             "description": {
-                "UNLIMITED": null,
-                "LIMITED": null,
-                "OFF": null
+                "UNLIMITED": "想要多少提示都行。",
+                "LIMITED": "每个牌面每局可用的提示次数是固定的。",
+                "OFF": "每一步都要自己找。"
             }
         },
         "hintLimit": {
-            "title": null,
-            "help": null
+            "title": "每局提示次数",
+            "help": "提示有限时，每个牌面每局可以请求几次提示。共享的牌面共用这些次数。"
         },
         "scoring": {
-            "title": null,
-            "help": null,
+            "title": "计分方式",
+            "help": "牌面的计分方法。完成牌局最多的一方获胜，平局时比分数。",
             "data": {
-                "STANDARD": null,
-                "VEGAS": null
+                "STANDARD": "标准计分",
+                "VEGAS": "拉斯维加斯"
             },
             "description": {
-                "STANDARD": null,
-                "VEGAS": null
+                "STANDARD": "每一步有进展的操作都能得分，完成时还有奖励，越快奖励越多。",
+                "VEGAS": "每局先付 52 分，基础牌堆上每张牌返还 5 分。"
             }
         },
         "timeLimit": {
-            "title": null,
-            "help": null
+            "title": "每局时间",
+            "help": "每一局可以进行多久。时间一到，所有人的这一局都结束。"
         },
         "rounds": {
-            "title": null,
-            "help": null
+            "title": "局数",
+            "help": "这场比赛要打几局。分数会累计到下一局。"
         },
         "firstFinish": {
-            "title": null,
-            "help": null
+            "title": "首个完成即结束",
+            "help": "开启后，只要有一方完成牌面，这一局就对所有人结束。关闭后，大家会一直玩到完成、放弃或时间用完。"
         },
         "foundationTakeBack": {
-            "title": null,
-            "help": null
+            "title": "从基础牌堆取回",
+            "help": "基础牌堆上的牌能否移回牌列。"
         },
         "autoComplete": {
-            "title": null,
-            "help": null
+            "title": "自动完成",
+            "help": "所有牌都翻开、牌堆和废牌堆都空了以后，牌面会自动完成。"
         },
         "showFits": {
-            "title": null,
-            "help": null
+            "title": "显示可放位置",
+            "help": "拿起一张牌时，能放的牌堆会被框出来。"
         },
         "doubleTap": {
-            "title": null,
-            "help": null
+            "title": "双击移动",
+            "help": "点两下或双击一张牌，它会去最合适的位置。关闭时，先点牌，再点要放的牌堆。"
         },
         "lostWarning": {
-            "title": null,
-            "help": null
+            "title": "提示死局",
+            "help": "当提示或放弃时发现这一局已经赢不了，会告诉你，并让你回到还能赢的时候。仅在开启提示时有效。"
         }
     },
     "presets": {
         "versus": {
-            "title": null,
+            "title": "对战",
             "description": [
-                null,
-                null
+                "大家同一副牌局",
+                "完成最多者胜，平局比分"
             ]
         },
         "coop": {
-            "title": null,
+            "title": "合作模式",
             "description": [
-                null,
-                null
+                "全桌共用一个牌面",
+                "一起完成每一局"
             ]
         },
         "teams": {
-            "title": null,
+            "title": "组队",
             "description": [
-                null,
-                null
+                "每队一个牌面",
+                "每队都是同一副牌局"
             ]
         },
         "vegas": {
-            "title": null,
+            "title": "拉斯维加斯规则",
             "description": [
-                null,
-                null
+                "翻三张，三轮",
+                "每局 52 分，每张 5 分，共 3 局"
             ]
         },
         "expertVersus": {
-            "title": null,
+            "title": "专家对战",
             "description": [
-                null,
-                null
+                "同一牌局，翻三张",
+                "不能撤销，没有提示和辅助"
             ]
         },
         "expertCoop": {
-            "title": null,
+            "title": "专家合作",
             "description": [
-                null,
-                null
+                "一个牌面，翻三张",
+                "只能靠彼此"
             ]
         }
     },
     "help": {
         "howToPlay": {
-            "title": null,
+            "title": "规则",
             "description": [
-                null,
-                null
+                "在四个基础牌堆上，按花色从 A 一直叠到 K。在牌列中，按红黑交替、点数递减往下叠；要移动一串牌，只需移动这串牌开头的那张。",
+                "只有 K 能放进空牌列。没牌可走时，点击牌堆翻牌。点一张牌再点它该去的地方，或把它拖过去，也可以双击让它去最合适的位置。"
             ]
         },
         "modes": {
-            "title": null,
+            "title": "一起玩",
             "description": [
-                null,
-                null
+                "同一局里每个牌面发的牌都一样。对战模式中每人玩自己的牌面，比谁先完成。组队模式中每队共用一个牌面。",
+                "合作模式中全桌一起玩同一个牌面。在时间用完前完成每一局就能获胜。"
             ]
         },
         "undoAndGiveUp": {
-            "title": null,
+            "title": "撤销和放弃",
             "description": [
-                null,
-                null
+                "根据设置，你可以随意撤销、每局撤销固定次数，或者完全不能撤销。",
+                "卡住了？放弃后这一局就不再等你。再走一步就能回来继续。"
             ]
         }
     },
     "info": {
-        "dealing": null,
-        "finishing": null,
-        "deal": null,
-        "draw": null,
-        "recycle": null,
-        "foundation": null,
-        "card": null,
-        "moves": null,
-        "lastPass": null,
-        "expert": null,
-        "assistsOff": null,
-        "assistsOffTitle": null,
-        "assistsNote": null,
-        "assistsExpertNote": null,
-        "undoLeft": null,
-        "hint": null,
-        "hintLeft": null,
-        "giveUp": null,
-        "noMoves": null,
-        "noMovesUndo": null,
-        "lost": null,
-        "lostAt": null,
-        "lostMoveOnto": null,
-        "lostMoveHome": null,
-        "lostMoveEmpty": null,
-        "lostMoveDraw": null,
-        "goBack": null,
-        "goBackCost": null,
-        "goBackShort": null,
-        "gaveUp": null,
-        "cleared": null,
-        "lastDeal": null,
-        "cardsHome": null,
-        "race": null,
-        "watching": null,
-        "watchTap": null,
-        "watchPick": null,
-        "pingLook": null,
-        "pingQuestion": null,
-        "backToTable": null,
-        "watchConfirmTitle": null,
-        "watchConfirm": null,
-        "watchers": null,
-        "giveUpConfirmTitle": null,
-        "giveUpConfirm": null,
-        "giveUpConfirmAlone": null,
-        "dealOver": null,
-        "voteAskUndo": null,
-        "voteAskHint": null,
-        "voteAskRewind": null,
-        "voteAsking": null,
-        "voteEveryone": null,
-        "voteSaidNo": null,
-        "voteKeepUndo": null,
-        "voteKeepHint": null,
-        "voteKeepRewind": null,
-        "voteKeepGiveUp": null,
-        "voteWaiting": null,
-        "voteAgreed": null,
-        "voteDeclinedUndo": null,
-        "voteDeclinedHint": null,
-        "voteDeclinedRewind": null,
-        "voteGoBack": null,
-        "hintBy": null,
-        "voteDeclinedGiveUp": null,
-        "giveUpConfirmTeam": null,
-        "voteCount": null,
-        "clearedIn": null
+        "dealing": "正在洗牌...",
+        "finishing": "正在完成牌局...",
+        "deal": "第 {current} 局，共 {total} 局",
+        "draw": "从牌堆翻牌",
+        "recycle": "把废牌堆翻回去",
+        "foundation": "基础牌堆",
+        "card": "{suit}{rank}",
+        "moves": "步数",
+        "lastPass": "最后一轮",
+        "expert": "专家",
+        "assistsOff": "已关闭 {count} 项辅助 | 已关闭 {count} 项辅助",
+        "assistsOffTitle": "辅助已关闭",
+        "assistsNote": "本场比赛不使用这些辅助。",
+        "assistsExpertNote": "专家规则：本场比赛不使用这些辅助。",
+        "undoLeft": "撤销（剩 {count} 次） | 撤销（剩 {count} 次） | 撤销（剩 {count} 次）",
+        "hint": "提示",
+        "hintLeft": "提示（剩 {count} 次） | 提示（剩 {count} 次） | 提示（剩 {count} 次）",
+        "giveUp": "放弃",
+        "noMoves": "没有有用的走法了。放弃就能结束你的这一局。",
+        "noMovesUndo": "没有有用的走法了。撤销换条路试试，或者放弃。",
+        "lost": "从这里开始，这一局已经赢不了了。",
+        "lostAt": "{count} 步前还能赢，就在{move}之前。 | 一步前还能赢，就在{move}之前。 | {count} 步前还能赢，就在{move}之前。",
+        "lostMoveOnto": "把 {card} 放到 {onto} 上",
+        "lostMoveHome": "把 {card} 收到基础牌堆",
+        "lostMoveEmpty": "把 {card} 放进空牌列",
+        "lostMoveDraw": "翻牌堆",
+        "goBack": "退回 {count} 步 | 退回 1 步 | 退回 {count} 步",
+        "goBackCost": "将用掉你剩余 {left} 次撤销中的 {count} 次。 | 将用掉你剩余 {left} 次撤销中的 1 次。 | 将用掉你剩余 {left} 次撤销中的 {count} 次。",
+        "goBackShort": "需要 {count} 次撤销，你只剩 {left} 次。 | 需要 1 次撤销，你已经没有了。 | 需要 {count} 次撤销，你只剩 {left} 次。",
+        "gaveUp": "已放弃",
+        "cleared": "已完成",
+        "lastDeal": "最后一局",
+        "cardsHome": "还没有牌收上去 | 已收 {count} 张 | 已收 {count} 张",
+        "race": "比赛进度",
+        "watching": "观战中",
+        "watchTap": "点击观战",
+        "watchPick": "选一个头像观战",
+        "pingLook": "{name}：看这里",
+        "pingQuestion": "{name}：这个怎么样？",
+        "backToTable": "我的牌面",
+        "watchConfirmTitle": "观战 {name}？",
+        "watchConfirm": "大家玩的是同一副牌局，所以对方的牌面会暴露牌。一旦观战，这一局就不能回到你的牌面了。",
+        "watchers": "{count} 人观战",
+        "giveUpConfirmTitle": "放弃这一局？",
+        "giveUpConfirm": "其他人会继续玩。在你观战别人之前，走一步就能撤回放弃。",
+        "giveUpConfirmAlone": "你的这一局就此结束。",
+        "dealOver": "本局结束",
+        "voteAskUndo": "撤销上一步？",
+        "voteAskHint": "要个提示吗？",
+        "voteAskRewind": "退回 {count} 步？ | 退回一步？ | 退回 {count} 步？",
+        "voteAsking": "{name} 正在询问队友。",
+        "voteEveryone": "需要所有人同意。",
+        "voteSaidNo": "你拒绝了。正在等其他人...",
+        "voteKeepUndo": "保留",
+        "voteKeepHint": "不用了",
+        "voteKeepRewind": "留在这里",
+        "voteKeepGiveUp": "继续玩",
+        "voteWaiting": "正在等队友...",
+        "voteAgreed": "你同意了。正在等其他人...",
+        "voteDeclinedUndo": "撤销被拒绝",
+        "voteDeclinedHint": "提示被拒绝",
+        "voteDeclinedRewind": "退回被拒绝",
+        "voteGoBack": "退回",
+        "hintBy": "{name} 请求的",
+        "voteDeclinedGiveUp": "放弃被拒绝",
+        "giveUpConfirmTeam": "需要你这一方所有人同意。大家都同意后，在你们观战别人之前，你们任何人走一步都能撤回放弃。",
+        "voteCount": "{yes}/{needed} 人同意",
+        "clearedIn": "用时 {time} 完成"
     },
     "statistics": {
-        "clearRate": null,
-        "bestTime": null,
-        "averageTime": null,
-        "fewestMoves": null,
-        "clears": null,
-        "expertClears": null
+        "clearRate": "完成率",
+        "bestTime": "最佳时间",
+        "averageTime": "平均时间",
+        "fewestMoves": "最少步数",
+        "clears": "完成次数",
+        "expertClears": "专家完成次数"
     }
 }
