@@ -57,7 +57,7 @@
         },
         "scoring": {
             "title": "Scoring Style",
-            "help": "How a tableau is scored. The player or team with the most points across every deal wins.",
+            "help": "How a tableau is scored. Whoever clears the most deals wins, and points break a tie.",
             "data": {
                 "STANDARD": "Standard points",
                 "VEGAS": "Vegas"
@@ -86,6 +86,18 @@
         "autoComplete": {
             "title": "Auto-Complete",
             "help": "Once every card is face up and the stock and waste are empty, the tableau finishes itself."
+        },
+        "showFits": {
+            "title": "Show Where Cards Fit",
+            "help": "While a card is picked up, the piles it can go on are outlined."
+        },
+        "doubleTap": {
+            "title": "Double-Tap to Move",
+            "help": "Tapping or clicking a card twice sends it to the best place it fits. Off, tap the card and then the pile."
+        },
+        "lostWarning": {
+            "title": "Say When a Deal Is Lost",
+            "help": "When a hint or giving up finds that the deal can no longer be won, say so, and offer to go back to where it still could be. Only with hints on."
         }
     },
     "presets": {
@@ -93,7 +105,7 @@
             "title": "Versus",
             "description": [
                 "Everyone gets the same deal",
-                "First to clear it wins"
+                "Most clears wins, points break ties"
             ]
         },
         "coop": {
@@ -113,8 +125,22 @@
         "vegas": {
             "title": "Vegas Rules",
             "description": [
-                "Draw three, one pass",
-                "52 to play, 5 per card home"
+                "Draw three, three passes",
+                "52 a deal, 5 a card, over 3 deals"
+            ]
+        },
+        "expertVersus": {
+            "title": "Expert Versus",
+            "description": [
+                "Same deal, draw three",
+                "No undo, hints or help"
+            ]
+        },
+        "expertCoop": {
+            "title": "Expert Co-op",
+            "description": [
+                "One tableau, draw three",
+                "Nothing to lean on but each other"
             ]
         }
     },
@@ -123,7 +149,7 @@
             "title": "The Rules",
             "description": [
                 "Build every suit up from the ace to the king on the four foundations. On the tableau, build columns down in alternating colors, and move a run of cards together by moving the card it starts with.",
-                "Only a king can go into an empty column. Click the stock to turn cards over when you run out of moves. Click a card and then where it should go, drag it there, or double-click it to send it home."
+                "Only a king can go into an empty column. Click the stock to turn cards over when you run out of moves. Click a card and then where it should go, drag it there, or double-click it to send it to the best place it fits."
             ]
         },
         "modes": {
@@ -150,13 +176,13 @@
         "foundation": "Foundation",
         "card": "{rank} of {suit}",
         "moves": "Moves",
-        "pass": "Pass {current} of {total}",
+        "lastPass": "Last pass",
         "undoLeft": "Undo ({count} left) | Undo ({count} left) | Undo ({count} left)",
         "hint": "Hint",
         "hintLeft": "Hint ({count} left) | Hint ({count} left) | Hint ({count} left)",
         "giveUp": "Give Up",
-        "noMoves": "No moves left. Give up to end your deal.",
-        "noMovesUndo": "No moves left. Undo to try another way, or give up.",
+        "noMoves": "No useful moves left. Give up to end your deal.",
+        "noMovesUndo": "No useful moves left. Undo to try another way, or give up.",
         "lost": "This deal can't be won from here.",
         "lostAt": "It could still be won {count} moves ago, before {move}. | It could still be won a move ago, before {move}. | It could still be won {count} moves ago, before {move}.",
         "lostMoveOnto": "putting {card} on {onto}",
@@ -173,10 +199,13 @@
         "race": "Progress in the race",
         "watching": "Watching",
         "watchTap": "Tap to watch",
-        "backToTable": "Back to my table",
+        "watchPick": "Pick a face to watch",
+        "pingLook": "{name}: look here",
+        "pingQuestion": "{name}: what about this?",
+        "backToTable": "My table",
         "watchConfirmTitle": "Watch {name}?",
         "watchConfirm": "Everyone is playing the same deal, so their table shows its cards. Once you watch, you can't go back to your table this deal.",
-        "watchers": "Nobody watching | {count} watching | {count} watching",
+        "watchers": "{count} watching",
         "giveUpConfirmTitle": "Give up this deal?",
         "giveUpConfirm": "The others play on without you. You can take it back by making a move, until you watch someone.",
         "giveUpConfirmAlone": "That ends your deal.",
