@@ -60,6 +60,17 @@ export const EAGER_TOURNAMENT_KEYS = [
 ]
 
 /**
+ * The fourth, and the first to take more than one section: the store's own
+ * strings, fetched when a player opens it. Every item's name (`item`), every
+ * pack's title and description (`perk`), and the store's screens (`shop`) are
+ * read nowhere else, except `shop.welcome`, the greeting a new player gets on
+ * the home menu before a store is anywhere in sight.
+ */
+const STORE_FILE = `store.json`
+export const STORE_KEYS = [`item`, `perk`, `shop`]
+export const EAGER_STORE_KEYS: Record<string, string[]> = { shop: [`welcome`] }
+
+/**
  * Checks whether a value is a plain object.
  *
  * @param value Value to check
@@ -98,7 +109,8 @@ export const catalogueExists = (locale: string): boolean => {
  * Reads a locale's files back into the single tree the rest of this tooling
  * expects — `core.json` with every `games/<GAME>.json` merged into its
  * `game.<GAME>` entry, `articles.json` merged into `articles`, and
- * `tournament.json` merged into `tournament`.
+ * `tournament.json` merged into `tournament`, and each section of `store.json`
+ * merged into its own.
  *
  * @param locale Locale code (or `_empty`)
  * @returns The whole catalogue
@@ -119,6 +131,14 @@ export const loadCatalogue = (locale: string): NestedObject => {
 	if (existsSync(tournamentPath)) {
 		const block = JSON.parse(readFileSync(tournamentPath, `utf8`)) as NestedObject
 		catalogue[TOURNAMENT_KEY] = { ...(catalogue[TOURNAMENT_KEY] ?? {}), ...block }
+	}
+
+	const storePath = osPath.join(root, STORE_FILE)
+	if (existsSync(storePath)) {
+		const store = JSON.parse(readFileSync(storePath, `utf8`)) as NestedObject
+		for (const [key, block] of Object.entries(store)) {
+			catalogue[key] = { ...(catalogue[key] ?? {}), ...(block as NestedObject) }
+		}
 	}
 
 	const gamesPath = osPath.join(root, `games`)
@@ -202,6 +222,26 @@ export const writeCatalogue = (locale: string, data: NestedObject) => {
 
 	core[TOURNAMENT_KEY] = eagerTournament
 	writeFile(osPath.join(root, TOURNAMENT_FILE), lazyTournament)
+
+	// And the store, a section at a time: what a section keeps eager stays in
+	// core where it was, and a section that keeps nothing leaves core entirely.
+	const store: NestedObject = {}
+	for (const section of STORE_KEYS) {
+		const eagerKeys = EAGER_STORE_KEYS[section] ?? []
+		const eager: NestedObject = {}
+		const lazy: NestedObject = {}
+		for (const [key, value] of Object.entries((data[section] ?? {}) as NestedObject)) {
+			;(eagerKeys.includes(key) ? eager : lazy)[key] = value
+		}
+
+		store[section] = lazy
+		if (Object.keys(eager).length > 0) {
+			core[section] = eager
+		} else {
+			delete core[section]
+		}
+	}
+	writeFile(osPath.join(root, STORE_FILE), store)
 
 	writeFile(osPath.join(root, `core.json`), core)
 }

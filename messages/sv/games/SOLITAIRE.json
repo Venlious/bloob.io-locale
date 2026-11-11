@@ -1,0 +1,262 @@
+{
+    "options": {
+        "drawCount": {
+            "title": "Dra",
+            "help": "Hur många kort som vänds upp från talongen åt gången. Med tre kan bara det översta spelas.",
+            "data": {
+                "1": "Dra ett",
+                "3": "Dra tre"
+            }
+        },
+        "passes": {
+            "title": "Varv genom leken",
+            "help": "Hur många gånger du får gå igenom talongen. När ett varv är slut vänds kasthögen tillbaka till en ny talong, tills varven är slut.",
+            "data": {
+                "0": "Hur många som helst",
+                "1": "Ett varv",
+                "3": "Tre varv"
+            }
+        },
+        "undo": {
+            "title": "Ångra",
+            "help": "Om ett drag kan tas tillbaka. Att ångra ett drag tar också tillbaka poängen det gav.",
+            "count": "{count} per giv",
+            "data": {
+                "UNLIMITED": "Obegränsat",
+                "LIMITED": "Begränsat",
+                "OFF": "Utan ångra"
+            },
+            "description": {
+                "UNLIMITED": "Ta tillbaka så många drag du vill.",
+                "LIMITED": "Varje tablå får ett visst antal ångra per giv.",
+                "OFF": "Varje drag är slutgiltigt."
+            }
+        },
+        "undoLimit": {
+            "title": "Ångra per giv",
+            "help": "Hur många drag varje tablå får ta tillbaka under en giv när ångra är begränsat. En delad tablå delar på dem."
+        },
+        "hint": {
+            "title": "Ledtrådar",
+            "help": "Om du kan be om en ledtråd. En ledtråd blinkar fram ett drag värt att göra: ett kort och vart det ska, eller talongen.",
+            "count": "{count} per giv",
+            "data": {
+                "UNLIMITED": "Obegränsat",
+                "LIMITED": "Begränsat",
+                "OFF": "Inga ledtrådar"
+            },
+            "description": {
+                "UNLIMITED": "Be om så många ledtrådar du vill.",
+                "LIMITED": "Varje tablå får ett visst antal ledtrådar per giv.",
+                "OFF": "Hitta varje drag själv."
+            }
+        },
+        "hintLimit": {
+            "title": "Ledtrådar per giv",
+            "help": "Hur många ledtrådar varje tablå får be om under en giv när ledtrådar är begränsade. En delad tablå delar på dem."
+        },
+        "scoring": {
+            "title": "Poängsättning",
+            "help": "Hur en tablå får poäng. Den som klarar flest givar vinner, och poängen avgör vid lika.",
+            "data": {
+                "STANDARD": "Standardpoäng",
+                "VEGAS": "Vegas"
+            },
+            "description": {
+                "STANDARD": "Poäng för varje drag som för spelet framåt, och en bonus för att klara given som växer ju snabbare du var.",
+                "VEGAS": "Varje giv kostar 52, och varje kort på en grundhög ger 5 tillbaka."
+            }
+        },
+        "timeLimit": {
+            "title": "Tid per giv",
+            "help": "Hur länge varje giv får pågå. När tiden är slut tar given slut för alla."
+        },
+        "rounds": {
+            "title": "Givar",
+            "help": "Hur många givar matchen spelar. Poängen följer med från en giv till nästa."
+        },
+        "firstFinish": {
+            "title": "Första som klarar avslutar given",
+            "help": "När det är på tar given slut för alla så fort en sida klarar sin tablå. När det är av spelar alla vidare tills de klarar den, ger upp eller får slut på tid."
+        },
+        "foundationTakeBack": {
+            "title": "Ta tillbaka från grundhögar",
+            "help": "Om ett kort på en grundhög får flyttas tillbaka ner till tablån."
+        },
+        "autoComplete": {
+            "title": "Lägg ut automatiskt",
+            "help": "När alla kort ligger uppvända och talongen och kasthögen är tomma lägger tablån ut sig själv."
+        },
+        "showFits": {
+            "title": "Visa var korten passar",
+            "help": "Medan du håller ett kort markeras högarna det kan läggas på."
+        },
+        "doubleTap": {
+            "title": "Dubbeltryck för att flytta",
+            "help": "Tryck eller klicka två gånger på ett kort för att skicka det till bästa stället det passar på. Annars trycker du på kortet och sedan på högen."
+        },
+        "lostWarning": {
+            "title": "Säg till när en giv är förlorad",
+            "help": "När en ledtråd eller att ge upp visar att given inte längre går att vinna säger spelet det, och erbjuder att gå tillbaka dit där den fortfarande gick. Bara med ledtrådar på."
+        }
+    },
+    "presets": {
+        "versus": {
+            "title": "Mot varandra",
+            "description": [
+                "Alla får samma giv",
+                "Flest klarade vinner, poäng vid lika"
+            ]
+        },
+        "coop": {
+            "title": "Co-op",
+            "description": [
+                "En tablå för hela bordet",
+                "Klara varje giv tillsammans"
+            ]
+        },
+        "teams": {
+            "title": "Lag",
+            "description": [
+                "En tablå per lag",
+                "Samma giv för alla lag"
+            ]
+        },
+        "vegas": {
+            "title": "Vegas-regler",
+            "description": [
+                "Dra tre, tre varv",
+                "52 per giv, 5 per kort, 3 givar"
+            ]
+        },
+        "expertVersus": {
+            "title": "Expert mot varandra",
+            "description": [
+                "Samma giv, dra tre",
+                "Utan ångra, ledtrådar och hjälp"
+            ]
+        },
+        "expertCoop": {
+            "title": "Expert co-op",
+            "description": [
+                "En tablå, dra tre",
+                "Ni har bara varandra att luta er mot"
+            ]
+        }
+    },
+    "help": {
+        "howToPlay": {
+            "title": "Reglerna",
+            "description": [
+                "Bygg varje färg uppåt från ess till kung på de fyra grundhögarna. På tablån bygger du högarna nedåt i växlande färger, och flyttar en serie kort tillsammans genom att flytta kortet den börjar med.",
+                "Bara en kung får läggas i en tom hög. Klicka på talongen för att vända upp kort när du får slut på drag. Klicka på ett kort och sedan dit det ska, dra dit det, eller dubbelklicka för att skicka det till bästa stället det passar på."
+            ]
+        },
+        "modes": {
+            "title": "Spela tillsammans",
+            "description": [
+                "Varje tablå i en giv får samma kort. I Mot varandra spelar alla sin egen, och det gäller att klara den först. I Lag delar varje lag på en.",
+                "I Co-op spelar hela bordet en enda tablå tillsammans. Klara varje giv innan tiden tar slut för att vinna."
+            ]
+        },
+        "undoAndGiveUp": {
+            "title": "Ångra och ge upp",
+            "description": [
+                "Beroende på inställningarna kan du ta tillbaka drag så ofta du vill, ett visst antal gånger per giv, eller inte alls.",
+                "Fastnat? Ge upp så väntar given inte längre på dig. Att ge upp är slutgiltigt, men du kan titta på när de andra spelar vidare och se hur given kunde ha vunnits."
+            ]
+        }
+    },
+    "info": {
+        "dealing": "Blandar leken...",
+        "finishing": "Lägger ut given...",
+        "deal": "Giv {current} av {total}",
+        "draw": "Dra från talongen",
+        "recycle": "Vänd kasthögen",
+        "foundation": "Grundhög",
+        "card": "{suit} {rank}",
+        "moves": "Drag",
+        "lastPass": "Sista varvet",
+        "expert": "Expert",
+        "assistsOff": "{count} hjälp av | {count} hjälpmedel av",
+        "assistsOffTitle": "Hjälpmedel av",
+        "assistsNote": "Den här matchen spelas utan dem.",
+        "assistsExpertNote": "Expertregler: den här matchen spelas utan dem.",
+        "undoLeft": "Ångra ({count} kvar) | Ångra ({count} kvar) | Ångra ({count} kvar)",
+        "hint": "Ledtråd",
+        "hintLeft": "Ledtråd ({count} kvar) | Ledtråd ({count} kvar) | Ledtråd ({count} kvar)",
+        "giveUp": "Ge upp",
+        "noMoves": "Inga användbara drag kvar. Ge upp för att avsluta din giv.",
+        "noMovesUndo": "Inga användbara drag kvar. Ångra för att prova en annan väg, eller ge upp.",
+        "lost": "Den här given går inte att vinna härifrån.",
+        "lostAt": "Den gick fortfarande att vinna för {count} drag sedan, innan {move}. | Den gick fortfarande att vinna för ett drag sedan, innan {move}. | Den gick fortfarande att vinna för {count} drag sedan, innan {move}.",
+        "lostMoveOnto": "{card} lades på {onto}",
+        "lostMoveHome": "{card} lades på en grundhög",
+        "lostMoveEmpty": "{card} lades i en tom hög",
+        "lostMoveDraw": "talongen vändes",
+        "goBack": "Gå tillbaka {count} drag | Gå tillbaka 1 drag | Gå tillbaka {count} drag",
+        "goBackCost": "Använder {count} av dina {left} ångringar. | Använder 1 av dina {left} ångringar. | Använder {count} av dina {left} ångringar.",
+        "goBackShort": "Du behöver {count} ångringar och har {left} kvar. | Du behöver 1 ångring och har inga kvar. | Du behöver {count} ångringar och har {left} kvar.",
+        "gaveUp": "Gav upp",
+        "cleared": "Klarad",
+        "lastDeal": "Sista given",
+        "cardsHome": "Inga kort upplagda | {count} kort upplagt | {count} kort upplagda",
+        "race": "Läget i loppet",
+        "watching": "Tittar",
+        "pingLook": "{name}: titta här",
+        "pingQuestion": "{name}: vad sägs om den här?",
+        "backToTable": "Mitt bord",
+        "watchers": "{count} tittar",
+        "giveUpConfirmTitle": "Ge upp den här given?",
+        "giveUpConfirm": "De andra spelar vidare utan dig. När du har gett upp kan du inte spela den här given igen.",
+        "giveUpConfirmAlone": "Det avslutar din giv.",
+        "dealOver": "Given är slut",
+        "voteAskUndo": "Ångra senaste draget?",
+        "voteAskHint": "Ta en ledtråd?",
+        "voteAskRewind": "Gå tillbaka {count} drag? | Gå tillbaka ett drag? | Gå tillbaka {count} drag?",
+        "voteAsking": "{name} frågar laget.",
+        "voteEveryone": "Alla måste hålla med.",
+        "voteSaidNo": "Du sa nej. Väntar på de andra...",
+        "voteKeepUndo": "Behåll det",
+        "voteKeepHint": "Nej tack",
+        "voteKeepRewind": "Stanna här",
+        "voteKeepGiveUp": "Spela vidare",
+        "voteWaiting": "Väntar på laget...",
+        "voteAgreed": "Du höll med. Väntar på de andra...",
+        "voteDeclinedUndo": "Ångra nekades",
+        "voteDeclinedHint": "Ledtråd nekades",
+        "voteDeclinedRewind": "Gå tillbaka nekades",
+        "voteGoBack": "Gå tillbaka",
+        "hintBy": "{name} frågade",
+        "voteDeclinedGiveUp": "Ge upp nekades",
+        "giveUpConfirmTeam": "Alla på din sida måste hålla med. Sedan kan din sida inte spela den här given igen.",
+        "voteCount": "{yes} av {needed} håller med",
+        "clearedIn": "Klarad på {time}",
+        "closeTitle": "Du var nära!",
+        "closeText": "Den här given kunde fortfarande vinnas härifrån.",
+        "showMe": "Visa hur",
+        "watchSomeone": "Titta på någon som fortfarande spelar",
+        "replaying": "Så här kunde den vinnas",
+        "replayMove": "Drag {current} av {total}",
+        "replayPlay": "Spela upp genomgången",
+        "replayPause": "Pausa",
+        "replayBack": "Ett drag bakåt",
+        "replayForward": "Ett drag framåt",
+        "replaySpeed": "Genomgångens hastighet",
+        "nextDeal": "Nästa giv",
+        "watchAgain": "Se igen",
+        "watchedCleared": "{name} gick ut. Nu tittar du på {next}.",
+        "watchedGaveUp": "{name} gav upp. Nu tittar du på {next}.",
+        "previousPlayer": "Föregående spelare",
+        "nextPlayer": "Nästa spelare",
+        "watchOthers": "Titta på de andra"
+    },
+    "statistics": {
+        "clearRate": "Andel klarade",
+        "soloBestTime": "Bästa solotid",
+        "soloAverageTime": "Snittid solo",
+        "fewestMoves": "Minst drag",
+        "clears": "Klarade",
+        "expertClears": "Klarade expert"
+    }
+}

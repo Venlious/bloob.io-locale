@@ -1,0 +1,262 @@
+{
+    "options": {
+        "drawCount": {
+            "title": "Draw",
+            "help": "How many cards are turned over from the stock at a time. With three, only the top one can be played.",
+            "data": {
+                "1": "Draw one",
+                "3": "Draw three"
+            }
+        },
+        "passes": {
+            "title": "Passes Through the Deck",
+            "help": "How many times you may go through the stock. Once a pass ends, the waste is turned back over into a new stock, until the passes run out.",
+            "data": {
+                "0": "Any number",
+                "1": "One pass",
+                "3": "Three passes"
+            }
+        },
+        "undo": {
+            "title": "Undo",
+            "help": "Whether a move can be taken back. Taking a move back also takes back the points it scored.",
+            "count": "{count} per deal",
+            "data": {
+                "UNLIMITED": "Unlimited",
+                "LIMITED": "Limited",
+                "OFF": "No undo"
+            },
+            "description": {
+                "UNLIMITED": "Take back as many moves as you like.",
+                "LIMITED": "Each tableau gets a fixed number of undos per deal.",
+                "OFF": "Every move is final."
+            }
+        },
+        "undoLimit": {
+            "title": "Undos per Deal",
+            "help": "How many moves each tableau may take back in one deal when undo is limited. A shared tableau shares them."
+        },
+        "hint": {
+            "title": "Hints",
+            "help": "Whether you can ask for a hint. A hint flashes a move worth making: a card and where it goes, or the stock.",
+            "count": "{count} per deal",
+            "data": {
+                "UNLIMITED": "Unlimited",
+                "LIMITED": "Limited",
+                "OFF": "No hints"
+            },
+            "description": {
+                "UNLIMITED": "Ask for as many hints as you like.",
+                "LIMITED": "Each tableau gets a fixed number of hints per deal.",
+                "OFF": "Find every move yourself."
+            }
+        },
+        "hintLimit": {
+            "title": "Hints per Deal",
+            "help": "How many hints each tableau may ask for in one deal when hints are limited. A shared tableau shares them."
+        },
+        "scoring": {
+            "title": "Scoring Style",
+            "help": "How a tableau is scored. Whoever clears the most deals wins, and points break a tie.",
+            "data": {
+                "STANDARD": "Standard points",
+                "VEGAS": "Vegas"
+            },
+            "description": {
+                "STANDARD": "Points for every move that makes progress, and a bonus for clearing that grows the faster you were.",
+                "VEGAS": "Each deal costs 52, and every card on a foundation pays 5 back."
+            }
+        },
+        "timeLimit": {
+            "title": "Time per Deal",
+            "help": "How long every deal may run. When the time is up, the deal ends for everyone."
+        },
+        "rounds": {
+            "title": "Deals",
+            "help": "How many deals the match plays. Points carry over from one deal to the next."
+        },
+        "firstFinish": {
+            "title": "First Clear Ends the Deal",
+            "help": "When on, the deal ends for everybody the moment one side clears its tableau. When off, everyone plays on until they clear, give up or run out of time."
+        },
+        "foundationTakeBack": {
+            "title": "Take Back from Foundations",
+            "help": "Whether a card on a foundation may be moved back down onto the tableau."
+        },
+        "autoComplete": {
+            "title": "Auto-Complete",
+            "help": "Once every card is face up and the stock and waste are empty, the tableau finishes itself."
+        },
+        "showFits": {
+            "title": "Show Where Cards Fit",
+            "help": "While a card is picked up, the piles it can go on are outlined."
+        },
+        "doubleTap": {
+            "title": "Double-Tap to Move",
+            "help": "Tapping or clicking a card twice sends it to the best place it fits. Off, tap the card and then the pile."
+        },
+        "lostWarning": {
+            "title": "Say When a Deal Is Lost",
+            "help": "When a hint or giving up finds that the deal can no longer be won, say so, and offer to go back to where it still could be. Only with hints on."
+        }
+    },
+    "presets": {
+        "versus": {
+            "title": "Versus",
+            "description": [
+                "Everyone gets the same deal",
+                "Most clears wins, points break ties"
+            ]
+        },
+        "coop": {
+            "title": "Co-op",
+            "description": [
+                "One tableau for the table",
+                "Clear every deal together"
+            ]
+        },
+        "teams": {
+            "title": "Teams",
+            "description": [
+                "One tableau per team",
+                "Same deal for every team"
+            ]
+        },
+        "vegas": {
+            "title": "Vegas Rules",
+            "description": [
+                "Draw three, three passes",
+                "52 a deal, 5 a card, over 3 deals"
+            ]
+        },
+        "expertVersus": {
+            "title": "Expert Versus",
+            "description": [
+                "Same deal, draw three",
+                "No undo, hints or help"
+            ]
+        },
+        "expertCoop": {
+            "title": "Expert Co-op",
+            "description": [
+                "One tableau, draw three",
+                "Nothing to lean on but each other"
+            ]
+        }
+    },
+    "help": {
+        "howToPlay": {
+            "title": "The Rules",
+            "description": [
+                "Build every suit up from the ace to the king on the four foundations. On the tableau, build columns down in alternating colors, and move a run of cards together by moving the card it starts with.",
+                "Only a king can go into an empty column. Click the stock to turn cards over when you run out of moves. Click a card and then where it should go, drag it there, or double-click it to send it to the best place it fits."
+            ]
+        },
+        "modes": {
+            "title": "Playing Together",
+            "description": [
+                "Every tableau in a deal is dealt the same cards. In Versus everyone plays their own, and the race is to clear it first. In Teams each team shares one.",
+                "In Co-op the whole table plays a single tableau together. Clear every deal before the time runs out to win."
+            ]
+        },
+        "undoAndGiveUp": {
+            "title": "Undo and Giving Up",
+            "description": [
+                "Depending on the settings, you can take moves back as often as you like, a set number of times per deal, or not at all.",
+                "Stuck? Give up and the deal stops waiting for you. Giving up is final, but you can watch the others play on and see how the deal could have been won."
+            ]
+        }
+    },
+    "info": {
+        "dealing": "Shuffling the deck...",
+        "finishing": "Finishing the deal...",
+        "deal": "Deal {current} of {total}",
+        "draw": "Draw from the stock",
+        "recycle": "Turn the waste over",
+        "foundation": "Foundation",
+        "card": "{rank} of {suit}",
+        "moves": "Moves",
+        "lastPass": "Last pass",
+        "expert": "Expert",
+        "assistsOff": "{count} assist off | {count} assists off",
+        "assistsOffTitle": "Assists off",
+        "assistsNote": "This match plays without them.",
+        "assistsExpertNote": "Expert rules: this match plays without them.",
+        "undoLeft": "Undo ({count} left) | Undo ({count} left) | Undo ({count} left)",
+        "hint": "Hint",
+        "hintLeft": "Hint ({count} left) | Hint ({count} left) | Hint ({count} left)",
+        "giveUp": "Give Up",
+        "noMoves": "No useful moves left. Give up to end your deal.",
+        "noMovesUndo": "No useful moves left. Undo to try another way, or give up.",
+        "lost": "This deal can't be won from here.",
+        "lostAt": "It could still be won {count} moves ago, before {move}. | It could still be won a move ago, before {move}. | It could still be won {count} moves ago, before {move}.",
+        "lostMoveOnto": "putting {card} on {onto}",
+        "lostMoveHome": "sending {card} home",
+        "lostMoveEmpty": "putting {card} in an empty column",
+        "lostMoveDraw": "turning the stock",
+        "goBack": "Go back {count} moves | Go back 1 move | Go back {count} moves",
+        "goBackCost": "Uses {count} of your {left} undos. | Uses 1 of your {left} undos. | Uses {count} of your {left} undos.",
+        "goBackShort": "You need {count} undos and have {left} left. | You need 1 undo and have none left. | You need {count} undos and have {left} left.",
+        "gaveUp": "Gave Up",
+        "cleared": "Cleared",
+        "lastDeal": "Last Deal",
+        "cardsHome": "No cards home | {count} card home | {count} cards home",
+        "race": "Progress in the race",
+        "watching": "Watching",
+        "pingLook": "{name}: look here",
+        "pingQuestion": "{name}: what about this?",
+        "backToTable": "My table",
+        "watchers": "{count} watching",
+        "giveUpConfirmTitle": "Give up this deal?",
+        "giveUpConfirm": "The others play on without you. Once you give up, you can't play this deal again.",
+        "giveUpConfirmAlone": "That ends your deal.",
+        "dealOver": "Deal over",
+        "voteAskUndo": "Undo the last move?",
+        "voteAskHint": "Take a hint?",
+        "voteAskRewind": "Go back {count} moves? | Go back a move? | Go back {count} moves?",
+        "voteAsking": "{name} is asking the team.",
+        "voteEveryone": "Everyone has to agree.",
+        "voteSaidNo": "You said no. Waiting for the others...",
+        "voteKeepUndo": "Keep it",
+        "voteKeepHint": "No thanks",
+        "voteKeepRewind": "Stay here",
+        "voteKeepGiveUp": "Play on",
+        "voteWaiting": "Waiting for the team...",
+        "voteAgreed": "You agreed. Waiting for the others...",
+        "voteDeclinedUndo": "Undo turned down",
+        "voteDeclinedHint": "Hint turned down",
+        "voteDeclinedRewind": "Going back turned down",
+        "voteGoBack": "Go back",
+        "hintBy": "{name} asked",
+        "voteDeclinedGiveUp": "Giving up turned down",
+        "giveUpConfirmTeam": "Everyone on your side has to agree. Once you all do, your side can't play this deal again.",
+        "voteCount": "{yes} of {needed} agreed",
+        "clearedIn": "Cleared in {time}",
+        "closeTitle": "You were close!",
+        "closeText": "This deal could still be won from here.",
+        "showMe": "Show me how",
+        "watchSomeone": "Watch someone still playing",
+        "replaying": "Showing how it could be won",
+        "replayMove": "Move {current} of {total}",
+        "replayPlay": "Play replay",
+        "replayPause": "Pause",
+        "replayBack": "Back a move",
+        "replayForward": "Forward a move",
+        "replaySpeed": "Replay speed",
+        "nextDeal": "Next deal",
+        "watchAgain": "Watch again",
+        "watchedCleared": "{name} cleared. Now watching {next}.",
+        "watchedGaveUp": "{name} gave up. Now watching {next}.",
+        "previousPlayer": "Previous player",
+        "nextPlayer": "Next player",
+        "watchOthers": "Watch others"
+    },
+    "statistics": {
+        "clearRate": "Clear Rate",
+        "soloBestTime": "Solo Best Time",
+        "soloAverageTime": "Solo Avg. Time",
+        "fewestMoves": "Fewest Moves",
+        "clears": "Clears",
+        "expertClears": "Expert Clears"
+    }
+}
