@@ -5,12 +5,12 @@
             "help": "Il tempo che ogni giocatore ha per fare la sua scommessa per il turno. Questo si usa solo se le scommesse sono attive."
         },
         "dealerSecondCard": {
-            "title": "Carta Seconda del Dealer",
+            "title": "Seconda Carta del Mazziere",
             "help": "Determina se la seconda carta del mazziere è mostrata a faccia in su (visibile) o a faccia in giù (nascosta). Quando la seconda carta è visibile, i giocatori hanno un vantaggio notevole sul mazziere."
         },
         "wager": {
             "title": "Scommessa",
-            "help": "Quando è attivato, i giocatori possono scommettere punti all'inizio del loro turno. Se vincono il round, la loro scommessa raddoppia; se perdono, si tengono i punti originali. I giocatori non possono scommettere più punti di quelli che hanno."
+            "help": "Quando è attivato, i giocatori possono scommettere punti all'inizio del loro turno. Se vincono la mano, ricevono il doppio della scommessa; se perdono, la scommessa è persa; in caso di pareggio, la riprendono. I giocatori non possono scommettere più punti di quelli che hanno."
         },
         "startPointAmount": {
             "title": "Punti di partenza",
@@ -18,19 +18,19 @@
         },
         "basePointAmount": {
             "title": "Punti Base",
-            "help": "I punti che un giocatore è sicuro di guadagnare quando vince un turno contro il dealer."
+            "help": "I punti che un giocatore è sicuro di guadagnare quando vince un turno contro il mazziere."
         },
         "blackjackBonusPointAmount": {
             "title": "Punti Bonus Blackjack",
             "help": "Punti extra (oltre ai \"Punti Base\") che si danno quando un giocatore vince un round con un blackjack."
         },
         "doubleDown": {
-            "title": "Raddoppia",
-            "help": "Quando è attivato, i giocatori possono raddoppiare la loro scommessa al primo colpo per una mano, ricevere esattamente un'altra carta e poi fermarsi automaticamente."
+            "title": "Raddoppio",
+            "help": "Quando è attivato, i giocatori possono raddoppiare la loro scommessa sulle prime due carte di una mano, ricevere esattamente un'altra carta e poi stare automaticamente."
         },
         "split": {
-            "title": "Dividi",
-            "help": "Quando è attivato, i giocatori possono dividere le loro due carte iniziali in due mani separate se entrambe le carte hanno lo stesso valore."
+            "title": "Split",
+            "help": "Quando è attivato, i giocatori possono fare split, cioè dividere le loro due carte iniziali in due mani separate se entrambe le carte hanno lo stesso valore."
         },
         "insurance": {
             "title": "Assicurazione",
@@ -41,7 +41,7 @@
             "help": "Quando è attivato, una mano di 21 con due carte (Asso + carta da 10) vince subito."
         },
         "aceHandling": {
-            "title": "Controllo da Pro",
+            "title": "Valore dell'Asso",
             "help": "Scegli come si segna un Asso. L'opzione dinamica conta automaticamente l'Asso come 1 se considerarlo come 11 farebbe superare 21.",
             "data": {
                 "ONE_OR_ELEVEN": "Dinamico (1 o 11)",
@@ -55,19 +55,19 @@
         },
         "fiveCardCharlie": {
             "title": "Five Card Charlie",
-            "help": "Quando è attivo, qualsiasi mano del giocatore con cinque carte e totale pari o inferiore a 21 vince automaticamente. Questa regola non si applica al dealer."
+            "help": "Quando è attivo, qualsiasi mano del giocatore con cinque carte e totale pari o inferiore a 21 vince automaticamente. Questa regola non si applica al mazziere."
         }
     },
     "presets": {
         "pointBased": {
-            "title": "Punti Basati",
+            "title": "A punti",
             "description": [
                 "Guadagna punti per vincere",
                 "10 turni"
             ]
         },
         "wagerOnly": {
-            "title": "Scommetti solo",
+            "title": "Solo scommesse",
             "description": [
                 "Inizia con 25 punti",
                 "Guadagna punti scommettendo",
@@ -79,21 +79,21 @@
         "gameplay": {
             "title": "Gioco",
             "description": [
-                "Inizi con due carte. Puoi scegliere di 'chiedere' (prendere un'altra carta) o 'stare' (tenere il tuo totale attuale).",
+                "Inizi con due carte. Puoi chiedere 'carta' (prendere un'altra carta) o 'stare' (tenere il tuo totale attuale).",
                 "L'obiettivo è arrivare il più vicino possibile a 21 senza superarlo. Un Asso è speciale, perché può valere 1 o 11 punti."
             ]
         },
         "dealer": {
-            "title": "Regole del Dealer",
+            "title": "Regole del Mazziere",
             "description": [
-                "Il mazziere deve pescare se ha 16 o meno e fermarsi se ha 17 o più.",
+                "Il mazziere deve chiedere carta se ha 16 o meno e stare se ha 17 o più.",
                 "Il fatto che il mazziere segua queste regole aggiunge un elemento strategico importante per il giocatore."
             ]
         },
         "objective": {
             "title": "Obiettivo",
             "description": [
-                "L'obiettivo è avere un punteggio più vicino a 21 di quello del dealer senza sballare (andare oltre 21 punti). Se finisci con lo stesso totale del dealer, si chiama 'push', il che significa che non vinci né perdi punti.",
+                "L'obiettivo è avere un punteggio più vicino a 21 di quello del mazziere senza sballare (andare oltre 21 punti). Se finisci con lo stesso totale del mazziere, è un pareggio ('push'), e non vinci né perdi punti.",
                 "Raggiungere un totale iniziale di 21 con due carte si chiama 'blackjack', e di solito porta a una vittoria speciale."
             ]
         },
@@ -101,21 +101,21 @@
             "title": "Scommesse",
             "description": [
                 "Nella nostra versione del blackjack, non puoi scommettere con fiches o soldi veri. Invece, puoi scommettere i tuoi punti nel gioco, così puoi superare i tuoi avversari.",
-                "Se scommetti 10 punti e vinci contro il dealer senza sballare, ti danno altri 10 punti. Ma se perdi, perdi i 10 punti che hai scommesso."
+                "Se scommetti 10 punti e vinci contro il mazziere senza sballare, ti danno altri 10 punti. Ma se perdi, perdi i 10 punti che hai scommesso."
             ]
         },
         "doubleDown": {
-            "title": "Raddoppia",
+            "title": "Raddoppio",
             "description": [
                 "Raddoppiare ti permette di raddoppiare la tua scommessa attuale in cambio di prendere esattamente un'altra carta.",
                 "Dopo aver ricevuto quella carta, la tua mano si ferma automaticamente, rendendo questa mossa ad alto rischio e alta ricompensa."
             ]
         },
         "split": {
-            "title": "Dividi",
+            "title": "Split",
             "description": [
-                "Se le tue prime due carte hanno lo stesso valore, puoi dividerle in due mani separate.",
-                "Si fa una scommessa uguale sulla nuova mano, e entrambe le mani si giocano indipendentemente contro il dealer."
+                "Se le tue prime due carte hanno lo stesso valore, puoi fare split e dividerle in due mani separate.",
+                "Si fa una scommessa uguale sulla nuova mano, e entrambe le mani si giocano indipendentemente contro il mazziere."
             ]
         },
         "insurance": {
@@ -142,7 +142,7 @@
             "PUSH": "Questo turno è un pareggio",
             "FIVE_CARD_CHARLIE": "Five Card Charlie! Una delle tue mani ha vinto automaticamente con cinque carte."
         },
-        "dealerRules": "Il dealer prende se ha {hitValue} o meno, si ferma su {standValue} o più.",
+        "dealerRules": "Il mazziere chiede carta con {hitValue} o meno, sta su {standValue} o più.",
         "waitingForWagerFromOthers": "Aspettando che tutti facciano la loro scommessa...",
         "selfReceivedPoints": "Hai ricevuto {points}.",
         "selfLostPoints": "Hai perso {points}.",

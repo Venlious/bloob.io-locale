@@ -10,7 +10,7 @@
         },
         "wager": {
             "title": "Miser",
-            "help": "Quand c'est activé, les joueurs peuvent parier des points au début de leur tour. S'ils gagnent le round, leur mise est doublée ; s'ils perdent, ils gardent leurs points d'origine. Les joueurs ne peuvent pas parier plus de points qu'ils en ont."
+            "help": "Quand c'est activé, les joueurs peuvent parier des points au début de leur tour. S'ils gagnent la main, ils récupèrent le double de leur mise ; s'ils perdent, la mise est perdue ; en cas d'égalité (push), ils récupèrent leur mise. Les joueurs ne peuvent pas parier plus de points qu'ils en ont."
         },
         "startPointAmount": {
             "title": "Points de départ",
@@ -25,8 +25,8 @@
             "help": "Des points en plus (en plus des \"Points de Base\") donnés quand un joueur gagne un tour avec un blackjack."
         },
         "doubleDown": {
-            "title": "Double ou rien",
-            "help": "Quand c'est activé, les joueurs peuvent doubler leur mise sur leur premier coup pour une main, recevoir exactement une carte en plus, puis se tenir automatiquement."
+            "title": "Doubler",
+            "help": "Quand c'est activé, les joueurs peuvent doubler leur mise sur leur premier coup d'une main, recevoir exactement une carte en plus, puis rester automatiquement."
         },
         "split": {
             "title": "Séparer",
@@ -41,7 +41,7 @@
             "help": "Quand c'est activé, un 21 avec deux cartes (As + carte de 10) gagne direct la main."
         },
         "aceHandling": {
-            "title": "Maniement de pro",
+            "title": "Valeur de l'as",
             "help": "Choisis comment un As est compté. L'option dynamique compte automatiquement l'As comme 1 si le compter comme 11 ferait dépasser 21.",
             "data": {
                 "ONE_OR_ELEVEN": "Dynamique (1 ou 11)",
@@ -50,8 +50,8 @@
             }
         },
         "splitSameFaceOnly": {
-            "title": "Split uniquement avec la même carte",
-            "help": "Quand c’est activé, le split est autorisé uniquement si les deux cartes de départ sont la même carte (par exemple K+K ou 8+8), pas seulement la même valeur numérique."
+            "title": "Séparer uniquement avec la même carte",
+            "help": "Quand c’est activé, on ne peut séparer que si les deux cartes de départ sont la même carte (par exemple K+K ou 8+8), pas seulement la même valeur."
         },
         "fiveCardCharlie": {
             "title": "Five Card Charlie",
@@ -84,7 +84,7 @@
             ]
         },
         "dealer": {
-            "title": "Règles du dealer",
+            "title": "Règles du croupier",
             "description": [
                 "Le croupier doit tirer sur un total de 16 ou moins et rester sur 17 ou plus.",
                 "Le fait que le croupier suive ces règles ajoute un côté stratégique super important pour le joueur."
@@ -93,19 +93,19 @@
         "objective": {
             "title": "Objectif",
             "description": [
-                "Le but, c'est d'avoir une valeur de main plus proche de 21 que le croupier sans dépasser (aller au-delà de 21 points). Si tu finis avec le même total que le croupier, on appelle ça un 'push', ce qui veut dire que tu gagnes ni ne perds de points.",
+                "Le but, c'est d'avoir une main plus proche de 21 que le croupier sans sauter (dépasser 21 points). Si tu finis avec le même total que le croupier, on appelle ça un 'push', ce qui veut dire que tu ne gagnes ni ne perds de points.",
                 "Avoir un total de 21 dès le départ avec deux cartes, ça s'appelle un 'blackjack', et ça te donne souvent une condition de victoire spéciale."
             ]
         },
         "wagering": {
             "title": "Miser des sous",
             "description": [
-                "Dans notre version du blackjack, tu peux pas parier avec des jetons ou de l'argent réel. À la place, tu peux parier tes points dans le jeu, ce qui te permet de battre tes adversaires.",
-                "Si tu paries 10 points et que tu gagnes contre le croupier sans faire faillite, tu recevras 10 points en plus. Par contre, si tu perds, tu perds les 10 points que t'as misé."
+                "Dans notre version du blackjack, tu ne peux pas parier avec des jetons ou de l'argent réel. À la place, tu peux parier tes points dans le jeu, ce qui te permet de battre tes adversaires.",
+                "Si tu paries 10 points et que tu bats le croupier sans sauter, tu reçois 10 points en plus. Par contre, si tu perds, tu perds les 10 points que t'as misés."
             ]
         },
         "doubleDown": {
-            "title": "Double ou rien",
+            "title": "Doubler",
             "description": [
                 "Doubler, ça te permet de doubler ta mise actuelle en échange de prendre juste une carte de plus.",
                 "Après avoir reçu cette carte, ta main reste automatiquement, ce qui en fait un coup à haut risque et à haute récompense."
@@ -135,7 +135,7 @@
     },
     "info": {
         "blackjackResult": {
-            "BUST": "T'as fait bust cette manche",
+            "BUST": "T'as sauté cette manche",
             "LOSS": "T'as perdu cette manche",
             "WIN": "T'as gagné cette manche!",
             "WIN_BLACKJACK": "Blackjack! T'as gagné cette manche!",

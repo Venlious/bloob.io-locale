@@ -10,23 +10,23 @@
         },
         "playTime": {
             "title": "Speltid",
-            "help": "Hur lång tid varje spelare har på sig att välja ett kort från sin hand att lägga till i det pågående spelet."
+            "help": "Hur lång tid varje spelare har på sig att välja ett kort från handen att spela ut."
         },
         "cribTime": {
-            "title": "Speldaxtid",
-            "help": "Hur lång tid varje spelare har på sig att bestämma vilka kort de ska skicka till korgen."
+            "title": "Tid för krubban",
+            "help": "Hur lång tid varje spelare har på sig att bestämma vilka kort som ska läggas i krubban."
         },
         "starterCardTime": {
             "title": "Startkortstid",
-            "help": "Hur länge den valda spelaren har på sig att välja startkortet från högen. Startkortet används som ett femte kort när det gäller att räkna poängen för alla händer och crib."
+            "help": "Hur lång tid den valda spelaren har på sig att välja startkortet ur leken. Startkortet räknas som ett femte kort när alla händer och krubban räknas."
         },
         "revealSpeed": {
             "title": "Visa Hastighet",
             "help": "Hur snabbt poängavslöjandet spelas upp i slutet av en omgång."
         },
         "dealerExtraCard": {
-            "title": "Återförsäljarens Extra Kort",
-            "help": "När det är aktiverat i 3-spelarspel får dealern ett extra crib-kort. När det är inaktiverat går det fjärde kortet automatiskt till crib."
+            "title": "Givarens extra kort",
+            "help": "När det är aktiverat i spel för 3 får givaren ett extra kort att lägga i krubban. När det är avstängt går det fjärde kortet automatiskt till krubban."
         },
         "winCondition": {
             "data": {
@@ -47,40 +47,41 @@
         "objective": {
             "title": "Förstå Uppdraget",
             "description": [
-                "Målet med Cribbage är att vara den första spelaren som når målscoren, vanligtvis 121 poäng.",
-                "Spelet består av tre distinkta delar som fortsätter hända tills det finns en vinnare."
+                "Målet med Cribbage är att vara först till målpoängen, oftast 121 poäng.",
+                "Varje runda har tre delar, och rundorna fortsätter tills någon har vunnit."
             ]
         },
         "deal": {
-            "title": "Affären",
+            "title": "Given",
             "description": [
-                "Varje spelare får 5 eller 6 kort, beroende på hur många spelare det är. Varje spelare måste välja 4 kort de vill behålla och slänga de andra till \"spjälsängen\", som tillhör dealern.",
-                "Spjälsängen kan ses som en andra hand, som kommer att ge dealern extra poäng när det är dags att räkna poängen."
+                "Varje spelare får 5 eller 6 kort, beroende på hur många ni är. Varje spelare behåller 4 kort och lägger resten i krubban, som tillhör givaren.",
+                "Krubban är som en extra hand som ger givaren extra poäng när poängen räknas."
             ]
         },
         "play": {
-            "title": "Spelet",
+            "title": "Utspelet",
             "description": [
-                "Spelare turas om att spela ett kort i taget från sin hand på bordet. Summan av de spelade korten hålls reda på under rundan och måste hålla sig under 31.",
-                "Spelare kan tjäna poäng med sekvenser, par, och genom att få summan till 15. Klicka på \"Poängsystem\" knappen under spelet för en fullständig översikt."
+                "Spelarna turas om att spela ut ett kort i taget från handen. Summan av de utspelade korten räknas under rundan och får inte gå över 31.",
+                "Du får poäng för följder, par och för att få summan till exakt 15. Klicka på knappen \"Poängsystem\" under spelet för en fullständig översikt."
             ]
         },
         "show": {
-            "title": "Showet",
+            "title": "Handräkning",
             "description": [
-                "När alla spelare har tömt sina händer under spelet, räknas poängen. Dealern räknas alltid sist och får också poäng för sin crib.",
-                "Spelare kan tjäna poäng för olika kombinationer. Klicka på \"Poängsystem\"-knappen medan du spelar för en fullständig översikt."
+                "När alla spelare har spelat ut sina kort räknas händerna. Givaren räknas alltid sist och får också poängen för sin krubba.",
+                "Du får poäng för olika kombinationer. Klicka på knappen \"Poängsystem\" under spelet för en fullständig översikt."
             ]
         }
     },
     "info": {
+        "dealer": "Givare",
         "type": {
             "jackHeels": {
-                "title": "Två för hans klackar"
+                "title": "Uppvänd knekt (två till givaren)"
             },
             "oneForHisNob": {
-                "title": "En för hans adelsman",
-                "description": "Ger {points} för att ha samma knektfärg som startkortet."
+                "title": "Rätt knekt",
+                "description": "Ger {points} för knekten i samma färg som startkortet."
             },
             "fifteen": {
                 "title": "Femton",
@@ -95,30 +96,30 @@
                 "playDescription": "Ger {points} poäng för att lägga till ett kort med samma rang som just spelades."
             },
             "pairRoyal": {
-                "title": "Kungligt Par",
+                "title": "Tre lika",
                 "description": "Ger {points} för att ha tre kort av samma valör.",
                 "playTitle": "att placera en {title}",
                 "playDescription": "Ger {points} poäng för att lägga till ett kort med samma rang som de två sista korten."
             },
             "doublePairRoyal": {
-                "title": "Dubbel Kunglig Par",
+                "title": "Fyra lika",
                 "description": "Ger {points} för att ha fyra kort av samma valör.",
                 "playTitle": "att placera en {title}",
                 "playDescription": "Ger {points} för att lägga till ett kort med samma rang som de tre sista korten."
             },
             "run": {
-                "title": "Serie",
-                "description": "Ger {points} poäng för varje kort i sekvensen.",
-                "playTitle": "att göra en sekvens av {cards}",
-                "playDescription": "Ger {points} för varje kort i sekvensen. Korten behöver inte vara i ordning, men de måste vara grupperade tillsammans. Till exempel, om du tar de sista korten och ordnar om dem i ordning, borde de räknas upp utan avbrott."
+                "title": "Följd",
+                "description": "Ger {points} för varje kort i följden.",
+                "playTitle": "att göra en följd med {cards}",
+                "playDescription": "Ger {points} för varje kort i följden. Korten behöver inte ligga i ordning, men de måste bilda en följd. Om du tar de senaste korten och sorterar dem ska de alltså bilda en obruten följd."
             },
             "flush": {
-                "title": "Flush (4 kort)",
-                "description": "Ger dig {points} om alla kort i din hand är av samma färg. Detta gäller bara för korten i din hand, utan att räkna med korgen och startkortet."
+                "title": "Färg (4 kort)",
+                "description": "Ger dig {points} om alla kort på din hand har samma färg. Det gäller bara korten på handen, inte krubban eller startkortet."
             },
             "flushStarter": {
-                "title": "Flush (5 kort)",
-                "description": "Ger {points} om alla kort i din hand + startkortet är av samma sort. Detta gäller bara för korten i din hand, inte för korten i korgen."
+                "title": "Färg (5 kort)",
+                "description": "Ger {points} om alla kort på din hand och startkortet har samma färg. Det gäller bara korten på handen, inte korten i krubban."
             },
             "thirtyOneForTwo": {
                 "title": "31 för två",
@@ -126,37 +127,37 @@
                 "playDescription": "Ger {points} till spelaren som spelade det sista kortet som ledde till en summa av 31."
             },
             "oneForGo": {
-                "title": "En för att gå",
+                "title": "Pass (en för sista kortet)",
                 "playTitle": "att spela det sista kortet",
                 "playDescription": "Ger {points} till spelaren som spelade det sista kortet när ingen annan kan göra ett giltigt drag."
             }
         },
         "title": {
             "hand": "Hand",
-            "show": "Visa",
-            "play": "Spela",
-            "crib": "Spjälsäng",
-            "skunkedSelf": "Skunkad Själv",
-            "skunkedOther": "Skunkad Annan"
+            "show": "Handräkning",
+            "play": "Utspel",
+            "crib": "Krubba",
+            "skunkedSelf": "Blev utklassad",
+            "skunkedOther": "Utklassade andra"
         },
-        "yourCribSelection": "Välj {cards} till din korg",
-        "nameCribSelection": "Välj {cards} till {name}s korg",
-        "yourCribSelectionSubmit": "Skicka de markerade korten till din korg!",
-        "nameCribSelectionSubmit": "Skicka de markerade korten till {name}s korg!",
-        "spectatorCribSelection": "Spelarna väljer kort till {name}s korg",
-        "singleSkunk": "Skunkad! Den här spelaren hade mindre än {points}.",
-        "doubleSkunk": "Dubbel skunkad! Den här spelaren hade mindre än {points}.",
-        "selfJackHeelsPoints": "{turn} drog en knekt! Du får {points} för hans klackar.",
-        "nameJackHeelsPoints": "{turn} drog en knekt! {name} får {points} för hans klackar.",
-        "nameSelfJackHeelsPoints": "Du drog en knekt! {name} får {points} för hans klackar.",
+        "yourCribSelection": "Välj {cards} till din krubba",
+        "nameCribSelection": "Välj {cards} till {name}s krubba",
+        "yourCribSelectionSubmit": "Lägg de markerade korten i din krubba!",
+        "nameCribSelectionSubmit": "Lägg de markerade korten i {name}s krubba!",
+        "spectatorCribSelection": "Spelarna väljer kort till {name}s krubba",
+        "singleSkunk": "Utklassad! Den här spelaren hade mindre än {points}.",
+        "doubleSkunk": "Dubbelt utklassad! Den här spelaren hade mindre än {points}.",
+        "selfJackHeelsPoints": "{turn} vände upp en knekt! Du får {points} för uppvänd knekt.",
+        "nameJackHeelsPoints": "{turn} vände upp en knekt! {name} får {points} för uppvänd knekt.",
+        "nameSelfJackHeelsPoints": "Du vände upp en knekt! {name} får {points} för uppvänd knekt.",
         "selfPlayOfOne": "Du får {points} för {0}.",
         "selfPlayOfTwo": "Du får {points} för {0} och {1}.",
         "namePlayOfOne": "{name} får {points} för {0}.",
         "namePlayOfTwo": "{name} får {points} för {0} och {1}.",
         "selfCannotPlay": "Inget av dina kort kan användas i spelet.",
         "nameCannotPlay": "{name} har inga kort som kan användas i spelet.",
-        "cardPlayBoardLimit": "Det här kortet kan inte spelas. Brädets värde kan inte överstiga {limit}.",
-        "sendCardsToCrib": "Skicka kort till spjälsängen",
+        "cardPlayBoardLimit": "Det här kortet kan inte spelas. Summan får inte gå över {limit}.",
+        "sendCardsToCrib": "Lägg kort i krubban",
         "pointsDisclaimer": "Dessa poäng räknades inte eftersom spelet slutade tidigt.",
         "cardInteractHint": "Klicka på ett kort för att göra ditt val.",
         "waitForOpponent": "Väntar på din motståndare...",

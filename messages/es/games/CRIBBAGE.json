@@ -13,20 +13,20 @@
             "help": "Cuánto tiempo tiene cada jugador para escoger una carta de su mano y añadirla a la jugada en curso."
         },
         "cribTime": {
-            "title": "Tiempo para mandar al montón",
-            "help": "Cuánto tiempo tiene cada jugador para decidir qué cartas va a mandar al montón."
+            "title": "Tiempo para el pozo",
+            "help": "Cuánto tiempo tiene cada jugador para decidir qué cartas va a echar al pozo."
         },
         "starterCardTime": {
-            "title": "Tiempo de carta inicial",
-            "help": "Cuánto tiempo tiene el jugador seleccionado para escoger la carta inicial del mazo. La carta inicial se usa como una quinta carta cuando se trata de calcular los puntajes para todas las manos y el montón."
+            "title": "Tiempo de la carta de corte",
+            "help": "Cuánto tiempo tiene el jugador seleccionado para escoger la carta de corte del mazo. La carta de corte cuenta como quinta carta al calcular la puntuación de todas las manos y del pozo."
         },
         "revealSpeed": {
             "title": "Velocidad de revelación",
             "help": "Qué tan rápido se muestra la puntuación al final de una ronda."
         },
         "dealerExtraCard": {
-            "title": "Carta extra del dealer",
-            "help": "Cuando se activa en juegos de 3 jugadores, el dealer recibe una carta extra para el montón. Cuando se desactiva, la cuarta carta va automáticamente al montón."
+            "title": "Carta extra del repartidor",
+            "help": "Cuando se activa en partidas de 3 jugadores, el repartidor recibe una carta extra para el pozo. Cuando se desactiva, la cuarta carta va automáticamente al pozo."
         },
         "winCondition": {
             "data": {
@@ -52,35 +52,36 @@
             ]
         },
         "deal": {
-            "title": "El trato",
+            "title": "El reparto",
             "description": [
-                "A cada jugador se le reparten 5 o 6 cartas, dependiendo de cuántos jugadores haya. Cada jugador debe elegir 4 cartas que quiera conservar y descartar las demás al \"montón\", que pertenece al dealer.",
-                "El montón se puede ver como una segunda mano, que le dará al dealer puntos adicionales cuando llegue el momento de contar los puntos."
+                "A cada jugador se le reparten 5 o 6 cartas, dependiendo de cuántos jugadores haya. Cada jugador debe elegir 4 cartas que quiera conservar y echar las demás al pozo, que pertenece al repartidor.",
+                "El pozo es como una segunda mano, que le dará al repartidor puntos adicionales cuando llegue el momento del recuento."
             ]
         },
         "play": {
-            "title": "El juego",
+            "title": "La jugada",
             "description": [
-                "Los jugadores se turnan para jugar una carta a la vez de su mano sobre la mesa. Se lleva la cuenta de la suma de las cartas jugadas durante la ronda y debe mantenerse por debajo de 31.",
-                "Los jugadores pueden ganar puntos con secuencias, pares y al conseguir que la suma llegue a 15. Haz clic en el botón \"Sistema de puntuación\" mientras estás en el juego para obtener una explicación completa."
+                "Los jugadores se turnan para jugar una carta a la vez de su mano sobre la mesa. Se lleva la cuenta de la suma de las cartas jugadas y no puede pasar de 31.",
+                "Los jugadores pueden ganar puntos con escaleras, pares y al conseguir que la suma llegue a 15. Haz clic en el botón \"Sistema de puntuación\" durante la partida para ver una explicación completa."
             ]
         },
         "show": {
-            "title": "El Show",
+            "title": "El recuento",
             "description": [
-                "Después de que todos los jugadores hayan vaciado sus manos durante el juego, se cuentan los puntos. El dealer siempre se cuenta al último y también recibirá puntos por el montón.",
-                "Los jugadores pueden ganar puntos por varias combinaciones. Haz clic en el botón \"Sistema de puntuación\" mientras estás en el juego para ver un resumen completo."
+                "Después de que todos los jugadores hayan jugado todas sus cartas, se cuentan los puntos. La mano del repartidor siempre se cuenta la última, y el repartidor también recibe los puntos del pozo.",
+                "Los jugadores pueden ganar puntos por varias combinaciones. Haz clic en el botón \"Sistema de puntuación\" durante la partida para ver un resumen completo."
             ]
         }
     },
     "info": {
+        "dealer": "Repartidor",
         "type": {
             "jackHeels": {
-                "title": "Dos por la Jota"
+                "title": "Dos por la jota de corte"
             },
             "oneForHisNob": {
-                "title": "Uno por la Jota",
-                "description": "Otorga {points} por tener una Jota del mismo palo que la carta inicial."
+                "title": "Uno por la jota del palo",
+                "description": "Otorga {points} por tener la jota del mismo palo que la carta de corte."
             },
             "fifteen": {
                 "title": "Quince",
@@ -95,60 +96,60 @@
                 "playDescription": "Otorga {points} por agregar una carta del mismo número que se acaba de jugar."
             },
             "pairRoyal": {
-                "title": "Trío Real",
+                "title": "Trío",
                 "description": "Otorga {points} por tener tres cartas del mismo número.",
                 "playTitle": "poniendo un {title}",
                 "playDescription": "Otorga {points} por agregar una carta del mismo número que las dos últimas cartas."
             },
             "doublePairRoyal": {
-                "title": "Doble Par Real",
+                "title": "Póker",
                 "description": "Otorga {points} por tener cuatro cartas del mismo número.",
                 "playTitle": "poniendo un {title}",
-                "playDescription": "Otorga {points} por agregar una carta del mismo rango que las últimas tres cartas."
+                "playDescription": "Otorga {points} por agregar una carta del mismo número que las últimas tres cartas."
             },
             "run": {
-                "title": "Corrida",
+                "title": "Escalera",
                 "description": "Otorga {points} por cada carta en la secuencia.",
-                "playTitle": "haciendo una corrida de {cards}",
+                "playTitle": "haciendo una escalera de {cards}",
                 "playDescription": "Otorga {points} por cada carta en la secuencia. Las cartas no necesitan estar en orden, pero sí necesitan estar agrupadas. Por ejemplo, si tomas las últimas cartas y las reorganizas en orden, deberían estar en secuencia sin interrupciones."
             },
             "flush": {
                 "title": "Color (4 cartas)",
-                "description": "Te da {points} si todas las cartas en tu mano son del mismo palo. Esto solo aplica a las cartas en tu mano, excluyendo el montón y la carta de inicio."
+                "description": "Te da {points} si todas las cartas de tu mano son del mismo palo. Esto solo se aplica a las cartas de tu mano, sin contar el pozo ni la carta de corte."
             },
             "flushStarter": {
                 "title": "Color (5 cartas)",
-                "description": "Te da {points} si todas las cartas en tu mano + la carta inicial son del mismo palo. Esto solo aplica a las cartas en tu mano, excluyendo el montón."
+                "description": "Te da {points} si todas las cartas de tu mano y la carta de corte son del mismo palo. Esto solo se aplica a las cartas de tu mano, sin contar el pozo."
             },
             "thirtyOneForTwo": {
-                "title": "31 para dos",
+                "title": "31 exacto",
                 "playTitle": "al dar justo en {target}",
                 "playDescription": "Otorga {points} al jugador que jugó la última carta que sumó 31."
             },
             "oneForGo": {
-                "title": "Uno por completar",
+                "title": "Uno por el paso",
                 "playTitle": "jugando la última carta",
-                "playDescription": "Otorga {points} al jugador que jugó la última carta cuando nadie más puede hacer una jugada válida."
+                "playDescription": "Otorga {points} al jugador que jugó la última carta cuando nadie más puede jugar."
             }
         },
         "title": {
             "hand": "Mano",
-            "show": "Mostrar",
-            "play": "Jugar",
-            "crib": "Montón",
+            "show": "Recuento",
+            "play": "Jugada",
+            "crib": "Pozo",
             "skunkedSelf": "Perdí por paliza",
             "skunkedOther": "Gané por paliza"
         },
-        "yourCribSelection": "Selecciona {cards} para tu montón",
-        "nameCribSelection": "Selecciona {cards} para el montón de {name}",
-        "yourCribSelectionSubmit": "¡Envía las cartas resaltadas a tu montón!",
-        "nameCribSelectionSubmit": "¡Envía las cartas resaltadas al montón de {name}!",
-        "spectatorCribSelection": "Los jugadores están eligiendo cartas para el montón de {name}",
+        "yourCribSelection": "Selecciona {cards} para tu pozo",
+        "nameCribSelection": "Selecciona {cards} para el pozo de {name}",
+        "yourCribSelectionSubmit": "¡Echa las cartas resaltadas a tu pozo!",
+        "nameCribSelectionSubmit": "¡Echa las cartas resaltadas al pozo de {name}!",
+        "spectatorCribSelection": "Los jugadores están eligiendo cartas para el pozo de {name}",
         "singleSkunk": "¡Paliza! Este jugador tenía menos de {points}.",
         "doubleSkunk": "¡Doble paliza! Este jugador tenía menos de {points}.",
-        "selfJackHeelsPoints": "¡{turn} sacó una Jota! Obtienes {points} por la Jota.",
-        "nameJackHeelsPoints": "¡{turn} sacó una Jota! {name} obtiene {points} por la Jota.",
-        "nameSelfJackHeelsPoints": "¡Sacaste una Jota! {name} obtiene {points} por la Jota.",
+        "selfJackHeelsPoints": "¡{turn} cortó una jota! Obtienes {points} por la jota de corte.",
+        "nameJackHeelsPoints": "¡{turn} cortó una jota! {name} obtiene {points} por la jota de corte.",
+        "nameSelfJackHeelsPoints": "¡Cortaste una jota! {name} obtiene {points} por la jota de corte.",
         "selfPlayOfOne": "Obtienes {points} por {0}.",
         "selfPlayOfTwo": "Obtienes {points} por {0} y {1}.",
         "namePlayOfOne": "{name} obtiene {points} por {0}.",
@@ -156,7 +157,7 @@
         "selfCannotPlay": "Ninguna de tus cartas puede ser usada en la jugada.",
         "nameCannotPlay": "{name} no tiene cartas que puedan ser usadas en la jugada.",
         "cardPlayBoardLimit": "No puedes jugar esta carta. El valor del tablero no puede exceder {limit}.",
-        "sendCardsToCrib": "Envía las cartas al montón",
+        "sendCardsToCrib": "Echa las cartas al pozo",
         "pointsDisclaimer": "Estas puntuaciones no contaron porque el juego terminó pronto.",
         "cardInteractHint": "Haz clic en una carta para hacer tu selección.",
         "waitForOpponent": "Esperando a tu oponente...",

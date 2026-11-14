@@ -13,20 +13,20 @@
             "help": "Quanto tempo cada jogador tem pra escolher uma carta da mão pra adicionar na jogada em andamento."
         },
         "cribTime": {
-            "title": "Hora do Berço",
-            "help": "Quanto tempo cada jogador tem pra decidir quais cartas vão mandar pro berço."
+            "title": "Tempo da Mão Extra",
+            "help": "Quanto tempo cada jogador tem para decidir quais cartas vai mandar para a mão extra."
         },
         "starterCardTime": {
-            "title": "Tempo do Cartão Inicial",
-            "help": "Quanto tempo o jogador selecionado tem para pegar a carta inicial do baralho. A carta inicial é usada como uma quinta carta na hora de calcular os pontos de todas as mãos e do berço."
+            "title": "Tempo da Carta Inicial",
+            "help": "Quanto tempo o jogador selecionado tem para tirar a carta inicial do baralho. A carta inicial conta como quinta carta na hora de contar os pontos de todas as mãos e da mão extra."
         },
         "revealSpeed": {
             "title": "Velocidade de Revelação",
-            "help": "Como rápido a pontuação é revelada no final de uma rodada."
+            "help": "Quão rápido a pontuação é revelada no final de uma rodada."
         },
         "dealerExtraCard": {
-            "title": "Carta Extra do Dealer",
-            "help": "Quando ativado em jogos de 3 jogadores, o dealer recebe uma carta extra pro berço. Quando desativado, a quarta carta vai pro berço automaticamente."
+            "title": "Carta Extra do Carteador",
+            "help": "Quando ativado em jogos de 3 jogadores, o carteador recebe uma carta extra para colocar na mão extra. Quando desativado, a quarta carta vai para a mão extra automaticamente."
         },
         "winCondition": {
             "data": {
@@ -52,111 +52,112 @@
             ]
         },
         "deal": {
-            "title": "O Acordo",
+            "title": "A Distribuição",
             "description": [
-                "Cada jogador recebe 5 ou 6 cartas, dependendo de quantos jogadores tem. Cada um deve escolher 4 cartas que quer manter e descartar as outras para o \"berço\", que pertence ao crupiê.",
-                "O berço pode ser visto como uma segunda mão, que vai dar pontos extras pro crupiê quando chegar a hora de contar os pontos."
+                "Cada jogador recebe 5 ou 6 cartas, dependendo de quantos jogadores tem. Cada um escolhe 4 cartas para ficar e descarta as outras na \"mão extra\", que pertence ao carteador.",
+                "A mão extra é como uma segunda mão, que dá pontos extras para o carteador na hora de contar os pontos."
             ]
         },
         "play": {
-            "title": "O Jogo",
+            "title": "A Jogada até 31",
             "description": [
-                "Os jogadores se revezam jogando uma carta por vez da mão para a mesa. A soma das cartas jogadas é acompanhada durante a rodada e deve ficar abaixo de 31.",
+                "Os jogadores se revezam jogando uma carta por vez da mão para a mesa. A soma das cartas jogadas é acompanhada durante a rodada e não pode passar de 31.",
                 "Os jogadores podem ganhar pontos com sequências, pares e ao fazer a soma chegar a 15. Clique no botão \"Sistema de Pontuação\" durante o jogo para uma visão geral completa."
             ]
         },
         "show": {
-            "title": "O Show",
+            "title": "A Contagem",
             "description": [
-                "Depois que todos os jogadores esvaziarem as mãos durante o jogo, os pontos são contados. O dealer sempre é contado por último e também recebe pontos pelo seu crib.",
+                "Depois que todos os jogadores esvaziam as mãos na jogada, os pontos são contados. O carteador sempre conta por último e também ganha os pontos da mão extra dele.",
                 "Os jogadores podem ganhar pontos por várias combinações. Clique no botão \"Sistema de Pontuação\" enquanto estiver no jogo para uma visão geral completa."
             ]
         }
     },
     "info": {
+        "dealer": "Carteador",
         "type": {
             "jackHeels": {
-                "title": "Dois pelos calcanhares dele"
+                "title": "Valete virado"
             },
             "oneForHisNob": {
-                "title": "Um para o seu nobre",
-                "description": "Dá {points} por ter o mesmo naipe de valete que a carta inicial."
+                "title": "Valete do naipe",
+                "description": "Dá {points} por ter o valete do mesmo naipe da carta inicial."
             },
             "fifteen": {
                 "title": "Quinze",
                 "description": "Dá {points} pra qualquer combinação de cartas que somam 15. As mesmas cartas podem ser usadas várias vezes em diferentes combinações.",
-                "playTitle": "acertando {target}",
+                "playTitle": "chegar a {target}",
                 "playDescription": "Dá {points} pontos por adicionar uma carta que faz o total dar 15."
             },
             "pair": {
                 "title": "Par",
-                "description": "Dá {points} pontos por ter duas cartas do mesmo naipe.",
-                "playTitle": "colocando um {title}",
+                "description": "Dá {points} pontos por ter duas cartas do mesmo valor.",
+                "playTitle": "um {title}",
                 "playDescription": "Concede {points} por adicionar uma carta com o mesmo valor que acabou de ser jogada."
             },
             "pairRoyal": {
-                "title": "Trinca Real",
-                "description": "Dá {points} pontos por ter três cartas do mesmo naipe.",
-                "playTitle": "colocando um {title}",
-                "playDescription": "Dá {points} por adicionar um carta com o mesmo valor das duas últimas cartas."
+                "title": "Trinca",
+                "description": "Dá {points} pontos por ter três cartas do mesmo valor.",
+                "playTitle": "uma {title}",
+                "playDescription": "Dá {points} por adicionar uma carta com o mesmo valor das duas últimas cartas."
             },
             "doublePairRoyal": {
-                "title": "Duplo Par Real",
+                "title": "Quadra",
                 "description": "Dá {points} pontos por ter quatro cartas do mesmo valor.",
-                "playTitle": "colocando um {title}",
+                "playTitle": "uma {title}",
                 "playDescription": "Dá {points} pontos por adicionar uma carta com o mesmo valor das últimas três cartas."
             },
             "run": {
                 "title": "Sequência",
                 "description": "Dá {points} pontos para cada carta na sequência.",
-                "playTitle": "fazendo uma sequência de {cards}",
+                "playTitle": "fazer uma sequência de {cards}",
                 "playDescription": "Dá {points} para cada carta na sequência. As cartas não precisam estar em ordem, mas precisam estar agrupadas. Por exemplo, se você pegar as últimas cartas e reorganizá-las em ordem, elas devem contar sem interrupção."
             },
             "flush": {
-                "title": "Sequência (4 cartas)",
-                "description": "Te dá {points} se todas as cartas na sua mão forem do mesmo naipe. Isso só vale pras cartas na sua mão, excluindo o berço e a carta inicial."
+                "title": "Mesmo naipe (4 cartas)",
+                "description": "Dá {points} se todas as cartas da sua mão forem do mesmo naipe. Isso só vale para as cartas da sua mão, sem contar a mão extra e a carta inicial."
             },
             "flushStarter": {
-                "title": "Sequência (5 cartas)",
-                "description": "Te dá {points} se todas as cartas na sua mão + a carta inicial forem do mesmo naipe. Isso só vale para as cartas na sua mão, excluindo o berço."
+                "title": "Mesmo naipe (5 cartas)",
+                "description": "Dá {points} se todas as cartas da sua mão + a carta inicial forem do mesmo naipe. Isso só vale para as cartas da sua mão, sem contar a mão extra."
             },
             "thirtyOneForTwo": {
-                "title": "31 pra dois",
-                "playTitle": "acertando exatamente {target}",
+                "title": "31 por dois",
+                "playTitle": "chegar exatamente a {target}",
                 "playDescription": "Dá {points} pro jogador que jogou a última carta que resultou na soma de 31."
             },
             "oneForGo": {
-                "title": "Um ponto por ir",
-                "playTitle": "jogando a última carta",
+                "title": "Um pelo passo",
+                "playTitle": "jogar a última carta",
                 "playDescription": "Dá {points} pro jogador que jogou a última carta quando ninguém mais consegue fazer uma jogada válida."
             }
         },
         "title": {
             "hand": "Mão",
-            "show": "Mostrar",
-            "play": "Jogar",
-            "crib": "Berço",
-            "skunkedSelf": "Eu fui skunkado",
-            "skunkedOther": "Ele foi skunkado"
+            "show": "Contagem",
+            "play": "Jogada",
+            "crib": "Mão extra",
+            "skunkedSelf": "Eu levei uma lavada",
+            "skunkedOther": "Ele levou uma lavada"
         },
-        "yourCribSelection": "Selecione {cards} para o seu berço",
-        "nameCribSelection": "Selecione {cards} para o berço do(a) {name}",
-        "yourCribSelectionSubmit": "Mande as cartas destacadas para o seu berço!",
-        "nameCribSelectionSubmit": "Mande as cartas destacadas para o berço do(a) {name}!",
-        "spectatorCribSelection": "Os jogadores estão selecionando cartas para o berço do(a) {name}",
-        "singleSkunk": "Foi skunked! Esse jogador tinha menos de {points}.",
-        "doubleSkunk": "Levou um skunk duplo! Esse jogador tinha menos de {points}.",
-        "selfJackHeelsPoints": "{turn} tirou um valete! Você ganha {points} pelos calcanhares dele.",
-        "nameJackHeelsPoints": "{turn} tirou um valete! {name} ganha {points} pelos calcanhares dele.",
-        "nameSelfJackHeelsPoints": "Você tirou um valete! {name} ganha {points} pelos calcanhares dele.",
+        "yourCribSelection": "Selecione {cards} para a sua mão extra",
+        "nameCribSelection": "Selecione {cards} para a mão extra do(a) {name}",
+        "yourCribSelectionSubmit": "Mande as cartas destacadas para a sua mão extra!",
+        "nameCribSelectionSubmit": "Mande as cartas destacadas para a mão extra do(a) {name}!",
+        "spectatorCribSelection": "Os jogadores estão selecionando cartas para a mão extra do(a) {name}",
+        "singleSkunk": "Levou uma lavada! Esse jogador tinha menos de {points}.",
+        "doubleSkunk": "Levou uma lavada dupla! Esse jogador tinha menos de {points}.",
+        "selfJackHeelsPoints": "{turn} tirou um valete! Você ganha {points} pelo valete virado.",
+        "nameJackHeelsPoints": "{turn} tirou um valete! {name} ganha {points} pelo valete virado.",
+        "nameSelfJackHeelsPoints": "Você tirou um valete! {name} ganha {points} pelo valete virado.",
         "selfPlayOfOne": "Você ganha {points} por {0}.",
         "selfPlayOfTwo": "Você ganha {points} por {0} e {1}.",
         "namePlayOfOne": "{name} ganha {points} por {0}.",
         "namePlayOfTwo": "{name} ganha {points} por {0} e {1}.",
         "selfCannotPlay": "Nenhuma das suas cartas pode ser usada na jogada.",
         "nameCannotPlay": "{name} não tem cartas que possam ser usadas na jogada.",
-        "cardPlayBoardLimit": "Essa carta não pode ser jogada. O valor do tabuleiro não pode ultrapassar {limit}.",
-        "sendCardsToCrib": "Mande Cartas para o Berço",
+        "cardPlayBoardLimit": "Essa carta não pode ser jogada. O total da mesa não pode passar de {limit}.",
+        "sendCardsToCrib": "Mande Cartas para a Mão Extra",
         "pointsDisclaimer": "Esses pontos não contaram porque o jogo acabou cedo.",
         "cardInteractHint": "Clique em uma carta para fazer sua escolha.",
         "waitForOpponent": "Esperando pelo seu oponente...",

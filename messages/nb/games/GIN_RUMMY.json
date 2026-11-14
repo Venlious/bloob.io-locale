@@ -6,50 +6,50 @@
         "knock": {
             "title": "Banke",
             "help": {
-                "enabled": "'Aktivert' lar deg banke basert på den innstilte bankegrensen.",
-                "firstDiscardCard": "'Basert på første kort som kastes' bruker det første kortet som kastes for å sette grensen; hvis du trekker en ess, må du gå Gin.",
-                "disabled": "'Deaktivert' lar deg bare avslutte en runde med en Gin."
+                "enabled": "'Aktivert' lar deg banke innenfor den innstilte bankegrensen.",
+                "firstDiscardCard": "'Basert på første kastekort' bruker det første kortet i kastebunken til å sette grensen; er det et ess, må du gå gin.",
+                "disabled": "'Deaktivert' lar deg bare avslutte en runde med gin."
             },
             "data": {
-                "firstDiscardCard": "Basert på første kort som ble kastet"
+                "firstDiscardCard": "Basert på første kastekort"
             }
         },
         "knockBasedOnFirstCard": {
-            "title": "Knock basert på første kast",
-            "help": "Når det er aktivert, bestemmer det første kortet i kastehaugen hvor mye man kan \"knock\" på. Spillere kan bare \"knocke\" hvis de har mindre eller likt med verdien av dette kortet i dødt tre."
+            "title": "Bankegrense fra første kastekort",
+            "help": "Når dette er aktivert, bestemmer det første kortet i kastebunken bankegrensen. Spillerne kan bare banke hvis deadwood er lik eller lavere enn verdien av dette kortet."
         },
         "knockThreshold": {
             "title": "Bankegrense",
-            "help": "En spiller kan \"knock\" når det er deres tur og de har dødt treverk som er lik eller lavere enn grensen som er satt."
+            "help": "En spiller kan banke på turen sin når deadwood er lik eller lavere enn grensen som er satt."
         },
         "ginPointAmount": {
             "title": "Gin",
-            "help": "Antall poeng en spiller får for å si Gin, som er når alle kortene på hånda er i en meld."
+            "help": "Antall poeng en spiller får for gin, det vil si når alle kortene på hånden er i kombinasjoner."
         },
         "bigGinPointAmount": {
-            "title": "Stor Gin",
-            "help": "Antall poeng en spiller får for å kalle Big Gin, som skjer når alle kortene i hånda pluss det trekka kortet er i en meld, uten noe dødt tre."
+            "title": "Big gin",
+            "help": "Antall poeng en spiller får for big gin, det vil si når alle kortene på hånden pluss kortet som ble trukket er i kombinasjoner, uten noe deadwood."
         },
         "undercutPointAmount": {
-            "title": "Underskudd",
-            "help": "En undercut skjer når en spiller banker, men motstanderen har like mange eller færre døde poeng. I så fall får motstanderen ekstra poeng."
+            "title": "Undercut",
+            "help": "En undercut skjer når en spiller banker, men motstanderen har like mye eller mindre deadwood. Da får motstanderen ekstra poeng."
         },
         "firstBonusPointAmount": {
-            "title": "Bonus: Første til å vinne",
-            "help": "Tildelt på slutten av spillet. Gir spilleren som først når 'Vinn Beløp' en bonus."
+            "title": "Spillbonus",
+            "help": "Gis på slutten av spillet. Gir spilleren som først nådde 'Vinnende Beløp' en bonus."
         },
         "roundBonusPointAmount": {
-            "title": "Bonus: Runde",
-            "help": "Tildelt på slutten av spillet. Gir hver spiller dette antallet poeng for hver runde de har vunnet, utenom uavgjorte."
+            "title": "Rundebonus",
+            "help": "Gis på slutten av spillet. Gir hver spiller dette antallet poeng for hver runde de har vunnet, uavgjorte runder ikke medregnet."
         },
         "shutoutBonusPointAmount": {
-            "title": "Bonus: Stengte mål",
-            "help": "Tildelt på slutten av spillet. Gir vinneren en ekstra bonus på dette antallet poeng hvis de har vunnet hver runde."
+            "title": "Shutout-bonus",
+            "help": "Gis på slutten av spillet. Gir vinneren en ekstra bonus på dette antallet poeng hvis de har vunnet alle rundene."
         }
     },
     "presets": {
         "straightGin": {
-            "title": "Ren gin",
+            "title": "Straight Gin",
             "description": [
                 "Ingen banking",
                 "Ingen bonus"
@@ -58,7 +58,7 @@
         "oklahomaGin": {
             "title": "Oklahoma Gin",
             "description": [
-                "Knock-verdi basert på første kast"
+                "Bankegrense fra første kastekort"
             ]
         }
     },
@@ -71,31 +71,31 @@
             ]
         },
         "deadwood": {
-            "title": "Dødt tre",
+            "title": "Deadwood",
             "description": [
-                "Deadwood er kort som ikke er med i noen meldinger. Verdien av deadwood regnes ut ved å summere verdiene av disse kortene (f.eks. to konger og en femmer blir totalt 25).",
-                "Prøv å holde deadwood så lavt som mulig ved å lage meldinger og kvitte deg med høyt verdikort som ikke er med i meldinger."
+                "Deadwood (døde kort) er kort som ikke er med i noen kombinasjon. Verdien av deadwood er summen av verdiene til disse kortene (f.eks. to konger og en femmer blir til sammen 25).",
+                "Prøv å holde deadwood så lavt som mulig ved å lage kombinasjoner og kvitte deg med høye kort som ikke er med i noen kombinasjon."
             ]
         },
         "melds": {
-            "title": "Meldinger",
+            "title": "Kombinasjoner",
             "description": [
-                "Melds kan lages ved å ha en rekke på tre eller flere kort av samme sort (f.eks. 3D, 4D, 5D) eller tre eller flere av samme rang (f.eks. 3H, 3D, 3S).",
-                "Melds blir automatisk uthevet i hånda di og i grensesnittet, så hold øye med bunken—motstanderen din kan droppe kortet du trenger!"
+                "Kombinasjoner (melds) lages av tre eller flere kort på rad i samme sort (f.eks. 3D, 4D, 5D) eller tre eller flere kort med samme verdi (f.eks. 3H, 3D, 3S).",
+                "Kombinasjonene blir automatisk uthevet på hånden din, så hold øye med kastebunken. Motstanderen din kan kaste kortet du trenger!"
             ]
         },
         "knock": {
-            "title": "Bank på",
+            "title": "Banke",
             "description": [
-                "Du kan banke hvis deadwooden din er under 10. Når du banker, blir alle kortene avslørt, og du får se motstanderens deadwood. Hvis deadwooden din er høyere, vinner motstanderen runden med en bonus.",
-                "Poenggiving for å banke er enkelt: trekk deadwooden din fra motstanderens. For eksempel, hvis deadwooden din er 5 og motstanderens er 25, får du 20 poeng."
+                "Du kan banke hvis deadwood er 10 eller mindre. Når du banker, vises alle kortene, og du ser motstanderens deadwood. Har du like mye eller mer deadwood enn motstanderen, er det en undercut, og motstanderen vinner runden med en bonus.",
+                "Poengene for å banke er enkle å regne ut: trekk din deadwood fra motstanderens. Har du for eksempel 5 i deadwood og motstanderen 25, får du 20 poeng."
             ]
         },
         "gin": {
-            "title": "Gin og Stooor Gin",
+            "title": "Gin og big gin",
             "description": [
-                "Hvis deadwooden din er 0 eller kan bli 0 etter å ha kastet det siste deadwood-kortet ditt, har du en Gin. Dette garanterer seier og gir deg en bonus pluss forskjellen i deadwood.",
-                "En Big Gin er enda bedre: hvis hele hånden din, pluss kortet du nettopp trakk, danner melds, får du en større bonus. Husk å si ifra om du har en Big Gin så fort du får den!"
+                "Er deadwood 0, eller blir det 0 når du kaster det siste kortet ditt som ikke passer inn, har du gin. Da vinner du runden og får en bonus pluss motstanderens deadwood.",
+                "Big gin er enda bedre: er hele hånden din, pluss kortet du nettopp trakk, i kombinasjoner, får du en større bonus."
             ]
         },
         "goal": {
@@ -111,13 +111,13 @@
             "tie": "Uavgjort",
             "undercut": "Undercut",
             "gin": "Gin",
-            "bigGin": "Stor Gin",
+            "bigGin": "Big gin",
             "knock": "Banke",
-            "knockSuccessRate": "Knock suksess"
+            "knockSuccessRate": "Vellykket banking"
         },
         "tieDescription": "Det er ikke nok kort igjen til å fortsette å spille. Det ble uavgjort!",
-        "scoreDescription": "Poengene blir regnet ut ved å se på forskjellen mellom verdiene av døde kort i hånda til hver spiller.",
-        "yourMeldAfterKnock": "Å nei... Noen av døde kortene til {name} kan flyttes til meldene dine!",
-        "nameMeldAfterKnock": "Kult! Noen av døde kortene dine kan flyttes til meldene til {name}!"
+        "scoreDescription": "Poengene regnes ut fra forskjellen i deadwood mellom spillerne.",
+        "yourMeldAfterKnock": "Å nei... Noe av deadwood til {name} kan legges av på kombinasjonene dine!",
+        "nameMeldAfterKnock": "Kult! Noe av deadwood ditt kan legges av på kombinasjonene til {name}!"
     }
 }

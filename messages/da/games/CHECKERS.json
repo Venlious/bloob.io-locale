@@ -1,10 +1,10 @@
 {
     "options": {
         "forceTake": {
-            "title": "Tving Tag",
+            "title": "Slagtvang",
             "help": {
-                "enabled": "**Aktiveret**: Når det er muligt, vil spilleren blive tvunget til at tage en modstanders brik.",
-                "disabled": "**Deaktiveret**: Spilleren kan vælge, hvilket træk de laver, selvom de kan tage en modstanders brik."
+                "enabled": "**Aktiveret**: Når det er muligt, skal spilleren slå en af modstanderens brikker.",
+                "disabled": "**Deaktiveret**: Spilleren kan vælge, hvilket træk de laver, selvom de kan slå en af modstanderens brikker."
             }
         },
         "field": {
@@ -25,24 +25,24 @@
             }
         },
         "kingCondition": {
-            "title": "Kongens Tilstand",
-            "help": "Under hvilke betingelser bliver en brik konge. En konge brik har lov til at bevæge sig i alle retninger.",
+            "title": "Kroning",
+            "help": "Hvornår en brik bliver kronet til konge. En konge må flytte i alle diagonale retninger.",
             "data": {
                 "OPPOSITE_SIDE": "Nå den modsatte side",
-                "TAKE": "Tag en brik",
-                "ALL": "Start med alle kongerne"
+                "TAKE": "Slå en brik",
+                "ALL": "Alle brikker starter som konger"
             }
         },
         "backwardsTake": {
-            "title": "Tag Tilbage",
-            "help": "Indstil om brikker har lov til at tage modstanderens brikker bagfra. Hvis det er slået fra, kan det kun gøres af kongebrikker."
+            "title": "Slå baglæns",
+            "help": "Om almindelige brikker må slå baglæns. Er det slået fra, kan kun konger slå baglæns."
         },
         "chainTake": {
-            "title": "Kæde Tag",
-            "help": "Når det er aktiveret, kan en brik overtage flere andre brikker i ét træk, hvis de er placeret korrekt. Alternativt, når det er deaktiveret, kan kun en brik tages ad gangen."
+            "title": "Flere slag i træk",
+            "help": "Når det er slået til, kan en brik slå flere brikker i ét træk, hvis de står rigtigt. Er det slået fra, kan der kun slås én brik ad gangen."
         },
         "staleCount": {
-            "title": "Kedeligt Spil",
+            "title": "Træk uden slag",
             "help": "Kampen ender uafgjort efter så mange træk i træk, hvor intet er slået og kun konger flytter."
         },
         "stuckThreshold": {
@@ -61,19 +61,19 @@
     },
     "presets": {
         "default": {
-            "title": "Almindelig Dam (Standard)",
+            "title": "Engelsk dam (standard)",
             "description": "8x8 felt — 24 brikker"
         },
         "international": {
-            "title": "Internationale Dam",
-            "description": "10x10 felt — 40 brikker — Tag baglæns"
+            "title": "International dam",
+            "description": "10x10 felt — 40 brikker — Slå baglæns"
         },
         "canadian": {
-            "title": "Canadisk Dam",
-            "description": "12x12 felt — 60 brikker — Tag tilbage"
+            "title": "Canadisk dam",
+            "description": "12x12 felt — 60 brikker — Slå baglæns"
         },
         "party": {
-            "title": "Fest Skak",
+            "title": "Dam for 4 spillere",
             "description": "Plus felt - 36 brikker - 4 spillere"
         }
     },
@@ -86,21 +86,21 @@
             ]
         },
         "take": {
-            "title": "Tager",
+            "title": "Slag",
             "description": [
-                "Hvis en modstanders brik er diagonalt ved siden af din brik med et åbent sted bag den, kan du tage den.",
-                "Afhængigt af indstillingerne, er du enten tvunget til at tage brikker når det er muligt, eller kan endda tage baglæns."
+                "Hvis en modstanders brik er diagonalt ved siden af din brik med et tomt felt bag den, kan du slå den.",
+                "Afhængigt af indstillingerne er der slagtvang, så du skal slå, når du kan, og almindelige brikker kan måske også slå baglæns."
             ]
         },
         "king": {
-            "title": "Kronede Brikker",
+            "title": "Konger",
             "description": [
-                "Under standardindstillingerne, når du når den modsatte side med en brik, bliver den til en konge.",
-                "Kongebrikker kan bevæge sig i alle diagonale retninger uden at være tvunget til at bevæge sig fremad."
+                "Under standardindstillingerne, når du når den modsatte side med en brik, bliver den kronet til konge.",
+                "Konger kan bevæge sig i alle diagonale retninger uden at være tvunget til at bevæge sig fremad."
             ]
         },
         "goal": {
-            "title": "Goal",
+            "title": "Mål",
             "description": [
                 "Typisk er målet at fjerne alle modstanderens brikker eller indtil der ikke kan laves flere gyldige træk.",
                 "Spillets mål, også kendt som sejrskriteriet, kan ændres i indstillingerne."

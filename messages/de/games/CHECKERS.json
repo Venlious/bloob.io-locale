@@ -1,10 +1,10 @@
 {
     "options": {
         "forceTake": {
-            "title": "Schlagen erzwingen",
+            "title": "Schlagzwang",
             "help": {
-                "enabled": "**Aktiviert**: Wenn möglich, ist der Spieler gezwungen, eine gegnerische Figur zu schlagen.",
-                "disabled": "**Deaktiviert**: Der Spieler darf den nächsten Zug bestimmen, auch wenn er dabei eine gegnerische Figur schlagen kann."
+                "enabled": "**Aktiviert**: Wenn möglich, ist der Spieler gezwungen, einen gegnerischen Stein zu schlagen.",
+                "disabled": "**Deaktiviert**: Der Spieler darf den nächsten Zug bestimmen, auch wenn er dabei einen gegnerischen Stein schlagen kann."
             }
         },
         "field": {
@@ -25,25 +25,25 @@
             }
         },
         "kingCondition": {
-            "title": "Krönungsbedingung",
-            "help": "Unter welchen Bedingungen ein Spielstein gekrönt wird. Ein gekrönter Spielstein darf sich in jede Richtung bewegen.",
+            "title": "Umwandlung zur Dame",
+            "help": "Unter welchen Bedingungen ein Stein zur Dame wird. Eine Dame darf in jede Richtung ziehen.",
             "data": {
                 "OPPOSITE_SIDE": "Erreichen der anderen Seite",
                 "TAKE": "Schlagen eines Spielsteins",
-                "ALL": "Jeder Spielstein ist gekrönt"
+                "ALL": "Jeder Stein ist eine Dame"
             }
         },
         "backwardsTake": {
-            "title": "Rückwärts Schlagen",
-            "help": "Lege fest, ob Spielsteine die gegnerischen Spielsteine rückwärts schlagen dürfen. Wenn diese Funktion deaktiviert ist, kann sie nur von gekrönten Spielsteinen genutzt werden."
+            "title": "Rückwärts schlagen",
+            "help": "Lege fest, ob Spielsteine die gegnerischen Spielsteine rückwärts schlagen dürfen. Wenn diese Funktion deaktiviert ist, kann sie nur von Damen genutzt werden."
         },
         "chainTake": {
-            "title": "Kettenschlagen",
+            "title": "Mehrfachschlagen",
             "help": "Wenn diese Funktion aktiviert ist, kann ein Spielstein mehrere andere Spielsteine in einem Zug schlagen, vorausgesetzt, sie befinden sich in der richtigen Entfernung zueinander. Wenn diese Funktion deaktiviert ist, kann jeweils nur ein Spielstein geschlagen werden."
         },
         "staleCount": {
             "title": "Unentschieden",
-            "help": "Das Spiel endet unentschieden nach so vielen Zügen in Folge, in denen nichts geschlagen wurde und nur gekrönte Steine gezogen haben."
+            "help": "Das Spiel endet unentschieden nach so vielen Zügen in Folge, in denen nichts geschlagen wurde und nur Damen gezogen haben."
         },
         "stuckThreshold": {
             "title": "Toleranz bei Feststeckung",
@@ -56,25 +56,25 @@
     },
     "drawCountdown": {
         "label": "Remis in {n} Zügen | Remis in {n} Zug | Remis in {n} Zügen",
-        "help": "Schlag einen Stein oder zieh einen Stein, der nicht gekrönt ist, um weiterzuspielen.",
-        "helpSpectating": "Ein Schlag oder ein Zug mit einem Stein, der nicht gekrönt ist, hält die Partie am Laufen."
+        "help": "Schlag einen Stein oder zieh einen einfachen Stein, um weiterzuspielen.",
+        "helpSpectating": "Ein Schlag oder ein Zug mit einem einfachen Stein hält die Partie am Laufen."
     },
     "presets": {
         "default": {
-            "title": "Englisches Dame (Standard)",
+            "title": "Englische Dame (Standard)",
             "description": "8x8 Feld — 24 Spielsteine"
         },
         "international": {
-            "title": "Internationales Dame",
-            "description": "10x10 Feld — 40 Spielsteine — Nimm rückwärts"
+            "title": "Internationale Dame",
+            "description": "10x10 Feld — 40 Spielsteine — Rückwärts schlagen"
         },
         "canadian": {
-            "title": "Kanadisches Dame",
-            "description": "12x12 Feld — 60 Spielsteine — Nimm rückwärts"
+            "title": "Kanadische Dame",
+            "description": "12x12 Feld — 60 Spielsteine — Rückwärts schlagen"
         },
         "party": {
-            "title": "Party Dame",
-            "description": "Plusfeld - 36 Spielsteine - 4 Spieler"
+            "title": "Dame für 4 Spieler",
+            "description": "Plusfeld — 36 Spielsteine"
         }
     },
     "help": {
@@ -93,16 +93,16 @@
             ]
         },
         "king": {
-            "title": "Gekrönte Spielsteine",
+            "title": "Damen",
             "description": [
-                "In der Standardeinstellung wird ein Spielstein zum König, wenn er die gegenüberliegende Seite erreicht.",
-                "Gekrönte Spielsteine können in alle diagonalen Richtungen ziehen, ohne gezwungen zu sein, vorwärts zu ziehen."
+                "In der Standardeinstellung wird ein Stein zur Dame, wenn er die gegenüberliegende Seite erreicht.",
+                "Damen können in alle diagonalen Richtungen ziehen, ohne gezwungen zu sein, vorwärts zu ziehen."
             ]
         },
         "goal": {
             "title": "Spielziel",
             "description": [
-                "Standardmäßig ist das Ziel, alle anderen Figuren des Gegners auszuschalten oder bis keine gültigen Züge mehr gemacht werden können.",
+                "Standardmäßig ist das Ziel, alle Steine des Gegners auszuschalten oder bis keine gültigen Züge mehr gemacht werden können.",
                 "Das Ziel des Spiels, auch als Siegbedingung bezeichnet, kann in den Einstellungen geändert werden."
             ]
         }

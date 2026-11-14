@@ -5,12 +5,12 @@
             "help": "Die Zeit, die jeder Spieler hat, um seinen Einsatz für die Runde zu machen. Das gilt nur, wenn Einsätze erlaubt sind."
         },
         "dealerSecondCard": {
-            "title": "Dealer Zweite Karte",
+            "title": "Zweite Karte des Dealers",
             "help": "Bestimmt, ob die zweite Karte des Dealers offen (sichtbar) oder verdeckt (versteckt) ist. Wenn die zweite Karte sichtbar ist, haben die Spieler einen richtig großen Vorteil gegenüber dem Dealer."
         },
         "wager": {
             "title": "Einsatz",
-            "help": "Wenn's aktiviert ist, können die Spieler am Anfang ihres Zugs Punkte setzen. Wenn sie die Runde gewinnen, wird ihr Einsatz verdoppelt; wenn sie verlieren, behalten sie ihre ursprünglichen Punkte. Die Spieler können nicht mehr Punkte setzen, als sie haben."
+            "help": "Wenn's aktiviert ist, können die Spieler am Anfang ihres Zugs Punkte setzen. Gewinnen sie die Hand, bekommen sie das Doppelte ihres Einsatzes zurück. Verlieren sie, ist der Einsatz weg. Bei einem Push bekommen sie ihn zurück. Die Spieler können nicht mehr Punkte setzen, als sie haben."
         },
         "startPointAmount": {
             "title": "Startpunkte",
@@ -21,15 +21,15 @@
             "help": "Die Punkte, die ein Spieler garantiert kriegt, wenn er ne Runde gegen den Dealer gewinnt."
         },
         "blackjackBonusPointAmount": {
-            "title": "Bonus Blackjack Punkte",
+            "title": "Blackjack-Bonuspunkte",
             "help": "Zusätzliche Punkte (obendrauf zu den \"Basis-Punkten\"), die ein Spieler bekommt, wenn er eine Runde mit einem Blackjack gewinnt."
         },
         "doubleDown": {
-            "title": "Doppelt setzen",
+            "title": "Verdoppeln (Double Down)",
             "help": "Wenn's aktiviert ist, können die Spieler ihren Einsatz bei ihrem ersten Zug für eine Runde verdoppeln, genau eine zusätzliche Karte bekommen und dann automatisch stehen bleiben."
         },
         "split": {
-            "title": "Teilen",
+            "title": "Teilen (Split)",
             "help": "Wenn's aktiviert ist, können die Spieler ihre ersten zwei Karten in zwei separate Hände aufteilen, wenn beide Karten den gleichen Wert haben."
         },
         "insurance": {
@@ -41,7 +41,7 @@
             "help": "Wenn's aktiviert ist, gewinnt man sofort mit einer Zwei-Karten-21 (Ass + 10-Wert-Karte)."
         },
         "aceHandling": {
-            "title": "Assi Steuerung",
+            "title": "Wert des Asses",
             "help": "Wähl, wie ein Ass gewertet wird. Die dynamische Option zählt das Ass automatisch als 1, wenn es als 11 gezählt werden würde und die Hand über 21 geht.",
             "data": {
                 "ONE_OR_ELEVEN": "Dynamisch (1 oder 11)",
@@ -50,8 +50,8 @@
             }
         },
         "splitSameFaceOnly": {
-            "title": "Split nur bei gleichem Kartenbild",
-            "help": "Wenn das aktiviert ist, ist Splitten nur erlaubt, wenn beide Startkarten dasselbe Kartenbild haben (zum Beispiel K+K oder 8+8), nicht nur denselben Zahlenwert."
+            "title": "Teilen nur bei gleichem Kartenbild",
+            "help": "Wenn das aktiviert ist, ist Teilen (Split) nur erlaubt, wenn beide Startkarten dasselbe Kartenbild haben (zum Beispiel K+K oder 8+8), nicht nur denselben Zahlenwert."
         },
         "fiveCardCharlie": {
             "title": "Five Card Charlie",
@@ -67,7 +67,7 @@
             ]
         },
         "wagerOnly": {
-            "title": "Nur Wetten",
+            "title": "Nur Einsätze",
             "description": [
                 "Fang mit 25 Punkten an",
                 "Punkte verdienen durch Wetten",
@@ -79,12 +79,12 @@
         "gameplay": {
             "title": "Gameplay - So spielst du!",
             "description": [
-                "Du fängst mit zwei Karten an. Du kannst 'hitten' (eine Karte ziehen) oder 'stehen bleiben' (dein aktuelles Total behalten).",
+                "Du fängst mit zwei Karten an. Du kannst 'Hit' sagen (eine Karte ziehen) oder 'Stand' (stehen bleiben und deine aktuelle Summe behalten).",
                 "Das Ziel ist, so nah wie möglich an 21 zu kommen, ohne drüber zu gehen. Ein Ass ist besonders, weil es entweder 1 oder 11 Punkte zählen kann."
             ]
         },
         "dealer": {
-            "title": "Händlerregeln",
+            "title": "Dealer-Regeln",
             "description": [
                 "Der Dealer muss bei 16 oder weniger ziehen und bei 17 oder mehr stehen bleiben.",
                 "Dass der Dealer sich an diese Regeln hält, bringt für den Spieler einen wichtigen strategischen Aspekt ins Spiel."
@@ -105,14 +105,14 @@
             ]
         },
         "doubleDown": {
-            "title": "Doppelt setzen",
+            "title": "Verdoppeln (Double Down)",
             "description": [
                 "Verdopple deinen Einsatz, indem du dich verpflichtest, genau eine Karte mehr zu ziehen.",
                 "Nach dem Ziehen dieser Karte bleibt deine Hand automatisch stehen, was das zu einem riskanten, aber lohnenden Zug macht."
             ]
         },
         "split": {
-            "title": "Teilen",
+            "title": "Teilen (Split)",
             "description": [
                 "Wenn deine ersten beiden Karten den gleichen Wert haben, kannst du sie in zwei separate Hände aufteilen.",
                 "Ein passender Einsatz wird auf die neue Hand gesetzt, und beide Hände werden unabhängig gegen den Dealer gespielt."
@@ -135,7 +135,7 @@
     },
     "info": {
         "blackjackResult": {
-            "BUST": "Du hast diese Runde verkackt",
+            "BUST": "Überkauft! Du hast diese Runde verloren",
             "LOSS": "Du hast diese Runde verloren",
             "WIN": "Du hast diese Runde gewonnen!",
             "WIN_BLACKJACK": "Blackjack! Du gewinnst diese Runde!",
@@ -143,7 +143,7 @@
             "FIVE_CARD_CHARLIE": "Five Card Charlie! Eine deiner Hände hat automatisch mit fünf Karten gewonnen."
         },
         "dealerRules": "Der Dealer zieht bei {hitValue} oder weniger, bleibt bei {standValue}+.",
-        "waitingForWagerFromOthers": "Wartest, bis alle ihren Einsatz gemacht haben...",
+        "waitingForWagerFromOthers": "Warte, bis alle ihren Einsatz gemacht haben...",
         "selfReceivedPoints": "Du hast {points} bekommen.",
         "selfLostPoints": "Du hast {points} verloren.",
         "selfRanOutOfPoints": "Dir sind die Punkte ausgegangen."

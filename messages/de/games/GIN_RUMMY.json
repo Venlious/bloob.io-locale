@@ -4,10 +4,10 @@
             "help": "Das Spiel endet, sobald ein Spieler diese Punktzahl erreicht. Aber das heißt nicht, dass man automatisch gewinnt, denn am Ende gibt's noch Bonuspunkte."
         },
         "knock": {
-            "title": "Klopf!",
+            "title": "Klopfen",
             "help": {
-                "enabled": "'Aktiviert' erlaubt Klopfen basierend auf dem festgelegten Klopfwert.",
-                "firstDiscardCard": "'Basierend auf der ersten abgeworfenen Karte' nutzt die erste abgeworfene Karte, um den Wert festzulegen; wenn ein Ass gezogen wird, musst du Gin machen.",
+                "enabled": "'Aktiviert' erlaubt Klopfen bis zur festgelegten Klopfgrenze.",
+                "firstDiscardCard": "'Basierend auf der ersten abgeworfenen Karte' nutzt die erste abgeworfene Karte, um die Klopfgrenze festzulegen; ist sie ein Ass, musst du Gin machen.",
                 "disabled": "'Deaktiviert' erlaubt das Beenden einer Runde nur mit einem Gin."
             },
             "data": {
@@ -15,41 +15,41 @@
             }
         },
         "knockBasedOnFirstCard": {
-            "title": "Knock basierend auf erstem Abwurf",
-            "help": "Wenn's aktiviert ist, bestimmt die erste Karte im Ablagestapel die Knock-Schwelle. Die Spieler können nur klopfen, wenn ihr toter Holzwert gleich oder niedriger als der Wert dieser Karte ist."
+            "title": "Klopfgrenze nach erstem Abwurf",
+            "help": "Wenn's aktiviert ist, bestimmt die erste Karte im Ablagestapel die Klopfgrenze. Die Spieler können nur klopfen, wenn ihr Deadwood gleich oder niedriger als der Wert dieser Karte ist."
         },
         "knockThreshold": {
             "title": "Klopfgrenze",
-            "help": "Ein Spieler kann klopfen, wenn er dran ist und sein toter Holzwert gleich oder kleiner als der festgelegte Grenzwert ist."
+            "help": "Ein Spieler kann klopfen, wenn er dran ist und sein Deadwood gleich oder kleiner als die festgelegte Grenze ist."
         },
         "ginPointAmount": {
             "title": "Gin",
-            "help": "Die Punkte, die ein Spieler bekommt, wenn er Gin ruft, also wenn alle Karten in seiner Hand in einer Meld sind."
+            "help": "Die Punkte, die ein Spieler bekommt, wenn er Gin ruft, also wenn alle Karten in seiner Hand zu Meldungen gehören."
         },
         "bigGinPointAmount": {
-            "title": "Großer Gin",
-            "help": "Die Punkte, die ein Spieler bekommt, wenn er Big Gin ruft, also wenn alle Karten in seiner Hand plus die gezogene Karte in einer Meld sind und kein totes Holz übrig bleibt."
+            "title": "Big Gin",
+            "help": "Die Punkte, die ein Spieler bekommt, wenn er Big Gin ruft, also wenn alle Karten in seiner Hand plus die gezogene Karte zu Meldungen gehören und kein Deadwood übrig bleibt."
         },
         "undercutPointAmount": {
             "title": "Undercut",
-            "help": "Ein Undercut passiert, wenn ein Spieler klopft, aber sein Gegner gleich viele oder weniger Punkte hat. In dem Fall kriegt der Gegner extra Punkte."
+            "help": "Ein Undercut passiert, wenn ein Spieler klopft, aber sein Gegner gleich viel oder weniger Deadwood hat. In dem Fall kriegt der Gegner extra Punkte."
         },
         "firstBonusPointAmount": {
-            "title": "Bonus: Erster Sieg",
+            "title": "Spielbonus",
             "help": "Am Ende des Spiels vergeben. Gibt dem Spieler, der als erster den 'Gewinnbetrag' erreicht hat, einen Bonus."
         },
         "roundBonusPointAmount": {
-            "title": "Bonus: Runde",
+            "title": "Rundenbonus",
             "help": "Am Ende des Spiels vergeben. Gibt jedem Spieler diese Anzahl an Punkten für jede Runde, die sie gewonnen haben, ohne Unentschieden."
         },
         "shutoutBonusPointAmount": {
-            "title": "Bonus: Auszeit",
+            "title": "Shutout-Bonus",
             "help": "Am Ende des Spiels vergeben. Gibt dem Gewinner einen zusätzlichen Bonus von dieser Punktzahl, wenn er jede Runde gewonnen hat."
         }
     },
     "presets": {
         "straightGin": {
-            "title": "Pur Gin",
+            "title": "Straight Gin",
             "description": [
                 "Kein Klopfen",
                 "Kein Bonus"
@@ -58,7 +58,7 @@
         "oklahomaGin": {
             "title": "Oklahoma Gin",
             "description": [
-                "Knock-Wert basierend auf dem ersten Abwurf"
+                "Klopfgrenze nach dem ersten Abwurf"
             ]
         }
     },
@@ -66,8 +66,8 @@
         "rounds": {
             "title": "Runden",
             "description": [
-                "Das Spiel besteht aus mehreren Runden. In jeder Runde kriegen die Spieler 10 Karten, und eine Karte liegt offen im Stapel. Die Spieler können entscheiden, ob sie passen oder die oberste Karte vom Stapel nehmen wollen.",
-                "Die Züge wechseln sich ab, und wenn du dran bist, kannst du eine Karte vom Stapel oder vom Deck nehmen. Danach musst du eine Karte wieder in den Stapel zurücklegen."
+                "Das Spiel besteht aus mehreren Runden. In jeder Runde kriegen die Spieler 10 Karten, und eine Karte liegt offen auf dem Ablagestapel. Die Spieler können entscheiden, ob sie passen oder diese Karte nehmen wollen.",
+                "Die Züge wechseln sich ab, und wenn du dran bist, kannst du eine Karte vom Ablagestapel oder vom Nachziehstapel nehmen. Danach musst du eine Karte auf den Ablagestapel abwerfen."
             ]
         },
         "deadwood": {
@@ -85,7 +85,7 @@
             ]
         },
         "knock": {
-            "title": "Klopf, klopf!",
+            "title": "Klopfen",
             "description": [
                 "Du kannst klopfen, wenn dein Deadwood weniger als 10 ist. Wenn du klopfst, werden alle Karten aufgedeckt und du siehst das Deadwood deines Gegners. Wenn dein Deadwood höher ist, gewinnt dein Gegner die Runde mit einem Bonus.",
                 "Die Punkte für ein Klopfen sind einfach: Zieh dein Deadwood von dem deines Gegners ab. Zum Beispiel, wenn dein Deadwood 5 ist und das deines Gegners 25, bekommst du 20 Punkte."
@@ -109,15 +109,15 @@
     "info": {
         "title": {
             "tie": "Unentschieden",
-            "undercut": "Überbieten",
+            "undercut": "Undercut",
             "gin": "Gin",
-            "bigGin": "Großer Gin",
+            "bigGin": "Big Gin",
             "knock": "Klopfen",
-            "knockSuccessRate": "Knock Erfolg"
+            "knockSuccessRate": "Klopf-Erfolg"
         },
         "tieDescription": "Es sind nicht genug Karten übrig, um weiterzuspielen. Unentschieden!",
-        "scoreDescription": "Die Punkte werden berechnet, indem man die Unterschiede zwischen den Werten der toten Karten in den Händen der Spieler vergleicht.",
-        "yourMeldAfterKnock": "Oh nein... Ein paar von {name}'s toten Karten können zu deinen Meldungen verschoben werden!",
-        "nameMeldAfterKnock": "Nice! Ein paar von deinen toten Karten können zu {name}'s Meldungen verschoben werden!"
+        "scoreDescription": "Die Punkte ergeben sich aus der Differenz zwischen dem Deadwood der Spieler.",
+        "yourMeldAfterKnock": "Oh nein... {name} kann ein paar Deadwood-Karten an deine Meldungen anlegen!",
+        "nameMeldAfterKnock": "Super! Du kannst ein paar Deadwood-Karten an die Meldungen von {name} anlegen!"
     }
 }

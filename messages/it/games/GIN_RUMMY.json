@@ -4,10 +4,10 @@
             "help": "Il gioco finisce appena un giocatore arriva a questo punteggio. Però, questo non garantisce una vittoria, perché ci sono punti bonus che vengono dati alla fine del gioco."
         },
         "knock": {
-            "title": "Batti!",
+            "title": "Bussare",
             "help": {
-                "enabled": "'Abilitato' permette di bussare in base alla soglia di bussata impostata.",
-                "firstDiscardCard": "'Basato sulla prima carta scartata' usa la prima carta scartata per impostare la soglia; se esce un Asso, devi andare in Gin.",
+                "enabled": "'Abilitato' permette di bussare in base al limite per bussare impostato.",
+                "firstDiscardCard": "'Basato sulla prima carta scartata' usa la prima carta scartata per fissare il limite per bussare; se esce un Asso, devi fare Gin.",
                 "disabled": "'Disabilitato' permette di chiudere un turno solo con un Gin."
             },
             "data": {
@@ -15,87 +15,87 @@
             }
         },
         "knockBasedOnFirstCard": {
-            "title": "Batti in base al primo scarto",
-            "help": "Quando è attivato, la prima carta nel mazzo degli scarti determina la soglia per bussare. I giocatori possono bussare solo se il loro \"deadwood\" è uguale o inferiore al valore di questa carta."
+            "title": "Bussata in base al primo scarto",
+            "help": "Quando è attivato, la prima carta della pila degli scarti fissa il limite per bussare. I giocatori possono bussare solo se le loro carte spaiate valgono quanto questa carta o meno."
         },
         "knockThreshold": {
-            "title": "Soglia di Colpo",
-            "help": "Un giocatore può \"bussare\" quando è il suo turno e il suo \"deadwood\" è uguale o inferiore alla soglia impostata."
+            "title": "Limite per bussare",
+            "help": "Un giocatore può bussare nel suo turno quando le sue carte spaiate valgono quanto il limite impostato o meno."
         },
         "ginPointAmount": {
             "title": "Gin",
-            "help": "Il numero di punti che si danno a un giocatore per aver chiamato Gin, che succede quando tutte le carte in mano sono in un meld."
+            "help": "Il numero di punti che si danno a un giocatore per aver fatto Gin, che succede quando tutte le carte in mano sono in combinazioni."
         },
         "bigGinPointAmount": {
-            "title": "Gin Gigante",
-            "help": "Il numero di punti che si danno a un giocatore per aver chiamato Big Gin, che succede quando tutte le carte in mano più quella pescata sono in un meld, senza carte morte."
+            "title": "Big Gin",
+            "help": "Il numero di punti che si danno a un giocatore per aver fatto Big Gin, che succede quando tutte le carte in mano più quella pescata sono in combinazioni, senza carte spaiate."
         },
         "undercutPointAmount": {
-            "title": "Sottosquadro",
-            "help": "Un undercut succede quando un giocatore fa knock, ma il suo avversario ha lo stesso numero di punti morti o meno. In questo caso, l'avversario guadagna punti extra."
+            "title": "Undercut",
+            "help": "Un undercut succede quando un giocatore bussa, ma le carte spaiate del suo avversario valgono quanto le sue o meno. In questo caso, l'avversario guadagna punti extra."
         },
         "firstBonusPointAmount": {
-            "title": "Bonus: Primo a vincere",
-            "help": "Assegnato alla fine del gioco. Dà al giocatore che è arrivato per primo al 'Importo Vincente' un bonus."
+            "title": "Bonus partita",
+            "help": "Assegnato alla fine del gioco. Dà un bonus al giocatore che è arrivato per primo al punteggio da raggiungere."
         },
         "roundBonusPointAmount": {
-            "title": "Bonus: Giro",
-            "help": "Assegnato alla fine del gioco. Dà a ogni giocatore questo numero di punti per ogni round che hanno vinto, escluse le pareggiate."
+            "title": "Bonus round",
+            "help": "Assegnato alla fine del gioco. Dà a ogni giocatore questo numero di punti per ogni round che ha vinto, esclusi i pareggi."
         },
         "shutoutBonusPointAmount": {
-            "title": "Bonus: Porta chiusa",
-            "help": "Alla fine del gioco, chi vince riceve un bonus extra di questo numero di punti se ha vinto tutti i turni."
+            "title": "Bonus cappotto",
+            "help": "Alla fine del gioco, chi vince riceve un bonus extra di questo numero di punti se ha vinto tutti i round (cappotto)."
         }
     },
     "presets": {
         "straightGin": {
-            "title": "Gin liscio",
+            "title": "Straight Gin",
             "description": [
-                "Niente colpi",
+                "Niente bussata",
                 "Niente bonus"
             ]
         },
         "oklahomaGin": {
             "title": "Oklahoma Gin",
             "description": [
-                "Valore del knock basato sulla prima scartata"
+                "Limite per bussare fissato dal primo scarto"
             ]
         }
     },
     "help": {
         "rounds": {
-            "title": "Giri",
+            "title": "Round",
             "description": [
-                "Il gioco è fatto di più turni. In ogni turno, ai giocatori vengono date 10 carte e una carta viene mostrata nel mazzo. I giocatori possono scegliere di passare o prendere la carta in cima al mazzo.",
-                "I turni si alternano, e quando è il tuo turno, puoi prendere una carta dal mazzo o dal mazzo. Dopo, devi restituire una carta al mazzo."
+                "Il gioco è fatto di più turni. In ogni round, ai giocatori vengono date 10 carte e una carta viene girata scoperta sulla pila degli scarti. I giocatori possono scegliere di passare o prendere quella carta.",
+                "I giocatori giocano a turno: nel tuo turno peschi una carta dal tallone o dalla pila degli scarti. Dopo, devi scartare una carta sulla pila degli scarti."
             ]
         },
         "deadwood": {
-            "title": "Legno Morto",
+            "title": "Carte spaiate",
             "description": [
-                "Il deadwood si riferisce alle carte che non fanno parte di nessun meld. Il valore del deadwood si calcola sommando i valori di queste carte (per esempio, due Re e un cinque fanno 25 in totale).",
-                "Cerca di tenere il tuo deadwood il più basso possibile formando meld e scartando le carte di alto valore che non sono nei meld."
+                "Le carte spaiate sono le carte che non fanno parte di nessuna combinazione. Il loro valore si calcola sommando i valori di queste carte (per esempio, due Re e un cinque fanno 25 in totale).",
+                "Cerca di tenere il valore delle tue carte spaiate il più basso possibile formando combinazioni e scartando le carte alte che non sono in combinazione."
             ]
         },
         "melds": {
             "title": "Combinazioni",
             "description": [
-                "I meld si formano con una sequenza di tre o più carte dello stesso seme (tipo, 3D, 4D, 5D) oppure tre o più carte dello stesso valore (tipo, 3H, 3D, 3S).",
-                "I meld vengono evidenziati automaticamente nella tua mano e nell'interfaccia, quindi fai attenzione al mazzo—il tuo avversario potrebbe lasciare la carta che ti serve!"
+                "Le combinazioni si formano con una scala di tre o più carte dello stesso seme (per esempio 3D, 4D, 5D) oppure con tre o più carte dello stesso valore (per esempio 3H, 3D, 3S).",
+                "Le combinazioni vengono evidenziate automaticamente nella tua mano e nell'interfaccia, quindi tieni d'occhio la pila degli scarti: il tuo avversario potrebbe lasciare la carta che ti serve!"
             ]
         },
         "knock": {
-            "title": "Batti!",
+            "title": "Bussare",
             "description": [
-                "Puoi bussare se il tuo deadwood è meno di 10. Quando bussi, tutte le carte vengono rivelate e vedrai il deadwood del tuo avversario. Se il tuo deadwood è più alto, il tuo avversario vince il turno con un bonus.",
-                "Il punteggio per un knock è semplice: sottrai il tuo deadwood da quello del tuo avversario. Per esempio, se il tuo deadwood è 5 e quello del tuo avversario è 25, fai 20 punti."
+                "Puoi bussare se le tue carte spaiate valgono 10 o meno. Quando bussi, tutte le carte vengono rivelate e vedrai le carte spaiate del tuo avversario. Se le tue valgono quanto le sue o di più, il tuo avversario vince il round con un bonus.",
+                "Il punteggio di una bussata è semplice: sottrai il valore delle tue carte spaiate da quello delle carte spaiate del tuo avversario. Per esempio, se le tue valgono 5 e le sue 25, fai 20 punti."
             ]
         },
         "gin": {
             "title": "Gin e Big Gin",
             "description": [
-                "Se il tuo deadwood è 0 o può diventarlo dopo aver scartato l'ultima carta deadwood, hai fatto un Gin. Questo ti garantisce la vittoria e ti dà un bonus più la differenza di deadwood.",
-                "Un Big Gin è ancora meglio: se tutta la tua mano, più la carta che hai appena pescato, forma dei meld, ricevi un bonus più grande. Chiama sempre un Big Gin appena ce l'hai!"
+                "Se non hai carte spaiate, o non ne hai più dopo aver scartato l'ultima, hai fatto Gin. Questo ti garantisce la vittoria del round e ti dà un bonus più la differenza delle carte spaiate.",
+                "Un Big Gin è ancora meglio: se tutta la tua mano, più la carta che hai appena pescato, forma combinazioni, ricevi un bonus più grande. Chiama sempre un Big Gin appena ce l'hai!"
             ]
         },
         "goal": {
@@ -109,15 +109,15 @@
     "info": {
         "title": {
             "tie": "Pareggio",
-            "undercut": "Sottocut",
+            "undercut": "Undercut",
             "gin": "Gin",
-            "bigGin": "Grande Gin",
-            "knock": "Knock",
-            "knockSuccessRate": "Knock riuscito"
+            "bigGin": "Big Gin",
+            "knock": "Bussata",
+            "knockSuccessRate": "Bussate riuscite"
         },
         "tieDescription": "Non ci sono abbastanza carte per continuare a giocare. È un pareggio!",
-        "scoreDescription": "Il punteggio si calcola facendo la differenza tra i valori totali delle carte morte in mano a ciascun giocatore.",
-        "yourMeldAfterKnock": "Oh no... Alcune delle carte morte di {name} possono essere spostate nei tuoi meld!",
-        "nameMeldAfterKnock": "Bello! Alcune delle tue carte morte possono essere spostate nei meld di {name}!"
+        "scoreDescription": "Il punteggio si calcola facendo la differenza tra i valori totali delle carte spaiate in mano a ciascun giocatore.",
+        "yourMeldAfterKnock": "Oh no... Alcune delle carte spaiate di {name} possono essere attaccate alle tue combinazioni!",
+        "nameMeldAfterKnock": "Bello! Alcune delle tue carte spaiate possono essere attaccate alle combinazioni di {name}!"
     }
 }
