@@ -1,15 +1,15 @@
 {
     "options": {
         "forceTake": {
-            "title": "Tvinga Ta",
+            "title": "Slagtvång",
             "help": {
-                "enabled": "**Aktiverad**: När det är möjligt, kommer spelaren att tvingas ta en motståndares pjäs.",
-                "disabled": "**Inaktiverad**: Spelaren kan välja vilket drag de gör, även om de kan ta ut en motståndares pjäs."
+                "enabled": "**Aktiverad**: Kan spelaren slå en av motståndarens brickor måste hen göra det.",
+                "disabled": "**Inaktiverad**: Spelaren får välja vilket drag som helst, även när det går att slå en av motståndarens brickor."
             }
         },
         "field": {
             "title": "Fält",
-            "help": "Spelplanen som används. Beroende på storleken på fältet och antalet rader, får du mer eller mindre startpjäser. Vissa fält kan stödja upp till fyra spelare.",
+            "help": "Brädet som används. Brädets storlek och antalet rader avgör hur många brickor varje spelare börjar med. Vissa bräden har plats för upp till fyra spelare.",
             "data": {
                 "8x8": "Engelsk (8x8)",
                 "10x10": "Internationell (10x10)",
@@ -20,30 +20,30 @@
         "winCondition": {
             "help": "Hur vinnaren kommer att bestämmas.",
             "data": {
-                "MORE_PIECES": "Flest bitar",
+                "MORE_PIECES": "Flest brickor",
                 "OPPOSITE_SIDE": "Nå motsatta sidan"
             }
         },
         "kingCondition": {
-            "title": "Kungens Skick",
-            "help": "Under vilket villkor en pjäs blir kungad. En kungad pjäs får röra sig i alla riktningar.",
+            "title": "Villkor för dam",
+            "help": "När en bricka blir dam. En dam får flytta åt alla håll.",
             "data": {
                 "OPPOSITE_SIDE": "Nå motsatta sidan",
-                "TAKE": "Ta en pjäs",
-                "ALL": "Börja med alla kungar"
+                "TAKE": "Slå en bricka",
+                "ALL": "Alla börjar som damer"
             }
         },
         "backwardsTake": {
-            "title": "Ta Tillbaka",
-            "help": "Ställ in om pjäser får ta över motståndarens pjäser bakåt. Om det är inaktiverat, kan detta endast göras av kungade pjäser."
+            "title": "Slå bakåt",
+            "help": "Om vanliga brickor får slå motståndarens brickor bakåt. Är det avstängt får bara damer slå bakåt."
         },
         "chainTake": {
-            "title": "Kedjetagning",
-            "help": "När det är aktiverat kan en pjäs ta över flera andra pjäser i ett drag, om de är placerade rätt. Alternativt, när det är inaktiverat kan bara en pjäs tas åt gången."
+            "title": "Flerslag",
+            "help": "När det är aktiverat kan en bricka slå flera brickor i samma drag, om de står rätt. När det är avstängt kan bara en bricka slås åt gången."
         },
         "staleCount": {
             "title": "Tråkigt Spel",
-            "help": "Matchen slutar oavgjort efter så här många drag i rad där inget slagits och bara kungar flyttat."
+            "help": "Matchen slutar oavgjort efter så här många drag i rad där inget slagits och bara damer flyttat."
         },
         "stuckThreshold": {
             "title": "Fastnat Tröskel",
@@ -51,59 +51,59 @@
         },
         "rows": {
             "title": "Rader",
-            "help": "Hur många rader med pjäser varje spelare börjar med. Beroende på fältets storlek bestäms antalet rader."
+            "help": "Hur många rader med brickor varje spelare börjar med. Brädets storlek avgör hur många rader det kan bli."
         }
     },
     "drawCountdown": {
         "label": "Oavgjort om {n} drag | Oavgjort om {n} drag | Oavgjort om {n} drag",
-        "help": "Slå en pjäs eller flytta en pjäs som inte är kung för att spela vidare.",
-        "helpSpectating": "Ett slag eller ett drag med en pjäs som inte är kung håller spelet igång."
+        "help": "Slå en bricka eller flytta en bricka som inte är dam för att spela vidare.",
+        "helpSpectating": "Ett slag eller ett drag med en bricka som inte är dam håller spelet igång."
     },
     "presets": {
         "default": {
-            "title": "Vanliga Dam (Standard)",
-            "description": "8x8 fält — 24 pjäser"
+            "title": "Engelsk dam (Standard)",
+            "description": "8x8-bräde — 24 brickor"
         },
         "international": {
-            "title": "Internationellt Damspel",
-            "description": "10x10 fält — 40 pjäser — Ta bakåt"
+            "title": "Internationell dam",
+            "description": "10x10-bräde — 40 brickor — Slå bakåt"
         },
         "canadian": {
-            "title": "Kanadensisk Dam",
-            "description": "12x12 fält — 60 pjäser — Ta bakåt"
+            "title": "Kanadensisk dam",
+            "description": "12x12-bräde — 60 brickor — Slå bakåt"
         },
         "party": {
-            "title": "Fest Schack",
-            "description": "Plusfält — 36 bitar — 4 spelare"
+            "title": "Dam för 4 spelare",
+            "description": "Plusformat bräde — 36 brickor — 4 spelare"
         }
     },
     "help": {
         "movement": {
-            "title": "Rörelse av pjäser",
+            "title": "Så flyttar brickorna",
             "description": [
-                "Bitarna kan flyttas diagonalt. När det är din tur, lyser alla bitar du kan flytta upp.",
-                "Du kan klicka på en upplyst bit för att se alla möjliga drag som finns tillgängliga för den biten."
+                "Brickorna flyttar diagonalt. När det är din tur lyser alla brickor som du kan flytta upp.",
+                "Klicka på en upplyst bricka för att se alla drag den kan göra."
             ]
         },
         "take": {
-            "title": "Tar",
+            "title": "Att slå",
             "description": [
-                "Om en motståndares pjäs är diagonalt bredvid din pjäs med en öppen plats bakom den, kan du ta den.",
-                "Beroende på inställningarna, är du antingen tvungen att ta pjäser när det är möjligt eller kan till och med ta bakåt."
+                "Står en av motståndarens brickor diagonalt bredvid din bricka med en tom ruta bakom sig kan du hoppa över den och slå den.",
+                "Beroende på inställningarna gäller slagtvång, och vanliga brickor kan även få slå bakåt."
             ]
         },
         "king": {
-            "title": "Kronade Spelpjäser",
+            "title": "Damer",
             "description": [
-                "Med standardinställningarna, när du når motsatta sidan med en pjäs blir den kungad.",
-                "Kungade pjäser kan röra sig i alla diagonala riktningar utan att tvingas att gå framåt."
+                "Med standardinställningarna blir en bricka dam när den når motsatta sidan.",
+                "En dam får flytta diagonalt åt alla håll, inte bara framåt."
             ]
         },
         "goal": {
-            "title": "Goal",
+            "title": "Mål",
             "description": [
-                "Vanligtvis är målet att ta bort alla andra pjäser från motståndaren eller tills inga giltiga drag kan göras.",
-                "Spelets mål, som också kallas vinstvillkoret, kan ändras i inställningarna."
+                "Oftast är målet att slå alla motståndarens brickor, eller att blockera dem så att motståndaren inte kan göra något drag.",
+                "Spelets mål, även kallat vinstvillkoret, kan ändras i inställningarna."
             ]
         }
     }

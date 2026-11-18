@@ -1,15 +1,15 @@
 {
     "options": {
         "forceTake": {
-            "title": "Tving Ta",
+            "title": "Slagtvang",
             "help": {
-                "enabled": "**Aktivert**: Når det er mulig, vil spilleren bli tvunget til å ta en motstanders brikke.",
-                "disabled": "**Deaktivert**: Spilleren kan velge hvilket trekk de gjør, selv om de kan ta ut en motstanders brikke."
+                "enabled": "**Aktivert**: Når det er mulig, må spilleren slå en av motstanderens brikker.",
+                "disabled": "**Deaktivert**: Spilleren kan velge hvilket trekk de gjør, selv om de kan slå en av motstanderens brikker."
             }
         },
         "field": {
-            "title": "Felt",
-            "help": "Spillefeltet som brukes. Avhengig av størrelsen på feltet og antall rader, vil du få mer eller mindre startbrikker. Noen felt kan støtte opptil fire spillere.",
+            "title": "Brett",
+            "help": "Brettet som brukes. Avhengig av størrelsen på brettet og antall rader får du flere eller færre brikker. Noen brett har plass til opptil fire spillere.",
             "data": {
                 "8x8": "Engelsk (8x8)",
                 "10x10": "Internasjonal (10x10)",
@@ -25,33 +25,33 @@
             }
         },
         "kingCondition": {
-            "title": "Kongens Tilstand",
-            "help": "Under hvilke forhold en brikke blir konge. En kongebrikke har lov til å bevege seg i alle retninger.",
+            "title": "Når en brikke blir konge",
+            "help": "Hva som skal til for at en brikke blir konge. En konge kan flytte i alle retninger.",
             "data": {
                 "OPPOSITE_SIDE": "Nå motsatt side",
-                "TAKE": "Ta en brikke",
+                "TAKE": "Slå en brikke",
                 "ALL": "Start med alle kongene"
             }
         },
         "backwardsTake": {
-            "title": "Ta Bakover",
-            "help": "Sett om brikker får lov til å ta over motstanderens brikker baklengs. Hvis dette er deaktivert, kan dette bare gjøres av kongede brikker."
+            "title": "Slå bakover",
+            "help": "Om vanlige brikker kan slå motstanderens brikker bakover. Er dette slått av, kan bare konger slå bakover."
         },
         "chainTake": {
-            "title": "Kjedeopptak",
-            "help": "Når denne er aktivert, kan en brikke ta over flere andre brikker i ett trekk, hvis de er plassert riktig. Alternativt, når den er deaktivert, kan bare en brikke tas om gangen."
+            "title": "Flere hopp",
+            "help": "Når dette er slått på, kan en brikke slå flere brikker i samme trekk hvis de står riktig plassert. Er det slått av, kan bare én brikke slås om gangen."
         },
         "staleCount": {
-            "title": "Stagnerende Spill",
+            "title": "Uavgjort uten fremgang",
             "help": "Kampen ender uavgjort etter så mange trekk på rad der ingenting er slått og bare konger flytter."
         },
         "stuckThreshold": {
-            "title": "Fastlåst Terskel",
+            "title": "Grense for fastlåste turer",
             "help": "Hvis en spiller sitter fast så mange turer på rad, vil de automatisk tape."
         },
         "rows": {
             "title": "Rader",
-            "help": "Hvor mange rader med brikker hver spiller starter med. Avhengig av feltstørrelsen vil antall rader bestemmes."
+            "help": "Hvor mange rader med brikker hver spiller starter med. Hvor mange rader som er mulig, avhenger av brettstørrelsen."
         }
     },
     "drawCountdown": {
@@ -61,20 +61,20 @@
     },
     "presets": {
         "default": {
-            "title": "Vanlig Dam (Standard)",
-            "description": "8x8 felt — 24 brikker"
+            "title": "Engelsk dam (Standard)",
+            "description": "8x8 brett — 24 brikker"
         },
         "international": {
-            "title": "Internasjonale Dam",
-            "description": "10x10 felt — 40 brikker — Ta bakover"
+            "title": "Internasjonal dam",
+            "description": "10x10 brett — 40 brikker — Slå bakover"
         },
         "canadian": {
-            "title": "Kanadisk Dam",
-            "description": "12x12 felt — 60 brikker — Ta bakover"
+            "title": "Kanadisk dam",
+            "description": "12x12 brett — 60 brikker — Slå bakover"
         },
         "party": {
-            "title": "Festlig Dam",
-            "description": "Pluss felt — 36 brikker — 4 spillere"
+            "title": "Dam for 4 spillere",
+            "description": "Plussformet brett — 36 brikker — 4 spillere"
         }
     },
     "help": {
@@ -86,21 +86,21 @@
             ]
         },
         "take": {
-            "title": "Tar",
+            "title": "Å slå",
             "description": [
-                "Hvis en motstanders brikke er diagonalt ved siden av din brikke med et åpent sted bak den, kan du ta den.",
-                "Avhengig av innstillingene, er du enten tvunget til å ta brikker når det er mulig, eller du kan til og med ta bakover."
+                "Står en av motstanderens brikker på skrå ved siden av din brikke, og ruten bak den er tom, kan du hoppe over den og slå den.",
+                "Avhengig av innstillingene er det slagtvang (du må slå når du kan), og vanlige brikker kan også slå bakover."
             ]
         },
         "king": {
-            "title": "Kronede Brikker",
+            "title": "Konger",
             "description": [
-                "Med standardinnstillingene, når du når motsatt side med en brikke, blir den konge.",
-                "Kongebrikker kan bevege seg i alle diagonale retninger uten å være tvunget til å bevege seg fremover."
+                "Med standardinnstillingene blir en brikke konge når den når motsatt side av brettet.",
+                "Konger kan flytte på skrå i alle retninger, ikke bare fremover."
             ]
         },
         "goal": {
-            "title": "Goal",
+            "title": "Mål",
             "description": [
                 "Vanligvis er målet å fjerne alle motstanderens brikker eller til det ikke er flere gyldige trekk som kan gjøres.",
                 "Målet med spillet, også kjent som vinnerbetingelsen, kan endres i innstillingene."

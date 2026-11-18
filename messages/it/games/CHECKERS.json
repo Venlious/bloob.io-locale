@@ -1,20 +1,20 @@
 {
     "options": {
         "forceTake": {
-            "title": "Forza di prendere",
+            "title": "Presa obbligatoria",
             "help": {
-                "enabled": "**Abilitato**: Quando possibile, il giocatore sarà costretto a prendere un pezzo dell'avversario.",
-                "disabled": "**Disabilitato**: il giocatore può scegliere quale mossa fare, anche se può eliminare un pezzo dell'avversario."
+                "enabled": "**Abilitato**: quando possibile, il giocatore è obbligato a mangiare un pezzo dell'avversario.",
+                "disabled": "**Disabilitato**: il giocatore può scegliere quale mossa fare, anche se può mangiare un pezzo dell'avversario."
             }
         },
         "field": {
-            "title": "Campo",
-            "help": "Il campo da gioco utilizzato. A seconda delle dimensioni del campo e della quantità di file, avrai più o meno pezzi di partenza. Alcuni campi possono supportare fino a quattro giocatori.",
+            "title": "Damiera",
+            "help": "La damiera usata. A seconda delle dimensioni della damiera e del numero di file, avrai più o meno pezzi di partenza. Alcune damiere supportano fino a quattro giocatori.",
             "data": {
                 "8x8": "Inglese (8x8)",
                 "10x10": "Internazionale (10x10)",
                 "12x12": "Canadese (12x12)",
-                "plus": "Forma Plus (12x12)"
+                "plus": "A croce (12x12)"
             }
         },
         "winCondition": {
@@ -25,25 +25,25 @@
             }
         },
         "kingCondition": {
-            "title": "Condizione del re",
-            "help": "A quali condizioni un pezzo diventa re. Un pezzo con re può muoversi in tutte le direzioni.",
+            "title": "Promozione a dama",
+            "help": "A quali condizioni una pedina diventa dama. Una dama può muoversi in tutte le direzioni.",
             "data": {
                 "OPPOSITE_SIDE": "Raggiungi il lato opposto",
-                "TAKE": "Prendere un pezzo",
-                "ALL": "Inizia con tutti i re"
+                "TAKE": "Mangiare un pezzo",
+                "ALL": "Si parte con tutte le dame"
             }
         },
         "backwardsTake": {
-            "title": "Prendi all'indietro",
-            "help": "Imposta se i pezzi possono prendere il controllo dei pezzi avversari all'indietro. Se è disattivato, questo può essere fatto solo dai pezzi con re."
+            "title": "Presa all'indietro",
+            "help": "Se le pedine possono mangiare i pezzi avversari anche all'indietro. Se è disattivato, possono farlo solo le dame."
         },
         "chainTake": {
-            "title": "Catena di presa",
-            "help": "Quando è abilitato, un pezzo può conquistare diversi altri pezzi in una sola mossa, se sono distanziati correttamente. In alternativa, quando è disattivato, può essere preso un solo pezzo alla volta."
+            "title": "Presa multipla",
+            "help": "Quando è attivo, un pezzo può mangiare più pezzi in una sola mossa, se sono distanziati correttamente. Quando è disattivato, si può mangiare un solo pezzo alla volta."
         },
         "staleCount": {
             "title": "Gioco stantio",
-            "help": "La partita finisce in patta dopo questo numero di mosse di fila senza catture in cui si muovono solo i re."
+            "help": "La partita finisce in patta dopo questo numero di mosse di fila senza catture in cui si muovono solo le dame."
         },
         "stuckThreshold": {
             "title": "Soglia bloccata",
@@ -56,25 +56,25 @@
     },
     "drawCountdown": {
         "label": "Patta tra {n} mosse | Patta tra {n} mossa | Patta tra {n} mosse",
-        "help": "Cattura un pezzo o muovi un pezzo che non è un re per continuare la partita.",
-        "helpSpectating": "Una cattura, o una mossa di un pezzo che non è un re, fa continuare la partita."
+        "help": "Mangia un pezzo o muovi una pedina per continuare la partita.",
+        "helpSpectating": "Una presa, o una mossa di una pedina, fa continuare la partita."
     },
     "presets": {
         "default": {
-            "title": "Dama dritta (Standard)",
-            "description": "Campo 8x8 - 24 pezzi"
+            "title": "Dama inglese (Standard)",
+            "description": "Damiera 8x8 — 24 pezzi"
         },
         "international": {
             "title": "Dama internazionale",
-            "description": "Campo 10x10 — 40 pezzi — Prendi all'indietro"
+            "description": "Damiera 10x10 — 40 pezzi — Presa all'indietro"
         },
         "canadian": {
             "title": "Dama canadese",
-            "description": "Campo 12x12 — 60 pezzi — Prendi all'indietro"
+            "description": "Damiera 12x12 — 60 pezzi — Presa all'indietro"
         },
         "party": {
-            "title": "Dama Party",
-            "description": "Campo Plus - 36 pezzi - 4 giocatori"
+            "title": "Dama a quattro giocatori",
+            "description": "Damiera a croce — 36 pezzi — 4 giocatori"
         }
     },
     "help": {
@@ -86,17 +86,17 @@
             ]
         },
         "take": {
-            "title": "Prende",
+            "title": "Mangiare",
             "description": [
-                "Se un pezzo dell'avversario si trova in diagonale accanto al tuo pezzo con uno spazio libero dietro di esso, puoi prenderlo.",
-                "A seconda delle impostazioni, sei obbligato a prendere i pezzi quando è possibile o puoi anche prenderli al contrario."
+                "Se un pezzo dell'avversario si trova in diagonale accanto al tuo pezzo con una casella libera dietro, puoi mangiarlo.",
+                "A seconda delle impostazioni, la presa può essere obbligatoria e le pedine possono mangiare anche all'indietro."
             ]
         },
         "king": {
-            "title": "Pezzi di Re",
+            "title": "La dama",
             "description": [
-                "Secondo le impostazioni predefinite, quando raggiungi il lato opposto con un pezzo, questo diventa re.",
-                "I pezzi con re possono muoversi in tutte le direzioni diagonali senza essere costretti ad avanzare."
+                "Con le impostazioni predefinite, quando una pedina raggiunge il lato opposto diventa dama.",
+                "Le dame possono muoversi in tutte le direzioni diagonali, senza essere obbligate ad avanzare."
             ]
         },
         "goal": {

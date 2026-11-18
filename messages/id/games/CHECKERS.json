@@ -1,15 +1,15 @@
 {
     "options": {
         "forceTake": {
-            "title": "Paksa Ambil",
+            "title": "Wajib Makan",
             "help": {
-                "enabled": "**Aktif**: Kalau bisa, pemain bakal dipaksa buat ngambil pion lawan.",
-                "disabled": "**Nonaktif**: Pemain bisa milih gerakan apa yang mau mereka lakukan, meskipun mereka bisa ngambil pion lawan."
+                "enabled": "**Aktif**: Kalau bisa, pemain bakal wajib memakan bidak lawan.",
+                "disabled": "**Nonaktif**: Pemain bisa milih gerakan apa yang mau mereka lakukan, meskipun mereka bisa memakan bidak lawan."
             }
         },
         "field": {
-            "title": "Lapangan",
-            "help": "Lapangan yang digunakan. Tergantung pada ukuran lapangan dan jumlah baris, kamu akan mendapatkan lebih banyak atau lebih sedikit bidak awal. Beberapa lapangan mungkin bisa mendukung hingga empat pemain.",
+            "title": "Papan",
+            "help": "Papan yang digunakan. Tergantung pada ukuran papan dan jumlah baris, kamu akan mendapatkan lebih banyak atau lebih sedikit bidak awal. Beberapa papan mungkin bisa mendukung hingga empat pemain.",
             "data": {
                 "8x8": "Inggris (8x8)",
                 "10x10": "Internasional (10x10)",
@@ -20,7 +20,7 @@
         "winCondition": {
             "help": "Bagaimana pemenang akan ditentukan.",
             "data": {
-                "MORE_PIECES": "Kebanyakan potongan",
+                "MORE_PIECES": "Bidak terbanyak",
                 "OPPOSITE_SIDE": "Sampai di sisi yang berlawanan"
             }
         },
@@ -29,20 +29,20 @@
             "help": "Dalam kondisi apa sebuah bidak menjadi raja. Bidak yang sudah jadi raja boleh gerak ke semua arah.",
             "data": {
                 "OPPOSITE_SIDE": "Sampai ke sisi seberang",
-                "TAKE": "Ambil sepotong",
+                "TAKE": "Memakan bidak",
                 "ALL": "Mulai dengan semua raja"
             }
         },
         "backwardsTake": {
-            "title": "Ambil Mundur",
-            "help": "Atur apakah bidak bisa mengambil bidak lawan dari belakang. Jika dinonaktifkan, ini hanya bisa dilakukan oleh bidak yang sudah menjadi raja."
+            "title": "Makan Mundur",
+            "help": "Atur apakah bidak bisa memakan bidak lawan ke arah belakang. Jika dinonaktifkan, ini hanya bisa dilakukan oleh bidak yang sudah menjadi raja."
         },
         "chainTake": {
-            "title": "Ambil Rantai",
-            "help": "Ketika diaktifkan, sebuah bidak bisa mengambil beberapa bidak lain dalam satu gerakan, jika mereka berjarak dengan benar. Sebaliknya, ketika dinonaktifkan, hanya satu bidak yang bisa diambil setiap saat."
+            "title": "Lompatan Beruntun",
+            "help": "Ketika diaktifkan, sebuah bidak bisa memakan beberapa bidak lain dalam satu gerakan, jika mereka berjarak dengan benar. Sebaliknya, ketika dinonaktifkan, hanya satu bidak yang bisa dimakan setiap kali."
         },
         "staleCount": {
-            "title": "Game yang Membosankan",
+            "title": "Permainan Macet",
             "help": "Pertandingan berakhir seri setelah sekian langkah berturut-turut tanpa ada bidak yang dimakan dan hanya raja yang bergerak."
         },
         "stuckThreshold": {
@@ -51,7 +51,7 @@
         },
         "rows": {
             "title": "Baris",
-            "help": "Berapa baris bidak yang dimulai setiap pemain. Jumlah baris akan ditentukan berdasarkan ukuran lapangan."
+            "help": "Berapa baris bidak yang dimulai setiap pemain. Jumlah baris akan ditentukan berdasarkan ukuran papan."
         }
     },
     "drawCountdown": {
@@ -61,20 +61,20 @@
     },
     "presets": {
         "default": {
-            "title": "Catur Biasa (Standar)",
-            "description": "Lapangan 8x8 — 24 bidak"
+            "title": "Dam Inggris (Standar)",
+            "description": "Papan 8x8 — 24 bidak"
         },
         "international": {
-            "title": "Catur Internasional",
-            "description": "Lapangan 10x10 — 40 bidak — Ambil mundur"
+            "title": "Dam Internasional",
+            "description": "Papan 10x10 — 40 bidak — Makan mundur"
         },
         "canadian": {
-            "title": "Catur Kanada",
-            "description": "Lapangan 12x12 — 60 bidak — Bisa ambil mundur"
+            "title": "Dam Kanada",
+            "description": "Papan 12x12 — 60 bidak — Makan mundur"
         },
         "party": {
-            "title": "Catur Pesta",
-            "description": "Plus bidang — 36 bagian — 4 pemain"
+            "title": "Dam 4 Pemain",
+            "description": "Papan plus — 36 bidak — 4 pemain"
         }
     },
     "help": {
@@ -86,10 +86,10 @@
             ]
         },
         "take": {
-            "title": "Ambil",
+            "title": "Memakan Bidak",
             "description": [
-                "Kalau ada bidak lawan yang berada di sebelah diagonal bidakmu dan ada tempat kosong di belakangnya, kamu bisa ambil bidak itu.",
-                "Tergantung pengaturannya, kamu bisa dipaksa untuk mengambil bidak saat ada kesempatan atau bahkan bisa ambil bidak ke arah belakang."
+                "Kalau ada bidak lawan yang berada di sebelah diagonal bidakmu dan ada tempat kosong di belakangnya, kamu bisa memakan bidak itu.",
+                "Tergantung pengaturannya, kamu bisa diwajibkan memakan bidak saat ada kesempatan atau bahkan bisa makan ke arah belakang."
             ]
         },
         "king": {
@@ -100,7 +100,7 @@
             ]
         },
         "goal": {
-            "title": "Goal",
+            "title": "Tujuan",
             "description": [
                 "Biasanya tujuannya adalah menghabisi semua bidak lawan atau sampai tidak ada langkah yang valid lagi.",
                 "Tujuan permainan, yang juga disebut sebagai kondisi menang, bisa diubah di pengaturan."

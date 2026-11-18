@@ -1,10 +1,10 @@
 {
     "options": {
         "forceTake": {
-            "title": "Pakota Ottamaan",
+            "title": "Lyöntipakko",
             "help": {
-                "enabled": "**Päällä**: Kun mahdollista, pelaajan on pakko ottaa vastustajan nappula.",
-                "disabled": "**Pois päältä**: Pelaaja voi valita siirtonsa, vaikka hänellä olisi mahdollisuus ottaa vastustajan nappula."
+                "enabled": "**Päällä**: Kun mahdollista, pelaajan on pakko lyödä vastustajan nappula.",
+                "disabled": "**Pois päältä**: Pelaaja voi valita siirtonsa, vaikka hänellä olisi mahdollisuus lyödä vastustajan nappula."
             }
         },
         "field": {
@@ -20,29 +20,29 @@
         "winCondition": {
             "help": "Miten voittaja päätetään.",
             "data": {
-                "MORE_PIECES": "Useimmat palat",
+                "MORE_PIECES": "Eniten nappuloita",
                 "OPPOSITE_SIDE": "Pääse vastakkaiselle puolelle"
             }
         },
         "kingCondition": {
-            "title": "Kuninkaan Tilanne",
+            "title": "Kuninkaaksi Korotus",
             "help": "Missä tilanteessa nappula saa kuninkaan statuksen. Kuninkaaksi korotettu nappula saa liikkua kaikkiin suuntiin.",
             "data": {
                 "OPPOSITE_SIDE": "Pääse vastakkaiselle puolelle",
-                "TAKE": "Ota pala",
+                "TAKE": "Lyö nappula",
                 "ALL": "Aloita kaikilla kuninkailla"
             }
         },
         "backwardsTake": {
-            "title": "Ota Takaisin",
-            "help": "Aseta, voivatko nappulat ottaa vastustajan nappuloita takaperin. Jos tämä on pois päältä, vain kuninkaaksi korotetut nappulat voivat tehdä tämän."
+            "title": "Lyönti Taaksepäin",
+            "help": "Aseta, voivatko tavalliset nappulat lyödä vastustajan nappuloita taaksepäin. Jos tämä on pois päältä, vain kuninkaaksi korotetut nappulat voivat tehdä tämän."
         },
         "chainTake": {
-            "title": "Ketjunotto",
-            "help": "Kun tämä on päällä, yksi nappula voi ottaa useita muita nappuloita yhdellä siirrolla, jos ne on aseteltu oikein. Vaihtoehtoisesti, kun tämä on pois päältä, vain yksi nappula voidaan ottaa kerrallaan."
+            "title": "Monilyönti",
+            "help": "Kun tämä on päällä, yksi nappula voi lyödä useita nappuloita samalla siirrolla hyppäämällä niiden yli peräkkäin. Kun tämä on pois päältä, yhdellä siirrolla voi lyödä vain yhden nappulan."
         },
         "staleCount": {
-            "title": "Vanha Peli",
+            "title": "Tasapeliraja",
             "help": "Ottelu päättyy tasapeliin, kun näin monessa peräkkäisessä siirrossa ei ole lyöty mitään ja vain kuninkaat ovat liikkuneet."
         },
         "stuckThreshold": {
@@ -61,20 +61,20 @@
     },
     "presets": {
         "default": {
-            "title": "Suora shakki (standardi)",
+            "title": "Englantilainen tammi (standardi)",
             "description": "8x8 kenttä — 24 nappulaa"
         },
         "international": {
-            "title": "Kansainväliset tammet",
-            "description": "10x10 kenttä — 40 nappulaa — Ota takaperin"
+            "title": "Kansainvälinen tammi",
+            "description": "10x10 kenttä — 40 nappulaa — Lyönti taaksepäin"
         },
         "canadian": {
             "title": "Kanadalainen tammi",
-            "description": "12x12 kenttä — 60 nappulaa — Ota takaperin"
+            "description": "12x12 kenttä — 60 nappulaa — Lyönti taaksepäin"
         },
         "party": {
-            "title": "Bileshakki",
-            "description": "Plussakenttä — 36 palaa — 4 pelaajaa"
+            "title": "Neljän pelaajan tammi",
+            "description": "Plusmuotoinen kenttä — 36 nappulaa — 4 pelaajaa"
         }
     },
     "help": {
@@ -86,10 +86,10 @@
             ]
         },
         "take": {
-            "title": "Ottaa",
+            "title": "Lyöminen",
             "description": [
-                "Jos vastustajan nappula on vinottain sun nappulan vieressä ja takana on tyhjä ruutu, voit ottaa sen.",
-                "Asetuksista riippuen, sun on pakko ottaa nappuloita kun mahdollista tai voit jopa ottaa takaperin."
+                "Jos vastustajan nappula on vinottain sun nappulan vieressä ja sen takana on tyhjä ruutu, voit hypätä sen yli ja lyödä sen.",
+                "Asetuksista riippuen sun on pakko lyödä aina kun voit (lyöntipakko), tai voit lyödä myös taaksepäin."
             ]
         },
         "king": {
@@ -100,10 +100,10 @@
             ]
         },
         "goal": {
-            "title": "Goal",
+            "title": "Tavoite",
             "description": [
-                "Yleensä tavoitteena on ottaa kaikki vastustajan nappulat pois tai jatkaa, kunnes ei ole enää laillisia siirtoja.",
-                "Peliin tavoitteen, jota kutsutaan myös voittoehdoksi, voi muuttaa asetuksista."
+                "Yleensä tavoitteena on lyödä kaikki vastustajan nappulat tai jatkaa, kunnes ei ole enää laillisia siirtoja.",
+                "Pelin tavoitetta, jota kutsutaan myös voittoehdoksi, voi muuttaa asetuksista."
             ]
         }
     }
