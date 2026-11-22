@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Swedish",
         "rtl": false,
-        "total": 3876,
-        "missing": 67
+        "total": 3881,
+        "missing": 0
     },
     "error": {
         "redeemCode": {
@@ -165,18 +165,18 @@
             "admin": "Bara admins får göra det här."
         },
         "discord": {
-            "expired": null,
-            "failed": null,
-            "alreadyConnected": null,
-            "onlyWayIn": null
+            "expired": "Inloggningen med Discord tog för lång tid. Försök igen.",
+            "failed": "Inloggningen med Discord fungerade inte. Försök igen.",
+            "alreadyConnected": "Ditt konto är redan kopplat till ett Discord-konto. Koppla bort det först.",
+            "onlyWayIn": "Lägg till en e-postadress först. Just nu är Discord det enda sättet att logga in på ditt konto."
         },
         "discordInvite": {
-            "declined": null,
-            "expired": null,
-            "over": null,
-            "notForYou": null,
-            "couldNotJoin": null,
-            "reserved": null
+            "declined": "Utmaningen blev nekad.",
+            "expired": "Länken har gått ut. Be om en ny på Discord.",
+            "over": "Den här inbjudan är över.",
+            "notForYou": "Du kan inte ta båda platserna i din egen utmaning.",
+            "couldNotJoin": "Du kunde inte gå med vid det här bordet.",
+            "reserved": "Det här bordet är reserverat för en utmaning mellan två andra spelare."
         }
     },
     "game": {
@@ -1156,7 +1156,6 @@
         "leaderboard": "Topplista",
         "elapsedTime": "{time} har passerat",
         "startingInTime": "Startar om {time}",
-        "averageWaitTimeBlank": "Genomsnittlig väntetid {value}",
         "averageBlank": "Genomsnittlig {value}",
         "highestBlank": "Hög. {value}",
         "showBlank": "Visa {value}",
@@ -1226,10 +1225,12 @@
         "pool": "Biljard",
         "gamePreferences": "Spelinställningar",
         "wrongBallIndicator": "Indikator för fel boll",
-        "connect": null,
-        "disconnect": null,
-        "discordAccount": null,
-        "or": null
+        "connect": "Koppla",
+        "disconnect": "Koppla bort",
+        "discordAccount": "Discord",
+        "or": "eller",
+        "leave": "Lämna",
+        "challenge": "Utmaning"
     },
     "match": {
         "quick": "Snabbmatch",
@@ -1317,62 +1318,67 @@
                     ]
                 }
             },
-            "lookingForMatch": null,
-            "firstMatchFirst": null,
-            "gamesSelected": null,
-            "findingOpponent": null,
-            "findingOpponentIn": null,
-            "stopSearching": null,
+            "lookingForMatch": "Letar efter en match",
+            "gamesSelected": "{n} spel valda | {n} spel valt | {n} spel valda",
+            "findingOpponent": "Letar efter en motståndare",
+            "findingOpponentIn": "Letar efter en motståndare i {game}",
+            "stopSearching": "Sluta söka",
             "picker": {
-                "title": null,
-                "subtitle": null,
-                "search": null,
-                "clearSearch": null,
-                "all": null,
-                "sortBy": null,
-                "sortPlaying": null,
-                "sortName": null,
-                "mostPlayed": null,
-                "featured": null,
-                "more": null,
-                "results": null,
-                "similar": null,
-                "noResults": null,
-                "noResultsHint": null,
-                "clearSelection": null,
-                "findMatch": null,
-                "pickToStart": null
+                "title": "Välj dina spel",
+                "subtitle": "Du går med i den första matchen som hittas",
+                "search": "Sök spel",
+                "clearSearch": "Rensa sökningen",
+                "all": "Alla",
+                "sortBy": "Sortera spel",
+                "sortPlaying": "Antal som spelar",
+                "sortName": "Namn (A-Ö)",
+                "mostPlayed": "Dina mest spelade",
+                "featured": "Utvalda för dig",
+                "more": "Fler spel",
+                "results": "Resultat för \"{query}\"",
+                "similar": "Inga exakta träffar. Liknar \"{query}\"",
+                "noResults": "Inga spel matchar \"{query}\"",
+                "noResultsHint": "Testa ett annat namn eller en annan kategori",
+                "clearSelection": "Rensa valet",
+                "findMatch": "Hitta en match i {n} spel | Hitta en match i {n} spel | Hitta en match i {n} spel",
+                "pickToStart": "Välj ett spel för att börja"
             },
-            "usuallyAbout": null,
-            "usuallyAboutIn": null,
-            "yourGames": null,
-            "editGames": null,
-            "quickest": null,
-            "othersSearching": null,
-            "quietBusierFrom": null,
-            "busyNow": null,
-            "usualWait": null,
-            "busyHours": null,
-            "filters": null,
-            "filtersHint": null,
+            "yourGames": "Dina spel",
+            "usualDay": "En vanlig dag",
+            "editGames": "Ändra spel",
+            "othersSearching": "{n} andra söker | {n} annan söker | {n} andra söker",
+            "quietBusierFrom": "Lugnt nu, mer folk från {time}",
+            "quietNow": "Lugnt den här tiden",
+            "busyNow": "Brukar vara mycket folk den här tiden",
+            "busyHours": "Hur mycket folk det brukar vara i {game} under dagen, timme för timme. Den markerade stapeln är nu.",
+            "hourBusy": "{time}: brukar vara mycket folk",
+            "hourQuiet": "{time}: brukar vara lugnt",
+            "filters": "Filter",
+            "filtersHint": "Du stannar kvar i kön medan du ändrar de här",
             "publicSummary": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "Inga offentliga matcher",
+                "defaultOnly": "Offentliga matcher med standardinställningar",
+                "any": "Alla offentliga matcher"
             },
             "opponentDescription": {
-                "any": null,
-                "higherThanLvl5": null,
-                "higherThanLvl25": null
+                "any": "Alla som söker i dina spel",
+                "higherThanLvl5": "Hoppar över helt nya spelare",
+                "higherThanLvl25": "Bara erfarna spelare"
             },
             "publicDescription": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "Bara nya matcher som skapas åt dig",
+                "defaultOnly": "Gå också med i öppna lobbyer med standardregler",
+                "any": "Gå också med i lobbyer med anpassade regler"
             },
-            "joining": null,
-            "waitingForMore": null,
-            "seatsHint": null
+            "joining": "Går med...",
+            "waitingForMore": "Väntar på {n} spelare till | Väntar på {n} spelare till | Väntar på {n} spelare till",
+            "seatsHint": "Startar när {seats} har gått med, eller när nedräkningen är slut med de som är här",
+            "likely": {
+                "soon": "Andra söker också. En match borde vara nära.",
+                "busy": "Brukar vara mycket folk den här tiden. Det borde inte ta lång tid.",
+                "quiet": "Lugnt just nu. Det brukar bli mer folk från {time}.",
+                "quietAll": "Lugnt just nu. Det kan ta ett tag."
+            }
         },
         "info": {
             "hostLeftWhileMatchmaking": "Värden lämnade matchen du var i.",
@@ -1387,6 +1393,7 @@
             "joinById": "Du kan gå med i en (privat) match genom att fylla i det fyrsiffriga ID:t.",
             "public": "Vem som helst kan gå med genom att kolla på tillgängliga matcher.",
             "private": "Spelare kan bara gå med genom att använda URL:en eller 4-siffriga ID.",
+            "challenge": "Bara de utmanade spelarna kan gå med.",
             "leave": "Du kanske inte kan komma tillbaka om du väljer att lämna.",
             "leaveLast": "Eftersom du är den enda personen i spelet, kommer matchen att stängas när du lämnar.",
             "leaveAsHost": "Nån annan blir den nya värden när du sticker.",
@@ -1644,10 +1651,10 @@
                 "loginTitle": "Logga in",
                 "loginDescription": "Inget lösenord. Vi mejlar dig en kod.",
                 "levelNote": "Du kan spara {name} med en e-postadress från {level}.",
-                "levelNoteDiscord": null,
+                "levelNoteDiscord": "Med Discord sparas {name} direkt. Med en e-postadress kan du spara från {level}.",
                 "note": "Inget lösenord. Vi använder bara din e-postadress för att logga in dig.",
                 "send": "Skicka en kod till mig",
-                "discord": null
+                "discord": "Fortsätt med Discord"
             },
             "code": {
                 "title": "Kolla din e-post",
@@ -1790,9 +1797,9 @@
         },
         "wrongBallIndicator": "I biljardspelen blir siktlinjen röd och visar ett kryss när den pekar på en boll du inte får träffa först.",
         "discord": {
-            "connected": null,
-            "notConnected": null,
-            "onlyWayIn": null
+            "connected": "Ditt Discord-konto är kopplat.",
+            "notConnected": "Inte kopplat",
+            "onlyWayIn": "Ditt Discord-konto är kopplat. Lägg till en e-postadress för att kunna koppla bort det."
         }
     },
     "share": {
@@ -1845,7 +1852,7 @@
         },
         "call": {
             "title": "Din nästa match",
-            "waiting": "Väntar…",
+            "waiting": "Väntar...",
             "single": "En match avgör",
             "series": "Bäst av {count}, {own}–{other}",
             "startsIn": "Startar om {seconds} s",

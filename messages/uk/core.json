@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Ukrainian",
         "rtl": false,
-        "total": 3876,
-        "missing": 67
+        "total": 3881,
+        "missing": 0
     },
     "error": {
         "redeemCode": {
@@ -165,18 +165,18 @@
             "admin": "Ця дія доступна тільки для адмінів."
         },
         "discord": {
-            "expired": null,
-            "failed": null,
-            "alreadyConnected": null,
-            "onlyWayIn": null
+            "expired": "Вхід через Discord тривав надто довго. Спробуй ще раз.",
+            "failed": "Не вдалося увійти через Discord. Спробуй ще раз.",
+            "alreadyConnected": "Твій акаунт уже підключено до акаунта Discord. Спершу відключи його.",
+            "onlyWayIn": "Спершу додай електронну адресу. Зараз Discord єдиний спосіб увійти у твій акаунт."
         },
         "discordInvite": {
-            "declined": null,
-            "expired": null,
-            "over": null,
-            "notForYou": null,
-            "couldNotJoin": null,
-            "reserved": null
+            "declined": "Цей виклик відхилено.",
+            "expired": "Термін дії цього посилання минув. Попроси нове в Discord.",
+            "over": "Це запрошення вже не дійсне.",
+            "notForYou": "Ти не можеш зайняти обидва місця у своєму власному виклику.",
+            "couldNotJoin": "Не вдалося приєднатися до цього столу.",
+            "reserved": "Цей стіл зарезервовано для виклику між двома іншими гравцями."
         }
     },
     "game": {
@@ -1156,7 +1156,6 @@
         "leaderboard": "Таблиця лідерів",
         "elapsedTime": "Минуло {time}",
         "startingInTime": "Починаємо через {time}",
-        "averageWaitTimeBlank": "Середній час очікування {value}",
         "averageBlank": "Середнє {value}",
         "highestBlank": "Високо. {value}",
         "showBlank": "Показати {value}",
@@ -1226,10 +1225,12 @@
         "pool": "Більярд",
         "gamePreferences": "Налаштування ігор",
         "wrongBallIndicator": "Індикатор неправильної кулі",
-        "connect": null,
-        "disconnect": null,
-        "discordAccount": null,
-        "or": null
+        "connect": "Підключити",
+        "disconnect": "Відключити",
+        "discordAccount": "Discord",
+        "or": "або",
+        "leave": "Вийти",
+        "challenge": "Виклик"
     },
     "match": {
         "quick": "Швидкий матч",
@@ -1317,62 +1318,67 @@
                     ]
                 }
             },
-            "lookingForMatch": null,
-            "firstMatchFirst": null,
-            "gamesSelected": null,
-            "findingOpponent": null,
-            "findingOpponentIn": null,
-            "stopSearching": null,
+            "lookingForMatch": "Шукаємо матч",
+            "gamesSelected": "Вибрано {n} ігор | Вибрано {n} гру | Вибрано {n} ігор",
+            "findingOpponent": "Шукаємо суперника",
+            "findingOpponentIn": "Шукаємо суперника в {game}",
+            "stopSearching": "Зупинити пошук",
             "picker": {
-                "title": null,
-                "subtitle": null,
-                "search": null,
-                "clearSearch": null,
-                "all": null,
-                "sortBy": null,
-                "sortPlaying": null,
-                "sortName": null,
-                "mostPlayed": null,
-                "featured": null,
-                "more": null,
-                "results": null,
-                "similar": null,
-                "noResults": null,
-                "noResultsHint": null,
-                "clearSelection": null,
-                "findMatch": null,
-                "pickToStart": null
+                "title": "Вибери свої ігри",
+                "subtitle": "Ти приєднаєшся до першого знайденого матчу",
+                "search": "Пошук ігор",
+                "clearSearch": "Очистити пошук",
+                "all": "Усі",
+                "sortBy": "Сортувати ігри",
+                "sortPlaying": "Кількість гравців",
+                "sortName": "Назва (А-Я)",
+                "mostPlayed": "Твої найпопулярніші",
+                "featured": "Рекомендовано для тебе",
+                "more": "Більше ігор",
+                "results": "Результати для \"{query}\"",
+                "similar": "Точних збігів немає. Схожі на \"{query}\"",
+                "noResults": "Немає ігор за запитом \"{query}\"",
+                "noResultsHint": "Спробуй іншу назву або категорію",
+                "clearSelection": "Скасувати вибір",
+                "findMatch": "Знайти матч у {n} іграх | Знайти матч у {n} грі | Знайти матч у {n} іграх",
+                "pickToStart": "Вибери гру, щоб почати"
             },
-            "usuallyAbout": null,
-            "usuallyAboutIn": null,
-            "yourGames": null,
-            "editGames": null,
-            "quickest": null,
-            "othersSearching": null,
-            "quietBusierFrom": null,
-            "busyNow": null,
-            "usualWait": null,
-            "busyHours": null,
-            "filters": null,
-            "filtersHint": null,
+            "yourGames": "Твої ігри",
+            "usualDay": "Звичайний день",
+            "editGames": "Змінити ігри",
+            "othersSearching": "Шукають ще {n} гравців | Шукає ще {n} гравець | Шукають ще {n} гравців",
+            "quietBusierFrom": "Зараз тихо, жвавіше буде з {time}",
+            "quietNow": "О цій порі тихо",
+            "busyNow": "О цій порі зазвичай жваво",
+            "busyHours": "Наскільки жваво зазвичай у {game} протягом дня, по годинах. Виділений стовпчик показує поточну годину.",
+            "hourBusy": "{time}: зазвичай жваво",
+            "hourQuiet": "{time}: зазвичай тихо",
+            "filters": "Фільтри",
+            "filtersHint": "Ти залишаєшся в пошуку, поки змінюєш їх",
             "publicSummary": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "Без публічних матчів",
+                "defaultOnly": "Публічні матчі зі стандартними налаштуваннями",
+                "any": "Будь-які публічні матчі"
             },
             "opponentDescription": {
-                "any": null,
-                "higherThanLvl5": null,
-                "higherThanLvl25": null
+                "any": "Будь-хто, хто шукає твої ігри",
+                "higherThanLvl5": "Без зовсім нових гравців",
+                "higherThanLvl25": "Лише досвідчені гравці"
             },
             "publicDescription": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "Лише нові матчі, створені для тебе",
+                "defaultOnly": "Також приєднуватися до відкритих лобі зі стандартними правилами",
+                "any": "Також приєднуватися до лобі з власними правилами"
             },
-            "joining": null,
-            "waitingForMore": null,
-            "seatsHint": null
+            "joining": "Приєднуюсь...",
+            "waitingForMore": "Чекаємо ще {n} гравців | Чекаємо ще {n} гравця | Чекаємо ще {n} гравців",
+            "seatsHint": "Почнеться, коли приєднаються {seats}, або коли закінчиться відлік, з тими, хто тут є",
+            "likely": {
+                "soon": "Інші теж шукають. Матч має бути вже скоро.",
+                "busy": "О цій порі зазвичай жваво. Довго чекати не доведеться.",
+                "quiet": "Зараз тихо. Зазвичай жвавіше стає з {time}.",
+                "quietAll": "Зараз тихо. Це може зайняти трохи часу."
+            }
         },
         "info": {
             "hostLeftWhileMatchmaking": "Хост покинув твій матч.",
@@ -1387,6 +1393,7 @@
             "joinById": "Ти можеш приєднатися до (приватного) матчу, введи чотиризначний ID.",
             "public": "Будь-хто може приєднатися, переглядаючи доступні матчі.",
             "private": "Гравці можуть приєднатися тільки за допомогою URL або 4-значного ID.",
+            "challenge": "Приєднатися можуть лише гравці, яких викликали.",
             "leave": "Можливо, ти не зможеш повернутися, якщо вирішиш вийти.",
             "leaveLast": "Оскільки ти єдиний у грі, матч закриється, коли ти підеш.",
             "leaveAsHost": "Хтось інший стане новим господарем, коли ти підеш.",
@@ -1644,10 +1651,10 @@
                 "loginTitle": "Увійти",
                 "loginDescription": "Без пароля. Ми надішлемо код на пошту.",
                 "levelNote": "Починаючи з {level}, ти можеш зберегти {name} за допомогою електронної адреси.",
-                "levelNoteDiscord": null,
+                "levelNoteDiscord": "Discord одразу збереже {name}. З електронною адресою це можна зробити, починаючи з {level}.",
                 "note": "Без пароля. Ми використовуємо твою електронну адресу лише для входу.",
                 "send": "Отримати код",
-                "discord": null
+                "discord": "Продовжити з Discord"
             },
             "code": {
                 "title": "Перевір пошту",
@@ -1790,9 +1797,9 @@
         },
         "wrongBallIndicator": "У більярдних іграх лінія прицілу стає червоною й показує хрестик, коли вказує на кулю, яку не можна бити першою.",
         "discord": {
-            "connected": null,
-            "notConnected": null,
-            "onlyWayIn": null
+            "connected": "Твій акаунт Discord підключено.",
+            "notConnected": "Не підключено",
+            "onlyWayIn": "Твій акаунт Discord підключено. Додай електронну адресу, щоб мати змогу відключити його."
         }
     },
     "share": {
@@ -1845,7 +1852,7 @@
         },
         "call": {
             "title": "Твій наступний матч",
-            "waiting": "Очікування…",
+            "waiting": "Очікування...",
             "single": "Усе вирішує один матч",
             "series": "Серія з {count} ігор, {own}–{other}",
             "startsIn": "Старт через {seconds} с",

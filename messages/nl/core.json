@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Dutch",
         "rtl": false,
-        "total": 3876,
-        "missing": 67
+        "total": 3881,
+        "missing": 0
     },
     "error": {
         "redeemCode": {
@@ -165,18 +165,18 @@
             "admin": "Deze actie is voorbehouden aan Admins."
         },
         "discord": {
-            "expired": null,
-            "failed": null,
-            "alreadyConnected": null,
-            "onlyWayIn": null
+            "expired": "Inloggen met Discord duurde te lang. Probeer het opnieuw.",
+            "failed": "Inloggen met Discord is niet gelukt. Probeer het opnieuw.",
+            "alreadyConnected": "Je account is al gekoppeld aan een Discord-account. Ontkoppel dat eerst.",
+            "onlyWayIn": "Voeg eerst een e-mailadres toe. Discord is nu de enige manier om in je account te komen."
         },
         "discordInvite": {
-            "declined": null,
-            "expired": null,
-            "over": null,
-            "notForYou": null,
-            "couldNotJoin": null,
-            "reserved": null
+            "declined": "Deze uitdaging is afgewezen.",
+            "expired": "Deze link is verlopen. Vraag op Discord om een nieuwe.",
+            "over": "Deze uitnodiging is voorbij.",
+            "notForYou": "Je kunt niet allebei de plekken van je eigen uitdaging innemen.",
+            "couldNotJoin": "Je kon niet meedoen aan dit spel.",
+            "reserved": "Dit spel is gereserveerd voor een uitdaging tussen twee andere spelers."
         }
     },
     "game": {
@@ -1156,7 +1156,6 @@
         "leaderboard": "Leaderbord",
         "elapsedTime": "{time} verstreken",
         "startingInTime": "Begint over {time}",
-        "averageWaitTimeBlank": "Gem. wachttijd {value}",
         "averageBlank": "Gem. {value}",
         "highestBlank": "Hoog. {value}",
         "showBlank": "Toon {value}",
@@ -1226,10 +1225,12 @@
         "pool": "Pool",
         "gamePreferences": "Spelvoorkeuren",
         "wrongBallIndicator": "Indicator voor verkeerde bal",
-        "connect": null,
-        "disconnect": null,
-        "discordAccount": null,
-        "or": null
+        "connect": "Koppelen",
+        "disconnect": "Ontkoppelen",
+        "discordAccount": "Discord",
+        "or": "of",
+        "leave": "Verlaten",
+        "challenge": "Uitdaging"
     },
     "match": {
         "quick": "Snel Spel",
@@ -1317,62 +1318,67 @@
                     ]
                 }
             },
-            "lookingForMatch": null,
-            "firstMatchFirst": null,
-            "gamesSelected": null,
-            "findingOpponent": null,
-            "findingOpponentIn": null,
-            "stopSearching": null,
+            "lookingForMatch": "Op zoek naar een potje",
+            "gamesSelected": "{n} spellen geselecteerd | {n} spel geselecteerd | {n} spellen geselecteerd",
+            "findingOpponent": "Tegenstander zoeken",
+            "findingOpponentIn": "Tegenstander zoeken in {game}",
+            "stopSearching": "Stop met Zoeken",
             "picker": {
-                "title": null,
-                "subtitle": null,
-                "search": null,
-                "clearSearch": null,
-                "all": null,
-                "sortBy": null,
-                "sortPlaying": null,
-                "sortName": null,
-                "mostPlayed": null,
-                "featured": null,
-                "more": null,
-                "results": null,
-                "similar": null,
-                "noResults": null,
-                "noResultsHint": null,
-                "clearSelection": null,
-                "findMatch": null,
-                "pickToStart": null
+                "title": "Kies je spellen",
+                "subtitle": "Je doet mee aan het eerste potje dat we vinden",
+                "search": "Zoek spellen",
+                "clearSearch": "Zoekopdracht wissen",
+                "all": "Alle",
+                "sortBy": "Spellen sorteren",
+                "sortPlaying": "Aantal spelers",
+                "sortName": "Naam (A-Z)",
+                "mostPlayed": "Je meest gespeelde",
+                "featured": "Uitgelicht voor jou",
+                "more": "Meer spellen",
+                "results": "Resultaten voor \"{query}\"",
+                "similar": "Geen exacte resultaten. Lijkt op \"{query}\"",
+                "noResults": "Geen spellen gevonden voor \"{query}\"",
+                "noResultsHint": "Probeer een andere naam of categorie",
+                "clearSelection": "Selectie wissen",
+                "findMatch": "Zoek een potje in {n} spellen | Zoek een potje in {n} spel | Zoek een potje in {n} spellen",
+                "pickToStart": "Kies een spel om te beginnen"
             },
-            "usuallyAbout": null,
-            "usuallyAboutIn": null,
-            "yourGames": null,
-            "editGames": null,
-            "quickest": null,
-            "othersSearching": null,
-            "quietBusierFrom": null,
-            "busyNow": null,
-            "usualWait": null,
-            "busyHours": null,
-            "filters": null,
-            "filtersHint": null,
+            "yourGames": "Jouw spellen",
+            "usualDay": "Normale dag",
+            "editGames": "Spellen wijzigen",
+            "othersSearching": "{n} anderen zoeken | {n} ander zoekt | {n} anderen zoeken",
+            "quietBusierFrom": "Nu rustig, drukker vanaf {time}",
+            "quietNow": "Rustig op dit uur",
+            "busyNow": "Meestal druk op dit uur",
+            "busyHours": "Hoe druk {game} meestal is door de dag heen, per uur. De gemarkeerde balk is nu.",
+            "hourBusy": "{time}: meestal druk",
+            "hourQuiet": "{time}: meestal rustig",
+            "filters": "Filters",
+            "filtersHint": "Je blijft in de wachtrij terwijl je dit aanpast",
             "publicSummary": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "Geen openbare wedstrijden",
+                "defaultOnly": "Openbare wedstrijden met standaardinstellingen",
+                "any": "Alle openbare wedstrijden"
             },
             "opponentDescription": {
-                "any": null,
-                "higherThanLvl5": null,
-                "higherThanLvl25": null
+                "any": "Iedereen die jouw spellen zoekt",
+                "higherThanLvl5": "Slaat gloednieuwe spelers over",
+                "higherThanLvl25": "Alleen ervaren spelers"
             },
             "publicDescription": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "Alleen nieuwe potjes die voor jou gemaakt zijn",
+                "defaultOnly": "Ook open lobby's met standaardregels",
+                "any": "Ook lobby's met aangepaste regels"
             },
-            "joining": null,
-            "waitingForMore": null,
-            "seatsHint": null
+            "joining": "Meedoen...",
+            "waitingForMore": "Wachten op nog {n} spelers | Wachten op nog {n} speler | Wachten op nog {n} spelers",
+            "seatsHint": "Start zodra {seats} meedoen, of als het aftellen voorbij is met wie er dan is",
+            "likely": {
+                "soon": "Anderen zoeken ook. Er komt vast snel een potje.",
+                "busy": "Meestal druk op dit uur. Het duurt vast niet lang.",
+                "quiet": "Het is nu rustig. Meestal wordt het drukker vanaf {time}.",
+                "quietAll": "Het is nu rustig. Het kan even duren."
+            }
         },
         "info": {
             "hostLeftWhileMatchmaking": "De host heeft de match waarin je zat verlaten.",
@@ -1387,6 +1393,7 @@
             "joinById": "Je kunt meedoen met een privé spel door de viercijferige ID in te vullen.",
             "public": "Iedereen kan meedoen door naar de beschikbare spellen te kijken.",
             "private": "Spelers kunnen alleen meedoen via de URL of de viercijferige ID.",
+            "challenge": "Alleen de uitgedaagde spelers kunnen meedoen.",
             "leave": "Het kan zijn dat je niet meer terug kunt komen als je het spel verlaat.",
             "leaveLast": "Omdat je alleen bent zal dit spel worden beëindigt zodra je het spel verlaat.",
             "leaveAsHost": "Iemand anders zal spelleider worden zodra je het spel verlaat.",
@@ -1644,10 +1651,10 @@
                 "loginTitle": "Inloggen",
                 "loginDescription": "Geen wachtwoord. We mailen je een code.",
                 "levelNote": "Vanaf {level} kun je {name} opslaan met een e-mailadres.",
-                "levelNoteDiscord": null,
+                "levelNoteDiscord": "Met Discord sla je {name} meteen op. Met een e-mailadres kan dat vanaf {level}.",
                 "note": "Geen wachtwoord. We gebruiken je e-mailadres alleen om je in te loggen.",
                 "send": "Stuur me een code",
-                "discord": null
+                "discord": "Doorgaan met Discord"
             },
             "code": {
                 "title": "Check je e-mail",
@@ -1790,9 +1797,9 @@
         },
         "wrongBallIndicator": "In de poolspellen wordt de richtlijn rood met een kruis als die wijst naar een bal die je niet als eerste mag raken.",
         "discord": {
-            "connected": null,
-            "notConnected": null,
-            "onlyWayIn": null
+            "connected": "Je Discord-account is gekoppeld.",
+            "notConnected": "Niet gekoppeld",
+            "onlyWayIn": "Je Discord-account is gekoppeld. Voeg een e-mailadres toe om het te kunnen ontkoppelen."
         }
     },
     "share": {
@@ -1845,7 +1852,7 @@
         },
         "call": {
             "title": "Je volgende spel",
-            "waiting": "Wachten…",
+            "waiting": "Wachten...",
             "single": "Eén spel beslist",
             "series": "Best of {count}, {own}–{other}",
             "startsIn": "Begint over {seconds}s",

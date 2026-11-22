@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Russian",
         "rtl": false,
-        "total": 3876,
-        "missing": 67
+        "total": 3881,
+        "missing": 0
     },
     "error": {
         "redeemCode": {
@@ -165,18 +165,18 @@
             "admin": "Это действие доступно только админам."
         },
         "discord": {
-            "expired": null,
-            "failed": null,
-            "alreadyConnected": null,
-            "onlyWayIn": null
+            "expired": "Вход через Discord занял слишком много времени. Попробуй ещё раз.",
+            "failed": "Не получилось войти через Discord. Попробуй ещё раз.",
+            "alreadyConnected": "Твой аккаунт уже привязан к аккаунту Discord. Сначала отвяжи его.",
+            "onlyWayIn": "Сначала добавь адрес электронной почты. Сейчас Discord единственный способ войти в твой аккаунт."
         },
         "discordInvite": {
-            "declined": null,
-            "expired": null,
-            "over": null,
-            "notForYou": null,
-            "couldNotJoin": null,
-            "reserved": null
+            "declined": "Этот вызов отклонили.",
+            "expired": "Срок действия ссылки истёк. Попроси новую в Discord.",
+            "over": "Это приглашение больше не действует.",
+            "notForYou": "Ты не можешь занять оба места в своём же вызове.",
+            "couldNotJoin": "Не получилось присоединиться к этому столу.",
+            "reserved": "Этот стол занят под вызов между двумя другими игроками."
         }
     },
     "game": {
@@ -1156,7 +1156,6 @@
         "leaderboard": "Таблица Лидеров",
         "elapsedTime": "Прошло {time}",
         "startingInTime": "Начинаем через {time}",
-        "averageWaitTimeBlank": "Среднее время ожидания {value}",
         "averageBlank": "Ср. {value}",
         "highestBlank": "Высокий. {value}",
         "showBlank": "Показать {value}",
@@ -1226,10 +1225,12 @@
         "pool": "Бильярд",
         "gamePreferences": "Настройки игр",
         "wrongBallIndicator": "Индикатор неверного шара",
-        "connect": null,
-        "disconnect": null,
-        "discordAccount": null,
-        "or": null
+        "connect": "Привязать",
+        "disconnect": "Отвязать",
+        "discordAccount": "Discord",
+        "or": "или",
+        "leave": "Выйти",
+        "challenge": "Вызов"
     },
     "match": {
         "quick": "Быстрый матч",
@@ -1317,62 +1318,67 @@
                     ]
                 }
             },
-            "lookingForMatch": null,
-            "firstMatchFirst": null,
-            "gamesSelected": null,
-            "findingOpponent": null,
-            "findingOpponentIn": null,
-            "stopSearching": null,
+            "lookingForMatch": "Ищем матч",
+            "gamesSelected": "Выбрано {n} игр | Выбрана {n} игра | Выбрано {n} игр",
+            "findingOpponent": "Ищем соперника",
+            "findingOpponentIn": "Ищем соперника в {game}",
+            "stopSearching": "Остановить поиск",
             "picker": {
-                "title": null,
-                "subtitle": null,
-                "search": null,
-                "clearSearch": null,
-                "all": null,
-                "sortBy": null,
-                "sortPlaying": null,
-                "sortName": null,
-                "mostPlayed": null,
-                "featured": null,
-                "more": null,
-                "results": null,
-                "similar": null,
-                "noResults": null,
-                "noResultsHint": null,
-                "clearSelection": null,
-                "findMatch": null,
-                "pickToStart": null
+                "title": "Выбери игры",
+                "subtitle": "Ты попадёшь в первый найденный матч",
+                "search": "Поиск игр",
+                "clearSearch": "Очистить поиск",
+                "all": "Все",
+                "sortBy": "Сортировка игр",
+                "sortPlaying": "Сейчас играют",
+                "sortName": "Название (А-Я)",
+                "mostPlayed": "Твои любимые",
+                "featured": "Подобрано для тебя",
+                "more": "Другие игры",
+                "results": "Результаты по запросу \"{query}\"",
+                "similar": "Точных совпадений нет. Похоже на \"{query}\"",
+                "noResults": "Нет игр по запросу \"{query}\"",
+                "noResultsHint": "Попробуй другое название или категорию",
+                "clearSelection": "Сбросить выбор",
+                "findMatch": "Найти матч в {n} играх | Найти матч в {n} игре | Найти матч в {n} играх",
+                "pickToStart": "Выбери игру, чтобы начать"
             },
-            "usuallyAbout": null,
-            "usuallyAboutIn": null,
-            "yourGames": null,
-            "editGames": null,
-            "quickest": null,
-            "othersSearching": null,
-            "quietBusierFrom": null,
-            "busyNow": null,
-            "usualWait": null,
-            "busyHours": null,
-            "filters": null,
-            "filtersHint": null,
+            "yourGames": "Твои игры",
+            "usualDay": "Обычный день",
+            "editGames": "Изменить игры",
+            "othersSearching": "Ищут ещё {n} игроков | Ищет ещё {n} игрок | Ищут ещё {n} игроков",
+            "quietBusierFrom": "Сейчас тихо, оживлённее с {time}",
+            "quietNow": "В это время тихо",
+            "busyNow": "Обычно в это время оживлённо",
+            "busyHours": "Насколько оживлённо обычно в {game} в течение дня, по часам. Выделенный столбец показывает текущий час.",
+            "hourBusy": "{time}: обычно оживлённо",
+            "hourQuiet": "{time}: обычно тихо",
+            "filters": "Фильтры",
+            "filtersHint": "Пока ты меняешь их, поиск продолжается",
             "publicSummary": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "Без публичных матчей",
+                "defaultOnly": "Публичные матчи со стандартными настройками",
+                "any": "Любые публичные матчи"
             },
             "opponentDescription": {
-                "any": null,
-                "higherThanLvl5": null,
-                "higherThanLvl25": null
+                "any": "Любой, кто ищет твои игры",
+                "higherThanLvl5": "Без совсем новых игроков",
+                "higherThanLvl25": "Только опытные игроки"
             },
             "publicDescription": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "Только новые матчи, созданные для тебя",
+                "defaultOnly": "Также открытые лобби со стандартными правилами",
+                "any": "Также лобби с изменёнными правилами"
             },
-            "joining": null,
-            "waitingForMore": null,
-            "seatsHint": null
+            "joining": "Присоединяемся...",
+            "waitingForMore": "Ждём ещё {n} игроков | Ждём ещё {n} игрока | Ждём ещё {n} игроков",
+            "seatsHint": "Начнётся, когда соберутся {seats}, или по окончании отсчёта с теми, кто уже здесь",
+            "likely": {
+                "soon": "Другие тоже ищут. Матч должен найтись скоро.",
+                "busy": "Обычно в это время оживлённо. Это не должно занять много времени.",
+                "quiet": "Сейчас тихо. Обычно оживлённее становится с {time}.",
+                "quietAll": "Сейчас тихо. Это может занять какое-то время."
+            }
         },
         "info": {
             "hostLeftWhileMatchmaking": "Хост покинул твой матч.",
@@ -1387,6 +1393,7 @@
             "joinById": "Ты можешь присоединиться к (приватному) матчу, введя четырехзначный ID.",
             "public": "Любой может присоединиться, просмотрев доступные матчи.",
             "private": "Игроки могут присоединиться только используя URL или 4-значный ID.",
+            "challenge": "Присоединиться могут только вызванные игроки.",
             "leave": "Если ты решишь уйти, то может быть не сможешь вернуться обратно.",
             "leaveLast": "Поскольку ты единственный в игре, матч закроется, когда ты уйдешь.",
             "leaveAsHost": "Когда ты уйдешь, кто-то другой станет новым хозяином.",
@@ -1644,10 +1651,10 @@
                 "loginTitle": "Вход",
                 "loginDescription": "Без пароля. Мы пришлём код на почту.",
                 "levelNote": "Начиная с {level}, ты можешь сохранить {name} с помощью email.",
-                "levelNoteDiscord": null,
+                "levelNoteDiscord": "Discord сразу сохранит {name}. С email это можно сделать начиная с {level}.",
                 "note": "Без пароля. Мы используем твой email только для входа.",
                 "send": "Получить код",
-                "discord": null
+                "discord": "Продолжить через Discord"
             },
             "code": {
                 "title": "Проверь почту",
@@ -1790,9 +1797,9 @@
         },
         "wrongBallIndicator": "В бильярдных играх линия прицела становится красной и показывает крестик, когда указывает на шар, который нельзя бить первым.",
         "discord": {
-            "connected": null,
-            "notConnected": null,
-            "onlyWayIn": null
+            "connected": "Твой аккаунт Discord привязан.",
+            "notConnected": "Не привязан",
+            "onlyWayIn": "Твой аккаунт Discord привязан. Добавь адрес электронной почты, чтобы его можно было отвязать."
         }
     },
     "share": {
@@ -1845,7 +1852,7 @@
         },
         "call": {
             "title": "Твой следующий матч",
-            "waiting": "Ожидание…",
+            "waiting": "Ожидание...",
             "single": "Всё решает один матч",
             "series": "Серия из {count} игр, {own}–{other}",
             "startsIn": "Старт через {seconds} с",

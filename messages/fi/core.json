@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 3876,
-        "missing": 67
+        "total": 3881,
+        "missing": 0
     },
     "error": {
         "redeemCode": {
@@ -165,18 +165,18 @@
             "admin": "Vain ylläpitäjät voivat tehdä tämän toiminnon."
         },
         "discord": {
-            "expired": null,
-            "failed": null,
-            "alreadyConnected": null,
-            "onlyWayIn": null
+            "expired": "Discordilla kirjautuminen kesti liian kauan. Yritä uudelleen.",
+            "failed": "Discordilla kirjautuminen ei onnistunut. Yritä uudelleen.",
+            "alreadyConnected": "Tiliisi on jo yhdistetty Discord-tili. Irrota se ensin.",
+            "onlyWayIn": "Lisää ensin sähköpostiosoite. Discord on tällä hetkellä ainoa tapa kirjautua tilillesi."
         },
         "discordInvite": {
-            "declined": null,
-            "expired": null,
-            "over": null,
-            "notForYou": null,
-            "couldNotJoin": null,
-            "reserved": null
+            "declined": "Tämä haaste hylättiin.",
+            "expired": "Tämä linkki on vanhentunut. Pyydä uusi Discordissa.",
+            "over": "Tämä kutsu on jo päättynyt.",
+            "notForYou": "Et voi ottaa molempia paikkoja omassa haasteessasi.",
+            "couldNotJoin": "Et voinut liittyä tähän pöytään.",
+            "reserved": "Tämä pöytä on varattu kahden muun pelaajan väliselle haasteelle."
         }
     },
     "game": {
@@ -1156,7 +1156,6 @@
         "leaderboard": "Tulostaulukko",
         "elapsedTime": "{time} kulunut",
         "startingInTime": "Alkaa {time} päästä",
-        "averageWaitTimeBlank": "Keskim. odotusaika {value}",
         "averageBlank": "Keskim. {value}",
         "highestBlank": "Korkea. {value}",
         "showBlank": "Näytä {value}",
@@ -1226,10 +1225,12 @@
         "pool": "Biljardi",
         "gamePreferences": "Peliasetukset",
         "wrongBallIndicator": "Väärän pallon ilmaisin",
-        "connect": null,
-        "disconnect": null,
-        "discordAccount": null,
-        "or": null
+        "connect": "Yhdistä",
+        "disconnect": "Irrota",
+        "discordAccount": "Discord",
+        "or": "tai",
+        "leave": "Poistu",
+        "challenge": "Haaste"
     },
     "match": {
         "quick": "Nopea ottelu",
@@ -1317,62 +1318,67 @@
                     ]
                 }
             },
-            "lookingForMatch": null,
-            "firstMatchFirst": null,
-            "gamesSelected": null,
-            "findingOpponent": null,
-            "findingOpponentIn": null,
-            "stopSearching": null,
+            "lookingForMatch": "Etsitään matsia",
+            "gamesSelected": "{n} peliä valittu | {n} peli valittu | {n} peliä valittu",
+            "findingOpponent": "Etsitään vastustajaa",
+            "findingOpponentIn": "Etsitään vastustajaa peliin {game}",
+            "stopSearching": "Lopeta haku",
             "picker": {
-                "title": null,
-                "subtitle": null,
-                "search": null,
-                "clearSearch": null,
-                "all": null,
-                "sortBy": null,
-                "sortPlaying": null,
-                "sortName": null,
-                "mostPlayed": null,
-                "featured": null,
-                "more": null,
-                "results": null,
-                "similar": null,
-                "noResults": null,
-                "noResultsHint": null,
-                "clearSelection": null,
-                "findMatch": null,
-                "pickToStart": null
+                "title": "Valitse pelisi",
+                "subtitle": "Liityt ensimmäiseen löytyvään matsiin",
+                "search": "Hae pelejä",
+                "clearSearch": "Tyhjennä haku",
+                "all": "Kaikki",
+                "sortBy": "Lajittele pelit",
+                "sortPlaying": "Pelaajia paikalla",
+                "sortName": "Nimi (A-Ö)",
+                "mostPlayed": "Eniten pelaamasi",
+                "featured": "Suosituksia sulle",
+                "more": "Lisää pelejä",
+                "results": "Tulokset haulle \"{query}\"",
+                "similar": "Ei tarkkoja osumia. Samankaltaisia kuin \"{query}\"",
+                "noResults": "Haulla \"{query}\" ei löytynyt pelejä",
+                "noResultsHint": "Kokeile toista nimeä tai kategoriaa",
+                "clearSelection": "Tyhjennä valinta",
+                "findMatch": "Etsi matsi {n} pelistä | Etsi matsi {n} pelistä | Etsi matsi {n} pelistä",
+                "pickToStart": "Valitse peli aloittaaksesi"
             },
-            "usuallyAbout": null,
-            "usuallyAboutIn": null,
-            "yourGames": null,
-            "editGames": null,
-            "quickest": null,
-            "othersSearching": null,
-            "quietBusierFrom": null,
-            "busyNow": null,
-            "usualWait": null,
-            "busyHours": null,
-            "filters": null,
-            "filtersHint": null,
+            "yourGames": "Sun pelit",
+            "usualDay": "Tavallinen päivä",
+            "editGames": "Muokkaa pelejä",
+            "othersSearching": "{n} muuta etsii | {n} muu etsii | {n} muuta etsii",
+            "quietBusierFrom": "Hiljaista nyt, vilkkaampaa klo {time} alkaen",
+            "quietNow": "Hiljaista tähän aikaan",
+            "busyNow": "Yleensä vilkasta tähän aikaan",
+            "busyHours": "Kuinka vilkasta pelissä {game} yleensä on päivän aikana, tunneittain. Korostettu palkki on nyt.",
+            "hourBusy": "{time}: yleensä vilkasta",
+            "hourQuiet": "{time}: yleensä hiljaista",
+            "filters": "Suodattimet",
+            "filtersHint": "Pysyt jonossa, kun muutat näitä",
             "publicSummary": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "Ei julkisia otteluita",
+                "defaultOnly": "Julkiset ottelut oletusasetuksilla",
+                "any": "Kaikki julkiset ottelut"
             },
             "opponentDescription": {
-                "any": null,
-                "higherThanLvl5": null,
-                "higherThanLvl25": null
+                "any": "Kuka tahansa, joka etsii sun pelejä",
+                "higherThanLvl5": "Ohittaa ihan uudet pelaajat",
+                "higherThanLvl25": "Vain kokeneet pelaajat"
             },
             "publicDescription": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "Vain sulle luodut uudet matsit",
+                "defaultOnly": "Liity myös avoimiin auloihin, joissa on vakiosäännöt",
+                "any": "Liity myös auloihin, joissa on mukautetut säännöt"
             },
-            "joining": null,
-            "waitingForMore": null,
-            "seatsHint": null
+            "joining": "Liitytään...",
+            "waitingForMore": "Odotetaan vielä {n} pelaajaa | Odotetaan vielä {n} pelaajaa | Odotetaan vielä {n} pelaajaa",
+            "seatsHint": "Alkaa, kun {seats} on liittynyt, tai kun laskenta loppuu niillä, jotka ovat paikalla",
+            "likely": {
+                "soon": "Muutkin etsivät. Matsin pitäisi löytyä pian.",
+                "busy": "Yleensä vilkasta tähän aikaan. Ei pitäisi kestää kauan.",
+                "quiet": "Hiljaista juuri nyt. Yleensä vilkastuu klo {time} alkaen.",
+                "quietAll": "Hiljaista juuri nyt. Tässä voi mennä hetki."
+            }
         },
         "info": {
             "hostLeftWhileMatchmaking": "Isäntä lähti matsista, jossa olit.",
@@ -1387,6 +1393,7 @@
             "joinById": "Voit liittyä (yksityiseen) matsiin syöttämällä nelinumeroisen ID:n.",
             "public": "Kuka tahansa voi liittyä selaamalla saatavilla olevia otteluita.",
             "private": "Pelaajat voivat liittyä vain käyttämällä URL-osoitetta tai 4-numeroista ID:tä.",
+            "challenge": "Vain haastetut pelaajat voivat liittyä.",
             "leave": "Et ehkä pysty liittymään takaisin, jos päätät lähteä.",
             "leaveLast": "Koska olet pelin ainoa henkilö, ottelu suljetaan, kun lähdet.",
             "leaveAsHost": "Kun lähdet, joku muu ottaa isännän roolin.",
@@ -1644,10 +1651,10 @@
                 "loginTitle": "Kirjaudu sisään",
                 "loginDescription": "Ei salasanaa. Lähetämme sinulle koodin sähköpostiin.",
                 "levelNote": "Voit tallentaa käyttäjän {name} sähköpostilla alkaen {level}.",
-                "levelNoteDiscord": null,
+                "levelNoteDiscord": "Discord tallentaa käyttäjän {name} heti. Sähköpostilla voit tallentaa alkaen {level}.",
                 "note": "Ei salasanaa. Käytämme sähköpostiosoitettasi vain sisäänkirjautumiseen.",
                 "send": "Lähetä minulle koodi",
-                "discord": null
+                "discord": "Jatka Discordilla"
             },
             "code": {
                 "title": "Tarkista sähköpostisi",
@@ -1790,9 +1797,9 @@
         },
         "wrongBallIndicator": "Biljardipeleissä tähtäysviiva muuttuu punaiseksi ja siihen tulee rasti, kun se osoittaa palloon, johon et saa osua ensin.",
         "discord": {
-            "connected": null,
-            "notConnected": null,
-            "onlyWayIn": null
+            "connected": "Discord-tilisi on yhdistetty.",
+            "notConnected": "Ei yhdistetty",
+            "onlyWayIn": "Discord-tilisi on yhdistetty. Lisää sähköpostiosoite, jotta voit irrottaa sen."
         }
     },
     "share": {
@@ -1845,7 +1852,7 @@
         },
         "call": {
             "title": "Seuraava ottelusi",
-            "waiting": "Odotetaan…",
+            "waiting": "Odotetaan...",
             "single": "Yksi ottelu ratkaisee",
             "series": "Paras {count}:stä, {own}–{other}",
             "startsIn": "Alkaa {seconds} s päästä",

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 3876,
-        "missing": 67
+        "total": 3881,
+        "missing": 0
     },
     "error": {
         "redeemCode": {
@@ -165,18 +165,18 @@
             "admin": "Bu eylem sadece Yöneticilere özgüdür."
         },
         "discord": {
-            "expired": null,
-            "failed": null,
-            "alreadyConnected": null,
-            "onlyWayIn": null
+            "expired": "Discord ile giriş yapmak çok uzun sürdü. Lütfen tekrar dene.",
+            "failed": "Discord ile giriş yapılamadı. Lütfen tekrar dene.",
+            "alreadyConnected": "Hesabın zaten bir Discord hesabına bağlı. Önce onun bağlantısını kes.",
+            "onlyWayIn": "Önce bir e-posta adresi ekle. Şu an hesabına girmenin tek yolu Discord."
         },
         "discordInvite": {
-            "declined": null,
-            "expired": null,
-            "over": null,
-            "notForYou": null,
-            "couldNotJoin": null,
-            "reserved": null
+            "declined": "Bu meydan okuma reddedildi.",
+            "expired": "Bu bağlantının süresi doldu. Discord'da yenisini iste.",
+            "over": "Bu davet sona erdi.",
+            "notForYou": "Kendi meydan okumanda iki yeri birden alamazsın.",
+            "couldNotJoin": "Bu masaya katılamadın.",
+            "reserved": "Bu masa, diğer iki oyuncu arasındaki bir meydan okuma için ayrıldı."
         }
     },
     "game": {
@@ -1156,7 +1156,6 @@
         "leaderboard": "Lider Tablosu",
         "elapsedTime": "{time} süre geçti",
         "startingInTime": "{time} içinde başlıyor",
-        "averageWaitTimeBlank": "Ort. bekleme süresi {value}",
         "averageBlank": "Ort. {value}",
         "highestBlank": "Yüksek. {value}",
         "showBlank": "{value} Göster",
@@ -1226,10 +1225,12 @@
         "pool": "Bilardo",
         "gamePreferences": "Oyun tercihleri",
         "wrongBallIndicator": "Yanlış top göstergesi",
-        "connect": null,
-        "disconnect": null,
-        "discordAccount": null,
-        "or": null
+        "connect": "Bağla",
+        "disconnect": "Bağlantıyı Kes",
+        "discordAccount": "Discord",
+        "or": "veya",
+        "leave": "Ayrıl",
+        "challenge": "Meydan Okuma"
     },
     "match": {
         "quick": "Hızlı Eşleşme",
@@ -1317,62 +1318,67 @@
                     ]
                 }
             },
-            "lookingForMatch": null,
-            "firstMatchFirst": null,
-            "gamesSelected": null,
-            "findingOpponent": null,
-            "findingOpponentIn": null,
-            "stopSearching": null,
+            "lookingForMatch": "Maç aranıyor",
+            "gamesSelected": "{n} oyun seçildi | {n} oyun seçildi | {n} oyun seçildi",
+            "findingOpponent": "Rakip aranıyor",
+            "findingOpponentIn": "{game} oyununda rakip aranıyor",
+            "stopSearching": "Aramayı Durdur",
             "picker": {
-                "title": null,
-                "subtitle": null,
-                "search": null,
-                "clearSearch": null,
-                "all": null,
-                "sortBy": null,
-                "sortPlaying": null,
-                "sortName": null,
-                "mostPlayed": null,
-                "featured": null,
-                "more": null,
-                "results": null,
-                "similar": null,
-                "noResults": null,
-                "noResultsHint": null,
-                "clearSelection": null,
-                "findMatch": null,
-                "pickToStart": null
+                "title": "Oyunlarını seç",
+                "subtitle": "İlk bulunan maça katılırsın",
+                "search": "Oyun ara",
+                "clearSearch": "Aramayı temizle",
+                "all": "Tümü",
+                "sortBy": "Oyunları sırala",
+                "sortPlaying": "Oynayan kişi sayısı",
+                "sortName": "İsim (A-Z)",
+                "mostPlayed": "En çok oynadıkların",
+                "featured": "Senin için öne çıkanlar",
+                "more": "Diğer oyunlar",
+                "results": "\"{query}\" için sonuçlar",
+                "similar": "Tam eşleşme yok. \"{query}\" ile benzer olanlar",
+                "noResults": "\"{query}\" ile eşleşen oyun yok",
+                "noResultsHint": "Farklı bir isim ya da kategori dene",
+                "clearSelection": "Seçimi Temizle",
+                "findMatch": "{n} Oyunda Maç Bul | {n} Oyunda Maç Bul | {n} Oyunda Maç Bul",
+                "pickToStart": "Başlamak için bir oyun seç"
             },
-            "usuallyAbout": null,
-            "usuallyAboutIn": null,
-            "yourGames": null,
-            "editGames": null,
-            "quickest": null,
-            "othersSearching": null,
-            "quietBusierFrom": null,
-            "busyNow": null,
-            "usualWait": null,
-            "busyHours": null,
-            "filters": null,
-            "filtersHint": null,
+            "yourGames": "Oyunların",
+            "usualDay": "Tipik bir gün",
+            "editGames": "Oyunları Düzenle",
+            "othersSearching": "{n} kişi daha arıyor | {n} kişi daha arıyor | {n} kişi daha arıyor",
+            "quietBusierFrom": "Şu an sakin, {time} itibarıyla hareketlenir",
+            "quietNow": "Bu saatte sakin",
+            "busyNow": "Bu saatte genelde kalabalık",
+            "busyHours": "{game} oyununun gün boyunca saat saat ne kadar kalabalık olduğu. Vurgulanan çubuk şu anı gösterir.",
+            "hourBusy": "{time}: genelde kalabalık",
+            "hourQuiet": "{time}: genelde sakin",
+            "filters": "Filtreler",
+            "filtersHint": "Bunları değiştirirken sırada kalırsın",
             "publicSummary": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "Halka açık maç yok",
+                "defaultOnly": "Varsayılan ayarlı halka açık maçlar",
+                "any": "Tüm halka açık maçlar"
             },
             "opponentDescription": {
-                "any": null,
-                "higherThanLvl5": null,
-                "higherThanLvl25": null
+                "any": "Oyunlarını arayan herkes",
+                "higherThanLvl5": "Yepyeni oyuncuları atlar",
+                "higherThanLvl25": "Sadece deneyimli oyuncular"
             },
             "publicDescription": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "Sadece senin için kurulan yeni maçlar",
+                "defaultOnly": "Standart kurallı açık lobilere de katıl",
+                "any": "Özel kurallı lobilere de katıl"
             },
-            "joining": null,
-            "waitingForMore": null,
-            "seatsHint": null
+            "joining": "Katılıyorsun...",
+            "waitingForMore": "{n} oyuncu daha bekleniyor | {n} oyuncu daha bekleniyor | {n} oyuncu daha bekleniyor",
+            "seatsHint": "{seats} katılınca ya da geri sayım bittiğinde buradakilerle başlar",
+            "likely": {
+                "soon": "Başkaları da arıyor. Maç yakın olmalı.",
+                "busy": "Bu saatte genelde kalabalık. Uzun sürmemeli.",
+                "quiet": "Şu an sakin. Genelde {time} itibarıyla hareketlenir.",
+                "quietAll": "Şu an sakin. Biraz sürebilir."
+            }
         },
         "info": {
             "hostLeftWhileMatchmaking": "Senin olduğun maçı ev sahibi terk etti.",
@@ -1387,6 +1393,7 @@
             "joinById": "Dört haneli ID'yi doldurarak (özel) bir maça katılabilirsin.",
             "public": "Herkes, mevcut maçları göz atarak katılabilir.",
             "private": "Oyuncular sadece URL veya 4 haneli ID kullanarak katılabilir.",
+            "challenge": "Sadece meydan okunan oyuncular katılabilir.",
             "leave": "Eğer çıkmayı seçersen, geri dönemeyebilirsin.",
             "leaveLast": "Oyunda tek kişi olduğun için, çıkınca maç kapanacak.",
             "leaveAsHost": "Çıkınca başka biri yeni ev sahibi olacak.",
@@ -1644,10 +1651,10 @@
                 "loginTitle": "Giriş Yap",
                 "loginDescription": "Şifre yok. E-postana bir kod göndereceğiz.",
                 "levelNote": "{level} itibarıyla {name} kullanıcısını e-postayla kaydedebilirsin.",
-                "levelNoteDiscord": null,
+                "levelNoteDiscord": "Discord {name} kullanıcısını hemen kaydeder. E-postayla {level} itibarıyla kaydedebilirsin.",
                 "note": "Şifre yok. E-postanı sadece giriş yapman için kullanıyoruz.",
                 "send": "Bana kod gönder",
-                "discord": null
+                "discord": "Discord ile devam et"
             },
             "code": {
                 "title": "E-postanı kontrol et",
@@ -1790,9 +1797,9 @@
         },
         "wrongBallIndicator": "Bilardo oyunlarında, ilk vurmana izin verilmeyen bir topa nişan aldığında nişan çizgisi kırmızıya döner ve bir çarpı gösterir.",
         "discord": {
-            "connected": null,
-            "notConnected": null,
-            "onlyWayIn": null
+            "connected": "Discord hesabın bağlı.",
+            "notConnected": "Bağlı değil",
+            "onlyWayIn": "Discord hesabın bağlı. Bağlantısını kesebilmek için bir e-posta adresi ekle."
         }
     },
     "share": {
@@ -1845,7 +1852,7 @@
         },
         "call": {
             "title": "Sıradaki maçın",
-            "waiting": "Bekleniyor…",
+            "waiting": "Bekleniyor...",
             "single": "Tek maçta belli olur",
             "series": "{count} oyunluk seri, {own}–{other}",
             "startsIn": "{seconds} sn içinde başlıyor",

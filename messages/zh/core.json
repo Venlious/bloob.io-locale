@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 3876,
-        "missing": 67
+        "total": 3881,
+        "missing": 0
     },
     "error": {
         "redeemCode": {
@@ -165,18 +165,18 @@
             "admin": "仅限管理员进行该操作"
         },
         "discord": {
-            "expired": null,
-            "failed": null,
-            "alreadyConnected": null,
-            "onlyWayIn": null
+            "expired": "用Discord登录超时了，请再试一次。",
+            "failed": "用Discord登录失败了，请再试一次。",
+            "alreadyConnected": "你的账户已经绑定了一个Discord账号。请先解除绑定。",
+            "onlyWayIn": "请先添加一个电子邮件地址。目前Discord是你登录账户的唯一方式。"
         },
         "discordInvite": {
-            "declined": null,
-            "expired": null,
-            "over": null,
-            "notForYou": null,
-            "couldNotJoin": null,
-            "reserved": null
+            "declined": "这个挑战已被拒绝。",
+            "expired": "这个链接已过期。去Discord上要一个新的吧。",
+            "over": "这个邀请已经结束了。",
+            "notForYou": "你不能在自己发起的挑战里占两个座位。",
+            "couldNotJoin": "你无法加入这个房间。",
+            "reserved": "这个房间是为另外两位玩家之间的挑战保留的。"
         }
     },
     "game": {
@@ -1156,7 +1156,6 @@
         "leaderboard": "排行榜",
         "elapsedTime": "已过去{time}",
         "startingInTime": "在 {time} 后开始",
-        "averageWaitTimeBlank": "平均等待时间 {value}",
         "averageBlank": "平均 {value}",
         "highestBlank": "高. {value}",
         "showBlank": "显示 {value}",
@@ -1226,10 +1225,12 @@
         "pool": "台球",
         "gamePreferences": "游戏偏好",
         "wrongBallIndicator": "错误球提示",
-        "connect": null,
-        "disconnect": null,
-        "discordAccount": null,
-        "or": null
+        "connect": "绑定",
+        "disconnect": "解除绑定",
+        "discordAccount": "Discord",
+        "or": "或",
+        "leave": "离开",
+        "challenge": "挑战"
     },
     "match": {
         "quick": "快速匹配",
@@ -1317,62 +1318,67 @@
                     ]
                 }
             },
-            "lookingForMatch": null,
-            "firstMatchFirst": null,
-            "gamesSelected": null,
-            "findingOpponent": null,
-            "findingOpponentIn": null,
-            "stopSearching": null,
+            "lookingForMatch": "正在寻找对局",
+            "gamesSelected": "已选 {n} 个游戏 | 已选 {n} 个游戏 | 已选 {n} 个游戏",
+            "findingOpponent": "正在寻找对手",
+            "findingOpponentIn": "正在 {game} 中寻找对手",
+            "stopSearching": "停止匹配",
             "picker": {
-                "title": null,
-                "subtitle": null,
-                "search": null,
-                "clearSearch": null,
-                "all": null,
-                "sortBy": null,
-                "sortPlaying": null,
-                "sortName": null,
-                "mostPlayed": null,
-                "featured": null,
-                "more": null,
-                "results": null,
-                "similar": null,
-                "noResults": null,
-                "noResultsHint": null,
-                "clearSelection": null,
-                "findMatch": null,
-                "pickToStart": null
+                "title": "选择你的游戏",
+                "subtitle": "你会加入最先找到的对局",
+                "search": "搜索游戏",
+                "clearSearch": "清除搜索",
+                "all": "全部",
+                "sortBy": "游戏排序",
+                "sortPlaying": "在线人数",
+                "sortName": "名称（A-Z）",
+                "mostPlayed": "你最常玩的",
+                "featured": "为你推荐",
+                "more": "更多游戏",
+                "results": "“{query}”的搜索结果",
+                "similar": "没有完全匹配的结果。与“{query}”相似",
+                "noResults": "没有与“{query}”匹配的游戏",
+                "noResultsHint": "换个名称或分类试试",
+                "clearSelection": "清除选择",
+                "findMatch": "在 {n} 个游戏中寻找对局 | 在 {n} 个游戏中寻找对局 | 在 {n} 个游戏中寻找对局",
+                "pickToStart": "选择一个游戏开始"
             },
-            "usuallyAbout": null,
-            "usuallyAboutIn": null,
-            "yourGames": null,
-            "editGames": null,
-            "quickest": null,
-            "othersSearching": null,
-            "quietBusierFrom": null,
-            "busyNow": null,
-            "usualWait": null,
-            "busyHours": null,
-            "filters": null,
-            "filtersHint": null,
+            "yourGames": "你的游戏",
+            "usualDay": "平常的一天",
+            "editGames": "编辑游戏",
+            "othersSearching": "另有 {n} 人在匹配 | 另有 {n} 人在匹配 | 另有 {n} 人在匹配",
+            "quietBusierFrom": "现在人少，{time} 起会热闹些",
+            "quietNow": "这个时段人少",
+            "busyNow": "这个时段通常人多",
+            "busyHours": "{game} 一天中每小时的平常热闹程度。高亮的柱子代表现在。",
+            "hourBusy": "{time}：通常人多",
+            "hourQuiet": "{time}：通常人少",
+            "filters": "筛选",
+            "filtersHint": "更改这些设置时，你仍会留在匹配中",
             "publicSummary": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "不加入公开房间",
+                "defaultOnly": "默认设置的公开房间",
+                "any": "任何公开房间"
             },
             "opponentDescription": {
-                "any": null,
-                "higherThanLvl5": null,
-                "higherThanLvl25": null
+                "any": "任何在匹配你所选游戏的人",
+                "higherThanLvl5": "跳过刚入门的新玩家",
+                "higherThanLvl25": "只匹配有经验的玩家"
             },
             "publicDescription": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "只加入为你新建的对局",
+                "defaultOnly": "也加入使用标准规则的公开房间",
+                "any": "也加入使用自定义规则的房间"
             },
-            "joining": null,
-            "waitingForMore": null,
-            "seatsHint": null
+            "joining": "正在加入...",
+            "waitingForMore": "还在等 {n} 位玩家 | 还在等 {n} 位玩家 | 还在等 {n} 位玩家",
+            "seatsHint": "{seats}加入后开始，或倒计时结束时由在场的玩家开始",
+            "likely": {
+                "soon": "其他人也在匹配，应该很快就能找到对局。",
+                "busy": "这个时段通常人多，应该不会等太久。",
+                "quiet": "现在人少，通常 {time} 起会热闹些。",
+                "quietAll": "现在人少，可能要等一会儿。"
+            }
         },
         "info": {
             "hostLeftWhileMatchmaking": "房主离开了你所在的房间。",
@@ -1387,6 +1393,7 @@
             "joinById": "你可以通过填写四位数的ID来加入（私人）房间。",
             "public": "任何人都可以通过浏览可用的房间来加入。",
             "private": "玩家只能通过URL或4位数ID来加入。",
+            "challenge": "只有被挑战的玩家才能加入。",
             "leave": "如果你选择离开，可能就再也回不来了。",
             "leaveLast": "你是游戏里唯一的人，你一离开房间就会解散。",
             "leaveAsHost": "你离开后，会有别人成为新的房主。",
@@ -1644,10 +1651,10 @@
                 "loginTitle": "登录",
                 "loginDescription": "无需密码。我们会把验证码发到你的邮箱。",
                 "levelNote": "达到 {level} 后，你就可以用邮箱保存 {name}。",
-                "levelNoteDiscord": null,
+                "levelNoteDiscord": "用Discord可以马上保存 {name}。用邮箱的话，达到 {level} 后才能保存。",
                 "note": "无需密码。我们只用你的邮箱来帮你登录。",
                 "send": "发送验证码",
-                "discord": null
+                "discord": "使用Discord继续"
             },
             "code": {
                 "title": "查看你的邮箱",
@@ -1790,9 +1797,9 @@
         },
         "wrongBallIndicator": "在台球游戏中，当瞄准线指向你不能先击打的球时，它会变红并显示一个叉号。",
         "discord": {
-            "connected": null,
-            "notConnected": null,
-            "onlyWayIn": null
+            "connected": "你的Discord账号已绑定。",
+            "notConnected": "未绑定",
+            "onlyWayIn": "你的Discord账号已绑定。添加电子邮件地址后才能解除绑定。"
         }
     },
     "share": {
@@ -1845,7 +1852,7 @@
         },
         "call": {
             "title": "你的下一场对局",
-            "waiting": "等待中…",
+            "waiting": "等待中...",
             "single": "一局定胜负",
             "series": "最多{count}局，{own}–{other}",
             "startsIn": "{seconds}秒后开始",

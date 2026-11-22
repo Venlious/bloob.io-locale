@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Danish",
         "rtl": false,
-        "total": 3876,
-        "missing": 67
+        "total": 3881,
+        "missing": 0
     },
     "error": {
         "redeemCode": {
@@ -165,18 +165,18 @@
             "admin": "Denne handling er kun for Admins."
         },
         "discord": {
-            "expired": null,
-            "failed": null,
-            "alreadyConnected": null,
-            "onlyWayIn": null
+            "expired": "Det tog for lang tid at logge ind med Discord. Prøv igen.",
+            "failed": "Det lykkedes ikke at logge ind med Discord. Prøv igen.",
+            "alreadyConnected": "Din konto er allerede forbundet til en Discord-konto. Afbryd den først.",
+            "onlyWayIn": "Tilføj først en emailadresse. Lige nu er Discord den eneste måde at komme ind på din konto."
         },
         "discordInvite": {
-            "declined": null,
-            "expired": null,
-            "over": null,
-            "notForYou": null,
-            "couldNotJoin": null,
-            "reserved": null
+            "declined": "Denne udfordring blev afvist.",
+            "expired": "Dette link er udløbet. Bed om et nyt på Discord.",
+            "over": "Denne invitation er slut.",
+            "notForYou": "Du kan ikke tage begge pladser i din egen udfordring.",
+            "couldNotJoin": "Du kunne ikke komme med ved dette bord.",
+            "reserved": "Dette bord er reserveret til en udfordring mellem to andre spillere."
         }
     },
     "game": {
@@ -1156,7 +1156,6 @@
         "leaderboard": "Rangliste",
         "elapsedTime": "{time} er gået",
         "startingInTime": "Starter om {time}",
-        "averageWaitTimeBlank": "Gns. ventetid {value}",
         "averageBlank": "Gns. {value}",
         "highestBlank": "Høj. {value}",
         "showBlank": "Vis {value}",
@@ -1226,10 +1225,12 @@
         "pool": "Pool",
         "gamePreferences": "Spilpræferencer",
         "wrongBallIndicator": "Indikator for forkert kugle",
-        "connect": null,
-        "disconnect": null,
-        "discordAccount": null,
-        "or": null
+        "connect": "Forbind",
+        "disconnect": "Afbryd",
+        "discordAccount": "Discord",
+        "or": "eller",
+        "leave": "Forlad",
+        "challenge": "Udfordring"
     },
     "match": {
         "quick": "Hurtig Kamp",
@@ -1317,62 +1318,67 @@
                     ]
                 }
             },
-            "lookingForMatch": null,
-            "firstMatchFirst": null,
-            "gamesSelected": null,
-            "findingOpponent": null,
-            "findingOpponentIn": null,
-            "stopSearching": null,
+            "lookingForMatch": "Leder efter en kamp",
+            "gamesSelected": "{n} spil valgt | {n} spil valgt | {n} spil valgt",
+            "findingOpponent": "Finder en modstander",
+            "findingOpponentIn": "Finder en modstander i {game}",
+            "stopSearching": "Stop søgningen",
             "picker": {
-                "title": null,
-                "subtitle": null,
-                "search": null,
-                "clearSearch": null,
-                "all": null,
-                "sortBy": null,
-                "sortPlaying": null,
-                "sortName": null,
-                "mostPlayed": null,
-                "featured": null,
-                "more": null,
-                "results": null,
-                "similar": null,
-                "noResults": null,
-                "noResultsHint": null,
-                "clearSelection": null,
-                "findMatch": null,
-                "pickToStart": null
+                "title": "Vælg dine spil",
+                "subtitle": "Du kommer med i den første kamp, vi finder",
+                "search": "Søg efter spil",
+                "clearSearch": "Ryd søgning",
+                "all": "Alle",
+                "sortBy": "Sorter spil",
+                "sortPlaying": "Flest spillere",
+                "sortName": "Navn (A-Å)",
+                "mostPlayed": "Dine mest spillede",
+                "featured": "Udvalgt til dig",
+                "more": "Flere spil",
+                "results": "Resultater for \"{query}\"",
+                "similar": "Ingen præcise resultater. Ligner \"{query}\"",
+                "noResults": "Ingen spil passer til \"{query}\"",
+                "noResultsHint": "Prøv et andet navn eller en anden kategori",
+                "clearSelection": "Ryd valg",
+                "findMatch": "Find en kamp i {n} spil | Find en kamp i {n} spil | Find en kamp i {n} spil",
+                "pickToStart": "Vælg et spil for at starte"
             },
-            "usuallyAbout": null,
-            "usuallyAboutIn": null,
-            "yourGames": null,
-            "editGames": null,
-            "quickest": null,
-            "othersSearching": null,
-            "quietBusierFrom": null,
-            "busyNow": null,
-            "usualWait": null,
-            "busyHours": null,
-            "filters": null,
-            "filtersHint": null,
+            "yourGames": "Dine spil",
+            "usualDay": "En typisk dag",
+            "editGames": "Rediger spil",
+            "othersSearching": "{n} andre søger | {n} anden søger | {n} andre søger",
+            "quietBusierFrom": "Stille nu, mere travlt fra {time}",
+            "quietNow": "Stille på dette tidspunkt",
+            "busyNow": "Normalt travlt på dette tidspunkt",
+            "busyHours": "Hvor travlt der normalt er i {game} i løbet af dagen, time for time. Den fremhævede søjle er nu.",
+            "hourBusy": "{time}: normalt travlt",
+            "hourQuiet": "{time}: normalt stille",
+            "filters": "Filtre",
+            "filtersHint": "Du bliver i køen, mens du ændrer dem",
             "publicSummary": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "Ingen offentlige kampe",
+                "defaultOnly": "Offentlige kampe med standardindstillinger",
+                "any": "Alle offentlige kampe"
             },
             "opponentDescription": {
-                "any": null,
-                "higherThanLvl5": null,
-                "higherThanLvl25": null
+                "any": "Alle, der søger i dine spil",
+                "higherThanLvl5": "Springer helt nye spillere over",
+                "higherThanLvl25": "Kun erfarne spillere"
             },
             "publicDescription": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "Kun nye kampe lavet til dig",
+                "defaultOnly": "Kom også med i åbne lobbyer med standardregler",
+                "any": "Kom også med i lobbyer med tilpassede regler"
             },
-            "joining": null,
-            "waitingForMore": null,
-            "seatsHint": null
+            "joining": "Deltager...",
+            "waitingForMore": "Venter på {n} spillere mere | Venter på {n} spiller mere | Venter på {n} spillere mere",
+            "seatsHint": "Starter, når {seats} er med, eller når nedtællingen slutter, med dem der er her",
+            "likely": {
+                "soon": "Andre søger også. En kamp burde være tæt på.",
+                "busy": "Normalt travlt på dette tidspunkt. Det burde ikke tage lang tid.",
+                "quiet": "Stille lige nu. Det bliver normalt mere travlt fra {time}.",
+                "quietAll": "Stille lige nu. Det kan tage et stykke tid."
+            }
         },
         "info": {
             "hostLeftWhileMatchmaking": "Værten forlod kampen, du var i.",
@@ -1387,6 +1393,7 @@
             "joinById": "Du kan deltage i en (privat) kamp ved at indtaste det firecifrede ID.",
             "public": "Alle kan deltage ved at gennemse de tilgængelige kampe.",
             "private": "Spillere kan kun deltage ved hjælp af URL'en eller 4-cifret ID.",
+            "challenge": "Kun de udfordrede spillere kan deltage.",
             "leave": "Du kan måske ikke komme tilbage, hvis du vælger at forlade.",
             "leaveLast": "Da du er den eneste person i spillet, vil kampen blive lukket, når du forlader.",
             "leaveAsHost": "Nogen anden bliver den nye vært, når du smutter.",
@@ -1644,10 +1651,10 @@
                 "loginTitle": "Log ind",
                 "loginDescription": "Ingen adgangskode. Vi sender dig en kode på e-mail.",
                 "levelNote": "Du kan gemme {name} med en email fra {level}.",
-                "levelNoteDiscord": null,
+                "levelNoteDiscord": "Discord gemmer {name} med det samme. Med en email kan du fra {level}.",
                 "note": "Ingen adgangskode. Vi bruger kun din email til at logge dig ind.",
                 "send": "Send mig en kode",
-                "discord": null
+                "discord": "Fortsæt med Discord"
             },
             "code": {
                 "title": "Tjek din email",
@@ -1790,9 +1797,9 @@
         },
         "wrongBallIndicator": "I poolspillene bliver sigtelinjen rød og viser et kryds, når den peger på en kugle, du ikke må ramme først.",
         "discord": {
-            "connected": null,
-            "notConnected": null,
-            "onlyWayIn": null
+            "connected": "Din Discord-konto er forbundet.",
+            "notConnected": "Ikke forbundet",
+            "onlyWayIn": "Din Discord-konto er forbundet. Tilføj en emailadresse for at kunne afbryde den."
         }
     },
     "share": {
@@ -1845,7 +1852,7 @@
         },
         "call": {
             "title": "Din næste kamp",
-            "waiting": "Venter…",
+            "waiting": "Venter...",
             "single": "Én kamp afgør det",
             "series": "Bedst af {count}, {own}–{other}",
             "startsIn": "Starter om {seconds} s",

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal French",
         "rtl": false,
-        "total": 3876,
-        "missing": 67
+        "total": 3881,
+        "missing": 0
     },
     "error": {
         "redeemCode": {
@@ -165,18 +165,18 @@
             "admin": "Cette action est réservée aux administrateurs."
         },
         "discord": {
-            "expired": null,
-            "failed": null,
-            "alreadyConnected": null,
-            "onlyWayIn": null
+            "expired": "La connexion avec Discord a pris trop de temps. Réessaie.",
+            "failed": "La connexion avec Discord n'a pas marché. Réessaie.",
+            "alreadyConnected": "Ton compte est déjà lié à un compte Discord. Déconnecte-le d'abord.",
+            "onlyWayIn": "Ajoute d'abord une adresse email. Pour l'instant, Discord est ton seul moyen d'accéder à ton compte."
         },
         "discordInvite": {
-            "declined": null,
-            "expired": null,
-            "over": null,
-            "notForYou": null,
-            "couldNotJoin": null,
-            "reserved": null
+            "declined": "Ce défi a été refusé.",
+            "expired": "Ce lien a expiré. Demandes-en un nouveau sur Discord.",
+            "over": "Cette invitation est terminée.",
+            "notForYou": "Tu ne peux pas prendre les deux places de ton propre défi.",
+            "couldNotJoin": "Tu n'as pas pu rejoindre cette table.",
+            "reserved": "Cette table est réservée à un défi entre deux autres joueurs."
         }
     },
     "game": {
@@ -1156,7 +1156,6 @@
         "leaderboard": "Tableau des leaders",
         "elapsedTime": "{time} écoulé",
         "startingInTime": "Commence dans {time}",
-        "averageWaitTimeBlank": "Temps d'attente moyen {value}",
         "averageBlank": "Moy. {value}",
         "highestBlank": "Haut. {value}",
         "showBlank": "Afficher {value}",
@@ -1226,10 +1225,12 @@
         "pool": "Billard",
         "gamePreferences": "Préférences de jeu",
         "wrongBallIndicator": "Indicateur de mauvaise bille",
-        "connect": null,
-        "disconnect": null,
-        "discordAccount": null,
-        "or": null
+        "connect": "Connecter",
+        "disconnect": "Déconnecter",
+        "discordAccount": "Discord",
+        "or": "ou",
+        "leave": "Quitter",
+        "challenge": "Défi"
     },
     "match": {
         "quick": "Match Rapide",
@@ -1317,62 +1318,67 @@
                     ]
                 }
             },
-            "lookingForMatch": null,
-            "firstMatchFirst": null,
-            "gamesSelected": null,
-            "findingOpponent": null,
-            "findingOpponentIn": null,
-            "stopSearching": null,
+            "lookingForMatch": "Recherche d'une partie",
+            "gamesSelected": "{n} jeu sélectionné | {n} jeu sélectionné | {n} jeux sélectionnés",
+            "findingOpponent": "Recherche d'un adversaire",
+            "findingOpponentIn": "Recherche d'un adversaire pour {game}",
+            "stopSearching": "Arrêter la recherche",
             "picker": {
-                "title": null,
-                "subtitle": null,
-                "search": null,
-                "clearSearch": null,
-                "all": null,
-                "sortBy": null,
-                "sortPlaying": null,
-                "sortName": null,
-                "mostPlayed": null,
-                "featured": null,
-                "more": null,
-                "results": null,
-                "similar": null,
-                "noResults": null,
-                "noResultsHint": null,
-                "clearSelection": null,
-                "findMatch": null,
-                "pickToStart": null
+                "title": "Choisis tes jeux",
+                "subtitle": "Tu rejoindras la première partie trouvée",
+                "search": "Rechercher des jeux",
+                "clearSearch": "Effacer la recherche",
+                "all": "Tous",
+                "sortBy": "Trier les jeux",
+                "sortPlaying": "Joueurs en ligne",
+                "sortName": "Nom (A-Z)",
+                "mostPlayed": "Tes plus joués",
+                "featured": "À la une pour toi",
+                "more": "Plus de jeux",
+                "results": "Résultats pour \"{query}\"",
+                "similar": "Aucun résultat exact. Proches de \"{query}\"",
+                "noResults": "Aucun jeu ne correspond à \"{query}\"",
+                "noResultsHint": "Essaie un autre nom ou une autre catégorie",
+                "clearSelection": "Effacer la sélection",
+                "findMatch": "Trouver une partie dans {n} jeu | Trouver une partie dans {n} jeu | Trouver une partie dans {n} jeux",
+                "pickToStart": "Choisis un jeu pour commencer"
             },
-            "usuallyAbout": null,
-            "usuallyAboutIn": null,
-            "yourGames": null,
-            "editGames": null,
-            "quickest": null,
-            "othersSearching": null,
-            "quietBusierFrom": null,
-            "busyNow": null,
-            "usualWait": null,
-            "busyHours": null,
-            "filters": null,
-            "filtersHint": null,
+            "yourGames": "Tes jeux",
+            "usualDay": "Journée type",
+            "editGames": "Modifier les jeux",
+            "othersSearching": "{n} autre joueur cherche | {n} autre joueur cherche | {n} autres joueurs cherchent",
+            "quietBusierFrom": "Calme pour l'instant, plus animé à partir de {time}",
+            "quietNow": "Calme à cette heure-ci",
+            "busyNow": "Souvent animé à cette heure-ci",
+            "busyHours": "L'activité habituelle sur {game} au fil de la journée, heure par heure. La barre en surbrillance, c'est maintenant.",
+            "hourBusy": "{time} : souvent animé",
+            "hourQuiet": "{time} : souvent calme",
+            "filters": "Filtres",
+            "filtersHint": "Tu restes dans la file d'attente pendant que tu les modifies",
             "publicSummary": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "Pas de matchs publics",
+                "defaultOnly": "Matchs publics avec les paramètres par défaut",
+                "any": "Tous les matchs publics"
             },
             "opponentDescription": {
-                "any": null,
-                "higherThanLvl5": null,
-                "higherThanLvl25": null
+                "any": "Tous ceux qui cherchent tes jeux",
+                "higherThanLvl5": "Évite les tout nouveaux joueurs",
+                "higherThanLvl25": "Joueurs expérimentés uniquement"
             },
             "publicDescription": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "Seulement de nouvelles parties créées pour toi",
+                "defaultOnly": "Rejoins aussi des lobbys ouverts avec les règles standard",
+                "any": "Rejoins aussi des lobbys avec des règles personnalisées"
             },
-            "joining": null,
-            "waitingForMore": null,
-            "seatsHint": null
+            "joining": "Connexion...",
+            "waitingForMore": "En attente de {n} joueur de plus | En attente de {n} joueur de plus | En attente de {n} joueurs de plus",
+            "seatsHint": "Commence quand {seats} ont rejoint, ou à la fin du compte à rebours avec ceux qui sont là",
+            "likely": {
+                "soon": "D'autres joueurs cherchent aussi. Une partie devrait arriver bientôt.",
+                "busy": "Souvent animé à cette heure-ci. Ça ne devrait pas être long.",
+                "quiet": "C'est calme en ce moment. Ça s'anime souvent à partir de {time}.",
+                "quietAll": "C'est calme en ce moment. Ça pourrait prendre un moment."
+            }
         },
         "info": {
             "hostLeftWhileMatchmaking": "L'hôte a quitté le match dans lequel tu étais.",
@@ -1387,6 +1393,7 @@
             "joinById": "Tu peux joindre une partie privée en entrant l'ID à quatre chiffres.",
             "public": "N'importe qui peut se joindre en parcourant les parties disponibles.",
             "private": "Les joueurs peuvent seulement se joindre en utilisant l'URL ou l'ID à 4 chiffres.",
+            "challenge": "Seuls les joueurs défiés peuvent rejoindre.",
             "leave": "Tu pourrais ne pas pouvoir rejoindre la partie si tu décides de quitter maintenant.",
             "leaveLast": "Puisque tu es la seule personne dans le jeu, la partie sera terminée lorsque tu auras quitté le jeu.",
             "leaveAsHost": "Quelqu'un d'autre deviendra l'hôte lorsque tu quitteras.",
@@ -1644,10 +1651,10 @@
                 "loginTitle": "Se connecter",
                 "loginDescription": "Pas de mot de passe. On t'envoie un code par e-mail.",
                 "levelNote": "Tu peux sauvegarder {name} avec un email à partir de {level}.",
-                "levelNoteDiscord": null,
+                "levelNoteDiscord": "Discord sauvegarde {name} tout de suite. Avec un email, tu peux le faire à partir de {level}.",
                 "note": "Pas de mot de passe. On utilise ton email uniquement pour te connecter.",
                 "send": "Envoie-moi un code",
-                "discord": null
+                "discord": "Continuer avec Discord"
             },
             "code": {
                 "title": "Vérifie tes emails",
@@ -1790,9 +1797,9 @@
         },
         "wrongBallIndicator": "Dans les jeux de billard, la ligne de visée devient rouge et affiche une croix quand elle vise une bille que tu n'as pas le droit de toucher en premier.",
         "discord": {
-            "connected": null,
-            "notConnected": null,
-            "onlyWayIn": null
+            "connected": "Ton compte Discord est connecté.",
+            "notConnected": "Non connecté",
+            "onlyWayIn": "Ton compte Discord est connecté. Ajoute une adresse email pour pouvoir le déconnecter."
         }
     },
     "share": {
@@ -1845,7 +1852,7 @@
         },
         "call": {
             "title": "Ta prochaine partie",
-            "waiting": "En attente…",
+            "waiting": "En attente...",
             "single": "Une seule partie décide",
             "series": "Au meilleur des {count}, {own}–{other}",
             "startsIn": "Commence dans {seconds}s",

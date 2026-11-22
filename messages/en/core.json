@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal American English",
         "rtl": false,
-        "total": 3876,
+        "total": 3881,
         "missing": 0
     },
     "error": {
@@ -1156,7 +1156,6 @@
         "leaderboard": "Leaderboard",
         "elapsedTime": "{time} elapsed",
         "startingInTime": "Starting in {time}",
-        "averageWaitTimeBlank": "Avg. wait time {value}",
         "averageBlank": "Avg. {value}",
         "highestBlank": "High. {value}",
         "showBlank": "Show {value}",
@@ -1229,7 +1228,9 @@
         "connect": "Connect",
         "disconnect": "Disconnect",
         "discordAccount": "Discord",
-        "or": "or"
+        "or": "or",
+        "leave": "Leave",
+        "challenge": "Challenge"
     },
     "match": {
         "quick": "Quick Match",
@@ -1318,7 +1319,6 @@
                 }
             },
             "lookingForMatch": "Looking for match",
-            "firstMatchFirst": "We'll put you in whichever of these games finds a match first",
             "gamesSelected": "{n} games selected | {n} game selected | {n} games selected",
             "findingOpponent": "Finding an opponent",
             "findingOpponentIn": "Finding an opponent in {game}",
@@ -1343,16 +1343,16 @@
                 "findMatch": "Find a match in {n} games | Find a match in {n} game | Find a match in {n} games",
                 "pickToStart": "Pick a game to start"
             },
-            "usuallyAbout": "Usually about {time} at this hour",
-            "usuallyAboutIn": "{game} usually matches in about {time}",
-            "yourGames": "Your games · usual day",
+            "yourGames": "Your games",
+            "usualDay": "Usual day",
             "editGames": "Edit games",
-            "quickest": "Quickest",
             "othersSearching": "{n} others searching | {n} other searching | {n} others searching",
             "quietBusierFrom": "Quiet now, busier from {time}",
+            "quietNow": "Quiet at this hour",
             "busyNow": "Usually busy at this hour",
-            "usualWait": "usual wait",
             "busyHours": "How busy {game} usually is through the day, by hour. The highlighted bar is now.",
+            "hourBusy": "{time}: usually busy",
+            "hourQuiet": "{time}: usually quiet",
             "filters": "Filters",
             "filtersHint": "You stay in the queue while you change these",
             "publicSummary": {
@@ -1370,9 +1370,15 @@
                 "defaultOnly": "Also join open lobbies with standard rules",
                 "any": "Also join lobbies with custom rules"
             },
-            "joining": "Joining…",
+            "joining": "Joining...",
             "waitingForMore": "Waiting for {n} more players | Waiting for {n} more player | Waiting for {n} more players",
-            "seatsHint": "Starts when {seats} have joined, or when the countdown ends with whoever is here"
+            "seatsHint": "Starts when {seats} have joined, or when the countdown ends with whoever is here",
+            "likely": {
+                "soon": "Others are searching too. A match should be close.",
+                "busy": "Usually busy at this hour. It should not take long.",
+                "quiet": "Quiet right now. It usually gets busier from {time}.",
+                "quietAll": "Quiet right now. It could take a while."
+            }
         },
         "info": {
             "hostLeftWhileMatchmaking": "The host left the match you were in.",
@@ -1387,6 +1393,7 @@
             "joinById": "You can join a (private) match by filling in the four-digit ID.",
             "public": "Anyone can join by browsing the available matches.",
             "private": "Players can only join using the URL or 4-digit ID.",
+            "challenge": "Only the players who were challenged can join.",
             "leave": "You may not be able to join back if you choose to leave.",
             "leaveLast": "Since you are the only person in the game, the match will be closed when you leave.",
             "leaveAsHost": "Somebody else will become the new host when you leave.",
@@ -1845,7 +1852,7 @@
         },
         "call": {
             "title": "Your next match",
-            "waiting": "Waiting…",
+            "waiting": "Waiting...",
             "single": "One match takes it",
             "series": "Best of {count}, {own}–{other}",
             "startsIn": "Starts in {seconds}s",

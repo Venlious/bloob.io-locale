@@ -2,8 +2,8 @@
     "_meta": {
         "language": "Korean (Haeyo-che, ~해요체 style)",
         "rtl": false,
-        "total": 3876,
-        "missing": 67
+        "total": 3881,
+        "missing": 0
     },
     "error": {
         "redeemCode": {
@@ -165,18 +165,18 @@
             "admin": "관리자만 수행할 수 있는 작업이에요."
         },
         "discord": {
-            "expired": null,
-            "failed": null,
-            "alreadyConnected": null,
-            "onlyWayIn": null
+            "expired": "디스코드 로그인 시간이 초과되었어요. 다시 시도해 주세요.",
+            "failed": "디스코드로 로그인하지 못했어요. 다시 시도해 주세요.",
+            "alreadyConnected": "계정이 이미 다른 디스코드 계정과 연결되어 있어요. 먼저 연결을 해제해 주세요.",
+            "onlyWayIn": "먼저 이메일 주소를 추가해 주세요. 지금은 디스코드로만 계정에 로그인할 수 있어요."
         },
         "discordInvite": {
-            "declined": null,
-            "expired": null,
-            "over": null,
-            "notForYou": null,
-            "couldNotJoin": null,
-            "reserved": null
+            "declined": "상대가 도전을 거절했어요.",
+            "expired": "링크가 만료되었어요. 디스코드에서 새 링크를 요청해 주세요.",
+            "over": "이미 끝난 초대예요.",
+            "notForYou": "내가 보낸 도전에서 두 자리를 모두 차지할 수는 없어요.",
+            "couldNotJoin": "이 테이블에 참여하지 못했어요.",
+            "reserved": "다른 두 플레이어의 도전을 위해 예약된 테이블이에요."
         }
     },
     "game": {
@@ -1156,7 +1156,6 @@
         "leaderboard": "리더보드",
         "elapsedTime": "{time} 경과",
         "startingInTime": "{time} 후 시작",
-        "averageWaitTimeBlank": "평균 대기 시간 {value}",
         "averageBlank": "평균 {value}",
         "highestBlank": "최고 {value}",
         "showBlank": "{value} 표시",
@@ -1226,10 +1225,12 @@
         "pool": "당구",
         "gamePreferences": "게임 환경설정",
         "wrongBallIndicator": "잘못된 공 표시",
-        "connect": null,
-        "disconnect": null,
-        "discordAccount": null,
-        "or": null
+        "connect": "연결",
+        "disconnect": "연결 해제",
+        "discordAccount": "디스코드",
+        "or": "또는",
+        "leave": "나가기",
+        "challenge": "도전"
     },
     "match": {
         "quick": "빠른 매치",
@@ -1317,62 +1318,67 @@
                     ]
                 }
             },
-            "lookingForMatch": null,
-            "firstMatchFirst": null,
-            "gamesSelected": null,
-            "findingOpponent": null,
-            "findingOpponentIn": null,
-            "stopSearching": null,
+            "lookingForMatch": "매치 찾는 중",
+            "gamesSelected": "게임 {n}개 선택됨 | 게임 {n}개 선택됨 | 게임 {n}개 선택됨",
+            "findingOpponent": "상대 찾는 중",
+            "findingOpponentIn": "{game}에서 상대 찾는 중",
+            "stopSearching": "찾기 중지",
             "picker": {
-                "title": null,
-                "subtitle": null,
-                "search": null,
-                "clearSearch": null,
-                "all": null,
-                "sortBy": null,
-                "sortPlaying": null,
-                "sortName": null,
-                "mostPlayed": null,
-                "featured": null,
-                "more": null,
-                "results": null,
-                "similar": null,
-                "noResults": null,
-                "noResultsHint": null,
-                "clearSelection": null,
-                "findMatch": null,
-                "pickToStart": null
+                "title": "게임 선택",
+                "subtitle": "가장 먼저 찾은 매치에 참여해요",
+                "search": "게임 검색",
+                "clearSearch": "검색어 지우기",
+                "all": "전체",
+                "sortBy": "게임 정렬",
+                "sortPlaying": "플레이 중인 인원순",
+                "sortName": "이름 (가나다순)",
+                "mostPlayed": "자주 플레이한 게임",
+                "featured": "추천 게임",
+                "more": "더 많은 게임",
+                "results": "\"{query}\" 검색 결과",
+                "similar": "정확히 일치하는 게임이 없어요. \"{query}\"와 비슷한 게임",
+                "noResults": "\"{query}\"와 일치하는 게임이 없어요",
+                "noResultsHint": "다른 이름이나 카테고리로 찾아보세요",
+                "clearSelection": "선택 해제",
+                "findMatch": "게임 {n}개에서 매치 찾기 | 게임 {n}개에서 매치 찾기 | 게임 {n}개에서 매치 찾기",
+                "pickToStart": "시작하려면 게임을 선택하세요"
             },
-            "usuallyAbout": null,
-            "usuallyAboutIn": null,
-            "yourGames": null,
-            "editGames": null,
-            "quickest": null,
-            "othersSearching": null,
-            "quietBusierFrom": null,
-            "busyNow": null,
-            "usualWait": null,
-            "busyHours": null,
-            "filters": null,
-            "filtersHint": null,
+            "yourGames": "내 게임",
+            "usualDay": "평소 하루",
+            "editGames": "게임 변경",
+            "othersSearching": "{n}명이 찾는 중 | {n}명이 찾는 중 | {n}명이 찾는 중",
+            "quietBusierFrom": "지금은 한산해요. {time}부터 붐벼요",
+            "quietNow": "이 시간에는 한산해요",
+            "busyNow": "이 시간에는 보통 붐벼요",
+            "busyHours": "{game}의 시간대별 평소 혼잡도예요. 강조된 막대가 현재 시간이에요.",
+            "hourBusy": "{time}: 보통 붐빔",
+            "hourQuiet": "{time}: 보통 한산함",
+            "filters": "필터",
+            "filtersHint": "변경하는 동안에도 대기열에서 빠지지 않아요",
             "publicSummary": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "공개 매치 제외",
+                "defaultOnly": "기본 설정의 공개 매치",
+                "any": "모든 공개 매치"
             },
             "opponentDescription": {
-                "any": null,
-                "higherThanLvl5": null,
-                "higherThanLvl25": null
+                "any": "내 게임을 찾는 모든 플레이어",
+                "higherThanLvl5": "완전 초보 플레이어는 제외해요",
+                "higherThanLvl25": "숙련된 플레이어만"
             },
             "publicDescription": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "나를 위해 새로 만든 매치만",
+                "defaultOnly": "기본 규칙의 열린 대기실에도 참여해요",
+                "any": "커스텀 규칙의 대기실에도 참여해요"
             },
-            "joining": null,
-            "waitingForMore": null,
-            "seatsHint": null
+            "joining": "참여하는 중...",
+            "waitingForMore": "플레이어 {n}명 더 기다리는 중 | 플레이어 {n}명 더 기다리는 중 | 플레이어 {n}명 더 기다리는 중",
+            "seatsHint": "{seats}이 모이거나, 카운트다운이 끝나면 지금 있는 인원으로 시작해요",
+            "likely": {
+                "soon": "다른 플레이어도 찾고 있어요. 곧 매치가 잡힐 거예요.",
+                "busy": "이 시간에는 보통 붐벼요. 오래 걸리지 않을 거예요.",
+                "quiet": "지금은 한산해요. 보통 {time}부터 붐벼요.",
+                "quietAll": "지금은 한산해요. 시간이 좀 걸릴 수 있어요."
+            }
         },
         "info": {
             "hostLeftWhileMatchmaking": "참여 중이던 매치에서 호스트가 나갔어요.",
@@ -1387,6 +1393,7 @@
             "joinById": "4자리 ID를 입력하여 (비공개) 매치에 참여할 수 있어요.",
             "public": "누구나 목록을 보고 참여할 수 있어요.",
             "private": "URL이나 4자리 ID를 통해서만 참여할 수 있어요.",
+            "challenge": "도전받은 플레이어만 참여할 수 있어요.",
             "leave": "지금 나가면 다시 참여하지 못할 수도 있어요.",
             "leaveLast": "혼자 남은 상태라 게임을 나가면 매치가 종료돼요.",
             "leaveAsHost": "방을 나가면 다른 사람이 새로운 호스트가 돼요.",
@@ -1644,10 +1651,10 @@
                 "loginTitle": "로그인",
                 "loginDescription": "비밀번호는 필요 없어요. 이메일로 코드를 보내 드릴게요.",
                 "levelNote": "{level}부터 이메일로 {name}님을 저장할 수 있어요.",
-                "levelNoteDiscord": null,
+                "levelNoteDiscord": "디스코드로는 {name}님을 바로 저장할 수 있어요. 이메일로는 {level}부터 가능해요.",
                 "note": "비밀번호는 필요 없어요. 이메일 주소는 로그인용으로만 사용해요.",
                 "send": "인증 코드 받기",
-                "discord": null
+                "discord": "디스코드로 계속하기"
             },
             "code": {
                 "title": "이메일을 확인해 주세요",
@@ -1790,9 +1797,9 @@
         },
         "wrongBallIndicator": "당구 게임에서 먼저 맞히면 안 되는 공을 겨냥하면 조준선이 빨갛게 바뀌고 X 표시가 나타나요.",
         "discord": {
-            "connected": null,
-            "notConnected": null,
-            "onlyWayIn": null
+            "connected": "디스코드 계정이 연결되어 있어요.",
+            "notConnected": "연결 안 됨",
+            "onlyWayIn": "디스코드 계정이 연결되어 있어요. 연결을 해제하려면 이메일 주소를 추가해 주세요."
         }
     },
     "share": {
@@ -1845,7 +1852,7 @@
         },
         "call": {
             "title": "다음 매치",
-            "waiting": "기다리는 중…",
+            "waiting": "기다리는 중...",
             "single": "한 판 승부",
             "series": "최대 {count}판, {own}–{other}",
             "startsIn": "{seconds}초 후 시작",

@@ -2,8 +2,8 @@
     "_meta": {
         "language": "informal Polish",
         "rtl": false,
-        "total": 3876,
-        "missing": 67
+        "total": 3881,
+        "missing": 0
     },
     "error": {
         "redeemCode": {
@@ -165,18 +165,18 @@
             "admin": "Ta akcja jest ograniczona do administratorów."
         },
         "discord": {
-            "expired": null,
-            "failed": null,
-            "alreadyConnected": null,
-            "onlyWayIn": null
+            "expired": "Logowanie przez Discord trwało za długo. Spróbuj ponownie.",
+            "failed": "Logowanie przez Discord nie zadziałało. Spróbuj ponownie.",
+            "alreadyConnected": "Twoje konto jest już połączone z kontem Discord. Najpierw je rozłącz.",
+            "onlyWayIn": "Najpierw dodaj adres e-mail. Na razie Discord to jedyny sposób, żeby wejść na twoje konto."
         },
         "discordInvite": {
-            "declined": null,
-            "expired": null,
-            "over": null,
-            "notForYou": null,
-            "couldNotJoin": null,
-            "reserved": null
+            "declined": "To wyzwanie zostało odrzucone.",
+            "expired": "Ten link wygasł. Poproś o nowy na Discordzie.",
+            "over": "To zaproszenie jest już nieaktualne.",
+            "notForYou": "Nie możesz zająć obu miejsc w swoim własnym wyzwaniu.",
+            "couldNotJoin": "Nie udało ci się dołączyć do tego stołu.",
+            "reserved": "Ten stół jest zarezerwowany na wyzwanie między dwoma innymi graczami."
         }
     },
     "game": {
@@ -1156,7 +1156,6 @@
         "leaderboard": "Tablica wyników",
         "elapsedTime": "Minęło {time}",
         "startingInTime": "Start za {time}",
-        "averageWaitTimeBlank": "Średni czas oczekiwania {value}",
         "averageBlank": "Średni {value}",
         "highestBlank": "Wysoko. {value}",
         "showBlank": "Pokaż {value}",
@@ -1226,10 +1225,12 @@
         "pool": "Bilard",
         "gamePreferences": "Preferencje gier",
         "wrongBallIndicator": "Wskaźnik złej bili",
-        "connect": null,
-        "disconnect": null,
-        "discordAccount": null,
-        "or": null
+        "connect": "Połącz",
+        "disconnect": "Rozłącz",
+        "discordAccount": "Discord",
+        "or": "lub",
+        "leave": "Wyjdź",
+        "challenge": "Wyzwanie"
     },
     "match": {
         "quick": "Szybki Mecz",
@@ -1317,62 +1318,67 @@
                     ]
                 }
             },
-            "lookingForMatch": null,
-            "firstMatchFirst": null,
-            "gamesSelected": null,
-            "findingOpponent": null,
-            "findingOpponentIn": null,
-            "stopSearching": null,
+            "lookingForMatch": "Szukamy meczu",
+            "gamesSelected": "Wybrane gry: {n} | Wybrana gra: {n} | Wybrane gry: {n}",
+            "findingOpponent": "Szukamy przeciwnika",
+            "findingOpponentIn": "Szukamy przeciwnika w {game}",
+            "stopSearching": "Przestań szukać",
             "picker": {
-                "title": null,
-                "subtitle": null,
-                "search": null,
-                "clearSearch": null,
-                "all": null,
-                "sortBy": null,
-                "sortPlaying": null,
-                "sortName": null,
-                "mostPlayed": null,
-                "featured": null,
-                "more": null,
-                "results": null,
-                "similar": null,
-                "noResults": null,
-                "noResultsHint": null,
-                "clearSelection": null,
-                "findMatch": null,
-                "pickToStart": null
+                "title": "Wybierz swoje gry",
+                "subtitle": "Dołączysz do pierwszego znalezionego meczu",
+                "search": "Szukaj gier",
+                "clearSearch": "Wyczyść wyszukiwanie",
+                "all": "Wszystkie",
+                "sortBy": "Sortuj gry",
+                "sortPlaying": "Liczba grających",
+                "sortName": "Nazwa (A-Z)",
+                "mostPlayed": "Twoje najczęściej grane",
+                "featured": "Polecane dla ciebie",
+                "more": "Więcej gier",
+                "results": "Wyniki dla „{query}”",
+                "similar": "Brak dokładnych wyników. Podobne do „{query}”",
+                "noResults": "Żadna gra nie pasuje do „{query}”",
+                "noResultsHint": "Spróbuj innej nazwy lub kategorii",
+                "clearSelection": "Wyczyść wybór",
+                "findMatch": "Znajdź mecz w {n} grach | Znajdź mecz w {n} grze | Znajdź mecz w {n} grach",
+                "pickToStart": "Wybierz grę, żeby zacząć"
             },
-            "usuallyAbout": null,
-            "usuallyAboutIn": null,
-            "yourGames": null,
-            "editGames": null,
-            "quickest": null,
-            "othersSearching": null,
-            "quietBusierFrom": null,
-            "busyNow": null,
-            "usualWait": null,
-            "busyHours": null,
-            "filters": null,
-            "filtersHint": null,
+            "yourGames": "Twoje gry",
+            "usualDay": "Typowy dzień",
+            "editGames": "Edytuj gry",
+            "othersSearching": "Inni szukający: {n} | Inny szukający: {n} | Inni szukający: {n}",
+            "quietBusierFrom": "Teraz spokojnie, więcej graczy od {time}",
+            "quietNow": "O tej porze jest spokojnie",
+            "busyNow": "O tej porze zwykle jest dużo graczy",
+            "busyHours": "Ilu graczy zwykle gra w {game} w ciągu dnia, godzina po godzinie. Wyróżniony słupek to teraz.",
+            "hourBusy": "{time}: zwykle dużo graczy",
+            "hourQuiet": "{time}: zwykle spokojnie",
+            "filters": "Filtry",
+            "filtersHint": "Zostajesz w kolejce, gdy je zmieniasz",
             "publicSummary": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "Bez publicznych meczów",
+                "defaultOnly": "Publiczne mecze z domyślnymi ustawieniami",
+                "any": "Dowolne publiczne mecze"
             },
             "opponentDescription": {
-                "any": null,
-                "higherThanLvl5": null,
-                "higherThanLvl25": null
+                "any": "Każdy, kto szuka twoich gier",
+                "higherThanLvl5": "Pomija zupełnie nowych graczy",
+                "higherThanLvl25": "Tylko doświadczeni gracze"
             },
             "publicDescription": {
-                "excluded": null,
-                "defaultOnly": null,
-                "any": null
+                "excluded": "Tylko nowe mecze utworzone dla ciebie",
+                "defaultOnly": "Dołączaj też do otwartych lobby ze standardowymi zasadami",
+                "any": "Dołączaj też do lobby z niestandardowymi zasadami"
             },
-            "joining": null,
-            "waitingForMore": null,
-            "seatsHint": null
+            "joining": "Dołączanie...",
+            "waitingForMore": "Czekamy na jeszcze {n} graczy | Czekamy na jeszcze {n} gracza | Czekamy na jeszcze {n} graczy",
+            "seatsHint": "Startuje, gdy dołączy {seats}, albo po zakończeniu odliczania z tymi, którzy są",
+            "likely": {
+                "soon": "Inni też szukają. Mecz powinien być blisko.",
+                "busy": "O tej porze zwykle jest dużo graczy. Nie powinno to długo potrwać.",
+                "quiet": "Teraz jest spokojnie. Zwykle więcej graczy jest od {time}.",
+                "quietAll": "Teraz jest spokojnie. To może chwilę potrwać."
+            }
         },
         "info": {
             "hostLeftWhileMatchmaking": "Gospodarz opuścił mecz, w którym byłeś.",
@@ -1387,6 +1393,7 @@
             "joinById": "Możesz dołączyć do (prywatnego) meczu, wpisując czterocyfrowy kod.",
             "public": "Każdy może dołączyć, przeglądając dostępne mecze.",
             "private": "Gracze mogą dołączyć tylko za pomocą adresu URL lub czterocyfrowego kodu.",
+            "challenge": "Dołączyć mogą tylko wyzwani gracze.",
             "leave": "Nie możesz dołączyć z powrotem, jeśli zdecydujesz się odejść.",
             "leaveLast": "Ponieważ jesteś jedyną osobą w grze, mecz zostanie zamknięty, gdy odejdziesz.",
             "leaveAsHost": "Ktoś inny stanie się nowym gospodarzem, gdy odejdziesz.",
@@ -1644,10 +1651,10 @@
                 "loginTitle": "Zaloguj się",
                 "loginDescription": "Bez hasła. Wyślemy ci kod e-mailem.",
                 "levelNote": "Od {level} możesz zapisać {name} za pomocą adresu e-mail.",
-                "levelNoteDiscord": null,
+                "levelNoteDiscord": "Discord zapisze {name} od razu. Za pomocą adresu e-mail możesz to zrobić od {level}.",
                 "note": "Bez hasła. Używamy Twojego adresu e-mail tylko do logowania.",
                 "send": "Wyślij mi kod",
-                "discord": null
+                "discord": "Kontynuuj przez Discord"
             },
             "code": {
                 "title": "Sprawdź swoją skrzynkę",
@@ -1790,9 +1797,9 @@
         },
         "wrongBallIndicator": "W grach bilardowych linia celowania robi się czerwona i pokazuje krzyżyk, gdy wskazuje bilę, której nie możesz uderzyć jako pierwszej.",
         "discord": {
-            "connected": null,
-            "notConnected": null,
-            "onlyWayIn": null
+            "connected": "Twoje konto Discord jest połączone.",
+            "notConnected": "Nie połączono",
+            "onlyWayIn": "Twoje konto Discord jest połączone. Dodaj adres e-mail, żeby móc je rozłączyć."
         }
     },
     "share": {
@@ -1845,7 +1852,7 @@
         },
         "call": {
             "title": "Twój następny mecz",
-            "waiting": "Oczekiwanie…",
+            "waiting": "Oczekiwanie...",
             "single": "Rozstrzyga jedna partia",
             "series": "Do {count} partii, {own}–{other}",
             "startsIn": "Start za {seconds} s",
