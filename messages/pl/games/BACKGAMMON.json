@@ -10,6 +10,44 @@
                 "enabled": "**Włączone**: Wygrana, zanim przeciwnik zdejmie choć jeden pionek, to gammon wart dwa punkty. Jeśli przeciwnik ma jeszcze pionek na bandzie lub w twoim domu, to backgammon wart trzy.",
                 "disabled": "**Wyłączone**: Każda wygrana jest warta jeden punkt."
             }
+        },
+        "layout": {
+            "title": "Ustawienie początkowe",
+            "help": "Skąd startują pionki: zwykłe ustawienie, Nackgammon (z każdej strony dwa pionki cofnięte na pole 24) albo Hypergammon (po trzy pionki).",
+            "data": {
+                "STANDARD": {
+                    "title": "Standardowe",
+                    "description": "Piętnaście pionków na zwykłych miejscach"
+                },
+                "NACKGAMMON": {
+                    "title": "Nackgammon",
+                    "description": "Dwa pionki startują dalej z tyłu"
+                },
+                "HYPERGAMMON": {
+                    "title": "Hypergammon",
+                    "description": "Po trzy pionki, na najdalszych polach"
+                }
+            }
+        },
+        "fivePerPoint": {
+            "title": "Pięć pionków na polu",
+            "help": "Na żadnym polu nie może stać więcej niż pięć pionków jednego gracza, jak w dawnym angielskim backgammonie. Zdejmowanie pionków nie ma limitu."
+        },
+        "cube": {
+            "title": "Kostka dublująca",
+            "help": "Podwój stawkę przed rzutem. Przeciwnik przyjmuje i gra dalej o dwa razy więcej punktów, a kostka jest teraz jego, albo odmawia i przegrywa partię. W meczu obowiązuje reguła Crawforda: partia po tym, jak gracz zbliży się do wygranej na jeden punkt, toczy się bez kostki."
+        },
+        "cubeLimit": {
+            "title": "Limit dublowania",
+            "help": "Jak wysoko można podwoić stawkę.",
+            "data": {
+                "limit": "Do 64",
+                "none": "Bez limitu"
+            }
+        },
+        "jacoby": {
+            "title": "Reguła Jacoby'ego",
+            "help": "W pojedynczej partii gammony i backgammony liczą się dopiero wtedy, gdy kostka została już obrócona."
         }
     },
     "presets": {
@@ -20,6 +58,18 @@
         "match": {
             "title": "Mecz do 5",
             "description": "Do pięciu punktów, gammony liczą się podwójnie"
+        },
+        "nackgammon": {
+            "title": "Nackgammon",
+            "description": "Dwa pionki startują dalej z tyłu, dla dłuższych, bardziej taktycznych partii"
+        },
+        "hypergammon": {
+            "title": "Hypergammon",
+            "description": "Po trzy pionki, na najdalszych polach: cała partia w kilka minut"
+        },
+        "oldEnglish": {
+            "title": "Dawne zasady angielskie",
+            "description": "Najwyżej pięć pionków na polu i bez kostki"
         }
     },
     "undo": "Cofnij ruch",
@@ -43,9 +93,10 @@
         "using": "za pomocą {dice}"
     },
     "result": {
-        "SINGLE": "{name} wygrywa partię: {points} pkt",
-        "GAMMON": "{name} wygrywa gammonem: {points} pkt",
-        "BACKGAMMON": "{name} wygrywa backgammonem: {points} pkt"
+        "SINGLE": "{name} wygrywa partię: {points} pkt | {name} wygrywa partię: {points} pkt | {name} wygrywa partię: {points} pkt",
+        "GAMMON": "{name} wygrywa gammona: {points} pkt | {name} wygrywa gammona: {points} pkt | {name} wygrywa gammona: {points} pkt",
+        "BACKGAMMON": "{name} wygrywa backgammona: {points} pkt | {name} wygrywa backgammona: {points} pkt | {name} wygrywa backgammona: {points} pkt",
+        "DROPPED": "{name} wygrywa, dublowanie odrzucone: {points} pkt | {name} wygrywa, dublowanie odrzucone: {points} pkt | {name} wygrywa, dublowanie odrzucone: {points} pkt"
     },
     "statistics": {
         "hitsPerMatch": "Bicia na mecz",
@@ -82,6 +133,35 @@
                 "Gdy wszystkie twoje pionki są w domu, kość może zdjąć pionek z pola o tym samym numerze.",
                 "Wygraj, zanim przeciwnik zdejmie jakikolwiek pionek, a będzie to gammon, wart w meczu dwa punkty."
             ]
+        }
+    },
+    "cube": {
+        "stake": "Gra o {n} pkt | Gra o {n} pkt | Gra o {n} pkt",
+        "crawford": "Partia Crawforda: bez dublowania",
+        "label": "Kostka dublująca: {value}",
+        "double": "Podwój stawkę do {value}",
+        "waiting": "Czekamy, aż {name} przyjmie lub odmówi",
+        "offered": "{name} dubluje do {value}",
+        "offer": {
+            "title": "Podwoić stawkę do {value}?",
+            "take": "Jeśli {name} przyjmie, ta partia będzie warta {n} pkt, a kostka przejdzie do gracza {name}: następne dublowanie należy tylko do tego gracza. | Jeśli {name} przyjmie, ta partia będzie warta {n} pkt, a kostka przejdzie do gracza {name}: następne dublowanie należy tylko do tego gracza. | Jeśli {name} przyjmie, ta partia będzie warta {n} pkt, a kostka przejdzie do gracza {name}: następne dublowanie należy tylko do tego gracza.",
+            "drop": "Jeśli przeciwnik odmówi, od razu wygrywasz partię, za {n} pkt. | Jeśli przeciwnik odmówi, od razu wygrywasz partię, za {n} pkt. | Jeśli przeciwnik odmówi, od razu wygrywasz partię, za {n} pkt.",
+            "confirm": "Dubluj do {value}",
+            "cancel": "Nie teraz"
+        },
+        "answer": {
+            "take": "Przyjmij: grasz dalej o {n} pkt. Kostka jest twoja. | Przyjmij: grasz dalej o {n} pkt. Kostka jest twoja. | Przyjmij: grasz dalej o {n} pkt. Kostka jest twoja.",
+            "drop": "Odmów: oddajesz tę partię. {name} dostaje {n} pkt. | Odmów: oddajesz tę partię. {name} dostaje {n} pkt. | Odmów: oddajesz tę partię. {name} dostaje {n} pkt.",
+            "takeButton": "Przyjmij",
+            "dropButton": "Odmów",
+            "match": {
+                "takeBothAt": "Przyjmij: wygrasz i masz {own} / {total}; przegrasz i {name} ma {other} / {total}.",
+                "takeYouWin": "Przyjmij: wygrasz i wygrywasz mecz; przegrasz i {name} ma {other} / {total}.",
+                "takeNameWins": "Przyjmij: wygrasz i masz {own} / {total}; przegrasz i {name} wygrywa mecz.",
+                "takeEither": "Przyjmij: kto wygra tę partię, wygra mecz.",
+                "dropAt": "Odmów: {name} ma wtedy {other} / {total}.",
+                "dropWins": "Odmów: {name} wygrywa mecz."
+            }
         }
     }
 }

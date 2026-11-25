@@ -10,6 +10,44 @@
                 "enabled": "**Ingeschakeld**: Win je voordat je tegenstander ook maar één schijf van het bord heeft gehaald, dan is het een gammon, goed voor twee punten. Staat er dan nog een schijf van hem op de bar of in jouw thuisbord, dan is het een backgammon, goed voor drie.",
                 "disabled": "**Uitgeschakeld**: Elke overwinning levert één punt op."
             }
+        },
+        "layout": {
+            "title": "Beginopstelling",
+            "help": "Waar de schijven beginnen: de gewone opstelling, Nackgammon (aan elke kant twee schijven terug op het 24-punt) of Hypergammon (drie schijven per speler).",
+            "data": {
+                "STANDARD": {
+                    "title": "Standaard",
+                    "description": "Vijftien schijven op de gewone plekken"
+                },
+                "NACKGAMMON": {
+                    "title": "Nackgammon",
+                    "description": "Twee schijven beginnen verder achteraan"
+                },
+                "HYPERGAMMON": {
+                    "title": "Hypergammon",
+                    "description": "Drie schijven per speler, op de verste punten"
+                }
+            }
+        },
+        "fivePerPoint": {
+            "title": "Vijf schijven per punt",
+            "help": "Op geen enkel punt mogen meer dan vijf schijven van een speler staan, zoals in het oude Engelse backgammon. Voor het uitspelen geldt geen grens."
+        },
+        "cube": {
+            "title": "Verdubbelingskubus",
+            "help": "Verdubbel de inzet voordat je gooit. Je tegenstander neemt aan en speelt door voor dubbel zoveel punten, met de kubus nu van hem, of geeft op en verliest het potje. In een match geldt de Crawfordregel: het potje nadat een speler op één punt van de winst staat, wordt zonder kubus gespeeld."
+        },
+        "cubeLimit": {
+            "title": "Kubuslimiet",
+            "help": "Hoe hoog de inzet verdubbeld kan worden.",
+            "data": {
+                "limit": "Tot 64",
+                "none": "Geen limiet"
+            }
+        },
+        "jacoby": {
+            "title": "Jacobyregel",
+            "help": "In één potje tellen gammons en backgammons pas als de kubus is gedraaid."
         }
     },
     "presets": {
@@ -20,6 +58,18 @@
         "match": {
             "title": "Match tot 5",
             "description": "Als eerste naar vijf punten, gammons tellen dubbel"
+        },
+        "nackgammon": {
+            "title": "Nackgammon",
+            "description": "Twee schijven beginnen verder achteraan, voor langere, tactischere potjes"
+        },
+        "hypergammon": {
+            "title": "Hypergammon",
+            "description": "Drie schijven per speler, op de verste punten: een heel potje in een paar minuten"
+        },
+        "oldEnglish": {
+            "title": "Oude Engelse regels",
+            "description": "Niet meer dan vijf schijven op een punt, en geen kubus"
         }
     },
     "undo": "Zet terugnemen",
@@ -43,9 +93,10 @@
         "using": "met {dice}"
     },
     "result": {
-        "SINGLE": "{name} heeft het potje gewonnen: {points} punt",
-        "GAMMON": "{name} heeft een gammon gewonnen: {points} punten",
-        "BACKGAMMON": "{name} heeft een backgammon gewonnen: {points} punten"
+        "SINGLE": "{name} heeft het potje gewonnen: {points} punten | {name} heeft het potje gewonnen: {points} punt | {name} heeft het potje gewonnen: {points} punten",
+        "GAMMON": "{name} heeft een gammon gewonnen: {points} punten | {name} heeft een gammon gewonnen: {points} punt | {name} heeft een gammon gewonnen: {points} punten",
+        "BACKGAMMON": "{name} heeft een backgammon gewonnen: {points} punten | {name} heeft een backgammon gewonnen: {points} punt | {name} heeft een backgammon gewonnen: {points} punten",
+        "DROPPED": "{name} heeft gewonnen, de verdubbeling werd geweigerd: {points} punten | {name} heeft gewonnen, de verdubbeling werd geweigerd: {points} punt | {name} heeft gewonnen, de verdubbeling werd geweigerd: {points} punten"
     },
     "statistics": {
         "hitsPerMatch": "Geslagen schijven per match",
@@ -82,6 +133,35 @@
                 "Staan al je schijven in je thuisbord, dan kan een dobbelsteen een schijf van het punt halen dat erbij hoort.",
                 "Win voordat je tegenstander een schijf van het bord haalt en het is een gammon, in een match twee punten waard."
             ]
+        }
+    },
+    "cube": {
+        "stake": "Je speelt om {n} punten | Je speelt om {n} punt | Je speelt om {n} punten",
+        "crawford": "Crawfordpotje: niet verdubbelen",
+        "label": "Verdubbelingskubus: {value}",
+        "double": "Verdubbel de inzet naar {value}",
+        "waiting": "Wachten tot {name} aanneemt of opgeeft",
+        "offered": "{name} verdubbelt naar {value}",
+        "offer": {
+            "title": "De inzet verdubbelen naar {value}?",
+            "take": "Als {name} aanneemt, is dit potje {n} punten waard en is de kubus van {name}: alleen {name} kan daarna verdubbelen. | Als {name} aanneemt, is dit potje {n} punt waard en is de kubus van {name}: alleen {name} kan daarna verdubbelen. | Als {name} aanneemt, is dit potje {n} punten waard en is de kubus van {name}: alleen {name} kan daarna verdubbelen.",
+            "drop": "Als je tegenstander opgeeft, win jij dit potje meteen, voor {n} punten. | Als je tegenstander opgeeft, win jij dit potje meteen, voor {n} punt. | Als je tegenstander opgeeft, win jij dit potje meteen, voor {n} punten.",
+            "confirm": "Verdubbel naar {value}",
+            "cancel": "Nu niet"
+        },
+        "answer": {
+            "take": "Aannemen: speel door voor {n} punten. De kubus is van jou. | Aannemen: speel door voor {n} punt. De kubus is van jou. | Aannemen: speel door voor {n} punten. De kubus is van jou.",
+            "drop": "Opgeven: je geeft dit potje op. {name} krijgt {n} punten. | Opgeven: je geeft dit potje op. {name} krijgt {n} punt. | Opgeven: je geeft dit potje op. {name} krijgt {n} punten.",
+            "takeButton": "Aannemen",
+            "dropButton": "Opgeven",
+            "match": {
+                "takeBothAt": "Aannemen: win je, dan sta je op {own} / {total}; verlies je, dan staat {name} op {other} / {total}.",
+                "takeYouWin": "Aannemen: win je, dan win je de match; verlies je, dan staat {name} op {other} / {total}.",
+                "takeNameWins": "Aannemen: win je, dan sta je op {own} / {total}; verlies je, dan wint {name} de match.",
+                "takeEither": "Aannemen: wie dit potje wint, wint de match.",
+                "dropAt": "Opgeven: {name} gaat naar {other} / {total}.",
+                "dropWins": "Opgeven: {name} wint de match."
+            }
         }
     }
 }

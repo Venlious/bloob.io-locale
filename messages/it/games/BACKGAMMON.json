@@ -10,6 +10,44 @@
                 "enabled": "**Abilitato**: Se vinci prima che l'avversario abbia portato fuori anche una sola pedina è un gammon e vale due punti. Se gli resta ancora una pedina sulla barra o nella tua tavola interna è un backgammon e vale tre.",
                 "disabled": "**Disabilitato**: Ogni vittoria vale un punto."
             }
+        },
+        "layout": {
+            "title": "Disposizione iniziale",
+            "help": "Dove partono le pedine: la disposizione solita, Nackgammon (due pedine indietro sulla punta 24 di ogni lato) o Hypergammon (tre pedine a testa).",
+            "data": {
+                "STANDARD": {
+                    "title": "Standard",
+                    "description": "Quindici pedine ai soliti posti"
+                },
+                "NACKGAMMON": {
+                    "title": "Nackgammon",
+                    "description": "Due pedine partono più indietro"
+                },
+                "HYPERGAMMON": {
+                    "title": "Hypergammon",
+                    "description": "Tre pedine a testa, sulle punte più lontane"
+                }
+            }
+        },
+        "fivePerPoint": {
+            "title": "Cinque pedine per punta",
+            "help": "Nessuna punta può avere più di cinque pedine di un giocatore, come nel vecchio backgammon inglese. Per portare fuori le pedine non ci sono limiti."
+        },
+        "cube": {
+            "title": "Cubo del raddoppio",
+            "help": "Raddoppia la posta prima di tirare. L'avversario accetta e continua per il doppio dei punti, con il cubo ora suo, oppure rifiuta e perde la partita. In un match vale la regola di Crawford: la partita dopo che un giocatore arriva a un punto dalla vittoria si gioca senza cubo."
+        },
+        "cubeLimit": {
+            "title": "Limite del cubo",
+            "help": "Fin dove si può raddoppiare la posta.",
+            "data": {
+                "limit": "Fino a 64",
+                "none": "Nessun limite"
+            }
+        },
+        "jacoby": {
+            "title": "Regola di Jacoby",
+            "help": "In una partita singola, gammon e backgammon contano solo dopo che il cubo è stato girato."
         }
     },
     "presets": {
@@ -20,6 +58,18 @@
         "match": {
             "title": "Match ai 5",
             "description": "Vince chi arriva prima a cinque punti, i gammon contano doppio"
+        },
+        "nackgammon": {
+            "title": "Nackgammon",
+            "description": "Due pedine partono più indietro, per partite più lunghe e tattiche"
+        },
+        "hypergammon": {
+            "title": "Hypergammon",
+            "description": "Tre pedine a testa, sulle punte più lontane: una partita intera in pochi minuti"
+        },
+        "oldEnglish": {
+            "title": "Vecchie regole inglesi",
+            "description": "Non più di cinque pedine per punta, e niente cubo"
         }
     },
     "undo": "Annulla mossa",
@@ -43,9 +93,10 @@
         "using": "usando {dice}"
     },
     "result": {
-        "SINGLE": "{name} ha vinto la partita: {points} punto",
-        "GAMMON": "{name} ha vinto un gammon: {points} punti",
-        "BACKGAMMON": "{name} ha vinto un backgammon: {points} punti"
+        "SINGLE": "{name} ha vinto la partita: {points} punti | {name} ha vinto la partita: {points} punto | {name} ha vinto la partita: {points} punti",
+        "GAMMON": "{name} ha vinto un gammon: {points} punti | {name} ha vinto un gammon: {points} punto | {name} ha vinto un gammon: {points} punti",
+        "BACKGAMMON": "{name} ha vinto un backgammon: {points} punti | {name} ha vinto un backgammon: {points} punto | {name} ha vinto un backgammon: {points} punti",
+        "DROPPED": "{name} ha vinto, il raddoppio è stato rifiutato: {points} punti | {name} ha vinto, il raddoppio è stato rifiutato: {points} punto | {name} ha vinto, il raddoppio è stato rifiutato: {points} punti"
     },
     "statistics": {
         "hitsPerMatch": "Colpi per match",
@@ -82,6 +133,35 @@
                 "Quando tutte le tue pedine sono nella tua tavola interna, un dado può portare fuori una pedina dalla punta corrispondente.",
                 "Vinci prima che l'avversario porti fuori una pedina e fai un gammon, che in un match vale due punti."
             ]
+        }
+    },
+    "cube": {
+        "stake": "In palio {n} punti | In palio {n} punto | In palio {n} punti",
+        "crawford": "Partita Crawford: niente raddoppi",
+        "label": "Cubo del raddoppio: {value}",
+        "double": "Raddoppia la posta a {value}",
+        "waiting": "In attesa che {name} accetti o rifiuti",
+        "offered": "{name} raddoppia a {value}",
+        "offer": {
+            "title": "Raddoppiare la posta a {value}?",
+            "take": "Se {name} accetta, questa partita vale {n} punti e il cubo passa a {name}: solo {name} potrà raddoppiare dopo. | Se {name} accetta, questa partita vale {n} punto e il cubo passa a {name}: solo {name} potrà raddoppiare dopo. | Se {name} accetta, questa partita vale {n} punti e il cubo passa a {name}: solo {name} potrà raddoppiare dopo.",
+            "drop": "Se l'avversario rifiuta, vinci subito la partita, per {n} punti. | Se l'avversario rifiuta, vinci subito la partita, per {n} punto. | Se l'avversario rifiuta, vinci subito la partita, per {n} punti.",
+            "confirm": "Raddoppia a {value}",
+            "cancel": "Non ora"
+        },
+        "answer": {
+            "take": "Accetta: continui per {n} punti. Il cubo è tuo. | Accetta: continui per {n} punto. Il cubo è tuo. | Accetta: continui per {n} punti. Il cubo è tuo.",
+            "drop": "Rifiuta: lasci questa partita. {name} vince {n} punti. | Rifiuta: lasci questa partita. {name} vince {n} punto. | Rifiuta: lasci questa partita. {name} vince {n} punti.",
+            "takeButton": "Accetta",
+            "dropButton": "Rifiuta",
+            "match": {
+                "takeBothAt": "Accetta: se vinci sei a {own} / {total}; se perdi {name} è a {other} / {total}.",
+                "takeYouWin": "Accetta: se vinci vinci il match; se perdi {name} è a {other} / {total}.",
+                "takeNameWins": "Accetta: se vinci sei a {own} / {total}; se perdi {name} vince il match.",
+                "takeEither": "Accetta: chi vince questa partita vince il match.",
+                "dropAt": "Rifiuta: {name} passa a {other} / {total}.",
+                "dropWins": "Rifiuta: {name} vince il match."
+            }
         }
     }
 }

@@ -10,6 +10,44 @@
                 "enabled": "**Aktiveret**: Vinder du, før modstanderen har spillet en eneste brik af, er det gammon og giver to point. Har modstanderen stadig en brik på baren eller i dit hjemmebræt, er det backgammon og giver tre.",
                 "disabled": "**Deaktiveret**: Hver sejr giver ét point."
             }
+        },
+        "layout": {
+            "title": "Startopstilling",
+            "help": "Hvor brikkerne starter: den sædvanlige opstilling, Nackgammon (to brikker tilbage på 24-punktet i hver side) eller Hypergammon (tre brikker hver).",
+            "data": {
+                "STANDARD": {
+                    "title": "Standard",
+                    "description": "Femten brikker på de sædvanlige pladser"
+                },
+                "NACKGAMMON": {
+                    "title": "Nackgammon",
+                    "description": "To brikker starter længere tilbage"
+                },
+                "HYPERGAMMON": {
+                    "title": "Hypergammon",
+                    "description": "Tre brikker hver, på de bageste punkter"
+                }
+            }
+        },
+        "fivePerPoint": {
+            "title": "Fem brikker pr. punkt",
+            "help": "Intet punkt må have mere end fem af en spillers brikker, som i gammelt engelsk backgammon. Der er ingen grænse for at spille brikker af."
+        },
+        "cube": {
+            "title": "Doblingsterning",
+            "help": "Fordobl indsatsen, før du slår. Modstanderen tager imod og spiller videre om dobbelt så mange point med terningen som sin, eller afviser og taber spillet. I en match gælder Crawford-reglen: spillet efter at en spiller er ét point fra at vinde, spilles uden doblingsterning."
+        },
+        "cubeLimit": {
+            "title": "Doblingsgrænse",
+            "help": "Hvor højt indsatsen kan fordobles.",
+            "data": {
+                "limit": "Op til 64",
+                "none": "Ingen grænse"
+            }
+        },
+        "jacoby": {
+            "title": "Jacoby-reglen",
+            "help": "I et enkelt spil tæller gammon og backgammon først, når doblingsterningen er blevet drejet."
         }
     },
     "presets": {
@@ -20,6 +58,18 @@
         "match": {
             "title": "Match til 5",
             "description": "Først til fem point, gammon tæller dobbelt"
+        },
+        "nackgammon": {
+            "title": "Nackgammon",
+            "description": "To brikker starter længere tilbage, for længere og mere taktiske spil"
+        },
+        "hypergammon": {
+            "title": "Hypergammon",
+            "description": "Tre brikker hver, på de bageste punkter: et helt spil på få minutter"
+        },
+        "oldEnglish": {
+            "title": "Gamle engelske regler",
+            "description": "Højst fem brikker på et punkt og ingen doblingsterning"
         }
     },
     "undo": "Fortryd træk",
@@ -43,9 +93,10 @@
         "using": "med {dice}"
     },
     "result": {
-        "SINGLE": "{name} vandt spillet: {points} point",
-        "GAMMON": "{name} vandt med gammon: {points} point",
-        "BACKGAMMON": "{name} vandt med backgammon: {points} point"
+        "SINGLE": "{name} vandt spillet: {points} point | {name} vandt spillet: {points} point | {name} vandt spillet: {points} point",
+        "GAMMON": "{name} vandt en gammon: {points} point | {name} vandt en gammon: {points} point | {name} vandt en gammon: {points} point",
+        "BACKGAMMON": "{name} vandt en backgammon: {points} point | {name} vandt en backgammon: {points} point | {name} vandt en backgammon: {points} point",
+        "DROPPED": "{name} vandt, doblingen blev afvist: {points} point | {name} vandt, doblingen blev afvist: {points} point | {name} vandt, doblingen blev afvist: {points} point"
     },
     "statistics": {
         "hitsPerMatch": "Slag pr. match",
@@ -82,6 +133,35 @@
                 "Når alle dine brikker er i dit hjemmebræt, kan en terning spille en brik af fra det punkt, der passer til den.",
                 "Vinder du, før modstanderen har spillet en eneste brik af, er det gammon, værd to point i en match."
             ]
+        }
+    },
+    "cube": {
+        "stake": "Der spilles om {n} point | Der spilles om {n} point | Der spilles om {n} point",
+        "crawford": "Crawford-spil: ingen dobling",
+        "label": "Doblingsterning: {value}",
+        "double": "Fordobl indsatsen til {value}",
+        "waiting": "Venter på, at {name} tager imod eller afviser",
+        "offered": "{name} dobler til {value}",
+        "offer": {
+            "title": "Fordoble indsatsen til {value}?",
+            "take": "Tager {name} imod, er dette spil {n} point værd, og terningen er {name}s: kun {name} kan doble næste gang. | Tager {name} imod, er dette spil {n} point værd, og terningen er {name}s: kun {name} kan doble næste gang. | Tager {name} imod, er dette spil {n} point værd, og terningen er {name}s: kun {name} kan doble næste gang.",
+            "drop": "Afviser modstanderen, vinder du spillet med det samme, for {n} point. | Afviser modstanderen, vinder du spillet med det samme, for {n} point. | Afviser modstanderen, vinder du spillet med det samme, for {n} point.",
+            "confirm": "Doble til {value}",
+            "cancel": "Ikke nu"
+        },
+        "answer": {
+            "take": "Tag imod: spil videre om {n} point. Terningen er din. | Tag imod: spil videre om {n} point. Terningen er din. | Tag imod: spil videre om {n} point. Terningen er din.",
+            "drop": "Afvis: du opgiver dette spil. {name} vinder {n} point. | Afvis: du opgiver dette spil. {name} vinder {n} point. | Afvis: du opgiver dette spil. {name} vinder {n} point.",
+            "takeButton": "Tag imod",
+            "dropButton": "Afvis",
+            "match": {
+                "takeBothAt": "Tag imod: vinder du, står du på {own} / {total}; taber du, står {name} på {other} / {total}.",
+                "takeYouWin": "Tag imod: vinder du, vinder du matchen; taber du, står {name} på {other} / {total}.",
+                "takeNameWins": "Tag imod: vinder du, står du på {own} / {total}; taber du, vinder {name} matchen.",
+                "takeEither": "Tag imod: den, der vinder dette spil, vinder matchen.",
+                "dropAt": "Afvis: {name} kommer på {other} / {total}.",
+                "dropWins": "Afvis: {name} vinder matchen."
+            }
         }
     }
 }

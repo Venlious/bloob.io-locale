@@ -10,6 +10,44 @@
                 "enabled": "**启用**：在对手移出任何棋子之前获胜就是全胜，得两分。如果对手还有棋子在中间栏或你的内盘里，就是完胜，得三分。",
                 "disabled": "**禁用**：每次获胜都只得一分。"
             }
+        },
+        "layout": {
+            "title": "开局布局",
+            "help": "棋子从哪里开始：常规布局、Nackgammon（双方各有两枚棋子退到 24 点）或 Hypergammon（每人三枚棋子）。",
+            "data": {
+                "STANDARD": {
+                    "title": "标准",
+                    "description": "十五枚棋子放在常规位置"
+                },
+                "NACKGAMMON": {
+                    "title": "Nackgammon",
+                    "description": "两枚棋子从更靠后的位置出发"
+                },
+                "HYPERGAMMON": {
+                    "title": "Hypergammon",
+                    "description": "每人三枚棋子，放在最远的点上"
+                }
+            }
+        },
+        "fivePerPoint": {
+            "title": "每点最多五枚",
+            "help": "和古老的英式双陆棋一样，一个点上同一玩家的棋子不能超过五枚。移出棋子不受限制。"
+        },
+        "cube": {
+            "title": "加倍骰",
+            "help": "掷骰之前可以把赌注加倍。对手可以接受，按双倍分数继续，加倍骰归他所有；也可以拒绝，直接输掉这一局。比赛中适用克劳福德规则：有玩家离获胜只差一分后的下一局，不使用加倍骰。"
+        },
+        "cubeLimit": {
+            "title": "加倍上限",
+            "help": "赌注最多能加倍到多少。",
+            "data": {
+                "limit": "最高 64",
+                "none": "不设上限"
+            }
+        },
+        "jacoby": {
+            "title": "雅各比规则",
+            "help": "在单局中，只有加倍骰被用过之后，全胜和完胜才算数。"
         }
     },
     "presets": {
@@ -20,6 +58,18 @@
         "match": {
             "title": "五分制比赛",
             "description": "先得五分者获胜，全胜计双倍"
+        },
+        "nackgammon": {
+            "title": "Nackgammon",
+            "description": "两枚棋子从更靠后的位置出发，对局更长、更讲战术"
+        },
+        "hypergammon": {
+            "title": "Hypergammon",
+            "description": "每人三枚棋子，从最远的点出发：几分钟就能下完一局"
+        },
+        "oldEnglish": {
+            "title": "古英式",
+            "description": "每点最多五枚棋子，不使用加倍骰"
         }
     },
     "undo": "撤回这一步",
@@ -43,9 +93,10 @@
         "using": "使用 {dice}"
     },
     "result": {
-        "SINGLE": "{name} 赢得本局：{points} 分",
-        "GAMMON": "{name} 全胜：{points} 分",
-        "BACKGAMMON": "{name} 完胜：{points} 分"
+        "SINGLE": "{name} 赢得本局：{points} 分 | {name} 赢得本局：{points} 分 | {name} 赢得本局：{points} 分",
+        "GAMMON": "{name} 全胜：{points} 分 | {name} 全胜：{points} 分 | {name} 全胜：{points} 分",
+        "BACKGAMMON": "{name} 完胜：{points} 分 | {name} 完胜：{points} 分 | {name} 完胜：{points} 分",
+        "DROPPED": "{name} 获胜，加倍被拒绝：{points} 分 | {name} 获胜，加倍被拒绝：{points} 分 | {name} 获胜，加倍被拒绝：{points} 分"
     },
     "statistics": {
         "hitsPerMatch": "每场打子数",
@@ -82,6 +133,35 @@
                 "所有棋子都进入内盘后，就可以按骰子点数把对应点上的棋子移出棋盘。",
                 "在对手移出任何棋子之前获胜就是全胜，在比赛中得两分。"
             ]
+        }
+    },
+    "cube": {
+        "stake": "本局赌注：{n} 分 | 本局赌注：{n} 分 | 本局赌注：{n} 分",
+        "crawford": "克劳福德局：不能加倍",
+        "label": "加倍骰：{value}",
+        "double": "把赌注加倍到 {value}",
+        "waiting": "等待 {name} 接受或拒绝",
+        "offered": "{name} 加倍到 {value}",
+        "offer": {
+            "title": "把赌注加倍到 {value}？",
+            "take": "如果 {name} 接受，这一局值 {n} 分，加倍骰归 {name}：下一次只有 {name} 能加倍。 | 如果 {name} 接受，这一局值 {n} 分，加倍骰归 {name}：下一次只有 {name} 能加倍。 | 如果 {name} 接受，这一局值 {n} 分，加倍骰归 {name}：下一次只有 {name} 能加倍。",
+            "drop": "如果对方拒绝，你立刻赢下这一局，得 {n} 分。 | 如果对方拒绝，你立刻赢下这一局，得 {n} 分。 | 如果对方拒绝，你立刻赢下这一局，得 {n} 分。",
+            "confirm": "加倍到 {value}",
+            "cancel": "先不了"
+        },
+        "answer": {
+            "take": "接受：按 {n} 分继续。加倍骰归你。 | 接受：按 {n} 分继续。加倍骰归你。 | 接受：按 {n} 分继续。加倍骰归你。",
+            "drop": "拒绝：放弃这一局。{name} 得 {n} 分。 | 拒绝：放弃这一局。{name} 得 {n} 分。 | 拒绝：放弃这一局。{name} 得 {n} 分。",
+            "takeButton": "接受",
+            "dropButton": "拒绝",
+            "match": {
+                "takeBothAt": "接受：赢了你到 {own} / {total}；输了 {name} 到 {other} / {total}。",
+                "takeYouWin": "接受：赢了你拿下比赛；输了 {name} 到 {other} / {total}。",
+                "takeNameWins": "接受：赢了你到 {own} / {total}；输了 {name} 拿下比赛。",
+                "takeEither": "接受：谁赢下这一局，谁就赢得比赛。",
+                "dropAt": "拒绝：{name} 到 {other} / {total}。",
+                "dropWins": "拒绝：{name} 赢得比赛。"
+            }
         }
     }
 }
