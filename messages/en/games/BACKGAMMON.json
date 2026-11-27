@@ -13,7 +13,7 @@
         },
         "layout": {
             "title": "Starting Layout",
-            "help": "Where the checkers start: the usual layout, Nackgammon (two checkers back on each side's 24-point) or Hypergammon (three checkers each).",
+            "help": "Where the checkers start: the usual layout, Nackgammon (two checkers back on each side's 24-point), Hypergammon (three checkers each) or Acey Deucey (all fifteen off the board, with its own rules).",
             "data": {
                 "STANDARD": {
                     "title": "Standard",
@@ -26,12 +26,30 @@
                 "HYPERGAMMON": {
                     "title": "Hypergammon",
                     "description": "Three checkers each, on the far points"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "All fifteen start off the board, and a 1-2 earns a double of your choice"
                 }
             }
         },
         "fivePerPoint": {
             "title": "Five Checkers per Point",
             "help": "No point may hold more than five of a player's checkers, as in Old English backgammon. Bearing off is not limited."
+        },
+        "barFirst": {
+            "title": "Hit Checkers Enter First",
+            "help": {
+                "enabled": "**Enabled**: A hit checker has to come back in before any other checker moves.",
+                "disabled": "**Disabled**: A hit checker waits with the others still to come in, and you can move the rest first."
+            }
+        },
+        "keepBonus": {
+            "title": "Keep the Bonus When Stuck",
+            "help": {
+                "enabled": "**Enabled**: A 1-2 or a double you can only partly play still gets you the double and the extra roll.",
+                "disabled": "**Disabled**: If you cannot play all of a 1-2 or its double, your turn ends there."
+            }
         },
         "cube": {
             "title": "Doubling Cube",
@@ -67,6 +85,10 @@
             "title": "Hypergammon",
             "description": "Three checkers each, starting on the far points: a whole game in a few minutes"
         },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Every checker starts off the board. Roll a 1-2 to pick any double and roll again"
+        },
         "oldEnglish": {
             "title": "Old English",
             "description": "No more than five checkers on a point, and no cube"
@@ -74,6 +96,27 @@
     },
     "undo": "Undo move",
     "noMoves": "No moves possible",
+    "aceyDeucey": {
+        "title": "Acey-deucey!",
+        "oneTwo": "Play the 1 and the 2, then pick a double",
+        "pick": {
+            "title": "Acey-deucey! Pick a double",
+            "detail": "Play it four times, then roll again",
+            "hover": "Four {n}s, then roll again",
+            "die": "Four {n}s"
+        },
+        "double": {
+            "title": "Four {n}s",
+            "detail": "Then roll again"
+        },
+        "bonus": "Roll again",
+        "theirs": {
+            "oneTwo": "{name} threw a 1-2",
+            "pick": "{name} is picking a double",
+            "double": "{name} picked four {n}s and rolls again after",
+            "bonus": "{name} rolls again"
+        }
+    },
     "opening": {
         "title": "Opening roll",
         "highest": "Highest die starts",
@@ -90,7 +133,8 @@
         "theirs": "(opponent's)",
         "bar": "Checkers on the bar: {count}",
         "off": "Checkers borne off: {count}",
-        "using": "using {dice}"
+        "using": "using {dice}",
+        "waiting": "Checkers still to bring in: {count}"
     },
     "result": {
         "SINGLE": "{name} won the game: {points} points | {name} won the game: {points} point | {name} won the game: {points} points",

@@ -13,7 +13,7 @@
         },
         "layout": {
             "title": "Beginopstelling",
-            "help": "Waar de schijven beginnen: de gewone opstelling, Nackgammon (aan elke kant twee schijven terug op het 24-punt) of Hypergammon (drie schijven per speler).",
+            "help": "Waar de schijven beginnen: de gewone opstelling, Nackgammon (aan elke kant twee schijven terug op het 24-punt), Hypergammon (drie schijven per speler) of Acey Deucey (alle vijftien naast het bord, met eigen regels).",
             "data": {
                 "STANDARD": {
                     "title": "Standaard",
@@ -26,12 +26,30 @@
                 "HYPERGAMMON": {
                     "title": "Hypergammon",
                     "description": "Drie schijven per speler, op de verste punten"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "Alle vijftien beginnen naast het bord, en een 1-2 levert een dubbel naar keuze op"
                 }
             }
         },
         "fivePerPoint": {
             "title": "Vijf schijven per punt",
             "help": "Op geen enkel punt mogen meer dan vijf schijven van een speler staan, zoals in het oude Engelse backgammon. Voor het uitspelen geldt geen grens."
+        },
+        "barFirst": {
+            "title": "Geslagen schijven eerst het bord op",
+            "help": {
+                "enabled": "**Ingeschakeld**: Een geslagen schijf moet eerst terug het bord op voordat een andere schijf mag bewegen.",
+                "disabled": "**Uitgeschakeld**: Een geslagen schijf wacht bij de andere schijven die nog het bord op moeten, en je kunt eerst de rest zetten."
+            }
+        },
+        "keepBonus": {
+            "title": "Bonus houden als je vastzit",
+            "help": {
+                "enabled": "**Ingeschakeld**: Kun je een 1-2 of een dubbel maar deels spelen, dan krijg je toch de dubbel en de extra worp.",
+                "disabled": "**Uitgeschakeld**: Kun je een 1-2 of de dubbel erna niet helemaal spelen, dan eindigt je beurt daar."
+            }
         },
         "cube": {
             "title": "Verdubbelingskubus",
@@ -67,6 +85,10 @@
             "title": "Hypergammon",
             "description": "Drie schijven per speler, op de verste punten: een heel potje in een paar minuten"
         },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Alle schijven beginnen naast het bord. Gooi 1-2 om een dubbel naar keuze te kiezen en nog eens te gooien"
+        },
         "oldEnglish": {
             "title": "Oude Engelse regels",
             "description": "Niet meer dan vijf schijven op een punt, en geen kubus"
@@ -74,6 +96,27 @@
     },
     "undo": "Zet terugnemen",
     "noMoves": "Geen zetten mogelijk",
+    "aceyDeucey": {
+        "title": "Acey-deucey!",
+        "oneTwo": "Speel de 1 en de 2, en kies dan een dubbel",
+        "pick": {
+            "title": "Acey-deucey! Kies een dubbel",
+            "detail": "Speel hem vier keer en gooi dan opnieuw",
+            "hover": "Vier keer {n}, dan opnieuw gooien",
+            "die": "Vier keer {n}"
+        },
+        "double": {
+            "title": "Vier keer {n}",
+            "detail": "Dan opnieuw gooien"
+        },
+        "bonus": "Gooi opnieuw",
+        "theirs": {
+            "oneTwo": "{name} gooide 1-2",
+            "pick": "{name} kiest een dubbel",
+            "double": "{name} koos vier keer {n} en gooit daarna opnieuw",
+            "bonus": "{name} gooit opnieuw"
+        }
+    },
     "opening": {
         "title": "Openingsworp",
         "highest": "Hoogste dobbelsteen begint",
@@ -90,7 +133,8 @@
         "theirs": "(van de tegenstander)",
         "bar": "Schijven op de bar: {count}",
         "off": "Schijven van het bord: {count}",
-        "using": "met {dice}"
+        "using": "met {dice}",
+        "waiting": "Schijven die nog het bord op moeten: {count}"
     },
     "result": {
         "SINGLE": "{name} heeft het potje gewonnen: {points} punten | {name} heeft het potje gewonnen: {points} punt | {name} heeft het potje gewonnen: {points} punten",

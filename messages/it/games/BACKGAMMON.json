@@ -13,7 +13,7 @@
         },
         "layout": {
             "title": "Disposizione iniziale",
-            "help": "Dove partono le pedine: la disposizione solita, Nackgammon (due pedine indietro sulla punta 24 di ogni lato) o Hypergammon (tre pedine a testa).",
+            "help": "Dove partono le pedine: la disposizione solita, Nackgammon (due pedine indietro sulla punta 24 di ogni lato), Hypergammon (tre pedine a testa) o Acey Deucey (tutte e quindici fuori dal tavoliere, con regole proprie).",
             "data": {
                 "STANDARD": {
                     "title": "Standard",
@@ -26,12 +26,30 @@
                 "HYPERGAMMON": {
                     "title": "Hypergammon",
                     "description": "Tre pedine a testa, sulle punte più lontane"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "Tutte e quindici partono fuori dal tavoliere, e un 1-2 ti fa scegliere un doppio"
                 }
             }
         },
         "fivePerPoint": {
             "title": "Cinque pedine per punta",
             "help": "Nessuna punta può avere più di cinque pedine di un giocatore, come nel vecchio backgammon inglese. Per portare fuori le pedine non ci sono limiti."
+        },
+        "barFirst": {
+            "title": "Le pedine colpite rientrano prima",
+            "help": {
+                "enabled": "**Abilitato**: Una pedina colpita deve rientrare prima che si muova qualsiasi altra pedina.",
+                "disabled": "**Disabilitato**: Una pedina colpita aspetta con le altre ancora da far entrare, e puoi muovere prima le altre."
+            }
+        },
+        "keepBonus": {
+            "title": "Bonus anche se sei bloccato",
+            "help": {
+                "enabled": "**Abilitato**: Un 1-2 o un doppio che puoi giocare solo in parte ti dà comunque il doppio e il tiro in più.",
+                "disabled": "**Disabilitato**: Se non puoi giocare tutto un 1-2 o il suo doppio, il tuo turno finisce lì."
+            }
         },
         "cube": {
             "title": "Cubo del raddoppio",
@@ -67,6 +85,10 @@
             "title": "Hypergammon",
             "description": "Tre pedine a testa, sulle punte più lontane: una partita intera in pochi minuti"
         },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Tutte le pedine partono fuori dal tavoliere. Fai 1-2 per scegliere un doppio qualsiasi e tirare di nuovo"
+        },
         "oldEnglish": {
             "title": "Vecchie regole inglesi",
             "description": "Non più di cinque pedine per punta, e niente cubo"
@@ -74,6 +96,27 @@
     },
     "undo": "Annulla mossa",
     "noMoves": "Nessuna mossa possibile",
+    "aceyDeucey": {
+        "title": "Acey-deucey!",
+        "oneTwo": "Gioca l'1 e il 2, poi scegli un doppio",
+        "pick": {
+            "title": "Acey-deucey! Scegli un doppio",
+            "detail": "Giocalo quattro volte, poi tira di nuovo",
+            "hover": "Quattro {n}, poi tiri di nuovo",
+            "die": "Quattro {n}"
+        },
+        "double": {
+            "title": "Quattro {n}",
+            "detail": "Poi tiri di nuovo"
+        },
+        "bonus": "Tira di nuovo",
+        "theirs": {
+            "oneTwo": "{name} ha fatto 1-2",
+            "pick": "{name} sta scegliendo un doppio",
+            "double": "{name} ha scelto quattro {n} e poi tira di nuovo",
+            "bonus": "{name} tira di nuovo"
+        }
+    },
     "opening": {
         "title": "Lancio d'apertura",
         "highest": "Inizia il dado più alto",
@@ -90,7 +133,8 @@
         "theirs": "(dell'avversario)",
         "bar": "Pedine sulla barra: {count}",
         "off": "Pedine portate fuori: {count}",
-        "using": "usando {dice}"
+        "using": "usando {dice}",
+        "waiting": "Pedine ancora da far entrare: {count}"
     },
     "result": {
         "SINGLE": "{name} ha vinto la partita: {points} punti | {name} ha vinto la partita: {points} punto | {name} ha vinto la partita: {points} punti",

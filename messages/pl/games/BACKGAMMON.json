@@ -13,7 +13,7 @@
         },
         "layout": {
             "title": "Ustawienie początkowe",
-            "help": "Skąd startują pionki: zwykłe ustawienie, Nackgammon (z każdej strony dwa pionki cofnięte na pole 24) albo Hypergammon (po trzy pionki).",
+            "help": "Skąd startują pionki: zwykłe ustawienie, Nackgammon (z każdej strony dwa pionki cofnięte na pole 24), Hypergammon (po trzy pionki) albo Acey Deucey (wszystkie piętnaście poza planszą, z własnymi zasadami).",
             "data": {
                 "STANDARD": {
                     "title": "Standardowe",
@@ -26,12 +26,30 @@
                 "HYPERGAMMON": {
                     "title": "Hypergammon",
                     "description": "Po trzy pionki, na najdalszych polach"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "Wszystkie piętnaście startują poza planszą, a 1-2 daje dublet do wyboru"
                 }
             }
         },
         "fivePerPoint": {
             "title": "Pięć pionków na polu",
             "help": "Na żadnym polu nie może stać więcej niż pięć pionków jednego gracza, jak w dawnym angielskim backgammonie. Zdejmowanie pionków nie ma limitu."
+        },
+        "barFirst": {
+            "title": "Zbite pionki wchodzą pierwsze",
+            "help": {
+                "enabled": "**Włączone**: Zbity pionek musi wejść do gry, zanim ruszy się jakikolwiek inny pionek.",
+                "disabled": "**Wyłączone**: Zbity pionek czeka z innymi, które jeszcze mają wejść, i możesz najpierw ruszyć resztę."
+            }
+        },
+        "keepBonus": {
+            "title": "Bonus mimo blokady",
+            "help": {
+                "enabled": "**Włączone**: Jeśli 1-2 albo dublet da się zagrać tylko częściowo, i tak dostajesz dublet i dodatkowy rzut.",
+                "disabled": "**Wyłączone**: Jeśli nie da się zagrać całego 1-2 albo dubletu po nim, twoja tura na tym się kończy."
+            }
         },
         "cube": {
             "title": "Kostka dublująca",
@@ -67,6 +85,10 @@
             "title": "Hypergammon",
             "description": "Po trzy pionki, na najdalszych polach: cała partia w kilka minut"
         },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Każdy pionek startuje poza planszą. Wyrzuć 1-2, żeby wybrać dowolny dublet i rzucić jeszcze raz"
+        },
         "oldEnglish": {
             "title": "Dawne zasady angielskie",
             "description": "Najwyżej pięć pionków na polu i bez kostki"
@@ -74,6 +96,27 @@
     },
     "undo": "Cofnij ruch",
     "noMoves": "Brak możliwych ruchów",
+    "aceyDeucey": {
+        "title": "Acey-deucey!",
+        "oneTwo": "Zagraj 1 i 2, a potem wybierz dublet",
+        "pick": {
+            "title": "Acey-deucey! Wybierz dublet",
+            "detail": "Zagraj go cztery razy, potem rzuć jeszcze raz",
+            "hover": "Cztery razy {n}, potem rzucasz jeszcze raz",
+            "die": "Cztery razy {n}"
+        },
+        "double": {
+            "title": "Cztery razy {n}",
+            "detail": "Potem rzucasz jeszcze raz"
+        },
+        "bonus": "Rzuć jeszcze raz",
+        "theirs": {
+            "oneTwo": "{name} wyrzuca 1-2",
+            "pick": "{name} wybiera dublet",
+            "double": "{name}: cztery razy {n}, potem kolejny rzut",
+            "bonus": "{name} rzuca jeszcze raz"
+        }
+    },
     "opening": {
         "title": "Rzut otwierający",
         "highest": "Zaczyna wyższa kość",
@@ -90,7 +133,8 @@
         "theirs": "(przeciwnika)",
         "bar": "Pionki na bandzie: {count}",
         "off": "Pionki zdjęte: {count}",
-        "using": "za pomocą {dice}"
+        "using": "za pomocą {dice}",
+        "waiting": "Pionki, które mają jeszcze wejść: {count}"
     },
     "result": {
         "SINGLE": "{name} wygrywa partię: {points} pkt | {name} wygrywa partię: {points} pkt | {name} wygrywa partię: {points} pkt",

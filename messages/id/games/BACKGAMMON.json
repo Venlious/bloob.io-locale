@@ -13,7 +13,7 @@
         },
         "layout": {
             "title": "Posisi awal",
-            "help": "Tempat bidak mulai: posisi biasa, Nackgammon (dua bidak mundur ke titik 24 di tiap sisi), atau Hypergammon (masing-masing tiga bidak).",
+            "help": "Tempat bidak mulai: posisi biasa, Nackgammon (dua bidak mundur ke titik 24 di tiap sisi), Hypergammon (masing-masing tiga bidak), atau Acey Deucey (kelima belas bidak di luar papan, dengan aturannya sendiri).",
             "data": {
                 "STANDARD": {
                     "title": "Standar",
@@ -26,12 +26,30 @@
                 "HYPERGAMMON": {
                     "title": "Hypergammon",
                     "description": "Masing-masing tiga bidak, di titik paling jauh"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "Kelima belas bidak mulai di luar papan, dan 1-2 memberimu dadu kembar pilihanmu"
                 }
             }
         },
         "fivePerPoint": {
             "title": "Lima bidak per titik",
             "help": "Satu titik nggak boleh diisi lebih dari lima bidak milik satu pemain, kayak di backgammon Inggris kuno. Ngeluarin bidak nggak dibatasi."
+        },
+        "barFirst": {
+            "title": "Bidak yang dipukul masuk duluan",
+            "help": {
+                "enabled": "**Diaktifkan**: Bidak yang dipukul harus masuk lagi sebelum bidak lain boleh bergerak.",
+                "disabled": "**Dinonaktifkan**: Bidak yang dipukul menunggu bersama bidak lain yang belum masuk, dan kamu bisa menggerakkan sisanya dulu."
+            }
+        },
+        "keepBonus": {
+            "title": "Bonus tetap meski macet",
+            "help": {
+                "enabled": "**Diaktifkan**: 1-2 atau dadu kembar yang cuma bisa dimainkan sebagian tetap memberimu dadu kembar dan lemparan tambahan.",
+                "disabled": "**Dinonaktifkan**: Kalau kamu nggak bisa memainkan seluruh 1-2 atau dadu kembarnya, giliranmu selesai di situ."
+            }
         },
         "cube": {
             "title": "Dadu penggandaan",
@@ -67,6 +85,10 @@
             "title": "Hypergammon",
             "description": "Masing-masing tiga bidak di titik paling jauh: satu permainan penuh dalam beberapa menit"
         },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Semua bidak mulai di luar papan. Lempar 1-2 untuk memilih dadu kembar mana pun lalu lempar lagi"
+        },
         "oldEnglish": {
             "title": "Aturan Inggris Lama",
             "description": "Maksimal lima bidak di satu titik, dan tanpa dadu penggandaan"
@@ -74,6 +96,27 @@
     },
     "undo": "Batalkan langkah",
     "noMoves": "Tidak ada langkah yang bisa dimainkan",
+    "aceyDeucey": {
+        "title": "Acey-deucey!",
+        "oneTwo": "Mainkan 1 dan 2, lalu pilih dadu kembar",
+        "pick": {
+            "title": "Acey-deucey! Pilih dadu kembar",
+            "detail": "Mainkan empat kali, lalu lempar lagi",
+            "hover": "Empat kali {n}, lalu lempar lagi",
+            "die": "Empat kali {n}"
+        },
+        "double": {
+            "title": "Empat kali {n}",
+            "detail": "Lalu lempar lagi"
+        },
+        "bonus": "Lempar lagi",
+        "theirs": {
+            "oneTwo": "{name} melempar 1-2",
+            "pick": "{name} sedang memilih dadu kembar",
+            "double": "{name} memilih empat kali {n} dan setelah itu lempar lagi",
+            "bonus": "{name} lempar lagi"
+        }
+    },
     "opening": {
         "title": "Lemparan pembuka",
         "highest": "Dadu tertinggi mulai duluan",
@@ -90,7 +133,8 @@
         "theirs": "(milik lawan)",
         "bar": "Bar: {count} bidak",
         "off": "Sudah keluar: {count} bidak",
-        "using": "memakai {dice}"
+        "using": "memakai {dice}",
+        "waiting": "Belum masuk: {count} bidak"
     },
     "result": {
         "SINGLE": "{name} memenangkan permainan: {points} poin | {name} memenangkan permainan: {points} poin | {name} memenangkan permainan: {points} poin",

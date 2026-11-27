@@ -13,7 +13,7 @@
         },
         "layout": {
             "title": "Startoppstilling",
-            "help": "Hvor brikkene starter: den vanlige oppstillingen, Nackgammon (to brikker tilbake på 24-punktet på hver side) eller Hypergammon (tre brikker hver).",
+            "help": "Hvor brikkene starter: den vanlige oppstillingen, Nackgammon (to brikker tilbake på 24-punktet på hver side), Hypergammon (tre brikker hver) eller Acey Deucey (alle femten utenfor brettet, med egne regler).",
             "data": {
                 "STANDARD": {
                     "title": "Standard",
@@ -26,12 +26,30 @@
                 "HYPERGAMMON": {
                     "title": "Hypergammon",
                     "description": "Tre brikker hver, på de bakerste punktene"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "Alle femten starter utenfor brettet, og 1-2 gir deg et valgfritt dobbeltkast"
                 }
             }
         },
         "fivePerPoint": {
             "title": "Fem brikker per punkt",
             "help": "Ingen punkter kan ha mer enn fem av en spillers brikker, som i gammel engelsk backgammon. Det er ingen grense når du tar av brikker."
+        },
+        "barFirst": {
+            "title": "Slåtte brikker kommer inn først",
+            "help": {
+                "enabled": "**Aktivert**: En slått brikke må komme inn igjen før noen annen brikke kan flytte.",
+                "disabled": "**Deaktivert**: En slått brikke venter sammen med de andre som skal komme inn, og du kan flytte resten først."
+            }
+        },
+        "keepBonus": {
+            "title": "Behold bonusen når du står fast",
+            "help": {
+                "enabled": "**Aktivert**: En 1-2 eller et dobbeltkast du bare kan spille delvis, gir deg likevel dobbeltkastet og det ekstra kastet.",
+                "disabled": "**Deaktivert**: Kan du ikke spille hele 1-2 eller dobbeltkastet etterpå, slutter turen din der."
+            }
         },
         "cube": {
             "title": "Doblingsterning",
@@ -67,6 +85,10 @@
             "title": "Hypergammon",
             "description": "Tre brikker hver, på de bakerste punktene: et helt parti på noen få minutter"
         },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Alle brikkene starter utenfor brettet. Kast 1-2 for å velge et dobbeltkast og kaste igjen"
+        },
         "oldEnglish": {
             "title": "Gamle engelske regler",
             "description": "Høyst fem brikker på et punkt, og ingen doblingsterning"
@@ -74,6 +96,27 @@
     },
     "undo": "Angre trekk",
     "noMoves": "Ingen mulige trekk",
+    "aceyDeucey": {
+        "title": "Acey-deucey!",
+        "oneTwo": "Spill 1 og 2, og velg så et dobbeltkast",
+        "pick": {
+            "title": "Acey-deucey! Velg et dobbeltkast",
+            "detail": "Spill det fire ganger, og kast så igjen",
+            "hover": "Fire {n}-ere, så kaster du igjen",
+            "die": "Fire {n}-ere"
+        },
+        "double": {
+            "title": "Fire {n}-ere",
+            "detail": "Så kaster du igjen"
+        },
+        "bonus": "Kast igjen",
+        "theirs": {
+            "oneTwo": "{name} kastet 1-2",
+            "pick": "{name} velger et dobbeltkast",
+            "double": "{name} valgte fire {n}-ere og kaster igjen etterpå",
+            "bonus": "{name} kaster igjen"
+        }
+    },
     "opening": {
         "title": "Åpningskast",
         "highest": "Høyeste terning starter",
@@ -90,7 +133,8 @@
         "theirs": "(motstanderens)",
         "bar": "Brikker på baren: {count}",
         "off": "Brikker tatt av: {count}",
-        "using": "med {dice}"
+        "using": "med {dice}",
+        "waiting": "Brikker som skal komme inn: {count}"
     },
     "result": {
         "SINGLE": "{name} vant partiet: {points} poeng | {name} vant partiet: {points} poeng | {name} vant partiet: {points} poeng",

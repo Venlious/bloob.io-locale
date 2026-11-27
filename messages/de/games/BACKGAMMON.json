@@ -13,7 +13,7 @@
         },
         "layout": {
             "title": "Startaufstellung",
-            "help": "Wo die Steine starten: die übliche Aufstellung, Nackgammon (auf jeder Seite zwei Steine zurück auf die 24) oder Hypergammon (drei Steine pro Spieler).",
+            "help": "Wo die Steine starten: die übliche Aufstellung, Nackgammon (auf jeder Seite zwei Steine zurück auf die 24), Hypergammon (drei Steine pro Spieler) oder Acey Deucey (alle fünfzehn außerhalb des Bretts, mit eigenen Regeln).",
             "data": {
                 "STANDARD": {
                     "title": "Standard",
@@ -26,12 +26,30 @@
                 "HYPERGAMMON": {
                     "title": "Hypergammon",
                     "description": "Drei Steine pro Spieler, ganz hinten"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "Alle fünfzehn starten außerhalb des Bretts, und eine 1-2 bringt dir einen Pasch deiner Wahl"
                 }
             }
         },
         "fivePerPoint": {
             "title": "Fünf Steine pro Zunge",
             "help": "Auf keiner Zunge dürfen mehr als fünf Steine eines Spielers stehen, wie im alten englischen Backgammon. Beim Herauswürfeln gilt keine Grenze."
+        },
+        "barFirst": {
+            "title": "Geschlagene Steine zuerst einsetzen",
+            "help": {
+                "enabled": "**Aktiviert**: Ein geschlagener Stein muss wieder eingesetzt werden, bevor ein anderer Stein ziehen darf.",
+                "disabled": "**Deaktiviert**: Ein geschlagener Stein wartet bei den anderen, die noch eingesetzt werden müssen, und du kannst zuerst den Rest ziehen."
+            }
+        },
+        "keepBonus": {
+            "title": "Bonus behalten, wenn du festsitzt",
+            "help": {
+                "enabled": "**Aktiviert**: Kannst du eine 1-2 oder einen Pasch nur teilweise ziehen, bekommst du trotzdem den Pasch und den Extrawurf.",
+                "disabled": "**Deaktiviert**: Kannst du eine 1-2 oder ihren Pasch nicht ganz ziehen, endet dein Zug dort."
+            }
         },
         "cube": {
             "title": "Dopplerwürfel",
@@ -67,6 +85,10 @@
             "title": "Hypergammon",
             "description": "Drei Steine pro Spieler, ganz hinten: eine ganze Partie in wenigen Minuten"
         },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Alle Steine starten außerhalb des Bretts. Wirf eine 1-2, wähle einen beliebigen Pasch und würfle noch einmal"
+        },
         "oldEnglish": {
             "title": "Alte englische Regeln",
             "description": "Höchstens fünf Steine pro Zunge und kein Dopplerwürfel"
@@ -74,6 +96,27 @@
     },
     "undo": "Zug zurücknehmen",
     "noMoves": "Kein Zug möglich",
+    "aceyDeucey": {
+        "title": "Acey-Deucey!",
+        "oneTwo": "Zieh die 1 und die 2, dann wähle einen Pasch",
+        "pick": {
+            "title": "Acey-Deucey! Wähle einen Pasch",
+            "detail": "Zieh ihn viermal, dann würfle noch einmal",
+            "hover": "Vier {n}er, dann noch einmal würfeln",
+            "die": "Vier {n}er"
+        },
+        "double": {
+            "title": "Vier {n}er",
+            "detail": "Dann noch einmal würfeln"
+        },
+        "bonus": "Noch einmal würfeln",
+        "theirs": {
+            "oneTwo": "{name} hat eine 1-2 geworfen",
+            "pick": "{name} wählt einen Pasch",
+            "double": "{name} hat vier {n}er gewählt und würfelt danach noch einmal",
+            "bonus": "{name} würfelt noch einmal"
+        }
+    },
     "opening": {
         "title": "Eröffnungswurf",
         "highest": "Höchster Würfel beginnt",
@@ -90,7 +133,8 @@
         "theirs": "(des Gegners)",
         "bar": "Steine auf der Bar: {count}",
         "off": "Herausgewürfelte Steine: {count}",
-        "using": "mit {dice}"
+        "using": "mit {dice}",
+        "waiting": "Steine, die noch eingesetzt werden: {count}"
     },
     "result": {
         "SINGLE": "{name} hat die Partie gewonnen: {points} Punkte | {name} hat die Partie gewonnen: {points} Punkt | {name} hat die Partie gewonnen: {points} Punkte",

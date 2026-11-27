@@ -13,7 +13,7 @@
         },
         "layout": {
             "title": "开局布局",
-            "help": "棋子从哪里开始：常规布局、Nackgammon（双方各有两枚棋子退到 24 点）或 Hypergammon（每人三枚棋子）。",
+            "help": "棋子从哪里开始：常规布局、Nackgammon（双方各有两枚棋子退到 24 点）、Hypergammon（每人三枚棋子）或 Acey Deucey（十五枚棋子都在棋盘外，有专门的规则）。",
             "data": {
                 "STANDARD": {
                     "title": "标准",
@@ -26,12 +26,30 @@
                 "HYPERGAMMON": {
                     "title": "Hypergammon",
                     "description": "每人三枚棋子，放在最远的点上"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "十五枚棋子都从棋盘外出发，掷出 1-2 可以任选一个对子"
                 }
             }
         },
         "fivePerPoint": {
             "title": "每点最多五枚",
             "help": "和古老的英式双陆棋一样，一个点上同一玩家的棋子不能超过五枚。移出棋子不受限制。"
+        },
+        "barFirst": {
+            "title": "被打的棋子先进场",
+            "help": {
+                "enabled": "**启用**：被打的棋子必须先重新进场，其他棋子才能走。",
+                "disabled": "**禁用**：被打的棋子和其他还没进场的棋子一起等待，你可以先走其他棋子。"
+            }
+        },
+        "keepBonus": {
+            "title": "走不完也保留奖励",
+            "help": {
+                "enabled": "**启用**：1-2 或对子只能走一部分时，仍然可以得到对子和额外一掷。",
+                "disabled": "**禁用**：如果 1-2 或随后的对子走不完，你的回合就到此结束。"
+            }
         },
         "cube": {
             "title": "加倍骰",
@@ -67,6 +85,10 @@
             "title": "Hypergammon",
             "description": "每人三枚棋子，从最远的点出发：几分钟就能下完一局"
         },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "所有棋子都从棋盘外出发。掷出 1-2 可以任选一个对子，然后再掷一次"
+        },
         "oldEnglish": {
             "title": "古英式",
             "description": "每点最多五枚棋子，不使用加倍骰"
@@ -74,6 +96,27 @@
     },
     "undo": "撤回这一步",
     "noMoves": "没有可走的棋",
+    "aceyDeucey": {
+        "title": "Acey-deucey！",
+        "oneTwo": "先走 1 和 2，再选一个对子",
+        "pick": {
+            "title": "Acey-deucey！选一个对子",
+            "detail": "走四次，然后再掷一次",
+            "hover": "{n} 点走四次，然后再掷一次",
+            "die": "{n} 点走四次"
+        },
+        "double": {
+            "title": "{n} 点走四次",
+            "detail": "然后再掷一次"
+        },
+        "bonus": "再掷一次",
+        "theirs": {
+            "oneTwo": "{name} 掷出了 1-2",
+            "pick": "{name} 正在选对子",
+            "double": "{name} 选了 {n} 点走四次，之后再掷一次",
+            "bonus": "{name} 再掷一次"
+        }
+    },
     "opening": {
         "title": "开局掷骰",
         "highest": "点数大的先走",
@@ -90,7 +133,8 @@
         "theirs": "（对手的）",
         "bar": "中间栏：{count} 枚棋子",
         "off": "已移出：{count} 枚棋子",
-        "using": "使用 {dice}"
+        "using": "使用 {dice}",
+        "waiting": "待进场：{count} 枚棋子"
     },
     "result": {
         "SINGLE": "{name} 赢得本局：{points} 分 | {name} 赢得本局：{points} 分 | {name} 赢得本局：{points} 分",

@@ -13,7 +13,7 @@
         },
         "layout": {
             "title": "Startuppställning",
-            "help": "Var pjäserna börjar: den vanliga uppställningen, Nackgammon (två pjäser bakåt på 24-spetsen på varje sida) eller Hypergammon (tre pjäser var).",
+            "help": "Var pjäserna börjar: den vanliga uppställningen, Nackgammon (två pjäser bakåt på 24-spetsen på varje sida), Hypergammon (tre pjäser var) eller Acey Deucey (alla femton utanför brädet, med egna regler).",
             "data": {
                 "STANDARD": {
                     "title": "Standard",
@@ -26,12 +26,30 @@
                 "HYPERGAMMON": {
                     "title": "Hypergammon",
                     "description": "Tre pjäser var, på de bortersta spetsarna"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "Alla femton börjar utanför brädet, och 1-2 ger en valfri dubbel"
                 }
             }
         },
         "fivePerPoint": {
             "title": "Fem pjäser per spets",
             "help": "Ingen spets får ha fler än fem av en spelares pjäser, som i gammal engelsk backgammon. Det finns ingen gräns för att spela ut pjäser."
+        },
+        "barFirst": {
+            "title": "Slagna pjäser kommer in först",
+            "help": {
+                "enabled": "**Aktiverad**: En slagen pjäs måste komma in igen innan någon annan pjäs får flyttas.",
+                "disabled": "**Inaktiverad**: En slagen pjäs väntar med de andra som ska komma in, och du kan flytta resten först."
+            }
+        },
+        "keepBonus": {
+            "title": "Behåll bonusen när du sitter fast",
+            "help": {
+                "enabled": "**Aktiverad**: En 1-2 eller en dubbel som du bara kan spela delvis ger dig ändå dubbeln och det extra kastet.",
+                "disabled": "**Inaktiverad**: Kan du inte spela hela 1-2 eller dubbeln efteråt slutar din tur där."
+            }
         },
         "cube": {
             "title": "Dubbleringstärning",
@@ -67,6 +85,10 @@
             "title": "Hypergammon",
             "description": "Tre pjäser var, på de bortersta spetsarna: ett helt parti på några minuter"
         },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Alla pjäser börjar utanför brädet. Slå 1-2 för att välja valfri dubbel och slå igen"
+        },
         "oldEnglish": {
             "title": "Gamla engelska regler",
             "description": "Högst fem pjäser på en spets, och ingen dubbleringstärning"
@@ -74,6 +96,27 @@
     },
     "undo": "Ta tillbaka drag",
     "noMoves": "Inga möjliga drag",
+    "aceyDeucey": {
+        "title": "Acey-deucey!",
+        "oneTwo": "Spela 1:an och 2:an, och välj sedan en dubbel",
+        "pick": {
+            "title": "Acey-deucey! Välj en dubbel",
+            "detail": "Spela den fyra gånger och slå sedan igen",
+            "hover": "Fyra {n}:or, sedan slår du igen",
+            "die": "Fyra {n}:or"
+        },
+        "double": {
+            "title": "Fyra {n}:or",
+            "detail": "Sedan slår du igen"
+        },
+        "bonus": "Slå igen",
+        "theirs": {
+            "oneTwo": "{name} slog 1-2",
+            "pick": "{name} väljer en dubbel",
+            "double": "{name} valde fyra {n}:or och slår igen efteråt",
+            "bonus": "{name} slår igen"
+        }
+    },
     "opening": {
         "title": "Öppningskast",
         "highest": "Högsta tärningen börjar",
@@ -90,7 +133,8 @@
         "theirs": "(motståndarens)",
         "bar": "Pjäser på baren: {count}",
         "off": "Utspelade pjäser: {count}",
-        "using": "med {dice}"
+        "using": "med {dice}",
+        "waiting": "Pjäser kvar att komma in: {count}"
     },
     "result": {
         "SINGLE": "{name} vann partiet: {points} poäng | {name} vann partiet: {points} poäng | {name} vann partiet: {points} poäng",

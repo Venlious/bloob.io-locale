@@ -13,7 +13,7 @@
         },
         "layout": {
             "title": "Başlangıç dizilişi",
-            "help": "Pulların başladığı yer: alışılmış diziliş, Nackgammon (her tarafta iki pul geride, 24. hanede) ya da Hypergammon (herkese üç pul).",
+            "help": "Pulların başladığı yer: alışılmış diziliş, Nackgammon (her tarafta iki pul geride, 24. hanede), Hypergammon (herkese üç pul) ya da Acey Deucey (on beş pulun hepsi tahtanın dışında, kendi kurallarıyla).",
             "data": {
                 "STANDARD": {
                     "title": "Standart",
@@ -26,12 +26,30 @@
                 "HYPERGAMMON": {
                     "title": "Hypergammon",
                     "description": "Herkese üç pul, en uzak hanelerde"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "On beş pulun hepsi tahtanın dışında başlar, 1-2 atınca istediğin çift zarı seçersin"
                 }
             }
         },
         "fivePerPoint": {
             "title": "Hane başına beş pul",
             "help": "Eski İngiliz tavlasındaki gibi, hiçbir hanede bir oyuncunun beşten fazla pulu olamaz. Pul toplamada sınır yoktur."
+        },
+        "barFirst": {
+            "title": "Kırılan pul önce girer",
+            "help": {
+                "enabled": "**Etkin**: Kırılan pul, başka bir pul oynamadan önce yeniden girmek zorundadır.",
+                "disabled": "**Devre Dışı**: Kırılan pul, girmeyi bekleyen diğer pullarla bekler ve önce geri kalanı oynatabilirsin."
+            }
+        },
+        "keepBonus": {
+            "title": "Takılınca bonus korunur",
+            "help": {
+                "enabled": "**Etkin**: 1-2'yi ya da çift zarı ancak kısmen oynayabilsen de çift zarı ve ek atışı yine alırsın.",
+                "disabled": "**Devre Dışı**: 1-2'yi ya da ardından gelen çift zarı tamamen oynayamazsan sıran orada biter."
+            }
         },
         "cube": {
             "title": "Katlama zarı",
@@ -67,6 +85,10 @@
             "title": "Hypergammon",
             "description": "Herkese üç pul, en uzak hanelerden başlar: bütün bir oyun birkaç dakikada"
         },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Bütün pullar tahtanın dışında başlar. 1-2 at, istediğin çift zarı seç ve yeniden at"
+        },
         "oldEnglish": {
             "title": "Eski İngiliz kuralları",
             "description": "Bir hanede en fazla beş pul, katlama zarı yok"
@@ -74,6 +96,27 @@
     },
     "undo": "Hamleyi geri al",
     "noMoves": "Oynanabilecek hamle yok",
+    "aceyDeucey": {
+        "title": "Acey-deucey!",
+        "oneTwo": "1'i ve 2'yi oyna, sonra bir çift zar seç",
+        "pick": {
+            "title": "Acey-deucey! Bir çift zar seç",
+            "detail": "Dört kez oyna, sonra yeniden at",
+            "hover": "Dört kez {n}, sonra yeniden at",
+            "die": "Dört kez {n}"
+        },
+        "double": {
+            "title": "Dört kez {n}",
+            "detail": "Sonra yeniden at"
+        },
+        "bonus": "Yeniden at",
+        "theirs": {
+            "oneTwo": "{name} 1-2 attı",
+            "pick": "{name} çift zar seçiyor",
+            "double": "{name} dört kez {n} seçti, ardından yeniden atacak",
+            "bonus": "{name} yeniden atıyor"
+        }
+    },
     "opening": {
         "title": "Başlangıç atışı",
         "highest": "Büyük zar başlar",
@@ -90,7 +133,8 @@
         "theirs": "(rakibin)",
         "bar": "Bar: {count} pul",
         "off": "Toplanan: {count} pul",
-        "using": "{dice} ile"
+        "using": "{dice} ile",
+        "waiting": "Girecek: {count} pul"
     },
     "result": {
         "SINGLE": "{name} oyunu kazandı: {points} sayı | {name} oyunu kazandı: {points} sayı | {name} oyunu kazandı: {points} sayı",

@@ -13,7 +13,7 @@
         },
         "layout": {
             "title": "Posição inicial",
-            "help": "Onde as peças começam: a posição de sempre, Nackgammon (duas peças atrás na casa 24 de cada lado) ou Hypergammon (três peças para cada um).",
+            "help": "Onde as peças começam: a posição de sempre, Nackgammon (duas peças atrás na casa 24 de cada lado), Hypergammon (três peças para cada um) ou Acey Deucey (as quinze fora do tabuleiro, com regras próprias).",
             "data": {
                 "STANDARD": {
                     "title": "Padrão",
@@ -26,12 +26,30 @@
                 "HYPERGAMMON": {
                     "title": "Hypergammon",
                     "description": "Três peças para cada um, nas casas do fundo"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "As quinze começam fora do tabuleiro, e um 1-2 vale uma dupla à sua escolha"
                 }
             }
         },
         "fivePerPoint": {
             "title": "Cinco peças por casa",
             "help": "Nenhuma casa pode ter mais de cinco peças de um jogador, como no antigo gamão inglês. Retirar peças não tem limite."
+        },
+        "barFirst": {
+            "title": "Peças capturadas entram primeiro",
+            "help": {
+                "enabled": "**Habilitado**: Uma peça capturada precisa voltar antes de qualquer outra peça se mover.",
+                "disabled": "**Desabilitado**: Uma peça capturada espera com as outras que ainda vão entrar, e você pode mover o resto primeiro."
+            }
+        },
+        "keepBonus": {
+            "title": "Manter o bônus se travar",
+            "help": {
+                "enabled": "**Habilitado**: Um 1-2 ou uma dupla que você só consegue jogar em parte ainda te dá a dupla e a jogada extra.",
+                "disabled": "**Desabilitado**: Se você não conseguir jogar todo o 1-2 ou a dupla dele, sua vez acaba ali."
+            }
         },
         "cube": {
             "title": "Dado de dobra",
@@ -67,6 +85,10 @@
             "title": "Hypergammon",
             "description": "Três peças para cada um, nas casas do fundo: uma partida inteira em poucos minutos"
         },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Todas as peças começam fora do tabuleiro. Tire 1-2 para escolher qualquer dupla e jogar de novo"
+        },
         "oldEnglish": {
             "title": "Regras inglesas antigas",
             "description": "No máximo cinco peças por casa, e sem dado de dobra"
@@ -74,6 +96,27 @@
     },
     "undo": "Desfazer movimento",
     "noMoves": "Nenhum movimento possível",
+    "aceyDeucey": {
+        "title": "Acey-deucey!",
+        "oneTwo": "Jogue o 1 e o 2, depois escolha uma dupla",
+        "pick": {
+            "title": "Acey-deucey! Escolha uma dupla",
+            "detail": "Jogue-a quatro vezes e depois role de novo",
+            "hover": "Quatro {n}, depois role de novo",
+            "die": "Quatro {n}"
+        },
+        "double": {
+            "title": "Quatro {n}",
+            "detail": "Depois role de novo"
+        },
+        "bonus": "Role de novo",
+        "theirs": {
+            "oneTwo": "{name} tirou 1-2",
+            "pick": "{name} está escolhendo uma dupla",
+            "double": "{name} escolheu quatro {n} e depois rola de novo",
+            "bonus": "{name} rola de novo"
+        }
+    },
     "opening": {
         "title": "Jogada inicial",
         "highest": "O dado maior começa",
@@ -90,7 +133,8 @@
         "theirs": "(do adversário)",
         "bar": "Peças na barra: {count}",
         "off": "Peças retiradas: {count}",
-        "using": "usando {dice}"
+        "using": "usando {dice}",
+        "waiting": "Peças que ainda vão entrar: {count}"
     },
     "result": {
         "SINGLE": "{name} venceu a partida: {points} pontos | {name} venceu a partida: {points} ponto | {name} venceu a partida: {points} pontos",

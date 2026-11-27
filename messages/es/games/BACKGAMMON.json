@@ -13,7 +13,7 @@
         },
         "layout": {
             "title": "Posición inicial",
-            "help": "Dónde empiezan las fichas: la posición de siempre, Nackgammon (dos fichas atrás en el punto 24 de cada lado) o Hypergammon (tres fichas cada uno).",
+            "help": "Dónde empiezan las fichas: la posición de siempre, Nackgammon (dos fichas atrás en el punto 24 de cada lado), Hypergammon (tres fichas cada uno) o Acey Deucey (las quince fuera del tablero, con sus propias reglas).",
             "data": {
                 "STANDARD": {
                     "title": "Estándar",
@@ -26,12 +26,30 @@
                 "HYPERGAMMON": {
                     "title": "Hypergammon",
                     "description": "Tres fichas cada uno, en los puntos del fondo"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "Las quince empiezan fuera del tablero, y un 1-2 te da el doble que elijas"
                 }
             }
         },
         "fivePerPoint": {
             "title": "Cinco fichas por punto",
             "help": "Ningún punto puede tener más de cinco fichas de un jugador, como en el antiguo backgammon inglés. Sacar fichas no tiene límite."
+        },
+        "barFirst": {
+            "title": "Las fichas golpeadas entran primero",
+            "help": {
+                "enabled": "**Activado**: Una ficha golpeada tiene que volver a entrar antes de que se mueva cualquier otra.",
+                "disabled": "**Desactivado**: Una ficha golpeada espera con las demás que faltan por entrar, y puedes mover el resto primero."
+            }
+        },
+        "keepBonus": {
+            "title": "Conservar el bono si te atoras",
+            "help": {
+                "enabled": "**Activado**: Un 1-2 o un doble que solo puedes jugar en parte igual te da el doble y la tirada extra.",
+                "disabled": "**Desactivado**: Si no puedes jugar todo un 1-2 o su doble, tu turno termina ahí."
+            }
         },
         "cube": {
             "title": "Cubo de doblaje",
@@ -67,6 +85,10 @@
             "title": "Hypergammon",
             "description": "Tres fichas cada uno, en los puntos del fondo: una partida entera en pocos minutos"
         },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Todas las fichas empiezan fuera del tablero. Saca un 1-2 para elegir cualquier doble y volver a tirar"
+        },
         "oldEnglish": {
             "title": "Reglas inglesas antiguas",
             "description": "No más de cinco fichas por punto, y sin cubo"
@@ -74,6 +96,27 @@
     },
     "undo": "Deshacer movimiento",
     "noMoves": "No hay movimientos posibles",
+    "aceyDeucey": {
+        "title": "¡Acey-deucey!",
+        "oneTwo": "Juega el 1 y el 2, luego elige un doble",
+        "pick": {
+            "title": "¡Acey-deucey! Elige un doble",
+            "detail": "Juégalo cuatro veces y vuelve a tirar",
+            "hover": "Cuatro {n}, luego vuelves a tirar",
+            "die": "Cuatro {n}"
+        },
+        "double": {
+            "title": "Cuatro {n}",
+            "detail": "Luego vuelves a tirar"
+        },
+        "bonus": "Vuelve a tirar",
+        "theirs": {
+            "oneTwo": "{name} sacó un 1-2",
+            "pick": "{name} está eligiendo un doble",
+            "double": "{name} eligió cuatro {n} y luego vuelve a tirar",
+            "bonus": "{name} vuelve a tirar"
+        }
+    },
     "opening": {
         "title": "Tirada inicial",
         "highest": "Empieza el dado más alto",
@@ -90,7 +133,8 @@
         "theirs": "(del rival)",
         "bar": "Fichas en la barra: {count}",
         "off": "Fichas sacadas: {count}",
-        "using": "usando {dice}"
+        "using": "usando {dice}",
+        "waiting": "Fichas que faltan por entrar: {count}"
     },
     "result": {
         "SINGLE": "{name} ganó la partida: {points} puntos | {name} ganó la partida: {points} punto | {name} ganó la partida: {points} puntos",
