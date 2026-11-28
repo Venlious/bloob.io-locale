@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Finnish",
         "rtl": false,
-        "total": 3814,
+        "total": 4040,
         "missing": 0
     },
     "error": {
@@ -163,6 +163,22 @@
             "notMatchmaking": "Et voi tehdä tätä toimintoa kun olet pelinvalinnassa.",
             "matchHost": "Et ole isäntä, joten et voi tehdä tätä toimintoa.",
             "admin": "Vain ylläpitäjät voivat tehdä tämän toiminnon."
+        },
+        "discord": {
+            "expired": "Discordilla kirjautuminen kesti liian kauan. Yritä uudelleen.",
+            "failed": "Discordilla kirjautuminen ei onnistunut. Yritä uudelleen.",
+            "alreadyConnected": "Tiliisi on jo yhdistetty Discord-tili. Irrota se ensin.",
+            "onlyWayIn": "Lisää ensin sähköpostiosoite. Discord on tällä hetkellä ainoa tapa kirjautua tilillesi."
+        },
+        "discordInvite": {
+            "declined": "Tämä haaste hylättiin.",
+            "expired": "Tämä linkki on vanhentunut. Pyydä uusi Discordissa.",
+            "over": "Tämä kutsu on jo päättynyt.",
+            "notForYou": "Et voi ottaa molempia paikkoja omassa haasteessasi.",
+            "couldNotJoin": "Et voinut liittyä tähän pöytään.",
+            "reserved": "Tämä pöytä on varattu kahden muun pelaajan väliselle haasteelle.",
+            "ranOut": "Kukaan ei ottanut haastetta vastaan ajoissa, joten se peruttiin.",
+            "paused": "Discordin pöydät ovat hetken tauolla. Yritä pian uudelleen."
         }
     },
     "game": {
@@ -873,7 +889,9 @@
         "includesItems": "Sisältää {n} esinettä | Sisältää {n} esineen | Sisältää {n} esinettä",
         "restartNotice": "Serveri käynnistyy uudestaan {n} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {n} minuutin päästä. Lopeta pelisi. | Serveri käynnistyy uudestaan {n} minuutin päästä. Lopeta pelisi.",
         "bombs": "{n} pommia | {n} pommi | {n} pommia",
-        "tricks": "{n} tikkiä | {n} tikki | {n} tikkiä"
+        "tricks": "{n} tikkiä | {n} tikki | {n} tikkiä",
+        "dailyPlayed": "{n} pelannut | {n} pelannut | {n} pelannut",
+        "dailyStreakInARow": "{n} päivää putkeen | {n} päivä putkeen | {n} päivää putkeen"
     },
     "articles": {
         "title": "Artikkelit"
@@ -1142,7 +1160,6 @@
         "leaderboard": "Tulostaulukko",
         "elapsedTime": "{time} kulunut",
         "startingInTime": "Alkaa {time} päästä",
-        "averageWaitTimeBlank": "Keskim. odotusaika {value}",
         "averageBlank": "Keskim. {value}",
         "highestBlank": "Korkea. {value}",
         "showBlank": "Näytä {value}",
@@ -1211,7 +1228,13 @@
         "siteName": "Bloob.io",
         "pool": "Biljardi",
         "gamePreferences": "Peliasetukset",
-        "wrongBallIndicator": "Väärän pallon ilmaisin"
+        "wrongBallIndicator": "Väärän pallon ilmaisin",
+        "connect": "Yhdistä",
+        "disconnect": "Irrota",
+        "discordAccount": "Discord",
+        "or": "tai",
+        "leave": "Poistu",
+        "challenge": "Haaste"
     },
     "match": {
         "quick": "Nopea ottelu",
@@ -1267,7 +1290,6 @@
             "gameUnsupported": "Tämä peli ei latautunut"
         },
         "matchmaking": {
-            "searching": "Etsitään matsia...",
             "matchFound": "Matsi löytyi!",
             "waitingForOpponent": "Odotetaan vastustajaasi... {seconds}",
             "opponentAway": "Vastustajasi ei ollut paikalla. Etsitään sulle edelleen.",
@@ -1285,26 +1307,93 @@
             "settings": {
                 "publicMatches": {
                     "title": "Julkiset ottelut",
-                    "description": "Vähennä odotusaikaa.",
                     "tooltip": [
                         "Julkiset ottelut luodaan muiden pelaajien toimesta. Näissä otteluissa saattaa olla mukautettuja asetuksia.",
                         "Palaat automaattisesti ottelunhakuun, jos sinut potkitaan ulos tai jos isäntä jättää ottelun."
                     ]
                 },
                 "games": {
-                    "title": "Pelit",
-                    "description": "Pelaa ekaa saatavilla olevaa peliä.",
-                    "tooltip": [
-                        "Sisällyttämällä useita pelejä voit vähentää odotusaikaa."
-                    ]
+                    "title": "Pelit"
                 },
                 "opponentFilter": {
                     "title": "Vastustajasuodatin",
-                    "description": "Ottelu sun kriteerien mukaan.",
                     "tooltip": [
                         "Tiukkojen suodattimien käyttäminen voi pidentää odotusaikaa, mutta se tarjoaa paremmin just sulle sopivia matchoja."
                     ]
                 }
+            },
+            "lookingForMatch": "Etsitään matsia",
+            "gamesSelected": "{n} peliä valittu | {n} peli valittu | {n} peliä valittu",
+            "findingOpponent": "Etsitään vastustajaa",
+            "findingOpponentIn": "Etsitään vastustajaa peliin {game}",
+            "stopSearching": "Lopeta haku",
+            "picker": {
+                "title": "Valitse pelisi",
+                "subtitle": "Liityt ensimmäiseen löytyvään matsiin",
+                "search": "Hae pelejä",
+                "clearSearch": "Tyhjennä haku",
+                "all": "Kaikki",
+                "sortBy": "Lajittele pelit",
+                "sortPlaying": "Pelaajia paikalla",
+                "sortName": "Nimi (A-Ö)",
+                "mostPlayed": "Eniten pelaamasi",
+                "featured": "Suosituksia sulle",
+                "more": "Lisää pelejä",
+                "results": "Tulokset haulle \"{query}\"",
+                "similar": "Ei tarkkoja osumia. Samankaltaisia kuin \"{query}\"",
+                "noResults": "Haulla \"{query}\" ei löytynyt pelejä",
+                "noResultsHint": "Kokeile toista nimeä tai kategoriaa",
+                "clearSelection": "Tyhjennä valinta",
+                "findMatch": "Etsi matsi {n} pelistä | Etsi matsi {n} pelistä | Etsi matsi {n} pelistä",
+                "pickToStart": "Valitse peli aloittaaksesi"
+            },
+            "yourGames": "Sun pelit",
+            "usualDay": "Tavallinen päivä",
+            "editGames": "Muokkaa pelejä",
+            "othersSearching": "{n} muuta etsii | {n} muu etsii | {n} muuta etsii",
+            "quietBusierFrom": "Hiljaista nyt, vilkkaampaa klo {time} alkaen",
+            "quietNow": "Hiljaista tähän aikaan",
+            "busyNow": "Yleensä vilkasta tähän aikaan",
+            "busyHours": "Kuinka vilkasta pelissä {game} yleensä on päivän aikana, tunneittain. Korostettu palkki on nyt.",
+            "hourBusy": "{time}: yleensä vilkasta",
+            "hourQuiet": "{time}: yleensä hiljaista",
+            "filters": "Suodattimet",
+            "filtersHint": "Pysyt jonossa, kun muutat näitä",
+            "publicSummary": {
+                "excluded": "Ei julkisia otteluita",
+                "defaultOnly": "Julkiset ottelut oletusasetuksilla",
+                "any": "Kaikki julkiset ottelut"
+            },
+            "opponentDescription": {
+                "any": "Kuka tahansa, joka etsii sun pelejä",
+                "higherThanLvl5": "Ohittaa ihan uudet pelaajat",
+                "higherThanLvl25": "Vain kokeneet pelaajat"
+            },
+            "publicDescription": {
+                "excluded": "Vain sulle luodut uudet matsit",
+                "defaultOnly": "Liity myös avoimiin auloihin, joissa on vakiosäännöt",
+                "any": "Liity myös auloihin, joissa on mukautetut säännöt"
+            },
+            "joining": "Liitytään...",
+            "waitingForMore": "Odotetaan vielä {n} pelaajaa | Odotetaan vielä {n} pelaajaa | Odotetaan vielä {n} pelaajaa",
+            "seatsHint": "Alkaa, kun {seats} on liittynyt, tai kun laskenta loppuu niillä, jotka ovat paikalla",
+            "likely": {
+                "soon": "Muutkin etsivät. Matsin pitäisi löytyä pian.",
+                "busy": "Yleensä vilkasta tähän aikaan. Ei pitäisi kestää kauan.",
+                "quiet": "Hiljaista juuri nyt. Yleensä vilkastuu klo {time} alkaen.",
+                "quietAll": "Hiljaista juuri nyt. Tässä voi mennä hetki."
+            },
+            "runner": {
+                "play": "Pelaa odottaessasi",
+                "playWithKey": "Paina {key} ja pelaa odottaessasi",
+                "best": "Ennätys",
+                "space": "Välilyönti",
+                "gameOver": "Peli päättyi",
+                "newBest": "Uusi ennätys",
+                "playAgain": "Pelaa uudelleen",
+                "words": "ODOTA TYLSÄÄ HAUSKA",
+                "royalFlush": "Kuningasvärisuora!",
+                "stopWithKey": "Lopeta pelaaminen painamalla {key}"
             }
         },
         "info": {
@@ -1320,10 +1409,63 @@
             "joinById": "Voit liittyä (yksityiseen) matsiin syöttämällä nelinumeroisen ID:n.",
             "public": "Kuka tahansa voi liittyä selaamalla saatavilla olevia otteluita.",
             "private": "Pelaajat voivat liittyä vain käyttämällä URL-osoitetta tai 4-numeroista ID:tä.",
+            "challenge": "Vain haastetut pelaajat voivat liittyä.",
             "leave": "Et ehkä pysty liittymään takaisin, jos päätät lähteä.",
             "leaveLast": "Koska olet pelin ainoa henkilö, ottelu suljetaan, kun lähdet.",
             "leaveAsHost": "Kun lähdet, joku muu ottaa isännän roolin.",
             "leaveOrForfeit": "Luovutus lasketaan tappioksi, mutta ei keskeyttämiseksi."
+        },
+        "daily": {
+            "title": "Päivän peli",
+            "play": "Pelaa",
+            "continue": "Jatka",
+            "seeBoard": "Katso tämän päivän tulostaulukko",
+            "stuckAt": "Jumissa {progress}/{total}",
+            "putAway": "Tauolla {progress}/{total}",
+            "underWay": "Kesken: {progress}/{total}",
+            "placeOf": "#{place}/{played}",
+            "clearedShort": "Ratkaistu! {points}",
+            "scope": "Kenen tulokset näet",
+            "everyone": "Kaikki",
+            "place": "Sija",
+            "time": "Aika",
+            "cleared": "Ratkaistu",
+            "stuck": "Jumissa",
+            "missed": "Väliin jäänyt",
+            "anonymous": "Joku pelaaja",
+            "resumed": "Jatkettu",
+            "resumedNote": "Jatkettu keskeytyksen jälkeen. Kello on pysähdyksissä, kun yritys on tauolla.",
+            "longestYet": "Pisin tähän asti",
+            "backTomorrow": "Huomenna vuorossa nro {number}",
+            "playedCounts": "Pelaaminen riittää, joten putkesi jatkuu",
+            "fullBoard": "Koko tulostaulukko",
+            "longest": "Pisin: {n}",
+            "clearedDays": "{cleared}/{played} ratkaistu",
+            "empty": "Kukaan ei ole vielä pelannut sitä.",
+            "emptyFriends": "Kukaan kavereistasi ei ole vielä pelannut sitä.",
+            "shareTitle": "Bloob.io Päivän peli · {game} · Nro {number}",
+            "shareLine": "{title}: {result}",
+            "results": "Päivän pelin tulokset",
+            "error": {
+                "played": "Pelasit jo tämän päivän pelin. Tule huomenna takaisin uuteen!",
+                "unavailable": "Päivän peli ei ole vielä valmis. Kokeile hetken päästä uudestaan!"
+            },
+            "played": "Pelattu",
+            "underWayShort": "Kesken",
+            "playedDays": "Pelattu {played}/{days}",
+            "wordsFound": "{n} sanaa | {n} sana | {n} sanaa",
+            "foundOf": "Löydetty {progress}/{total}",
+            "allFound": "Kaikki löydetty",
+            "notAllFound": "Kaikkia ei löydetty",
+            "number": "Nro {number}",
+            "solo": "Soolo",
+            "sameForEverybody": "sama kaikille",
+            "firstTryCounts": "ensimmäinen yritys ratkaisee",
+            "continueUntil": "jatka klo {time} asti",
+            "playedCount": "{played} pelannut",
+            "clearedCount": "{cleared} ratkaissut",
+            "streak": "Putki",
+            "placeShort": "#{place}"
         }
     },
     "info": {
@@ -1400,7 +1542,11 @@
             "typing": "Ottelussa voit lähettää vain valmiita fraaseja. Discordissa kirjoitat mitä haluat.",
             "community": "Palvelimellamme Bloob.ion pelaajat tapaavat, etsivät peliseuraa ja juttelevat peleistä.",
             "free": "Liittyminen on ilmaista ja voit lähteä milloin vain. Discord-tili on eri asia kuin Bloob.io-tilisi.",
-            "open": "Avaa Discordin uuteen välilehteen."
+            "open": "Avaa Discordin uuteen välilehteen.",
+            "seatedHere": "Otit paikkasi Discordista.",
+            "offer": "Paikkasi Discordista pelin {game} pöydässä odottaa. Ota se, kun olet valmis.",
+            "takeSeat": "Ota paikka",
+            "declinedOne": "{name} hylkäsi haasteen. Voitte silti pelata ilman häntä."
         },
         "stallCall": {
             "title": "Odotatko vielä?",
@@ -1576,9 +1722,9 @@
                 "description": "Syötä sähköpostiosoitteesi. Jos olet uusi, tallennamme käyttäjän {name}. Jos olet käynyt täällä ennen, kirjaamme sinut sisään.",
                 "loginTitle": "Kirjaudu sisään",
                 "loginDescription": "Ei salasanaa. Lähetämme sinulle koodin sähköpostiin.",
-                "levelNote": "Voit tallentaa käyttäjän {name} sähköpostilla alkaen {level}.",
                 "note": "Ei salasanaa. Käytämme sähköpostiosoitettasi vain sisäänkirjautumiseen.",
-                "send": "Lähetä minulle koodi"
+                "send": "Lähetä minulle koodi",
+                "discord": "Jatka Discordilla"
             },
             "code": {
                 "title": "Tarkista sähköpostisi",
@@ -1694,32 +1840,41 @@
         "offerDraw": "Vastustajaltasi kysytään, päätetäänkö ottelu tasapeliin. Jos hän hyväksyy, se ei ole voitto eikä tappio.",
         "accountStatus": {
             "unsaved": {
-                "title": "Vain tällä laitteella",
-                "description": "Tallenna {name} sähköpostillasi, niin edistymisesi säilyy ja voit pelata millä laitteella tahansa. Ei salasanaa.",
-                "level": "Saavuta {level} tallentaaksesi {name} sähköpostillasi.",
+                "title": "Tallenna {name}",
+                "description": "Toistaiseksi vain tällä laitteella. Tallenna, niin voit pelata millä tahansa laitteella.",
+                "discord": "Toistaiseksi vain tällä laitteella. Discord tallentaa sen heti.",
+                "level": "Toistaiseksi vain tällä laitteella. Voit tallentaa sen sähköpostilla alkaen {level}.",
                 "loginOnly": "Kirjaudu sisään, niin edistymisesi säilyy ja voit pelata millä laitteella tahansa."
             },
             "devices": {
                 "title": "{name} on vain tällä laitteella",
-                "description": "Tallenna sähköpostillasi pelataksesi myös muilla laitteillasi ja nähdäksesi ne täällä."
+                "description": "Tallenna, niin voit pelata myös muilla laitteillasi ja nähdä ne täällä."
             },
             "redeem": {
                 "title": "Tallenna ensin {name}",
-                "description": "Lunastamasi asiat menevät tilillesi, joten siihen tarvitaan sähköpostisi."
+                "description": "Lunastamasi asiat menevät tilillesi."
             },
             "saved": {
                 "title": "Tallennettu osoitteeseen {email}",
                 "description": "Edistymisesi seuraa sinua jokaiselle laitteelle."
             },
-            "save": "Tallenna sähköpostilla",
-            "haveAccount": "Minulla on tili",
+            "login": {
+                "title": "Onko sinulla jo tili?",
+                "description": "Kirjaudu sisään ja jatka siitä, mihin jäit."
+            },
+            "email": "Sähköposti",
             "changeEmail": "Vaihda sähköposti",
             "logout": {
                 "description": "Tällä laitteella, tai kaikilla kohdasta Omat laitteet."
             },
             "logoutEverywhere": "Kirjaudu ulos kaikkialta"
         },
-        "wrongBallIndicator": "Biljardipeleissä tähtäysviiva muuttuu punaiseksi ja siihen tulee rasti, kun se osoittaa palloon, johon et saa osua ensin."
+        "wrongBallIndicator": "Biljardipeleissä tähtäysviiva muuttuu punaiseksi ja siihen tulee rasti, kun se osoittaa palloon, johon et saa osua ensin.",
+        "discord": {
+            "connected": "Discord-tilisi on yhdistetty.",
+            "notConnected": "Ei yhdistetty",
+            "onlyWayIn": "Discord-tilisi on yhdistetty. Lisää sähköpostiosoite, jotta voit irrottaa sen."
+        }
     },
     "share": {
         "tiers": {
@@ -1771,7 +1926,7 @@
         },
         "call": {
             "title": "Seuraava ottelusi",
-            "waiting": "Odotetaan…",
+            "waiting": "Odotetaan...",
             "single": "Yksi ottelu ratkaisee",
             "series": "Paras {count}:stä, {own}–{other}",
             "startsIn": "Alkaa {seconds} s päästä",

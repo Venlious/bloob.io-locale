@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Turkish",
         "rtl": false,
-        "total": 3814,
+        "total": 4040,
         "missing": 0
     },
     "error": {
@@ -163,6 +163,22 @@
             "notMatchmaking": "Eşleştirme yaparken bu eylemi gerçekleştiremezsin.",
             "matchHost": "Ev sahibi sen olmadığın için bu eylemi gerçekleştiremezsin.",
             "admin": "Bu eylem sadece Yöneticilere özgüdür."
+        },
+        "discord": {
+            "expired": "Discord ile giriş yapmak çok uzun sürdü. Lütfen tekrar dene.",
+            "failed": "Discord ile giriş yapılamadı. Lütfen tekrar dene.",
+            "alreadyConnected": "Hesabın zaten bir Discord hesabına bağlı. Önce onun bağlantısını kes.",
+            "onlyWayIn": "Önce bir e-posta adresi ekle. Şu an hesabına girmenin tek yolu Discord."
+        },
+        "discordInvite": {
+            "declined": "Bu meydan okuma reddedildi.",
+            "expired": "Bu bağlantının süresi doldu. Discord'da yenisini iste.",
+            "over": "Bu davet sona erdi.",
+            "notForYou": "Kendi meydan okumanda iki yeri birden alamazsın.",
+            "couldNotJoin": "Bu masaya katılamadın.",
+            "reserved": "Bu masa, diğer iki oyuncu arasındaki bir meydan okuma için ayrıldı.",
+            "ranOut": "Bu meydan okumayı kimse zamanında kabul etmedi, bu yüzden iptal edildi.",
+            "paused": "Discord'dan gelen masalar kısa bir süreliğine durduruldu. Birazdan tekrar dene."
         }
     },
     "game": {
@@ -873,7 +889,9 @@
         "includesItems": "{n} öğe içerir | {n} öğe içerir | {n} öğe içerir",
         "restartNotice": "Sunucu {n} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {n} dakikada yeniden başlayacak. Oyununu bitir. | Sunucu {n} dakikada yeniden başlayacak. Oyununu bitir.",
         "bombs": "{n} bomba | {n} bomba | {n} bomba",
-        "tricks": "{n} el | {n} el | {n} el"
+        "tricks": "{n} el | {n} el | {n} el",
+        "dailyPlayed": "{n} kişi oynadı | {n} kişi oynadı | {n} kişi oynadı",
+        "dailyStreakInARow": "Üst üste {n} gün | Üst üste {n} gün | Üst üste {n} gün"
     },
     "articles": {
         "title": "Yazılar"
@@ -1142,7 +1160,6 @@
         "leaderboard": "Lider Tablosu",
         "elapsedTime": "{time} süre geçti",
         "startingInTime": "{time} içinde başlıyor",
-        "averageWaitTimeBlank": "Ort. bekleme süresi {value}",
         "averageBlank": "Ort. {value}",
         "highestBlank": "Yüksek. {value}",
         "showBlank": "{value} Göster",
@@ -1211,7 +1228,13 @@
         "siteName": "Bloob.io",
         "pool": "Bilardo",
         "gamePreferences": "Oyun tercihleri",
-        "wrongBallIndicator": "Yanlış top göstergesi"
+        "wrongBallIndicator": "Yanlış top göstergesi",
+        "connect": "Bağla",
+        "disconnect": "Bağlantıyı Kes",
+        "discordAccount": "Discord",
+        "or": "veya",
+        "leave": "Ayrıl",
+        "challenge": "Meydan Okuma"
     },
     "match": {
         "quick": "Hızlı Eşleşme",
@@ -1267,7 +1290,6 @@
             "gameUnsupported": "Bu oyun yüklenmedi"
         },
         "matchmaking": {
-            "searching": "Maç arıyorum...",
             "matchFound": "Maç bulundu!",
             "waitingForOpponent": "Rakibin bekleniyor... {seconds}",
             "opponentAway": "Rakibin orada değildi. Senin için aramaya devam ediyoruz.",
@@ -1285,26 +1307,93 @@
             "settings": {
                 "publicMatches": {
                     "title": "Halka açık maçlar",
-                    "description": "Bekleme süresini kısalt.",
                     "tooltip": [
                         "Kamuoyu maçları diğer oyuncular tarafından oluşturulur. Bu maçlar özelleştirilmiş ayarlar içerebilir.",
                         "Eğer atılırsan veya ev sahibi maçı terk ederse, otomatik olarak eşleştirme sistemine geri dönersin."
                     ]
                 },
                 "games": {
-                    "title": "Oyunlar",
-                    "description": "İlk müsait oyunu oyna.",
-                    "tooltip": [
-                        "Birden fazla oyun eklemek bekleme süresini azaltabilir."
-                    ]
+                    "title": "Oyunlar"
                 },
                 "opponentFilter": {
                     "title": "Rakip filtresi",
-                    "description": "Kriterlerine göre eşleş.",
                     "tooltip": [
                         "Sıkı filtreler kullanmak bekleme süresini uzatabilir ama daha uygun eşleşmeler sağlar."
                     ]
                 }
+            },
+            "lookingForMatch": "Maç aranıyor",
+            "gamesSelected": "{n} oyun seçildi | {n} oyun seçildi | {n} oyun seçildi",
+            "findingOpponent": "Rakip aranıyor",
+            "findingOpponentIn": "{game} oyununda rakip aranıyor",
+            "stopSearching": "Aramayı Durdur",
+            "picker": {
+                "title": "Oyunlarını seç",
+                "subtitle": "İlk bulunan maça katılırsın",
+                "search": "Oyun ara",
+                "clearSearch": "Aramayı temizle",
+                "all": "Tümü",
+                "sortBy": "Oyunları sırala",
+                "sortPlaying": "Oynayan kişi sayısı",
+                "sortName": "İsim (A-Z)",
+                "mostPlayed": "En çok oynadıkların",
+                "featured": "Senin için öne çıkanlar",
+                "more": "Diğer oyunlar",
+                "results": "\"{query}\" için sonuçlar",
+                "similar": "Tam eşleşme yok. \"{query}\" ile benzer olanlar",
+                "noResults": "\"{query}\" ile eşleşen oyun yok",
+                "noResultsHint": "Farklı bir isim ya da kategori dene",
+                "clearSelection": "Seçimi Temizle",
+                "findMatch": "{n} Oyunda Maç Bul | {n} Oyunda Maç Bul | {n} Oyunda Maç Bul",
+                "pickToStart": "Başlamak için bir oyun seç"
+            },
+            "yourGames": "Oyunların",
+            "usualDay": "Tipik bir gün",
+            "editGames": "Oyunları Düzenle",
+            "othersSearching": "{n} kişi daha arıyor | {n} kişi daha arıyor | {n} kişi daha arıyor",
+            "quietBusierFrom": "Şu an sakin, {time} itibarıyla hareketlenir",
+            "quietNow": "Bu saatte sakin",
+            "busyNow": "Bu saatte genelde kalabalık",
+            "busyHours": "{game} oyununun gün boyunca saat saat ne kadar kalabalık olduğu. Vurgulanan çubuk şu anı gösterir.",
+            "hourBusy": "{time}: genelde kalabalık",
+            "hourQuiet": "{time}: genelde sakin",
+            "filters": "Filtreler",
+            "filtersHint": "Bunları değiştirirken sırada kalırsın",
+            "publicSummary": {
+                "excluded": "Halka açık maç yok",
+                "defaultOnly": "Varsayılan ayarlı halka açık maçlar",
+                "any": "Tüm halka açık maçlar"
+            },
+            "opponentDescription": {
+                "any": "Oyunlarını arayan herkes",
+                "higherThanLvl5": "Yepyeni oyuncuları atlar",
+                "higherThanLvl25": "Sadece deneyimli oyuncular"
+            },
+            "publicDescription": {
+                "excluded": "Sadece senin için kurulan yeni maçlar",
+                "defaultOnly": "Standart kurallı açık lobilere de katıl",
+                "any": "Özel kurallı lobilere de katıl"
+            },
+            "joining": "Katılıyorsun...",
+            "waitingForMore": "{n} oyuncu daha bekleniyor | {n} oyuncu daha bekleniyor | {n} oyuncu daha bekleniyor",
+            "seatsHint": "{seats} katılınca ya da geri sayım bittiğinde buradakilerle başlar",
+            "likely": {
+                "soon": "Başkaları da arıyor. Maç yakın olmalı.",
+                "busy": "Bu saatte genelde kalabalık. Uzun sürmemeli.",
+                "quiet": "Şu an sakin. Genelde {time} itibarıyla hareketlenir.",
+                "quietAll": "Şu an sakin. Biraz sürebilir."
+            },
+            "runner": {
+                "play": "Beklerken oyna",
+                "playWithKey": "Beklerken oynamak için {key} tuşuna bas",
+                "best": "Rekor",
+                "space": "Boşluk",
+                "gameOver": "Oyun bitti",
+                "newBest": "Yeni rekor",
+                "playAgain": "Tekrar oyna",
+                "words": "BEKLE SIKICI EĞLENCE",
+                "royalFlush": "Floş royal!",
+                "stopWithKey": "Oynamayı bırakmak için {key}"
             }
         },
         "info": {
@@ -1320,10 +1409,63 @@
             "joinById": "Dört haneli ID'yi doldurarak (özel) bir maça katılabilirsin.",
             "public": "Herkes, mevcut maçları göz atarak katılabilir.",
             "private": "Oyuncular sadece URL veya 4 haneli ID kullanarak katılabilir.",
+            "challenge": "Sadece meydan okunan oyuncular katılabilir.",
             "leave": "Eğer çıkmayı seçersen, geri dönemeyebilirsin.",
             "leaveLast": "Oyunda tek kişi olduğun için, çıkınca maç kapanacak.",
             "leaveAsHost": "Çıkınca başka biri yeni ev sahibi olacak.",
             "leaveOrForfeit": "Pes etmek yenilgi sayılır ama maçı terk etmek sayılmaz."
+        },
+        "daily": {
+            "title": "Günlük",
+            "play": "Oyna",
+            "continue": "Devam et",
+            "seeBoard": "Bugünün tablosunu gör",
+            "stuckAt": "{total} karttan {progress} kartta takıldı",
+            "putAway": "{total} karttan {progress} kartta bırakıldı",
+            "underWay": "Sürüyor: {progress}/{total}",
+            "placeOf": "{played} kişide #{place}",
+            "clearedShort": "Bitirdi! {points}",
+            "scope": "Kimin sonuçları",
+            "everyone": "Herkes",
+            "place": "Derece",
+            "time": "Süre",
+            "cleared": "Bitirdi",
+            "stuck": "Takıldı",
+            "missed": "Kaçırdı",
+            "anonymous": "Bir oyuncu",
+            "resumed": "Devam edildi",
+            "resumedNote": "Bir kesintiden sonra kaldığı yerden sürdü. Deneme bekletilirken süre durur.",
+            "longestYet": "Şimdiye kadarki en uzunun",
+            "backTomorrow": "No. {number} için yarın gel",
+            "playedCounts": "Oynamak sayılır, serin devam ediyor",
+            "fullBoard": "Tüm tablo",
+            "longest": "En uzun: {n}",
+            "clearedDays": "{played} günün {cleared} tanesi bitti",
+            "empty": "Henüz kimse oynamadı.",
+            "emptyFriends": "Arkadaşlarından henüz kimse oynamadı.",
+            "shareTitle": "Bloob.io Günlük · {game} · No. {number}",
+            "shareLine": "{title}: {result}",
+            "results": "Günlük sonuçlar",
+            "error": {
+                "played": "Bugünün günlüğünü zaten oynadın. Yenisi için yarın gel!",
+                "unavailable": "Bugünün günlüğü henüz hazır değil. Birazdan tekrar dene!"
+            },
+            "played": "Oynandı",
+            "underWayShort": "Devam ediyor",
+            "playedDays": "{days} günden {played} gün oynandı",
+            "wordsFound": "{n} kelime | {n} kelime | {n} kelime",
+            "foundOf": "{total} farktan {progress} bulundu",
+            "allFound": "Hepsi bulundu",
+            "notAllFound": "Hepsi bulunamadı",
+            "number": "No. {number}",
+            "solo": "Solo",
+            "sameForEverybody": "herkese aynı",
+            "firstTryCounts": "ilk deneme sayılır",
+            "continueUntil": "saat {time} kadar devam et",
+            "playedCount": "{played} kişi oynadı",
+            "clearedCount": "{cleared} kişi bitirdi",
+            "streak": "Seri",
+            "placeShort": "#{place}"
         }
     },
     "info": {
@@ -1400,7 +1542,11 @@
             "typing": "Maçta sadece hazır cümleleri gönderebilirsin. Discord'da ise ne istersen yazarsın.",
             "community": "Sunucumuzda Bloob.io oyuncuları buluşur, birlikte oynayacak birini bulur ve oyunlar hakkında konuşur.",
             "free": "Katılmak ücretsiz ve istediğin zaman ayrılabilirsin. Discord hesabın Bloob.io hesabından ayrıdır.",
-            "open": "Discord'u yeni sekmede açar."
+            "open": "Discord'u yeni sekmede açar.",
+            "seatedHere": "Yerini Discord'dan aldın.",
+            "offer": "Discord'dan gelen {game} masasındaki yerin seni bekliyor. Hazır olduğunda al.",
+            "takeSeat": "Yerini al",
+            "declinedOne": "{name} meydan okumayı reddetti. Onsuz da oynayabilirsiniz."
         },
         "stallCall": {
             "title": "Hâlâ Bekliyor Musun?",
@@ -1576,9 +1722,9 @@
                 "description": "E-posta adresini gir. Yeniysen {name} kaydedilir. Daha önce geldiysen giriş yaparsın.",
                 "loginTitle": "Giriş Yap",
                 "loginDescription": "Şifre yok. E-postana bir kod göndereceğiz.",
-                "levelNote": "{level} itibarıyla {name} kullanıcısını e-postayla kaydedebilirsin.",
                 "note": "Şifre yok. E-postanı sadece giriş yapman için kullanıyoruz.",
-                "send": "Bana kod gönder"
+                "send": "Bana kod gönder",
+                "discord": "Discord ile devam et"
             },
             "code": {
                 "title": "E-postanı kontrol et",
@@ -1694,32 +1840,41 @@
         "offerDraw": "Rakibine maçı berabere bitirmek isteyip istemediği sorulacak. Kabul ederse ne galibiyet ne de mağlubiyet sayılır.",
         "accountStatus": {
             "unsaved": {
-                "title": "Sadece bu cihazda",
-                "description": "İlerlemeni korumak ve her cihazda oynamak için {name} hesabını e-postanla kaydet. Şifre yok.",
-                "level": "{name} hesabını e-postanla kaydetmek için {level} seviyesine ulaş.",
+                "title": "{name} kaydet",
+                "description": "Şimdilik sadece bu cihazda. Her cihazda oynamak için kaydet.",
+                "discord": "Şimdilik sadece bu cihazda. Discord hemen kaydeder.",
+                "level": "Şimdilik sadece bu cihazda. {level} itibarıyla e-postanla kaydedebilirsin.",
                 "loginOnly": "İlerlemeni korumak ve her cihazda oynamak için giriş yap."
             },
             "devices": {
                 "title": "{name} sadece bu cihazda",
-                "description": "Diğer cihazlarında da oynamak ve onları burada görmek için e-postanla kaydet."
+                "description": "Diğer cihazlarında da oynamak ve onları burada görmek için kaydet."
             },
             "redeem": {
                 "title": "Önce {name} hesabını kaydet",
-                "description": "Kullandığın kodlar hesabına eklenir, bu yüzden e-postan gerekir."
+                "description": "Kullandığın kodlar hesabına eklenir."
             },
             "saved": {
                 "title": "{email} adresine kaydedildi",
                 "description": "İlerlemen her cihazda seninle."
             },
-            "save": "E-postayla kaydet",
-            "haveAccount": "Hesabım var",
+            "login": {
+                "title": "Zaten hesabın var mı?",
+                "description": "Kaldığın yerden devam etmek için giriş yap."
+            },
+            "email": "E-posta",
             "changeEmail": "E-postayı değiştir",
             "logout": {
                 "description": "Bu cihazda ya da Cihazlarım'dan tüm cihazlarda."
             },
             "logoutEverywhere": "Her yerden çıkış yap"
         },
-        "wrongBallIndicator": "Bilardo oyunlarında, ilk vurmana izin verilmeyen bir topa nişan aldığında nişan çizgisi kırmızıya döner ve bir çarpı gösterir."
+        "wrongBallIndicator": "Bilardo oyunlarında, ilk vurmana izin verilmeyen bir topa nişan aldığında nişan çizgisi kırmızıya döner ve bir çarpı gösterir.",
+        "discord": {
+            "connected": "Discord hesabın bağlı.",
+            "notConnected": "Bağlı değil",
+            "onlyWayIn": "Discord hesabın bağlı. Bağlantısını kesebilmek için bir e-posta adresi ekle."
+        }
     },
     "share": {
         "tiers": {
@@ -1771,7 +1926,7 @@
         },
         "call": {
             "title": "Sıradaki maçın",
-            "waiting": "Bekleniyor…",
+            "waiting": "Bekleniyor...",
             "single": "Tek maçta belli olur",
             "series": "{count} oyunluk seri, {own}–{other}",
             "startsIn": "{seconds} sn içinde başlıyor",

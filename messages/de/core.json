@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal German",
         "rtl": false,
-        "total": 3814,
+        "total": 4040,
         "missing": 0
     },
     "error": {
@@ -163,6 +163,22 @@
             "notMatchmaking": "Du kannst diese Aktion nicht durchführen, während du dich im Matchmaking befindest.",
             "matchHost": "Du bist nicht der Gastgeber und kannst diese Aktion nicht durchführen.",
             "admin": "Diese Aktion ist auf Admins beschränkt."
+        },
+        "discord": {
+            "expired": "Die Anmeldung mit Discord hat zu lange gedauert. Bitte versuch es noch einmal.",
+            "failed": "Die Anmeldung mit Discord hat nicht geklappt. Bitte versuch es noch einmal.",
+            "alreadyConnected": "Dein Konto ist bereits mit einem Discord-Konto verbunden. Trenne es zuerst.",
+            "onlyWayIn": "Füge zuerst eine E-Mail-Adresse hinzu. Im Moment kommst du nur über Discord in dein Konto."
+        },
+        "discordInvite": {
+            "declined": "Diese Herausforderung wurde abgelehnt.",
+            "expired": "Dieser Link ist abgelaufen. Frag auf Discord nach einem neuen.",
+            "over": "Diese Einladung ist vorbei.",
+            "notForYou": "Du kannst nicht beide Plätze deiner eigenen Herausforderung einnehmen.",
+            "couldNotJoin": "Du konntest diesem Tisch nicht beitreten.",
+            "reserved": "Dieser Tisch ist für eine Herausforderung zwischen zwei anderen Spielern reserviert.",
+            "ranOut": "Niemand hat diese Herausforderung rechtzeitig angenommen, deshalb wurde sie abgesagt.",
+            "paused": "Tische über Discord sind gerade kurz pausiert. Versuch es gleich noch mal."
         }
     },
     "game": {
@@ -873,7 +889,9 @@
         "includesItems": "Beinhaltet {n} Artikel | Beinhaltet {n} Artikel | Beinhaltet {n} Artikel",
         "restartNotice": "Der Server startet in {n} Minuten neu. Beende bitte dein Spiel. | Der Server startet in {n} Minute neu. Beende bitte dein Spiel. | Der Server startet in {n} Minuten neu. Beende bitte dein Spiel.",
         "bombs": "{n} Bomben | {n} Bombe | {n} Bomben",
-        "tricks": "{n} Stiche | {n} Stich | {n} Stiche"
+        "tricks": "{n} Stiche | {n} Stich | {n} Stiche",
+        "dailyPlayed": "{n} gespielt | {n} gespielt | {n} gespielt",
+        "dailyStreakInARow": "{n} Tage in Folge | {n} Tag in Folge | {n} Tage in Folge"
     },
     "articles": {
         "title": "Artikel"
@@ -1142,7 +1160,6 @@
         "leaderboard": "Rangliste",
         "elapsedTime": "{time} vergangen",
         "startingInTime": "Startet in {time}",
-        "averageWaitTimeBlank": "Ø Wartezeit {value}",
         "averageBlank": "Ø {value}",
         "highestBlank": "Hoch. {value}",
         "showBlank": "{value} anzeigen",
@@ -1211,7 +1228,13 @@
         "siteName": "Bloob.io",
         "pool": "Pool",
         "gamePreferences": "Spieleinstellungen",
-        "wrongBallIndicator": "Anzeige für falsche Kugel"
+        "wrongBallIndicator": "Anzeige für falsche Kugel",
+        "connect": "Verbinden",
+        "disconnect": "Trennen",
+        "discordAccount": "Discord",
+        "or": "oder",
+        "leave": "Verlassen",
+        "challenge": "Herausforderung"
     },
     "match": {
         "quick": "Schnelles Spiel",
@@ -1267,7 +1290,6 @@
             "gameUnsupported": "Dieses Spiel lädt nicht"
         },
         "matchmaking": {
-            "searching": "Suche nach einem Match...",
             "matchFound": "Match gefunden!",
             "waitingForOpponent": "Warte auf deinen Gegner... {seconds}",
             "opponentAway": "Dein Gegner war nicht da. Wir suchen weiter für dich.",
@@ -1285,26 +1307,93 @@
             "settings": {
                 "publicMatches": {
                     "title": "Öffentliche Spiele",
-                    "description": "Wartezeit verkürzen.",
                     "tooltip": [
                         "Öffentliche Spiele werden von anderen Spielern erstellt. Diese Spiele können angepasste Einstellungen haben.",
                         "Du wirst automatisch zum Matchmaking zurückkehren, wenn du rausgeworfen wirst oder wenn der Gastgeber das Spiel verlässt."
                     ]
                 },
                 "games": {
-                    "title": "Spiele",
-                    "description": "Spiel das erste verfügbare Spiel.",
-                    "tooltip": [
-                        "Wenn du mehrere Spiele einbeziehst, kann die Wartezeit verkürzt werden."
-                    ]
+                    "title": "Spiele"
                 },
                 "opponentFilter": {
                     "title": "Gegnerfilter",
-                    "description": "Match basierend auf deinen Kriterien.",
                     "tooltip": [
                         "Strenge Filter können die Wartezeit verlängern, aber dafür bekommst du besser passende Matches."
                     ]
                 }
+            },
+            "lookingForMatch": "Suche nach einem Match",
+            "gamesSelected": "{n} Spiele ausgewählt | {n} Spiel ausgewählt | {n} Spiele ausgewählt",
+            "findingOpponent": "Suche nach einem Gegner",
+            "findingOpponentIn": "Suche nach einem Gegner in {game}",
+            "stopSearching": "Suche beenden",
+            "picker": {
+                "title": "Wähle deine Spiele",
+                "subtitle": "Du trittst dem ersten gefundenen Match bei",
+                "search": "Spiele suchen",
+                "clearSearch": "Suche löschen",
+                "all": "Alle",
+                "sortBy": "Spiele sortieren",
+                "sortPlaying": "Aktive Spieler",
+                "sortName": "Name (A-Z)",
+                "mostPlayed": "Deine meistgespielten",
+                "featured": "Empfohlen für dich",
+                "more": "Weitere Spiele",
+                "results": "Ergebnisse für \"{query}\"",
+                "similar": "Keine genauen Treffer. Ähnlich wie \"{query}\"",
+                "noResults": "Keine Spiele passen zu \"{query}\"",
+                "noResultsHint": "Versuch einen anderen Namen oder eine andere Kategorie",
+                "clearSelection": "Auswahl aufheben",
+                "findMatch": "Match in {n} Spielen finden | Match in {n} Spiel finden | Match in {n} Spielen finden",
+                "pickToStart": "Wähle ein Spiel, um zu starten"
+            },
+            "yourGames": "Deine Spiele",
+            "usualDay": "Normaler Tag",
+            "editGames": "Spiele bearbeiten",
+            "othersSearching": "{n} andere suchen | {n} anderer sucht | {n} andere suchen",
+            "quietBusierFrom": "Gerade ruhig, ab {time} mehr los",
+            "quietNow": "Ruhig um diese Uhrzeit",
+            "busyNow": "Um diese Uhrzeit meist viel los",
+            "busyHours": "Wie viel in {game} normalerweise im Tagesverlauf los ist, nach Stunden. Der markierte Balken ist jetzt.",
+            "hourBusy": "{time}: meist viel los",
+            "hourQuiet": "{time}: meist ruhig",
+            "filters": "Filter",
+            "filtersHint": "Du bleibst in der Warteschlange, während du das änderst",
+            "publicSummary": {
+                "excluded": "Keine öffentlichen Spiele",
+                "defaultOnly": "Öffentliche Spiele mit Standardeinstellungen",
+                "any": "Alle öffentlichen Spiele"
+            },
+            "opponentDescription": {
+                "any": "Alle, die deine Spiele suchen",
+                "higherThanLvl5": "Überspringt ganz neue Spieler",
+                "higherThanLvl25": "Nur erfahrene Spieler"
+            },
+            "publicDescription": {
+                "excluded": "Nur neue Matches, die für dich erstellt werden",
+                "defaultOnly": "Tritt auch offenen Lobbys mit Standardregeln bei",
+                "any": "Tritt auch Lobbys mit eigenen Regeln bei"
+            },
+            "joining": "Trete bei...",
+            "waitingForMore": "Warte auf {n} weitere Spieler | Warte auf {n} weiteren Spieler | Warte auf {n} weitere Spieler",
+            "seatsHint": "Startet, wenn {seats} beigetreten sind, oder wenn der Countdown endet, mit allen, die da sind",
+            "likely": {
+                "soon": "Andere suchen auch. Ein Match sollte bald kommen.",
+                "busy": "Um diese Uhrzeit ist meist viel los. Es sollte nicht lange dauern.",
+                "quiet": "Gerade ist es ruhig. Ab {time} ist meist mehr los.",
+                "quietAll": "Gerade ist es ruhig. Es könnte eine Weile dauern."
+            },
+            "runner": {
+                "play": "Spiel, während du wartest",
+                "playWithKey": "Drück {key}, um zu spielen, während du wartest",
+                "best": "Rekord",
+                "space": "Leertaste",
+                "gameOver": "Spiel vorbei",
+                "newBest": "Neuer Rekord",
+                "playAgain": "Nochmal spielen",
+                "words": "WARTEN ÖDE SPASS",
+                "royalFlush": "Royal Flush!",
+                "stopWithKey": "{key} zum Aufhören"
             }
         },
         "info": {
@@ -1320,10 +1409,63 @@
             "joinById": "Du kannst einem privaten Spiel beitreten, indem du die vierstellige ID eingibst.",
             "public": "Jeder kann beitreten.",
             "private": "Nur Spieler mit der URL oder der vierstelligen ID können beitreten.",
+            "challenge": "Nur die herausgeforderten Spieler können beitreten.",
             "leave": "Es kann sein, dass du nicht wieder einsteigen kannst, wenn du dich dafür entscheidest, zu gehen.",
             "leaveLast": "Da du die einzige Person im Spiel bist, wird das Spiel beendet, wenn du es verlässt.",
             "leaveAsHost": "Jemand anderes wird der neue Gastgeber, wenn du gehst.",
             "leaveOrForfeit": "Aufgeben zählt als Niederlage, aber nicht als Spielabbruch."
+        },
+        "daily": {
+            "title": "Tagesrunde",
+            "play": "Spielen",
+            "continue": "Weiterspielen",
+            "seeBoard": "Rangliste von heute ansehen",
+            "stuckAt": "Festgefahren bei {progress} von {total}",
+            "putAway": "Pausiert bei {progress} von {total}",
+            "underWay": "Läuft: {progress} von {total}",
+            "placeOf": "#{place} von {played}",
+            "clearedShort": "Gelöst! {points}",
+            "scope": "Wessen Ergebnisse du siehst",
+            "everyone": "Alle",
+            "place": "Platz",
+            "time": "Zeit",
+            "cleared": "Gelöst",
+            "stuck": "Festgefahren",
+            "missed": "Verpasst",
+            "anonymous": "Ein Spieler",
+            "resumed": "Fortgesetzt",
+            "resumedNote": "Nach einer Unterbrechung wieder aufgenommen. Die Uhr steht still, solange ein Versuch pausiert ist.",
+            "longestYet": "Deine längste bisher",
+            "backTomorrow": "Morgen wieder mit Nr. {number}",
+            "playedCounts": "Spielen zählt, deine Serie läuft weiter",
+            "fullBoard": "Ganze Rangliste",
+            "longest": "Längste: {n}",
+            "clearedDays": "{cleared} von {played} gelöst",
+            "empty": "Noch hat sie niemand gespielt.",
+            "emptyFriends": "Noch hat sie keiner deiner Freunde gespielt.",
+            "shareTitle": "Bloob.io Tagesrunde · {game} · Nr. {number}",
+            "shareLine": "{title}: {result}",
+            "results": "Ergebnisse der Tagesrunde",
+            "error": {
+                "played": "Du hast die heutige Tagesrunde schon gespielt. Komm morgen für eine neue wieder!",
+                "unavailable": "Die heutige Tagesrunde ist noch nicht bereit. Versuch es gleich nochmal!"
+            },
+            "played": "Gespielt",
+            "underWayShort": "Läuft",
+            "playedDays": "{played} von {days} gespielt",
+            "wordsFound": "{n} Wörter | {n} Wort | {n} Wörter",
+            "foundOf": "{progress} von {total} gefunden",
+            "allFound": "Alle gefunden",
+            "notAllFound": "Nicht alle gefunden",
+            "number": "Nr. {number}",
+            "solo": "Solo",
+            "sameForEverybody": "für alle gleich",
+            "firstTryCounts": "der erste Versuch zählt",
+            "continueUntil": "weiterspielen bis {time}",
+            "playedCount": "{played} gespielt",
+            "clearedCount": "{cleared} gelöst",
+            "streak": "Serie",
+            "placeShort": "#{place}"
         }
     },
     "info": {
@@ -1400,7 +1542,11 @@
             "typing": "In einer Partie kannst du nur die vorgegebenen Sätze schicken. Auf Discord tippst du, was du willst.",
             "community": "Auf unserem Server treffen sich Bloob.io-Spieler, finden Mitspieler und reden über die Spiele.",
             "free": "Der Beitritt ist kostenlos und du kannst jederzeit wieder gehen. Ein Discord-Konto hat nichts mit deinem Bloob.io-Konto zu tun.",
-            "open": "Öffnet Discord in einem neuen Tab."
+            "open": "Öffnet Discord in einem neuen Tab.",
+            "seatedHere": "Du hast deinen Platz über Discord eingenommen.",
+            "offer": "Dein Platz an einem {game}-Tisch von Discord wartet. Nimm ihn ein, wenn du bereit bist.",
+            "takeSeat": "Platz einnehmen",
+            "declinedOne": "{name} hat die Herausforderung abgelehnt. Ihr könnt trotzdem ohne diese Person spielen."
         },
         "stallCall": {
             "title": "Immer noch am Warten?",
@@ -1576,9 +1722,9 @@
                 "description": "Gib deine E-Mail ein. Bist du neu, speichern wir {name}. Warst du schon mal hier, loggen wir dich ein.",
                 "loginTitle": "Einloggen",
                 "loginDescription": "Kein Passwort. Wir schicken dir einen Code per E-Mail.",
-                "levelNote": "Ab {level} kannst du {name} mit einer E-Mail speichern.",
                 "note": "Kein Passwort. Wir nutzen deine E-Mail nur, um dich einzuloggen.",
-                "send": "Schick mir einen Code"
+                "send": "Schick mir einen Code",
+                "discord": "Weiter mit Discord"
             },
             "code": {
                 "title": "Schau in deine E-Mails",
@@ -1694,32 +1840,41 @@
         "offerDraw": "Dein Gegner wird gefragt, ob das Spiel unentschieden enden soll. Nimmt er an, zählt es weder als Sieg noch als Niederlage.",
         "accountStatus": {
             "unsaved": {
-                "title": "Nur auf diesem Gerät",
-                "description": "Speichere {name} mit deiner E-Mail, damit dein Fortschritt sicher ist und du auf jedem Gerät spielen kannst. Kein Passwort.",
-                "level": "Erreiche {level}, um {name} mit deiner E-Mail zu speichern.",
+                "title": "{name} speichern",
+                "description": "Vorerst nur auf diesem Gerät. Speichere es, um auf jedem Gerät zu spielen.",
+                "discord": "Vorerst nur auf diesem Gerät. Mit Discord ist es sofort gespeichert.",
+                "level": "Vorerst nur auf diesem Gerät. Ab {level} kannst du es mit deiner E-Mail speichern.",
                 "loginOnly": "Melde dich an, damit dein Fortschritt sicher ist und du auf jedem Gerät spielen kannst."
             },
             "devices": {
                 "title": "{name} ist nur auf diesem Gerät",
-                "description": "Speichere mit deiner E-Mail, um auch auf deinen anderen Geräten zu spielen und sie hier zu sehen."
+                "description": "Speichere es, um auch auf deinen anderen Geräten zu spielen und sie hier zu sehen."
             },
             "redeem": {
                 "title": "Speichere zuerst {name}",
-                "description": "Was du einlöst, landet in deinem Konto, dafür braucht es deine E-Mail."
+                "description": "Was du einlöst, landet in deinem Konto."
             },
             "saved": {
                 "title": "Gespeichert unter {email}",
                 "description": "Dein Fortschritt kommt mit auf jedes Gerät."
             },
-            "save": "Mit E-Mail speichern",
-            "haveAccount": "Ich habe ein Konto",
+            "login": {
+                "title": "Schon ein Konto?",
+                "description": "Melde dich an und mach da weiter, wo du aufgehört hast."
+            },
+            "email": "E-Mail",
             "changeEmail": "E-Mail ändern",
             "logout": {
                 "description": "Auf diesem Gerät, oder unter Meine Geräte auf allen."
             },
             "logoutEverywhere": "Überall abmelden"
         },
-        "wrongBallIndicator": "In den Pool-Spielen wird die Ziellinie rot und zeigt ein Kreuz, wenn sie auf eine Kugel zeigt, die du nicht zuerst treffen darfst."
+        "wrongBallIndicator": "In den Pool-Spielen wird die Ziellinie rot und zeigt ein Kreuz, wenn sie auf eine Kugel zeigt, die du nicht zuerst treffen darfst.",
+        "discord": {
+            "connected": "Dein Discord-Konto ist verbunden.",
+            "notConnected": "Nicht verbunden",
+            "onlyWayIn": "Dein Discord-Konto ist verbunden. Füge eine E-Mail-Adresse hinzu, um es trennen zu können."
+        }
     },
     "share": {
         "tiers": {
@@ -1771,7 +1926,7 @@
         },
         "call": {
             "title": "Dein nächstes Spiel",
-            "waiting": "Warte…",
+            "waiting": "Warte...",
             "single": "Ein Spiel entscheidet",
             "series": "Best of {count}, {own}–{other}",
             "startsIn": "Startet in {seconds}s",

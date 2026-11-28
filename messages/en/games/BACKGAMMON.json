@@ -10,6 +10,62 @@
                 "enabled": "**Enabled**: Winning before your opponent has borne off a single checker is a gammon and scores two points. If they still have a checker on the bar or in your home board, it is a backgammon and scores three.",
                 "disabled": "**Disabled**: Every win scores one point."
             }
+        },
+        "layout": {
+            "title": "Starting Layout",
+            "help": "Where the checkers start: the usual layout, Nackgammon (two checkers back on each side's 24-point), Hypergammon (three checkers each) or Acey Deucey (all fifteen off the board, with its own rules).",
+            "data": {
+                "STANDARD": {
+                    "title": "Standard",
+                    "description": "Fifteen checkers in the usual places"
+                },
+                "NACKGAMMON": {
+                    "title": "Nackgammon",
+                    "description": "Two checkers start further back"
+                },
+                "HYPERGAMMON": {
+                    "title": "Hypergammon",
+                    "description": "Three checkers each, on the far points"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "All fifteen start off the board, and a 1-2 earns a double of your choice"
+                }
+            }
+        },
+        "fivePerPoint": {
+            "title": "Five Checkers per Point",
+            "help": "No point may hold more than five of a player's checkers, as in Old English backgammon. Bearing off is not limited."
+        },
+        "barFirst": {
+            "title": "Hit Checkers Enter First",
+            "help": {
+                "enabled": "**Enabled**: A hit checker has to come back in before any other checker moves.",
+                "disabled": "**Disabled**: A hit checker waits with the others still to come in, and you can move the rest first."
+            }
+        },
+        "keepBonus": {
+            "title": "Keep the Bonus When Stuck",
+            "help": {
+                "enabled": "**Enabled**: A 1-2 or a double you can only partly play still gets you the double and the extra roll.",
+                "disabled": "**Disabled**: If you cannot play all of a 1-2 or its double, your turn ends there."
+            }
+        },
+        "cube": {
+            "title": "Doubling Cube",
+            "help": "Double the stakes before you roll. Your opponent takes, playing on for twice the points with the cube now theirs, or drops and loses the game. In a match, the Crawford rule applies: the game after a player gets one point from winning is played without the cube."
+        },
+        "cubeLimit": {
+            "title": "Cube Limit",
+            "help": "How high the stakes can be doubled.",
+            "data": {
+                "limit": "Up to 64",
+                "none": "No limit"
+            }
+        },
+        "jacoby": {
+            "title": "Jacoby Rule",
+            "help": "In a single game, gammons and backgammons only count once the cube has been turned."
         }
     },
     "presets": {
@@ -20,10 +76,47 @@
         "match": {
             "title": "Match to 5",
             "description": "First to five points, gammons count double"
+        },
+        "nackgammon": {
+            "title": "Nackgammon",
+            "description": "Two checkers start further back, for longer, more tactical games"
+        },
+        "hypergammon": {
+            "title": "Hypergammon",
+            "description": "Three checkers each, starting on the far points: a whole game in a few minutes"
+        },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Every checker starts off the board. Roll a 1-2 to pick any double and roll again"
+        },
+        "oldEnglish": {
+            "title": "Old English",
+            "description": "No more than five checkers on a point, and no cube"
         }
     },
     "undo": "Undo move",
     "noMoves": "No moves possible",
+    "aceyDeucey": {
+        "title": "Acey-deucey!",
+        "oneTwo": "Play the 1 and the 2, then pick a double",
+        "pick": {
+            "title": "Acey-deucey! Pick a double",
+            "detail": "Play it four times, then roll again",
+            "hover": "Four {n}s, then roll again",
+            "die": "Four {n}s"
+        },
+        "double": {
+            "title": "Four {n}s",
+            "detail": "Then roll again"
+        },
+        "bonus": "Roll again",
+        "theirs": {
+            "oneTwo": "{name} threw a 1-2",
+            "pick": "{name} is picking a double",
+            "double": "{name} picked four {n}s and rolls again after",
+            "bonus": "{name} rolls again"
+        }
+    },
     "opening": {
         "title": "Opening roll",
         "highest": "Highest die starts",
@@ -40,12 +133,14 @@
         "theirs": "(opponent's)",
         "bar": "Checkers on the bar: {count}",
         "off": "Checkers borne off: {count}",
-        "using": "using {dice}"
+        "using": "using {dice}",
+        "waiting": "Checkers still to bring in: {count}"
     },
     "result": {
-        "SINGLE": "{name} won the game: {points} point",
-        "GAMMON": "{name} won a gammon: {points} points",
-        "BACKGAMMON": "{name} won a backgammon: {points} points"
+        "SINGLE": "{name} won the game: {points} points | {name} won the game: {points} point | {name} won the game: {points} points",
+        "GAMMON": "{name} won a gammon: {points} points | {name} won a gammon: {points} point | {name} won a gammon: {points} points",
+        "BACKGAMMON": "{name} won a backgammon: {points} points | {name} won a backgammon: {points} point | {name} won a backgammon: {points} points",
+        "DROPPED": "{name} won: the double was dropped, {points} points | {name} won: the double was dropped, {points} point | {name} won: the double was dropped, {points} points"
     },
     "statistics": {
         "hitsPerMatch": "Hits per match",
@@ -82,6 +177,35 @@
                 "Once all your checkers are in your home board, a die can take a checker off the point that matches it.",
                 "Win before your opponent bears off any checker for a gammon, worth two points in a match."
             ]
+        }
+    },
+    "cube": {
+        "stake": "Playing for {n} points | Playing for {n} point | Playing for {n} points",
+        "crawford": "Crawford game: no doubling",
+        "label": "Doubling cube: {value}",
+        "double": "Double the stakes to {value}",
+        "waiting": "Waiting for {name} to take or drop",
+        "offered": "{name} doubles to {value}",
+        "offer": {
+            "title": "Double the stakes to {value}?",
+            "take": "If {name} takes, this game is worth {n} points, and the cube is theirs: only they can double next. | If {name} takes, this game is worth {n} point, and the cube is theirs: only they can double next. | If {name} takes, this game is worth {n} points, and the cube is theirs: only they can double next.",
+            "drop": "If they drop, you win this game now, for {n} points. | If they drop, you win this game now, for {n} point. | If they drop, you win this game now, for {n} points.",
+            "confirm": "Double to {value}",
+            "cancel": "Not now"
+        },
+        "answer": {
+            "take": "Take: play on for {n} points. The cube is yours. | Take: play on for {n} point. The cube is yours. | Take: play on for {n} points. The cube is yours.",
+            "drop": "Drop: give up this game. {name} wins {n} points. | Drop: give up this game. {name} wins {n} point. | Drop: give up this game. {name} wins {n} points.",
+            "takeButton": "Take",
+            "dropButton": "Drop",
+            "match": {
+                "takeBothAt": "Take: win and you are at {own} / {total}; lose and {name} is at {other} / {total}.",
+                "takeYouWin": "Take: win and you win the match; lose and {name} is at {other} / {total}.",
+                "takeNameWins": "Take: win and you are at {own} / {total}; lose and {name} wins the match.",
+                "takeEither": "Take: whoever wins this game wins the match.",
+                "dropAt": "Drop: {name} goes to {other} / {total}.",
+                "dropWins": "Drop: {name} wins the match."
+            }
         }
     }
 }

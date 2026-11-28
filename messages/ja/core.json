@@ -2,7 +2,7 @@
     "_meta": {
         "language": "Casual Gaming Japanese (カジュアルゲーム向け日本語)",
         "rtl": false,
-        "total": 3814,
+        "total": 4040,
         "missing": 0
     },
     "error": {
@@ -163,6 +163,22 @@
             "notMatchmaking": "対戦相手をさがしている間は、この操作はできないよ。",
             "matchHost": "君はホスト（部屋の主）じゃないから、この操作はできないよ。",
             "admin": "この操作は管理者だけができるよ。"
+        },
+        "discord": {
+            "expired": "Discordでのログインに時間がかかりすぎたよ。もう一度試してね。",
+            "failed": "Discordでのログインがうまくいかなかったよ。もう一度試してね。",
+            "alreadyConnected": "君のアカウントはすでに別のDiscordアカウントと連携されているよ。先に連携を解除してね。",
+            "onlyWayIn": "先にメールアドレスを追加してね。今はDiscordがアカウントにログインする唯一の方法だよ。"
+        },
+        "discordInvite": {
+            "declined": "このチャレンジは断られたよ。",
+            "expired": "このリンクは期限切れだよ。Discordで新しいリンクをもらってね。",
+            "over": "この招待はもう終わったよ。",
+            "notForYou": "自分のチャレンジで両方の席には座れないよ。",
+            "couldNotJoin": "このテーブルに参加できなかったよ。",
+            "reserved": "このテーブルは、ほかの2人のプレイヤーのチャレンジ用に予約されているよ。",
+            "ranOut": "時間内にだれもこのチャレンジを受けなかったから、取り消されたよ。",
+            "paused": "Discordからのテーブルはちょっとだけ一時停止中だよ。少ししたらもう一度試してね。"
         }
     },
     "game": {
@@ -873,7 +889,9 @@
         "includesItems": "{n}個のアイテムが含まれてるよ | {n}個のアイテムが含まれてるよ | {n}個のアイテムが含まれてるよ",
         "restartNotice": "サーバーは{n}分後に再起動するよ。ゲームを終わらせてね。 | サーバーは{n}分後に再起動するよ。ゲームを終わらせてね。 | サーバーは{n}分後に再起動するよ。ゲームを終わらせてね。",
         "bombs": "{n}個の爆弾 | {n}個の爆弾 | {n}個の爆弾",
-        "tricks": "{n}トリック | {n}トリック | {n}トリック"
+        "tricks": "{n}トリック | {n}トリック | {n}トリック",
+        "dailyPlayed": "{n}人がプレイ | {n}人がプレイ | {n}人がプレイ",
+        "dailyStreakInARow": "{n}日連続 | {n}日連続 | {n}日連続"
     },
     "articles": {
         "title": "記事"
@@ -1142,7 +1160,6 @@
         "leaderboard": "ランキング",
         "elapsedTime": "{time} 経過した",
         "startingInTime": "{time}後に開始",
-        "averageWaitTimeBlank": "平均待ち時間 {value}",
         "averageBlank": "平均 {value}",
         "highestBlank": "高いよ。{value}",
         "showBlank": "{value}を表示",
@@ -1211,7 +1228,13 @@
         "siteName": "Bloob.io",
         "pool": "ビリヤード",
         "gamePreferences": "ゲーム設定",
-        "wrongBallIndicator": "間違ったボールの表示"
+        "wrongBallIndicator": "間違ったボールの表示",
+        "connect": "連携する",
+        "disconnect": "連携を解除する",
+        "discordAccount": "Discord",
+        "or": "または",
+        "leave": "退出する",
+        "challenge": "チャレンジ"
     },
     "match": {
         "quick": "クイック対戦",
@@ -1267,7 +1290,6 @@
             "gameUnsupported": "このゲームは読み込めなかった"
         },
         "matchmaking": {
-            "searching": "対戦相手をさがしているよ．．．",
             "matchFound": "対戦が見つかったよ！",
             "waitingForOpponent": "相手を待っているよ．．． {seconds}",
             "opponentAway": "相手がいなかったよ。引き続きさがしているよ。",
@@ -1285,26 +1307,93 @@
             "settings": {
                 "publicMatches": {
                     "title": "だれでも対戦",
-                    "description": "待ち時間を短くするために、だれでも参加できる対戦を作成するよ。",
                     "tooltip": [
                         "だれでも対戦は他のプレイヤーが作成するよ。これらの対戦はカスタマイズされた設定を持つかもしれないよ。",
                         "退出させられたり、ホストが対戦を放棄した場合、自動的に対戦相手探しに戻るよ。"
                     ]
                 },
                 "games": {
-                    "title": "ゲーム",
-                    "description": "最初に利用可能なゲームをプレイする。",
-                    "tooltip": [
-                        "複数のゲームを含めると待ち時間が短くなるよ。"
-                    ]
+                    "title": "ゲーム"
                 },
                 "opponentFilter": {
                     "title": "対戦相手フィルター",
-                    "description": "君の条件で対戦するよ。",
                     "tooltip": [
                         "厳しいフィルター使うと待ち時間が長くなるかもだけど、もっとピッタリな相手が見つかるよ。"
                     ]
                 }
+            },
+            "lookingForMatch": "対戦をさがしているよ",
+            "gamesSelected": "{n}個のゲームを選択中 | {n}個のゲームを選択中 | {n}個のゲームを選択中",
+            "findingOpponent": "対戦相手をさがしているよ",
+            "findingOpponentIn": "{game}で対戦相手をさがしているよ",
+            "stopSearching": "さがすのをやめる",
+            "picker": {
+                "title": "ゲームを選んでね",
+                "subtitle": "最初に見つかった対戦に参加するよ",
+                "search": "ゲームをさがす",
+                "clearSearch": "検索をクリア",
+                "all": "すべて",
+                "sortBy": "ゲームを並べ替え",
+                "sortPlaying": "プレイ人数順",
+                "sortName": "名前順",
+                "mostPlayed": "よく遊ぶゲーム",
+                "featured": "君へのおすすめ",
+                "more": "ほかのゲーム",
+                "results": "「{query}」の結果",
+                "similar": "ぴったりのゲームはないよ。「{query}」に近いゲーム",
+                "noResults": "「{query}」に合うゲームはないよ",
+                "noResultsHint": "別の名前やカテゴリーで試してみてね",
+                "clearSelection": "選択を解除",
+                "findMatch": "{n}個のゲームで対戦をさがす | {n}個のゲームで対戦をさがす | {n}個のゲームで対戦をさがす",
+                "pickToStart": "ゲームを選んでスタート"
+            },
+            "yourGames": "君のゲーム",
+            "usualDay": "いつもの1日",
+            "editGames": "ゲームを変更",
+            "othersSearching": "ほかに{n}人がさがし中 | ほかに{n}人がさがし中 | ほかに{n}人がさがし中",
+            "quietBusierFrom": "今は少なめ、{time}から増えるよ",
+            "quietNow": "この時間は少なめ",
+            "busyNow": "この時間はいつも多め",
+            "busyHours": "{game}の1日の時間ごとのいつもの混み具合だよ。ハイライトされたバーが今の時間だよ。",
+            "hourBusy": "{time}：いつも多め",
+            "hourQuiet": "{time}：いつも少なめ",
+            "filters": "フィルター",
+            "filtersHint": "変更中もキューに残ったままだよ",
+            "publicSummary": {
+                "excluded": "だれでも対戦なし",
+                "defaultOnly": "デフォルト設定のだれでも対戦",
+                "any": "すべてのだれでも対戦"
+            },
+            "opponentDescription": {
+                "any": "君のゲームをさがしている人ならだれでも",
+                "higherThanLvl5": "始めたばかりのプレイヤーはスキップ",
+                "higherThanLvl25": "経験豊富なプレイヤーのみ"
+            },
+            "publicDescription": {
+                "excluded": "君のために作られた新しい対戦だけ",
+                "defaultOnly": "標準ルールの公開ロビーにも参加するよ",
+                "any": "カスタムルールのロビーにも参加するよ"
+            },
+            "joining": "参加中...",
+            "waitingForMore": "あと{n}人のプレイヤーを待っているよ | あと{n}人のプレイヤーを待っているよ | あと{n}人のプレイヤーを待っているよ",
+            "seatsHint": "{seats}がそろうか、カウントダウンが終わるとその場のメンバーでスタートするよ",
+            "likely": {
+                "soon": "ほかにもさがしている人がいるよ。もうすぐ対戦が見つかりそう。",
+                "busy": "この時間はいつも多めだよ。すぐ見つかるはず。",
+                "quiet": "今は少なめだよ。いつもは{time}から増えるよ。",
+                "quietAll": "今は少なめだよ。少し時間がかかるかも。"
+            },
+            "runner": {
+                "play": "待ってる間にあそぼう",
+                "playWithKey": "{key}で待ってる間にあそべるよ",
+                "best": "ベスト",
+                "space": "スペース",
+                "gameOver": "ゲームオーバー",
+                "newBest": "ベスト更新",
+                "playAgain": "もう一回あそぶ",
+                "words": "まって ひま たのしい",
+                "royalFlush": "ロイヤルフラッシュ！",
+                "stopWithKey": "{key}でやめる"
             }
         },
         "info": {
@@ -1320,10 +1409,63 @@
             "joinById": "4桁のIDを入力することで（プライベート）対戦に参加できるよ。",
             "public": "利用可能な対戦をブラウズすることで誰でも参加できるよ。",
             "private": "プレイヤーはURLまたは4桁のIDを使用してのみ参加できるよ。",
+            "challenge": "チャレンジされたプレイヤーだけが参加できるよ。",
             "leave": "退出すると、もしかしたら戻れないかもしれないよ。",
             "leaveLast": "このゲームは君ひとりだから、退出すると対戦は閉じるよ。",
             "leaveAsHost": "君が退出すると、誰か他の人が新しいホストになるよ。",
             "leaveOrForfeit": "投了は負けになるけど、途中退出にはならないよ。"
+        },
+        "daily": {
+            "title": "デイリー",
+            "play": "プレイ",
+            "continue": "続ける",
+            "seeBoard": "今日のランキングを見る",
+            "stuckAt": "{total}枚中{progress}枚で手詰まり",
+            "putAway": "{total}枚中{progress}枚で中断",
+            "underWay": "プレイ中：{total}枚中{progress}枚",
+            "placeOf": "{played}人中{place}位",
+            "clearedShort": "クリア！{points}",
+            "scope": "誰の結果を表示するか",
+            "everyone": "みんな",
+            "place": "順位",
+            "time": "タイム",
+            "cleared": "クリア",
+            "stuck": "手詰まり",
+            "missed": "未プレイ",
+            "anonymous": "あるプレイヤー",
+            "resumed": "再開",
+            "resumedNote": "中断のあとで再開したよ。中断している間は時計が止まるよ。",
+            "longestYet": "過去最長だよ",
+            "backTomorrow": "明日はNo.{number}だよ",
+            "playedCounts": "プレイすればカウントされるから、連続記録は続くよ",
+            "fullBoard": "ランキング全体",
+            "longest": "最長: {n}",
+            "clearedDays": "{played}日中{cleared}日クリア",
+            "empty": "まだ誰もプレイしてないよ。",
+            "emptyFriends": "まだ友だちは誰もプレイしてないよ。",
+            "shareTitle": "Bloob.io デイリー · {game} · No.{number}",
+            "shareLine": "{title}：{result}",
+            "results": "デイリーの結果",
+            "error": {
+                "played": "今日のデイリーはもうプレイ済みだよ。また明日、新しいのに挑戦してね！",
+                "unavailable": "今日のデイリーはまだ準備中だよ。少ししてからもう一度試してね！"
+            },
+            "played": "プレイ済み",
+            "underWayShort": "プレイ中",
+            "playedDays": "{days}日中{played}日プレイ",
+            "wordsFound": "{n}語 | {n}語 | {n}語",
+            "foundOf": "{total}個中{progress}個発見",
+            "allFound": "全部発見",
+            "notAllFound": "見つけきれず",
+            "number": "No.{number}",
+            "solo": "ソロ",
+            "sameForEverybody": "みんな同じ",
+            "firstTryCounts": "最初の1回だけカウント",
+            "continueUntil": "{time}まで続きができるよ",
+            "playedCount": "{played}人がプレイ",
+            "clearedCount": "{cleared}人がクリア",
+            "streak": "連続",
+            "placeShort": "{place}位"
         }
     },
     "info": {
@@ -1400,7 +1542,11 @@
             "typing": "対戦中は決まったフレーズしか送れないんだ。Discordなら好きなことを書けるよ。",
             "community": "うちのサーバーではBloob.ioのプレイヤーが集まって、遊ぶ相手を見つけたり、ゲームの話をしたりしてるよ。",
             "free": "参加は無料で、いつでも抜けられるよ。DiscordのアカウントはBloob.ioのアカウントとは別だよ。",
-            "open": "新しいタブでDiscordを開くよ。"
+            "open": "新しいタブでDiscordを開くよ。",
+            "seatedHere": "Discordから席に着いたよ。",
+            "offer": "Discordからの{game}のテーブルの席が待ってるよ。準備ができたら座ってね。",
+            "takeSeat": "席に着く",
+            "declinedOne": "{name}がチャレンジを断ったよ。残りのメンバーで遊べるよ。"
         },
         "stallCall": {
             "title": "まだ待つ？",
@@ -1576,9 +1722,9 @@
                 "description": "メールアドレスを入力してね。初めてなら{name}を保存するよ。前に来たことがあるならログインするよ。",
                 "loginTitle": "ログイン",
                 "loginDescription": "パスワードは不要。メールでコードを送るよ。",
-                "levelNote": "{level}から、メールアドレスで{name}を保存できるよ。",
                 "note": "パスワードは不要だよ。メールアドレスはログインのためだけに使うよ。",
-                "send": "認証コードを送って"
+                "send": "認証コードを送って",
+                "discord": "Discordで続ける"
             },
             "code": {
                 "title": "メールを確認してね",
@@ -1694,32 +1840,41 @@
         "offerDraw": "相手に引き分けで対戦を終えるか聞くよ。受け入れられたら、勝ちにも負けにもならないよ。",
         "accountStatus": {
             "unsaved": {
-                "title": "このデバイスだけ",
-                "description": "メールアドレスで{name}を保存すると、進行状況を守ってどのデバイスでも遊べるよ。パスワードは不要。",
-                "level": "{level}になるとメールアドレスで{name}を保存できるよ。",
+                "title": "{name}を保存",
+                "description": "今はこのデバイスだけにあるよ。保存すればどのデバイスでも遊べるよ。",
+                "discord": "今はこのデバイスだけにあるよ。Discordならすぐに保存できるよ。",
+                "level": "今はこのデバイスだけにあるよ。{level}からメールアドレスで保存できるよ。",
                 "loginOnly": "ログインすると、進行状況を守ってどのデバイスでも遊べるよ。"
             },
             "devices": {
                 "title": "{name}はこのデバイスだけにいるよ",
-                "description": "メールアドレスで保存すると、ほかのデバイスでも遊べて、ここに表示されるよ。"
+                "description": "保存すれば、ほかのデバイスでも遊べて、ここに表示されるよ。"
             },
             "redeem": {
                 "title": "まず{name}を保存してね",
-                "description": "引き換えたものはアカウントに入るから、メールアドレスが必要だよ。"
+                "description": "引き換えたものはアカウントに入るよ。"
             },
             "saved": {
                 "title": "{email}に保存済み",
                 "description": "進行状況はどのデバイスにも引き継がれるよ。"
             },
-            "save": "メールで保存",
-            "haveAccount": "アカウントを持ってる",
+            "login": {
+                "title": "もうアカウントを持ってる？",
+                "description": "ログインすると、続きから遊べるよ。"
+            },
+            "email": "メール",
             "changeEmail": "メールアドレスを変更",
             "logout": {
                 "description": "このデバイス、またはマイデバイスからすべてのデバイス。"
             },
             "logoutEverywhere": "すべてのデバイスからログアウト"
         },
-        "wrongBallIndicator": "ビリヤードのゲームで、最初に当ててはいけないボールを狙うと、照準ラインが赤くなり×印が表示されます。"
+        "wrongBallIndicator": "ビリヤードのゲームで、最初に当ててはいけないボールを狙うと、照準ラインが赤くなり×印が表示されます。",
+        "discord": {
+            "connected": "君のDiscordアカウントは連携されているよ。",
+            "notConnected": "未連携",
+            "onlyWayIn": "君のDiscordアカウントは連携されているよ。連携を解除するにはメールアドレスを追加してね。"
+        }
     },
     "share": {
         "tiers": {
@@ -1771,7 +1926,7 @@
         },
         "call": {
             "title": "次の対戦",
-            "waiting": "待機中…",
+            "waiting": "待機中...",
             "single": "1回勝負",
             "series": "最大{count}ゲーム、{own}–{other}",
             "startsIn": "{seconds}秒後に開始",

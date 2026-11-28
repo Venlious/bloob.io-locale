@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Swedish",
         "rtl": false,
-        "total": 3814,
+        "total": 4040,
         "missing": 0
     },
     "error": {
@@ -163,6 +163,22 @@
             "notMatchmaking": "Du kan inte göra det här när du matchar.",
             "matchHost": "Du är inte värd och kan inte göra det här.",
             "admin": "Bara admins får göra det här."
+        },
+        "discord": {
+            "expired": "Inloggningen med Discord tog för lång tid. Försök igen.",
+            "failed": "Inloggningen med Discord fungerade inte. Försök igen.",
+            "alreadyConnected": "Ditt konto är redan kopplat till ett Discord-konto. Koppla bort det först.",
+            "onlyWayIn": "Lägg till en e-postadress först. Just nu är Discord det enda sättet att logga in på ditt konto."
+        },
+        "discordInvite": {
+            "declined": "Utmaningen blev nekad.",
+            "expired": "Länken har gått ut. Be om en ny på Discord.",
+            "over": "Den här inbjudan är över.",
+            "notForYou": "Du kan inte ta båda platserna i din egen utmaning.",
+            "couldNotJoin": "Du kunde inte gå med vid det här bordet.",
+            "reserved": "Det här bordet är reserverat för en utmaning mellan två andra spelare.",
+            "ranOut": "Ingen antog utmaningen i tid, så den ställdes in.",
+            "paused": "Bord från Discord är pausade en stund. Försök igen snart."
         }
     },
     "game": {
@@ -873,7 +889,9 @@
         "includesItems": "Inkluderar {n} saker | Inkluderar {n} sak | Inkluderar {n} saker",
         "restartNotice": "Servern kommer starta om om {n} minuter. Avsluta ditt spel. | Servern kommer starta om om {n} minut. Avsluta ditt spel. | Servern kommer starta om om {n} minuter. Avsluta ditt spel.",
         "bombs": "{n} bomber | {n} bomb | {n} bomber",
-        "tricks": "{n} stick | {n} stick | {n} stick"
+        "tricks": "{n} stick | {n} stick | {n} stick",
+        "dailyPlayed": "{n} har spelat | {n} har spelat | {n} har spelat",
+        "dailyStreakInARow": "{n} dagar i rad | {n} dag i rad | {n} dagar i rad"
     },
     "articles": {
         "title": "Artiklar"
@@ -1142,7 +1160,6 @@
         "leaderboard": "Topplista",
         "elapsedTime": "{time} har passerat",
         "startingInTime": "Startar om {time}",
-        "averageWaitTimeBlank": "Genomsnittlig väntetid {value}",
         "averageBlank": "Genomsnittlig {value}",
         "highestBlank": "Hög. {value}",
         "showBlank": "Visa {value}",
@@ -1211,7 +1228,13 @@
         "siteName": "Bloob.io",
         "pool": "Biljard",
         "gamePreferences": "Spelinställningar",
-        "wrongBallIndicator": "Indikator för fel boll"
+        "wrongBallIndicator": "Indikator för fel boll",
+        "connect": "Koppla",
+        "disconnect": "Koppla bort",
+        "discordAccount": "Discord",
+        "or": "eller",
+        "leave": "Lämna",
+        "challenge": "Utmaning"
     },
     "match": {
         "quick": "Snabbmatch",
@@ -1267,7 +1290,6 @@
             "gameUnsupported": "Spelet kunde inte laddas"
         },
         "matchmaking": {
-            "searching": "Letar efter en match...",
             "matchFound": "Match hittad!",
             "waitingForOpponent": "Väntar på din motståndare... {seconds}",
             "opponentAway": "Din motståndare var inte här. Vi letar fortfarande åt dig.",
@@ -1285,26 +1307,93 @@
             "settings": {
                 "publicMatches": {
                     "title": "Offentliga matcher",
-                    "description": "Minska väntetiden.",
                     "tooltip": [
                         "Offentliga matcher skapas av andra spelare. Dessa matcher kan ha anpassade inställningar.",
                         "Du kommer automatiskt att återvända till matchning om du blir sparkad eller om värden överger matchen."
                     ]
                 },
                 "games": {
-                    "title": "Spel",
-                    "description": "Spela första tillgängliga spelet.",
-                    "tooltip": [
-                        "Att inkludera flera spel kan minska väntetiden."
-                    ]
+                    "title": "Spel"
                 },
                 "opponentFilter": {
                     "title": "Motståndarfiltret",
-                    "description": "Matcha baserat på dina kriterier.",
                     "tooltip": [
                         "Att använda strikta filter kan göra att du får vänta längre, men ger mer skräddarsydda matcher."
                     ]
                 }
+            },
+            "lookingForMatch": "Letar efter en match",
+            "gamesSelected": "{n} spel valda | {n} spel valt | {n} spel valda",
+            "findingOpponent": "Letar efter en motståndare",
+            "findingOpponentIn": "Letar efter en motståndare i {game}",
+            "stopSearching": "Sluta söka",
+            "picker": {
+                "title": "Välj dina spel",
+                "subtitle": "Du går med i den första matchen som hittas",
+                "search": "Sök spel",
+                "clearSearch": "Rensa sökningen",
+                "all": "Alla",
+                "sortBy": "Sortera spel",
+                "sortPlaying": "Antal som spelar",
+                "sortName": "Namn (A-Ö)",
+                "mostPlayed": "Dina mest spelade",
+                "featured": "Utvalda för dig",
+                "more": "Fler spel",
+                "results": "Resultat för \"{query}\"",
+                "similar": "Inga exakta träffar. Liknar \"{query}\"",
+                "noResults": "Inga spel matchar \"{query}\"",
+                "noResultsHint": "Testa ett annat namn eller en annan kategori",
+                "clearSelection": "Rensa valet",
+                "findMatch": "Hitta en match i {n} spel | Hitta en match i {n} spel | Hitta en match i {n} spel",
+                "pickToStart": "Välj ett spel för att börja"
+            },
+            "yourGames": "Dina spel",
+            "usualDay": "En vanlig dag",
+            "editGames": "Ändra spel",
+            "othersSearching": "{n} andra söker | {n} annan söker | {n} andra söker",
+            "quietBusierFrom": "Lugnt nu, mer folk från {time}",
+            "quietNow": "Lugnt den här tiden",
+            "busyNow": "Brukar vara mycket folk den här tiden",
+            "busyHours": "Hur mycket folk det brukar vara i {game} under dagen, timme för timme. Den markerade stapeln är nu.",
+            "hourBusy": "{time}: brukar vara mycket folk",
+            "hourQuiet": "{time}: brukar vara lugnt",
+            "filters": "Filter",
+            "filtersHint": "Du stannar kvar i kön medan du ändrar de här",
+            "publicSummary": {
+                "excluded": "Inga offentliga matcher",
+                "defaultOnly": "Offentliga matcher med standardinställningar",
+                "any": "Alla offentliga matcher"
+            },
+            "opponentDescription": {
+                "any": "Alla som söker i dina spel",
+                "higherThanLvl5": "Hoppar över helt nya spelare",
+                "higherThanLvl25": "Bara erfarna spelare"
+            },
+            "publicDescription": {
+                "excluded": "Bara nya matcher som skapas åt dig",
+                "defaultOnly": "Gå också med i öppna lobbyer med standardregler",
+                "any": "Gå också med i lobbyer med anpassade regler"
+            },
+            "joining": "Går med...",
+            "waitingForMore": "Väntar på {n} spelare till | Väntar på {n} spelare till | Väntar på {n} spelare till",
+            "seatsHint": "Startar när {seats} har gått med, eller när nedräkningen är slut med de som är här",
+            "likely": {
+                "soon": "Andra söker också. En match borde vara nära.",
+                "busy": "Brukar vara mycket folk den här tiden. Det borde inte ta lång tid.",
+                "quiet": "Lugnt just nu. Det brukar bli mer folk från {time}.",
+                "quietAll": "Lugnt just nu. Det kan ta ett tag."
+            },
+            "runner": {
+                "play": "Spela medan du väntar",
+                "playWithKey": "Tryck på {key} för att spela medan du väntar",
+                "best": "Rekord",
+                "space": "Mellanslag",
+                "gameOver": "Spelet är slut",
+                "newBest": "Nytt rekord",
+                "playAgain": "Spela igen",
+                "words": "VÄNTA TRÅKIGT KUL",
+                "royalFlush": "Royal flush!",
+                "stopWithKey": "{key} för att sluta spela"
             }
         },
         "info": {
@@ -1320,10 +1409,63 @@
             "joinById": "Du kan gå med i en (privat) match genom att fylla i det fyrsiffriga ID:t.",
             "public": "Vem som helst kan gå med genom att kolla på tillgängliga matcher.",
             "private": "Spelare kan bara gå med genom att använda URL:en eller 4-siffriga ID.",
+            "challenge": "Bara de utmanade spelarna kan gå med.",
             "leave": "Du kanske inte kan komma tillbaka om du väljer att lämna.",
             "leaveLast": "Eftersom du är den enda personen i spelet, kommer matchen att stängas när du lämnar.",
             "leaveAsHost": "Nån annan blir den nya värden när du sticker.",
             "leaveOrForfeit": "Att ge upp räknas som en förlust, men inte som att lämna matchen."
+        },
+        "daily": {
+            "title": "Dagens spel",
+            "play": "Spela",
+            "continue": "Fortsätt",
+            "seeBoard": "Se dagens topplista",
+            "stuckAt": "Fast på {progress} av {total}",
+            "putAway": "Pausat vid {progress} av {total}",
+            "underWay": "Pågår: {progress} av {total}",
+            "placeOf": "#{place} av {played}",
+            "clearedShort": "Klarad! {points}",
+            "scope": "Vems resultat du ser",
+            "everyone": "Alla",
+            "place": "Placering",
+            "time": "Tid",
+            "cleared": "Klarad",
+            "stuck": "Fast",
+            "missed": "Missad",
+            "anonymous": "En spelare",
+            "resumed": "Återupptaget",
+            "resumedNote": "Togs upp igen efter ett avbrott. Klockan står still medan ett försök är pausat.",
+            "longestYet": "Din längsta hittills",
+            "backTomorrow": "Tillbaka i morgon för nr {number}",
+            "playedCounts": "Det räknas att spela, så din svit fortsätter",
+            "fullBoard": "Hela topplistan",
+            "longest": "Längsta: {n}",
+            "clearedDays": "{cleared} av {played} klarade",
+            "empty": "Ingen har spelat den än.",
+            "emptyFriends": "Ingen av dina kompisar har spelat den än.",
+            "shareTitle": "Bloob.io Dagens spel · {game} · Nr {number}",
+            "shareLine": "{title}: {result}",
+            "results": "Resultat från dagens spel",
+            "error": {
+                "played": "Du har redan spelat dagens spel. Kom tillbaka i morgon för ett nytt!",
+                "unavailable": "Dagens spel är inte klart än. Försök igen om en stund!"
+            },
+            "played": "Spelad",
+            "underWayShort": "Pågår",
+            "playedDays": "Spelat {played} av {days}",
+            "wordsFound": "{n} ord | {n} ord | {n} ord",
+            "foundOf": "Hittade {progress} av {total}",
+            "allFound": "Alla hittade",
+            "notAllFound": "Inte alla hittade",
+            "number": "Nr {number}",
+            "solo": "Solo",
+            "sameForEverybody": "samma för alla",
+            "firstTryCounts": "första försöket räknas",
+            "continueUntil": "fortsätt till {time}",
+            "playedCount": "{played} har spelat",
+            "clearedCount": "{cleared} klarade",
+            "streak": "Svit",
+            "placeShort": "#{place}"
         }
     },
     "info": {
@@ -1400,7 +1542,11 @@
             "typing": "I en match kan du bara skicka de färdiga fraserna. På Discord skriver du vad du vill.",
             "community": "På vår server träffas Bloob.io-spelare, hittar någon att spela med och snackar om spelen.",
             "free": "Det är gratis att gå med och du kan lämna när du vill. Ett Discord-konto är skilt från ditt Bloob.io-konto.",
-            "open": "Öppnar Discord i en ny flik."
+            "open": "Öppnar Discord i en ny flik.",
+            "seatedHere": "Du tog din plats från Discord.",
+            "offer": "Din plats vid ett {game}-bord från Discord väntar. Ta den när du är redo.",
+            "takeSeat": "Ta plats",
+            "declinedOne": "{name} nekade utmaningen. Ni kan fortfarande spela utan dem."
         },
         "stallCall": {
             "title": "Väntar du fortfarande?",
@@ -1576,9 +1722,9 @@
                 "description": "Ange din e-postadress. Är du ny sparar vi {name}. Har du varit här förut loggar vi in dig.",
                 "loginTitle": "Logga in",
                 "loginDescription": "Inget lösenord. Vi mejlar dig en kod.",
-                "levelNote": "Du kan spara {name} med en e-postadress från {level}.",
                 "note": "Inget lösenord. Vi använder bara din e-postadress för att logga in dig.",
-                "send": "Skicka en kod till mig"
+                "send": "Skicka en kod till mig",
+                "discord": "Fortsätt med Discord"
             },
             "code": {
                 "title": "Kolla din e-post",
@@ -1694,32 +1840,41 @@
         "offerDraw": "Din motståndare får frågan om matchen ska sluta oavgjort. Om de accepterar räknas det varken som vinst eller förlust.",
         "accountStatus": {
             "unsaved": {
-                "title": "Bara på den här enheten",
-                "description": "Spara {name} med din e-post så att dina framsteg är säkra och du kan spela på alla enheter. Inget lösenord.",
-                "level": "Nå {level} för att spara {name} med din e-post.",
+                "title": "Spara {name}",
+                "description": "Bara på den här enheten än så länge. Spara för att spela på vilken enhet som helst.",
+                "discord": "Bara på den här enheten än så länge. Discord sparar det direkt.",
+                "level": "Bara på den här enheten än så länge. Du kan spara med din e-postadress från {level}.",
                 "loginOnly": "Logga in för att behålla dina framsteg och spela på alla enheter."
             },
             "devices": {
                 "title": "{name} finns bara på den här enheten",
-                "description": "Spara med din e-post för att spela på dina andra enheter också och se dem här."
+                "description": "Spara för att spela på dina andra enheter också och se dem här."
             },
             "redeem": {
                 "title": "Spara {name} först",
-                "description": "Det du löser in hamnar på ditt konto, så det behöver din e-post."
+                "description": "Det du löser in hamnar på ditt konto."
             },
             "saved": {
                 "title": "Sparat till {email}",
                 "description": "Dina framsteg följer med till alla enheter."
             },
-            "save": "Spara med e-post",
-            "haveAccount": "Jag har ett konto",
+            "login": {
+                "title": "Har du redan ett konto?",
+                "description": "Logga in för att fortsätta där du slutade."
+            },
+            "email": "E-post",
             "changeEmail": "Byt e-post",
             "logout": {
                 "description": "På den här enheten, eller på alla från Mina enheter."
             },
             "logoutEverywhere": "Logga ut överallt"
         },
-        "wrongBallIndicator": "I biljardspelen blir siktlinjen röd och visar ett kryss när den pekar på en boll du inte får träffa först."
+        "wrongBallIndicator": "I biljardspelen blir siktlinjen röd och visar ett kryss när den pekar på en boll du inte får träffa först.",
+        "discord": {
+            "connected": "Ditt Discord-konto är kopplat.",
+            "notConnected": "Inte kopplat",
+            "onlyWayIn": "Ditt Discord-konto är kopplat. Lägg till en e-postadress för att kunna koppla bort det."
+        }
     },
     "share": {
         "tiers": {
@@ -1771,7 +1926,7 @@
         },
         "call": {
             "title": "Din nästa match",
-            "waiting": "Väntar…",
+            "waiting": "Väntar...",
             "single": "En match avgör",
             "series": "Bäst av {count}, {own}–{other}",
             "startsIn": "Startar om {seconds} s",

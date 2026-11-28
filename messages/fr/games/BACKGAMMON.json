@@ -10,6 +10,62 @@
                 "enabled": "**Activé** : gagner avant que ton adversaire ait sorti une seule dame est un gammon et rapporte deux points. S'il lui reste une dame sur la barre ou dans ton jan intérieur, c'est un backgammon et cela rapporte trois.",
                 "disabled": "**Désactivé** : chaque victoire rapporte un point."
             }
+        },
+        "layout": {
+            "title": "Position de départ",
+            "help": "Où les dames commencent : la position habituelle, le Nackgammon (deux dames reculées sur la flèche 24 de chaque côté), l'Hypergammon (trois dames chacun) ou l'Acey Deucey (les quinze hors du plateau, avec ses propres règles).",
+            "data": {
+                "STANDARD": {
+                    "title": "Standard",
+                    "description": "Quinze dames aux places habituelles"
+                },
+                "NACKGAMMON": {
+                    "title": "Nackgammon",
+                    "description": "Deux dames commencent plus loin"
+                },
+                "HYPERGAMMON": {
+                    "title": "Hypergammon",
+                    "description": "Trois dames chacun, sur les flèches du fond"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "Les quinze commencent hors du plateau, et un 1-2 te donne le double de ton choix"
+                }
+            }
+        },
+        "fivePerPoint": {
+            "title": "Cinq dames par flèche",
+            "help": "Aucune flèche ne peut porter plus de cinq dames d'un même joueur, comme dans le vieux backgammon anglais. La sortie des dames n'est pas limitée."
+        },
+        "barFirst": {
+            "title": "Les dames frappées rentrent d'abord",
+            "help": {
+                "enabled": "**Activé** : une dame frappée doit rentrer avant qu'une autre dame puisse bouger.",
+                "disabled": "**Désactivé** : une dame frappée attend avec celles qui doivent encore entrer, et tu peux d'abord bouger les autres."
+            }
+        },
+        "keepBonus": {
+            "title": "Garder le bonus si tu es bloqué",
+            "help": {
+                "enabled": "**Activé** : un 1-2 ou un double que tu ne peux jouer qu'en partie te donne quand même le double et le lancer en plus.",
+                "disabled": "**Désactivé** : si tu ne peux pas jouer tout un 1-2 ou son double, ton tour s'arrête là."
+            }
+        },
+        "cube": {
+            "title": "Videau",
+            "help": "Double la mise avant de lancer les dés. Ton adversaire accepte et continue pour deux fois plus de points, le videau étant alors à lui, ou refuse et perd la partie. En match, la règle de Crawford s'applique : la partie qui suit celle où un joueur arrive à un point de la victoire se joue sans videau."
+        },
+        "cubeLimit": {
+            "title": "Limite du videau",
+            "help": "Jusqu'où la mise peut être doublée.",
+            "data": {
+                "limit": "Jusqu'à 64",
+                "none": "Sans limite"
+            }
+        },
+        "jacoby": {
+            "title": "Règle de Jacoby",
+            "help": "En partie simple, les gammons et les backgammons ne comptent qu'une fois le videau tourné."
         }
     },
     "presets": {
@@ -20,10 +76,47 @@
         "match": {
             "title": "Match en 5 points",
             "description": "Le premier à cinq points, les gammons comptent double"
+        },
+        "nackgammon": {
+            "title": "Nackgammon",
+            "description": "Deux dames commencent plus loin, pour des parties plus longues et plus tactiques"
+        },
+        "hypergammon": {
+            "title": "Hypergammon",
+            "description": "Trois dames chacun, au fond du plateau : une partie entière en quelques minutes"
+        },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Toutes les dames commencent hors du plateau. Fais un 1-2 pour choisir n'importe quel double et relancer"
+        },
+        "oldEnglish": {
+            "title": "Anciennes règles anglaises",
+            "description": "Pas plus de cinq dames par flèche, et pas de videau"
         }
     },
     "undo": "Annuler le coup",
     "noMoves": "Aucun coup possible",
+    "aceyDeucey": {
+        "title": "Acey-deucey !",
+        "oneTwo": "Joue le 1 et le 2, puis choisis un double",
+        "pick": {
+            "title": "Acey-deucey ! Choisis un double",
+            "detail": "Joue-le quatre fois, puis relance",
+            "hover": "Quatre {n}, puis relance",
+            "die": "Quatre {n}"
+        },
+        "double": {
+            "title": "Quatre {n}",
+            "detail": "Puis relance"
+        },
+        "bonus": "Relance",
+        "theirs": {
+            "oneTwo": "{name} a fait un 1-2",
+            "pick": "{name} choisit un double",
+            "double": "{name} a choisi quatre {n} et relance ensuite",
+            "bonus": "{name} relance"
+        }
+    },
     "opening": {
         "title": "Lancer d'ouverture",
         "highest": "Le dé le plus haut commence",
@@ -40,12 +133,14 @@
         "theirs": "(celles de l'adversaire)",
         "bar": "Dames sur la barre : {count}",
         "off": "Dames sorties : {count}",
-        "using": "avec {dice}"
+        "using": "avec {dice}",
+        "waiting": "Dames encore à entrer : {count}"
     },
     "result": {
-        "SINGLE": "{name} a gagné la partie : {points} point",
-        "GAMMON": "{name} a gagné un gammon : {points} points",
-        "BACKGAMMON": "{name} a gagné un backgammon : {points} points"
+        "SINGLE": "{name} a gagné la partie : {points} points | {name} a gagné la partie : {points} point | {name} a gagné la partie : {points} points",
+        "GAMMON": "{name} a gagné un gammon : {points} points | {name} a gagné un gammon : {points} point | {name} a gagné un gammon : {points} points",
+        "BACKGAMMON": "{name} a gagné un backgammon : {points} points | {name} a gagné un backgammon : {points} point | {name} a gagné un backgammon : {points} points",
+        "DROPPED": "{name} a gagné, le double a été refusé : {points} points | {name} a gagné, le double a été refusé : {points} point | {name} a gagné, le double a été refusé : {points} points"
     },
     "statistics": {
         "hitsPerMatch": "Frappes par match",
@@ -82,6 +177,35 @@
                 "Une fois toutes tes dames dans ton jan intérieur, un dé peut sortir une dame de la flèche qui lui correspond.",
                 "Gagne avant que ton adversaire sorte une dame et c'est un gammon, qui vaut deux points dans un match."
             ]
+        }
+    },
+    "cube": {
+        "stake": "En jeu : {n} points | En jeu : {n} point | En jeu : {n} points",
+        "crawford": "Partie Crawford : pas de double",
+        "label": "Videau : {value}",
+        "double": "Doubler la mise à {value}",
+        "waiting": "{name} doit accepter ou refuser",
+        "offered": "{name} double à {value}",
+        "offer": {
+            "title": "Doubler la mise à {value} ?",
+            "take": "Si {name} accepte, cette partie vaut {n} points et le videau est à {name} : seul {name} pourra doubler ensuite. | Si {name} accepte, cette partie vaut {n} point et le videau est à {name} : seul {name} pourra doubler ensuite. | Si {name} accepte, cette partie vaut {n} points et le videau est à {name} : seul {name} pourra doubler ensuite.",
+            "drop": "Si ton adversaire refuse, tu gagnes la partie tout de suite, pour {n} points. | Si ton adversaire refuse, tu gagnes la partie tout de suite, pour {n} point. | Si ton adversaire refuse, tu gagnes la partie tout de suite, pour {n} points.",
+            "confirm": "Doubler à {value}",
+            "cancel": "Pas maintenant"
+        },
+        "answer": {
+            "take": "Accepter : on continue pour {n} points. Le videau est à toi. | Accepter : on continue pour {n} point. Le videau est à toi. | Accepter : on continue pour {n} points. Le videau est à toi.",
+            "drop": "Refuser : tu abandonnes cette partie. {name} gagne {n} points. | Refuser : tu abandonnes cette partie. {name} gagne {n} point. | Refuser : tu abandonnes cette partie. {name} gagne {n} points.",
+            "takeButton": "Accepter",
+            "dropButton": "Refuser",
+            "match": {
+                "takeBothAt": "Accepter : si tu gagnes, tu es à {own} / {total} ; si tu perds, {name} est à {other} / {total}.",
+                "takeYouWin": "Accepter : si tu gagnes, tu gagnes le match ; si tu perds, {name} est à {other} / {total}.",
+                "takeNameWins": "Accepter : si tu gagnes, tu es à {own} / {total} ; si tu perds, {name} gagne le match.",
+                "takeEither": "Accepter : le gagnant de cette partie gagne le match.",
+                "dropAt": "Refuser : {name} passe à {other} / {total}.",
+                "dropWins": "Refuser : {name} gagne le match."
+            }
         }
     }
 }

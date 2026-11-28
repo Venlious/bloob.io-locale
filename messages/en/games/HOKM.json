@@ -54,6 +54,10 @@
                 "five": "The classic call, made on a third of a hand",
                 "thirteen": "The Hakem sees everything before deciding"
             }
+        },
+        "reshuffle": {
+            "title": "No-trump reshuffle",
+            "help": "A player dealt no trump may have the round dealt again on their first turn. Not the Hakem, who chose the suit."
         }
     },
     "presets": {
@@ -109,7 +113,7 @@
         "title": "Round history"
     },
     "scoreboard": {
-        "target": "First to {amount}, {tricks} tricks a round"
+        "target": "First to {amount}"
     },
     "help": {
         "rules": {
@@ -130,22 +134,36 @@
             "title": "Taking tricks",
             "description": [
                 "Whoever takes a trick leads the next one, so winning it also means choosing what everybody has to follow next.",
-                "The first team to take **seven** tricks wins the round — the rest of the cards are not played out."
+                "The first team to take **seven** tricks wins the round, and the rest of the cards are not played out."
             ]
         },
         "scoring": {
             "title": "Scoring",
             "description": [
                 "Each round won is worth a point, and the first team to seven points wins the match. Taking all seven tricks is a **Kot**, and is worth two.",
-                "The Hakem stays Hakem while their team keeps winning; the moment they lose a round, the call passes to the player on their right."
+                "The Hakem stays Hakem while their team keeps winning; the moment they lose a round, the call passes to the player on their left, on the other team."
             ]
         },
         "bots": {
             "title": "Bots",
             "description": [
                 "Easy bots play any card the rules allow. Normal bots read the trick in front of them: they stay out of a partner's winning trick and take the rest as cheaply as they can.",
-                "Hard bots count the cards. They remember which suits you have run out of, which high cards are gone, and which suits you have chosen to lead — so leading a suit at your partner twice is something they will answer."
+                "Hard bots count the cards. They remember which suits you have run out of, which high cards are gone, and which suits you have chosen to lead, so leading a suit at your partner twice is something they will answer."
             ]
+        }
+    },
+    "reshuffle": {
+        "prompt": {
+            "title": "You have no trump",
+            "description": "Call for a reshuffle? The cards are dealt again and the Hakem calls trump again.",
+            "keep": "Keep playing",
+            "reshuffle": "Reshuffle"
+        },
+        "announcement": {
+            "name": "{name} called for a reshuffle",
+            "self": "You called for a reshuffle",
+            "reason": "No trump in their hand",
+            "reasonSelf": "No trump in your hand"
         }
     }
 }

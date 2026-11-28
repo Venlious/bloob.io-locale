@@ -54,6 +54,10 @@
                 "five": "Den klassiske meldingen, på en tredjedel av hånda",
                 "thirteen": "Hakem ser alt før han bestemmer seg"
             }
+        },
+        "reshuffle": {
+            "title": "Ny stokking uten trumf",
+            "help": "En spiller uten trumf på hånden kan få runden delt ut på nytt i sin første tur. Ikke Hakem, som valgte fargen."
         }
     },
     "presets": {
@@ -109,7 +113,7 @@
         "title": "Rundehistorikk"
     },
     "scoreboard": {
-        "target": "Først til {amount}, {tricks} stikk per spill"
+        "target": "Først til {amount}"
     },
     "help": {
         "rules": {
@@ -129,23 +133,37 @@
         "tricks": {
             "title": "Å ta stikk",
             "description": [
-                "Den som tar et stikk, spiller ut det neste — å vinne betyr altså også å velge fargen alle andre må følge.",
-                "Det første laget som tar **sju** stikk, vinner spillet — resten av kortene spilles ikke ut."
+                "Den som tar et stikk, spiller ut det neste. Å vinne betyr altså også å velge fargen alle andre må følge.",
+                "Det første laget som tar **sju** stikk, vinner spillet, og resten av kortene spilles ikke ut."
             ]
         },
         "scoring": {
             "title": "Poeng",
             "description": [
                 "Hvert vunnet spill er verdt ett poeng, og det første laget til sju poeng vinner kampen. Å ta alle sju stikkene er en **Kot** og teller for to.",
-                "Hakem forblir Hakem så lenge laget vinner; i det øyeblikket de taper et spill, går meldingen til spilleren til høyre for ham."
+                "Hakem forblir Hakem så lenge laget vinner; i det øyeblikket de taper et spill, går meldingen til spilleren til venstre for ham, på det andre laget."
             ]
         },
         "bots": {
             "title": "Boter",
             "description": [
                 "Lette boter legger et hvilket som helst lovlig kort. Vanlige boter leser stikket foran seg: de holder seg unna stikket makkeren allerede vinner, og tar resten så billig som mulig.",
-                "Vanskelige boter teller kort. De husker hvilke farger du er tom for, hvilke høye kort som er gått, og hvilke farger du spiller ut — å spille ut samme farge to ganger hos makkeren din er noe de svarer på."
+                "Vanskelige boter teller kort. De husker hvilke farger du er tom for, hvilke høye kort som er gått, og hvilke farger du spiller ut, så å spille ut samme farge to ganger hos makkeren din er noe de svarer på."
             ]
+        }
+    },
+    "reshuffle": {
+        "prompt": {
+            "title": "Du har ingen trumf",
+            "description": "Vil du be om ny stokking? Kortene deles ut på nytt, og Hakem velger trumf igjen.",
+            "keep": "Spill videre",
+            "reshuffle": "Stokk på nytt"
+        },
+        "announcement": {
+            "name": "{name} ba om ny stokking",
+            "self": "Du ba om ny stokking",
+            "reason": "Ingen trumf på hånden",
+            "reasonSelf": "Ingen trumf på hånden din"
         }
     }
 }

@@ -10,6 +10,62 @@
                 "enabled": "**Käytössä**: Jos voitat ennen kuin vastustaja on pelannut pois yhtäkään nappulaa, se on gammon ja antaa kaksi pistettä. Jos vastustajalla on vielä nappula palkilla tai kotialueellasi, se on backgammon ja antaa kolme.",
                 "disabled": "**Pois käytöstä**: Jokainen voitto antaa yhden pisteen."
             }
+        },
+        "layout": {
+            "title": "Aloitusasetelma",
+            "help": "Mistä nappulat lähtevät: tavallinen asetelma, Nackgammon (kummallakin puolella kaksi nappulaa taaempana pisteessä 24), Hypergammon (kolme nappulaa kummallakin) tai Acey Deucey (kaikki viisitoista laudan ulkopuolella, omilla säännöillään).",
+            "data": {
+                "STANDARD": {
+                    "title": "Tavallinen",
+                    "description": "Viisitoista nappulaa tavallisilla paikoilla"
+                },
+                "NACKGAMMON": {
+                    "title": "Nackgammon",
+                    "description": "Kaksi nappulaa lähtee kauempaa"
+                },
+                "HYPERGAMMON": {
+                    "title": "Hypergammon",
+                    "description": "Kolme nappulaa kummallakin, kaukaisimmissa pisteissä"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "Kaikki viisitoista lähtevät laudan ulkopuolelta, ja 1-2 antaa valita tuplat"
+                }
+            }
+        },
+        "fivePerPoint": {
+            "title": "Viisi nappulaa pisteessä",
+            "help": "Missään pisteessä ei saa olla yli viittä saman pelaajan nappulaa, kuten vanhassa englantilaisessa backgammonissa. Pois pelaamista tämä ei rajoita."
+        },
+        "barFirst": {
+            "title": "Lyödyt nappulat ensin peliin",
+            "help": {
+                "enabled": "**Käytössä**: Lyödyn nappulan on palattava peliin ennen kuin mikään muu nappula voi liikkua.",
+                "disabled": "**Pois käytöstä**: Lyöty nappula odottaa muiden peliin tulevien kanssa, ja voit siirtää muita ensin."
+            }
+        },
+        "keepBonus": {
+            "title": "Bonus säilyy jumissakin",
+            "help": {
+                "enabled": "**Käytössä**: Jos voit pelata 1-2:n tai tuplat vain osittain, saat silti tuplat ja lisäheiton.",
+                "disabled": "**Pois käytöstä**: Jos et voi pelata koko 1-2:ta tai sen tuplia, vuorosi päättyy siihen."
+            }
+        },
+        "cube": {
+            "title": "Tuplauskuutio",
+            "help": "Tuplaa panos ennen kuin heität. Vastustaja ottaa vastaan ja pelaa jatkossa kaksinkertaisista pisteistä, ja kuutio on nyt hänen, tai luovuttaa ja häviää pelin. Ottelussa noudatetaan Crawfordin sääntöä: peli sen jälkeen, kun pelaaja on yhden pisteen päässä voitosta, pelataan ilman kuutiota."
+        },
+        "cubeLimit": {
+            "title": "Kuution raja",
+            "help": "Kuinka korkealle panoksen voi tuplata.",
+            "data": {
+                "limit": "Enintään 64",
+                "none": "Ei rajaa"
+            }
+        },
+        "jacoby": {
+            "title": "Jacobyn sääntö",
+            "help": "Yksittäisessä pelissä gammonit ja backgammonit lasketaan vasta, kun kuutiota on käännetty."
         }
     },
     "presets": {
@@ -20,10 +76,47 @@
         "match": {
             "title": "Ottelu viiteen",
             "description": "Ensimmäinen viiteen pisteeseen, gammonit lasketaan kaksinkertaisina"
+        },
+        "nackgammon": {
+            "title": "Nackgammon",
+            "description": "Kaksi nappulaa lähtee kauempaa, pidempiin ja taktisempiin peleihin"
+        },
+        "hypergammon": {
+            "title": "Hypergammon",
+            "description": "Kolme nappulaa kummallakin, kaukaisimmissa pisteissä: koko peli muutamassa minuutissa"
+        },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Kaikki nappulat lähtevät laudan ulkopuolelta. Heitä 1-2, valitse mitkä tahansa tuplat ja heitä uudelleen"
+        },
+        "oldEnglish": {
+            "title": "Vanha englantilainen",
+            "description": "Enintään viisi nappulaa pisteessä, eikä kuutiota"
         }
     },
     "undo": "Peru siirto",
     "noMoves": "Ei mahdollisia siirtoja",
+    "aceyDeucey": {
+        "title": "Acey-deucey!",
+        "oneTwo": "Pelaa 1 ja 2, ja valitse sitten tuplat",
+        "pick": {
+            "title": "Acey-deucey! Valitse tuplat",
+            "detail": "Pelaa ne neljä kertaa ja heitä sitten uudelleen",
+            "hover": "{n} neljä kertaa, sitten heität uudelleen",
+            "die": "{n} neljä kertaa"
+        },
+        "double": {
+            "title": "{n} neljä kertaa",
+            "detail": "Sitten heität uudelleen"
+        },
+        "bonus": "Heitä uudelleen",
+        "theirs": {
+            "oneTwo": "{name} heitti 1-2",
+            "pick": "{name} valitsee tuplia",
+            "double": "{name} valitsi {n} neljä kertaa ja heittää sen jälkeen uudelleen",
+            "bonus": "{name} heittää uudelleen"
+        }
+    },
     "opening": {
         "title": "Aloitusheitto",
         "highest": "Suurempi noppa aloittaa",
@@ -40,12 +133,14 @@
         "theirs": "(vastustajan)",
         "bar": "Nappuloita palkilla: {count}",
         "off": "Pois pelattuja nappuloita: {count}",
-        "using": "nopilla {dice}"
+        "using": "nopilla {dice}",
+        "waiting": "Vielä peliin tulevia nappuloita: {count}"
     },
     "result": {
-        "SINGLE": "{name} voitti pelin: {points} piste",
-        "GAMMON": "{name} voitti gammonilla: {points} pistettä",
-        "BACKGAMMON": "{name} voitti backgammonilla: {points} pistettä"
+        "SINGLE": "{name} voitti pelin: {points} pistettä | {name} voitti pelin: {points} piste | {name} voitti pelin: {points} pistettä",
+        "GAMMON": "{name} voitti gammonilla: {points} pistettä | {name} voitti gammonilla: {points} piste | {name} voitti gammonilla: {points} pistettä",
+        "BACKGAMMON": "{name} voitti backgammonilla: {points} pistettä | {name} voitti backgammonilla: {points} piste | {name} voitti backgammonilla: {points} pistettä",
+        "DROPPED": "{name} voitti, tuplaus jätettiin ottamatta: {points} pistettä | {name} voitti, tuplaus jätettiin ottamatta: {points} piste | {name} voitti, tuplaus jätettiin ottamatta: {points} pistettä"
     },
     "statistics": {
         "hitsPerMatch": "Lyönnit per ottelu",
@@ -82,6 +177,35 @@
                 "Kun kaikki nappulasi ovat kotialueella, noppa voi viedä nappulan pois siitä pisteestä, joka vastaa sen silmälukua.",
                 "Voita ennen kuin vastustaja pelaa pois yhtäkään nappulaa, niin saat gammonin, joka on ottelussa kahden pisteen arvoinen."
             ]
+        }
+    },
+    "cube": {
+        "stake": "Pelataan {n} pisteestä | Pelataan {n} pisteestä | Pelataan {n} pisteestä",
+        "crawford": "Crawford-peli: ei tuplausta",
+        "label": "Tuplauskuutio: {value}",
+        "double": "Tuplaa panos arvoon {value}",
+        "waiting": "Odotetaan, ottaako {name} vastaan vai luovuttaako",
+        "offered": "{name} tuplaa arvoon {value}",
+        "offer": {
+            "title": "Tuplataanko panos arvoon {value}?",
+            "take": "Jos {name} ottaa vastaan, tämä peli on {n} pisteen arvoinen ja kuutio on pelaajan {name}: vain {name} voi tuplata seuraavaksi. | Jos {name} ottaa vastaan, tämä peli on {n} pisteen arvoinen ja kuutio on pelaajan {name}: vain {name} voi tuplata seuraavaksi. | Jos {name} ottaa vastaan, tämä peli on {n} pisteen arvoinen ja kuutio on pelaajan {name}: vain {name} voi tuplata seuraavaksi.",
+            "drop": "Jos vastustaja luovuttaa, voitat pelin heti, {n} pisteellä. | Jos vastustaja luovuttaa, voitat pelin heti, {n} pisteellä. | Jos vastustaja luovuttaa, voitat pelin heti, {n} pisteellä.",
+            "confirm": "Tuplaa arvoon {value}",
+            "cancel": "Ei nyt"
+        },
+        "answer": {
+            "take": "Ota vastaan: pelaa jatkossa {n} pisteestä. Kuutio on sinun. | Ota vastaan: pelaa jatkossa {n} pisteestä. Kuutio on sinun. | Ota vastaan: pelaa jatkossa {n} pisteestä. Kuutio on sinun.",
+            "drop": "Luovuta: annat tämän pelin pois. {name} saa {n} pistettä. | Luovuta: annat tämän pelin pois. {name} saa {n} pisteen. | Luovuta: annat tämän pelin pois. {name} saa {n} pistettä.",
+            "takeButton": "Ota vastaan",
+            "dropButton": "Luovuta",
+            "match": {
+                "takeBothAt": "Ota vastaan: voittamalla olet {own} / {total}; häviämällä {name} on {other} / {total}.",
+                "takeYouWin": "Ota vastaan: voittamalla voitat ottelun; häviämällä {name} on {other} / {total}.",
+                "takeNameWins": "Ota vastaan: voittamalla olet {own} / {total}; häviämällä {name} voittaa ottelun.",
+                "takeEither": "Ota vastaan: tämän pelin voittaja voittaa ottelun.",
+                "dropAt": "Luovuta: {name} nousee lukemaan {other} / {total}.",
+                "dropWins": "Luovuta: {name} voittaa ottelun."
+            }
         }
     }
 }

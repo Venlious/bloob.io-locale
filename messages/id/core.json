@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Indonesian",
         "rtl": false,
-        "total": 3814,
+        "total": 4040,
         "missing": 0
     },
     "error": {
@@ -163,6 +163,22 @@
             "notMatchmaking": "Kamu nggak bisa melakukan aksi ini saat lagi nyari lawan main.",
             "matchHost": "Kamu bukan tuan rumah jadi nggak bisa melakukan aksi ini.",
             "admin": "Aksi ini cuma bisa dilakukan sama Admin doang."
+        },
+        "discord": {
+            "expired": "Masuk dengan Discord kelamaan. Coba lagi ya.",
+            "failed": "Masuk dengan Discord nggak berhasil. Coba lagi ya.",
+            "alreadyConnected": "Akun kamu udah terhubung ke akun Discord. Putuskan dulu yang itu.",
+            "onlyWayIn": "Tambahkan alamat email dulu. Sekarang Discord satu-satunya cara masuk ke akunmu."
+        },
+        "discordInvite": {
+            "declined": "Tantangan ini ditolak.",
+            "expired": "Link ini udah kedaluwarsa. Minta link baru di Discord.",
+            "over": "Undangan ini udah selesai.",
+            "notForYou": "Kamu nggak bisa ambil dua kursi di tantanganmu sendiri.",
+            "couldNotJoin": "Kamu nggak bisa gabung ke meja ini.",
+            "reserved": "Meja ini dipesan buat tantangan antara dua pemain lain.",
+            "ranOut": "Nggak ada yang nerima tantangan ini tepat waktu, jadi dibatalkan.",
+            "paused": "Meja dari Discord lagi dijeda sebentar. Coba lagi nanti, ya."
         }
     },
     "game": {
@@ -873,7 +889,9 @@
         "includesItems": "Termasuk {n} item | Termasuk {n} item | Termasuk {n} item",
         "restartNotice": "Server bakal restart dalam {n} menit. Selesaikan gamenya ya. | Server bakal restart dalam {n} menit. Selesaikan gamenya ya. | Server bakal restart dalam {n} menit. Selesaikan gamenya ya.",
         "bombs": "{n} bom | {n} bom | {n} bom",
-        "tricks": "{n} trik | {n} trik | {n} trik"
+        "tricks": "{n} trik | {n} trik | {n} trik",
+        "dailyPlayed": "{n} main | {n} main | {n} main",
+        "dailyStreakInARow": "{n} hari beruntun | {n} hari beruntun | {n} hari beruntun"
     },
     "articles": {
         "title": "Artikel"
@@ -1142,7 +1160,6 @@
         "leaderboard": "Papan Peringkat",
         "elapsedTime": "{time} telah berlalu",
         "startingInTime": "Mulai dalam {time}",
-        "averageWaitTimeBlank": "Waktu tunggu rata-rata {value}",
         "averageBlank": "Rata-rata {value}",
         "highestBlank": "Tinggi. {value}",
         "showBlank": "Tampilkan {value}",
@@ -1211,7 +1228,13 @@
         "siteName": "Bloob.io",
         "pool": "Biliar",
         "gamePreferences": "Preferensi game",
-        "wrongBallIndicator": "Indikator bola salah"
+        "wrongBallIndicator": "Indikator bola salah",
+        "connect": "Hubungkan",
+        "disconnect": "Putuskan",
+        "discordAccount": "Discord",
+        "or": "atau",
+        "leave": "Keluar",
+        "challenge": "Tantangan"
     },
     "match": {
         "quick": "Match Cepat",
@@ -1267,7 +1290,6 @@
             "gameUnsupported": "Game ini gagal dimuat"
         },
         "matchmaking": {
-            "searching": "Lagi nyari lawan...",
             "matchFound": "Lawan ketemu!",
             "waitingForOpponent": "Nungguin lawanmu... {seconds}",
             "opponentAway": "Lawanmu nggak ada. Masih nyariin buat kamu.",
@@ -1285,26 +1307,93 @@
             "settings": {
                 "publicMatches": {
                     "title": "Pertandingan publik",
-                    "description": "Kurangi waktu tunggunya.",
                     "tooltip": [
                         "Pertandingan publik dibuat oleh pemain lain. Pertandingan ini mungkin memiliki pengaturan khusus.",
                         "Kamu akan otomatis kembali ke pencocokan jika kamu dikeluarkan atau jika pembuat pertandingan meninggalkan pertandingan."
                     ]
                 },
                 "games": {
-                    "title": "Game",
-                    "description": "Main game yang pertama kali tersedia.",
-                    "tooltip": [
-                        "Memasukkan beberapa game bisa mengurangi waktu tunggu."
-                    ]
+                    "title": "Game"
                 },
                 "opponentFilter": {
                     "title": "Filter lawan",
-                    "description": "Cocokin berdasarkan kriteria kamu.",
                     "tooltip": [
                         "Pake filter yang ketat bisa bikin waktu tunggu lebih lama, tapi hasilnya bakal lebih cocok sama kamu."
                     ]
                 }
+            },
+            "lookingForMatch": "Nyari pertandingan",
+            "gamesSelected": "{n} game dipilih | {n} game dipilih | {n} game dipilih",
+            "findingOpponent": "Nyari lawan",
+            "findingOpponentIn": "Nyari lawan di {game}",
+            "stopSearching": "Berhenti nyari",
+            "picker": {
+                "title": "Pilih game-mu",
+                "subtitle": "Kamu bakal gabung ke pertandingan pertama yang ketemu",
+                "search": "Cari game",
+                "clearSearch": "Hapus pencarian",
+                "all": "Semua",
+                "sortBy": "Urutkan game",
+                "sortPlaying": "Orang yang lagi main",
+                "sortName": "Nama (A-Z)",
+                "mostPlayed": "Paling sering kamu mainkan",
+                "featured": "Pilihan buat kamu",
+                "more": "Game lainnya",
+                "results": "Hasil untuk \"{query}\"",
+                "similar": "Nggak ada yang persis sama. Mirip dengan \"{query}\"",
+                "noResults": "Nggak ada game yang cocok dengan \"{query}\"",
+                "noResultsHint": "Coba nama atau kategori lain",
+                "clearSelection": "Hapus pilihan",
+                "findMatch": "Cari pertandingan di {n} game | Cari pertandingan di {n} game | Cari pertandingan di {n} game",
+                "pickToStart": "Pilih game buat mulai"
+            },
+            "yourGames": "Game-mu",
+            "usualDay": "Hari biasa",
+            "editGames": "Ubah game",
+            "othersSearching": "{n} orang lain lagi nyari | {n} orang lain lagi nyari | {n} orang lain lagi nyari",
+            "quietBusierFrom": "Lagi sepi, mulai ramai dari {time}",
+            "quietNow": "Sepi di jam segini",
+            "busyNow": "Biasanya ramai di jam segini",
+            "busyHours": "Seberapa ramai {game} biasanya sepanjang hari, per jam. Batang yang disorot adalah sekarang.",
+            "hourBusy": "{time}: biasanya ramai",
+            "hourQuiet": "{time}: biasanya sepi",
+            "filters": "Filter",
+            "filtersHint": "Kamu tetap di antrean selama mengubah ini",
+            "publicSummary": {
+                "excluded": "Tanpa pertandingan publik",
+                "defaultOnly": "Pertandingan publik dengan pengaturan bawaan",
+                "any": "Semua pertandingan publik"
+            },
+            "opponentDescription": {
+                "any": "Siapa aja yang nyari game-mu",
+                "higherThanLvl5": "Lewatin pemain yang baru banget",
+                "higherThanLvl25": "Cuma pemain berpengalaman"
+            },
+            "publicDescription": {
+                "excluded": "Cuma pertandingan baru yang dibuat buat kamu",
+                "defaultOnly": "Juga gabung ke lobi terbuka dengan aturan standar",
+                "any": "Juga gabung ke lobi dengan aturan kustom"
+            },
+            "joining": "Bergabung...",
+            "waitingForMore": "Nungguin {n} pemain lagi | Nungguin {n} pemain lagi | Nungguin {n} pemain lagi",
+            "seatsHint": "Mulai kalau {seats} udah gabung, atau pas hitung mundur selesai dengan siapa aja yang ada",
+            "likely": {
+                "soon": "Yang lain juga lagi nyari. Pertandingan harusnya udah dekat.",
+                "busy": "Biasanya ramai di jam segini. Harusnya nggak lama.",
+                "quiet": "Lagi sepi sekarang. Biasanya mulai ramai dari {time}.",
+                "quietAll": "Lagi sepi sekarang. Bisa agak lama."
+            },
+            "runner": {
+                "play": "Main sambil nunggu",
+                "playWithKey": "Tekan {key} buat main sambil nunggu",
+                "best": "Rekor",
+                "space": "Spasi",
+                "gameOver": "Game over",
+                "newBest": "Rekor baru",
+                "playAgain": "Main lagi",
+                "words": "TUNGGU BOSAN SERU",
+                "royalFlush": "Royal flush!",
+                "stopWithKey": "{key} buat berhenti main"
             }
         },
         "info": {
@@ -1320,10 +1409,63 @@
             "joinById": "Kamu bisa gabung ke pertandingan (privat) dengan masukkan ID empat digit.",
             "public": "Siapa aja bisa gabung dengan cari pertandingan yang tersedia.",
             "private": "Pemain hanya bisa gabung pakai URL atau ID 4 digit.",
+            "challenge": "Cuma pemain yang ditantang yang bisa gabung.",
             "leave": "Kalau kamu memilih untuk keluar, mungkin kamu nggak bisa gabung lagi lho.",
             "leaveLast": "Karena kamu orang satu-satunya di game ini, pertandingan bakal ditutup kalau kamu keluar.",
             "leaveAsHost": "Orang lain bakal jadi tuan rumah baru kalau kamu keluar.",
             "leaveOrForfeit": "Menyerah dihitung kalah, tapi nggak dihitung kabur."
+        },
+        "daily": {
+            "title": "Harian",
+            "play": "Main",
+            "continue": "Lanjut",
+            "seeBoard": "Lihat papan hari ini",
+            "stuckAt": "Mentok di {progress} dari {total}",
+            "putAway": "Dijeda di {progress} dari {total}",
+            "underWay": "Lagi jalan: {progress} dari {total}",
+            "placeOf": "#{place} dari {played}",
+            "clearedShort": "Selesai! {points}",
+            "scope": "Hasil siapa yang ditampilin",
+            "everyone": "Semua",
+            "place": "Peringkat",
+            "time": "Waktu",
+            "cleared": "Selesai",
+            "stuck": "Mentok",
+            "missed": "Kelewat",
+            "anonymous": "Seorang pemain",
+            "resumed": "Dilanjutin",
+            "resumedNote": "Dilanjutin lagi setelah sempat terputus. Waktunya berhenti selama percobaan dijeda.",
+            "longestYet": "Terpanjangmu sejauh ini",
+            "backTomorrow": "Balik lagi besok buat No. {number}",
+            "playedCounts": "Yang penting main, jadi streak-mu lanjut",
+            "fullBoard": "Papan lengkap",
+            "longest": "Terpanjang: {n}",
+            "clearedDays": "{cleared} dari {played} selesai",
+            "empty": "Belum ada yang main.",
+            "emptyFriends": "Belum ada temanmu yang main.",
+            "shareTitle": "Bloob.io Harian · {game} · No. {number}",
+            "shareLine": "{title}: {result}",
+            "results": "Hasil harian",
+            "error": {
+                "played": "Kamu udah main harian hari ini. Balik lagi besok buat yang baru ya!",
+                "unavailable": "Harian hari ini belum siap. Coba lagi sebentar ya!"
+            },
+            "played": "Dimainkan",
+            "underWayShort": "Sedang berjalan",
+            "playedDays": "Dimainkan {played} dari {days}",
+            "wordsFound": "{n} kata | {n} kata | {n} kata",
+            "foundOf": "Ditemukan {progress} dari {total}",
+            "allFound": "Semua ditemukan",
+            "notAllFound": "Tidak semua ditemukan",
+            "number": "No. {number}",
+            "solo": "Solo",
+            "sameForEverybody": "sama buat semua",
+            "firstTryCounts": "percobaan pertama yang dihitung",
+            "continueUntil": "lanjutin sampai {time}",
+            "playedCount": "{played} main",
+            "clearedCount": "{cleared} selesai",
+            "streak": "Beruntun",
+            "placeShort": "#{place}"
         }
     },
     "info": {
@@ -1400,7 +1542,11 @@
             "typing": "Di pertandingan kamu cuma bisa kirim kalimat yang sudah ada. Di Discord kamu bisa ketik apa saja.",
             "community": "Di server kita, pemain Bloob.io kumpul, cari teman main, dan ngobrolin game-nya.",
             "free": "Gabung itu gratis dan kamu bisa keluar kapan saja. Akun Discord terpisah dari akun Bloob.io kamu.",
-            "open": "Membuka Discord di tab baru."
+            "open": "Membuka Discord di tab baru.",
+            "seatedHere": "Kamu udah ambil kursimu dari Discord.",
+            "offer": "Kursimu di meja {game} dari Discord lagi nunggu. Ambil kalau kamu udah siap.",
+            "takeSeat": "Ambil kursi",
+            "declinedOne": "{name} menolak tantangannya. Kalian tetap bisa main tanpa dia."
         },
         "stallCall": {
             "title": "Masih Nunggu?",
@@ -1576,9 +1722,9 @@
                 "description": "Masukkan emailmu. Kalau baru di sini, kami simpan {name}. Kalau pernah ke sini, kami masukkan kamu ke akunmu.",
                 "loginTitle": "Masuk",
                 "loginDescription": "Tanpa kata sandi. Kami akan mengirim kode ke emailmu.",
-                "levelNote": "Kamu bisa menyimpan {name} dengan email mulai dari {level}.",
                 "note": "Tanpa kata sandi. Kami hanya pakai emailmu untuk proses masuk.",
-                "send": "Kirim kode ke aku"
+                "send": "Kirim kode ke aku",
+                "discord": "Lanjut dengan Discord"
             },
             "code": {
                 "title": "Cek emailmu",
@@ -1694,32 +1840,41 @@
         "offerDraw": "Lawanmu akan ditanya apakah mau mengakhiri pertandingan dengan seri. Kalau dia setuju, tidak dihitung sebagai menang maupun kalah.",
         "accountStatus": {
             "unsaved": {
-                "title": "Hanya di perangkat ini",
-                "description": "Simpan {name} dengan emailmu agar progresmu aman dan bisa main di perangkat mana pun. Tanpa kata sandi.",
-                "level": "Capai {level} untuk menyimpan {name} dengan emailmu.",
+                "title": "Simpan {name}",
+                "description": "Untuk sekarang cuma ada di perangkat ini. Simpan biar bisa main di perangkat mana aja.",
+                "discord": "Untuk sekarang cuma ada di perangkat ini. Discord langsung menyimpannya.",
+                "level": "Untuk sekarang cuma ada di perangkat ini. Kamu bisa menyimpannya pakai email mulai dari {level}.",
                 "loginOnly": "Masuk agar progresmu aman dan bisa main di perangkat mana pun."
             },
             "devices": {
                 "title": "{name} hanya ada di perangkat ini",
-                "description": "Simpan dengan emailmu untuk main juga di perangkat lainmu dan melihatnya di sini."
+                "description": "Simpan biar bisa main juga di perangkatmu yang lain dan lihat semuanya di sini."
             },
             "redeem": {
                 "title": "Simpan {name} dulu",
-                "description": "Yang kamu tukarkan masuk ke akunmu, jadi perlu emailmu."
+                "description": "Yang kamu tukarkan masuk ke akunmu."
             },
             "saved": {
                 "title": "Tersimpan di {email}",
                 "description": "Progresmu ikut ke perangkat mana pun."
             },
-            "save": "Simpan dengan email",
-            "haveAccount": "Aku punya akun",
+            "login": {
+                "title": "Udah punya akun?",
+                "description": "Masuk untuk lanjut dari tempat terakhirmu."
+            },
+            "email": "Email",
             "changeEmail": "Ganti email",
             "logout": {
                 "description": "Di perangkat ini, atau di semua perangkat dari Perangkatku."
             },
             "logoutEverywhere": "Keluar di semua perangkat"
         },
-        "wrongBallIndicator": "Di game biliar, garis bidik jadi merah dan muncul tanda silang kalau mengarah ke bola yang gak boleh kamu kenai duluan."
+        "wrongBallIndicator": "Di game biliar, garis bidik jadi merah dan muncul tanda silang kalau mengarah ke bola yang gak boleh kamu kenai duluan.",
+        "discord": {
+            "connected": "Akun Discord kamu sudah terhubung.",
+            "notConnected": "Belum terhubung",
+            "onlyWayIn": "Akun Discord kamu sudah terhubung. Tambahkan alamat email supaya bisa memutuskannya."
+        }
     },
     "share": {
         "tiers": {
@@ -1771,7 +1926,7 @@
         },
         "call": {
             "title": "Pertandingan berikutnya",
-            "waiting": "Menunggu…",
+            "waiting": "Menunggu...",
             "single": "Satu pertandingan menentukan",
             "series": "Best of {count}, {own}–{other}",
             "startsIn": "Mulai dalam {seconds} dtk",

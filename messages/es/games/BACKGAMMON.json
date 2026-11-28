@@ -10,6 +10,62 @@
                 "enabled": "**Activado**: Ganar antes de que tu rival haya sacado una sola ficha es un gammon y vale dos puntos. Si todavía le queda una ficha en la barra o en tu cuadrante interior, es un backgammon y vale tres.",
                 "disabled": "**Desactivado**: Cada victoria vale un punto."
             }
+        },
+        "layout": {
+            "title": "Posición inicial",
+            "help": "Dónde empiezan las fichas: la posición de siempre, Nackgammon (dos fichas atrás en el punto 24 de cada lado), Hypergammon (tres fichas cada uno) o Acey Deucey (las quince fuera del tablero, con sus propias reglas).",
+            "data": {
+                "STANDARD": {
+                    "title": "Estándar",
+                    "description": "Quince fichas en los lugares de siempre"
+                },
+                "NACKGAMMON": {
+                    "title": "Nackgammon",
+                    "description": "Dos fichas empiezan más atrás"
+                },
+                "HYPERGAMMON": {
+                    "title": "Hypergammon",
+                    "description": "Tres fichas cada uno, en los puntos del fondo"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "Las quince empiezan fuera del tablero, y un 1-2 te da el doble que elijas"
+                }
+            }
+        },
+        "fivePerPoint": {
+            "title": "Cinco fichas por punto",
+            "help": "Ningún punto puede tener más de cinco fichas de un jugador, como en el antiguo backgammon inglés. Sacar fichas no tiene límite."
+        },
+        "barFirst": {
+            "title": "Las fichas golpeadas entran primero",
+            "help": {
+                "enabled": "**Activado**: Una ficha golpeada tiene que volver a entrar antes de que se mueva cualquier otra.",
+                "disabled": "**Desactivado**: Una ficha golpeada espera con las demás que faltan por entrar, y puedes mover el resto primero."
+            }
+        },
+        "keepBonus": {
+            "title": "Conservar el bono si te atoras",
+            "help": {
+                "enabled": "**Activado**: Un 1-2 o un doble que solo puedes jugar en parte igual te da el doble y la tirada extra.",
+                "disabled": "**Desactivado**: Si no puedes jugar todo un 1-2 o su doble, tu turno termina ahí."
+            }
+        },
+        "cube": {
+            "title": "Cubo de doblaje",
+            "help": "Dobla la apuesta antes de tirar. Tu rival acepta y sigue jugando por el doble de puntos, con el cubo ahora suyo, o rechaza y pierde la partida. En un match se aplica la regla Crawford: la partida después de que un jugador quede a un punto de ganar se juega sin cubo."
+        },
+        "cubeLimit": {
+            "title": "Límite del cubo",
+            "help": "Hasta dónde se puede doblar la apuesta.",
+            "data": {
+                "limit": "Hasta 64",
+                "none": "Sin límite"
+            }
+        },
+        "jacoby": {
+            "title": "Regla Jacoby",
+            "help": "En una partida suelta, los gammons y backgammons solo cuentan si el cubo ya se ha doblado."
         }
     },
     "presets": {
@@ -20,10 +76,47 @@
         "match": {
             "title": "Match a 5",
             "description": "El primero en llegar a cinco puntos, los gammons cuentan doble"
+        },
+        "nackgammon": {
+            "title": "Nackgammon",
+            "description": "Dos fichas empiezan más atrás, para partidas más largas y tácticas"
+        },
+        "hypergammon": {
+            "title": "Hypergammon",
+            "description": "Tres fichas cada uno, en los puntos del fondo: una partida entera en pocos minutos"
+        },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Todas las fichas empiezan fuera del tablero. Saca un 1-2 para elegir cualquier doble y volver a tirar"
+        },
+        "oldEnglish": {
+            "title": "Reglas inglesas antiguas",
+            "description": "No más de cinco fichas por punto, y sin cubo"
         }
     },
     "undo": "Deshacer movimiento",
     "noMoves": "No hay movimientos posibles",
+    "aceyDeucey": {
+        "title": "¡Acey-deucey!",
+        "oneTwo": "Juega el 1 y el 2, luego elige un doble",
+        "pick": {
+            "title": "¡Acey-deucey! Elige un doble",
+            "detail": "Juégalo cuatro veces y vuelve a tirar",
+            "hover": "Cuatro {n}, luego vuelves a tirar",
+            "die": "Cuatro {n}"
+        },
+        "double": {
+            "title": "Cuatro {n}",
+            "detail": "Luego vuelves a tirar"
+        },
+        "bonus": "Vuelve a tirar",
+        "theirs": {
+            "oneTwo": "{name} sacó un 1-2",
+            "pick": "{name} está eligiendo un doble",
+            "double": "{name} eligió cuatro {n} y luego vuelve a tirar",
+            "bonus": "{name} vuelve a tirar"
+        }
+    },
     "opening": {
         "title": "Tirada inicial",
         "highest": "Empieza el dado más alto",
@@ -40,12 +133,14 @@
         "theirs": "(del rival)",
         "bar": "Fichas en la barra: {count}",
         "off": "Fichas sacadas: {count}",
-        "using": "usando {dice}"
+        "using": "usando {dice}",
+        "waiting": "Fichas que faltan por entrar: {count}"
     },
     "result": {
-        "SINGLE": "{name} ganó la partida: {points} punto",
-        "GAMMON": "{name} ganó un gammon: {points} puntos",
-        "BACKGAMMON": "{name} ganó un backgammon: {points} puntos"
+        "SINGLE": "{name} ganó la partida: {points} puntos | {name} ganó la partida: {points} punto | {name} ganó la partida: {points} puntos",
+        "GAMMON": "{name} ganó un gammon: {points} puntos | {name} ganó un gammon: {points} punto | {name} ganó un gammon: {points} puntos",
+        "BACKGAMMON": "{name} ganó un backgammon: {points} puntos | {name} ganó un backgammon: {points} punto | {name} ganó un backgammon: {points} puntos",
+        "DROPPED": "{name} ganó, el doblaje fue rechazado: {points} puntos | {name} ganó, el doblaje fue rechazado: {points} punto | {name} ganó, el doblaje fue rechazado: {points} puntos"
     },
     "statistics": {
         "hitsPerMatch": "Golpes por match",
@@ -82,6 +177,35 @@
                 "Cuando todas tus fichas están en tu cuadrante interior, un dado puede sacar una ficha del punto que le corresponde.",
                 "Gana antes de que tu rival saque alguna ficha y será un gammon, que vale dos puntos en un match."
             ]
+        }
+    },
+    "cube": {
+        "stake": "Se juegan {n} puntos | Se juega {n} punto | Se juegan {n} puntos",
+        "crawford": "Partida Crawford: sin doblar",
+        "label": "Cubo de doblaje: {value}",
+        "double": "Doblar la apuesta a {value}",
+        "waiting": "Esperando a que {name} acepte o rechace",
+        "offered": "{name} dobla a {value}",
+        "offer": {
+            "title": "¿Doblar la apuesta a {value}?",
+            "take": "Si {name} acepta, esta partida vale {n} puntos y el cubo es de {name}: solo {name} podrá doblar después. | Si {name} acepta, esta partida vale {n} punto y el cubo es de {name}: solo {name} podrá doblar después. | Si {name} acepta, esta partida vale {n} puntos y el cubo es de {name}: solo {name} podrá doblar después.",
+            "drop": "Si tu rival rechaza, ganas la partida ahora mismo, por {n} puntos. | Si tu rival rechaza, ganas la partida ahora mismo, por {n} punto. | Si tu rival rechaza, ganas la partida ahora mismo, por {n} puntos.",
+            "confirm": "Doblar a {value}",
+            "cancel": "Ahora no"
+        },
+        "answer": {
+            "take": "Aceptar: sigue jugando por {n} puntos. El cubo es tuyo. | Aceptar: sigue jugando por {n} punto. El cubo es tuyo. | Aceptar: sigue jugando por {n} puntos. El cubo es tuyo.",
+            "drop": "Rechazar: abandonas esta partida. {name} gana {n} puntos. | Rechazar: abandonas esta partida. {name} gana {n} punto. | Rechazar: abandonas esta partida. {name} gana {n} puntos.",
+            "takeButton": "Aceptar",
+            "dropButton": "Rechazar",
+            "match": {
+                "takeBothAt": "Aceptar: si ganas, quedas con {own} / {total}; si pierdes, {name} queda con {other} / {total}.",
+                "takeYouWin": "Aceptar: si ganas, ganas el match; si pierdes, {name} queda con {other} / {total}.",
+                "takeNameWins": "Aceptar: si ganas, quedas con {own} / {total}; si pierdes, {name} gana el match.",
+                "takeEither": "Aceptar: quien gane esta partida gana el match.",
+                "dropAt": "Rechazar: {name} pasa a {other} / {total}.",
+                "dropWins": "Rechazar: {name} gana el match."
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Norwegian (Bokmål)",
         "rtl": false,
-        "total": 3814,
+        "total": 4040,
         "missing": 0
     },
     "error": {
@@ -163,6 +163,22 @@
             "notMatchmaking": "Du kan ikke gjøre dette mens du er i matchmaking.",
             "matchHost": "Du er ikke verten og kan ikke gjøre dette.",
             "admin": "Denne handlingen er begrenset til administratorer."
+        },
+        "discord": {
+            "expired": "Innloggingen med Discord tok for lang tid. Prøv igjen.",
+            "failed": "Innloggingen med Discord fungerte ikke. Prøv igjen.",
+            "alreadyConnected": "Kontoen din er allerede koblet til en Discord-konto. Koble den fra først.",
+            "onlyWayIn": "Legg til en e-postadresse først. Akkurat nå er Discord den eneste måten å komme inn på kontoen din."
+        },
+        "discordInvite": {
+            "declined": "Denne utfordringen ble avslått.",
+            "expired": "Denne lenken har utløpt. Be om en ny på Discord.",
+            "over": "Denne invitasjonen er over.",
+            "notForYou": "Du kan ikke ta begge plassene i din egen utfordring.",
+            "couldNotJoin": "Du kunne ikke bli med ved dette bordet.",
+            "reserved": "Dette bordet er reservert for en utfordring mellom to andre spillere.",
+            "ranOut": "Ingen tok imot denne utfordringen i tide, så den ble avlyst.",
+            "paused": "Bord fra Discord er satt på pause en liten stund. Prøv igjen snart."
         }
     },
     "game": {
@@ -873,7 +889,9 @@
         "includesItems": "Inkluderer {n} ting | Inkluderer {n} ting | Inkluderer {n} ting",
         "restartNotice": "Serveren restarter om {n} minutter. Vennligst avslutt spillet ditt. | Serveren restarter om {n} minutt. Vennligst avslutt spillet ditt. | Serveren restarter om {n} minutter. Vennligst avslutt spillet ditt.",
         "bombs": "{n} bomber | {n} bombe | {n} bomber",
-        "tricks": "{n} stikk | {n} stikk | {n} stikk"
+        "tricks": "{n} stikk | {n} stikk | {n} stikk",
+        "dailyPlayed": "{n} har spilt | {n} har spilt | {n} har spilt",
+        "dailyStreakInARow": "{n} dager på rad | {n} dag på rad | {n} dager på rad"
     },
     "articles": {
         "title": "Artikler"
@@ -1142,7 +1160,6 @@
         "leaderboard": "Toppliste",
         "elapsedTime": "{time} har gått",
         "startingInTime": "Starter om {time}",
-        "averageWaitTimeBlank": "Gj.snitt ventetid {value}",
         "averageBlank": "Gj.snitt {value}",
         "highestBlank": "Høy. {value}",
         "showBlank": "Vis {value}",
@@ -1211,7 +1228,13 @@
         "siteName": "Bloob.io",
         "pool": "Biljard",
         "gamePreferences": "Spillinnstillinger",
-        "wrongBallIndicator": "Indikator for feil kule"
+        "wrongBallIndicator": "Indikator for feil kule",
+        "connect": "Koble til",
+        "disconnect": "Koble fra",
+        "discordAccount": "Discord",
+        "or": "eller",
+        "leave": "Forlat",
+        "challenge": "Utfordring"
     },
     "match": {
         "quick": "Rask kamp",
@@ -1267,7 +1290,6 @@
             "gameUnsupported": "Dette spillet lastet ikke"
         },
         "matchmaking": {
-            "searching": "Leter etter en kamp...",
             "matchFound": "Kamp funnet!",
             "waitingForOpponent": "Venter på motstanderen din... {seconds}",
             "opponentAway": "Motstanderen din var ikke her. Vi leter fortsatt for deg.",
@@ -1285,26 +1307,93 @@
             "settings": {
                 "publicMatches": {
                     "title": "Offentlige kamper",
-                    "description": "Reduser ventetiden.",
                     "tooltip": [
                         "Offentlige kamper er laget av andre spillere. Disse kampene kan ha tilpassede innstillinger.",
                         "Du vil automatisk returnere til matchmaking hvis du blir sparket ut eller hvis verten forlater kampen."
                     ]
                 },
                 "games": {
-                    "title": "Spill",
-                    "description": "Spill første tilgjengelige spill.",
-                    "tooltip": [
-                        "Å inkludere flere spill kan redusere ventetiden."
-                    ]
+                    "title": "Spill"
                 },
                 "opponentFilter": {
                     "title": "Motstanderfilter",
-                    "description": "Kamp basert på dine kriterier.",
                     "tooltip": [
                         "Å bruke strenge filtre kan gjøre ventetiden lengre, men gir mer skreddersydde matcher."
                     ]
                 }
+            },
+            "lookingForMatch": "Ser etter en kamp",
+            "gamesSelected": "{n} spill valgt | {n} spill valgt | {n} spill valgt",
+            "findingOpponent": "Finner en motstander",
+            "findingOpponentIn": "Finner en motstander i {game}",
+            "stopSearching": "Slutt å søke",
+            "picker": {
+                "title": "Velg spillene dine",
+                "subtitle": "Du blir med i den første kampen som blir funnet",
+                "search": "Søk etter spill",
+                "clearSearch": "Tøm søket",
+                "all": "Alle",
+                "sortBy": "Sorter spill",
+                "sortPlaying": "Antall som spiller",
+                "sortName": "Navn (A-Å)",
+                "mostPlayed": "Dine mest spilte",
+                "featured": "Utvalgt for deg",
+                "more": "Flere spill",
+                "results": "Resultater for \"{query}\"",
+                "similar": "Ingen eksakte treff. Likner på \"{query}\"",
+                "noResults": "Ingen spill passer til \"{query}\"",
+                "noResultsHint": "Prøv et annet navn eller en annen kategori",
+                "clearSelection": "Fjern valget",
+                "findMatch": "Finn en kamp i {n} spill | Finn en kamp i {n} spill | Finn en kamp i {n} spill",
+                "pickToStart": "Velg et spill for å starte"
+            },
+            "yourGames": "Spillene dine",
+            "usualDay": "Vanlig dag",
+            "editGames": "Endre spill",
+            "othersSearching": "{n} andre søker | {n} annen søker | {n} andre søker",
+            "quietBusierFrom": "Rolig nå, travlere fra {time}",
+            "quietNow": "Rolig på denne tiden",
+            "busyNow": "Vanligvis travelt på denne tiden",
+            "busyHours": "Hvor travelt det vanligvis er i {game} gjennom dagen, time for time. Den markerte søylen er nå.",
+            "hourBusy": "{time}: vanligvis travelt",
+            "hourQuiet": "{time}: vanligvis rolig",
+            "filters": "Filtre",
+            "filtersHint": "Du blir stående i køen mens du endrer disse",
+            "publicSummary": {
+                "excluded": "Ingen offentlige kamper",
+                "defaultOnly": "Offentlige kamper med standardinnstillinger",
+                "any": "Alle offentlige kamper"
+            },
+            "opponentDescription": {
+                "any": "Alle som søker i spillene dine",
+                "higherThanLvl5": "Hopper over helt nye spillere",
+                "higherThanLvl25": "Bare erfarne spillere"
+            },
+            "publicDescription": {
+                "excluded": "Bare nye kamper laget for deg",
+                "defaultOnly": "Bli også med i åpne lobbyer med standardregler",
+                "any": "Bli også med i lobbyer med egne regler"
+            },
+            "joining": "Blir med...",
+            "waitingForMore": "Venter på {n} spillere til | Venter på {n} spiller til | Venter på {n} spillere til",
+            "seatsHint": "Starter når {seats} har blitt med, eller når nedtellingen er over med dem som er her",
+            "likely": {
+                "soon": "Andre søker også. En kamp burde være nær.",
+                "busy": "Vanligvis travelt på denne tiden. Det burde ikke ta lang tid.",
+                "quiet": "Rolig akkurat nå. Det blir vanligvis travlere fra {time}.",
+                "quietAll": "Rolig akkurat nå. Det kan ta en stund."
+            },
+            "runner": {
+                "play": "Spill mens du venter",
+                "playWithKey": "Trykk på {key} for å spille mens du venter",
+                "best": "Rekord",
+                "space": "Mellomrom",
+                "gameOver": "Spillet er over",
+                "newBest": "Ny rekord",
+                "playAgain": "Spill igjen",
+                "words": "VENT KJEDELIG GØY",
+                "royalFlush": "Royal flush!",
+                "stopWithKey": "{key} for å slutte å spille"
             }
         },
         "info": {
@@ -1320,10 +1409,63 @@
             "joinById": "Du kan bli med i en (privat) kamp ved å fylle inn den fire-sifrede ID-en.",
             "public": "Alle kan bli med ved å bla gjennom tilgjengelige kamper.",
             "private": "Spillere kan bare bli med ved å bruke URL-en eller 4-sifret ID.",
+            "challenge": "Bare spillerne som ble utfordret kan bli med.",
             "leave": "Du kan kanskje ikke komme tilbake hvis du velger å forlate.",
             "leaveLast": "Siden du er den eneste personen i spillet, vil kampen bli stengt når du forlater.",
             "leaveAsHost": "Noen andre vil bli den nye verten når du drar.",
             "leaveOrForfeit": "Å gi opp teller som et tap, men ikke som å forlate kampen."
+        },
+        "daily": {
+            "title": "Dagens spill",
+            "play": "Spill",
+            "continue": "Fortsett",
+            "seeBoard": "Se dagens toppliste",
+            "stuckAt": "Stopp ved {progress} av {total}",
+            "putAway": "Satt på pause ved {progress} av {total}",
+            "underWay": "Pågår: {progress} av {total}",
+            "placeOf": "#{place} av {played}",
+            "clearedShort": "Gått opp! {points}",
+            "scope": "Hvem sine resultater du ser",
+            "everyone": "Alle",
+            "place": "Plassering",
+            "time": "Tid",
+            "cleared": "Gått opp",
+            "stuck": "Stopp",
+            "missed": "Gikk glipp",
+            "anonymous": "En spiller",
+            "resumed": "Gjenopptatt",
+            "resumedNote": "Tatt opp igjen etter et avbrudd. Klokka står stille mens et forsøk er satt på pause.",
+            "longestYet": "Din lengste hittil",
+            "backTomorrow": "Kom tilbake i morgen for nr. {number}",
+            "playedCounts": "Det teller å spille, så rekka di fortsetter",
+            "fullBoard": "Hele topplista",
+            "longest": "Lengste: {n}",
+            "clearedDays": "{cleared} av {played} gått opp",
+            "empty": "Ingen har spilt det ennå.",
+            "emptyFriends": "Ingen av vennene dine har spilt det ennå.",
+            "shareTitle": "Bloob.io Dagens spill · {game} · Nr. {number}",
+            "shareLine": "{title}: {result}",
+            "results": "Resultater fra dagens spill",
+            "error": {
+                "played": "Du har allerede spilt dagens spill. Kom tilbake i morgen for et nytt!",
+                "unavailable": "Dagens spill er ikke klart ennå. Prøv igjen om litt!"
+            },
+            "played": "Spilt",
+            "underWayShort": "Pågår",
+            "playedDays": "Spilt {played} av {days}",
+            "wordsFound": "{n} ord | {n} ord | {n} ord",
+            "foundOf": "Funnet {progress} av {total}",
+            "allFound": "Alle funnet",
+            "notAllFound": "Ikke alle funnet",
+            "number": "Nr. {number}",
+            "solo": "Solo",
+            "sameForEverybody": "det samme for alle",
+            "firstTryCounts": "første forsøk teller",
+            "continueUntil": "fortsett til {time}",
+            "playedCount": "{played} har spilt",
+            "clearedCount": "{cleared} gikk opp",
+            "streak": "Rekke",
+            "placeShort": "#{place}"
         }
     },
     "info": {
@@ -1400,7 +1542,11 @@
             "typing": "I en kamp kan du bare sende de ferdige frasene. På Discord skriver du hva du vil.",
             "community": "På serveren vår møtes Bloob.io-spillere, finner noen å spille med og prater om spillene.",
             "free": "Det er gratis å bli med, og du kan gå når du vil. En Discord-konto er noe helt annet enn Bloob.io-kontoen din.",
-            "open": "Åpner Discord i en ny fane."
+            "open": "Åpner Discord i en ny fane.",
+            "seatedHere": "Du tok plassen din fra Discord.",
+            "offer": "Plassen din ved et {game}-bord fra Discord venter. Ta den når du er klar.",
+            "takeSeat": "Ta plass",
+            "declinedOne": "{name} avslo utfordringen. Dere kan fortsatt spille uten dem."
         },
         "stallCall": {
             "title": "Venter du fortsatt?",
@@ -1576,9 +1722,9 @@
                 "description": "Skriv inn e-postadressen din. Er du ny, lagrer vi {name}. Har du vært her før, logger vi deg inn.",
                 "loginTitle": "Logg inn",
                 "loginDescription": "Ikke noe passord. Vi sender deg en kode på e-post.",
-                "levelNote": "Du kan lagre {name} med en e-postadresse fra {level}.",
                 "note": "Ingen passord. Vi bruker bare e-postadressen din til å logge deg inn.",
-                "send": "Send meg en kode"
+                "send": "Send meg en kode",
+                "discord": "Fortsett med Discord"
             },
             "code": {
                 "title": "Sjekk e-posten din",
@@ -1694,32 +1840,41 @@
         "offerDraw": "Motstanderen din blir spurt om kampen skal ende uavgjort. Hvis de godtar, teller det verken som seier eller tap.",
         "accountStatus": {
             "unsaved": {
-                "title": "Bare på denne enheten",
-                "description": "Lagre {name} med e-posten din, så fremgangen er trygg og du kan spille på alle enheter. Ikke noe passord.",
-                "level": "Nå {level} for å lagre {name} med e-posten din.",
+                "title": "Lagre {name}",
+                "description": "Bare på denne enheten foreløpig. Lagre det for å spille på alle enheter.",
+                "discord": "Bare på denne enheten foreløpig. Discord lagrer det med en gang.",
+                "level": "Bare på denne enheten foreløpig. Du kan lagre det med e-postadressen din fra {level}.",
                 "loginOnly": "Logg inn for å beholde fremgangen og spille på alle enheter."
             },
             "devices": {
                 "title": "{name} er bare på denne enheten",
-                "description": "Lagre med e-posten din for å spille på de andre enhetene dine også, og se dem her."
+                "description": "Lagre det for å spille på de andre enhetene dine også, og se dem her."
             },
             "redeem": {
                 "title": "Lagre {name} først",
-                "description": "Det du løser inn havner på kontoen din, så det trenger e-posten din."
+                "description": "Det du løser inn, havner på kontoen din."
             },
             "saved": {
                 "title": "Lagret på {email}",
                 "description": "Fremgangen din følger deg til alle enheter."
             },
-            "save": "Lagre med e-post",
-            "haveAccount": "Jeg har en konto",
+            "login": {
+                "title": "Har du allerede en konto?",
+                "description": "Logg inn for å fortsette der du slapp."
+            },
+            "email": "E-post",
             "changeEmail": "Endre e-post",
             "logout": {
                 "description": "På denne enheten, eller på alle fra Mine enheter."
             },
             "logoutEverywhere": "Logg ut overalt"
         },
-        "wrongBallIndicator": "I biljardspillene blir siktelinjen rød og viser et kryss når den peker på en kule du ikke har lov til å treffe først."
+        "wrongBallIndicator": "I biljardspillene blir siktelinjen rød og viser et kryss når den peker på en kule du ikke har lov til å treffe først.",
+        "discord": {
+            "connected": "Discord-kontoen din er koblet til.",
+            "notConnected": "Ikke koblet til",
+            "onlyWayIn": "Discord-kontoen din er koblet til. Legg til en e-postadresse for å kunne koble den fra."
+        }
     },
     "share": {
         "tiers": {
@@ -1771,7 +1926,7 @@
         },
         "call": {
             "title": "Din neste kamp",
-            "waiting": "Venter…",
+            "waiting": "Venter...",
             "single": "Én kamp avgjør",
             "series": "Best av {count}, {own}–{other}",
             "startsIn": "Starter om {seconds} s",

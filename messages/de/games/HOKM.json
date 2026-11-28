@@ -54,6 +54,10 @@
                 "five": "Die klassische Ansage auf einem Drittel des Blatts",
                 "thirteen": "Der Hakem sieht alles, bevor er entscheidet"
             }
+        },
+        "reshuffle": {
+            "title": "Neu mischen ohne Trumpf",
+            "help": "Wer keinen Trumpf bekommen hat, darf im ersten Zug die Runde neu geben lassen. Nicht der Hakem, der die Farbe gewählt hat."
         }
     },
     "presets": {
@@ -109,7 +113,7 @@
         "title": "Rundenverlauf"
     },
     "scoreboard": {
-        "target": "Erster auf {amount}, {tricks} Stiche pro Runde"
+        "target": "Erster auf {amount}"
     },
     "help": {
         "rules": {
@@ -129,23 +133,37 @@
         "tricks": {
             "title": "Stiche holen",
             "description": [
-                "Wer einen Stich holt, spielt den nächsten an — gewinnen heißt also auch bestimmen, welche Farbe alle bedienen müssen.",
-                "Das erste Team mit **sieben** Stichen gewinnt die Runde — der Rest der Karten wird nicht mehr ausgespielt."
+                "Wer einen Stich holt, spielt den nächsten an. Gewinnen heißt also auch bestimmen, welche Farbe alle bedienen müssen.",
+                "Das erste Team mit **sieben** Stichen gewinnt die Runde, und der Rest der Karten wird nicht mehr ausgespielt."
             ]
         },
         "scoring": {
             "title": "Wertung",
             "description": [
                 "Jede gewonnene Runde ist einen Punkt wert, und das erste Team auf sieben Punkten gewinnt das Match. Alle sieben Stiche zu holen ist ein **Kot** und zählt zwei.",
-                "Der Hakem bleibt Hakem, solange sein Team gewinnt; verliert es eine Runde, geht die Ansage an den Spieler zu seiner Rechten."
+                "Der Hakem bleibt Hakem, solange sein Team gewinnt; verliert es eine Runde, geht die Ansage an den Spieler zu seiner Linken, aus dem anderen Team."
             ]
         },
         "bots": {
             "title": "Bots",
             "description": [
                 "Leichte Bots spielen jede erlaubte Karte. Normale Bots lesen den Stich vor sich: Sie halten sich aus dem gewonnenen Stich ihres Partners heraus und holen den Rest so günstig wie möglich.",
-                "Schwere Bots zählen die Karten. Sie merken sich, welche Farben dir ausgegangen sind, welche hohen Karten weg sind und welche Farben du anspielst — eine Farbe zweimal beim Partner anzuspielen ist etwas, worauf sie antworten."
+                "Schwere Bots zählen die Karten. Sie merken sich, welche Farben dir ausgegangen sind, welche hohen Karten weg sind und welche Farben du anspielst. Eine Farbe zweimal beim Partner anzuspielen ist also etwas, worauf sie antworten."
             ]
+        }
+    },
+    "reshuffle": {
+        "prompt": {
+            "title": "Du hast keinen Trumpf",
+            "description": "Neu mischen lassen? Die Karten werden neu gegeben und der Hakem sagt erneut Trumpf an.",
+            "keep": "Weiterspielen",
+            "reshuffle": "Neu mischen"
+        },
+        "announcement": {
+            "name": "{name} lässt neu mischen",
+            "self": "Du lässt neu mischen",
+            "reason": "Kein Trumpf auf der Hand",
+            "reasonSelf": "Kein Trumpf auf deiner Hand"
         }
     }
 }

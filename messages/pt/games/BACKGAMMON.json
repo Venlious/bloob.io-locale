@@ -10,6 +10,62 @@
                 "enabled": "**Habilitado**: Vencer antes que o adversário tenha retirado uma única peça é um gammon e vale dois pontos. Se ele ainda tiver uma peça na barra ou na sua casa, é um backgammon e vale três.",
                 "disabled": "**Desabilitado**: Toda vitória vale um ponto."
             }
+        },
+        "layout": {
+            "title": "Posição inicial",
+            "help": "Onde as peças começam: a posição de sempre, Nackgammon (duas peças atrás na casa 24 de cada lado), Hypergammon (três peças para cada um) ou Acey Deucey (as quinze fora do tabuleiro, com regras próprias).",
+            "data": {
+                "STANDARD": {
+                    "title": "Padrão",
+                    "description": "Quinze peças nos lugares de sempre"
+                },
+                "NACKGAMMON": {
+                    "title": "Nackgammon",
+                    "description": "Duas peças começam mais atrás"
+                },
+                "HYPERGAMMON": {
+                    "title": "Hypergammon",
+                    "description": "Três peças para cada um, nas casas do fundo"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "As quinze começam fora do tabuleiro, e um 1-2 vale uma dupla à sua escolha"
+                }
+            }
+        },
+        "fivePerPoint": {
+            "title": "Cinco peças por casa",
+            "help": "Nenhuma casa pode ter mais de cinco peças de um jogador, como no antigo gamão inglês. Retirar peças não tem limite."
+        },
+        "barFirst": {
+            "title": "Peças capturadas entram primeiro",
+            "help": {
+                "enabled": "**Habilitado**: Uma peça capturada precisa voltar antes de qualquer outra peça se mover.",
+                "disabled": "**Desabilitado**: Uma peça capturada espera com as outras que ainda vão entrar, e você pode mover o resto primeiro."
+            }
+        },
+        "keepBonus": {
+            "title": "Manter o bônus se travar",
+            "help": {
+                "enabled": "**Habilitado**: Um 1-2 ou uma dupla que você só consegue jogar em parte ainda te dá a dupla e a jogada extra.",
+                "disabled": "**Desabilitado**: Se você não conseguir jogar todo o 1-2 ou a dupla dele, sua vez acaba ali."
+            }
+        },
+        "cube": {
+            "title": "Dado de dobra",
+            "help": "Dobre a aposta antes de rolar. Seu adversário aceita e continua jogando pelo dobro de pontos, com o dado agora dele, ou recusa e perde a partida. Num match vale a regra de Crawford: a partida depois que um jogador fica a um ponto da vitória é jogada sem o dado."
+        },
+        "cubeLimit": {
+            "title": "Limite de dobra",
+            "help": "Até onde a aposta pode ser dobrada.",
+            "data": {
+                "limit": "Até 64",
+                "none": "Sem limite"
+            }
+        },
+        "jacoby": {
+            "title": "Regra de Jacoby",
+            "help": "Numa partida avulsa, gammons e backgammons só contam depois que o dado de dobra foi usado."
         }
     },
     "presets": {
@@ -20,10 +76,47 @@
         "match": {
             "title": "Match de 5",
             "description": "Primeiro a cinco pontos, gammons valem o dobro"
+        },
+        "nackgammon": {
+            "title": "Nackgammon",
+            "description": "Duas peças começam mais atrás, para partidas mais longas e táticas"
+        },
+        "hypergammon": {
+            "title": "Hypergammon",
+            "description": "Três peças para cada um, nas casas do fundo: uma partida inteira em poucos minutos"
+        },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Todas as peças começam fora do tabuleiro. Tire 1-2 para escolher qualquer dupla e jogar de novo"
+        },
+        "oldEnglish": {
+            "title": "Regras inglesas antigas",
+            "description": "No máximo cinco peças por casa, e sem dado de dobra"
         }
     },
     "undo": "Desfazer movimento",
     "noMoves": "Nenhum movimento possível",
+    "aceyDeucey": {
+        "title": "Acey-deucey!",
+        "oneTwo": "Jogue o 1 e o 2, depois escolha uma dupla",
+        "pick": {
+            "title": "Acey-deucey! Escolha uma dupla",
+            "detail": "Jogue-a quatro vezes e depois role de novo",
+            "hover": "Quatro {n}, depois role de novo",
+            "die": "Quatro {n}"
+        },
+        "double": {
+            "title": "Quatro {n}",
+            "detail": "Depois role de novo"
+        },
+        "bonus": "Role de novo",
+        "theirs": {
+            "oneTwo": "{name} tirou 1-2",
+            "pick": "{name} está escolhendo uma dupla",
+            "double": "{name} escolheu quatro {n} e depois rola de novo",
+            "bonus": "{name} rola de novo"
+        }
+    },
     "opening": {
         "title": "Jogada inicial",
         "highest": "O dado maior começa",
@@ -40,12 +133,14 @@
         "theirs": "(do adversário)",
         "bar": "Peças na barra: {count}",
         "off": "Peças retiradas: {count}",
-        "using": "usando {dice}"
+        "using": "usando {dice}",
+        "waiting": "Peças que ainda vão entrar: {count}"
     },
     "result": {
-        "SINGLE": "{name} venceu a partida: {points} ponto",
-        "GAMMON": "{name} venceu com gammon: {points} pontos",
-        "BACKGAMMON": "{name} venceu com backgammon: {points} pontos"
+        "SINGLE": "{name} venceu a partida: {points} pontos | {name} venceu a partida: {points} ponto | {name} venceu a partida: {points} pontos",
+        "GAMMON": "{name} venceu com gammon: {points} pontos | {name} venceu com gammon: {points} ponto | {name} venceu com gammon: {points} pontos",
+        "BACKGAMMON": "{name} venceu com backgammon: {points} pontos | {name} venceu com backgammon: {points} ponto | {name} venceu com backgammon: {points} pontos",
+        "DROPPED": "{name} venceu, a dobra foi recusada: {points} pontos | {name} venceu, a dobra foi recusada: {points} ponto | {name} venceu, a dobra foi recusada: {points} pontos"
     },
     "statistics": {
         "hitsPerMatch": "Capturas por partida",
@@ -82,6 +177,35 @@
                 "Quando todas as suas peças estiverem na sua casa, um dado pode retirar uma peça da casa que corresponde a ele.",
                 "Vença antes que o adversário retire qualquer peça e é um gammon, que vale dois pontos num match."
             ]
+        }
+    },
+    "cube": {
+        "stake": "Valendo {n} pontos | Valendo {n} ponto | Valendo {n} pontos",
+        "crawford": "Partida Crawford: sem dobrar",
+        "label": "Dado de dobra: {value}",
+        "double": "Dobrar a aposta para {value}",
+        "waiting": "Esperando {name} aceitar ou recusar",
+        "offered": "{name} dobra para {value}",
+        "offer": {
+            "title": "Dobrar a aposta para {value}?",
+            "take": "Se {name} aceitar, esta partida vale {n} pontos e o dado fica com {name}: só {name} pode dobrar depois. | Se {name} aceitar, esta partida vale {n} ponto e o dado fica com {name}: só {name} pode dobrar depois. | Se {name} aceitar, esta partida vale {n} pontos e o dado fica com {name}: só {name} pode dobrar depois.",
+            "drop": "Se o adversário recusar, você vence a partida na hora, por {n} pontos. | Se o adversário recusar, você vence a partida na hora, por {n} ponto. | Se o adversário recusar, você vence a partida na hora, por {n} pontos.",
+            "confirm": "Dobrar para {value}",
+            "cancel": "Agora não"
+        },
+        "answer": {
+            "take": "Aceitar: continue jogando por {n} pontos. O dado é seu. | Aceitar: continue jogando por {n} ponto. O dado é seu. | Aceitar: continue jogando por {n} pontos. O dado é seu.",
+            "drop": "Recusar: você entrega esta partida. {name} ganha {n} pontos. | Recusar: você entrega esta partida. {name} ganha {n} ponto. | Recusar: você entrega esta partida. {name} ganha {n} pontos.",
+            "takeButton": "Aceitar",
+            "dropButton": "Recusar",
+            "match": {
+                "takeBothAt": "Aceitar: se vencer, você fica com {own} / {total}; se perder, {name} fica com {other} / {total}.",
+                "takeYouWin": "Aceitar: se vencer, você vence o match; se perder, {name} fica com {other} / {total}.",
+                "takeNameWins": "Aceitar: se vencer, você fica com {own} / {total}; se perder, {name} vence o match.",
+                "takeEither": "Aceitar: quem vencer esta partida vence o match.",
+                "dropAt": "Recusar: {name} vai para {other} / {total}.",
+                "dropWins": "Recusar: {name} vence o match."
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Brazilian Portuguese",
         "rtl": false,
-        "total": 3814,
+        "total": 4040,
         "missing": 0
     },
     "error": {
@@ -163,6 +163,22 @@
             "notMatchmaking": "Você não pode realizar esta ação enquanto estiver fazendo um jogo.",
             "matchHost": "Você não é o anfitrião e não pode executar esta ação.",
             "admin": "Esta ação é restrita aos administradores."
+        },
+        "discord": {
+            "expired": "Entrar com o Discord demorou demais. Tente de novo.",
+            "failed": "Não deu para entrar com o Discord. Tente de novo.",
+            "alreadyConnected": "Sua conta já está conectada a uma conta do Discord. Desconecte ela primeiro.",
+            "onlyWayIn": "Adicione um endereço de e-mail primeiro. Agora o Discord é o único jeito de entrar na sua conta."
+        },
+        "discordInvite": {
+            "declined": "Este desafio foi recusado.",
+            "expired": "Este link expirou. Peça um novo no Discord.",
+            "over": "Este convite já acabou.",
+            "notForYou": "Você não pode ocupar os dois lugares do seu próprio desafio.",
+            "couldNotJoin": "Você não conseguiu entrar nesta mesa.",
+            "reserved": "Esta mesa está reservada para um desafio entre outros dois jogadores.",
+            "ranOut": "Ninguém aceitou este desafio a tempo, então ele foi cancelado.",
+            "paused": "As mesas do Discord estão pausadas por um momento. Tenta de novo daqui a pouco."
         }
     },
     "game": {
@@ -873,7 +889,9 @@
         "includesItems": "Inclui {n} itens | Inclui {n} item | Inclui {n} itens",
         "restartNotice": "O servidor vai reiniciar em {n} minutos. Termina seu jogo. | O servidor vai reiniciar em {n} minuto. Termina seu jogo. | O servidor vai reiniciar em {n} minutos. Termina seu jogo.",
         "bombs": "{n} bombas | {n} bomba | {n} bombas",
-        "tricks": "{n} vazas | {n} vaza | {n} vazas"
+        "tricks": "{n} vazas | {n} vaza | {n} vazas",
+        "dailyPlayed": "{n} jogaram | {n} jogou | {n} jogaram",
+        "dailyStreakInARow": "{n} dias seguidos | {n} dia seguido | {n} dias seguidos"
     },
     "articles": {
         "title": "Artigos"
@@ -1142,7 +1160,6 @@
         "leaderboard": "Leaderboard",
         "elapsedTime": "{time} decorrido",
         "startingInTime": "Começando em {time}",
-        "averageWaitTimeBlank": "Tempo médio de espera {value}",
         "averageBlank": "Média {value}",
         "highestBlank": "Alto. {value}",
         "showBlank": "Mostrar {value}",
@@ -1211,7 +1228,13 @@
         "siteName": "Bloob.io",
         "pool": "Sinuca",
         "gamePreferences": "Preferências de jogo",
-        "wrongBallIndicator": "Indicador de bola errada"
+        "wrongBallIndicator": "Indicador de bola errada",
+        "connect": "Conectar",
+        "disconnect": "Desconectar",
+        "discordAccount": "Discord",
+        "or": "ou",
+        "leave": "Sair",
+        "challenge": "Desafio"
     },
     "match": {
         "quick": "Partida Rápida",
@@ -1267,7 +1290,6 @@
             "gameUnsupported": "Esse jogo não carregou"
         },
         "matchmaking": {
-            "searching": "Procurando uma partida...",
             "matchFound": "Partida encontrada!",
             "waitingForOpponent": "Esperando seu oponente... {seconds}",
             "opponentAway": "Seu oponente não estava lá. Ainda procurando pra você.",
@@ -1285,26 +1307,93 @@
             "settings": {
                 "publicMatches": {
                     "title": "Partidas públicas",
-                    "description": "Diminua o tempo de espera.",
                     "tooltip": [
                         "Partidas públicas são criadas por outros jogadores. Essas partidas podem ter configurações personalizadas.",
                         "Você retornará automaticamente para a busca de partidas se for expulso ou se o anfitrião abandonar a partida."
                     ]
                 },
                 "games": {
-                    "title": "Jogos",
-                    "description": "Jogue o primeiro jogo disponível.",
-                    "tooltip": [
-                        "Incluir vários jogos pode reduzir o tempo de espera."
-                    ]
+                    "title": "Jogos"
                 },
                 "opponentFilter": {
                     "title": "Filtro de oponentes",
-                    "description": "Combina com base nos seus critérios.",
                     "tooltip": [
                         "Usar filtros rigorosos pode aumentar o tempo de espera, mas garante matches mais personalizados."
                     ]
                 }
+            },
+            "lookingForMatch": "Procurando partida",
+            "gamesSelected": "{n} jogos selecionados | {n} jogo selecionado | {n} jogos selecionados",
+            "findingOpponent": "Procurando um oponente",
+            "findingOpponentIn": "Procurando um oponente em {game}",
+            "stopSearching": "Parar de procurar",
+            "picker": {
+                "title": "Escolha seus jogos",
+                "subtitle": "Você entra na primeira partida encontrada",
+                "search": "Buscar jogos",
+                "clearSearch": "Limpar busca",
+                "all": "Todos",
+                "sortBy": "Ordenar jogos",
+                "sortPlaying": "Pessoas jogando",
+                "sortName": "Nome (A-Z)",
+                "mostPlayed": "Seus mais jogados",
+                "featured": "Destaques para você",
+                "more": "Mais jogos",
+                "results": "Resultados para \"{query}\"",
+                "similar": "Nada exato. Parecidos com \"{query}\"",
+                "noResults": "Nenhum jogo encontrado para \"{query}\"",
+                "noResultsHint": "Tente outro nome ou categoria",
+                "clearSelection": "Limpar seleção",
+                "findMatch": "Procurar partida em {n} jogos | Procurar partida em {n} jogo | Procurar partida em {n} jogos",
+                "pickToStart": "Escolha um jogo para começar"
+            },
+            "yourGames": "Seus jogos",
+            "usualDay": "Dia típico",
+            "editGames": "Editar jogos",
+            "othersSearching": "{n} outros procurando | {n} outro procurando | {n} outros procurando",
+            "quietBusierFrom": "Calmo agora, mais movimentado a partir das {time}",
+            "quietNow": "Calmo neste horário",
+            "busyNow": "Costuma estar movimentado neste horário",
+            "busyHours": "Como {game} costuma estar movimentado ao longo do dia, por hora. A barra destacada é agora.",
+            "hourBusy": "{time}: costuma estar movimentado",
+            "hourQuiet": "{time}: costuma estar calmo",
+            "filters": "Filtros",
+            "filtersHint": "Você continua na fila enquanto muda isso",
+            "publicSummary": {
+                "excluded": "Sem partidas públicas",
+                "defaultOnly": "Partidas públicas com configurações padrão",
+                "any": "Qualquer partida pública"
+            },
+            "opponentDescription": {
+                "any": "Qualquer um procurando seus jogos",
+                "higherThanLvl5": "Pula jogadores bem novos",
+                "higherThanLvl25": "Só jogadores experientes"
+            },
+            "publicDescription": {
+                "excluded": "Só partidas novas criadas para você",
+                "defaultOnly": "Também entra em lobbies abertos com regras padrão",
+                "any": "Também entra em lobbies com regras personalizadas"
+            },
+            "joining": "Entrando...",
+            "waitingForMore": "Esperando mais {n} jogadores | Esperando mais {n} jogador | Esperando mais {n} jogadores",
+            "seatsHint": "Começa quando {seats} entrarem, ou quando a contagem acabar com quem estiver aqui",
+            "likely": {
+                "soon": "Outras pessoas também estão procurando. Uma partida deve sair logo.",
+                "busy": "Costuma estar movimentado neste horário. Não deve demorar.",
+                "quiet": "Está calmo agora. Costuma ficar mais movimentado a partir das {time}.",
+                "quietAll": "Está calmo agora. Pode demorar um pouco."
+            },
+            "runner": {
+                "play": "Jogue enquanto espera",
+                "playWithKey": "Aperte {key} para jogar enquanto espera",
+                "best": "Recorde",
+                "space": "Espaço",
+                "gameOver": "Fim de jogo",
+                "newBest": "Novo recorde",
+                "playAgain": "Jogar de novo",
+                "words": "ESPERA TÉDIO LEGAL",
+                "royalFlush": "Royal flush!",
+                "stopWithKey": "{key} para parar de jogar"
             }
         },
         "info": {
@@ -1320,10 +1409,63 @@
             "joinById": "Você pode participar de um jogo particular preenchendo a identificação de quatro dígitos.",
             "public": "Qualquer um pode participar navegando nos jogos disponíveis.",
             "private": "Os jogadores só podem participar usando a URL ou ID de 4 dígitos.",
+            "challenge": "Só os jogadores desafiados podem entrar.",
             "leave": "É possível que você não consiga voltar, se optar por sair.",
             "leaveLast": "Como você é a única pessoa no jogo, a partida será encerrada quando você sair.",
             "leaveAsHost": "Alguém se tornará o novo anfitrião quando você sair.",
             "leaveOrForfeit": "Desistir conta como derrota, mas não como abandono."
+        },
+        "daily": {
+            "title": "Desafio diário",
+            "play": "Jogar",
+            "continue": "Continuar",
+            "seeBoard": "Ver o ranking de hoje",
+            "stuckAt": "Travou em {progress} de {total}",
+            "putAway": "Pausado em {progress} de {total}",
+            "underWay": "Rolando: {progress} de {total}",
+            "placeOf": "#{place} de {played}",
+            "clearedShort": "Completou! {points}",
+            "scope": "De quem ver os resultados",
+            "everyone": "Todo mundo",
+            "place": "Posição",
+            "time": "Tempo",
+            "cleared": "Completou",
+            "stuck": "Travou",
+            "missed": "Perdeu",
+            "anonymous": "Um jogador",
+            "resumed": "Retomado",
+            "resumedNote": "Retomado depois de uma interrupção. O relógio para enquanto a tentativa fica pausada.",
+            "longestYet": "Sua maior até agora",
+            "backTomorrow": "Volte amanhã pro nº {number}",
+            "playedCounts": "Jogar já conta, então sua sequência continua",
+            "fullBoard": "Ranking completo",
+            "longest": "Maior: {n}",
+            "clearedDays": "{cleared} de {played} completados",
+            "empty": "Ninguém jogou ainda.",
+            "emptyFriends": "Nenhum amigo seu jogou ainda.",
+            "shareTitle": "Bloob.io Desafio diário · {game} · Nº {number}",
+            "shareLine": "{title}: {result}",
+            "results": "Resultados do desafio diário",
+            "error": {
+                "played": "Você já jogou o desafio de hoje. Volte amanhã pra um novo!",
+                "unavailable": "O desafio de hoje ainda não está pronto. Tente de novo daqui a pouco!"
+            },
+            "played": "Jogou",
+            "underWayShort": "Em andamento",
+            "playedDays": "Jogou {played} de {days}",
+            "wordsFound": "{n} palavras | {n} palavra | {n} palavras",
+            "foundOf": "Achou {progress} de {total}",
+            "allFound": "Todas achadas",
+            "notAllFound": "Nem todas achadas",
+            "number": "Nº {number}",
+            "solo": "Solo",
+            "sameForEverybody": "igual pra todo mundo",
+            "firstTryCounts": "vale a primeira tentativa",
+            "continueUntil": "continue até {time}",
+            "playedCount": "{played} jogaram",
+            "clearedCount": "{cleared} completaram",
+            "streak": "Sequência",
+            "placeShort": "#{place}"
         }
     },
     "info": {
@@ -1400,7 +1542,11 @@
             "typing": "Na partida você só pode mandar as frases prontas. No Discord você escreve o que quiser.",
             "community": "No nosso servidor a galera do Bloob.io se encontra, acha com quem jogar e troca ideia sobre os jogos.",
             "free": "Entrar é de graça e você pode sair quando quiser. A conta do Discord é separada da sua conta no Bloob.io.",
-            "open": "Abre o Discord em uma nova aba."
+            "open": "Abre o Discord em uma nova aba.",
+            "seatedHere": "Você pegou seu lugar pelo Discord.",
+            "offer": "Seu lugar em uma mesa de {game} do Discord está esperando. Pegue quando estiver pronto.",
+            "takeSeat": "Pegar lugar",
+            "declinedOne": "{name} recusou o desafio. Vocês ainda podem jogar sem essa pessoa."
         },
         "stallCall": {
             "title": "Ainda Esperando?",
@@ -1576,9 +1722,9 @@
                 "description": "Digite seu e-mail. Se você é novo aqui, salvamos {name}. Se já esteve aqui, fazemos seu login.",
                 "loginTitle": "Fazer login",
                 "loginDescription": "Sem senha. Vamos te mandar um código por e-mail.",
-                "levelNote": "Você pode salvar {name} com um e-mail a partir de {level}.",
                 "note": "Sem senha. Usamos seu e-mail só para fazer seu login.",
-                "send": "Me envie um código"
+                "send": "Me envie um código",
+                "discord": "Continuar com o Discord"
             },
             "code": {
                 "title": "Confira seu e-mail",
@@ -1694,32 +1840,41 @@
         "offerDraw": "Seu adversário será perguntado se quer terminar a partida empatada. Se ele aceitar, não conta como vitória nem como derrota.",
         "accountStatus": {
             "unsaved": {
-                "title": "Só neste dispositivo",
-                "description": "Salve {name} com seu e-mail para manter seu progresso e jogar em qualquer dispositivo. Sem senha.",
-                "level": "Chegue ao {level} para salvar {name} com seu e-mail.",
+                "title": "Salvar {name}",
+                "description": "Por enquanto só neste dispositivo. Salve para jogar em qualquer dispositivo.",
+                "discord": "Por enquanto só neste dispositivo. Com o Discord, salva na hora.",
+                "level": "Por enquanto só neste dispositivo. Você pode salvar com seu e-mail a partir de {level}.",
                 "loginOnly": "Entre para manter seu progresso e jogar em qualquer dispositivo."
             },
             "devices": {
                 "title": "{name} está só neste dispositivo",
-                "description": "Salve com seu e-mail para jogar também nos seus outros dispositivos e vê-los aqui."
+                "description": "Salve para jogar também nos seus outros dispositivos e vê-los aqui."
             },
             "redeem": {
                 "title": "Salve {name} primeiro",
-                "description": "O que você resgata vai para sua conta, então precisa do seu e-mail."
+                "description": "O que você resgatar vai para a sua conta."
             },
             "saved": {
                 "title": "Salvo em {email}",
                 "description": "Seu progresso vai com você para qualquer dispositivo."
             },
-            "save": "Salvar com e-mail",
-            "haveAccount": "Já tenho uma conta",
+            "login": {
+                "title": "Já tem uma conta?",
+                "description": "Entre para continuar de onde parou."
+            },
+            "email": "E-mail",
             "changeEmail": "Mudar e-mail",
             "logout": {
                 "description": "Neste dispositivo, ou em todos em Meus dispositivos."
             },
             "logoutEverywhere": "Sair em todos os lugares"
         },
-        "wrongBallIndicator": "Nos jogos de sinuca, a linha de mira fica vermelha e mostra um X quando aponta para uma bola que você não pode acertar primeiro."
+        "wrongBallIndicator": "Nos jogos de sinuca, a linha de mira fica vermelha e mostra um X quando aponta para uma bola que você não pode acertar primeiro.",
+        "discord": {
+            "connected": "Sua conta do Discord está conectada.",
+            "notConnected": "Não conectado",
+            "onlyWayIn": "Sua conta do Discord está conectada. Adicione um endereço de e-mail para poder desconectar ela."
+        }
     },
     "share": {
         "tiers": {
@@ -1771,7 +1926,7 @@
         },
         "call": {
             "title": "Sua próxima partida",
-            "waiting": "Esperando…",
+            "waiting": "Esperando...",
             "single": "Uma partida decide",
             "series": "Melhor de {count}, {own}–{other}",
             "startsIn": "Começa em {seconds}s",

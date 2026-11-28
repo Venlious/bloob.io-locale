@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal Polish",
         "rtl": false,
-        "total": 3814,
+        "total": 4040,
         "missing": 0
     },
     "error": {
@@ -163,6 +163,22 @@
             "notMatchmaking": "Nie możesz wykonać tej akcji, gdy jesteś w trakcie dopasowywania.",
             "matchHost": "Nie jesteś gospodarzem i nie możesz wykonać tej akcji.",
             "admin": "Ta akcja jest ograniczona do administratorów."
+        },
+        "discord": {
+            "expired": "Logowanie przez Discord trwało za długo. Spróbuj ponownie.",
+            "failed": "Logowanie przez Discord nie zadziałało. Spróbuj ponownie.",
+            "alreadyConnected": "Twoje konto jest już połączone z kontem Discord. Najpierw je rozłącz.",
+            "onlyWayIn": "Najpierw dodaj adres e-mail. Na razie Discord to jedyny sposób, żeby wejść na twoje konto."
+        },
+        "discordInvite": {
+            "declined": "To wyzwanie zostało odrzucone.",
+            "expired": "Ten link wygasł. Poproś o nowy na Discordzie.",
+            "over": "To zaproszenie jest już nieaktualne.",
+            "notForYou": "Nie możesz zająć obu miejsc w swoim własnym wyzwaniu.",
+            "couldNotJoin": "Nie udało ci się dołączyć do tego stołu.",
+            "reserved": "Ten stół jest zarezerwowany na wyzwanie między dwoma innymi graczami.",
+            "ranOut": "Nikt nie przyjął tego wyzwania na czas, więc zostało odwołane.",
+            "paused": "Stoły z Discorda są na chwilę wstrzymane. Spróbuj ponownie za moment."
         }
     },
     "game": {
@@ -873,7 +889,9 @@
         "includesItems": "Zawiera {n} przedmioty | Zawiera {n} przedmiot | Zawiera {n} przedmiotów",
         "restartNotice": "Serwer zrestartuje się za {n} minut. Skończ swoją grę. | Serwer zrestartuje się za {n} minutę. Skończ swoją grę. | Serwer zrestartuje się za {n} minut. Skończ swoją grę.",
         "bombs": "{n} bomb | {n} bomba | {n} bomb",
-        "tricks": "{n} lew | {n} lewa | {n} lew"
+        "tricks": "{n} lew | {n} lewa | {n} lew",
+        "dailyPlayed": "Zagrało: {n} | Zagrał: {n} | Zagrało: {n}",
+        "dailyStreakInARow": "{n} dni z rzędu | {n} dzień z rzędu | {n} dni z rzędu"
     },
     "articles": {
         "title": "Artykuły"
@@ -1142,7 +1160,6 @@
         "leaderboard": "Tablica wyników",
         "elapsedTime": "Minęło {time}",
         "startingInTime": "Start za {time}",
-        "averageWaitTimeBlank": "Średni czas oczekiwania {value}",
         "averageBlank": "Średni {value}",
         "highestBlank": "Wysoko. {value}",
         "showBlank": "Pokaż {value}",
@@ -1211,7 +1228,13 @@
         "siteName": "Bloob.io",
         "pool": "Bilard",
         "gamePreferences": "Preferencje gier",
-        "wrongBallIndicator": "Wskaźnik złej bili"
+        "wrongBallIndicator": "Wskaźnik złej bili",
+        "connect": "Połącz",
+        "disconnect": "Rozłącz",
+        "discordAccount": "Discord",
+        "or": "lub",
+        "leave": "Wyjdź",
+        "challenge": "Wyzwanie"
     },
     "match": {
         "quick": "Szybki Mecz",
@@ -1267,7 +1290,6 @@
             "gameUnsupported": "Ta gra się nie wczytała"
         },
         "matchmaking": {
-            "searching": "Szukam meczu...",
             "matchFound": "Znaleziono mecz!",
             "waitingForOpponent": "Czekamy na twojego przeciwnika... {seconds}",
             "opponentAway": "Twojego przeciwnika nie było. Dalej szukamy dla ciebie.",
@@ -1285,26 +1307,93 @@
             "settings": {
                 "publicMatches": {
                     "title": "Publiczne mecze",
-                    "description": "Skróć czas oczekiwania.",
                     "tooltip": [
                         "Publiczne mecze są tworzone przez innych graczy. Te mecze mogą mieć dostosowane ustawienia.",
                         "Automatycznie wrócisz do dobierania graczy, jeśli zostaniesz wyrzucony lub jeśli gospodarz opuści mecz."
                     ]
                 },
                 "games": {
-                    "title": "Gry",
-                    "description": "Zagraj w pierwszą dostępną grę.",
-                    "tooltip": [
-                        "Dołączanie do wielu gier może skrócić czas oczekiwania."
-                    ]
+                    "title": "Gry"
                 },
                 "opponentFilter": {
                     "title": "Filtr przeciwników",
-                    "description": "Dopasuj na podstawie swoich kryteriów.",
                     "tooltip": [
                         "Używanie surowych filtrów może wydłużyć czas oczekiwania, ale daje bardziej dopasowane pary."
                     ]
                 }
+            },
+            "lookingForMatch": "Szukamy meczu",
+            "gamesSelected": "Wybrane gry: {n} | Wybrana gra: {n} | Wybrane gry: {n}",
+            "findingOpponent": "Szukamy przeciwnika",
+            "findingOpponentIn": "Szukamy przeciwnika w {game}",
+            "stopSearching": "Przestań szukać",
+            "picker": {
+                "title": "Wybierz swoje gry",
+                "subtitle": "Dołączysz do pierwszego znalezionego meczu",
+                "search": "Szukaj gier",
+                "clearSearch": "Wyczyść wyszukiwanie",
+                "all": "Wszystkie",
+                "sortBy": "Sortuj gry",
+                "sortPlaying": "Liczba grających",
+                "sortName": "Nazwa (A-Z)",
+                "mostPlayed": "Twoje najczęściej grane",
+                "featured": "Polecane dla ciebie",
+                "more": "Więcej gier",
+                "results": "Wyniki dla „{query}”",
+                "similar": "Brak dokładnych wyników. Podobne do „{query}”",
+                "noResults": "Żadna gra nie pasuje do „{query}”",
+                "noResultsHint": "Spróbuj innej nazwy lub kategorii",
+                "clearSelection": "Wyczyść wybór",
+                "findMatch": "Znajdź mecz w {n} grach | Znajdź mecz w {n} grze | Znajdź mecz w {n} grach",
+                "pickToStart": "Wybierz grę, żeby zacząć"
+            },
+            "yourGames": "Twoje gry",
+            "usualDay": "Typowy dzień",
+            "editGames": "Edytuj gry",
+            "othersSearching": "Inni szukający: {n} | Inny szukający: {n} | Inni szukający: {n}",
+            "quietBusierFrom": "Teraz spokojnie, więcej graczy od {time}",
+            "quietNow": "O tej porze jest spokojnie",
+            "busyNow": "O tej porze zwykle jest dużo graczy",
+            "busyHours": "Ilu graczy zwykle gra w {game} w ciągu dnia, godzina po godzinie. Wyróżniony słupek to teraz.",
+            "hourBusy": "{time}: zwykle dużo graczy",
+            "hourQuiet": "{time}: zwykle spokojnie",
+            "filters": "Filtry",
+            "filtersHint": "Zostajesz w kolejce, gdy je zmieniasz",
+            "publicSummary": {
+                "excluded": "Bez publicznych meczów",
+                "defaultOnly": "Publiczne mecze z domyślnymi ustawieniami",
+                "any": "Dowolne publiczne mecze"
+            },
+            "opponentDescription": {
+                "any": "Każdy, kto szuka twoich gier",
+                "higherThanLvl5": "Pomija zupełnie nowych graczy",
+                "higherThanLvl25": "Tylko doświadczeni gracze"
+            },
+            "publicDescription": {
+                "excluded": "Tylko nowe mecze utworzone dla ciebie",
+                "defaultOnly": "Dołączaj też do otwartych lobby ze standardowymi zasadami",
+                "any": "Dołączaj też do lobby z niestandardowymi zasadami"
+            },
+            "joining": "Dołączanie...",
+            "waitingForMore": "Czekamy na jeszcze {n} graczy | Czekamy na jeszcze {n} gracza | Czekamy na jeszcze {n} graczy",
+            "seatsHint": "Startuje, gdy dołączy {seats}, albo po zakończeniu odliczania z tymi, którzy są",
+            "likely": {
+                "soon": "Inni też szukają. Mecz powinien być blisko.",
+                "busy": "O tej porze zwykle jest dużo graczy. Nie powinno to długo potrwać.",
+                "quiet": "Teraz jest spokojnie. Zwykle więcej graczy jest od {time}.",
+                "quietAll": "Teraz jest spokojnie. To może chwilę potrwać."
+            },
+            "runner": {
+                "play": "Zagraj w trakcie czekania",
+                "playWithKey": "Naciśnij {key}, aby zagrać w trakcie czekania",
+                "best": "Rekord",
+                "space": "Spacja",
+                "gameOver": "Koniec gry",
+                "newBest": "Nowy rekord",
+                "playAgain": "Zagraj ponownie",
+                "words": "CZEKAJ NUDA FRAJDA",
+                "royalFlush": "Poker królewski!",
+                "stopWithKey": "{key}, aby przestać grać"
             }
         },
         "info": {
@@ -1320,10 +1409,63 @@
             "joinById": "Możesz dołączyć do (prywatnego) meczu, wpisując czterocyfrowy kod.",
             "public": "Każdy może dołączyć, przeglądając dostępne mecze.",
             "private": "Gracze mogą dołączyć tylko za pomocą adresu URL lub czterocyfrowego kodu.",
+            "challenge": "Dołączyć mogą tylko wyzwani gracze.",
             "leave": "Nie możesz dołączyć z powrotem, jeśli zdecydujesz się odejść.",
             "leaveLast": "Ponieważ jesteś jedyną osobą w grze, mecz zostanie zamknięty, gdy odejdziesz.",
             "leaveAsHost": "Ktoś inny stanie się nowym gospodarzem, gdy odejdziesz.",
             "leaveOrForfeit": "Poddanie się liczy się jako porażka, ale nie jako opuszczenie meczu."
+        },
+        "daily": {
+            "title": "Wyzwanie dnia",
+            "play": "Graj",
+            "continue": "Kontynuuj",
+            "seeBoard": "Zobacz dzisiejszą tablicę",
+            "stuckAt": "Utknięto na {progress} z {total}",
+            "putAway": "Wstrzymane na {progress} z {total}",
+            "underWay": "W toku: {progress} z {total}",
+            "placeOf": "#{place} z {played}",
+            "clearedShort": "Ułożone! {points}",
+            "scope": "Czyje wyniki widzisz",
+            "everyone": "Wszyscy",
+            "place": "Miejsce",
+            "time": "Czas",
+            "cleared": "Ułożone",
+            "stuck": "Utknięto",
+            "missed": "Pominięte",
+            "anonymous": "Jakiś gracz",
+            "resumed": "Wznowione",
+            "resumedNote": "Wznowione po przerwie. Zegar stoi, dopóki próba jest wstrzymana.",
+            "longestYet": "Twoja najdłuższa jak dotąd",
+            "backTomorrow": "Wróć jutro po nr {number}",
+            "playedCounts": "Granie się liczy, więc seria trwa dalej",
+            "fullBoard": "Cała tablica",
+            "longest": "Najdłuższa: {n}",
+            "clearedDays": "Ułożone: {cleared} z {played}",
+            "empty": "Nikt jeszcze nie zagrał.",
+            "emptyFriends": "Nikt z twoich znajomych jeszcze nie zagrał.",
+            "shareTitle": "Bloob.io Wyzwanie dnia · {game} · Nr {number}",
+            "shareLine": "{title}: {result}",
+            "results": "Wyniki wyzwania dnia",
+            "error": {
+                "played": "Dzisiejsze wyzwanie już zagrane. Wróć jutro po nowe!",
+                "unavailable": "Dzisiejsze wyzwanie nie jest jeszcze gotowe. Spróbuj za chwilę!"
+            },
+            "played": "Zagrane",
+            "underWayShort": "W toku",
+            "playedDays": "Zagrane {played} z {days}",
+            "wordsFound": "{n} słów | {n} słowo | {n} słów",
+            "foundOf": "Znaleziono {progress} z {total}",
+            "allFound": "Znaleziono wszystkie",
+            "notAllFound": "Nie znaleziono wszystkich",
+            "number": "Nr {number}",
+            "solo": "Solo",
+            "sameForEverybody": "to samo dla wszystkich",
+            "firstTryCounts": "liczy się pierwsza próba",
+            "continueUntil": "kontynuuj do {time}",
+            "playedCount": "Zagrało: {played}",
+            "clearedCount": "ułożyło: {cleared}",
+            "streak": "Seria",
+            "placeShort": "#{place}"
         }
     },
     "info": {
@@ -1400,7 +1542,11 @@
             "typing": "W trakcie gry możesz wysyłać tylko gotowe zwroty. Na Discordzie napiszesz, co chcesz.",
             "community": "Na naszym serwerze gracze Bloob.io spotykają się, szukają kogoś do gry i rozmawiają o grach.",
             "free": "Dołączenie jest darmowe i możesz wyjść, kiedy chcesz. Konto na Discordzie to nie to samo co konto na Bloob.io.",
-            "open": "Otwiera Discorda w nowej karcie."
+            "open": "Otwiera Discorda w nowej karcie.",
+            "seatedHere": "Zająłeś miejsce przez Discorda.",
+            "offer": "Twoje miejsce przy stole {game} z Discorda czeka. Zajmij je, kiedy będziesz gotowy.",
+            "takeSeat": "Zajmij miejsce",
+            "declinedOne": "{name} odrzuca wyzwanie. Możecie dalej grać bez tej osoby."
         },
         "stallCall": {
             "title": "Wciąż czekasz?",
@@ -1576,9 +1722,9 @@
                 "description": "Wpisz swój adres e-mail. Jeśli jesteś nowy, zapiszemy {name}. Jeśli już tu byłeś, zalogujemy Cię.",
                 "loginTitle": "Zaloguj się",
                 "loginDescription": "Bez hasła. Wyślemy ci kod e-mailem.",
-                "levelNote": "Od {level} możesz zapisać {name} za pomocą adresu e-mail.",
                 "note": "Bez hasła. Używamy Twojego adresu e-mail tylko do logowania.",
-                "send": "Wyślij mi kod"
+                "send": "Wyślij mi kod",
+                "discord": "Kontynuuj przez Discord"
             },
             "code": {
                 "title": "Sprawdź swoją skrzynkę",
@@ -1694,32 +1840,41 @@
         "offerDraw": "Twój przeciwnik zostanie zapytany, czy zakończyć mecz remisem. Jeśli się zgodzi, nie liczy się to ani jako wygrana, ani jako przegrana.",
         "accountStatus": {
             "unsaved": {
-                "title": "Tylko na tym urządzeniu",
-                "description": "Zapisz {name} przez e-mail, żeby zachować postępy i grać na każdym urządzeniu. Bez hasła.",
-                "level": "Osiągnij {level}, żeby zapisać {name} przez e-mail.",
+                "title": "Zapisz {name}",
+                "description": "Na razie tylko na tym urządzeniu. Zapisz, żeby grać na każdym urządzeniu.",
+                "discord": "Na razie tylko na tym urządzeniu. Discord zapisze to od razu.",
+                "level": "Na razie tylko na tym urządzeniu. Od {level} możesz zapisać to za pomocą adresu e-mail.",
                 "loginOnly": "Zaloguj się, żeby zachować postępy i grać na każdym urządzeniu."
             },
             "devices": {
                 "title": "{name} jest tylko na tym urządzeniu",
-                "description": "Zapisz przez e-mail, żeby grać też na innych urządzeniach i widzieć je tutaj."
+                "description": "Zapisz, żeby grać też na innych urządzeniach i widzieć je tutaj."
             },
             "redeem": {
                 "title": "Najpierw zapisz {name}",
-                "description": "To, co zrealizujesz, trafia na twoje konto, więc potrzebny jest twój e-mail."
+                "description": "To, co zrealizujesz, trafia na twoje konto."
             },
             "saved": {
                 "title": "Zapisano na {email}",
                 "description": "Twoje postępy idą z tobą na każde urządzenie."
             },
-            "save": "Zapisz przez e-mail",
-            "haveAccount": "Mam konto",
+            "login": {
+                "title": "Masz już konto?",
+                "description": "Zaloguj się, żeby grać dalej tam, gdzie skończyłeś."
+            },
+            "email": "E-mail",
             "changeEmail": "Zmień e-mail",
             "logout": {
                 "description": "Na tym urządzeniu albo na wszystkich w Moich urządzeniach."
             },
             "logoutEverywhere": "Wyloguj wszędzie"
         },
-        "wrongBallIndicator": "W grach bilardowych linia celowania robi się czerwona i pokazuje krzyżyk, gdy wskazuje bilę, której nie możesz uderzyć jako pierwszej."
+        "wrongBallIndicator": "W grach bilardowych linia celowania robi się czerwona i pokazuje krzyżyk, gdy wskazuje bilę, której nie możesz uderzyć jako pierwszej.",
+        "discord": {
+            "connected": "Twoje konto Discord jest połączone.",
+            "notConnected": "Nie połączono",
+            "onlyWayIn": "Twoje konto Discord jest połączone. Dodaj adres e-mail, żeby móc je rozłączyć."
+        }
     },
     "share": {
         "tiers": {
@@ -1771,7 +1926,7 @@
         },
         "call": {
             "title": "Twój następny mecz",
-            "waiting": "Oczekiwanie…",
+            "waiting": "Oczekiwanie...",
             "single": "Rozstrzyga jedna partia",
             "series": "Do {count} partii, {own}–{other}",
             "startsIn": "Start za {seconds} s",

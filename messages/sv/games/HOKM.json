@@ -54,6 +54,10 @@
                 "five": "Den klassiska bjudningen, på en tredjedel av handen",
                 "thirteen": "Hakem ser allt innan han bestämmer sig"
             }
+        },
+        "reshuffle": {
+            "title": "Ny blandning utan trumf",
+            "help": "En spelare utan trumf på handen får be om ny giv i sin första tur. Inte Hakem, som valde färgen."
         }
     },
     "presets": {
@@ -109,7 +113,7 @@
         "title": "Rundhistorik"
     },
     "scoreboard": {
-        "target": "Först till {amount}, {tricks} stick per spel"
+        "target": "Först till {amount}"
     },
     "help": {
         "rules": {
@@ -130,22 +134,36 @@
             "title": "Att ta stick",
             "description": [
                 "Den som tar ett stick spelar ut till nästa, så att vinna innebär också att välja vilken färg alla andra måste följa.",
-                "Det första laget som tar **sju** stick vinner spelet — resten av korten spelas inte ut."
+                "Det första laget som tar **sju** stick vinner spelet, och resten av korten spelas inte ut."
             ]
         },
         "scoring": {
             "title": "Poäng",
             "description": [
                 "Varje vunnet spel är värt ett poäng, och det första laget till sju poäng vinner matchen. Att ta alla sju sticken är en **Kot** och räknas som två.",
-                "Hakem förblir Hakem så länge hans lag vinner; i samma stund som de förlorar ett spel går bjudningen till spelaren till höger om honom."
+                "Hakem förblir Hakem så länge hans lag vinner; i samma stund som de förlorar ett spel går bjudningen till spelaren till vänster om honom, i det andra laget."
             ]
         },
         "bots": {
             "title": "Bottar",
             "description": [
                 "Lätta bottar lägger vilket tillåtet kort som helst. Vanliga bottar läser sticket framför sig: de håller sig undan det stick partnern redan vinner och tar resten så billigt som möjligt.",
-                "Svåra bottar räknar kort. De minns vilka färger du är slut på, vilka höga kort som gått och vilka färger du spelar ut — att spela ut samma färg två gånger hos din partner är något de svarar på."
+                "Svåra bottar räknar kort. De minns vilka färger du är slut på, vilka höga kort som gått och vilka färger du spelar ut, så att spela ut samma färg två gånger hos din partner är något de svarar på."
             ]
+        }
+    },
+    "reshuffle": {
+        "prompt": {
+            "title": "Du har ingen trumf",
+            "description": "Be om ny blandning? Korten delas ut igen och Hakem väljer trumf på nytt.",
+            "keep": "Spela vidare",
+            "reshuffle": "Blanda om"
+        },
+        "announcement": {
+            "name": "{name} bad om ny blandning",
+            "self": "Du bad om ny blandning",
+            "reason": "Ingen trumf på handen",
+            "reasonSelf": "Ingen trumf på din hand"
         }
     }
 }

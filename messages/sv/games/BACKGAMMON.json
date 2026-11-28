@@ -10,6 +10,62 @@
                 "enabled": "**Aktiverad**: Vinner du innan motståndaren har spelat ut en enda pjäs är det en gammon, värd två poäng. Har motståndaren fortfarande en pjäs på baren eller i ditt inre bord är det en backgammon, värd tre.",
                 "disabled": "**Inaktiverad**: Varje vinst ger en poäng."
             }
+        },
+        "layout": {
+            "title": "Startuppställning",
+            "help": "Var pjäserna börjar: den vanliga uppställningen, Nackgammon (två pjäser bakåt på 24-spetsen på varje sida), Hypergammon (tre pjäser var) eller Acey Deucey (alla femton utanför brädet, med egna regler).",
+            "data": {
+                "STANDARD": {
+                    "title": "Standard",
+                    "description": "Femton pjäser på de vanliga platserna"
+                },
+                "NACKGAMMON": {
+                    "title": "Nackgammon",
+                    "description": "Två pjäser börjar längre bak"
+                },
+                "HYPERGAMMON": {
+                    "title": "Hypergammon",
+                    "description": "Tre pjäser var, på de bortersta spetsarna"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "Alla femton börjar utanför brädet, och 1-2 ger en valfri dubbel"
+                }
+            }
+        },
+        "fivePerPoint": {
+            "title": "Fem pjäser per spets",
+            "help": "Ingen spets får ha fler än fem av en spelares pjäser, som i gammal engelsk backgammon. Det finns ingen gräns för att spela ut pjäser."
+        },
+        "barFirst": {
+            "title": "Slagna pjäser kommer in först",
+            "help": {
+                "enabled": "**Aktiverad**: En slagen pjäs måste komma in igen innan någon annan pjäs får flyttas.",
+                "disabled": "**Inaktiverad**: En slagen pjäs väntar med de andra som ska komma in, och du kan flytta resten först."
+            }
+        },
+        "keepBonus": {
+            "title": "Behåll bonusen när du sitter fast",
+            "help": {
+                "enabled": "**Aktiverad**: En 1-2 eller en dubbel som du bara kan spela delvis ger dig ändå dubbeln och det extra kastet.",
+                "disabled": "**Inaktiverad**: Kan du inte spela hela 1-2 eller dubbeln efteråt slutar din tur där."
+            }
+        },
+        "cube": {
+            "title": "Dubbleringstärning",
+            "help": "Dubbla insatsen innan du slår. Motståndaren tar och spelar vidare om dubbelt så många poäng med tärningen som sin, eller passar och förlorar partiet. I en match gäller Crawford-regeln: partiet efter att en spelare är ett poäng från vinst spelas utan dubbleringstärning."
+        },
+        "cubeLimit": {
+            "title": "Dubbleringsgräns",
+            "help": "Hur högt insatsen kan dubblas.",
+            "data": {
+                "limit": "Upp till 64",
+                "none": "Ingen gräns"
+            }
+        },
+        "jacoby": {
+            "title": "Jacoby-regeln",
+            "help": "I ett enstaka parti räknas gammon och backgammon först när dubbleringstärningen har vänts."
         }
     },
     "presets": {
@@ -20,10 +76,47 @@
         "match": {
             "title": "Match till 5",
             "description": "Först till fem poäng, gammon räknas dubbelt"
+        },
+        "nackgammon": {
+            "title": "Nackgammon",
+            "description": "Två pjäser börjar längre bak, för längre och mer taktiska partier"
+        },
+        "hypergammon": {
+            "title": "Hypergammon",
+            "description": "Tre pjäser var, på de bortersta spetsarna: ett helt parti på några minuter"
+        },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Alla pjäser börjar utanför brädet. Slå 1-2 för att välja valfri dubbel och slå igen"
+        },
+        "oldEnglish": {
+            "title": "Gamla engelska regler",
+            "description": "Högst fem pjäser på en spets, och ingen dubbleringstärning"
         }
     },
     "undo": "Ta tillbaka drag",
     "noMoves": "Inga möjliga drag",
+    "aceyDeucey": {
+        "title": "Acey-deucey!",
+        "oneTwo": "Spela 1:an och 2:an, och välj sedan en dubbel",
+        "pick": {
+            "title": "Acey-deucey! Välj en dubbel",
+            "detail": "Spela den fyra gånger och slå sedan igen",
+            "hover": "Fyra {n}:or, sedan slår du igen",
+            "die": "Fyra {n}:or"
+        },
+        "double": {
+            "title": "Fyra {n}:or",
+            "detail": "Sedan slår du igen"
+        },
+        "bonus": "Slå igen",
+        "theirs": {
+            "oneTwo": "{name} slog 1-2",
+            "pick": "{name} väljer en dubbel",
+            "double": "{name} valde fyra {n}:or och slår igen efteråt",
+            "bonus": "{name} slår igen"
+        }
+    },
     "opening": {
         "title": "Öppningskast",
         "highest": "Högsta tärningen börjar",
@@ -40,12 +133,14 @@
         "theirs": "(motståndarens)",
         "bar": "Pjäser på baren: {count}",
         "off": "Utspelade pjäser: {count}",
-        "using": "med {dice}"
+        "using": "med {dice}",
+        "waiting": "Pjäser kvar att komma in: {count}"
     },
     "result": {
-        "SINGLE": "{name} vann partiet: {points} poäng",
-        "GAMMON": "{name} vann en gammon: {points} poäng",
-        "BACKGAMMON": "{name} vann en backgammon: {points} poäng"
+        "SINGLE": "{name} vann partiet: {points} poäng | {name} vann partiet: {points} poäng | {name} vann partiet: {points} poäng",
+        "GAMMON": "{name} vann en gammon: {points} poäng | {name} vann en gammon: {points} poäng | {name} vann en gammon: {points} poäng",
+        "BACKGAMMON": "{name} vann en backgammon: {points} poäng | {name} vann en backgammon: {points} poäng | {name} vann en backgammon: {points} poäng",
+        "DROPPED": "{name} vann, dubbleringen avböjdes: {points} poäng | {name} vann, dubbleringen avböjdes: {points} poäng | {name} vann, dubbleringen avböjdes: {points} poäng"
     },
     "statistics": {
         "hitsPerMatch": "Slag per match",
@@ -82,6 +177,35 @@
                 "När alla dina pjäser är i ditt inre bord kan en tärning spela ut en pjäs från spetsen som motsvarar den.",
                 "Vinner du innan motståndaren har spelat ut någon pjäs är det en gammon, värd två poäng i en match."
             ]
+        }
+    },
+    "cube": {
+        "stake": "Det spelas om {n} poäng | Det spelas om {n} poäng | Det spelas om {n} poäng",
+        "crawford": "Crawford-parti: ingen dubblering",
+        "label": "Dubbleringstärning: {value}",
+        "double": "Dubbla insatsen till {value}",
+        "waiting": "Väntar på att {name} tar eller passar",
+        "offered": "{name} dubblar till {value}",
+        "offer": {
+            "title": "Dubbla insatsen till {value}?",
+            "take": "Om {name} tar är det här partiet värt {n} poäng och tärningen blir {name}s: bara {name} kan dubbla nästa gång. | Om {name} tar är det här partiet värt {n} poäng och tärningen blir {name}s: bara {name} kan dubbla nästa gång. | Om {name} tar är det här partiet värt {n} poäng och tärningen blir {name}s: bara {name} kan dubbla nästa gång.",
+            "drop": "Om motståndaren passar vinner du partiet direkt, för {n} poäng. | Om motståndaren passar vinner du partiet direkt, för {n} poäng. | Om motståndaren passar vinner du partiet direkt, för {n} poäng.",
+            "confirm": "Dubbla till {value}",
+            "cancel": "Inte nu"
+        },
+        "answer": {
+            "take": "Ta: spela vidare om {n} poäng. Tärningen är din. | Ta: spela vidare om {n} poäng. Tärningen är din. | Ta: spela vidare om {n} poäng. Tärningen är din.",
+            "drop": "Passa: du ger upp det här partiet. {name} får {n} poäng. | Passa: du ger upp det här partiet. {name} får {n} poäng. | Passa: du ger upp det här partiet. {name} får {n} poäng.",
+            "takeButton": "Ta",
+            "dropButton": "Passa",
+            "match": {
+                "takeBothAt": "Ta: vinner du står du på {own} / {total}; förlorar du står {name} på {other} / {total}.",
+                "takeYouWin": "Ta: vinner du vinner du matchen; förlorar du står {name} på {other} / {total}.",
+                "takeNameWins": "Ta: vinner du står du på {own} / {total}; förlorar du vinner {name} matchen.",
+                "takeEither": "Ta: den som vinner det här partiet vinner matchen.",
+                "dropAt": "Passa: {name} går till {other} / {total}.",
+                "dropWins": "Passa: {name} vinner matchen."
+            }
         }
     }
 }

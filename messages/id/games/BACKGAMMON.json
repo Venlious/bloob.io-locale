@@ -10,6 +10,62 @@
                 "enabled": "**Diaktifkan**: Menang sebelum lawan mengeluarkan satu bidak pun disebut gammon dan bernilai dua poin. Kalau lawan masih punya bidak di bar atau di papan rumahmu, itu backgammon dan bernilai tiga.",
                 "disabled": "**Dinonaktifkan**: Setiap kemenangan bernilai satu poin."
             }
+        },
+        "layout": {
+            "title": "Posisi awal",
+            "help": "Tempat bidak mulai: posisi biasa, Nackgammon (dua bidak mundur ke titik 24 di tiap sisi), Hypergammon (masing-masing tiga bidak), atau Acey Deucey (kelima belas bidak di luar papan, dengan aturannya sendiri).",
+            "data": {
+                "STANDARD": {
+                    "title": "Standar",
+                    "description": "Lima belas bidak di tempat biasanya"
+                },
+                "NACKGAMMON": {
+                    "title": "Nackgammon",
+                    "description": "Dua bidak mulai lebih ke belakang"
+                },
+                "HYPERGAMMON": {
+                    "title": "Hypergammon",
+                    "description": "Masing-masing tiga bidak, di titik paling jauh"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "Kelima belas bidak mulai di luar papan, dan 1-2 memberimu dadu kembar pilihanmu"
+                }
+            }
+        },
+        "fivePerPoint": {
+            "title": "Lima bidak per titik",
+            "help": "Satu titik nggak boleh diisi lebih dari lima bidak milik satu pemain, kayak di backgammon Inggris kuno. Ngeluarin bidak nggak dibatasi."
+        },
+        "barFirst": {
+            "title": "Bidak yang dipukul masuk duluan",
+            "help": {
+                "enabled": "**Diaktifkan**: Bidak yang dipukul harus masuk lagi sebelum bidak lain boleh bergerak.",
+                "disabled": "**Dinonaktifkan**: Bidak yang dipukul menunggu bersama bidak lain yang belum masuk, dan kamu bisa menggerakkan sisanya dulu."
+            }
+        },
+        "keepBonus": {
+            "title": "Bonus tetap meski macet",
+            "help": {
+                "enabled": "**Diaktifkan**: 1-2 atau dadu kembar yang cuma bisa dimainkan sebagian tetap memberimu dadu kembar dan lemparan tambahan.",
+                "disabled": "**Dinonaktifkan**: Kalau kamu nggak bisa memainkan seluruh 1-2 atau dadu kembarnya, giliranmu selesai di situ."
+            }
+        },
+        "cube": {
+            "title": "Dadu penggandaan",
+            "help": "Gandakan taruhan sebelum lempar dadu. Lawanmu terima dan lanjut main buat poin dua kali lipat, dadunya jadi miliknya, atau nolak dan kalah di permainan itu. Di match berlaku aturan Crawford: permainan setelah ada pemain yang tinggal satu poin lagi menang dimainkan tanpa dadu penggandaan."
+        },
+        "cubeLimit": {
+            "title": "Batas penggandaan",
+            "help": "Seberapa tinggi taruhan bisa digandakan.",
+            "data": {
+                "limit": "Sampai 64",
+                "none": "Tanpa batas"
+            }
+        },
+        "jacoby": {
+            "title": "Aturan Jacoby",
+            "help": "Di satu permainan, gammon dan backgammon baru dihitung kalau dadu penggandaan udah pernah diputar."
         }
     },
     "presets": {
@@ -20,10 +76,47 @@
         "match": {
             "title": "Match sampai 5",
             "description": "Yang pertama meraih lima poin menang, gammon dihitung dua kali lipat"
+        },
+        "nackgammon": {
+            "title": "Nackgammon",
+            "description": "Dua bidak mulai lebih ke belakang, buat permainan yang lebih panjang dan taktis"
+        },
+        "hypergammon": {
+            "title": "Hypergammon",
+            "description": "Masing-masing tiga bidak di titik paling jauh: satu permainan penuh dalam beberapa menit"
+        },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Semua bidak mulai di luar papan. Lempar 1-2 untuk memilih dadu kembar mana pun lalu lempar lagi"
+        },
+        "oldEnglish": {
+            "title": "Aturan Inggris Lama",
+            "description": "Maksimal lima bidak di satu titik, dan tanpa dadu penggandaan"
         }
     },
     "undo": "Batalkan langkah",
     "noMoves": "Tidak ada langkah yang bisa dimainkan",
+    "aceyDeucey": {
+        "title": "Acey-deucey!",
+        "oneTwo": "Mainkan 1 dan 2, lalu pilih dadu kembar",
+        "pick": {
+            "title": "Acey-deucey! Pilih dadu kembar",
+            "detail": "Mainkan empat kali, lalu lempar lagi",
+            "hover": "Empat kali {n}, lalu lempar lagi",
+            "die": "Empat kali {n}"
+        },
+        "double": {
+            "title": "Empat kali {n}",
+            "detail": "Lalu lempar lagi"
+        },
+        "bonus": "Lempar lagi",
+        "theirs": {
+            "oneTwo": "{name} melempar 1-2",
+            "pick": "{name} sedang memilih dadu kembar",
+            "double": "{name} memilih empat kali {n} dan setelah itu lempar lagi",
+            "bonus": "{name} lempar lagi"
+        }
+    },
     "opening": {
         "title": "Lemparan pembuka",
         "highest": "Dadu tertinggi mulai duluan",
@@ -40,12 +133,14 @@
         "theirs": "(milik lawan)",
         "bar": "Bar: {count} bidak",
         "off": "Sudah keluar: {count} bidak",
-        "using": "memakai {dice}"
+        "using": "memakai {dice}",
+        "waiting": "Belum masuk: {count} bidak"
     },
     "result": {
-        "SINGLE": "{name} memenangkan permainan: {points} poin",
-        "GAMMON": "{name} menang gammon: {points} poin",
-        "BACKGAMMON": "{name} menang backgammon: {points} poin"
+        "SINGLE": "{name} memenangkan permainan: {points} poin | {name} memenangkan permainan: {points} poin | {name} memenangkan permainan: {points} poin",
+        "GAMMON": "{name} menang gammon: {points} poin | {name} menang gammon: {points} poin | {name} menang gammon: {points} poin",
+        "BACKGAMMON": "{name} menang backgammon: {points} poin | {name} menang backgammon: {points} poin | {name} menang backgammon: {points} poin",
+        "DROPPED": "{name} menang, penggandaannya ditolak: {points} poin | {name} menang, penggandaannya ditolak: {points} poin | {name} menang, penggandaannya ditolak: {points} poin"
     },
     "statistics": {
         "hitsPerMatch": "Pukulan per match",
@@ -82,6 +177,35 @@
                 "Setelah semua bidakmu ada di papan rumah, sebuah dadu bisa mengeluarkan bidak dari titik yang sesuai dengan angkanya.",
                 "Menang sebelum lawan mengeluarkan satu bidak pun berarti gammon, bernilai dua poin dalam match."
             ]
+        }
+    },
+    "cube": {
+        "stake": "Main buat {n} poin | Main buat {n} poin | Main buat {n} poin",
+        "crawford": "Permainan Crawford: nggak bisa gandakan",
+        "label": "Dadu penggandaan: {value}",
+        "double": "Gandakan taruhan jadi {value}",
+        "waiting": "Nunggu {name} terima atau nolak",
+        "offered": "{name} gandakan jadi {value}",
+        "offer": {
+            "title": "Gandakan taruhan jadi {value}?",
+            "take": "Kalau {name} terima, permainan ini bernilai {n} poin, dan dadunya jadi milik {name}: cuma {name} yang bisa gandakan berikutnya. | Kalau {name} terima, permainan ini bernilai {n} poin, dan dadunya jadi milik {name}: cuma {name} yang bisa gandakan berikutnya. | Kalau {name} terima, permainan ini bernilai {n} poin, dan dadunya jadi milik {name}: cuma {name} yang bisa gandakan berikutnya.",
+            "drop": "Kalau lawanmu nolak, kamu langsung menang permainan ini, dapat {n} poin. | Kalau lawanmu nolak, kamu langsung menang permainan ini, dapat {n} poin. | Kalau lawanmu nolak, kamu langsung menang permainan ini, dapat {n} poin.",
+            "confirm": "Gandakan jadi {value}",
+            "cancel": "Nanti aja"
+        },
+        "answer": {
+            "take": "Terima: lanjut main buat {n} poin. Dadunya jadi milikmu. | Terima: lanjut main buat {n} poin. Dadunya jadi milikmu. | Terima: lanjut main buat {n} poin. Dadunya jadi milikmu.",
+            "drop": "Tolak: kamu nyerah di permainan ini. {name} dapat {n} poin. | Tolak: kamu nyerah di permainan ini. {name} dapat {n} poin. | Tolak: kamu nyerah di permainan ini. {name} dapat {n} poin.",
+            "takeButton": "Terima",
+            "dropButton": "Tolak",
+            "match": {
+                "takeBothAt": "Terima: kalau menang kamu jadi {own} / {total}; kalau kalah {name} jadi {other} / {total}.",
+                "takeYouWin": "Terima: kalau menang kamu menang match; kalau kalah {name} jadi {other} / {total}.",
+                "takeNameWins": "Terima: kalau menang kamu jadi {own} / {total}; kalau kalah {name} menang match.",
+                "takeEither": "Terima: siapa pun yang menang permainan ini menang match.",
+                "dropAt": "Tolak: {name} jadi {other} / {total}.",
+                "dropWins": "Tolak: {name} menang match."
+            }
         }
     }
 }

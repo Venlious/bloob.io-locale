@@ -10,6 +10,62 @@
                 "enabled": "**Aktiviert**: Gewinnst du, bevor dein Gegner auch nur einen Stein herausgewürfelt hat, ist es ein Gammon und zählt zwei Punkte. Hat er noch einen Stein auf der Bar oder in deinem Heimfeld, ist es ein Backgammon und zählt drei.",
                 "disabled": "**Deaktiviert**: Jeder Sieg zählt einen Punkt."
             }
+        },
+        "layout": {
+            "title": "Startaufstellung",
+            "help": "Wo die Steine starten: die übliche Aufstellung, Nackgammon (auf jeder Seite zwei Steine zurück auf die 24), Hypergammon (drei Steine pro Spieler) oder Acey Deucey (alle fünfzehn außerhalb des Bretts, mit eigenen Regeln).",
+            "data": {
+                "STANDARD": {
+                    "title": "Standard",
+                    "description": "Fünfzehn Steine an den üblichen Stellen"
+                },
+                "NACKGAMMON": {
+                    "title": "Nackgammon",
+                    "description": "Zwei Steine starten weiter hinten"
+                },
+                "HYPERGAMMON": {
+                    "title": "Hypergammon",
+                    "description": "Drei Steine pro Spieler, ganz hinten"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "Alle fünfzehn starten außerhalb des Bretts, und eine 1-2 bringt dir einen Pasch deiner Wahl"
+                }
+            }
+        },
+        "fivePerPoint": {
+            "title": "Fünf Steine pro Zunge",
+            "help": "Auf keiner Zunge dürfen mehr als fünf Steine eines Spielers stehen, wie im alten englischen Backgammon. Beim Herauswürfeln gilt keine Grenze."
+        },
+        "barFirst": {
+            "title": "Geschlagene Steine zuerst einsetzen",
+            "help": {
+                "enabled": "**Aktiviert**: Ein geschlagener Stein muss wieder eingesetzt werden, bevor ein anderer Stein ziehen darf.",
+                "disabled": "**Deaktiviert**: Ein geschlagener Stein wartet bei den anderen, die noch eingesetzt werden müssen, und du kannst zuerst den Rest ziehen."
+            }
+        },
+        "keepBonus": {
+            "title": "Bonus behalten, wenn du festsitzt",
+            "help": {
+                "enabled": "**Aktiviert**: Kannst du eine 1-2 oder einen Pasch nur teilweise ziehen, bekommst du trotzdem den Pasch und den Extrawurf.",
+                "disabled": "**Deaktiviert**: Kannst du eine 1-2 oder ihren Pasch nicht ganz ziehen, endet dein Zug dort."
+            }
+        },
+        "cube": {
+            "title": "Dopplerwürfel",
+            "help": "Verdopple den Einsatz, bevor du würfelst. Dein Gegner nimmt an und spielt um doppelt so viele Punkte weiter, der Würfel gehört dann ihm, oder er gibt auf und verliert die Partie. Im Match gilt die Crawford-Regel: Die Partie, nachdem ein Spieler nur noch einen Punkt vom Sieg entfernt ist, wird ohne Dopplerwürfel gespielt."
+        },
+        "cubeLimit": {
+            "title": "Verdopplungsgrenze",
+            "help": "Wie hoch der Einsatz verdoppelt werden kann.",
+            "data": {
+                "limit": "Bis 64",
+                "none": "Keine Grenze"
+            }
+        },
+        "jacoby": {
+            "title": "Jacoby-Regel",
+            "help": "In einer Einzelpartie zählen Gammons und Backgammons erst, wenn der Dopplerwürfel gedreht wurde."
         }
     },
     "presets": {
@@ -20,10 +76,47 @@
         "match": {
             "title": "Match bis 5",
             "description": "Bis fünf Punkte, Gammons zählen doppelt"
+        },
+        "nackgammon": {
+            "title": "Nackgammon",
+            "description": "Zwei Steine starten weiter hinten, für längere, taktischere Partien"
+        },
+        "hypergammon": {
+            "title": "Hypergammon",
+            "description": "Drei Steine pro Spieler, ganz hinten: eine ganze Partie in wenigen Minuten"
+        },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Alle Steine starten außerhalb des Bretts. Wirf eine 1-2, wähle einen beliebigen Pasch und würfle noch einmal"
+        },
+        "oldEnglish": {
+            "title": "Alte englische Regeln",
+            "description": "Höchstens fünf Steine pro Zunge und kein Dopplerwürfel"
         }
     },
     "undo": "Zug zurücknehmen",
     "noMoves": "Kein Zug möglich",
+    "aceyDeucey": {
+        "title": "Acey-Deucey!",
+        "oneTwo": "Zieh die 1 und die 2, dann wähle einen Pasch",
+        "pick": {
+            "title": "Acey-Deucey! Wähle einen Pasch",
+            "detail": "Zieh ihn viermal, dann würfle noch einmal",
+            "hover": "Vier {n}er, dann noch einmal würfeln",
+            "die": "Vier {n}er"
+        },
+        "double": {
+            "title": "Vier {n}er",
+            "detail": "Dann noch einmal würfeln"
+        },
+        "bonus": "Noch einmal würfeln",
+        "theirs": {
+            "oneTwo": "{name} hat eine 1-2 geworfen",
+            "pick": "{name} wählt einen Pasch",
+            "double": "{name} hat vier {n}er gewählt und würfelt danach noch einmal",
+            "bonus": "{name} würfelt noch einmal"
+        }
+    },
     "opening": {
         "title": "Eröffnungswurf",
         "highest": "Höchster Würfel beginnt",
@@ -40,12 +133,14 @@
         "theirs": "(des Gegners)",
         "bar": "Steine auf der Bar: {count}",
         "off": "Herausgewürfelte Steine: {count}",
-        "using": "mit {dice}"
+        "using": "mit {dice}",
+        "waiting": "Steine, die noch eingesetzt werden: {count}"
     },
     "result": {
-        "SINGLE": "{name} hat die Partie gewonnen: {points} Punkt",
-        "GAMMON": "{name} hat einen Gammon gewonnen: {points} Punkte",
-        "BACKGAMMON": "{name} hat einen Backgammon gewonnen: {points} Punkte"
+        "SINGLE": "{name} hat die Partie gewonnen: {points} Punkte | {name} hat die Partie gewonnen: {points} Punkt | {name} hat die Partie gewonnen: {points} Punkte",
+        "GAMMON": "{name} hat einen Gammon gewonnen: {points} Punkte | {name} hat einen Gammon gewonnen: {points} Punkt | {name} hat einen Gammon gewonnen: {points} Punkte",
+        "BACKGAMMON": "{name} hat einen Backgammon gewonnen: {points} Punkte | {name} hat einen Backgammon gewonnen: {points} Punkt | {name} hat einen Backgammon gewonnen: {points} Punkte",
+        "DROPPED": "{name} hat gewonnen, die Verdopplung wurde abgelehnt: {points} Punkte | {name} hat gewonnen, die Verdopplung wurde abgelehnt: {points} Punkt | {name} hat gewonnen, die Verdopplung wurde abgelehnt: {points} Punkte"
     },
     "statistics": {
         "hitsPerMatch": "Geschlagene Steine pro Match",
@@ -82,6 +177,35 @@
                 "Sind alle deine Steine im Heimfeld, kann ein Würfel einen Stein von der passenden Zunge herausnehmen.",
                 "Gewinnst du, bevor dein Gegner einen Stein herausgewürfelt hat, ist es ein Gammon und zählt im Match zwei Punkte."
             ]
+        }
+    },
+    "cube": {
+        "stake": "Es geht um {n} Punkte | Es geht um {n} Punkt | Es geht um {n} Punkte",
+        "crawford": "Crawford-Partie: kein Verdoppeln",
+        "label": "Dopplerwürfel: {value}",
+        "double": "Einsatz auf {value} verdoppeln",
+        "waiting": "Warte, ob {name} annimmt oder aufgibt",
+        "offered": "{name} verdoppelt auf {value}",
+        "offer": {
+            "title": "Einsatz auf {value} verdoppeln?",
+            "take": "Nimmt {name} an, geht es in dieser Partie um {n} Punkte, und der Würfel gehört {name}: Nur {name} kann als Nächstes verdoppeln. | Nimmt {name} an, geht es in dieser Partie um {n} Punkt, und der Würfel gehört {name}: Nur {name} kann als Nächstes verdoppeln. | Nimmt {name} an, geht es in dieser Partie um {n} Punkte, und der Würfel gehört {name}: Nur {name} kann als Nächstes verdoppeln.",
+            "drop": "Gibt dein Gegner auf, gewinnst du die Partie sofort, mit {n} Punkten. | Gibt dein Gegner auf, gewinnst du die Partie sofort, mit {n} Punkt. | Gibt dein Gegner auf, gewinnst du die Partie sofort, mit {n} Punkten.",
+            "confirm": "Auf {value} verdoppeln",
+            "cancel": "Jetzt nicht"
+        },
+        "answer": {
+            "take": "Annehmen: Weiterspielen um {n} Punkte. Der Würfel gehört dir. | Annehmen: Weiterspielen um {n} Punkt. Der Würfel gehört dir. | Annehmen: Weiterspielen um {n} Punkte. Der Würfel gehört dir.",
+            "drop": "Aufgeben: Du gibst diese Partie ab. {name} bekommt {n} Punkte. | Aufgeben: Du gibst diese Partie ab. {name} bekommt {n} Punkt. | Aufgeben: Du gibst diese Partie ab. {name} bekommt {n} Punkte.",
+            "takeButton": "Annehmen",
+            "dropButton": "Aufgeben",
+            "match": {
+                "takeBothAt": "Annehmen: Gewinnst du, stehst du bei {own} / {total}; verlierst du, steht {name} bei {other} / {total}.",
+                "takeYouWin": "Annehmen: Gewinnst du, gewinnst du das Match; verlierst du, steht {name} bei {other} / {total}.",
+                "takeNameWins": "Annehmen: Gewinnst du, stehst du bei {own} / {total}; verlierst du, gewinnt {name} das Match.",
+                "takeEither": "Annehmen: Wer diese Partie gewinnt, gewinnt das Match.",
+                "dropAt": "Aufgeben: {name} kommt auf {other} / {total}.",
+                "dropWins": "Aufgeben: {name} gewinnt das Match."
+            }
         }
     }
 }

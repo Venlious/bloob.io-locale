@@ -10,6 +10,62 @@
                 "enabled": "**Etkin**: Rakip tek bir pul bile toplamadan kazanırsan mars olur ve iki sayı eder. Rakibin hâlâ barda ya da senin evinde pulu varsa katmerli mars olur ve üç sayı eder.",
                 "disabled": "**Devre Dışı**: Her galibiyet bir sayı eder."
             }
+        },
+        "layout": {
+            "title": "Başlangıç dizilişi",
+            "help": "Pulların başladığı yer: alışılmış diziliş, Nackgammon (her tarafta iki pul geride, 24. hanede), Hypergammon (herkese üç pul) ya da Acey Deucey (on beş pulun hepsi tahtanın dışında, kendi kurallarıyla).",
+            "data": {
+                "STANDARD": {
+                    "title": "Standart",
+                    "description": "Alışılmış yerlerde on beş pul"
+                },
+                "NACKGAMMON": {
+                    "title": "Nackgammon",
+                    "description": "İki pul daha geriden başlar"
+                },
+                "HYPERGAMMON": {
+                    "title": "Hypergammon",
+                    "description": "Herkese üç pul, en uzak hanelerde"
+                },
+                "ACEY_DEUCEY": {
+                    "title": "Acey Deucey",
+                    "description": "On beş pulun hepsi tahtanın dışında başlar, 1-2 atınca istediğin çift zarı seçersin"
+                }
+            }
+        },
+        "fivePerPoint": {
+            "title": "Hane başına beş pul",
+            "help": "Eski İngiliz tavlasındaki gibi, hiçbir hanede bir oyuncunun beşten fazla pulu olamaz. Pul toplamada sınır yoktur."
+        },
+        "barFirst": {
+            "title": "Kırılan pul önce girer",
+            "help": {
+                "enabled": "**Etkin**: Kırılan pul, başka bir pul oynamadan önce yeniden girmek zorundadır.",
+                "disabled": "**Devre Dışı**: Kırılan pul, girmeyi bekleyen diğer pullarla bekler ve önce geri kalanı oynatabilirsin."
+            }
+        },
+        "keepBonus": {
+            "title": "Takılınca bonus korunur",
+            "help": {
+                "enabled": "**Etkin**: 1-2'yi ya da çift zarı ancak kısmen oynayabilsen de çift zarı ve ek atışı yine alırsın.",
+                "disabled": "**Devre Dışı**: 1-2'yi ya da ardından gelen çift zarı tamamen oynayamazsan sıran orada biter."
+            }
+        },
+        "cube": {
+            "title": "Katlama zarı",
+            "help": "Zar atmadan önce bahsi ikiye katla. Rakibin kabul edip iki kat sayı için oynamaya devam eder ve zar artık onun olur, ya da reddedip oyunu kaybeder. Maçta Crawford kuralı geçerlidir: bir oyuncu kazanmaya bir sayı kaldığında oynanan sonraki oyun katlama zarı olmadan oynanır."
+        },
+        "cubeLimit": {
+            "title": "Katlama sınırı",
+            "help": "Bahsin ne kadar yükseğe katlanabileceği.",
+            "data": {
+                "limit": "64'e kadar",
+                "none": "Sınır yok"
+            }
+        },
+        "jacoby": {
+            "title": "Jacoby kuralı",
+            "help": "Tek oyunda mars ve katmerli mars ancak katlama zarı çevrildiyse sayılır."
         }
     },
     "presets": {
@@ -20,10 +76,47 @@
         "match": {
             "title": "5 Sayılık Maç",
             "description": "Beş sayıya ilk ulaşan kazanır, mars çift sayılır"
+        },
+        "nackgammon": {
+            "title": "Nackgammon",
+            "description": "İki pul daha geriden başlar, daha uzun ve taktik oyunlar için"
+        },
+        "hypergammon": {
+            "title": "Hypergammon",
+            "description": "Herkese üç pul, en uzak hanelerden başlar: bütün bir oyun birkaç dakikada"
+        },
+        "aceyDeucey": {
+            "title": "Acey Deucey",
+            "description": "Bütün pullar tahtanın dışında başlar. 1-2 at, istediğin çift zarı seç ve yeniden at"
+        },
+        "oldEnglish": {
+            "title": "Eski İngiliz kuralları",
+            "description": "Bir hanede en fazla beş pul, katlama zarı yok"
         }
     },
     "undo": "Hamleyi geri al",
     "noMoves": "Oynanabilecek hamle yok",
+    "aceyDeucey": {
+        "title": "Acey-deucey!",
+        "oneTwo": "1'i ve 2'yi oyna, sonra bir çift zar seç",
+        "pick": {
+            "title": "Acey-deucey! Bir çift zar seç",
+            "detail": "Dört kez oyna, sonra yeniden at",
+            "hover": "Dört kez {n}, sonra yeniden at",
+            "die": "Dört kez {n}"
+        },
+        "double": {
+            "title": "Dört kez {n}",
+            "detail": "Sonra yeniden at"
+        },
+        "bonus": "Yeniden at",
+        "theirs": {
+            "oneTwo": "{name} 1-2 attı",
+            "pick": "{name} çift zar seçiyor",
+            "double": "{name} dört kez {n} seçti, ardından yeniden atacak",
+            "bonus": "{name} yeniden atıyor"
+        }
+    },
     "opening": {
         "title": "Başlangıç atışı",
         "highest": "Büyük zar başlar",
@@ -40,12 +133,14 @@
         "theirs": "(rakibin)",
         "bar": "Bar: {count} pul",
         "off": "Toplanan: {count} pul",
-        "using": "{dice} ile"
+        "using": "{dice} ile",
+        "waiting": "Girecek: {count} pul"
     },
     "result": {
-        "SINGLE": "{name} oyunu kazandı: {points} sayı",
-        "GAMMON": "{name} mars yaptı: {points} sayı",
-        "BACKGAMMON": "{name} katmerli mars yaptı: {points} sayı"
+        "SINGLE": "{name} oyunu kazandı: {points} sayı | {name} oyunu kazandı: {points} sayı | {name} oyunu kazandı: {points} sayı",
+        "GAMMON": "{name} mars yaptı: {points} sayı | {name} mars yaptı: {points} sayı | {name} mars yaptı: {points} sayı",
+        "BACKGAMMON": "{name} katmerli mars yaptı: {points} sayı | {name} katmerli mars yaptı: {points} sayı | {name} katmerli mars yaptı: {points} sayı",
+        "DROPPED": "{name} kazandı, katlama reddedildi: {points} sayı | {name} kazandı, katlama reddedildi: {points} sayı | {name} kazandı, katlama reddedildi: {points} sayı"
     },
     "statistics": {
         "hitsPerMatch": "Maç başına kırma",
@@ -82,6 +177,35 @@
                 "Bütün pulların evine girince, bir zar kendi sayısındaki haneden bir pul toplayabilir.",
                 "Rakip tek bir pul bile toplamadan kazanırsan mars olur ve maçta iki sayı eder."
             ]
+        }
+    },
+    "cube": {
+        "stake": "{n} sayı için oynanıyor | {n} sayı için oynanıyor | {n} sayı için oynanıyor",
+        "crawford": "Crawford oyunu: katlama yok",
+        "label": "Katlama zarı: {value}",
+        "double": "Bahsi katla, yeni bahis {value}",
+        "waiting": "{name} kabul mü edecek, reddedecek mi bekleniyor",
+        "offered": "{name} katladı: {value}",
+        "offer": {
+            "title": "Bahis katlansın mı? Yeni bahis: {value}",
+            "take": "{name} kabul ederse bu oyun {n} sayı değerinde olur ve zar {name} oyuncusuna geçer: bir sonraki katlamayı sadece o yapabilir. | {name} kabul ederse bu oyun {n} sayı değerinde olur ve zar {name} oyuncusuna geçer: bir sonraki katlamayı sadece o yapabilir. | {name} kabul ederse bu oyun {n} sayı değerinde olur ve zar {name} oyuncusuna geçer: bir sonraki katlamayı sadece o yapabilir.",
+            "drop": "Rakibin reddederse oyunu hemen {n} sayıyla kazanırsın. | Rakibin reddederse oyunu hemen {n} sayıyla kazanırsın. | Rakibin reddederse oyunu hemen {n} sayıyla kazanırsın.",
+            "confirm": "Katla: {value}",
+            "cancel": "Şimdi değil"
+        },
+        "answer": {
+            "take": "Kabul: {n} sayı için devam et. Zar senin. | Kabul: {n} sayı için devam et. Zar senin. | Kabul: {n} sayı için devam et. Zar senin.",
+            "drop": "Reddet: bu oyunu bırakırsın. {name} {n} sayı kazanır. | Reddet: bu oyunu bırakırsın. {name} {n} sayı kazanır. | Reddet: bu oyunu bırakırsın. {name} {n} sayı kazanır.",
+            "takeButton": "Kabul et",
+            "dropButton": "Reddet",
+            "match": {
+                "takeBothAt": "Kabul: kazanırsan {own} / {total} olursun; kaybedersen {name} {other} / {total} olur.",
+                "takeYouWin": "Kabul: kazanırsan maçı kazanırsın; kaybedersen {name} {other} / {total} olur.",
+                "takeNameWins": "Kabul: kazanırsan {own} / {total} olursun; kaybedersen maçı {name} kazanır.",
+                "takeEither": "Kabul: bu oyunu kim kazanırsa maçı da o kazanır.",
+                "dropAt": "Reddet: {name} {other} / {total} olur.",
+                "dropWins": "Reddet: maçı {name} kazanır."
+            }
         }
     }
 }

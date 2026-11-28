@@ -54,6 +54,10 @@
                 "five": "Klasyczny wybór, na jednej trzeciej ręki",
                 "thirteen": "Hakem widzi wszystko, zanim zdecyduje"
             }
+        },
+        "reshuffle": {
+            "title": "Ponowne tasowanie bez atutu",
+            "help": "Gracz, który nie dostał żadnego atutu, może w pierwszym ruchu zażądać ponownego rozdania. Poza Hakemem, który wybrał kolor."
         }
     },
     "presets": {
@@ -109,7 +113,7 @@
         "title": "Historia rund"
     },
     "scoreboard": {
-        "target": "Pierwszy do {amount}, {tricks} lew na rozdanie"
+        "target": "Pierwszy do {amount}"
     },
     "help": {
         "rules": {
@@ -130,22 +134,36 @@
             "title": "Branie lew",
             "description": [
                 "Kto bierze lewę, wychodzi w następnej, więc wygrana to także wybór koloru, do którego wszyscy będą musieli dołożyć.",
-                "Pierwsza drużyna, która weźmie **siedem** lew, wygrywa rozdanie — reszty kart się nie rozgrywa."
+                "Pierwsza drużyna, która weźmie **siedem** lew, wygrywa rozdanie, a reszty kart się nie rozgrywa."
             ]
         },
         "scoring": {
             "title": "Punktacja",
             "description": [
                 "Każde wygrane rozdanie jest warte punkt, a pierwsza drużyna z siedmioma punktami wygrywa mecz. Wzięcie wszystkich siedmiu lew to **Kot** i liczy się za dwa.",
-                "Hakem pozostaje Hakemem, dopóki jego drużyna wygrywa; gdy przegra rozdanie, wybór przechodzi na gracza po jego prawej."
+                "Hakem pozostaje Hakemem, dopóki jego drużyna wygrywa; gdy przegra rozdanie, wybór przechodzi na gracza po jego lewej, z drugiej drużyny."
             ]
         },
         "bots": {
             "title": "Boty",
             "description": [
                 "Łatwe boty zagrywają dowolną dozwoloną kartę. Zwykłe czytają lewę przed sobą: trzymają się z dala od lewy, którą bierze już partner, i biorą resztę możliwie najtaniej.",
-                "Trudne boty liczą karty. Pamiętają, których kolorów ci zabrakło, które wysokie karty już wyszły i w których kolorach wychodzisz — dwukrotne wyjście w tym samym kolorze przy partnerze to coś, na co odpowiedzą."
+                "Trudne boty liczą karty. Pamiętają, których kolorów ci zabrakło, które wysokie karty już wyszły i w których kolorach wychodzisz, więc dwukrotne wyjście w tym samym kolorze przy partnerze to coś, na co odpowiedzą."
             ]
+        }
+    },
+    "reshuffle": {
+        "prompt": {
+            "title": "Nie masz atutu",
+            "description": "Poprosić o ponowne tasowanie? Karty zostaną rozdane od nowa, a Hakem znowu wybierze atut.",
+            "keep": "Graj dalej",
+            "reshuffle": "Potasuj ponownie"
+        },
+        "announcement": {
+            "name": "Ponowne tasowanie: {name}",
+            "self": "Ponowne tasowanie na twoją prośbę",
+            "reason": "Brak atutu w ręce",
+            "reasonSelf": "Brak atutu w twojej ręce"
         }
     }
 }

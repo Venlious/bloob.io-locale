@@ -2,7 +2,7 @@
     "_meta": {
         "language": "informal simplified Chinese",
         "rtl": false,
-        "total": 3814,
+        "total": 4040,
         "missing": 0
     },
     "error": {
@@ -163,6 +163,22 @@
             "notMatchmaking": "你在匹配时不能执行该操作",
             "matchHost": "你不是房主，不能进行该操作",
             "admin": "仅限管理员进行该操作"
+        },
+        "discord": {
+            "expired": "用Discord登录超时了，请再试一次。",
+            "failed": "用Discord登录失败了，请再试一次。",
+            "alreadyConnected": "你的账户已经绑定了一个Discord账号。请先解除绑定。",
+            "onlyWayIn": "请先添加一个电子邮件地址。目前Discord是你登录账户的唯一方式。"
+        },
+        "discordInvite": {
+            "declined": "这个挑战已被拒绝。",
+            "expired": "这个链接已过期。去Discord上要一个新的吧。",
+            "over": "这个邀请已经结束了。",
+            "notForYou": "你不能在自己发起的挑战里占两个座位。",
+            "couldNotJoin": "你无法加入这个房间。",
+            "reserved": "这个房间是为另外两位玩家之间的挑战保留的。",
+            "ranOut": "没有人及时接受这个挑战，所以它被取消了。",
+            "paused": "来自Discord的房间暂时暂停了。请稍后再试。"
         }
     },
     "game": {
@@ -873,7 +889,9 @@
         "includesItems": "包含 {n} 个物品 | 包含 {n} 个物品 | 包含 {n} 个物品",
         "restartNotice": "服务器将在 {n} 分钟后重启，请尽快完成你的游戏。 | 服务器将在 {n} 分钟后重启，请尽快你的游戏。 | 服务器将在 {n} 分钟后重启，请尽快完成你的游戏。",
         "bombs": "{n} 个炸弹 | {n} 个炸弹 | {n} 个炸弹",
-        "tricks": "{n}墩 | {n}墩 | {n}墩"
+        "tricks": "{n}墩 | {n}墩 | {n}墩",
+        "dailyPlayed": "{n} 人玩过 | {n} 人玩过 | {n} 人玩过",
+        "dailyStreakInARow": "连续 {n} 天 | 连续 {n} 天 | 连续 {n} 天"
     },
     "articles": {
         "title": "文章"
@@ -1142,7 +1160,6 @@
         "leaderboard": "排行榜",
         "elapsedTime": "已过去{time}",
         "startingInTime": "在 {time} 后开始",
-        "averageWaitTimeBlank": "平均等待时间 {value}",
         "averageBlank": "平均 {value}",
         "highestBlank": "高. {value}",
         "showBlank": "显示 {value}",
@@ -1211,7 +1228,13 @@
         "siteName": "Bloob.io",
         "pool": "台球",
         "gamePreferences": "游戏偏好",
-        "wrongBallIndicator": "错误球提示"
+        "wrongBallIndicator": "错误球提示",
+        "connect": "绑定",
+        "disconnect": "解除绑定",
+        "discordAccount": "Discord",
+        "or": "或",
+        "leave": "离开",
+        "challenge": "挑战"
     },
     "match": {
         "quick": "快速匹配",
@@ -1267,7 +1290,6 @@
             "gameUnsupported": "这个游戏加载不出来"
         },
         "matchmaking": {
-            "searching": "正在匹配...",
             "matchFound": "找到对局了！",
             "waitingForOpponent": "正在等待你的对手... {seconds}",
             "opponentAway": "你的对手不在。我们还在为你匹配。",
@@ -1285,26 +1307,93 @@
             "settings": {
                 "publicMatches": {
                     "title": "公开房间",
-                    "description": "缩短等待时间。",
                     "tooltip": [
                         "公开房间是由其他玩家创建的。这些房间可能有自定义的设置。",
                         "如果你被踢出或者房主解散房间，你会自动返回到配对模式。"
                     ]
                 },
                 "games": {
-                    "title": "游戏",
-                    "description": "筛选想玩的游戏。",
-                    "tooltip": [
-                        "游戏选择的越多，等待时间会相对减少。"
-                    ]
+                    "title": "游戏"
                 },
                 "opponentFilter": {
                     "title": "对手筛选",
-                    "description": "根据你的条件匹配。",
                     "tooltip": [
                         "使用严格的筛选可能会增加等待时间，但能匹配更旗鼓相当的对手。"
                     ]
                 }
+            },
+            "lookingForMatch": "正在寻找对局",
+            "gamesSelected": "已选 {n} 个游戏 | 已选 {n} 个游戏 | 已选 {n} 个游戏",
+            "findingOpponent": "正在寻找对手",
+            "findingOpponentIn": "正在 {game} 中寻找对手",
+            "stopSearching": "停止匹配",
+            "picker": {
+                "title": "选择你的游戏",
+                "subtitle": "你会加入最先找到的对局",
+                "search": "搜索游戏",
+                "clearSearch": "清除搜索",
+                "all": "全部",
+                "sortBy": "游戏排序",
+                "sortPlaying": "在线人数",
+                "sortName": "名称（A-Z）",
+                "mostPlayed": "你最常玩的",
+                "featured": "为你推荐",
+                "more": "更多游戏",
+                "results": "“{query}”的搜索结果",
+                "similar": "没有完全匹配的结果。与“{query}”相似",
+                "noResults": "没有与“{query}”匹配的游戏",
+                "noResultsHint": "换个名称或分类试试",
+                "clearSelection": "清除选择",
+                "findMatch": "在 {n} 个游戏中寻找对局 | 在 {n} 个游戏中寻找对局 | 在 {n} 个游戏中寻找对局",
+                "pickToStart": "选择一个游戏开始"
+            },
+            "yourGames": "你的游戏",
+            "usualDay": "平常的一天",
+            "editGames": "编辑游戏",
+            "othersSearching": "另有 {n} 人在匹配 | 另有 {n} 人在匹配 | 另有 {n} 人在匹配",
+            "quietBusierFrom": "现在人少，{time} 起会热闹些",
+            "quietNow": "这个时段人少",
+            "busyNow": "这个时段通常人多",
+            "busyHours": "{game} 一天中每小时的平常热闹程度。高亮的柱子代表现在。",
+            "hourBusy": "{time}：通常人多",
+            "hourQuiet": "{time}：通常人少",
+            "filters": "筛选",
+            "filtersHint": "更改这些设置时，你仍会留在匹配中",
+            "publicSummary": {
+                "excluded": "不加入公开房间",
+                "defaultOnly": "默认设置的公开房间",
+                "any": "任何公开房间"
+            },
+            "opponentDescription": {
+                "any": "任何在匹配你所选游戏的人",
+                "higherThanLvl5": "跳过刚入门的新玩家",
+                "higherThanLvl25": "只匹配有经验的玩家"
+            },
+            "publicDescription": {
+                "excluded": "只加入为你新建的对局",
+                "defaultOnly": "也加入使用标准规则的公开房间",
+                "any": "也加入使用自定义规则的房间"
+            },
+            "joining": "正在加入...",
+            "waitingForMore": "还在等 {n} 位玩家 | 还在等 {n} 位玩家 | 还在等 {n} 位玩家",
+            "seatsHint": "{seats}加入后开始，或倒计时结束时由在场的玩家开始",
+            "likely": {
+                "soon": "其他人也在匹配，应该很快就能找到对局。",
+                "busy": "这个时段通常人多，应该不会等太久。",
+                "quiet": "现在人少，通常 {time} 起会热闹些。",
+                "quietAll": "现在人少，可能要等一会儿。"
+            },
+            "runner": {
+                "play": "等待时玩一玩",
+                "playWithKey": "按 {key} 在等待时玩一玩",
+                "best": "最高",
+                "space": "空格键",
+                "gameOver": "游戏结束",
+                "newBest": "新纪录",
+                "playAgain": "再玩一次",
+                "words": "等待 无聊 好玩",
+                "royalFlush": "皇家同花顺！",
+                "stopWithKey": "按 {key} 停止游戏"
             }
         },
         "info": {
@@ -1320,10 +1409,63 @@
             "joinById": "你可以通过填写四位数的ID来加入（私人）房间。",
             "public": "任何人都可以通过浏览可用的房间来加入。",
             "private": "玩家只能通过URL或4位数ID来加入。",
+            "challenge": "只有被挑战的玩家才能加入。",
             "leave": "如果你选择离开，可能就再也回不来了。",
             "leaveLast": "你是游戏里唯一的人，你一离开房间就会解散。",
             "leaveAsHost": "你离开后，会有别人成为新的房主。",
             "leaveOrForfeit": "认输算作失败，但不算中途退出。"
+        },
+        "daily": {
+            "title": "每日挑战",
+            "play": "开始玩",
+            "continue": "继续",
+            "seeBoard": "看今天的排行",
+            "stuckAt": "卡在 {progress}/{total}",
+            "putAway": "暂停在 {progress}/{total}",
+            "underWay": "进行中：{progress}/{total}",
+            "placeOf": "{played} 人中第 {place}",
+            "clearedShort": "完成！{points}",
+            "scope": "显示谁的成绩",
+            "everyone": "所有人",
+            "place": "名次",
+            "time": "用时",
+            "cleared": "已完成",
+            "stuck": "卡住",
+            "missed": "错过",
+            "anonymous": "某位玩家",
+            "resumed": "已续玩",
+            "resumedNote": "中断后接着玩的。暂停期间不计时。",
+            "longestYet": "你目前最长的",
+            "backTomorrow": "明天再来玩第 {number} 期",
+            "playedCounts": "玩了就算，连续记录继续",
+            "fullBoard": "完整排行",
+            "longest": "最长：{n}",
+            "clearedDays": "{played} 天中完成 {cleared} 天",
+            "empty": "还没有人玩过。",
+            "emptyFriends": "你的好友还没有人玩过。",
+            "shareTitle": "Bloob.io 每日挑战 · {game} · 第 {number} 期",
+            "shareLine": "{title}：{result}",
+            "results": "每日挑战成绩",
+            "error": {
+                "played": "你今天已经玩过每日挑战了，明天再来玩新的吧！",
+                "unavailable": "今天的每日挑战还没准备好，稍后再试试吧！"
+            },
+            "played": "已玩",
+            "underWayShort": "进行中",
+            "playedDays": "{days}天中玩了{played}天",
+            "wordsFound": "{n}个单词 | {n}个单词 | {n}个单词",
+            "foundOf": "找到{progress}/{total}",
+            "allFound": "全部找到",
+            "notAllFound": "没全找到",
+            "number": "第 {number} 期",
+            "solo": "单人",
+            "sameForEverybody": "所有人都一样",
+            "firstTryCounts": "只算第一次",
+            "continueUntil": "{time} 前都能继续",
+            "playedCount": "{played} 人玩过",
+            "clearedCount": "{cleared} 人完成",
+            "streak": "连续",
+            "placeShort": "第{place}"
         }
     },
     "info": {
@@ -1400,7 +1542,11 @@
             "typing": "对局中只能发预设的短语。在Discord上你想写什么都行。",
             "community": "在我们的服务器里，Bloob.io的玩家会聚在一起，找人一起玩，聊聊这些游戏。",
             "free": "加入免费，随时可以退出。Discord账号和你的Bloob.io账号是分开的。",
-            "open": "在新标签页中打开Discord。"
+            "open": "在新标签页中打开Discord。",
+            "seatedHere": "你已通过Discord入座。",
+            "offer": "你在Discord上获得的{game}房间座位正在等你。准备好了就入座吧。",
+            "takeSeat": "入座",
+            "declinedOne": "{name}拒绝了挑战。你们仍然可以不带TA一起玩。"
         },
         "stallCall": {
             "title": "还在等吗？",
@@ -1576,9 +1722,9 @@
                 "description": "输入你的邮箱。新来的话，我们会保存 {name}。来过的话，我们会帮你登录。",
                 "loginTitle": "登录",
                 "loginDescription": "无需密码。我们会把验证码发到你的邮箱。",
-                "levelNote": "达到 {level} 后，你就可以用邮箱保存 {name}。",
                 "note": "无需密码。我们只用你的邮箱来帮你登录。",
-                "send": "发送验证码"
+                "send": "发送验证码",
+                "discord": "使用Discord继续"
             },
             "code": {
                 "title": "查看你的邮箱",
@@ -1694,32 +1840,41 @@
         "offerDraw": "将询问对手是否以和棋结束对局。如果对方接受，既不算胜也不算负。",
         "accountStatus": {
             "unsaved": {
-                "title": "仅在这台设备上",
-                "description": "用你的邮箱保存 {name}，保住你的进度，在任何设备上都能玩。无需密码。",
-                "level": "达到 {level} 即可用邮箱保存 {name}。",
+                "title": "保存 {name}",
+                "description": "目前只在这台设备上。保存后就能在任何设备上玩。",
+                "discord": "目前只在这台设备上。用Discord可以马上保存。",
+                "level": "目前只在这台设备上。达到 {level} 后可以用邮箱保存。",
                 "loginOnly": "登录以保住你的进度，在任何设备上都能玩。"
             },
             "devices": {
                 "title": "{name} 仅在这台设备上",
-                "description": "用邮箱保存，就能在你的其他设备上玩，并在这里看到它们。"
+                "description": "保存后，也能在你的其他设备上玩，并在这里看到它们。"
             },
             "redeem": {
                 "title": "先保存 {name}",
-                "description": "你兑换的内容会进入你的账号，所以需要你的邮箱。"
+                "description": "你兑换的内容会进入你的账号。"
             },
             "saved": {
                 "title": "已保存到 {email}",
                 "description": "你的进度会跟着你到任何设备。"
             },
-            "save": "用邮箱保存",
-            "haveAccount": "我有账号",
+            "login": {
+                "title": "已经有账号了？",
+                "description": "登录后从上次的地方继续。"
+            },
+            "email": "邮箱",
             "changeEmail": "更换邮箱",
             "logout": {
                 "description": "在这台设备上，或在“我的设备”中退出所有设备。"
             },
             "logoutEverywhere": "在所有设备上退出"
         },
-        "wrongBallIndicator": "在台球游戏中，当瞄准线指向你不能先击打的球时，它会变红并显示一个叉号。"
+        "wrongBallIndicator": "在台球游戏中，当瞄准线指向你不能先击打的球时，它会变红并显示一个叉号。",
+        "discord": {
+            "connected": "你的Discord账号已绑定。",
+            "notConnected": "未绑定",
+            "onlyWayIn": "你的Discord账号已绑定。添加电子邮件地址后才能解除绑定。"
+        }
     },
     "share": {
         "tiers": {
@@ -1771,7 +1926,7 @@
         },
         "call": {
             "title": "你的下一场对局",
-            "waiting": "等待中…",
+            "waiting": "等待中...",
             "single": "一局定胜负",
             "series": "最多{count}局，{own}–{other}",
             "startsIn": "{seconds}秒后开始",
